@@ -1,0 +1,24 @@
+greater_than_or_equal_to;jj,jjr;2;(a,b):a>=b
+less_than_or_equal_to;jj,jjr;2;(a,b):a<=b
+equal_to;jj,vbz,vbg;2;(a,b):a==b
+less_than;jj;2;(a,b):a<b
+greater_than;jj;2;(a,b):a>b
+be;vb,vbd,vbg,vbn,vbp,vbz;1;(*):TrueP
+result;nn,nns,nnp,nnps;1;(*):\result
+should;md;*;(*):x
+in;in;2;(x,y):\sub
+input;nn,nns,nnp,nnps;1;(*):\param
+ascending_order;nn;1;(x):x[k]<=x[k+1]
+descending_order;nn;1;(x):x[k]>=x[k+1]
+sorted_in_ascending_order;nn;1;(x):\forall int k;0 <= k && k < x.length-1;x[k]<=x[k+1]
+sorted_in_descending_order;nn;1;(x):\forall int k;0 <= k && k < x.length-1;x[k]>=x[k+1]
+true_value;nn;1;(*):true
+false_value;nn;1;(*):false
+null_value;nn;1;(*):null
+prime;jj;1;(x):\forall int k;2 < k && k < x/2; x%k == 0
+be;vbz;2;(x,y):x==y
+length;nn;1;(x):x.length
+value_at_the_index_of_the_return_value;nn;1;(x):x[\result]
+contain;vbz;2;(a,b):\exists int i; 0 <= i < a.length; a[i] == b
+if;in;2;(*):==>
+of;in;2;(a,b):ba

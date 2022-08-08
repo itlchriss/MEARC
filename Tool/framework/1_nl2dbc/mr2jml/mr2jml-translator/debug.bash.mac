@@ -1,0 +1,11 @@
+#!/bin/sh
+
+debugger=lldb
+
+make clean;
+make;
+
+$debugger -ex=r --args bin/h2jc ../test/prime_true.hol 1 ./sst.template ./dst.template isPrime
+$debugger -ex=r --args bin/h2jc ../test/sort.hol 1 ./sst.template ./dst.template sort
+$debugger -ex=r --args bin/h2jc ../test/simple.hol 1 ./sst.template ./dst.template Sum
+
