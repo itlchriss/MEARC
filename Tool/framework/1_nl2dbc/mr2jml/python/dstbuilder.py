@@ -10,9 +10,8 @@ import javalang.tree
 from javalang.tree import ClassDeclaration, InterfaceDeclaration, TypeDeclaration
 from bs4 import BeautifulSoup, NavigableString
 
-asts = []
+asts = {}
 javadocs = {}
-
 
 # class ElementType(Enum):
 #     CLASS = enum.auto()
@@ -39,8 +38,21 @@ def get_asts_under_dir(directory: str):
         if os.path.isfile(f) and filename.endswith('.java'):
             with open(f, 'r') as fp:
                 file = fp.read()
-                asts.append(javalang.parse.parse(file))
-                # asts.append((filename, javalang.parse.parse(file)))
+                tree = javalang.parse.parse(file)
+                if tree.types:  # type: ClassDeclaration
+                    extends_type = tree.types[0].extends
+                    if extends_type:
+                        if isinstance(extends_type, List):
+                            [print(i.attrs['name']) for i in extends_type]
+                            # extends_type.__class__ = javalang.tree.Type
+                    asts[tree.types[0].name] = {
+                        'fields': tree.types[0].fields,    # type: javalang.tree.FieldDeclaration
+                        'methods': tree.types[0].methods,  # type: javalang.tree.MethodDeclaration
+                        'constructors': tree.types[0].constructors,  # type: javalang.tree.ConstructorDeclaration
+                        # 'inherit': [print(i[1]) for i in tree.types[0].extends]
+                    }
+                # asts.append(javalang.parse.parse(file))
+                # # asts.append((filename, javalang.parse.parse(file)))
         elif os.path.isdir(f):
             get_asts_under_dir(f)
         else:
@@ -76,7 +88,7 @@ def __process_section(tag: Union[BeautifulSoup, NavigableString]):
                     # type: Union[BeautifulSoup, NavigableString]
                 tmp['parameter'][parameter['name']] = []
 
-                tmp['parameter'][parameter['name']].append()
+                # tmp['parameter'][parameter['name']].append()
             # for _mt in _t.find_all(recursive=False):
             #     if _mt.name == 'tag' and _mt['name'] == '@param':
             #         text = _mt['text']
@@ -86,6 +98,7 @@ def __process_section(tag: Union[BeautifulSoup, NavigableString]):
             docs['method'][_t['name']] = tmp
 
     print(docs)
+
 
 # What do we need from documentation?
 #  - We want the field, method documentations
@@ -97,15 +110,50 @@ def process_documentation(filepath: str):
     if not package:
         print('Cannot find package in javadoc file: %s' % filepath)
         exit(-1)
-    for element in package.find_all(True, recursive=False):
-        if element.name == 'comment':
-            # interface and class comments are excluded in the current stage
-            continue
-        elif element.name == 'interface' or element.name == 'class':
-            __process_section(element)
-        else:
-            print('Unknown javadoc element: %s' % element.name)
-            exit(-2)
+    param_docs = []
+    return_docs = []
+    throw_docs = []
+    types = []
+    # TODO: to be fine-tuned. use this in the current stage
+    code_tag_regex = r'(<code>[a-zA-Z0-9 ()]+</code>)'
+    for element in package.find_all('class', recursive=False):
+        types.append(element['name'])
+    for element in package.find_all('interface', recursive=False):
+        types.append(element['name'])
+    for element in package.find_all('tag', recursive=True):
+        text = element['text'].replace('\n', '').replace('  ', ' ').strip()
+        tokens = [i.strip() for i in text.split(' ')]
+        if element['name'] == '@param':
+            param_docs.append(text)
+        elif element['name'] == '@return':
+            return_docs.append(text)
+        elif element['name'] == '@throws':
+            exception_type = tokens[0]
+            desc = ' '.join(tokens[1:])
+            if m := re.findall(code_tag_regex, desc, re.ASCII):
+                print(m)
+                print(exception_type, desc)
+            # fix <code>term</code>
+            #   if the term is a method name and the term is a noun, then ?
+            #   if the term is a method signature and the term is a noun, then?
+            #       - how does it be recognised as a noun?
+            #   null is a value type
+            # fix @link
+            throw_docs.append((exception_type, ))
+
+    words = []
+    # for doc in throw_docs:
+    #     print(doc)
+
+    # for element in package.find_all(True, recursive=False):
+    #     if element.name == 'comment':
+    #         # interface and class comments are excluded in the current stage
+    #         continue
+    #     elif element.name == 'interface' or element.name == 'class':
+    #         __process_section(element)
+    #     else:
+    #         print('Unknown javadoc element: %s' % element.name)
+    #         exit(-2)
 
 
 def main(source_code_dir: str, javadoc_xml_filepath: str):
@@ -117,8 +165,9 @@ def main(source_code_dir: str, javadoc_xml_filepath: str):
     #   Loop all fields and methods to get their documentation
     #       Loop all words (using tokenizer) in the documentation
     #           For each word, loop all visible scope in the software to find exact name of software element
-    get_asts_under_dir(source_code_dir)
+    # get_asts_under_dir(source_code_dir)
     process_documentation(javadoc_xml_filepath)
+
 
 
 if __name__ == "__main__":
