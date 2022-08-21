@@ -32,6 +32,52 @@ javadocs = {}
 #     # def __init__(self):
 
 
+def get_package_info(directory: str):
+    print('| File name | Number of methods in the file |')
+    print('|:---:|:---:|')
+    for filename in os.listdir(directory):
+        f = os.path.join(directory, filename)
+        if os.path.isfile(f) and filename.endswith('.java'):
+            with open(f, 'r') as fp:
+                file = fp.read()
+                tree = javalang.parse.parse(file)
+                method_count = 0
+                for path, node in tree.filter(javalang.tree.MethodDeclaration):
+                    method_count += 1
+                print('| %s | %s |' % (filename, method_count))
+
+
+def __get_element_info(element: Union [BeautifulSoup, NavigableString]):
+    print('#### %s' % element['name'])
+    print('| Method signature | parameter doc count | return doc count | exception doc count |')
+    print('|:---:|:---:|:---:|:---:|')
+    for method in element.find_all('method', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
+        # print(method['name'])
+        param_doc_count = return_doc_count = throw_doc_count = 0
+        for tag in method.find_all('tag', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
+            if tag['name'] == '@param':
+                param_doc_count += 1
+            if tag['name'] == '@return':
+                return_doc_count += 1
+            if tag['name'] == '@throw':
+                throw_doc_count += 1
+        print('|%s|%s|%s|%s|' % (method['name'], param_doc_count, return_doc_count, throw_doc_count))
+
+
+def get_javadoc_info(filepath: str):
+    with open(filepath, 'r') as file:
+        fs = file.read()
+    soup = BeautifulSoup(fs, 'xml')
+    package = soup.find('package')
+    if not package:
+        print('Cannot find package in javadoc file: %s' % filepath)
+        exit(-1)
+    for element in package.find_all('class', recursive=False): # type: Union[BeautifulSoup, NavigableString]
+        __get_element_info(element)
+    for element in package.find_all('interface', recursive=False):
+        __get_element_info(element)
+
+
 def get_asts_under_dir(directory: str):
     for filename in os.listdir(directory):
         f = os.path.join(directory, filename)
@@ -166,8 +212,9 @@ def main(source_code_dir: str, javadoc_xml_filepath: str):
     #       Loop all words (using tokenizer) in the documentation
     #           For each word, loop all visible scope in the software to find exact name of software element
     # get_asts_under_dir(source_code_dir)
-    process_documentation(javadoc_xml_filepath)
-
+    # process_documentation(javadoc_xml_filepath)
+    get_package_info(source_code_dir)
+    get_javadoc_info(javadoc_xml_filepath)
 
 
 if __name__ == "__main__":
