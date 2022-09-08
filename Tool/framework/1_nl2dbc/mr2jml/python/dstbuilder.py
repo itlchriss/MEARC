@@ -75,6 +75,10 @@ def get_package_info(directory: str):
                 print('| %s | %s |' % (filename, method_count))
 
 
+# TODO: this normalisation has banned the close curly bracket '}'
+def __normalise(text: str) -> str:
+    return text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
+
 def __get_element_info(element: Union[BeautifulSoup, NavigableString]):
     # print('#### %s' % element['name'])
     # print('| Method signature | parameter doc count | return doc count | exception doc count |')
@@ -89,9 +93,9 @@ def __get_element_info(element: Union[BeautifulSoup, NavigableString]):
                 ts = tag['text'].split(' ')
                 param_name = ts[0]
                 param_desc = ' '.join(ts[1:])
-                for word in ts[1:]:
-                    if param_name.lower() in word.lower():
-                        print(param_name, word, param_desc)
+                # for word in ts[1:]:
+                #     if param_name.lower() in word.lower():
+                #         print(param_name, word, param_desc)
                 comments.append(param_desc)
         # TODO: We can aim for an issue to check if return and throw comments mention the parameter
         #        If we can do this, we MAY be able to increase the rate of generation, but not exactly the accuracy
