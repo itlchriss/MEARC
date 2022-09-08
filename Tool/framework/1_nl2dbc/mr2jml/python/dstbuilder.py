@@ -1,35 +1,63 @@
-import enum
 import os
 import sys
 import re
-from enum import Enum
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Set
 
 import javalang
 import javalang.tree
-from javalang.tree import ClassDeclaration, InterfaceDeclaration, TypeDeclaration
+from javalang.tree import ClassDeclaration, InterfaceDeclaration, TypeDeclaration, MethodDeclaration
 from bs4 import BeautifulSoup, NavigableString
+from functools import lru_cache
 
 asts = {}
 javadocs = {}
 
-# class ElementType(Enum):
-#     CLASS = enum.auto()
-#     INTERFACE = enum.auto()
+
+
+
+def get_levenshtein_distance(a, b):
+    @lru_cache(None)  # for memorization
+    def min_dist(s1, s2):
+
+        if s1 == len(a) or s2 == len(b):
+            return len(a) - s1 + len(b) - s2
+
+        # no change required
+        if a[s1] == b[s2]:
+            return min_dist(s1 + 1, s2 + 1)
+
+        return 1 + min(
+            min_dist(s1, s2 + 1),  # insert character
+            min_dist(s1 + 1, s2),  # delete character
+            min_dist(s1 + 1, s2 + 1),  # replace character
+        )
+
+    return min_dist(0, 0)
+
 
 #
-# class Content:
-#     # The name of the software element
-#     __name: str
-#     # The type of the software element. It is either ElementType.CLASS or ElementType.INTERFACE
-#     __type: ElementType
-#     # Includes the name of elements in the following scenario:
-#     #   1. The class that a class has extended
-#     #   2. The interface that a class has implemented
-#     #   3. The interface that an interface has extended
-#     # __inherit_elements: List[str]
-#     # __fields: List[str]
-#     # def __init__(self):
+#  Obtaining globally visible software elements
+#   Including names of classes and their public methods, protected methods in inherited class,
+#       names of interfaces and their methods
+#
+def get_package_global_info(directory: str) -> Set:
+    global_element_names = []
+    for filename in os.listdir(directory):
+        f = os.path.join(directory, filename)
+        if os.path.isfile(f) and filename.endswith('.java'):
+            with open(f, 'r') as fp:
+                file = fp.read()
+                tree = javalang.parse.parse(file)
+                for path, node in tree.filter(javalang.tree.MethodDeclaration):
+                    global_element_names.append(node.name)
+                for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
+                    global_element_names.append(node.name)
+                for path, node in tree.filter(javalang.tree.ClassDeclaration):
+                    global_element_names.append(node.name)
+                for path, node in tree.filter(javalang.tree.FieldDeclaration):
+                    if node.declarators:
+                        global_element_names.append(node.declarators[0].name)
+    return set(global_element_names)
 
 
 def get_package_info(directory: str):
@@ -47,21 +75,30 @@ def get_package_info(directory: str):
                 print('| %s | %s |' % (filename, method_count))
 
 
-def __get_element_info(element: Union [BeautifulSoup, NavigableString]):
-    print('#### %s' % element['name'])
-    print('| Method signature | parameter doc count | return doc count | exception doc count |')
-    print('|:---:|:---:|:---:|:---:|')
+def __get_element_info(element: Union[BeautifulSoup, NavigableString]):
+    # print('#### %s' % element['name'])
+    # print('| Method signature | parameter doc count | return doc count | exception doc count |')
+    # print('|:---:|:---:|:---:|:---:|')
     for method in element.find_all('method', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
-        # print(method['name'])
-        param_doc_count = return_doc_count = throw_doc_count = 0
+        comments = []
+        param_name = param_desc = None
         for tag in method.find_all('tag', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
-            if tag['name'] == '@param':
-                param_doc_count += 1
-            if tag['name'] == '@return':
-                return_doc_count += 1
-            if tag['name'] == '@throw':
-                throw_doc_count += 1
-        print('|%s|%s|%s|%s|' % (method['name'], param_doc_count, return_doc_count, throw_doc_count))
+            if tag['name'] in ['@return', '@throw']:
+                comments.append(tag['text'])
+            elif tag['name'] == '@param':
+                ts = tag['text'].split(' ')
+                param_name = ts[0]
+                param_desc = ' '.join(ts[1:])
+                for word in ts[1:]:
+                    if param_name.lower() in word.lower():
+                        print(param_name, word, param_desc)
+                comments.append(param_desc)
+        # TODO: We can aim for an issue to check if return and throw comments mention the parameter
+        #        If we can do this, we MAY be able to increase the rate of generation, but not exactly the accuracy
+        # if param_name and param_desc and comments:
+        #     for comment in comments:
+        #         if param_desc in comment:
+        #             print(param_name, param_desc, comment)
 
 
 def get_javadoc_info(filepath: str):
@@ -72,7 +109,7 @@ def get_javadoc_info(filepath: str):
     if not package:
         print('Cannot find package in javadoc file: %s' % filepath)
         exit(-1)
-    for element in package.find_all('class', recursive=False): # type: Union[BeautifulSoup, NavigableString]
+    for element in package.find_all('class', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
         __get_element_info(element)
     for element in package.find_all('interface', recursive=False):
         __get_element_info(element)
@@ -92,7 +129,7 @@ def get_asts_under_dir(directory: str):
                             [print(i.attrs['name']) for i in extends_type]
                             # extends_type.__class__ = javalang.tree.Type
                     asts[tree.types[0].name] = {
-                        'fields': tree.types[0].fields,    # type: javalang.tree.FieldDeclaration
+                        'fields': tree.types[0].fields,  # type: javalang.tree.FieldDeclaration
                         'methods': tree.types[0].methods,  # type: javalang.tree.MethodDeclaration
                         'constructors': tree.types[0].constructors,  # type: javalang.tree.ConstructorDeclaration
                         # 'inherit': [print(i[1]) for i in tree.types[0].extends]
@@ -185,7 +222,7 @@ def process_documentation(filepath: str):
             #       - how does it be recognised as a noun?
             #   null is a value type
             # fix @link
-            throw_docs.append((exception_type, ))
+            throw_docs.append((exception_type,))
 
     words = []
     # for doc in throw_docs:
@@ -213,7 +250,7 @@ def main(source_code_dir: str, javadoc_xml_filepath: str):
     #           For each word, loop all visible scope in the software to find exact name of software element
     # get_asts_under_dir(source_code_dir)
     # process_documentation(javadoc_xml_filepath)
-    get_package_info(source_code_dir)
+    global_names = get_package_global_info(source_code_dir)
     get_javadoc_info(javadoc_xml_filepath)
 
 
