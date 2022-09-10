@@ -79,16 +79,17 @@ def get_package_info(directory: str):
 def __normalise(text: str) -> str:
     return text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
 
-def __get_element_info(element: Union[BeautifulSoup, NavigableString]):
-    # print('#### %s' % element['name'])
-    # print('| Method signature | parameter doc count | return doc count | exception doc count |')
-    # print('|:---:|:---:|:---:|:---:|')
+
+def __get_element_info(element: Union[BeautifulSoup, NavigableString]) -> Dict[str, Dict[str, str]]:
+    data = {}
     for method in element.find_all('method', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
-        comments = []
         param_name = param_desc = None
+        comments = {}
         for tag in method.find_all('tag', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
-            if tag['name'] in ['@return', '@throw']:
-                comments.append(tag['text'])
+            if tag['name'] == '@return':
+                comments['r'] = tag['text']
+            elif tag['name'] == '@throw':
+                comments['t'] = tag['text']
             elif tag['name'] == '@param':
                 ts = tag['text'].split(' ')
                 param_name = ts[0]
@@ -96,16 +97,18 @@ def __get_element_info(element: Union[BeautifulSoup, NavigableString]):
                 # for word in ts[1:]:
                 #     if param_name.lower() in word.lower():
                 #         print(param_name, word, param_desc)
-                comments.append(param_desc)
+                comments['p'] = param_desc
+        data[method['name']] = comments
         # TODO: We can aim for an issue to check if return and throw comments mention the parameter
         #        If we can do this, we MAY be able to increase the rate of generation, but not exactly the accuracy
         # if param_name and param_desc and comments:
         #     for comment in comments:
         #         if param_desc in comment:
         #             print(param_name, param_desc, comment)
+    return data
 
 
-def get_javadoc_info(filepath: str):
+def get_javadoc_info(filepath: str) -> Dict[str, Dict[str, Dict[str, str]]]:
     with open(filepath, 'r') as file:
         fs = file.read()
     soup = BeautifulSoup(fs, 'xml')
@@ -113,10 +116,12 @@ def get_javadoc_info(filepath: str):
     if not package:
         print('Cannot find package in javadoc file: %s' % filepath)
         exit(-1)
+    data = {}
     for element in package.find_all('class', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
-        __get_element_info(element)
+        data['class_' + element['name']] = __get_element_info(element)
     for element in package.find_all('interface', recursive=False):
-        __get_element_info(element)
+        data['interface_' + element['name']] = __get_element_info(element)
+    return data
 
 
 def get_asts_under_dir(directory: str):
