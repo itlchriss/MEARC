@@ -13,8 +13,6 @@ asts = {}
 javadocs = {}
 
 
-
-
 def get_levenshtein_distance(a, b):
     @lru_cache(None)  # for memorization
     def min_dist(s1, s2):
@@ -77,7 +75,15 @@ def get_package_info(directory: str):
 
 # TODO: this normalisation has banned the close curly bracket '}'
 def __normalise(text: str) -> str:
-    return text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
+    soup = BeautifulSoup(text)
+    text = soup.getText()
+    text = text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
+    if rs := re.findall(r'<\w+>', text):
+        for r in set(rs):
+            text = text.replace(r, r.replace('<', '').replace('>', '') + '_TYPE')
+    # if text[-1] != '.':
+    #     text = text + '.'
+    return text
 
 
 def __get_element_info(element: Union[BeautifulSoup, NavigableString]) -> Dict[str, Dict[str, str]]:
@@ -87,17 +93,17 @@ def __get_element_info(element: Union[BeautifulSoup, NavigableString]) -> Dict[s
         comments = {}
         for tag in method.find_all('tag', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
             if tag['name'] == '@return':
-                comments['r'] = tag['text']
+                comments['r'] = 'The method returns ' + __normalise(tag['text']).strip()
             elif tag['name'] == '@throw':
-                comments['t'] = tag['text']
+                comments['t'] = 'The method throws ' + __normalise(tag['text']).strip()
             elif tag['name'] == '@param':
                 ts = tag['text'].split(' ')
-                param_name = ts[0]
-                param_desc = ' '.join(ts[1:])
+                param_name = ts[0].strip()
+                param_desc = (' '.join(ts[1:])).strip()
                 # for word in ts[1:]:
                 #     if param_name.lower() in word.lower():
                 #         print(param_name, word, param_desc)
-                comments['p'] = param_desc
+                comments['p'] = 'The ' + param_name + '_PARAM is ' + __normalise(param_desc)
         data[method['name']] = comments
         # TODO: We can aim for an issue to check if return and throw comments mention the parameter
         #        If we can do this, we MAY be able to increase the rate of generation, but not exactly the accuracy
