@@ -75,8 +75,8 @@ def get_package_info(directory: str):
 
 # TODO: this normalisation has banned the close curly bracket '}'
 def __normalise(text: str) -> str:
-    soup = BeautifulSoup(text)
-    text = soup.getText()
+    # soup = BeautifulSoup(text)
+    # text = soup.getText()
     text = text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
     if rs := re.findall(r'<\w+>', text):
         for r in set(rs):
@@ -94,7 +94,7 @@ def __get_element_info(element: Union[BeautifulSoup, NavigableString]) -> Dict[s
         for tag in method.find_all('tag', recursive=False):  # type: Union[BeautifulSoup, NavigableString]
             if tag['name'] == '@return':
                 comments['r'] = 'The method returns ' + __normalise(tag['text']).strip()
-            elif tag['name'] == '@throw':
+            elif tag['name'] == '@throws':
                 comments['t'] = 'The method throws ' + __normalise(tag['text']).strip()
             elif tag['name'] == '@param':
                 ts = tag['text'].split(' ')

@@ -6,7 +6,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L
-OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o h2jc.o
+OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o
 DEBUG   ?=      1
 
 ifeq ($(DEBUG), 1)
@@ -16,7 +16,7 @@ endif
 
 .PHONY: directories
 
-all: directories h2jc
+all: directories main
 
 directories: ${BUILD} ${BIN}
 
@@ -26,8 +26,8 @@ ${BUILD}:
 ${BIN}:
 	mkdir -p $(BIN)
 
-h2jc: $(OBJS)
-	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/h2jc -ll
+main: $(OBJS)
+	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll
 
 lex-only: lex
 	$(CC) $(BUILD)/lex.yy.c -ll -o $(BIN)/lex.o
@@ -38,8 +38,8 @@ lex:
 lex.o:	lex
 	$(CC) $(CFLAGS) -c $(BUILD)/lex.yy.c -o $(BUILD)/lex.o
 
-h2jc.o: $(SRC)/h2jc.c
-	$(CC) $(CFLAGS) -c -o $(BUILD)/h2jc.o $<
+main.o: $(SRC)/main.c
+	$(CC) $(CFLAGS) -c -o $(BUILD)/main.o $<
 
 parser.o:	parser.c
 		$(CC) $(CFLAGS) -c $(BUILD)/parser.c -o $(BUILD)/parser.o
@@ -73,7 +73,7 @@ dst.o  : $(SRC)/dst.c
 sem.o  : $(SRC)/sem.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
 
-lex.o parser.o sym_table.o		:	$(INCL)/h2jc.h
+lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
 lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h $(INCL)/sst.h

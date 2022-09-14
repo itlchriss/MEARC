@@ -22,14 +22,15 @@ void walksubtree(struct astnode *subtreeroot) {
         node = (struct astnode*) dequeue(nodequeue);
         print = 1;
         switch(node->type) {
-            case Exists:                        
-            case ForAll:
-            print = 1;
-            break;            
-            case NotExists:
-            case NotForAll:
-            not = 1;
-            break;
+            // TODO: distinguishing negative sign
+            // case Exists:                        
+            // case ForAll:
+            // print = 1;
+            // break;            
+            // case NotExists:
+            // case NotForAll:
+            // not = 1;
+            // break;
             case Resolved:
             if (strlen(node->token->symbol) > 0) {
                 if (node->isnegative) {

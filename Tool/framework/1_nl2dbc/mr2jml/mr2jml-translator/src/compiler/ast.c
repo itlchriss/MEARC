@@ -8,7 +8,9 @@
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Exists", "NotExists", "ForAll", "NotForAll", "Predicate", "Variable", "TrivialConnective", "TrueP", "STDPF", "Resolved", "Semantic", "NonTrivialConnective" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "Semantic", "NonTrivialConnective" };
+char *connective_name[] = { "And", "Equivalent", "Imply" };
+char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
 struct queue *_paramdstptrs = NULL;
 
@@ -26,12 +28,6 @@ int iscomparator(char *relation) {
 int isequality(char *relation) {
     return strcmp(relation, "be");
 }
-
-// int iskeyword(struct astnode *node) {
-//     struct semantic *sem = getsemantic(node->semantics, 0);
-//     if (sem != NULL && sem->data != NULL && sem->data[0] == '\\' && strcmp(sem->args[0], "*") == 0) return 0;
-//     return 1;
-// }
 
 void appendnode(struct astnodelist *list, struct astnode *n) {
     if (list == NULL) {
@@ -64,46 +60,6 @@ struct token *newtoken(char *text, int line, int column) {
     return new;
 }
 
-enum ptbsyntax _getptbsyntax(char *syntax) {
-    if (strcmp(syntax, "cc") == 0) return CC;
-    else if (strcmp(syntax, "cd") == 0) return CD;
-    else if (strcmp(syntax, "dt") == 0) return DT;
-    else if (strcmp(syntax, "ex") == 0) return EX;
-    else if (strcmp(syntax, "fw") == 0) return FW;
-    else if (strcmp(syntax, "in") == 0) return IN;
-    else if (strcmp(syntax, "jj") == 0) return JJ;
-    else if (strcmp(syntax, "jjr") == 0) return JJR;
-    else if (strcmp(syntax, "jjs") == 0) return JJS;
-    else if (strcmp(syntax, "ls") == 0) return LS;
-    else if (strcmp(syntax, "md") == 0) return MD;
-    else if (strcmp(syntax, "nn") == 0) return NN;
-    else if (strcmp(syntax, "nns") == 0) return NNS;
-    else if (strcmp(syntax, "nnp") == 0) return NNP;
-    else if (strcmp(syntax, "nnps") == 0) return NNPS;
-    else if (strcmp(syntax, "pdt") == 0) return PDT;
-    else if (strcmp(syntax, "prp") == 0) return PRP;
-    else if (strcmp(syntax, "pos") == 0) return POS;
-    else if (strcmp(syntax, "prp_pos") == 0) return PRP_POS;
-    else if (strcmp(syntax, "rb") == 0) return RB;
-    else if (strcmp(syntax, "rbr") == 0) return RBR;
-    else if (strcmp(syntax, "rbs") == 0) return RBS;
-    else if (strcmp(syntax, "rp") == 0) return RP;
-    else if (strcmp(syntax, "sym") == 0) return SYM;
-    else if (strcmp(syntax, "to") == 0) return TO;
-    else if (strcmp(syntax, "uh") == 0) return UH;
-    else if (strcmp(syntax, "vb") == 0) return VB;
-    else if (strcmp(syntax, "vbd") == 0) return VBD;
-    else if (strcmp(syntax, "vbg") == 0) return VBG;
-    else if (strcmp(syntax, "vbn") == 0) return VBN;
-    else if (strcmp(syntax, "vbp") == 0) return VBP;
-    else if (strcmp(syntax, "vbz") == 0) return VBZ;
-    else if (strcmp(syntax, "wdt") == 0) return WDT;
-    else if (strcmp(syntax, "wp") == 0) return WP;
-    else if (strcmp(syntax, "wp_pos") == 0) return WP_POS;
-    else if (strcmp(syntax, "wrb") == 0) return WRB;
-    else return 0;
-}
-
 struct astnode *newastnode(enum astnodetype type, struct token *token) {
     struct astnode *new = malloc(sizeof(struct astnode));
     new->type = type;    
@@ -112,35 +68,6 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     new->parent = NULL;
     new->isroot = 0;
     new->isnegative = 0;
-    // default priority is the last priority
-    new->priority = 9;
-    if (type == Predicate) {
-        // Only predicate has syntax
-        char *tmp = strdup(token->symbol), *pos;
-        char *t = strtok_r(tmp, "@", &pos);
-        if (t == NULL) {
-            printf("Syntax Error: the functor syntax is incorret %s\n", token->symbol);
-        }
-        free(new->token->symbol);
-        if (t[0] == '-') {
-            new->token->symbol = (char *)strdup(t + 2);
-            new->isnegative = 1;
-        } else {
-            new->token->symbol = (char *)strdup(t + 1);
-        }
-        t = strtok_r(NULL, "@", &pos);
-        if (t == NULL) {
-            printf("Syntax Error: the functor syntax is incorret %s\n", token->symbol);
-        }
-        t = (char *)strdup(t) + 1;
-        t = strtok_r(t, ",", &pos);
-        new->syntax = (char *)strdup(t);
-        free(tmp);
-
-        // after acquiring the functor and syntax, deliberately search the static symbol table
-        
-        new->ptbsyntax = _getptbsyntax(new->syntax);
-    }
     new->children = malloc(sizeof(struct astnodelist));
     new->children->node = NULL;
     new->children->next = NULL;
@@ -456,10 +383,7 @@ struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, stru
         node = (struct astnode*)dequeue(conn_queue);
         for (int i = 0; i < countastchildren(node); ++i) {
             child = getastchild(node, i);            
-            if (child->type != Exists && 
-                child->type != NotExists && 
-                child->type != ForAll && 
-                child->type != NotForAll && 
+            if (child->type != Quantifier && 
                 child->type != Resolved) {
                 printf("Incomplete simplification: a node with type %s cannot be simplified....\n", node_type_name[child->type]);
                 goto END;
@@ -552,23 +476,16 @@ void showast(struct astnode *node, int depth) {
                     node->syntax);
             }
             break;
-        case Exists:
-        case ForAll:
-        case NotExists:
-        case NotForAll:
-            printf("%s %s", node_type_name[node->type], node->token->symbol);
+        case Quantifier:
+            printf("%s %s %s", node_type_name[node->type], quantifier_name[node->qtype], node->token->symbol);
             break;
-        case Variable:
         case Connective:
+            printf("%s", connective_name[node->conntype]);
+            break;
+        case Variable:        
         case NonTrivialConnective:
         case Semantic:
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
-            break;
-        case STDPF:
-            printf("%s(%s) : %s", node_type_name[node->type], node->token->symbol, getsemantic(node->semantics, 0)->data);
-            break;
-        case TrueP:
-            printf("%s", node_type_name[node->type]);
             break;
         case Resolved:
             printf("%s: %s", node_type_name[node->type], node->token->symbol);
