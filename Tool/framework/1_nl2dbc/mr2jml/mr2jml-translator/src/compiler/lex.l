@@ -101,13 +101,11 @@ KEYWORD_FORALL      "all"
 KEYWORD_NOT_EXISTS  "-exists"
 KEYWORD_NOT_FORALL  "-all"
 
-STRING          [a-z]+
-ANNOT_PREDICATE      [-]?(_([a-zA-Z0-9\-\.*]+))+@\{([a-z]+),([a-z]+)\-([a-z]+)\}
 PREDICATE       (_([a-zA-Z0-9\-\.*']+))+
 VARIABLE               (x([0-9]+))|(e([0-9]+))
 GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 
-%s QSCOPE QVAR_SCOPE ARGUMENT PSCOPE COND COMPLEX_FORMULA FORMULA FORMULA_BODY WORD_CAT RSCOPE RVAR_SCOPE
+%s QSCOPE QVAR_SCOPE ARGUMENT PSCOPE FORMULA FORMULA_BODY WORD_CAT RSCOPE RVAR_SCOPE
 %%
 <INITIAL>{LBRAC} {
     BEGIN(FORMULA);
@@ -262,26 +260,12 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 \r  { colNum = 1; lineNum++; }
 \n\r { lineNum++; colNum = 1; }
 . { 
-    // printf("bad input character '%s' at line %d and column %d\n", yytext, lineNum, colNum); 
-    // fprintf(stderr,"%s\n", input_line);
-    // free(input_line);
-    // for(int i = 0; i < colNum - 1; i++)
-    //     fprintf(stderr,"_");
-    // fprintf(stderr,"^\n"); 
-    // exit(-1);
     print_error();
     }
 
 %%
 void print_error() {
     printf("Lexer: bad input character '%s' at line %d and column %d\n", yytext, lineNum, colNum); 
-    /* fprintf(stderr,"%s\n", input_line); */
-    /* error_lines[error_count] = lineNum; */
-    /* free(input_line); */
-    /* for(int i = 0; i < colNum - 1; i++) */
-        /* fprintf(stderr,"_"); */
-    /* fprintf(stderr,"^\n");  */
-    /* exit(-1); */
 }
 
 int yywrap() {  /* need this to avoid link problem */ 

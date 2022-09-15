@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <yaml.h>
 #include "core.h"
 #include "cg.h"
+#include "si.h"
 
 extern FILE *yyin;
 extern int *error_lines, error_count;
@@ -95,8 +97,8 @@ int main(int argc, char** argv) {
     FILE *fp;
 
     int lines = 0;
-    // // parameters of the method
-    // //  symbols come from dynamic symbol table
+    // parameters of the method
+    //  symbols come from dynamic symbol table
     // struct queue *params = NULL;
     // FILE *fp = fopen(pslfile, "r");
     // if (!fp) {
@@ -122,17 +124,17 @@ int main(int argc, char** argv) {
     //         goto END;
     //     }
     // }    
-    // fp = fopen(dstfile, "r");
-    // if (!fp) {
-    //     printf("The dynamic symbol table file cannot be opened...\n");
-    //     goto END;
-    // }
-    // printf("Reading dynamic symbol table from %s...\n", dstfile);
-    // done = readDST(fp);
-    // fclose(fp);
-    // if (done == -1) {
-    //     goto END;
-    // }
+    fp = fopen(dstfile, "r");
+    if (!fp) {
+        printf("The dynamic symbol table file cannot be opened...\n");
+        goto END;
+    }
+    printf("Reading SI information from dynamic symbol from %s...\n", dstfile);
+    done = readDST(fp);
+    fclose(fp);
+    if (done == -1) {
+        goto END;
+    }
 
     fp = fopen(specfile, "r");
     if (!fp) {
@@ -359,7 +361,7 @@ int readPSL(FILE *fp) {
     return done;
 }
 
-int readDST(FILE *fp) {
+struct si* readDST(FILE *fp) {
     char line[1001] = "", *pos;
     while (fgets(line, sizeof(line), fp)) {
         char *symbol, *datatype, *symtype, *scope, *sep = ";";
