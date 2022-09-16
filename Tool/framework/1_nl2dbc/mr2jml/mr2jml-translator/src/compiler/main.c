@@ -10,8 +10,8 @@ extern int *error_lines, error_count;
 
 
 int countlines(FILE *fp);
-int readDST(FILE *fp);
-int readPSL(FILE *fp);
+struct queue* readSI(char *);
+// int readPSL(FILE *fp);
 
 // counting the number of MR in single file
 int c = 0;
@@ -21,8 +21,6 @@ int c = 0;
 struct astnode **ast;  
 //  predicate semantic library
 struct sstnode *psl;    
-//  dynamic symbol table
-struct dstnode *dst;     
 //  compile-time symbol table
 struct queue **csts;     
 //  predicate stack, marking the positions of the predicate nodes
@@ -44,9 +42,10 @@ struct dstnode *fdstptr = NULL;
 //      structure, and everything messes up.
 int main(int argc, char** argv) { 
     int opt;
-    char *specfile, *pslfile, *dstfile, *cpslfile, *mname;
-    specfile = pslfile = dstfile = cpslfile = mname = NULL;
-    while ((opt = getopt(argc, argv, ":f:p:d:c:m:")) != -1) {
+    char *specfile, *pslfile, *dstfiles, *cpslfile, *mname;
+    specfile = pslfile = dstfiles = cpslfile = mname = NULL;
+
+    while ((opt = getopt(argc, argv, ":f:p:s:c:m:")) != -1) {
         switch(opt) {
             case 'f':
             printf("input file: %s\n", optarg);
@@ -56,9 +55,9 @@ int main(int argc, char** argv) {
             printf("predicate semantic library: %s\n", optarg);
             pslfile = optarg;
             break;
-            case 'd':
-            printf("dynamic symbol table: %s\n", optarg);
-            dstfile = optarg;
+            case 's':
+            printf("Semantic interpretation sources: %s\n", optarg);
+            dstfiles = optarg;
             break;
             case 'c':
             printf("custom predicate semantics: %s\n", optarg);
@@ -94,7 +93,7 @@ int main(int argc, char** argv) {
     //     printf("Please specify the method name by -m\n");
     //     return 1;
     // } 
-    FILE *fp;
+    
 
     int lines = 0;
     // parameters of the method
@@ -124,19 +123,11 @@ int main(int argc, char** argv) {
     //         goto END;
     //     }
     // }    
-    fp = fopen(dstfile, "r");
-    if (!fp) {
-        printf("The dynamic symbol table file cannot be opened...\n");
-        goto END;
-    }
-    printf("Reading SI information from dynamic symbol from %s...\n", dstfile);
-    done = readDST(fp);
-    fclose(fp);
-    if (done == -1) {
-        goto END;
-    }
+    /* A structure implemented by a queue containing semantic interpretations */    
+    printf("Trying to reading SI information...\n");
+    struct queue *silist = readSI(dstfiles);
 
-    fp = fopen(specfile, "r");
+    FILE *fp = fopen(specfile, "r");
     if (!fp) {
         printf("The spec file path cannot be opened...\n");
         return 1;
@@ -328,62 +319,45 @@ int countlines(FILE *fp) {
     return lines;
 }
 
-int readPSL(FILE *fp) {
-    char line[1001] = "", *pos;
-    struct sstnode *tmp;
-    int done = 0;
-    while (fgets(line, sizeof(line), fp)) {
-        char *symbol, *syntax, *arity, *stdp, *sep = ";";
-        symbol = (char*)strdup(strtok_r(line, sep, &pos));
-        syntax = (char*)strdup(strtok_r(NULL, sep, &pos));
-        arity = (char*)strdup(strtok_r(NULL, sep, &pos));
-        stdp = (char*)strdup(strtok_r(NULL, "", &pos));
-        trim(symbol);
-        trim(syntax);
-        trim(arity);
-        trim(stdp);
-        tmp = newsstnode(symbol, syntax, atoi(arity), stdp);
-        if (tmp == NULL) {
-            printf("Error in parsing predicate semantic library...");
-            done = -1;
-            break;
-        }
-        if (!psl) {
-            psl = tmp;
+struct queue* readSI(char *dstfilepaths) {
+    char *filepath, *pos;
+    char *token = strtok_r(dstfilepaths, ",", &pos);
+    struct queue* new = initqueue();
+    FILE *fp;
+    yaml_parser_t parser;
+    yaml_document_t document;
+    yaml_node_t *node;
+    yaml_parser_initialize(&parser);
+    while (token != NULL) {
+        filepath = (char*)strdup(token);
+        fp = fopen(filepath, "rb");        
+        yaml_parser_set_input_file(&parser, fp);
+        if (!yaml_parser_load(&parser, &document)) {
+            fprintf(stderr, "Failed to open file at %s\n", filepath);
         } else {
-            addsstnode(psl, tmp);
+            printf("Trying to read SI from file at %s\n", filepath);
+            int i = 1;
+            while(1) {
+                node = yaml_document_get_node(&document, i);
+                if (!node) break;
+                if (node->type == YAML_SCALAR_NODE) {
+                    if (node->data.scalar.style == 1){ //assuming that the key is a string
+                        printf("%s: ", node->data.scalar.value);
+                        i++; 
+                        node = yaml_document_get_node(&document, i); //assuming that the value is stored as the next node
+                        if(!node) break;
+                        printf("%s (%d)\n", node->data.scalar.value, node->data.scalar.style); //value for each key and the type of value in the braces
+                    }
+                }
+                ++i;
+            }
+            yaml_document_delete(&document);
         }
-        free(symbol);
-        free(syntax);
-        free(arity);
-        free(stdp);
+        fclose(fp);
+        token = strtok_r(NULL, ",", &pos);
     }
-    return done;
-}
-
-struct si* readDST(FILE *fp) {
-    char line[1001] = "", *pos;
-    while (fgets(line, sizeof(line), fp)) {
-        char *symbol, *datatype, *symtype, *scope, *sep = ";";
-        symbol = (char*)strdup(strtok_r(line, sep, &pos));
-        datatype = (char*)strdup(strtok_r(NULL, sep, &pos));
-        symtype = (char*)strdup(strtok_r(NULL, sep, &pos));
-        scope = (char*)strdup(strtok_r(NULL, sep, &pos));
-        trim(symbol);
-        trim(datatype);
-        trim(symtype);
-        trim(scope);
-        if (!dst) {
-            dst = newdstnode(symbol, datatype, symtype, scope);
-        } else {
-            adddstnode(dst, newdstnode(symbol, datatype, symtype, scope));
-        }
-        free(symbol);
-        free(datatype);
-        free(symtype);
-        free(scope);
-    }
-    return 0;
+    yaml_parser_delete(&parser);
+    return new;
 }
 
 /* 

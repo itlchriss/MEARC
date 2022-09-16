@@ -1,6 +1,6 @@
 #ifndef SI_H
 #define SI_H
-
+#include "ast.h"
 #include "util.h"
 /*
     Semantic interpretation header
@@ -18,5 +18,5 @@ struct si {
     char *interpretation;
 };
 
-
+struct si* newsi(char *data);
 #endif

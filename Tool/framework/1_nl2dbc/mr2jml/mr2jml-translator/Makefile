@@ -5,8 +5,8 @@ SRC		=	./src/compiler
 BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
-CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L
-OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o
+CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L -I/usr/local/include -L/usr/local/lib 
+OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o si.o
 DEBUG   ?=      1
 
 ifeq ($(DEBUG), 1)
@@ -27,7 +27,7 @@ ${BIN}:
 	mkdir -p $(BIN)
 
 main: $(OBJS)
-	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll
+	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll -lyaml
 
 lex-only: lex
 	$(CC) $(BUILD)/lex.yy.c -ll -o $(BIN)/lex.o
@@ -70,6 +70,9 @@ cg.o  : $(SRC)/cg.c
 dst.o  : $(SRC)/dst.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/dst.o $<		
 
+si.o	: $(SRC)/si.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/si.o $<		
+
 sem.o  : $(SRC)/sem.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
 
@@ -82,6 +85,7 @@ sst.o							:   $(INCL)/util.h $(INCL)/sst.h
 cst.o							:   $(INCL)/util.h $(INCL)/ast.h
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h $(INCL)/dst.h
 sem.o							:   $(INCL)/ast.h $(INCL)/sem.h 
+si.o							:   $(INCL)/si.h $(INCL)/sst.h
 clean:
 	rm $(BUILD)/*
 	rm ./parser.output
