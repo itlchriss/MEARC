@@ -9,7 +9,7 @@
 
 // this has to agree exactly with the array in ast.c
 enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, Semantic, NonTrivialConnective };
-
+enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Equivalent, Op_Imply };
@@ -65,6 +65,8 @@ struct astnode {
     struct astnodelist *children;
     // type of quantifier if the type == Quantifier
     enum quantifiertype qtype;
+    // type of the node with extra grammar information
+    enum grammartype gtype;
     // type of connective if the type == Connective
     enum conntype conntype;
     // linguistic syntax of the token. This value is only available when the type is Predicate

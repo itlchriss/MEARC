@@ -20,14 +20,11 @@
     struct token *t;
     enum ptbsyntax ptb;
     enum conntype conntype;
-    enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP DOT MINUS
-%token <t> COMMA LBRAC RBRAC GCASE EQUAL AND IMPLY EQUIV CURLY_LBRAC CURLY_RBRAC
-%token <t> KEYWORD_FORALL KEYWORD_EXISTS
-%token <t> KEYWORD_PROG
-%token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS KEYWORD_VB KEYWORD_VBG
+%token <t> PREDICATE TRUE_PREDICATE MODAL_PREDICATE VARIABLE COMMA LBRAC RBRAC GCASE EQUAL AND IMPLY EQUIV
+%token <t> KEYWORD_FORALL KEYWORD_EXISTS KEYWORD_NOT_FORALL KEYWORD_NOT_EXISTS
+%token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS KEYWORD_VB        
 %token <ptb> KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
 %left AND IMPLY EQUIV RBRAC
 
@@ -35,7 +32,7 @@
 %type<conntype> connective
 %type<node> formula terms meaning_repr formulas argument term quantify_expr
 %type<nodelist> arguments
-%type<gtype> grammar_term
+
 %start meaning_reprs
 
 %%
@@ -74,36 +71,23 @@ meaning_repr
 
 formulas:
     formulas connective formula {
-        print_debug("formulas: formulas connective formula");
+        print_debug("formulas: formulas formula");
         $$ = newastnode(Connective, NULL);
         $$->conntype = $2;
         addastchild($$, $1);
         addastchild($$, $3);
     }
-    | formulas connective MINUS formula {
-        print_debug("formulas: formulas connective MINUS formula");
-        $$ = newastnode(Connective, NULL);
-        $$->conntype = $2;
-        $4->isnegative = 1;
-        addastchild($$, $1);
-        addastchild($$, $4);
-    }
     | formula {
         print_debug("formulas: formula");
         $$ = $1;
     }
-    | MINUS formula {
-        print_debug("formulas: MINUS formula");
-        $$ = $2;
-        $$->isnegative = 1;
-    }
     ;
 
 formula
-    : quantify_expr DOT LBRAC terms RBRAC {
+    : quantify_expr LBRAC terms RBRAC {
         print_debug("formula: quantify_expr LBRAC terms RBRAC");
         $$ = $1;
-        addastchild($$, $4);
+        addastchild($$, $3);
     }
     ;
 
@@ -118,51 +102,32 @@ terms
             addastchild($$, $3);
         }
     }
-    | terms AND MINUS term {
-        print_debug("terms: terms term");
-        $$ = newastnode(Connective, $2);
-        $4->isnegative = 1;
-        addastchild($$, $1);
-        addastchild($$, $4);
-    }
     | term {
         print_debug("terms: term");
         $$ = $1;
     }
-    | MINUS term {
-        print_debug("term: MINUS term");
-        $$ = $2;
-        $$->isnegative = 1;
-    }
     ;
 
 term
-    : PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC {
-        print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
+    : PREDICATE pos_tag LBRAC arguments RBRAC {
+        print_debug("term: PREDICATE POS_TAG LBRAC arguments RBRAC");
         $$ = newastnode(Predicate, $1);    
-        addastchildren($$, $6);
-        $$->ptbsyntax = $3;
+        addastchildren($$, $4);
+        $$->ptbsyntax = $2;
     }
-    | PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC {
-        print_debug("term: PREDICATE(Modal)) CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC");
-        $$ = $7;
+    | MODAL_PREDICATE pos_tag LBRAC LBRAC terms RBRAC RBRAC {
+        print_debug("term: MODAL_PREDICATE pos_tag LBRAC LBRAC terms RBRAC RBRAC");
+        $$ = $5;
     }
-    | KEYWORD_TRUEP {
-        print_debug("term: PREDICATE(TrueP)");
+    | TRUE_PREDICATE {
+        print_debug("term: TRUE_PREDICATE");
         $$ = NULL;
-    }
-    | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
-        print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
-        $$ = newastnode(Predicate, $3);
-        $$->ptbsyntax = $5;
-        $$->gtype = $1;
-        addastchildren($$, $8);
     }
     | formula {
         print_debug("term: formula");
         $$ = $1;
     }
-    | LBRAC GCASE LBRAC arguments RBRAC EQUAL arguments RBRAC {
+    | LBRAC GCASE LBRAC argument RBRAC EQUAL argument RBRAC {
         print_debug("term: LBRAC GCASE LBRAC VARIABLE RBRAC EQUAL VARIABLE RBRAC");
         $$ = NULL;
     }
@@ -185,8 +150,8 @@ arguments
     ;
 
 argument
-    : IDENTIFIER {
-        print_debug("argument: IDENTIFIER");
+    : VARIABLE {
+        print_debug("argument: VARIABLE");
         $$ = newastnode(Variable, $1);
     }
     | formula {
@@ -196,17 +161,25 @@ argument
     ;
 
 quantify_expr
-    : KEYWORD_EXISTS IDENTIFIER {
+    : KEYWORD_EXISTS VARIABLE {
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_Exists;
     }
-    | KEYWORD_FORALL IDENTIFIER {
+    | KEYWORD_NOT_EXISTS VARIABLE {
+        $$ = newastnode(Quantifier, $2);
+        $$->qtype = Quantifier_Exists;
+        $$->isnegative = 1;
+    }
+    | KEYWORD_FORALL VARIABLE {
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_ForAll;
     }
+    | KEYWORD_NOT_FORALL VARIABLE {
+        $$ = newastnode(Quantifier, $2);
+        $$->qtype = Quantifier_ForAll;
+        $$->isnegative = 1;
+    }
     ;
-
-
 
 pos_tag
     : KEYWORD_NN { $$ = NN; }
@@ -226,7 +199,6 @@ pos_tag
     | KEYWORD_CC { $$ = CC; }
     | KEYWORD_PRP { $$ = PRP; }
     | KEYWORD_MD { $$ = MD; }
-    | KEYWORD_VBG { $$ = VBG; }
     ;
 
 connective
@@ -234,14 +206,11 @@ connective
     | EQUIV { $$ = Op_Equivalent; }
     | IMPLY { $$ = Op_Imply; }
     ;
-
-grammar_term
-    : KEYWORD_PROG { $$ = Gram_Prog; }
 %%
 
 
 void print_debug(char *s) {
-    #if PARDEBUG
+    #if DEBUG
     printf("%s\n", s);
     #endif  
 }
