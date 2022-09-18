@@ -1,3 +1,4 @@
+UNAME_S := $(shell uname -s)
 CC		=	cc
 FCC		=	flex
 BCC		=	bison
@@ -5,13 +6,28 @@ SRC		=	./src/compiler
 BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
-CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L -I/usr/local/include -L/usr/local/lib 
+CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
 OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o si.o
 DEBUG   ?=      1
+LEXDEBUG ?=     0
+LOCINCL =   -I/usr/local/include 
+LOCLINK =   -L/usr/local/lib
+ifeq ($(UNAME_S),Darwin)
+	LOCINCL = -I/opt/homebrew/Cellar/libyaml/0.2.5/include
+	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
+endif
 
 ifeq ($(DEBUG), 1)
 #   CFLAGS += -DDEBUG -fsanitize=address
    CFLAGS += -DDEBUG
+endif
+
+ifeq ($(LEXDEBUG), 1)
+   CFLAGS += -DLEXDEBUG
+endif
+
+ifeq ($(PARDEBUG), 1)
+    CFLAGS += -DPARDEBUG
 endif
 
 .PHONY: directories
@@ -27,7 +43,7 @@ ${BIN}:
 	mkdir -p $(BIN)
 
 main: $(OBJS)
-	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll -lyaml
+	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll $(LOCLINK) -lyaml
 
 lex-only: lex
 	$(CC) $(BUILD)/lex.yy.c -ll -o $(BIN)/lex.o
