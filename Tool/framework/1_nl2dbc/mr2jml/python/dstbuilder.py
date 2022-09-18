@@ -269,6 +269,7 @@ def main(source_code_dir: str, javadoc_xml_filepath: str):
     get_javadoc_info(javadoc_xml_filepath)
 
 
+
 if __name__ == "__main__":
     if sys.argv[1] and os.path.exists(sys.argv[1]) and \
             sys.argv[2] and os.path.exists(sys.argv[2]):
