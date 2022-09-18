@@ -530,3 +530,46 @@ void throwasterror(char *msg, struct token *token) {
     else
         printf("%s\n", msg);
 }
+
+enum ptbsyntax string2ptbsyntax(char *input) {
+    if (strcmp(input, "CC")) return CC;
+    else if (strcmp(input, "CD")) return CD;
+    else if (strcmp(input, "DT")) return DT;
+    else if (strcmp(input, "EX")) return EX;
+    else if (strcmp(input, "FW")) return FW;
+    else if (strcmp(input, "IN")) return IN;
+    else if (strcmp(input, "JJ")) return JJ;
+    else if (strcmp(input, "JJR")) return JJR;
+    else if (strcmp(input, "JJS")) return JJS;
+    else if (strcmp(input, "LS")) return LS;
+    else if (strcmp(input, "MD")) return MD;
+    else if (strcmp(input, "NN")) return NN;
+    else if (strcmp(input, "NNS")) return NNS;
+    else if (strcmp(input, "NNP")) return NNP;
+    else if (strcmp(input, "NNPS")) return NNPS;
+    else if (strcmp(input, "PDT")) return PDT;
+    else if (strcmp(input, "POS")) return POS;
+    else if (strcmp(input, "PRP")) return PRP;
+    else if (strcmp(input, "PRP_POS")) return PRP_POS;
+    else if (strcmp(input, "RB")) return RB;
+    else if (strcmp(input, "RBR")) return RBR;
+    else if (strcmp(input, "RBS")) return RBS;
+    else if (strcmp(input, "RP")) return RP;
+    else if (strcmp(input, "SYM")) return SYM;
+    else if (strcmp(input, "TO")) return TO;
+    else if (strcmp(input, "UH")) return UH;
+    else if (strcmp(input, "VB")) return VB;
+    else if (strcmp(input, "VBD")) return VBD;
+    else if (strcmp(input, "VBG")) return VBG;
+    else if (strcmp(input, "VBN")) return VBN;
+    else if (strcmp(input, "VBP")) return VBP;
+    else if (strcmp(input, "VBZ")) return VBZ;
+    else if (strcmp(input, "WDT")) return WDT;
+    else if (strcmp(input, "WP")) return WP;
+    else if (strcmp(input, "WP_POS")) return WP_POS; 
+    else if (strcmp(input, "WRB")) return WRB;
+    else {
+        fprintf(stderr, "Unknown syntactic category %s in the SI files\n", input);
+        exit(-2);
+    }
+}

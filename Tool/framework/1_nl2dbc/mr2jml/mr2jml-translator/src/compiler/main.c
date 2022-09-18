@@ -321,40 +321,157 @@ int countlines(FILE *fp) {
 
 struct queue* readSI(char *dstfilepaths) {
     char *filepath, *pos;
-    char *token = strtok_r(dstfilepaths, ",", &pos);
+    char *_t = strtok_r(dstfilepaths, ",", &pos);
     struct queue* new = initqueue();
     FILE *fp;
     yaml_parser_t parser;
-    yaml_document_t document;
-    yaml_node_t *node;
     yaml_parser_initialize(&parser);
-    while (token != NULL) {
-        filepath = (char*)strdup(token);
+    while (_t != NULL) {
+        filepath = (char*)strdup(_t);
         fp = fopen(filepath, "rb");        
         yaml_parser_set_input_file(&parser, fp);
-        if (!yaml_parser_load(&parser, &document)) {
-            fprintf(stderr, "Failed to open file at %s\n", filepath);
-        } else {
-            printf("Trying to read SI from file at %s\n", filepath);
-            int i = 1;
-            while(1) {
-                node = yaml_document_get_node(&document, i);
-                if (!node) break;
-                if (node->type == YAML_SCALAR_NODE) {
-                    if (node->data.scalar.style == 1){ //assuming that the key is a string
-                        printf("%s: ", node->data.scalar.value);
-                        i++; 
-                        node = yaml_document_get_node(&document, i); //assuming that the value is stored as the next node
-                        if(!node) break;
-                        printf("%s (%d)\n", node->data.scalar.value, node->data.scalar.style); //value for each key and the type of value in the braces
+        printf("Trying to read SI from file at %s\n", filepath);
+        int token_flag = -1;
+        yaml_token_t  token;   /* new variable */
+        struct si *si = NULL;
+        char *key, *value;
+         do {
+            yaml_parser_scan(&parser, &token);
+            switch(token.type)
+            {
+            /* Stream start/end */
+            case YAML_STREAM_START_TOKEN: 
+                #if DSTDEBUG
+                puts("STREAM START");
+                #endif
+                break;
+            case YAML_STREAM_END_TOKEN:
+                #if DSTDEBUG
+                puts("STREAM END");
+                #endif   
+                break;
+            /* Token types (read before actual token) */
+            case YAML_KEY_TOKEN:   
+                #if DSTDEBUG
+                printf("(Key token)   "); 
+                #endif
+                token_flag = 1;
+                break;
+            case YAML_VALUE_TOKEN: 
+                #if DSTDEBUG
+                printf("(Value token) "); 
+                #endif
+                token_flag = 2;
+                break;
+            /* Block delimeters */
+            case YAML_BLOCK_SEQUENCE_START_TOKEN: 
+                #if DSTDEBUG
+                puts("<b>Start Block (Sequence)</b>"); 
+                #endif
+                break;
+            case YAML_BLOCK_ENTRY_TOKEN:          
+                #if DSTDEBUG
+                puts("<b>Start Block (Entry)</b>");    
+                #endif
+                si = (struct si*) malloc (sizeof(struct si));
+                break;
+            case YAML_BLOCK_END_TOKEN:            
+                #if DSTDEBUG
+                puts("<b>End block</b>");
+                #endif
+                if (si != NULL) {
+                    enqueue(new, (void*)si);
+                    si = NULL;
+                }
+                break;
+            /* Data */
+            case YAML_BLOCK_MAPPING_START_TOKEN:
+                #if DSTDEBUG
+                puts("[Block mapping]");
+                #endif            
+                if (key && strcmp(key, "semantic") == 0) {
+                    char *variables = NULL;
+                    #if DSTDEBUG
+                    printf("key %s \n", token.data.scalar.value); 
+                    fflush(stdout);
+                    #endif
+                    free(key);
+                    key = (char*) strdup(token.data.scalar.value);
+                    yaml_parser_scan(&parser, &token);
+                    #if DSTDEBUG
+                    printf("scalar %s \n", token.data.scalar.value); 
+                    #endif
+                    if (strcmp(key, "variables") == 0) {
+                        variables = (char*) strdup(token.data.scalar.value);
+                    } else {
+                        si->interpretation = (char*) strdup(token.data.scalar.value);
+                    }
+                    free(key);
+                    yaml_parser_scan(&parser, &token);
+                    #if DSTDEBUG
+                    printf("key %s \n", token.data.scalar.value); 
+                    #endif
+                    key = (char*) strdup(token.data.scalar.value);
+                    yaml_parser_scan(&parser, &token);
+                    #if DSTDEBUG
+                    printf("scalar %s \n", token.data.scalar.value); 
+                    #endif
+                    if (strcmp(key, "variables") == 0) {
+                        variables = (char*) strdup(token.data.scalar.value);
+                    } else {
+                        si->interpretation = (char*) strdup(token.data.scalar.value);
+                    }
+                    if (variables && si->interpretation) {
+                        setargs(si, variables);
+                    } else {
+                        fprintf(stderr, "Syntax error: invalid syntax in file %s\n", filepath);
+                        exit(-2);
                     }
                 }
-                ++i;
+                break;
+            case YAML_SCALAR_TOKEN:  
+                #if DSTDEBUG
+                printf("scalar %s \n", token.data.scalar.value); 
+                #endif
+                if (token_flag == 1) {
+                    if (key) free(key);
+                    key = (char*) strdup(token.data.scalar.value);
+                } else if (token_flag == 2) {
+                    if (value) free(value);
+                    value = (char*) strdup(token.data.scalar.value);
+                    if (key && value) {
+                        // printf("KEY: %s, VALUE: %s\n", key, value);
+                        if (strcmp(key, "arity") == 0) {
+                            si->arg_count = atoi(value);
+                        } else if (strcmp(key, "name") == 0) {
+                            si->symbol = (char*) strdup(value);
+                        } else if (strcmp(key, "syntax") == 0) {
+                            si->ptb = string2ptbsyntax(value);
+                        } else {
+                            fprintf(stderr, "Syntax error in SI file %s with key %s and value %s", filepath, key ,value);
+                            exit(-1);
+                        }
+                    }
+                }
+                break;
+            /* Others */
+            default:
+                #if DSTDEBUG
+                printf("Got token of type %d\n", token.type);
+                #endif
+                break;
             }
-            yaml_document_delete(&document);
-        }
+            if(token.type != YAML_STREAM_END_TOKEN) {
+                yaml_token_delete(&token);
+            }
+        } while(token.type != YAML_STREAM_END_TOKEN);
+        yaml_token_delete(&token);
+        /* END new code */
+
+        /* Cleanup */
+        yaml_parser_delete(&parser);   
         fclose(fp);
-        token = strtok_r(NULL, ",", &pos);
+        _t = strtok_r(NULL, ",", &pos);
     }
     yaml_parser_delete(&parser);
     return new;

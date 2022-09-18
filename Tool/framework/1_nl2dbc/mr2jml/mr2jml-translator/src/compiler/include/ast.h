@@ -100,6 +100,7 @@ struct astnode *getastchild(struct astnode *parent, int position);
 int countastchildren(struct astnode *node);
 void showast(struct astnode *root, int depth);
 void deallocateast(struct astnode *root);
+enum ptbsyntax string2ptbsyntax(char *input);
 
 struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs);
 

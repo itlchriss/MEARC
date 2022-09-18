@@ -18,5 +18,8 @@ struct si {
     char *interpretation;
 };
 
-struct si* newsi(char *data);
+void siidentification(struct astnode *root, struct queue *silist);
+void setargs(struct si* si, char *data);
+void deallocatesilist(struct queue *silist);
+void deallocatesi(struct si *si);
 #endif

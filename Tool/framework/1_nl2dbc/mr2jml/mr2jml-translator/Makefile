@@ -10,6 +10,7 @@ CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L 
 OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o si.o
 DEBUG   ?=      1
 LEXDEBUG ?=     0
+DSTDEBUG ?=		0
 LOCINCL =   -I/usr/local/include 
 LOCLINK =   -L/usr/local/lib
 ifeq ($(UNAME_S),Darwin)
@@ -28,6 +29,10 @@ endif
 
 ifeq ($(PARDEBUG), 1)
     CFLAGS += -DPARDEBUG
+endif
+
+ifeq ($(DSTDEBUG), 1)
+	CFLAGS += -DDSTDEBUG
 endif
 
 .PHONY: directories
