@@ -4,22 +4,23 @@
 #include "util.h"
 /*
     Semantic interpretation header
-    Each semantic interpretation is UNIQUE because each interpretation has a unique composite key of (symbol and penn-tree bank category).
+    Each semantic interpretation is UNIQUE because each interpretation has a unique composite key of (term and penn-tree bank category).
 */
 
 struct si {
-    char *symbol;
+    char *term;
     /* penn tree bank category of this si */
-    enum ptbsyntax ptb;
+    enum ptbsyntax syntax;
     /* number of argument to synthesize this semantic */
     int arg_count;    
-    /* arguments in the interpretation. the length of args must be equal to arg_count */
-    char **args;    
+    /* arguments in the interpretation */
+    // struct queue *args;
+    char **args;
     char *interpretation;
 };
 
-void siidentification(struct astnode *root, struct queue *silist);
-void setargs(struct si* si, char *data);
+void siidentification(struct queue* predicates, struct queue *silist);
+void showsilist(struct queue *silist);
 void deallocatesilist(struct queue *silist);
 void deallocatesi(struct si *si);
 #endif

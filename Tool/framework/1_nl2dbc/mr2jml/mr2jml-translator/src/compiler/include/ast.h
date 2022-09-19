@@ -15,43 +15,8 @@ enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Equivalent, Op_Imply };
 // Penn tree bank syntax
 enum ptbsyntax {
-    CC,
-CD,
-DT,
-EX,
-FW,
-IN,
-JJ,
-JJR,
-JJS,
-LS,
-MD,
-NN,
-NNS,
-NNP,
-NNPS,
-PDT,
-POS,
-PRP,
-PRP_POS,
-RB,
-RBR,
-RBS,
-RP,
-SYM,
-TO,
-UH,
-VB,
-VBD,
-VBG,
-VBN,
-VBP,
-VBZ,
-WDT,
-WP,
-WP_POS,
-WRB
-};
+    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB};
+enum contextualtype { Cont_Class, Cont_Interface, Cont_Method, Cont_Parameter };
 
 struct token {
     char *symbol;    
@@ -63,21 +28,21 @@ struct astnode {
     struct token *token;    
     struct astnode *parent;
     struct astnodelist *children;
-    // type of quantifier if the type == Quantifier
+    /* type of contextual element */
+    enum contextualtype ctype;
+    /* type of quantifier if the type == Quantifier */
     enum quantifiertype qtype;
-    // type of the node with extra grammar information
+    /* type of the node with extra grammar information */
     enum grammartype gtype;
-    // type of connective if the type == Connective
+    /* type of connective if the type == Connective */
     enum conntype conntype;
-    // linguistic syntax of the token. This value is only available when the type is Predicate
-    char *syntax;
-    // type of word, according to penn-tree bank
-    enum ptbsyntax ptbsyntax;
+    /* type of word, according to penn-tree bank */
+    enum ptbsyntax syntax;    
     int priority;
     struct cstsymbol *cstptr;  
-    struct semanticlist *semantics;
+    /* default 0 for non-root nodes. 1 indicates this node is a root node */
     int isroot;
-    // default 0 for positive. 1 for negative
+    /* default 0 for positive. 1 for negative */
     int isnegative;
 };
 
@@ -101,6 +66,7 @@ int countastchildren(struct astnode *node);
 void showast(struct astnode *root, int depth);
 void deallocateast(struct astnode *root);
 enum ptbsyntax string2ptbsyntax(char *input);
+char *ptbsyntax2string(enum ptbsyntax ptb);
 
 struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs);
 

@@ -20,16 +20,14 @@ def main(source_code_dir: str, javadoc_xml_filepath: str = None) -> None:
     dst = []
     for name in global_names:
         dst.append({
-            'name': name,
+            'term': name,
             'syntax': 'NN',
             'arity': 1,
-            'semantic': {
-                'variables': ['x'],
-                'interpretation': name
-            }
+            'arguments': ['x'],
+            'interpretation': name
         })
     # with open(r'./dst.yml', 'w') as file:
-    dynamic_symbol_file = yaml.dump(dst, sys.stdout)
+    dynamic_symbol_file = yaml.dump(dst, sys.stdout, sort_keys=False)
     # for element_data in javadoc_data:
     #     # logger.critical('processing element %s' % element_data)
     #     method_data = javadoc_data[element_data]

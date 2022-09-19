@@ -31,8 +31,12 @@ ifeq ($(PARDEBUG), 1)
     CFLAGS += -DPARDEBUG
 endif
 
-ifeq ($(DSTDEBUG), 1)
-	CFLAGS += -DDSTDEBUG
+ifeq ($(SIDEBUG), 1)
+	CFLAGS += -DSIDEBUG
+endif
+
+ifeq ($(ASTDEBUG), 1)
+	CFLAGS += -DASTDEBUG
 endif
 
 .PHONY: directories

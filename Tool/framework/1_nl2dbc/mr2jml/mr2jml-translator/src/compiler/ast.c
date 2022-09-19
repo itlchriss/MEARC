@@ -64,7 +64,6 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     struct astnode *new = malloc(sizeof(struct astnode));
     new->type = type;    
     new->token = token;
-    new->syntax = NULL;
     new->parent = NULL;
     new->isroot = 0;
     new->isnegative = 0;
@@ -72,18 +71,14 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     new->children->node = NULL;
     new->children->next = NULL;
     new->children->prev = NULL;
-    new->semantics = initsemlist();
     return new;
 }
 
 void deleteastnode(struct astnode *node) {
-    if (node->syntax)
-        free(node->syntax);
     if (node->token) {
         free(node->token->symbol);
         free(node->token);
     }
-    deallocatesemantics(node->semantics);
     free(node);
 }
 
@@ -120,7 +115,7 @@ void deleteastchildren(struct astnode *parent) {
         free(tmp);
     }
     parent->children->next = NULL;
-    #if DEBUG
+    #if ASTDEBUG
     if (countastchildren(parent) > 0) {
         printf("Error in deleteastchildren");
     }
@@ -143,263 +138,263 @@ void transresolved(struct astnode *node, char *data) {
 //     deleteastchild(node->parent, node);
 // }
 
-void transrelation(struct astnode *node) {
-    struct semantic *sem = getsemantic(node->semantics, 0);
-    char *template = sem->data;
-    struct dstnode *dstptr = NULL;
-    struct astnode *child;
-    struct astnode *child1 = getastchild(node, 0);
-    struct astnode *child2 = getastchild(node, 1);
+// void transrelation(struct astnode *node) {
+//     struct semantic *sem = getsemantic(node->semantics, 0);
+//     char *template = sem->data;
+//     struct dstnode *dstptr = NULL;
+//     struct astnode *child;
+//     struct astnode *child1 = getastchild(node, 0);
+//     struct astnode *child2 = getastchild(node, 1);
     
-    if ((iscomparator(node->token->symbol) == 0 || isequality(node->token->symbol) == 0) &&
-        child2->token->symbol[0] == '\\') {
-        // if the node is a comparator, then we have to make the LHS and RHS follow a rule:
-        //   if there is a child's semantic is a forall or exists, it must be located on the LHS
-        template = strrep(template, sem->args[1], child1->token->symbol);
-        template = strrep(template, sem->args[0], child2->token->symbol);        
-    } 
-    if (strcmp(template, "\\sub") == 0) {
-        if (child1->type == Variable && child2->type == Semantic) {
-            // Substituting semantic of child2 to all the variables used in child1 
-            for (int i = 0; i < child1->cstptr->refs->count; ++i) {
-                struct astnode *tmp = (struct astnode*)gqueue(child1->cstptr->refs, i);
-                free(tmp->token->symbol);
-                tmp->token->symbol = (char*)strdup(child2->token->symbol);
-            }
-            template = "";
-        }
-    } else {
-        for (int i = 0; i < countastchildren(node); ++i) {
-            child = getastchild(node, i);
-            // TODO: we have to avoid the replacement doubled. such as (x,y):x == y, sub y to x: y == y, sub x to y: x == x
-            char *s = strrep(template, sem->args[i], child->token->symbol);
-            if (s == NULL) continue;
-            else {
-                template = s;
-                if (child->cstptr->dstptr != NULL) dstptr = child->cstptr->dstptr;
-            }
-        }    
-    }
+//     if ((iscomparator(node->token->symbol) == 0 || isequality(node->token->symbol) == 0) &&
+//         child2->token->symbol[0] == '\\') {
+//         // if the node is a comparator, then we have to make the LHS and RHS follow a rule:
+//         //   if there is a child's semantic is a forall or exists, it must be located on the LHS
+//         template = strrep(template, sem->args[1], child1->token->symbol);
+//         template = strrep(template, sem->args[0], child2->token->symbol);        
+//     } 
+//     if (strcmp(template, "\\sub") == 0) {
+//         if (child1->type == Variable && child2->type == Semantic) {
+//             // Substituting semantic of child2 to all the variables used in child1 
+//             for (int i = 0; i < child1->cstptr->refs->count; ++i) {
+//                 struct astnode *tmp = (struct astnode*)gqueue(child1->cstptr->refs, i);
+//                 free(tmp->token->symbol);
+//                 tmp->token->symbol = (char*)strdup(child2->token->symbol);
+//             }
+//             template = "";
+//         }
+//     } else {
+//         for (int i = 0; i < countastchildren(node); ++i) {
+//             child = getastchild(node, i);
+//             // TODO: we have to avoid the replacement doubled. such as (x,y):x == y, sub y to x: y == y, sub x to y: x == x
+//             char *s = strrep(template, sem->args[i], child->token->symbol);
+//             if (s == NULL) continue;
+//             else {
+//                 template = s;
+//                 if (child->cstptr->dstptr != NULL) dstptr = child->cstptr->dstptr;
+//             }
+//         }    
+//     }
 
-    if (isequality(node->token->symbol) == 0 && !(child1->type == Semantic && child2->type == Semantic)) {        
-        template = "";
-        free(child2->cstptr->token->symbol);
-        child2->cstptr->token->symbol = strdup(child1->token->symbol);        
-        for (int i = 0; i < child2->cstptr->refs->count; ++i) {
-            struct astnode *tmp = (struct astnode*)gqueue(child2->cstptr->refs, i);
-            free(tmp->token->symbol);
-            tmp->token->symbol = strdup(child1->token->symbol);
-        }
-        if (child2->cstptr->dstptr == NULL) {
-            child2->cstptr->dstptr = child1->cstptr->dstptr;
-        } else if (child1->cstptr->dstptr == NULL) {
-            child1->cstptr->dstptr = child2->cstptr->dstptr;
-        }    
-    } else if (iscomparator(node->token->symbol) == 0) {
-        // TODO: we apply a naive setting to assign propagate the dstptr to all other null arguments
-        for (int i = 0; i < countastchildren(node); ++i) {
-            child = getastchild(node, i);
-            if (child->cstptr->dstptr == NULL) child->cstptr->dstptr = dstptr;
-        }
-        // if (child1->type == Variable && child2->type == Semantic) {
-        //     // Substituting semantic of child2 to all the variables used in child1 
-        //     for (int i = 0; i < child1->cstptr->refs->count; ++i) {
-        //         struct astnode *tmp = (struct astnode*)gqueue(child1->cstptr->refs, i);
-        //         free(tmp->token->symbol);
-        //         tmp->token->symbol = (char*)strdup(child2->token->symbol);
-        //     }
-        //     template = "";
-        //     transresolved(node, "");
-        // }
-    }
-    transresolved(node, template);
-}
+//     if (isequality(node->token->symbol) == 0 && !(child1->type == Semantic && child2->type == Semantic)) {        
+//         template = "";
+//         free(child2->cstptr->token->symbol);
+//         child2->cstptr->token->symbol = strdup(child1->token->symbol);        
+//         for (int i = 0; i < child2->cstptr->refs->count; ++i) {
+//             struct astnode *tmp = (struct astnode*)gqueue(child2->cstptr->refs, i);
+//             free(tmp->token->symbol);
+//             tmp->token->symbol = strdup(child1->token->symbol);
+//         }
+//         if (child2->cstptr->dstptr == NULL) {
+//             child2->cstptr->dstptr = child1->cstptr->dstptr;
+//         } else if (child1->cstptr->dstptr == NULL) {
+//             child1->cstptr->dstptr = child2->cstptr->dstptr;
+//         }    
+//     } else if (iscomparator(node->token->symbol) == 0) {
+//         // TODO: we apply a naive setting to assign propagate the dstptr to all other null arguments
+//         for (int i = 0; i < countastchildren(node); ++i) {
+//             child = getastchild(node, i);
+//             if (child->cstptr->dstptr == NULL) child->cstptr->dstptr = dstptr;
+//         }
+//         // if (child1->type == Variable && child2->type == Semantic) {
+//         //     // Substituting semantic of child2 to all the variables used in child1 
+//         //     for (int i = 0; i < child1->cstptr->refs->count; ++i) {
+//         //         struct astnode *tmp = (struct astnode*)gqueue(child1->cstptr->refs, i);
+//         //         free(tmp->token->symbol);
+//         //         tmp->token->symbol = (char*)strdup(child2->token->symbol);
+//         //     }
+//         //     template = "";
+//         //     transresolved(node, "");
+//         // }
+//     }
+//     transresolved(node, template);
+// }
 
-// // transform constant node
-void transconstant(struct astnode *node, void *ptr) {
-    // the constant node should have only one child and the child must be a variable
-    struct astnode *child = getastchild(node, 0);
-    // TODO: for multiple semantics existing in one node, we have to implement the cst symbol point to a "semantics" structure
-    struct semantic *sem = getsemantic(node->semantics, 0);
+// // // transform constant node
+// void transconstant(struct astnode *node, void *ptr) {
+//     // the constant node should have only one child and the child must be a variable
+//     struct astnode *child = getastchild(node, 0);
+//     // TODO: for multiple semantics existing in one node, we have to implement the cst symbol point to a "semantics" structure
+//     struct semantic *sem = getsemantic(node->semantics, 0);
 
-    if (sem->sstype == SemSource_Dynamic) {
-        // we have to provide the dstptr to the runtime symbol
-        // and transform the node
-        // TODO: replacing all the symbols pointed to the child->cstptr with the node->token->symbol
-        for (int i = 0; i < child->cstptr->refs->count; ++i) {
-            struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
-            free(tmp->token->symbol);
-            tmp->token->symbol = (char*)strdup(node->token->symbol);
-            tmp->type = Semantic;
-        }
-        transresolved(node, "");
-    } else {    
-        if (strcmp(sem->data, "\\param") == 0) {
-            struct queue* params = (struct queue*)ptr;        
-            if (params == NULL) {
-                transresolved(node, "");
-                return;
-            }
-            if (params->count > 1) {
-                printf("Warning: Please remember to specify the parameter name in the specification. There are more than one parameters for the testing predicate\n");
-                printf("         The compiler will not generate the multiple instance of specifications for the current version....\n");
-            } else {
-                child->cstptr->dstptr = (struct dstnode*)gqueue(params, 0);
-                // template = child->cstptr->dstptr->symbol;
-                // TODO: replacing all the symbols pointed to the child->cstptr with the child->cstptr->dstptr->symbol
-                for (int i = 0; i < child->cstptr->refs->count; ++i) {
-                    struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
-                    // free(tmp->token->symbol);
-                    tmp->token->symbol = (char*)strdup(child->cstptr->dstptr->symbol);
-                    tmp->type = Semantic;
-                }
-                transresolved(node, "");
-            }            
-        } else {
-            if (strcmp(sem->args[0], "*") == 0) { 
-                // this is a keyword
-                // a keyword can be a software element keyword or a jml keyword
-                for (int i = 0; i < child->cstptr->refs->count; ++i) {
-                    struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
-                    // free(tmp->token->symbol);
-                    tmp->token->symbol = (char*)strdup(sem->data);
-                    tmp->type = Semantic;
-                }
-                transresolved(node, "");
-            } else {
-                // this is a predicate with parameters
-                // substitute the child symbol to the predicate parameter
-                char *template;
-                if (child->cstptr->of_referal != NULL) {
-                    template = strrep(sem->data, sem->args[0], child->cstptr->of_referal->token->symbol);
-                } else {
-                    template = strrep(sem->data, sem->args[0], child->token->symbol);
-                    transresolved(node, template);
-                }                       
-            }
+//     if (sem->sstype == SemSource_Dynamic) {
+//         // we have to provide the dstptr to the runtime symbol
+//         // and transform the node
+//         // TODO: replacing all the symbols pointed to the child->cstptr with the node->token->symbol
+//         for (int i = 0; i < child->cstptr->refs->count; ++i) {
+//             struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
+//             free(tmp->token->symbol);
+//             tmp->token->symbol = (char*)strdup(node->token->symbol);
+//             tmp->type = Semantic;
+//         }
+//         transresolved(node, "");
+//     } else {    
+//         if (strcmp(sem->data, "\\param") == 0) {
+//             struct queue* params = (struct queue*)ptr;        
+//             if (params == NULL) {
+//                 transresolved(node, "");
+//                 return;
+//             }
+//             if (params->count > 1) {
+//                 printf("Warning: Please remember to specify the parameter name in the specification. There are more than one parameters for the testing predicate\n");
+//                 printf("         The compiler will not generate the multiple instance of specifications for the current version....\n");
+//             } else {
+//                 child->cstptr->dstptr = (struct dstnode*)gqueue(params, 0);
+//                 // template = child->cstptr->dstptr->symbol;
+//                 // TODO: replacing all the symbols pointed to the child->cstptr with the child->cstptr->dstptr->symbol
+//                 for (int i = 0; i < child->cstptr->refs->count; ++i) {
+//                     struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
+//                     // free(tmp->token->symbol);
+//                     tmp->token->symbol = (char*)strdup(child->cstptr->dstptr->symbol);
+//                     tmp->type = Semantic;
+//                 }
+//                 transresolved(node, "");
+//             }            
+//         } else {
+//             if (strcmp(sem->args[0], "*") == 0) { 
+//                 // this is a keyword
+//                 // a keyword can be a software element keyword or a jml keyword
+//                 for (int i = 0; i < child->cstptr->refs->count; ++i) {
+//                     struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
+//                     // free(tmp->token->symbol);
+//                     tmp->token->symbol = (char*)strdup(sem->data);
+//                     tmp->type = Semantic;
+//                 }
+//                 transresolved(node, "");
+//             } else {
+//                 // this is a predicate with parameters
+//                 // substitute the child symbol to the predicate parameter
+//                 char *template;
+//                 if (child->cstptr->of_referal != NULL) {
+//                     template = strrep(sem->data, sem->args[0], child->cstptr->of_referal->token->symbol);
+//                 } else {
+//                     template = strrep(sem->data, sem->args[0], child->token->symbol);
+//                     transresolved(node, template);
+//                 }                       
+//             }
 
-            if (strcmp(sem->data, "\\result") == 0) {
-                // propagate the resulting type to the variable
-                child->cstptr->dstptr = ptr;
-                for (int i = 0; i < child->cstptr->refs->count; ++i) {
-                    struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
-                    // free(tmp->token->symbol);
-                    tmp->token->symbol = (char*)strdup("\\result");
-                    tmp->type = Semantic;
-                }
-                transresolved(node, "");
-            }
-        }
-    }
-    for (int i = 1; i < node->semantics->s->count; ++i) {
-        struct semantic *tmpsem = getsemantic(node->semantics, i);
-        if (tmpsem->sstype == SemSource_Dynamic) {
-            child->cstptr->dstptr = tmpsem->sourceptr;
-        }
-    }
-}
+//             if (strcmp(sem->data, "\\result") == 0) {
+//                 // propagate the resulting type to the variable
+//                 child->cstptr->dstptr = ptr;
+//                 for (int i = 0; i < child->cstptr->refs->count; ++i) {
+//                     struct astnode *tmp = (struct astnode*)gqueue(child->cstptr->refs, i);
+//                     // free(tmp->token->symbol);
+//                     tmp->token->symbol = (char*)strdup("\\result");
+//                     tmp->type = Semantic;
+//                 }
+//                 transresolved(node, "");
+//             }
+//         }
+//     }
+//     for (int i = 1; i < node->semantics->s->count; ++i) {
+//         struct semantic *tmpsem = getsemantic(node->semantics, i);
+//         if (tmpsem->sstype == SemSource_Dynamic) {
+//             child->cstptr->dstptr = tmpsem->sourceptr;
+//         }
+//     }
+// }
 
-void transIN(struct astnode *node) {
-    if (strcmp(node->token->symbol, "of") == 0) {
-        struct astnode *first = getastchild(node, 0);
-        first->cstptr->of_referal = getastchild(node, 1)->cstptr;
-        transresolved(node, "");
-    }
-}
+// void transIN(struct astnode *node) {
+//     if (strcmp(node->token->symbol, "of") == 0) {
+//         struct astnode *first = getastchild(node, 0);
+//         first->cstptr->of_referal = getastchild(node, 1)->cstptr;
+//         transresolved(node, "");
+//     }
+// }
 
-void transidentity(struct astnode *node) {
-    struct astnodelist *children = node->children;
-    while((children = children->next) != NULL) {
-        addastchild(node->parent, children->node);
-    }
-    deleteastchildren(node);
-    deleteastnode(node);
-}
+// void transidentity(struct astnode *node) {
+//     struct astnodelist *children = node->children;
+//     while((children = children->next) != NULL) {
+//         addastchild(node->parent, children->node);
+//     }
+//     deleteastchildren(node);
+//     deleteastnode(node);
+// }
 
 
-struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs) {
-    // steps:
-    // 1. transform constants from subtrees to single node containing the semantics
-    // 2. if every child of an & node is resolved, remove the & node
-    struct astnode *rootptr = root, *node;    
-    struct semantic *sem;
+// struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs) {
+//     // steps:
+//     // 1. transform constants from subtrees to single node containing the semantics
+//     // 2. if every child of an & node is resolved, remove the & node
+//     struct astnode *rootptr = root, *node;    
+//     struct semantic *sem;
 
     
 
-    // the order of the predicates are in the order of the bottom most to the top most
-    //   the ordering is maintained by the parser, due to the parser resolves the inner grammar rules first then to the outer rules
-    // the complexity is O(number of predicates)
-    while (pred_queue->count > 0) {
-        node = (struct astnode *)dequeue(pred_queue);
-        #if DEBUG
-        printf("AST processing node: %s\n", node->token->symbol);
-        #endif
-        // TODO: we may have to deal with multiple semantics later. currently we always refer to the first semantic
-        sem = getsemantic(node->semantics, 0);
-        // if (node->ptbsyntax == IN) {
-        //     transIN(node);
-        // } else 
-        if (sem->sstype == SemSource_Dynamic) {
-            // the semantic is a symbol from the source code
-            // relating the symbol information to the runtime symbol
-            transconstant(node, NULL);
-        } else if (strcmp(sem->data, "TrueP") == 0) {
-            transresolved(node, "");
-        } else {
-            // the semantic is a symbol from the static symbol table, aka the standard predicate
-            switch (node->ptbsyntax)
-            {
-            case NN: case NNP: case NNPS: case NNS:
-            case CD:
-                if (strcmp(sem->data, "\\result") == 0) {
-                    transconstant(node, fdstptr);
-                } else if (strcmp(sem->data, "\\param")  == 0) {
-                    transconstant(node, paramdstptrs);
-                } else {
-                    transconstant(node, NULL);
-                }
-                break;
-            case JJ: case JJR: case JJS: case VBN: case VBZ: case VB: case VBG: case RB: case VBP:
-            case IN:
-                transrelation(node);
-                break;   
-            case MD:
-                // transidentity(node);
-                break;     
-            default:
-                throwasterror("Unexpected type of syntax encountered", node->token);
-                goto END;
-                break;
-            }
-        }
-        #if DEBUG
-        printf("In AST Simplification\n");
-        showast(rootptr, 0);
-        #endif
-    }
+//     // the order of the predicates are in the order of the bottom most to the top most
+//     //   the ordering is maintained by the parser, due to the parser resolves the inner grammar rules first then to the outer rules
+//     // the complexity is O(number of predicates)
+//     while (pred_queue->count > 0) {
+//         node = (struct astnode *)dequeue(pred_queue);
+//         #if ASTDEBUG
+//         printf("AST processing node: %s\n", node->token->symbol);
+//         #endif
+//         // TODO: we may have to deal with multiple semantics later. currently we always refer to the first semantic
+//         sem = getsemantic(node->semantics, 0);
+//         // if (node->ptbsyntax == IN) {
+//         //     transIN(node);
+//         // } else 
+//         if (sem->sstype == SemSource_Dynamic) {
+//             // the semantic is a symbol from the source code
+//             // relating the symbol information to the runtime symbol
+//             transconstant(node, NULL);
+//         } else if (strcmp(sem->data, "TrueP") == 0) {
+//             transresolved(node, "");
+//         } else {
+//             // the semantic is a symbol from the static symbol table, aka the standard predicate
+//             switch (node->ptbsyntax)
+//             {
+//             case NN: case NNP: case NNPS: case NNS:
+//             case CD:
+//                 if (strcmp(sem->data, "\\result") == 0) {
+//                     transconstant(node, fdstptr);
+//                 } else if (strcmp(sem->data, "\\param")  == 0) {
+//                     transconstant(node, paramdstptrs);
+//                 } else {
+//                     transconstant(node, NULL);
+//                 }
+//                 break;
+//             case JJ: case JJR: case JJS: case VBN: case VBZ: case VB: case VBG: case RB: case VBP:
+//             case IN:
+//                 transrelation(node);
+//                 break;   
+//             case MD:
+//                 // transidentity(node);
+//                 break;     
+//             default:
+//                 throwasterror("Unexpected type of syntax encountered", node->token);
+//                 goto END;
+//                 break;
+//             }
+//         }
+//         #if ASTDEBUG
+//         printf("In AST Simplification\n");
+//         showast(rootptr, 0);
+//         #endif
+//     }
 
-    struct astnode *child;
-    while (conn_queue->count > 0) {
-        node = (struct astnode*)dequeue(conn_queue);
-        for (int i = 0; i < countastchildren(node); ++i) {
-            child = getastchild(node, i);            
-            if (child->type != Quantifier && 
-                child->type != Resolved) {
-                printf("Incomplete simplification: a node with type %s cannot be simplified....\n", node_type_name[child->type]);
-                goto END;
-            } else {
-                addastchild(node->parent, child);
-            }
-        }
-        deleteastchild(node->parent, node);
-        #if DEBUG
-        printf("In & removal\n");
-        showast(rootptr, 0);
-        #endif
-    }
-END:
-    return rootptr;
-}
+//     struct astnode *child;
+//     while (conn_queue->count > 0) {
+//         node = (struct astnode*)dequeue(conn_queue);
+//         for (int i = 0; i < countastchildren(node); ++i) {
+//             child = getastchild(node, i);            
+//             if (child->type != Quantifier && 
+//                 child->type != Resolved) {
+//                 printf("Incomplete simplification: a node with type %s cannot be simplified....\n", node_type_name[child->type]);
+//                 goto END;
+//             } else {
+//                 addastchild(node->parent, child);
+//             }
+//         }
+//         deleteastchild(node->parent, node);
+//         #if ASTDEBUG
+//         printf("In & removal\n");
+//         showast(rootptr, 0);
+//         #endif
+//     }
+// END:
+//     return rootptr;
+// }
 
 void addastchild(struct astnode *parent, struct astnode *child) {
     struct astnodelist *new = malloc(sizeof(struct astnodelist));
@@ -468,13 +463,8 @@ void showast(struct astnode *node, int depth) {
         printf("..");
     switch(node->type) {
         case Predicate:
-            if (getsemantic(node->semantics, 0) != NULL) {
-                printf("%s(%s) Syntax: %s.%s", node_type_name[node->type], node->token->symbol, 
-                    node->syntax, getsemantic(node->semantics, 0)->data);
-            } else {
-                printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, 
-                    node->syntax);
-            }
+            printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, 
+                    ptbsyntax2string(node->syntax));
             break;
         case Quantifier:
             printf("%s %s %s", node_type_name[node->type], quantifier_name[node->qtype], node->token->symbol);
@@ -515,10 +505,6 @@ void deallocateast(struct astnode *node) {
             free(node->token->symbol);
             free(node->token);
         }
-        if(node->syntax != NULL) {
-            free(node->syntax);
-        }
-        deallocatesemantics(node->semantics);
         free(node);
     }
 }
@@ -570,6 +556,49 @@ enum ptbsyntax string2ptbsyntax(char *input) {
     else if (strcmp(input, "WRB")) return WRB;
     else {
         fprintf(stderr, "Unknown syntactic category %s in the SI files\n", input);
+        exit(-2);
+    }
+}
+
+char *ptbsyntax2string(enum ptbsyntax ptb) {
+    if (ptb == CC) return "CC";
+    else if (ptb == CD) return "CD";
+    else if (ptb == DT) return "DT";
+    else if (ptb == EX) return "EX";
+    else if (ptb == FW) return "FW";
+    else if (ptb == IN) return "IN";
+    else if (ptb == JJ) return "JJ";
+    else if (ptb == JJR) return "JJR";
+    else if (ptb == JJS) return "JJS";
+    else if (ptb == LS) return "LS";
+    else if (ptb == MD) return "MD";
+    else if (ptb == NN) return "NN";
+    else if (ptb == NNS) return "NNS";
+    else if (ptb == NNP) return "NNP";
+    else if (ptb == NNPS) return "NNPS";
+    else if (ptb == PDT) return "PDT";
+    else if (ptb == POS) return "POS";
+    else if (ptb == PRP) return "PRP";
+    else if (ptb == PRP_POS) return "PRP_POS";
+    else if (ptb == RB) return "RB";
+    else if (ptb == RBR) return "RBR";
+    else if (ptb == RBS) return "RBS";
+    else if (ptb == RP) return "RP";
+    else if (ptb == SYM) return "SYM";
+    else if (ptb == TO) return "TO";
+    else if (ptb == UH) return "UH";
+    else if (ptb == VB) return "VB";
+    else if (ptb == VBD) return "VBD";
+    else if (ptb == VBG) return "VBG";
+    else if (ptb == VBN) return "VBN";
+    else if (ptb == VBP) return "VBP";
+    else if (ptb == VBZ) return "VBZ";
+    else if (ptb == WDT) return "WDT";
+    else if (ptb == WP) return "WP";
+    else if (ptb == WP_POS) return "WP_POS"; 
+    else if (ptb == WRB) return "WRB";
+    else {
+        fprintf(stderr, "Unknown syntactic category %d is encountered in function ptbsyntax2string\n", ptb);
         exit(-2);
     }
 }

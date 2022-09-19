@@ -24,7 +24,7 @@ struct sstnode *psl;
 //  compile-time symbol table
 struct queue **csts;     
 //  predicate stack, marking the positions of the predicate nodes
-struct queue **pred_queues;   
+struct queue **predicates;   
 //  connective stack, marking the positions of the connective nodes
 struct queue **conn_queues;  
 //  temporary unreferenced table
@@ -96,33 +96,6 @@ int main(int argc, char** argv) {
     
 
     int lines = 0;
-    // parameters of the method
-    //  symbols come from dynamic symbol table
-    // struct queue *params = NULL;
-    // FILE *fp = fopen(pslfile, "r");
-    // if (!fp) {
-    //     printf("The predicate semantic library file cannot be opened...\n");
-    //     goto END;
-    // }
-    // printf("Reading predicate semantic library from %s...\n", pslfile);
-    // done = readPSL(fp);
-    // fclose(fp);
-    // if (done == -1) {
-    //     goto END;
-    // }
-    // if (cpslfile != NULL) {
-    //     printf("Reading custom predicate semantics from %s...\n", cpslfile);
-    //     fp = fopen(cpslfile, "r");
-    //     if (!fp) {
-    //         printf("The specified custom predicate semantic file cannot be opened...\n");
-    //         goto END;
-    //     }
-    //     done = readPSL(fp);
-    //     fclose(fp);
-    //     if (done == -1) {
-    //         goto END;
-    //     }
-    // }    
     /* A structure implemented by a queue containing semantic interpretations */    
     printf("Trying to reading SI information...\n");
     struct queue *silist = readSI(dstfiles);
@@ -137,12 +110,7 @@ int main(int argc, char** argv) {
         printf("zero lines...do I have to do anything?\n");
         exit(1);
     }
-    // #if DEBUG
-    // printf("Printing predicate semantic library...\n");
-    // showsst(psl);
-    // printf("Printing dynamic symbol table...\n");
-    // showdst(dst);
-    // #endif
+
     // printf("Number of MRs: %d\n", lines);    
 
     // fdstptr = getdstsymbol(dst, mname);
@@ -152,19 +120,16 @@ int main(int argc, char** argv) {
     // }    
     // acquire resources before parsing
     ast = (struct astnode **) malloc (sizeof(struct astnode *) * lines);
-    // // TODO: declaring structures according to the number lines
     // /* cst = initqueue();     */
     // // csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
     // csts = initcsts(lines);
-    // pred_queues = (struct queue **) malloc (sizeof(struct queue *) * lines);
+    predicates = (struct queue **) malloc (sizeof(struct queue *) * lines);
     // conn_queues = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    // for (int i = 0; i < lines; ++i) {
-    //     // csts[i] = initqueue();
-    //     pred_queues[i] = initqueue();
-    //     conn_queues[i] = initqueue();
-    // }
-    // /* pred_queue = initqueue(); */
-    // /* conn_queue = initqueue(); */
+    for (int i = 0; i < lines; ++i) {
+        // csts[i] = initqueue();
+        predicates[i] = initqueue();
+        // conn_queues[i] = initqueue();
+    }
     // reftable = initqueue();
     // //
     fseek(fp, 0, SEEK_SET);
@@ -189,18 +154,19 @@ int main(int argc, char** argv) {
     // // clear all the stdout buffer
     // fflush(stdout);
 
-    #if DEBUG
+    /* 
+    Step: Semantic interpretation identification  
+        For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
+    */
+     for (int i = 0; i < c; ++i) {
+        siidentification(predicates[i], silist);
+     }
+     deallocatesilist(silist);
+
+    #if ASTDEBUG
     for (int i = 0; i < c; ++i) {
         printf("Printing Abstract syntax tree # %d.................\n", i + 1);
         showast(ast[i], 0);
-        // printf("Printing Compile-time symbol table # %d............\n", i + 1);
-        // showcst(csts[i]);
-        // printf("Printing Predicate queue information of AST # %d...\n", i + 1);
-        // for (int j = 0; j < pred_queues[i]->count; ++j) {
-        //     printf("%s %d, ", 
-        //         ((struct astnode *)gqueue(pred_queues[i], j))->token->symbol, 
-        //         ((struct astnode *)gqueue(pred_queues[i], j))->priority);
-        // }
     }
     printf("\n");
     #endif
@@ -255,32 +221,20 @@ int main(int argc, char** argv) {
     
     // END:
 
-    // // free resources
-    // /* deallocatedag(dag); */
-    // if (psl)
-    //     deallocatesst(psl);
-    // if (dst)
-    //     deallocatedst(dst);
+    /* free resources */
     // /* if (cst) */
     //     /* deallocatecst(cst); */
     // if (csts) {
     //     deallocatecsts(csts, lines);
     // }
-    // for (int i = 0; i < c; ++i) {
-    //     if (ast[i])
-    //         deallocateast(ast[i]);
-    // }
-    // /* if (pred_queue)
-    //     deallocatequeue(pred_queue);
+    for (int i = 0; i < c; ++i) {
+        if (ast[i])
+            deallocateast(ast[i]);
+        if (predicates[i])
+            deallocatequeue(predicates[i]);
+    }    
     // if (conn_queue)
     //     deallocatequeue(conn_queue); */
-    // if (pred_queues) {
-    //     for (int i = 0; i < c; ++i) {
-    //         if (pred_queues[i]) {
-    //             deallocatequeue(pred_queues[i]);
-    //         }
-    //     }
-    // }
     // if (conn_queues) {
     //     for (int i = 0; i < c; ++i) {
     //         if (conn_queues[i]) {
@@ -341,122 +295,97 @@ struct queue* readSI(char *dstfilepaths) {
             {
             /* Stream start/end */
             case YAML_STREAM_START_TOKEN: 
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("STREAM START");
                 #endif
                 break;
             case YAML_STREAM_END_TOKEN:
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("STREAM END");
                 #endif   
                 break;
             /* Token types (read before actual token) */
             case YAML_KEY_TOKEN:   
-                #if DSTDEBUG
+                #if SIDEBUG
                 printf("(Key token)   "); 
                 #endif
                 token_flag = 1;
                 break;
             case YAML_VALUE_TOKEN: 
-                #if DSTDEBUG
+                #if SIDEBUG
                 printf("(Value token) "); 
                 #endif
                 token_flag = 2;
                 break;
             /* Block delimeters */
             case YAML_BLOCK_SEQUENCE_START_TOKEN: 
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("<b>Start Block (Sequence)</b>"); 
                 #endif
                 break;
             case YAML_BLOCK_ENTRY_TOKEN:          
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("<b>Start Block (Entry)</b>");    
                 #endif
-                si = (struct si*) malloc (sizeof(struct si));
+                if (!si) {
+                    si = (struct si*) malloc (sizeof(struct si));
+                }
                 break;
             case YAML_BLOCK_END_TOKEN:            
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("<b>End block</b>");
                 #endif
-                if (si != NULL) {
+                if (si) {
                     enqueue(new, (void*)si);
                     si = NULL;
                 }
                 break;
             /* Data */
             case YAML_BLOCK_MAPPING_START_TOKEN:
-                #if DSTDEBUG
+                #if SIDEBUG
                 puts("[Block mapping]");
-                #endif            
-                if (key && strcmp(key, "semantic") == 0) {
-                    char *variables = NULL;
-                    #if DSTDEBUG
-                    printf("key %s \n", token.data.scalar.value); 
-                    fflush(stdout);
-                    #endif
-                    free(key);
-                    key = (char*) strdup(token.data.scalar.value);
-                    yaml_parser_scan(&parser, &token);
-                    #if DSTDEBUG
-                    printf("scalar %s \n", token.data.scalar.value); 
-                    #endif
-                    if (strcmp(key, "variables") == 0) {
-                        variables = (char*) strdup(token.data.scalar.value);
-                    } else {
-                        si->interpretation = (char*) strdup(token.data.scalar.value);
-                    }
-                    free(key);
-                    yaml_parser_scan(&parser, &token);
-                    #if DSTDEBUG
-                    printf("key %s \n", token.data.scalar.value); 
-                    #endif
-                    key = (char*) strdup(token.data.scalar.value);
-                    yaml_parser_scan(&parser, &token);
-                    #if DSTDEBUG
-                    printf("scalar %s \n", token.data.scalar.value); 
-                    #endif
-                    if (strcmp(key, "variables") == 0) {
-                        variables = (char*) strdup(token.data.scalar.value);
-                    } else {
-                        si->interpretation = (char*) strdup(token.data.scalar.value);
-                    }
-                    if (variables && si->interpretation) {
-                        setargs(si, variables);
-                    } else {
-                        fprintf(stderr, "Syntax error: invalid syntax in file %s\n", filepath);
-                        exit(-2);
-                    }
-                }
+                #endif                            
                 break;
             case YAML_SCALAR_TOKEN:  
-                #if DSTDEBUG
-                printf("scalar %s \n", token.data.scalar.value); 
+                #if SIDEBUG
+                printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
                 #endif
                 if (token_flag == 1) {
-                    if (key) free(key);
-                    key = (char*) strdup(token.data.scalar.value);
+                    key = (char*) strdup((char*)token.data.scalar.value);
+                    if (strcmp(key, "arguments") == 0) {
+                        si->args = (char**)malloc(sizeof(char*) * si->arg_count);
+                        int i = 0;                            
+                        while (i < si->arg_count) {
+                            yaml_parser_scan(&parser, &token);
+                            if (token.type == YAML_SCALAR_TOKEN) {
+                                si->args[i] = (char*) strdup((char*)token.data.scalar.value);
+                                ++i;
+                            }
+                        }                            
+                    } 
                 } else if (token_flag == 2) {
-                    if (value) free(value);
-                    value = (char*) strdup(token.data.scalar.value);
+                    value = (char*) strdup((char*)token.data.scalar.value);
                     if (key && value) {
-                        // printf("KEY: %s, VALUE: %s\n", key, value);
                         if (strcmp(key, "arity") == 0) {
-                            si->arg_count = atoi(value);
-                        } else if (strcmp(key, "name") == 0) {
-                            si->symbol = (char*) strdup(value);
+                            si->arg_count = atoi(value);                            
+                        } else if (strcmp(key, "term") == 0) {
+                            si->term = (char*) strdup(value);
                         } else if (strcmp(key, "syntax") == 0) {
-                            si->ptb = string2ptbsyntax(value);
+                            si->syntax = string2ptbsyntax(value);
+                        } else if (strcmp(key, "interpretation") == 0) {
+                            si->interpretation = (char*) strdup(value);
                         } else {
-                            fprintf(stderr, "Syntax error in SI file %s with key %s and value %s", filepath, key ,value);
+                            fprintf(stderr, "Syntax error in SI file %s with key %s and value %s\n", filepath, key ,value);
                             exit(-1);
-                        }
+                        }                        
                     }
+                    free(key);
+                    free(value);
                 }
                 break;
             /* Others */
             default:
-                #if DSTDEBUG
+                #if SIDEBUG
                 printf("Got token of type %d\n", token.type);
                 #endif
                 break;
@@ -474,6 +403,9 @@ struct queue* readSI(char *dstfilepaths) {
         _t = strtok_r(NULL, ",", &pos);
     }
     yaml_parser_delete(&parser);
+    #if SIDEBUG
+    showsilist(new);
+    #endif
     return new;
 }
 

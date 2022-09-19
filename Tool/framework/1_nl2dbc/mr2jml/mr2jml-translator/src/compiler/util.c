@@ -232,11 +232,11 @@ void* peek(struct queue* stack) {
 
 
 void deallocatequeue(struct queue *queue) {
-    struct queuenode *tmp = queue->q->next;
+    // struct queuenode *tmp = queue->q->next;
     while (queue->count > 0) {
-        tmp = queue->q->next;
+        // tmp = queue->q->next;
         queue->q->next = queue->q->next->next;
-        free(tmp);
+        // free(tmp);
         --queue->count;
     }
     free(queue->q);

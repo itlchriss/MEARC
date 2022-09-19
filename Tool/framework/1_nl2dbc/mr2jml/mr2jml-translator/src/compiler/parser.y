@@ -8,7 +8,7 @@
     // From main.c
     extern int c;
     extern struct astnode **ast;  
-    extern struct queue **conn_queues, **pred_queues, *reftable;
+    extern struct queue **conn_queues, **predicates, *reftable;
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, *error_lines, error_count = 0;
@@ -141,7 +141,9 @@ term
         print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
         $$ = newastnode(Predicate, $1);    
         addastchildren($$, $6);
-        $$->ptbsyntax = $3;
+        $$->syntax = $3;
+        /* predicate node is marked in a queue and si identification is processed later  */
+        enqueue(predicates[c], (void*)$$);
     }
     | PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC {
         print_debug("term: PREDICATE(Modal)) CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC");
@@ -154,9 +156,11 @@ term
     | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
         print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
         $$ = newastnode(Predicate, $3);
-        $$->ptbsyntax = $5;
+        $$->syntax = $5;
         $$->gtype = $1;
         addastchildren($$, $8);
+        /* predicate node is marked in a queue and si identification is processed later  */
+        enqueue(predicates[c], (void*)$$);
     }
     | formula {
         print_debug("term: formula");
