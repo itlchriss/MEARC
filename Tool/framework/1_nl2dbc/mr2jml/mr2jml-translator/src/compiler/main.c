@@ -19,8 +19,6 @@ int c = 0;
 // data structures
 //  abstract syntax tree(s)
 struct astnode **ast;  
-//  predicate semantic library
-struct sstnode *psl;    
 //  compile-time symbol table
 struct queue **csts;     
 //  predicate stack, marking the positions of the predicate nodes
@@ -32,9 +30,6 @@ struct queue **conn_queues;
 //      the aim is to check if the symbol name is used
 //      if so, the symbol name is renamed and all the symbols using the same name stored in this table is renamed
 struct queue *reftable; 
-//  the method that a single runtime is going to check
-//  this points to a dynamic symbol table that has the same method name as the input method name
-struct dstnode *fdstptr = NULL;
 
 
 //TODO: we have to store every queue per root node.
@@ -74,30 +69,20 @@ int main(int argc, char** argv) {
             return 1;
             default:
             printf("-f filename    specifying the filename of the spec file\n");
-            printf("-p filename    specifying the filename of the predicate semantic library\n");
-            printf("-d filename    specifying the filename of the dynamic symbol table\n");
-            printf("-c filename    specifying the filename of the custom predicate semantic from developer's annotations\n");
-            printf("-m methodname  specifying the name of the method that the spec describes\n");
+            printf("-s filename    specifying the filenames of the semantic interpretation library files\n");
         }
     }
-    // if (specfile == NULL) {
-    //     printf("Please specify the spec file by -f\n");
-    //     return 1;
-    // } else if (dstfile == NULL) {
-    //     printf("Please specify the dynamic symbol table by -d\n");
-    //     return 1;
-    // } else if (pslfile == NULL) {
-    //     printf("Please specify the predicate semantic library by -p\n");
-    //     return 1;
-    // } else if (mname == NULL) {
-    //     printf("Please specify the method name by -m\n");
-    //     return 1;
-    // } 
+    if (specfile == NULL) {
+        printf("Please specify the spec file by -f\n");
+        return 1;
+    } 
     
 
     int lines = 0;
-    /* A structure implemented by a queue containing semantic interpretations */    
+    /* A structure implemented by a queue containing semantic interpretations */  
+    #if INFO      
     printf("Trying to reading SI information...\n");
+    #endif
     struct queue *silist = readSI(dstfiles);
 
     FILE *fp = fopen(specfile, "r");
@@ -110,28 +95,18 @@ int main(int argc, char** argv) {
         printf("zero lines...do I have to do anything?\n");
         exit(1);
     }
-
-    // printf("Number of MRs: %d\n", lines);    
-
-    // fdstptr = getdstsymbol(dst, mname);
-    // if (fdstptr == NULL || fdstptr->stype != Dst_SYM_Function) {
-    //     printf("The method name is not found in the dynamic symbol table...\n");
-    //     goto END;
-    // }    
+    #if INFO
+    printf("Number of MRs: %d\n", lines);    
+    #endif
     // acquire resources before parsing
     ast = (struct astnode **) malloc (sizeof(struct astnode *) * lines);
-    // /* cst = initqueue();     */
-    // // csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    // csts = initcsts(lines);
+    csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
     predicates = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    // conn_queues = (struct queue **) malloc (sizeof(struct queue *) * lines);
     for (int i = 0; i < lines; ++i) {
-        // csts[i] = initqueue();
+        csts[i] = initqueue();
         predicates[i] = initqueue();
-        // conn_queues[i] = initqueue();
     }
-    // reftable = initqueue();
-    // //
+
     fseek(fp, 0, SEEK_SET);
     error_lines = (int*) malloc (sizeof(int) * lines);
     yyin = fp;
@@ -159,16 +134,21 @@ int main(int argc, char** argv) {
         For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
     */
      for (int i = 0; i < c; ++i) {
-        siidentification(predicates[i], silist);
+        siidentification(predicates[i], silist, csts[i]);
+        #if ASTDEBUG
+        showast(ast[i], 0);
+        #endif
      }
-     deallocatesilist(silist);
+    //  deallocatesilist(silist);
+    deallocatequeue(silist, deallocatesi);
 
     #if ASTDEBUG
     for (int i = 0; i < c; ++i) {
         printf("Printing Abstract syntax tree # %d.................\n", i + 1);
-        showast(ast[i], 0);
+        showast(ast[i], 0);        
+        showqueue(csts[i], showcstsymbol);
     }
-    printf("\n");
+    printf("\n");    
     #endif
 
     // // exit(-2);
@@ -222,30 +202,15 @@ int main(int argc, char** argv) {
     // END:
 
     /* free resources */
-    // /* if (cst) */
-    //     /* deallocatecst(cst); */
-    // if (csts) {
-    //     deallocatecsts(csts, lines);
-    // }
     for (int i = 0; i < c; ++i) {
         if (ast[i])
             deallocateast(ast[i]);
+        if (csts[i])
+            deallocatequeue(csts[i], deallocatecstsymbol);
         if (predicates[i])
-            deallocatequeue(predicates[i]);
+            deallocatequeue(predicates[i], NULL);
     }    
-    // if (conn_queue)
-    //     deallocatequeue(conn_queue); */
-    // if (conn_queues) {
-    //     for (int i = 0; i < c; ++i) {
-    //         if (conn_queues[i]) {
-    //             deallocatequeue(conn_queues[i]);
-    //         }
-    //     }
-    // }
-    // if (reftable)
-    //     deallocatequeue(reftable);
-    // if (params)
-    //     deallocatequeue(params);
+   
     if (error_count > 0) {
         printf("There are %d lines that cannot be processed:\n", error_count);
         for (int i = 0; i < error_count - 1; ++i) {
@@ -278,11 +243,23 @@ struct queue* readSI(char *dstfilepaths) {
     char *_t = strtok_r(dstfilepaths, ",", &pos);
     struct queue* new = initqueue();
     FILE *fp;
-    yaml_parser_t parser;
-    yaml_parser_initialize(&parser);
+    yaml_parser_t parser;    
     while (_t != NULL) {
         filepath = (char*)strdup(_t);
         fp = fopen(filepath, "rb");        
+        if (!fp) {
+            fprintf(stderr, "Cannot open SI file at %s\n", filepath);
+            exit(-1);
+        } else {
+            int c = fgetc(fp);
+    	    if (c == EOF) {
+                fprintf(stderr, "Empty SI file at %s\n", filepath);
+                break;
+            } else {
+                ungetc(c, fp);
+            }
+        }
+        yaml_parser_initialize(&parser);
         yaml_parser_set_input_file(&parser, fp);
         printf("Trying to read SI from file at %s\n", filepath);
         int token_flag = -1;
@@ -291,6 +268,7 @@ struct queue* readSI(char *dstfilepaths) {
         char *key, *value;
          do {
             yaml_parser_scan(&parser, &token);
+            SWITCH:
             switch(token.type)
             {
             /* Stream start/end */
@@ -362,7 +340,34 @@ struct queue* readSI(char *dstfilepaths) {
                                 ++i;
                             }
                         }                            
-                    } 
+                    } else if (strcmp(key, "syntax") == 0) {
+                        int i = 0;
+                        si->syntax = NULL;
+                        /* skip the YAML_VALUE_TOKEN */
+                        yaml_parser_scan(&parser, &token);
+                        /* read the YAML_BLOCK_ENTRY_TOKEN */
+                        yaml_parser_scan(&parser, &token);
+                        while (token.type == YAML_BLOCK_ENTRY_TOKEN) {                               
+                            yaml_parser_scan(&parser, &token);          
+                            #if SIDEBUG
+                            printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                            #endif                                                 
+                            if (i > 0) {
+                                enum ptbsyntax *tmp = (enum ptbsyntax*) malloc (sizeof(enum ptbsyntax) * (++i));
+                                for (int j = 0; j < i; ++j) {
+                                    tmp[j] = si->syntax[j];
+                                }
+                                free(si->syntax);          
+                                si->syntax = tmp;                      
+                            } else {
+                                si->syntax = (enum ptbsyntax*) malloc (sizeof(enum ptbsyntax) * (++i));
+                            }
+                            si->syntax[i - 1] = string2ptbsyntax((char*)token.data.scalar.value);                               
+                            yaml_parser_scan(&parser, &token);                      
+                        }                                                                         
+                        si->syntax_count = i;
+                        goto SWITCH;
+                    }
                 } else if (token_flag == 2) {
                     value = (char*) strdup((char*)token.data.scalar.value);
                     if (key && value) {
@@ -370,8 +375,6 @@ struct queue* readSI(char *dstfilepaths) {
                             si->arg_count = atoi(value);                            
                         } else if (strcmp(key, "term") == 0) {
                             si->term = (char*) strdup(value);
-                        } else if (strcmp(key, "syntax") == 0) {
-                            si->syntax = string2ptbsyntax(value);
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
                         } else {
@@ -404,7 +407,7 @@ struct queue* readSI(char *dstfilepaths) {
     }
     yaml_parser_delete(&parser);
     #if SIDEBUG
-    showsilist(new);
+    showqueue(new, showsi);
     #endif
     return new;
 }

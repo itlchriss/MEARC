@@ -7,7 +7,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o sst.o ast.o cst.o util.o cg.o dst.o sem.o main.o si.o
+OBJS	=	parser.o lex.o ast.o cst.o util.o cg.o main.o si.o
 DEBUG   ?=      1
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -37,6 +37,10 @@ endif
 
 ifeq ($(ASTDEBUG), 1)
 	CFLAGS += -DASTDEBUG
+endif
+
+ifeq ($(CSTDEBUG), 1)
+	CFLAGS += -DCSTDEBUG
 endif
 
 .PHONY: directories
@@ -106,10 +110,8 @@ parser.only						:	$(INCL)/ast.h
 lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h $(INCL)/sst.h
 util.o							:   $(INCL)/util.h
-sst.o							:   $(INCL)/util.h $(INCL)/sst.h
-cst.o							:   $(INCL)/util.h $(INCL)/ast.h
+cst.o							:   $(INCL)/util.h 
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h $(INCL)/dst.h
-sem.o							:   $(INCL)/ast.h $(INCL)/sem.h 
 si.o							:   $(INCL)/si.h $(INCL)/sst.h
 clean:
 	rm $(BUILD)/*

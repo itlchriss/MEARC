@@ -1,6 +1,7 @@
 %{
     #include "core.h"
     #include "util.h"
+    #include "cst.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
@@ -8,7 +9,7 @@
     // From main.c
     extern int c;
     extern struct astnode **ast;  
-    extern struct queue **conn_queues, **predicates, *reftable;
+    extern struct queue **csts, **predicates;
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, *error_lines, error_count = 0;
@@ -104,6 +105,7 @@ formula
         print_debug("formula: quantify_expr LBRAC terms RBRAC");
         $$ = $1;
         addastchild($$, $4);
+        closecstscope(csts[c], $1->token->symbol);
     }
     ;
 
@@ -140,6 +142,10 @@ term
     : PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC {
         print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
         $$ = newastnode(Predicate, $1);    
+        if ($$->token->symbol[0] == '_') {
+            /* removing the underscore */
+            popchar($$->token->symbol);
+        }
         addastchildren($$, $6);
         $$->syntax = $3;
         /* predicate node is marked in a queue and si identification is processed later  */
@@ -156,6 +162,10 @@ term
     | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
         print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
         $$ = newastnode(Predicate, $3);
+        if ($$->token->symbol[0] == '_') {
+            /* removing the underscore */
+            popchar($$->token->symbol);
+        }
         $$->syntax = $5;
         $$->gtype = $1;
         addastchildren($$, $8);
@@ -192,6 +202,10 @@ argument
     : IDENTIFIER {
         print_debug("argument: IDENTIFIER");
         $$ = newastnode(Variable, $1);
+        if (addcstref(csts[c], $$->token->symbol, $$) == 1) {
+            addcstsymbol(csts[c], $$->token->symbol);
+            addcstref(csts[c], $$->token->symbol, $$);
+        }
     }
     | formula {
         print_debug("argument: formula");
@@ -201,12 +215,22 @@ argument
 
 quantify_expr
     : KEYWORD_EXISTS IDENTIFIER {
+        print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_Exists;
+        if (addcstref(csts[c], $2->symbol, $$) == 1) {
+            addcstsymbol(csts[c], $2->symbol);
+            addcstref(csts[c], $2->symbol, $$);
+        }
     }
     | KEYWORD_FORALL IDENTIFIER {
+        print_debug("quantify_expr: KEYWORD_FORALL IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_ForAll;
+        if (addcstref(csts[c], $2->symbol, $$) == 1) {
+            addcstsymbol(csts[c], $2->symbol);
+            addcstref(csts[c], $2->symbol, $$);
+        }    
     }
     ;
 

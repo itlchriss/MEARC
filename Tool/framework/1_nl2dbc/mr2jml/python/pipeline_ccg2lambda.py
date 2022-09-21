@@ -21,7 +21,7 @@ def main(source_code_dir: str, javadoc_xml_filepath: str = None) -> None:
     for name in global_names:
         dst.append({
             'term': name,
-            'syntax': 'NN',
+            'syntax': ['NN'],
             'arity': 1,
             'arguments': ['x'],
             'interpretation': name

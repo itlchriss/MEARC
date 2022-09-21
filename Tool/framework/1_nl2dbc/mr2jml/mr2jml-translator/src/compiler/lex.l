@@ -109,12 +109,12 @@ VARIABLE               ([a-z]([0-9]+)?)
 GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 %%
 {LBRAC} {
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     ++bracket;
     return LBRAC;
 }
 {RBRAC} {
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     --bracket;
     return RBRAC;
 }
@@ -128,7 +128,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 {KEYWORD_TRUEP} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }
 {CURLY_LBRAC} {
     ++cbracket;    
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     return CURLY_LBRAC;
 }
 {KEYWORD_PROG} { yylval.t = handletoken(yytext); return KEYWORD_PROG; }
@@ -156,11 +156,11 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
         print_error();
     }
     --cbracket;
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     return CURLY_RBRAC;
 }
 {COMMA} {
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     return COMMA;
 }
 {AND} {
@@ -176,7 +176,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     return GCASE;
 }
 {EQ} {
-    handlecolnum(yytext);
+    yylval.t = handletoken(yytext);
     return EQUAL;
 }
 [ \t]+ { 

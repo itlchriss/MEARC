@@ -1,194 +1,123 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include "util.h"
 #include "cst.h"
+#include "ast.h"
 
-char *cst_datatype_name[] = { "Predicate", "Function" };
+struct cstsymbol* searchcst(struct queue *cst, char *symbol);
 
-struct cstsymbol* searchcst(struct queue *cst, struct token *symbol);
-
-
-struct queue** initcsts(int scopes) {
-    struct queue **new = (struct queue **) malloc (sizeof(struct queue *) * scopes);
-    for (int i = 0; i < scopes; ++i) {
-        new[i] = initqueue();
-    }
-    return new;
+void showcstsymbol(void *_symbol) {
+    struct cstsymbol *c = (struct cstsymbol*)_symbol;
+    printf("=============================Compile time symbol===================================\n");
+    printf("Symbol: %s   Data: %s   No. of Refs: %d\n", c->symbol, c->data, c->refs->count);
+    printf("===================================================================================\n");
 }
 
-struct cstscope* addscope(struct queue *cstscopes, int scope, struct cstsymbol *symbol) {
-    struct cstscope *new = (struct cstscope*) malloc (sizeof(struct cstscope));
-    new->scope = scope;
-    new->symbol = symbol;
-    new->refs = initqueue();
-    // TODO: adding a quantifying type in the symbol scope
-    enqueue(cstscopes, (void*)new);    
-    return new;
-}
-
-struct cstsymbol *newcstsymbol(struct token *token, struct token *quantifier) {
-    struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
-    new->token = token;
-    new->datatype = CST_STDP;
-    new->args = NULL;
-    new->argcount = 0;
-    new->alias = NULL;
-    new->scopeclosed = 0;
-    return new;
-}
-
-void showcst(struct queue* cst) {
-    struct queuenode *tmp = cst->q->next;
-    while (tmp != NULL) {
-        struct cstsymbol *node = (struct cstsymbol*)tmp->datanode;
-        printf("Symbol: %s, Data: %s, Type: %s\n", node->token->symbol, node->data, cst_datatype_name[node->datatype]);
-        tmp = tmp->next;
-    }
-}
-
-
-struct cstsymbol* addcstsymbol(struct queue *cst, struct token *token, struct token *qsymbol) {
-    struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
-    new->token = newtoken(token->symbol, token->line, token->column);
-    new->data = NULL;
-    // new->hash = sdbm(symbol->symbol);
-    if (strcmp(qsymbol->symbol, "EXISTS")) {
-        new->type = CST_EXISTS;
-    } else {
-        new->type = CST_FORALL;
-    }
-    new->datatype = CST_STDP;
-    new->args = NULL;
-    new->argcount = 0;
-    new->alias = NULL;
-    new->refs = initqueue();
-    new->dstptr = NULL;
-    new->of_referal = NULL;
-    struct cstsymbol *tmp;
-    // TODO: checking if the cst already has a name for the symbol. if so, we have to rename the current one
-    while ((tmp = searchcst(cst, new->token)) != NULL) {
-        // TODO: currently we consider only single integer       
-        if (strlen(new->token->symbol) == 1) {
-            free(new->token->symbol);
-            new->token->symbol = (char*)malloc(sizeof(char)*3);
-            new->token->symbol[0] = tmp->token->symbol[0];
-            new->token->symbol[1] = '1';
-            new->token->symbol[2] = '\0';
-        } else {
-            new->token->symbol[1]++;
-        }         
-    }
-    enqueue(cst, (void*)new);
-    return new;
-}
-
-int setvalue2cst(struct queue *cst, struct token *symbol, char *data) {
+void addcstsymbol(struct queue *cst, char *symbol) {
     struct cstsymbol *tmp = searchcst(cst, symbol);
-    if (tmp == NULL) return 1;
-    else {
-        tmp->data = (char*) strdup (data);
+    if (tmp != NULL && tmp->scope == 0) {
+        printf("Error in building compiler symbol table. Adding new symbol(%s) when there is a symbol(%s) with open scope existed.\n", symbol, tmp->symbol);
+    } else {
+        struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
+        if (tmp != NULL) {
+            /* TODO: the current renaming strategy is naive */
+            if (strlen(symbol) == 1) {
+                new->symbol = (char*) malloc (sizeof(char) * 3);
+                new->symbol[0] = symbol[0];
+                new->symbol[1] = '1';
+                new->symbol[2] = '\0';
+            } else {
+                /* overflow when the symbol length is greater than 2 */
+                char *s = (char*)malloc(sizeof(char) * 2);
+                s[0] = symbol[1];
+                s[1] = '\0';
+                int n = atoi(s);
+                ++n;
+                sprintf(s, "%d", n);
+                new->symbol = (char*) malloc(sizeof(char) * 3);
+                new->symbol[0] = symbol[0];
+                new->symbol[1] = s[0];
+                new->symbol[2] = '\0';
+            }   
+        } else {
+            new->symbol = (char*)strdup(symbol);
+        }
+        new->data = NULL;
+        new->refs = initqueue();
+        new->scope = 0;            
+        enqueue(cst, (void*)new);
+    }            
+}
+
+int addcstref(struct queue *cst, char *symbol, void *pt) {
+    struct cstsymbol *c = searchcst(cst, symbol);
+    if (c == NULL) {
+        #if CSTDEBUG
+        printf("Compile time symbol(%s) not found\n", symbol);
+        #endif
+        return 1;
+    } else if (c->scope == 0) {
+        enqueue(c->refs, pt);
         return 0;
+    } else {
+        #if CSTDEBUG
+        printf("Error in building compiler symbol table. Trying to add identifier(%s) to the references but the scope is closed.\n", symbol);
+        #endif
+        exit(-2);
     }
 }
 
-// int addreference2cst(struct queue *cst, char *symbol, void *ptr) {
+void closecstscope(struct queue *cst, char *symbol) {
+    struct cstsymbol *c = searchcst(cst, symbol);
+    if (c != NULL) {
+        c->scope = 1;
+    }
+}
+
+// int setvalue2cst(struct queue *cst, struct token *symbol, char *data) {
 //     struct cstsymbol *tmp = searchcst(cst, symbol);
 //     if (tmp == NULL) return 1;
 //     else {
-//         enqueue(tmp->references, ptr);
+//         tmp->data = (char*) strdup (data);
+//         return 0;
 //     }
-//     return 0;
 // }
 
-// char* getsymboldata(struct queue *cst, char *symbol) {
-//     struct cstsymbol *tmp = searchcst(cst, symbol);
-//     if (tmp == NULL) return NULL;
-//     else return tmp->data;
-// }
+struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data) {
+    struct cstsymbol *c = searchcst(cst, symbol);
+    if (c->data) {
+        free(c->data);
+    }
+    c->data = (char*)strdup(data);
+    return c;
+}
+
+void syncsymbol(struct cstsymbol *c) {
+    for (int i = 0; i < c->refs->count; ++i) {
+        struct astnode *node = (struct astnode*)gqueue(c->refs, i);
+        free(node->token->symbol);
+        node->token->symbol = (char*)strdup(c->data);
+    }
+}
 
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data) {
     cstsym->data = (char*) strdup (data);
 }
 
-void setalias2cstsymbol(struct cstsymbol *cstsym, char *data) {
-    cstsym->alias = (char*) strdup (data);
+int cstsymbolcomparator(void *_pt, void *_symbol) {
+    struct cstsymbol* c = (struct cstsymbol*)_pt;
+    char *symbol = (char*)_symbol;
+    return strcmp(c->symbol, symbol);
 }
 
-struct cstsymbol* searchcst(struct queue *cst, struct token *symbol) {
-    struct queuenode *tmp = cst->q->next;
-    while(tmp != NULL) {        
-        if (strcmp(((struct cstsymbol*)tmp->datanode)->token->symbol, symbol->symbol) == 0) {
-            return ((struct cstsymbol*)tmp->datanode);
-        }
-        tmp = tmp->next;
-    } 
-    return NULL;
+struct cstsymbol* searchcst(struct queue *cst, char *symbol) {
+    return (struct cstsymbol*)searchqueue(cst, symbol, cstsymbolcomparator);
 }
 
-struct cstscope *searchcstscope(struct queue *cstscopes, struct token *token) {
-    struct queuenode *tmp = cstscopes->q;
-    while((tmp = tmp->next) != NULL) {
-        if (strcmp(((struct cstscope*)tmp->datanode)->symbol->token->symbol, token->symbol) == 0) {
-            return ((struct cstscope*)tmp->datanode);
-        }
-    }
-    return NULL;
+void deallocatecstsymbol(void *_cstsymbol) {
+    struct cstsymbol *c = (struct cstsymbol *)_cstsymbol;
+    free(c->symbol);
+    free(c->data);
+    deallocatequeue(c->refs, NULL);
 }
 
-// void showcstscopes(struct queue *cstscopes) {
-//     int i;
-//     for (i = 0; i < cstscopes->count; ++i) {
-//         s = (struct cstscope*)gqueue(cstscopes, i);
-//     }
-// }
-
-void deallocatecst(struct queue *cst) {
-    struct cstsymbol *tmp;
-    int i;
-    while (!isempty(cst)) {        
-        tmp = (struct cstsymbol*)dequeue(cst);
-        // if (tmp->symbol)
-            // free(tmp->symbol);
-        if (tmp->data)
-            free(tmp->data);
-        if (tmp->argcount > 0) {
-            for (i = 0; i < tmp->argcount; ++i) {
-                free(tmp->args[i]);
-            }
-            free(tmp->args);
-        }
-        if (tmp->alias) {
-            free(tmp->alias);
-        }
-        if (tmp->refs) {
-            deallocatequeue(tmp->refs);
-        }
-        if (tmp->token) {
-            if (tmp->token->symbol) free(tmp->token->symbol);
-            free(tmp->token);
-        }
-        // if (tmp->references) {
-        //     deallocatequeue(tmp->references);
-        // }
-    }
-    free(cst);    
-}
-
-void deallocatecsts(struct queue **csts, int scopes) {
-    for (int i = 0; i < scopes; ++i) {
-        if (csts[i])
-            deallocatecst(csts[i]);  
-    }    
-}
-
-void deallocatecstscopes(struct queue *cstscopes) {
-    struct cstscope *tmp;
-    while (cstscopes->count > 0) {
-        tmp = (struct cstscope*)dequeue(cstscopes);
-        deallocatequeue(tmp->refs);
-        free(tmp);
-    }
-    free(cstscopes);
-}

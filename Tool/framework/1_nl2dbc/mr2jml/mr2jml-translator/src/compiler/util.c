@@ -231,12 +231,14 @@ void* peek(struct queue* stack) {
 }
 
 
-void deallocatequeue(struct queue *queue) {
-    // struct queuenode *tmp = queue->q->next;
+void deallocatequeue(struct queue *queue, void (*deallocate)(void*)) {
+    struct queuenode *tmp = queue->q->next;
     while (queue->count > 0) {
-        // tmp = queue->q->next;
+        tmp = queue->q->next;
         queue->q->next = queue->q->next->next;
-        // free(tmp);
+        if (deallocate != NULL) {
+            deallocate(tmp->datanode);
+        }
         --queue->count;
     }
     free(queue->q);
@@ -287,4 +289,25 @@ char* strrep(char *str, char *str1, char *str2) {
     }
     new[size - 1] = '\0';
     return new;    
+}
+
+void popchar(char *s) {
+    memmove(s, s+1, strlen(s));
+}
+
+void showqueue(struct queue *queue, void (*print)(void*)) {
+    if (queue == NULL) return;
+    for (int i = 0; i < queue->count; ++i) {
+        print(gqueue(queue, i));
+    }
+}
+
+void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*)) {
+    if (queue == NULL || queue->count <= 0) return NULL;
+    void *tmp = NULL;
+    for (int i = 0; i < queue->count; ++i) {
+        tmp = gqueue(queue, i);
+        if (compare(tmp, data) == 0) return tmp;
+    }
+    return NULL;
 }

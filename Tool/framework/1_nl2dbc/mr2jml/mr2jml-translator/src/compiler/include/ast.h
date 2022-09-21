@@ -8,14 +8,14 @@
 #include "dst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, Semantic, NonTrivialConnective };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, NoSI, Semantic, NonTrivialConnective };
 enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Equivalent, Op_Imply };
 // Penn tree bank syntax
 enum ptbsyntax {
-    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB};
+    CC = 1, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB,ASTERISK};
 enum contextualtype { Cont_Class, Cont_Interface, Cont_Method, Cont_Parameter };
 
 struct token {
@@ -59,6 +59,7 @@ struct token *newtoken(char *text, int line, int column);
 struct astnode *newastnode(enum astnodetype type, struct token *token);
 void addastchild(struct astnode *parent, struct astnode *child);
 void deleteastnode(struct astnode *node);
+void deleteastchildren(struct astnode *parent);
 void addastchildren(struct astnode *parent, struct astnodelist *children);
 void insertastchild(struct astnode *parent, struct astnode *child, int position);
 struct astnode *getastchild(struct astnode *parent, int position);

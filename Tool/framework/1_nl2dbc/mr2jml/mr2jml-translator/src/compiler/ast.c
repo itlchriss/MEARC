@@ -8,7 +8,7 @@
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "Semantic", "NonTrivialConnective" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "NoSI", "Semantic", "NonTrivialConnective" };
 char *connective_name[] = { "And", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -53,7 +53,7 @@ struct astnodelist *newastnodelist(struct astnode* n) {
 
 
 struct token *newtoken(char *text, int line, int column) {
-    struct token *new = malloc(sizeof(struct token));
+    struct token *new = malloc(sizeof(struct token));    
     new->symbol = (char *)strdup(text);
     new->line = line;
     new->column = column;
@@ -64,6 +64,9 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     struct astnode *new = malloc(sizeof(struct astnode));
     new->type = type;    
     new->token = token;
+    if (new->type == Predicate) {
+        
+    }
     new->parent = NULL;
     new->isroot = 0;
     new->isnegative = 0;
@@ -101,14 +104,6 @@ int deleteastchild(struct astnode *parent, struct astnode *child) {
 void deleteastchildren(struct astnode *parent) {
     struct astnodelist *children = parent->children->next, *tmp;
     while (children != NULL) {
-        //TODO: remove the cstptr->refs of the node
-        for (int i = 0; i < children->node->cstptr->refs->count; ++i) {
-            struct astnode *t = (struct astnode*)gqueue(children->node->cstptr->refs, i);
-            if (t == children->node) {
-                rqueue(children->node->cstptr->refs, i);
-                break;
-            }
-        }
         deleteastnode(children->node);
         tmp = children;
         children = children->next;
@@ -118,6 +113,7 @@ void deleteastchildren(struct astnode *parent) {
     #if ASTDEBUG
     if (countastchildren(parent) > 0) {
         printf("Error in deleteastchildren");
+        exit(-3);
     }
     #endif
 }
@@ -475,13 +471,15 @@ void showast(struct astnode *node, int depth) {
         case Variable:        
         case NonTrivialConnective:
         case Semantic:
+        case Resolved:
+        case NoSI:
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
             break;
-        case Resolved:
+        
             printf("%s: %s", node_type_name[node->type], node->token->symbol);
-            break;
+            break;        
         default:
-            printf("Unknown type for: %s: %s", node->token->symbol, node_type_name[node->type]);
+            printf("Unknown type for: %s(%d)", node->token->symbol, node->type);
     }
     if (node->isnegative == 1) {
         printf(" (Negative) ");
@@ -502,7 +500,8 @@ void deallocateast(struct astnode *node) {
             free(tmp);
         }
         if(node->token != NULL) {
-            free(node->token->symbol);
+            if (node->token->symbol)
+                free(node->token->symbol);
             free(node->token);
         }
         free(node);
@@ -518,42 +517,43 @@ void throwasterror(char *msg, struct token *token) {
 }
 
 enum ptbsyntax string2ptbsyntax(char *input) {
-    if (strcmp(input, "CC")) return CC;
-    else if (strcmp(input, "CD")) return CD;
-    else if (strcmp(input, "DT")) return DT;
-    else if (strcmp(input, "EX")) return EX;
-    else if (strcmp(input, "FW")) return FW;
-    else if (strcmp(input, "IN")) return IN;
-    else if (strcmp(input, "JJ")) return JJ;
-    else if (strcmp(input, "JJR")) return JJR;
-    else if (strcmp(input, "JJS")) return JJS;
-    else if (strcmp(input, "LS")) return LS;
-    else if (strcmp(input, "MD")) return MD;
-    else if (strcmp(input, "NN")) return NN;
-    else if (strcmp(input, "NNS")) return NNS;
-    else if (strcmp(input, "NNP")) return NNP;
-    else if (strcmp(input, "NNPS")) return NNPS;
-    else if (strcmp(input, "PDT")) return PDT;
-    else if (strcmp(input, "POS")) return POS;
-    else if (strcmp(input, "PRP")) return PRP;
-    else if (strcmp(input, "PRP_POS")) return PRP_POS;
-    else if (strcmp(input, "RB")) return RB;
-    else if (strcmp(input, "RBR")) return RBR;
-    else if (strcmp(input, "RBS")) return RBS;
-    else if (strcmp(input, "RP")) return RP;
-    else if (strcmp(input, "SYM")) return SYM;
-    else if (strcmp(input, "TO")) return TO;
-    else if (strcmp(input, "UH")) return UH;
-    else if (strcmp(input, "VB")) return VB;
-    else if (strcmp(input, "VBD")) return VBD;
-    else if (strcmp(input, "VBG")) return VBG;
-    else if (strcmp(input, "VBN")) return VBN;
-    else if (strcmp(input, "VBP")) return VBP;
-    else if (strcmp(input, "VBZ")) return VBZ;
-    else if (strcmp(input, "WDT")) return WDT;
-    else if (strcmp(input, "WP")) return WP;
-    else if (strcmp(input, "WP_POS")) return WP_POS; 
-    else if (strcmp(input, "WRB")) return WRB;
+    if (strcmp(input, "CC") == 0) return CC;
+    else if (strcmp(input, "CD") == 0) return CD;
+    else if (strcmp(input, "DT") == 0) return DT;
+    else if (strcmp(input, "EX") == 0) return EX;
+    else if (strcmp(input, "FW") == 0) return FW;
+    else if (strcmp(input, "IN") == 0) return IN;
+    else if (strcmp(input, "JJ") == 0) return JJ;
+    else if (strcmp(input, "JJR") == 0) return JJR;
+    else if (strcmp(input, "JJS") == 0) return JJS;
+    else if (strcmp(input, "LS") == 0) return LS;
+    else if (strcmp(input, "MD") == 0) return MD;
+    else if (strcmp(input, "NN") == 0) return NN;
+    else if (strcmp(input, "NNS") == 0) return NNS;
+    else if (strcmp(input, "NNP") == 0) return NNP;
+    else if (strcmp(input, "NNPS") == 0) return NNPS;
+    else if (strcmp(input, "PDT") == 0) return PDT;
+    else if (strcmp(input, "POS") == 0) return POS;
+    else if (strcmp(input, "PRP") == 0) return PRP;
+    else if (strcmp(input, "PRP_POS") == 0) return PRP_POS;
+    else if (strcmp(input, "RB") == 0) return RB;
+    else if (strcmp(input, "RBR") == 0) return RBR;
+    else if (strcmp(input, "RBS") == 0) return RBS;
+    else if (strcmp(input, "RP") == 0) return RP;
+    else if (strcmp(input, "SYM") == 0) return SYM;
+    else if (strcmp(input, "TO") == 0) return TO;
+    else if (strcmp(input, "UH") == 0) return UH;
+    else if (strcmp(input, "VB") == 0) return VB;
+    else if (strcmp(input, "VBD") == 0) return VBD;
+    else if (strcmp(input, "VBG") == 0) return VBG;
+    else if (strcmp(input, "VBN") == 0) return VBN;
+    else if (strcmp(input, "VBP") == 0) return VBP;
+    else if (strcmp(input, "VBZ") == 0) return VBZ;
+    else if (strcmp(input, "WDT") == 0) return WDT;
+    else if (strcmp(input, "WP") == 0) return WP;
+    else if (strcmp(input, "WP_POS") == 0) return WP_POS; 
+    else if (strcmp(input, "WRB") == 0) return WRB;
+    else if (strcmp(input, "*") == 0) return ASTERISK;
     else {
         fprintf(stderr, "Unknown syntactic category %s in the SI files\n", input);
         exit(-2);
@@ -597,6 +597,7 @@ char *ptbsyntax2string(enum ptbsyntax ptb) {
     else if (ptb == WP) return "WP";
     else if (ptb == WP_POS) return "WP_POS"; 
     else if (ptb == WRB) return "WRB";
+    else if (ptb == ASTERISK) return "*";
     else {
         fprintf(stderr, "Unknown syntactic category %d is encountered in function ptbsyntax2string\n", ptb);
         exit(-2);

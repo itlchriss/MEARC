@@ -9,8 +9,10 @@
 
 struct si {
     char *term;
-    /* penn tree bank category of this si */
-    enum ptbsyntax syntax;
+    /* penn tree bank categories of this si */
+    enum ptbsyntax *syntax;
+    /* number of syntax that can be accepted for synthesising this semantic */
+    int syntax_count;
     /* number of argument to synthesize this semantic */
     int arg_count;    
     /* arguments in the interpretation */
@@ -19,8 +21,15 @@ struct si {
     char *interpretation;
 };
 
-void siidentification(struct queue* predicates, struct queue *silist);
-void showsilist(struct queue *silist);
-void deallocatesilist(struct queue *silist);
-void deallocatesi(struct si *si);
+/* 
+    semantic interpretation identification 
+    this is a process to identify as many si as possible presenting in the meaning representation
+    - parameter descriptions
+        predicates  : a queue holding pointers of predicates present in an abstract syntax tree parsed from meaning representation
+        silist      : a queue holding semantic interpretations parsed from standard semantic interpretation database
+        cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
+*/
+void siidentification(struct queue*, struct queue *, struct queue *);
+void showsi(void *_si);
+void deallocatesi(void *);
 #endif

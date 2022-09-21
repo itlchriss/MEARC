@@ -60,7 +60,7 @@ void walksubtree(struct astnode *subtreeroot) {
     }
     fprintf(stderr, ")");
     fflush(stderr);
-    deallocatequeue(nodequeue);
+    deallocatequeue(nodequeue, NULL);
 }
 
 void printree(struct astnode *node) {
