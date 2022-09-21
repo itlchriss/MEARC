@@ -598,6 +598,7 @@ char *ptbsyntax2string(enum ptbsyntax ptb) {
     else if (ptb == WP_POS) return "WP_POS"; 
     else if (ptb == WRB) return "WRB";
     else if (ptb == ASTERISK) return "*";
+    else if (ptb == NONE) return "";
     else {
         fprintf(stderr, "Unknown syntactic category %d is encountered in function ptbsyntax2string\n", ptb);
         exit(-2);

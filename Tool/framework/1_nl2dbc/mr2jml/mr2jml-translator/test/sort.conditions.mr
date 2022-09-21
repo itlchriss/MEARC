@@ -1,2 +1,2 @@
-exists x.(_input{NN}(x) & _arr{NN}(x) & TrueP & -_should{MD}((_be{VB}(x) & _null{JJ}(x))))
-exists x.(_input{NN}(x) & _arr{NN}(x) & TrueP & _should{MD}((_sort{VBN}(x) & exists z1.(_order{NN}(z1) & TrueP & Prog(_ascend{VBG}(x,z1))))))
+exists x.(_input{NN}(x) & _arr{NN}(x) & TrueP & -_should{MD}(exists z2.(_null_value{NN}(z2) & TrueP & _be{VB}(x,z2))))
+exists x.(_input{NN}(x) & _arr{NN}(x) & TrueP & exists z1.(_sorted_in_ascending_order{NN}(z1) & TrueP & _be{VBZ}(x,z1)))

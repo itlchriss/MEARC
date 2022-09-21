@@ -34,6 +34,7 @@ void syncsymbol(struct cstsymbol *);
 struct cstsymbol* searchcst(struct queue *, char *);
 void closecstscope(struct queue *cst, char *symbol);
 
+void removecstref(struct queue *, char *, void *);
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data);
 
 void deallocatecstsymbol(void *);

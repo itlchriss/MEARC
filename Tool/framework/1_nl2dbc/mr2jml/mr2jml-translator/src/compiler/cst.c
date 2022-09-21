@@ -67,21 +67,21 @@ int addcstref(struct queue *cst, char *symbol, void *pt) {
     }
 }
 
+void removecstref(struct queue *cst, char *symbol, void *pt) {
+    struct cstsymbol *c = searchcst(cst, symbol);
+    for (int i = 0; i < c->refs->count; ++i) {
+        if (gqueue(c->refs, i) == pt) {
+            rqueue(c->refs, i);
+        }
+    }
+}
+
 void closecstscope(struct queue *cst, char *symbol) {
     struct cstsymbol *c = searchcst(cst, symbol);
     if (c != NULL) {
         c->scope = 1;
     }
 }
-
-// int setvalue2cst(struct queue *cst, struct token *symbol, char *data) {
-//     struct cstsymbol *tmp = searchcst(cst, symbol);
-//     if (tmp == NULL) return 1;
-//     else {
-//         tmp->data = (char*) strdup (data);
-//         return 0;
-//     }
-// }
 
 struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data) {
     struct cstsymbol *c = searchcst(cst, symbol);
@@ -95,7 +95,10 @@ struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data) {
 void syncsymbol(struct cstsymbol *c) {
     for (int i = 0; i < c->refs->count; ++i) {
         struct astnode *node = (struct astnode*)gqueue(c->refs, i);
-        free(node->token->symbol);
+        if (node->type != Quantifier)
+            node->type = Resolved;
+        if (node->token->symbol)
+            free(node->token->symbol);
         node->token->symbol = (char*)strdup(c->data);
     }
 }

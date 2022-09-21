@@ -321,11 +321,12 @@ def main(javafile, sidb):
     for name in dst:
         contextual_si.append({
             'term': name,
-            'syntax': 'NN',
+            'syntax': ['NN'],
             'arity': 1,
             'arguments': ['x'],
             'interpretation': name
         })
+    yaml.dump(contextual_si, sys.stdout, sort_keys=False)
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafile, sidb)
     specs = {'requires': [], 'ensures': []}

@@ -66,6 +66,9 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
             tree = javalang.parse.parse(file)
             for path, node in tree.filter(javalang.tree.MethodDeclaration):
                 global_element_names.append(node.name.lower())
+                if node.parameters:
+                    for p in node.parameters:
+                        global_element_names.append(p.name)
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.ClassDeclaration):
@@ -73,7 +76,6 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
             for path, node in tree.filter(javalang.tree.FieldDeclaration):
                 if node.declarators:
                     global_element_names.append(node.declarators[0].name.lower())
-
     return set(global_element_names)
 
 

@@ -63,7 +63,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
     struct astnode *node;
     struct si *si;
     for (int i = 0; i < predicates->count; ++i) {
-        node = (struct astnode*)gqueue(predicates, i);
+        node = (struct astnode*)gqueue(predicates, i);  
         si = searchqueue(silist, node, sicomparator);
         if (si == NULL) {
             #if DSIDEBUG
@@ -90,8 +90,17 @@ void __synthesis_post_process__(struct astnode *node, enum astnodetype type, cha
 //     return semantic;
 // }
 
+void __remove_all_children_cst__(struct queue *cst, struct astnode *node) {
+    struct astnode *child;
+    for (int i = 0; i < countastchildren(node); ++i) {
+        child = getastchild(node, i);
+        removecstref(cst, child->token->symbol, child);
+    }
+}
+
 void Nseries_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     char *s = si->interpretation;    
+    __remove_all_children_cst__(cst, node);
     if (strcmp(s, "\\param") == 0) {
         /* indicating the next predicate with the same indentifier must be a parameter name */
         /* potential research problem. can we infer or guess the parameter name if the word used in the sentence is not the exact parameter name? */

@@ -153,11 +153,19 @@ term
     }
     | PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC {
         print_debug("term: PREDICATE(Modal)) CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC");
-        $$ = $7;
+        $$ = newastnode(Predicate, $1);
+        if ($$->token->symbol[0] == '_') {
+            /* removing the underscore */
+            popchar($$->token->symbol);
+        }
+        $$->syntax = $3;
+        addastchildren($$, $7);
+        enqueue(predicates[c], (void*)$$);
     }
     | KEYWORD_TRUEP {
         print_debug("term: PREDICATE(TrueP)");
-        $$ = NULL;
+        $$ = newastnode(Predicate, $1);
+        $$->syntax = NONE;
     }
     | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
         print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
@@ -202,9 +210,9 @@ argument
     : IDENTIFIER {
         print_debug("argument: IDENTIFIER");
         $$ = newastnode(Variable, $1);
-        if (addcstref(csts[c], $$->token->symbol, $$) == 1) {
-            addcstsymbol(csts[c], $$->token->symbol);
-            addcstref(csts[c], $$->token->symbol, $$);
+        if (addcstref(csts[c], $1->symbol, $$) == 1) {
+            addcstsymbol(csts[c], $1->symbol);
+            addcstref(csts[c], $1->symbol, $$);
         }
     }
     | formula {
