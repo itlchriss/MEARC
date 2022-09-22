@@ -8,7 +8,7 @@
 #include "dst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, NoSI, Semantic, NonTrivialConnective };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, NoSI, Semantic, NonTrivialConnective, Operator };
 enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
@@ -59,6 +59,7 @@ struct token *newtoken(char *text, int line, int column);
 struct astnode *newastnode(enum astnodetype type, struct token *token);
 void addastchild(struct astnode *parent, struct astnode *child);
 void deleteastnode(struct astnode *node);
+int deleteastchild(struct astnode *parent, struct astnode *child);
 void deleteastchildren(struct astnode *parent);
 void addastchildren(struct astnode *parent, struct astnodelist *children);
 void insertastchild(struct astnode *parent, struct astnode *child, int position);

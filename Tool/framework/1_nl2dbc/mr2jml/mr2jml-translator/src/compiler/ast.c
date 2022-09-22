@@ -8,7 +8,7 @@
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "NoSI", "Semantic", "NonTrivialConnective" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "NoSI", "Semantic", "NonTrivialConnective", "Operator" };
 char *connective_name[] = { "And", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -88,10 +88,13 @@ void deleteastnode(struct astnode *node) {
 int deleteastchild(struct astnode *parent, struct astnode *child) {
     int pc = countastchildren(parent);
     struct astnodelist *children = parent->children;
-    children = parent->children;
     while ((children = children->next) != NULL) {
         if (children->node == child) {               
             (children->prev)->next = children->next;
+            if (children->next != NULL) {
+                children->next->prev = children->prev;
+            }
+            deleteastchildren(child);
             deleteastnode(child);
             free(children);            
             if (countastchildren(parent) != pc -1) return 1;
@@ -392,6 +395,11 @@ void transresolved(struct astnode *node, char *data) {
 //     return rootptr;
 // }
 
+
+void astsimplification(struct astnode *root, struct queue *cst) {
+
+}
+
 void addastchild(struct astnode *parent, struct astnode *child) {
     struct astnodelist *new = malloc(sizeof(struct astnodelist));
     new->node = child;
@@ -471,12 +479,12 @@ void showast(struct astnode *node, int depth) {
         case Variable:        
         case NonTrivialConnective:
         case Semantic:
-        case Resolved:
-        case NoSI:
+        case Resolved:        
+        case Operator:
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
-            break;
-        
-            printf("%s: %s", node_type_name[node->type], node->token->symbol);
+            break; 
+        case NoSI:
+            printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, ptbsyntax2string(node->syntax));
             break;        
         default:
             printf("Unknown type for: %s(%d)", node->token->symbol, node->type);

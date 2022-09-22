@@ -30,6 +30,7 @@ struct si {
         cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
 */
 void siidentification(struct queue*, struct queue *, struct queue *);
+void opresolution(struct queue*, struct queue *);
 void showsi(void *_si);
 void deallocatesi(void *);
 #endif

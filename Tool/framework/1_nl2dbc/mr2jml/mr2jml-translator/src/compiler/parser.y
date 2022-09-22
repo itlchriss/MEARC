@@ -9,7 +9,7 @@
     // From main.c
     extern int c;
     extern struct astnode **ast;  
-    extern struct queue **csts, **predicates;
+    extern struct queue **csts, **predicates, **operators;
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, *error_lines, error_count = 0;
@@ -141,31 +141,37 @@ terms
 term
     : PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC {
         print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
+        if ($3 == MD) {
+            /* skip the predicates with syntax is Modal, e.g. should, must */
+            /* and, the prerequisite is the arguments are formula */
+            if (getnodelistlength($6) == 1) {
+                $$ = $6->node;
+                free($6);
+                if ($$->type == Predicate) {
+                    enqueue(predicates[c], (void*)$$);
+                }
+            } else {
+                fprintf(stderr, "This meaning representation is not supported by the current grammar.\n");
+            }
+        } else {
         $$ = newastnode(Predicate, $1);    
-        if ($$->token->symbol[0] == '_') {
-            /* removing the underscore */
-            popchar($$->token->symbol);
-        }
-        addastchildren($$, $6);
-        $$->syntax = $3;
-        /* predicate node is marked in a queue and si identification is processed later  */
-        enqueue(predicates[c], (void*)$$);
+            if ($$->token->symbol[0] == '_') {
+                /* removing the underscore */
+                popchar($$->token->symbol);
+            }
+            addastchildren($$, $6);
+            $$->syntax = $3;
+            /* predicate node is marked in a queue and si identification is processed later  */            
+            enqueue(predicates[c], (void*)$$);
+        }        
     }
     | PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC {
         print_debug("term: PREDICATE(Modal)) CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC");
-        $$ = newastnode(Predicate, $1);
-        if ($$->token->symbol[0] == '_') {
-            /* removing the underscore */
-            popchar($$->token->symbol);
-        }
-        $$->syntax = $3;
-        addastchildren($$, $7);
-        enqueue(predicates[c], (void*)$$);
+        $$ = $7;
     }
     | KEYWORD_TRUEP {
         print_debug("term: PREDICATE(TrueP)");
-        $$ = newastnode(Predicate, $1);
-        $$->syntax = NONE;
+        $$ = NULL;
     }
     | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
         print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
@@ -191,6 +197,23 @@ term
     | LBRAC GCASE LBRAC arguments RBRAC {
         print_debug("term: LBRAC GCASE LBRAC arguments RBRAC");
         $$ = NULL;
+    }
+    | LBRAC IDENTIFIER EQUAL IDENTIFIER RBRAC {
+        print_debug("term: LBRAC IDENTIFIER EQUAL IDENTIFIER RBRAC");
+        $$ = newastnode(Operator, $3);
+        struct astnode *left = newastnode(Variable, $2);
+        struct astnode *right = newastnode(Variable, $4);
+        if (addcstref(csts[c], $2->symbol, left) == 1) {
+            addcstsymbol(csts[c], $2->symbol);
+            addcstref(csts[c], $2->symbol, left);
+        }
+        if (addcstref(csts[c], $4->symbol, right) == 1) {
+            addcstsymbol(csts[c], $4->symbol);
+            addcstref(csts[c], $4->symbol, right);
+        }
+        addastchild($$, left);
+        addastchild($$, right);
+        enqueue(operators[c], (void*)$$);
     }
     ;
 

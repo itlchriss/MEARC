@@ -323,7 +323,7 @@ def main(javafile, sidb):
             'term': name,
             'syntax': ['NN'],
             'arity': 1,
-            'arguments': ['x'],
+            'arguments': ['(*)'],
             'interpretation': name
         })
     yaml.dump(contextual_si, sys.stdout, sort_keys=False)

@@ -22,14 +22,9 @@ struct astnode **ast;
 //  compile-time symbol table
 struct queue **csts;     
 //  predicate stack, marking the positions of the predicate nodes
-struct queue **predicates;   
-//  connective stack, marking the positions of the connective nodes
-struct queue **conn_queues;  
-//  temporary unreferenced table
-//      this table is to mark the symbols in a single scope (subtree)
-//      the aim is to check if the symbol name is used
-//      if so, the symbol name is renamed and all the symbols using the same name stored in this table is renamed
-struct queue *reftable; 
+struct queue **predicates;
+
+struct queue **operators;
 
 
 //TODO: we have to store every queue per root node.
@@ -101,10 +96,12 @@ int main(int argc, char** argv) {
     // acquire resources before parsing
     ast = (struct astnode **) malloc (sizeof(struct astnode *) * lines);
     csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
+    operators = (struct queue **) malloc (sizeof(struct queue *) * lines);
     predicates = (struct queue **) malloc (sizeof(struct queue *) * lines);
     for (int i = 0; i < lines; ++i) {
         csts[i] = initqueue();
         predicates[i] = initqueue();
+        operators[i] = initqueue();
     }
 
     fseek(fp, 0, SEEK_SET);
@@ -128,6 +125,15 @@ int main(int argc, char** argv) {
     // printf("Parsing completed...\n");
     // // clear all the stdout buffer
     // fflush(stdout);
+    #if ASTDEBUG
+    printf("======================================Parsing finished=========================================\n");
+    for (int i = 0; i < c; ++i) {
+        printf("Printing Abstract syntax tree # %d.................\n", i + 1);
+        showast(ast[i], 0);        
+        showqueue(csts[i], showcstsymbol);
+    }
+    printf("================================================================================================\n");    
+    #endif
 
     /* 
     Step: Semantic interpretation identification  
@@ -135,6 +141,7 @@ int main(int argc, char** argv) {
     */
      for (int i = 0; i < c; ++i) {
         siidentification(predicates[i], silist, csts[i]);
+        opresolution(operators[i], csts[i]);
         #if ASTDEBUG
         showast(ast[i], 0);
         #endif
@@ -209,6 +216,8 @@ int main(int argc, char** argv) {
             deallocatequeue(csts[i], deallocatecstsymbol);
         if (predicates[i])
             deallocatequeue(predicates[i], NULL);
+        if (operators[i])
+            deallocatequeue(operators[i], NULL);
     }    
    
     if (error_count > 0) {
@@ -261,7 +270,9 @@ struct queue* readSI(char *dstfilepaths) {
         }
         yaml_parser_initialize(&parser);
         yaml_parser_set_input_file(&parser, fp);
+        #if SIDEBUG
         printf("Trying to read SI from file at %s\n", filepath);
+        #endif
         int token_flag = -1;
         yaml_token_t  token;   /* new variable */
         struct si *si = NULL;
@@ -375,6 +386,16 @@ struct queue* readSI(char *dstfilepaths) {
                             si->arg_count = atoi(value);                            
                         } else if (strcmp(key, "term") == 0) {
                             si->term = (char*) strdup(value);
+                            trim(si->term);
+                            /* 
+                                predicates in meaning representation use underscores to represent spaces 
+                                therefore, we replace any spaces in the term with underscores
+                            */                            
+                            for (int i = 0; i < strlen(si->term); ++i) {
+                                if (si->term[i] == ' ') {
+                                    si->term[i] = '_';
+                                }
+                            }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
                         } else {
@@ -411,91 +432,5 @@ struct queue* readSI(char *dstfilepaths) {
     #endif
     return new;
 }
-
-/* 
-* ==================================================================================================================
-* helper functions
-* ==================================================================================================================
-*/
-// new astnode for a formula expression
-// struct astnode *newformula (struct token *quantifier, struct token *variable, struct astnode *terms) {
-//     #if DEBUG
-//     fprintf(stderr, "Original quantifying variable: %s\n", variable->symbol);
-//     #endif
-//     struct astnode *new = newqexpr(quantifier, variable, terms);
-//     #if DEBUG
-//     fprintf(stderr, "After adding cstsymbol quantifying variable: %s\n", variable->symbol);
-//     fprintf(stderr, "new quantifying variable: %s\n", new->cstptr->token->symbol);
-//     #endif
-//     struct astnode *tmp;
-//     struct cstsymbol *s;
-//     //TODO: do the renaming of variable procedure here. 
-//     //      In case that two subtrees use the same variable name.
-
-//     // a temporary queue holding the not found variables
-//     struct queue *_reftable = initqueue();
-//     while (reftable->count > 0) {
-//         tmp = (struct astnode *)dequeue(reftable);
-//         if (strcmp(tmp->token->symbol, variable->symbol) == 0 && 
-//             strcmp(tmp->token->symbol, new->cstptr->token->symbol) != 0) {
-//             free(tmp->token->symbol);
-//             tmp->token->symbol = (char*)strdup(new->cstptr->token->symbol);
-//             s = searchcst(csts[c], tmp->token);
-//             tmp->cstptr = s;
-//             enqueue(s->refs, tmp);
-//         } else if ((s = searchcst(csts[c], tmp->token)) != NULL && s->scopeclosed != 1) {
-//             tmp->cstptr = s;
-//             enqueue(s->refs, tmp);
-//         } else {
-//             #if DEBUG
-//             fprintf(stderr, "Variable %s in reftable not fit current formula variable\n", tmp->token->symbol);
-//             #endif
-//             enqueue(_reftable, (void*)tmp);
-//         }
-//         // if ((s = searchcst(csts[c], tmp->token)) != NULL) {
-//         //     tmp->cstptr = s;
-//         //     enqueue(s->refs, tmp);
-//         // } 
-//         // else {
-//         //     #if DEBUG
-//         //     printf("Syntax error: Symbol not found for symbol %s at line %d column %d\n", 
-//         //     tmp->token->symbol, tmp->token->line, tmp->token->column);
-//         //     #endif
-//         //     yyerror("Syntax error: Symbol not found");
-//         // }
-//     }
-//     while (_reftable->count > 0) {
-//         enqueue(reftable, (void*)dequeue(_reftable));
-//     }
-//     if (strcmp(new->cstptr->token->symbol, variable->symbol) != 0) {
-//         free(new->token->symbol);
-//         new->token->symbol = (char*)strdup(new->cstptr->token->symbol);
-//     }
-//     deallocatequeue(_reftable);
-//     new->cstptr->scopeclosed = 1;
-//     return new;
-// }
-
-// struct astnode* newcomplexformula(struct astnode *cfnode, struct astnode *connnode, struct astnode *fnode) {
-//     struct astnode *new = connnode;
-//     new->type = NonTrivialConnective;
-//     if (strcmp(new->token->symbol, "&") == 0) {
-//         free(new->token->symbol);
-//         new->token->symbol = (char*)strdup("&&");
-//     } else if (strcmp(new->token->symbol, "|") == 0) {
-//         free(new->token->symbol);
-//         new->token->symbol = (char*)strdup("||");
-//     } else {
-//         #if DEBUG
-//         fprintf(stderr, "Issue (%s)\n", new->token->symbol);
-//         #endif
-//         yyerror("Unknown connective encountered between formulas");
-//     }
-//     addastchild(new, cfnode);
-//     addastchild(new, fnode);
-//     return new;
-// }
-
-
 
 

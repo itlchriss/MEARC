@@ -18,7 +18,7 @@ def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List
             'term': name,
             'syntax': syntax,
             'arity': len(arguments),
-            'arguments': arguments,
+            'arguments': [('(%s)' % arg) for arg in arguments],
             'interpretation': interpretation
         }
     )

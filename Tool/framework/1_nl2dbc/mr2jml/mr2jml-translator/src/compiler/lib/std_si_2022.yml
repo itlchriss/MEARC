@@ -3,14 +3,14 @@
   - NN
   arity: 1
   arguments:
-  - x
+  - (x)
   interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
 - term: sorted in descending order
   syntax:
   - NN
   arity: 1
   arguments:
-  - x
+  - (x)
   interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] >= (x)[k + 1]
 - term: greater than or equal to
   syntax:
@@ -18,8 +18,8 @@
   - JJR
   arity: 2
   arguments:
-  - x
-  - y
+  - (x)
+  - (y)
   interpretation: (x) >= (y)
 - term: less than or equal to
   syntax:
@@ -27,59 +27,59 @@
   - JJR
   arity: 2
   arguments:
-  - x
-  - y
+  - (x)
+  - (y)
   interpretation: (x) <= (y)
 - term: true_value
   syntax:
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: 'true'
 - term: false_value
   syntax:
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: 'false'
 - term: null_value
   syntax:
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: 'null'
 - term: be
   syntax:
   - VBZ
   arity: 2
   arguments:
-  - x
-  - y
+  - (x)
+  - (y)
   interpretation: (x) == (y)
 - term: contain
   syntax:
   - VBZ
   arity: 2
   arguments:
-  - x
-  - y
+  - (x)
+  - (y)
   interpretation: \exists int i; 0 <= i < (x).length; (x)[i] == (y)
 - term: result
   syntax:
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: \result
 - term: prime
   syntax:
   - NN
   arity: 1
   arguments:
-  - x
+  - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
     (x)/2; (x)%k != 0
 - term: parameter
@@ -87,12 +87,12 @@
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: \param
 - term: input
   syntax:
   - NN
   arity: 1
   arguments:
-  - '*'
+  - (*)
   interpretation: \param
