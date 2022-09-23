@@ -8,7 +8,7 @@
 #include "dst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Resolved, NoSI, Semantic, NonTrivialConnective, Operator };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator };
 enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
@@ -65,12 +65,20 @@ void addastchildren(struct astnode *parent, struct astnodelist *children);
 void insertastchild(struct astnode *parent, struct astnode *child, int position);
 struct astnode *getastchild(struct astnode *parent, int position);
 int countastchildren(struct astnode *node);
+struct astnode * deleteastnodeandedge(struct astnode *, struct astnode *);
 void showast(struct astnode *root, int depth);
 void deallocateast(struct astnode *root);
 enum ptbsyntax string2ptbsyntax(char *input);
 char *ptbsyntax2string(enum ptbsyntax ptb);
 
-struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs);
+/* 
+    simplifying the tree after semantic identification and operator resolution 
+    this simplification may update the pointer of root node
+    return an astnode pointer pointing at root
+*/
+struct astnode *astsimplification(struct astnode *);
+
+// struct astnode *simplifyast(struct astnode *root, struct queue *pred_queue, struct queue *conn_queue, struct dstnode *fdstptr, struct queue *paramdstptrs);
 
 
 int iscomparator(char *relation);

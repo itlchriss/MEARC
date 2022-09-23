@@ -44,11 +44,18 @@ char * getchunk(char *);
 char * conv_cardinal_number(char *);
 
 void popchar(char *);
+char* __combine_3_strings__(char *, char *, char *);
 
 // string replace
 // replacing all instances of str1 in str with str2
 // returning a new instances of char array containing the replaced string
 char* strrep(char *str, char *str1, char *str2);
+/* 
+    string search
+    returning the number of occurences and the occurence indices of str1 in str
+    if occur is NULL, then the occurence indices are not stored
+*/
+int strsearch(char *str, char* str1, int *occur);
 unsigned long long sdbm(unsigned char *str);
 void trim(char *s);
 

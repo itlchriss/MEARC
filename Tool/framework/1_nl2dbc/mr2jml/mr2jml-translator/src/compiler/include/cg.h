@@ -5,6 +5,7 @@
 
 // Code generation header
 
-void gencode(struct astnode *, int);
+// void gencode(struct astnode *, int);
+void output(struct astnode *);
 
 #endif

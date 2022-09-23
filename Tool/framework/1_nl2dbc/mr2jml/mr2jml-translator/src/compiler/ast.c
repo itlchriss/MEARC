@@ -8,7 +8,7 @@
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Resolved", "NoSI", "Semantic", "NonTrivialConnective", "Operator" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator" };
 char *connective_name[] = { "And", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -85,6 +85,20 @@ void deleteastnode(struct astnode *node) {
     free(node);
 }
 
+void __deleteastchild_only__(struct astnode *parent, struct astnode *child) {
+    struct astnodelist *children = parent->children;
+    while ((children = children->next) != NULL) {
+        if (children->node == child) {               
+            (children->prev)->next = children->next;
+            if (children->next != NULL) {
+                children->next->prev = children->prev;
+            }
+            deleteastnode(child);
+            free(children);
+        }
+    }
+}
+
 int deleteastchild(struct astnode *parent, struct astnode *child) {
     int pc = countastchildren(parent);
     struct astnodelist *children = parent->children;
@@ -121,16 +135,16 @@ void deleteastchildren(struct astnode *parent) {
     #endif
 }
 
-void transnodedata(struct astnode *node, char *data) {    deleteastchildren(node);
-    deleteastchildren(node);
-    free(node->token);
-    node->token = newtoken(data, 0, 0);
-}
+// void transnodedata(struct astnode *node, char *data) {    deleteastchildren(node);
+//     deleteastchildren(node);
+//     free(node->token);
+//     node->token = newtoken(data, 0, 0);
+// }
 
-void transresolved(struct astnode *node, char *data) {
-    transnodedata(node, data);
-    node->type = Resolved;
-}
+// void transresolved(struct astnode *node, char *data) {
+//     transnodedata(node, data);
+//     node->type = Resolved;
+// }
 
 // void removesubtree(struct astnode *node) {
 //     deleteastchildren(node);
@@ -396,8 +410,81 @@ void transresolved(struct astnode *node, char *data) {
 // }
 
 
-void astsimplification(struct astnode *root, struct queue *cst) {
+struct astnode *astsimplification(struct astnode *_root) {
+    struct queue *queue = initqueue();
+    struct astnode *node, *root = _root, *child;
+    enqueue(queue, _root);
+    int count = 0;
+    while (!isempty(queue)) {
+        node = (struct astnode *)dequeue(queue);
+        count = countastchildren(node);
+        /* to traverse the tree, children nodes have to be added to the queue */
+        for (int i = 0; i < count; ++i) {
+            enqueue(queue, getastchild(node, i));
+        }
+        /* 
+            this is a node that has no effects to the result 
+            a node has type connective (and, or, etc.) can only provide meaning when both left and right hand-side operators present
+        */
+        if (count == 1 && (node->type == Connective || node->type == Quantifier)) {            
+            child = getastchild(node, 0);
+            /* xor operation is applied on the new isnegative property */
+            child->isnegative = child->isnegative ^ node->isnegative;
+            if (node->isroot == 1) {
+                child->isroot = 1;
+                root = child;
+                child->parent = NULL;
+            } else {
+                struct astnodelist *children = node->parent->children;
+                while ((children = children->next) != NULL) {
+                    if (children->node == node) {               
+                        children->node = child;
+                        child->parent = node->parent;
+                        break;
+                    }
+                }
+            } 
+            deleteastnode(node);
+        } else if (count == 0 && (node->type == Connective || node->type == Quantifier)) {
+            deleteastchild(node->parent, node);
+        }
+        #if ASTDEBUG
+        showast(root, 0);
+        #endif
+    }
+    deallocatequeue(queue, NULL);
+    return root;
+}
 
+struct astnode * deleteastnodeandedge(struct astnode *node, struct astnode *_root) {
+    struct astnode *parent = node->parent, *tmp, *root = _root; 
+    deleteastchild(parent, node);      
+    int count = countastchildren(parent);
+    if (count == 0) {        
+        deleteastchild(parent->parent, parent);
+    } else if (count == 1) {
+        tmp = getastchild(parent, 0);
+        tmp->isnegative = tmp->isnegative ^ parent->isnegative;
+        if (parent->isroot == 1) {
+            tmp->isroot = 1;
+            root = tmp;
+            tmp->parent = NULL;
+        } else {
+            struct astnodelist *children = parent->parent->children;
+            while ((children = children->next) != NULL) {
+                if (children->node == parent) {               
+                    children->node = tmp;
+                    tmp->parent = parent->parent;
+                    break;
+                }
+            }
+        }
+        deleteastnode(parent);
+    }
+    #if ASTDEBUG
+    showast(root, 0);
+    #endif
+    return root;
 }
 
 void addastchild(struct astnode *parent, struct astnode *child) {
@@ -477,10 +564,9 @@ void showast(struct astnode *node, int depth) {
             printf("%s", connective_name[node->conntype]);
             break;
         case Variable:        
-        case NonTrivialConnective:
-        case Semantic:
-        case Resolved:        
+        case Synthesised:        
         case Operator:
+        case Template:
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
             break; 
         case NoSI:

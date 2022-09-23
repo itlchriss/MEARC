@@ -5,6 +5,8 @@
 #include "si.h"
 #include "ast.h"
 
+extern struct astnode *root;
+
 int search_syntax(struct si*, enum ptbsyntax);
 int sicomparator(void *, void *);
 
@@ -23,87 +25,109 @@ void __remove_all_children_cst__(struct queue *cst, struct astnode *node) {
     }
 }
 
-int Vseries_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
+/* obtaining semantic interpretation from the template of parent node and synthesising it with its children */
+char* __obtain_si_from_subtree__(struct astnode *parent, struct si* si) {
+    char *s = (char*)strdup(si->interpretation), *tmp = NULL;
+    struct astnode *child = NULL;
+    for (int i = 0; i < countastchildren(parent); ++i) {
+        child = getastchild(parent, i);
+        if (child->type == Synthesised) {
+            /* child semantic interpretation has been resolved. use it in code synthesis */
+            tmp = strrep(s, si->args[i], child->token->symbol);
+        } else {
+            /* child semantic interpretation has NOT been resolved. leave the name of the argument as the argument of the semantic interpretation for possible code synthesis to be happened in operator resolution */
+            char *arg = __combine_3_strings__("(", child->token->symbol, ")");
+            tmp = strrep(s, si->args[i], arg);
+            free(arg);
+        }
+        free(s);
+        s = tmp;
+    }
+    return s;
+}
+
+int Vseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     struct astnode *child;
     /* Verbs usually accepts 2 arguments (subject, object). Thus, verbs cannot be resolved before both arguments are resolved. */
     for (int i = 0; i < countastchildren(node); ++i) {
         child = getastchild(node, i);
-        if (child->type != Resolved) {
+        if (child->type != Synthesised) {
             return 1;
         }
     }
-    char *arg;
-    char *s = (char*) strdup(si->interpretation), *tmp;
-    for (int i = 0; i < countastchildren(node); ++i) {
-        child = getastchild(node, i);
-        arg = si->args[i];
-        tmp = strrep(s, arg, child->token->symbol);
-        free(s);
-        s = tmp;
-    }
-    __replace_si_at_parent__(node, Resolved, s);
+    char *s = __obtain_si_from_subtree__(node, si);
+    __replace_si_at_parent__(node, Synthesised, s);
     return 0;
 }
 
 
-int Nseries_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
-    char *s = si->interpretation;    
+int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
+    char *s = si->interpretation;;    
     __remove_all_children_cst__(cst, node);
     if (strcmp(s, "\\param") == 0) {
         /* indicating the next predicate with the same indentifier must be a parameter name */
         /* potential research problem. can we infer or guess the parameter name if the word used in the sentence is not the exact parameter name? */
     } else {
+        struct astnode *child = getastchild(node, 0); 
+        #if SIDEBUG
+        printf("Nseries_code_synthesis: si(%s) and child token(%s)\n", s, child->token->symbol);
+        #endif        
         if (strcmp(si->args[0], "(*)") == 0) {
-            /* arguments do no effects to the semantic interpretation */
-            /* therefore, directly replacing the semantic interpretation to all the places of identifiers */
-            struct astnode *child = getastchild(node, 0); 
-            struct cstsymbol *c = updatecstsymbol(cst, child->token->symbol, s);
-            syncsymbol(c);
+            /* argument does no effects to the semantic interpretation */
+            /* therefore, directly replacing the semantic interpretation to all the places of identifiers */                                                
+        } else {
+            /* argument does affect the semantic interpretation */
+            /* therefore, the semantic interpretation of the subtree requires code synthesis */
+            s = __obtain_si_from_subtree__(node, si);
         }
+        struct cstsymbol *c = updatecstsymbol(cst, child->token->symbol, s);
+        syncsymbol(c);
     }           
-    deleteastchild(node->parent, node);
+    // struct astnode *parent = node->parent;
+    // deleteastchild(parent, node);
+    root = deleteastnodeandedge(node, root);
     return 0;
 }
 
 
 
-int CC_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int CD_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int DT_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int EX_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int FW_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int IN_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int JJ_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int JJR_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int JJS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int LS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int MD_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int NN_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Nseries_semantic_synthesis(node, si, cst); }
-int NNS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int NNP_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int NNPS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int PDT_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int POS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int PRP_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int PRP_POS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int RB_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int RBR_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int RBS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int RP_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int SYM_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int TO_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int UH_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int VB_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Vseries_semantic_synthesis(node, si, cst); }
-int VBD_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int VBG_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int VBN_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int VBP_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int VBZ_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int WDT_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int WP_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int WP_POS_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int WRB_semantic_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
-int (*semantic_syntheses[])(struct astnode *, struct si *, struct queue *) = {CC_semantic_synthesis, CD_semantic_synthesis, DT_semantic_synthesis, EX_semantic_synthesis, FW_semantic_synthesis, IN_semantic_synthesis, JJ_semantic_synthesis, JJR_semantic_synthesis, JJS_semantic_synthesis, LS_semantic_synthesis, MD_semantic_synthesis, NN_semantic_synthesis, NNS_semantic_synthesis, NNP_semantic_synthesis, NNPS_semantic_synthesis, PDT_semantic_synthesis, POS_semantic_synthesis, PRP_semantic_synthesis, PRP_POS_semantic_synthesis, RB_semantic_synthesis, RBR_semantic_synthesis, RBS_semantic_synthesis, RP_semantic_synthesis, SYM_semantic_synthesis, TO_semantic_synthesis, UH_semantic_synthesis, VB_semantic_synthesis, VBD_semantic_synthesis, VBG_semantic_synthesis, VBN_semantic_synthesis, VBP_semantic_synthesis, VBZ_semantic_synthesis, WDT_semantic_synthesis, WP_semantic_synthesis, WP_POS_semantic_synthesis, WRB_semantic_synthesis};
+int CC_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int CD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int DT_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int EX_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int FW_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int IN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int JJ_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int JJR_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int JJS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int LS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int MD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int NN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Nseries_code_synthesis(node, si, cst); }
+int NNS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int NNP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int NNPS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int PDT_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int POS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int PRP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int PRP_POS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int RB_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int RBR_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int RBS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int RP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int SYM_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int TO_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int UH_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VB_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Vseries_code_synthesis(node, si, cst); }
+int VBD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBG_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBZ_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int WDT_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int WP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int WP_POS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int WRB_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int (*code_syntheses[])(struct astnode *, struct si *, struct queue *) = {CC_code_synthesis, CD_code_synthesis, DT_code_synthesis, EX_code_synthesis, FW_code_synthesis, IN_code_synthesis, JJ_code_synthesis, JJR_code_synthesis, JJS_code_synthesis, LS_code_synthesis, MD_code_synthesis, NN_code_synthesis, NNS_code_synthesis, NNP_code_synthesis, NNPS_code_synthesis, PDT_code_synthesis, POS_code_synthesis, PRP_code_synthesis, PRP_POS_code_synthesis, RB_code_synthesis, RBR_code_synthesis, RBS_code_synthesis, RP_code_synthesis, SYM_code_synthesis, TO_code_synthesis, UH_code_synthesis, VB_code_synthesis, VBD_code_synthesis, VBG_code_synthesis, VBN_code_synthesis, VBP_code_synthesis, VBZ_code_synthesis, WDT_code_synthesis, WP_code_synthesis, WP_POS_code_synthesis, WRB_code_synthesis};
 
 /* 
     semantic interpretation identification 
@@ -131,7 +155,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
             #endif
             node->type = NoSI;
         } else {
-            int x = (*semantic_syntheses[node->syntax])(node, si, cst);
+            int x = (*code_syntheses[node->syntax])(node, si, cst);
             if (x != 0) {
                 enqueue(predicates, (void*)node);
             }
@@ -145,18 +169,36 @@ void opresolution(struct queue *operators, struct queue *cst) {
         node = (struct astnode*)dequeue(operators);
         left = getastchild(node, 0);
         right = getastchild(node, 1);
-        char *s;
-        if (left->type == Resolved && right->type == Resolved) {
-            int _size = strlen(left->token->symbol) + strlen(right->token->symbol) + 2 + 1;
-            s = (char*) malloc(sizeof(char) * _size);
-            memcpy(s, left->token->symbol, strlen(left->token->symbol) + 1);
-            append(s, "==");
-            append(s, right->token->symbol);
-            s[_size - 1] = '\0';
-        } else {
+        char *s = NULL;
 
+        if (left->type == Synthesised && right->type == Synthesised) {
+            /* both ast node semantic interpretations have been synthesised */
+            /* therefore, the operator serves as a comparator */
+            s = __combine_3_strings__(left->token->symbol, "==", right->token->symbol);
+        } else {
+            /* if node A has node type == Template, the symbol of node A is aliased as the symbol of node B */
+            /* such that, semantic interpretation is synthesised from substituting the semantic interpretation of node B into the template in node A */
+            struct cstsymbol *c = NULL;
+            char *tmp = NULL;
+            if (left->type == Template && right->type == Synthesised) {
+                c = searchsymbolbyref(cst, left);
+                tmp = __combine_3_strings__("(", c->symbol, ")");
+                s = strrep(left->token->symbol, tmp, right->token->symbol);
+                free(tmp);
+            } else if (left->type == Synthesised && right->type == Template) {                
+                c = searchsymbolbyref(cst, right);
+                tmp = __combine_3_strings__("(", c->symbol, ")");
+                s = strrep(right->token->symbol, tmp, left->token->symbol);
+                free(tmp);
+            } else {
+                /* missing semantic intrepretations. code synthesis failed */
+                return;
+            }
         }
-        __replace_si_at_parent__(node, Resolved, s);
+        __replace_si_at_parent__(node, Synthesised, s);
+        if (s) {
+            free(s);
+        }
     }    
 }
 

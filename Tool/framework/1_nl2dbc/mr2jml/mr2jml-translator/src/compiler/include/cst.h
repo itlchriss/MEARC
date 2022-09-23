@@ -28,9 +28,7 @@ int addcstref(struct queue *cst, char *symbol, void *pt);
 struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data);
 void showcstsymbol(void *);
 void syncsymbol(struct cstsymbol *);
-// int addreference2cst(struct queue *cst, struct token *symbol, void *ptr);
-// int setvalue2cst(struct queue *cst, struct token *symbol, char *data);
-// char* getsymboldata(struct queue *cst, struct token *symbol);
+struct cstsymbol* searchsymbolbyref(struct queue *, void *);
 struct cstsymbol* searchcst(struct queue *, char *);
 void closecstscope(struct queue *cst, char *symbol);
 

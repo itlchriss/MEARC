@@ -83,7 +83,7 @@ void closecstscope(struct queue *cst, char *symbol) {
     }
 }
 
-struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data) {
+struct cstsymbol* updatecstsymbol(struct queue *cst, char *symbol, char *data) {
     struct cstsymbol *c = searchcst(cst, symbol);
     if (c->data) {
         free(c->data);
@@ -93,10 +93,18 @@ struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data) {
 }
 
 void syncsymbol(struct cstsymbol *c) {
+    char *tmp = __combine_3_strings__("(", c->symbol, ")");
+    int check = strsearch(c->data, tmp, NULL);
+    free(tmp);
     for (int i = 0; i < c->refs->count; ++i) {
         struct astnode *node = (struct astnode*)gqueue(c->refs, i);
-        if (node->type != Quantifier)
-            node->type = Resolved;
+        if (node->type != Quantifier) {
+            if (check > 0)  {
+                node->type = Template;
+            } else {
+                node->type = Synthesised;
+            }
+        }            
         if (node->token->symbol)
             free(node->token->symbol);
         node->token->symbol = (char*)strdup(c->data);
@@ -107,14 +115,35 @@ void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data) {
     cstsym->data = (char*) strdup (data);
 }
 
-int cstsymbolcomparator(void *_pt, void *_symbol) {
+int __cstsymbolcomparator(void *_pt, void *_symbol) {
     struct cstsymbol* c = (struct cstsymbol*)_pt;
     char *symbol = (char*)_symbol;
     return strcmp(c->symbol, symbol);
 }
 
+int __ptrcomparator(void *_aptr, void *_baptr) {
+    if (_aptr == _baptr) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+int __cstrefcomparator(void *_csymptr, void *_astptr) {
+    struct cstsymbol *c = (struct cstsymbol*)_csymptr;
+    if (searchqueue(c->refs, _astptr, __ptrcomparator) == NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 struct cstsymbol* searchcst(struct queue *cst, char *symbol) {
-    return (struct cstsymbol*)searchqueue(cst, symbol, cstsymbolcomparator);
+    return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolcomparator);
+}
+
+struct cstsymbol* searchsymbolbyref(struct queue *cst, void *_astptr) {
+    return (struct cstsymbol*)searchqueue(cst, _astptr, __cstrefcomparator);
 }
 
 void deallocatecstsymbol(void *_cstsymbol) {

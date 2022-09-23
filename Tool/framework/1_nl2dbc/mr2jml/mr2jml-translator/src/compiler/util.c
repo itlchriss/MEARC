@@ -82,7 +82,11 @@ void prepend(char *s, const char *t) {
 }
 
 void append(char *s, const char *t) {
-    strncat(s, t, strlen(t));
+    if (strlen(s) == 0) {
+        memcpy(s, t, strlen(t) + 1);
+    } else {
+        strncat(s, t, strlen(t));
+    }
 }
 
 // sdbm from http://www.cse.yorku.ca/~oz/hash.html
@@ -245,8 +249,8 @@ void deallocatequeue(struct queue *queue, void (*deallocate)(void*)) {
     free(queue);
 }
 
-char* strrep(char *str, char *str1, char *str2) {
-    int t[256], i, skip = 0, occur[strlen(str)/strlen(str1) + 1], k = 0;
+int strsearch(char *str, char *str1, int *occur) {
+    int t[256], i, skip = 0, k = 0;
     // first, mark all the instances of str1 in str
     // using Boyer-Moore-Horspool
     for (i = 0; i < 256; ++i) {
@@ -259,11 +263,24 @@ char* strrep(char *str, char *str1, char *str2) {
     while (strlen(str) - skip >= strlen(str1)) {
         i = strlen(str1) - 1;
         while (str[skip + i] == str1[i]) {
-            if (i == 0) { occur[k++] = skip; break; }
+            if (i == 0) { 
+                if (occur != NULL) {
+                    occur[k++] = skip; 
+                } else {
+                    ++k;
+                }
+                break; 
+            }
             --i;
         }
         skip += t[(int)str[skip + strlen(str1) - 1]];
     }
+    return k;
+}
+
+char* strrep(char *str, char *str1, char *str2) {
+    int i = 0, occur[strlen(str)/strlen(str1) + 1], k = 0;
+    k = strsearch(str, str1, occur);
 
     // no occurrences of str1 in str
     if (k == 0) return NULL;
@@ -295,6 +312,16 @@ void popchar(char *s) {
     memmove(s, s+1, strlen(s));
 }
 
+char* __combine_3_strings__(char *a, char *b, char *c) {
+    int _size = strlen(a) + strlen(b) + strlen(c) + 1;
+    char *new = (char*)malloc(sizeof(char) * _size);
+    memcpy(new, a, strlen(a) + 1);
+    append(new, b);
+    append(new, c);
+    new[_size - 1] = '\0';
+    return new;
+}
+
 void showqueue(struct queue *queue, void (*print)(void*)) {
     if (queue == NULL) return;
     for (int i = 0; i < queue->count; ++i) {
@@ -311,3 +338,6 @@ void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*))
     }
     return NULL;
 }
+
+
+

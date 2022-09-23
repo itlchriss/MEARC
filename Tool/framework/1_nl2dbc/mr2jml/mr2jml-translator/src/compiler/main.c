@@ -26,6 +26,8 @@ struct queue **predicates;
 
 struct queue **operators;
 
+struct astnode *root;
+
 
 //TODO: we have to store every queue per root node.
 //      because, if we use the same queue and multiple sentences, predicates will be stores in the same
@@ -140,23 +142,32 @@ int main(int argc, char** argv) {
         For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
     */
      for (int i = 0; i < c; ++i) {
+        root = ast[i];
         siidentification(predicates[i], silist, csts[i]);
-        opresolution(operators[i], csts[i]);
+        opresolution(operators[i], csts[i]);        
+        ast[i] = root;
         #if ASTDEBUG
         showast(ast[i], 0);
         #endif
+        ast[i] = astsimplification(ast[i]);
+        #if ASTDEBUG
+        showast(ast[i], 0);
+        #endif        
      }
-    //  deallocatesilist(silist);
     deallocatequeue(silist, deallocatesi);
 
     #if ASTDEBUG
     for (int i = 0; i < c; ++i) {
-        printf("Printing Abstract syntax tree # %d.................\n", i + 1);
+        printf("Printing resulting Abstract syntax tree # %d.................\n", i + 1);
         showast(ast[i], 0);        
         showqueue(csts[i], showcstsymbol);
     }
     printf("\n");    
     #endif
+
+    for (int i = 0; i < c; ++i) {
+        output(ast[i]);
+    }
 
     // // exit(-2);
 
