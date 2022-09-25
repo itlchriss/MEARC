@@ -93,7 +93,10 @@ class Preprocessor:
         'null': 'a null_value',
         'true': 'a true_value',
         'false': 'a false_value',
-        'should be': 'is'
+        'should be': 'is',
+        'should not be': 'is not',
+        'must be': 'is',
+        'must not be': 'is not'
     }
 
     def __preprocess(self, pattern: str) -> list:

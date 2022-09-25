@@ -1,27 +1,30 @@
 #!/bin/bash
 
-$LEX_OKAY=false
+STD_SI=./src/compiler/lib/std_si_2022.yml
+ 
+make clean;
+make;
 
-make clean
-make
+if [ -f "./bin/main" ]; then
 
-if [ -f "./build/lex.o" ]; then
-    LEX_OKAY=true
-else
-    echo "compilation failed"
+    echo "Running all the test cases in the ***test*** folder"
+    echo "Using standard interpretations in $STD_SI"
+
+    shopt -s dotglob
+    find ./test/* -prune -type d | while IFS= read -r input; do 
+        d=`basename $input`
+        echo "checking ./test/$d/$d.conditions.mr && -f ./test/$d/$d.si.yml"
+        if [[ -f "./test/$d/$d.conditions.mr" && -f "./test/$d/$d.si.yml" ]]; then
+            echo "===============================Running test of $d====================================="
+            ./bin/main -f./test/$d/$d.conditions.mr -s./test/$d/$d.si.yml,$STD_SI
+            echo "======================================================================================"
+        else
+            echo "======================================================================================"
+            [ -f "./test/$d/$d.conditions.mr" ] && echo "Please provide the SI file at ./test/$d/$d.si.yml"
+            [ -f "./test/$d/$d.si.yml" ] && echo "Please provide the MR file at ./test/$d/$d.conditions.mr"
+            echo "======================================================================================"
+        fi
+    done
 fi
 
-if $LEX_OKAY; then
-    echo "./lex.o ../test/dataset1.txt > ./results/result1.txt"
-    ./build/lex.o ../test/dataset1.txt > ./results/result1.txt
-    echo "./lex.o ../test/dataset2.txt > ./results/result2.txt"
-    ./build/lex.o ../test/dataset2.txt > ./results/result2.txt
 
-    if [ -f "./results/result1.txt" ]; then
-        cat ./results/result1.txt | grep 'bad input character'
-    fi
-
-    if [ -f "./results/result2.txt" ]; then
-        cat ./results/result2.txt | grep 'bad input character'
-    fi
-fi

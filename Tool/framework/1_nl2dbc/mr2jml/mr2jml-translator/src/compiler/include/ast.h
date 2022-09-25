@@ -2,10 +2,7 @@
 #define _AST_H
 
 #include "util.h"
-#include "sst.h"
 #include "cst.h"
-#include "sem.h"
-#include "dst.h"
 
 // this has to agree exactly with the array in ast.c
 enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator };
@@ -15,7 +12,7 @@ enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Equivalent, Op_Imply };
 // Penn tree bank syntax
 enum ptbsyntax {
-    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB,ASTERISK,NONE};
+    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB};
 enum contextualtype { Cont_Class, Cont_Interface, Cont_Method, Cont_Parameter };
 
 struct token {

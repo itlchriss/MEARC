@@ -28,6 +28,12 @@ struct queue **operators;
 
 struct astnode *root;
 
+#if INFO
+void showprocessinfo(char *msg) {
+    printf("======================================%s=========================================\n", msg);
+}
+#endif
+
 
 //TODO: we have to store every queue per root node.
 //      because, if we use the same queue and multiple sentences, predicates will be stores in the same
@@ -40,25 +46,21 @@ int main(int argc, char** argv) {
     while ((opt = getopt(argc, argv, ":f:p:s:c:m:")) != -1) {
         switch(opt) {
             case 'f':
+            #if INFO
             printf("input file: %s\n", optarg);
+            #endif
             specfile = optarg;
             break;
-            case 'p':
-            printf("predicate semantic library: %s\n", optarg);
-            pslfile = optarg;
-            break;
             case 's':
+            #if INFO
             printf("Semantic interpretation sources: %s\n", optarg);
+            #endif
             dstfiles = optarg;
             break;
-            case 'c':
-            printf("custom predicate semantics: %s\n", optarg);
-            cpslfile = optarg;
-            break;
-            case 'm':
-            printf("method name: %s\n", optarg);
-            mname = optarg;
-            break;
+            // case 'm':
+            // printf("method name: %s\n", optarg);
+            // mname = optarg;
+            // break;
             case '?':
             fprintf (stderr,
                    "Unknown option character `\\x%x'.\n",
@@ -78,9 +80,12 @@ int main(int argc, char** argv) {
     int lines = 0;
     /* A structure implemented by a queue containing semantic interpretations */  
     #if INFO      
-    printf("Trying to reading SI information...\n");
+    showprocessinfo("Start reading SI information");
     #endif
     struct queue *silist = readSI(dstfiles);
+    #if INFO      
+    showprocessinfo("Finished reading SI information");
+    #endif
 
     FILE *fp = fopen(specfile, "r");
     if (!fp) {
@@ -108,27 +113,36 @@ int main(int argc, char** argv) {
 
     fseek(fp, 0, SEEK_SET);
     error_lines = (int*) malloc (sizeof(int) * lines);
+    #if INFO      
+    showprocessinfo("Start Parsing");
+    #endif
     yyin = fp;
     yyparse();
     fclose(fp);
+    for (int i = 0; i < lines; ++i) {
+    #if INFO
+    showprocessinfo("Before rename cst symbols");
+    #endif
+    #if CSTDEBUG 
+        showqueue(csts[i], showcstsymbol);
+    #endif
+        renamesymbols(csts[i]);
+    #if INFO
+    showprocessinfo("After rename cst symbols");
+    #endif
+    #if CSTDEBUG
+        showqueue(csts[i], showcstsymbol);
+    #endif
+    }
 
     // only process with successful parsed lines
     lines -= error_count;
 
-    // if (reftable->count > 0) {
-    //     fprintf(stderr, "Symbols not referenced incorrect...Stopping...Please check with the MR...\n");        
-    //     while (reftable->count > 0) {
-    //         struct astnode *tmp = (struct astnode*)dequeue(reftable);
-    //         fprintf(stderr, "Variable: %s\n", tmp->token->symbol);
-    //     }
-    //     goto END;
-    // }
+    #if INFO
+    showprocessinfo("Parsing finished");
+    #endif
 
-    // printf("Parsing completed...\n");
-    // // clear all the stdout buffer
-    // fflush(stdout);
     #if ASTDEBUG
-    printf("======================================Parsing finished=========================================\n");
     for (int i = 0; i < c; ++i) {
         printf("Printing Abstract syntax tree # %d.................\n", i + 1);
         showast(ast[i], 0);        
@@ -143,13 +157,31 @@ int main(int argc, char** argv) {
     */
      for (int i = 0; i < c; ++i) {
         root = ast[i];
+        #if INFO
+        showprocessinfo("Start semantic interpretation identification");
+        #endif
         siidentification(predicates[i], silist, csts[i]);
+        #if INFO
+        showprocessinfo("Finished semantic interpretation identification");
+        #endif
+        #if INFO
+        showprocessinfo("Start operator resolution");
+        #endif
         opresolution(operators[i], csts[i]);        
+        #if INFO
+        showprocessinfo("Finished operator resolution");
+        #endif
         ast[i] = root;
         #if ASTDEBUG
         showast(ast[i], 0);
         #endif
+        #if INFO
+        showprocessinfo("Start AST simplification");
+        #endif
         ast[i] = astsimplification(ast[i]);
+        #if INFO
+        showprocessinfo("Finished AST simplification");
+        #endif
         #if ASTDEBUG
         showast(ast[i], 0);
         #endif        
@@ -165,9 +197,15 @@ int main(int argc, char** argv) {
     printf("\n");    
     #endif
 
+    #if INFO
+    showprocessinfo("Start Code generation");
+    #endif
     for (int i = 0; i < c; ++i) {
         output(ast[i]);
     }
+    #if INFO
+    showprocessinfo("Finished Code generation");
+    #endif
 
     // // exit(-2);
 

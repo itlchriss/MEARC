@@ -1,0 +1,2 @@
+exists x.(_parameter{NN}(x) & _original{NN}(x) & TrueP & -exists z2.(_null_value{NN}(z2) & TrueP & (x = z2)))
+exists x.(_size{NN}(x) & exists z1.(_result{NN}(z1) & TrueP & _of{IN}(x,z1)) & TrueP & exists z3.(_length{NN}(z3) & exists z2.(_original{JJ}(z2) & TrueP & _of{IN}(z3,z2)) & TrueP & _equals_to{VBZ}(x,z3)))

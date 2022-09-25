@@ -34,6 +34,6 @@ void closecstscope(struct queue *cst, char *symbol);
 
 void removecstref(struct queue *, char *, void *);
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data);
-
+void renamesymbols(struct queue *cst);
 void deallocatecstsymbol(void *);
 #endif

@@ -16,6 +16,7 @@
   syntax:
   - JJ
   - JJR
+  - VBG
   arity: 2
   arguments:
   - (x)
@@ -30,6 +31,36 @@
   - (x)
   - (y)
   interpretation: (x) <= (y)
+- term: correspondingly equal to
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]
+- term: equals to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
 - term: true_value
   syntax:
   - NN
@@ -59,6 +90,13 @@
   - (x)
   - (y)
   interpretation: (x) == (y)
+- term: be
+  syntax:
+  - VBZ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
 - term: contain
   syntax:
   - VBZ
@@ -96,3 +134,66 @@
   arguments:
   - (*)
   interpretation: \param
+- term: even
+  syntax:
+  - RB
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) % 2 == 0
+- term: prime number
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    x/2; (x) % k != 0
+- term: length
+  syntax:
+  - NN
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: size
+  syntax:
+  - JJ
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: sort
+  syntax:
+  - VBN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+- term: index
+  syntax:
+  - JJ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: Arrays.asList((x)).indexOf((y)))
+- term: of
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(x)2(y)
+- term: elements of array
+  syntax:
+  - NN
+  arity: 3
+  arguments:
+  - (x)
+  - (y)
+  - (z)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i](y)(z)

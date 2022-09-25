@@ -5,6 +5,7 @@
 #include "ast.h"
 
 struct cstsymbol* searchcst(struct queue *cst, char *symbol);
+struct cstsymbol* __searchcst(struct queue *cst, char *symbol);
 
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
@@ -13,35 +14,79 @@ void showcstsymbol(void *_symbol) {
     printf("===================================================================================\n");
 }
 
+void applysyncsymbols(void *_astptr, void *_symbol) {
+    struct astnode *node = (struct astnode *)_astptr;
+    char *s = (char*)_symbol;
+    free(node->token->symbol);
+    node->token->symbol = (char*)strdup(s);
+}
+
+void renamesymbols(struct queue *cst) {
+    char *tmp;
+    struct cstsymbol *_curptr, *_vicptr;
+    for (int i = 0; i < cst->count; ++i) {
+        _curptr = (struct cstsymbol*)gqueue(cst, i);
+        for (int j = i + 1; j < cst->count; ++j) {
+            _vicptr = (struct cstsymbol*)gqueue(cst, j);
+            if (strcmp(_vicptr->symbol, _curptr->symbol) == 0) {
+                /* rename the symbols of _vicptr */
+                if (strlen(_vicptr->symbol) == 1) {
+                    tmp = (char*) malloc (sizeof(char) * 3);
+                    tmp[0] = _vicptr->symbol[0];
+                    tmp[1] = '1';
+                    tmp[2] = '\0';
+                } else {
+                    /* overflow when the symbol length is greater than 2 */
+                    char *s = (char*)malloc(sizeof(char) * 2);
+                    s[0] = _vicptr->symbol[1];
+                    s[1] = '\0';
+                    int n = atoi(s);
+                    ++n;
+                    sprintf(s, "%d", n);
+                    tmp = (char*) malloc(sizeof(char) * 3);
+                    tmp[0] = _vicptr->symbol[0];
+                    tmp[1] = s[0];
+                    tmp[2] = '\0';
+                    free(s);
+                }
+                free(_vicptr->symbol);
+                _vicptr->symbol = (char*)strdup(tmp);
+                applyqueue(_vicptr->refs, _vicptr->symbol, applysyncsymbols);
+            }
+        }
+    }
+}
+
 void addcstsymbol(struct queue *cst, char *symbol) {
     struct cstsymbol *tmp = searchcst(cst, symbol);
     if (tmp != NULL && tmp->scope == 0) {
         printf("Error in building compiler symbol table. Adding new symbol(%s) when there is a symbol(%s) with open scope existed.\n", symbol, tmp->symbol);
     } else {
         struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
-        if (tmp != NULL) {
-            /* TODO: the current renaming strategy is naive */
-            if (strlen(symbol) == 1) {
-                new->symbol = (char*) malloc (sizeof(char) * 3);
-                new->symbol[0] = symbol[0];
-                new->symbol[1] = '1';
-                new->symbol[2] = '\0';
-            } else {
-                /* overflow when the symbol length is greater than 2 */
-                char *s = (char*)malloc(sizeof(char) * 2);
-                s[0] = symbol[1];
-                s[1] = '\0';
-                int n = atoi(s);
-                ++n;
-                sprintf(s, "%d", n);
-                new->symbol = (char*) malloc(sizeof(char) * 3);
-                new->symbol[0] = symbol[0];
-                new->symbol[1] = s[0];
-                new->symbol[2] = '\0';
-            }   
-        } else {
-            new->symbol = (char*)strdup(symbol);
-        }
+        new->symbol = (char*)strdup(symbol);
+        // if (tmp != NULL) {
+        //     /* TODO: the current renaming strategy is naive */
+        //     if (strlen(symbol) == 1) {
+        //         new->symbol = (char*) malloc (sizeof(char) * 3);
+        //         new->symbol[0] = symbol[0];
+        //         new->symbol[1] = '1';
+        //         new->symbol[2] = '\0';
+        //     } else {
+        //         /* overflow when the symbol length is greater than 2 */
+        //         char *s = (char*)malloc(sizeof(char) * 2);
+        //         s[0] = symbol[1];
+        //         s[1] = '\0';
+        //         int n = atoi(s);
+        //         ++n;
+        //         sprintf(s, "%d", n);
+        //         new->symbol = (char*) malloc(sizeof(char) * 3);
+        //         new->symbol[0] = symbol[0];
+        //         new->symbol[1] = s[0];
+        //         new->symbol[2] = '\0';
+        //     }   
+        // } else {
+        //     new->symbol = (char*)strdup(symbol);
+        // }
         new->data = NULL;
         new->refs = initqueue();
         new->scope = 0;            
@@ -50,10 +95,10 @@ void addcstsymbol(struct queue *cst, char *symbol) {
 }
 
 int addcstref(struct queue *cst, char *symbol, void *pt) {
-    struct cstsymbol *c = searchcst(cst, symbol);
+    struct cstsymbol *c = __searchcst(cst, symbol);
     if (c == NULL) {
         #if CSTDEBUG
-        printf("Compile time symbol(%s) not found\n", symbol);
+        printf("Compile time symbol(%s) with scope opened(scope == 0) not found\n", symbol);
         #endif
         return 1;
     } else if (c->scope == 0) {
@@ -61,9 +106,10 @@ int addcstref(struct queue *cst, char *symbol, void *pt) {
         return 0;
     } else {
         #if CSTDEBUG
-        printf("Error in building compiler symbol table. Trying to add identifier(%s) to the references but the scope is closed.\n", symbol);
+        printf("Trying to add identifier(%s) to the references but the scope is closed.\n", symbol);
+        printf("Attempting to add new compile time symbol with number appended or incremented.\n");
         #endif
-        exit(-2);
+        return 2;
     }
 }
 
@@ -121,6 +167,13 @@ int __cstsymbolcomparator(void *_pt, void *_symbol) {
     return strcmp(c->symbol, symbol);
 }
 
+int __cstsymbolandscopecomparator(void *_pt, void *_symbol) {
+    struct cstsymbol* c = (struct cstsymbol*)_pt;
+    char *symbol = (char*)_symbol;
+    if (strcmp(c->symbol, symbol) == 0 && c->scope == 0) return 0;
+    else return 1;
+}
+
 int __ptrcomparator(void *_aptr, void *_baptr) {
     if (_aptr == _baptr) {
         return 0;
@@ -140,6 +193,10 @@ int __cstrefcomparator(void *_csymptr, void *_astptr) {
 
 struct cstsymbol* searchcst(struct queue *cst, char *symbol) {
     return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolcomparator);
+}
+
+struct cstsymbol* __searchcst(struct queue *cst, char *symbol) {
+    return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolandscopecomparator);
 }
 
 struct cstsymbol* searchsymbolbyref(struct queue *cst, void *_astptr) {

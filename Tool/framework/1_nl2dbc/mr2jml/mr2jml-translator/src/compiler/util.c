@@ -144,31 +144,23 @@ void* dequeue(struct queue *queue) {
 }
 
 void rqueue(struct queue *queue, int index) {
-    if (queue->count == 0 || index >= queue->count) return;
-    struct queuenode *ptr = queue->q->next;
-    int i = 0;
-    while (i != index && ptr != NULL) {
-        ptr = ptr->next;
-        ++i;
+    struct queuenode *node = _gqueue(queue, index);
+    if (node != NULL) {
+        node->prev->next = node->next;
+        if (node->next != NULL) {
+            node->next->prev = node->prev;
+        }
+        queue->count--;
     }
-    ptr->prev->next = ptr->next;
-    if (ptr->next != NULL)
-        ptr->next->prev = ptr->prev; 
-    --queue->count;
 }
 
 void* gqueue(struct queue* queue, int index) {
-    if (queue->count == 0 || index >= queue->count) return NULL;
-    struct queuenode *ptr = queue->q->next;
-    int i = 0;
-    while (i != index && ptr != NULL) {
-        ptr = ptr->next;
-        ++i;
-    }
-    if (ptr != NULL)
-        return ptr->datanode;
-    else 
+    struct queuenode *node = _gqueue(queue, index);
+    if (node != NULL) {
+        return node->datanode;
+    } else {
         return NULL;
+    }
 }
 
 struct queuenode* _gqueue(struct queue* queue, int index) {
@@ -337,6 +329,13 @@ void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*))
         if (compare(tmp, data) == 0) return tmp;
     }
     return NULL;
+}
+
+void applyqueue(struct queue *queue, void *data, void (*func)(void*, void*)) {
+    if (queue == NULL || queue->count <= 0) return;
+    for (int i = 0; i < queue->count; ++i) {
+        func(gqueue(queue, i), data);
+    }
 }
 
 

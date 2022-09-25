@@ -4,6 +4,8 @@
 #include "ast.h"
 #include "util.h"
 
+char *connective_code[] = { "&&", "<->", "->" };
+
 void walktree(struct astnode *root, FILE *s, int *haserror) {
     struct queue *queue = initqueue();
     struct astnode *node;
@@ -39,7 +41,9 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
         } else {
             fprintf(s, "(");
             printree((struct astnode *)getastchild(node, 0), s, haserror);
-            fprintf(s, " %s ", node->token->symbol);
+            fprintf(s, ")");
+            fprintf(s, " %s ", connective_code[node->conntype]);
+            fprintf(s, "(");
             printree((struct astnode *)getastchild(node, 1), s, haserror);
             fprintf(s, ")");
         }
@@ -55,7 +59,9 @@ void output(struct astnode *root) {
     printree(root, stream, &haserror);
     if (haserror == 0) {
         fflush(stream);
-        printf("%s;\n", buffer);
+        /* TODO: add configuration of ensures and requires, and open bracket */
+        printf("%s\n", buffer);
+        /* TODO: add close bracket and colon (;) */
     } else {
         fprintf(stderr, "Failed\n");
     }

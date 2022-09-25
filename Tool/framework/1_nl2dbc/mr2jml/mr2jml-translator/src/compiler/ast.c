@@ -3,7 +3,6 @@
 #include <string.h>
 #include "ast.h"
 #include "util.h"
-#include "dst.h"
 
 void throwasterror(char *msg, struct token *token);
 
@@ -647,7 +646,6 @@ enum ptbsyntax string2ptbsyntax(char *input) {
     else if (strcmp(input, "WP") == 0) return WP;
     else if (strcmp(input, "WP_POS") == 0) return WP_POS; 
     else if (strcmp(input, "WRB") == 0) return WRB;
-    else if (strcmp(input, "*") == 0) return ASTERISK;
     else {
         fprintf(stderr, "Unknown syntactic category %s in the SI files\n", input);
         exit(-2);
@@ -691,8 +689,6 @@ char *ptbsyntax2string(enum ptbsyntax ptb) {
     else if (ptb == WP) return "WP";
     else if (ptb == WP_POS) return "WP_POS"; 
     else if (ptb == WRB) return "WRB";
-    else if (ptb == ASTERISK) return "*";
-    else if (ptb == NONE) return "";
     else {
         fprintf(stderr, "Unknown syntactic category %d is encountered in function ptbsyntax2string\n", ptb);
         exit(-2);

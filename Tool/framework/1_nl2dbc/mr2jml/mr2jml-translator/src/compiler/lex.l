@@ -97,6 +97,7 @@ KEYWORD_CC          "CC"
 KEYWORD_CD          "CD"
 KEYWORD_PRP         "PRP"
 KEYWORD_MD          "MD"
+KEYWORD_RB          "RB"
 
 KEYWORD_EXISTS      "exists"
 KEYWORD_FORALL      "all"
@@ -150,6 +151,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 {KEYWORD_PRP} { yylval.t = handletoken(yytext); return KEYWORD_PRP; }
 {KEYWORD_MD} { yylval.t = handletoken(yytext); return KEYWORD_MD; }
 {KEYWORD_VBG} { yylval.t = handletoken(yytext); return KEYWORD_VBG; }
+{KEYWORD_RB}    {yylval.t = handletoken(yytext); return KEYWORD_RB; }
 
 {CURLY_RBRAC} {
     if (cbracket <= 0) {

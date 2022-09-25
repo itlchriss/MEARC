@@ -1,11 +1,9 @@
 #!/bin/sh
 
 debugger=lldb
+STD_SI=./src/compiler/lib/std_si_2022.yml
 
 make clean;
-make;
+make ASTDEBUG=1 DEBUG=1 SIDEBUG=1;
 
-$debugger -ex=r --args bin/h2jc ../test/prime_true.hol 1 ./sst.template ./dst.template isPrime
-$debugger -ex=r --args bin/h2jc ../test/sort.hol 1 ./sst.template ./dst.template sort
-$debugger -ex=r --args bin/h2jc ../test/simple.hol 1 ./sst.template ./dst.template Sum
-
+lldb -- ./bin/main -f./test/$1/$1.conditions.mr -s./test/$1/$1.si.yml,$STD_SI

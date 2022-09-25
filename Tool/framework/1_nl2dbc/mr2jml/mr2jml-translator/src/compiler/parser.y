@@ -30,6 +30,7 @@
 %token <t> KEYWORD_PROG
 %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS KEYWORD_VB KEYWORD_VBG
 %token <ptb> KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
+%token <ptb> KEYWORD_RB
 %left AND IMPLY EQUIV RBRAC
 
 %type<ptb> pos_tag
@@ -141,6 +142,9 @@ terms
 term
     : PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC {
         print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
+        #if PARDEBUG
+        printf("Predicate(%s), Syntax(%s)\n", $1->symbol, ptbsyntax2string($3));
+        #endif
         if ($3 == MD) {
             /* skip the predicates with syntax is Modal, e.g. should, must */
             /* and, the prerequisite is the arguments are formula */
@@ -154,7 +158,7 @@ term
                 fprintf(stderr, "This meaning representation is not supported by the current grammar.\n");
             }
         } else {
-        $$ = newastnode(Predicate, $1);    
+            $$ = newastnode(Predicate, $1);    
             if ($$->token->symbol[0] == '_') {
                 /* removing the underscore */
                 popchar($$->token->symbol);
@@ -203,11 +207,11 @@ term
         $$ = newastnode(Operator, $3);
         struct astnode *left = newastnode(Variable, $2);
         struct astnode *right = newastnode(Variable, $4);
-        if (addcstref(csts[c], $2->symbol, left) == 1) {
+        if (addcstref(csts[c], $2->symbol, left) != 0) {
             addcstsymbol(csts[c], $2->symbol);
             addcstref(csts[c], $2->symbol, left);
         }
-        if (addcstref(csts[c], $4->symbol, right) == 1) {
+        if (addcstref(csts[c], $4->symbol, right) != 0) {
             addcstsymbol(csts[c], $4->symbol);
             addcstref(csts[c], $4->symbol, right);
         }
@@ -233,7 +237,7 @@ argument
     : IDENTIFIER {
         print_debug("argument: IDENTIFIER");
         $$ = newastnode(Variable, $1);
-        if (addcstref(csts[c], $1->symbol, $$) == 1) {
+        if (addcstref(csts[c], $1->symbol, $$) != 0) {
             addcstsymbol(csts[c], $1->symbol);
             addcstref(csts[c], $1->symbol, $$);
         }
@@ -249,7 +253,7 @@ quantify_expr
         print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_Exists;
-        if (addcstref(csts[c], $2->symbol, $$) == 1) {
+        if (addcstref(csts[c], $2->symbol, $$) != 0) {
             addcstsymbol(csts[c], $2->symbol);
             addcstref(csts[c], $2->symbol, $$);
         }
@@ -258,7 +262,7 @@ quantify_expr
         print_debug("quantify_expr: KEYWORD_FORALL IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
         $$->qtype = Quantifier_ForAll;
-        if (addcstref(csts[c], $2->symbol, $$) == 1) {
+        if (addcstref(csts[c], $2->symbol, $$) != 0) {
             addcstsymbol(csts[c], $2->symbol);
             addcstref(csts[c], $2->symbol, $$);
         }    
@@ -286,6 +290,7 @@ pos_tag
     | KEYWORD_PRP { $$ = PRP; }
     | KEYWORD_MD { $$ = MD; }
     | KEYWORD_VBG { $$ = VBG; }
+    | KEYWORD_RB  { $$ = RB; }
     ;
 
 connective

@@ -43,6 +43,10 @@ ifeq ($(CSTDEBUG), 1)
 	CFLAGS += -DCSTDEBUG
 endif
 
+ifeq ($(INFO), 1)
+	CFLAGS += -DINFO
+endif
+
 .PHONY: directories
 
 all: directories main
@@ -108,11 +112,11 @@ sem.o  : $(SRC)/sem.c
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
 lex.o							: 	$(BUILD)/tok.h
-ast.o							:   $(INCL)/ast.h $(INCL)/cst.h $(INCL)/sst.h
+ast.o							:   $(INCL)/ast.h $(INCL)/cst.h
 util.o							:   $(INCL)/util.h
 cst.o							:   $(INCL)/util.h 
-cg.o							:   $(INCL)/util.h $(INCL)/cg.h $(INCL)/dst.h
-si.o							:   $(INCL)/si.h $(INCL)/sst.h
+cg.o							:   $(INCL)/util.h $(INCL)/cg.h
+si.o							:   $(INCL)/si.h 
 clean:
 	rm $(BUILD)/*
 	rm ./parser.output

@@ -35,6 +35,7 @@ void prepend(char *s, const char* t);
 void append(char *s, const char* t);
 
 void deallocatequeue(struct queue *queue, void (*deallocate)(void*));
+void applyqueue(struct queue *, void *, void (*func)(void*, void*));
 
 
 char * getfunctor(char *);
@@ -58,5 +59,6 @@ char* strrep(char *str, char *str1, char *str2);
 int strsearch(char *str, char* str1, int *occur);
 unsigned long long sdbm(unsigned char *str);
 void trim(char *s);
+
 
 #endif
