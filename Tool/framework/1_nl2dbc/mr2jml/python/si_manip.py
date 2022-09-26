@@ -38,14 +38,14 @@ def main(filepath: str):
                                              r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) || (('
                                              r'x).getClass().isArray() && (x).getClass().isArray() && Arrays.equals(('
                                              r'x), (y))))', ['VBZ'])
-    __add2sis('length of', ['x'], r'(x).length', ['NN'])
+    __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('true_value', ['*'], 'true', ['NN'])
     __add2sis('false_value', ['*'], 'false', ['NN'])
     __add2sis('null_value', ['*'], 'null', ['NN'])
     __add2sis('be', ['x', 'y'], r'(x) == (y)', ['VBZ'])
-    __add2sis('be', ['x'], r'(x)', ['VBZ'])
+    # __add2sis('be', ['x'], r'(x)', ['VBZ'])
     __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'])
     __add2sis('result', ['*'], r'\result', ['NN'])
     __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0',
@@ -61,10 +61,13 @@ def main(filepath: str):
     __add2sis('index', ['x', 'y'], r'Arrays.asList((x)).indexOf((y)))', ['JJ'])
     __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
     __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
-    __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
+    # __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
     __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
+
+
+
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

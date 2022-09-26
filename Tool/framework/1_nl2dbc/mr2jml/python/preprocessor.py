@@ -98,7 +98,7 @@ class Preprocessor:
         'must be': 'is',
         'must not be': 'is not',
         'is equal to': 'is',
-        'will contain': 'contains'
+        'will': ' '
     }
 
     def __preprocess(self, pattern: str) -> list:

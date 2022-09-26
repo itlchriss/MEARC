@@ -25,7 +25,7 @@
 }
 
 %token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP DOT MINUS
-%token <t> COMMA LBRAC RBRAC GCASE EQUAL AND IMPLY EQUIV CURLY_LBRAC CURLY_RBRAC
+%token <t> COMMA LBRAC RBRAC GCASE EQUAL AND OR IMPLY EQUIV CURLY_LBRAC CURLY_RBRAC
 %token <t> KEYWORD_FORALL KEYWORD_EXISTS
 %token <t> KEYWORD_PROG
 %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS KEYWORD_VB KEYWORD_VBG
@@ -89,6 +89,9 @@ formulas
         addastchild($$, $1);
         addastchild($$, $3);
     }
+    | formulas connective LBRAC formula RBRAC {
+
+    }
     | formulas connective MINUS formula {
         print_debug("formulas: formulas connective MINUS formula");
         $$ = newastnode(Connective, NULL);
@@ -116,7 +119,7 @@ formula
         closecstscope(csts[c], $1->token->symbol);
     }
     | LBRAC quantify_expr DOT LBRAC terms RBRAC RBRAC {
-        print_debug("formula: quantify_expr LBRAC terms RBRAC");
+        print_debug("formula: LBRAC quantify_expr DOT LBRAC terms RBRAC RBRAC");
         $$ = $2;
         addastchild($$, $5);
         closecstscope(csts[c], $2->token->symbol);
@@ -124,24 +127,49 @@ formula
     ;
 
 terms
-    : terms AND term {
+    : terms connective term {
         print_debug("terms: terms term");
         if ($3 == NULL) {
             $$ = $1;
         } else {
-            $$ = newastnode(Connective, $2);
-            $$->conntype = Op_And;
+            // $$ = newastnode(Connective, $2);
+            $$ = newastnode(Connective, NULL);
+            $$->conntype = $2;
             addastchild($$, $1);
             addastchild($$, $3);
         }
     }
-    | terms AND MINUS term {
+    | terms connective LBRAC term RBRAC {
+        print_debug("terms: terms connective LBRAC term RBRAC");
+        if ($4 == NULL) {
+            $$ = $1;
+        } else {
+            $$ = newastnode(Connective, NULL);
+            $$->conntype = $2;
+            addastchild($$, $1);
+            addastchild($$, $4);
+        }
+    }
+    | terms connective MINUS term {
         print_debug("terms: terms term");
-        $$ = newastnode(Connective, $2);
+        // $$ = newastnode(Connective, $2);
+        $$ = newastnode(Connective, NULL);
         $4->isnegative = 1;
-        $$->conntype = Op_And;
+        $$->conntype = $2;
         addastchild($$, $1);
         addastchild($$, $4);
+    }
+    | terms connective MINUS LBRAC term RBRAC {
+        print_debug("terms: terms term");
+        // $$ = newastnode(Connective, $2);
+        $$ = newastnode(Connective, NULL);
+        $5->isnegative = 1;
+        $$->conntype = $2;
+        addastchild($$, $1);
+        addastchild($$, $5);
+    }
+    | LBRAC term RBRAC {
+        
     }
     | term {
         print_debug("terms: term");
@@ -150,6 +178,11 @@ terms
     | MINUS term {
         print_debug("term: MINUS term");
         $$ = $2;
+        $$->isnegative = 1;
+    }
+    | MINUS LBRAC term RBRAC {
+        print_debug("term: MINUS term");
+        $$ = $3;
         $$->isnegative = 1;
     }
     ;
@@ -209,26 +242,26 @@ term
         print_debug("term: formula");
         $$ = $1;
     }
-    | LBRAC GCASE LBRAC arguments RBRAC EQUAL arguments RBRAC {
+    | GCASE LBRAC arguments RBRAC EQUAL arguments {
         print_debug("term: LBRAC GCASE LBRAC VARIABLE RBRAC EQUAL VARIABLE RBRAC");
         $$ = NULL;
     }
-    | LBRAC GCASE LBRAC arguments RBRAC {
-        print_debug("term: LBRAC GCASE LBRAC arguments RBRAC");
+    | GCASE LBRAC arguments RBRAC {
+        print_debug("term: LBRAC GCASE LBRAC arguments RBRAC RBRAC");
         $$ = NULL;
     }
-    | LBRAC IDENTIFIER EQUAL IDENTIFIER RBRAC {
+    | IDENTIFIER EQUAL IDENTIFIER {
         print_debug("term: LBRAC IDENTIFIER EQUAL IDENTIFIER RBRAC");
-        $$ = newastnode(Operator, $3);
-        struct astnode *left = newastnode(Variable, $2);
-        struct astnode *right = newastnode(Variable, $4);
-        if (addcstref(csts[c], $2->symbol, left) != 0) {
-            addcstsymbol(csts[c], $2->symbol);
-            addcstref(csts[c], $2->symbol, left);
+        $$ = newastnode(Operator, $2);
+        struct astnode *left = newastnode(Variable, $1);
+        struct astnode *right = newastnode(Variable, $3);
+        if (addcstref(csts[c], $1->symbol, left) != 0) {
+            addcstsymbol(csts[c], $1->symbol);
+            addcstref(csts[c], $1->symbol, left);
         }
-        if (addcstref(csts[c], $4->symbol, right) != 0) {
-            addcstsymbol(csts[c], $4->symbol);
-            addcstref(csts[c], $4->symbol, right);
+        if (addcstref(csts[c], $3->symbol, right) != 0) {
+            addcstsymbol(csts[c], $3->symbol);
+            addcstref(csts[c], $3->symbol, right);
         }
         addastchild($$, left);
         addastchild($$, right);
@@ -312,6 +345,7 @@ connective
     : AND { $$ = Op_And; }
     | EQUIV { $$ = Op_Equivalent; }
     | IMPLY { $$ = Op_Imply; }
+    | OR    { $$ = Op_Or; }
     ;
 
 grammar_term
