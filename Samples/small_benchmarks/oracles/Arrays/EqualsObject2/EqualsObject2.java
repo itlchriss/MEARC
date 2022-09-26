@@ -12,12 +12,12 @@ public class Equals {
     //- semantics "elements of array a", nn, 1, (*):a
     //- semantics "elements of array b", nn, 1, (*):b
     //- semantics "correspondingly equal to", vbg, 2, (x, y):\forall int i; 0 <= i < x.length; x[i] == y[i]
-    //@ ensures (*If the length of array a is equal to the length of array b and the elements of array a are correspondingly equal to the elements of array b, the result is true.*);
+    //@ ensures (*If the length of array x is equal to the length of array y and the elements of array x are correspondingly equal to the elements of array y, the result is true.*);
     //- semantics "array a reference", nn, 1, (*): a
     //- semantics "array b reference", nn, 1, (*): b
-    //@ ensures (*If the array a reference is null and the array b reference is null, the result is true.*);
-    public boolean equals(Object[] a, Object[] b) {
-        return Arrays.equals(a, b);
+    //@ ensures (*If the array x reference is null and the array y reference is null, the result is true.*);
+    public boolean equals(Object[] x, Object[] y) {
+        return Arrays.equals(x, y);
     }
 }
 
