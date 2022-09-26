@@ -114,10 +114,12 @@ int addcstref(struct queue *cst, char *symbol, void *pt) {
 }
 
 void removecstref(struct queue *cst, char *symbol, void *pt) {
-    struct cstsymbol *c = searchcst(cst, symbol);
+    // struct cstsymbol *c = searchcst(cst, symbol);
+    struct cstsymbol *c = searchsymbolbyref(cst, pt);
     for (int i = 0; i < c->refs->count; ++i) {
         if (gqueue(c->refs, i) == pt) {
             rqueue(c->refs, i);
+            break;
         }
     }
 }
@@ -129,8 +131,17 @@ void closecstscope(struct queue *cst, char *symbol) {
     }
 }
 
-struct cstsymbol* updatecstsymbol(struct queue *cst, char *symbol, char *data) {
-    struct cstsymbol *c = searchcst(cst, symbol);
+// struct cstsymbol* updatecstsymbol(struct queue *cst, char *symbol, char *data) {
+//     struct cstsymbol *c = searchcst(cst, symbol);
+//     if (c->data) {
+//         free(c->data);
+//     }
+//     c->data = (char*)strdup(data);
+//     return c;
+// }
+
+struct cstsymbol* updatecstsymbol(struct queue *cst, char *data, void *ptr) {
+    struct cstsymbol *c = searchsymbolbyref(cst, ptr);
     if (c->data) {
         free(c->data);
     }

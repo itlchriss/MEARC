@@ -195,17 +195,30 @@ int isempty(struct queue* queue) {
 }
 
 
-void push(struct queue* stack, void *node) {
-    struct queuenode* tmp = stack->q;
-    while(tmp->next != NULL) {
-        tmp = tmp->next;
-    }    
-    tmp->next = (struct queuenode*) malloc (sizeof(struct queuenode));
-    tmp->next->prev = tmp;
-    tmp->next->datanode = node;
-    tmp->next->next = NULL;
-    stack->last = tmp->next;
-    ++stack->count;
+
+void push(struct queue* queue, void *node) {
+    // struct queuenode* tmp = stack->q;
+    // while(tmp->next != NULL) {
+    //     tmp = tmp->next;
+    // }    
+    // tmp->next = (struct queuenode*) malloc (sizeof(struct queuenode));
+    // tmp->next->prev = tmp;
+    // tmp->next->datanode = node;
+    // tmp->next->next = NULL;
+    // stack->last = tmp->next;
+    // ++stack->count;
+    if (queue->count == 0) {
+        enqueue(queue, node);
+    } else {
+        struct queuenode *head = queue->q, *top = head->next;
+        struct queuenode *new = (struct queuenode*) malloc (sizeof(struct queuenode));
+        head->next = new;
+        new->next = top;
+        top->prev = new;
+        new->prev = head;
+        new->datanode = node;
+        queue->count++;        
+    }
 }
 
 void* pop(struct queue* stack) {

@@ -27,7 +27,7 @@ int isempty(struct queue* queue);
 void showqueue(struct queue *queue, void (*print)(void*));
 void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*));
 // use queue as a stack
-void push(struct queue* stack, void *node);
+void push(struct queue*, void *);
 void* pop(struct queue* stack);
 void* peek(struct queue* stack);
 

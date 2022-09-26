@@ -263,8 +263,8 @@ int main(int argc, char** argv) {
             deallocateast(ast[i]);
         if (csts[i])
             deallocatequeue(csts[i], deallocatecstsymbol);
-        if (predicates[i])
-            deallocatequeue(predicates[i], NULL);
+        // if (predicates[i] && predicates[i]->count > 0)
+        //     deallocatequeue(predicates[i], NULL);
         if (operators[i])
             deallocatequeue(operators[i], NULL);
     }    

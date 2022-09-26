@@ -22,10 +22,8 @@ struct cstsymbol {
 // void addcstsymbol(struct queue* cst, struct token *symbol, struct token *qsymbol);
 void addcstsymbol(struct queue *cst, char *symbol);
 int addcstref(struct queue *cst, char *symbol, void *pt);
-// setting the value in the input data to a symbol same as the input symbol in the compile-time symbol table
-// if the result is 1, the symbol is not found; the result is 0, the symbol is found and data is assigned to the symbol
-// int setvalue2cst(struct queue* cst, struct token *symbol, char *data);
-struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data);
+// struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data);
+struct cstsymbol* updatecstsymbol(struct queue *, char *, void *);
 void showcstsymbol(void *);
 void syncsymbol(struct cstsymbol *);
 struct cstsymbol* searchsymbolbyref(struct queue *, void *);

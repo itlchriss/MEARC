@@ -5,6 +5,13 @@
   arguments:
   - (x)
   interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
+- term: sorted in ascending numerical order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
 - term: sorted in descending order
   syntax:
   - NN
@@ -39,6 +46,23 @@
   - (x)
   - (y)
   interpretation: \forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]
+- term: deeply equal to
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] ==
+    null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) || ((x).getClass().isArray()
+    && (x).getClass().isArray() && Arrays.equals((x), (y))))
+- term: length of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).length
 - term: equals to
   syntax:
   - JJ
@@ -188,6 +212,14 @@
   - (x)
   - (y)
   interpretation: \sub(x)2(y)
+- term: in
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(y)2(x)
 - term: elements of array
   syntax:
   - NN
@@ -197,3 +229,24 @@
   - (y)
   - (z)
   interpretation: \forall int i; 0 <= i < (x).length; (x)[i](y)(z)
+- term: elements of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: elements of
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
+- term: every element
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]

@@ -74,8 +74,15 @@ meaning_repr
     }
     ;
 
-formulas:
-    formulas connective formula {
+formulas
+    : LBRAC formulas RBRAC connective formula {
+        print_debug("formulas: formulas connective formula");
+        $$ = newastnode(Connective, NULL);
+        $$->conntype = $4;
+        addastchild($$, $2);
+        addastchild($$, $5);
+    }
+    | formulas connective formula {
         print_debug("formulas: formulas connective formula");
         $$ = newastnode(Connective, NULL);
         $$->conntype = $2;
@@ -108,6 +115,12 @@ formula
         addastchild($$, $4);
         closecstscope(csts[c], $1->token->symbol);
     }
+    | LBRAC quantify_expr DOT LBRAC terms RBRAC RBRAC {
+        print_debug("formula: quantify_expr LBRAC terms RBRAC");
+        $$ = $2;
+        addastchild($$, $5);
+        closecstscope(csts[c], $2->token->symbol);
+    }
     ;
 
 terms
@@ -117,6 +130,7 @@ terms
             $$ = $1;
         } else {
             $$ = newastnode(Connective, $2);
+            $$->conntype = Op_And;
             addastchild($$, $1);
             addastchild($$, $3);
         }
@@ -125,6 +139,7 @@ terms
         print_debug("terms: terms term");
         $$ = newastnode(Connective, $2);
         $4->isnegative = 1;
+        $$->conntype = Op_And;
         addastchild($$, $1);
         addastchild($$, $4);
     }
@@ -235,7 +250,7 @@ arguments
 
 argument
     : IDENTIFIER {
-        print_debug("argument: IDENTIFIER");
+        print_debug("argument: IDENTIFIER");        
         $$ = newastnode(Variable, $1);
         if (addcstref(csts[c], $1->symbol, $$) != 0) {
             addcstsymbol(csts[c], $1->symbol);

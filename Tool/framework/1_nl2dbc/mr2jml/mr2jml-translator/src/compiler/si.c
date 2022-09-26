@@ -61,6 +61,13 @@ char* __obtain_si_from_subtree__(struct astnode *parent, struct si* si) {
     return s;
 }
 
+void __update_cstsymbol_data__(struct cstsymbol *c, char *data) {
+    if (c->data) {
+        free(c->data);
+    }
+    c->data = (char*)strdup(data);
+}
+
 int Jseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     struct astnode *child;
     for (int i = 0; i < countastchildren(node); ++i) {
@@ -69,7 +76,13 @@ int Jseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
     }
     char *s = __obtain_si_from_subtree__(node, si);
     if (countastchildren(node) == 1) {
-        __replace_si_at_parent__(node, Template, s);
+        child = getastchild(node, 0);
+        struct cstsymbol *c = searchsymbolbyref(cst, child);
+        __remove_all_children_cst__(cst, node);
+        // __replace_si_at_parent__(node, Template, s);
+        __update_cstsymbol_data__(c, s);
+        syncsymbol(c);
+        root = deleteastnodeandedge(node, root);
     } else {
         __replace_si_at_parent__(node, Synthesised, s);
         __remove_all_children_cst__(cst, node);
@@ -95,12 +108,13 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
 
 
 int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
-    char *s = si->interpretation;;    
-    __remove_all_children_cst__(cst, node);
     struct astnode *child = getastchild(node, 0);    
+    char *s = si->interpretation;
+    struct cstsymbol *c = searchsymbolbyref(cst, child);
+    __remove_all_children_cst__(cst, node);    
     #if SIDEBUG
     printf("Nseries_code_synthesis: si(%s) and child token(%s)\n", s, child->token->symbol);
-    #endif     
+    #endif         
     if (strcmp(s, "\\param") == 0) {
         /* indicating the next predicate with the same indentifier must be a parameter name */
         /* potential research problem. can we infer or guess the parameter name if the word used in the sentence is not the exact parameter name? */
@@ -113,9 +127,10 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
             /* therefore, the semantic interpretation of the subtree requires code synthesis */
             s = __obtain_si_from_subtree__(node, si);
         }
-        struct cstsymbol *c = updatecstsymbol(cst, child->token->symbol, s);
+        // struct cstsymbol *c = updatecstsymbol(cst, s, child);
+        __update_cstsymbol_data__(c, s);
         syncsymbol(c);
-    }           
+    }               
     root = deleteastnodeandedge(node, root);
     return 0;
 }
@@ -125,12 +140,15 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
 int CC_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int CD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
     char *s = node->token->symbol;    
-    __remove_all_children_cst__(cst, node);
     struct astnode *child = getastchild(node, 0); 
+    struct cstsymbol *c = searchsymbolbyref(cst, child);
+    __remove_all_children_cst__(cst, node);    
     #if SIDEBUG
     printf("CD_code_synthesis: si(%s) and child token(%s)\n", s, child->token->symbol);
     #endif        
-    struct cstsymbol *c = updatecstsymbol(cst, child->token->symbol, s);
+    // struct cstsymbol *c = updatecstsymbol(cst, child->token->symbol, s);
+    // struct cstsymbol *c = updatecstsymbol(cst, s, child);
+    __update_cstsymbol_data__(c, s);
     syncsymbol(c);         
     root = deleteastnodeandedge(node, root);
     return 0;
@@ -150,18 +168,29 @@ int IN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     }
     x = getastchild(node, 0);
     struct astnode *y = getastchild(node, 1);
+    char *s;
+    struct cstsymbol *c;
     if (strcmp(si->interpretation, "\\sub(x)2(y)") == 0) {
-        char *s;
-        struct cstsymbol *c;
         if (x->type == Template) {
             s = __subsititute_synthesised_into_template__(y, x, cst);
-            c = updatecstsymbol(cst, x->token->symbol, s);
+            c = updatecstsymbol(cst, s, y);
         } else {
             s = __subsititute_synthesised_into_template__(x, y, cst);
-            c = updatecstsymbol(cst, y->token->symbol, s);
-        }
+            c = updatecstsymbol(cst, s, x);
+        }        
         __remove_all_children_cst__(cst, node);
-        syncsymbol(c);
+        syncsymbol(c);        
+        root = deleteastnodeandedge(node, root);
+    } else if (strcmp(si->interpretation, "\\sub(y)2(x)") == 0) {
+        if (x->type == Template) {
+            s = __subsititute_synthesised_into_template__(y, x, cst);
+            c = updatecstsymbol(cst, s, x);
+        } else {
+            s = __subsititute_synthesised_into_template__(x, y, cst);
+            c = updatecstsymbol(cst, s, y);
+        }        
+        __remove_all_children_cst__(cst, node);
+        syncsymbol(c);        
         root = deleteastnodeandedge(node, root);
     } else {
         #if SIDEBUG
@@ -184,6 +213,9 @@ int POS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
 int PRP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int PRP_POS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int RB_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
+    for (int i = 0; i < countastchildren(node); ++i) {
+        if (getastchild(node, i)->type != Synthesised) return 1;
+    }
     char *s = __obtain_si_from_subtree__(node, si);
     __replace_si_at_parent__(node, Synthesised, s);
     __remove_all_children_cst__(cst, node);
@@ -228,7 +260,54 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
     #if SIDEBUG
     printf("si identification: there are %d predicates in the queue.\n", predicates->count);
     #endif
-    // while (predicates->count > 0) {
+    /* 
+        sorting the predicates according to the semantic interpretation found 
+        1st priority: all predicates with 1-argument si, and the argument is '*'. these predicates can be synthesised without any affects from other predicates
+        2nd priority: all predicates with 1-argument si, and the argument is not '*'
+        3rd priority: all other predicates which syntax are not preposition (IN).
+        4th priority: predicates which syntax are prepositions. IN predicates require two arguments which are both synthesised, otherwise the code synthesis will be very difficult to compose, such as, Template in synthesis, variable in synthesis, variable in synthesis to template, etc.
+    */
+    struct queue *tmp = initqueue(), *two_args_preds = initqueue(), *in_preds = initqueue();
+    while (!isempty(predicates)) {
+        node = (struct astnode*)dequeue(predicates);
+        if (selfSI[node->syntax] == 0) {
+            push(tmp, node);
+        } else {
+            si = searchqueue(silist, node, __sicomparator);
+            if (si == NULL) {
+                continue;
+            } else if (node->syntax == IN) {
+                enqueue(in_preds, node);
+            } else if (node->syntax == NN) {
+                if (strcmp(si->args[0], "*") == 0) {
+                    push(tmp, node);
+                } else {
+                    enqueue(tmp, node);
+                }
+            } else {
+                enqueue(two_args_preds, node);
+            }
+        }
+    }
+    while (!isempty(two_args_preds)) {
+        enqueue(tmp, dequeue(two_args_preds));
+    }
+    while (!isempty(in_preds)) {
+        enqueue(tmp, dequeue(in_preds));
+    }
+    deallocatequeue(two_args_preds, NULL);
+    deallocatequeue(predicates, NULL);
+    deallocatequeue(in_preds, NULL);
+    predicates = tmp;
+
+    #if SIDEBUG
+    printf("si identification: after sorting, there are %d predicates in the queue.\n", predicates->count);
+    for (int i = 0; i < predicates->count; ++i) {
+        node = (struct astnode*)gqueue(predicates, i);
+        printf("%d. %s(%s)\n", i + 1, node->token->symbol, ptbsyntax2string(node->syntax));
+    }
+    #endif
+
     while (!isempty(predicates)) {    
         node = (struct astnode*)dequeue(predicates);
         #if SIDEBUG

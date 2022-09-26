@@ -27,11 +27,18 @@ def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List
 def main(filepath: str):
     __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                   r'(x)[k + 1]', ['NN'])
+    __add2sis('sorted in ascending numerical order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
+                                                            r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in descending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] >= '
                                                    r'(x)[k + 1]', ['NN'])
     __add2sis('greater than or equal to', ['x', 'y'], r'(x) >= (y)', ['JJ', 'JJR', 'VBG'])
     __add2sis('less than or equal to', ['x', 'y'], r'(x) <= (y)', ['JJ', 'JJR'])
     __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]', ['VBG'])
+    __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
+                                             r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) || (('
+                                             r'x).getClass().isArray() && (x).getClass().isArray() && Arrays.equals(('
+                                             r'x), (y))))', ['VBZ'])
+    __add2sis('length of', ['x'], r'(x).length', ['NN'])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('true_value', ['*'], 'true', ['NN'])
@@ -53,7 +60,11 @@ def main(filepath: str):
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
     __add2sis('index', ['x', 'y'], r'Arrays.asList((x)).indexOf((y)))', ['JJ'])
     __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
+    __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
     __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
+    __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
+    __add2sis('elements of', ['x'], r'(x)', ['JJ'])
+    __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

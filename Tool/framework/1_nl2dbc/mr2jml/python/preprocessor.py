@@ -96,7 +96,9 @@ class Preprocessor:
         'should be': 'is',
         'should not be': 'is not',
         'must be': 'is',
-        'must not be': 'is not'
+        'must not be': 'is not',
+        'is equal to': 'is',
+        'will contain': 'contains'
     }
 
     def __preprocess(self, pattern: str) -> list:
@@ -131,6 +133,7 @@ class Preprocessor:
         # patterns = custom_idioms
         # patterns.update(self.patterns)
         text = text.strip()
+        text = ' '.join([t.lower() for t in text.split(' ')])
         data = text.split('\n')
         result = None
         for d in data:
@@ -324,7 +327,7 @@ def main(javafile, sidb):
     for name in dst:
         contextual_si.append({
             'term': name,
-            'syntax': ['NN'],
+            'syntax': ['NN', 'NNS'],
             'arity': 1,
             'arguments': ['(*)'],
             'interpretation': name
