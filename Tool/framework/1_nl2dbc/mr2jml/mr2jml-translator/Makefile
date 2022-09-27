@@ -47,6 +47,10 @@ ifeq ($(INFO), 1)
 	CFLAGS += -DINFO
 endif
 
+ifeq ($(MEMDEBUG), 1)
+	CFLAGS += -DMEMDEBUG
+endif
+
 .PHONY: directories
 
 all: directories main

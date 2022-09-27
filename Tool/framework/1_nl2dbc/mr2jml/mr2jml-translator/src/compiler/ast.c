@@ -577,6 +577,9 @@ void showast(struct astnode *node, int depth) {
     if (node->isnegative == 1) {
         printf(" (Negative) ");
     }
+    #if MEMDEBUG
+    printf(" Memory(%p) ", (void*)node);
+    #endif
     printf("\n");
     struct astnodelist *child = node->children;
     while((child = child->next) != NULL)

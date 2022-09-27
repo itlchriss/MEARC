@@ -100,6 +100,7 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
         }
     }
     char *s = __obtain_si_from_subtree__(node, si);
+    __remove_all_children_cst__(cst, node);
     __replace_si_at_parent__(node, Synthesised, s);
     free(s);
     return 0;
@@ -120,7 +121,17 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
     } else {
         if (strcmp(si->args[0], "(*)") == 0) {
             /* argument does no effects to the semantic interpretation */
-            /* therefore, directly replacing the semantic interpretation to all the places of identifiers */                                                
+            /* therefore, directly replacing the semantic interpretation to all the places of identifiers */ 
+
+            /* there can be a case that, a noun predicate is synthesised as template. such that when subtree root is trying to synthesise, it should be substituted to the child's semantic template */
+            if (child->type == Template) {
+                char *arg = __combine_3_strings__("(", c->symbol, ")");
+                char *tmp = strrep(child->token->symbol, arg, s);
+                free(s);
+                s = (char*) strdup (tmp);
+                free(arg);
+                free(tmp);
+            }
         } else {
             /* argument does affect the semantic interpretation */
             /* therefore, the semantic interpretation of the subtree requires code synthesis */
@@ -234,7 +245,9 @@ int VBD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
 int VBG_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
     return Vseries_code_synthesis(node, si, cst);
 }
-int VBN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
+    return Vseries_code_synthesis(node, si, cst);
+}
 int VBP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int VBZ_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     return Vseries_code_synthesis(node, si, cst);

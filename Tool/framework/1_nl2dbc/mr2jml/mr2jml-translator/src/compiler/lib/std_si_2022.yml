@@ -167,7 +167,7 @@
   - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
     x/2; (x) % k != 0
-- term: length
+- term: length of
   syntax:
   - NN
   - JJ
@@ -175,7 +175,7 @@
   arguments:
   - (x)
   interpretation: (x).size()
-- term: size
+- term: size of
   syntax:
   - JJ
   - NN
@@ -235,3 +235,10 @@
   arguments:
   - (x)
   interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: reference of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)

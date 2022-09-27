@@ -55,8 +55,8 @@ def main(filepath: str):
     __add2sis('even', ['x'], r'(x) % 2 == 0', ['RB'])
     __add2sis('prime number', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= x/2; (x) % k '
                                      r'!= 0', ['NN'])
-    __add2sis('length', ['x'], r'(x).size()', ['NN', 'JJ'])
-    __add2sis('size', ['x'], r'(x).size()', ['JJ', 'NN'])
+    __add2sis('length of', ['x'], r'(x).size()', ['NN', 'JJ'])
+    __add2sis('size of', ['x'], r'(x).size()', ['JJ', 'NN'])
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
     __add2sis('index', ['x', 'y'], r'Arrays.asList((x)).indexOf((y)))', ['JJ'])
     __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
@@ -65,7 +65,7 @@ def main(filepath: str):
     __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
-
+    __add2sis('reference of', ['x'], r'(x)', ['NN'])
 
 
     fp = open(filepath, 'w')

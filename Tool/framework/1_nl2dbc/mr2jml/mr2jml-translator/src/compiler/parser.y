@@ -64,7 +64,8 @@ meaning_reprs
     ;
 
 meaning_repr
-    : LBRAC formulas RBRAC {
+    : 
+    LBRAC formulas RBRAC {
         print_debug("meaning_repr: formula");
         $$ = $2;
     }
@@ -241,6 +242,13 @@ term
     | formula {
         print_debug("term: formula");
         $$ = $1;
+    }
+    | LBRAC formula connective formula RBRAC {
+        print_debug("term: LBRAC formula connective formula RBRAC");
+        $$ = newastnode(Connective, NULL);
+        $$->conntype = $3;
+        addastchild($$, $2);
+        addastchild($$, $4);
     }
     | GCASE LBRAC arguments RBRAC EQUAL arguments {
         print_debug("term: LBRAC GCASE LBRAC VARIABLE RBRAC EQUAL VARIABLE RBRAC");

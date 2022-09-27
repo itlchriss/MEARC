@@ -3,6 +3,12 @@
 STD_SI=./src/compiler/lib/std_si_2022.yml
  
 make clean;
+find ./test/* -prune -type d | while IFS= read -r input; do 
+    d=`basename $input`
+    if [[ -f "./test/$d/$d.conditions.output" ]]; then
+        rm ./test/$d/$d.conditions.output
+    fi
+done
 make;
 
 if [ -f "./bin/main" ]; then
@@ -16,7 +22,8 @@ if [ -f "./bin/main" ]; then
         echo "checking ./test/$d/$d.conditions.mr && -f ./test/$d/$d.si.yml"
         if [[ -f "./test/$d/$d.conditions.mr" && -f "./test/$d/$d.si.yml" ]]; then
             echo "===============================Running test of $d====================================="
-            ./bin/main -f./test/$d/$d.conditions.mr -s./test/$d/$d.si.yml,$STD_SI
+            ./bin/main -f./test/$d/$d.conditions.mr -s./test/$d/$d.si.yml,$STD_SI > ./test/$d/$d.conditions.output
+            diff ./test/$d/$d.conditions.output ./test/$d/$d.conditions.jml
             echo "======================================================================================"
         else
             echo "======================================================================================"

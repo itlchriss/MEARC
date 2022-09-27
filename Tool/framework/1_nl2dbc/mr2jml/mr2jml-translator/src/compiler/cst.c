@@ -64,29 +64,6 @@ void addcstsymbol(struct queue *cst, char *symbol) {
     } else {
         struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
         new->symbol = (char*)strdup(symbol);
-        // if (tmp != NULL) {
-        //     /* TODO: the current renaming strategy is naive */
-        //     if (strlen(symbol) == 1) {
-        //         new->symbol = (char*) malloc (sizeof(char) * 3);
-        //         new->symbol[0] = symbol[0];
-        //         new->symbol[1] = '1';
-        //         new->symbol[2] = '\0';
-        //     } else {
-        //         /* overflow when the symbol length is greater than 2 */
-        //         char *s = (char*)malloc(sizeof(char) * 2);
-        //         s[0] = symbol[1];
-        //         s[1] = '\0';
-        //         int n = atoi(s);
-        //         ++n;
-        //         sprintf(s, "%d", n);
-        //         new->symbol = (char*) malloc(sizeof(char) * 3);
-        //         new->symbol[0] = symbol[0];
-        //         new->symbol[1] = s[0];
-        //         new->symbol[2] = '\0';
-        //     }   
-        // } else {
-        //     new->symbol = (char*)strdup(symbol);
-        // }
         new->data = NULL;
         new->refs = initqueue();
         new->scope = 0;            
@@ -125,20 +102,12 @@ void removecstref(struct queue *cst, char *symbol, void *pt) {
 }
 
 void closecstscope(struct queue *cst, char *symbol) {
-    struct cstsymbol *c = searchcst(cst, symbol);
+    struct cstsymbol *c = __searchcst(cst, symbol);    
     if (c != NULL) {
         c->scope = 1;
     }
 }
 
-// struct cstsymbol* updatecstsymbol(struct queue *cst, char *symbol, char *data) {
-//     struct cstsymbol *c = searchcst(cst, symbol);
-//     if (c->data) {
-//         free(c->data);
-//     }
-//     c->data = (char*)strdup(data);
-//     return c;
-// }
 
 struct cstsymbol* updatecstsymbol(struct queue *cst, char *data, void *ptr) {
     struct cstsymbol *c = searchsymbolbyref(cst, ptr);
@@ -153,18 +122,20 @@ void syncsymbol(struct cstsymbol *c) {
     char *tmp = __combine_3_strings__("(", c->symbol, ")");
     int check = strsearch(c->data, tmp, NULL);
     free(tmp);
+    enum astnodetype _type;
+    if (check > 0)  {
+        _type = Template;
+    } else {
+        _type = Synthesised;
+    }
     for (int i = 0; i < c->refs->count; ++i) {
         struct astnode *node = (struct astnode*)gqueue(c->refs, i);
         if (node->type != Quantifier) {
-            if (check > 0)  {
-                node->type = Template;
-            } else {
-                node->type = Synthesised;
-            }
+            node->type = _type;
+            if (node->token->symbol)
+                free(node->token->symbol);
+            node->token->symbol = (char*)strdup(c->data);
         }            
-        if (node->token->symbol)
-            free(node->token->symbol);
-        node->token->symbol = (char*)strdup(c->data);
     }
 }
 

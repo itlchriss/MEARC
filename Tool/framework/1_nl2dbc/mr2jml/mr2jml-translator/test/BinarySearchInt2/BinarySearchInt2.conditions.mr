@@ -1,0 +1,2 @@
+exists x.(_array{NN}(x) & TrueP & _sort{VBN}(x))
+(exists x.(_array{NN}(x) & TrueP & exists z1.(_key{NN}(z1) & TrueP & _contain{VBZ}(x,z1))) -> exists x.(_result{NN}(x) & TrueP & exists z4.(_index{NN}(z4) & exists z3.(_key{NN}(z3) & exists z2.(_array{NN}(z2) & TrueP & _in{IN}(z3,z2)) & TrueP & _of{IN}(z4,z3)) & TrueP & (x = z4))))
