@@ -9,8 +9,8 @@ public class Even {
     */
     //+ semantics "even", rb, 1, (x):x%2 == 0
     //+ semantics "input number", nn, 1, (*):number
-    // ensures (*If result is true, the input number is even.*);
-    // ensures (*If result is false, the input number is not even.*);
+    //@ ensures (*If result is true, the input number is even.*);
+    //@ ensures (*If result is false, the input number is not even.*);
     // ensures ((\result==false) ==> (!(number%2 == 0)));
     //@ ensures (\exists boolean x; x == \result && (\exists boolean z; z == true && x == z) ==> \exists int x1; x1 == 0 && (\exists int x2; x2 == number%2 && x2 == x1));
     public static boolean isEven(int number) {

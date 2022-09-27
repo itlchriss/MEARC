@@ -5,7 +5,7 @@ debugger=''
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   debugger='gdb -ex=r --args'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  debuggger='lldb --'
+  debugger='lldb --'
 fi
 STD_SI=./src/compiler/lib/std_si_2022.yml
 

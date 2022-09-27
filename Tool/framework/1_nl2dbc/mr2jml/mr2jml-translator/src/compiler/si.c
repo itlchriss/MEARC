@@ -79,7 +79,6 @@ int Jseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
         child = getastchild(node, 0);
         struct cstsymbol *c = searchsymbolbyref(cst, child);
         __remove_all_children_cst__(cst, node);
-        // __replace_si_at_parent__(node, Template, s);
         __update_cstsymbol_data__(c, s);
         syncsymbol(c);
         root = deleteastnodeandedge(node, root);
@@ -205,7 +204,7 @@ int JJS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
 int LS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int MD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int NN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Nseries_code_synthesis(node, si, cst); }
-int NNS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int NNS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return Nseries_code_synthesis(node, si, cst); }
 int NNP_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int NNPS_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
 int PDT_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
@@ -275,6 +274,8 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         } else {
             si = searchqueue(silist, node, __sicomparator);
             if (si == NULL) {
+                __remove_all_children_cst__(cst, node);
+                root = deleteastnodeandedge(node, root);
                 continue;
             } else if (node->syntax == IN) {
                 enqueue(in_preds, node);

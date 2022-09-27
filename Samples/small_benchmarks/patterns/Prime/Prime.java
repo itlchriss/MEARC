@@ -37,7 +37,7 @@ class Prime{
     // @*/
     //+ semantics "prime number", nn, 1, (x):(x == 2 || (x > 2 && (\forall int k; x > 2 && 2 <= k && k <= x/2; x%k != 0)
     //+ semantics "input number", nn, 1, (*):n
-    //@ ensures (*If the result is true, the input number is a prime number.*);
+    //@ ensures (*If the result is true, the input n is a prime number.*);
     public static boolean isPrime(int n)
     {                
         if(n <= 1){

@@ -1,16 +1,18 @@
 public class Largest {
     // /*@ ensures(
-    //     (n1 >= n2) ==> \result == n1);
+    //     (x >= y) ==> \result == x);
     // @*/
     // /*@ ensures(
-    //     (n1 < n2) ==> \result == n2);
+    //     (x < y) ==> \result == y);
     // @*/
-    //@ ensures \result >= n1 && \result >= n2;
-    //@ ensures \result == n1 || \result == n2;
-    public static int largest(int n1, int n2) {
-        int max = n1;
-        if (n1 <= n2)
-            max = n2;
+    //@ ensures \result >= x && \result >= y;
+    //@ ensures \result == x || \result == y;
+    //@ ensures (*The result should be greater than or equal to the parameter x and the result should be greater than or equal to the parameter y.*);
+    //@ ensures (*The result is equal to the parameter x or the result is equal to the parameter y.*);
+    public static int largest(int x, int y) {
+        int max = x;
+        if (x <= y)
+            max = y;
         return max;
     }
 }

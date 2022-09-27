@@ -181,6 +181,11 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     yylval.t = handletoken(yytext);
     return EQUAL;
 }
+
+{OR} {
+    yylval.t = handletoken(yytext);
+    return OR;
+}
 [ \t]+ { 
     handlecolnum(yytext);
     }

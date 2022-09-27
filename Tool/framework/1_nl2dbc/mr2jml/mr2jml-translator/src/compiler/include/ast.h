@@ -9,7 +9,7 @@ enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Tem
 enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
-enum conntype { Op_And, Op_Equivalent, Op_Imply };
+enum conntype { Op_And, Op_Or,  Op_Equivalent, Op_Imply };
 // Penn tree bank syntax
 enum ptbsyntax {
     CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB};

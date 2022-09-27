@@ -1,0 +1,3 @@
+exists x.(_parameter{NN}(x) & _original{NN}(x) & TrueP & -exists z2.(_null_value{NN}(z2) & TrueP & (x = z2)))
+exists x.(_parameter{NN}(x) & _newlength{NN}(x) & TrueP & exists z1.(_0{CD}(z1) & TrueP & _greater_than_or_equal_to{JJ}(x,z1)))
+exists x.(_length_of{JJ}(x) & _result{NN}(x) & TrueP & exists z1.(_parameter{NN}(z1) & _newlength{NN}(z1) & TrueP & (x = z1)))

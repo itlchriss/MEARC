@@ -57,7 +57,7 @@ public class CopyOf {
     @*/
     //@   ensures (\forall int i; original.length <= i < newLength; \result[i] == 0);
 
-    public int[] copyOf(int[] original, int newLength) {
-        return Arrays.copyOf(original, newLength);
+    public int[] copyOf(int[] original, int newlength) {
+        return Arrays.copyOf(original, newlength);
     }
 }

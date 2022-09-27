@@ -8,7 +8,7 @@ void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
 char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator" };
-char *connective_name[] = { "And", "Equivalent", "Imply" };
+char *connective_name[] = { "And", "Or", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
 struct queue *_paramdstptrs = NULL;
