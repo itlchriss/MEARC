@@ -322,18 +322,18 @@ class Preprocessor:
                 continue
 
 
-def main(javafile, sidb):
+def main(javafile, sidb, targetpath = None):
     contextual_si = []
     dst = get_package_global_info_from_javasrc(javafile)
     for name in dst:
         contextual_si.append({
-            'term': name,
+            'term': name[0] if isinstance(name, tuple) else name,
             'syntax': ['NN', 'NNS'],
             'arity': 1,
             'arguments': ['(*)'],
-            'interpretation': name
+            'interpretation': name[0] if isinstance(name, tuple) else name,
+            'type': name[1] if isinstance(name, tuple) else -1
         })
-    yaml.dump(contextual_si, sys.stdout, sort_keys=False)
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafile, sidb)
     specs = {'requires': [], 'ensures': []}
@@ -358,8 +358,17 @@ def main(javafile, sidb):
                 'type': 'postcondition',
                 'specification': post
             })
-    yaml.dump(yaml_data, sys.stdout, sort_keys=False)
-
+    if not targetpath:
+        yaml.dump(contextual_si, sys.stdout, sort_keys=False)
+        yaml.dump(yaml_data, sys.stdout, sort_keys=False)
+    else:
+        name = javafile.split('/')[-1].split('.')[0]
+        si_path = ('%s/%s.si.yml' % (targetpath, name))
+        spec_path = ('%s/%s.conditions.yml' % (targetpath, name))
+        with open(si_path, 'w+') as fp:
+            yaml.dump(contextual_si, fp, sort_keys=False)
+        with open(spec_path, 'w+') as fp:
+            yaml.dump(yaml_data, fp, sort_keys=False)
 
 if __name__ == "__main__":
     # argv[1]: java file
@@ -370,6 +379,8 @@ if __name__ == "__main__":
     #         sys.argv[3] and os.path.exists(sys.argv[3]):
     if len(sys.argv) == 2:
         main(sys.argv[1], None)
+    elif len(sys.argv) == 4:
+        main(sys.argv[1], sys.argv[2], sys.argv[3])
     elif sys.argv[1] and os.path.exists(sys.argv[1]) and \
             sys.argv[2] and os.path.exists(sys.argv[2]):
         main(sys.argv[1], sys.argv[2])

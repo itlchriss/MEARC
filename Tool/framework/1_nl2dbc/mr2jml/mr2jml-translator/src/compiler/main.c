@@ -207,64 +207,12 @@ int main(int argc, char** argv) {
     showprocessinfo("Finished Code generation");
     #endif
 
-    // // exit(-2);
-
-    // // sort the priorities
-    // for (int k = 0; k < c; ++k) {
-    //     for (int i = 0; i < pred_queues[k]->count; ++i) {
-    //         for (int j = pred_queues[k]->count - 1; j > i; --j) {
-    //             if (((struct astnode *)gqueue(pred_queues[k], j))->priority < 
-    //                 ((struct astnode *)gqueue(pred_queues[k], i))->priority) {
-    //                 struct queuenode *tmp1 = _gqueue(pred_queues[k], j);
-    //                 struct queuenode *tmp2 = _gqueue(pred_queues[k], i);
-    //                 struct astnode *tmpnode = (struct astnode *)tmp1->datanode;
-    //                 tmp1->datanode = tmp2->datanode;
-    //                 tmp2->datanode = tmpnode;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // #if DEBUG
-    // for (int k = 0; k < c; ++k) {
-    //     for (int i = 0; i < pred_queues[k]->count; ++i) {
-    //         printf("%s %d, ", 
-    //             ((struct astnode *)gqueue(pred_queues[k], i))->token->symbol, 
-    //             ((struct astnode *)gqueue(pred_queues[k], i))->priority);
-    //     }
-    // }
-    // printf("\n");
-    // #endif
-
-    // // TODO: support other modes, such as invariant    
-    // // indicating the current spec type
-    // int mode;
-    // //simplifying the ast and generate target code    
-    // if (specfile[strlen(specfile) - 4] == 'e') {
-    //     // preconditions, generate 'requires'
-    //     mode = 1;
-    // } else {
-    //     // postconditions, generate 'ensures'
-    //     mode = 2;
-    // }
-
-    // params = getparams(dst, fdstptr);
-    // for (int i = 0; i < c; ++i) { 
-    //     ast[i] = simplifyast(ast[i], pred_queues[i], conn_queues[i], fdstptr, params);
-    //     // Code generation
-    //     gencode(ast[i], mode);
-    // }  
-    
-    // END:
-
     /* free resources */
     for (int i = 0; i < c; ++i) {
         if (ast[i])
             deallocateast(ast[i]);
         if (csts[i])
             deallocatequeue(csts[i], deallocatecstsymbol);
-        // if (predicates[i] && predicates[i]->count > 0)
-        //     deallocatequeue(predicates[i], NULL);
         if (operators[i])
             deallocatequeue(operators[i], NULL);
     }    
@@ -447,6 +395,8 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
+                        } else if (strcmp(key, "type") == 0) {
+                            si->jtype = atoi(value);
                         } else {
                             fprintf(stderr, "Syntax error in SI file %s with key %s and value %s\n", filepath, key ,value);
                             exit(-1);

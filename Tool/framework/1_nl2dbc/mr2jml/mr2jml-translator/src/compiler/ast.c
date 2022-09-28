@@ -480,9 +480,6 @@ struct astnode * deleteastnodeandedge(struct astnode *node, struct astnode *_roo
         }
         deleteastnode(parent);
     }
-    #if ASTDEBUG
-    showast(root, 0);
-    #endif
     return root;
 }
 

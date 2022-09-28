@@ -11,6 +11,7 @@ int search_syntax(struct si*, enum ptbsyntax);
 int __sicomparator(void *, void *);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };
+char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
 
 void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char *si) {    
     deleteastchildren(node);
@@ -337,6 +338,9 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
             } else {
                 int x = (*code_syntheses[node->syntax])(node, si, cst);
                 if (x != 0) {
+                    #if SIDEBUG
+                    printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                    #endif
                     enqueue(predicates, (void*)node);
                 }
             }  
@@ -345,6 +349,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         }
         #if ASTDEBUG
         showast(root, 0);
+        fflush(stdout);
         #endif
     }
     #if SIDEBUG

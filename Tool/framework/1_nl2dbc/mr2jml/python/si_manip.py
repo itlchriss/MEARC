@@ -66,7 +66,8 @@ def main(filepath: str):
     __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('reference of', ['x'], r'(x)', ['NN'])
-
+    __add2sis('change', ['x'], r'((x).length != \old((x)).length) || (\exists int i; 0 <= i < (x).length; (x)[i] != '
+                               r'\old((x))[i])', ['VBN'])
 
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)

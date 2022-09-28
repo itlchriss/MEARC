@@ -58,6 +58,9 @@ def get_package_global_info(directory: str) -> Set:
     return set(global_element_names)
 
 
+java_types_with_dimensions = ['Collection', 'Set', 'Queue', 'Stack']
+java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char']
+
 def get_package_global_info_from_javasrc(srcfile: str) -> Set:
     global_element_names = []
     if os.path.isfile(srcfile) and srcfile.endswith('.java'):
@@ -68,7 +71,13 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
                 global_element_names.append(node.name.lower())
                 if node.parameters:
                     for p in node.parameters:
-                        global_element_names.append(p.name)
+                        if p.type.dimensions or p.type.name in java_types_with_dimensions:
+                            t_name = 2
+                        elif p.type.name in java_types_primitive:
+                            t_name = 0
+                        else:
+                            t_name = 1
+                        global_element_names.append((p.name, t_name))
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.ClassDeclaration):
