@@ -250,3 +250,10 @@
   - (x)
   interpretation: ((x).length != \old((x)).length) || (\exists int i; 0 <= i < (x).length;
     (x)[i] != \old((x))[i])
+- term: empty
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).length == 0

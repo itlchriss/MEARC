@@ -110,7 +110,7 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
 
 int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     struct astnode *child = getastchild(node, 0);    
-    char *s = si->interpretation;
+    char *s = (char*)strdup(si->interpretation);
     struct cstsymbol *c = searchsymbolbyref(cst, child);
     __remove_all_children_cst__(cst, node);    
     #if SIDEBUG
@@ -422,7 +422,7 @@ void showsi(void *_si) {
     for (int j = 0; j < si->arg_count; ++j) {
         printf("%s ", si->args[j]);
     }
-    printf("   %s\n", si->interpretation);
+    printf("   %s(%p)\n", si->interpretation, (void*)si->interpretation);
     printf("============================================================================\n");
 }
 
@@ -432,7 +432,8 @@ void deallocatesi(void *tmp) {
         free(si->args[i]);
     }
     free(si->syntax);
-    free(si->interpretation);
+    if (si->interpretation)
+        free(si->interpretation);
     free(si->term);
     free(si);
 }

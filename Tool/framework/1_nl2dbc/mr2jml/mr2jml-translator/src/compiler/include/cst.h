@@ -34,4 +34,5 @@ void removecstref(struct queue *, char *, void *);
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data);
 void renamesymbols(struct queue *cst);
 void deallocatecstsymbol(void *);
+int getavailablerefs(struct cstsymbol *);
 #endif

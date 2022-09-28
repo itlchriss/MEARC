@@ -185,6 +185,19 @@ struct cstsymbol* searchsymbolbyref(struct queue *cst, void *_astptr) {
     return (struct cstsymbol*)searchqueue(cst, _astptr, __cstrefcomparator);
 }
 
+int getavailablerefs(struct cstsymbol *c) {
+    if (c->refs->count == 0) return 0;
+    else {
+        int count = 0;
+        struct astnode *tmp;
+        for (int i = 0; i < c->refs->count; ++i) {
+            tmp = gqueue(c->refs, i);
+            if (tmp->type != Quantifier) ++count;
+        }
+        return count;
+    }
+}
+
 void deallocatecstsymbol(void *_cstsymbol) {
     struct cstsymbol *c = (struct cstsymbol *)_cstsymbol;
     free(c->symbol);
