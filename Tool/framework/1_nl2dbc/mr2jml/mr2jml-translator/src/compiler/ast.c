@@ -69,6 +69,7 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     new->parent = NULL;
     new->isroot = 0;
     new->isnegative = 0;
+    // new->jtype = specific_jtype + 1;
     new->children = malloc(sizeof(struct astnodelist));
     new->children->node = NULL;
     new->children->next = NULL;
@@ -559,12 +560,15 @@ void showast(struct astnode *node, int depth) {
         case Connective:
             printf("%s", connective_name[node->conntype]);
             break;
-        case Variable:        
-        case Synthesised:        
-        case Operator:
-        case Template:
+        case Variable:                        
+        case Operator:        
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
             break; 
+        case Template:
+        case Synthesised:
+            // printf("%s(%s)[%s]", node_type_name[node->type], node->token->symbol, javadatatype_name[node->jtype]);
+            printf("%s(%s)", node_type_name[node->type], node->token->symbol);
+            break;
         case NoSI:
             printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, ptbsyntax2string(node->syntax));
             break;        

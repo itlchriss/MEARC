@@ -1,12 +1,14 @@
 import os
 import sys
+from enum import IntEnum
+
 import yaml
 from typing import List
 
 sis = []
 
 
-def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str]) -> None:
+def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str], _type: int = 3) -> None:
     if arguments and len(arguments) >= 1:
         for arg in arguments:
             if arg != '*' and ('(%s)' % arg) not in interpretation:
@@ -19,9 +21,15 @@ def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List
             'syntax': syntax,
             'arity': len(arguments),
             'arguments': [('(%s)' % arg) for arg in arguments],
-            'interpretation': interpretation
+            'interpretation': interpretation,
         }
     )
+
+
+class JavaTypes(IntEnum):
+    Primitive = 0
+    Array = 1
+    Collection = 2
 
 
 def main(filepath: str):
@@ -33,7 +41,9 @@ def main(filepath: str):
                                                    r'(x)[k + 1]', ['NN'])
     __add2sis('greater than or equal to', ['x', 'y'], r'(x) >= (y)', ['JJ', 'JJR', 'VBG'])
     __add2sis('less than or equal to', ['x', 'y'], r'(x) <= (y)', ['JJ', 'JJR'])
-    __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]', ['VBG'])
+    # __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]', ['VBG'])
+    __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length && (x).length == ('
+                                                      r'y).length; (x) == (y)', ['VBG'], int(JavaTypes.Array))
     __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
                                              r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) || (('
                                              r'x).getClass().isArray() && (x).getClass().isArray() && Arrays.equals(('
@@ -46,7 +56,12 @@ def main(filepath: str):
     __add2sis('null_value', ['*'], 'null', ['NN'])
     __add2sis('be', ['x', 'y'], r'(x) == (y)', ['VBZ'])
     # __add2sis('be', ['x'], r'(x)', ['VBZ'])
-    __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'])
+    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'], int(JavaTypes.Array))
+    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'], int(JavaTypes.Collection))
+    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'],
+    #           int(JavaTypes.Array))
+    __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'],
+              int(JavaTypes.Collection))
     __add2sis('result', ['*'], r'\result', ['NN'])
     __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0',
               ['NN'])
@@ -63,12 +78,14 @@ def main(filepath: str):
     __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
     # __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
     __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
+    __add2sis('element', ['x'], r'(x)[i]', ['NNS'])
     __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('reference of', ['x'], r'(x)', ['NN'])
-    __add2sis('change', ['x'], r'((x).length != \old((x)).length) || (\exists int i; 0 <= i < (x).length; (x)[i] != '
+    __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x)[i] != '
                                r'\old((x))[i])', ['VBN'])
-
+    __add2sis('empty', ['x'], r'(x).size() == 0', ['JJ'])
+    __add2sis('number of elements', ['x'], r'(x).size()', ['NNS'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

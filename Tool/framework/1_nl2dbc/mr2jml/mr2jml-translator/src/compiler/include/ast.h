@@ -41,6 +41,8 @@ struct astnode {
     int isroot;
     /* default 0 for positive. 1 for negative */
     int isnegative;
+
+    // enum javadatatype jtype;
 };
 
 struct astnodelist {

@@ -1,18 +1,18 @@
-- term: aslist
+- term: collectionsize
   syntax:
   - NN
   - NNS
   arity: 1
   arguments:
   - (*)
-  interpretation: aslist
+  interpretation: collectionsize
   type: -1
-- term: original
+- term: collection
   syntax:
   - NN
   - NNS
   arity: 1
   arguments:
   - (*)
-  interpretation: original
-  type: 1
+  interpretation: collection
+  type: 2

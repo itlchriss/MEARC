@@ -82,7 +82,12 @@ int Jseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
         __remove_all_children_cst__(cst, node);
         __update_cstsymbol_data__(c, s);
         syncsymbol(c);
-        root = deleteastnodeandedge(node, root);
+        if (getavailablerefs(c) == 0 && node->parent->type == Quantifier) {
+            /* a special case for the sentences that the predicate is a single adjective */
+            __replace_si_at_parent__(node, Synthesised, s);
+        } else {
+            root = deleteastnodeandedge(node, root);
+        }
     } else {
         __replace_si_at_parent__(node, Synthesised, s);
         __remove_all_children_cst__(cst, node);
@@ -184,10 +189,12 @@ int IN_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {
     if (strcmp(si->interpretation, "\\sub(x)2(y)") == 0) {
         if (x->type == Template) {
             s = __subsititute_synthesised_into_template__(y, x, cst);
-            c = updatecstsymbol(cst, s, y);
+            // c = updatecstsymbol(cst, s, y);
+            c = updatecstsymbol(cst, s, x);
         } else {
             s = __subsititute_synthesised_into_template__(x, y, cst);
-            c = updatecstsymbol(cst, s, x);
+            // c = updatecstsymbol(cst, s, x);
+            c = updatecstsymbol(cst, s, y);
         }        
         __remove_all_children_cst__(cst, node);
         syncsymbol(c);        

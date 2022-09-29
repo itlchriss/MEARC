@@ -1,21 +1,3 @@
-- term: isempty
-  syntax:
-  - NN
-  - NNS
-  arity: 1
-  arguments:
-  - (*)
-  interpretation: isempty
-  type: -1
-- term: collectionisempty
-  syntax:
-  - NN
-  - NNS
-  arity: 1
-  arguments:
-  - (*)
-  interpretation: collectionisempty
-  type: -1
 - term: collection
   syntax:
   - NN
@@ -25,3 +7,21 @@
   - (*)
   interpretation: collection
   type: 2
+- term: collectionisempty
+  syntax:
+  - NN
+  - NNS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: collectionisempty
+  type: -1
+- term: isempty
+  syntax:
+  - NN
+  - NNS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: isempty
+  type: -1

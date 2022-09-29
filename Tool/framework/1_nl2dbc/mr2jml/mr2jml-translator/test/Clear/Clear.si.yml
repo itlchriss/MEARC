@@ -1,27 +1,27 @@
-- term: x
+- term: collectionclear
   syntax:
   - NN
   - NNS
   arity: 1
   arguments:
   - (*)
-  interpretation: x
-  type: 1
-- term: equals
-  syntax:
-  - NN
-  - NNS
-  arity: 1
-  arguments:
-  - (*)
-  interpretation: equals
+  interpretation: collectionclear
   type: -1
-- term: y
+- term: clear
   syntax:
   - NN
   - NNS
   arity: 1
   arguments:
   - (*)
-  interpretation: y
-  type: 1
+  interpretation: clear
+  type: -1
+- term: collection
+  syntax:
+  - NN
+  - NNS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: collection
+  type: 2

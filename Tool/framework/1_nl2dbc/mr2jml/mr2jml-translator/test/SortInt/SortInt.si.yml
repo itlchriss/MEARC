@@ -1,11 +1,3 @@
-- term: x
-  syntax:
-  - NN
-  - NNS
-  arity: 1
-  arguments:
-  - (*)
-  interpretation: x
 - term: sort
   syntax:
   - NN
@@ -14,3 +6,13 @@
   arguments:
   - (*)
   interpretation: sort
+  type: -1
+- term: x
+  syntax:
+  - NN
+  - NNS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: x
+  type: 1

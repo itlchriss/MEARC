@@ -32,11 +32,11 @@ If either of the specified arrays contain themselves as elements either directly
     //+ semantics "length of parameter a1", nn, 1, (*):a1.length
     //+ semantics "length of parameter a2", nn, 1, (*):a2.length
     //+ semantics "deeply equal to", vbg, 2, (X, Y):\forall int i; 0 <= i < X.length; ((X[i] == null && Y[i] == null) || (X[i] == Y[i]) || (X[i].equals( Y[i] )) || (X.getClass().isArray() && X.getClass().isArray() && Arrays.equals(X, Y)))
-    //@ ensures (*If the length of parameter a1 is equal to the length of parameter a2 and the elements of parameter a1 are deeply equal to the elements of parameter a2, the result is true.*);
+    //@ ensures (*If the length of parameter x is equal to the length of parameter y and the elements of parameter x are deeply equal to the elements of parameter y, the result is true.*);
     // missing postcondition
     // length of parameter a1 is equal to length of parameter a2
-    //@ ensures (((\forall int i; 0 <= i < a1.length; ((a1[i] == null && a2[i] == null) || (a1[i] ==a2[i]) || (a1[i].equals(a2[i])) || (a1.getClass().isArray() && a1.getClass().isArray() && Arrays.equals(a1,a2)))) && (a1.length==a2.length)) ==> (\result==true));
-    public boolean deepEquals(Object[] a1, Object[] a2) {
-        return Arrays.deepEquals(a1, a2);
+    //@ ensures (((\forall int i; 0 <= i < x.length; ((x[i] == null && y[i] == null) || (x[i] ==y[i]) || (x[i].equals(y[i])) || (x.getClass().isArray() && x.getClass().isArray() && Arrays.equals(x,y)))) && (x.length==y.length)) ==> (\result==true));
+    public boolean deepEquals(Object[] x, Object[] y) {
+        return Arrays.deepEquals(x, y);
     }
 }

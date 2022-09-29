@@ -1,2 +1,2 @@
-((\forall int i; 0 <= i < x.length; x[i] == y[i]) && (x.length==y.length)) -> (\result==true)
-((y==null) && (x==null)) -> (\result==true)
+((\forall int i; 0 <= i < x.length && x.length == y.length; x == y) && (x.length==y.length)) ==> (\result==true)
+((y==null) && (x==null)) ==> (\result==true)

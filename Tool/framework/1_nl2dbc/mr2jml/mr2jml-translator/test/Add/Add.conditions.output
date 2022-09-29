@@ -1,2 +1,2 @@
-\exists int i; 0 <= i < collection.length; collection[i] == e
-((collection.length != \old(collection).length) || (\exists int i; 0 <= i < collection.length; collection[i] != \old(collection)[i])) -> (\result==true)
+\exists int i; 0 <= i < collection.size(); collection[i] == e
+((collection.size() != \old(collection).size()) || (\exists int i; 0 <= i < collection.size(); collection[i] != \old(collection)[i])) ==> (\result==true)

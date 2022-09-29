@@ -71,12 +71,14 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
                 global_element_names.append(node.name.lower())
                 if node.parameters:
                     for p in node.parameters:
-                        if p.type.dimensions or p.type.name in java_types_with_dimensions:
-                            t_name = 2
+                        if p.type.dimensions:
+                            t_name = 1
                         elif p.type.name in java_types_primitive:
                             t_name = 0
+                        elif p.type.name == 'Collection':
+                            t_name = 2
                         else:
-                            t_name = 1
+                            t_name = 3
                         global_element_names.append((p.name, t_name))
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())

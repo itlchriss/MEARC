@@ -4,7 +4,7 @@
 #include "ast.h"
 #include "util.h"
 
-char *connective_code[] = { "&&", "||", "<->", "->" };
+char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 void walktree(struct astnode *root, FILE *s, int *haserror) {
     struct queue *queue = initqueue();
