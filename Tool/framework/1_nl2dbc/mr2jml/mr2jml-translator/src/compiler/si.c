@@ -296,7 +296,17 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
             si = searchqueue(silist, node, __sicomparator);
             if (si == NULL) {
                 __remove_all_children_cst__(cst, node);
-                root = deleteastnodeandedge(node, root);
+                if (node->parent->type != Connective) {
+                    fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
+                    exit(-10);
+                } else if (
+                    node->parent->conntype != Op_And &&
+                    node->parent->conntype != Op_Or) {
+                    fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
+                    exit(-11);                
+                } else {
+                    root = deleteastnodeandedge(node, root);
+                }
                 continue;
             } else if (node->syntax == IN) {
                 enqueue(in_preds, node);

@@ -3,8 +3,8 @@
 #include <string.h>
 #include "ast.h"
 #include "util.h"
+#include "cg.h"
 
-char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 void walktree(struct astnode *root, FILE *s, int *haserror) {
     struct queue *queue = initqueue();

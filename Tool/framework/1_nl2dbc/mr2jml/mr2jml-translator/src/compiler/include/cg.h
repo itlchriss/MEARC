@@ -5,6 +5,8 @@
 
 // Code generation header
 
+static char *connective_code[] = { "&&", "||", "<==>", "==>" };
+
 // void gencode(struct astnode *, int);
 void output(struct astnode *);
 
