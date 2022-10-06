@@ -1,10 +1,8 @@
 import java.util.Arrays;
 
-public class Equals {
-    // ensures ((a.length == b.length) && (\forall int i; 0 <= i < a.length; a[i] == b[i])) ==> (\result == true);
-    // ensures (a == null && b == null) ==> (\result == true);
-    //@ ensures (((\forall int i; 0 <= i < a.length; a[i] ==b[i]) && (a.length==b.length)) ==> (\result==true));
-    //@ ensures ((( b==null) && ( a==null)) ==> (\result==true));
+public class EqualsObject2 {
+    //@ ensures (((x != null && y != null && x.length == y.length && ((\forall int i; 0 <= i < x.length;  (x[i] == null && y[i] == null) || (x[i].equals(y[i]))))) && (x.length==y.length)) ==> (\result==true));
+    //@ ensures (((y==null) && (x==null)) ==> (\result==true));
     // ensures (*Two arrays are considered equal if both arrays contain the same number of elements, and all corresponding pairs of elements in the two arrays are equal.*);
     //- semantics "length of array a", nn, 1, (*):a.length
     //- semantics "length of array b", nn, 1, (*):b.length

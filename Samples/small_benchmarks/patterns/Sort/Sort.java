@@ -1,8 +1,10 @@
 // based upon the example written by Viktorio S. el Hakim
 public class Sort {
-    //+ semantics "input array", nn, 1, (*):arr
+    // semantics "input array", [nn], 1, [*], arr
     //@ requires (*The input array should not be null*);
-    //@ ensures (*The input array should be sorted in ascending order*);
+    //@ ensures (*The input array should be sorted in descending order*);
+    //@ requires (!(arr==null));
+    //@ ensures (\forall int k; 0 <= k < arr.length - 1; arr[k] >= arr[k + 1]);
     public static void sort(int[] arr) {
         //@ final ghost int n = arr.length;
         

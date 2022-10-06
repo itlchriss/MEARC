@@ -42,12 +42,14 @@ def main(filepath: str):
     __add2sis('greater than or equal to', ['x', 'y'], r'(x) >= (y)', ['JJ', 'JJR', 'VBG'])
     __add2sis('less than or equal to', ['x', 'y'], r'(x) <= (y)', ['JJ', 'JJR'])
     # __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]', ['VBG'])
-    __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length && (x).length == ('
-                                                      r'y).length; (x) == (y)', ['VBG'], int(JavaTypes.Array))
+    # __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length && (x).length == ('
+    #                                                   r'y).length; (x) == (y)', ['VBG'], int(JavaTypes.Array))
+    __add2sis('correspondingly equal to', ['x', 'y'], r'(x) != null && (y) != null && (x).length == (y).length && (('
+                                                      r'\forall int i; 0 <= i < (x).length;  ((x)[i] == null && (y)['
+                                                      r'i] == null) || ((x)[i].equals((y)[i]))))', ['VBG'], int(JavaTypes.Array))
     __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
-                                             r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) || (('
-                                             r'x).getClass().isArray() && (x).getClass().isArray() && Arrays.equals(('
-                                             r'x), (y))))', ['VBZ'])
+                                             r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length '
+                                             r'== (y).length && (Arrays.equals((x), (y)))', ['VBZ'])
     __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
@@ -60,7 +62,11 @@ def main(filepath: str):
     # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'], int(JavaTypes.Collection))
     # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'],
     #           int(JavaTypes.Array))
-    __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'],
+    #__add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'],
+       #       int(JavaTypes.Collection))
+    __add2sis('contain', ['x', 'y'], r'((y) == null && (\exists int i; 0 <= i < (x).size(); (x).get(i) == null)) '
+                                     r'|| (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))',
+              ['VBZ'],
               int(JavaTypes.Collection))
     __add2sis('result', ['*'], r'\result', ['NN'])
     __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0',
@@ -68,7 +74,7 @@ def main(filepath: str):
     __add2sis('parameter', ['*'], r'\param', ['NN'])
     __add2sis('input', ['*'], r'\param', ['NN'])
     __add2sis('even', ['x'], r'(x) % 2 == 0', ['RB'])
-    __add2sis('prime number', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= x/2; (x) % k '
+    __add2sis('prime number', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x) % k '
                                      r'!= 0', ['NN'])
     __add2sis('length of', ['x'], r'(x).size()', ['NN', 'JJ'])
     __add2sis('size of', ['x'], r'(x).size()', ['JJ', 'NN'])
@@ -82,8 +88,10 @@ def main(filepath: str):
     __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('reference of', ['x'], r'(x)', ['NN'])
-    __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x)[i] != '
-                               r'\old((x))[i])', ['VBN'])
+    # __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x)[i] != '
+    #                            r'\old((x))[i])', ['VBN'], int(JavaTypes.Array))
+    __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x).get(i) '
+                               r'!= \old((x)).get(i))', ['VBN', 'VBD'], int(JavaTypes.Collection))
     __add2sis('empty', ['x'], r'(x).size() == 0', ['JJ'])
     __add2sis('number of elements', ['x'], r'(x).size()', ['NNS'])
     fp = open(filepath, 'w')

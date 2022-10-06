@@ -92,6 +92,7 @@ KEYWORD_VBZ         "VBZ"
 KEYWORD_VBN         "VBN"
 KEYWORD_VBP         "VBP"
 KEYWORD_VBG         "VBG"
+KEYWORD_VBD         "VBD"
 KEYWORD_DT          "DT"
 KEYWORD_CC          "CC"
 KEYWORD_CD          "CD"
@@ -152,6 +153,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 {KEYWORD_MD} { yylval.t = handletoken(yytext); return KEYWORD_MD; }
 {KEYWORD_VBG} { yylval.t = handletoken(yytext); return KEYWORD_VBG; }
 {KEYWORD_RB}    {yylval.t = handletoken(yytext); return KEYWORD_RB; }
+{KEYWORD_VBD}    {yylval.t = handletoken(yytext); return KEYWORD_VBD; }
 
 {CURLY_RBRAC} {
     if (cbracket <= 0) {

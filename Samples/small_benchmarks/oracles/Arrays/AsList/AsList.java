@@ -24,8 +24,10 @@ public class AsList {
     //+ semantics "length of parameter original", nn, 1, (*):original.length
     //+ semantics "size of result", nn, 1, (*):\result.size()
     //+ semantics "parameter original", nn, 1, (*):original.length
-    //@ requires (*The parameter original should not be null.*);
+    // requires (*The parameter original should not be null.*);
     //@ ensures (*The size of result equals to the length of parameter original.*);
+    // requires (!(original==null));
+    //@ ensures (\result.size() == original.length);
     public List<Integer> asList(Integer[] original) {
         return Arrays.asList(original);
     }

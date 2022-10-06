@@ -249,7 +249,9 @@ int UH_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
 int VB_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
     return Vseries_code_synthesis(node, si, cst); 
 }
-int VBD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { return 0; }
+int VBD_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) {  
+    return Vseries_code_synthesis(node, si, cst);
+}
 int VBG_code_synthesis(struct astnode *node, struct si *si, struct queue *cst) { 
     return Vseries_code_synthesis(node, si, cst);
 }

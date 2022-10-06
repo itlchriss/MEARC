@@ -35,8 +35,56 @@ If either of the specified arrays contain themselves as elements either directly
     //@ ensures (*If the length of parameter x is equal to the length of parameter y and the elements of parameter x are deeply equal to the elements of parameter y, the result is true.*);
     // missing postcondition
     // length of parameter a1 is equal to length of parameter a2
-    //@ ensures (((\forall int i; 0 <= i < x.length; ((x[i] == null && y[i] == null) || (x[i] ==y[i]) || (x[i].equals(y[i])) || (x.getClass().isArray() && x.getClass().isArray() && Arrays.equals(x,y)))) && (x.length==y.length)) ==> (\result==true));
-    public boolean deepEquals(Object[] x, Object[] y) {
+    /* ensures (
+                 
+                    (   (Arrays.equals(x,y)) || x == y || (
+                                    (x.length == y.length) &&
+                                    (
+                                        \forall int i; 0 <= i < x.length; 
+                                        (
+                                            (x[i] == null && y[i] == null) || (x[i] ==y[i]) || (x[i].equals(y[i]))
+                                        )
+                                    )
+                                )
+                    )==>
+                    (\result==true)
+                );
+    @*/
+    /*@ ensures (
+            (
+                (
+                    (x == null && y == null) && 
+                    (
+                        (x == y) || (x.equals(y)) || Arrays.equals(x, y)
+                    )
+                ) || 
+                (
+                    (x != null && y != null && x.length == y.length) && 
+                    (
+                        \forall int i; 0 <= i < x.length; 
+                        ( 
+                            (x[i] == null && y[i] == null) || 
+                            (
+                                x[i] != null && y[i] != null && 
+                                (
+                                    !x[i].getClass().isArray() &&
+                                    !y[i].getClass().isArray() &&
+                                    x[i].equals(y[i])
+                                )
+                            )  
+                        )
+                    )
+                )
+            ) ==>
+            (\result == true)
+        );
+    @*/
+    public boolean deepEquals(Integer[] x, Integer[] y) {
         return Arrays.deepEquals(x, y);
     }
 }
+
+
+// (x[i] instanceof Integer) && 
+// (y[i] instanceof Integer) && 
+// x[i].equals(y[i])

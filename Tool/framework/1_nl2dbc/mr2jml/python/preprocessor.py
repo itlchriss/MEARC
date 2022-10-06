@@ -218,11 +218,12 @@ class Preprocessor:
         r = {'requires': self.data[method_name]['requires'], 'ensures': self.data[method_name]['ensures']}
         return r
 
-    def get_semantics(self, method_name) -> List[str]:
-        d = self.data[method_name]['semantics']
-        for i in d:
-            i['term'] = '_'.join(i['term'].split(' '))
-        return [';'.join(i.values()) for i in d]
+    def get_semantics(self, method_name=None) -> List[Dict]:
+        if not method_name:
+            d = self.data[next(iter(self.data))]['semantics']
+        else:
+            d = self.data[method_name]['semantics']
+        return d
 
     def get_defined_terms(self, method_name) -> List[Dict[str, str]]:
         return self.data[method_name]['defines']
@@ -269,10 +270,10 @@ class Preprocessor:
                 # if len(r) == 2:
                 # TODO: extract defines to a single file
             elif r := re.findall(
-                    r'^\s*//\+\s*semantics\s*\"(.*)\"\s*,\s*(.*)\s*,\s*(\d+)\s*,\s*(.*)\s*$',
+                    r'^\s*//@\s*semantics\s*\"(.*)\"\s*,\s*\[(.*)\]\s*,\s*(\d+)\s*,\s*\[(.*)\]\s*,\s*(.*)\s*$',
                     s, re.ASCII):
                 r = r[0]
-                if len(r) != 4:
+                if len(r) != 5:
                     print('Syntax error in declaring semantics: ', s)
                     print('The declaration of semantics follow term, syntax, arity, semantic')
                     exit(1)
@@ -286,9 +287,10 @@ class Preprocessor:
                 tmp['semantics'].append(
                     {
                         'term': r[0].strip().replace('"', ''),
-                        'syntax': r[1].strip(),
+                        'syntax': [s.upper() for s in r[1].strip().split(',')],
                         'arity': r[2].strip(),
-                        'semantic': r[3].strip()
+                        'arguments': [('(%s)' % i.strip()) for i in r[3].strip().split(',')],
+                        'interpretation': r[4].strip()
                     }
                 )
             elif r := re.findall(r'^[\s]*//\+[\s]*define[\s]*"(.*)"[\s]*,[\s]*"(.*)"[\s]*$', s, re.ASCII):
@@ -320,6 +322,7 @@ class Preprocessor:
                 tmp = {'semantics': [], 'requires': [], 'ensures': [], 'eliminates': [], 'defines': []}
             else:
                 continue
+        self.__add_si_to_patterns(self.get_semantics())
 
 
 def main(javafile, sidb, targetpath = None):
@@ -336,6 +339,16 @@ def main(javafile, sidb, targetpath = None):
         })
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafile, sidb)
+    annotations = preprocessor.get_semantics()
+    if annotations:
+        for d in annotations:
+            contextual_si.append({
+                'term': d['term'],
+                'syntax': d['syntax'],
+                'arity': d['arity'],
+                'arguments': d['arguments'],
+                'interpretation': d['interpretation']
+            })
     specs = {'requires': [], 'ensures': []}
     for method in preprocessor.data:
         raw_specs = preprocessor.get_specs(method)

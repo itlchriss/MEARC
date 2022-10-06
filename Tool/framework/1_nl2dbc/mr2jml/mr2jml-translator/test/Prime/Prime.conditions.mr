@@ -1,1 +1,1 @@
-(exists x.(_result{NN}(x) & TrueP & exists z1.(_true_value{NN}(z1) & TrueP & (x = z1))) -> exists x.(_input{NN}(x) & _n{NN}(x) & TrueP & exists z2.(_prime_number{NN}(z2) & TrueP & (x = z2))))
+(exists x.(_input{NN}(x) & _n{NN}(x) & TrueP & exists z1.(_prime_number{NN}(z1) & TrueP & (x = z1))) -> exists x.(_result{NN}(x) & TrueP & exists z2.(_true_value{NN}(z2) & TrueP & (x = z2))))

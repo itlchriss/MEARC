@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Sort {
+public class SortInt {
     /*
         Remark: The specification should focus on what the method affects the status.
                 The original specification focus on what the method does.
@@ -12,6 +12,7 @@ public class Sort {
     //+ semantics "sorted in ascending numerical order", nn, 1, (x):\forall int k;0 <= k && k < x.length-1;x[k]<=x[k+1]
     //+ semantics "ascending numerical order", nn, 1, (x):\forall int k;0 <= k && k < x.length-1;x[k]<=x[k+1]
     //@ ensures (*The parameter x is sorted in ascending numerical order.*);
+    //@ ensures (\forall int k; 0 <= k < x.length - 1; x[k] <= x[k + 1]);
     public void sort(int[] x) {
         Arrays.sort(x);
     }

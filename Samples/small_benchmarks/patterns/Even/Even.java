@@ -11,8 +11,8 @@ public class Even {
     //+ semantics "input number", nn, 1, (*):number
     //@ ensures (*If result is true, the input number is even.*);
     //@ ensures (*If result is false, the input number is not even.*);
-    // ensures ((\result==false) ==> (!(number%2 == 0)));
-    //@ ensures (\exists boolean x; x == \result && (\exists boolean z; z == true && x == z) ==> \exists int x1; x1 == 0 && (\exists int x2; x2 == number%2 && x2 == x1));
+    //@ ensures ((\result==true) ==> (number % 2 == 0));
+    //@ ensures ((\result==false) ==> (!(number % 2 == 0)));
     public static boolean isEven(int number) {
         if(number % 2 == 0)
             return true;
