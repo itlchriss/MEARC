@@ -94,6 +94,8 @@ def main(filepath: str):
                                r'!= \old((x)).get(i))', ['VBN', 'VBD'], int(JavaTypes.Collection))
     __add2sis('empty', ['x'], r'(x).size() == 0', ['JJ'])
     __add2sis('number of elements', ['x'], r'(x).size()', ['NNS'])
+    __add2sis('for', ['x', 'y'], r'\sub(x)2(y)', ['NNS'])
+    __add2sis('all of the elements', ['x'], r'\forall int i; 0 <= i < (x).length; ', ['NNS'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

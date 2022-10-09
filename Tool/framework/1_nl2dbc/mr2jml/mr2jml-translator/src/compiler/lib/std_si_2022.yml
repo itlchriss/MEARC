@@ -274,3 +274,18 @@
   arguments:
   - (x)
   interpretation: (x).size()
+- term: for
+  syntax:
+  - NNS
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(x)2(y)
+- term: all of the elements
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: '\forall int i; 0 <= i < (x).length; '
