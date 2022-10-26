@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STD_SI=./src/compiler/lib/std_si_2022.yml
+STD_SI=./c/lib/std_si_2022.yml
  
 make clean;
 find ./test/* -prune -type d | while IFS= read -r input; do 
