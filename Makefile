@@ -84,7 +84,8 @@ parser.o:	parser.c
 parser.c:	
 		$(BCC) -d -v $(SRC)/parser.y
 		mv parser.tab.c $(BUILD)/parser.c
-		mv parser.tab.h $(BUILD)/tok.h
+		cp parser.tab.h $(BUILD)/tok.h
+		mv parser.tab.h $(BUILD)
 	
 ast.o : $(SRC)/ast.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/ast.o $<
@@ -115,6 +116,7 @@ sem.o  : $(SRC)/sem.c
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
+parser.o						:       $(BUILD)/tok.h
 lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h
 main.o							:   $(INCL)/si.h

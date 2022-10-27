@@ -5,31 +5,35 @@ A meaning representation (MR) compiler translating meaning representation to JML
 ## Keywords
 Formal method, Design by Contract, Java Modeling Language
 
-### Prerequisite
-- Python 3.9
-- build essentials (gcc)
-
 ### Installation
 1. ccg2lambda installation. The following instruction is for the version released on 04-10-2017.
-	- Follow these steps to set up the virtual environment and ccg2lambda.
-		```
-		sudo apt-get install libxml2-dev libxslt1-dev
-		pip install virutalenv
-		python -m venv py3-10
-		source py3-10/bin/activate
-		pip install lxml simplejson pyyaml beautifulsoup4 javalang -I nltk==3.0.5
-		python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"
-		unzip ~/nltk_data/corpora/wordnet.zip
-		unzip ~/nltk_data/tokenizers/punkt.zip
-		mkdir src
-		git clone https://github.com/mynlp/ccg2lambda.git
-		cd ccg2lambda-eacl2017
-		python scripts/run_tests.py
-		```
-		The last command is to test the set up of virtual environment. All tests in ccg2lambda should pass.
-2. Following the [ccg2lambda installation instructions](https://github.com/mynlp/ccg2lambda) to install the NLP tool
-3. Perform the changes to ccg2lambda by copying the files in the [changes](./ccg2lambda/changes) folder to the corresponding ccg2lambda folders
-4. Following the [openjml installation instructions](https://www.openjml.org/downloads/), please install the [0.17.0-alpha-15 version](https://github.com/OpenJML/OpenJML/releases/tag/0.17.0-alpha-15).
+	i. Download the source code of ccg2lambda from [here](https://github.com/mynlp/ccg2lambda/archive/refs/tags/eacl2017.tar.gz).
+
+	
+2. Installing the Python 3.9 or above
+3. Installing required Python modules
+	```
+	pip install nltk	
+	pip install beautifulsoup4
+	pip install lxml
+	pip install pyyaml
+	pip install javalang
+	```
+	- Following commands are for nltk support
+	```
+	python
+	import nltk
+	nltk.download('punkt')
+	nltk.download('wordnet')
+	quit()
+	```
+	- Note: For OSX, you may encounter SSL problem. Try running
+	``` 
+	bash /Applications/Python\ 3.9/Install\ Certificates.command
+	```
+3. Following the [ccg2lambda installation instructions](https://github.com/mynlp/ccg2lambda) to install the NLP tool
+4. Perform the changes to ccg2lambda by copying the files in the [changes](./ccg2lambda/changes) folder to the corresponding ccg2lambda folders
+5. Following the [openjml installation instructions](https://www.openjml.org/downloads/), please install the [0.17.0-alpha-15 version](https://github.com/OpenJML/OpenJML/releases/tag/0.17.0-alpha-15).
 
 ## Building the compiler
 ```

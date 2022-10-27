@@ -1,6 +1,6 @@
 #!/bin/bash
-
-STD_SI=./c/lib/std_si_2022.yml
+SRC=./c
+STD_SI=$SRC/lib/std_si_2022.yml
  
 make clean;
 find ./test/* -prune -type d | while IFS= read -r input; do 

@@ -1,1 +1,1 @@
-(\result==true) ==> (n == 2 || (n > 2 && (\forall int k; n > 2 && 2 <= k && k <= x/2; n % k != 0)
+(n == 2 || (n > 2 && (\forall int k; n > 2 && 2 <= k && k <= n/2; n % k != 0) ==> (\result==true)
