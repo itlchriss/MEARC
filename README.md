@@ -32,8 +32,9 @@ Formal method, Design by Contract, Java Modeling Language
 	bash /Applications/Python\ 3.9/Install\ Certificates.command
 	```
 3. Following the [ccg2lambda installation instructions](https://github.com/mynlp/ccg2lambda) to install the NLP tool
-4. Perform the changes to ccg2lambda by copying the files in the [changes](./ccg2lambda/changes) folder to the corresponding ccg2lambda folders
-5. Following the [openjml installation instructions](https://www.openjml.org/downloads/), please install the [0.17.0-alpha-15 version](https://github.com/OpenJML/OpenJML/releases/tag/0.17.0-alpha-15).
+4. Perform the changes to ccg2lambda by copying the files in the [ccg2lambda_changes](./ccg2lambda/changes/src) folder to the corresponding ccg2lambda folders
+5. Create a *build* folder under ccg2lambda, and copy the *ccg2lambda_changes/run.sh* to the newly created *build* folder.
+6. Following the [openjml installation instructions](https://www.openjml.org/downloads/), please install the [0.17.0-alpha-15 version](https://github.com/OpenJML/OpenJML/releases/tag/0.17.0-alpha-15).
 
 ## Building the compiler
 ```
