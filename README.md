@@ -8,25 +8,18 @@ Formal method, Design by Contract, Java Modeling Language
 ### Installation
 1. ccg2lambda installation. The following instruction is for the version released on 04-10-2017.
 	i. Download the source code of ccg2lambda from [here](https://github.com/mynlp/ccg2lambda/archive/refs/tags/eacl2017.tar.gz).
-
-	
 2. Installing the Python 3.9 or above
-3. Installing required Python modules
+3. Setting up python virtual environment and installing required Python modules
 	```
-	pip install nltk	
-	pip install beautifulsoup4
-	pip install lxml
-	pip install pyyaml
-	pip install javalang
+	python -m venv py3
+	source py3/bin/activate
+	pip install beautifulsoup4 lxml pyyaml javalang simplejson -I nltk==3.0.5
 	```
 	- Following commands are for nltk support
 	```
-	python
-	import nltk
-	nltk.download('punkt')
-	nltk.download('wordnet')
-	quit()
+	python -c "import nltk; nltk.download('punkt'); nltk.download('wordnet')"
 	```
+	- Note: By running the above python script, two zip files should be downloaded and unzip to the ~/nltk_data. In some cases, the files are not decompressed. If so, please access the nltk_data folder and manually decompress them.
 	- Note: For OSX, you may encounter SSL problem. Try running
 	``` 
 	bash /Applications/Python\ 3.9/Install\ Certificates.command

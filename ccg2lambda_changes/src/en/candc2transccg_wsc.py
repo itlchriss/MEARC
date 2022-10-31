@@ -248,7 +248,7 @@ def main(args=None):
         transccg_trees.append(transccg_tree)
         sentence_num += 1
 
-    print('Produced {0} transccg trees'.format(len(transccg_trees)), file=sys.stderr)
+    # print('Produced {0} transccg trees'.format(len(transccg_trees)), file=sys.stderr)
     transccg_xml_tree = make_transccg_xml_tree(transccg_trees)
     encoding = xml_tree.docinfo.encoding
     result = etree.tostring(transccg_xml_tree, xml_declaration=True,
