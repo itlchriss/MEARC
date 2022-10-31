@@ -1,0 +1,291 @@
+- term: sorted in ascending order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
+- term: sorted in ascending numerical order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
+- term: sorted in descending order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] >= (x)[k + 1]
+- term: greater than or equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) >= (y)
+- term: less than or equal to
+  syntax:
+  - JJ
+  - JJR
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) <= (y)
+- term: correspondingly equal to
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) != null && (y) != null && (x).length == (y).length && ((\forall
+    int i; 0 <= i < (x).length;  ((x)[i] == null && (y)[i] == null) || ((x)[i].equals((y)[i]))))
+- term: deeply equal to
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] ==
+    null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length == (y).length
+    && (Arrays.equals((x), (y)))
+- term: length of
+  syntax:
+  - NN
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).length
+- term: equals to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: true_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'true'
+- term: false_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'false'
+- term: null_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'null'
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: contain
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: ((y) == null && (\exists int i; 0 <= i < (x).size(); (x).get(i)
+    == null)) || (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))
+- term: result
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \result
+- term: prime
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x)%k != 0
+- term: parameter
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \param
+- term: input
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \param
+- term: even
+  syntax:
+  - RB
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) % 2 == 0
+- term: prime number
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x) % k != 0
+- term: length of
+  syntax:
+  - NN
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: size of
+  syntax:
+  - JJ
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: sort
+  syntax:
+  - VBN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+- term: index
+  syntax:
+  - JJ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: Arrays.asList((x)).indexOf((y)))
+- term: of
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(x)2(y)
+- term: in
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(y)2(x)
+- term: elements of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: element
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)[i]
+- term: elements of
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
+- term: every element
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: reference of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
+- term: change
+  syntax:
+  - VBN
+  - VBD
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: ((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size();
+    (x).get(i) != \old((x)).get(i))
+- term: empty
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size() == 0
+- term: number of elements
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: for
+  syntax:
+  - NNS
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(x)2(y)
+- term: all of the elements
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: '\forall int i; 0 <= i < (x).length; '
