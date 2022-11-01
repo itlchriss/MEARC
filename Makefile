@@ -2,7 +2,7 @@ UNAME_S := $(shell uname -s)
 CC		=	cc
 FCC		=	flex
 BCC		=	bison
-SRC		=	./c
+SRC		=	./src/c
 BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
@@ -18,38 +18,43 @@ ifeq ($(UNAME_S),Darwin)
 	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
 endif
 
-ifeq ($(DEBUG), 1)
+ifeq ($(DEBUG), 0)
+   CFLAGS = -g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
+else
+# ifeq ($(DEBUG), 1)
 #   CFLAGS += -DDEBUG -fsanitize=address
    CFLAGS += -DDEBUG
+# endif
+
+	ifeq ($(LEXDEBUG), 1)
+	CFLAGS += -DLEXDEBUG
+	endif
+
+	ifeq ($(PARDEBUG), 1)
+		CFLAGS += -DPARDEBUG
+	endif
+
+	ifeq ($(SIDEBUG), 1)
+		CFLAGS += -DSIDEBUG
+	endif
+
+	ifeq ($(ASTDEBUG), 1)
+		CFLAGS += -DASTDEBUG
+	endif
+
+	ifeq ($(CSTDEBUG), 1)
+		CFLAGS += -DCSTDEBUG
+	endif
+
+	ifeq ($(INFO), 1)
+		CFLAGS += -DINFO
+	endif
+
+	ifeq ($(MEMDEBUG), 1)
+		CFLAGS += -DMEMDEBUG
+	endif
 endif
 
-ifeq ($(LEXDEBUG), 1)
-   CFLAGS += -DLEXDEBUG
-endif
-
-ifeq ($(PARDEBUG), 1)
-    CFLAGS += -DPARDEBUG
-endif
-
-ifeq ($(SIDEBUG), 1)
-	CFLAGS += -DSIDEBUG
-endif
-
-ifeq ($(ASTDEBUG), 1)
-	CFLAGS += -DASTDEBUG
-endif
-
-ifeq ($(CSTDEBUG), 1)
-	CFLAGS += -DCSTDEBUG
-endif
-
-ifeq ($(INFO), 1)
-	CFLAGS += -DINFO
-endif
-
-ifeq ($(MEMDEBUG), 1)
-	CFLAGS += -DMEMDEBUG
-endif
 
 .PHONY: directories
 

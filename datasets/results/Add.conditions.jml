@@ -1,0 +1,2 @@
+ensures(((e == null && (\exists int i; 0 <= i < collection.size(); collection.get(i) == null)) || (\exists int i; 0 <= i < collection.size();collection.get(i) == e)) ==> (\result==true));
+ensures(((collection.size() != \old(collection).size()) || (\exists int i; 0 <= i < collection.size(); collection.get(i) != \old(collection).get(i))) ==> (\result==true));

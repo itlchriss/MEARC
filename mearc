@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ROOT=`pwd`
 # provide the path to the python virtual environment
@@ -7,36 +7,36 @@ PYVENV=/home/chrissleong/venv/py3
 NLP=/home/chrissleong/release/ccg2lambda-master
 
 # path to standard semantic interpretation library
-STD_SI=./c/lib/std_si_2022.yml
+STD_SI=./src/c/lib/std_si_2022.yml
 TMP=./tmp
 
 PYCMD=$PYVENV/bin/python
 
 # create a tmp directory for intermediate files
 mkdir -p $TMP
+rm -rf $TMP/*
 
 filename="$(basename $1)"
 tmpname="$(basename -s .java $1)"
 
 # preprocessing
-# $PYCMD ./python/preprocessor.py $1 $STD_SI $TMP
+$PYCMD ./src/python/preprocessor.py $1 $STD_SI $TMP
 
 raw_conditions=$tmpname.conditions.yml
 prog_si=$tmpname.si.yml
 
 # check files generated
+if [[ -f "$TMP/$tmpname.conditions.yml" && -f "$TMP/$tmpname.si.yml" ]]; then
 
-# parsing the conditions.yml file
-$PYCMD ./python/pipeline.py $NLP $TMP/$raw_conditions $PYCMD
+    # parsing the conditions.yml file
+    $PYCMD ./src/python/pipeline.py $NLP $TMP/$raw_conditions $PYCMD $STD_SI
+else
+    echo "======================================================================================"
+    [ -f "$TMP/$tmpname.conditions.yml" ] && echo "Please provide the SI file at $TMP/$tmpname.si.yml"
+    [ -f "$TMP/$tmpname.si.yml" ] && echo "Please provide the MR file at $TMP/$tmpname.conditions.yml"
+    echo "======================================================================================"
+fi
 
 
 
-# cat $1 | sed -f ../en/tokenizer.sed > sentences.tok
-# ../candc-1.00/bin/candc  --log ./candc.log --models ../candc-1.00/models --candc-printer xml --input sentences.tok > sentences.candc.xml
-# ../py3/bin/python ../en/candc2transccg_wsc.py sentences.candc.xml > sentences.xml
-# ../py3/bin/python ../scripts/semparse_wsc.py sentences.xml ../en/semantic_templates_en_emnlp2015.yaml
-
-# rm $TMP/*.xml
-# rm $TMP/*.tok
-# rm $TMP/candc.log
 

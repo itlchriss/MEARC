@@ -1,0 +1,2 @@
+requires(!(arr==null));
+ensures(\forall int k; 0 <= k < arr.length - 1; arr[k] >= arr[k + 1]);
