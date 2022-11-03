@@ -1,0 +1,1 @@
+ensures(((o == null && (\exists int i; 0 <= i < collection.size(); collection.get(i) == null)) || (\exists int i; 0 <= i < collection.size();collection.get(i) == o)) ==> (\result==true));

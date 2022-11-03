@@ -36,6 +36,10 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
     if (*haserror > 0) {
         return;
     } else {
+        if (node == NULL) {
+            (*haserror)++;
+            return;
+        }
         if (node->type != Connective) {
             walktree(node, s, haserror);        
         } else {
