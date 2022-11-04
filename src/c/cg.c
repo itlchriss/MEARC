@@ -5,6 +5,7 @@
 #include "util.h"
 #include "cg.h"
 
+static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 void walktree(struct astnode *root, FILE *s, int *haserror) {
     struct queue *queue = initqueue();

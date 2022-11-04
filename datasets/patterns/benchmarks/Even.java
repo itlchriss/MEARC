@@ -7,12 +7,8 @@ public class Even {
                 If we fix it by putting the sign there, we can generate the correct JML.
                 ensures ((\result==false) ==> (!(number%2 == 0)));
     */
-    //+ semantics "even", rb, 1, (x):x%2 == 0
-    //+ semantics "input number", nn, 1, (*):number
     //@ ensures (*If result is true, the input number is even.*);
     //@ ensures (*If result is false, the input number is not even.*);
-    //@ ensures ((\result==true) ==> (number % 2 == 0));
-    //@ ensures ((\result==false) ==> (!(number % 2 == 0)));
     public static boolean isEven(int number) {
         if(number % 2 == 0)
             return true;
