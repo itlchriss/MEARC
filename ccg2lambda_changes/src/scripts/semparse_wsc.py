@@ -105,10 +105,11 @@ def main(args = None):
         print(root_str)
 
 def semantic_parse_sentences(sentence_inds, ncores=1):
-    if ncores <= 1:
-        sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
-    else:
-        sem_nodes_lists = semantic_parse_sentences_par(sentence_inds, ncores)
+    # if ncores <= 1:
+    #     sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
+    # else:
+    #     sem_nodes_lists = semantic_parse_sentences_par(sentence_inds, ncores)
+    sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
     sem_nodes_lists = [
         [etree.fromstring(s) for s in sem_nodes] for sem_nodes in sem_nodes_lists]
     return sem_nodes_lists

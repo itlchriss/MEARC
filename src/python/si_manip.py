@@ -47,9 +47,10 @@ def main(filepath: str):
     __add2sis('correspondingly equal to', ['x', 'y'], r'(x) != null && (y) != null && (x).length == (y).length && (('
                                                       r'\forall int i; 0 <= i < (x).length;  ((x)[i] == null && (y)['
                                                       r'i] == null) || ((x)[i].equals((y)[i]))))', ['VBG'], int(JavaTypes.Array))
-    __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
-                                             r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length '
-                                             r'== (y).length && (Arrays.equals((x), (y)))', ['VBZ'])
+    # __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
+    #                                          r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length '
+    #                                          r'== (y).length && (Arrays.equals((x), (y)))', ['VBZ'])
+    __add2sis('deeply equals to', ['x', 'y'], r'((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y))) || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length == (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray() && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))', ['VBZ'])                                        
     __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])

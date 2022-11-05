@@ -78,13 +78,13 @@ def main(java_file_path: str, raw_jml_path: str, config_path: str):
     with open(target_jml_path, 'w') as fp:
         for s in data:
             fp.write(s + '\n')
-    cmd = "%s -esc %s -specs-path %s --check-specs-path --prover=z3_4_7" % (openjml, java_file_path, tmp_path)
+    cmd = "%s/openjml -esc %s -specs-path %s --check-specs-path --prover=z3_4_7" % (openjml, java_file_path, tmp_path)
     print('Verifying %s with command: %s' % (prog_name, cmd))
     output, error = run_cmd_with_output(cmd)
     if not output and not error:
         print('Verification accepted.')
     else:
-        print('Verification failed.')
+        print('Verification rejected.')
         if output:
             print(output)
         if error:

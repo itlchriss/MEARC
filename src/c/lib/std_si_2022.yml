@@ -47,16 +47,14 @@
   - (y)
   interpretation: (x) != null && (y) != null && (x).length == (y).length && ((\forall
     int i; 0 <= i < (x).length;  ((x)[i] == null && (y)[i] == null) || ((x)[i].equals((y)[i]))))
-- term: deeply equal to
+- term: deeply equals to
   syntax:
   - VBZ
   arity: 2
   arguments:
   - (x)
   - (y)
-  interpretation: \forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] ==
-    null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length == (y).length
-    && (Arrays.equals((x), (y)))
+  interpretation: ((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y))) || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length == (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray() && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))
 - term: length of
   syntax:
   - NN
@@ -139,7 +137,7 @@
   arguments:
   - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
-    (x)/2; (x)%k != 0
+    (x)/2; (x)%k != 0))
 - term: parameter
   syntax:
   - NN
@@ -168,7 +166,7 @@
   arguments:
   - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
-    (x)/2; (x) % k != 0
+    (x)/2; (x) % k != 0))
 - term: length of
   syntax:
   - NN

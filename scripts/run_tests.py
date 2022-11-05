@@ -10,10 +10,12 @@ def main():
     print('Comparing JML generated from MR to expected results')
     run_cmd_without_output("rm -rf ./tmp/*; mkdir -p ./tmp/test; rm -rf ./datasets/output; mkdir -p ./datasets/output")
     succeeded_cases = {}
+    number_of_tests = 0
     for dataset in os.listdir(benchmark_dir):
         for filename in os.listdir(os.path.join(benchmark_dir, dataset)):
             test_name = filename.replace('.java', '')
             cmd = _cmd % (dataset, filename)
+            number_of_tests += 1
             # process = subprocess.run(
             #     cmd.split(' '),
             #     stdout=subprocess.PIPE,
@@ -46,6 +48,7 @@ def main():
                         r = 'Success'
                         succeeded_cases[test_name] = os.path.join(os.path.join(benchmark_dir, dataset), filename)
             print('Dataset %s : %s' % (test_name, r))
+    print('%d out of %d datasets are translated successfully' % (len(succeeded_cases), number_of_tests))
     print('Successful translated datasets are subjected to static testing')
     for ds in succeeded_cases:
         cmd = 'python ./scripts/esc.py %s %s ./mearc.config' % (succeeded_cases[ds], './datasets/output/%s.conditions.jml' % ds)

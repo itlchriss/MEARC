@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!../venv/py3/bin/python
 
 import subprocess
 import sys
@@ -103,7 +103,7 @@ def main(config_path: str, prog_file: str) -> None:
         if mr_error:
             print('Failed', file=sys.stderr)
             with open('%s/%s.error' % (configs.TMP, prog_name), 'a') as fp:
-                fp.write(mr.error)
+                fp.write(mr_error)
             break
             
         with open(mr_file_path) as fp:
