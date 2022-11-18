@@ -13,9 +13,16 @@ LEXDEBUG ?=     0
 DSTDEBUG ?=		0
 LOCINCL =   -I/usr/local/include 
 LOCLINK =   -L/usr/local/lib
+FRONTEND =
 ifeq ($(UNAME_S),Darwin)
 	LOCINCL = -I/opt/homebrew/Cellar/libyaml/0.2.5/include
 	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
+endif
+
+ifeq ($(FRONT), depccg)
+	FRONTEND = $(SRC)/frontends/depccg
+else
+	FRONTEND = $(SRC)/frontends/ccg2lambda
 endif
 
 ifeq ($(DEBUG), 0)
@@ -72,10 +79,10 @@ main: $(OBJS)
 	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll $(LOCLINK) -lyaml
 
 lex-only: lex
-	$(CC) $(BUILD)/lex.yy.c -ll -o $(BIN)/lex.o
+	$(CC) $(BUILD)/lex.yy.c -ll -DDEBUG -o $(BIN)/lex.o
 
 lex: 
-	$(FCC) -o $(BUILD)/lex.yy.c $(SRC)/lex.l
+	$(FCC) -o $(BUILD)/lex.yy.c $(FRONTEND)/lex.l
 
 lex.o:	lex
 	$(CC) $(CFLAGS) -c $(BUILD)/lex.yy.c -o $(BUILD)/lex.o
@@ -87,7 +94,7 @@ parser.o:	parser.c
 		$(CC) $(CFLAGS) -c $(BUILD)/parser.c -o $(BUILD)/parser.o
 
 parser.c:	
-		$(BCC) -d -v $(SRC)/parser.y
+		$(BCC) -d -v $(FRONTEND)/parser.y
 		mv parser.tab.c $(BUILD)/parser.c
 		cp parser.tab.h $(BUILD)/tok.h
 		mv parser.tab.h $(BUILD)
