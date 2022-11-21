@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from dstbuilder import get_package_global_info_from_javasrc
 import yaml
 
@@ -127,12 +127,8 @@ class Preprocessor:
             skip = skip + t[ord(haystack[skip + len(needle) - 1])]
         return -1
 
-    # def process(self, text: str, custom_idioms: Dict[str, str]) -> str:
     def process(self, text: str) -> str:
         patterns = self.patterns
-        # patterns.update(custom_idioms)
-        # patterns = custom_idioms
-        # patterns.update(self.patterns)
         text = text.strip()
         text = ' '.join([t.lower() for t in text.split(' ')])
         data = text.split('\n')
@@ -164,39 +160,7 @@ class Preprocessor:
                         break
             # providing warnings to the use of pronouns
             if not _d.strip():
-                continue
-            # if _d[-1] == '.':
-            #     arr = _d[:-1].split(' ')
-            # else:
-            #     arr = _d.split(' ')
-            # indices = []
-            # for pronoun in Pronouns:
-            #     s = [i for i, x in enumerate(arr) if x.lower() == pronoun.lower()]
-            #     if s:
-            #         print('Warning: The use of pronoun (', pronoun, ') may not be '
-            #                                                         'correctly '
-            #                                                         'processed by the '
-            #                                                         'NLP. Please '
-            #                                                         'consider to '
-            #                                                         'replace it with '
-            #                                                         'proper noun.')
-            #         indices += s
-            # if indices:
-            #     # for i, x in enumerate(arr):
-            #     #     if i in indices:
-            #     #         arr[i] = '**' + x + '**'
-            #     s = ' '.join(arr) + '.'
-            #     print(s)
-            #     c = 0
-            #     for i in range(len(s)):
-            #         if s[i] == ' ':
-            #             c += 1
-            #             print('_', end='')
-            #             continue
-            #         if c in indices:
-            #             print('^', end='')
-            #         else:
-            #             print('_', end='')
+                continue            
             result = _d
         if result and result[-1] == '.':
             result = result[:-1].strip()
@@ -245,15 +209,6 @@ class Preprocessor:
             with open(std_si_lib_file, 'r') as f:
                 std_sis = yaml.full_load(f)
                 self.__add_si_to_patterns(std_sis)
-                # for p in tmp.split('\n'):
-                #     if p and len(p) > 1:
-                #         if ';' in p:
-                #             k = p.split(';')[0]
-                #             v = p.split(';')[1]
-                #         else:
-                #             k = p
-                #             v = ''
-                #         self.patterns[k] = v
         # formatting method specifications (requires, ensures) in the data
         self.data = {}
         specs = file.split('\n')
@@ -325,6 +280,52 @@ class Preprocessor:
             else:
                 continue
         self.__add_si_to_patterns(self.get_semantics())
+        # data = self.data
+        # for method in self.data:
+        #     specs = self.get_specs(method)
+        #     for spec_type in specs:
+        #         conds = specs[spec_type]
+        #         [self.__generate_si_from_grammar_rules__(cond) for cond in conds]
+
+    grammar_rule_data = [
+        [[('from', 'IN'), ('', 'CD'), ('to', 'TO'), ('', 'CD')], ['x'], '(_) <= (x) <= (_)']
+    ]
+
+    def __tag_list_comparator__(self, a: List[Tuple[str, str]], b: List[Tuple[str, str]]) -> bool:
+        for i in range(len(a)):
+            word_a, syntax_a = a[i]
+            word_b, syntax_b = b[i]
+            if not(syntax_a == syntax_b and (word_a == word_b or not word_b and word_a)):
+                return False
+        return True
+
+    def generate_si_from_grammar_rules(self, sent: str):
+        tokens = nltk.word_tokenize(sent)
+        tags = nltk.pos_tag(tokens)
+        si_list = []
+        for data in self.grammar_rule_data:
+            rule = data[0]
+            args = data[1]            
+            si = data[2]
+            for i in range(len(tags) - len(rule) + 1):
+                if self.__tag_list_comparator__(tags[i: i + len(rule)], rule):
+                    index = [i for i in range(len(rule)) if not rule[i][0]]
+                    _t = [rule[i][0] for i in range(len(rule))]
+                    _si = si
+                    for indice in index:
+                        _si = _si.replace('(_)', tags[i: i + len(rule)][indice][0], 1)
+                        _t[indice] = tags[i: i + len(rule)][indice][0]
+                    _t = '_'.join(_t)
+                    sent = sent.replace(' '.join(tokens[i: i + len(rule)]), _t)                    
+                    si_list.append({
+                        'term': '_'.join([r[0] for r in rule]),
+                        'syntax': ['NN', 'NNS'],
+                        'arity': 1,
+                        'arguments': ['(*)'],
+                        'interpretation': _si,
+                        'type': -1
+                    })
+        return si_list, sent
 
 
 def main(javafile, sidb, targetpath = None):
@@ -356,10 +357,14 @@ def main(javafile, sidb, targetpath = None):
         raw_specs = preprocessor.get_specs(method)
         if raw_specs['requires']:
             for r in raw_specs['requires']:
-                specs['requires'].append(preprocessor.process(r))
+                tmp = preprocessor.process(r)
+                specs['requires'].append(tmp)
         if raw_specs['ensures']:
             for e in raw_specs['ensures']:
-                specs['ensures'].append(preprocessor.process(e))
+                tmp = preprocessor.process(e)
+                g_si, tmp = preprocessor.generate_si_from_grammar_rules(tmp)
+                contextual_si.append(g_si)
+                specs['ensures'].append(tmp)                
     yaml_data = []
     if specs['requires']:
         for pre in specs['requires']:

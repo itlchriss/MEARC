@@ -62,6 +62,7 @@ def main(config_path: str, prog_file: str) -> None:
     run_cmd_without_output('mkdir -p %s; rm -rf %s/*' % (configs.TMP, configs.TMP))
     # preprocessing 
     cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, configs.STD_SI, configs.TMP)
+    print(cmd)
     run_cmd_show_output(cmd)
     prog_condition_file = "%s/%s.conditions.yml" % (configs.TMP, prog_name)
     prog_si_file = "%s/%s.si.yml" % (configs.TMP, prog_name)
@@ -114,6 +115,7 @@ def main(config_path: str, prog_file: str) -> None:
             continue
 
         cmd = "./bin/main -f%s -s%s,%s" % (mr_file_path, si_file_path, configs.STD_SI)
+        print(cmd)
         process = subprocess.run(
             cmd.split(' '),
             stdout=subprocess.PIPE,
