@@ -3,6 +3,9 @@
     #include "util.h"
     #include "cst.h"
     #define YYERROR_VERBOSE 1
+    #if EVENT_SEMANTICS
+    #include "event.h"
+    #endif
 
     void print_debug(char *);
 
@@ -10,6 +13,9 @@
     extern int c;
     extern struct astnode **ast;  
     extern struct queue **csts, **predicates, **operators;
+    #if EVENT_SEMANTICS
+    extern struct queue **events;
+    #endif
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, *error_lines, error_count = 0;
@@ -251,9 +257,14 @@ term
         addastchild($$, $2);
         addastchild($$, $4);
     }
+    /* | GCASE LBRAC arguments RBRAC EQUAL arguments { */
     | GCASE LBRAC arguments RBRAC EQUAL arguments {
         print_debug("term: LBRAC GCASE LBRAC VARIABLE RBRAC EQUAL VARIABLE RBRAC");
+        #if EVENT_SEMANTICS
+        addevententity(newevent(events[c], $3->node->token->symbol), $6->node->token->symbol, $1->symbol);
+        #endif
         $$ = NULL;
+        //CAUTION: there is a memory leak here. the two arguments are in structure of astnode. therefore, they are not freed in the later operations.
     }
     | GCASE LBRAC arguments RBRAC {
         print_debug("term: LBRAC GCASE LBRAC arguments RBRAC RBRAC");

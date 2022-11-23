@@ -1,6 +1,8 @@
 class RandomForest { 
 
-  //@ semantics "patients who had degenerative spondylolithesis", [NN], 1, [*], \result == 1
+  //@ semantics "patients who had degenerative spondylolithesis", [NN, NNPS, NNS, NNP], 1, [*], \result == 1
+  //@ semantics "patients who had degenerative sp", [NN, NNPS, NNS, NNP], 1, [*], \result == 1
+  //@ semantics "have", [VBD], 2, [(Subj), (Acc)], (Subj) ==> (Acc)
   //@ semantics "angle", [NN], 1, [*], lumbar_lordosis_angle
   //@ ensures (*All patients who had degenerative spondylolithesis had an angle from 52.6 to 62.1.*);
 public int randomForest(double pelvic_incidence,double pelvic_tilt,double lumbar_lordosis_angle,double sacral_slope,double pelvic_radius,double degree_spondylolisthesis){

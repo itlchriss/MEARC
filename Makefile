@@ -20,7 +20,14 @@ ifeq ($(UNAME_S),Darwin)
 endif
 
 ifeq ($(FRONT), depccg)
+	FRONTEND = $(SRC)/frontends/depccg	
+else
+	FRONTEND = $(SRC)/frontends/ccg2lambda
+endif
+
+ifeq ($(MAKECMDGOALS), depccg)
 	FRONTEND = $(SRC)/frontends/depccg
+	CFLAGS += -DEVENT_SEMANTICS
 else
 	FRONTEND = $(SRC)/frontends/ccg2lambda
 endif
@@ -32,7 +39,9 @@ else
 #   CFLAGS += -DDEBUG -fsanitize=address
    CFLAGS += -DDEBUG
 # endif
-
+	ifeq ($(EVENTDEBUG), 1)
+	CFLAGS += -DEVENTDEBUG
+	endif
 	ifeq ($(LEXDEBUG), 1)
 	CFLAGS += -DLEXDEBUG
 	endif
@@ -67,19 +76,20 @@ endif
 
 all: directories main
 
-directories: ${BUILD} ${BIN}
+depccg: directories depccg_main
 
-${BUILD}:
-	mkdir -p $(BUILD)
 
-${BIN}:
-	mkdir -p $(BIN)
+depccg_main: $(OBJS) event.o
+	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS) event.o) -o $(BIN)/main -ll $(LOCLINK) -lyaml
+
+event.o: $(FRONTEND)/event.c
+	$(CC) $(CFLAGS) -c -o $(BUILD)/event.o $<
 
 main: $(OBJS)
 	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll $(LOCLINK) -lyaml
 
 lex-only: lex
-	$(CC) $(BUILD)/lex.yy.c -ll -DDEBUG -o $(BIN)/lex.o
+	$(CC) $(BUILD)/lex.yy.c -ll -DLEXONLY -o $(BIN)/lex.o
 
 lex: 
 	$(FCC) -o $(BUILD)/lex.yy.c $(FRONTEND)/lex.l
@@ -120,11 +130,19 @@ cg.o  : $(SRC)/cg.c
 dst.o  : $(SRC)/dst.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/dst.o $<		
 
-si.o	: $(SRC)/si.c
+si.o	: $(FRONTEND)/si.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/si.o $<		
 
 sem.o  : $(SRC)/sem.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
+
+directories: ${BUILD} ${BIN}
+
+${BUILD}:
+	mkdir -p $(BUILD)
+
+${BIN}:
+	mkdir -p $(BIN)
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
@@ -136,8 +154,8 @@ util.o							:   $(INCL)/util.h
 cst.o							:   $(INCL)/util.h 
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h
 si.o							:   $(INCL)/si.h 
+event.o							:   $(INCL)/event.h
 clean:
 	rm $(BUILD)/*
-	rm ./parser.output
-	rm ./bin/*
-	
+	rm ./parser.*
+	rm ./bin/*	

@@ -5,7 +5,7 @@
 #include "cst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, Grammar };
 enum grammartype { Gram_Prog };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };

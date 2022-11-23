@@ -7,7 +7,7 @@
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator", "Grammar" };
 char *connective_name[] = { "And", "Or", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -522,6 +522,8 @@ struct astnode *getastchild(struct astnode *parent, int position) {
             return children->node;
     return NULL;
 }
+
+
 
 int countastchildren(struct astnode *node) {
     if (node->children->next == NULL) return 0;

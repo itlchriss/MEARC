@@ -4,6 +4,9 @@
 #include "core.h"
 #include "cg.h"
 #include "si.h"
+#if EVENT_SEMANTICS
+#include "event.h"
+#endif
 
 extern FILE *yyin;
 extern int *error_lines, error_count;
@@ -27,6 +30,11 @@ struct queue **predicates;
 struct queue **operators;
 
 struct astnode *root;
+
+#if EVENT_SEMANTICS
+struct queue **events;
+struct queue *_events;
+#endif
 
 #if INFO
 void showprocessinfo(char *msg) {
@@ -105,10 +113,14 @@ int main(int argc, char** argv) {
     csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
     operators = (struct queue **) malloc (sizeof(struct queue *) * lines);
     predicates = (struct queue **) malloc (sizeof(struct queue *) * lines);
+    #if EVENT_SEMANTICS
+    events = (struct queue **) malloc (sizeof(struct queue *) * lines);
+    #endif
     for (int i = 0; i < lines; ++i) {
         csts[i] = initqueue();
         predicates[i] = initqueue();
         operators[i] = initqueue();
+        events[i] = initqueue();
     }
 
     fseek(fp, 0, SEEK_SET);
@@ -160,6 +172,9 @@ int main(int argc, char** argv) {
         #if INFO
         showprocessinfo("Start semantic interpretation identification");
         #endif
+        #if EVENT_SEMANTICS
+        _events = events[i];
+        #endif
         siidentification(predicates[i], silist, csts[i]);
         #if INFO
         showprocessinfo("Finished semantic interpretation identification");
@@ -185,6 +200,9 @@ int main(int argc, char** argv) {
         #if ASTDEBUG
         showast(ast[i], 0);
         #endif        
+        #if EVENTDEBUG
+        showqueue(events[i], showevent);
+        #endif
      }
     deallocatequeue(silist, deallocatesi);
 
@@ -215,6 +233,9 @@ int main(int argc, char** argv) {
             deallocatequeue(csts[i], deallocatecstsymbol);
         if (operators[i])
             deallocatequeue(operators[i], NULL);
+        #if EVENT_SEMANTICS
+            deallocatequeue(events[i], deallocateevent);
+        #endif
     }    
    
     if (error_count > 0) {

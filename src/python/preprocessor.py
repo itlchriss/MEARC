@@ -238,15 +238,17 @@ class Preprocessor:
                     print('Syntax error in declaring semantics: ', s)
                     print('Expected number in the arity, but get ', r[2])
                     exit(1)
-                elif r[1].strip().lower() not in PTBTagSet:
+                elif [ptb for ptb in r[1].split(',') if ptb.strip().lower() not in PTBTagSet]:                                    
                     print('The syntax specified in ', s, ' is not a valid Penn Tree Bank category')
                     exit(1)
+                term = r[0].strip().replace('"', '')
+                term = re.sub(r'\s+', '_', term)    
                 tmp['semantics'].append(
                     {
-                        'term': r[0].strip().replace('"', ''),
-                        'syntax': [s.upper() for s in r[1].strip().split(',')],
+                        'term': term,
+                        'syntax': [s.upper().strip() for s in r[1].strip().split(',')],
                         'arity': r[2].strip(),
-                        'arguments': [('(%s)' % i.strip()) for i in r[3].strip().split(',')],
+                        'arguments': ['%s' % i.strip() for i in r[3].strip().split(',')],
                         'interpretation': r[4].strip()
                     }
                 )
@@ -315,13 +317,13 @@ class Preprocessor:
                     for indice in index:
                         _si = _si.replace('(_)', tags[i: i + len(rule)][indice][0], 1)
                         _t[indice] = tags[i: i + len(rule)][indice][0]
-                    _t = '_'.join(_t)
-                    sent = sent.replace(' '.join(tokens[i: i + len(rule)]), _t)                    
+                    _t = ('_'.join(_t)).replace('.', '_DOT')
+                    sent = sent.replace(' '.join(tokens[i: i + len(rule)]), _t)                                   
                     si_list.append({
-                        'term': '_'.join([r[0] for r in rule]),
-                        'syntax': ['NN', 'NNS'],
+                        'term': _t,
+                        'syntax': ['NN', 'NNS', 'NNP'],
                         'arity': 1,
-                        'arguments': ['(*)'],
+                        'arguments': ['(%s)' % arg for arg in args],
                         'interpretation': _si,
                         'type': -1
                     })
@@ -355,16 +357,24 @@ def main(javafile, sidb, targetpath = None):
     specs = {'requires': [], 'ensures': []}
     for method in preprocessor.data:
         raw_specs = preprocessor.get_specs(method)
-        if raw_specs['requires']:
-            for r in raw_specs['requires']:
+        for key in raw_specs:
+            for r in raw_specs[key]:
                 tmp = preprocessor.process(r)
-                specs['requires'].append(tmp)
-        if raw_specs['ensures']:
-            for e in raw_specs['ensures']:
-                tmp = preprocessor.process(e)
+                specs[key].append(tmp)
                 g_si, tmp = preprocessor.generate_si_from_grammar_rules(tmp)
-                contextual_si.append(g_si)
-                specs['ensures'].append(tmp)                
+                contextual_si += g_si
+        # if raw_specs['requires']:
+        #     for r in raw_specs['requires']:
+        #         tmp = preprocessor.process(r)
+        #         specs['requires'].append(tmp)
+        #         g_si, tmp = preprocessor.generate_si_from_grammar_rules(tmp)
+        #         contextual_si += g_si
+        # if raw_specs['ensures']:
+        #     for e in raw_specs['ensures']:
+        #         tmp = preprocessor.process(e)
+        #         g_si, tmp = preprocessor.generate_si_from_grammar_rules(tmp)
+        #         contextual_si += g_si
+        #         specs['ensures'].append(tmp)                
     yaml_data = []
     if specs['requires']:
         for pre in specs['requires']:

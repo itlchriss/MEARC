@@ -1,6 +1,6 @@
 %{
     int bracket = 0, cbracket = 0;
-    #if DEBUG
+    #if LEXONLY
     int lineNum, colNum, *error_lines, error_count;
     #else
     #include "core.h"
@@ -8,8 +8,6 @@
     extern YYSTYPE yylval; /* for passing value to parser */
     extern int lineNum, colNum, *error_lines, error_count; /* line number from cal.tab.c */     
     #endif
-    // #define __LOG_LEVEL__ 1
-    // #define DEBUG
     void print_debug(char *);
     void print_error();
 
@@ -57,7 +55,7 @@
         // #if LEXDEBUG
         // printf("Token: %s\n", text);
         // #endif  
-        #if DEBUG
+        #if LEXONLY
         handlecolnum(text);
         return NULL;
         #else
@@ -120,7 +118,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 %%
 {LBRAC} {    
     ++bracket;
-    #if DEBUG
+    #if LEXONLY
     printf("LBRAC\n");
     #else
     yylval.t = handletoken(yytext);
@@ -129,7 +127,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 }
 {RBRAC} {    
     --bracket;    
-    #if DEBUG
+    #if LEXONLY
     printf("RBRAC\n");
     #else
     yylval.t = handletoken(yytext);
@@ -137,7 +135,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {MINUS} {     
-    #if DEBUG
+    #if LEXONLY
     printf("MINUS\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -145,7 +143,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_EXISTS} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_EXISTS\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -153,7 +151,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_FORALL} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_FORALL\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -162,7 +160,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     }
 
 {VARIABLE} { 
-    #if DEBUG
+    #if LEXONLY
     printf("IDENTIFIER\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -170,7 +168,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif    
     }
 {PREDICATE} { 
-    #if DEBUG
+    #if LEXONLY
     printf("PREDICATE\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -178,7 +176,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {DOT} { 
-    #if DEBUG
+    #if LEXONLY
     printf("DOT\n");
     #else
     handlecolnum(yytext); 
@@ -186,7 +184,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_TRUEP} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_TRUEP\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -195,7 +193,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     }
 {CURLY_LBRAC} {
     ++cbracket;    
-    #if DEBUG
+    #if LEXONLY
     printf("CURLY_LBRAC\n");
     #else
     yylval.t = handletoken(yytext);
@@ -203,7 +201,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {KEYWORD_PROG} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_PROG\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -211,7 +209,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_NN} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_NN\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -219,7 +217,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif    
     }
 {KEYWORD_NNS} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_NNS\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -227,7 +225,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif    
     }
 {KEYWORD_NNP} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_NNP\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -235,7 +233,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif    
     }
 {KEYWORD_NNPS} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_NNPS\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -243,7 +241,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_IN} {
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_IN\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -251,7 +249,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_JJ} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_JJ\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -259,7 +257,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_JJR} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_JJR\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -267,7 +265,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_JJS} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_JJS\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -275,7 +273,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VB} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VB\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -283,7 +281,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VBZ} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VBZ\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -291,7 +289,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VBN} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VBN\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -299,7 +297,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VBP} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VBP\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -307,7 +305,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_DT} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_DT\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -315,7 +313,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_CC} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_CC\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -323,7 +321,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_CD} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_CD\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -331,7 +329,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_PRP} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_PRP\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -339,7 +337,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_MD} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_MD\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -347,7 +345,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VBG} { 
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VBG\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -355,7 +353,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_RB}    {
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_RB\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -363,7 +361,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
     }
 {KEYWORD_VBD}    {
-    #if DEBUG
+    #if LEXONLY
     printf("KEYWORD_VBD\n");
     #else
     yylval.t = handletoken(yytext); 
@@ -376,7 +374,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
         print_error();
     }
     --cbracket;
-    #if DEBUG
+    #if LEXONLY
     printf("CURLY_RBRAC\n");
     #else
     yylval.t = handletoken(yytext);
@@ -384,7 +382,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif    
 }
 {COMMA} {
-    #if DEBUG
+    #if LEXONLY
     printf("COMMA\n");
     #else
     yylval.t = handletoken(yytext);
@@ -392,7 +390,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {AND} {
-    #if DEBUG
+    #if LEXONLY
     printf("AND\n");
     #else
     yylval.t = handletoken(yytext);
@@ -400,7 +398,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {IMPLY} {
-    #if DEBUG
+    #if LEXONLY
     printf("IMPLY\n");
     #else
     yylval.t = handletoken(yytext);
@@ -408,7 +406,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {GRAM_KEYWORDS} {
-    #if DEBUG
+    #if LEXONLY
     printf("GCASE\n");
     #else
     yylval.t = handletoken(yytext);
@@ -416,7 +414,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     #endif
 }
 {EQ} {
-    #if DEBUG
+    #if LEXONLY
     printf("EQUAL\n");
     #else
     yylval.t = handletoken(yytext);
@@ -425,7 +423,7 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 }
 
 {OR} {
-    #if DEBUG
+    #if LEXONLY
     printf("OR\n");
     #else
     yylval.t = handletoken(yytext);
@@ -459,7 +457,7 @@ int yywrap() {  /* need this to avoid link problem */
 
 }
 
-#if DEBUG
+#if LEXONLY
 int main(int argc, char **argv) {
     yyin = fopen(argv[1], "r");
     yylex();

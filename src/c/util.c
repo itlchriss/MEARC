@@ -288,7 +288,7 @@ char* strrep(char *str, char *str1, char *str2) {
     k = strsearch(str, str1, occur);
 
     // no occurrences of str1 in str
-    if (k == 0) return NULL;
+    if (k == 0) return (char*)strdup(str);
     int size = strlen(str) - (k * (strlen(str1) - strlen(str2))) + 1;
     char *new = (char*) malloc (sizeof(char) * size);
     int j, m, kc;
