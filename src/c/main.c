@@ -364,8 +364,14 @@ struct queue* readSI(char *dstfilepaths) {
                         int i = 0;                            
                         while (i < si->arg_count) {
                             yaml_parser_scan(&parser, &token);
+                            #if SIDEBUG
+                            printf("ARG: TOKEN TYPE: %u \n", token.type); 
+                            #endif
                             if (token.type == YAML_SCALAR_TOKEN) {
                                 si->args[i] = (char*) strdup((char*)token.data.scalar.value);
+                                #if SIDEBUG
+                                printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                                #endif
                                 ++i;
                             }
                         }                            

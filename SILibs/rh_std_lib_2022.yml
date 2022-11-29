@@ -1,0 +1,31 @@
+- term: have
+  syntax:
+  - VBD
+  - VBZ
+  arity: 2
+  arguments:
+  - - (Subj)
+    - exp
+  - - (Acc)
+    - exp
+  interpretation: (Subj) ==> (Acc)
+- term: have
+  syntax:
+  - VBD
+  - VBZ
+  arity: 2
+  arguments:
+  - - (Subj)
+    - keyword
+  - - (Acc)
+    - literal
+  interpretation: (Subj) == (Acc)
+- term: patient
+  syntax:
+  - NNS
+  - NN
+  arity: 1
+  arguments:
+  - - (*)
+    - keyword
+  interpretation: \result

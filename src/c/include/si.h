@@ -8,6 +8,7 @@
 */
 
 enum javadatatype { PRIMITIVE = 0, NON_PRIMITIVE, NON_PRIMITIVE_WITH_DIMENSIONS };
+enum argumenttype { EXPRESSION = 0, KEYWORD };
 
 struct si {
     char *term;
@@ -20,6 +21,7 @@ struct si {
     /* arguments in the interpretation */
     // struct queue *args;
     char **args;
+    
     char *interpretation;
     enum javadatatype jtype;
 };

@@ -1,49 +1,95 @@
 class RandomForest { 
 
-  //@ semantics "patients who had degenerative spondylolithesis", [NN, NNPS, NNS, NNP], 1, [*], \result == 1
-  //@ semantics "patients who had degenerative sp", [NN, NNPS, NNS, NNP], 1, [*], \result == 1
-  //@ semantics "have", [VBD], 2, [(Subj), (Acc)], (Subj) ==> (Acc)
-  //@ semantics "angle", [NN], 1, [*], lumbar_lordosis_angle
-  //@ ensures (*All patients who had degenerative spondylolithesis had an angle from 52.6 to 62.1.*);
+public static final int Hernia = 0;
+public static final int Normal = 1;
+public static final int Spondylolisthesis = 2;
 public int randomForest(double pelvic_incidence,double pelvic_tilt,double lumbar_lordosis_angle,double sacral_slope,double pelvic_radius,double degree_spondylolisthesis){
 double  class0 = 0;
 double  class1 = 0;
 double  class2 = 0;
  // TREE: 0
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (degree_spondylolisthesis <= 6.924067258834839)
-        {
-         class0+=0.8260869565217391;
-         class1+=0.17391304347826086;
-         class2+=0.0;
-        }
-      else
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (degree_spondylolisthesis <= 1.2192070484161377)
         {
          class0+=0.3333333333333333;
          class1+=0.6666666666666666;
          class2+=0.0;
         }
-    else
-      if (pelvic_tilt <= 10.707735538482666)
+      else
         {
-         class0+=0.08333333333333333;
-         class1+=0.9166666666666666;
+         class0+=0.6530612244897959;
+         class1+=0.32653061224489793;
+         class2+=0.02040816326530612;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (sacral_slope <= 53.330434799194336)
+      if (pelvic_incidence <= 69.5125503540039)
+        {
+         class0+=0.041666666666666664;
+         class1+=0.5;
+         class2+=0.4583333333333333;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.041666666666666664;
+         class2+=0.9583333333333334;
+        }
+    else
+      if (sacral_slope <= 58.73384475708008)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.09090909090909091;
+         class2+=0.9090909090909091;
+        }
+ // TREE: 1
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_incidence <= 49.899505615234375)
+        {
+         class0+=0.8064516129032258;
+         class1+=0.1935483870967742;
          class2+=0.0;
         }
       else
         {
-         class0+=0.3275862068965517;
-         class1+=0.6206896551724138;
-         class2+=0.05172413793103448;
+         class0+=0.35714285714285715;
+         class1+=0.5714285714285714;
+         class2+=0.07142857142857142;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
         }
   else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (degree_spondylolisthesis <= 18.88465976715088)
         {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
         }
       else
         {
@@ -52,42 +98,77 @@ double  class2 = 0;
          class2+=0.0;
         }
     else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 1
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (sacral_slope <= 35.553558349609375)
+      if (degree_spondylolisthesis <= 31.24958896636963)
         {
-         class0+=0.7631578947368421;
-         class1+=0.23684210526315788;
+         class0+=0.0;
+         class1+=0.07692307692307693;
+         class2+=0.9230769230769231;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 2
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
          class2+=0.0;
         }
       else
         {
-         class0+=0.24324324324324326;
-         class1+=0.6756756756756757;
-         class2+=0.08108108108108109;
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
         }
     else
-      if (sacral_slope <= 20.55422878265381)
+      if (sacral_slope <= 41.109004974365234)
         {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
+         class0+=0.4098360655737705;
+         class1+=0.5737704918032787;
+         class2+=0.01639344262295082;
+        }
+      else
+        {
+         class0+=0.07142857142857142;
+         class1+=0.8571428571428571;
+         class2+=0.07142857142857142;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_incidence <= 57.21945381164551)
+        {
+         class0+=0.0;
+         class1+=1.0;
          class2+=0.0;
         }
       else
         {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
         }
-  else
-    if (lumbar_lordosis_angle <= 62.66514015197754)
-      if (degree_spondylolisthesis <= 16.078891277313232)
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.05405405405405406;
+         class2+=0.9459459459459459;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 3
+  if (pelvic_radius <= 110.68482971191406)
+    if (sacral_slope <= 41.11776542663574)
+      if (lumbar_lordosis_angle <= 34.232845306396484)
         {
          class0+=1.0;
          class1+=0.0;
@@ -95,156 +176,39 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.0;
-         class1+=0.0392156862745098;
-         class2+=0.9607843137254902;
+         class0+=0.625;
+         class1+=0.0;
+         class2+=0.375;
         }
     else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 2
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (degree_spondylolisthesis <= 5.387938022613525)
+      if (degree_spondylolisthesis <= 11.642083644866943)
         {
-         class0+=0.40298507462686567;
-         class1+=0.5970149253731343;
+         class0+=0.5;
+         class1+=0.5;
          class2+=0.0;
         }
       else
-        {
-         class0+=0.7692307692307693;
-         class1+=0.23076923076923078;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 112.11275100708008)
-        {
-         class0+=0.045454545454545456;
-         class1+=0.09090909090909091;
-         class2+=0.8636363636363636;
-        }
-      else
-        {
-         class0+=0.14814814814814814;
-         class1+=0.5555555555555556;
-         class2+=0.2962962962962963;
-        }
-    else
-      if (sacral_slope <= 52.95919609069824)
         {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
-      else
-        {
-         class0+=0.0;
-         class1+=0.125;
-         class2+=0.875;
-        }
- // TREE: 3
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (sacral_slope <= 40.80160331726074)
-        {
-         class0+=0.3404255319148936;
-         class1+=0.6382978723404256;
-         class2+=0.02127659574468085;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.5384615384615384;
-         class2+=0.46153846153846156;
-        }
-    else
-      if (pelvic_incidence <= 55.399030685424805)
-        {
-         class0+=0.8333333333333334;
-         class1+=0.16666666666666666;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.46153846153846156;
-         class1+=0.23076923076923078;
-         class2+=0.3076923076923077;
-        }
   else
-    if (pelvic_tilt <= 30.175579071044922)
-      if (sacral_slope <= 43.76664161682129)
+    if (lumbar_lordosis_angle <= 56.35000038146973)
+      if (degree_spondylolisthesis <= 20.085037231445312)
         {
-         class0+=0.25;
-         class1+=0.5;
-         class2+=0.25;
+         class0+=0.3645833333333333;
+         class1+=0.6041666666666666;
+         class2+=0.03125;
         }
       else
         {
          class0+=0.0;
-         class1+=0.16455696202531644;
-         class2+=0.8354430379746836;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 4
-  if (pelvic_incidence <= 56.49103927612305)
-    if (sacral_slope <= 28.01943588256836)
-      if (sacral_slope <= 23.494050979614258)
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.9230769230769231;
-         class1+=0.07692307692307693;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 42.783695220947266)
-        {
-         class0+=0.325;
-         class1+=0.625;
-         class2+=0.05;
-        }
-      else
-        {
-         class0+=0.045454545454545456;
-         class1+=0.5909090909090909;
-         class2+=0.36363636363636365;
-        }
-  else
-    if (sacral_slope <= 44.822065353393555)
-      if (pelvic_tilt <= 32.02567481994629)
-        {
-         class0+=0.36363636363636365;
-         class1+=0.3181818181818182;
-         class2+=0.3181818181818182;
-        }
-      else
-        {
-         class0+=0.07142857142857142;
          class1+=0.0;
-         class2+=0.9285714285714286;
+         class2+=1.0;
         }
     else
-      if (lumbar_lordosis_angle <= 58.72928810119629)
+      if (lumbar_lordosis_angle <= 62.66514015197754)
         {
          class0+=0.0;
          class1+=0.3125;
@@ -253,57 +217,57 @@ double  class2 = 0;
       else
         {
          class0+=0.0;
-         class1+=0.08064516129032258;
-         class2+=0.9193548387096774;
+         class1+=0.05714285714285714;
+         class2+=0.9428571428571428;
         }
- // TREE: 5
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (lumbar_lordosis_angle <= 31.40432643890381)
-      if (sacral_slope <= 27.234947204589844)
+ // TREE: 4
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
         {
-         class0+=0.9;
-         class1+=0.1;
-         class2+=0.0;
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
         }
       else
         {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
         }
     else
-      if (pelvic_tilt <= 17.217758178710938)
+      if (degree_spondylolisthesis <= 2.116147041320801)
         {
-         class0+=0.13333333333333333;
-         class1+=0.7111111111111111;
-         class2+=0.15555555555555556;
+         class0+=0.038461538461538464;
+         class1+=0.9615384615384616;
+         class2+=0.0;
         }
       else
         {
-         class0+=0.625;
-         class1+=0.20833333333333334;
-         class2+=0.16666666666666666;
+         class0+=0.35714285714285715;
+         class1+=0.6428571428571429;
+         class2+=0.0;
         }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (lumbar_lordosis_angle <= 49.31392860412598)
+    if (pelvic_incidence <= 56.319414138793945)
+      if (sacral_slope <= 42.68553161621094)
         {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
         }
       else
         {
-         class0+=0.08;
-         class1+=0.8;
-         class2+=0.12;
+         class0+=0.0;
+         class1+=0.2857142857142857;
+         class2+=0.7142857142857143;
         }
     else
-      if (pelvic_incidence <= 68.07559204101562)
+      if (degree_spondylolisthesis <= 26.451024055480957)
         {
-         class0+=0.03571428571428571;
-         class1+=0.07142857142857142;
-         class2+=0.8928571428571429;
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
         }
       else
         {
@@ -311,47 +275,109 @@ double  class2 = 0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 6
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_tilt <= 21.858789443969727)
+ // TREE: 5
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
         {
-         class0+=0.36764705882352944;
-         class1+=0.6323529411764706;
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
          class2+=0.0;
         }
       else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 112.92106246948242)
+        {
+         class0+=0.6470588235294118;
+         class1+=0.058823529411764705;
+         class2+=0.29411764705882354;
+        }
+      else
+        {
+         class0+=0.21212121212121213;
+         class1+=0.6363636363636364;
+         class2+=0.15151515151515152;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 43.32751655578613)
+        {
+         class0+=0.058823529411764705;
+         class1+=0.11764705882352941;
+         class2+=0.8235294117647058;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013513513513513514;
+         class2+=0.9864864864864865;
+        }
+ // TREE: 6
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (sacral_slope <= 40.1485710144043)
+        {
+         class0+=0.43636363636363634;
+         class1+=0.5636363636363636;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.95;
+         class2+=0.05;
+        }
+    else
+      if (sacral_slope <= 29.734612464904785)
         {
          class0+=1.0;
          class1+=0.0;
          class2+=0.0;
         }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 18.59344720840454)
+      else
         {
-         class0+=0.25;
-         class1+=0.75;
-         class2+=0.0;
+         class0+=0.4074074074074074;
+         class1+=0.5185185185185185;
+         class2+=0.07407407407407407;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_incidence <= 55.807992935180664)
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
         }
       else
         {
          class0+=0.0;
-         class1+=0.06896551724137931;
-         class2+=0.9310344827586207;
+         class1+=1.0;
+         class2+=0.0;
         }
     else
-      if (pelvic_tilt <= 30.175579071044922)
+      if (degree_spondylolisthesis <= 26.451024055480957)
         {
          class0+=0.0;
-         class1+=0.11320754716981132;
-         class2+=0.8867924528301887;
+         class1+=0.125;
+         class2+=0.875;
         }
       else
         {
@@ -360,118 +386,36 @@ double  class2 = 0;
          class2+=1.0;
         }
  // TREE: 7
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_incidence <= 49.899505615234375)
         {
-         class0+=0.8947368421052632;
-         class1+=0.10526315789473684;
+         class0+=0.8064516129032258;
+         class1+=0.1935483870967742;
          class2+=0.0;
         }
       else
         {
-         class0+=0.42857142857142855;
+         class0+=0.35714285714285715;
          class1+=0.5714285714285714;
-         class2+=0.0;
+         class2+=0.07142857142857142;
         }
     else
-      if (pelvic_radius <= 118.08693313598633)
+      if (degree_spondylolisthesis <= 2.116147041320801)
         {
-         class0+=0.46153846153846156;
-         class1+=0.48717948717948717;
-         class2+=0.05128205128205128;
+         class0+=0.038461538461538464;
+         class1+=0.9615384615384616;
+         class2+=0.0;
         }
       else
         {
-         class0+=0.06976744186046512;
-         class1+=0.9069767441860465;
-         class2+=0.023255813953488372;
+         class0+=0.35714285714285715;
+         class1+=0.6428571428571429;
+         class2+=0.0;
         }
   else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 8
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.125;
-         class1+=0.875;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (pelvic_incidence <= 55.01586723327637)
-        {
-         class0+=0.0;
-         class1+=0.6666666666666666;
-         class2+=0.3333333333333333;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.25;
-         class2+=0.6388888888888888;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.365471124649048)
-        {
-         class0+=0.14285714285714285;
-         class1+=0.8571428571428571;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.02702702702702703;
-         class2+=0.972972972972973;
-        }
- // TREE: 9
-  if (pelvic_radius <= 110.70603561401367)
-    if (degree_spondylolisthesis <= 11.642083644866943)
-      if (pelvic_radius <= 107.06352615356445)
-        {
-         class0+=0.2857142857142857;
-         class1+=0.7142857142857143;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 105.7842025756836)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (sacral_slope <= 42.34691619873047)
         {
          class0+=0.0;
          class1+=0.0;
@@ -479,140 +423,16 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.07142857142857142;
-         class1+=0.0;
-         class2+=0.9285714285714286;
-        }
-  else
-    if (lumbar_lordosis_angle <= 57.10000038146973)
-      if (pelvic_incidence <= 69.31559753417969)
-        {
-         class0+=0.3723404255319149;
-         class1+=0.5638297872340425;
-         class2+=0.06382978723404255;
-        }
-      else
-        {
          class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
+         class1+=0.5;
+         class2+=0.5;
         }
     else
       if (pelvic_incidence <= 68.07559204101562)
         {
-         class0+=0.07692307692307693;
-         class1+=0.38461538461538464;
-         class2+=0.5384615384615384;
-        }
-      else
-        {
          class0+=0.0;
-         class1+=0.06521739130434782;
-         class2+=0.9347826086956522;
-        }
- // TREE: 10
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
-        {
-         class0+=0.17647058823529413;
-         class1+=0.5882352941176471;
-         class2+=0.23529411764705882;
-        }
-      else
-        {
-         class0+=0.6326530612244898;
-         class1+=0.24489795918367346;
-         class2+=0.12244897959183673;
-        }
-    else
-      if (lumbar_lordosis_angle <= 25.224257469177246)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.045454545454545456;
-         class1+=0.9090909090909091;
-         class2+=0.045454545454545456;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_incidence <= 70.737548828125)
-        {
-         class0+=0.21052631578947367;
-         class1+=0.7894736842105263;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.6666666666666666;
-         class2+=0.3333333333333333;
-        }
-    else
-      if (sacral_slope <= 43.447879791259766)
-        {
-         class0+=0.05263157894736842;
-         class1+=0.05263157894736842;
-         class2+=0.8947368421052632;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.012658227848101266;
-         class2+=0.9873417721518988;
-        }
- // TREE: 11
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8333333333333334;
-         class2+=0.05555555555555555;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_incidence <= 70.737548828125)
-        {
-         class0+=0.21052631578947367;
-         class1+=0.7894736842105263;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.6666666666666666;
-         class2+=0.3333333333333333;
-        }
-    else
-      if (lumbar_lordosis_angle <= 62.66514015197754)
-        {
-         class0+=0.024390243902439025;
-         class1+=0.04878048780487805;
-         class2+=0.926829268292683;
+         class1+=0.045454545454545456;
+         class2+=0.9545454545454546;
         }
       else
         {
@@ -620,74 +440,19 @@ double  class2 = 0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 12
-  if (pelvic_incidence <= 56.49103927612305)
-    if (degree_spondylolisthesis <= 17.252374172210693)
-      if (pelvic_tilt <= 10.707735538482666)
+ // TREE: 8
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (sacral_slope <= 36.027883529663086)
         {
-         class0+=0.12;
-         class1+=0.88;
+         class0+=0.6166666666666667;
+         class1+=0.38333333333333336;
          class2+=0.0;
         }
       else
         {
-         class0+=0.5882352941176471;
-         class1+=0.4117647058823529;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 113.07193374633789)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.25;
-         class2+=0.75;
-        }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (sacral_slope <= 44.822065353393555)
-        {
-         class0+=0.45;
-         class1+=0.25;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.3125;
-         class2+=0.6875;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.365471124649048)
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.013888888888888888;
-         class2+=0.9861111111111112;
-        }
- // TREE: 13
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.36764705882352944;
-         class1+=0.6323529411764706;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
+         class0+=0.21875;
+         class1+=0.78125;
          class2+=0.0;
         }
     else
@@ -697,49 +462,8 @@ double  class2 = 0;
        class2+=1.0;
       }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (degree_spondylolisthesis <= -0.5330937206745148)
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.047619047619047616;
-         class1+=0.8095238095238095;
-         class2+=0.14285714285714285;
-        }
-    else
-      if (lumbar_lordosis_angle <= 62.66514015197754)
-        {
-         class0+=0.024390243902439025;
-         class1+=0.04878048780487805;
-         class2+=0.926829268292683;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 14
-  if (pelvic_incidence <= 56.49103927612305)
-    if (degree_spondylolisthesis <= 17.252374172210693)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 60.49077033996582)
+    if (pelvic_radius <= 121.3623161315918)
+      if (pelvic_radius <= 103.31562042236328)
         {
          class0+=0.0;
          class1+=0.0;
@@ -747,26 +471,12 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.0;
-         class1+=0.5;
-         class2+=0.5;
-        }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (sacral_slope <= 44.822065353393555)
-        {
-         class0+=0.45;
-         class1+=0.25;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.3125;
-         class2+=0.6875;
+         class0+=0.037037037037037035;
+         class1+=0.1111111111111111;
+         class2+=0.8518518518518519;
         }
     else
-      if (degree_spondylolisthesis <= 8.365471124649048)
+      if (degree_spondylolisthesis <= 27.53839111328125)
         {
          class0+=0.0;
          class1+=1.0;
@@ -775,652 +485,13 @@ double  class2 = 0;
       else
         {
          class0+=0.0;
-         class1+=0.013888888888888888;
-         class2+=0.9861111111111112;
-        }
- // TREE: 15
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
-        {
-         class0+=0.15;
-         class1+=0.5;
-         class2+=0.35;
-        }
-      else
-        {
-         class0+=0.75;
-         class1+=0.2222222222222222;
-         class2+=0.027777777777777776;
-        }
-    else
-      if (degree_spondylolisthesis <= 22.721468925476074)
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
-  else
-    if (pelvic_tilt <= 30.175579071044922)
-      if (degree_spondylolisthesis <= 12.387728691101074)
-        {
-         class0+=0.2;
-         class1+=0.7;
-         class2+=0.1;
-        }
-      else
-        {
-         class0+=0.014084507042253521;
-         class1+=0.014084507042253521;
-         class2+=0.971830985915493;
-        }
-    else
-      if (lumbar_lordosis_angle <= 47.17729949951172)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 16
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (lumbar_lordosis_angle <= 31.40432643890381)
-      if (pelvic_tilt <= 6.681411981582642)
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.7619047619047619;
-         class1+=0.23809523809523808;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 125.3803825378418)
-        {
-         class0+=0.41379310344827586;
-         class1+=0.5344827586206896;
-         class2+=0.05172413793103448;
-        }
-      else
-        {
-         class0+=0.03571428571428571;
-         class1+=0.9642857142857143;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_tilt <= 14.86863899230957)
-      if (pelvic_tilt <= 14.60332202911377)
-        {
-         class0+=0.0;
-         class1+=0.03225806451612903;
-         class2+=0.967741935483871;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 17
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (degree_spondylolisthesis <= 6.924067258834839)
-        {
-         class0+=0.8260869565217391;
-         class1+=0.17391304347826086;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.3333333333333333;
-         class1+=0.6666666666666666;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 31.530985832214355)
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.2;
-         class1+=0.7571428571428571;
-         class2+=0.04285714285714286;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (pelvic_radius <= 105.5777816772461)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_tilt <= 14.86863899230957)
-        {
-         class0+=0.0;
-         class1+=0.06451612903225806;
-         class2+=0.9354838709677419;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 18
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_incidence <= 60.66520690917969)
-        {
-         class0+=0.64;
-         class1+=0.36;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24;
-         class1+=0.64;
-         class2+=0.12;
-        }
-    else
-      if (pelvic_tilt <= 25.32889747619629)
-        {
-         class0+=0.0625;
-         class1+=0.9375;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 19
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (lumbar_lordosis_angle <= 35.93632888793945)
-        {
-         class0+=0.7666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.3333333333333333;
-         class1+=0.6;
-         class2+=0.06666666666666667;
-        }
-    else
-      if (lumbar_lordosis_angle <= 25.224257469177246)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (lumbar_lordosis_angle <= 66.84712982177734)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 62.66514015197754)
-        {
-         class0+=0.0;
-         class1+=0.0392156862745098;
-         class2+=0.9607843137254902;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 20
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.76;
-         class1+=0.24;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.32727272727272727;
-         class1+=0.6727272727272727;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.617511749267578)
-        {
-         class0+=0.0;
-         class1+=0.2222222222222222;
-         class2+=0.7777777777777778;
-        }
-      else
-        {
-         class0+=0.22727272727272727;
-         class1+=0.5;
-         class2+=0.2727272727272727;
-        }
-    else
-      if (lumbar_lordosis_angle <= 61.07404136657715)
-        {
-         class0+=0.0;
-         class1+=0.18181818181818182;
-         class2+=0.8181818181818182;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.03636363636363636;
-         class2+=0.9636363636363636;
-        }
- // TREE: 21
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (lumbar_lordosis_angle <= 30.714024543762207)
-        {
-         class0+=0.5;
-         class1+=0.5;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      if (sacral_slope <= 35.53619194030762)
-        {
-         class0+=0.6888888888888889;
-         class1+=0.3111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.18421052631578946;
-         class1+=0.7368421052631579;
-         class2+=0.07894736842105263;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (pelvic_incidence <= 70.7374324798584)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_tilt <= 14.86863899230957)
-        {
-         class0+=0.0;
-         class1+=0.06451612903225806;
-         class2+=0.9354838709677419;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 22
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
-        {
-         class0+=0.23076923076923078;
-         class1+=0.6153846153846154;
-         class2+=0.15384615384615385;
-        }
-      else
-        {
-         class0+=0.7333333333333333;
-         class1+=0.17777777777777778;
-         class2+=0.08888888888888889;
-        }
-    else
-      if (degree_spondylolisthesis <= 32.5670747756958)
-        {
-         class0+=0.11538461538461539;
-         class1+=0.8846153846153846;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 85.2918815612793)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.1;
-         class1+=0.8333333333333334;
-         class2+=0.06666666666666667;
-        }
-    else
-      if (pelvic_tilt <= 14.86863899230957)
-        {
-         class0+=0.0;
-         class1+=0.06666666666666667;
-         class2+=0.9333333333333333;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 23
-  if (sacral_slope <= 40.53826332092285)
-    if (lumbar_lordosis_angle <= 55.60000038146973)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6363636363636364;
-         class1+=0.2909090909090909;
-         class2+=0.07272727272727272;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8518518518518519;
-         class2+=0.037037037037037035;
-        }
-    else
-      if (lumbar_lordosis_angle <= 63.405269622802734)
-        {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (sacral_slope <= 53.45471954345703)
-      if (degree_spondylolisthesis <= 14.380344867706299)
-        {
-         class0+=0.125;
-         class1+=0.8333333333333334;
-         class2+=0.041666666666666664;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.043478260869565216;
-         class2+=0.9565217391304348;
-        }
-    else
-      if (sacral_slope <= 55.55099105834961)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.11904761904761904;
-         class2+=0.8809523809523809;
-        }
- // TREE: 24
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8947368421052632;
-         class1+=0.10526315789473684;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (sacral_slope <= 45.12681770324707)
-        {
-         class0+=0.3387096774193548;
-         class1+=0.6612903225806451;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.85;
-         class2+=0.15;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (pelvic_tilt <= 19.228031635284424)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 31.374295234680176)
-        {
-         class0+=0.0;
-         class1+=0.08333333333333333;
-         class2+=0.9166666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 25
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (sacral_slope <= 35.553558349609375)
-        {
-         class0+=0.7631578947368421;
-         class1+=0.23684210526315788;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24324324324324326;
-         class1+=0.6756756756756757;
-         class2+=0.08108108108108109;
-        }
-    else
-      if (lumbar_lordosis_angle <= 25.224257469177246)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
-        }
-  else
-    if (lumbar_lordosis_angle <= 62.66514015197754)
-      if (pelvic_incidence <= 68.58223342895508)
-        {
-         class0+=0.03333333333333333;
-         class1+=0.06666666666666667;
-         class2+=0.9;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 26
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 16.65331506729126)
-        {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_tilt <= 22.52758026123047)
-        {
-         class0+=0.08695652173913043;
-         class1+=0.9130434782608695;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 18.59344720840454)
-        {
-         class0+=0.25;
-         class1+=0.75;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.06896551724137931;
-         class2+=0.9310344827586207;
-        }
-    else
-      if (lumbar_lordosis_angle <= 61.07404136657715)
-        {
-         class0+=0.0;
-         class1+=0.18181818181818182;
-         class2+=0.8181818181818182;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.03636363636363636;
-         class2+=0.9636363636363636;
-        }
- // TREE: 27
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (lumbar_lordosis_angle <= 31.40432643890381)
-      if (pelvic_radius <= 123.31332397460938)
+ // TREE: 9
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
         {
          class0+=0.9333333333333333;
          class1+=0.06666666666666667;
@@ -1428,43 +499,43 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.2857142857142857;
-         class1+=0.7142857142857143;
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
          class2+=0.0;
         }
     else
-      if (pelvic_tilt <= 19.620058059692383)
+      if (pelvic_radius <= 117.12782287597656)
         {
-         class0+=0.16666666666666666;
-         class1+=0.8;
-         class2+=0.03333333333333333;
+         class0+=0.5428571428571428;
+         class1+=0.37142857142857144;
+         class2+=0.08571428571428572;
         }
       else
         {
-         class0+=0.5769230769230769;
-         class1+=0.38461538461538464;
-         class2+=0.038461538461538464;
+         class0+=0.14814814814814814;
+         class1+=0.8518518518518519;
+         class2+=0.0;
         }
   else
-    if (pelvic_tilt <= 14.86863899230957)
-      if (pelvic_tilt <= 14.60332202911377)
-        {
-         class0+=0.0;
-         class1+=0.03225806451612903;
-         class2+=0.967741935483871;
-        }
-      else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_incidence <= 57.21945381164551)
         {
          class0+=0.0;
          class1+=1.0;
          class2+=0.0;
         }
-    else
-      if (lumbar_lordosis_angle <= 55.60000038146973)
+      else
         {
-         class0+=0.07142857142857142;
+         class0+=0.0;
          class1+=0.0;
-         class2+=0.9285714285714286;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.045454545454545456;
+         class2+=0.9545454545454546;
         }
       else
         {
@@ -1472,26 +543,26 @@ double  class2 = 0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 28
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (degree_spondylolisthesis <= 15.480012655258179)
+ // TREE: 10
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_tilt <= 27.4694242477417)
+      if (sacral_slope <= 28.13647174835205)
         {
-         class0+=0.12;
-         class1+=0.88;
+         class0+=0.7727272727272727;
+         class1+=0.22727272727272727;
          class2+=0.0;
         }
       else
         {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
+         class0+=0.34782608695652173;
+         class1+=0.5072463768115942;
+         class2+=0.14492753623188406;
         }
     else
-      if (degree_spondylolisthesis <= 32.862857818603516)
+      if (degree_spondylolisthesis <= 6.3782958984375)
         {
-         class0+=0.5769230769230769;
-         class1+=0.4230769230769231;
+         class0+=1.0;
+         class1+=0.0;
          class2+=0.0;
         }
       else
@@ -1501,39 +572,39 @@ double  class2 = 0;
          class2+=1.0;
         }
   else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.907419681549072)
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (degree_spondylolisthesis <= 8.581488609313965)
         {
          class0+=0.0;
-         class1+=0.13043478260869565;
-         class2+=0.8695652173913043;
+         class1+=1.0;
+         class2+=0.0;
         }
       else
         {
-         class0+=0.2857142857142857;
-         class1+=0.4642857142857143;
-         class2+=0.25;
+         class0+=0.14285714285714285;
+         class1+=0.0;
+         class2+=0.8571428571428571;
         }
     else
-      if (pelvic_radius <= 111.81633758544922)
+      if (sacral_slope <= 53.0706672668457)
         {
-         class0+=0.03125;
-         class1+=0.1875;
-         class2+=0.78125;
+         class0+=0.0196078431372549;
+         class1+=0.23529411764705882;
+         class2+=0.7450980392156863;
         }
       else
         {
          class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
         }
- // TREE: 29
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 18.811551570892334)
+ // TREE: 11
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_radius <= 125.44171905517578)
+      if (degree_spondylolisthesis <= 17.48571014404297)
         {
-         class0+=0.6923076923076923;
-         class1+=0.3076923076923077;
+         class0+=0.6333333333333333;
+         class1+=0.36666666666666664;
          class2+=0.0;
         }
       else
@@ -1543,488 +614,76 @@ double  class2 = 0;
          class2+=1.0;
         }
     else
-      if (pelvic_incidence <= 56.98469161987305)
+      if (pelvic_tilt <= 23.426228523254395)
         {
-         class0+=0.1111111111111111;
-         class1+=0.8518518518518519;
-         class2+=0.037037037037037035;
+         class0+=0.14705882352941177;
+         class1+=0.7647058823529411;
+         class2+=0.08823529411764706;
         }
       else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (pelvic_radius <= 110.70603561401367)
-      if (degree_spondylolisthesis <= 11.642083644866943)
-        {
-         class0+=0.2;
-         class1+=0.8;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 14.380344867706299)
-        {
-         class0+=0.08;
-         class1+=0.84;
-         class2+=0.08;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.038461538461538464;
-         class2+=0.9615384615384616;
-        }
- // TREE: 30
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_incidence <= 66.89922332763672)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.625;
-         class1+=0.2857142857142857;
-         class2+=0.08928571428571429;
-        }
-      else
-        {
-         class0+=0.10714285714285714;
-         class1+=0.8214285714285714;
-         class2+=0.07142857142857142;
-        }
-    else
-      if (sacral_slope <= 33.18121528625488)
         {
          class0+=0.3333333333333333;
          class1+=0.0;
          class2+=0.6666666666666666;
         }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
   else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 113.05963516235352)
-        {
-         class0+=0.07407407407407407;
-         class1+=0.07407407407407407;
-         class2+=0.8518518518518519;
-        }
-      else
-        {
-         class0+=0.04;
-         class1+=0.76;
-         class2+=0.2;
-        }
-    else
-      if (pelvic_radius <= 111.81633758544922)
+    if (pelvic_incidence <= 63.123300552368164)
+      if (pelvic_incidence <= 61.22392272949219)
         {
          class0+=0.0;
-         class1+=0.1935483870967742;
-         class2+=0.8064516129032258;
+         class1+=0.34615384615384615;
+         class2+=0.6538461538461539;
         }
       else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 31
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 17.252374172210693)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
-        }
-    else
-      if (degree_spondylolisthesis <= 22.721468925476074)
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 99.58705520629883)
-        {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
-        }
-      else
-        {
-         class0+=0.23333333333333334;
-         class1+=0.7;
-         class2+=0.06666666666666667;
-        }
-    else
-      if (sacral_slope <= 39.34503364562988)
-        {
-         class0+=0.1111111111111111;
-         class1+=0.0;
-         class2+=0.8888888888888888;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.011235955056179775;
-         class2+=0.9887640449438202;
-        }
- // TREE: 32
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (degree_spondylolisthesis <= 1.974761962890625)
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_incidence <= 60.66520690917969)
-        {
-         class0+=0.5925925925925926;
-         class1+=0.4074074074074074;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.20689655172413793;
-         class1+=0.6896551724137931;
-         class2+=0.10344827586206896;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 33
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 17.252374172210693)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
-        }
-    else
-      if (sacral_slope <= 20.55422878265381)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03571428571428571;
-         class1+=0.8928571428571429;
-         class2+=0.07142857142857142;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (sacral_slope <= 42.2171573638916)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.08695652173913043;
-         class1+=0.782608695652174;
-         class2+=0.13043478260869565;
-        }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.037037037037037035;
-         class1+=0.037037037037037035;
-         class2+=0.9259259259259259;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 34
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (sacral_slope <= 23.494050979614258)
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.9285714285714286;
-         class1+=0.07142857142857142;
-         class2+=0.0;
-        }
-    else
-      if (sacral_slope <= 45.12681770324707)
-        {
-         class0+=0.3387096774193548;
-         class1+=0.6612903225806451;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.85;
-         class2+=0.15;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (lumbar_lordosis_angle <= 66.84712982177734)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 62.66514015197754)
-        {
-         class0+=0.0;
-         class1+=0.0392156862745098;
-         class2+=0.9607843137254902;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 35
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (lumbar_lordosis_angle <= 31.40432643890381)
-      if (sacral_slope <= 27.234947204589844)
-        {
-         class0+=0.9;
-         class1+=0.1;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 13.920654773712158)
-        {
-         class0+=0.3620689655172414;
-         class1+=0.6379310344827587;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (sacral_slope <= 43.68538284301758)
-      if (pelvic_tilt <= 30.450276374816895)
-        {
-         class0+=0.25;
-         class1+=0.5;
-         class2+=0.25;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_radius <= 126.13557434082031)
-        {
-         class0+=0.0;
-         class1+=0.10843373493975904;
-         class2+=0.891566265060241;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.36363636363636365;
-         class2+=0.6363636363636364;
-        }
- // TREE: 36
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8888888888888888;
-         class1+=0.1111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8333333333333334;
-         class2+=0.05555555555555555;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 18.59344720840454)
         {
          class0+=0.25;
          class1+=0.75;
          class2+=0.0;
         }
+    else
+      if (pelvic_incidence <= 69.5125503540039)
+        {
+         class0+=0.045454545454545456;
+         class1+=0.18181818181818182;
+         class2+=0.7727272727272727;
+        }
       else
         {
          class0+=0.0;
-         class1+=0.06896551724137931;
-         class2+=0.9310344827586207;
+         class1+=0.05172413793103448;
+         class2+=0.9482758620689655;
+        }
+ // TREE: 12
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (degree_spondylolisthesis <= 1.3626884818077087)
+      if (pelvic_radius <= 121.49974060058594)
+        {
+         class0+=0.4583333333333333;
+         class1+=0.5;
+         class2+=0.041666666666666664;
+        }
+      else
+        {
+         class0+=0.07407407407407407;
+         class1+=0.9259259259259259;
+         class2+=0.0;
         }
     else
-      if (degree_spondylolisthesis <= 8.255654573440552)
+      if (sacral_slope <= 35.3641357421875)
         {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 37
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.76;
-         class1+=0.24;
+         class0+=0.7878787878787878;
+         class1+=0.21212121212121213;
          class2+=0.0;
         }
       else
         {
-         class0+=0.32727272727272727;
-         class1+=0.6727272727272727;
-         class2+=0.0;
+         class0+=0.2413793103448276;
+         class1+=0.6896551724137931;
+         class2+=0.06896551724137931;
         }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
   else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (sacral_slope <= 43.76664161682129)
-        {
-         class0+=0.26666666666666666;
-         class1+=0.4666666666666667;
-         class2+=0.26666666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.26666666666666666;
-         class2+=0.7333333333333333;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.365471124649048)
-        {
-         class0+=0.14285714285714285;
-         class1+=0.8571428571428571;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.02702702702702703;
-         class2+=0.972972972972973;
-        }
- // TREE: 38
-  if (pelvic_incidence <= 56.49103927612305)
-    if (degree_spondylolisthesis <= 17.252374172210693)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 60.49077033996582)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (sacral_slope <= 42.34691619873047)
         {
          class0+=0.0;
          class1+=0.0;
@@ -2036,226 +695,67 @@ double  class2 = 0;
          class1+=0.5;
          class2+=0.5;
         }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 113.05963516235352)
-        {
-         class0+=0.16;
-         class1+=0.08;
-         class2+=0.76;
-        }
-      else
-        {
-         class0+=0.15384615384615385;
-         class1+=0.5384615384615384;
-         class2+=0.3076923076923077;
-        }
     else
-      if (lumbar_lordosis_angle <= 34.24835014343262)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
+      if (degree_spondylolisthesis <= 31.24958896636963)
         {
          class0+=0.0;
          class1+=0.07692307692307693;
          class2+=0.9230769230769231;
         }
- // TREE: 39
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8947368421052632;
-         class1+=0.10526315789473684;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_tilt <= 10.707735538482666)
-        {
-         class0+=0.08333333333333333;
-         class1+=0.9166666666666666;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.3275862068965517;
-         class1+=0.6206896551724138;
-         class2+=0.05172413793103448;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 40
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (pelvic_radius <= 110.853271484375)
-        {
-         class0+=0.125;
-         class1+=0.0;
-         class2+=0.875;
-        }
-      else
-        {
-         class0+=0.08;
-         class1+=0.88;
-         class2+=0.04;
-        }
-    else
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.75;
-         class1+=0.2222222222222222;
-         class2+=0.027777777777777776;
-        }
-      else
-        {
-         class0+=0.16666666666666666;
-         class1+=0.7777777777777778;
-         class2+=0.05555555555555555;
-        }
-  else
-    if (sacral_slope <= 44.822065353393555)
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=0.5625;
-         class1+=0.4375;
-         class2+=0.0;
-        }
       else
         {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
+ // TREE: 13
+  if (pelvic_radius <= 110.68482971191406)
+    if (sacral_slope <= 41.11776542663574)
+      if (pelvic_incidence <= 48.98326301574707)
         {
-         class0+=0.0;
-         class1+=0.875;
-         class2+=0.125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.01282051282051282;
-         class2+=0.9871794871794872;
-        }
- // TREE: 41
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 16.65331506729126)
-        {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
+         class0+=0.5714285714285714;
          class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_tilt <= 22.52758026123047)
-        {
-         class0+=0.08695652173913043;
-         class1+=0.9130434782608695;
-         class2+=0.0;
+         class2+=0.42857142857142855;
         }
       else
-        {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
-        }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (pelvic_radius <= 125.59880447387695)
-        {
-         class0+=0.11428571428571428;
-         class1+=0.2;
-         class2+=0.6857142857142857;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.8;
-         class2+=0.2;
-        }
-    else
-      if (pelvic_tilt <= 26.210180282592773)
-        {
-         class0+=0.018518518518518517;
-         class1+=0.14814814814814814;
-         class2+=0.8333333333333334;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 42
-  if (sacral_slope <= 40.53826332092285)
-    if (lumbar_lordosis_angle <= 55.60000038146973)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6363636363636364;
-         class1+=0.2909090909090909;
-         class2+=0.07272727272727272;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8518518518518519;
-         class2+=0.037037037037037035;
-        }
-    else
-      if (degree_spondylolisthesis <= 23.90088641643524)
         {
          class0+=1.0;
          class1+=0.0;
          class2+=0.0;
         }
-      else
+    else
+      if (pelvic_radius <= 101.79591369628906)
         {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
-  else
-    if (sacral_slope <= 53.45471954345703)
-      if (degree_spondylolisthesis <= 14.380344867706299)
+      else
         {
-         class0+=0.125;
-         class1+=0.8333333333333334;
-         class2+=0.041666666666666664;
+         class0+=0.08695652173913043;
+         class1+=0.08695652173913043;
+         class2+=0.8260869565217391;
+        }
+  else
+    if (lumbar_lordosis_angle <= 56.35000038146973)
+      if (pelvic_radius <= 125.30192565917969)
+        {
+         class0+=0.4603174603174603;
+         class1+=0.38095238095238093;
+         class2+=0.15873015873015872;
+        }
+      else
+        {
+         class0+=0.1276595744680851;
+         class1+=0.723404255319149;
+         class2+=0.14893617021276595;
+        }
+    else
+      if (degree_spondylolisthesis <= 11.996948957443237)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
         }
       else
         {
@@ -2263,932 +763,47 @@ double  class2 = 0;
          class1+=0.043478260869565216;
          class2+=0.9565217391304348;
         }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
+ // TREE: 14
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_radius <= 111.27699661254883)
         {
-         class0+=0.0;
-         class1+=0.8333333333333334;
-         class2+=0.16666666666666666;
+         class0+=0.7647058823529411;
+         class1+=0.17647058823529413;
+         class2+=0.058823529411764705;
         }
       else
         {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
+         class0+=0.48214285714285715;
+         class1+=0.48214285714285715;
+         class2+=0.03571428571428571;
         }
- // TREE: 43
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_radius <= 124.96423721313477)
+    else
+      if (sacral_slope <= 28.13647174835205)
         {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
          class2+=0.0;
         }
       else
         {
-         class0+=0.125;
-         class1+=0.875;
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
          class2+=0.0;
         }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
   else
-    if (pelvic_tilt <= 30.175579071044922)
-      if (degree_spondylolisthesis <= 12.387728691101074)
-        {
-         class0+=0.14285714285714285;
-         class1+=0.75;
-         class2+=0.10714285714285714;
-        }
-      else
-        {
-         class0+=0.014084507042253521;
-         class1+=0.028169014084507043;
-         class2+=0.9577464788732394;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 44
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.76;
-         class1+=0.24;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.32727272727272727;
-         class1+=0.6727272727272727;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 18.59344720840454)
-        {
-         class0+=0.25;
-         class1+=0.75;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.06896551724137931;
-         class2+=0.9310344827586207;
-        }
-    else
-      if (lumbar_lordosis_angle <= 61.07404136657715)
-        {
-         class0+=0.0;
-         class1+=0.18181818181818182;
-         class2+=0.8181818181818182;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.03636363636363636;
-         class2+=0.9636363636363636;
-        }
- // TREE: 45
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_incidence <= 63.882225036621094)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 85.2918815612793)
+    if (pelvic_incidence <= 56.319414138793945)
+      if (lumbar_lordosis_angle <= 54.25)
         {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
       else
-        {
-         class0+=0.18181818181818182;
-         class1+=0.7272727272727273;
-         class2+=0.09090909090909091;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_radius <= 115.87165069580078)
-        {
-         class0+=0.03571428571428571;
-         class1+=0.0;
-         class2+=0.9642857142857143;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.2;
-         class2+=0.8;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 46
-  if (pelvic_radius <= 110.70603561401367)
-    if (lumbar_lordosis_angle <= 31.751480102539062)
-      {
-       class0+=1.0;
-       class1+=0.0;
-       class2+=0.0;
-      }
-    else
-      if (degree_spondylolisthesis <= 11.642083644866943)
-        {
-         class0+=0.2857142857142857;
-         class1+=0.7142857142857143;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.020833333333333332;
-         class1+=0.0;
-         class2+=0.9791666666666666;
-        }
-  else
-    if (lumbar_lordosis_angle <= 57.10000038146973)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.7407407407407407;
-         class1+=0.2222222222222222;
-         class2+=0.037037037037037035;
-        }
-      else
-        {
-         class0+=0.2054794520547945;
-         class1+=0.6438356164383562;
-         class2+=0.1506849315068493;
-        }
-    else
-      if (degree_spondylolisthesis <= 15.148581981658936)
-        {
-         class0+=0.125;
-         class1+=0.75;
-         class2+=0.125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0392156862745098;
-         class2+=0.9607843137254902;
-        }
- // TREE: 47
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (sacral_slope <= 35.553558349609375)
-        {
-         class0+=0.7631578947368421;
-         class1+=0.23684210526315788;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24324324324324326;
-         class1+=0.6756756756756757;
-         class2+=0.08108108108108109;
-        }
-    else
-      if (degree_spondylolisthesis <= -0.4475463032722473)
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.16666666666666666;
-         class1+=0.8333333333333334;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_tilt <= 14.86863899230957)
-      if (pelvic_tilt <= 14.60332202911377)
-        {
-         class0+=0.0;
-         class1+=0.03225806451612903;
-         class2+=0.967741935483871;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_incidence <= 63.94157600402832)
-        {
-         class0+=0.125;
-         class1+=0.0;
-         class2+=0.875;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 48
-  if (sacral_slope <= 40.53826332092285)
-    if (degree_spondylolisthesis <= 18.811551570892334)
-      if (lumbar_lordosis_angle <= 31.40432643890381)
-        {
-         class0+=0.7272727272727273;
-         class1+=0.2727272727272727;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.4107142857142857;
-         class1+=0.5892857142857143;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (lumbar_lordosis_angle <= 47.28213119506836)
-        {
-         class0+=0.05263157894736842;
-         class1+=0.5263157894736842;
-         class2+=0.42105263157894735;
-        }
-      else
-        {
-         class0+=0.058823529411764705;
-         class1+=0.2647058823529412;
-         class2+=0.6764705882352942;
-        }
-    else
-      if (sacral_slope <= 43.447879791259766)
         {
          class0+=0.0;
          class1+=0.3333333333333333;
          class2+=0.6666666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.078125;
-         class2+=0.921875;
-        }
- // TREE: 49
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= -0.582274317741394)
-        {
-         class0+=0.7368421052631579;
-         class1+=0.2631578947368421;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5178571428571429;
-         class2+=0.05357142857142857;
-        }
-    else
-      if (degree_spondylolisthesis <= -0.4475463032722473)
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.16666666666666666;
-         class1+=0.8333333333333334;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.05405405405405406;
-         class2+=0.9459459459459459;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 50
-  if (pelvic_incidence <= 56.49103927612305)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8888888888888888;
-         class1+=0.1111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4782608695652174;
-         class1+=0.21739130434782608;
-         class2+=0.30434782608695654;
-        }
-      else
-        {
-         class0+=0.07692307692307693;
-         class1+=0.8461538461538461;
-         class2+=0.07692307692307693;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.907419681549072)
-        {
-         class0+=0.0;
-         class1+=0.13043478260869565;
-         class2+=0.8695652173913043;
-        }
-      else
-        {
-         class0+=0.2857142857142857;
-         class1+=0.4642857142857143;
-         class2+=0.25;
-        }
-    else
-      if (pelvic_radius <= 111.81633758544922)
-        {
-         class0+=0.03125;
-         class1+=0.1875;
-         class2+=0.78125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 51
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 17.252374172210693)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
-        }
-    else
-      if (pelvic_tilt <= 19.205841064453125)
-        {
-         class0+=0.03571428571428571;
-         class1+=0.8928571428571429;
-         class2+=0.07142857142857142;
-        }
-      else
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_tilt <= 20.16680145263672)
-        {
-         class0+=0.0;
-         class1+=0.8666666666666667;
-         class2+=0.13333333333333333;
-        }
-      else
-        {
-         class0+=0.47058823529411764;
-         class1+=0.47058823529411764;
-         class2+=0.058823529411764705;
-        }
-    else
-      if (sacral_slope <= 39.34503364562988)
-        {
-         class0+=0.1111111111111111;
-         class1+=0.0;
-         class2+=0.8888888888888888;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.011235955056179775;
-         class2+=0.9887640449438202;
-        }
- // TREE: 52
-  if (pelvic_incidence <= 56.49103927612305)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8888888888888888;
-         class1+=0.1111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4782608695652174;
-         class1+=0.21739130434782608;
-         class2+=0.30434782608695654;
-        }
-      else
-        {
-         class0+=0.07692307692307693;
-         class1+=0.8461538461538461;
-         class2+=0.07692307692307693;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.907419681549072)
-        {
-         class0+=0.0;
-         class1+=0.13043478260869565;
-         class2+=0.8695652173913043;
-        }
-      else
-        {
-         class0+=0.2857142857142857;
-         class1+=0.4642857142857143;
-         class2+=0.25;
-        }
-    else
-      if (pelvic_tilt <= 30.175579071044922)
-        {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
-        }
-      else
-        {
-         class0+=0.04;
-         class1+=0.0;
-         class2+=0.96;
-        }
- // TREE: 53
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_incidence <= 60.66520690917969)
-        {
-         class0+=0.64;
-         class1+=0.36;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24;
-         class1+=0.64;
-         class2+=0.12;
-        }
-    else
-      if (lumbar_lordosis_angle <= 25.224257469177246)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.05405405405405406;
-         class2+=0.9459459459459459;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 54
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
-        {
-         class0+=0.17647058823529413;
-         class1+=0.5882352941176471;
-         class2+=0.23529411764705882;
-        }
-      else
-        {
-         class0+=0.6326530612244898;
-         class1+=0.24489795918367346;
-         class2+=0.12244897959183673;
-        }
-    else
-      if (pelvic_incidence <= 60.99151420593262)
-        {
-         class0+=0.13043478260869565;
-         class1+=0.8695652173913043;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.5;
-         class2+=0.5;
-        }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (degree_spondylolisthesis <= 16.84712839126587)
-        {
-         class0+=0.21052631578947367;
-         class1+=0.7368421052631579;
-         class2+=0.05263157894736842;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.038461538461538464;
-         class2+=0.9615384615384616;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.365471124649048)
-        {
-         class0+=0.14285714285714285;
-         class1+=0.8571428571428571;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.02702702702702703;
-         class2+=0.972972972972973;
-        }
- // TREE: 55
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (lumbar_lordosis_angle <= 31.40432643890381)
-      if (degree_spondylolisthesis <= -1.0019319355487823)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.625;
-         class1+=0.375;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 125.3803825378418)
-        {
-         class0+=0.41379310344827586;
-         class1+=0.5344827586206896;
-         class2+=0.05172413793103448;
-        }
-      else
-        {
-         class0+=0.03571428571428571;
-         class1+=0.9642857142857143;
-         class2+=0.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (pelvic_radius <= 105.5777816772461)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 31.374295234680176)
-        {
-         class0+=0.0;
-         class1+=0.08333333333333333;
-         class2+=0.9166666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 56
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
-        {
-         class0+=0.15;
-         class1+=0.5;
-         class2+=0.35;
-        }
-      else
-        {
-         class0+=0.75;
-         class1+=0.2222222222222222;
-         class2+=0.027777777777777776;
-        }
-    else
-      if (degree_spondylolisthesis <= 22.721468925476074)
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_tilt <= 20.16680145263672)
-        {
-         class0+=0.0;
-         class1+=0.8666666666666667;
-         class2+=0.13333333333333333;
-        }
-      else
-        {
-         class0+=0.47058823529411764;
-         class1+=0.47058823529411764;
-         class2+=0.058823529411764705;
-        }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.037037037037037035;
-         class1+=0.037037037037037035;
-         class2+=0.9259259259259259;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 57
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8333333333333334;
-         class2+=0.05555555555555555;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.617511749267578)
-        {
-         class0+=0.0;
-         class1+=0.2222222222222222;
-         class2+=0.7777777777777778;
-        }
-      else
-        {
-         class0+=0.22727272727272727;
-         class1+=0.5;
-         class2+=0.2727272727272727;
-        }
-    else
-      if (pelvic_radius <= 111.81633758544922)
-        {
-         class0+=0.0;
-         class1+=0.2;
-         class2+=0.8;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 58
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (lumbar_lordosis_angle <= 31.751480102539062)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.13333333333333333;
-         class1+=0.7111111111111111;
-         class2+=0.15555555555555556;
-        }
-    else
-      if (degree_spondylolisthesis <= 13.794804573059082)
-        {
-         class0+=0.7777777777777778;
-         class1+=0.2222222222222222;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 112.11275100708008)
-        {
-         class0+=0.045454545454545456;
-         class1+=0.09090909090909091;
-         class2+=0.8636363636363636;
-        }
-      else
-        {
-         class0+=0.14814814814814814;
-         class1+=0.5555555555555556;
-         class2+=0.2962962962962963;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.255654573440552)
-        {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 59
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.36764705882352944;
-         class1+=0.6323529411764706;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (sacral_slope <= 43.68538284301758)
-      if (pelvic_tilt <= 30.450276374816895)
-        {
-         class0+=0.25;
-         class1+=0.5;
-         class2+=0.25;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
-        {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0125;
-         class2+=0.9875;
-        }
- // TREE: 60
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (lumbar_lordosis_angle <= 30.714024543762207)
-        {
-         class0+=0.5;
-         class1+=0.5;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 49.31392860412598)
-        {
-         class0+=0.5901639344262295;
-         class1+=0.4098360655737705;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.09090909090909091;
-         class1+=0.7727272727272727;
-         class2+=0.13636363636363635;
-        }
-  else
-    if (sacral_slope <= 43.074928283691406)
-      if (lumbar_lordosis_angle <= 63.31851005554199)
-        {
-         class0+=0.07142857142857142;
-         class1+=0.07142857142857142;
-         class2+=0.8571428571428571;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
         }
     else
       if (pelvic_radius <= 123.53171920776367)
@@ -3200,22 +815,1430 @@ double  class2 = 0;
       else
         {
          class0+=0.0;
-         class1+=0.06666666666666667;
-         class2+=0.9333333333333333;
+         class1+=0.05;
+         class2+=0.95;
         }
- // TREE: 61
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (pelvic_radius <= 124.96423721313477)
+ // TREE: 15
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (pelvic_radius <= 125.30192565917969)
         {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.17647058823529413;
+         class1+=0.8235294117647058;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (degree_spondylolisthesis <= 8.581488609313965)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.0;
+         class2+=0.8571428571428571;
+        }
+    else
+      if (pelvic_radius <= 121.77228927612305)
+        {
+         class0+=0.013888888888888888;
+         class1+=0.06944444444444445;
+         class2+=0.9166666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.34615384615384615;
+         class2+=0.6538461538461539;
+        }
+ // TREE: 16
+  if (pelvic_incidence <= 56.49103927612305)
+    if (pelvic_radius <= 125.37104797363281)
+      if (lumbar_lordosis_angle <= 42.77910232543945)
+        {
+         class0+=0.6382978723404256;
+         class1+=0.2978723404255319;
+         class2+=0.06382978723404255;
+        }
+      else
+        {
+         class0+=0.125;
+         class1+=0.3125;
+         class2+=0.5625;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.8387096774193549;
+         class2+=0.12903225806451613;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (sacral_slope <= 41.474557876586914)
+        {
+         class0+=0.625;
+         class1+=0.25;
+         class2+=0.125;
+        }
+      else
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
+        }
+    else
+      if (degree_spondylolisthesis <= 16.078891277313232)
+        {
+         class0+=0.5;
+         class1+=0.0;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.011627906976744186;
+         class2+=0.9883720930232558;
+        }
+ // TREE: 17
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (lumbar_lordosis_angle <= 29.128881454467773)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.46774193548387094;
+         class1+=0.4838709677419355;
+         class2+=0.04838709677419355;
+        }
+    else
+      if (pelvic_tilt <= 26.227545738220215)
+        {
+         class0+=0.1282051282051282;
+         class1+=0.8717948717948718;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.045454545454545456;
+         class2+=0.9545454545454546;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 18
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_radius <= 125.30192565917969)
+      if (degree_spondylolisthesis <= 18.731049060821533)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_tilt <= 31.517855644226074)
+        {
+         class0+=0.15789473684210525;
+         class1+=0.7368421052631579;
+         class2+=0.10526315789473684;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (degree_spondylolisthesis <= 8.581488609313965)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.0;
+         class2+=0.8571428571428571;
+        }
+    else
+      if (sacral_slope <= 53.0706672668457)
+        {
+         class0+=0.0196078431372549;
+         class1+=0.23529411764705882;
+         class2+=0.7450980392156863;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
+        }
+ // TREE: 19
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (sacral_slope <= 36.027883529663086)
+        {
+         class0+=0.6166666666666667;
+         class1+=0.38333333333333336;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.21875;
+         class1+=0.78125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (lumbar_lordosis_angle <= 51.30072784423828)
+        {
+         class0+=0.16666666666666666;
+         class1+=0.5;
+         class2+=0.3333333333333333;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 20.63097858428955)
+        {
+         class0+=0.25;
+         class1+=0.25;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.022988505747126436;
+         class2+=0.9770114942528736;
+        }
+ // TREE: 20
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (lumbar_lordosis_angle <= 32.91078758239746)
+        {
+         class0+=0.6190476190476191;
+         class1+=0.38095238095238093;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.2037037037037037;
+         class1+=0.7777777777777778;
+         class2+=0.018518518518518517;
+        }
+    else
+      if (pelvic_incidence <= 53.754459381103516)
+        {
+         class0+=0.8571428571428571;
+         class1+=0.14285714285714285;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4166666666666667;
+         class1+=0.5;
+         class2+=0.08333333333333333;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_tilt <= 9.68252682685852)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.05405405405405406;
+         class2+=0.9459459459459459;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 21
+  if (pelvic_incidence <= 56.49103927612305)
+    if (sacral_slope <= 28.13647174835205)
+      if (sacral_slope <= 23.553030014038086)
+        {
+         class0+=0.6363636363636364;
+         class1+=0.36363636363636365;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.9166666666666666;
+         class1+=0.08333333333333333;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 20.085037231445312)
+        {
+         class0+=0.31746031746031744;
+         class1+=0.6825396825396826;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+  else
+    if (pelvic_radius <= 120.88045120239258)
+      if (lumbar_lordosis_angle <= 47.568403244018555)
+        {
+         class0+=0.5;
+         class1+=0.2;
+         class2+=0.3;
+        }
+      else
+        {
+         class0+=0.028985507246376812;
+         class1+=0.07246376811594203;
+         class2+=0.8985507246376812;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0625;
+         class1+=0.6875;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 22
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_tilt <= 9.53122329711914)
+        {
+         class0+=0.3076923076923077;
+         class1+=0.6923076923076923;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6;
+         class1+=0.35;
+         class2+=0.05;
+        }
+    else
+      if (pelvic_incidence <= 35.79051399230957)
+        {
+         class0+=0.6;
+         class1+=0.4;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.08571428571428572;
+         class1+=0.9142857142857143;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_tilt <= 14.86863899230957)
+      if (pelvic_radius <= 115.87165069580078)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.2727272727272727;
+         class2+=0.7272727272727273;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+ // TREE: 23
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_incidence <= 49.899505615234375)
+        {
+         class0+=0.8064516129032258;
+         class1+=0.1935483870967742;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.35714285714285715;
+         class1+=0.5714285714285714;
+         class2+=0.07142857142857142;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (degree_spondylolisthesis <= 18.88465976715088)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.05405405405405406;
+         class2+=0.9459459459459459;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 24
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.7916666666666666;
+         class1+=0.20833333333333334;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4098360655737705;
+         class1+=0.5737704918032787;
+         class2+=0.01639344262295082;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (pelvic_tilt <= 22.42124843597412)
+        {
+         class0+=0.0;
+         class1+=0.7647058823529411;
+         class2+=0.23529411764705882;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.0;
+         class2+=0.6666666666666666;
+        }
+    else
+      if (pelvic_radius <= 121.77228927612305)
+        {
+         class0+=0.013888888888888888;
+         class1+=0.06944444444444445;
+         class2+=0.9166666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.34615384615384615;
+         class2+=0.6538461538461539;
+        }
+ // TREE: 25
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.6333333333333333;
+         class1+=0.36666666666666664;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.1875;
+         class1+=0.8125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_tilt <= 18.92229175567627)
+        {
+         class0+=0.0;
+         class1+=1.0;
          class2+=0.0;
         }
       else
         {
          class0+=0.125;
-         class1+=0.875;
+         class1+=0.625;
+         class2+=0.25;
+        }
+    else
+      if (pelvic_incidence <= 56.547590255737305)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.012195121951219513;
+         class1+=0.012195121951219513;
+         class2+=0.975609756097561;
+        }
+ // TREE: 26
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_radius <= 125.30192565917969)
+      if (lumbar_lordosis_angle <= 49.223758697509766)
+        {
+         class0+=0.7115384615384616;
+         class1+=0.21153846153846154;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.14285714285714285;
+         class2+=0.7142857142857143;
+        }
+    else
+      if (pelvic_tilt <= 31.517855644226074)
+        {
+         class0+=0.15789473684210525;
+         class1+=0.7368421052631579;
+         class2+=0.10526315789473684;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (degree_spondylolisthesis <= 9.723408699035645)
+        {
+         class0+=0.038461538461538464;
+         class1+=0.9230769230769231;
+         class2+=0.038461538461538464;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 56.319414138793945)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.012195121951219513;
+         class2+=0.9878048780487805;
+        }
+ // TREE: 27
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 117.12782287597656)
+        {
+         class0+=0.5428571428571428;
+         class1+=0.37142857142857144;
+         class2+=0.08571428571428572;
+        }
+      else
+        {
+         class0+=0.14814814814814814;
+         class1+=0.8518518518518519;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_incidence <= 57.21945381164551)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 31.24958896636963)
+        {
+         class0+=0.0;
+         class1+=0.07692307692307693;
+         class2+=0.9230769230769231;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 28
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_tilt <= 41.976768493652344)
+        {
+         class0+=0.6666666666666666;
+         class1+=0.21052631578947367;
+         class2+=0.12280701754385964;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5;
+         class1+=0.4;
+         class2+=0.1;
+        }
+      else
+        {
+         class0+=0.03333333333333333;
+         class1+=0.8;
+         class2+=0.16666666666666666;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (pelvic_tilt <= 18.92229175567627)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.25;
+         class1+=0.625;
+         class2+=0.125;
+        }
+    else
+      if (pelvic_incidence <= 56.319414138793945)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.012195121951219513;
+         class2+=0.9878048780487805;
+        }
+ // TREE: 29
+  if (pelvic_radius <= 110.68482971191406)
+    if (degree_spondylolisthesis <= 19.410610675811768)
+      if (pelvic_radius <= 77.16199493408203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.8461538461538461;
+         class1+=0.15384615384615385;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (lumbar_lordosis_angle <= 56.35000038146973)
+      if (pelvic_radius <= 125.30192565917969)
+        {
+         class0+=0.4603174603174603;
+         class1+=0.38095238095238093;
+         class2+=0.15873015873015872;
+        }
+      else
+        {
+         class0+=0.1276595744680851;
+         class1+=0.723404255319149;
+         class2+=0.14893617021276595;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.5;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.06976744186046512;
+         class2+=0.9302325581395349;
+        }
+ // TREE: 30
+  if (sacral_slope <= 40.53826332092285)
+    if (lumbar_lordosis_angle <= 50.677467346191406)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.7115384615384616;
+         class1+=0.21153846153846154;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.17647058823529413;
+         class1+=0.7352941176470589;
+         class2+=0.08823529411764706;
+        }
+    else
+      if (pelvic_tilt <= 27.4694242477417)
+        {
+         class0+=0.125;
+         class1+=0.5;
+         class2+=0.375;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (degree_spondylolisthesis <= 8.581488609313965)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.0;
+         class2+=0.8571428571428571;
+        }
+    else
+      if (sacral_slope <= 53.0706672668457)
+        {
+         class0+=0.0196078431372549;
+         class1+=0.23529411764705882;
+         class2+=0.7450980392156863;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
+        }
+ // TREE: 31
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.4098360655737705;
+         class1+=0.5737704918032787;
+         class2+=0.01639344262295082;
+        }
+      else
+        {
+         class0+=0.07142857142857142;
+         class1+=0.8571428571428571;
+         class2+=0.07142857142857142;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.045454545454545456;
+         class2+=0.9545454545454546;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 32
+  if (pelvic_radius <= 110.68482971191406)
+    if (degree_spondylolisthesis <= 19.410610675811768)
+      if (pelvic_incidence <= 69.3479118347168)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.25;
+         class1+=0.5;
+         class2+=0.25;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 67.35112380981445)
+      if (degree_spondylolisthesis <= 15.030566215515137)
+        {
+         class0+=0.3645833333333333;
+         class1+=0.625;
+         class2+=0.010416666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.09523809523809523;
+         class2+=0.9047619047619048;
+        }
+    else
+      if (lumbar_lordosis_angle <= 59.12527084350586)
+        {
+         class0+=0.0;
+         class1+=0.2;
+         class2+=0.8;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.029411764705882353;
+         class2+=0.9705882352941176;
+        }
+ // TREE: 33
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (sacral_slope <= 28.13647174835205)
+      if (degree_spondylolisthesis <= 7.179219961166382)
+        {
+         class0+=0.8571428571428571;
+         class1+=0.14285714285714285;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.6666666666666666;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 76.84163284301758)
+        {
+         class0+=0.3125;
+         class1+=0.5375;
+         class2+=0.15;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 20.63097858428955)
+        {
+         class0+=0.25;
+         class1+=0.25;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.022988505747126436;
+         class2+=0.9770114942528736;
+        }
+ // TREE: 34
+  if (pelvic_radius <= 110.68482971191406)
+    if (degree_spondylolisthesis <= 19.410610675811768)
+      if (sacral_slope <= 48.556976318359375)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.6666666666666666;
+         class2+=0.3333333333333333;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 67.35112380981445)
+      if (degree_spondylolisthesis <= 15.030566215515137)
+        {
+         class0+=0.3645833333333333;
+         class1+=0.625;
+         class2+=0.010416666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.09523809523809523;
+         class2+=0.9047619047619048;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.3333333333333333;
+         class2+=0.6666666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.04878048780487805;
+         class2+=0.9512195121951219;
+        }
+ // TREE: 35
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (degree_spondylolisthesis <= 2.116147041320801)
+        {
+         class0+=0.038461538461538464;
+         class1+=0.9615384615384616;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.35714285714285715;
+         class1+=0.6428571428571429;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_tilt <= 14.86863899230957)
+      if (pelvic_tilt <= 14.60332202911377)
+        {
+         class0+=0.0;
+         class1+=0.05263157894736842;
+         class2+=0.9473684210526315;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+ // TREE: 36
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (degree_spondylolisthesis <= 1.2192070484161377)
+        {
+         class0+=0.3333333333333333;
+         class1+=0.6666666666666666;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6530612244897959;
+         class1+=0.32653061224489793;
+         class2+=0.02040816326530612;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 69.5125503540039)
+      if (sacral_slope <= 53.330434799194336)
+        {
+         class0+=0.041666666666666664;
+         class1+=0.5;
+         class2+=0.4583333333333333;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_tilt <= 15.78461503982544)
+        {
+         class0+=0.0;
+         class1+=0.14285714285714285;
+         class2+=0.8571428571428571;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.03773584905660377;
+         class2+=0.9622641509433962;
+        }
+ // TREE: 37
+  if (pelvic_incidence <= 56.49103927612305)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_tilt <= 17.340057373046875)
+        {
+         class0+=0.6428571428571429;
+         class1+=0.35714285714285715;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 111.68848037719727)
+        {
+         class0+=0.42857142857142855;
+         class1+=0.0;
+         class2+=0.5714285714285714;
+        }
+      else
+        {
+         class0+=0.21212121212121213;
+         class1+=0.6666666666666666;
+         class2+=0.12121212121212122;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (sacral_slope <= 41.474557876586914)
+        {
+         class0+=0.625;
+         class1+=0.25;
+         class2+=0.125;
+        }
+      else
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
+        }
+    else
+      if (lumbar_lordosis_angle <= 58.0201473236084)
+        {
+         class0+=0.041666666666666664;
+         class1+=0.041666666666666664;
+         class2+=0.9166666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 38
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_radius <= 113.90714263916016)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.2;
+         class2+=0.8;
+        }
+    else
+      if (lumbar_lordosis_angle <= 58.0201473236084)
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 39
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4;
+         class1+=0.6;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_tilt <= 10.883872032165527)
+        {
+         class0+=0.10714285714285714;
+         class1+=0.8928571428571429;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.43478260869565216;
+         class1+=0.5217391304347826;
+         class2+=0.043478260869565216;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_incidence <= 55.807992935180664)
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (lumbar_lordosis_angle <= 58.0201473236084)
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 40
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_tilt <= 14.86863899230957)
+      if (lumbar_lordosis_angle <= 54.41946983337402)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.15;
+         class2+=0.85;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+ // TREE: 41
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (degree_spondylolisthesis <= 1.3626884818077087)
+      if (pelvic_radius <= 121.49974060058594)
+        {
+         class0+=0.4583333333333333;
+         class1+=0.5;
+         class2+=0.041666666666666664;
+        }
+      else
+        {
+         class0+=0.07407407407407407;
+         class1+=0.9259259259259259;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 59.66083908081055)
+        {
+         class0+=0.625;
+         class1+=0.375;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.21428571428571427;
+         class1+=0.6428571428571429;
+         class2+=0.14285714285714285;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (degree_spondylolisthesis <= 20.085037231445312)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+    else
+      if (pelvic_radius <= 123.53171920776367)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05;
+         class2+=0.95;
+        }
+ // TREE: 42
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.6333333333333333;
+         class1+=0.36666666666666664;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.1875;
+         class1+=0.8125;
          class2+=0.0;
         }
     else
@@ -3226,298 +2249,44 @@ double  class2 = 0;
       }
   else
     if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (pelvic_tilt <= 14.482349395751953)
+      if (lumbar_lordosis_angle <= 49.59900093078613)
         {
          class0+=0.0;
-         class1+=0.2222222222222222;
-         class2+=0.7777777777777778;
+         class1+=0.0;
+         class2+=1.0;
         }
       else
         {
-         class0+=0.14814814814814814;
-         class1+=0.4074074074074074;
-         class2+=0.4444444444444444;
+         class0+=0.05263157894736842;
+         class1+=0.3684210526315789;
+         class2+=0.5789473684210527;
         }
     else
-      if (sacral_slope <= 53.45471954345703)
-        {
-         class0+=0.02564102564102564;
-         class1+=0.15384615384615385;
-         class2+=0.8205128205128205;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.047619047619047616;
-         class2+=0.9523809523809523;
-        }
- // TREE: 62
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (pelvic_radius <= 116.0182876586914)
-        {
-         class0+=0.75;
-         class1+=0.25;
-         class2+=0.0;
-        }
-      else
+      if (degree_spondylolisthesis <= 9.067076206207275)
         {
          class0+=0.0;
          class1+=1.0;
          class2+=0.0;
         }
-    else
-      if (sacral_slope <= 35.53619194030762)
-        {
-         class0+=0.6888888888888889;
-         class1+=0.3111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.18421052631578946;
-         class1+=0.7368421052631579;
-         class2+=0.07894736842105263;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
       else
         {
          class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
+         class1+=0.015625;
+         class2+=0.984375;
         }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 63
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 16.65331506729126)
-        {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (sacral_slope <= 20.55422878265381)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.045454545454545456;
-         class1+=0.9090909090909091;
-         class2+=0.045454545454545456;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (sacral_slope <= 49.18738555908203)
-        {
-         class0+=0.1724137931034483;
-         class1+=0.4482758620689655;
-         class2+=0.3793103448275862;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.2;
-         class2+=0.8;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.255654573440552)
-        {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 64
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (sacral_slope <= 23.494050979614258)
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.9285714285714286;
-         class1+=0.07142857142857142;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_tilt <= 10.707735538482666)
-        {
-         class0+=0.08333333333333333;
-         class1+=0.9166666666666666;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.3275862068965517;
-         class1+=0.6206896551724138;
-         class2+=0.05172413793103448;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 65
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.76;
-         class1+=0.24;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.32727272727272727;
-         class1+=0.6727272727272727;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
-  else
-    if (sacral_slope <= 43.68538284301758)
-      if (degree_spondylolisthesis <= 19.410610675811768)
-        {
-         class0+=0.35714285714285715;
-         class1+=0.6428571428571429;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.05555555555555555;
-         class2+=0.9444444444444444;
-        }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
-        {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0125;
-         class2+=0.9875;
-        }
- // TREE: 66
-  if (pelvic_radius <= 110.70603561401367)
-    if (sacral_slope <= 40.710838317871094)
-      if (degree_spondylolisthesis <= 18.811551570892334)
-        {
-         class0+=0.8333333333333334;
-         class1+=0.16666666666666666;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_radius <= 100.1068229675293)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.13333333333333333;
-         class2+=0.8333333333333334;
-        }
-  else
-    if (lumbar_lordosis_angle <= 57.10000038146973)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.7407407407407407;
-         class1+=0.2222222222222222;
-         class2+=0.037037037037037035;
-        }
-      else
-        {
-         class0+=0.2054794520547945;
-         class1+=0.6438356164383562;
-         class2+=0.1506849315068493;
-        }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.07692307692307693;
-         class1+=0.38461538461538464;
-         class2+=0.5384615384615384;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.06521739130434782;
-         class2+=0.9347826086956522;
-        }
- // TREE: 67
+ // TREE: 43
   if (pelvic_incidence <= 56.49103927612305)
-    if (degree_spondylolisthesis <= 17.252374172210693)
-      if (sacral_slope <= 28.01943588256836)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (degree_spondylolisthesis <= 2.023559093475342)
         {
-         class0+=0.76;
-         class1+=0.24;
+         class0+=0.2765957446808511;
+         class1+=0.723404255319149;
          class2+=0.0;
         }
       else
         {
-         class0+=0.27450980392156865;
-         class1+=0.7254901960784313;
+         class0+=0.6410256410256411;
+         class1+=0.358974358974359;
          class2+=0.0;
         }
     else
@@ -3534,18 +2303,1413 @@ double  class2 = 0;
          class2+=0.0;
         }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_tilt <= 20.16680145263672)
+    if (lumbar_lordosis_angle <= 47.53213119506836)
+      if (pelvic_tilt <= 24.17318630218506)
         {
-         class0+=0.0;
-         class1+=0.8666666666666667;
-         class2+=0.13333333333333333;
+         class0+=0.08333333333333333;
+         class1+=0.5833333333333334;
+         class2+=0.3333333333333333;
         }
       else
         {
-         class0+=0.47058823529411764;
-         class1+=0.47058823529411764;
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 53.0706672668457)
+        {
+         class0+=0.04;
+         class1+=0.18;
+         class2+=0.78;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
+        }
+ // TREE: 44
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (sacral_slope <= 28.13647174835205)
+      if (lumbar_lordosis_angle <= 34.5564079284668)
+        {
+         class0+=0.9230769230769231;
+         class1+=0.07692307692307693;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6363636363636364;
+         class1+=0.36363636363636365;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 112.92106246948242)
+        {
+         class0+=0.6470588235294118;
+         class1+=0.058823529411764705;
+         class2+=0.29411764705882354;
+        }
+      else
+        {
+         class0+=0.21212121212121213;
+         class1+=0.6363636363636364;
+         class2+=0.15151515151515152;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 56.547590255737305)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.012195121951219513;
+         class1+=0.012195121951219513;
+         class2+=0.975609756097561;
+        }
+ // TREE: 45
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (pelvic_tilt <= 6.502035617828369)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.8666666666666667;
+         class1+=0.13333333333333333;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_tilt <= 10.883872032165527)
+        {
+         class0+=0.10714285714285714;
+         class1+=0.8928571428571429;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.43478260869565216;
+         class1+=0.5217391304347826;
+         class2+=0.043478260869565216;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (degree_spondylolisthesis <= 20.085037231445312)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 46
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 117.12782287597656)
+        {
+         class0+=0.5428571428571428;
+         class1+=0.37142857142857144;
+         class2+=0.08571428571428572;
+        }
+      else
+        {
+         class0+=0.14814814814814814;
+         class1+=0.8518518518518519;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_radius <= 136.77429962158203)
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.04878048780487805;
+         class2+=0.9512195121951219;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_tilt <= 7.746830224990845)
+        {
+         class0+=0.0;
+         class1+=0.5;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 47
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (degree_spondylolisthesis <= 20.762762784957886)
+        {
+         class0+=0.8125;
+         class1+=0.1875;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 15.030566215515137)
+        {
+         class0+=0.40789473684210525;
+         class1+=0.5921052631578947;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 43.32751655578613)
+        {
+         class0+=0.058823529411764705;
+         class1+=0.11764705882352941;
+         class2+=0.8235294117647058;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013513513513513514;
+         class2+=0.9864864864864865;
+        }
+ // TREE: 48
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 76.84163284301758)
+        {
+         class0+=0.3125;
+         class1+=0.5375;
+         class2+=0.15;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (lumbar_lordosis_angle <= 51.30072784423828)
+        {
+         class0+=0.16666666666666666;
+         class1+=0.5;
+         class2+=0.3333333333333333;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 20.63097858428955)
+        {
+         class0+=0.25;
+         class1+=0.25;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.022988505747126436;
+         class2+=0.9770114942528736;
+        }
+ // TREE: 49
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (pelvic_radius <= 113.8734245300293)
+        {
+         class0+=0.6666666666666666;
+         class1+=0.06666666666666667;
+         class2+=0.26666666666666666;
+        }
+      else
+        {
+         class0+=0.23333333333333334;
+         class1+=0.6666666666666666;
+         class2+=0.1;
+        }
+    else
+      if (lumbar_lordosis_angle <= 47.53213119506836)
+        {
+         class0+=0.6666666666666666;
+         class1+=0.23333333333333334;
+         class2+=0.1;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (pelvic_radius <= 121.3623161315918)
+      if (degree_spondylolisthesis <= 9.756257057189941)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.014705882352941176;
+         class1+=0.014705882352941176;
+         class2+=0.9705882352941176;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.7222222222222222;
+         class2+=0.2777777777777778;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 50
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_tilt <= 17.340057373046875)
+        {
+         class0+=0.6428571428571429;
+         class1+=0.35714285714285715;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 112.92106246948242)
+        {
+         class0+=0.6470588235294118;
+         class1+=0.058823529411764705;
+         class2+=0.29411764705882354;
+        }
+      else
+        {
+         class0+=0.21212121212121213;
+         class1+=0.6363636363636364;
+         class2+=0.15151515151515152;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 56.547590255737305)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.012195121951219513;
+         class1+=0.012195121951219513;
+         class2+=0.975609756097561;
+        }
+ // TREE: 51
+  if (pelvic_incidence <= 56.49103927612305)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_tilt <= 17.340057373046875)
+        {
+         class0+=0.6428571428571429;
+         class1+=0.35714285714285715;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 20.085037231445312)
+        {
+         class0+=0.31746031746031744;
+         class1+=0.6825396825396826;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.53213119506836)
+      if (sacral_slope <= 40.9268741607666)
+        {
+         class0+=0.8333333333333334;
+         class1+=0.16666666666666666;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.5454545454545454;
+         class2+=0.36363636363636365;
+        }
+    else
+      if (pelvic_incidence <= 69.5125503540039)
+        {
+         class0+=0.05405405405405406;
+         class1+=0.21621621621621623;
+         class2+=0.7297297297297297;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05;
+         class2+=0.95;
+        }
+ // TREE: 52
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4;
+         class1+=0.6;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 35.53619194030762)
+        {
+         class0+=0.5531914893617021;
+         class1+=0.44680851063829785;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14;
+         class1+=0.8;
+         class2+=0.06;
+        }
+  else
+    if (pelvic_radius <= 136.77429962158203)
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.04878048780487805;
+         class2+=0.9512195121951219;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_incidence <= 53.21263122558594)
+        {
+         class0+=0.0;
+         class1+=0.3333333333333333;
+         class2+=0.6666666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 53
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (pelvic_incidence <= 49.899505615234375)
+        {
+         class0+=0.44;
+         class1+=0.56;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.08;
+         class1+=0.88;
+         class2+=0.04;
+        }
+    else
+      if (sacral_slope <= 29.734612464904785)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4074074074074074;
+         class1+=0.5185185185185185;
+         class2+=0.07407407407407407;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 68.07559204101562)
+        {
+         class0+=0.0;
+         class1+=0.045454545454545456;
+         class2+=0.9545454545454546;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 54
+  if (sacral_slope <= 40.53826332092285)
+    if (lumbar_lordosis_angle <= 50.677467346191406)
+      if (pelvic_tilt <= 17.583970069885254)
+        {
+         class0+=0.39344262295081966;
+         class1+=0.5081967213114754;
+         class2+=0.09836065573770492;
+        }
+      else
+        {
+         class0+=0.76;
+         class1+=0.2;
+         class2+=0.04;
+        }
+    else
+      if (degree_spondylolisthesis <= 22.443135738372803)
+        {
+         class0+=0.16666666666666666;
+         class1+=0.6666666666666666;
+         class2+=0.16666666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (pelvic_tilt <= 22.42124843597412)
+        {
+         class0+=0.0;
+         class1+=0.7647058823529411;
+         class2+=0.23529411764705882;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.0;
+         class2+=0.6666666666666666;
+        }
+    else
+      if (pelvic_radius <= 121.77228927612305)
+        {
+         class0+=0.013888888888888888;
+         class1+=0.06944444444444445;
+         class2+=0.9166666666666666;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.34615384615384615;
+         class2+=0.6538461538461539;
+        }
+ // TREE: 55
+  if (pelvic_incidence <= 56.49103927612305)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.782608695652174;
+         class1+=0.21739130434782608;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.31746031746031744;
+         class1+=0.6825396825396826;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_incidence <= 55.807992935180664)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_incidence <= 69.5125503540039)
+      if (degree_spondylolisthesis <= 16.078891277313232)
+        {
+         class0+=0.3181818181818182;
+         class1+=0.6363636363636364;
+         class2+=0.045454545454545456;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.03333333333333333;
+         class2+=0.9666666666666667;
+        }
+    else
+      if (degree_spondylolisthesis <= 9.075990915298462)
+        {
+         class0+=0.2;
+         class1+=0.6;
+         class2+=0.2;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 56
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (lumbar_lordosis_angle <= 32.91078758239746)
+        {
+         class0+=0.5909090909090909;
+         class1+=0.36363636363636365;
+         class2+=0.045454545454545456;
+        }
+      else
+        {
+         class0+=0.20754716981132076;
+         class1+=0.6226415094339622;
+         class2+=0.16981132075471697;
+        }
+    else
+      if (pelvic_radius <= 121.49222946166992)
+        {
+         class0+=0.8095238095238095;
+         class1+=0.14285714285714285;
+         class2+=0.047619047619047616;
+        }
+      else
+        {
+         class0+=0.2727272727272727;
+         class1+=0.36363636363636365;
+         class2+=0.36363636363636365;
+        }
+  else
+    if (lumbar_lordosis_angle <= 58.72928810119629)
+      if (sacral_slope <= 53.0706672668457)
+        {
+         class0+=0.0625;
+         class1+=0.40625;
+         class2+=0.53125;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.1;
+         class2+=0.9;
+        }
+    else
+      if (pelvic_tilt <= 13.753094673156738)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05084745762711865;
+         class2+=0.9491525423728814;
+        }
+ // TREE: 57
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.7916666666666666;
+         class1+=0.20833333333333334;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.4098360655737705;
+         class1+=0.5737704918032787;
+         class2+=0.01639344262295082;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (pelvic_incidence <= 67.90209197998047)
+        {
+         class0+=0.0;
+         class1+=0.7222222222222222;
+         class2+=0.2777777777777778;
+        }
+      else
+        {
+         class0+=0.5;
+         class1+=0.0;
+         class2+=0.5;
+        }
+    else
+      if (lumbar_lordosis_angle <= 58.72928810119629)
+        {
+         class0+=0.030303030303030304;
+         class1+=0.2727272727272727;
+         class2+=0.696969696969697;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.07692307692307693;
+         class2+=0.9230769230769231;
+        }
+ // TREE: 58
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (degree_spondylolisthesis <= 1.2192070484161377)
+        {
+         class0+=0.3333333333333333;
+         class1+=0.6666666666666666;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6530612244897959;
+         class1+=0.32653061224489793;
+         class2+=0.02040816326530612;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (pelvic_tilt <= 22.42124843597412)
+        {
+         class0+=0.0;
+         class1+=0.7647058823529411;
+         class2+=0.23529411764705882;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.0;
+         class2+=0.6666666666666666;
+        }
+    else
+      if (pelvic_incidence <= 69.5125503540039)
+        {
+         class0+=0.02564102564102564;
+         class1+=0.28205128205128205;
+         class2+=0.6923076923076923;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05084745762711865;
+         class2+=0.9491525423728814;
+        }
+ // TREE: 59
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_tilt <= 17.340057373046875)
+        {
+         class0+=0.6428571428571429;
+         class1+=0.35714285714285715;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 117.12782287597656)
+        {
+         class0+=0.5428571428571428;
+         class1+=0.37142857142857144;
+         class2+=0.08571428571428572;
+        }
+      else
+        {
+         class0+=0.14814814814814814;
+         class1+=0.8518518518518519;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_radius <= 113.90714263916016)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.2;
+         class2+=0.8;
+        }
+    else
+      if (lumbar_lordosis_angle <= 58.0201473236084)
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 60
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (lumbar_lordosis_angle <= 34.5564079284668)
+        {
+         class0+=0.9230769230769231;
+         class1+=0.07692307692307693;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6363636363636364;
+         class1+=0.36363636363636365;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 117.12782287597656)
+        {
+         class0+=0.5428571428571428;
+         class1+=0.37142857142857144;
+         class2+=0.08571428571428572;
+        }
+      else
+        {
+         class0+=0.14814814814814814;
+         class1+=0.8518518518518519;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_radius <= 136.77429962158203)
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.05555555555555555;
+         class2+=0.9444444444444444;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (sacral_slope <= 39.426496505737305)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.3333333333333333;
+         class2+=0.6666666666666666;
+        }
+ // TREE: 61
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_radius <= 111.27699661254883)
+        {
+         class0+=0.7647058823529411;
+         class1+=0.17647058823529413;
          class2+=0.058823529411764705;
+        }
+      else
+        {
+         class0+=0.48214285714285715;
+         class1+=0.48214285714285715;
+         class2+=0.03571428571428571;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 31.24958896636963)
+        {
+         class0+=0.0;
+         class1+=0.07692307692307693;
+         class2+=0.9230769230769231;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 62
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (degree_spondylolisthesis <= 3.3239283561706543)
+        {
+         class0+=0.3548387096774194;
+         class1+=0.6451612903225806;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.7333333333333333;
+         class1+=0.26666666666666666;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (sacral_slope <= 53.0706672668457)
+      if (degree_spondylolisthesis <= 20.63097858428955)
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
+        }
+    else
+      if (pelvic_radius <= 112.84704208374023)
+        {
+         class0+=0.0;
+         class1+=0.08695652173913043;
+         class2+=0.9130434782608695;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 63
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (degree_spondylolisthesis <= 1.3626884818077087)
+      if (sacral_slope <= 28.01943588256836)
+        {
+         class0+=0.7;
+         class1+=0.3;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14634146341463414;
+         class1+=0.8292682926829268;
+         class2+=0.024390243902439025;
+        }
+    else
+      if (pelvic_radius <= 120.5997314453125)
+        {
+         class0+=0.696969696969697;
+         class1+=0.24242424242424243;
+         class2+=0.06060606060606061;
+        }
+      else
+        {
+         class0+=0.3448275862068966;
+         class1+=0.6551724137931034;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_radius <= 136.77429962158203)
+      if (degree_spondylolisthesis <= 31.24958896636963)
+        {
+         class0+=0.0;
+         class1+=0.07407407407407407;
+         class2+=0.9259259259259259;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_tilt <= 7.746830224990845)
+        {
+         class0+=0.0;
+         class1+=0.5;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 64
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (sacral_slope <= 36.027883529663086)
+        {
+         class0+=0.6166666666666667;
+         class1+=0.38333333333333336;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.21875;
+         class1+=0.78125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 63.123300552368164)
+      if (sacral_slope <= 39.47086524963379)
+        {
+         class0+=0.1;
+         class1+=0.6;
+         class2+=0.3;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.3;
+         class2+=0.7;
+        }
+    else
+      if (degree_spondylolisthesis <= 6.54765772819519)
+        {
+         class0+=0.125;
+         class1+=0.75;
+         class2+=0.125;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013888888888888888;
+         class2+=0.9861111111111112;
+        }
+ // TREE: 65
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_radius <= 125.30192565917969)
+      if (lumbar_lordosis_angle <= 49.223758697509766)
+        {
+         class0+=0.7115384615384616;
+         class1+=0.21153846153846154;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.14285714285714285;
+         class2+=0.7142857142857143;
+        }
+    else
+      if (pelvic_radius <= 144.0055694580078)
+        {
+         class0+=0.16216216216216217;
+         class1+=0.7567567567567568;
+         class2+=0.08108108108108109;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (pelvic_incidence <= 67.90209197998047)
+        {
+         class0+=0.0;
+         class1+=0.7222222222222222;
+         class2+=0.2777777777777778;
+        }
+      else
+        {
+         class0+=0.5;
+         class1+=0.0;
+         class2+=0.5;
+        }
+    else
+      if (degree_spondylolisthesis <= 10.153969287872314)
+        {
+         class0+=0.07692307692307693;
+         class1+=0.8461538461538461;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.03529411764705882;
+         class2+=0.9647058823529412;
+        }
+ // TREE: 66
+  if (pelvic_radius <= 110.68482971191406)
+    if (degree_spondylolisthesis <= 19.410610675811768)
+      if (sacral_slope <= 48.556976318359375)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.6666666666666666;
+         class2+=0.3333333333333333;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 67.35112380981445)
+      if (pelvic_tilt <= 14.746737003326416)
+        {
+         class0+=0.19117647058823528;
+         class1+=0.6470588235294118;
+         class2+=0.16176470588235295;
+        }
+      else
+        {
+         class0+=0.4489795918367347;
+         class1+=0.3673469387755102;
+         class2+=0.1836734693877551;
+        }
+    else
+      if (degree_spondylolisthesis <= 26.451024055480957)
+        {
+         class0+=0.0;
+         class1+=0.5;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 67
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_tilt <= 27.4694242477417)
+      if (pelvic_radius <= 125.30192565917969)
+        {
+         class0+=0.6666666666666666;
+         class1+=0.2222222222222222;
+         class2+=0.1111111111111111;
+        }
+      else
+        {
+         class0+=0.13513513513513514;
+         class1+=0.7567567567567568;
+         class2+=0.10810810810810811;
+        }
+    else
+      if (sacral_slope <= 33.40303039550781)
+        {
+         class0+=0.6;
+         class1+=0.0;
+         class2+=0.4;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (pelvic_radius <= 102.72551727294922)
+        {
+         class0+=1.0;
+         class1+=0.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.038461538461538464;
+         class1+=0.9230769230769231;
+         class2+=0.038461538461538464;
+        }
+    else
+      if (sacral_slope <= 43.32751655578613)
+        {
+         class0+=0.0;
+         class1+=0.16666666666666666;
+         class2+=0.8333333333333334;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.012658227848101266;
+         class2+=0.9873417721518988;
+        }
+ // TREE: 68
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (degree_spondylolisthesis <= 1.3626884818077087)
+      if (pelvic_radius <= 121.49974060058594)
+        {
+         class0+=0.4583333333333333;
+         class1+=0.5;
+         class2+=0.041666666666666664;
+        }
+      else
+        {
+         class0+=0.07407407407407407;
+         class1+=0.9259259259259259;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 120.5997314453125)
+        {
+         class0+=0.696969696969697;
+         class1+=0.24242424242424243;
+         class2+=0.06060606060606061;
+        }
+      else
+        {
+         class0+=0.3448275862068966;
+         class1+=0.6551724137931034;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (lumbar_lordosis_angle <= 54.25)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.3333333333333333;
+         class2+=0.6666666666666666;
+        }
+    else
+      if (pelvic_tilt <= 14.86863899230957)
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 69
+  if (pelvic_incidence <= 56.49103927612305)
+    if (pelvic_tilt <= 10.72407579421997)
+      if (pelvic_radius <= 116.0182876586914)
+        {
+         class0+=0.42857142857142855;
+         class1+=0.07142857142857142;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.06060606060606061;
+         class1+=0.7575757575757576;
+         class2+=0.18181818181818182;
+        }
+    else
+      if (pelvic_incidence <= 53.62777519226074)
+        {
+         class0+=0.6086956521739131;
+         class1+=0.34782608695652173;
+         class2+=0.043478260869565216;
+        }
+      else
+        {
+         class0+=0.2;
+         class1+=0.7;
+         class2+=0.1;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (sacral_slope <= 41.474557876586914)
+        {
+         class0+=0.625;
+         class1+=0.25;
+         class2+=0.125;
+        }
+      else
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
         }
     else
       if (degree_spondylolisthesis <= 16.078891277313232)
@@ -3557,126 +3721,71 @@ double  class2 = 0;
       else
         {
          class0+=0.0;
-         class1+=0.010416666666666666;
-         class2+=0.9895833333333334;
-        }
- // TREE: 68
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 18.811551570892334)
-        {
-         class0+=0.6923076923076923;
-         class1+=0.3076923076923077;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 32.5670747756958)
-        {
-         class0+=0.11538461538461539;
-         class1+=0.8846153846153846;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 85.2918815612793)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.1;
-         class1+=0.8333333333333334;
-         class2+=0.06666666666666667;
-        }
-    else
-      if (pelvic_tilt <= 14.86863899230957)
-        {
-         class0+=0.0;
-         class1+=0.06666666666666667;
-         class2+=0.9333333333333333;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 69
-  if (sacral_slope <= 40.53826332092285)
-    if (lumbar_lordosis_angle <= 55.60000038146973)
-      if (degree_spondylolisthesis <= 18.811551570892334)
-        {
-         class0+=0.4935064935064935;
-         class1+=0.5064935064935064;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_radius <= 115.62433624267578)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (sacral_slope <= 53.330434799194336)
-        {
-         class0+=0.07142857142857142;
-         class1+=0.47619047619047616;
-         class2+=0.4523809523809524;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.1;
-         class2+=0.9;
-        }
-    else
-      if (lumbar_lordosis_angle <= 61.07404136657715)
-        {
-         class0+=0.0;
-         class1+=0.18181818181818182;
-         class2+=0.8181818181818182;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.038461538461538464;
-         class2+=0.9615384615384616;
+         class1+=0.011627906976744186;
+         class2+=0.9883720930232558;
         }
  // TREE: 70
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_tilt <= 21.858789443969727)
+  if (sacral_slope <= 40.53826332092285)
+    if (lumbar_lordosis_angle <= 50.677467346191406)
+      if (degree_spondylolisthesis <= 16.999180793762207)
         {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
+         class0+=0.5443037974683544;
+         class1+=0.45569620253164556;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_incidence <= 64.0407886505127)
+        {
+         class0+=0.1111111111111111;
+         class1+=0.4444444444444444;
+         class2+=0.4444444444444444;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (pelvic_incidence <= 69.5125503540039)
+      if (lumbar_lordosis_angle <= 48.068403244018555)
+        {
+         class0+=0.05;
+         class1+=0.7;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.02631578947368421;
+         class1+=0.2631578947368421;
+         class2+=0.7105263157894737;
+        }
+    else
+      if (pelvic_radius <= 111.81633758544922)
+        {
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 71
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (degree_spondylolisthesis <= 1.4012479186058044)
+        {
+         class0+=0.5714285714285714;
+         class1+=0.42857142857142855;
          class2+=0.0;
         }
       else
@@ -3686,31 +3795,224 @@ double  class2 = 0;
          class2+=0.0;
         }
     else
-      if (pelvic_tilt <= 10.707735538482666)
+      if (pelvic_radius <= 125.30192565917969)
         {
-         class0+=0.08333333333333333;
-         class1+=0.9166666666666666;
+         class0+=0.46774193548387094;
+         class1+=0.4838709677419355;
+         class2+=0.04838709677419355;
+        }
+      else
+        {
+         class0+=0.11428571428571428;
+         class1+=0.8857142857142857;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (lumbar_lordosis_angle <= 62.66514015197754)
+        {
+         class0+=0.0;
+         class1+=0.04;
+         class2+=0.96;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 72
+  if (pelvic_incidence <= 56.49103927612305)
+    if (lumbar_lordosis_angle <= 42.77910232543945)
+      if (degree_spondylolisthesis <= 1.2192070484161377)
+        {
+         class0+=0.2903225806451613;
+         class1+=0.7096774193548387;
          class2+=0.0;
         }
       else
         {
-         class0+=0.3275862068965517;
-         class1+=0.6206896551724138;
-         class2+=0.05172413793103448;
+         class0+=0.6585365853658537;
+         class1+=0.24390243902439024;
+         class2+=0.0975609756097561;
+        }
+    else
+      if (pelvic_incidence <= 54.04203224182129)
+        {
+         class0+=0.08695652173913043;
+         class1+=0.43478260869565216;
+         class2+=0.4782608695652174;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.875;
+         class2+=0.125;
         }
   else
-    if (pelvic_incidence <= 68.07559204101562)
+    if (degree_spondylolisthesis <= 11.642083644866943)
+      if (sacral_slope <= 41.474557876586914)
+        {
+         class0+=0.625;
+         class1+=0.25;
+         class2+=0.125;
+        }
+      else
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
+        }
+    else
       if (degree_spondylolisthesis <= 16.078891277313232)
         {
-         class0+=1.0;
+         class0+=0.5;
          class1+=0.0;
+         class2+=0.5;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.011627906976744186;
+         class2+=0.9883720930232558;
+        }
+ // TREE: 73
+  if (sacral_slope <= 40.53826332092285)
+    if (lumbar_lordosis_angle <= 50.677467346191406)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.7115384615384616;
+         class1+=0.21153846153846154;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.17647058823529413;
+         class1+=0.7352941176470589;
+         class2+=0.08823529411764706;
+        }
+    else
+      if (lumbar_lordosis_angle <= 55.60000038146973)
+        {
+         class0+=0.1111111111111111;
+         class1+=0.4444444444444444;
+         class2+=0.4444444444444444;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (pelvic_incidence <= 69.5125503540039)
+      if (lumbar_lordosis_angle <= 48.068403244018555)
+        {
+         class0+=0.05;
+         class1+=0.7;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.02631578947368421;
+         class1+=0.2631578947368421;
+         class2+=0.7105263157894737;
+        }
+    else
+      if (pelvic_radius <= 111.81633758544922)
+        {
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 74
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (degree_spondylolisthesis <= 16.999180793762207)
+        {
+         class0+=0.36923076923076925;
+         class1+=0.6307692307692307;
          class2+=0.0;
         }
       else
         {
          class0+=0.0;
-         class1+=0.05405405405405406;
-         class2+=0.9459459459459459;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_incidence <= 76.84163284301758)
+        {
+         class0+=0.6896551724137931;
+         class1+=0.2413793103448276;
+         class2+=0.06896551724137931;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_tilt <= 18.92229175567627)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+    else
+      if (pelvic_incidence <= 56.547590255737305)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.012195121951219513;
+         class1+=0.012195121951219513;
+         class2+=0.975609756097561;
+        }
+ // TREE: 75
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.6333333333333333;
+         class1+=0.36666666666666664;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.1875;
+         class1+=0.8125;
+         class2+=0.0;
         }
     else
       {
@@ -3718,26 +4020,211 @@ double  class2 = 0;
        class1+=0.0;
        class2+=1.0;
       }
- // TREE: 71
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (sacral_slope <= 39.40337562561035)
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_tilt <= 18.92229175567627)
         {
-         class0+=0.09523809523809523;
-         class1+=0.8095238095238095;
-         class2+=0.09523809523809523;
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
         }
       else
         {
-         class0+=0.08333333333333333;
-         class1+=0.4166666666666667;
-         class2+=0.5;
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
         }
     else
-      if (degree_spondylolisthesis <= 32.862857818603516)
+      if (sacral_slope <= 43.32751655578613)
         {
-         class0+=0.5769230769230769;
-         class1+=0.4230769230769231;
+         class0+=0.058823529411764705;
+         class1+=0.11764705882352941;
+         class2+=0.8235294117647058;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013513513513513514;
+         class2+=0.9864864864864865;
+        }
+ // TREE: 76
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_radius <= 125.30192565917969)
+      if (lumbar_lordosis_angle <= 49.223758697509766)
+        {
+         class0+=0.7115384615384616;
+         class1+=0.21153846153846154;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.14285714285714285;
+         class2+=0.7142857142857143;
+        }
+    else
+      if (pelvic_radius <= 144.0055694580078)
+        {
+         class0+=0.16216216216216217;
+         class1+=0.7567567567567568;
+         class2+=0.08108108108108109;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+  else
+    if (lumbar_lordosis_angle <= 47.28213119506836)
+      if (degree_spondylolisthesis <= 8.581488609313965)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14285714285714285;
+         class1+=0.0;
+         class2+=0.8571428571428571;
+        }
+    else
+      if (degree_spondylolisthesis <= 10.153969287872314)
+        {
+         class0+=0.07692307692307693;
+         class1+=0.8461538461538461;
+         class2+=0.07692307692307693;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.03529411764705882;
+         class2+=0.9647058823529412;
+        }
+ // TREE: 77
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (lumbar_lordosis_angle <= 29.128881454467773)
+      if (pelvic_tilt <= 6.502035617828369)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.8666666666666667;
+         class1+=0.13333333333333333;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 35.53619194030762)
+        {
+         class0+=0.5531914893617021;
+         class1+=0.44680851063829785;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.14;
+         class1+=0.8;
+         class2+=0.06;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (lumbar_lordosis_angle <= 54.25)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.3333333333333333;
+         class2+=0.6666666666666666;
+        }
+    else
+      if (degree_spondylolisthesis <= 26.451024055480957)
+        {
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 78
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (sacral_slope <= 36.027883529663086)
+        {
+         class0+=0.6166666666666667;
+         class1+=0.38333333333333336;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.21875;
+         class1+=0.78125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_incidence <= 64.01713180541992)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.1111111111111111;
+         class1+=0.6666666666666666;
+         class2+=0.2222222222222222;
+        }
+    else
+      if (lumbar_lordosis_angle <= 62.66514015197754)
+        {
+         class0+=0.025;
+         class1+=0.075;
+         class2+=0.9;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 79
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_tilt <= 17.583970069885254)
+      if (pelvic_radius <= 113.8734245300293)
+        {
+         class0+=0.6666666666666666;
+         class1+=0.06666666666666667;
+         class2+=0.26666666666666666;
+        }
+      else
+        {
+         class0+=0.23333333333333334;
+         class1+=0.6666666666666666;
+         class2+=0.1;
+        }
+    else
+      if (degree_spondylolisthesis <= 13.794804573059082)
+        {
+         class0+=0.7407407407407407;
+         class1+=0.25925925925925924;
          class2+=0.0;
         }
       else
@@ -3747,12 +4234,273 @@ double  class2 = 0;
          class2+=1.0;
         }
   else
-    if (sacral_slope <= 44.822065353393555)
-      if (pelvic_radius <= 124.19750213623047)
+    if (lumbar_lordosis_angle <= 58.72928810119629)
+      if (pelvic_radius <= 121.91911315917969)
+        {
+         class0+=0.07407407407407407;
+         class1+=0.1111111111111111;
+         class2+=0.8148148148148148;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.7333333333333333;
+         class2+=0.26666666666666666;
+        }
+    else
+      if (sacral_slope <= 43.16859245300293)
+        {
+         class0+=0.0;
+         class1+=0.2222222222222222;
+         class2+=0.7777777777777778;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05084745762711865;
+         class2+=0.9491525423728814;
+        }
+ // TREE: 80
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_radius <= 111.27699661254883)
+        {
+         class0+=0.7647058823529411;
+         class1+=0.17647058823529413;
+         class2+=0.058823529411764705;
+        }
+      else
+        {
+         class0+=0.48214285714285715;
+         class1+=0.48214285714285715;
+         class2+=0.03571428571428571;
+        }
+    else
+      if (lumbar_lordosis_angle <= 37.900146484375)
+        {
+         class0+=0.3;
+         class1+=0.7;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_tilt <= 14.86863899230957)
+      if (pelvic_radius <= 115.87165069580078)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.2727272727272727;
+         class2+=0.7272727272727273;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+ // TREE: 81
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (sacral_slope <= 36.027883529663086)
+        {
+         class0+=0.6166666666666667;
+         class1+=0.38333333333333336;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.21875;
+         class1+=0.78125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_incidence <= 63.123300552368164)
+      if (sacral_slope <= 39.47086524963379)
+        {
+         class0+=0.1;
+         class1+=0.6;
+         class2+=0.3;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.3;
+         class2+=0.7;
+        }
+    else
+      if (pelvic_incidence <= 69.5125503540039)
+        {
+         class0+=0.045454545454545456;
+         class1+=0.18181818181818182;
+         class2+=0.7727272727272727;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.05172413793103448;
+         class2+=0.9482758620689655;
+        }
+ // TREE: 82
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_radius <= 125.44171905517578)
+      if (pelvic_incidence <= 49.899505615234375)
+        {
+         class0+=0.7142857142857143;
+         class1+=0.17142857142857143;
+         class2+=0.11428571428571428;
+        }
+      else
+        {
+         class0+=0.37142857142857144;
+         class1+=0.45714285714285713;
+         class2+=0.17142857142857143;
+        }
+    else
+      if (lumbar_lordosis_angle <= 44.31545639038086)
+        {
+         class0+=0.20689655172413793;
+         class1+=0.7586206896551724;
+         class2+=0.034482758620689655;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.5;
+         class2+=0.5;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_tilt <= 18.92229175567627)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+    else
+      if (sacral_slope <= 43.32751655578613)
+        {
+         class0+=0.058823529411764705;
+         class1+=0.11764705882352941;
+         class2+=0.8235294117647058;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013513513513513514;
+         class2+=0.9864864864864865;
+        }
+ // TREE: 83
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (degree_spondylolisthesis <= 2.116147041320801)
+        {
+         class0+=0.038461538461538464;
+         class1+=0.9615384615384616;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.35714285714285715;
+         class1+=0.6428571428571429;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_radius <= 116.20321655273438)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.043478260869565216;
+         class2+=0.9565217391304348;
+        }
+ // TREE: 84
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (pelvic_radius <= 125.64007568359375)
+        {
+         class0+=0.9333333333333333;
+         class1+=0.06666666666666667;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+    else
+      if (pelvic_tilt <= 9.623145580291748)
+        {
+         class0+=0.12;
+         class1+=0.88;
+         class2+=0.0;
+        }
+      else
         {
          class0+=0.375;
-         class1+=0.2916666666666667;
-         class2+=0.3333333333333333;
+         class1+=0.578125;
+         class2+=0.046875;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_incidence <= 57.21945381164551)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
         }
       else
         {
@@ -3761,35 +4509,90 @@ double  class2 = 0;
          class2+=1.0;
         }
     else
-      if (degree_spondylolisthesis <= 11.452327728271484)
+      if (pelvic_tilt <= 14.86863899230957)
         {
          class0+=0.0;
-         class1+=0.875;
-         class2+=0.125;
+         class1+=0.05405405405405406;
+         class2+=0.9459459459459459;
         }
       else
         {
          class0+=0.0;
-         class1+=0.01282051282051282;
-         class2+=0.9871794871794872;
+         class1+=0.0;
+         class2+=1.0;
         }
- // TREE: 72
-  if (sacral_slope <= 40.53826332092285)
-    if (lumbar_lordosis_angle <= 55.60000038146973)
-      if (sacral_slope <= 28.01943588256836)
+ // TREE: 85
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_radius <= 125.44171905517578)
+      if (pelvic_incidence <= 49.899505615234375)
         {
-         class0+=0.7407407407407407;
-         class1+=0.2222222222222222;
-         class2+=0.037037037037037035;
+         class0+=0.7142857142857143;
+         class1+=0.17142857142857143;
+         class2+=0.11428571428571428;
         }
       else
         {
-         class0+=0.32727272727272727;
-         class1+=0.6;
-         class2+=0.07272727272727272;
+         class0+=0.37142857142857144;
+         class1+=0.45714285714285713;
+         class2+=0.17142857142857143;
         }
     else
-      if (pelvic_tilt <= 16.75529384613037)
+      if (pelvic_tilt <= 23.426228523254395)
+        {
+         class0+=0.14705882352941177;
+         class1+=0.7647058823529411;
+         class2+=0.08823529411764706;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.0;
+         class2+=0.6666666666666666;
+        }
+  else
+    if (degree_spondylolisthesis <= 11.257752895355225)
+      if (pelvic_radius <= 119.18045425415039)
+        {
+         class0+=0.125;
+         class1+=0.625;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (sacral_slope <= 43.32751655578613)
+        {
+         class0+=0.058823529411764705;
+         class1+=0.11764705882352941;
+         class2+=0.8235294117647058;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.013513513513513514;
+         class2+=0.9864864864864865;
+        }
+ // TREE: 86
+  if (sacral_slope <= 40.53826332092285)
+    if (pelvic_tilt <= 27.4694242477417)
+      if (degree_spondylolisthesis <= 18.047505855560303)
+        {
+         class0+=0.5061728395061729;
+         class1+=0.49382716049382713;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (pelvic_incidence <= 53.86601448059082)
         {
          class0+=1.0;
          class1+=0.0;
@@ -3797,30 +4600,85 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.0;
+         class0+=0.2857142857142857;
          class1+=0.0;
-         class2+=1.0;
+         class2+=0.7142857142857143;
         }
   else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 14.380344867706299)
+    if (sacral_slope <= 53.330434799194336)
+      if (lumbar_lordosis_angle <= 48.068403244018555)
         {
-         class0+=0.13636363636363635;
-         class1+=0.8636363636363636;
+         class0+=0.05;
+         class1+=0.7;
+         class2+=0.25;
+        }
+      else
+        {
+         class0+=0.019230769230769232;
+         class1+=0.21153846153846154;
+         class2+=0.7692307692307693;
+        }
+    else
+      if (degree_spondylolisthesis <= 9.067076206207275)
+        {
+         class0+=0.0;
+         class1+=1.0;
          class2+=0.0;
         }
       else
         {
          class0+=0.0;
-         class1+=0.06666666666666667;
-         class2+=0.9333333333333333;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 87
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_radius <= 111.27699661254883)
+        {
+         class0+=0.7647058823529411;
+         class1+=0.17647058823529413;
+         class2+=0.058823529411764705;
+        }
+      else
+        {
+         class0+=0.48214285714285715;
+         class1+=0.48214285714285715;
+         class2+=0.03571428571428571;
         }
     else
-      if (degree_spondylolisthesis <= 8.255654573440552)
+      if (pelvic_incidence <= 35.79051399230957)
+        {
+         class0+=0.6;
+         class1+=0.4;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.08571428571428572;
+         class1+=0.9142857142857143;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_incidence <= 55.807992935180664)
         {
          class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 26.451024055480957)
+        {
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
         }
       else
         {
@@ -3828,13 +4686,13 @@ double  class2 = 0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 73
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (degree_spondylolisthesis <= 6.924067258834839)
+ // TREE: 88
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (degree_spondylolisthesis <= 7.179219961166382)
         {
-         class0+=0.8181818181818182;
-         class1+=0.18181818181818182;
+         class0+=0.8571428571428571;
+         class1+=0.14285714285714285;
          class2+=0.0;
         }
       else
@@ -3844,25 +4702,25 @@ double  class2 = 0;
          class2+=0.0;
         }
     else
-      if (sacral_slope <= 40.80160331726074)
+      if (degree_spondylolisthesis <= 3.39676570892334)
         {
-         class0+=0.3541666666666667;
-         class1+=0.5833333333333334;
-         class2+=0.0625;
+         class0+=0.17543859649122806;
+         class1+=0.8070175438596491;
+         class2+=0.017543859649122806;
         }
       else
         {
-         class0+=0.05555555555555555;
-         class1+=0.5;
-         class2+=0.4444444444444444;
+         class0+=0.53125;
+         class1+=0.40625;
+         class2+=0.0625;
         }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 124.03000259399414)
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_incidence <= 55.807992935180664)
         {
-         class0+=0.2222222222222222;
-         class1+=0.6111111111111112;
-         class2+=0.16666666666666666;
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
         }
       else
         {
@@ -3871,31 +4729,86 @@ double  class2 = 0;
          class2+=0.0;
         }
     else
-      if (degree_spondylolisthesis <= 16.84712839126587)
+      if (degree_spondylolisthesis <= 26.451024055480957)
         {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
+         class0+=0.0;
+         class1+=0.125;
+         class2+=0.875;
         }
       else
         {
          class0+=0.0;
-         class1+=0.020833333333333332;
-         class2+=0.9791666666666666;
+         class1+=0.0;
+         class2+=1.0;
         }
- // TREE: 74
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (degree_spondylolisthesis <= 13.920654773712158)
-      if (sacral_slope <= 28.01943588256836)
+ // TREE: 89
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
         {
-         class0+=0.76;
-         class1+=0.24;
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (degree_spondylolisthesis <= 2.116147041320801)
+        {
+         class0+=0.038461538461538464;
+         class1+=0.9615384615384616;
          class2+=0.0;
         }
       else
         {
-         class0+=0.32727272727272727;
-         class1+=0.6727272727272727;
+         class0+=0.35714285714285715;
+         class1+=0.6428571428571429;
+         class2+=0.0;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_radius <= 136.77429962158203)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+    else
+      if (lumbar_lordosis_angle <= 62.66514015197754)
+        {
+         class0+=0.0;
+         class1+=0.04;
+         class2+=0.96;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 90
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (degree_spondylolisthesis <= 3.3239283561706543)
+        {
+         class0+=0.3548387096774194;
+         class1+=0.6451612903225806;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.7333333333333333;
+         class1+=0.26666666666666666;
          class2+=0.0;
         }
     else
@@ -3905,25 +4818,25 @@ double  class2 = 0;
        class2+=1.0;
       }
   else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 112.11275100708008)
+    if (lumbar_lordosis_angle <= 58.72928810119629)
+      if (sacral_slope <= 53.0706672668457)
         {
-         class0+=0.045454545454545456;
-         class1+=0.09090909090909091;
-         class2+=0.8636363636363636;
+         class0+=0.0625;
+         class1+=0.40625;
+         class2+=0.53125;
         }
       else
         {
-         class0+=0.14814814814814814;
-         class1+=0.5555555555555556;
-         class2+=0.2962962962962963;
+         class0+=0.0;
+         class1+=0.1;
+         class2+=0.9;
         }
     else
-      if (pelvic_radius <= 111.81633758544922)
+      if (lumbar_lordosis_angle <= 75.99925994873047)
         {
          class0+=0.0;
-         class1+=0.2;
-         class2+=0.8;
+         class1+=0.11904761904761904;
+         class2+=0.8809523809523809;
         }
       else
         {
@@ -3931,81 +4844,129 @@ double  class2 = 0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 75
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (lumbar_lordosis_angle <= 31.751480102539062)
+ // TREE: 91
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (pelvic_radius <= 125.44171905517578)
+      if (pelvic_radius <= 111.43204879760742)
         {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.13333333333333333;
-         class1+=0.7111111111111111;
-         class2+=0.15555555555555556;
-        }
-    else
-      if (degree_spondylolisthesis <= 13.794804573059082)
-        {
-         class0+=0.7777777777777778;
-         class1+=0.2222222222222222;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
+         class0+=0.6875;
          class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (sacral_slope <= 43.68538284301758)
-      if (pelvic_radius <= 132.19104766845703)
-        {
-         class0+=0.21739130434782608;
-         class1+=0.391304347826087;
-         class2+=0.391304347826087;
+         class2+=0.3125;
         }
       else
         {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
+         class0+=0.5;
+         class1+=0.4074074074074074;
+         class2+=0.09259259259259259;
         }
     else
-      if (pelvic_radius <= 126.13557434082031)
+      if (pelvic_tilt <= 23.426228523254395)
         {
-         class0+=0.0;
-         class1+=0.10843373493975904;
-         class2+=0.891566265060241;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.36363636363636365;
-         class2+=0.6363636363636364;
-        }
- // TREE: 76
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (lumbar_lordosis_angle <= 35.93632888793945)
-        {
-         class0+=0.7666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.0;
+         class0+=0.14705882352941177;
+         class1+=0.7647058823529411;
+         class2+=0.08823529411764706;
         }
       else
         {
          class0+=0.3333333333333333;
-         class1+=0.6;
-         class2+=0.06666666666666667;
+         class1+=0.0;
+         class2+=0.6666666666666666;
+        }
+  else
+    if (sacral_slope <= 53.0706672668457)
+      if (degree_spondylolisthesis <= 20.63097858428955)
+        {
+         class0+=0.1111111111111111;
+         class1+=0.8333333333333334;
+         class2+=0.05555555555555555;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0425531914893617;
+         class2+=0.9574468085106383;
         }
     else
-      if (pelvic_tilt <= 25.32889747619629)
+      if (pelvic_radius <= 112.84704208374023)
         {
-         class0+=0.0625;
-         class1+=0.9375;
+         class0+=0.0;
+         class1+=0.08695652173913043;
+         class2+=0.9130434782608695;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+ // TREE: 92
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (pelvic_incidence <= 49.899505615234375)
+        {
+         class0+=0.8064516129032258;
+         class1+=0.1935483870967742;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.35714285714285715;
+         class1+=0.5714285714285714;
+         class2+=0.07142857142857142;
+        }
+    else
+      if (sacral_slope <= 28.13647174835205)
+        {
+         class0+=0.5555555555555556;
+         class1+=0.4444444444444444;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.03225806451612903;
+         class1+=0.967741935483871;
+         class2+=0.0;
+        }
+  else
+    if (pelvic_tilt <= 14.86863899230957)
+      if (lumbar_lordosis_angle <= 54.41946983337402)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.15;
+         class2+=0.85;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+ // TREE: 93
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_radius <= 125.30192565917969)
+      if (sacral_slope <= 41.109004974365234)
+        {
+         class0+=0.7450980392156863;
+         class1+=0.23529411764705882;
+         class2+=0.0196078431372549;
+        }
+      else
+        {
+         class0+=0.09090909090909091;
+         class1+=0.8181818181818182;
+         class2+=0.09090909090909091;
+        }
+    else
+      if (pelvic_tilt <= 26.227545738220215)
+        {
+         class0+=0.1282051282051282;
+         class1+=0.8717948717948718;
          class2+=0.0;
         }
       else
@@ -4018,544 +4979,63 @@ double  class2 = 0;
     if (lumbar_lordosis_angle <= 62.66514015197754)
       if (pelvic_radius <= 115.87165069580078)
         {
-         class0+=0.02857142857142857;
-         class1+=0.0;
-         class2+=0.9714285714285714;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.11764705882352941;
-         class2+=0.8823529411764706;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 77
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 17.252374172210693)
-        {
-         class0+=0.6382978723404256;
-         class1+=0.3617021276595745;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.1111111111111111;
-         class2+=0.8888888888888888;
-        }
-    else
-      if (degree_spondylolisthesis <= 22.721468925476074)
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (sacral_slope <= 44.822065353393555)
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=0.5625;
-         class1+=0.4375;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
-        {
-         class0+=0.0;
-         class1+=0.875;
-         class2+=0.125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.01282051282051282;
-         class2+=0.9871794871794872;
-        }
- // TREE: 78
-  if (pelvic_incidence <= 56.49103927612305)
-    if (degree_spondylolisthesis <= 17.252374172210693)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.76;
-         class1+=0.24;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.27450980392156865;
-         class1+=0.7254901960784313;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_incidence <= 55.807992935180664)
-        {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
       else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.907419681549072)
         {
          class0+=0.0;
          class1+=0.13043478260869565;
          class2+=0.8695652173913043;
         }
-      else
-        {
-         class0+=0.2857142857142857;
-         class1+=0.4642857142857143;
-         class2+=0.25;
-        }
-    else
-      if (sacral_slope <= 33.18121528625488)
-        {
-         class0+=0.5;
-         class1+=0.0;
-         class2+=0.5;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.07792207792207792;
-         class2+=0.922077922077922;
-        }
- // TREE: 79
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_radius <= 105.67694854736328)
-        {
-         class0+=0.25;
-         class1+=0.0;
-         class2+=0.75;
-        }
-      else
-        {
-         class0+=0.5517241379310345;
-         class1+=0.3793103448275862;
-         class2+=0.06896551724137931;
-        }
-    else
-      if (degree_spondylolisthesis <= 12.182384729385376)
-        {
-         class0+=0.125;
-         class1+=0.875;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 124.03000259399414)
-        {
-         class0+=0.2222222222222222;
-         class1+=0.6111111111111112;
-         class2+=0.16666666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      if (lumbar_lordosis_angle <= 62.66514015197754)
-        {
-         class0+=0.024390243902439025;
-         class1+=0.04878048780487805;
-         class2+=0.926829268292683;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 80
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (sacral_slope <= 39.40337562561035)
-        {
-         class0+=0.09523809523809523;
-         class1+=0.8095238095238095;
-         class2+=0.09523809523809523;
-        }
-      else
-        {
-         class0+=0.08333333333333333;
-         class1+=0.4166666666666667;
-         class2+=0.5;
-        }
-    else
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.48936170212765956;
-         class1+=0.46808510638297873;
-         class2+=0.0425531914893617;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (sacral_slope <= 44.822065353393555)
-        {
-         class0+=0.3333333333333333;
-         class1+=0.2916666666666667;
-         class2+=0.375;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.3333333333333333;
-         class2+=0.6666666666666666;
-        }
-    else
-      if (pelvic_radius <= 111.81633758544922)
-        {
-         class0+=0.03125;
-         class1+=0.1875;
-         class2+=0.78125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 81
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_incidence <= 63.882225036621094)
-      if (pelvic_tilt <= 10.707735538482666)
-        {
-         class0+=0.12;
-         class1+=0.88;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.5666666666666667;
-         class1+=0.43333333333333335;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_tilt <= 23.895398139953613)
-        {
-         class0+=0.0;
-         class1+=0.8125;
-         class2+=0.1875;
-        }
-      else
-        {
-         class0+=0.5714285714285714;
-         class1+=0.42857142857142855;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
     else
       {
        class0+=0.0;
        class1+=0.0;
        class2+=1.0;
       }
- // TREE: 82
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= -0.582274317741394)
+ // TREE: 94
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (degree_spondylolisthesis <= 1.3626884818077087)
+      if (pelvic_radius <= 121.49974060058594)
         {
-         class0+=0.7368421052631579;
-         class1+=0.2631578947368421;
-         class2+=0.0;
+         class0+=0.4583333333333333;
+         class1+=0.5;
+         class2+=0.041666666666666664;
         }
       else
         {
-         class0+=0.42857142857142855;
-         class1+=0.5178571428571429;
-         class2+=0.05357142857142857;
+         class0+=0.07407407407407407;
+         class1+=0.9259259259259259;
+         class2+=0.0;
         }
     else
-      if (pelvic_incidence <= 35.79051399230957)
+      if (pelvic_radius <= 120.5997314453125)
         {
-         class0+=0.3333333333333333;
-         class1+=0.6666666666666666;
-         class2+=0.0;
+         class0+=0.696969696969697;
+         class1+=0.24242424242424243;
+         class2+=0.06060606060606061;
         }
       else
         {
-         class0+=0.06666666666666667;
-         class1+=0.9333333333333333;
+         class0+=0.3448275862068966;
+         class1+=0.6551724137931034;
          class2+=0.0;
         }
   else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (degree_spondylolisthesis <= 16.078891277313232)
+    if (pelvic_incidence <= 56.319414138793945)
+      if (pelvic_incidence <= 55.807992935180664)
         {
-         class0+=1.0;
-         class1+=0.0;
+         class0+=0.0;
+         class1+=0.058823529411764705;
+         class2+=0.9411764705882353;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=1.0;
          class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.05405405405405406;
-         class2+=0.9459459459459459;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 83
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (degree_spondylolisthesis <= 17.68692922592163)
-        {
-         class0+=0.3018867924528302;
-         class1+=0.6981132075471698;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (sacral_slope <= 35.13139533996582)
-        {
-         class0+=0.8571428571428571;
-         class1+=0.14285714285714285;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.3;
-         class1+=0.3;
-         class2+=0.4;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (degree_spondylolisthesis <= -0.5330937206745148)
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.047619047619047616;
-         class1+=0.8095238095238095;
-         class2+=0.14285714285714285;
-        }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.03571428571428571;
-         class1+=0.07142857142857142;
-         class2+=0.8928571428571429;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 84
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (degree_spondylolisthesis <= 15.480012655258179)
-        {
-         class0+=0.12;
-         class1+=0.88;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.48936170212765956;
-         class1+=0.46808510638297873;
-         class2+=0.0425531914893617;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_tilt <= 30.175579071044922)
-      if (lumbar_lordosis_angle <= 58.72928810119629)
-        {
-         class0+=0.15217391304347827;
-         class1+=0.32608695652173914;
-         class2+=0.5217391304347826;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.12727272727272726;
-         class2+=0.8727272727272727;
-        }
-    else
-      if (degree_spondylolisthesis <= 15.794094562530518)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 85
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_incidence <= 66.89922332763672)
-      if (sacral_slope <= 28.01943588256836)
-        {
-         class0+=0.7407407407407407;
-         class1+=0.2222222222222222;
-         class2+=0.037037037037037035;
-        }
-      else
-        {
-         class0+=0.3157894736842105;
-         class1+=0.5789473684210527;
-         class2+=0.10526315789473684;
-        }
-    else
-      if (pelvic_incidence <= 72.71776580810547)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
-        {
-         class0+=0.3333333333333333;
-         class1+=0.0;
-         class2+=0.6666666666666666;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_incidence <= 70.737548828125)
-        {
-         class0+=0.13636363636363635;
-         class1+=0.8636363636363636;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.6666666666666666;
-         class2+=0.3333333333333333;
-        }
-    else
-      if (pelvic_incidence <= 56.319414138793945)
-        {
-         class0+=0.0;
-         class1+=0.14285714285714285;
-         class2+=0.8571428571428571;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.011363636363636364;
-         class2+=0.9886363636363636;
-        }
- // TREE: 86
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_radius <= 110.44103240966797)
-        {
-         class0+=0.2222222222222222;
-         class1+=0.0;
-         class2+=0.7777777777777778;
-        }
-      else
-        {
-         class0+=0.5957446808510638;
-         class1+=0.3829787234042553;
-         class2+=0.02127659574468085;
-        }
-    else
-      if (degree_spondylolisthesis <= 22.721468925476074)
-        {
-         class0+=0.10344827586206896;
-         class1+=0.896551724137931;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (sacral_slope <= 42.2171573638916)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.08695652173913043;
-         class1+=0.782608695652174;
-         class2+=0.13043478260869565;
         }
     else
       if (pelvic_tilt <= 14.86863899230957)
@@ -4566,484 +5046,51 @@ double  class2 = 0;
         }
       else
         {
-         class0+=0.013333333333333334;
-         class1+=0.0;
-         class2+=0.9866666666666667;
-        }
- // TREE: 87
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
-        {
-         class0+=0.8888888888888888;
-         class1+=0.1111111111111111;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8333333333333334;
-         class2+=0.05555555555555555;
-        }
-  else
-    if (lumbar_lordosis_angle <= 58.72928810119629)
-      if (pelvic_radius <= 125.59880447387695)
-        {
-         class0+=0.11428571428571428;
-         class1+=0.2;
-         class2+=0.6857142857142857;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.8;
-         class2+=0.2;
-        }
-    else
-      if (lumbar_lordosis_angle <= 76.12190246582031)
-        {
-         class0+=0.02127659574468085;
-         class1+=0.14893617021276595;
-         class2+=0.8297872340425532;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.029411764705882353;
-         class2+=0.9705882352941176;
-        }
- // TREE: 88
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (pelvic_incidence <= 32.66292953491211)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0625;
-         class1+=0.6875;
-         class2+=0.25;
-        }
-    else
-      if (degree_spondylolisthesis <= 32.862857818603516)
-        {
-         class0+=0.5769230769230769;
-         class1+=0.4230769230769231;
-         class2+=0.0;
-        }
-      else
-        {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
-        }
-  else
-    if (sacral_slope <= 44.822065353393555)
-      if (pelvic_incidence <= 67.19613265991211)
-        {
-         class0+=0.3333333333333333;
-         class1+=0.3333333333333333;
-         class2+=0.3333333333333333;
-        }
-      else
-        {
-         class0+=0.13333333333333333;
-         class1+=0.0;
-         class2+=0.8666666666666667;
-        }
-    else
-      if (degree_spondylolisthesis <= 11.452327728271484)
-        {
-         class0+=0.0;
-         class1+=0.875;
-         class2+=0.125;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.01282051282051282;
-         class2+=0.9871794871794872;
-        }
- // TREE: 89
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (sacral_slope <= 35.553558349609375)
-        {
-         class0+=0.7631578947368421;
-         class1+=0.23684210526315788;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24324324324324326;
-         class1+=0.6756756756756757;
-         class2+=0.08108108108108109;
-        }
-    else
-      if (sacral_slope <= 20.55422878265381)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
-        }
-  else
-    if (lumbar_lordosis_angle <= 62.66514015197754)
-      if (lumbar_lordosis_angle <= 62.31851005554199)
-        {
-         class0+=0.0196078431372549;
-         class1+=0.0196078431372549;
-         class2+=0.9607843137254902;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 90
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.45454545454545453;
-         class1+=0.22727272727272727;
-         class2+=0.3181818181818182;
-        }
-      else
-        {
-         class0+=0.15789473684210525;
-         class1+=0.8421052631578947;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.5625;
-         class1+=0.375;
-         class2+=0.0625;
-        }
-      else
-        {
-         class0+=0.8;
-         class1+=0.0;
-         class2+=0.2;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_tilt <= 15.617511749267578)
-        {
-         class0+=0.0;
-         class1+=0.2222222222222222;
-         class2+=0.7777777777777778;
-        }
-      else
-        {
-         class0+=0.22727272727272727;
-         class1+=0.5;
-         class2+=0.2727272727272727;
-        }
-    else
-      if (degree_spondylolisthesis <= 8.255654573440552)
-        {
-         class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 91
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (pelvic_radius <= 124.96423721313477)
-      if (sacral_slope <= 35.553558349609375)
-        {
-         class0+=0.7631578947368421;
-         class1+=0.23684210526315788;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.24324324324324326;
-         class1+=0.6756756756756757;
-         class2+=0.08108108108108109;
-        }
-    else
-      if (lumbar_lordosis_angle <= 25.224257469177246)
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.03333333333333333;
-         class1+=0.9666666666666667;
-         class2+=0.0;
-        }
-  else
-    if (pelvic_incidence <= 68.07559204101562)
-      if (pelvic_incidence <= 67.52561950683594)
-        {
-         class0+=0.02702702702702703;
-         class1+=0.02702702702702703;
-         class2+=0.9459459459459459;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=1.0;
-         class2+=0.0;
-        }
-    else
-      {
-       class0+=0.0;
-       class1+=0.0;
-       class2+=1.0;
-      }
- // TREE: 92
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_incidence <= 66.89922332763672)
-      if (degree_spondylolisthesis <= 18.811551570892334)
-        {
-         class0+=0.4935064935064935;
-         class1+=0.5064935064935064;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 27.563772678375244)
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (degree_spondylolisthesis <= 14.380344867706299)
-        {
-         class0+=0.13636363636363635;
-         class1+=0.8636363636363636;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.06666666666666667;
-         class2+=0.9333333333333333;
-        }
-    else
-      if (pelvic_radius <= 111.81633758544922)
-        {
-         class0+=0.0;
-         class1+=0.1935483870967742;
-         class2+=0.8064516129032258;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 93
-  if (sacral_slope <= 40.53826332092285)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 18.811551570892334)
-        {
-         class0+=0.6923076923076923;
-         class1+=0.3076923076923077;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (degree_spondylolisthesis <= 32.5670747756958)
-        {
-         class0+=0.11538461538461539;
-         class1+=0.8846153846153846;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-  else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_tilt <= 18.92229175567627)
-        {
-         class0+=0.0;
-         class1+=0.9444444444444444;
-         class2+=0.05555555555555555;
-        }
-      else
-        {
-         class0+=0.23076923076923078;
-         class1+=0.6153846153846154;
-         class2+=0.15384615384615385;
-        }
-    else
-      if (pelvic_incidence <= 56.319414138793945)
-        {
-         class0+=0.0;
-         class1+=0.14285714285714285;
-         class2+=0.8571428571428571;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.011363636363636364;
-         class2+=0.9886363636363636;
-        }
- // TREE: 94
-  if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_tilt <= 10.707735538482666)
-      if (degree_spondylolisthesis <= 15.480012655258179)
-        {
-         class0+=0.12;
-         class1+=0.88;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_tilt <= 21.858789443969727)
-        {
-         class0+=0.48936170212765956;
-         class1+=0.46808510638297873;
-         class2+=0.0425531914893617;
-        }
-      else
-        {
-         class0+=1.0;
-         class1+=0.0;
-         class2+=0.0;
-        }
-  else
-    if (sacral_slope <= 44.822065353393555)
-      if (degree_spondylolisthesis <= 16.078891277313232)
-        {
-         class0+=0.5625;
-         class1+=0.4375;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-    else
-      if (pelvic_incidence <= 69.48115158081055)
-        {
-         class0+=0.0;
-         class1+=0.3333333333333333;
-         class2+=0.6666666666666666;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.08955223880597014;
-         class2+=0.9104477611940298;
         }
  // TREE: 95
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (sacral_slope <= 28.01943588256836)
-      if (pelvic_radius <= 124.96423721313477)
+  if (sacral_slope <= 40.53826332092285)
+    if (degree_spondylolisthesis <= 18.047505855560303)
+      if (pelvic_tilt <= 21.710060119628906)
         {
-         class0+=0.8888888888888888;
-         class1+=0.1111111111111111;
+         class0+=0.4647887323943662;
+         class1+=0.5352112676056338;
          class2+=0.0;
         }
       else
         {
-         class0+=0.42857142857142855;
-         class1+=0.5714285714285714;
-         class2+=0.0;
+         class0+=0.7857142857142857;
+         class1+=0.14285714285714285;
+         class2+=0.07142857142857142;
         }
     else
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.4666666666666667;
-         class1+=0.23333333333333334;
-         class2+=0.3;
-        }
-      else
-        {
-         class0+=0.1111111111111111;
-         class1+=0.8333333333333334;
-         class2+=0.05555555555555555;
-        }
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
   else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 112.11275100708008)
+    if (pelvic_radius <= 119.32738494873047)
+      if (lumbar_lordosis_angle <= 47.568403244018555)
         {
-         class0+=0.045454545454545456;
-         class1+=0.09090909090909091;
-         class2+=0.8636363636363636;
+         class0+=0.1;
+         class1+=0.5;
+         class2+=0.4;
         }
       else
         {
-         class0+=0.14814814814814814;
-         class1+=0.5555555555555556;
-         class2+=0.2962962962962963;
+         class0+=0.014705882352941176;
+         class1+=0.07352941176470588;
+         class2+=0.9117647058823529;
         }
     else
-      if (degree_spondylolisthesis <= 8.255654573440552)
+      if (pelvic_incidence <= 68.07559204101562)
         {
          class0+=0.0;
-         class1+=0.8571428571428571;
-         class2+=0.14285714285714285;
+         class1+=0.8095238095238095;
+         class2+=0.19047619047619047;
         }
       else
         {
@@ -5053,107 +5100,107 @@ double  class2 = 0;
         }
  // TREE: 96
   if (pelvic_incidence <= 56.49103927612305)
-    if (pelvic_radius <= 124.96423721313477)
-      if (pelvic_tilt <= 10.485756874084473)
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (degree_spondylolisthesis <= 2.023559093475342)
         {
-         class0+=0.15;
+         class0+=0.2765957446808511;
+         class1+=0.723404255319149;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.6410256410256411;
+         class1+=0.358974358974359;
+         class2+=0.0;
+        }
+    else
+      if (lumbar_lordosis_angle <= 60.49077033996582)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.0;
          class1+=0.5;
-         class2+=0.35;
-        }
-      else
-        {
-         class0+=0.75;
-         class1+=0.2222222222222222;
-         class2+=0.027777777777777776;
-        }
-    else
-      if (pelvic_tilt <= 19.205841064453125)
-        {
-         class0+=0.03571428571428571;
-         class1+=0.8928571428571429;
-         class2+=0.07142857142857142;
-        }
-      else
-        {
-         class0+=0.6666666666666666;
-         class1+=0.3333333333333333;
-         class2+=0.0;
+         class2+=0.5;
         }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (lumbar_lordosis_angle <= 49.31392860412598)
+    if (pelvic_incidence <= 69.5125503540039)
+      if (degree_spondylolisthesis <= 16.078891277313232)
         {
-         class0+=0.5384615384615384;
-         class1+=0.46153846153846156;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.05263157894736842;
-         class1+=0.7894736842105263;
-         class2+=0.15789473684210525;
-        }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.037037037037037035;
-         class1+=0.037037037037037035;
-         class2+=0.9259259259259259;
+         class0+=0.3181818181818182;
+         class1+=0.6363636363636364;
+         class2+=0.045454545454545456;
         }
       else
         {
          class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
- // TREE: 97
-  if (degree_spondylolisthesis <= 12.387728691101074)
-    if (sacral_slope <= 28.01943588256836)
-      if (sacral_slope <= 23.494050979614258)
-        {
-         class0+=0.5833333333333334;
-         class1+=0.4166666666666667;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.9285714285714286;
-         class1+=0.07142857142857142;
-         class2+=0.0;
+         class1+=0.03333333333333333;
+         class2+=0.9666666666666667;
         }
     else
-      if (pelvic_radius <= 118.08693313598633)
-        {
-         class0+=0.46153846153846156;
-         class1+=0.48717948717948717;
-         class2+=0.05128205128205128;
-        }
-      else
-        {
-         class0+=0.06976744186046512;
-         class1+=0.9069767441860465;
-         class2+=0.023255813953488372;
-        }
-  else
-    if (degree_spondylolisthesis <= 16.078891277313232)
-      if (pelvic_radius <= 105.5777816772461)
-        {
-         class0+=0.0;
-         class1+=0.0;
-         class2+=1.0;
-        }
-      else
+      if (sacral_slope <= 33.40303039550781)
         {
          class0+=1.0;
          class1+=0.0;
          class2+=0.0;
         }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
+      else
         {
          class0+=0.0;
-         class1+=0.05405405405405406;
-         class2+=0.9459459459459459;
+         class1+=0.04918032786885246;
+         class2+=0.9508196721311475;
+        }
+ // TREE: 97
+  if (degree_spondylolisthesis <= 16.078891277313232)
+    if (sacral_slope <= 28.13647174835205)
+      if (degree_spondylolisthesis <= 7.179219961166382)
+        {
+         class0+=0.8571428571428571;
+         class1+=0.14285714285714285;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.3333333333333333;
+         class1+=0.6666666666666666;
+         class2+=0.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 3.39676570892334)
+        {
+         class0+=0.17543859649122806;
+         class1+=0.8070175438596491;
+         class2+=0.017543859649122806;
+        }
+      else
+        {
+         class0+=0.53125;
+         class1+=0.40625;
+         class2+=0.0625;
+        }
+  else
+    if (degree_spondylolisthesis <= 20.085037231445312)
+      if (pelvic_incidence <= 57.21945381164551)
+        {
+         class0+=0.0;
+         class1+=1.0;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 31.24958896636963)
+        {
+         class0+=0.0;
+         class1+=0.07692307692307693;
+         class2+=0.9230769230769231;
         }
       else
         {
@@ -5162,12 +5209,12 @@ double  class2 = 0;
          class2+=1.0;
         }
  // TREE: 98
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_radius <= 124.96423721313477)
-      if (degree_spondylolisthesis <= 16.65331506729126)
+  if (pelvic_radius <= 110.68482971191406)
+    if (sacral_slope <= 41.11776542663574)
+      if (degree_spondylolisthesis <= 21.71998643875122)
         {
-         class0+=0.6071428571428571;
-         class1+=0.39285714285714285;
+         class0+=1.0;
+         class1+=0.0;
          class2+=0.0;
         }
       else
@@ -5177,108 +5224,101 @@ double  class2 = 0;
          class2+=1.0;
         }
     else
-      if (pelvic_tilt <= 22.52758026123047)
+      if (degree_spondylolisthesis <= 11.642083644866943)
         {
-         class0+=0.08695652173913043;
-         class1+=0.9130434782608695;
+         class0+=0.5;
+         class1+=0.5;
          class2+=0.0;
         }
       else
         {
-         class0+=0.5;
+         class0+=0.0;
          class1+=0.0;
-         class2+=0.5;
+         class2+=1.0;
         }
   else
-    if (degree_spondylolisthesis <= 12.387728691101074)
-      if (pelvic_radius <= 124.03000259399414)
+    if (sacral_slope <= 39.99390411376953)
+      if (degree_spondylolisthesis <= 16.999180793762207)
         {
-         class0+=0.2222222222222222;
-         class1+=0.6111111111111112;
-         class2+=0.16666666666666666;
+         class0+=0.4666666666666667;
+         class1+=0.52;
+         class2+=0.013333333333333334;
         }
       else
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+    else
+      if (degree_spondylolisthesis <= 12.306690216064453)
+        {
+         class0+=0.0;
+         class1+=0.9583333333333334;
+         class2+=0.041666666666666664;
+        }
+      else
+        {
+         class0+=0.0;
+         class1+=0.057692307692307696;
+         class2+=0.9423076923076923;
+        }
+ // TREE: 99
+  if (lumbar_lordosis_angle <= 48.1184024810791)
+    if (degree_spondylolisthesis <= 15.030566215515137)
+      if (pelvic_radius <= 125.44171905517578)
+        {
+         class0+=0.6333333333333333;
+         class1+=0.36666666666666664;
+         class2+=0.0;
+        }
+      else
+        {
+         class0+=0.1875;
+         class1+=0.8125;
+         class2+=0.0;
+        }
+    else
+      {
+       class0+=0.0;
+       class1+=0.0;
+       class2+=1.0;
+      }
+  else
+    if (pelvic_radius <= 121.3623161315918)
+      if (pelvic_radius <= 103.31562042236328)
+        {
+         class0+=0.0;
+         class1+=0.0;
+         class2+=1.0;
+        }
+      else
+        {
+         class0+=0.037037037037037035;
+         class1+=0.1111111111111111;
+         class2+=0.8518518518518519;
+        }
+    else
+      if (degree_spondylolisthesis <= 27.53839111328125)
         {
          class0+=0.0;
          class1+=1.0;
          class2+=0.0;
         }
-    else
-      if (pelvic_incidence <= 68.07559204101562)
-        {
-         class0+=0.03571428571428571;
-         class1+=0.07142857142857142;
-         class2+=0.8928571428571429;
-        }
       else
         {
          class0+=0.0;
          class1+=0.0;
          class2+=1.0;
         }
- // TREE: 99
-  if (lumbar_lordosis_angle <= 47.53213119506836)
-    if (pelvic_tilt <= 17.217758178710938)
-      if (pelvic_radius <= 117.35956192016602)
-        {
-         class0+=0.45454545454545453;
-         class1+=0.22727272727272727;
-         class2+=0.3181818181818182;
-        }
-      else
-        {
-         class0+=0.15789473684210525;
-         class1+=0.8421052631578947;
-         class2+=0.0;
-        }
-    else
-      if (pelvic_incidence <= 55.399030685424805)
-        {
-         class0+=0.8333333333333334;
-         class1+=0.16666666666666666;
-         class2+=0.0;
-        }
-      else
-        {
-         class0+=0.46153846153846156;
-         class1+=0.23076923076923078;
-         class2+=0.3076923076923077;
-        }
-  else
-    if (pelvic_incidence <= 69.48115158081055)
-      if (pelvic_radius <= 112.11275100708008)
-        {
-         class0+=0.045454545454545456;
-         class1+=0.09090909090909091;
-         class2+=0.8636363636363636;
-        }
-      else
-        {
-         class0+=0.14814814814814814;
-         class1+=0.5555555555555556;
-         class2+=0.2962962962962963;
-        }
-    else
-      if (lumbar_lordosis_angle <= 61.07404136657715)
-        {
-         class0+=0.0;
-         class1+=0.18181818181818182;
-         class2+=0.8181818181818182;
-        }
-      else
-        {
-         class0+=0.0;
-         class1+=0.03636363636363636;
-         class2+=0.9636363636363636;
-        }
   // VOTER
 int classification = -1;
   if( class0>=class1 && class0>=class2)
-    classification = 0;
+    classification = Hernia;
   if( class1>=class0 && class1>=class2)
-    classification = 1;
+    classification = Normal;
   if( class2>=class0 && class2>=class1)
-    classification = 2;
+    classification = Spondylolisthesis;
  return classification;
 }
 }
