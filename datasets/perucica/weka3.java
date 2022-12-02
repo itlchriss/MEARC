@@ -3,6 +3,7 @@ class RandomForest {
 public static final int Hernia = 0;
 public static final int Normal = 1;
 public static final int Spondylolisthesis = 2;
+//@ ensures(*The patients who had degenerative spondylolisthesis had a lumbar lordosis angle from 52.6 to 62.1.*);
 public int randomForest(double pelvic_incidence,double pelvic_tilt,double lumbar_lordosis_angle,double sacral_slope,double pelvic_radius,double degree_spondylolisthesis){
 double  class0 = 0;
 double  class1 = 0;

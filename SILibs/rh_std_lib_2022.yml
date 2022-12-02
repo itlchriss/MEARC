@@ -5,9 +5,10 @@
   arity: 2
   arguments:
   - - (Subj)
-    - exp
+    - EXP
   - - (Acc)
-    - exp
+    - EXP
+  type: EXP
   interpretation: (Subj) ==> (Acc)
 - term: have
   syntax:
@@ -16,9 +17,10 @@
   arity: 2
   arguments:
   - - (Subj)
-    - keyword
+    - KEYWORD
   - - (Acc)
-    - literal
+    - LITERAL
+  type: EXP
   interpretation: (Subj) == (Acc)
 - term: patient
   syntax:
@@ -27,5 +29,6 @@
   arity: 1
   arguments:
   - - (*)
-    - keyword
+    - KEYWORD
+  type: KEYWORD
   interpretation: \result

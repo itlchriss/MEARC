@@ -443,7 +443,7 @@ struct astnode *astsimplification(struct astnode *_root) {
                         break;
                     }
                 }
-            } 
+            }
             deleteastnode(node);
         } else if (count == 0 && (node->type == Connective || node->type == Quantifier)) {
             deleteastchild(node->parent, node);

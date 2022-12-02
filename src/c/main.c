@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 #include <yaml.h>
 #include "core.h"
@@ -168,6 +167,7 @@ int main(int argc, char** argv) {
         For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
     */
      for (int i = 0; i < c; ++i) {
+        connectentitysymbol(csts[i], events[i]);
         root = ast[i];
         #if INFO
         showprocessinfo("Start semantic interpretation identification");
@@ -193,6 +193,16 @@ int main(int argc, char** argv) {
         #if INFO
         showprocessinfo("Start AST simplification");
         #endif
+        /*
+        intended to do simplification TWICE.
+        because there can be case that a skew tree exists before simplification and the root is a connective.
+        such that, all internal nodes may be removed (the case that all internal nodes are quantifiers),
+        but the root is preserved. 
+        this case will make the semantics weird in the code generation phase.
+        running the simplification twice can deal with this situation. 
+        however, it is ugly. we should improve the algorithm.
+        */
+        ast[i] = astsimplification(ast[i]);
         ast[i] = astsimplification(ast[i]);
         #if INFO
         showprocessinfo("Finished AST simplification");
@@ -265,6 +275,19 @@ int countlines(FILE *fp) {
     return lines;
 }
 
+enum mearc_config_key_type { 
+    TERM,
+    SYNTAX,
+    ARITY,
+    ARGUMENTS,
+    ARGUMENTS_SECTION,
+    ARGUMENT_NAME,
+    ARGUMENT_TYPE,
+    INTERPRETATION,
+    TYPE
+};
+
+
 struct queue* readSI(char *dstfilepaths) {
     char *filepath, *pos;
     char *_t = strtok_r(dstfilepaths, ",", &pos);
@@ -291,13 +314,14 @@ struct queue* readSI(char *dstfilepaths) {
         #if SIDEBUG
         printf("Trying to read SI from file at %s\n", filepath);
         #endif
-        int token_flag = -1;
+        
         yaml_token_t  token;   /* new variable */
+        yaml_token_type_t token_type;
+        enum mearc_config_key_type key_type;
         struct si *si = NULL;
-        char *key, *value;
+        struct siarg *siarg = NULL;
          do {
             yaml_parser_scan(&parser, &token);
-            SWITCH:
             switch(token.type)
             {
             /* Stream start/end */
@@ -314,15 +338,15 @@ struct queue* readSI(char *dstfilepaths) {
             /* Token types (read before actual token) */
             case YAML_KEY_TOKEN:   
                 #if SIDEBUG
-                printf("(Key token)   "); 
+                puts("(Key token)   "); 
                 #endif
-                token_flag = 1;
+                token_type = YAML_KEY_TOKEN;
                 break;
             case YAML_VALUE_TOKEN: 
                 #if SIDEBUG
-                printf("(Value token) "); 
+                puts("(Value token) "); 
                 #endif
-                token_flag = 2;
+                token_type = YAML_VALUE_TOKEN;
                 break;
             /* Block delimeters */
             case YAML_BLOCK_SEQUENCE_START_TOKEN: 
@@ -335,16 +359,32 @@ struct queue* readSI(char *dstfilepaths) {
                 puts("<b>Start Block (Entry)</b>");    
                 #endif
                 if (!si) {
-                    si = (struct si*) malloc (sizeof(struct si));
+                    si = newsi();
+                }
+                switch (key_type)
+                {
+                case ARGUMENTS:
+                    key_type = ARGUMENTS_SECTION;
+                    siarg = (struct siarg*)malloc(sizeof(struct siarg));
+                    break;
+                case ARGUMENTS_SECTION:
+                    key_type = ARGUMENT_NAME;
+                    break;
+                case ARGUMENT_NAME:
+                    key_type = ARGUMENT_TYPE;
+                    break;
+                default:
+                    break;
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
                 #if SIDEBUG
                 puts("<b>End block</b>");
                 #endif
-                if (si) {
-                    enqueue(new, (void*)si);
-                    si = NULL;
+                if (key_type == ARGUMENT_TYPE) { 
+                    enqueue(si->_args, (void*)siarg);
+                    siarg = NULL;
+                    key_type = ARGUMENTS;
                 }
                 break;
             /* Data */
@@ -355,88 +395,65 @@ struct queue* readSI(char *dstfilepaths) {
                 break;
             case YAML_SCALAR_TOKEN:  
                 #if SIDEBUG
-                printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                printf("YAML_SCALAR_TOKEN: %s(%s) \n", token.data.scalar.value, yaml_token_type_name[token_type]); 
                 #endif
-                if (token_flag == 1) {
-                    key = (char*) strdup((char*)token.data.scalar.value);
-                    if (strcmp(key, "arguments") == 0) {
-                        si->args = (char**)malloc(sizeof(char*) * si->arg_count);
-                        int i = 0;                            
-                        while (i < si->arg_count) {
-                            yaml_parser_scan(&parser, &token);
-                            #if SIDEBUG
-                            printf("ARG: TOKEN TYPE: %u \n", token.type); 
-                            #endif
-                            if (token.type == YAML_SCALAR_TOKEN) {
-                                si->args[i] = (char*) strdup((char*)token.data.scalar.value);
-                                #if SIDEBUG
-                                printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
-                                #endif
-                                ++i;
-                            }
-                        }                            
-                    } else if (strcmp(key, "syntax") == 0) {
-                        int i = 0;
-                        si->syntax = NULL;
-                        /* skip the YAML_VALUE_TOKEN */
-                        yaml_parser_scan(&parser, &token);
-                        /* read the YAML_BLOCK_ENTRY_TOKEN */
-                        yaml_parser_scan(&parser, &token);
-                        while (token.type == YAML_BLOCK_ENTRY_TOKEN) {                               
-                            yaml_parser_scan(&parser, &token);          
-                            #if SIDEBUG
-                            printf("YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
-                            #endif                                                 
-                            if (i > 0) {
-                                enum ptbsyntax *tmp = (enum ptbsyntax*) malloc (sizeof(enum ptbsyntax) * (++i));
-                                for (int j = 0; j < i; ++j) {
-                                    tmp[j] = si->syntax[j];
-                                }
-                                free(si->syntax);          
-                                si->syntax = tmp;                      
-                            } else {
-                                si->syntax = (enum ptbsyntax*) malloc (sizeof(enum ptbsyntax) * (++i));
-                            }
-                            si->syntax[i - 1] = string2ptbsyntax((char*)token.data.scalar.value);                               
-                            yaml_parser_scan(&parser, &token);                      
-                        }                                                                         
-                        si->syntax_count = i;
-                        goto SWITCH;
+                if (token_type == YAML_KEY_TOKEN) {
+                    if (strcmp((char*)token.data.scalar.value, "term") == 0) {
+                        key_type = TERM;
+                    } else if (strcmp((char*)token.data.scalar.value, "syntax") == 0) {
+                        key_type = SYNTAX;
+                    } else if (strcmp((char*)token.data.scalar.value, "arguments") == 0) {
+                        key_type = ARGUMENTS;
+                    } else if (strcmp((char*)token.data.scalar.value, "arity") == 0) {
+                        key_type = ARITY;
+                    } else if (strcmp((char*)token.data.scalar.value, "interpretation") == 0) {
+                        key_type = INTERPRETATION;
+                    } else if (strcmp((char*)token.data.scalar.value, "type") == 0) {
+                        key_type = TYPE;
+                    } else {
+                        fprintf(stderr, "Unknown config key encountered: %s\n", token.data.scalar.value);
+                        exit(-1);
                     }
-                } else if (token_flag == 2) {
-                    value = (char*) strdup((char*)token.data.scalar.value);
-                    if (key && value) {
-                        if (strcmp(key, "arity") == 0) {
-                            si->arg_count = atoi(value);                            
-                        } else if (strcmp(key, "term") == 0) {
-                            si->term = (char*) strdup(value);
-                            trim(si->term);
-                            /* 
-                                predicates in meaning representation use underscores to represent spaces 
-                                therefore, we replace any spaces in the term with underscores
-                            */                            
-                            for (int i = 0; i < strlen(si->term); ++i) {
-                                if (si->term[i] == ' ') {
-                                    si->term[i] = '_';
-                                }
-                            }
-                        } else if (strcmp(key, "interpretation") == 0) {
-                            si->interpretation = (char*) strdup(value);
-                        } else if (strcmp(key, "type") == 0) {
-                            si->jtype = atoi(value);
-                        } else {
-                            fprintf(stderr, "Syntax error in SI file %s with key %s and value %s\n", filepath, key ,value);
-                            exit(-1);
-                        }                        
+                }
+                else if (token_type == YAML_VALUE_TOKEN) {
+                    switch (key_type)
+                    {
+                    case TERM:
+                        si = newsi();
+                        si->term = (char*)strdup((char*)token.data.scalar.value);
+                        break;
+                    case SYNTAX:
+                        enqueue(si->_syntax, (void*)((char*)strdup((char*)token.data.scalar.value)));
+                        break;
+                    case ARITY:
+                        si->arg_count = atoi((char*)token.data.scalar.value);
+                        break;
+                    case ARGUMENT_NAME:
+                        siarg->data = (char*)strdup((char*)token.data.scalar.value);
+                        break;
+                    case ARGUMENT_TYPE:
+                        siarg->type = str2argtype((char*)token.data.scalar.value);
+                        break;
+                    case TYPE:
+                        si->type = str2argtype((char*)token.data.scalar.value);
+                        break;
+                    case INTERPRETATION:
+                        si->interpretation = (char*)strdup((char*)token.data.scalar.value);
+                        enqueue(new, (void*)si);
+                        si = NULL;
+                        break;
+                    default:
+                        break;
                     }
-                    free(key);
-                    free(value);
+                } else {
+                    fprintf(stderr, "Unknown token type encountered in reading scalar token: %s\n", yaml_token_type_name[token_type]);
+                    exit(-1);
                 }
                 break;
             /* Others */
             default:
                 #if SIDEBUG
-                printf("Got token of type %d\n", token.type);
+                printf("Got unknown token of type %d\n", token.type);
                 #endif
                 break;
             }

@@ -166,7 +166,7 @@ int __ptrcomparator(void *_aptr, void *_baptr) {
 
 int __cstrefcomparator(void *_csymptr, void *_astptr) {
     struct cstsymbol *c = (struct cstsymbol*)_csymptr;
-    if (searchqueue(c->refs, _astptr, __ptrcomparator) == NULL) {
+    if (searchqueue_firstmatch(c->refs, _astptr, __ptrcomparator) == NULL) {
         return 1;
     } else {
         return 0;
@@ -174,15 +174,15 @@ int __cstrefcomparator(void *_csymptr, void *_astptr) {
 }
 
 struct cstsymbol* searchcst(struct queue *cst, char *symbol) {
-    return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolcomparator);
+    return (struct cstsymbol*)searchqueue_firstmatch(cst, symbol, __cstsymbolcomparator);
 }
 
 struct cstsymbol* __searchcst(struct queue *cst, char *symbol) {
-    return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolandscopecomparator);
+    return (struct cstsymbol*)searchqueue_firstmatch(cst, symbol, __cstsymbolandscopecomparator);
 }
 
 struct cstsymbol* searchsymbolbyref(struct queue *cst, void *_astptr) {
-    return (struct cstsymbol*)searchqueue(cst, _astptr, __cstrefcomparator);
+    return (struct cstsymbol*)searchqueue_firstmatch(cst, _astptr, __cstrefcomparator);
 }
 
 int getavailablerefs(struct cstsymbol *c) {

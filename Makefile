@@ -19,12 +19,6 @@ ifeq ($(UNAME_S),Darwin)
 	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
 endif
 
-ifeq ($(FRONT), depccg)
-	FRONTEND = $(SRC)/frontends/depccg	
-else
-	FRONTEND = $(SRC)/frontends/ccg2lambda
-endif
-
 ifeq ($(MAKECMDGOALS), depccg)
 	FRONTEND = $(SRC)/frontends/depccg
 	CFLAGS += -DEVENT_SEMANTICS

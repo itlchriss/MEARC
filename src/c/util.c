@@ -334,14 +334,50 @@ void showqueue(struct queue *queue, void (*print)(void*)) {
     }
 }
 
-void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*)) {
-    if (queue == NULL || queue->count <= 0) return NULL;
+void* __searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*), int from) {
+    if (from >= queue->count) return NULL;
     void *tmp = NULL;
-    for (int i = 0; i < queue->count; ++i) {
+    for (int i = from; i < queue->count; ++i) {
         tmp = gqueue(queue, i);
         if (compare(tmp, data) == 0) return tmp;
     }
     return NULL;
+}
+
+int __searchqueue_index(struct queue *queue, void *data, int (*compare)(void*, void*), int from) {
+    if (from >= queue->count) return -1;
+    void *tmp = NULL;
+    for (int i = from; i < queue->count; ++i) {
+        tmp = gqueue(queue, i);
+        if (compare(tmp, data) == 0) return i;
+    }
+    return -1;
+}
+
+void* searchqueue_firstmatch(struct queue *queue, void *data, int (*compare)(void*, void*)) {
+    // if (queue == NULL || queue->count <= 0) return NULL;
+    // void *tmp = NULL;
+    // for (int i = 0; i < queue->count; ++i) {
+    //     tmp = gqueue(queue, i);
+    //     if (compare(tmp, data) == 0) return tmp;
+    // }
+    // return NULL;
+    return __searchqueue(queue, data, compare, 0);
+}
+
+struct queue *searchqueue_allmatch(struct queue *queue, void *data, int (*compare)(void*, void*)) {
+    if (queue == NULL || queue->count <= 0) return NULL;
+    struct queue *new = initqueue();
+    int tmp = -1;
+    for (int i = 0; i < queue->count;) {
+        if ((tmp = __searchqueue_index(queue, data, compare, i)) != -1) {
+            enqueue(new, gqueue(queue, tmp));
+            i = tmp + 1;
+        } else {
+            break;
+        }
+    }
+    return new;
 }
 
 void applyqueue(struct queue *queue, void *data, void (*func)(void*, void*)) {

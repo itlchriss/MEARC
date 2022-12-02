@@ -11,9 +11,21 @@ extern struct queue *_events;
 
 int search_syntax(struct si*, enum ptbsyntax);
 int __sicomparator(void *, void *);
+int __eventsicomparator(void *, void *);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };
 char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
+char *argtype_name[] = { "EXP", "KEYWORD", "LITERAL" };
+
+struct si* newsi() {
+    struct si* new = (struct si*)malloc(sizeof(struct si));
+    // new->args = NULL;
+    new->interpretation = NULL;
+    new->_args = initqueue();
+    new->_syntax = initqueue();
+    return new;
+}
+
 
 void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char *si) {    
     deleteastchildren(node);
@@ -51,11 +63,11 @@ char* __obtain_si_from_subtree__(struct astnode *parent, struct si* si) {
         child = getastchild(parent, i);
         if (child->type == Synthesised) {
             /* child semantic interpretation has been resolved. use it in code synthesis */
-            tmp = strrep(s, si->args[i], child->token->symbol);
+            tmp = strrep(s, ((struct siarg*)gqueue(si->_args, i))->data, child->token->symbol);
         } else {
             /* child semantic interpretation has NOT been resolved. leave the name of the argument as the argument of the semantic interpretation for possible code synthesis to be happened in operator resolution */
             char *arg = __combine_3_strings__("(", child->token->symbol, ")");
-            tmp = strrep(s, si->args[i], arg);
+            tmp = strrep(s, ((struct siarg*)gqueue(si->_args, i))->data, arg);
             free(arg);
         }
         free(s);
@@ -136,11 +148,56 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
     Assume Subject always comes before accusation in the MR.
     If not, the following code needs modification
     */
-    char *tmp = strrep(si->interpretation, si->args[0], sym_a->data);
-    char *s = strrep(tmp, si->args[1], sym_b->data);
+    char *tmp = strrep(si->interpretation, ((struct siarg*)gqueue(si->_args, 0))->data, sym_a->data);
+    char *s = strrep(tmp, ((struct siarg*)gqueue(si->_args, 1))->data, sym_b->data);
     free(tmp);
-    __remove_all_children_cst__(cst, node);
-    __replace_si_at_parent__(node, Synthesised, s);
+    updatecstsymbol(cst, s, child);
+    /*
+    It is not only removing children now. It is to remove the variables involving.
+    */
+    // __remove_all_children_cst__(cst, node);
+    /*
+    removing the current child symbol, which is the one of the event variable from the compiler symbol reference table. 
+    */
+    removecstref(cst, event->var, child);
+    // __replace_si_at_parent__(node, Synthesised, s);
+    for (int i = 0; i < event->entities->count; ++i) {
+        entity_a = (struct entity*)gqueue(event->entities, i);
+        sym_a = entity_a->ptr;
+        if (sym_a->symbol[0] == 'e') {
+            /*
+            if this is an event variable, we have to delete its quantifier.
+            because it has been already synthesised, and its SI is being used in another event.
+            */
+            for (int j = 0; j < sym_a->refs->count; ++j) {
+                child = (struct astnode*)gqueue(sym_a->refs, j);
+                // if (child->type == Quantifier) {
+                deleteastchildren(child);
+                deleteastchild(child->parent, child);
+                break;
+                // }
+            }
+        } 
+    }
+    aliaseventsubject(_events, cst, event);
+    sym_a = searchcst(cst, event->var);
+    /*
+    replacing the SI to the quantifier of the event variable
+    */
+    for (int i = 0; i < sym_a->refs->count; ++i) {
+        child = (struct astnode*)gqueue(sym_a->refs, i);
+        if (child->type == Quantifier) {
+            free(child->token->symbol);
+            child->token->symbol = (char*)strdup(s);
+            child->type = Synthesised;
+            deleteastchildren(child);
+            break;
+        } else {
+            deleteastnode(child);
+        }
+    }
+    // deallocatequeue(sym_a->refs, NULL);
+    // sym_a->refs = initqueue();
     free(s);
     return 0;
 }
@@ -158,7 +215,7 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
         /* indicating the next predicate with the same indentifier must be a parameter name */
         /* potential research problem. can we infer or guess the parameter name if the word used in the sentence is not the exact parameter name? */
     } else {
-        if (strcmp(si->args[0], "(*)") == 0) {
+        if (strcmp(((struct siarg*)gqueue(si->_args, 0))->data, "(*)") == 0) {
             /* argument does no effects to the semantic interpretation */
             /* therefore, directly replacing the semantic interpretation to all the places of identifiers */ 
 
@@ -170,11 +227,15 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si, struct queue *cs
                 s = (char*) strdup (tmp);
                 free(arg);
                 free(tmp);
+                syncentitysitype(_events, c->symbol, EXP);
+            } else {
+                syncentitysitype(_events, child->token->symbol, si->type);
             }
         } else {
             /* argument does affect the semantic interpretation */
             /* therefore, the semantic interpretation of the subtree requires code synthesis */
             s = __obtain_si_from_subtree__(node, si);
+            syncentitysitype(_events, child->token->symbol, si->type);
         }
         // struct cstsymbol *c = updatecstsymbol(cst, s, child);
         __update_cstsymbol_data__(c, s);
@@ -328,7 +389,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         if (selfSI[node->syntax] == 0) {
             push(tmp, node);
         } else {
-            si = searchqueue(silist, node, __sicomparator);
+            si = searchqueue_firstmatch(silist, node, __sicomparator);
             if (si == NULL) {
                 __remove_all_children_cst__(cst, node);
                 if (node->parent->type != Connective) {
@@ -346,7 +407,8 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
             } else if (node->syntax == IN) {
                 enqueue(in_preds, node);
             } else if (node->syntax == NN) {
-                if (strcmp(si->args[0], "*") == 0) {
+                enum argtype _argtype = ((struct siarg*)gqueue(si->_args, 0))->type;
+                if (_argtype == KEYWORD || _argtype == LITERAL) {
                     push(tmp, node);
                 } else {
                     enqueue(tmp, node);
@@ -381,26 +443,65 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         printf("si identification: processing predicate %s(%s).\n", node->token->symbol, ptbsyntax2string(node->syntax));
         #endif
         if (selfSI[node->syntax] == 1) {
-            si = searchqueue(silist, node, __sicomparator);
-            if (si == NULL) {
-                #if SIDEBUG
-                printf("si identification: no si for predicate %s(%s) is found\n", node->token->symbol, ptbsyntax2string(node->syntax));
-                #endif
-                node->type = NoSI;
-            } else {
-                int x = (*code_syntheses[node->syntax])(node, si, cst);
-                if (x != 0) {
+            if (node->syntax >= 26 && node->syntax <= 31) {
+                /*
+                    Verb syntax. Typically we are checking the event restrictions.
+                    To synthesise an event si, we have to know the synthesised si of the related entities
+                */
+                struct event *ev = searchevent(_events, getastchild(node, 0)->token->symbol);
+                int ready = 0;
+                for (int i = 0; i < ev->entities->count; ++i) {
+                    if (((struct entity *)gqueue(ev->entities, i))->type == -1) {
+                        ready = -1;
+                        break;
+                    }
+                }
+                if (ready == -1) {
                     #if SIDEBUG
                     printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
                     #endif
                     enqueue(predicates, (void*)node);
+                } else {
+                    // si = searchqueue(silist, ev, __eventsicomparator);
+                    // TODO: 1. search all si that matches the predicate
+                    //       2. filter the si with the exact same argument types
+                    struct queue *si_set = searchqueue_allmatch(silist, node, __sicomparator);
+                    si = searchqueue_firstmatch(si_set, ev, __eventsicomparator);
+                    if (si == NULL) {
+                        fprintf(stderr, "SI of %s is not found with the event component SI types.\n", node->token->symbol);
+                    } else {
+                        int x = (*code_syntheses[node->syntax])(node, si, cst);
+                        #if SIDEBUG
+                        if (x != 0) {
+                            printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                        }
+                        #endif
+                    }
+                    deallocatequeue(si_set, NULL);
                 }
-            }  
+            } else {
+                si = searchqueue_firstmatch(silist, node, __sicomparator);
+                if (si == NULL) {
+                    #if SIDEBUG
+                    printf("si identification: no si for predicate %s(%s) is found\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                    #endif
+                    node->type = NoSI;
+                } else {
+                    int x = (*code_syntheses[node->syntax])(node, si, cst);
+                    if (x != 0) {
+                        #if SIDEBUG
+                        printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                        #endif
+                        enqueue(predicates, (void*)node);
+                    }
+                }  
+            }
         } else {
             (*code_syntheses[node->syntax])(node, si, cst);
         }
         #if ASTDEBUG
         showast(root, 0);
+        showqueue(_events, showevent);
         fflush(stdout);
         #endif
     }
@@ -456,9 +557,27 @@ int __sicomparator(void *_si, void *_astnode) {
         return 1;
 }
 
+int __eventsicomparator(void *_si, void *_event) {
+    struct si *si = (struct si*)_si;
+    struct event *ev = (struct event*)_event;
+    if (si->_args->count != ev->entities->count) return 1;
+    struct entity *_en = NULL;
+    struct siarg *_arg = NULL;
+    for (int i = 0; i < si->_args->count; ++i) {
+        _arg = (struct siarg*)gqueue(si->_args, i);
+        _en = (struct entity*)gqueue(ev->entities, i);
+        if (
+            _arg->type != _en->sitype
+        ) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int search_syntax(struct si* si, enum ptbsyntax ptb) {
-    for (int i = 0; i < si->syntax_count; ++i) {
-        if (si->syntax[i] == ptb) {
+    for (int i = 0; i < si->_syntax->count; ++i) {
+        if (string2ptbsyntax((char*)gqueue(si->_syntax, i)) == ptb) {
             return 0;
         }
     }
@@ -467,29 +586,51 @@ int search_syntax(struct si* si, enum ptbsyntax ptb) {
 
 void showsi(void *_si) {
     struct si *si = (struct si*)_si;
+    struct siarg* tmparg = NULL;
     printf("==========================Semantic interpretations: =========================\n");
     printf("Term          Syntactic Category       Arity     Arguments    Interpretation\n");
     printf("Term: %s   Syntactic Category: ", si->term);        
-    for (int j = 0; j < si->syntax_count; ++j) {
-        printf("%s ", ptbsyntax2string(si->syntax[j]));
+    for (int i = 0; i < si->_syntax->count; ++i) {
+        printf("%s ", (char*)gqueue(si->_syntax, i));
     }
     printf("  Arity: %d   Arguments: ", si->arg_count);
-    for (int j = 0; j < si->arg_count; ++j) {
-        printf("%s ", si->args[j]);
+    for (int i = 0; i < si->_args->count; ++i) {
+        tmparg = (struct siarg*)gqueue(si->_args, i);
+        printf("%s(%s) ", tmparg->data, argtype_name[tmparg->type]);
     }
     printf("   %s(%p)\n", si->interpretation, (void*)si->interpretation);
     printf("============================================================================\n");
 }
 
+void deallocatesiarg(void *_input) {
+    struct siarg* input = (struct siarg*)_input;
+    free(input->data);
+    free(input);
+}
+
+void deallocatesyntax(void *_input) {
+    free(_input);
+}
+
 void deallocatesi(void *tmp) {    
     struct si *si = (struct si*)tmp;
-    for (int i = 0; i < si->arg_count; ++i) {
-        free(si->args[i]);
-    }
-    free(si->syntax);
+    // for (int i = 0; i < si->arg_count; ++i) {
+    //     free(si->args[i]);
+    // }
+    deallocatequeue(si->_args, deallocatesiarg);
+    deallocatequeue(si->_syntax, deallocatesyntax);
+    // free(si->syntax);
     if (si->interpretation)
         free(si->interpretation);
     free(si->term);
     free(si);
 }
+
+enum argtype str2argtype(char *str) {
+    if (strcmp(str, "EXP") == 0) return EXP;
+    else if (strcmp(str, "KEYWORD") == 0) return KEYWORD;
+    else if (strcmp(str, "LITERAL") == 0) return LITERAL;
+    else return -1;
+}
+
 

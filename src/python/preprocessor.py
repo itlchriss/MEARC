@@ -323,9 +323,9 @@ class Preprocessor:
                         'term': _t,
                         'syntax': ['NN', 'NNS', 'NNP'],
                         'arity': 1,
-                        'arguments': ['(%s)' % arg for arg in args],
-                        'interpretation': _si,
-                        'type': -1
+                        'arguments': [['(%s)' % arg, 'EXP'] for arg in args],
+                        'type': 'EXP',
+                        'interpretation': _si
                     })
         return si_list, sent
 
@@ -336,11 +336,12 @@ def main(javafile, sidb, targetpath = None):
     for name in dst:
         contextual_si.append({
             'term': name[0] if isinstance(name, tuple) else name,
-            'syntax': ['NN', 'NNS'],
+            'syntax': ['NN', 'NNS', 'NNP', 'NNPS'],
             'arity': 1,
-            'arguments': ['(*)'],
+            'arguments': [['(*)', 'LITERAL']],
+            'type': 'LITERAL',
             'interpretation': name[0] if isinstance(name, tuple) else name,
-            'type': name[1] if isinstance(name, tuple) else -1
+            # 'type': name[1] if isinstance(name, tuple) else -1
         })
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafile, sidb)

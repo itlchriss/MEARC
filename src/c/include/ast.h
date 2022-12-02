@@ -36,7 +36,7 @@ struct astnode {
     /* type of word, according to penn-tree bank */
     enum ptbsyntax syntax;    
     int priority;
-    struct cstsymbol *cstptr;  
+    // struct cstsymbol *cstptr;  
     /* default 0 for non-root nodes. 1 indicates this node is a root node */
     int isroot;
     /* default 0 for positive. 1 for negative */

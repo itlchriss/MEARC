@@ -295,7 +295,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         if (selfSI[node->syntax] == 0) {
             push(tmp, node);
         } else {
-            si = searchqueue(silist, node, __sicomparator);
+            si = searchqueue_firstmatch(silist, node, __sicomparator);
             if (si == NULL) {
                 __remove_all_children_cst__(cst, node);
                 if (node->parent->type != Connective) {
@@ -348,7 +348,7 @@ void siidentification(struct queue *predicates, struct queue *silist, struct que
         printf("si identification: processing predicate %s(%s).\n", node->token->symbol, ptbsyntax2string(node->syntax));
         #endif
         if (selfSI[node->syntax] == 1) {
-            si = searchqueue(silist, node, __sicomparator);
+            si = searchqueue_firstmatch(silist, node, __sicomparator);
             if (si == NULL) {
                 #if SIDEBUG
                 printf("si identification: no si for predicate %s(%s) is found\n", node->token->symbol, ptbsyntax2string(node->syntax));
