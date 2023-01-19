@@ -5,14 +5,14 @@
 #include "cst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator };
-enum grammartype { Gram_Prog };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, GrammarNotation };
+// enum grammartype { Gram_Prog, Gram_Rel };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Or,  Op_Equivalent, Op_Imply };
 // Penn tree bank syntax
 enum ptbsyntax {
-    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB};
+    CC, CD,DT,EX,FW,IN,JJ,JJR,JJS,LS,MD,NN,NNS,NNP,NNPS,PDT,POS,PRP,PRP_POS,RB,RBR,RBS,RP,SYM,TO,UH,VB,VBD,VBG,VBN,VBP,VBZ,WDT,WP,WP_POS,WRB,  Gram_Prog, Gram_Rel};
 enum contextualtype { Cont_Class, Cont_Interface, Cont_Method, Cont_Parameter };
 
 struct token {
@@ -30,7 +30,7 @@ struct astnode {
     /* type of quantifier if the type == Quantifier */
     enum quantifiertype qtype;
     /* type of the node with extra grammar information */
-    enum grammartype gtype;
+    // enum grammartype gtype;
     /* type of connective if the type == Connective */
     enum conntype conntype;
     /* type of word, according to penn-tree bank */

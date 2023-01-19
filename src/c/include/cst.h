@@ -13,6 +13,13 @@ struct cstsymbol {
     struct queue *refs;
     /* scope opening. default 0. the value 1 indicates the scope is closed and no more references can be added */
     int scope;
+    /* this field is to save the type from si, such type indicates the datatype of the data */
+    int type;
+
+    void *si_ptr;
+    /* this field is assigned when the si_ptr is assigned */
+    /* it is for counting the unresolved grammar arguments */
+    int g_arg_count;
 };
 
 
@@ -20,19 +27,18 @@ struct cstsymbol {
 // the symbol is the symbol that is going to be added to the table
 // the qsymbol is the symbol of the quantifier
 // void addcstsymbol(struct queue* cst, struct token *symbol, struct token *qsymbol);
-void addcstsymbol(struct queue *cst, char *symbol);
-int addcstref(struct queue *cst, char *symbol, void *pt);
-// struct cstsymbol* updatecstsymbol(struct queue* cst, char *symbol, char *data);
-struct cstsymbol* updatecstsymbol(struct queue *, char *, void *);
+void addcstsymbol(char *symbol);
+int addcstref(char *symbol, void *pt);
+struct cstsymbol* updatecstsymbol(char *, void *);
 void showcstsymbol(void *);
 void syncsymbol(struct cstsymbol *);
-struct cstsymbol* searchsymbolbyref(struct queue *, void *);
-struct cstsymbol* searchcst(struct queue *, char *);
-void closecstscope(struct queue *cst, char *symbol);
+struct cstsymbol* searchsymbolbyref(void *);
+struct cstsymbol* searchcst(char *);
+void closecstscope(char *symbol);
 
-void removecstref(struct queue *, char *, void *);
+void removecstref(char *, void *);
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data);
-void renamesymbols(struct queue *cst);
+void renamesymbols();
 void deallocatecstsymbol(void *);
 int getavailablerefs(struct cstsymbol *);
 #endif

@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from dstbuilder import get_package_global_info_from_javasrc
 import yaml
 
@@ -87,7 +87,6 @@ PTBTagSet = [
     "wrb"
 ]
 
-
 class Preprocessor:
     patterns = {
         'null': 'a null_value',
@@ -97,9 +96,26 @@ class Preprocessor:
         'should not be': 'is not',
         'must be': 'is',
         'must not be': 'is not',
+        'will be': 'is',
         'is equal to': 'is',
         'will': ' ',
         'all elements in': 'every element of'
+    }
+    function_si = []
+    phrases = [{
+        'phrase': 'from (x) to (y)',
+        'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
+        'interpretation': '(x) < i < (y)'}]
+    operators = {
+        '>=': 'greater than or equal to',
+        '=': 'equal',
+        '<=': 'less than or equal to',
+        '<': 'less than',
+        '>': 'greater than'
+    }
+    # word: [position, phrase]
+    word_with_position = {
+        'returns': [0, 'The result is']
     }
 
     def __preprocess(self, pattern: str) -> list:
@@ -127,12 +143,127 @@ class Preprocessor:
             skip = skip + t[ord(haystack[skip + len(needle) - 1])]
         return -1
 
-    # def process(self, text: str, custom_idioms: Dict[str, str]) -> str:
+    def __process_function__(self, text: str) -> str:
+        _text = text
+        if _text[-1] == '.':
+            _text = _text[:-1]
+        data = _text.split(' ')
+        tmp = []
+        i = 0
+        while i < len(data):
+            token = data[i]
+            if r := re.findall(r'^Expression\((.*)\)$', token, re.ASCII):
+                r = r[0]
+                # TODO: we have to process everything that can be encountered in java expression. or we can restrict to accept a subset
+                # after applying the replacement rules, we have to add an SI
+                tmp.append(r)
+                interpretation = r
+                if '-' in r:
+                    expr_tokens = list(filter(None, re.split(r'(\W)', r.strip())))
+                    ri = []
+                    for j, t in enumerate(expr_tokens):
+                        if t == 'result':
+                            ri.append('\\result')
+                        elif t == '-':
+                            ri.append(t)
+                            expr_tokens[j] = 'dash'
+                        elif t:
+                            ri.append(t)
+                        else:
+                            continue
+                    interpretation = ''.join(ri)
+                    r = '_'.join(expr_tokens)
+                self.function_si.append({
+                    'term': r.replace('.', '_DOT'),
+                    'syntax': ['NN', 'NNS', 'NNP'],
+                    'arity': 1,
+                    'arguments': '(*)',
+                    'interpretation': interpretation,
+                    'type': -1,
+                })
+            elif (token.lower() == 'parameter' or token.lower() == 'input') \
+                    and i + 1 < len(data) \
+                    and (data[i + 1] in self.dst_names or data[i + 1].strip('\'s').strip(',').strip() in self.dst_names):
+                _t = token + '_' + data[i + 1]
+                _type = -1
+                for d in self.dst:
+                    if isinstance(d, tuple) and d[0] == data[i + 1].strip('\'s').strip(',').strip():
+                        _type = d[1]
+                        break
+                    elif d == data[i + 1].strip('\'s').strip(',').strip():
+                        _type = -1
+                        break
+                tmp.append(_t)
+                if not [1 for si in self.function_si if si['term'] == _t.lower()]:
+                    self.function_si.append({
+                        'term': _t.lower(),
+                        'syntax': ['NN', 'NNS', 'NNP'],
+                        'arity': 1,
+                        'arguments': '(*)',
+                        'interpretation': data[i + 1].strip('\'s').strip(',').strip(),
+                        'type': _type,
+                    })
+                # skip the data[i + 1] because it has been processed
+                i = i + 1
+            elif token.lower() == 'if' and data[i + 1].lower() == 'and' and data[i + 2].lower() == 'only' and data[i + 3].lower() == 'if':
+                _t = 'if_only'
+                tmp.append(_t)
+                if not [1 for si in self.function_si if si['term'] == _t.lower()]:
+                    self.function_si.append({
+                        'term': _t.lower(),
+                        'syntax': ['RB'],
+                        'arity': 2,
+                        'arguments': ['(x)', '(y)'],
+                        'interpretation': '(x) <==> (y)',
+                        'type': -1,
+                    })
+                i = i + 3
+            elif token in self.operators:
+                _t = self.operators[token]
+                tmp.append(_t)
+            elif [1 for w in self.word_with_position if w == token.lower() and i == self.word_with_position[w][0]]:
+                _t = self.word_with_position[token.lower()][1]
+                tmp.append(_t)
+            else:
+                tmp.append(token)
+            i = i + 1
+        return ' '.join(tmp)
+
+    #TODO we have to consider after processed i, may result in i - 1 pattern. so we have to retry all patterns
+    def __process_phrases__(self, text: str) -> str:
+        data = text.split(' ')
+        i = 0
+        tmp = []
+        tags = nltk.pos_tag(data)
+        while i < len(data):
+            match = True
+            for phrase_rule in self.phrases:
+                _p_token_list = phrase_rule['phrase'].split(' ')
+                _args = phrase_rule['args']
+                for j in range(len(_p_token_list)):
+                    if _p_token_list[j][0] == '(':
+                        _a = _args[_p_token_list[j]]
+                        _tag = tags[i + j]
+                        if _tag[1] not in _a and _tag[0] not in self.dst_names:
+                            match = False
+                            break
+                    elif _p_token_list[j] != data[i + j]:
+                        match = False
+                        break
+                if match:
+                    tmp.append('_'.join(data[i:i+len(_p_token_list)]))
+                    i = i + len(_p_token_list)
+                    break
+            if not match:
+                tmp.append(data[i])
+                i = i + 1
+        return ' '.join(tmp)
+
+
     def process(self, text: str) -> str:
+        text = self.__process_function__(text)
+        text = self.__process_phrases__(text) + '.'
         patterns = self.patterns
-        # patterns.update(custom_idioms)
-        # patterns = custom_idioms
-        # patterns.update(self.patterns)
         text = text.strip()
         text = ' '.join([t.lower() for t in text.split(' ')])
         data = text.split('\n')
@@ -165,38 +296,6 @@ class Preprocessor:
             # providing warnings to the use of pronouns
             if not _d.strip():
                 continue
-            # if _d[-1] == '.':
-            #     arr = _d[:-1].split(' ')
-            # else:
-            #     arr = _d.split(' ')
-            # indices = []
-            # for pronoun in Pronouns:
-            #     s = [i for i, x in enumerate(arr) if x.lower() == pronoun.lower()]
-            #     if s:
-            #         print('Warning: The use of pronoun (', pronoun, ') may not be '
-            #                                                         'correctly '
-            #                                                         'processed by the '
-            #                                                         'NLP. Please '
-            #                                                         'consider to '
-            #                                                         'replace it with '
-            #                                                         'proper noun.')
-            #         indices += s
-            # if indices:
-            #     # for i, x in enumerate(arr):
-            #     #     if i in indices:
-            #     #         arr[i] = '**' + x + '**'
-            #     s = ' '.join(arr) + '.'
-            #     print(s)
-            #     c = 0
-            #     for i in range(len(s)):
-            #         if s[i] == ' ':
-            #             c += 1
-            #             print('_', end='')
-            #             continue
-            #         if c in indices:
-            #             print('^', end='')
-            #         else:
-            #             print('_', end='')
             result = _d
         if result and result[-1] == '.':
             result = result[:-1].strip()
@@ -234,7 +333,15 @@ class Preprocessor:
         for si in si_lib:  # type: Dict
             self.patterns[si['term']] = ''
 
-    def __init__(self, java_file, std_si_lib_file=None, cont_si_lib=None):
+    def __init__(self, java_file, std_si_lib_file=None, cont_si_lib=None, dst=None):
+        if dst:
+            self.dst = dst
+            self.dst_names = []
+            for d in dst:
+                if isinstance(d, tuple):
+                    self.dst_names.append(d[0])
+                else:
+                    self.dst_names.append(d)
         with open(java_file, 'r') as f:
             file = f.read()
         if cont_si_lib:
@@ -245,15 +352,6 @@ class Preprocessor:
             with open(std_si_lib_file, 'r') as f:
                 std_sis = yaml.full_load(f)
                 self.__add_si_to_patterns(std_sis)
-                # for p in tmp.split('\n'):
-                #     if p and len(p) > 1:
-                #         if ';' in p:
-                #             k = p.split(';')[0]
-                #             v = p.split(';')[1]
-                #         else:
-                #             k = p
-                #             v = ''
-                #         self.patterns[k] = v
         # formatting method specifications (requires, ensures) in the data
         self.data = {}
         specs = file.split('\n')
@@ -269,7 +367,6 @@ class Preprocessor:
                 tmp['eliminates'].append(r)
             elif r := re.findall(r'^[\s]*//\+[\s]*defines[\s]*"(.*)"[\s]*,[\s]*"(.*)"[\s]*[\s]*$', s, re.ASCII):
                 r = list(r[0])
-                # if len(r) == 2:
                 # TODO: extract defines to a single file
             elif r := re.findall(
                     r'^\s*//@\s*semantics\s*\"(.*)\"\s*,\s*\[(.*)\]\s*,\s*(\d+)\s*,\s*\[(.*)\]\s*,\s*(.*)\s*$',
@@ -327,7 +424,7 @@ class Preprocessor:
         self.__add_si_to_patterns(self.get_semantics())
 
 
-def main(javafile, sidb, targetpath = None):
+def main(javafile, sidb, targetpath=None):
     contextual_si = []
     dst = get_package_global_info_from_javasrc(javafile)
     for name in dst:
@@ -340,7 +437,7 @@ def main(javafile, sidb, targetpath = None):
             'type': name[1] if isinstance(name, tuple) else -1
         })
     # TODO: we need error handling in accessing the class name
-    preprocessor = Preprocessor(javafile, sidb)
+    preprocessor = Preprocessor(javafile, sidb, dst=dst)
     annotations = preprocessor.get_semantics()
     if annotations:
         for d in annotations:
@@ -360,6 +457,7 @@ def main(javafile, sidb, targetpath = None):
         if raw_specs['ensures']:
             for e in raw_specs['ensures']:
                 specs['ensures'].append(preprocessor.process(e))
+    contextual_si += preprocessor.function_si
     yaml_data = []
     if specs['requires']:
         for pre in specs['requires']:
@@ -385,13 +483,8 @@ def main(javafile, sidb, targetpath = None):
         with open(spec_path, 'w+') as fp:
             yaml.dump(yaml_data, fp, sort_keys=False)
 
+
 if __name__ == "__main__":
-    # argv[1]: java file
-    # argv[2]: idioms file
-    # argv[3]: temporary folder located in the working directory
-    # if sys.argv[1] and os.path.exists(sys.argv[1]) and \
-    #         sys.argv[2] and os.path.exists(sys.argv[2]) and \
-    #         sys.argv[3] and os.path.exists(sys.argv[3]):
     if len(sys.argv) == 2:
         main(sys.argv[1], None)
     elif len(sys.argv) == 4:

@@ -4,10 +4,12 @@
 #include "ast.h"
 #include "util.h"
 
+extern struct astnode *root;
+
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator", "GrammarNotation" };
 char *connective_name[] = { "And", "Or", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -554,6 +556,9 @@ void showast(struct astnode *node, int depth) {
             printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, 
                     ptbsyntax2string(node->syntax));
             break;
+        case GrammarNotation:
+            printf("%s(%s)", node_type_name[node->type], node->token->symbol);
+            break;
         case Quantifier:
             printf("%s %s %s", node_type_name[node->type], quantifier_name[node->qtype], node->token->symbol);
             break;
@@ -693,6 +698,8 @@ char *ptbsyntax2string(enum ptbsyntax ptb) {
     else if (ptb == WP) return "WP";
     else if (ptb == WP_POS) return "WP_POS"; 
     else if (ptb == WRB) return "WRB";
+    else if (ptb == Gram_Prog) return "Grammar(Progressive)";
+    else if (ptb == Gram_Rel) return "Grammar(Relation)";
     else {
         fprintf(stderr, "Unknown syntactic category %d is encountered in function ptbsyntax2string\n", ptb);
         exit(-2);

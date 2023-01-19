@@ -18,19 +18,19 @@ public class BinarySearchInt2 {
            ensures (\forall int j; (-1-\result) <= j < array.length; key < array[j]);
       |}
       */ 
-    //@ requires (*The array must not be null.*);
+    //@ requires (*The parameter array must not be null.*);
     //@ requires array != null;
-    //@ requires (*The array must be sorted.*);
+    //@ requires (*The parameter array must be sorted in ascending order.*);
     //@ requires (\forall int i; 0 < i < array.length; array[i-1] <= array[i]); 
-    //@ ensures (*Returns the index of the search key if array contains the key.*);
+    //@ ensures (*Returns the parameter array's index of the parameter key if the parameter array contains the parameter key.*);
     // ===> preprocessed to *The result is the array's index of the search key if the array contains the key*
     //@ ensures ((\exists int i; 0 <= i < array.length; array[i] == key) ==> \result == \old(Arrays.asList(array).indexOf(key)));
-    //@ ensures (*The return value will be >= 0 if and only if the key is found.*);
+    //@ ensures (*The return value will be >= 0 if and only if the parameter array contains the parameter key.*);
     // ===> modified to *The return_value is greater than or equal to 0 if and only if the array contains the key.*
     // ===> preprocessed to *The return_value is greater_than_or_equal_to 0 _if_ the array contains the key.*
     //@ ensures (\result >= 0 <==> (\exists int i; 0 <= i < array.length; array[i] == key));
-    //@ ensures (*Returns -array.length-1 if all elements in the array are less than the specified key .*);
-    /*@ ensures (
+    //@ ensures (*If the parameter array does not contain the parameter key, the Expression(-result-1) is the parameter key's insertion point in the parameter array.*);
+    /* ensures (
             !(\exists int i; 0 <= i < array.length; array[i] == key) ==>
             ((
                 (\forall int j; 0 <= j < array.length; array[j] < key) ==> \result == (-1-array.length)
@@ -38,6 +38,11 @@ public class BinarySearchInt2 {
             (
                 (\forall int j; 0 <= j < (-1-\result); array[j] < key) && (\forall int j; (-1-\result) <= j < array.length; key < array[j])
             ))
+        );
+    */
+    /*@ ensures (
+            !(\exists int i; 0 <= i < array.length; array[i] == key) ==>
+            (\forall int j; 0 <= j < (-1-\result); array[j] < key) && (\forall int j; (-1-\result) <= j < array.length; key < array[j])
         );
     @*/
     public int binarySearch(int[] array, int key) {

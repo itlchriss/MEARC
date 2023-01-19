@@ -26,6 +26,7 @@ void* plastqueue(struct queue* queue);
 int isempty(struct queue* queue);
 void showqueue(struct queue *queue, void (*print)(void*));
 void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*));
+struct queue *q_searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*));
 // use queue as a stack
 void push(struct queue*, void *);
 void* pop(struct queue* stack);

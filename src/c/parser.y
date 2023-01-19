@@ -7,12 +7,12 @@
     void print_debug(char *);
 
     // From main.c
-    extern int c;
-    extern struct astnode **ast;  
-    extern struct queue **csts, **predicates, **operators;
+    // extern int c;
+    extern struct astnode *ast;  
+    extern struct queue *predicates, *operators;
 
     // c is for the line counter of hols
-    int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, *error_lines, error_count = 0;
+    int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, error_count = 0;
 %}
 
 %union{
@@ -21,110 +21,33 @@
     struct token *t;
     enum ptbsyntax ptb;
     enum conntype conntype;
-    enum grammartype gtype;
+    // enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP DOT MINUS
-%token <t> COMMA LBRAC RBRAC GCASE EQUAL AND OR IMPLY EQUIV CURLY_LBRAC CURLY_RBRAC
-%token <t> KEYWORD_FORALL KEYWORD_EXISTS
-%token <t> KEYWORD_PROG
+%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' MINUS
+%token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
+%token <t> KEYWORD_QUANTIFIER
+%token <t> KEYWORD_PROG KEYWORD_REL
 %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
 %token <ptb> KEYWORD_VB KEYWORD_VBG KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_VBD
 %token <ptb> KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
 %token <ptb> KEYWORD_RB
-%left AND IMPLY EQUIV RBRAC
+%left AND IMPLY EQUIV ')'
 
 %type<ptb> pos_tag
 %type<conntype> connective
-%type<node> formula terms meaning_repr formulas argument term quantify_expr
+%type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag
 %type<nodelist> arguments
-%type<gtype> grammar_term
-%start meaning_reprs
+/* %type<gtype> grammar_relation */
+%start formula
 
 %%
 
-meaning_reprs
-    : meaning_reprs meaning_repr
-    {
-        print_debug("meaning_reprs: meaning_reprs meaning_repr");
-        ast[c] = $2;
-        $2->isroot = 1;
-        ++c;      
-        lineNum++;
-        colNum = 1;
-    }
-    | meaning_repr 
-    {
-        print_debug("meaning_reprs: meaning_repr");
-        ast[c] = $1;
-        $1->isroot = 1;
-        ++c;  
-        lineNum++;
-        colNum = 1;      
-    }
-    ;
-
-meaning_repr
-    : 
-    LBRAC formulas RBRAC {
-        print_debug("meaning_repr: formula");
-        $$ = $2;
-    }
-    | formulas {
-        print_debug("meaning_repr: formula");
-        $$ = $1;
-    }
-    ;
-
-formulas
-    : LBRAC formulas RBRAC connective formula {
-        print_debug("formulas: formulas connective formula");
-        $$ = newastnode(Connective, NULL);
-        $$->conntype = $4;
-        addastchild($$, $2);
-        addastchild($$, $5);
-    }
-    | formulas connective formula {
-        print_debug("formulas: formulas connective formula");
-        $$ = newastnode(Connective, NULL);
-        $$->conntype = $2;
-        addastchild($$, $1);
-        addastchild($$, $3);
-    }
-    | formulas connective LBRAC formula RBRAC {
-
-    }
-    | formulas connective MINUS formula {
-        print_debug("formulas: formulas connective MINUS formula");
-        $$ = newastnode(Connective, NULL);
-        $$->conntype = $2;
-        $4->isnegative = 1;
-        addastchild($$, $1);
-        addastchild($$, $4);
-    }
-    | formula {
-        print_debug("formulas: formula");
-        $$ = $1;
-    }
-    | MINUS formula {
-        print_debug("formulas: MINUS formula");
-        $$ = $2;
-        $$->isnegative = 1;
-    }
-    ;
-
 formula
-    : quantify_expr DOT LBRAC terms RBRAC {
-        print_debug("formula: quantify_expr LBRAC terms RBRAC");
-        $$ = $1;
-        addastchild($$, $4);
-        closecstscope(csts[c], $1->token->symbol);
-    }
-    | LBRAC quantify_expr DOT LBRAC terms RBRAC RBRAC {
-        print_debug("formula: LBRAC quantify_expr DOT LBRAC terms RBRAC RBRAC");
-        $$ = $2;
-        addastchild($$, $5);
-        closecstscope(csts[c], $2->token->symbol);
+    : terms {
+        print_debug("formula: terms");
+        ast = $1;
+        $1->isroot = 1;
     }
     ;
 
@@ -134,15 +57,14 @@ terms
         if ($3 == NULL) {
             $$ = $1;
         } else {
-            // $$ = newastnode(Connective, $2);
             $$ = newastnode(Connective, NULL);
             $$->conntype = $2;
             addastchild($$, $1);
             addastchild($$, $3);
         }
     }
-    | terms connective LBRAC term RBRAC {
-        print_debug("terms: terms connective LBRAC term RBRAC");
+    | terms connective '(' term ')' {
+        print_debug("terms: terms connective '(' term ')'");
         if ($4 == NULL) {
             $$ = $1;
         } else {
@@ -154,24 +76,19 @@ terms
     }
     | terms connective MINUS term {
         print_debug("terms: terms term");
-        // $$ = newastnode(Connective, $2);
         $$ = newastnode(Connective, NULL);
         $4->isnegative = 1;
         $$->conntype = $2;
         addastchild($$, $1);
         addastchild($$, $4);
     }
-    | terms connective MINUS LBRAC term RBRAC {
+    | terms connective MINUS '(' term ')' {
         print_debug("terms: terms term");
-        // $$ = newastnode(Connective, $2);
         $$ = newastnode(Connective, NULL);
         $5->isnegative = 1;
         $$->conntype = $2;
         addastchild($$, $1);
         addastchild($$, $5);
-    }
-    | LBRAC term RBRAC {
-        
     }
     | term {
         print_debug("terms: term");
@@ -182,7 +99,7 @@ terms
         $$ = $2;
         $$->isnegative = 1;
     }
-    | MINUS LBRAC term RBRAC {
+    | MINUS '(' term ')' {
         print_debug("term: MINUS term");
         $$ = $3;
         $$->isnegative = 1;
@@ -190,102 +107,85 @@ terms
     ;
 
 term
-    : PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC {
-        print_debug("term: PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC");
-        #if PARDEBUG
-        printf("Predicate(%s), Syntax(%s)\n", $1->symbol, ptbsyntax2string($3));
-        #endif
-        if ($3 == MD) {
-            /* skip the predicates with syntax is Modal, e.g. should, must */
-            /* and, the prerequisite is the arguments are formula */
-            if (getnodelistlength($6) == 1) {
-                $$ = $6->node;
-                free($6);
-                if ($$->type == Predicate) {
-                    enqueue(predicates[c], (void*)$$);
-                }
-            } else {
-                fprintf(stderr, "This meaning representation is not supported by the current grammar.\n");
-            }
-        } else {
-            $$ = newastnode(Predicate, $1);    
-            if ($$->token->symbol[0] == '_') {
-                /* removing the underscore */
-                popchar($$->token->symbol);
-            }
-            addastchildren($$, $6);
-            $$->syntax = $3;
-            /* predicate node is marked in a queue and si identification is processed later  */            
-            enqueue(predicates[c], (void*)$$);
-        }        
+    : predicate_term {
+        $$ = $1;
     }
-    | PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC {
-        print_debug("term: PREDICATE(Modal)) CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC LBRAC terms RBRAC RBRAC");
-        $$ = $7;
+    | quantified_term {
+        $$ = $1;
+    }
+    | grammar_term {
+        $$ = $1;
     }
     | KEYWORD_TRUEP {
         print_debug("term: PREDICATE(TrueP)");
         $$ = NULL;
     }
-    | grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC {
-        print_debug("term: grammar_term LBRAC PREDICATE CURLY_LBRAC pos_tag CURLY_RBRAC LBRAC arguments RBRAC RBRAC");
-        $$ = newastnode(Predicate, $3);
+    | IDENTIFIER EQUAL IDENTIFIER {
+        print_debug("term: '(' IDENTIFIER EQUAL IDENTIFIER ')'");
+        $$ = newastnode(Operator, $2);
+        struct astnode *left = newastnode(Variable, $1);
+        struct astnode *right = newastnode(Variable, $3);
+        if (addcstref($1->symbol, left) != 0) {
+            addcstsymbol($1->symbol);
+            addcstref($1->symbol, left);
+        }
+        if (addcstref($3->symbol, right) != 0) {
+            addcstsymbol($3->symbol);
+            addcstref($3->symbol, right);
+        }
+        addastchild($$, left);
+        addastchild($$, right);
+        enqueue(operators, (void*)$$);
+    }    
+    ;
+
+grammar_term
+    : grammar_tag '(' predicate_term ')' {
+        print_debug("grammar_term: grammar_tag '(' predicate_term ')'");
+        // we just want to ignore the grammar_tag in this rule. to avoid memory leak, so free it asap.
+        deleteastnode($1);
+        $$ = $3;
+    }
+    | grammar_tag '(' arguments ')' {
+        print_debug("grammar_term: grammar_tag '(' arguments ')'");
+        $$ = $1;        
+        addastchildren($1, $3);
+        // we treat the grammar_tag as a predicate
+        enqueue(predicates, (void*)$$);
+    }
+    ;
+
+
+predicate_term
+    : PREDICATE '{' pos_tag '}' '(' arguments ')' {
+        print_debug("term: PREDICATE '{' pos_tag '}' '(' arguments ')'");
+        #if PARDEBUG
+        printf("Predicate(%s), Syntax(%s)\n", $1->symbol, ptbsyntax2string($3));
+        #endif
+        $$ = newastnode(Predicate, $1);    
         if ($$->token->symbol[0] == '_') {
             /* removing the underscore */
             popchar($$->token->symbol);
         }
-        $$->syntax = $5;
-        $$->gtype = $1;
-        addastchildren($$, $8);
-        /* predicate node is marked in a queue and si identification is processed later  */
-        enqueue(predicates[c], (void*)$$);
+        addastchildren($$, $6);
+        $$->syntax = $3;
+        /* predicate node is marked in a queue and si identification is processed later  */            
+        enqueue(predicates, (void*)$$);
     }
-    | formula {
-        print_debug("term: formula");
-        $$ = $1;
-    }
-    | LBRAC formula connective formula RBRAC {
-        print_debug("term: LBRAC formula connective formula RBRAC");
-        $$ = newastnode(Connective, NULL);
-        $$->conntype = $3;
-        addastchild($$, $2);
-        addastchild($$, $4);
-    }
-    | GCASE LBRAC arguments RBRAC EQUAL arguments {
-        print_debug("term: LBRAC GCASE LBRAC VARIABLE RBRAC EQUAL VARIABLE RBRAC");
-        $$ = NULL;
-    }
-    | GCASE LBRAC arguments RBRAC {
-        print_debug("term: LBRAC GCASE LBRAC arguments RBRAC RBRAC");
-        $$ = NULL;
-    }
-    | IDENTIFIER EQUAL IDENTIFIER {
-        print_debug("term: LBRAC IDENTIFIER EQUAL IDENTIFIER RBRAC");
-        $$ = newastnode(Operator, $2);
-        struct astnode *left = newastnode(Variable, $1);
-        struct astnode *right = newastnode(Variable, $3);
-        if (addcstref(csts[c], $1->symbol, left) != 0) {
-            addcstsymbol(csts[c], $1->symbol);
-            addcstref(csts[c], $1->symbol, left);
-        }
-        if (addcstref(csts[c], $3->symbol, right) != 0) {
-            addcstsymbol(csts[c], $3->symbol);
-            addcstref(csts[c], $3->symbol, right);
-        }
-        addastchild($$, left);
-        addastchild($$, right);
-        enqueue(operators[c], (void*)$$);
+    | PREDICATE '{' pos_tag '}' '(' '(' terms ')' ')' {
+        print_debug("term: PREDICATE(Modal)) '{' pos_tag '}' '(' '(' terms ')' ')'");
+        $$ = $7;
     }
     ;
 
 arguments
     : arguments COMMA argument {
-        print_debug("arguments: arguments argument");
+        print_debug("arguments: arguments IDENTIFIER");
         appendnode($1, $3);
         $$ = $1;
     }
     | argument {
-        print_debug("arguments: argument");
+        print_debug("arguments: IDENTIFIER");
         $$ = newastnodelist($1);
     }
     ;
@@ -294,39 +194,34 @@ argument
     : IDENTIFIER {
         print_debug("argument: IDENTIFIER");        
         $$ = newastnode(Variable, $1);
-        if (addcstref(csts[c], $1->symbol, $$) != 0) {
-            addcstsymbol(csts[c], $1->symbol);
-            addcstref(csts[c], $1->symbol, $$);
+        if (addcstref($1->symbol, $$) != 0) {
+            addcstsymbol($1->symbol);
+            addcstref($1->symbol, $$);
         }
     }
-    | formula {
-        print_debug("argument: formula");
+    | quantified_term {
+        print_debug("argument: quantified_term");    
         $$ = $1;
     }
     ;
 
-quantify_expr
-    : KEYWORD_EXISTS IDENTIFIER {
+quantified_term
+    : KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' {
         print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
-        $$->qtype = Quantifier_Exists;
-        if (addcstref(csts[c], $2->symbol, $$) != 0) {
-            addcstsymbol(csts[c], $2->symbol);
-            addcstref(csts[c], $2->symbol, $$);
+        if (strcmp($1->symbol, "exists") == 0) {
+            $$->qtype = Quantifier_Exists;
+        } else {
+            $$->qtype = Quantifier_ForAll;
         }
-    }
-    | KEYWORD_FORALL IDENTIFIER {
-        print_debug("quantify_expr: KEYWORD_FORALL IDENTIFIER");
-        $$ = newastnode(Quantifier, $2);
-        $$->qtype = Quantifier_ForAll;
-        if (addcstref(csts[c], $2->symbol, $$) != 0) {
-            addcstsymbol(csts[c], $2->symbol);
-            addcstref(csts[c], $2->symbol, $$);
-        }    
+        if (addcstref($2->symbol, $$) != 0) {
+            addcstsymbol($2->symbol);
+            addcstref($2->symbol, $$);
+        }
+        addastchild($$, $5);        
+        closecstscope($2->symbol);
     }
     ;
-
-
 
 pos_tag
     : KEYWORD_NN { $$ = NN; }
@@ -358,8 +253,10 @@ connective
     | OR    { $$ = Op_Or; }
     ;
 
-grammar_term
-    : KEYWORD_PROG { $$ = Gram_Prog; }
+grammar_tag
+    : KEYWORD_PROG { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Prog; }
+    | KEYWORD_REL { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Rel; }
+    ;
 %%
 
 
@@ -374,7 +271,6 @@ void yyerror(const char *s) {
     extern char* input_line;
     fprintf(stderr,"Parser: parse error!\n  Message: %s in line %d, column %d\n", s, lineNum, colNum);
     fprintf(stderr,"%s\n", input_line);
-    error_lines[error_count++] = lineNum;
     free(input_line);
     for(int i = 0; i < colNum - 1; i++)
         fprintf(stderr,"_");

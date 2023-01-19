@@ -1,5 +1,3 @@
-#!../venv/py3/bin/python
-
 import subprocess
 import sys
 import yaml
@@ -45,6 +43,7 @@ def run_cmd_show_output(cmd: str) -> None:
         )
     process.wait()
 
+debug = True
 
 def main(config_path: str, prog_file: str) -> None:
     with open(config_path) as fp:
@@ -57,6 +56,7 @@ def main(config_path: str, prog_file: str) -> None:
     configs = dot_access_dict(_configs)
     # prog_name = prog_file.replace('.conditions.yml', '').split('/')[-1]
     prog_name = prog_file.replace('.java', '').split('/')[-1]
+    si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))
 
     # create tmp folder
     run_cmd_without_output('mkdir -p %s; rm -rf %s/*' % (configs.TMP, configs.TMP))
@@ -68,35 +68,40 @@ def main(config_path: str, prog_file: str) -> None:
     if not os.path.exists(prog_condition_file) or not os.path.exists(prog_si_file):
         print('Preprocessing failed.')
         exit(-2)
-
+    else:
+        print('INFO:Preprocessing done')
     with open("%s/%s.conditions.yml" % (configs.TMP, prog_name)) as fp:
         data = yaml.load(fp, Loader=SafeLoader)
     for i, record in enumerate(data):
         t = record['type']
         nlspec = record['specification']
+        print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
+        debug and print('DEBUG: ccgslambda - tokenization')
         process = subprocess.Popen(
-            ("echo %s | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
+            ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
             shell=True, stdout=subprocess.PIPE
-        )
+        )        
         process.wait()
+        debug and print('DEBUG: ccgslambda - C & C parsing')
         process = subprocess.Popen(
             ("%s/candc-1.00/bin/candc  --log %s/candc.log --models %s/candc-1.00/models --candc-printer xml --input "
              "%s/sentences.tok > %s/sentences.candc.xml" % (configs.NLP, configs.TMP, configs.NLP, configs.TMP, configs.TMP)),
             shell=True, stdout=subprocess.PIPE
         )
         process.wait()
+        debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
         process = subprocess.Popen(
             ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, configs.NLP, configs.TMP, configs.TMP)),
             shell=True, stdout=subprocess.PIPE
         )
         process.wait()
+        debug and print('DEBUG: ccgslambda - mapping CCG rules with the templates')
         process = subprocess.run(
             ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
              "%s/%s.conditions.mr.%d" % (configs.PYCMD, configs.NLP, configs.TMP, configs.NLP, configs.TMP, prog_name, i)),
             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
-        mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, i))
-        si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))
+        mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, i))        
         mr_error = process.stderr.decode()
         mr_stdout = process.stdout.decode()    
         
@@ -105,6 +110,8 @@ def main(config_path: str, prog_file: str) -> None:
             with open('%s/%s.error' % (configs.TMP, prog_name), 'a') as fp:
                 fp.write(mr_error)
             break
+        else:
+            print('INFO:MR generation done')
             
         with open(mr_file_path) as fp:
             mr = fp.read()

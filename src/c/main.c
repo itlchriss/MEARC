@@ -6,25 +6,20 @@
 #include "si.h"
 
 extern FILE *yyin;
-extern int *error_lines, error_count;
 
-
-int countlines(FILE *fp);
 struct queue* readSI(char *);
-// int readPSL(FILE *fp);
-
-// counting the number of MR in single file
-int c = 0;
 
 // data structures
 //  abstract syntax tree(s)
-struct astnode **ast;  
+struct astnode *ast;  
 //  compile-time symbol table
-struct queue **csts;     
+struct queue *cst;     
 //  predicate stack, marking the positions of the predicate nodes
-struct queue **predicates;
+struct queue *predicates;
 
-struct queue **operators;
+struct queue *operators;
+
+struct queue *silist;
 
 struct astnode *root;
 
@@ -57,10 +52,6 @@ int main(int argc, char** argv) {
             #endif
             dstfiles = optarg;
             break;
-            // case 'm':
-            // printf("method name: %s\n", optarg);
-            // mname = optarg;
-            // break;
             case '?':
             fprintf (stderr,
                    "Unknown option character `\\x%x'.\n",
@@ -76,13 +67,11 @@ int main(int argc, char** argv) {
         return 1;
     } 
     
-
-    int lines = 0;
     /* A structure implemented by a queue containing semantic interpretations */  
     #if INFO      
     showprocessinfo("Start reading SI information");
     #endif
-    struct queue *silist = readSI(dstfiles);
+    silist = readSI(dstfiles);
     #if INFO      
     showprocessinfo("Finished reading SI information");
     #endif
@@ -92,62 +81,41 @@ int main(int argc, char** argv) {
         printf("The spec file path cannot be opened...\n");
         return 1;
     }
-    lines = countlines(fp);
-    if (lines <= 0) {
-        printf("zero lines...do I have to do anything?\n");
-        exit(1);
-    }
-    #if INFO
-    printf("Number of MRs: %d\n", lines);    
-    #endif
-    // acquire resources before parsing
-    ast = (struct astnode **) malloc (sizeof(struct astnode *) * lines);
-    csts = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    operators = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    predicates = (struct queue **) malloc (sizeof(struct queue *) * lines);
-    for (int i = 0; i < lines; ++i) {
-        csts[i] = initqueue();
-        predicates[i] = initqueue();
-        operators[i] = initqueue();
-    }
 
-    fseek(fp, 0, SEEK_SET);
-    error_lines = (int*) malloc (sizeof(int) * lines);
+    // acquire resources before parsing
+    ast = (struct astnode *) malloc (sizeof(struct astnode));
+    cst = initqueue();
+    operators = initqueue();
+    predicates = initqueue();
+
     #if INFO      
     showprocessinfo("Start Parsing");
     #endif
     yyin = fp;
     yyparse();
     fclose(fp);
-    for (int i = 0; i < lines; ++i) {
     #if INFO
     showprocessinfo("Before rename cst symbols");
     #endif
     #if CSTDEBUG 
-        showqueue(csts[i], showcstsymbol);
+    showqueue(cst, showcstsymbol);
     #endif
-        renamesymbols(csts[i]);
+    renamesymbols(cst);
     #if INFO
     showprocessinfo("After rename cst symbols");
     #endif
     #if CSTDEBUG
-        showqueue(csts[i], showcstsymbol);
+    showqueue(cst, showcstsymbol);
     #endif
-    }
-
-    // only process with successful parsed lines
-    lines -= error_count;
 
     #if INFO
     showprocessinfo("Parsing finished");
     #endif
 
     #if ASTDEBUG
-    for (int i = 0; i < c; ++i) {
-        printf("Printing Abstract syntax tree # %d.................\n", i + 1);
-        showast(ast[i], 0);        
-        showqueue(csts[i], showcstsymbol);
-    }
+    printf("Printing Abstract syntax debug information.................\n");
+    showast(ast, 0);        
+    showqueue(cst, showcstsymbol);
     printf("================================================================================================\n");    
     #endif
 
@@ -155,93 +123,64 @@ int main(int argc, char** argv) {
     Step: Semantic interpretation identification  
         For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
     */
-     for (int i = 0; i < c; ++i) {
-        root = ast[i];
-        #if INFO
-        showprocessinfo("Start semantic interpretation identification");
-        #endif
-        siidentification(predicates[i], silist, csts[i]);
-        #if INFO
-        showprocessinfo("Finished semantic interpretation identification");
-        #endif
-        #if INFO
-        showprocessinfo("Start operator resolution");
-        #endif
-        opresolution(operators[i], csts[i]);        
-        #if INFO
-        showprocessinfo("Finished operator resolution");
-        #endif
-        ast[i] = root;
-        #if ASTDEBUG
-        showast(ast[i], 0);
-        #endif
-        #if INFO
-        showprocessinfo("Start AST simplification");
-        #endif
-        ast[i] = astsimplification(ast[i]);
-        #if INFO
-        showprocessinfo("Finished AST simplification");
-        #endif
-        #if ASTDEBUG
-        showast(ast[i], 0);
-        #endif        
-     }
+    root = ast;
+    #if INFO
+    showprocessinfo("Start semantic interpretation identification");
+    #endif
+    siidentification(silist);
+    #if INFO
+    showprocessinfo("Finished semantic interpretation identification");
+    #endif
+    #if INFO
+    showprocessinfo("Start operator resolution");
+    #endif
+    opresolution(operators, cst);        
+    #if INFO
+    showprocessinfo("Finished operator resolution");
+    #endif
+    ast = root;
+    #if ASTDEBUG
+    showast(ast, 0);
+    #endif
+    #if INFO
+    showprocessinfo("Start AST simplification");
+    #endif
+    ast = astsimplification(ast);
+    ast = astsimplification(ast);
+    #if INFO
+    showprocessinfo("Finished AST simplification");
+    #endif
+    #if ASTDEBUG
+    showast(ast, 0);
+    #endif 
     deallocatequeue(silist, deallocatesi);
 
     #if ASTDEBUG
-    for (int i = 0; i < c; ++i) {
-        printf("Printing resulting Abstract syntax tree # %d.................\n", i + 1);
-        showast(ast[i], 0);        
-        showqueue(csts[i], showcstsymbol);
-    }
+    printf("Printing debugging info.................\n");
+    showast(ast, 0);        
+    showqueue(cst, showcstsymbol);
     printf("\n");    
     #endif
 
     #if INFO
     showprocessinfo("Start Code generation");
     #endif
-    for (int i = 0; i < c; ++i) {
-        output(ast[i]);
-    }
+    output(ast);
     #if INFO
     showprocessinfo("Finished Code generation");
     #endif
 
     /* free resources */
-    for (int i = 0; i < c; ++i) {
-        if (ast[i])
-            deallocateast(ast[i]);
-        if (csts[i])
-            deallocatequeue(csts[i], deallocatecstsymbol);
-        if (operators[i])
-            deallocatequeue(operators[i], NULL);
-    }    
-   
-    if (error_count > 0) {
-        printf("There are %d lines that cannot be processed:\n", error_count);
-        for (int i = 0; i < error_count - 1; ++i) {
-            printf("%d, ", error_lines[i]);
-        }
-        printf("%d\n", error_lines[error_count - 1]);
+    if (ast) {
+        deallocateast(ast);
     }
-    free(error_lines);
+    if (cst) {
+        deallocatequeue(cst, deallocatecstsymbol);
+    }
+    if (operators) {
+        deallocatequeue(operators, NULL);
+    }
     return 0; 
-}
-
-
-int countlines(FILE *fp) {
-    int lines = 0;
-    int c = '\0', pc = '\n';
-    while (c = fgetc(fp), c != EOF) {
-        if (c == '\n' && pc != '\n') {
-            lines++;
-        }
-        pc = c;
-    }
-    if (pc != '\n') {
-        lines++;
-    }    
-    return lines;
 }
 
 struct queue* readSI(char *dstfilepaths) {
@@ -315,6 +254,7 @@ struct queue* readSI(char *dstfilepaths) {
                 #endif
                 if (!si) {
                     si = (struct si*) malloc (sizeof(struct si));
+                    si->g_arg_count = 0;
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
@@ -340,6 +280,10 @@ struct queue* readSI(char *dstfilepaths) {
                     key = (char*) strdup((char*)token.data.scalar.value);
                     if (strcmp(key, "arguments") == 0) {
                         si->args = (char**)malloc(sizeof(char*) * si->arg_count);
+                        si->arg_types = (int*)malloc(sizeof(int) * si->arg_count);
+                        for (int j = 0; j < si->arg_count; ++j) {
+                            si->arg_types[j] = -1;
+                        }
                         int i = 0;                            
                         while (i < si->arg_count) {
                             yaml_parser_scan(&parser, &token);
@@ -348,6 +292,24 @@ struct queue* readSI(char *dstfilepaths) {
                                 ++i;
                             }
                         }                            
+                    } else if (strcmp(key, "grammar_arguments") == 0) {                        
+                        int i = 0;                            
+                        while (i < si->g_arg_count) {
+                            yaml_parser_scan(&parser, &token);
+                            if (token.type == YAML_SCALAR_TOKEN) {
+                                si->g_args[i] = (char*) strdup((char*)token.data.scalar.value);
+                                ++i;
+                            }
+                        }  
+                    } else if (strcmp(key, "specific_arg_types") == 0) {                        
+                        int i = 0;                            
+                        while (i < si->arg_count) {
+                            yaml_parser_scan(&parser, &token);
+                            if (token.type == YAML_SCALAR_TOKEN) {
+                                si->arg_types[i] = atoi((char*)token.data.scalar.value);
+                                ++i;
+                            }
+                        }  
                     } else if (strcmp(key, "syntax") == 0) {
                         int i = 0;
                         si->syntax = NULL;
@@ -381,6 +343,9 @@ struct queue* readSI(char *dstfilepaths) {
                     if (key && value) {
                         if (strcmp(key, "arity") == 0) {
                             si->arg_count = atoi(value);                            
+                        } else if (strcmp(key, "g_arity") == 0) {
+                            si->g_arg_count = atoi(value);
+                            si->g_args = (char**) malloc (sizeof(char*) * si->g_arg_count);
                         } else if (strcmp(key, "term") == 0) {
                             si->term = (char*) strdup(value);
                             trim(si->term);
