@@ -8,22 +8,59 @@ from typing import List
 sis = []
 
 
-def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str], _type: int = 3) -> None:
+def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str], _type: int = 3, _specific_arg_types: List[int] = None, _grammar_args: List[str] = None) -> None:
     if arguments and len(arguments) >= 1:
         for arg in arguments:
             if arg != '*' and ('(%s)' % arg) not in interpretation:
-                print('Warning: The following interpretation has no arguments used, but arguments are specified')
+                print('Warning: SI %s following interpretation has no arguments used, but arguments are specified' % name)
                 print('Interpretation: %s' % interpretation)
                 print('Arguments: %s' % ','.join(arguments))
-    sis.append(
-        {
-            'term': name,
-            'syntax': syntax,
-            'arity': len(arguments),
-            'arguments': [('(%s)' % arg) for arg in arguments],
-            'interpretation': interpretation,
-        }
-    )
+    if not _specific_arg_types and not _grammar_args:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'interpretation': interpretation,
+            }
+        )
+    elif _specific_arg_types and _grammar_args:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'g_arity': len(_grammar_args),
+                'grammar_arguments': [('(%s)' % arg) for arg in _grammar_args],
+                'specific_arg_types': [('%d' % t) for t in _specific_arg_types],
+                'interpretation': interpretation,
+            }
+        )
+    elif _specific_arg_types:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'specific_arg_types': [('%d' % t) for t in _specific_arg_types],
+                'interpretation': interpretation,
+            }
+        )
+    else:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'g_arity': len(_grammar_args),
+                'grammar_arguments': [('(%s)' % arg) for arg in _grammar_args],
+                'interpretation': interpretation,
+            }
+        )
 
 
 class JavaTypes(IntEnum):
@@ -32,15 +69,17 @@ class JavaTypes(IntEnum):
     Collection = 2
 
 
-def main(filepath: str):
+def main(filepath: str):    
     __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                   r'(x)[k + 1]', ['NN'])
+    __add2sis('sorted in ascending order', ['x', 'y'], r'\forall int k; (x); (y)[k] <= '
+                                                  r'(y)[k + 1]', ['JJ'])
     __add2sis('sorted in ascending numerical order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                             r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in descending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] >= '
                                                    r'(x)[k + 1]', ['NN'])
     __add2sis('greater than or equal to', ['x', 'y'], r'(x) >= (y)', ['JJ', 'JJR', 'VBG'])
-    __add2sis('less than or equal to', ['x', 'y'], r'(x) <= (y)', ['JJ', 'JJR'])
+    __add2sis('less than or equal to', ['x', 'y'], r'(x) <= (y)', ['JJ', 'JJR', 'VBG'])
     # __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (x)[i] == (y)[i]', ['VBG'])
     # __add2sis('correspondingly equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length && (x).length == ('
     #                                                   r'y).length; (x) == (y)', ['VBG'], int(JavaTypes.Array))
@@ -58,6 +97,7 @@ def main(filepath: str):
     __add2sis('false_value', ['*'], 'false', ['NN'])
     __add2sis('null_value', ['*'], 'null', ['NN'])
     __add2sis('be', ['x', 'y'], r'(x) == (y)', ['VBZ'])
+    __add2sis('return value', ['*'], r'\result', ['NN'])
     # __add2sis('be', ['x'], r'(x)', ['VBZ'])
     # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'], int(JavaTypes.Array))
     # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'], int(JavaTypes.Collection))
@@ -69,6 +109,9 @@ def main(filepath: str):
                                      r'|| (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))',
               ['VBZ'],
               int(JavaTypes.Collection))
+    __add2sis('contain', ['x', 'y'], r'(\exists int i; 0 <= i < (x).length; (x)[i] == (y)) ',
+              ['VBZ', 'VB'],
+              int(JavaTypes.Array), _specific_arg_types = [JavaTypes.Array, JavaTypes.Primitive])
     __add2sis('result', ['*'], r'\result', ['NN'])
     __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0',
               ['NN'])
@@ -80,13 +123,12 @@ def main(filepath: str):
     __add2sis('length of', ['x'], r'(x).size()', ['NN', 'JJ'])
     __add2sis('size of', ['x'], r'(x).size()', ['JJ', 'NN'])
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
-    __add2sis('index', ['x', 'y'], r'Arrays.asList((x)).indexOf((y)))', ['JJ'])
+    __add2sis('index', ['y'], r'\old(Arrays.asList(((x))).indexOf((y))))', ['NN'], _grammar_args = ['x'])
     __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
     __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
+    __add2sis('if', ['x', 'y'], r'((y)) ==> ((x))', ['IN'])
     # __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
-    __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('element', ['x'], r'(x)[i]', ['NNS'])
-    __add2sis('elements of', ['x'], r'(x)', ['JJ'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
     __add2sis('reference of', ['x'], r'(x)', ['NN'])
     # __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x)[i] != '
@@ -98,6 +140,11 @@ def main(filepath: str):
     __add2sis('for', ['x', 'y'], r'\sub(x)2(y)', ['NNS'])
     __add2sis('all of the elements', ['x'], r'\forall int i; 0 <= i < (x).length; ', ['NNS'])
     __add2sis('all valid indices', ['x'], r'\forall int i; 0 <= i < (x).length; ', ['NNS'])
+    __add2sis('elements of', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
+    __add2sis('elements of', ['x'], r'(x)', ['JJ'])
+    __add2sis('insertion point', ['x'], r'(\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j; ((z)) <= j < (x).length; (y) < (x)[j])', ['NN'], _specific_arg_types=[JavaTypes.Array], _grammar_args=['y', 'z'])
+    __add2sis('minus', ['x', 'y'], r'(x) - (y)', ['IN'])
+    __add2sis('negative', ['x'], r'-(x)', ['JJ'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

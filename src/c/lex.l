@@ -3,7 +3,7 @@
     #include "core.h"
     #include "tok.h"    
     extern YYSTYPE yylval; /* for passing value to parser */
-    extern int lineNum, colNum, *error_lines, error_count; /* line number from cal.tab.c */ 
+    extern int lineNum, colNum; /* line number from cal.tab.c */ 
     // #define __LOG_LEVEL__ 1
     // #define DEBUG
     void print_debug(char *);
@@ -104,36 +104,37 @@ KEYWORD_EXISTS      "exists"
 KEYWORD_FORALL      "all"
 
 KEYWORD_PROG        "Prog"
+KEYWORD_REL         "Rel"
 
 KEYWORD_TRUEP      "TrueP"
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
 VARIABLE               ([a-z]([0-9]+)?)
-GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 %%
-{LBRAC} {
+"(" {
     yylval.t = handletoken(yytext);
     ++bracket;
-    return LBRAC;
+    return '(';
 }
-{RBRAC} {
+")" {
     yylval.t = handletoken(yytext);
     --bracket;
-    return RBRAC;
+    return ')';
 }
 {MINUS} { yylval.t = handletoken(yytext); return MINUS; }
-{KEYWORD_EXISTS} { yylval.t = handletoken(yytext); return KEYWORD_EXISTS; }
-{KEYWORD_FORALL} { yylval.t = handletoken(yytext); return KEYWORD_FORALL; }
+{KEYWORD_EXISTS} { yylval.t = handletoken(yytext); return KEYWORD_QUANTIFIER; }
+{KEYWORD_FORALL} { yylval.t = handletoken(yytext); return KEYWORD_QUANTIFIER; }
 
 {VARIABLE} { yylval.t = handletoken(yytext); return IDENTIFIER; }
 {PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
-{DOT} { handlecolnum(yytext); return DOT; }
+"." { handlecolnum(yytext); return '.'; }
 {KEYWORD_TRUEP} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }
-{CURLY_LBRAC} {
+"{" {
     ++cbracket;    
     yylval.t = handletoken(yytext);
-    return CURLY_LBRAC;
+    return '{';
 }
 {KEYWORD_PROG} { yylval.t = handletoken(yytext); return KEYWORD_PROG; }
+{KEYWORD_REL} { yylval.t = handletoken(yytext); return KEYWORD_REL; }
 {KEYWORD_NN} { yylval.t = handletoken(yytext); return KEYWORD_NN; }
 {KEYWORD_NNS} { yylval.t = handletoken(yytext); return KEYWORD_NNS; }
 {KEYWORD_NNP} { yylval.t = handletoken(yytext); return KEYWORD_NNP; }
@@ -155,13 +156,13 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 {KEYWORD_RB}    {yylval.t = handletoken(yytext); return KEYWORD_RB; }
 {KEYWORD_VBD}    {yylval.t = handletoken(yytext); return KEYWORD_VBD; }
 
-{CURLY_RBRAC} {
+"}" {
     if (cbracket <= 0) {
         print_error();
     }
     --cbracket;
     yylval.t = handletoken(yytext);
-    return CURLY_RBRAC;
+    return '}';
 }
 {COMMA} {
     yylval.t = handletoken(yytext);
@@ -175,9 +176,9 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
     yylval.t = handletoken(yytext);
     return IMPLY;
 }
-{GRAM_KEYWORDS} {
+{EQUIV} {
     yylval.t = handletoken(yytext);
-    return GCASE;
+    return EQUIV;
 }
 {EQ} {
     yylval.t = handletoken(yytext);
@@ -202,7 +203,6 @@ GRAM_KEYWORDS        ("Subj"|"Acc"|"AccI"|"Dat"|"Gen"|"Abl"|"Rel"|"Voc"|"AccE")
 void print_error() {
     printf("Lexer: bad input character '%s' at line %d and column %d\n", yytext, lineNum, colNum); 
     fprintf(stderr,"%s\n", input_line);
-    error_lines[error_count++] = lineNum;
     free(input_line);
     for(int i = 0; i < colNum - 1; i++)
         fprintf(stderr,"_");

@@ -16,10 +16,14 @@ struct si {
     /* number of syntax that can be accepted for synthesising this semantic */
     int syntax_count;
     /* number of argument to synthesize this semantic */
-    int arg_count;    
+    int arg_count; 
+    /* number of argument to synthesize the grammar relation semantic */
+    int g_arg_count;   
     /* arguments in the interpretation */
-    // struct queue *args;
     char **args;
+    /* grammar arguments in the interpretation */
+    char **g_args;
+    int *arg_types;
     char *interpretation;
     enum javadatatype jtype;
 };
@@ -32,8 +36,8 @@ struct si {
         silist      : a queue holding semantic interpretations parsed from standard semantic interpretation database
         cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
 */
-void siidentification(struct queue*, struct queue *, struct queue *);
-void opresolution(struct queue*, struct queue *);
+void siidentification();
+void opresolution();
 void showsi(void *_si);
 void deallocatesi(void *);
 #endif

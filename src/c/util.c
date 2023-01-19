@@ -344,6 +344,19 @@ void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*))
     return NULL;
 }
 
+struct queue* q_searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*)) {
+    if (queue == NULL || queue->count <= 0) return NULL;
+    struct queue *new = initqueue();
+    void *tmp = NULL;
+    for (int i = 0; i < queue->count; ++i) {
+        tmp = gqueue(queue, i);
+        if (compare(tmp, data) == 0) {
+            enqueue(new, tmp);
+        }
+    }
+    return new;
+}
+
 void applyqueue(struct queue *queue, void *data, void (*func)(void*, void*)) {
     if (queue == NULL || queue->count <= 0) return;
     for (int i = 0; i < queue->count; ++i) {
