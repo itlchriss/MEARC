@@ -655,6 +655,8 @@ enum ptbsyntax string2ptbsyntax(char *input) {
     else if (strcmp(input, "WP") == 0) return WP;
     else if (strcmp(input, "WP_POS") == 0) return WP_POS; 
     else if (strcmp(input, "WRB") == 0) return WRB;
+    else if (strcmp(input, "Prog") == 0) return Gram_Prog;
+    else if (strcmp(input, "Rel") == 0) return Gram_Rel;
     else {
         fprintf(stderr, "Unknown syntactic category %s in the SI files\n", input);
         exit(-2);

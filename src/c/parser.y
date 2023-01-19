@@ -24,19 +24,21 @@
     // enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' MINUS
+%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
 %token <t> KEYWORD_QUANTIFIER
-%token <t> KEYWORD_PROG KEYWORD_REL
-%token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
+%token <t> TAG
+/* %token <t> KEYWORD_PROG KEYWORD_REL TAG */
+/* %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
 %token <ptb> KEYWORD_VB KEYWORD_VBG KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_VBD
 %token <ptb> KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
-%token <ptb> KEYWORD_RB
+%token <ptb> KEYWORD_RB */
 %left AND IMPLY EQUIV ')'
 
-%type<ptb> pos_tag
+/* %type<ptb> pos_tag */
 %type<conntype> connective
-%type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag
+/* %type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag */
+%type<node> terms argument term quantified_term predicate_term grammar_term 
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
 %start formula
@@ -74,7 +76,7 @@ terms
             addastchild($$, $4);
         }
     }
-    | terms connective MINUS term {
+    | terms connective NEG term {
         print_debug("terms: terms term");
         $$ = newastnode(Connective, NULL);
         $4->isnegative = 1;
@@ -82,7 +84,7 @@ terms
         addastchild($$, $1);
         addastchild($$, $4);
     }
-    | terms connective MINUS '(' term ')' {
+    | terms connective NEG '(' term ')' {
         print_debug("terms: terms term");
         $$ = newastnode(Connective, NULL);
         $5->isnegative = 1;
@@ -94,13 +96,13 @@ terms
         print_debug("terms: term");
         $$ = $1;
     }
-    | MINUS term {
-        print_debug("term: MINUS term");
+    | NEG term {
+        print_debug("term: NEG term");
         $$ = $2;
         $$->isnegative = 1;
     }
-    | MINUS '(' term ')' {
-        print_debug("term: MINUS term");
+    | NEG '(' term ')' {
+        print_debug("term: NEG term");
         $$ = $3;
         $$->isnegative = 1;
     }
@@ -139,17 +141,25 @@ term
     }    
     ;
 
+connective
+    : AND { $$ = Op_And; }
+    | EQUIV { $$ = Op_Equivalent; }
+    | IMPLY { $$ = Op_Imply; }
+    | OR    { $$ = Op_Or; }
+    ;
+
 grammar_term
-    : grammar_tag '(' predicate_term ')' {
-        print_debug("grammar_term: grammar_tag '(' predicate_term ')'");
+    : TAG '(' predicate_term ')' {
+        print_debug("grammar_term: TAG '(' predicate_term ')'");
         // we just want to ignore the grammar_tag in this rule. to avoid memory leak, so free it asap.
-        deleteastnode($1);
+        // deleteastnode($1);
         $$ = $3;
     }
-    | grammar_tag '(' arguments ')' {
-        print_debug("grammar_term: grammar_tag '(' arguments ')'");
-        $$ = $1;        
-        addastchildren($1, $3);
+    | TAG '(' arguments ')' {
+        print_debug("grammar_term: TAG '(' arguments ')'");
+        $$ = newastnode(GrammarNotation, $1); 
+        $$->syntax = string2ptbsyntax($1->symbol);
+        addastchildren($$, $3);
         // we treat the grammar_tag as a predicate
         enqueue(predicates, (void*)$$);
     }
@@ -157,10 +167,10 @@ grammar_term
 
 
 predicate_term
-    : PREDICATE '{' pos_tag '}' '(' arguments ')' {
-        print_debug("term: PREDICATE '{' pos_tag '}' '(' arguments ')'");
+    : PREDICATE '{' TAG '}' '(' arguments ')' {
+        print_debug("term: PREDICATE '{' TAG '}' '(' arguments ')'");
         #if PARDEBUG
-        printf("Predicate(%s), Syntax(%s)\n", $1->symbol, ptbsyntax2string($3));
+        printf("Predicate(%s), Syntax(%s)\n", $1->symbol, $3->symbol);
         #endif
         $$ = newastnode(Predicate, $1);    
         if ($$->token->symbol[0] == '_') {
@@ -168,12 +178,12 @@ predicate_term
             popchar($$->token->symbol);
         }
         addastchildren($$, $6);
-        $$->syntax = $3;
+        $$->syntax = string2ptbsyntax($3->symbol);
         /* predicate node is marked in a queue and si identification is processed later  */            
         enqueue(predicates, (void*)$$);
     }
-    | PREDICATE '{' pos_tag '}' '(' '(' terms ')' ')' {
-        print_debug("term: PREDICATE(Modal)) '{' pos_tag '}' '(' '(' terms ')' ')'");
+    | PREDICATE '{' TAG '}' '(' '(' terms ')' ')' {
+        print_debug("term: PREDICATE(Modal)) '{' TAG '}' '(' '(' terms ')' ')'");
         $$ = $7;
     }
     ;
@@ -222,7 +232,7 @@ quantified_term
         closecstscope($2->symbol);
     }
     ;
-
+/* 
 pos_tag
     : KEYWORD_NN { $$ = NN; }
     | KEYWORD_NNS { $$ = NNS; }
@@ -244,19 +254,12 @@ pos_tag
     | KEYWORD_VBG { $$ = VBG; }
     | KEYWORD_RB  { $$ = RB; }
     | KEYWORD_VBD { $$ = VBD; }
-    ;
+    ; */
 
-connective
-    : AND { $$ = Op_And; }
-    | EQUIV { $$ = Op_Equivalent; }
-    | IMPLY { $$ = Op_Imply; }
-    | OR    { $$ = Op_Or; }
-    ;
-
-grammar_tag
+/* grammar_tag
     : KEYWORD_PROG { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Prog; }
     | KEYWORD_REL { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Rel; }
-    ;
+    ; */
 %%
 
 

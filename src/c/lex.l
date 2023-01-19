@@ -69,7 +69,7 @@ DOT             "."
 COMMA           ","
 
 /* Operators */
-MINUS           "-"
+NEG           "-"
 ADD             "+"
 MUL             "*"
 DIV             "/"        
@@ -120,7 +120,7 @@ VARIABLE               ([a-z]([0-9]+)?)
     --bracket;
     return ')';
 }
-{MINUS} { yylval.t = handletoken(yytext); return MINUS; }
+{NEG} { yylval.t = handletoken(yytext); return NEG; }
 {KEYWORD_EXISTS} { yylval.t = handletoken(yytext); return KEYWORD_QUANTIFIER; }
 {KEYWORD_FORALL} { yylval.t = handletoken(yytext); return KEYWORD_QUANTIFIER; }
 
@@ -133,28 +133,29 @@ VARIABLE               ([a-z]([0-9]+)?)
     yylval.t = handletoken(yytext);
     return '{';
 }
-{KEYWORD_PROG} { yylval.t = handletoken(yytext); return KEYWORD_PROG; }
-{KEYWORD_REL} { yylval.t = handletoken(yytext); return KEYWORD_REL; }
-{KEYWORD_NN} { yylval.t = handletoken(yytext); return KEYWORD_NN; }
-{KEYWORD_NNS} { yylval.t = handletoken(yytext); return KEYWORD_NNS; }
-{KEYWORD_NNP} { yylval.t = handletoken(yytext); return KEYWORD_NNP; }
-{KEYWORD_NNPS} { yylval.t = handletoken(yytext); return KEYWORD_NNPS; }
-{KEYWORD_IN} { yylval.t = handletoken(yytext); return KEYWORD_IN; }
-{KEYWORD_JJ} { yylval.t = handletoken(yytext); return KEYWORD_JJ; }
-{KEYWORD_JJR} { yylval.t = handletoken(yytext); return KEYWORD_JJR; }
-{KEYWORD_JJS} { yylval.t = handletoken(yytext); return KEYWORD_JJS; }
-{KEYWORD_VB} { yylval.t = handletoken(yytext); return KEYWORD_VB; }
-{KEYWORD_VBZ} { yylval.t = handletoken(yytext); return KEYWORD_VBZ; }
-{KEYWORD_VBN} { yylval.t = handletoken(yytext); return KEYWORD_VBN; }
-{KEYWORD_VBP} { yylval.t = handletoken(yytext); return KEYWORD_VBP; }
-{KEYWORD_DT} { yylval.t = handletoken(yytext); return KEYWORD_DT; }
-{KEYWORD_CC} { yylval.t = handletoken(yytext); return KEYWORD_CC; }
-{KEYWORD_CD} { yylval.t = handletoken(yytext); return KEYWORD_CD; }
-{KEYWORD_PRP} { yylval.t = handletoken(yytext); return KEYWORD_PRP; }
-{KEYWORD_MD} { yylval.t = handletoken(yytext); return KEYWORD_MD; }
-{KEYWORD_VBG} { yylval.t = handletoken(yytext); return KEYWORD_VBG; }
-{KEYWORD_RB}    {yylval.t = handletoken(yytext); return KEYWORD_RB; }
-{KEYWORD_VBD}    {yylval.t = handletoken(yytext); return KEYWORD_VBD; }
+
+{KEYWORD_PROG} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_REL} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_NN} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_NNS} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_NNP} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_NNPS} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_IN} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_JJ} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_JJR} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_JJS} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VB} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VBZ} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VBN} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VBP} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_DT} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_CC} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_CD} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_PRP} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_MD} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VBG} { yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_RB}    {yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_VBD}    {yylval.t = handletoken(yytext); return TAG; }
 
 "}" {
     if (cbracket <= 0) {
