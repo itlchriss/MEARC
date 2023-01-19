@@ -500,7 +500,7 @@ void opresolution() {
                 char *tmp = __combine_3_strings__("(", _si_ptr->g_args[ctemplate->g_arg_count], ")");
                 s = strrep(template->token->symbol, tmp, sub->token->symbol);
                 free(tmp);
-                _si_ptr->g_arg_count++;
+                ctemplate->g_arg_count++;
                 ctemplate = updatecstsymbol(s, template);      
                 __remove_all_children_cst__(node);
                 syncsymbol(ctemplate);        
@@ -582,7 +582,8 @@ void deallocatesi(void *tmp) {
         free(si->args[i]);
     }
     for (int i = 0; i < si->g_arg_count; ++i) {
-        free(si->g_args[i]);
+        if (si->g_args[i])
+            free(si->g_args[i]);
     }
     free(si->syntax);
     if (si->interpretation)
