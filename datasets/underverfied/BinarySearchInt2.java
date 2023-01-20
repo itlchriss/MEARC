@@ -29,7 +29,7 @@ public class BinarySearchInt2 {
     // ===> modified to *The return_value is greater than or equal to 0 if and only if the array contains the key.*
     // ===> preprocessed to *The return_value is greater_than_or_equal_to 0 _if_ the array contains the key.*
     //@ ensures (\result >= 0 <==> (\exists int i; 0 <= i < array.length; array[i] == key));
-    //@ ensures (*If the parameter array does not contain the parameter key, the Expression(-result-1) is the parameter key's insertion point in the parameter array.*);
+    //@ ensures (*If the parameter array does not contain the parameter key, the (-result-1) is the parameter key's insertion point in the parameter array.*);
     /* ensures (
             !(\exists int i; 0 <= i < array.length; array[i] == key) ==>
             ((
