@@ -61,6 +61,20 @@ def get_package_global_info(directory: str) -> Set:
 java_types_with_dimensions = ['Collection', 'Set', 'Queue', 'Stack']
 java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char']
 
+def get_type(typedefinition) -> int:
+    if typedefinition:
+        if typedefinition.dimensions:
+            t = 1
+        elif typedefinition.name in java_types_primitive:
+            t = 0
+        elif typedefinition.name == 'Collection' or typedefinition.name == 'List':
+            t = 2
+        else:
+            t = 3
+    else:
+        t = -1
+    return t
+
 def get_package_global_info_from_javasrc(srcfile: str) -> Set:
     global_element_names = []
     if os.path.isfile(srcfile) and srcfile.endswith('.java'):
@@ -69,16 +83,18 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
             tree = javalang.parse.parse(file)
             for path, node in tree.filter(javalang.tree.MethodDeclaration):
                 global_element_names.append(node.name.lower())
+                global_element_names.append(("\result", get_type(node.return_type)))
                 if node.parameters:
                     for p in node.parameters:
-                        if p.type.dimensions:
-                            t_name = 1
-                        elif p.type.name in java_types_primitive:
-                            t_name = 0
-                        elif p.type.name == 'Collection':
-                            t_name = 2
-                        else:
-                            t_name = 3
+                        t_name = get_type(p.type)
+                        # if p.type.dimensions:
+                        #     t_name = 1
+                        # elif p.type.name in java_types_primitive:
+                        #     t_name = 0
+                        # elif p.type.name == 'Collection' or p.type.name == 'List':
+                        #     t_name = 2
+                        # else:
+                        #     t_name = 3
                         global_element_names.append((p.name, t_name))
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())

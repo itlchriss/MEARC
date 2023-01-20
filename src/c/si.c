@@ -72,14 +72,29 @@ int __synthesis_predicate_at_root__(struct si *si) {
         // we have to ensure all other predicates are synthesised
         return 1;
     }
-    opresolution();
-    root = astsimplification(root);
-    // TODO: we will remove this once we revise the simplification algorithm
-    root = astsimplification(root);
-    char *s = __obtain_si_from_subtree__(root, si);
-    __replace_si_at_parent__(root, Synthesised, s);
-    __remove_all_children_cst__(root);
-    free(s);
+    // opresolution();
+    // root = astsimplification(root);
+    // // TODO: we will remove this once we revise the simplification algorithm
+    // root = astsimplification(root);
+    // char *s = __obtain_si_from_subtree__(root, si);
+    // __replace_si_at_parent__(root, Synthesised, s);
+    // __remove_all_children_cst__(root);
+    // free(s);
+    free(root->token->symbol);
+    root->token->symbol = (char*)strdup(si->interpretation);
+    if (strcmp(root->token->symbol, "==>") == 0) {
+        root->conntype = Op_Imply;
+    } else if (strcmp(root->token->symbol, "&&") == 0) {
+        root->conntype = Op_And;
+    } else if (strcmp(root->token->symbol, "||") == 0) {
+        root->conntype = Op_Or;
+    } else if (strcmp(root->token->symbol, "<==>") == 0) {
+        root->conntype = Op_Equivalent;
+    } else {
+        fprintf(stderr, "Unknown semantics %s is not allowed to be the root node semantic\n", root->token->symbol);
+        exit(-16);
+    }
+    root->type = Connective;
     return 0;
 }
 
@@ -262,21 +277,33 @@ int PRP_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PRP_POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RB_code_synthesis(struct astnode *node, struct si *si) {
     if (node->isroot == 1) {
-        //because the node is a root node, if we want to do the synthesis, the tree must be simplified first
-        node = astsimplification(node);
-        #if ASTDEBUG
-        showast(root, 0);
-        fflush(stdout);
-        #endif
+        return __synthesis_predicate_at_root__(si);
+    } else {
+        for (int i = 0; i < countastchildren(node); ++i) {
+            if (getastchild(node, i)->type != Synthesised) return 1;
+        }
+        char *s = __obtain_si_from_subtree__(node, si);
+        __replace_si_at_parent__(node, Synthesised, s);
+        __remove_all_children_cst__(node);
+        free(s);
+        return 0;
     }
-    for (int i = 0; i < countastchildren(node); ++i) {
-        if (getastchild(node, i)->type != Synthesised) return 1;
-    }
-    char *s = __obtain_si_from_subtree__(node, si);
-    __replace_si_at_parent__(node, Synthesised, s);
-    __remove_all_children_cst__(node);
-    free(s);
-    return 0;
+    // 
+    //     //because the node is a root node, if we want to do the synthesis, the tree must be simplified first
+    //     node = astsimplification(node);
+    //     #if ASTDEBUG
+    //     showast(root, 0);
+    //     fflush(stdout);
+    //     #endif
+    // }
+    // for (int i = 0; i < countastchildren(node); ++i) {
+    //     if (getastchild(node, i)->type != Synthesised) return 1;
+    // }
+    // char *s = __obtain_si_from_subtree__(node, si);
+    // __replace_si_at_parent__(node, Synthesised, s);
+    // __remove_all_children_cst__(node);
+    // free(s);
+    // return 0;
 }
 int RBR_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RBS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
@@ -545,7 +572,7 @@ int __argtype_si_comparator(void *_si, void *_astnode) {
     for (int i = 0; i < si->arg_count; ++i) {
         tmp = getastchild(node, i);
         c = searchsymbolbyref(tmp);
-        if (si->arg_types[i] != c->type) return 1;
+        if (si->arg_types[i] != -1 && si->arg_types[i] != c->type) return 1;
         else continue;
     }
     return 0;

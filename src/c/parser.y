@@ -149,19 +149,19 @@ connective
     ;
 
 grammar_term
-    : TAG '(' predicate_term ')' {
-        print_debug("grammar_term: TAG '(' predicate_term ')'");
-        // we just want to ignore the grammar_tag in this rule. to avoid memory leak, so free it asap.
-        // deleteastnode($1);
-        $$ = $3;
-    }
-    | TAG '(' arguments ')' {
+    : TAG '(' arguments ')' {
         print_debug("grammar_term: TAG '(' arguments ')'");
-        $$ = newastnode(GrammarNotation, $1); 
-        $$->syntax = string2ptbsyntax($1->symbol);
-        addastchildren($$, $3);
-        // we treat the grammar_tag as a predicate
-        enqueue(predicates, (void*)$$);
+        if (string2ptbsyntax($1->symbol) == Gram_Prog) {
+            printf("%d", getnodelistlength($3));
+            $$ = $3->node;
+            free($3);
+        } else {
+            $$ = newastnode(GrammarNotation, $1); 
+            $$->syntax = string2ptbsyntax($1->symbol);
+            addastchildren($$, $3);
+            // we treat the grammar_tag as a predicate
+            enqueue(predicates, (void*)$$);
+        }
     }
     ;
 
@@ -195,7 +195,7 @@ arguments
         $$ = $1;
     }
     | argument {
-        print_debug("arguments: IDENTIFIER");
+        print_debug("arguments: argument");
         $$ = newastnodelist($1);
     }
     ;
@@ -209,8 +209,8 @@ argument
             addcstref($1->symbol, $$);
         }
     }
-    | quantified_term {
-        print_debug("argument: quantified_term");    
+    | terms {
+        print_debug("argument: terms");
         $$ = $1;
     }
     ;
@@ -232,34 +232,6 @@ quantified_term
         closecstscope($2->symbol);
     }
     ;
-/* 
-pos_tag
-    : KEYWORD_NN { $$ = NN; }
-    | KEYWORD_NNS { $$ = NNS; }
-    | KEYWORD_NNP { $$ = NNP; }
-    | KEYWORD_NNPS { $$ = NNPS; }
-    | KEYWORD_IN { $$ = IN; }
-    | KEYWORD_JJ { $$ = JJ; }
-    | KEYWORD_JJR { $$ = JJR; }
-    | KEYWORD_JJS { $$ = JJS; }
-    | KEYWORD_VB { $$ = VB; }
-    | KEYWORD_VBZ { $$ = VBZ; }
-    | KEYWORD_VBN { $$ = VBN; }
-    | KEYWORD_VBP { $$ = VBP; }
-    | KEYWORD_DT { $$ = DT; }
-    | KEYWORD_CD { $$ = CD; }
-    | KEYWORD_CC { $$ = CC; }
-    | KEYWORD_PRP { $$ = PRP; }
-    | KEYWORD_MD { $$ = MD; }
-    | KEYWORD_VBG { $$ = VBG; }
-    | KEYWORD_RB  { $$ = RB; }
-    | KEYWORD_VBD { $$ = VBD; }
-    ; */
-
-/* grammar_tag
-    : KEYWORD_PROG { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Prog; }
-    | KEYWORD_REL { $$ = newastnode(GrammarNotation, $1); $$->syntax = Gram_Rel; }
-    ; */
 %%
 
 

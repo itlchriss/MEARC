@@ -39,6 +39,29 @@ SENTENCES=None
 kMaxTasksPerChild=None
 lock = Lock()
 
+def check_duplicated_parentheses(text: str) -> str:
+    start = 0
+    while start < len(text) - 1:
+        i = text[start:].find('((')
+        if i > 0:
+            count = 1
+            start = i + 2
+            for j, c in enumerate(text[start:]):
+                if c == '(':
+                    count += 1
+                elif c == ')':
+                    count -= 1
+                    if count == 0:
+                        text = text[:start - 1] + text[start:start + j - 1] + text[start+j:]                        
+                        start = start + j
+                        break
+                else:
+                    continue
+        else:
+            break    
+    return text
+
+
 def main(args = None):
     global SEMANTIC_INDEX
     global ARGS
@@ -98,18 +121,31 @@ def main(args = None):
     logging.info('Finished adding XML semantic nodes to sentences.')
 
     root_str_list = serialize_tree(root)
-    # with open(ARGS.sem, 'w') as fout:
-    #     [fout.write(root_str) for root_str in root_str_list]
-    # print(root_xml_str)
+    
     for root_str in root_str_list:
-        print(root_str)
+        tmp = root_str
+        while tmp[0] == '(':
+            left = 0
+            right = 0
+            for i, c in enumerate(tmp):
+                if c == '(':
+                    left = left + 1
+                elif c == ')':
+                    right = right + 1
+                    if left == right and left > 0 and right > 0:
+                        tmp = tmp[:i] + tmp[i + 1:]
+                        tmp = tmp[1:]
+                        break
+                else:
+                    continue
+        tmp = check_duplicated_parentheses(tmp)
+        print(tmp)
 
 def semantic_parse_sentences(sentence_inds, ncores=1):
-    # if ncores <= 1:
-    #     sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
-    # else:
-    #     sem_nodes_lists = semantic_parse_sentences_par(sentence_inds, ncores)
-    sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
+    if ncores <= 1:
+        sem_nodes_lists = semantic_parse_sentences_seq(sentence_inds)
+    else:
+        sem_nodes_lists = semantic_parse_sentences_par(sentence_inds, ncores)
     sem_nodes_lists = [
         [etree.fromstring(s) for s in sem_nodes] for sem_nodes in sem_nodes_lists]
     return sem_nodes_lists
