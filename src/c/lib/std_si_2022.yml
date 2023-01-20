@@ -89,6 +89,18 @@
   interpretation: (x) == (y)
 - term: equal to
   syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '2'
+  interpretation: \result == true ==> ((x).size() == (y).size()) && (\forall int j;
+    0 <= j < (y).size(); ((x).contains((y).get(j))))
+- term: equal to
+  syntax:
   - JJ
   - JJR
   - VBG
@@ -97,6 +109,9 @@
   arguments:
   - (x)
   - (y)
+  specific_arg_types:
+  - '0'
+  - '0'
   interpretation: (x) == (y)
 - term: true_value
   syntax:
@@ -145,6 +160,17 @@
     == null)) || (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))
 - term: contain
   syntax:
+  - VBD
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
+  interpretation: \exists int i; 0 <= i < \old((x)).size(); \old((x)).get(i) == (y)
+- term: contain
+  syntax:
   - VBZ
   - VB
   arity: 2
@@ -155,6 +181,17 @@
   - '1'
   - '0'
   interpretation: '(\exists int i; 0 <= i < (x).length; (x)[i] == (y)) '
+- term: removed from
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
+  interpretation: '!(\exists int i; 0 <= i < (y).size(); (y).get(i) == (x))'
 - term: result
   syntax:
   - NN
@@ -253,9 +290,9 @@
   - IN
   arity: 2
   arguments:
-  - (x)
-  - (y)
-  interpretation: ((y)) ==> ((x))
+  - (*)
+  - (*)
+  interpretation: ==>
 - term: element
   syntax:
   - NNS

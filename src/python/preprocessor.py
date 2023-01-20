@@ -97,7 +97,7 @@ class Preprocessor:
         'must be': 'is',
         'must not be': 'is not',
         'will be': 'is',
-        'is equal to': 'is',
+        # 'is equal to': 'is',
         'will': ' ',
         'all elements in': 'every element of'
     }
@@ -213,9 +213,9 @@ class Preprocessor:
                         'term': _t.lower(),
                         'syntax': ['RB'],
                         'arity': 2,
-                        'arguments': ['(x)', '(y)'],
-                        'interpretation': '(x) <==> (y)',
-                        'type': -1,
+                        'arguments': ['(*)', '(*)'],
+                        'interpretation': '<==>',
+                        'type': 2,
                     })
                 i = i + 3
             elif token in self.operators:
