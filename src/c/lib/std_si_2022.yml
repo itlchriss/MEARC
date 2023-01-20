@@ -8,11 +8,13 @@
 - term: sorted in ascending order
   syntax:
   - JJ
-  arity: 2
+  arity: 1
   arguments:
   - (x)
+  g_arity: 1
+  grammar_arguments:
   - (y)
-  interpretation: \forall int k; (x); (y)[k] <= (y)[k + 1]
+  interpretation: \forall int k; (x); ((y))[k] <= ((y))[k + 1]
 - term: sorted in ascending numerical order
   syntax:
   - NN
@@ -97,8 +99,8 @@
   specific_arg_types:
   - '2'
   - '2'
-  interpretation: \result == true ==> ((x).size() == (y).size()) && (\forall int j;
-    0 <= j < (y).size(); ((x).contains((y).get(j))))
+  interpretation: ((x).size() == (y).size()) && (\forall int j; 0 <= j < (y).size();
+    ((x).contains((y).get(j))))
 - term: equal to
   syntax:
   - JJ

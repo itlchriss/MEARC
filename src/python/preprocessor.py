@@ -152,7 +152,7 @@ class Preprocessor:
         i = 0
         while i < len(data):
             token = data[i]
-            if r := re.findall(r'^Expression\((.*)\)$', token, re.ASCII):
+            if r := re.findall(r'^\((.*)\)$', token, re.ASCII):
                 r = r[0]
                 # TODO: we have to process everything that can be encountered in java expression. or we can restrict to accept a subset
                 # after applying the replacement rules, we have to add an SI
@@ -240,19 +240,32 @@ class Preprocessor:
             for phrase_rule in self.phrases:
                 _p_token_list = phrase_rule['phrase'].split(' ')
                 _args = phrase_rule['args']
+                _interpretation = phrase_rule['interpretation']
                 for j in range(len(_p_token_list)):
+                    # if the phrase has a parameter, check the parameter type and the current token, the type must be equal to the type of the token
                     if _p_token_list[j][0] == '(':
-                        _a = _args[_p_token_list[j]]
+                        _arg_type = _args[_p_token_list[j]]
                         _tag = tags[i + j]
-                        if _tag[1] not in _a and _tag[0] not in self.dst_names:
+                        if _tag[1] not in _arg_type and _tag[0] not in self.dst_names:
                             match = False
                             break
+                        _interpretation = _interpretation.replace(_p_token_list[j], _tag[0])
                     elif _p_token_list[j] != data[i + j]:
                         match = False
                         break
                 if match:
-                    tmp.append('_'.join(data[i:i+len(_p_token_list)]))
+                    _t = '_'.join(data[i:i+len(_p_token_list)])
+                    tmp.append(_t)
                     i = i + len(_p_token_list)
+                    # add the si
+                    self.function_si.append({
+                        'term': _t.lower(),
+                        'syntax': ['NN'],
+                        'arity': 1,
+                        'arguments': ['(*)'],
+                        'interpretation': _interpretation,
+                        'type': -1,
+                    })                                        
                     break
             if not match:
                 tmp.append(data[i])
@@ -262,7 +275,9 @@ class Preprocessor:
 
     def process(self, text: str) -> str:
         text = self.__process_function__(text)
-        text = self.__process_phrases__(text) + '.'
+        text = self.__process_phrases__(text)
+        if text[-1] != '.':
+            text = text + '.'
         patterns = self.patterns
         text = text.strip()
         text = ' '.join([t.lower() for t in text.split(' ')])

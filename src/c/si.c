@@ -119,6 +119,10 @@ int Jseries_code_synthesis(struct astnode *node, struct si *si) {
         __remove_all_children_cst__(node);
         __update_cstsymbol_data__(c, s, si->jtype);
         syncsymbol(c);
+        // TODO: check this. this is not thoroughly checked. if this ruins other cases, remove this line.
+        c->si_ptr = si;
+        c->g_arg_count = 0;
+        //
         if (getavailablerefs(c) == 0 && node->parent->type == Quantifier) {
             /* a special case for the sentences that the predicate is a single adjective */
             __replace_si_at_parent__(node, Synthesised, s);
@@ -600,6 +604,10 @@ void showsi(void *_si) {
         printf("%s ", si->args[j]);
     }
     printf("   %s(%p)\n", si->interpretation, (void*)si->interpretation);
+    printf("   Grammar_arity: %d   Grammar_arguments: ", si->g_arg_count);
+    for (int j = 0; j < si->g_arg_count; ++j) {
+        printf("%s ", si->g_args[j]);
+    }
     printf("============================================================================\n");
 }
 
