@@ -1,12 +1,5 @@
 - term: sorted in ascending order
   syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
-- term: sorted in ascending order
-  syntax:
   - JJ
   arity: 1
   arguments:
@@ -15,6 +8,13 @@
   grammar_arguments:
   - (y)
   interpretation: \forall int k; (x); ((y))[k] <= ((y))[k + 1]
+- term: sorted in ascending order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
 - term: sorted in ascending numerical order
   syntax:
   - NN
