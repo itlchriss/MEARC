@@ -152,7 +152,6 @@ grammar_term
     : TAG '(' arguments ')' {
         print_debug("grammar_term: TAG '(' arguments ')'");
         if (string2ptbsyntax($1->symbol) == Gram_Prog) {
-            printf("%d", getnodelistlength($3));
             $$ = $3->node;
             free($3);
         } else {

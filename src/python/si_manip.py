@@ -70,10 +70,10 @@ class JavaTypes(IntEnum):
 
 
 def main(filepath: str):    
-    __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
-                                                  r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in ascending order', ['x'], r'\forall int k; (x); ((y))[k] <= '
                                                   r'((y))[k + 1]', ['JJ'], _grammar_args=['y'])
+    __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
+                                                  r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in ascending numerical order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                             r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in descending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] >= '
