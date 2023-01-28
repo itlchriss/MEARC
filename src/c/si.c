@@ -11,8 +11,8 @@ extern struct astnode *root;
 struct queue *cst;    
 
 int search_syntax(struct si*, enum ptbsyntax);
-int __sicomparator(void *, void *);
-int __argtype_si_comparator(void *, void *);
+int __simatcher(void *, void *);
+int __argtype_simatcher(void *, void *);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 0, 0};
 char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
@@ -201,9 +201,6 @@ int CD_code_synthesis(struct astnode *node, struct si *si) {
     struct astnode *child = getastchild(node, 0); 
     struct cstsymbol *c = searchsymbolbyref(child);
     __remove_all_children_cst__(node);    
-    #if SIDEBUG
-    printf("CD_code_synthesis: si(%s) and child token(%s)\n", s, child->token->symbol);
-    #endif        
     __update_cstsymbol_data__(c, s, 0);
     syncsymbol(c);    
     // because CS is self defined SI that is dynamically generated
@@ -344,7 +341,7 @@ int Gram_Rel_synthesis(struct astnode *node, struct si *si) {
     struct cstsymbol *c = searchsymbolbyref(x);
     struct si *_si = (struct si *)c->si_ptr;
     if (_si->g_arg_count == 0) {
-        printf("Error: Predicate(%s) must have grammar arguments defined\n", _si->term);
+        printf("Error: Predicate(%s) must have grammar arguments defined\n", _si->symbol);
         exit(-14);
     }
     char *s = strrep(x->token->symbol, _si->g_args[0], y->token->symbol);
@@ -363,15 +360,9 @@ int Gram_Prog_synthesis(struct astnode *node, struct si *si) {
 
 int (*code_syntheses[])(struct astnode *, struct si *) = {CC_code_synthesis, CD_code_synthesis, DT_code_synthesis, EX_code_synthesis, FW_code_synthesis, IN_code_synthesis, JJ_code_synthesis, JJR_code_synthesis, JJS_code_synthesis, LS_code_synthesis, MD_code_synthesis, NN_code_synthesis, NNS_code_synthesis, NNP_code_synthesis, NNPS_code_synthesis, PDT_code_synthesis, POS_code_synthesis, PRP_code_synthesis, PRP_POS_code_synthesis, RB_code_synthesis, RBR_code_synthesis, RBS_code_synthesis, RP_code_synthesis, SYM_code_synthesis, TO_code_synthesis, UH_code_synthesis, VB_code_synthesis, VBD_code_synthesis, VBG_code_synthesis, VBN_code_synthesis, VBP_code_synthesis, VBZ_code_synthesis, WDT_code_synthesis, WP_code_synthesis, WP_POS_code_synthesis, WRB_code_synthesis, Gram_Prog_synthesis, Gram_Rel_synthesis};
 
-/* 
-    semantic interpretation identification 
-    this is a process to identify as many si as possible presenting in the meaning representation
-    - parameter descriptions
-        predicates  : a queue holding pointers of predicates present in an abstract syntax tree parsed from meaning representation
-        silist      : a queue holding semantic interpretations parsed from standard semantic interpretation database
-        cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
-*/
-void siidentification() {
+
+
+void sianalysis() {
     struct astnode *node;
     struct si *si;
     #if SIDEBUG
@@ -392,7 +383,7 @@ void siidentification() {
         if (selfSI[node->syntax] == 0) {
             push(tmp, node);
         } else {
-            si = searchqueue(silist, node, __sicomparator);
+            si = searchqueue(silist, node, __simatcher);
             if (si == NULL) {
                 if (node->isroot) {
                     fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
@@ -434,7 +425,19 @@ void siidentification() {
     deallocatequeue(predicates, NULL);
     deallocatequeue(in_preds, NULL);
     predicates = tmp;
+}
 
+/* 
+    semantic interpretation synthesis 
+    this is a process to identify as many si as possible presenting in the meaning representation
+    - parameter descriptions
+        predicates  : a queue holding pointers of predicates present in an abstract syntax tree parsed from meaning representation
+        silist      : a queue holding semantic interpretations parsed from standard semantic interpretation database
+        cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
+*/
+void sisynthesis() {
+    struct astnode *node;
+    struct si *si;
     #if SIDEBUG
     printf("si identification: after sorting, there are %d predicates in the queue.\n", predicates->count);
     for (int i = 0; i < predicates->count; ++i) {
@@ -451,14 +454,14 @@ void siidentification() {
         printf("si identification: processing predicate %s(%s).\n", node->token->symbol, ptbsyntax2string(node->syntax));
         #endif
         if (selfSI[node->syntax] == 1) {
-            si_q = q_searchqueue(silist, node, __sicomparator);
+            si_q = q_searchqueue(silist, node, __simatcher);
             si = NULL;
             if (si_q->count == 0) si = NULL;
             else if (si_q->count == 1) si = dequeue(si_q);
             else {
                 // because there are more than one possible si
                 // in order to get the most appropriate one, we filter the queue to get the one that has arg_types matching the current child node types                
-                si = searchqueue(si_q, node, __argtype_si_comparator);                                
+                si = searchqueue(si_q, node, __argtype_simatcher);                                
             }                 
             deallocatequeue(si_q, NULL);
             if (si == NULL) {
@@ -558,10 +561,10 @@ void opresolution() {
 
 
 
-int __sicomparator(void *_si, void *_astnode) {
+int __simatcher(void *_si, void *_astnode) {
     struct si* si = (struct si*)_si;
     struct astnode *node = (struct astnode*)_astnode;
-    if (strcmp(node->token->symbol, si->term) == 0 &&
+    if (strcmp(node->token->symbol, si->symbol) == 0 &&
                 search_syntax(si, node->syntax) == 0 && 
                 si->arg_count == countastchildren(node)) 
         return 0;
@@ -569,7 +572,7 @@ int __sicomparator(void *_si, void *_astnode) {
         return 1;
 }
 
-int __argtype_si_comparator(void *_si, void *_astnode) {
+int __argtype_simatcher(void *_si, void *_astnode) {
     struct si* si = (struct si*)_si;
     struct astnode *node = (struct astnode*)_astnode, *tmp;
     struct cstsymbol *c = NULL;
@@ -595,7 +598,7 @@ void showsi(void *_si) {
     struct si *si = (struct si*)_si;
     printf("==========================Semantic interpretations: =========================\n");
     printf("Term          Syntactic Category       Arity     Arguments    Interpretation\n");
-    printf("Term: %s   Syntactic Category: ", si->term);        
+    printf("Term: %s   Syntactic Category: ", si->symbol);        
     for (int j = 0; j < si->syntax_count; ++j) {
         printf("%s ", ptbsyntax2string(si->syntax[j]));
     }
@@ -623,7 +626,7 @@ void deallocatesi(void *tmp) {
     free(si->syntax);
     if (si->interpretation)
         free(si->interpretation);
-    free(si->term);
+    free(si->symbol);
     free(si);
 }
 

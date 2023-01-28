@@ -127,7 +127,9 @@ int main(int argc, char** argv) {
     #if INFO
     showprocessinfo("Start semantic interpretation identification");
     #endif
-    siidentification(silist);
+    // siidentification(silist);
+    sianalysis();
+    sisynthesis();
     #if INFO
     showprocessinfo("Finished semantic interpretation identification");
     #endif
@@ -347,15 +349,15 @@ struct queue* readSI(char *dstfilepaths) {
                             si->g_arg_count = atoi(value);
                             si->g_args = (char**) malloc (sizeof(char*) * si->g_arg_count);
                         } else if (strcmp(key, "term") == 0) {
-                            si->term = (char*) strdup(value);
-                            trim(si->term);
+                            si->symbol = (char*) strdup(value);
+                            trim(si->symbol);
                             /* 
                                 predicates in meaning representation use underscores to represent spaces 
                                 therefore, we replace any spaces in the term with underscores
                             */                            
-                            for (int i = 0; i < strlen(si->term); ++i) {
-                                if (si->term[i] == ' ') {
-                                    si->term[i] = '_';
+                            for (int i = 0; i < strlen(si->symbol); ++i) {
+                                if (si->symbol[i] == ' ') {
+                                    si->symbol[i] = '_';
                                 }
                             }
                         } else if (strcmp(key, "interpretation") == 0) {

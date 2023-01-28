@@ -10,7 +10,7 @@
 enum javadatatype { PRIMITIVE = 0, NON_PRIMITIVE, NON_PRIMITIVE_WITH_DIMENSIONS };
 
 struct si {
-    char *term;
+    char *symbol;
     /* penn tree bank categories of this si */
     enum ptbsyntax *syntax;
     /* number of syntax that can be accepted for synthesising this semantic */
@@ -36,7 +36,9 @@ struct si {
         silist      : a queue holding semantic interpretations parsed from standard semantic interpretation database
         cst         : a queue holding the compile time symbols, aka the identitiers in the meaning representation
 */
-void siidentification();
+// void siidentification();
+void sianalysis();
+void sisynthesis();
 void opresolution();
 void showsi(void *_si);
 void deallocatesi(void *);
