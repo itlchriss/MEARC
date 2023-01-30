@@ -83,7 +83,7 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
             tree = javalang.parse.parse(file)
             for path, node in tree.filter(javalang.tree.MethodDeclaration):
                 global_element_names.append(node.name.lower())
-                global_element_names.append(("\result", get_type(node.return_type)))
+                global_element_names.append(("\\result", get_type(node.return_type)))
                 if node.parameters:
                     for p in node.parameters:
                         t_name = get_type(p.type)

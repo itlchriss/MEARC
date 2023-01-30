@@ -17,6 +17,8 @@ struct cstsymbol {
     int type;
 
     void *si_ptr;
+    /* a queue holding the possible SIs if the symbol is not synthesised */
+    struct queue *si_q;
     /* this field is assigned when the si_ptr is assigned */
     /* it is for counting the unresolved grammar arguments */
     int g_arg_count;

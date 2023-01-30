@@ -1,0 +1,2 @@
+requires(((fromIndex <= toIndex) && (toIndex <= array.length)) && (fromIndex >= 0));
+ensures(\forall int k; fromIndex < i < toIndex; array[k] <= array[k + 1]);

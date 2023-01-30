@@ -72,6 +72,7 @@ void addcstsymbol(char *symbol) {
         new->type = -1;
         new->si_ptr = NULL;
         new->g_arg_count = 0;
+        new->si_q = NULL;
         enqueue(cst, (void*)new);
     }            
 }
@@ -123,23 +124,33 @@ struct cstsymbol* updatecstsymbol(char *data, void *ptr) {
 }
 
 void syncsymbol(struct cstsymbol *c) {
-    char *tmp = __combine_3_strings__("(", c->symbol, ")");
-    int check = strsearch(c->data, tmp, NULL);
-    free(tmp);
-    enum astnodetype _type;
-    if (check > 0)  {
-        _type = Template;
+    if (c->si_q != NULL && c->si_q->count > 0 && c->type == -9) {
+        for (int i = 0; i < c->refs->count; ++i) {
+            struct astnode *node = (struct astnode*)gqueue(c->refs, i);
+            if (node->type != Quantifier) {
+                node->type = MultipleSIs;
+                node->si_q = copyqueue(c->si_q);
+            }            
+        }
     } else {
-        _type = Synthesised;
-    }
-    for (int i = 0; i < c->refs->count; ++i) {
-        struct astnode *node = (struct astnode*)gqueue(c->refs, i);
-        if (node->type != Quantifier) {
-            node->type = _type;
-            if (node->token->symbol)
-                free(node->token->symbol);
-            node->token->symbol = (char*)strdup(c->data);
-        }            
+        char *tmp = __combine_3_strings__("(", c->symbol, ")");
+        int check = strsearch(c->data, tmp, NULL);
+        free(tmp);
+        enum astnodetype _type;
+        if (check > 0)  {
+            _type = Template;
+        } else {
+            _type = Synthesised;
+        }
+        for (int i = 0; i < c->refs->count; ++i) {
+            struct astnode *node = (struct astnode*)gqueue(c->refs, i);
+            if (node->type != Quantifier) {
+                node->type = _type;
+                if (node->token->symbol)
+                    free(node->token->symbol);
+                node->token->symbol = (char*)strdup(c->data);
+            }            
+        }
     }
 }
 

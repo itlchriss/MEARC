@@ -196,7 +196,7 @@ class Preprocessor:
                 tmp.append(_t)
                 if not [1 for si in self.function_si if si['term'] == _t.lower()]:
                     self.function_si.append({
-                        'term': _t.lower(),
+                        'term': _t.lower().strip(','),
                         'syntax': ['NN', 'NNS', 'NNP'],
                         'arity': 1,
                         'arguments': '(*)',

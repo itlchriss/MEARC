@@ -5,7 +5,7 @@
 #include "cst.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, GrammarNotation };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, GrammarNotation, MultipleSIs };
 // enum grammartype { Gram_Prog, Gram_Rel };
 enum astsemtype { Sem_Static, Sem_Dynamic };
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
@@ -41,6 +41,8 @@ struct astnode {
     int isroot;
     /* default 0 for positive. 1 for negative */
     int isnegative;
+    /* storing the matched SIs. there can be multiple SIs because multiple Java types can be related to a semantic. */
+    struct queue *si_q;
 
     // enum javadatatype jtype;
 };

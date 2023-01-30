@@ -239,6 +239,14 @@ void* peek(struct queue* stack) {
     return ptr;
 }
 
+struct queue* copyqueue(struct queue *input) {
+    struct queue *new = initqueue();
+    for (int i = 0; i < input->count; ++i) {
+        enqueue(new, gqueue(input, i));
+    }
+    return new;
+}
+
 
 void deallocatequeue(struct queue *queue, void (*deallocate)(void*)) {
     struct queuenode *tmp = queue->q->next;

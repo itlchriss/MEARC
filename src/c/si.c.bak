@@ -13,11 +13,8 @@ struct queue *cst;
 int search_syntax(struct si*, enum ptbsyntax);
 int __simatcher(void *, void *);
 int __argtype_simatcher(void *, void *);
-int __sisymbol_duplicated(void *, void *);
-int __preposition_argtype_simatcher(void *, void *);
-int __match_interpretation_and_get_type(void *, void *);
 
-int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
+int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 0, 0};
 char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
 
 void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char *si) {    
@@ -75,6 +72,14 @@ int __synthesis_predicate_at_root__(struct si *si) {
         // we have to ensure all other predicates are synthesised
         return 1;
     }
+    // opresolution();
+    // root = astsimplification(root);
+    // // TODO: we will remove this once we revise the simplification algorithm
+    // root = astsimplification(root);
+    // char *s = __obtain_si_from_subtree__(root, si);
+    // __replace_si_at_parent__(root, Synthesised, s);
+    // __remove_all_children_cst__(root);
+    // free(s);
     free(root->token->symbol);
     root->token->symbol = (char*)strdup(si->interpretation);
     if (strcmp(root->token->symbol, "==>") == 0) {
@@ -99,44 +104,6 @@ void __update_cstsymbol_data__(struct cstsymbol *c, char *data, int datatype) {
     }
     c->data = (char*)strdup(data);
     c->type = datatype;
-}
-
-void si_alias(struct astnode *node, struct si *si) {
-    struct astnode *child = getastchild(node, 0); 
-    struct cstsymbol *c = searchsymbolbyref(child);
-    __remove_all_children_cst__(node);        
-    // TODO: not thoroughly checked this line. removed this line if problem raises    
-    if (si == NULL) {
-        if (c->si_q) {
-            deallocatequeue(c->si_q, NULL);
-        }
-        c->si_q = copyqueue(node->si_q);
-        /* inidicate this symbol is not resolved due to multiple SIs */
-        c->type = -9;
-    } else {
-        c->si_ptr = si;  
-        __update_cstsymbol_data__(c, si->interpretation, si->jtype);
-        if (c->si_q) {
-            deallocatequeue(c->si_q, NULL);
-        }   
-    }
-    syncsymbol(c);    
-    root = deleteastnodeandedge(node, root);
-}
-
-void subtree_si_synthesis(struct astnode *node, struct si *si) {
-    char *s = __obtain_si_from_subtree__(node, si);
-    __remove_all_children_cst__(node);
-    __replace_si_at_parent__(node, Synthesised, s);
-    free(s);
-}
-
-void si_substitution(struct astnode *dest, struct astnode *sinode, struct astnode *datanode, struct si *si) {
-    struct cstsymbol *c = searchsymbolbyref(sinode);
-    char *s = strrep(si->interpretation, si->args[0], datanode->token->symbol);
-    __update_cstsymbol_data__(c, s, 0);
-    syncsymbol(c);
-    root = deleteastnodeandedge(dest, root);
 }
 
 int Jseries_code_synthesis(struct astnode *node, struct si *si) {
@@ -180,7 +147,10 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si) {
             return 1;
         }
     }
-    subtree_si_synthesis(node, si);
+    char *s = __obtain_si_from_subtree__(node, si);
+    __remove_all_children_cst__(node);
+    __replace_si_at_parent__(node, Synthesised, s);
+    free(s);
     return 0;
 }
 
@@ -188,22 +158,37 @@ int Vseries_code_synthesis(struct astnode *node, struct si *si) {
 int Nseries_code_synthesis(struct astnode *node, struct si *si) {
     struct astnode *child = getastchild(node, 0);    
     char *s = (char*)strdup(si->interpretation);
-    struct cstsymbol *c = searchsymbolbyref(child);   
-    // __remove_all_children_cst__(node);          
-    if (strcmp(si->args[0], "(*)") != 0) {
-        /* argument does affect the semantic interpretation */
-        /* therefore, the semantic interpretation of the subtree requires code synthesis */
-        s = __obtain_si_from_subtree__(node, si);
-    }
+    struct cstsymbol *c = searchsymbolbyref(child);
     __remove_all_children_cst__(node);    
-    struct si *tmp = searchqueue(silist, s, __match_interpretation_and_get_type);
-    if (tmp != NULL) {
-        __update_cstsymbol_data__(c, s, tmp->jtype);
+    #if SIDEBUG
+    printf("Nseries_code_synthesis: si(%s) and child token(%s)\n", s, child->token->symbol);
+    #endif         
+    if (strcmp(s, "\\param") == 0) {
+        /* indicating the next predicate with the same indentifier must be a parameter name */
+        /* potential research problem. can we infer or guess the parameter name if the word used in the sentence is not the exact parameter name? */
     } else {
+        if (strcmp(si->args[0], "(*)") == 0) {
+            /* argument does no effects to the semantic interpretation */
+            /* therefore, directly replacing the semantic interpretation to all the places of identifiers */ 
+
+            /* there can be a case that, a noun predicate is synthesised as template. such that when subtree root is trying to synthesise, it should be substituted to the child's semantic template */
+            if (child->type == Template) {
+                char *arg = __combine_3_strings__("(", c->symbol, ")");
+                char *tmp = strrep(child->token->symbol, arg, s);
+                free(s);
+                s = (char*) strdup (tmp);
+                free(arg);
+                free(tmp);
+            }
+        } else {
+            /* argument does affect the semantic interpretation */
+            /* therefore, the semantic interpretation of the subtree requires code synthesis */
+            s = __obtain_si_from_subtree__(node, si);
+        }
         __update_cstsymbol_data__(c, s, si->jtype);
-    }    
-    syncsymbol(c);
-    c->si_ptr = si;            
+        syncsymbol(c);
+        c->si_ptr = si;
+    }               
     root = deleteastnodeandedge(node, root);
     return 0;
 }
@@ -212,7 +197,15 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si) {
 
 int CC_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int CD_code_synthesis(struct astnode *node, struct si *si) { 
-    si_alias(node, si);
+    char *s = node->token->symbol;    
+    struct astnode *child = getastchild(node, 0); 
+    struct cstsymbol *c = searchsymbolbyref(child);
+    __remove_all_children_cst__(node);    
+    __update_cstsymbol_data__(c, s, 0);
+    syncsymbol(c);    
+    // because CS is self defined SI that is dynamically generated
+    c->si_ptr = NULL;     
+    root = deleteastnodeandedge(node, root);
     return 0;
 }
 int DT_code_synthesis(struct astnode *node, struct si *si) { return 0; }
@@ -226,14 +219,6 @@ int IN_code_synthesis(struct astnode *node, struct si *si) {
     // a special case for root with preposition predicate
     if (node->isroot == 1) {
         return __synthesis_predicate_at_root__(si);
-    } else if (getastchild(node, 0)->type == MultipleSIs && getastchild(node, 1)->type == Synthesised) {
-        struct astnode *sinode = getastchild(node, 0), *datanode = getastchild(node, 1);
-        struct si *si = searchqueue(sinode->si_q, datanode, __preposition_argtype_simatcher);
-        if (si == NULL) {
-            fprintf(stderr, "No SI matched for predicate(%s) with syntax (IN)\n", node->token->symbol);
-            exit(-100);
-        }
-        si_substitution(node, sinode, datanode, si);
     } else {
         struct astnode *x;
         for (int i = 0; i < countastchildren(node); ++i) {
@@ -267,7 +252,13 @@ int IN_code_synthesis(struct astnode *node, struct si *si) {
             syncsymbol(c);        
             root = deleteastnodeandedge(node, root);
         } else {
-            subtree_si_synthesis(node, si);
+            // #if SIDEBUG
+            // fprintf(stderr, "the si(%s) is not implemented.\n", si->interpretation);
+            // #endif
+            char *s = __obtain_si_from_subtree__(node, si);
+            __remove_all_children_cst__(node);
+            __replace_si_at_parent__(node, Synthesised, s);
+            free(s);
         }
     }
     return 0;
@@ -292,9 +283,28 @@ int RB_code_synthesis(struct astnode *node, struct si *si) {
         for (int i = 0; i < countastchildren(node); ++i) {
             if (getastchild(node, i)->type != Synthesised) return 1;
         }
-        subtree_si_synthesis(node, si);
+        char *s = __obtain_si_from_subtree__(node, si);
+        __replace_si_at_parent__(node, Synthesised, s);
+        __remove_all_children_cst__(node);
+        free(s);
         return 0;
     }
+    // 
+    //     //because the node is a root node, if we want to do the synthesis, the tree must be simplified first
+    //     node = astsimplification(node);
+    //     #if ASTDEBUG
+    //     showast(root, 0);
+    //     fflush(stdout);
+    //     #endif
+    // }
+    // for (int i = 0; i < countastchildren(node); ++i) {
+    //     if (getastchild(node, i)->type != Synthesised) return 1;
+    // }
+    // char *s = __obtain_si_from_subtree__(node, si);
+    // __replace_si_at_parent__(node, Synthesised, s);
+    // __remove_all_children_cst__(node);
+    // free(s);
+    // return 0;
 }
 int RBR_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RBS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
@@ -351,31 +361,10 @@ int Gram_Prog_synthesis(struct astnode *node, struct si *si) {
 int (*code_syntheses[])(struct astnode *, struct si *) = {CC_code_synthesis, CD_code_synthesis, DT_code_synthesis, EX_code_synthesis, FW_code_synthesis, IN_code_synthesis, JJ_code_synthesis, JJR_code_synthesis, JJS_code_synthesis, LS_code_synthesis, MD_code_synthesis, NN_code_synthesis, NNS_code_synthesis, NNP_code_synthesis, NNPS_code_synthesis, PDT_code_synthesis, POS_code_synthesis, PRP_code_synthesis, PRP_POS_code_synthesis, RB_code_synthesis, RBR_code_synthesis, RBS_code_synthesis, RP_code_synthesis, SYM_code_synthesis, TO_code_synthesis, UH_code_synthesis, VB_code_synthesis, VBD_code_synthesis, VBG_code_synthesis, VBN_code_synthesis, VBP_code_synthesis, VBZ_code_synthesis, WDT_code_synthesis, WP_code_synthesis, WP_POS_code_synthesis, WRB_code_synthesis, Gram_Prog_synthesis, Gram_Rel_synthesis};
 
 
-struct si* __generate_runtime_si__(struct astnode *node) {
-    struct si *dup = searchqueue(silist, node->token->symbol, __sisymbol_duplicated);
-    if (dup == NULL) {
-        struct si *new = (struct si*) malloc (sizeof(struct si));
-        new->symbol = (char*)strdup(node->token->symbol);
-        new->g_arg_count = 0;
-        new->arg_count = 1;
-        new->args = (char**)malloc(sizeof(char*) * new->arg_count);
-        new->args[0] = (char*)malloc(sizeof(char) * 4);
-        memcpy(new->args[0], "(*)", 4);
-        new->interpretation = (char*)strdup(node->token->symbol);
-        new->syntax_count = 1;
-        new->syntax = (enum ptbsyntax*) malloc (sizeof(enum ptbsyntax));
-        new->syntax[0] = node->syntax;
-        enqueue(silist, (void*)new);
-        return new;
-    } else {
-        return dup;
-    }
-}
 
 void sianalysis() {
     struct astnode *node;
-    // struct si *si;
-    struct queue *si_q;
+    struct si *si;
     #if SIDEBUG
     printf("si identification: there are %d predicates in the queue.\n", predicates->count);
     #endif
@@ -390,16 +379,12 @@ void sianalysis() {
     while (!isempty(predicates)) {
         node = (struct astnode*)dequeue(predicates);
         // reset the si pointer for checking a node dequeue from the predicates queue
-        si_q = NULL;
+        si = NULL;
         if (selfSI[node->syntax] == 0) {
-            // generate runtime SI
-            node->si_q = initqueue();
-            enqueue(node->si_q, (void*)__generate_runtime_si__(node));
             push(tmp, node);
         } else {
-            // si = searchqueue(silist, node, __simatcher);
-            si_q = q_searchqueue(silist, node, __simatcher);
-            if (si_q == NULL || si_q->count == 0) {
+            si = searchqueue(silist, node, __simatcher);
+            if (si == NULL) {
                 if (node->isroot) {
                     fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-10);
@@ -417,19 +402,16 @@ void sianalysis() {
                     root = deleteastnodeandedge(node, root);
                 }
                 continue;
-            } else { 
-                node->si_q = si_q;
-                if (node->syntax == IN) {
-                    enqueue(in_preds, node);
-                } else if (node->syntax == NN || node->syntax >= Gram_Prog) {
-                    if (si_q->count == 1 && strcmp(((struct si*)gqueue(si_q, 0))->args[0], "*") == 0) {
-                        push(tmp, node);
-                    } else {
-                        enqueue(tmp, node);
-                    }
+            } else if (node->syntax == IN) {
+                enqueue(in_preds, node);
+            } else if (node->syntax == NN || node->syntax >= Gram_Prog) {
+                if (strcmp(si->args[0], "*") == 0) {
+                    push(tmp, node);
                 } else {
-                    enqueue(two_args_preds, node);
+                    enqueue(tmp, node);
                 }
+            } else {
+                enqueue(two_args_preds, node);
             }
         }
     }
@@ -460,56 +442,53 @@ void sisynthesis() {
     printf("si identification: after sorting, there are %d predicates in the queue.\n", predicates->count);
     for (int i = 0; i < predicates->count; ++i) {
         node = (struct astnode*)gqueue(predicates, i);
-        printf("%d. %s(%s) %d\n", i + 1, node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
+        printf("%d. %s(%s)\n", i + 1, node->token->symbol, ptbsyntax2string(node->syntax));
     }
     #endif
 
     // struc queue *childnodetypes;
     struct queue *si_q;
-    int count = predicates->count;
     while (!isempty(predicates)) {    
         node = (struct astnode*)dequeue(predicates);
         #if SIDEBUG
-        printf("si identification: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
+        printf("si identification: processing predicate %s(%s).\n", node->token->symbol, ptbsyntax2string(node->syntax));
         #endif
-        // si_q = q_searchqueue(silist, node, __simatcher);
-        si_q = node->si_q;
-        si = NULL;
-        if (si_q->count == 0) si = NULL;
-        else if (si_q->count == 1) si = gqueue(si_q, 0);
-        else {
-            // because there are more than one possible si
-            // in order to get the most appropriate one, we filter the queue to get the one that has arg_types matching the current child node types                
-            si = searchqueue(si_q, node, __argtype_simatcher);                                
-        }                 
-        if (si_q->count > 0 && countastchildren(node) == 1 && si == NULL) {
-            /* This is a case that the SIs in the si_q require non-asterisk argument */
-            /* Therefore, we alias all variable nodes related to this predicate's child with the predicate itself */
-            si_alias(node, NULL);
-        } else if (si == NULL) {
-            #if SIDEBUG
-            printf("si identification: no exact matched si for predicate %s(%s) is found. but there are %d SIs in the queue\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
-            // showast(root, 0);
-            #endif
-            // node->type = NoSI;
-            if (count == 0) {
-                fprintf(stderr, "SI is not found after all other direct predicates are tried.\n");
-                exit(-100);
+        if (selfSI[node->syntax] == 1) {
+            si_q = q_searchqueue(silist, node, __simatcher);
+            si = NULL;
+            if (si_q->count == 0) si = NULL;
+            else if (si_q->count == 1) si = dequeue(si_q);
+            else {
+                // because there are more than one possible si
+                // in order to get the most appropriate one, we filter the queue to get the one that has arg_types matching the current child node types                
+                si = searchqueue(si_q, node, __argtype_simatcher);                                
+            }                 
+            deallocatequeue(si_q, NULL);
+            if (si == NULL) {
+                #if SIDEBUG
+                printf("si identification: no si for predicate %s(%s) is found\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                #endif
+                node->type = NoSI;
             } else {
-                --count;
-                enqueue(predicates, (void*)node);
-            }
+                int x = (*code_syntheses[node->syntax])(node, si);
+                if (x != 0) {
+                    #if SIDEBUG
+                    printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                    #endif
+                    enqueue(predicates, (void*)node);
+                }
+            }  
         } else {
             int x = (*code_syntheses[node->syntax])(node, si);
+            // originally, self defined SI (e.g. CD) will not have the case that cannot be synthesised
+            //   however, we have added new rule for grammar relation, such relation requires all children nodes to be synthesised
             if (x != 0) {
                 #if SIDEBUG
                 printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
                 #endif
                 enqueue(predicates, (void*)node);
-            } else {
-                count = predicates->count;
             }
-        }          
+        }
         #if ASTDEBUG
         showast(root, 0);
         showqueue(cst, showcstsymbol);
@@ -580,13 +559,6 @@ void opresolution() {
     }    
 }
 
-int __sisymbol_duplicated(void *_si, void *_symbol) {
-    char *symbol = (char*)_symbol;
-    struct si* si = (struct si*)_si;
-    if (strcmp(symbol, si->symbol) == 0) return 0;
-    else return 1;
-}
-
 
 
 int __simatcher(void *_si, void *_astnode) {
@@ -613,23 +585,6 @@ int __argtype_simatcher(void *_si, void *_astnode) {
     return 0;
 }
 
-int __preposition_argtype_simatcher(void *_si, void *_datanode) {
-    struct si* si = (struct si*)_si;
-    struct astnode *node = (struct astnode*)_datanode;
-    if (si->arg_count == 1) {
-        struct cstsymbol *c = searchsymbolbyref(node);    
-        if (si->arg_types[0] == c->type) return 0;
-    }
-    return 1;
-}
-
-int __match_interpretation_and_get_type(void *_si, void *_s) {
-    struct si* si = (struct si*)_si;
-    char *s = (char*)_s;
-    if (strcmp(si->symbol, s) == 0) return 0;
-    else return 1;
-}
-
 int search_syntax(struct si* si, enum ptbsyntax ptb) {
     for (int i = 0; i < si->syntax_count; ++i) {
         if (si->syntax[i] == ptb) {
@@ -642,8 +597,8 @@ int search_syntax(struct si* si, enum ptbsyntax ptb) {
 void showsi(void *_si) {
     struct si *si = (struct si*)_si;
     printf("==========================Semantic interpretations: =========================\n");
-    printf("Symbol          Syntactic Category       Arity     Arguments    Interpretation\n");
-    printf("Symbol: %s   Syntactic Category: ", si->symbol);        
+    printf("Term          Syntactic Category       Arity     Arguments    Interpretation\n");
+    printf("Term: %s   Syntactic Category: ", si->symbol);        
     for (int j = 0; j < si->syntax_count; ++j) {
         printf("%s ", ptbsyntax2string(si->syntax[j]));
     }

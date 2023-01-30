@@ -1,0 +1,1 @@
+ensures(((target.size() == collection.size()) && (\forall int j; 0 <= j < collection.size(); (target.contains(collection.get(j))))) ==> (\result==true));

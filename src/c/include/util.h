@@ -16,6 +16,7 @@ struct queuenode {
 
 
 struct queue* initqueue();
+struct queue* copyqueue(struct queue *input);
 void enqueue(struct queue* queue, void *node);
 void* dequeue(struct queue* queue);
 void* pqueue(struct queue* queue);

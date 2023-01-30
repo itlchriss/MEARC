@@ -70,8 +70,8 @@ class JavaTypes(IntEnum):
 
 
 def main(filepath: str):    
-    __add2sis('sorted in ascending order', ['x'], r'\forall int k; (x); ((y))[k] <= '
-                                                  r'((y))[k + 1]', ['JJ'], _grammar_args=['y'])
+    __add2sis('sorted in ascending order', ['x'], r'\forall int i; (x); ((y))[i] <= '
+                                                  r'((y))[i + 1]', ['JJ'], _grammar_args=['y'])
     __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                   r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in ascending numerical order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
@@ -90,7 +90,8 @@ def main(filepath: str):
     #                                          r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length '
     #                                          r'== (y).length && (Arrays.equals((x), (y)))', ['VBZ'])
     __add2sis('deeply equals to', ['x', 'y'], r'((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y))) || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length == (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray() && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))', ['VBZ'])                                        
-    __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
+    # __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
+    __add2sis('length', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])    
     __add2sis('equal to', ['x', 'y'], r'((x).size() == (y).size()) && (\forall int j; 0 <= j < (y).size(); ((x).contains((y).get(j))))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Collection])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'], _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive])
@@ -116,15 +117,17 @@ def main(filepath: str):
               int(JavaTypes.Array), _specific_arg_types = [JavaTypes.Array, JavaTypes.Primitive])
     __add2sis('removed from', ['x', 'y'], r'!(\exists int i; 0 <= i < (y).size(); (y).get(i) == (x))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Primitive])
     __add2sis('result', ['*'], r'\result', ['NN'])
-    __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0',
+    __add2sis('prime', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x)%k != 0))',
               ['NN'])
     __add2sis('parameter', ['*'], r'\param', ['NN'])
     __add2sis('input', ['*'], r'\param', ['NN'])
     __add2sis('even', ['x'], r'(x) % 2 == 0', ['RB'])
-    __add2sis('prime number', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x) % k '
-                                     r'!= 0', ['NN'])
-    __add2sis('length of', ['x'], r'(x).size()', ['NN', 'JJ'])
-    __add2sis('size of', ['x'], r'(x).size()', ['JJ', 'NN'])
+    __add2sis('prime number', ['x'], r'(x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <= (x)/2; (x) % k != 0))', ['NN'])
+    # __add2sis('length of', ['x'], r'(x).size()', ['NN', 'JJ'])
+    # __add2sis('size of', ['x'], r'(x).size()', ['JJ', 'NN'])
+    __add2sis('length', ['x'], r'(x).size()', ['NN'], _specific_arg_types=[JavaTypes.Collection])
+    __add2sis('size', ['x'], r'(x).size()', ['NN'], _specific_arg_types=[JavaTypes.Collection])
+    __add2sis('size', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
     __add2sis('index', ['y'], r'\old(Arrays.asList(((x))).indexOf((y))))', ['NN'], _grammar_args = ['x'])
     __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
@@ -134,7 +137,8 @@ def main(filepath: str):
     # __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
     __add2sis('element', ['x'], r'(x)[i]', ['NNS'])
     __add2sis('every element', ['x'], r'\forall int i; 0 <= i < (x).length; (x)[i]', ['NN'])
-    __add2sis('reference of', ['x'], r'(x)', ['NN'])
+    # __add2sis('reference of', ['x'], r'(x)', ['NN'])
+    __add2sis('reference', ['x'], r'(x)', ['NN'])
     # __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x)[i] != '
     #                            r'\old((x))[i])', ['VBN'], int(JavaTypes.Array))
     __add2sis('change', ['x'], r'((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size(); (x).get(i) '
@@ -149,6 +153,7 @@ def main(filepath: str):
     __add2sis('insertion point', ['x'], r'(\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j; ((z)) <= j < (x).length; (y) < (x)[j])', ['NN'], _specific_arg_types=[JavaTypes.Array], _grammar_args=['y', 'z'])
     __add2sis('minus', ['x', 'y'], r'(x) - (y)', ['IN'])
     __add2sis('negative', ['x'], r'-(x)', ['JJ'])
+    __add2sis('Rel', ['x', 'y'], r'\sub(y)2(x)', ['Rel'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 
