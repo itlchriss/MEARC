@@ -1,0 +1,5 @@
+requires(!(array==null));
+requires(\forall int k; 0 <= k < array.length - 1; array[k] <= array[k + 1]);
+ensures(((key == null && (\exists int i; 0 <= i < array.size(); array.get(i) == null)) || (\exists int i; 0 <= i < array.size();array.get(i) == key)) ==> (\result==\old(Arrays.asList((array)).indexOf(key)))));
+ensures(((key == null && (\exists int i; 0 <= i < array.size(); array.get(i) == null)) || (\exists int i; 0 <= i < array.size();array.get(i) == key)) <==> (\result >= 0));
+ensures((!((\exists int i; 0 <= i < array.length; array[i] == key) )) ==> ((\forall int j; 0 <= j < -\result-1; array[j] < key) && (\forall int j; -\result-1 <= j < array.length; key < array[j])));

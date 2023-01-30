@@ -1,2 +1,2 @@
-ensures(((x != null && y != null && x.length == y.length && ((\forall int i; 0 <= i < x.length;  (x[i] == null && y[i] == null) || (x[i].equals(y[i]))))) && (x.length==y.length)) ==> (\result==true));
+ensures(((x != null && y != null && x.length == y.length && ((\forall int i; 0 <= i < x.length;  (x[i] == null && y[i] == null) || (x[i].equals(y[i]))))) && (x.length == y.length)) ==> (\result==true));
 ensures(((y==null) && (x==null)) ==> (\result==true));

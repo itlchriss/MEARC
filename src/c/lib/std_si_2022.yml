@@ -7,7 +7,7 @@
   g_arity: 1
   grammar_arguments:
   - (y)
-  interpretation: \forall int k; (x); ((y))[k] <= ((y))[k + 1]
+  interpretation: \forall int i; (x); ((y))[i] <= ((y))[i + 1]
 - term: sorted in ascending order
   syntax:
   - NN
@@ -70,13 +70,14 @@
     (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i]
     == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray()
     && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))
-- term: length of
+- term: length
   syntax:
   - NN
-  - JJ
   arity: 1
   arguments:
   - (x)
+  specific_arg_types:
+  - '1'
   interpretation: (x).length
 - term: equals to
   syntax:
@@ -208,7 +209,7 @@
   arguments:
   - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
-    (x)/2; (x)%k != 0
+    (x)/2; (x)%k != 0))
 - term: parameter
   syntax:
   - NN
@@ -237,23 +238,34 @@
   arguments:
   - (x)
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
-    (x)/2; (x) % k != 0
-- term: length of
+    (x)/2; (x) % k != 0))
+- term: length
   syntax:
-  - NN
-  - JJ
-  arity: 1
-  arguments:
-  - (x)
-  interpretation: (x).size()
-- term: size of
-  syntax:
-  - JJ
   - NN
   arity: 1
   arguments:
   - (x)
+  specific_arg_types:
+  - '2'
   interpretation: (x).size()
+- term: size
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '2'
+  interpretation: (x).size()
+- term: size
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '1'
+  interpretation: (x).length
 - term: sort
   syntax:
   - VBN
@@ -309,7 +321,7 @@
   arguments:
   - (x)
   interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
-- term: reference of
+- term: reference
   syntax:
   - NN
   arity: 1
@@ -404,3 +416,11 @@
   arguments:
   - (x)
   interpretation: -(x)
+- term: Rel
+  syntax:
+  - Rel
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(y)2(x)

@@ -9,8 +9,3 @@ public class DeepEquals {
         return Arrays.deepEquals(x, y);
     }
 }
-
-
-// (x[i] instanceof Integer) && 
-// (y[i] instanceof Integer) && 
-// x[i].equals(y[i])

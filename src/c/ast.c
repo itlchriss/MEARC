@@ -9,7 +9,7 @@ extern struct astnode *root;
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator", "GrammarNotation" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "NoSI", "Operator", "GrammarNotation", "Multiple SIs" };
 char *connective_name[] = { "And", "Or", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;
@@ -76,10 +76,14 @@ struct astnode *newastnode(enum astnodetype type, struct token *token) {
     new->children->node = NULL;
     new->children->next = NULL;
     new->children->prev = NULL;
+    new->si_q = NULL;
     return new;
 }
 
 void deleteastnode(struct astnode *node) {
+    if (node->si_q) {
+        deallocatequeue(node->si_q, NULL);
+    }    
     if (node->token) {
         free(node->token->symbol);
         free(node->token);
@@ -573,6 +577,9 @@ void showast(struct astnode *node, int depth) {
         case Synthesised:
             // printf("%s(%s)[%s]", node_type_name[node->type], node->token->symbol, javadatatype_name[node->jtype]);
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);
+            break;
+        case MultipleSIs:
+            printf("%s(%s)(%d)", node_type_name[node->type], node->token->symbol, node->si_q->count);
             break;
         case NoSI:
             printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, ptbsyntax2string(node->syntax));
