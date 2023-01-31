@@ -7,6 +7,7 @@ benchmark_dir = './datasets/patterns'
 
 
 def main():
+    run_cmd_without_output("make clean; make")
     print('Comparing JML generated from MR to expected results')
     run_cmd_without_output("rm -rf ./tmp/*; mkdir -p ./tmp/test; rm -rf ./datasets/output; mkdir -p ./datasets/output")
     succeeded_cases = {}

@@ -59,7 +59,7 @@ def get_package_global_info(directory: str) -> Set:
 
 
 java_types_with_dimensions = ['Collection', 'Set', 'Queue', 'Stack']
-java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char']
+java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char', 'Integer']
 
 def get_type(typedefinition) -> int:
     if typedefinition:

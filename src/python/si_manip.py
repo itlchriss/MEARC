@@ -70,8 +70,8 @@ class JavaTypes(IntEnum):
 
 
 def main(filepath: str):    
-    __add2sis('sorted in ascending order', ['x'], r'\forall int i; (x); ((y))[i] <= '
-                                                  r'((y))[i + 1]', ['JJ'], _grammar_args=['y'])
+    __add2sis('sorted in ascending order', ['x'], r'\forall int i; (x); ((y))[i - 1] <= '
+                                                  r'((y))[i]', ['JJ'], _grammar_args=['y'])
     __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
                                                   r'(x)[k + 1]', ['NN'])
     __add2sis('sorted in ascending numerical order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
@@ -86,31 +86,20 @@ def main(filepath: str):
     __add2sis('correspondingly equal to', ['x', 'y'], r'(x) != null && (y) != null && (x).length == (y).length && (('
                                                       r'\forall int i; 0 <= i < (x).length;  ((x)[i] == null && (y)['
                                                       r'i] == null) || ((x)[i].equals((y)[i]))))', ['VBG'], int(JavaTypes.Array))
-    # __add2sis('deeply equal to', ['x', 'y'], r'\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == '
-    #                                          r'null) || ((x)[i] == (y)[i]) || ((x)[i].equals( (y)[i] )) && (x).length '
-    #                                          r'== (y).length && (Arrays.equals((x), (y)))', ['VBZ'])
     __add2sis('deeply equals to', ['x', 'y'], r'((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y))) || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length == (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray() && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))', ['VBZ'])                                        
-    # __add2sis('length of', ['x'], r'(x).length', ['NN', 'JJ'])
     __add2sis('length', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])    
-    __add2sis('equal to', ['x', 'y'], r'((x).size() == (y).size()) && (\forall int j; 0 <= j < (y).size(); ((x).contains((y).get(j))))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Collection])
+    __add2sis('equal to', ['x', 'y'], r'((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null && (y).get(j) != null <==> (x).get(j).equals((y).get(j))) && (x).equals((y)) && (y).equals((x))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Collection])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'], _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive])
     __add2sis('true_value', ['*'], 'true', ['NN'])
     __add2sis('false_value', ['*'], 'false', ['NN'])
     __add2sis('null_value', ['*'], 'null', ['NN'])
     __add2sis('be', ['x', 'y'], r'(x) == (y)', ['VBZ'])
     __add2sis('return value', ['*'], r'\result', ['NN'])
-    # __add2sis('be', ['x'], r'(x)', ['VBZ'])
-    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'], int(JavaTypes.Array))
-    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'], int(JavaTypes.Collection))
-    # __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).length; (x)[i] == (y)', ['VBZ'],
-    #           int(JavaTypes.Array))
-    #__add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < (x).size(); (x)[i] == (y)', ['VBZ'],
-       #       int(JavaTypes.Collection))
     __add2sis('contain', ['x', 'y'], r'((y) == null && (\exists int i; 0 <= i < (x).size(); (x).get(i) == null)) '
                                      r'|| (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))',
               ['VBZ'],
-              int(JavaTypes.Collection))
+              int(JavaTypes.Collection), _specific_arg_types = [JavaTypes.Collection, JavaTypes.Primitive])
     __add2sis('contain', ['x', 'y'], r'\exists int i; 0 <= i < \old((x)).size(); \old((x)).get(i) == (y)', ['VBD'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Primitive])
     __add2sis('contain', ['x', 'y'], r'(\exists int i; 0 <= i < (x).length; (x)[i] == (y)) ',
               ['VBZ', 'VB'],
@@ -129,8 +118,8 @@ def main(filepath: str):
     __add2sis('size', ['x'], r'(x).size()', ['NN'], _specific_arg_types=[JavaTypes.Collection])
     __add2sis('size', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
-    __add2sis('index', ['y'], r'\old(Arrays.asList(((x))).indexOf((y))))', ['NN'], _grammar_args = ['x'])
-    __add2sis('of', ['x', 'y'], r'\sub(x)2(y)', ['IN'])
+    __add2sis('index', ['y'], r'\old(Arrays.asList((x)).indexOf((y)))', ['NN'], _grammar_args = ['x'])
+    __add2sis('of', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
     __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
     # __add2sis('if', ['x', 'y'], r'((y)) ==> ((x))', ['IN'])
     __add2sis('if', ['*', '*'], r'==>', ['IN'], _type=3)
