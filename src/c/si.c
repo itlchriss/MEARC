@@ -154,10 +154,10 @@ void sibling_si_synthesis(struct astnode *node, struct astnode *sinode, struct a
 
 int Jseries_code_synthesis(struct astnode *node, struct si *si) {
     struct astnode *child;
-    for (int i = 0; i < countastchildren(node); ++i) {
-        child = getastchild(node, i);
-        if (child->type != Synthesised) return 1;
-    }
+    // for (int i = 0; i < countastchildren(node); ++i) {
+    //     child = getastchild(node, i);
+    //     if (child->type != Synthesised) return 1;
+    // }
     char *s = __obtain_si_from_subtree__(node, si);
     if (countastchildren(node) == 1) {
         child = getastchild(node, 0);
@@ -231,14 +231,16 @@ int DT_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int EX_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int FW_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int IN_code_synthesis(struct astnode *node, struct si *si) {      
-    if (countastchildren(node) == 1) {
-        fprintf(stderr, "single argument preposition is not supported.\n");
-        exit(-5);
-    }
+    // if (countastchildren(node) == 1) {
+    //     fprintf(stderr, "single argument preposition is not supported.\n");
+    //     exit(-5);
+    // }
     // a special case for root with preposition predicate
-    if (node->isroot == 1) {
-        return __synthesis_predicate_at_root__(si);
-    } else if (getastchild(node, 0)->type == MultipleSIs && getastchild(node, 1)->type == Synthesised) {
+    // if (node->isroot == 1) {
+    //     return __synthesis_predicate_at_root__(si);
+    // } else 
+
+    if (getastchild(node, 0)->type == MultipleSIs && getastchild(node, 1)->type == Synthesised) {
         struct astnode *sinode = getastchild(node, 0), *datanode = getastchild(node, 1);
         struct si *si = searchqueue(sinode->si_q, datanode, __preposition_argtype_simatcher);
         if (si == NULL) {
@@ -272,15 +274,20 @@ int POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PRP_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PRP_POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RB_code_synthesis(struct astnode *node, struct si *si) {
-    if (node->isroot == 1) {
-        return __synthesis_predicate_at_root__(si);
-    } else {
-        for (int i = 0; i < countastchildren(node); ++i) {
-            if (getastchild(node, i)->type != Synthesised) return 1;
-        }
-        subtree_si_synthesis(node, si);
-        return 0;
-    }
+    // if (node->isroot == 1) {
+    //     return __synthesis_predicate_at_root__(si);
+    // } else {
+    //     for (int i = 0; i < countastchildren(node); ++i) {
+    //         if (getastchild(node, i)->type != Synthesised) return 1;
+    //     }
+    //     subtree_si_synthesis(node, si);
+    //     return 0;
+    // }
+    // for (int i = 0; i < countastchildren(node); ++i) {
+    //     if (getastchild(node, i)->type != Synthesised) return 1;
+    // }
+    subtree_si_synthesis(node, si);
+    return 0;
 }
 int RBR_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RBS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
@@ -311,9 +318,9 @@ int WRB_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 
 int Gram_Rel_synthesis(struct astnode *node, struct si *si) {
     // sibling_si_synthesis
-    for (int i = 0; i < countastchildren(node); ++i) {
-        if (getastchild(node, i)->type != Synthesised) return 1;
-    }
+    // for (int i = 0; i < countastchildren(node); ++i) {
+    //     if (getastchild(node, i)->type != Synthesised) return 1;
+    // }
     struct astnode *sinode = getastchild(node, 0), *y = getastchild(node, 1);
     struct cstsymbol *c = searchsymbolbyref(sinode);
     struct si *_si = (struct si *)c->si_ptr;
@@ -357,6 +364,18 @@ struct si* __generate_runtime_si__(struct astnode *node) {
     } else {
         return dup;
     }
+}
+
+/* only the noun series (NN, NNS, NNP, NNPS) and cardinal number (CD) can provide direct semantics */
+int __is_direct_semantics__(enum ptbsyntax syntax) {
+    if (syntax == NN || 
+            syntax == NNS || 
+            syntax == NNP ||
+            syntax == NNPS || 
+            syntax == CD) 
+        return 0;
+    else 
+        return 1;
 }
 
 void sianalysis() {
@@ -444,7 +463,7 @@ void sisynthesis() {
     struct astnode *node;
     struct si *si;
     #if SIDEBUG
-    printf("si identification: after sorting, there are %d predicates in the queue.\n", predicates->count);
+    printf("si synthesis: after sorting, there are %d predicates in the queue.\n", predicates->count);
     for (int i = 0; i < predicates->count; ++i) {
         node = (struct astnode*)gqueue(predicates, i);
         printf("%d. %s(%s) %d\n", i + 1, node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
@@ -456,7 +475,7 @@ void sisynthesis() {
     while (!isempty(predicates)) {    
         node = (struct astnode*)dequeue(predicates);
         #if SIDEBUG
-        printf("si identification: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
+        printf("si synthesis: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
         #endif
         // si_q = q_searchqueue(silist, node, __simatcher);
         si_q = node->si_q;
@@ -474,7 +493,7 @@ void sisynthesis() {
             si_alias(node, NULL);
         } else if (si == NULL) {
             #if SIDEBUG
-            printf("si identification: no exact matched si for predicate %s(%s) is found. but there are %d SIs in the queue\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
+            printf("si synthesis: no exact matched si for predicate %s(%s) is found. but there are %d SIs in the queue\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
             #endif
             if (count == 0) {
                 fprintf(stderr, "SI is not found after all other direct predicates are tried.\n");
@@ -486,11 +505,33 @@ void sisynthesis() {
         } else {
             /* An SI is matched. Synthesis can be performed. */
             int x = 1;
-            
-            x = (*code_syntheses[node->syntax])(node, si);
+            // x = (*code_syntheses[node->syntax])(node, si);
+            if (node->isroot == 1) {
+                x = __synthesis_predicate_at_root__(si);
+            } else if (node->syntax == IN) {
+                x = IN_code_synthesis(node, si);
+            } else {
+                if (__is_direct_semantics__(node->syntax) != 0) {
+                    for (int i = 0; i < countastchildren(node); ++i) {
+                        if (getastchild(node, i)->type != Synthesised) {
+                            x = 1;
+                            goto CHECK;
+                        }
+                    }
+                }
+                // TODO: check keywords (e.g. \sub) here
+                if (countastchildren(node) == 2 && si->interpretation[0] != '\\') {
+                    subtree_si_synthesis(node, si);
+                    x = 0;
+                } else {
+                    x = (*code_syntheses[node->syntax])(node, si);
+                }
+            }
+
+            CHECK:
             if (x != 0) {
                 #if SIDEBUG
-                printf("si identification: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
+                printf("si synthesis: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
                 #endif
                 enqueue(predicates, (void*)node);
             } else {
@@ -504,7 +545,7 @@ void sisynthesis() {
         #endif
     }
     #if SIDEBUG
-    printf("si identification finished\n");
+    printf("si synthesis finished\n");
     #endif
 }
 

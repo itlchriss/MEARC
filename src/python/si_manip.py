@@ -89,7 +89,7 @@ def main(filepath: str):
     __add2sis('deeply equals to', ['x', 'y'], r'((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y))) || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length == (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i] == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray() && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))', ['VBZ'])                                        
     __add2sis('length', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('equals to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'])    
-    __add2sis('equal to', ['x', 'y'], r'((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null && (y).get(j) != null <==> (x).get(j).equals((y).get(j))) && (x).equals((y)) && (y).equals((x))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Collection])
+    __add2sis('equal to', ['x', 'y'], r'(x).size() == (y).size() && (\forall int j; 0 <= j < (x).size(); ((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null && (y).get(j) != null <==> (x).get(j).equals((y).get(j)))) && (x).equals((y)) && (y).equals((x))', ['VBG'], _specific_arg_types=[JavaTypes.Collection, JavaTypes.Collection])
     __add2sis('equal to', ['x', 'y'], r'(x) == (y)', ['JJ', 'JJR', 'VBG', 'VBZ'], _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive])
     __add2sis('true_value', ['*'], 'true', ['NN'])
     __add2sis('false_value', ['*'], 'false', ['NN'])
@@ -142,7 +142,7 @@ def main(filepath: str):
     __add2sis('insertion point', ['x'], r'(\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j; ((z)) <= j < (x).length; (y) < (x)[j])', ['NN'], _specific_arg_types=[JavaTypes.Array], _grammar_args=['y', 'z'])
     __add2sis('minus', ['x', 'y'], r'(x) - (y)', ['IN'])
     __add2sis('negative', ['x'], r'-(x)', ['JJ'])
-    __add2sis('Rel', ['x', 'y'], r'\sub(y)2(x)', ['Rel'])
+    __add2sis('Rel', ['x', 'y'], r'\gsub(y)2(x)', ['Rel'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 
