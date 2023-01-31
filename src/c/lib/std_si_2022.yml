@@ -7,7 +7,7 @@
   g_arity: 1
   grammar_arguments:
   - (y)
-  interpretation: \forall int i; (x); ((y))[i] <= ((y))[i + 1]
+  interpretation: \forall int i; (x); ((y))[i - 1] <= ((y))[i]
 - term: sorted in ascending order
   syntax:
   - NN
@@ -100,8 +100,9 @@
   specific_arg_types:
   - '2'
   - '2'
-  interpretation: ((x).size() == (y).size()) && (\forall int j; 0 <= j < (y).size();
-    ((x).contains((y).get(j))))
+  interpretation: ((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null
+    && (y).get(j) != null <==> (x).get(j).equals((y).get(j)))) && (x).equals((y))
+    && (y).equals((x))
 - term: equal to
   syntax:
   - JJ
@@ -159,6 +160,9 @@
   arguments:
   - (x)
   - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
   interpretation: ((y) == null && (\exists int i; 0 <= i < (x).size(); (x).get(i)
     == null)) || (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))
 - term: contain
@@ -282,7 +286,7 @@
   g_arity: 1
   grammar_arguments:
   - (x)
-  interpretation: \old(Arrays.asList(((x))).indexOf((y))))
+  interpretation: \old(Arrays.asList((x)).indexOf((y)))
 - term: of
   syntax:
   - IN
@@ -290,7 +294,7 @@
   arguments:
   - (x)
   - (y)
-  interpretation: \sub(x)2(y)
+  interpretation: \sub(y)2(x)
 - term: in
   syntax:
   - IN
