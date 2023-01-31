@@ -45,6 +45,7 @@ def run_cmd_show_output(cmd: str) -> None:
 
 
 debug = True
+info = False
 
 def main(config_path: str, prog_file: str) -> None:
     with open(config_path) as fp:
@@ -70,13 +71,13 @@ def main(config_path: str, prog_file: str) -> None:
         print('Preprocessing failed.')
         exit(-2)
     else:
-        print('INFO:Preprocessing done')
+        info and print('INFO:Preprocessing done')
     with open("%s/%s.conditions.yml" % (configs.TMP, prog_name)) as fp:
         data = yaml.load(fp, Loader=SafeLoader)
     for i, record in enumerate(data):
         t = record['type']
         nlspec = record['specification']
-        print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
+        info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
         debug and print('DEBUG: ccgslambda - tokenization')
         process = subprocess.Popen(
             ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
@@ -112,7 +113,7 @@ def main(config_path: str, prog_file: str) -> None:
                 fp.write(mr_error)
             break
         else:
-            print('INFO:MR generation done')
+            info and print('INFO:MR generation done')
             
         with open(mr_file_path) as fp:
             mr = fp.read()

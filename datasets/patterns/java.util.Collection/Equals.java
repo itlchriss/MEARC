@@ -5,18 +5,9 @@ import java.util.Objects;
 
 public class Equals {
     //@ ensures(*Returns true if the parameter target is equal to the parameter collection.*);
-    //@ requires target instanceof List<Integer> && collection instanceof List<Integer>;
-    //@ requires target != null && collection != null;
-    /* ensures((\result==true) ==>
-            (
-                (target.size() == collection.size()) &&
-                (
-                    \forall int j; 0 <= j < \old(collection).size(); (collection.get(j) == null <==> target.get(j) == null) || (collection.get(j) == target.get(j))
-                )
-            )        
-        );
-    */
-    /*@ ensures(
+    // requires target instanceof List<Integer> && collection instanceof List<Integer>;
+    // requires target != null && collection != null;
+    /* ensures(
         (\result==true) <==>
             (
                 (target.size() == collection.size()) &&
@@ -26,7 +17,7 @@ public class Equals {
                 ) && collection.equals(target) && target.equals(collection)
             )        
         );
-    @*/
+    */
     public Boolean CollectionEquals(List<Integer> collection, List<Integer> target) {
         return collection.equals(target);
     }

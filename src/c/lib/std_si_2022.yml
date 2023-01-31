@@ -100,9 +100,9 @@
   specific_arg_types:
   - '2'
   - '2'
-  interpretation: ((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null
-    && (y).get(j) != null <==> (x).get(j).equals((y).get(j)))) && (x).equals((y))
-    && (y).equals((x))
+  interpretation: (x).size() == (y).size() && (\forall int j; 0 <= j < (x).size();
+    ((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null && (y).get(j)
+    != null <==> (x).get(j).equals((y).get(j)))) && (x).equals((y)) && (y).equals((x))
 - term: equal to
   syntax:
   - JJ

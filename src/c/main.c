@@ -125,13 +125,17 @@ int main(int argc, char** argv) {
     */
     root = ast;
     #if INFO
-    showprocessinfo("Start semantic interpretation identification");
+    showprocessinfo("Start semantic interpretation analysis");
     #endif
     // siidentification(silist);
     sianalysis();
+    #if INFO
+    showprocessinfo("Finished semantic interpretation analysis");
+    showprocessinfo("Start semantic interpretation synthesis");
+    #endif
     sisynthesis();
     #if INFO
-    showprocessinfo("Finished semantic interpretation identification");
+    showprocessinfo("Finished semantic interpretation synthesis");
     #endif
     #if INFO
     showprocessinfo("Start operator resolution");
