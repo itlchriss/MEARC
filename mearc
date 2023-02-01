@@ -86,9 +86,15 @@ def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[
 def __depccg(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
     info and print('INFO:using depccg to get MR from (%s)' % nlspec)
     mr = call_depccg_pipeline(nlspec)
+    mr_error = None
+    if not mr:
+        mr_error = 'Failed'
     info and print('INFO: depccg executed')
+    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber)) 
+    with open(mr_file_path, 'w') as fp:
+        fp.write(mr)
     # print(mr)
-    return (None, None, None)
+    return (mr_file_path, mr_error, None)
 
 frontends = ['ccg2lambda', 'depccg']
 

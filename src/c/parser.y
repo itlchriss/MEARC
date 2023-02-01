@@ -28,11 +28,7 @@
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
 %token <t> KEYWORD_QUANTIFIER
 %token <t> TAG
-/* %token <t> KEYWORD_PROG KEYWORD_REL TAG */
-/* %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
-%token <ptb> KEYWORD_VB KEYWORD_VBG KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_VBD
-%token <ptb> KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
-%token <ptb> KEYWORD_RB */
+%token <t> EVENT
 %left AND IMPLY EQUIV ')'
 
 /* %type<ptb> pos_tag */
@@ -118,6 +114,9 @@ term
     | grammar_term {
         $$ = $1;
     }
+    | event_term {
+        $$ = NULL;
+    }
     | KEYWORD_TRUEP {
         print_debug("term: PREDICATE(TrueP)");
         $$ = NULL;
@@ -146,6 +145,13 @@ connective
     | EQUIV { $$ = Op_Equivalent; }
     | IMPLY { $$ = Op_Imply; }
     | OR    { $$ = Op_Or; }
+    ;
+
+event_term
+    : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
+        print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'");
+
+    }
     ;
 
 grammar_term
