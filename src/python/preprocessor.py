@@ -102,10 +102,18 @@ class Preprocessor:
         'all elements in': 'every element of'
     }
     function_si = []
-    phrases = [{
-        'phrase': 'from (x) to (y)',
-        'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
-        'interpretation': '(x) < i < (y)'}]
+    phrases = [
+        {
+            'phrase': 'from (x) to (y)',
+            'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
+            'interpretation': '(x) < i < (y)'
+        },
+        {
+            'phrase': '(x) ± (y)',
+            'args': {'(x)': ['CD'], '(y)': ['CD']},
+            'interpretation': '(x) - (y) < i < (x) + (y)'
+        }
+    ]
     operators = {
         '>=': 'greater than or equal to',
         '=': 'equal',
@@ -236,16 +244,22 @@ class Preprocessor:
         tmp = []
         tags = nltk.pos_tag(data)
         while i < len(data):
-            match = True
+            # match = True
             for phrase_rule in self.phrases:
+                match = True
                 _p_token_list = phrase_rule['phrase'].split(' ')
                 _args = phrase_rule['args']
                 _interpretation = phrase_rule['interpretation']
                 for j in range(len(_p_token_list)):
+                    # print(tags[i + j], _interpretation)
                     # if the phrase has a parameter, check the parameter type and the current token, the type must be equal to the type of the token
+                    if i + j >= len(data):
+                        match = False
+                        break
                     if _p_token_list[j][0] == '(':
                         _arg_type = _args[_p_token_list[j]]
                         _tag = tags[i + j]
+                        # print(_tag[0], match)
                         if _tag[1] not in _arg_type and _tag[0] not in self.dst_names:
                             match = False
                             break
@@ -253,7 +267,8 @@ class Preprocessor:
                     elif _p_token_list[j] != data[i + j]:
                         match = False
                         break
-                if match:
+                    
+                if match:                    
                     _t = '_'.join(data[i:i+len(_p_token_list)])
                     tmp.append(_t)
                     i = i + len(_p_token_list)
@@ -278,6 +293,8 @@ class Preprocessor:
         text = self.__process_phrases__(text)
         if text[-1] != '.':
             text = text + '.'
+        for name in self.dst_names:
+            self.patterns[name.replace('_', ' ').strip()] = name
         patterns = self.patterns
         text = text.strip()
         text = ' '.join([t.lower() for t in text.split(' ')])
@@ -443,12 +460,19 @@ def main(javafile, sidb, targetpath=None):
     contextual_si = []
     dst = get_package_global_info_from_javasrc(javafile)
     for name in dst:
+        interpretation = None
+        if not isinstance(name, tuple):
+            interpretation = name
+        elif len(name) == 2:
+            interpretation = name[0]
+        else:
+            interpretation = name[2]
         contextual_si.append({
             'term': name[0] if isinstance(name, tuple) else name,
             'syntax': ['NN', 'NNS'],
             'arity': 1,
             'arguments': ['(*)'],
-            'interpretation': name[0] if isinstance(name, tuple) else name,
+            'interpretation': interpretation,
             'type': name[1] if isinstance(name, tuple) else -1
         })
     # TODO: we need error handling in accessing the class name
@@ -487,8 +511,8 @@ def main(javafile, sidb, targetpath=None):
                 'specification': post
             })
     if not targetpath:
-        yaml.dump(contextual_si, sys.stdout, sort_keys=False)
-        yaml.dump(yaml_data, sys.stdout, sort_keys=False)
+        yaml.dump(contextual_si, sys.stdout, sort_keys=False, allow_unicode=True)
+        yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True)
     else:
         name = javafile.split('/')[-1].split('.')[0]
         si_path = ('%s/%s.si.yml' % (targetpath, name))

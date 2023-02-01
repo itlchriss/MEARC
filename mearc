@@ -2,11 +2,19 @@ import subprocess
 import sys
 import yaml
 import os
-from typing import Dict
+from optparse import OptionParser
+from typing import Dict, Tuple
 from yaml.loader import SafeLoader
+sys.path.append('./src/python')
+from pipeline_depccg import call_depccg_pipeline
 
 _configs = { 'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
 
+optparser = OptionParser()
+optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
+optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
+optparser.add_option("-c", "--config", dest="config_path", help="path of the config file")
+optparser.add_option("-e", "--frontend", dest="frontend", help="ccg2lambda or depccg")
 
 class dot_access_dict(dict):
     __getattr__ = dict.get
@@ -43,15 +51,56 @@ def run_cmd_show_output(cmd: str) -> None:
         )
     process.wait()
 
+def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
+    info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
+    debug and print('DEBUG: ccgslambda - tokenization')
+    process = subprocess.Popen(
+        ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
+        shell=True, stdout=subprocess.PIPE
+    )        
+    process.wait()
+    debug and print('DEBUG: ccgslambda - C & C parsing')
+    process = subprocess.Popen(
+        ("%s/candc-1.00/bin/candc  --log %s/candc.log --models %s/candc-1.00/models --candc-printer xml --input "
+            "%s/sentences.tok > %s/sentences.candc.xml" % (configs.NLP, configs.TMP, configs.NLP, configs.TMP, configs.TMP)),
+        shell=True, stdout=subprocess.PIPE
+    )
+    process.wait()
+    debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
+    process = subprocess.Popen(
+        ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, configs.NLP, configs.TMP, configs.TMP)),
+        shell=True, stdout=subprocess.PIPE
+    )
+    process.wait()
+    debug and print('DEBUG: ccgslambda - mapping CCG rules with the templates')
+    process = subprocess.run(
+        ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
+            "%s/%s.conditions.mr.%d" % (configs.PYCMD, configs.NLP, configs.TMP, configs.NLP, configs.TMP, prog_name, rownumber)),
+        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber))        
+    mr_error = process.stderr.decode()
+    mr_stdout = process.stdout.decode()  
+    return (mr_file_path, mr_error, mr_stdout)
+
+def __depccg(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
+    info and print('INFO:using depccg to get MR from (%s)' % nlspec)
+    mr = call_depccg_pipeline(nlspec)
+    info and print('INFO: depccg executed')
+    # print(mr)
+    return (None, None, None)
+
+frontends = ['ccg2lambda', 'depccg']
 
 debug = True
 info = False
+frontend = 'ccg2lambda'
 
 def main(config_path: str, prog_file: str) -> None:
     with open(config_path) as fp:
         _config = yaml.load(fp, Loader=SafeLoader)
     for key in _configs:
-        if not _config[key] or not _config[key].strip():
+        if not _config[key] or (not isinstance(_config[key], list) and not _config[key].strip()):
             warn_missing_config(key)
         else:
             _configs[key] = _config[key]
@@ -77,35 +126,7 @@ def main(config_path: str, prog_file: str) -> None:
     for i, record in enumerate(data):
         t = record['type']
         nlspec = record['specification']
-        info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
-        debug and print('DEBUG: ccgslambda - tokenization')
-        process = subprocess.Popen(
-            ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
-            shell=True, stdout=subprocess.PIPE
-        )        
-        process.wait()
-        debug and print('DEBUG: ccgslambda - C & C parsing')
-        process = subprocess.Popen(
-            ("%s/candc-1.00/bin/candc  --log %s/candc.log --models %s/candc-1.00/models --candc-printer xml --input "
-             "%s/sentences.tok > %s/sentences.candc.xml" % (configs.NLP, configs.TMP, configs.NLP, configs.TMP, configs.TMP)),
-            shell=True, stdout=subprocess.PIPE
-        )
-        process.wait()
-        debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
-        process = subprocess.Popen(
-            ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, configs.NLP, configs.TMP, configs.TMP)),
-            shell=True, stdout=subprocess.PIPE
-        )
-        process.wait()
-        debug and print('DEBUG: ccgslambda - mapping CCG rules with the templates')
-        process = subprocess.run(
-            ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
-             "%s/%s.conditions.mr.%d" % (configs.PYCMD, configs.NLP, configs.TMP, configs.NLP, configs.TMP, prog_name, i)),
-            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-        mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, i))        
-        mr_error = process.stderr.decode()
-        mr_stdout = process.stdout.decode()    
+        (mr_file_path, mr_error, mr_stdout) = globals()['__%s' % frontend](nlspec, configs, prog_name, i)
         
         if mr_error:
             print('Failed', file=sys.stderr)
@@ -154,12 +175,26 @@ def main(config_path: str, prog_file: str) -> None:
 
 
 if __name__ == "__main__":
-    # main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
-    if len(sys.argv) == 3:
-        debug = False
-        main(sys.argv[1], sys.argv[2])
-    elif len(sys.argv) == 4:
-        debug = True
-        main(sys.argv[1], sys.argv[2])
+    (options, args) = optparser.parse_args()
+    if options.prog_path == None:
+        print("Please provide the program file path")
+    elif options.config_path == None:
+        print("Please provide the config file path")
     else:
-        print('unknown number of arguments provided')
+        if options.debuglevel == 1:
+            info = True
+        elif options.debuglevel == 2:
+            info = True
+            debug = True
+        else:
+            info = False
+            debug = False
+        
+
+        if options.frontend == None or options.frontend not in frontends:
+            info and print("Using default frontend(ccg2lambda)")
+        else:
+            frontend = options.frontend
+        
+        main(options.config_path, options.prog_path)
+

@@ -87,22 +87,16 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
                 if node.parameters:
                     for p in node.parameters:
                         t_name = get_type(p.type)
-                        # if p.type.dimensions:
-                        #     t_name = 1
-                        # elif p.type.name in java_types_primitive:
-                        #     t_name = 0
-                        # elif p.type.name == 'Collection' or p.type.name == 'List':
-                        #     t_name = 2
-                        # else:
-                        #     t_name = 3
                         global_element_names.append((p.name, t_name))
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.ClassDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.FieldDeclaration):
-                if node.declarators:
-                    global_element_names.append(node.declarators[0].name.lower())
+                if node.declarators:       
+                    t_name = get_type(p.type)             
+                    global_element_names.append((node.declarators[0].name.lower(), t_name, node.declarators[0].initializer.value))
+                    global_element_names.append((node.declarators[0].name.capitalize(), t_name, node.declarators[0].initializer.value))
     return set(global_element_names)
 
 
