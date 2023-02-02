@@ -165,9 +165,9 @@ def main(source_code_dir: str, javadoc_xml_filepath: str) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        call_depccg_pipeline(sys.argv[1])
-    if sys.argv[1] and os.path.exists(sys.argv[1]) and \
-            sys.argv[2] and os.path.exists(sys.argv[2]):
-        main(sys.argv[1], sys.argv[2])
-    else:
-        print('use -h to view the helping messages')
+        print(call_depccg_pipeline(sys.argv[1]))
+    # if sys.argv[1] and os.path.exists(sys.argv[1]) and \
+    #         sys.argv[2] and os.path.exists(sys.argv[2]):
+    #     main(sys.argv[1], sys.argv[2])
+    # else:
+    #     print('use -h to view the helping messages')

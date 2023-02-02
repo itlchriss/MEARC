@@ -5,3 +5,9 @@
   arguments:
   - (*)
   interpretation: normal
+- term: patients who had degenerative spondylolisthesis
+  syntax: NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) ==> \\result == 2

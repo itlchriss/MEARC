@@ -6,9 +6,15 @@ from optparse import OptionParser
 from typing import Dict, Tuple
 from yaml.loader import SafeLoader
 sys.path.append('./src/python')
-from pipeline_depccg import call_depccg_pipeline
+# from pipeline_depccg import call_depccg_pipeline
 
 _configs = { 'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
+nlp_path = None
+frontends = ['ccg2lambda', 'depccg']
+
+debug = True
+info = False
+frontend = 'ccg2lambda'
 
 optparser = OptionParser()
 optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
@@ -51,31 +57,32 @@ def run_cmd_show_output(cmd: str) -> None:
         )
     process.wait()
 
-def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
+def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:    
     info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
     debug and print('DEBUG: ccgslambda - tokenization')
+    global nlp_path
     process = subprocess.Popen(
-        ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, configs.NLP, configs.TMP)),
+        ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, nlp_path, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )        
     process.wait()
     debug and print('DEBUG: ccgslambda - C & C parsing')
     process = subprocess.Popen(
         ("%s/candc-1.00/bin/candc  --log %s/candc.log --models %s/candc-1.00/models --candc-printer xml --input "
-            "%s/sentences.tok > %s/sentences.candc.xml" % (configs.NLP, configs.TMP, configs.NLP, configs.TMP, configs.TMP)),
+            "%s/sentences.tok > %s/sentences.candc.xml" % (nlp_path, configs.TMP, nlp_path, configs.TMP, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )
     process.wait()
     debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
     process = subprocess.Popen(
-        ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, configs.NLP, configs.TMP, configs.TMP)),
+        ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, nlp_path, configs.TMP, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )
     process.wait()
     debug and print('DEBUG: ccgslambda - mapping CCG rules with the templates')
     process = subprocess.run(
         ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
-            "%s/%s.conditions.mr.%d" % (configs.PYCMD, configs.NLP, configs.TMP, configs.NLP, configs.TMP, prog_name, rownumber)),
+            "%s/%s.conditions.mr.%d" % (configs.PYCMD, nlp_path, configs.TMP, nlp_path, configs.TMP, prog_name, rownumber)),
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber))        
@@ -85,6 +92,7 @@ def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[
 
 def __depccg(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
     info and print('INFO:using depccg to get MR from (%s)' % nlspec)
+    from pipeline_depccg import call_depccg_pipeline
     mr = call_depccg_pipeline(nlspec)
     mr_error = None
     if not mr:
@@ -96,12 +104,6 @@ def __depccg(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str,
     # print(mr)
     return (mr_file_path, mr_error, None)
 
-frontends = ['ccg2lambda', 'depccg']
-
-debug = True
-info = False
-frontend = 'ccg2lambda'
-
 def main(config_path: str, prog_file: str) -> None:
     with open(config_path) as fp:
         _config = yaml.load(fp, Loader=SafeLoader)
@@ -111,6 +113,8 @@ def main(config_path: str, prog_file: str) -> None:
         else:
             _configs[key] = _config[key]
     configs = dot_access_dict(_configs)
+    global nlp_path
+    nlp_path = configs.NLP[0][frontend.upper()]
     # prog_name = prog_file.replace('.conditions.yml', '').split('/')[-1]
     prog_name = prog_file.replace('.java', '').split('/')[-1]
     si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))

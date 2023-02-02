@@ -136,6 +136,8 @@ class Preprocessor:
 
     def __same(self, str1: str, str2: str, length: int) -> bool:
         i = length - 1
+        if str2 == 'index':
+            print(str1, str2)
         while str1[i].lower() == str2[i].lower():
             if i == 0:
                 return True
@@ -143,12 +145,25 @@ class Preprocessor:
         return False
 
     def __search(self, needle: str, haystack: str):
-        t = self.__preprocess(needle)
-        skip = 0
-        while len(haystack) - skip >= len(needle):
-            if self.__same(haystack[skip:], needle, len(needle)):
-                return skip
-            skip = skip + t[ord(haystack[skip + len(needle) - 1])]
+        # t = self.__preprocess(needle)
+        # if needle == 'index':
+        #     print(t)
+        # skip = 0
+        # while len(haystack) - skip >= len(needle):
+        #     if self.__same(haystack[skip:], needle, len(needle)):
+        #         return skip
+        #     skip = skip + t[ord(haystack[skip + len(needle) - 1])]
+        data = haystack.split(' ')
+        pattern = needle.split(' ')
+        for i in range(len(data)):
+            match = True
+            for j, w2 in enumerate(pattern):
+                if i + j > len(data) or data[i + j] != w2:
+                    match = False
+                    break
+            if match:
+                prefix = ' '.join(data[:i])
+                return len(prefix) + 1
         return -1
 
     def __process_function__(self, text: str) -> str:
@@ -234,7 +249,7 @@ class Preprocessor:
                 tmp.append(_t)
             else:
                 tmp.append(token)
-            i = i + 1
+            i = i + 1        
         return ' '.join(tmp)
 
     #TODO we have to consider after processed i, may result in i - 1 pattern. so we have to retry all patterns
@@ -259,7 +274,6 @@ class Preprocessor:
                     if _p_token_list[j][0] == '(':
                         _arg_type = _args[_p_token_list[j]]
                         _tag = tags[i + j]
-                        # print(_tag[0], match)
                         if _tag[1] not in _arg_type and _tag[0] not in self.dst_names:
                             match = False
                             break
@@ -290,31 +304,42 @@ class Preprocessor:
 
     def process(self, text: str) -> str:
         text = self.__process_function__(text)
-        text = self.__process_phrases__(text)
-        if text[-1] != '.':
-            text = text + '.'
+        # text = self.__process_phrases__(text)
+        # if text[-1] != '.':
+        #     text = text + '.'
         for name in self.dst_names:
             self.patterns[name.replace('_', ' ').strip()] = name
-        patterns = self.patterns
-        text = text.strip()
-        text = ' '.join([t.lower() for t in text.split(' ')])
-        data = text.split('\n')
+        # remove all single word pattern, because we don't have to treat them in this function        
+        patterns = self.patterns        
+        patterns = {k:v for k,v in patterns.items() if len(k.split(' ')) > 1 or v}
+        # _patterns_list = sorted(list(patterns.items()), key= lambda key: len(key[0].split(' ')))
+        # patterns = {ele[0]: ele[1] for ele in _patterns_list}
+        text = text.strip()        
+        # text = ' '.join([t.lower() for t in text.split(' ')])
+        # data = text.split('\n')
+        # text = text.split('\n')[0]
+        data = []
+        for t in text.split():
+            if not t in self.dst_names:
+                data.append(t.lower())
+            else:
+                data.append(t)
         result = None
+        data = ' '.join(data)
+        data = data.split('\n')
         for d in data:
             _d = d
             for pattern in patterns:
                 pc = len(pattern)
                 tmp = _d
-                start = 0
-
+                start = 0                
                 if not patterns[pattern]:
                     target = '_'.join(pattern.split(' '))
                 elif patterns[pattern].isspace():
                     target = ''
                 else:
                     target = patterns[pattern]
-
-                while len(tmp) >= pc:
+                while len(tmp) >= pc:                    
                     found = self.__search(pattern, tmp)
                     if found >= 0:
                         dis = len(_d) - len(tmp)
@@ -328,9 +353,12 @@ class Preprocessor:
             # providing warnings to the use of pronouns
             if not _d.strip():
                 continue
-            result = _d
+            result = _d        
+        result = self.__process_phrases__(result)
         if result and result[-1] == '.':
             result = result[:-1].strip()
+            result += '.'
+        else:
             result += '.'
         return result
 
