@@ -2,7 +2,7 @@ import os
 import sys
 import re
 from typing import Dict, List, Union, Set
-
+from enum import IntEnum
 import javalang
 import javalang.tree
 from javalang.tree import ClassDeclaration, InterfaceDeclaration, TypeDeclaration, MethodDeclaration
@@ -61,16 +61,24 @@ def get_package_global_info(directory: str) -> Set:
 java_types_with_dimensions = ['Collection', 'Set', 'Queue', 'Stack']
 java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char', 'Integer']
 
+class JavaTypes(IntEnum):
+    Primitive = 0
+    Array = 1
+    Collection = 2
+    # This is to specify the result from JML Expressions
+    JML_expression_result = 3
+    Others = 4
+
 def get_type(typedefinition) -> int:
     if typedefinition:
         if typedefinition.dimensions:
-            t = 1
+            t = JavaTypes.Array
         elif typedefinition.name in java_types_primitive:
-            t = 0
+            t = JavaTypes.Primitive
         elif typedefinition.name == 'Collection' or typedefinition.name == 'List':
-            t = 2
+            t = JavaTypes.Collection
         else:
-            t = 3
+            t = JavaTypes.Others
     else:
         t = -1
     return t

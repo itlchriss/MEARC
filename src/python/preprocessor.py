@@ -2,7 +2,7 @@ import os
 import re
 import sys
 from typing import List, Dict, Tuple
-from dstbuilder import get_package_global_info_from_javasrc
+from dstbuilder import get_package_global_info_from_javasrc, JavaTypes
 import yaml
 
 import javalang
@@ -106,12 +106,20 @@ class Preprocessor:
         {
             'phrase': 'from (x) to (y)',
             'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
-            'interpretation': '(x) < i < (y)'
+            'interpretation': '(x) < i < (y)',
+            'type': JavaTypes.JML_expression_result
+        },
+        {
+            'phrase': '(z) from (x) to (y)',
+            'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM'], '(z)': ['PARAM']},
+            'interpretation': '(x) < (z) < (y)',
+            'type': JavaTypes.JML_expression_result
         },
         {
             'phrase': '(x) ± (y)',
             'args': {'(x)': ['CD'], '(y)': ['CD']},
-            'interpretation': '(x) - (y) < i < (x) + (y)'
+            'interpretation': '(x) - (y) < i < (x) + (y)',
+            'type': JavaTypes.JML_expression_result
         }
     ]
     operators = {
@@ -158,12 +166,15 @@ class Preprocessor:
         for i in range(len(data)):
             match = True
             for j, w2 in enumerate(pattern):
-                if i + j > len(data) or data[i + j] != w2:
+                if i + j > len(data) or data[i + j].strip(',') != w2:
                     match = False
                     break
             if match:
                 prefix = ' '.join(data[:i])
-                return len(prefix) + 1
+                if not prefix:
+                    return 0
+                else:
+                    return len(prefix) + 1
         return -1
 
     def __process_function__(self, text: str) -> str:
@@ -293,7 +304,7 @@ class Preprocessor:
                         'arity': 1,
                         'arguments': ['(*)'],
                         'interpretation': _interpretation,
-                        'type': -1,
+                        'type': phrase_rule['type'],
                     })                                        
                     break
             if not match:

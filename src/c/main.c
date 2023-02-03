@@ -4,6 +4,9 @@
 #include "core.h"
 #include "cg.h"
 #include "si.h"
+#if EVENT_SEMANTICS
+#include "event.h"
+#endif
 
 extern FILE *yyin;
 
@@ -18,6 +21,11 @@ struct queue *cst;
 struct queue *predicates;
 
 struct queue *operators;
+
+#if EVENT_SEMANTICS
+/* queue of events. for resolving MRs in neo-davidsonian event semantics */
+struct queue *events;
+#endif
 
 struct queue *silist;
 
@@ -87,6 +95,9 @@ int main(int argc, char** argv) {
     cst = initqueue();
     operators = initqueue();
     predicates = initqueue();
+    #if DEPCCG
+    events = initqueue();
+    #endif
 
     #if INFO      
     showprocessinfo("Start Parsing");
@@ -104,7 +115,7 @@ int main(int argc, char** argv) {
     #if INFO
     showprocessinfo("After rename cst symbols");
     #endif
-    #if CSTDEBUG
+    #if EVENT_SEMANTICS
     showqueue(cst, showcstsymbol);
     #endif
 
@@ -186,6 +197,11 @@ int main(int argc, char** argv) {
     if (operators) {
         deallocatequeue(operators, NULL);
     }
+    #if EVENT_SEMANTICS
+    if (events) {
+        deallocatequeue(events, deallocateevent);
+    }
+    #endif
     return 0; 
 }
 

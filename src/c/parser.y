@@ -2,6 +2,9 @@
     #include "core.h"
     #include "util.h"
     #include "cst.h"
+    #if EVENT_SEMANTICS
+    #include "event.h"
+    #endif
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
@@ -10,6 +13,9 @@
     // extern int c;
     extern struct astnode *ast;  
     extern struct queue *predicates, *operators;
+    #if EVENT_SEMANTICS
+    extern struct queue *events;
+    #endif
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, error_count = 0;
@@ -150,7 +156,9 @@ connective
 event_term
     : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
         print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'");
-
+        #if EVENT_SEMANTICS
+        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);
+        #endif
     }
     ;
 

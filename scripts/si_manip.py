@@ -67,6 +67,14 @@ class JavaTypes(IntEnum):
     Primitive = 0
     Array = 1
     Collection = 2
+    # This is to specify the result from JML Expressions
+    JML_expression_result = 3
+    Others = 4
+
+# class JavaTypes(IntEnum):
+#     Primitive = 0
+#     Array = 1
+#     Collection = 2
 
 
 def main(filepath: str):    

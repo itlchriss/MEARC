@@ -2,7 +2,7 @@ import os
 from util import run_cmd_without_output, run_cmd_with_output, run_cmd_directly
 
 # _cmd = "./mearc ./datasets/patterns/%s/%s"
-_cmd = 'python mearc ./mearc.config ./datasets/patterns/%s/%s'
+_cmd = 'python mearc -c ./mearc.config -f ./datasets/patterns/%s/%s'
 benchmark_dir = './datasets/patterns'
 
 
@@ -17,6 +17,7 @@ def main():
         for filename in os.listdir(os.path.join(benchmark_dir, dataset)):
             test_name = filename.replace('.java', '')
             cmd = _cmd % (dataset, filename)
+            print(cmd)
             number_of_tests += 1
             # process = subprocess.run(
             #     cmd.split(' '),

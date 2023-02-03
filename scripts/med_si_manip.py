@@ -8,34 +8,79 @@ from typing import List
 sis = []
 
 
-def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str], _type: int = 3) -> None:
+
+def __add2sis(name: str, arguments: List[str], interpretation: str, syntax: List[str], _type: int = 3, _specific_arg_types: List[int] = None, _grammar_args: List[str] = None) -> None:
     if arguments and len(arguments) >= 1:
         for arg in arguments:
             if arg != '*' and ('(%s)' % arg) not in interpretation:
-                print('Warning: The following interpretation has no arguments used, but arguments are specified')
+                print('Warning: SI %s following interpretation has no arguments used, but arguments are specified' % name)
                 print('Interpretation: %s' % interpretation)
                 print('Arguments: %s' % ','.join(arguments))
-    sis.append(
-        {
-            'term': name,
-            'syntax': syntax,
-            'arity': len(arguments),
-            'arguments': [('(%s)' % arg) for arg in arguments],
-            'interpretation': interpretation,
-        }
-    )
+    if not _specific_arg_types and not _grammar_args:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'interpretation': interpretation,
+            }
+        )
+    elif _specific_arg_types and _grammar_args:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'g_arity': len(_grammar_args),
+                'grammar_arguments': [('(%s)' % arg) for arg in _grammar_args],
+                'specific_arg_types': [('%d' % t) for t in _specific_arg_types],
+                'interpretation': interpretation,
+            }
+        )
+    elif _specific_arg_types:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'specific_arg_types': [('%d' % t) for t in _specific_arg_types],
+                'interpretation': interpretation,
+            }
+        )
+    else:
+        sis.append(
+            {
+                'term': name,
+                'syntax': syntax,
+                'arity': len(arguments),
+                'arguments': [('(%s)' % arg) for arg in arguments],
+                'g_arity': len(_grammar_args),
+                'grammar_arguments': [('(%s)' % arg) for arg in _grammar_args],
+                'interpretation': interpretation,
+            }
+        )
 
 
 class JavaTypes(IntEnum):
     Primitive = 0
     Array = 1
     Collection = 2
+    # This is to specify the result from JML Expressions
+    JML_expression_result = 3
+    Others = 4
 
 
 def main(filepath: str):
-    # __add2sis('sorted in ascending order', ['x'], r'\forall int k; 0 <= k < (x).length - 1; (x)[k] <= '
-    #                                               r'(x)[k + 1]', ['NN'])
     __add2sis('no spinal pathology', ['*'], r'normal', ['NN'])
+    # appears in 28 papers
+    __add2sis('patients who had degenerative spondylolisthesis', ['*'], r'\\result == 2', ['NN'], _type = JavaTypes.JML_expression_result)
+    # appears in 54 papers
+    __add2sis('patients who had spondylolisthesis', ['*'], r'\\result == 2', ['NN'], _type = JavaTypes.JML_expression_result)
+
+    __add2sis('have', ['x', 'y'], r'(x) ==> (y)', ['VBD', 'VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.JML_expression_result, JavaTypes.JML_expression_result])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

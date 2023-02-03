@@ -113,8 +113,8 @@ def main(config_path: str, prog_file: str) -> None:
         else:
             _configs[key] = _config[key]
     configs = dot_access_dict(_configs)
-    global nlp_path
-    nlp_path = configs.NLP[0][frontend.upper()]
+    global nlp_path    
+    nlp_path = [nlp.get(frontend.upper(), None) for nlp in configs.NLP][0]
     # prog_name = prog_file.replace('.conditions.yml', '').split('/')[-1]
     prog_name = prog_file.replace('.java', '').split('/')[-1]
     si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))

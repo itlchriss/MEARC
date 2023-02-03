@@ -6,7 +6,7 @@
 #include "ast.h"
 
 extern struct astnode *root;
-extern struct queue *predicates, *operators, *silist;
+extern struct queue *predicates, *operators, *silist, *events;
 extern struct astnode *root;
 struct queue *cst;    
 
@@ -18,7 +18,7 @@ int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
-char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
+char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "OTHERS" };
 
 void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char *si) {    
     deleteastchildren(node);
@@ -383,7 +383,7 @@ void sianalysis() {
     // struct si *si;
     struct queue *si_q;
     #if SIDEBUG
-    printf("si identification: there are %d predicates in the queue.\n", predicates->count);
+    printf("si analysis: there are %d predicates in the queue.\n", predicates->count);
     #endif
     /* 
         sorting the predicates according to the semantic interpretation found 
@@ -407,17 +407,17 @@ void sianalysis() {
             si_q = q_searchqueue(silist, node, __simatcher);
             if (si_q == NULL || si_q->count == 0) {
                 if (node->isroot) {
-                    fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
+                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-10);
                 }
                 __remove_all_children_cst__(node);
                 if (node->parent->type != Connective) {
-                    fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
+                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-10);
                 } else if (
                     node->parent->conntype != Op_And &&
                     node->parent->conntype != Op_Or) {
-                    fprintf(stderr, "Symbol error: Please provide the SI for predicate(%s)\n", node->token->symbol);
+                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-11);                
                 } else {
                     root = deleteastnodeandedge(node, root);

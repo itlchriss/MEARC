@@ -7,7 +7,7 @@
     Each semantic interpretation is UNIQUE because each interpretation has a unique composite key of (term and penn-tree bank category).
 */
 
- enum javadatatype { PRIMITIVE = 0, NON_PRIMITIVE, NON_PRIMITIVE_WITH_DIMENSIONS };
+ enum javadatatype { PRIMITIVE = 0, ARRAY, COLLECTION, JML_EXPRESSION_RESULT, OTHERS };
 
 struct si {
     char *symbol;
