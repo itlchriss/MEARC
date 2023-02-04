@@ -13,9 +13,17 @@ LEXDEBUG ?=     0
 DSTDEBUG ?=		0
 LOCINCL =   -I/usr/local/include 
 LOCLINK =   -L/usr/local/lib
+FRONTEND =
 ifeq ($(UNAME_S),Darwin)
 	LOCINCL = -I/opt/homebrew/Cellar/libyaml/0.2.5/include
 	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
+endif
+
+ifeq ($(MAKECMDGOALS), depccg)
+	FRONTEND = $(SRC)/frontends/depccg
+	CFLAGS += -DEVENT_SEMANTICS
+else
+	FRONTEND = $(SRC)/frontends/ccg2lambda
 endif
 
 ifeq ($(DEBUG), 0)
@@ -58,7 +66,9 @@ endif
 
 .PHONY: directories
 
-all: directories main
+ccg2lambda: directories ccg2lambda_main
+
+depccg: directories depccg_main
 
 directories: ${BUILD} ${BIN}
 
@@ -68,8 +78,11 @@ ${BUILD}:
 ${BIN}:
 	mkdir -p $(BIN)
 
-main: $(OBJS)
+ccg2lambda_main: $(OBJS)
 	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll $(LOCLINK) -lyaml
+
+depccg_main: $(OBJS) event.o
+	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS) event.o) -o $(BIN)/main -ll $(LOCLINK) -lyaml
 
 lex-only: lex
 	$(CC) $(BUILD)/lex.yy.c -ll -o $(BIN)/lex.o
@@ -98,26 +111,17 @@ ast.o : $(SRC)/ast.c
 util.o : $(SRC)/util.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/util.o $<
 
-sst.o  : $(SRC)/sst.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/sst.o $<
-
 cst.o  : $(SRC)/cst.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cst.o $<
 
-opt.o  : $(SRC)/opt.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/opt.o $<
+event.o  : $(SRC)/event.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/event.o $<
 
 cg.o  : $(SRC)/cg.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cg.o $<		
 
-dst.o  : $(SRC)/dst.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/dst.o $<		
-
-si.o	: $(SRC)/si.c
+si.o	: $(FRONTEND)/si.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/si.o $<		
-
-sem.o  : $(SRC)/sem.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
