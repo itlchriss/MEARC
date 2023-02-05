@@ -1,0 +1,193 @@
+- term: lumbar_lordosis_angle
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: lumbar_lordosis_angle
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: Hernia
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '0'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: Spondylolisthesis
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '2'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: degree_spondylolisthesis
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: degree_spondylolisthesis
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: pelvic_tilt
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: pelvic_tilt
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: Normal
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '1'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: pelvic_radius
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: pelvic_radius
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: spondylolisthesis
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '2'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: randomforest
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: randomforest
+  type: -1
+- term: normal
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '1'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: \result
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \result
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: sacral_slope
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: sacral_slope
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: hernia
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: '0'
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: pelvic_incidence
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: pelvic_incidence
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 0
+- term: lumbar_lordosis_angle_from_52_DOT6_to_62_DOT1
+  syntax:
+  - NN
+  - NNP
+  - NNS
+  - NNPS
+  - CD
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 52.6 < lumbar_lordosis_angle < 62.1
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 3
+- term: "45_DOT9_\xB1_9_DOT9"
+  syntax:
+  - NN
+  - NNP
+  - NNS
+  - NNPS
+  - CD
+  arity: 1
+  arguments:
+  - (Subj)
+  interpretation: 45.9 - 9.9 < (Subj) < 45.9 + 9.9
+  type: !!python/object/apply:dstbuilder.JavaTypes
+  - 3

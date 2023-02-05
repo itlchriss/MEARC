@@ -1,3 +1,58 @@
+- term: patients who had degenerative spondylolisthesis
+  syntax:
+  - NN
+  - NNP
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \\result == 2
+- term: patients who had spondylolisthesis
+  syntax:
+  - NN
+  - NNP
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \\result == 2
+- term: individuals with no spinal pathology
+  syntax:
+  - NN
+  - NNP
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \\result == 0
+- term: individual with no spinal pathology
+  syntax:
+  - NN
+  - NNP
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \\result == 0
+- term: have
+  syntax:
+  - VBD
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '3'
+  - '3'
+  interpretation: (Acc) ==> (Subj)
+- term: be
+  syntax:
+  - VBD
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '0'
+  - '4'
+  interpretation: _sub(Subj)2(Acc)
 - term: no spinal pathology
   syntax:
   - NN
@@ -5,9 +60,3 @@
   arguments:
   - (*)
   interpretation: normal
-- term: patients who had degenerative spondylolisthesis
-  syntax: NN
-  arity: 1
-  arguments:
-  - (x)
-  interpretation: (x) ==> \\result == 2

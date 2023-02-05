@@ -70,17 +70,23 @@ class JavaTypes(IntEnum):
     Collection = 2
     # This is to specify the result from JML Expressions
     JML_expression_result = 3
-    Others = 4
+    JML_expression_template = 4
+    Others = 5
 
 
 def main(filepath: str):
-    __add2sis('no spinal pathology', ['*'], r'normal', ['NN'])
     # appears in 28 papers
-    __add2sis('patients who had degenerative spondylolisthesis', ['*'], r'\\result == 2', ['NN'], _type = JavaTypes.JML_expression_result)
+    __add2sis('patients who had degenerative spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
     # appears in 54 papers
-    __add2sis('patients who had spondylolisthesis', ['*'], r'\\result == 2', ['NN'], _type = JavaTypes.JML_expression_result)
+    __add2sis('patients who had spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    __add2sis('individuals with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    __add2sis('individual with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    __add2sis('patients with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    __add2sis('patient with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
 
-    __add2sis('have', ['x', 'y'], r'(x) ==> (y)', ['VBD', 'VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.JML_expression_result, JavaTypes.JML_expression_result])
+    __add2sis('have', ['Subj', 'Acc'], r'(Acc) ==> (Subj)', ['VBD', 'VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.JML_expression_result, JavaTypes.JML_expression_result])
+    __add2sis('be', ['Subj', 'Acc'], r'_sub(Subj)2(Acc)', ['VBD'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.Primitive, JavaTypes.JML_expression_template])
+    __add2sis('no spinal pathology', ['*'], r'normal', ['NN'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 

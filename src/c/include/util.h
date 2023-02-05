@@ -21,6 +21,7 @@ void enqueue(struct queue* queue, void *node);
 void* dequeue(struct queue* queue);
 void* pqueue(struct queue* queue);
 void* gqueue(struct queue* queue, int index);
+/* removing the element at the parameter index in the parameter queue */
 void rqueue(struct queue* queue, int index);
 struct queuenode* _gqueue(struct queue* queue, int index);
 void* plastqueue(struct queue* queue);

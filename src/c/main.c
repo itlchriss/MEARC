@@ -95,7 +95,7 @@ int main(int argc, char** argv) {
     cst = initqueue();
     operators = initqueue();
     predicates = initqueue();
-    #if DEPCCG
+    #if EVENT_SEMANTICS
     events = initqueue();
     #endif
 
@@ -115,8 +115,11 @@ int main(int argc, char** argv) {
     #if INFO
     showprocessinfo("After rename cst symbols");
     #endif
-    #if EVENT_SEMANTICS
+    #if CSTDEBUG
     showqueue(cst, showcstsymbol);
+    #endif
+    #if EVENTDEBUG
+    showqueue(events, showevent);
     #endif
 
     #if INFO

@@ -61,6 +61,10 @@ else
 	ifeq ($(MEMDEBUG), 1)
 		CFLAGS += -DMEMDEBUG
 	endif
+
+	ifeq ($(EVENTDEBUG), 1)
+		CFLAGS += -DEVENTDEBUG
+	endif
 endif
 
 
@@ -128,7 +132,7 @@ parser.only						:	$(INCL)/ast.h
 parser.o						:       $(BUILD)/tok.h
 lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h
-main.o							:   $(INCL)/si.h
+main.o							:   $(INCL)/si.h $(INCL)/event.h
 util.o							:   $(INCL)/util.h
 cst.o							:   $(INCL)/util.h 
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h

@@ -112,7 +112,8 @@ KEYWORD_ACCI         "AccI"
 
 
 KEYWORD_TRUEP      "TrueP"
-PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
+/* PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+ */
+PREDICATE           (_([a-zA-Z0-9±\-\.*'\^]+))+
 VARIABLE               ([a-z]([0-9]+)?)
 %%
 "(" {

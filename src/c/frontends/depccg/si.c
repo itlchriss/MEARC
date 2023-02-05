@@ -1,9 +1,14 @@
+/*
+    This is an implementation of semantic interpretation analysis and synthesis specially for the neo-davidsonian event semantics
+*/
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "util.h"
 #include "si.h"
 #include "ast.h"
+#include "event.h"
 
 extern struct astnode *root;
 extern struct queue *predicates, *operators, *silist, *events;
@@ -12,13 +17,14 @@ struct queue *cst;
 
 int search_syntax(struct si*, enum ptbsyntax);
 int __simatcher(void *, void *);
+int __eventsimatcher(void *, void *);
 int __argtype_simatcher(void *, void *);
 int __sisymbol_duplicated(void *, void *);
 int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
-char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "OTHERS" };
+char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "JML_EXPRESSION_TEMPLATE", "OTHERS" };
 
 void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char *si) {    
     deleteastchildren(node);
@@ -27,10 +33,14 @@ void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char 
     node->type = type;
 }
 
+/*
+    node: the node must be a predicate node
+*/
 void __remove_all_children_cst__(struct astnode *node) {
     struct astnode *child;
     for (int i = 0; i < countastchildren(node); ++i) {
         child = getastchild(node, i);
+        /* we do not have to deal with the events here. because the structure is independent to the ast tree as they do not have pointers pointing to each other. we will free the events structure at the end of the program. */
         removecstref(child->token->symbol, child);
     }
 }
@@ -267,7 +277,7 @@ int LS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int MD_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int NN_code_synthesis(struct astnode *node, struct si *si) { return Nseries_code_synthesis(node, si); }
 int NNS_code_synthesis(struct astnode *node, struct si *si) { return Nseries_code_synthesis(node, si); }
-int NNP_code_synthesis(struct astnode *node, struct si *si) { return 0; }
+int NNP_code_synthesis(struct astnode *node, struct si *si) { return Nseries_code_synthesis(node, si); }
 int NNPS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PDT_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
@@ -315,6 +325,48 @@ int WDT_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int WP_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int WP_POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int WRB_code_synthesis(struct astnode *node, struct si *si) { return 0; }
+
+int event_synthesis(struct astnode *node, struct si *si) {
+    struct event *e = searchevent(getastchild(node, 0)->token->symbol);
+    char *s = (char *)strdup(si->interpretation);
+    struct entity *en = NULL;
+    if (s[0] == '_') {
+        /* keywords. the synthesis process is up to what the keywords have specified. */
+        if (strcmp(s, "_sub(Subj)2(Acc)") == 0) {
+            /* 
+                The synthesised SI of the entity with Subj is substituted to that of the entity with Acc.
+                The synthesised SI of the Acc entity must have the type of JML_expression_template.
+                After the substitution, both the Subj and Acc entity cst pointer's data field has the synthesised SI.
+            */
+            
+        }
+    } else {
+        for (int i = 0; i < e->entities->count; ++i) {
+            /* 
+                get the compile symbol table pointer, and the get the data.
+                the argument of SI is named using the grammar relationship string, such as Subj
+                substitution is done replacing the SI synthesised in the data field of CST symbol to the grammar relationship string
+            */
+        en = (struct entity*)gqueue((void*)e->entities, i);
+        /* 
+                because the entity variables should have been synthesised before coming to this point. 
+                we should not be able to search the symbol by the reference as the references are removed before synthesising the SI.
+                therefore, we should search the symbol by the symbol name.
+                there is no risk by using the symbol name because all symbol names are made unique.
+        */
+        struct cstsymbol *c = searchcst(en->var);
+        char *tmp = strrep(s, gramtype2string(en->type), c->data);
+        free(s);
+        s = tmp;
+        }
+    }
+    /* 
+    s contains the synthesised SI 
+    */
+   __remove_all_children_cst__(node);
+    __replace_si_at_parent__(node, Synthesised, s);
+    return 0;
+}
 
 int Gram_Rel_synthesis(struct astnode *node, struct si *si) {
     // sibling_si_synthesis
@@ -378,6 +430,28 @@ int __is_direct_semantics__(enum ptbsyntax syntax) {
         return 1;
 }
 
+/* because the event predicate has only one child. and such event requires multiple synthesised predicates to finish the synthesis. therefore, it is a special case to the current practice of si matching, which is designed for usual higher-order logic. */
+int __is_event_predicate__(struct astnode *node) {
+    if (countastchildren(node) > 1) {
+        return 1;
+    } else {
+        struct astnode *child = getastchild(node, 0);
+        if (child->type != Variable || child->token->symbol[0] != 'e') {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
+
+// /*
+//     this function is check if the event predicate is useless.
+//     the case is that, if the entities relevant to the event are not going to be synthesised, this event predicate is useless because it will not have any synthesised entities to synthesise with.
+// */
+// int __check_useless_event__(struct astnode *node) {
+
+// }
+
 void sianalysis() {
     struct astnode *node;
     // struct si *si;
@@ -402,8 +476,18 @@ void sianalysis() {
             node->si_q = initqueue();
             enqueue(node->si_q, (void*)__generate_runtime_si__(node));
             push(tmp, node);
+        } else if (__is_event_predicate__(node) == 0) { 
+            si_q = q_searchqueue(silist, node, __eventsimatcher);
+            if (si_q == NULL || si_q->count == 0) {
+                /* 
+                    there can be a possibility that all the relevant entities are not going to be synthesised. in another words, the relevant entities do not have predicates matched with SI. if this is the case, this event is useless.
+                */
+                fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
+            } else {
+                node->si_q = si_q;
+                enqueue(two_args_preds, node);
+            }
         } else {
-            // si = searchqueue(silist, node, __simatcher);
             si_q = q_searchqueue(silist, node, __simatcher);
             if (si_q == NULL || si_q->count == 0) {
                 if (node->isroot) {
@@ -477,7 +561,7 @@ void sisynthesis() {
         #if SIDEBUG
         printf("si synthesis: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
         #endif
-        // si_q = q_searchqueue(silist, node, __simatcher);
+
         si_q = node->si_q;
         si = NULL;
         if (si_q->count == 0) si = NULL;
@@ -510,6 +594,8 @@ void sisynthesis() {
                 x = __synthesis_predicate_at_root__(si);
             } else if (node->syntax == IN) {
                 x = IN_code_synthesis(node, si);
+            } else if (__is_event_predicate__(node) == 0) {
+                x = event_synthesis(node, si);
             } else {
                 if (__is_direct_semantics__(node->syntax) != 0) {
                     for (int i = 0; i < countastchildren(node); ++i) {
@@ -586,8 +672,7 @@ void opresolution() {
                 ctemplate->g_arg_count++;
                 ctemplate = updatecstsymbol(s, template);      
                 __remove_all_children_cst__(node);
-                syncsymbol(ctemplate);        
-                // root = deleteastnodeandedge(node, root);                
+                syncsymbol(ctemplate);                      
             }
         } else {
             /* if node A has node type == Template, the symbol of node A is aliased as the symbol of node B */
@@ -626,6 +711,27 @@ int __simatcher(void *_si, void *_astnode) {
         return 0;
     else
         return 1;
+}
+
+/* 
+    this is an SI matcher that is specifically for the event predicates.
+    event predicates have only one child that is the event variable, which is not useful in the SI matching with SIs should have specified the number of arguments required for synthesis.
+    however, we have recorded the entities that have grammar relationships with this event variable.
+    such that, we can check the number of arguments required for the SI against the number of entities of the event variables.
+*/
+int __eventsimatcher(void *_si, void *_astnode) {
+    struct si* si = (struct si*)_si;
+    struct astnode *node = (struct astnode*)_astnode, *child = getastchild(node, 0);
+    struct event *event = searchevent(child->token->symbol);
+    if (strcmp(si->symbol, node->token->symbol) == 0 &&
+        search_syntax(si, node->syntax) == 0 &&
+        si->arg_count == event->entities->count
+        ) 
+    {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
 int __argtype_simatcher(void *_si, void *_astnode) {

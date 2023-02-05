@@ -67,7 +67,8 @@ class JavaTypes(IntEnum):
     Collection = 2
     # This is to specify the result from JML Expressions
     JML_expression_result = 3
-    Others = 4
+    JML_expression_template = 4
+    Others = 5
 
 def get_type(typedefinition) -> int:
     if typedefinition:

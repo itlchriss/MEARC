@@ -118,7 +118,8 @@ class Preprocessor:
         {
             'phrase': '(x) ± (y)',
             'args': {'(x)': ['CD'], '(y)': ['CD']},
-            'interpretation': '(x) - (y) < i < (x) + (y)',
+            'si_args': ['(Subj)' ],
+            'interpretation': '(x) - (y) < (Subj) < (x) + (y)',
             'type': JavaTypes.JML_expression_result
         }
     ]
@@ -297,15 +298,22 @@ class Preprocessor:
                     _t = '_'.join(data[i:i+len(_p_token_list)])
                     tmp.append(_t)
                     i = i + len(_p_token_list)
-                    # add the si
-                    self.function_si.append({
-                        'term': _t.lower(),
-                        'syntax': ['NN'],
+
+                    si = {
+                        'term': _t.lower().replace('.', '_DOT').replace('-', '_dash'),
+                        # only direct semantics are acceptable
+                        'syntax': ['NN', 'NNP', 'NNS', 'NNPS', 'CD'],
                         'arity': 1,
+                        #TODO if si_args in the dict presents, the arguments must specify the si_args
+                        # otherwise, asterisk is used
                         'arguments': ['(*)'],
                         'interpretation': _interpretation,
                         'type': phrase_rule['type'],
-                    })                                        
+                    }
+                    if 'si_args' in phrase_rule:
+                        si['arguments'] = phrase_rule['si_args']
+                    # add the si
+                    self.function_si.append(si)                                        
                     break
             if not match:
                 tmp.append(data[i])
@@ -508,7 +516,7 @@ def main(javafile, sidb, targetpath=None):
             interpretation = name[2]
         contextual_si.append({
             'term': name[0] if isinstance(name, tuple) else name,
-            'syntax': ['NN', 'NNS'],
+            'syntax': ['NN', 'NNS', 'NNP', 'NNPS'],
             'arity': 1,
             'arguments': ['(*)'],
             'interpretation': interpretation,

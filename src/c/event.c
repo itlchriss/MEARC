@@ -7,13 +7,20 @@
 
 extern struct queue *events;
 
+void deallocateentity(struct entity *entity);
+
 enum gramtype __string2gramtype(char *input);
 
+char *gram_string[] = { "Subj", "Acc", "AccI", "AccE", "Dat", "Gen", "Abl", "Rel", "Voc" };
 char *gram_name[] = { "SubjectOf", "AccusationOf", "IntentionalAccusationOf", "ExtentionalAccusationOf", "Dative", "Genitive", "Ablative", "Relative", "Vocative" };
 
 int __eventptrcomparator(void *a, void *b) {
     if (a == b) return 0;
     else return 1;
+}
+
+char *gramtype2string(enum gramtype type) {
+    return gram_string[type];
 }
 
 /*
@@ -61,6 +68,22 @@ TODO: instead of alias, we should just replace the entity var with the event var
 //         }
 //     }
 // }
+
+/* this function removes all the relationships in the events relating the input entity variable */
+void removeentityfromevents(char *entityvar) {
+    struct event *e;
+    for (int i = 0; i < events->count; ++i) {
+        e = (struct event*)gqueue(events, i);
+        for (int j = 0; j < e->entities->count; ++j) {
+            struct entity *en = (struct entity*)gqueue(e->entities, i);
+            if (strcmp(en->var, entityvar) == 0) {
+                rqueue(e->entities, j);
+                deallocateentity(en);
+                break;
+            }
+        }
+    }
+}
 
 struct event *searchevent(char *eventvar) {
     struct event *e;
@@ -135,14 +158,17 @@ void *__popentityfromevent(char *eventvar) {
     return dequeue(e->entities);
 }
 
-// void showevent(void *_event) {
-//     struct event *event = (struct event*)_event;
-//     printf("Event: %s\n", event->var);
-//     for (int j = 0; j < event->entities->count; ++j) {
-//         struct entity *entity = (struct entity *)gqueue(event->entities, j);
-//         printf("    ->Entity: %s(%s) alias(%s) SI(%d)\n ", entity->var, gram_name[entity->type], entity->alias, entity->sitype);
-//     }
-// }
+void showevent(void *_event) {
+    struct event *event = (struct event*)_event;
+    printf("Event: %s\n", event->var);
+    for (int j = 0; j < event->entities->count; ++j) {
+        struct entity *entity = (struct entity *)gqueue(event->entities, j);
+        // printf("    ->Entity: %s(%s) alias(%s) SI(%d)\n ", entity->var, gram_name[entity->type], entity->alias, entity->sitype);
+        printf("=============================Event symbol===================================\n");
+        printf("    ->Entity: %s(%s) alias(%s) SI\n ", entity->var, gram_name[entity->type], entity->alias);
+        printf("===================================================================================\n");
+    }
+}
 
 void deallocateentity(struct entity *entity) {
     free(entity->var);
