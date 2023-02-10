@@ -287,22 +287,6 @@
   grammar_arguments:
   - (x)
   interpretation: \old(Arrays.asList((x)).indexOf((y)))
-- term: of
-  syntax:
-  - IN
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: \sub(y)2(x)
-- term: in
-  syntax:
-  - IN
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: \sub(y)2(x)
 - term: if
   syntax:
   - IN
@@ -427,4 +411,20 @@
   arguments:
   - (x)
   - (y)
-  interpretation: \sub(y)2(x)
+  interpretation: _gsub(y)2(x)
+- term: of
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: _sub(y)2(x)
+- term: in
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: _sub(y)2(x)
