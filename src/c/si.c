@@ -16,6 +16,7 @@ int __argtype_simatcher(void *, void *);
 int __sisymbol_duplicated(void *, void *);
 int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
+int Gram_Rel_synthesis(struct astnode *node, struct si *si);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
 char *javadatatype_name[] = { "PRIMITIVE", "NON_PRIMITIVE", "NON_PRIMITIVE_WITH_DIMENSIONS" };
@@ -152,46 +153,44 @@ void sibling_si_synthesis(struct astnode *node, struct astnode *sinode, struct a
     root = deleteastnodeandedge(node, root);
 }
 
-int Jseries_code_synthesis(struct astnode *node, struct si *si) {
-    struct astnode *child;
-    // for (int i = 0; i < countastchildren(node); ++i) {
-    //     child = getastchild(node, i);
-    //     if (child->type != Synthesised) return 1;
-    // }
-    char *s = __obtain_si_from_subtree__(node, si);
-    if (countastchildren(node) == 1) {
-        child = getastchild(node, 0);
-        struct cstsymbol *c = searchsymbolbyref(child);
-        __remove_all_children_cst__(node);
-        __update_cstsymbol_data__(c, s, si->jtype);
-        syncsymbol(c);
-        // TODO: check this. this is not thoroughly checked. if this ruins other cases, remove this line.
-        c->si_ptr = si;
-        c->g_arg_count = 0;
-        //
-        if (getavailablerefs(c) == 0 && node->parent->type == Quantifier) {
-            /* a special case for the sentences that the predicate is a single adjective */
-            __replace_si_at_parent__(node, Synthesised, s);
-        } else {
-            root = deleteastnodeandedge(node, root);
-        }
+
+int __synthesis_with_keywords__(struct astnode *node, struct si *si) {
+    struct astnode *x = getastchild(node, 0), *y = getastchild(node, 1);
+    if (strcmp(si->interpretation, "_sub(x)2(y)") == 0) {
+        sibling_si_synthesis(node, y, x);
+    } else if (strcmp(si->interpretation, "_sub(y)2(x)") == 0) {
+        sibling_si_synthesis(node, x, y);
+    } else if (strcmp(si->interpretation, "_gsub(y)2(x)") == 0) {
+        return Gram_Rel_synthesis(node, si);
     } else {
-        __remove_all_children_cst__(node);
+        fprintf(stderr, "Unrecognised keyword(%s)\n", si->interpretation);
+        exit(-100);
+    }
+    return 1;
+}
+
+int Jseries_code_synthesis(struct astnode *node, struct si *si) {
+    char *s = __obtain_si_from_subtree__(node, si);
+    struct astnode *child = getastchild(node, 0);
+    struct cstsymbol *c = searchsymbolbyref(child);
+    __remove_all_children_cst__(node);
+    __update_cstsymbol_data__(c, s, si->jtype);
+    syncsymbol(c);
+    // TODO: check this. this is not thoroughly checked. if this ruins other cases, remove this line.
+    c->si_ptr = si;
+    c->g_arg_count = 0;
+    //
+    if (getavailablerefs(c) == 0 && node->parent->type == Quantifier) {
+        /* a special case for the sentences that the predicate is a single adjective */
         __replace_si_at_parent__(node, Synthesised, s);
+    } else {
+        root = deleteastnodeandedge(node, root);
     }
     free(s);
     return 0;
 }
 
 int Vseries_code_synthesis(struct astnode *node, struct si *si) {
-    struct astnode *child;
-    /* Verbs usually accepts 2 arguments (subject, object). Thus, verbs cannot be resolved before both arguments are resolved. */
-    for (int i = 0; i < countastchildren(node); ++i) {
-        child = getastchild(node, i);
-        if (child->type != Synthesised) {
-            return 1;
-        }
-    }
     subtree_si_synthesis(node, si);
     return 0;
 }
@@ -231,15 +230,6 @@ int DT_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int EX_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int FW_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int IN_code_synthesis(struct astnode *node, struct si *si) {      
-    // if (countastchildren(node) == 1) {
-    //     fprintf(stderr, "single argument preposition is not supported.\n");
-    //     exit(-5);
-    // }
-    // a special case for root with preposition predicate
-    // if (node->isroot == 1) {
-    //     return __synthesis_predicate_at_root__(si);
-    // } else 
-
     if (getastchild(node, 0)->type == MultipleSIs && getastchild(node, 1)->type == Synthesised) {
         struct astnode *sinode = getastchild(node, 0), *datanode = getastchild(node, 1);
         struct si *si = searchqueue(sinode->si_q, datanode, __preposition_argtype_simatcher);
@@ -250,9 +240,9 @@ int IN_code_synthesis(struct astnode *node, struct si *si) {
         si_substitution(node, sinode, datanode, si);
     } else {
         struct astnode *x = getastchild(node, 0), *y = getastchild(node, 1);
-        if (strcmp(si->interpretation, "\\sub(x)2(y)") == 0) {
+        if (strcmp(si->interpretation, "_sub(x)2(y)") == 0) {
             sibling_si_synthesis(node, y, x);
-        } else if (strcmp(si->interpretation, "\\sub(y)2(x)") == 0) {
+        } else if (strcmp(si->interpretation, "_sub(y)2(x)") == 0) {
             sibling_si_synthesis(node, x, y);
         } else {
             subtree_si_synthesis(node, si);
@@ -274,18 +264,6 @@ int POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PRP_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int PRP_POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int RB_code_synthesis(struct astnode *node, struct si *si) {
-    // if (node->isroot == 1) {
-    //     return __synthesis_predicate_at_root__(si);
-    // } else {
-    //     for (int i = 0; i < countastchildren(node); ++i) {
-    //         if (getastchild(node, i)->type != Synthesised) return 1;
-    //     }
-    //     subtree_si_synthesis(node, si);
-    //     return 0;
-    // }
-    // for (int i = 0; i < countastchildren(node); ++i) {
-    //     if (getastchild(node, i)->type != Synthesised) return 1;
-    // }
     subtree_si_synthesis(node, si);
     return 0;
 }
@@ -317,10 +295,6 @@ int WP_POS_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 int WRB_code_synthesis(struct astnode *node, struct si *si) { return 0; }
 
 int Gram_Rel_synthesis(struct astnode *node, struct si *si) {
-    // sibling_si_synthesis
-    // for (int i = 0; i < countastchildren(node); ++i) {
-    //     if (getastchild(node, i)->type != Synthesised) return 1;
-    // }
     struct astnode *sinode = getastchild(node, 0), *y = getastchild(node, 1);
     struct cstsymbol *c = searchsymbolbyref(sinode);
     struct si *_si = (struct si *)c->si_ptr;
@@ -342,6 +316,7 @@ int Gram_Prog_synthesis(struct astnode *node, struct si *si) {
     return 0;
 }
 
+// int (*code_syntheses[])(struct astnode *, struct si *) = {CC_code_synthesis, CD_code_synthesis, DT_code_synthesis, EX_code_synthesis, FW_code_synthesis, IN_code_synthesis, JJ_code_synthesis, JJR_code_synthesis, JJS_code_synthesis, LS_code_synthesis, MD_code_synthesis, NN_code_synthesis, NNS_code_synthesis, NNP_code_synthesis, NNPS_code_synthesis, PDT_code_synthesis, POS_code_synthesis, PRP_code_synthesis, PRP_POS_code_synthesis, RB_code_synthesis, RBR_code_synthesis, RBS_code_synthesis, RP_code_synthesis, SYM_code_synthesis, TO_code_synthesis, UH_code_synthesis, VB_code_synthesis, VBD_code_synthesis, VBG_code_synthesis, VBN_code_synthesis, VBP_code_synthesis, VBZ_code_synthesis, WDT_code_synthesis, WP_code_synthesis, WP_POS_code_synthesis, WRB_code_synthesis, Gram_Prog_synthesis, Gram_Rel_synthesis};
 int (*code_syntheses[])(struct astnode *, struct si *) = {CC_code_synthesis, CD_code_synthesis, DT_code_synthesis, EX_code_synthesis, FW_code_synthesis, IN_code_synthesis, JJ_code_synthesis, JJR_code_synthesis, JJS_code_synthesis, LS_code_synthesis, MD_code_synthesis, NN_code_synthesis, NNS_code_synthesis, NNP_code_synthesis, NNPS_code_synthesis, PDT_code_synthesis, POS_code_synthesis, PRP_code_synthesis, PRP_POS_code_synthesis, RB_code_synthesis, RBR_code_synthesis, RBS_code_synthesis, RP_code_synthesis, SYM_code_synthesis, TO_code_synthesis, UH_code_synthesis, VB_code_synthesis, VBD_code_synthesis, VBG_code_synthesis, VBN_code_synthesis, VBP_code_synthesis, VBZ_code_synthesis, WDT_code_synthesis, WP_code_synthesis, WP_POS_code_synthesis, WRB_code_synthesis, Gram_Prog_synthesis, Gram_Rel_synthesis};
 
 
@@ -519,8 +494,10 @@ void sisynthesis() {
                         }
                     }
                 }
-                // TODO: check keywords (e.g. \sub) here
-                if (countastchildren(node) == 2 && si->interpretation[0] != '\\') {
+                // check keywords (e.g. \sub) here
+                if (si->interpretation[0] == '_') {
+                    x = __synthesis_with_keywords__(node, si);
+                } else if (countastchildren(node) == 2) {
                     subtree_si_synthesis(node, si);
                     x = 0;
                 } else {

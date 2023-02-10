@@ -119,8 +119,6 @@ def main(filepath: str):
     __add2sis('size', ['x'], r'(x).length', ['NN'], _specific_arg_types=[JavaTypes.Array])
     __add2sis('sort', ['x'], r'\forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]', ['VBN'])
     __add2sis('index', ['y'], r'\old(Arrays.asList((x)).indexOf((y)))', ['NN'], _grammar_args = ['x'])
-    __add2sis('of', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
-    __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
     # __add2sis('if', ['x', 'y'], r'((y)) ==> ((x))', ['IN'])
     __add2sis('if', ['*', '*'], r'==>', ['IN'], _type=3)
     # __add2sis('elements of array', ['x', 'y', 'z'], r'\forall int i; 0 <= i < (x).length; (x)[i](y)(z)', ['NN'])
@@ -142,44 +140,14 @@ def main(filepath: str):
     __add2sis('insertion point', ['x'], r'(\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j; ((z)) <= j < (x).length; (y) < (x)[j])', ['NN'], _specific_arg_types=[JavaTypes.Array], _grammar_args=['y', 'z'])
     __add2sis('minus', ['x', 'y'], r'(x) - (y)', ['IN'])
     __add2sis('negative', ['x'], r'-(x)', ['JJ'])
-    __add2sis('Rel', ['x', 'y'], r'\gsub(y)2(x)', ['Rel'])
+    # __add2sis('Rel', ['x', 'y'], r'\gsub(y)2(x)', ['Rel'])
+    # __add2sis('of', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
+    # __add2sis('in', ['x', 'y'], r'\sub(y)2(x)', ['IN'])
+    __add2sis('Rel', ['x', 'y'], r'_gsub(y)2(x)', ['Rel'])
+    __add2sis('of', ['x', 'y'], r'_sub(y)2(x)', ['IN'])
+    __add2sis('in', ['x', 'y'], r'_sub(y)2(x)', ['IN'])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
-
-
-# def _main(filepath: str):
-#     sis = []
-#     fp = open(filepath, 'a+')
-#     data = yaml.full_load(fp)
-#     print('===========Start manipulation===========')
-#     for line in sys.stdin:  # type: str
-#         print('1. Input a semantic interpretation')
-#         print('2. Delete a semantic interpretation')
-#         print('3. Save changes and close')
-#         print('4. Discard changes and close')
-#         print('Please choose one of the options[1|2|3|4]: ', end='')
-#         choice = line.strip()
-#         if choice == '4':
-#             while True:
-#                 print('Are you sure to discard all changes?[Y|n]', end='')
-#                 for ans in sys.stdin:  # type: str
-#                     if ans not in ['Y', 'n']:
-#                         continue
-#                     elif ans == 'Y':
-#                         exit(1)
-#                     else:
-#                         break
-#         elif choice == '3':
-#             if sis:
-#
-#                 yaml.dump(sis, fp, sort_keys=False)
-#                 print('%d terms are written to the target file')
-#         else:
-#             if r := __analyse(line.strip()):
-#                 sis.append(r)
-#             else:
-#                 print('Something is wrong with the previous input. Please check with the input format')
-
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
