@@ -7,33 +7,51 @@
 
 static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
-void walktree(struct astnode *root, FILE *s, int *haserror) {
-    struct queue *queue = initqueue();
-    struct astnode *node;
-    enqueue(queue, root);
-    while (!isempty(queue)) {
-        node = (struct astnode*) dequeue(queue);
-        switch(node->type) {
-            case Synthesised:
-                if (node->isnegative == 1) {
-                    fprintf(s, "!(%s)", node->token->symbol);
-                } else {
-                    fprintf(s, "%s", node->token->symbol);
-                }
-                break;
-            default:
-                #if CGDEBUG
-                fprintf(stderr, "walktree: Unknown type(%s) encountered for symbol(%s).\n");
-                #endif
-                (*haserror)++;
-                goto END;
-        }        
-    }
-END:
-    deallocatequeue(queue, NULL);
-}
+// void walktree(struct astnode *root, FILE *s, int *haserror) {
+//     struct queue *queue = initqueue();
+//     struct astnode *node;
+//     enqueue(queue, root);
+//     while (!isempty(queue)) {
+//         node = (struct astnode*) dequeue(queue);
+//         switch(node->type) {
+//             case Synthesised:
+//                 if (node->isnegative == 1) {
+//                     fprintf(s, "!(%s)", node->token->symbol);
+//                 } else {
+//                     fprintf(s, "%s", node->token->symbol);
+//                 }
+//                 break;
+//             default:
+//                 #if CGDEBUG
+//                 fprintf(stderr, "walktree: Unknown type(%s) encountered for symbol(%s).\n");
+//                 #endif
+//                 (*haserror)++;
+//                 goto END;
+//         }        
+//     }
+// END:
+//     deallocatequeue(queue, NULL);
+// }
 
 void printree(struct astnode *node, FILE *s, int *haserror) {
+    switch(node->type) {
+        case Synthesised:
+            if (node->isnegative == 1) {
+                fprintf(s, "!(%s)", node->token->symbol);
+            } else {
+                fprintf(s, "%s", node->token->symbol);
+            }
+            break;
+        default:
+            #if CGDEBUG
+            fprintf(stderr, "walktree: Unknown type(%s) encountered for symbol(%s).\n");
+            #endif
+            (*haserror)++;
+            goto END;
+    }        
+}
+
+void walktree(struct astnode *node, FILE *s, int *haserror) {
     if (*haserror > 0) {
         return;
     } else {
@@ -42,14 +60,14 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
             return;
         }
         if (node->type != Connective) {
-            walktree(node, s, haserror);        
+            printree(node, s, haserror);        
         } else {
             fprintf(s, "(");
-            printree((struct astnode *)getastchild(node, 0), s, haserror);
+            walktree((struct astnode *)getastchild(node, 0), s, haserror);
             fprintf(s, ")");
             fprintf(s, " %s ", connective_code[node->conntype]);
             fprintf(s, "(");
-            printree((struct astnode *)getastchild(node, 1), s, haserror);
+            walktree((struct astnode *)getastchild(node, 1), s, haserror);
             fprintf(s, ")");
         }
     }
