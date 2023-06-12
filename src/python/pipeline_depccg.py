@@ -164,8 +164,10 @@ def main(source_code_dir: str, javadoc_xml_filepath: str) -> None:
 
 
 if __name__ == "__main__":
+    result = None
     if len(sys.argv) == 2:
-        print(call_depccg_pipeline(sys.argv[1]))
+        result = call_depccg_pipeline(sys.argv[1]).strip()
+        print(result)
     # if sys.argv[1] and os.path.exists(sys.argv[1]) and \
     #         sys.argv[2] and os.path.exists(sys.argv[2]):
     #     main(sys.argv[1], sys.argv[2])

@@ -233,13 +233,15 @@ quantified_term
         print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
         if (strcmp($1->symbol, "exists") == 0) {
-            $$->qtype = Quantifier_Exists;
+            // $$->qtype = Quantifier_Exists;
+            $$->qtype = 0;
         } else {
-            $$->qtype = Quantifier_ForAll;
+            // $$->qtype = Quantifier_ForAll;
+            $$->qtype = 1;
         }
         if (addcstref($2->symbol, $$) != 0) {
             addcstsymbol($2->symbol);
-            addcstref($2->symbol, $$);
+            // addcstref($2->symbol, $$);
         }
         addastchild($$, $5);        
         closecstscope($2->symbol);

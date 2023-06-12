@@ -61,6 +61,7 @@ def get_package_global_info(directory: str) -> Set:
 java_types_with_dimensions = ['Collection', 'Set', 'Queue', 'Stack']
 java_types_primitive = ['int', 'byte', 'short', 'long', 'float', 'double', 'boolean', 'char', 'Integer']
 
+
 class JavaTypes(IntEnum):
     Primitive = 0
     Array = 1
@@ -69,6 +70,7 @@ class JavaTypes(IntEnum):
     JML_expression_result = 3
     JML_expression_template = 4
     Others = 5
+
 
 def get_type(typedefinition) -> int:
     if typedefinition:
@@ -84,6 +86,34 @@ def get_type(typedefinition) -> int:
         t = -1
     return t
 
+
+# returning a set of constants declared in the class
+def get_constants_from_javasrc(filepath: str) -> Set:
+    result = []
+    if os.path.isfile(filepath) and filepath.endswith('.java'):
+        with open(filepath, 'r') as fp:
+            file = fp.read()
+            tree = javalang.parse.parse(file)
+            for path, node in tree.filter(javalang.tree.FieldDeclaration):
+                if node.declarators:
+                    result.append(node.declarators[0].name.lower())
+    return set(result)
+
+
+# returning a set of parameters in the first method in the class
+def get_single_method_parameters(filepath: str) -> Set:
+    result = []
+    if os.path.isfile(filepath) and filepath.endswith('.java'):
+        with open(filepath, 'r') as fp:
+            file = fp.read()
+            tree = javalang.parse.parse(file)
+            for path, node in tree.filter(javalang.tree.MethodDeclaration):
+                if node.parameters:
+                    for p in node.parameters:
+                        result.append(p.name)
+    return set(result)
+
+
 def get_package_global_info_from_javasrc(srcfile: str) -> Set:
     global_element_names = []
     if os.path.isfile(srcfile) and srcfile.endswith('.java'):
@@ -97,15 +127,21 @@ def get_package_global_info_from_javasrc(srcfile: str) -> Set:
                     for p in node.parameters:
                         t_name = get_type(p.type)
                         global_element_names.append((p.name, t_name))
+                        # if '_' in p.name:
+                        #     tmp = p.name.split('_')
+                        #     abbr = [x[0].upper() for x in tmp]
+                        #     global_element_names.append((abbr, t_name))
             for path, node in tree.filter(javalang.tree.InterfaceDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.ClassDeclaration):
                 global_element_names.append(node.name.lower())
             for path, node in tree.filter(javalang.tree.FieldDeclaration):
-                if node.declarators:       
-                    t_name = get_type(p.type)             
-                    global_element_names.append((node.declarators[0].name.lower(), t_name, node.declarators[0].initializer.value))
-                    global_element_names.append((node.declarators[0].name.capitalize(), t_name, node.declarators[0].initializer.value))
+                if node.declarators:
+                    t_name = get_type(p.type)
+                    global_element_names.append(
+                        (node.declarators[0].name.lower(), t_name, node.declarators[0].initializer.value))
+                    global_element_names.append(
+                        (node.declarators[0].name.capitalize(), t_name, node.declarators[0].initializer.value))
     return set(global_element_names)
 
 
@@ -128,7 +164,8 @@ def get_package_info(directory: str):
 def __normalise(text: str) -> str:
     # soup = BeautifulSoup(text)
     # text = soup.getText()
-    text = text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>', '')
+    text = text.replace('{@link', '').replace('}', '').replace('{@code', '').replace('<code>', '').replace('</code>',
+                                                                                                           '')
     if rs := re.findall(r'<\w+>', text):
         for r in set(rs):
             text = text.replace(r, r.replace('<', '').replace('>', '') + '_TYPE')
@@ -318,7 +355,6 @@ def main(source_code_dir: str, javadoc_xml_filepath: str):
     # process_documentation(javadoc_xml_filepath)
     global_names = get_package_global_info(source_code_dir)
     get_javadoc_info(javadoc_xml_filepath)
-
 
 
 if __name__ == "__main__":

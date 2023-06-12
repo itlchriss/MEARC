@@ -2,11 +2,22 @@ import os
 import re
 import sys
 from typing import List, Dict, Tuple
-from dstbuilder import get_package_global_info_from_javasrc, JavaTypes
+from dstbuilder import get_package_global_info_from_javasrc, \
+    JavaTypes, get_constants_from_javasrc, get_single_method_parameters
 import yaml
+from copy import deepcopy
 
 import javalang
 import nltk
+from optparse import OptionParser
+
+optparser = OptionParser()
+optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
+optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
+optparser.add_option("-o", "--target", dest="target_path", help="[optional]path for saving the output")
+optparser.add_option("-q", "--query",
+                     dest="query_path", help="[optional]path of the queries that at saved in separate file")
+optparser.add_option("-s", "--silib", dest="silib_path", help="[optional]path of the SI Library")
 
 Pronouns = ['I', 'me', 'he', 'she', 'herself', 'you', 'it', 'that', 'they', 'each', 'few', 'many', 'who', 'whoever',
             'whose', 'someone', 'everybody']
@@ -87,6 +98,7 @@ PTBTagSet = [
     "wrb"
 ]
 
+
 class Preprocessor:
     patterns = {
         'null': 'a null_value',
@@ -99,6 +111,9 @@ class Preprocessor:
         'will be': 'is',
         # 'is equal to': 'is',
         'will': ' ',
+        'degrees': ' ',
+        'degree': ' ',
+        'is between': 'ranges between',
         'all elements in': 'every element of'
     }
     function_si = []
@@ -106,21 +121,36 @@ class Preprocessor:
         {
             'phrase': 'from (x) to (y)',
             'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
-            'interpretation': '(x) < i < (y)',
-            'type': JavaTypes.JML_expression_result
+            'si_args': ['(Subj)'],
+            'interpretation': '(x) < (Subj) < (y)',
+            'type': int(JavaTypes.JML_expression_result)
         },
         {
             'phrase': '(z) from (x) to (y)',
             'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM'], '(z)': ['PARAM']},
             'interpretation': '(x) < (z) < (y)',
-            'type': JavaTypes.JML_expression_result
+            'type': int(JavaTypes.JML_expression_result)
         },
         {
             'phrase': '(x) ± (y)',
             'args': {'(x)': ['CD'], '(y)': ['CD']},
-            'si_args': ['(Subj)' ],
+            'si_args': ['(Subj)'],
             'interpretation': '(x) - (y) < (Subj) < (x) + (y)',
-            'type': JavaTypes.JML_expression_result
+            'type': int(JavaTypes.JML_expression_result)
+        },
+        {
+            'phrase': 'between (x) and (y)',
+            'args': {'(x)': ['CD'], '(y)': ['CD']},
+            'si_args': ['(Subj)'],
+            'interpretation': '(x) < (Subj) < (y)',
+            'type': int(JavaTypes.JML_expression_result)
+        },
+        {
+            'phrase': '(x) to (y)',
+            'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
+            'si_args': ['(Subj)'],
+            'interpretation': '(x) < (Subj) < (y)',
+            'type': int(JavaTypes.JML_expression_result)
         }
     ]
     operators = {
@@ -167,7 +197,10 @@ class Preprocessor:
         for i in range(len(data)):
             match = True
             for j, w2 in enumerate(pattern):
-                if i + j > len(data) or data[i + j].strip(',') != w2:
+                if i + j >= len(data):
+                    match = False
+                    break
+                if data[i + j].strip(',') != w2:
                     match = False
                     break
             if match:
@@ -311,7 +344,7 @@ class Preprocessor:
                         'type': phrase_rule['type'],
                     }
                     if 'si_args' in phrase_rule:
-                        si['arguments'] = phrase_rule['si_args']
+                        si['arguments'] = deepcopy(phrase_rule['si_args'])
                     # add the si
                     self.function_si.append(si)                                        
                     break
@@ -503,27 +536,30 @@ class Preprocessor:
         self.__add_si_to_patterns(self.get_semantics())
 
 
-def main(javafile, sidb, targetpath=None):
+def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: str = None, using_gpt=True):
     contextual_si = []
-    dst = get_package_global_info_from_javasrc(javafile)
+    dst = get_package_global_info_from_javasrc(javafilepath)
     for name in dst:
         interpretation = None
+        _type = -1
         if not isinstance(name, tuple):
             interpretation = name
         elif len(name) == 2:
             interpretation = name[0]
+            _type = int(name[1])
         else:
             interpretation = name[2]
+            _type = int(name[1])
         contextual_si.append({
             'term': name[0] if isinstance(name, tuple) else name,
             'syntax': ['NN', 'NNS', 'NNP', 'NNPS'],
             'arity': 1,
             'arguments': ['(*)'],
             'interpretation': interpretation,
-            'type': name[1] if isinstance(name, tuple) else -1
+            'type': _type if isinstance(name, tuple) else -1
         })
     # TODO: we need error handling in accessing the class name
-    preprocessor = Preprocessor(javafile, sidb, dst=dst)
+    preprocessor = Preprocessor(javafilepath, silibpath, dst=dst)
     annotations = preprocessor.get_semantics()
     if annotations:
         for d in annotations:
@@ -543,6 +579,47 @@ def main(javafile, sidb, targetpath=None):
         if raw_specs['ensures']:
             for e in raw_specs['ensures']:
                 specs['ensures'].append(preprocessor.process(e))
+    #############################################################
+    # 20230525 in Portugal
+    # Adding the GPT optional preprocessing
+    if querypath:
+        from gpt_helpers import Gpt_preprocessing
+        features = list(get_single_method_parameters(javafilepath))
+        classes = list(get_constants_from_javasrc(javafilepath))
+        with open(querypath, 'r') as fp:
+            lines = fp.readlines()
+        specs['pairs'] = []
+        gpt_turbo_count = 0
+        for line in lines:
+            runner = Gpt_preprocessing(features=features, classes=classes, debug=False)
+            runner.count = gpt_turbo_count
+            print('input line: ', line)
+            spec = runner.process(line)
+            for conclusion in spec:
+                # each key value pair is a conclusion to a list of premises pair
+                # we formulate them to each premise pair with the conclusion
+                # such that, we can construct 'also' in between them
+                premises = spec[conclusion]
+                if conclusion and premises:
+                    print('premises: ', premises)
+                    print('conclusion: ', conclusion)
+                    # the conclusion is the same over all the premises within the same key value pair
+                    # therefore, we preprocess it just once
+                    _c = preprocessor.process(conclusion)
+                    _pre_list = []
+                    for p in premises:
+                        # each premise is preprocessed here
+                        p = p.strip()
+                        if '\n' in p:
+                            # replacing all newlines and colons with 'and',
+                            # such that multiple parameter descriptions form a spec
+                            p = p.replace('\n', ' and ')
+                            p = p.replace(';', ' and ')
+                        _pre_list.append(preprocessor.process(p))
+                    # premises for a conclusion is stored in a list and paired in dictionary with the conclusion
+                    # such that we can produce 'also' in mearc by checking multiple premises
+                    specs['pairs'].append({'pre': _pre_list, 'post': _c})
+    #############################################################
     contextual_si += preprocessor.function_si
     yaml_data = []
     if specs['requires']:
@@ -557,13 +634,22 @@ def main(javafile, sidb, targetpath=None):
                 'type': 'postcondition',
                 'specification': post
             })
+    #############################################################
+    # 20230526 Added in Portugal
+    # TODO: write specs['pairs'] into the yaml file
+    #############################################################
+    # yaml.dumper.SafeDumper.ignore_aliases = lambda self, data: True
+
     if not targetpath:
+        # yaml.dump(contextual_si, sys.stdout, sort_keys=False, allow_unicode=True, Dumper=yaml.dumper.SafeDumper)
+        # yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True, Dumper=yaml.dumper.SafeDumper)
         yaml.dump(contextual_si, sys.stdout, sort_keys=False, allow_unicode=True)
         yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True)
     else:
-        name = javafile.split('/')[-1].split('.')[0]
+        name = javafilepath.split('/')[-1].split('.')[0]
         si_path = ('%s/%s.si.yml' % (targetpath, name))
         spec_path = ('%s/%s.conditions.yml' % (targetpath, name))
+
         with open(si_path, 'w+') as fp:
             yaml.dump(contextual_si, fp, sort_keys=False)
         with open(spec_path, 'w+') as fp:
@@ -571,12 +657,19 @@ def main(javafile, sidb, targetpath=None):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        main(sys.argv[1], None)
-    elif len(sys.argv) == 4:
-        main(sys.argv[1], sys.argv[2], sys.argv[3])
-    elif sys.argv[1] and os.path.exists(sys.argv[1]) and \
-            sys.argv[2] and os.path.exists(sys.argv[2]):
-        main(sys.argv[1], sys.argv[2])
+    (options, args) = optparser.parse_args()
+    if not options.prog_path:
+        print('Please provide the java source file path')
+        exit(1)
     else:
-        print('Please check the input file path')
+        main(javafilepath=options.prog_path,
+             silibpath=options.silib_path, targetpath=options.target_path, querypath=options.query_path)
+    # if len(sys.argv) == 5:
+    #     main(javafilepath=sys.argv[1], sidbpath=sys.argv[2], targetpath=sys.argv[3], querypath=sys.argv[4])
+    # elif len(sys.argv) == 4:
+    #     main(javafilepath=sys.argv[1], sidbpath=sys.argv[2], targetpath=sys.argv[3])
+    # elif sys.argv[1] and os.path.exists(sys.argv[1]) and \
+    #         sys.argv[2] and os.path.exists(sys.argv[2]):
+    #     main(sys.argv[1], sys.argv[2])
+    # else:
+    #     print('Please check the input file path')

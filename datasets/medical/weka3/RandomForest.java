@@ -3,16 +3,12 @@ class RandomForest {
 public static final int Hernia = 0;
 public static final int Normal = 1;
 public static final int Spondylolisthesis = 2;
-//@ ensures(*The patients who had degenerative spondylolisthesis had a lumbar lordosis angle from 52.6 to 62.1.*);
-//   This below case cannot be used. Because the NLP translates it to incorrect MR that we cannot fix. The problem is that the phrase (lordosis angle) is being translated to an entity that has equality to the an entity of the phrase (individuals). Such that, because this two entities are syntactically different, but they are being inferred as the same thing logically. Therefore, in the current knowledge we cannot convert the logic to something correct.
-// ensures(*The lordosis angle of the individuals with no spinal pathology was 45.9 ± 9.9 degrees.*);
-// ensures(*Patients with lumbar disk herniation at L4-L5 level had a mean tilt of 8.06, mean slope of 36.93, and mean PI of 45. In patients with degenerative spondylolisthesis at the L4-L5 level, a mean tilt of 22.1, mean slope of 38.3, and mean PI of 61.4 were observed.*);
-// The above sentence is broken down into two sentences.
-// Then, the first sentence syntax is inconsistent. We have to do minor correction...
-//   We have to look up the literature to find the range of values, because only mean is not sufficient.
-// ensures(*Patients with lumbar disk herniation at L4 to L5 level had a mean tilt of 8.06, and a mean slope of 36.93, and a mean PI of 45.*);
-// ensures(*the normal range of the pelvic incidence is between 40 to 65, sacral slope 30 to 50, the normal range of lumbar lordosis is between 31 and 70.*);
-//@ ensures(*the normal range of the pelvic incidence is between 40 to 65, sacral slope 30 to 50, the normal range of lumbar lordosis angle between 31 and 70.*);
+// requires(*Lumbar lordosis angle ranges from 36 to 56.8 degrees.*);
+// requires(*The lumbar lordosis angle ranges between 36 and 56.8 degrees.*);
+// ensures(*The result is normal.*);
+// requires(*lumbar_lordosis_angle ranges from 46.5 to 61.1 degrees.*);
+// requires(*lumbar_lordosis_angle ranges from 37.2 to 68.0 degrees.*);
+// requires(*sacral slope ranges 30 to 50.*);
 public int randomForest(double pelvic_incidence,double pelvic_tilt,double lumbar_lordosis_angle,double sacral_slope,double pelvic_radius,double degree_spondylolisthesis){
 double  class0 = 0;
 double  class1 = 0;

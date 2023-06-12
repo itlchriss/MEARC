@@ -118,6 +118,13 @@ void addevententity(struct event *event, char *entityvar, char *gramstr) {
     new->type = __string2gramtype(gramstr);
     // new->sitype = -1;
     new->alias = NULL;
+    /* find the compile time symbol of the entity variable */
+    new->ptr = searchcst(entityvar);
+    if (new->ptr == NULL) {
+        fprintf(stderr, "An entity variable(%s) is not found in the compile time symbol table. Stopping..", entityvar);
+        exit(-1);
+    }
+    new->ptr->refs->count -= 1;
     enqueue(event->entities, (void*)new);
 }
 

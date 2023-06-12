@@ -109,6 +109,7 @@ KEYWORD_REL         "Rel"
 KEYWORD_SUBJ        "Subj"
 KEYWORD_ACC         "Acc"
 KEYWORD_ACCI         "AccI"
+KEYWORD_DAT         "Dat"
 
 
 KEYWORD_TRUEP      "TrueP"
@@ -166,6 +167,7 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_SUBJ}  {yylval.t = handletoken(yytext); return EVENT;}
 {KEYWORD_ACC}  {yylval.t = handletoken(yytext); return EVENT;}
 {KEYWORD_ACCI}  {yylval.t = handletoken(yytext); return EVENT;}
+{KEYWORD_DAT}   {yylval.t = handletoken(yytext); return EVENT;}
 
 "}" {
     if (cbracket <= 0) {

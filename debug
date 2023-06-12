@@ -1,3 +1,3 @@
 make ASTDEBUG=1 SIDEBUG=1
 
-gdb --ex=r --args ./bin/main -f./tmp/$1.conditions.mr.$2  -s./tmp/$1.si.yml,./src/c/lib/std_si_2022.yml
+lldb -- ./bin/main -f./tmp/$1.conditions.mr.$2  -s./tmp/$1.si.yml,./src/c/lib/std_si_2022.yml

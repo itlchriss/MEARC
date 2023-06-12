@@ -5,10 +5,11 @@ import os
 from optparse import OptionParser
 from typing import Dict, Tuple
 from yaml.loader import SafeLoader
+
 sys.path.append('./src/python')
 # from pipeline_depccg import call_depccg_pipeline
 
-_configs = { 'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
+_configs = {'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
 nlp_path = None
 si_path = None
 frontends = ['ccg2lambda', 'depccg']
@@ -22,6 +23,7 @@ optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = 
 optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
 optparser.add_option("-c", "--config", dest="config_path", help="path of the config file")
 optparser.add_option("-e", "--frontend", dest="frontend", help="ccg2lambda or depccg")
+
 
 class dot_access_dict(dict):
     __getattr__ = dict.get
@@ -40,70 +42,103 @@ def run_cmd_with_output(cmd: str) -> Dict[str, str]:
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     process.wait()
-    return { 'stdout': process.stdout.decode(), 'stderr': process.stderr.decode() }
+    return {'stdout': process.stdout.decode(), 'stderr': process.stderr.decode()}
 
 
 def run_cmd_without_output(cmd: str) -> None:
     process = subprocess.Popen(
-            cmd,
-            shell=True, stdout=subprocess.PIPE
-        )
+        cmd,
+        shell=True, stdout=subprocess.PIPE
+    )
     process.wait()
 
 
 def run_cmd_show_output(cmd: str) -> None:
     process = subprocess.Popen(
-            cmd,
-            shell=True
-        )
+        cmd,
+        shell=True
+    )
     process.wait()
 
-def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:    
+
+def __ccg2lambda(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
     info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
     debug and print('DEBUG: ccgslambda - tokenization')
     global nlp_path
     process = subprocess.Popen(
         ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/sentences.tok" % (nlspec, nlp_path, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
-    )        
+    )
     process.wait()
     debug and print('DEBUG: ccgslambda - C & C parsing')
     process = subprocess.Popen(
         ("%s/candc-1.00/bin/candc  --log %s/candc.log --models %s/candc-1.00/models --candc-printer xml --input "
-            "%s/sentences.tok > %s/sentences.candc.xml" % (nlp_path, configs.TMP, nlp_path, configs.TMP, configs.TMP)),
+         "%s/sentences.tok > %s/sentences.candc.xml" % (nlp_path, configs.TMP, nlp_path, configs.TMP, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )
     process.wait()
     debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
     process = subprocess.Popen(
-        ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (configs.PYCMD, nlp_path, configs.TMP, configs.TMP)),
+        ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (
+        configs.PYCMD, nlp_path, configs.TMP, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )
     process.wait()
     debug and print('DEBUG: ccgslambda - mapping CCG rules with the templates')
     process = subprocess.run(
         ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
-            "%s/%s.conditions.mr.%d" % (configs.PYCMD, nlp_path, configs.TMP, nlp_path, configs.TMP, prog_name, rownumber)),
+         "%s/%s.conditions.mr.%d" % (
+         configs.PYCMD, nlp_path, configs.TMP, nlp_path, configs.TMP, prog_name, rownumber)),
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
-    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber))        
+    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber))
     mr_error = process.stderr.decode()
-    mr_stdout = process.stdout.decode()  
+    mr_stdout = process.stdout.decode()
     return (mr_file_path, mr_error, mr_stdout)
+
 
 def __depccg(nlspec: str, configs, prog_name: str, rownumber: int) -> Tuple[str, str, str]:
     info and print('INFO:using depccg to get MR from (%s)' % nlspec)
     from pipeline_depccg import call_depccg_pipeline
-    mr = call_depccg_pipeline(nlspec)
+    mr = call_depccg_pipeline(nlspec).strip()
     mr_error = None
     if not mr:
         mr_error = 'Failed'
     info and print('INFO: depccg executed')
-    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber)) 
+    mr_file_path = ("%s/%s.conditions.mr.%d" % (configs.TMP, prog_name, rownumber))
+    while True:
+        tuples = find_parens(mr)
+        # if 0 not in tuples or tuples[0] != len(mr) - 1:
+        #     break
+        # else:
+        #     mr = mr[1: -1]
+        if 0 not in tuples:
+            break
+        else:
+            mr = mr[:tuples[0]] + mr[tuples[0] + 1:]
+            mr = mr[1:]
     with open(mr_file_path, 'w') as fp:
         fp.write(mr)
-    # print(mr)
     return (mr_file_path, mr_error, None)
+
+
+def find_parens(s):
+    toret = {}
+    pstack = []
+
+    for i, c in enumerate(s):
+        if c == '(':
+            pstack.append(i)
+        elif c == ')':
+            if len(pstack) == 0:
+                raise IndexError("No matching closing parens at: " + str(i))
+            toret[pstack.pop()] = i
+
+    if len(pstack) > 0:
+        raise IndexError("No matching opening parens at: " + str(pstack.pop()))
+
+    return toret
+
 
 def main(config_path: str, prog_file: str) -> None:
     with open(config_path) as fp:
@@ -126,6 +161,7 @@ def main(config_path: str, prog_file: str) -> None:
     # preprocessing 
     # cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, configs.STD_SI, configs.TMP)
     cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, si_path, configs.TMP)
+    print(cmd)
     run_cmd_show_output(cmd)
     prog_condition_file = "%s/%s.conditions.yml" % (configs.TMP, prog_name)
     prog_si_file = "%s/%s.si.yml" % (configs.TMP, prog_name)
@@ -139,8 +175,14 @@ def main(config_path: str, prog_file: str) -> None:
     for i, record in enumerate(data):
         t = record['type']
         nlspec = record['specification']
+        # if frontend.upper() == 'DEPCCG':
+        #     # cmd = "%s ./src/python/pipeline_depccg.py '%s' > ./tmp/%s.conditions.mr.%s" % (configs.PYCMD, nlspec, prog_name, i)
+        #     # info and print(cmd)
+        #     # run_cmd_show_output(cmd)
+        #     (mr_file_path, )
+        # else:
         (mr_file_path, mr_error, mr_stdout) = globals()['__%s' % frontend](nlspec, configs, prog_name, i)
-        
+
         if mr_error:
             print('Failed', file=sys.stderr)
             with open('%s/%s.error' % (configs.TMP, prog_name), 'a') as fp:
@@ -148,12 +190,12 @@ def main(config_path: str, prog_file: str) -> None:
             break
         else:
             info and print('INFO:MR generation done')
-            
+
         with open(mr_file_path) as fp:
             mr = fp.read()
         if not mr or not mr.strip():
             print('MR generation failed for the following specification: ')
-            print(nlspec)            
+            print(nlspec)
             continue
         else:
             debug and print('DEBUG: going to translate the following mr: ')
@@ -162,13 +204,14 @@ def main(config_path: str, prog_file: str) -> None:
 
         # cmd = "./bin/main -f%s -s%s,%s" % (mr_file_path, si_file_path, configs.STD_SI)
         cmd = "./bin/main -f%s -s%s,%s" % (mr_file_path, si_file_path, si_path)
+        print(cmd)
         process = subprocess.run(
             cmd.split(' '),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
         # generated jml from translator
-        cond = process.stdout.decode().strip()        
+        cond = process.stdout.decode().strip()
         error = process.stderr.decode()
         if cond:
             keyword = None
@@ -203,12 +246,10 @@ if __name__ == "__main__":
         else:
             info = False
             debug = False
-        
 
         if options.frontend == None or options.frontend not in frontends:
             info and print("Using default frontend(ccg2lambda)")
         else:
             frontend = options.frontend
-        
-        main(options.config_path, options.prog_path)
 
+        main(options.config_path, options.prog_path)

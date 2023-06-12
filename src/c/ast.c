@@ -557,8 +557,8 @@ void showast(struct astnode *node, int depth) {
         printf("..");
     switch(node->type) {
         case Predicate:
-            printf("%s(%s) Syntax: %s", node_type_name[node->type], node->token->symbol, 
-                    ptbsyntax2string(node->syntax));
+            printf("%s(%s) Syntax: %s(isroot == %d)", node_type_name[node->type], node->token->symbol, 
+                    ptbsyntax2string(node->syntax), node->isroot);
             break;
         case GrammarNotation:
             printf("%s(%s)", node_type_name[node->type], node->token->symbol);

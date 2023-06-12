@@ -214,6 +214,7 @@ struct queue* readSI(char *dstfilepaths) {
     struct queue* new = initqueue();
     FILE *fp;
     yaml_parser_t parser;    
+    enum sisource _source = -1;
     while (_t != NULL) {
         filepath = (char*)strdup(_t);
         fp = fopen(filepath, "rb");        
@@ -228,6 +229,11 @@ struct queue* readSI(char *dstfilepaths) {
             } else {
                 ungetc(c, fp);
             }
+        }
+        if (strstr(filepath, ".std.si.yml")) {
+            _source = STD;
+        } else {
+            _source = CONTEXTUTAL;
         }
         yaml_parser_initialize(&parser);
         yaml_parser_set_input_file(&parser, fp);
@@ -287,6 +293,7 @@ struct queue* readSI(char *dstfilepaths) {
                 puts("<b>End block</b>");
                 #endif
                 if (si) {
+                    si->source = _source;
                     enqueue(new, (void*)si);
                     si = NULL;
                 }

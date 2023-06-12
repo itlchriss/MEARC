@@ -75,18 +75,22 @@ class JavaTypes(IntEnum):
 
 
 def main(filepath: str):
-    # appears in 28 papers
-    __add2sis('patients who had degenerative spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
-    # appears in 54 papers
-    __add2sis('patients who had spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
-    __add2sis('individuals with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
-    __add2sis('individual with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
-    __add2sis('patients with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
-    __add2sis('patient with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # # appears in 28 papers
+    # __add2sis('patients who had degenerative spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # # appears in 54 papers
+    # __add2sis('patients who had spondylolisthesis', ['*'], r'\\result == 2', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # __add2sis('individuals with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # __add2sis('individual with no spinal pathology', ['*'], r'\\result == 0', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # __add2sis('patients with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
+    # __add2sis('patient with lumbar disk herniation at L4 to L5 level', ['*'], r'\\result == 1', ['NN', 'NNP'], _type = JavaTypes.JML_expression_result)
 
-    __add2sis('have', ['Subj', 'Acc'], r'(Acc) ==> (Subj)', ['VBD', 'VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.JML_expression_result, JavaTypes.JML_expression_result])
-    __add2sis('be', ['Subj', 'Acc'], r'_sub(Subj)2(Acc)', ['VBD'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.Primitive, JavaTypes.JML_expression_template])
-    __add2sis('no spinal pathology', ['*'], r'normal', ['NN'])
+    # __add2sis('have', ['Subj', 'Acc'], r'(Acc) ==> (Subj)', ['VBD', 'VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.JML_expression_result, JavaTypes.JML_expression_result])
+    # __add2sis('be', ['Subj', 'Acc'], r'_sub(Subj)2(Acc)', ['VBD'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.Primitive, JavaTypes.JML_expression_template])
+    # __add2sis('no spinal pathology', ['*'], r'normal', ['NN'])
+    # __add2sis('normal range', ['X', 'Acc'], r'X')
+    __add2sis('result', ['*'], r'\\result', ['NN'])
+    __add2sis('be', ['Subj', 'Acc'], r'(Subj) == (Acc)', ['VBZ'])
+    __add2sis('range', ['Subj', 'Acc'], r'_sub(Subj)2(Acc)', ['VBZ'], _type = JavaTypes.JML_expression_result, _specific_arg_types = [JavaTypes.Primitive, JavaTypes.JML_expression_template])
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)
 
