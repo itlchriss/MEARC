@@ -1,0 +1,26 @@
+- term: result
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \\result
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  interpretation: (Subj) == (Acc)
+- term: range
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '0'
+  - '4'
+  interpretation: _sub(Subj)2(Acc)
