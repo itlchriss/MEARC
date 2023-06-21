@@ -231,18 +231,46 @@ class Gpt_preprocessing:
                 # self.debug and print('Calling gpt: ' + self.allinonequery3_1 + 'Sentences: ' + s)
                 response = self.__call_gpt_chat(self.allinonequery3_1 + 'Sentences: ' + s)
                 # self.debug and print('response: ', response.choices[0].message.content)
-                sum_sents.append(response.choices[0].message.content)
+                text = response.choices[0].message.content
+                text = text.split('\n')
+                # sum_sents.append(response.choices[0].message.content)
+                sum_sents += text
             if data[0] not in results:                
                 results[data[0]] = []
-            results[data[0]].append(sum_sents)
+            results[data[0]].append(sum_sents)        
         self.debug and print('result: ', results)
         # return broken_sents, filtered
         return results
+    
+''' 
+sentence: string, the sentence that requires GPT preprocessing
+features: list of string, the features of the decision tree ensembles
+classes: list of string, the classes of the decision tree ensembles. If the classes of the model is integers, labels mapping to these integers must be defined
+key_path: string, path to the openai key
+pq_path: string, path to the professional queries. These queries are provided by the professionals to train the GPT for more precise results
+'''
+def call_gpt_helper(sentence: str, features: List[str], classes: List[str], key_path: str, pq_path: str = None):
+    # getting the openai key
+    with open(key_path, 'r') as fp:
+        key = fp.read().strip()
+    with open(pq_path, 'r') as fp:
+        pq = fp.read().strip()
+    with open('./professional_queries/relationships.txt', 'r') as fp:
+        text = fp.read()
+    raw = text.split('\n')
+    relationships = []
+    for r in raw:
+        p = r.split(',')
+        relationships.append(p)
+    runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq,
+                openai_key=key, relationships=relationships, debug=False)
+    r = runner.process(sentence)
+    return r
 
 
 def deterministic_check(sentence: str, features: List[str], classes: List[str], runs: int = 10):
     bucket = []    
-    with open('./openai.key', 'r') as fp:
+    with open('../openai.key', 'r') as fp:
         key = fp.read().strip()
     #pq_type = 'orthopedics'
     pq_type = 'acs'
@@ -278,20 +306,25 @@ def deterministic_check(sentence: str, features: List[str], classes: List[str], 
     return bucket[0]
 
 
-# _classes = ['spondylolisthesis', 'hernia', 'normal']
-# _features = ['pelvic_tilt',
-#             'pelvic_incidence',
-#             'lumbar_lordosis_angle',
-#             'sacral_slope', 'pelvic_radius', 'degree_spondylolisthesis']
+_classes = ['spondylolisthesis', 'hernia', 'normal']
+_features = ['pelvic_tilt',
+            'pelvic_incidence',
+            'lumbar_lordosis_angle',
+            'sacral_slope', 'pelvic_radius', 'degree_spondylolisthesis']
 
 # TODO: we need to consider how to relate 0 and 1 with high and low risk
-_classes = ['high risk', 'low risk']
-# TODO: we need to think of how to break the feature names into words
-_features = [
-    'age',
-    'heart_Rate', 'systolic_Blood_Pressure', 'serum_Creatinine', 'cardiac_Arrest_At_Admission', 'deviated_ST_Segment',
-    'elevated_Cardiac_Enzymes', 'killip_Class'
-]
+# _classes = ['high risk', 'low risk']
+# TODO: [optional and minor] we need to think of how to break the feature names into words
+# _features = [
+#     'age',
+#     'heart_Rate', 'systolic_Blood_Pressure', 'serum_Creatinine', 'cardiac_Arrest_At_Admission', 'deviated_ST_Segment',
+#     'elevated_Cardiac_Enzymes', 'killip_Class'
+# ]
+# _features = [
+#     'age',
+#     'heartRate', 'systolicBloodPressure', 'serumCreatinine', 'cardiacArrestAtAdmission', 'deviatedSTSegment',
+#     'elevatedCardiacEnzymes', 'killipClass'
+# ]
 
 
 #The low mortality would be
@@ -304,7 +337,8 @@ _features = [
 #possible drawbacks of the risk scores based on trial
 #cohorts.
 
-dataset = 'acs'
+# dataset = 'acs'
+dataset = 'orthopedics'
 queries = []
 with open('./datasets/medical/%s/queries.txt' % dataset, 'r') as fp:
     text = fp.read()
