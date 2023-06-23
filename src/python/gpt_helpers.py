@@ -10,6 +10,7 @@ from typing import List, Dict
 import openai
 import json
 import spacy
+import yaml
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -64,7 +65,7 @@ class Gpt_preprocessing:
                 Classify the sentences that are related to one of these topics: %s.
                 %s
                 You don't have to add extra explanations.
-                Return "topic: sentence" in your reply.
+                Return "The result is topic: sentence" in your reply.
                 "sentence" are the complete sentences that you consider to match the above topics,
                 "topic" are sentences in the format "The result is topic".
                 All return messages must base on the sentences that I gave you.
@@ -106,7 +107,7 @@ class Gpt_preprocessing:
                     abbr[f] = [_abbr]
         return abbr
 
-    def __call_gpt_chat(self, query: str):
+    def __call_gpt_chat(self, query: str):        
         response = openai.ChatCompletion.create(
             model=self.gpt_model,
             messages=[
@@ -234,38 +235,63 @@ class Gpt_preprocessing:
                 text = response.choices[0].message.content
                 text = text.split('\n')
                 # sum_sents.append(response.choices[0].message.content)
-                sum_sents += text
-            if data[0] not in results:                
-                results[data[0]] = []
-            results[data[0]].append(sum_sents)        
+                if text:
+                    sum_sents += text
+            if sum_sents:
+                if data[0] not in results:                
+                    results[data[0]] = []
+                results[data[0]] += sum_sents
         self.debug and print('result: ', results)
         # return broken_sents, filtered
         return results
     
-''' 
-sentence: string, the sentence that requires GPT preprocessing
-features: list of string, the features of the decision tree ensembles
-classes: list of string, the classes of the decision tree ensembles. If the classes of the model is integers, labels mapping to these integers must be defined
-key_path: string, path to the openai key
-pq_path: string, path to the professional queries. These queries are provided by the professionals to train the GPT for more precise results
-'''
-def call_gpt_helper(sentence: str, features: List[str], classes: List[str], key_path: str, pq_path: str = None):
-    # getting the openai key
-    with open(key_path, 'r') as fp:
-        key = fp.read().strip()
-    with open(pq_path, 'r') as fp:
-        pq = fp.read().strip()
-    with open('./professional_queries/relationships.txt', 'r') as fp:
-        text = fp.read()
-    raw = text.split('\n')
-    relationships = []
-    for r in raw:
-        p = r.split(',')
-        relationships.append(p)
-    runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq,
-                openai_key=key, relationships=relationships, debug=False)
-    r = runner.process(sentence)
-    return r
+
+# runner = None
+    
+# ''' 
+# sentence: string, the sentence that requires GPT preprocessing
+# features: list of string, the features of the decision tree ensembles
+# classes: list of string, the classes of the decision tree ensembles. If the classes of the model is integers, labels mapping to these integers must be defined
+# key_path: string, path to the openai key
+# pq_path: string, path to the professional queries. These queries are provided by the professionals to train the GPT for more precise results
+# '''
+# def call_gpt_helper(sentence: str, features: List[str], classes: List[str], key_path: str, pq_path: str = None, runner = None):
+#     # getting the openai key
+#     with open(key_path, 'r') as fp:
+#         key = fp.read().strip()
+#     with open(pq_path, 'r') as fp:
+#         pq = fp.read().strip()
+#     with open('./professional_queries/relationships.txt', 'r') as fp:
+#         text = fp.read()
+#     raw = text.split('\n')
+#     relationships = []
+#     for r in raw:
+#         p = r.split(',')
+#         relationships.append(p)
+#     # global runner
+#     if not runner:
+#         # runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq,
+#         #             openai_key=key, relationships=relationships, debug=False)
+#         print('Runner object is not initiated')
+#         exit(-1)
+#     r = runner.process(sentence)
+#     yaml_data = []
+#     for pair in r:    
+#         for post in pair:
+#             pres = pair[post]
+#             if pres:
+#                 # each class can have several sentences, or no sentences
+#                 for text in pres:
+#                     # we only retrieve those with sentences
+#                     doc = nlp(text)
+#                     for s in doc.sents:
+#                         if s.sent.text and len(s.sent.text.strip()) > 2:
+#                             yaml_data.append({
+#                                 'type': 'pair',
+#                                 'precondition': s.sent.text,
+#                                 'postcondition': post
+#                             })
+#     return yaml_data
 
 
 def deterministic_check(sentence: str, features: List[str], classes: List[str], runs: int = 10):
@@ -306,11 +332,11 @@ def deterministic_check(sentence: str, features: List[str], classes: List[str], 
     return bucket[0]
 
 
-_classes = ['spondylolisthesis', 'hernia', 'normal']
-_features = ['pelvic_tilt',
-            'pelvic_incidence',
-            'lumbar_lordosis_angle',
-            'sacral_slope', 'pelvic_radius', 'degree_spondylolisthesis']
+# _classes = ['spondylolisthesis', 'hernia', 'normal']
+# _features = ['pelvic_tilt',
+#             'pelvic_incidence',
+#             'lumbar_lordosis_angle',
+#             'sacral_slope', 'pelvic_radius', 'degree_spondylolisthesis']
 
 # TODO: we need to consider how to relate 0 and 1 with high and low risk
 # _classes = ['high risk', 'low risk']
@@ -338,19 +364,41 @@ _features = ['pelvic_tilt',
 #cohorts.
 
 # dataset = 'acs'
-dataset = 'orthopedics'
-queries = []
-with open('./datasets/medical/%s/queries.txt' % dataset, 'r') as fp:
-    text = fp.read()
-queries = text.split('\n')
-results = []
-for q in queries:
-    results.append(
-        deterministic_check(
-            sentence=q,
-            features=_features,
-            classes=_classes,
-            runs=1            
-        )
-    )
-[print(r) for r in results]
+# dataset = 'orthopedics'
+# queries = []
+# with open('./datasets/medical/%s/queries.txt' % dataset, 'r') as fp:
+#     text = fp.read()
+# queries = text.split('\n')
+# results = []
+# for q in queries:
+#     results.append(
+#         call_gpt_helper(
+#             sentence=q,
+#             features=_features,
+#             classes=_classes,
+#             key_path='../openai.key',
+#             pq_path='./professional_queries/orthopedics.txt'         
+#         )
+#     )
+# [print(r) for r in results]
+# yaml_data = []
+# for pair in results:    
+#     for post in pair:
+#         pres = pair[post]
+#         if pres:
+#             # each class can have several sentences, or no sentences
+#             for text in pres:
+#                 # we only retrieve those with sentences
+#                 doc = nlp(text)
+#                 for s in doc.sents:
+#                     if s.sent.text and len(s.sent.text.strip()) > 2:
+#                         yaml_data.append({
+#                             'type': 'pair',
+#                             'precondition': s.sent.text,
+#                             'postcondition': post
+#                         })
+
+# import sys
+# yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True)
+# with open('./datasets/medical/%s/gpt_processed_queries.txt' % dataset, 'w+') as fp:
+#     yaml.dump(yaml_data, fp, sort_keys=False, allow_unicode=True)

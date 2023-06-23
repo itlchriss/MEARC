@@ -21,6 +21,8 @@ frontend = 'ccg2lambda'
 optparser = OptionParser()
 optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
 optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
+optparser.add_option("-q", "--query", dest="query", help="path of the query file")
+optparser.add_option("-p", "--profquery", dest="prof_query", help="path of the professional query file")
 optparser.add_option("-c", "--config", dest="config_path", help="path of the config file")
 optparser.add_option("-e", "--frontend", dest="frontend", help="ccg2lambda or depccg")
 
@@ -140,7 +142,7 @@ def find_parens(s):
     return toret
 
 
-def main(config_path: str, prog_file: str) -> None:
+def main(config_path: str, prog_file: str, query_path: str = None, prof_query_path: str = None) -> None:
     with open(config_path) as fp:
         _config = yaml.load(fp, Loader=SafeLoader)
     for key in _configs:
@@ -160,7 +162,16 @@ def main(config_path: str, prog_file: str) -> None:
     run_cmd_without_output('mkdir -p %s; rm -rf %s/*' % (configs.TMP, configs.TMP))
     # preprocessing 
     # cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, configs.STD_SI, configs.TMP)
-    cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, si_path, configs.TMP)
+    #############################################################
+    # 20230623 added in Macau
+    # adding query file support
+    #############################################################
+    if query_path and prof_query_path:
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s" % (configs.PYCMD, prog_file, si_path, configs.TMP, query_path, prof_query_path)
+    elif query_path:
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s" % (configs.PYCMD, prog_file, si_path, configs.TMP, query_path)
+    else:
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s" % (configs.PYCMD, prog_file, si_path, configs.TMP)
     print(cmd)
     run_cmd_show_output(cmd)
     prog_condition_file = "%s/%s.conditions.yml" % (configs.TMP, prog_name)
@@ -174,13 +185,16 @@ def main(config_path: str, prog_file: str) -> None:
         data = yaml.load(fp, Loader=SafeLoader)
     for i, record in enumerate(data):
         t = record['type']
-        nlspec = record['specification']
-        # if frontend.upper() == 'DEPCCG':
-        #     # cmd = "%s ./src/python/pipeline_depccg.py '%s' > ./tmp/%s.conditions.mr.%s" % (configs.PYCMD, nlspec, prog_name, i)
-        #     # info and print(cmd)
-        #     # run_cmd_show_output(cmd)
-        #     (mr_file_path, )
-        # else:
+        ######################################################################
+        # 20230623 added in Macau
+        # TODO: we need handling of type == 'pair'
+        # for those spec pairs come with precondition and postcondition
+        ######################################################################
+        if t == 'pair':
+            precondition = record['precondition']
+            postcondition = record['postcondition']
+        else:
+            nlspec = record['specification']
         (mr_file_path, mr_error, mr_stdout) = globals()['__%s' % frontend](nlspec, configs, prog_name, i)
 
         if mr_error:
@@ -251,5 +265,10 @@ if __name__ == "__main__":
             info and print("Using default frontend(ccg2lambda)")
         else:
             frontend = options.frontend
-
-        main(options.config_path, options.prog_path)
+        if not options.query:
+            main(options.config_path, options.prog_path)
+        else:
+            if not options.prof_query:
+                main(options.config_path, options.prog_path, query_path=options.query)
+            else:
+                main(options.config_path, options.prog_path, query_path=options.query, prof_query_path=options.prof_query)

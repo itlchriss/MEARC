@@ -9,12 +9,15 @@ from copy import deepcopy
 
 import javalang
 import nltk
+import spacy
+import time
 from optparse import OptionParser
 
 optparser = OptionParser()
 optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
 optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
 optparser.add_option("-o", "--target", dest="target_path", help="[optional]path for saving the output")
+optparser.add_option("-p", "--profquery", dest="prof_query_path", help="[optional]path for professional query when query file presents")
 optparser.add_option("-q", "--query",
                      dest="query_path", help="[optional]path of the queries that at saved in separate file")
 optparser.add_option("-s", "--silib", dest="silib_path", help="[optional]path of the SI Library")
@@ -536,7 +539,7 @@ class Preprocessor:
         self.__add_si_to_patterns(self.get_semantics())
 
 
-def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: str = None, using_gpt=True):
+def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: str = None, profquerypath:str = None, using_gpt=True):
     contextual_si = []
     dst = get_package_global_info_from_javasrc(javafilepath)
     for name in dst:
@@ -579,6 +582,7 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
         if raw_specs['ensures']:
             for e in raw_specs['ensures']:
                 specs['ensures'].append(preprocessor.process(e))
+    yaml_data = []
     #############################################################
     # 20230525 in Portugal
     # Adding the GPT optional preprocessing
@@ -588,40 +592,60 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
         classes = list(get_constants_from_javasrc(javafilepath))
         with open(querypath, 'r') as fp:
             lines = fp.readlines()
-        specs['pairs'] = []
+        pq = None
+        if profquerypath:
+            with open(profquerypath, 'r') as fp:
+                pq = fp.read()
+        #########################################################
+        # 20230623 in Macau
+        # Reading the key of openai
+        # the key is fixed to place in somewhere the user can read
+        # but not polluting the software
+        with open('../openai.key', 'r') as fp:
+            key = fp.read().strip()
+        #########################################################
+        # 20230623 in Macau
+        # Reading a relationship file to specify the relationship between terms to train GPT 
+        with open('./professional_queries/relationships.txt', 'r') as fp:
+            text = fp.read()
+        raw = text.split('\n')
+        relationships = []
+        for r in raw:
+            p = r.split(',')
+            relationships.append(p)
+        #########################################################
         gpt_turbo_count = 0
-        for line in lines:
-            runner = Gpt_preprocessing(features=features, classes=classes, debug=False)
+        nlp = spacy.load("en_core_web_sm")
+        for i, line in enumerate(lines):
+            runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq, 
+                                       openai_key=key, relationships=relationships, debug=False)
             runner.count = gpt_turbo_count
-            print('input line: ', line)
-            spec = runner.process(line)
-            for conclusion in spec:
-                # each key value pair is a conclusion to a list of premises pair
-                # we formulate them to each premise pair with the conclusion
-                # such that, we can construct 'also' in between them
-                premises = spec[conclusion]
-                if conclusion and premises:
-                    print('premises: ', premises)
-                    print('conclusion: ', conclusion)
-                    # the conclusion is the same over all the premises within the same key value pair
-                    # therefore, we preprocess it just once
-                    _c = preprocessor.process(conclusion)
-                    _pre_list = []
-                    for p in premises:
-                        # each premise is preprocessed here
-                        p = p.strip()
-                        if '\n' in p:
-                            # replacing all newlines and colons with 'and',
-                            # such that multiple parameter descriptions form a spec
-                            p = p.replace('\n', ' and ')
-                            p = p.replace(';', ' and ')
-                        _pre_list.append(preprocessor.process(p))
-                    # premises for a conclusion is stored in a list and paired in dictionary with the conclusion
-                    # such that we can produce 'also' in mearc by checking multiple premises
-                    specs['pairs'].append({'pre': _pre_list, 'post': _c})
+            print('input line: ', line.strip())
+            spec = runner.process(line.strip())            
+            for post in spec:    
+                for text in spec[post]:
+                    # each class can have several sentences, or no sentences
+                    print(text)
+                    # we only retrieve those with sentences
+                    doc = nlp(text)
+                    for s in doc.sents:
+                        if s.sent.text and len(s.sent.text.strip()) > 2:
+                            print(s.sent.text)
+                            #############################################################
+                            # 20230623 Added in Macau
+                            # write spec pairs into the yaml file
+                            #############################################################
+                            yaml_data.append({
+                                'type': 'pair',
+                                'precondition': s.sent.text,
+                                'postcondition': post
+                            })
+            if i != len(lines) - 1:
+                print('Finished a line. Pausing for 60 seconds...')
+                time.sleep(60)
     #############################################################
     contextual_si += preprocessor.function_si
-    yaml_data = []
+    
     if specs['requires']:
         for pre in specs['requires']:
             yaml_data.append({
@@ -633,11 +657,7 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
             yaml_data.append({
                 'type': 'postcondition',
                 'specification': post
-            })
-    #############################################################
-    # 20230526 Added in Portugal
-    # TODO: write specs['pairs'] into the yaml file
-    #############################################################
+            })    
     # yaml.dumper.SafeDumper.ignore_aliases = lambda self, data: True
 
     if not targetpath:
@@ -651,9 +671,9 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
         spec_path = ('%s/%s.conditions.yml' % (targetpath, name))
 
         with open(si_path, 'w+') as fp:
-            yaml.dump(contextual_si, fp, sort_keys=False)
+            yaml.dump(contextual_si, fp, sort_keys=False, allow_unicode=True)
         with open(spec_path, 'w+') as fp:
-            yaml.dump(yaml_data, fp, sort_keys=False)
+            yaml.dump(yaml_data, fp, sort_keys=False, allow_unicode=True)
 
 
 if __name__ == "__main__":
@@ -663,7 +683,7 @@ if __name__ == "__main__":
         exit(1)
     else:
         main(javafilepath=options.prog_path,
-             silibpath=options.silib_path, targetpath=options.target_path, querypath=options.query_path)
+             silibpath=options.silib_path, targetpath=options.target_path, querypath=options.query_path, profquerypath=options.prof_query_path)
     # if len(sys.argv) == 5:
     #     main(javafilepath=sys.argv[1], sidbpath=sys.argv[2], targetpath=sys.argv[3], querypath=sys.argv[4])
     # elif len(sys.argv) == 4:
