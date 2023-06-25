@@ -103,6 +103,8 @@ PTBTagSet = [
 
 
 class Preprocessor:
+    symbols_need_to_remove = ['°', 'verb', 'value']
+    correction = {'±': ['is equal to', 'ranges']}
     patterns = {
         'null': 'a null_value',
         'true': 'a true_value',
@@ -117,7 +119,10 @@ class Preprocessor:
         'degrees': ' ',
         'degree': ' ',
         'is between': 'ranges between',
-        'all elements in': 'every element of'
+        'ranges between': 'ranges',
+        'all elements in': 'every element of',
+        # error handling for GPT when it returns grammatically incorrect sentences
+        'is ranges': 'ranges'
     }
     function_si = []
     phrases = [
@@ -126,6 +131,20 @@ class Preprocessor:
             'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM']},
             'si_args': ['(Subj)'],
             'interpretation': '(x) < (Subj) < (y)',
+            'type': int(JavaTypes.JML_expression_result)
+        },
+        {
+            'phrase': 'from (x) - (y) to (a) + (b)',
+            'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM'], '(a)': ['CD', 'PARAM'], '(b)': ['CD', 'PARAM']},
+            'si_args': ['(Subj)'],
+            'interpretation': '(x) - (y) < (Subj) < (a) + (b)',
+            'type': int(JavaTypes.JML_expression_result)
+        },
+        {
+            'phrase': 'from (x) + (y) to (a) - (b)',
+            'args': {'(x)': ['CD', 'PARAM'], '(y)': ['CD', 'PARAM'], '(a)': ['CD', 'PARAM'], '(b)': ['CD', 'PARAM']},
+            'si_args': ['(Subj)'],
+            'interpretation': '(x) + (y) < (Subj) < (a) - (b)',
             'type': int(JavaTypes.JML_expression_result)
         },
         {
@@ -336,7 +355,7 @@ class Preprocessor:
                     i = i + len(_p_token_list)
 
                     si = {
-                        'term': _t.lower().replace('.', '_DOT').replace('-', '_dash'),
+                        'term': _t.lower().replace('.', '_DOT').replace('-', '_dash').replace(';', ''),
                         # only direct semantics are acceptable
                         'syntax': ['NN', 'NNP', 'NNS', 'NNPS', 'CD'],
                         'arity': 1,
@@ -358,6 +377,13 @@ class Preprocessor:
 
 
     def process(self, text: str) -> str:
+        for symbol in self.symbols_need_to_remove:
+            text = text.replace(symbol, '')
+        # Highlight: we correct the GPT response with the query information
+        #            GPT can be wrong and undeterministic
+        for symbol in self.correction:
+            if symbol in text and self.correction[symbol][0] in text:
+                text = text.replace(self.correction[symbol][0], self.correction[symbol][1])
         text = self.__process_function__(text)
         # text = self.__process_phrases__(text)
         # if text[-1] != '.':
@@ -559,7 +585,8 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
             'arity': 1,
             'arguments': ['(*)'],
             'interpretation': interpretation,
-            'type': _type if isinstance(name, tuple) else -1
+            # 'type': _type if isinstance(name, tuple) else -1
+            'type': JavaTypes.Primitive
         })
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafilepath, silibpath, dst=dst)
@@ -625,21 +652,21 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
             for post in spec:    
                 for text in spec[post]:
                     # each class can have several sentences, or no sentences
-                    print(text)
                     # we only retrieve those with sentences
                     doc = nlp(text)
                     for s in doc.sents:
                         if s.sent.text and len(s.sent.text.strip()) > 2:
-                            print(s.sent.text)
                             #############################################################
                             # 20230623 Added in Macau
                             # write spec pairs into the yaml file
                             #############################################################
                             yaml_data.append({
                                 'type': 'pair',
-                                'precondition': s.sent.text,
-                                'postcondition': post
+                                'precondition': preprocessor.process(s.sent.text),
+                                'postcondition': preprocessor.process(post)
                             })
+                            # debug print
+                            print(yaml_data[-1])
             if i != len(lines) - 1:
                 print('Finished a line. Pausing for 60 seconds...')
                 time.sleep(60)
@@ -681,9 +708,15 @@ if __name__ == "__main__":
     if not options.prog_path:
         print('Please provide the java source file path')
         exit(1)
-    else:
+    elif options.query_path:
         main(javafilepath=options.prog_path,
              silibpath=options.silib_path, targetpath=options.target_path, querypath=options.query_path, profquerypath=options.prof_query_path)
+    elif options.target_path:
+        main(javafilepath=options.prog_path,
+             silibpath=options.silib_path, targetpath=options.target_path)
+    else:
+        main(javafilepath=options.prog_path,
+             silibpath=options.silib_path)
     # if len(sys.argv) == 5:
     #     main(javafilepath=sys.argv[1], sidbpath=sys.argv[2], targetpath=sys.argv[3], querypath=sys.argv[4])
     # elif len(sys.argv) == 4:

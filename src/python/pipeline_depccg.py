@@ -49,6 +49,7 @@ def call_depccg_pipeline(text: str):
     # set_ccg2lamda_logging_level(logging_level)
     annotator_fun = english_annotator.get('spacy', annotate_XX)
     supertagger, config = load_model(None, -1)
+    # supertagger, config = load_model('elmo', -1)
 
     (
         apply_binary_rules,
@@ -104,6 +105,7 @@ def call_depccg_pipeline(text: str):
     score_result, categories_ = supertagger.predict_doc(
         [[token.word for token in sentence] for sentence in doc]
     )
+
     if categories is None:
         categories = [
             Category.parse(category) for category in categories_

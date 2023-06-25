@@ -46,7 +46,7 @@ class Gpt_preprocessing:
             classes: List[str], 
             professional_query: str = None, 
             openai_key: str = None, 
-            relationships: Dict = None,
+            relationships: List[List[str]] = None,
             debug=True):
         self.features = features
         self.classes = classes
@@ -73,14 +73,15 @@ class Gpt_preprocessing:
         self.allinonequery3_1 = """
             I am going to send you some sentences.
             Summarise the sentence without adding new words;
-            return "parameter verb value" in your reply; "parameter" is in one of these names: %s;
-            a numerical value means integer or floating point number;
-            a range means one or more numerical value with an operator, an example can be 'number ± number',
+            return a sentence with a format of "The parameter verb value" in your reply; "parameter" is in one of these names: %s;
+            a numerical value is an integer or a floating point number;
+            a range is an expression with two numerical values and an operator, an example can be 'number ± number',
             another example of range can be 'between value to value';
             an inequality means using comparative expressions with number, an example can be 'greater than number' and 'less than number'; 
             "value" is a numerical value or a range or an inequality;
-            the "verb" is "is equal to" for "value" is a numerical value; the "verb" is "ranges" for "value" is a range;
-            the "verb" is "is" for "value" is an inequality;
+            the "verb" is "is equal to" if "value" is a numerical value; 
+            the "verb" is "ranges" if "value" is a range;
+            the "verb" is "is" if "value" is an inequality;
             all of the information in the your sentence must be derived based on the given sentence;  
             remove all information except the parameter, verb and value;
             if you cannot find a parameter or a value, you should return unrelated;
@@ -233,6 +234,7 @@ class Gpt_preprocessing:
                 response = self.__call_gpt_chat(self.allinonequery3_1 + 'Sentences: ' + s)
                 # self.debug and print('response: ', response.choices[0].message.content)
                 text = response.choices[0].message.content
+                text = text.replace(';', '.\n')
                 text = text.split('\n')
                 # sum_sents.append(response.choices[0].message.content)
                 if text:

@@ -19,6 +19,7 @@ int search_syntax(struct si*, enum ptbsyntax);
 int __simatcher(void *, void *);
 int __eventsimatcher(void *, void *);
 int __argtype_simatcher(void *, void *);
+int __event_argtype_simatcher(void *, void *);
 int __sisymbol_duplicated(void *, void *);
 int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
@@ -236,7 +237,8 @@ int Nseries_code_synthesis(struct astnode *node, struct si *si) {
         __update_cstsymbol_data__(c, s, si->jtype);
     }    
     syncsymbol(c);
-    c->si_ptr = si;            
+    c->si_ptr = si;
+    c->type = si->jtype;            
     root = deleteastnodeandedge(node, root);
     return 0;
 }
@@ -342,6 +344,15 @@ int event_synthesis(struct astnode *node, struct si *si) {
     char *s = NULL;
     struct entity *en = NULL;
     if (si->interpretation[0] == '_') {
+        struct cstsymbol *subj_ptr, *acc_ptr;
+        en = (struct entity*)gqueue((void*)e->entities, 0);
+        if (en->type == SubjectOf) {
+            subj_ptr = en->ptr;
+            acc_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
+        } else {
+            acc_ptr = en->ptr;
+            subj_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
+        }
         /* keywords. the synthesis process is up to what the keywords have specified. */
         if (strcmp(si->interpretation, "_sub(Subj)2(Acc)") == 0) {
             /* 
@@ -349,17 +360,17 @@ int event_synthesis(struct astnode *node, struct si *si) {
                 The synthesised SI of the Acc entity must have the type of JML_expression_template.
                 After the substitution, both the Subj and Acc entity cst pointer's data field has the synthesised SI.
             */
-            struct cstsymbol *subj_ptr, *acc_ptr;
-            en = (struct entity*)gqueue((void*)e->entities, 0);
-            if (en->type == SubjectOf) {
-                subj_ptr = en->ptr;
-                acc_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
-            } else {
-                acc_ptr = en->ptr;
-                subj_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
-            }
             struct si *_si = (struct si *)acc_ptr->si_ptr;
-            s = strrep(_si->interpretation, _si->args[0], subj_ptr->data);                  
+            s = strrep(_si->interpretation, _si->args[0], subj_ptr->data); 
+            acc_ptr->type = si->jtype;                 
+        } else if (strcmp(si->interpretation, "_event_sub(Subj)2(Acc)") == 0) {
+            /*
+                This case is substituting the SI based on the event arguments. 
+                The previous case is for substitution based on the accusation's arguments
+            */
+            // notice here we use (Subj) directly, because we follow the command directly
+            s = strrep(acc_ptr->data, "(Subj)", subj_ptr->data); 
+            acc_ptr->type = si->jtype;     
         }
     } else {
         s = (char *)strdup(si->interpretation);
@@ -369,19 +380,20 @@ int event_synthesis(struct astnode *node, struct si *si) {
                 the argument of SI is named using the grammar relationship string, such as Subj
                 substitution is done replacing the SI synthesised in the data field of CST symbol to the grammar relationship string
             */
-        en = (struct entity*)gqueue((void*)e->entities, i);
-        /* 
-                because the entity variables should have been synthesised before coming to this point. 
-                we should not be able to search the symbol by the reference as the references are removed before synthesising the SI.
-                therefore, we should search the symbol by the symbol name.
-                there is no risk by using the symbol name because all symbol names are made unique.
-        */
-        struct cstsymbol *c = searchcst(en->var);
-        char *arg = __combine_3_strings__("(", gramtype2string(en->type), ")");
-        char *tmp = strrep(s, arg, c->data);
-        free(arg);
-        free(s);
-        s = tmp;
+            en = (struct entity*)gqueue((void*)e->entities, i);
+            /* 
+                    because the entity variables should have been synthesised before coming to this point. 
+                    we should not be able to search the symbol by the reference as the references are removed before synthesising the SI.
+                    therefore, we should search the symbol by the symbol name.
+                    there is no risk by using the symbol name because all symbol names are made unique.
+            */
+            struct cstsymbol *c = searchcst(en->var);
+            char *arg = __combine_3_strings__("(", gramtype2string(en->type), ")");
+            char *tmp = strrep(s, arg, c->data);
+            free(arg);
+            free(s);
+            s = tmp;
+            c->type = si->jtype;
         }
     }
     /* 
@@ -605,6 +617,12 @@ void sisynthesis() {
         si = NULL;
         if (si_q->count == 0) si = NULL;
         else if (si_q->count == 1) si = gqueue(si_q, 0);
+        else if (__is_event_predicate__(node) == 0) {
+            /* TODO: we have to add a condition specific for the event predicates
+                check the children type matching the SI's argument type specification
+            */
+            si = searchqueue(si_q, node, __event_argtype_simatcher);
+        } 
         else {
             // because there are more than one possible si
             // in order to get the most appropriate one, we filter the queue to get the one that has arg_types matching the current child node types                
@@ -789,6 +807,19 @@ int __eventsimatcher(void *_si, void *_astnode) {
     } else {
         return 1;
     }
+}
+
+int __event_argtype_simatcher(void *_si, void *_astnode) {
+    struct si* si = (struct si*)_si;
+    struct astnode *node = (struct astnode*)_astnode;
+    struct cstsymbol *c = NULL;
+    struct event *event = searchevent(getastchild(node, 0)->token->symbol);
+    for (int i = 0; i < event->entities->count; ++i) {
+        c = ((struct entity*)gqueue(event->entities, i))->ptr;
+        if (si->arg_types[i] != -1 && si->arg_types[i] != c->type) return 1;
+        else continue;
+    }
+    return 0;
 }
 
 int __argtype_simatcher(void *_si, void *_astnode) {

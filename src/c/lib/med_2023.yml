@@ -5,6 +5,7 @@
   arguments:
   - (*)
   interpretation: \\result
+  type: 0
 - term: be
   syntax:
   - VBZ
@@ -12,7 +13,59 @@
   arguments:
   - (Subj)
   - (Acc)
+  specific_arg_types:
+  - '0'
+  - '4'
+  interpretation: _event_sub(Subj)2(Acc)
+  type: 3
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '0'
+  - '3'
   interpretation: (Subj) == (Acc)
+  type: 3
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '3'
+  - '0'
+  interpretation: (Subj) == (Acc)
+  type: 3
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '0'
+  - '0'
+  interpretation: (Subj) == (Acc)
+  type: 3
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '3'
+  - '3'
+  interpretation: (Subj) == (Acc)
+  type: 3
 - term: range
   syntax:
   - VBZ
@@ -24,3 +77,30 @@
   - '0'
   - '4'
   interpretation: _sub(Subj)2(Acc)
+  type: 3
+- term: equal to
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (Subj)
+  - (Acc)
+  specific_arg_types:
+  - '0'
+  - '0'
+  interpretation: (Subj) == (Acc)
+  type: 3
+- term: greater than
+  syntax:
+  - NNP
+  arity: 1
+  arguments:
+  - (Acc)
+  g_arity: 1
+  grammar_arguments:
+  - (Subj)
+  specific_arg_types:
+  - '0'
+  - '0'
+  interpretation: (Subj) > (Acc)
+  type: 4
