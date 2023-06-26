@@ -103,7 +103,7 @@ PTBTagSet = [
 
 
 class Preprocessor:
-    symbols_need_to_remove = ['°', 'verb', 'value']
+    symbols_need_to_remove = ['°', 'verb', 'value', '"']
     correction = {'±': ['is equal to', 'ranges']}
     patterns = {
         'null': 'a null_value',
@@ -649,6 +649,10 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
             runner.count = gpt_turbo_count
             print('input line: ', line.strip())
             spec = runner.process(line.strip())            
+            #############################################################
+            #  Separating processed queries into individual files
+            processed_data_per_query = []
+            #############################################################
             for post in spec:    
                 for text in spec[post]:
                     # each class can have several sentences, or no sentences
@@ -660,45 +664,60 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
                             # 20230623 Added in Macau
                             # write spec pairs into the yaml file
                             #############################################################
-                            yaml_data.append({
+                            processed_data_per_query.append({
                                 'type': 'pair',
                                 'precondition': preprocessor.process(s.sent.text),
                                 'postcondition': preprocessor.process(post)
                             })
-                            # debug print
-                            print(yaml_data[-1])
+            yaml_data.append(processed_data_per_query)
             if i != len(lines) - 1:
                 print('Finished a line. Pausing for 60 seconds...')
                 time.sleep(60)
+    #############################################################    
+    else:
+        if specs['requires']:
+            for pre in specs['requires']:
+                yaml_data.append({
+                    'type': 'precondition',
+                    'specification': pre
+                })
+        if specs['ensures']:
+            for post in [i for i in specs['ensures'] if i]:
+                yaml_data.append({
+                    'type': 'postcondition',
+                    'specification': post
+                })    
     #############################################################
+    # Functional SI is not relevant to the preprocessing
+    #  However, it is vital to the compilation
+    #  Do not delete this line
     contextual_si += preprocessor.function_si
-    
-    if specs['requires']:
-        for pre in specs['requires']:
-            yaml_data.append({
-                'type': 'precondition',
-                'specification': pre
-            })
-    if specs['ensures']:
-        for post in [i for i in specs['ensures'] if i]:
-            yaml_data.append({
-                'type': 'postcondition',
-                'specification': post
-            })    
-    # yaml.dumper.SafeDumper.ignore_aliases = lambda self, data: True
-
+    #############################################################
     if not targetpath:
-        # yaml.dump(contextual_si, sys.stdout, sort_keys=False, allow_unicode=True, Dumper=yaml.dumper.SafeDumper)
-        # yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True, Dumper=yaml.dumper.SafeDumper)
         yaml.dump(contextual_si, sys.stdout, sort_keys=False, allow_unicode=True)
         yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True)
     else:
         name = javafilepath.split('/')[-1].split('.')[0]
         si_path = ('%s/%s.si.yml' % (targetpath, name))
-        spec_path = ('%s/%s.conditions.yml' % (targetpath, name))
-
+        #############################################################
+        # debug print
+        yaml.dump(yaml_data, sys.stdout, sort_keys=False, allow_unicode=True)
+        #############################################################
         with open(si_path, 'w+') as fp:
             yaml.dump(contextual_si, fp, sort_keys=False, allow_unicode=True)
+        # if querypath:
+        #     #############################################################
+        #     # If query file is provided
+        #     # specifications from each line are stored in a file
+        #     # therefore, number of files is equal to number of queries
+        #     #############################################################
+        #     for i, specs in yaml_data:
+        #         if specs:
+        #             spec_path = ('%s/%s.q%d.conditions.yml' % (targetpath, name, i))                
+        #             with open(spec_path, 'w+') as fp:
+        #                 yaml.dump(specs, fp, sort_keys=False, allow_unicode=True)
+        # else:            
+        spec_path = ('%s/%s.conditions.yml' % (targetpath, name))            
         with open(spec_path, 'w+') as fp:
             yaml.dump(yaml_data, fp, sort_keys=False, allow_unicode=True)
 
