@@ -88,7 +88,7 @@ def __ccg2lambda(nlspec: str, configs, prog_name: str, identifier: str) -> Tuple
     debug and print('DEBUG: ccgslambda - translate C & C parsing result to CCG rules')
     process = subprocess.Popen(
         ("%s %s/en/candc2transccg_wsc.py %s/sentences.candc.xml > %s/sentences.xml" % (
-        configs.PYCMD, nlp_path, configs.TMP, configs.TMP)),
+            configs.PYCMD, nlp_path, configs.TMP, configs.TMP)),
         shell=True, stdout=subprocess.PIPE
     )
     process.wait()
@@ -96,7 +96,7 @@ def __ccg2lambda(nlspec: str, configs, prog_name: str, identifier: str) -> Tuple
     process = subprocess.run(
         ("%s %s/scripts/semparse_wsc.py %s/sentences.xml %s/en/semantic_templates_en_emnlp2015.yaml > "
          "%s/%s.conditions.mr.%s" % (
-         configs.PYCMD, nlp_path, configs.TMP, nlp_path, configs.TMP, prog_name, identifier)),
+             configs.PYCMD, nlp_path, configs.TMP, nlp_path, configs.TMP, prog_name, identifier)),
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     mr_file_path = ("%s/%s.conditions.mr.%s" % (configs.TMP, prog_name, identifier))
@@ -127,7 +127,7 @@ def __depccg(nlspec: str, configs, prog_name: str, identifier: str) -> Tuple[str
             mr = mr[1:]
     with open(mr_file_path, 'w') as fp:
         fp.write(mr)
-    return (mr_file_path, mr_error, None)
+    return mr_file_path, mr_error, None
 
 
 def find_parens(s):
@@ -171,7 +171,7 @@ def __run_nlp_pipeline(nlspec: str, configs, prog_name: str, identifier: str):
         return mr_file_path, mr_error, mr_stdout
 
 
-def __call_compiler(mr_file_path, si_file_path, _type:str):
+def __call_compiler(mr_file_path, si_file_path, _type: str):
     cmd = "./bin/main -f%s -s%s,%s" % (mr_file_path, si_file_path, si_path)
     print(cmd)
     process = subprocess.run(
@@ -200,16 +200,17 @@ def __call_compiler(mr_file_path, si_file_path, _type:str):
     else:
         print('Failed', file=sys.stderr)
         return None
-    
-def write_to_jml_file(jmls: List[Tuple[str, str]], file_path: str, prog_name: str):    
+
+
+def write_to_jml_file(jmls: List[Tuple[str | None, str | None]], file_path: str, prog_name: str):
     for i, jml in enumerate(jmls):
         with open('%s/%s.conditions.query.%d' % (file_path, prog_name, i), 'w+') as fp:
             for item in jml:
-                if isinstance(item, Tuple):
+                if item[0] != 'ALSO':
                     fp.write("//@ %s" % item[0])
                     fp.write("//@ %s" % item[1])
                 else:
-                    fp.write("//@ %s" % item)
+                    fp.write("//@ %s" % item[1])
 
 
 def main(config_path: str, prog_file: str, query_path: str = None, prof_query_path: str = None) -> None:
@@ -235,9 +236,11 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
     # adding query file support
     #############################################################
     if query_path and prof_query_path:
-        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s" % (configs.PYCMD, prog_file, si_path, configs.TMP, query_path, prof_query_path)
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s" % (
+        configs.PYCMD, prog_file, si_path, configs.TMP, query_path, prof_query_path)
     elif query_path:
-        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s" % (configs.PYCMD, prog_file, si_path, configs.TMP, query_path)
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s" % (
+        configs.PYCMD, prog_file, si_path, configs.TMP, query_path)
     else:
         cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s" % (configs.PYCMD, prog_file, si_path, configs.TMP)
     print(cmd)
@@ -260,32 +263,36 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
             # for those spec pairs come with precondition and postcondition
             ######################################################################            
             jml = []
-            for spec in specs:
-                precondition = record['precondition']
-                postcondition = record['postcondition']
-                tmp = __run_nlp_pipeline(precondition, configs, prog_name, 'pair_%d_pre' % i)
+            for j, spec in enumerate(specs):
+                precondition = spec['precondition']
+                postcondition = spec['postcondition']
+                tmp = __run_nlp_pipeline(precondition, configs, prog_name, 'query_%d_pair_%d_pre' % (i, j))
                 _pre = None
                 _post = None
+                mr_file_path = None
                 if tmp:
                     (mr_file_path, mr_error, mr_stdout) = tmp
                     _pre = __call_compiler(mr_file_path, si_file_path, 'precondition')
                 else:
-                    print("Precondition MR generation failed in query %d" % i)
+                    print("Precondition MR generation failed in query %d pair %d" % (i, j))
                 if not _pre:
-                    print("Compilation failed in query %d, please check with the MR in following path: \n%s" % (i, mr_file_path))
-                tmp = __run_nlp_pipeline(postcondition, configs, prog_name, 'pair_%d_post' % i)
+                    print("Compilation failed in query %d pair %d, please check with the MR in following path: \n%s" % (
+                    i, j, mr_file_path))
+                tmp = __run_nlp_pipeline(postcondition, configs, prog_name, 'query_%d_pair_%d_post' % (i, j))
                 if tmp:
                     (mr_file_path, mr_error, mr_stdout) = tmp
                     _post = __call_compiler(mr_file_path, si_file_path, 'postcondition')
                 else:
-                    print("Postcondition MR generation failed in query %d" % i)
+                    print("Postcondition MR generation failed in query %d pair %d" % (i, j))
                 if not _post:
-                    print("Compilation failed in query %d, please check with the MR in following path: \n%s" % (i, mr_file_path))
+                    print("Compilation failed in query %d pair %d, please check with the MR in following path: \n%s" % (
+                    i, j, mr_file_path))
                 if _pre and _post:
-                    jml.append(_pre, _post)
-            jmls += jml
-            jmls.append('also')
-        jmls = jmls[:-1]
+                    jml.append((_pre, _post))
+                    jml.append(("ALSO", 'also'))
+            jml = jml[:-1]
+            jmls.append(jml)
+        write_to_jml_file(jmls=jmls, file_path=configs.TMP, prog_name=prog_name)
     else:
         for i, record in enumerate(data):
             t = record['type']
@@ -294,7 +301,6 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
             if tmp:
                 (mr_file_path, mr_error, mr_stdout) = tmp
                 print(__call_compiler(mr_file_path, si_file_path, t))
-                
 
 
 if __name__ == "__main__":
@@ -323,4 +329,5 @@ if __name__ == "__main__":
             if not options.prof_query:
                 main(options.config_path, options.prog_path, query_path=options.query)
             else:
-                main(options.config_path, options.prog_path, query_path=options.query, prof_query_path=options.prof_query)
+                main(options.config_path, options.prog_path, query_path=options.query,
+                     prof_query_path=options.prof_query)

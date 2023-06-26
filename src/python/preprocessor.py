@@ -21,6 +21,14 @@ optparser.add_option("-p", "--profquery", dest="prof_query_path", help="[optiona
 optparser.add_option("-q", "--query",
                      dest="query_path", help="[optional]path of the queries that at saved in separate file")
 optparser.add_option("-s", "--silib", dest="silib_path", help="[optional]path of the SI Library")
+optparser.add_option("-c", "--classnames",
+                     dest="class_names",
+                     help="[optional]Comma separated string, the class labels when the classes are all integers. "
+                          "Notice that when this option"
+                          "is used, the original class names are ignored. ")
+
+# For formal verification of random forest
+# classes = []
 
 Pronouns = ['I', 'me', 'he', 'she', 'herself', 'you', 'it', 'that', 'they', 'each', 'few', 'many', 'who', 'whoever',
             'whose', 'someone', 'everybody']
@@ -103,6 +111,7 @@ PTBTagSet = [
 
 
 class Preprocessor:
+    classes = []
     symbols_need_to_remove = ['°', 'verb', 'value', '"']
     correction = {'±': ['is equal to', 'ranges']}
     patterns = {
@@ -384,6 +393,16 @@ class Preprocessor:
         for symbol in self.correction:
             if symbol in text and self.correction[symbol][0] in text:
                 text = text.replace(self.correction[symbol][0], self.correction[symbol][1])
+        text = ' '.join([i.strip() for i in text.split(' ')])
+        if self.classes:
+            if text[-1] == '.':
+                text = text[:-1]
+            tmp = text.split(' ')
+            # tmp = text.split(' ')
+            for i, word in enumerate(text.split(' ')):
+                if word in self.classes:
+                    tmp[i] = 'the class_' + word
+            text = ' '.join(tmp) + '.'
         text = self.__process_function__(text)
         # text = self.__process_phrases__(text)
         # if text[-1] != '.':
@@ -565,7 +584,11 @@ class Preprocessor:
         self.__add_si_to_patterns(self.get_semantics())
 
 
-def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: str = None, profquerypath:str = None, using_gpt=True):
+def main(javafilepath: str, silibpath: str,
+         targetpath: str = None, querypath: str = None, profquerypath:str = None, using_gpt=True, classes=None):
+    _classes = classes
+    if not classes:
+        _classes = []
     contextual_si = []
     dst = get_package_global_info_from_javasrc(javafilepath)
     for name in dst:
@@ -579,6 +602,23 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
         else:
             interpretation = name[2]
             _type = int(name[1])
+            ###########################################
+            # Classes can be words that are adjectives
+            # Therefore, we replace those words to a noun in the format 'class_[class name]'
+            # In this perspective, we need contextual SI support of such symbol has the same interpretation as
+            #  the original symbol
+            ###########################################
+            if name[0] not in _classes:
+                _classes.append(name[0])
+                contextual_si.append({
+                    'term': 'class_' + name[0],
+                    'syntax': ['NN', 'NNS', 'NNP', 'NNPS'],
+                    'arity': 1,
+                    'arguments': ['(*)'],
+                    'interpretation': interpretation,
+                    # 'type': _type if isinstance(name, tuple) else -1
+                    'type': JavaTypes.Primitive
+                })
         contextual_si.append({
             'term': name[0] if isinstance(name, tuple) else name,
             'syntax': ['NN', 'NNS', 'NNP', 'NNPS'],
@@ -590,6 +630,7 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
         })
     # TODO: we need error handling in accessing the class name
     preprocessor = Preprocessor(javafilepath, silibpath, dst=dst)
+    preprocessor.classes = _classes
     annotations = preprocessor.get_semantics()
     if annotations:
         for d in annotations:
@@ -723,16 +764,21 @@ def main(javafilepath: str, silibpath: str, targetpath: str = None, querypath: s
 
 
 if __name__ == "__main__":
+    classes = []
     (options, args) = optparser.parse_args()
+    if options.class_names:
+        classes = options.class_names.split(',')
+        classes = [i.strip() for i in classes]
     if not options.prog_path:
         print('Please provide the java source file path')
         exit(1)
     elif options.query_path:
         main(javafilepath=options.prog_path,
-             silibpath=options.silib_path, targetpath=options.target_path, querypath=options.query_path, profquerypath=options.prof_query_path)
+             silibpath=options.silib_path, targetpath=options.target_path,
+             querypath=options.query_path, profquerypath=options.prof_query_path, classes=classes)
     elif options.target_path:
         main(javafilepath=options.prog_path,
-             silibpath=options.silib_path, targetpath=options.target_path)
+             silibpath=options.silib_path, targetpath=options.target_path, classes=classes)
     else:
         main(javafilepath=options.prog_path,
              silibpath=options.silib_path)
