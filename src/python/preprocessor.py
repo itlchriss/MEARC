@@ -113,7 +113,7 @@ PTBTagSet = [
 class Preprocessor:
     classes = []
     symbols_need_to_remove = ['°', 'verb', 'value', '"']
-    correction = {'±': ['is equal to', 'ranges']}
+    correction = {'±': ['is equal to', 'ranges'], 'ranges': ['and', 'to']}
     patterns = {
         'null': 'a null_value',
         'true': 'a true_value',
@@ -402,7 +402,7 @@ class Preprocessor:
             for i, word in enumerate(text.split(' ')):
                 if word in self.classes:
                     tmp[i] = 'the class_' + word
-            text = ' '.join(tmp) + '.'
+            text = ' '.join(tmp)
         text = self.__process_function__(text)
         # text = self.__process_phrases__(text)
         # if text[-1] != '.':
@@ -684,12 +684,14 @@ def main(javafilepath: str, silibpath: str,
         #########################################################
         gpt_turbo_count = 0
         nlp = spacy.load("en_core_web_sm")
+        gpt_raw_reply = []
         for i, line in enumerate(lines):
             runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq, 
                                        openai_key=key, relationships=relationships, debug=False)
             runner.count = gpt_turbo_count
             print('input line: ', line.strip())
-            spec = runner.process(line.strip())            
+            spec = runner.process(line.strip())
+            gpt_raw_reply.append(spec)            
             #############################################################
             #  Separating processed queries into individual files
             processed_data_per_query = []
@@ -714,6 +716,7 @@ def main(javafilepath: str, silibpath: str,
             if i != len(lines) - 1:
                 print('Finished a line. Pausing for 60 seconds...')
                 time.sleep(60)
+        print(gpt_raw_reply)
     #############################################################    
     else:
         if specs['requires']:

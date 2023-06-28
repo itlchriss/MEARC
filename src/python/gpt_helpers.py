@@ -72,11 +72,15 @@ class Gpt_preprocessing:
             """ % (','.join(['"%s"' % c for c in classes]), pq)
         self.allinonequery3_1 = """
             I am going to send you some sentences.
-            Summarise the sentence without adding new words;
-            return only "The parameter verb value" in your reply; "parameter" is in one of these names: %s;
+            Summarise the sentence without adding new words;            
+            return only "The parameter verb value" in your reply; 
+            Your reply examples are 'Something ranges number ± number', 
+            'Something ranges number to number',
+            'Something is greater than number' and 'Something is equal to number';
+            "parameter" is in one of these names: %s;
             a numerical value is an integer or a floating point number;
             a range is an expression with two numerical values and an operator, 
-            examples can be 'number ± number' and 'between number to number';
+            either "number ± number" or "between number to number";
             an inequality means using comparative expressions with number, an example can be 'greater than number' and 'less than number'; 
             "value" is a numerical value or a range or an inequality;
             the "verb" is "is equal to" if "value" is a numerical value; 
@@ -85,7 +89,7 @@ class Gpt_preprocessing:
             all of the information in the your sentence must be derived based on the given sentence;  
             remove all information except the parameter, verb and value;
             if you cannot find a parameter or a value, you should return unrelated;
-            your sentences must have a parameter and a value and a verb.
+            your sentences must have a parameter and a value and a verb.            
             """ % ','.join(['"%s"' % f for f in features])
         debug and print(self.allinonequery1)
         debug and print(self.__allinonequery2)
@@ -109,13 +113,24 @@ class Gpt_preprocessing:
         return abbr
 
     def __call_gpt_chat(self, query: str):        
-        response = openai.ChatCompletion.create(
-            model=self.gpt_model,
-            messages=[
-                {"role": "user", "content": query}
-            ],
-            temperature=0
-        )
+        for i in range(3):
+            try:
+                response = openai.ChatCompletion.create(
+                    model=self.gpt_model,
+                    messages=[
+                        {"role": "user", "content": query}
+                    ],
+                    temperature=0
+                )
+            except openai.error.APIError:
+                print('API Error. Retry...')
+                continue
+            except openai.error.ServiceUnavailableError:
+                print('Server overloaded...Retry after 120 seconds...')
+                time.sleep(120)
+                continue
+            else:
+                break
         self.count = self.count + 1
         if (self.count + 1) % 3 == 0:
             print('Pausing for 60 seconds...')

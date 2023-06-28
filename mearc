@@ -202,18 +202,18 @@ def __call_compiler(mr_file_path, si_file_path, _type: str):
         return None
 
 
-def write_to_jml_file(jmls: List[Tuple[str | None, str | None]], file_path: str, prog_name: str):
-    for i, jml in enumerate(jmls):
-        with open('%s/%s.conditions.query.%d' % (file_path, prog_name, i), 'w+') as fp:
-            for item in jml:
-                if item[0] != 'ALSO':
-                    fp.write("//@ %s" % item[0])
-                    fp.write("//@ %s" % item[1])
-                else:
-                    fp.write("//@ %s" % item[1])
+# def write_to_jml_file(jmls: List[Tuple[str | None, str | None]], file_path: str, prog_name: str):
+#     for i, jml in enumerate(jmls):
+#         with open('%s/%s.conditions.query.%d' % (file_path, prog_name, i), 'w+') as fp:
+#             for item in jml:
+#                 if item[0] != 'ALSO':
+#                     fp.write("//@ %s\n" % item[0])
+#                     fp.write("//@ %s\n" % item[1])
+#                 else:
+#                     fp.write("//@ %s\n" % item[1])
 
 
-def main(config_path: str, prog_file: str, query_path: str = None, prof_query_path: str = None) -> None:
+def main(config_path: str, prog_file_path: str, query_path: str = None, prof_query_path: str = None) -> None:
     with open(config_path) as fp:
         _config = yaml.load(fp, Loader=SafeLoader)
     for key in _configs:
@@ -225,7 +225,7 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
     global nlp_path, si_path
     nlp_path = [nlp.get(frontend.upper()) for nlp in configs.NLP][1]
     si_path = [si.get(frontend.upper()) for si in configs.STD_SI][1]
-    prog_name = prog_file.replace('.java', '').split('/')[-1]
+    prog_name = prog_file_path.replace('.java', '').split('/')[-1]
     si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))
 
     # create tmp folder
@@ -237,12 +237,12 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
     #############################################################
     if query_path and prof_query_path:
         cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s" % (
-        configs.PYCMD, prog_file, si_path, configs.TMP, query_path, prof_query_path)
+        configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path, prof_query_path)
     elif query_path:
         cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s" % (
-        configs.PYCMD, prog_file, si_path, configs.TMP, query_path)
+        configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path)
     else:
-        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s" % (configs.PYCMD, prog_file, si_path, configs.TMP)
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s" % (configs.PYCMD, prog_file_path, si_path, configs.TMP)
     print(cmd)
     run_cmd_show_output(cmd)
     prog_condition_file = "%s/%s.conditions.yml" % (configs.TMP, prog_name)
@@ -257,6 +257,8 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
     # TODO changing the handling method when there is a query file
     if query_path:
         jmls = []
+        count = 0
+        failed_mr_files = []
         for i, specs in enumerate(data):
             ######################################################################
             # 20230626 added in Macau
@@ -278,6 +280,8 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
                 if not _pre:
                     print("Compilation failed in query %d pair %d, please check with the MR in following path: \n%s" % (
                     i, j, mr_file_path))
+                    count += 1
+                    failed_mr_files.append('query_%d_pair_%d_pre' % (i, j))
                 tmp = __run_nlp_pipeline(postcondition, configs, prog_name, 'query_%d_pair_%d_post' % (i, j))
                 if tmp:
                     (mr_file_path, mr_error, mr_stdout) = tmp
@@ -287,12 +291,21 @@ def main(config_path: str, prog_file: str, query_path: str = None, prof_query_pa
                 if not _post:
                     print("Compilation failed in query %d pair %d, please check with the MR in following path: \n%s" % (
                     i, j, mr_file_path))
+                    count += 1
+                    failed_mr_files.append('query_%d_pair_%d_post' % (i, j))
                 if _pre and _post:
                     jml.append((_pre, _post))
                     jml.append(("ALSO", 'also'))
             jml = jml[:-1]
             jmls.append(jml)
-        write_to_jml_file(jmls=jmls, file_path=configs.TMP, prog_name=prog_name)
+        # write_to_jml_file(jmls=jmls, file_path=configs.TMP, prog_name=prog_name)
+        print('Number of MRs that cannot be compiled: ', count)
+        if count:
+            print('Please refer to the following MR files: ')
+            [print(f) for f in failed_mr_files]
+        print('Generating JML files...')
+        from esc import write_JML_files
+        write_JML_files(jmls, prog_file_path=prog_file_path, prog_name=prog_name, target_path=configs.TMP)
     else:
         for i, record in enumerate(data):
             t = record['type']
