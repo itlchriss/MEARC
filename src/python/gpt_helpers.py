@@ -138,12 +138,23 @@ class Gpt_preprocessing:
         return response
 
     def __call_gpt_text_completion(self, prompt: str):
-        response = openai.Completion.create(
-            model=self.text_completion_model,
-            prompt=prompt,
-            max_tokens=150,
-            temperature=0
-        )
+        for i in range(3):
+            try:
+                response = openai.Completion.create(
+                    model=self.text_completion_model,
+                    prompt=prompt,
+                    max_tokens=150,
+                    temperature=0
+                )
+            except openai.error.APIError:
+                print('API Error. Retry...')
+                continue
+            except openai.error.ServiceUnavailableError:
+                print('Server overloaded...Retry after 120 seconds...')
+                time.sleep(120)
+                continue
+            else:
+                break
         return response
 
     # This is a heuristic function judging if the sentence is related in providing information about the features

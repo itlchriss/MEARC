@@ -31,6 +31,7 @@ optparser.add_option("-q", "--query", dest="query", help="path of the query file
 optparser.add_option("-p", "--profquery", dest="prof_query", help="path of the professional query file")
 optparser.add_option("-c", "--config", dest="config_path", help="path of the config file")
 optparser.add_option("-e", "--frontend", dest="frontend", help="ccg2lambda or depccg")
+optparser.add_option("-l", "--labels", dest="labels", help="[optional]comma separated string for labels using in verifying models")
 
 
 class dot_access_dict(dict):
@@ -213,7 +214,7 @@ def __call_compiler(mr_file_path, si_file_path, _type: str):
 #                     fp.write("//@ %s\n" % item[1])
 
 
-def main(config_path: str, prog_file_path: str, query_path: str = None, prof_query_path: str = None) -> None:
+def main(config_path: str, prog_file_path: str, query_path: str = None, prof_query_path: str = None, labels_str: str = None) -> None:
     with open(config_path) as fp:
         _config = yaml.load(fp, Loader=SafeLoader)
     for key in _configs:
@@ -236,11 +237,11 @@ def main(config_path: str, prog_file_path: str, query_path: str = None, prof_que
     # adding query file support
     #############################################################
     if query_path and prof_query_path:
-        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s" % (
-        configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path, prof_query_path)
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -p %s -c %s" % (
+            configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path, prof_query_path, labels_str)
     elif query_path:
-        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s" % (
-        configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path)
+        cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s -q %s -c %s" % (
+            configs.PYCMD, prog_file_path, si_path, configs.TMP, query_path, labels_str)
     else:
         cmd = "%s ./src/python/preprocessor.py -f %s -s %s -o %s" % (configs.PYCMD, prog_file_path, si_path, configs.TMP)
     print(cmd)
@@ -340,7 +341,7 @@ if __name__ == "__main__":
             main(options.config_path, options.prog_path)
         else:
             if not options.prof_query:
-                main(options.config_path, options.prog_path, query_path=options.query)
+                main(options.config_path, options.prog_path, query_path=options.query, labels_str=options.labels)
             else:
                 main(options.config_path, options.prog_path, query_path=options.query,
-                     prof_query_path=options.prof_query)
+                    prof_query_path=options.prof_query, labels_str=options.labels)
