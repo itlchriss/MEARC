@@ -74,21 +74,25 @@ class Gpt_preprocessing:
             I am going to send you some sentences.
             Summarise the sentence without adding new words;            
             return only "The parameter verb value" in your reply; 
-            Your reply examples are 'Something ranges number ± number', 
-            'Something ranges number to number',
-            'Something is greater than number' and 'Something is equal to number';
-            "parameter" is in one of these names: %s;
-            a numerical value is an integer or a floating point number;
+            Your reply examples are 'Something ranges a number ± a number', 
+            'Something ranges a number to a number',
+            'Something is less than a number'
+            'Something is greater than number' and 'Something is equal to a number';
+            "parameter" must be one of these names: %s;        
+            a numerical value must be an integer or a floating point number;
             a range is an expression with two numerical values and an operator, 
             either "number ± number" or "between number to number";
-            an inequality means using comparative expressions with number, an example can be 'greater than number' and 'less than number'; 
+            an inequality is a comparative expression with number, 
+            examples can be 'greater than number', 'less than number', '< number', '< number'; 
             "value" is a numerical value or a range or an inequality;
-            the "verb" is "is equal to" if "value" is a numerical value; 
-            the "verb" is "ranges" if "value" is a range;
-            the "verb" is "is" if "value" is an inequality;
+            the "verb" must be "is equal to" if "value" is a numerical value; 
+            the "verb" must be "ranges" if "value" is a range;
+            the "verb" must be "is greater than" or "is less than" or "is greater than or equal to" or "is less than or equal to" if "value" is an inequality;
             all of the information in the your sentence must be derived based on the given sentence;  
             remove all information except the parameter, verb and value;
-            if you cannot find a parameter or a value, you should return unrelated;
+            if you cannot find a value for a parameter, do not return the parameter;
+            if you cannot find a parameter for a value, do not return the value;
+            if you cannot find any related parameters, you should return the sentence is unrelated;
             your sentences must have a parameter and a value and a verb.            
             """ % ','.join(['"%s"' % f for f in features])
         debug and print(self.allinonequery1)
@@ -190,6 +194,22 @@ class Gpt_preprocessing:
 
     def process(self, text: str) -> Dict[str, List[str]]:
         self.debug and print('input: %s' % text)
+        ##############################################################
+        # 20230630 Added in Macao
+        # Fixing the problem that GPT does not understand the abbreviation
+        # [TRYING]The solution is to replace the abbreviation before calling GPT
+        ##############################################################
+        abbr = self.abbr
+        for i, f in enumerate(abbr):
+            f_abbr = abbr[f]
+            _tmp = text.split(' ')
+            for a in f_abbr:
+                for j, w in enumerate(_tmp):
+                    if w == a:
+                        _tmp[j] = f.replace('_', ' ')
+            text = ' '.join(_tmp)   
+        self.debug and print('Replacing possible abbreivation: %s' %text)
+        
         response = self.__call_gpt_text_completion(self.allinonequery1 + 'Sentence: ' + text)
 
         tmp: str = response['choices'][0]['text']
@@ -202,12 +222,16 @@ class Gpt_preprocessing:
                 broken_sents.append(s.sent.text.strip())
         self.debug and print('text to sentences: ', broken_sents)
 
-        response = self.__call_gpt_chat(self.__allinonequery2 + 'Sentences: ' + '\n'.join(broken_sents))
+        gpt_processed = []
+        for sent in broken_sents:
+            response = self.__call_gpt_chat(self.__allinonequery2 + 'Sentences: ' +  sent)
+            gpt_processed.append(response.choices[0].message.content)
 
+        self.debug and print('gpt processed: ', gpt_processed)
         filtered = []
-        tmp = response.choices[0].message.content
-        self.debug and print('gpt processed: ', tmp)
-        for s in tmp.split('\n'):
+        # tmp = response.choices[0].message.content
+        # self.debug and print('gpt processed: ', tmp)
+        for s in gpt_processed:
             if s and len(s) > 2 and len(s.split(':')) == 2:
                 s1 = s.split(':')[0]
                 s2 = s.split(':')[1]
@@ -222,7 +246,7 @@ class Gpt_preprocessing:
                 for d in data.sents:
                     s = d.sent.text.strip()
                     if not self.__related__(s):
-                        self.debug and print('This sentence is checked by symbolic, it is not related.')
+                        self.debug and print('This sentence (%s) is checked by symbolic, it is not related.' % s)
                         continue
                     if len(s) > 2:
                         self.debug and print('Before replacement: ', s)
@@ -237,9 +261,9 @@ class Gpt_preprocessing:
                             #     _s = _s.replace(a, f.replace('_', ' '))
                             _tmp = _s.split(' ')
                             for a in f_abbr:
-                                for w, i in enumerate(_tmp):
+                                for j, w in enumerate(_tmp):
                                     if w == a:
-                                        _tmp[i] = f.replace('_', ' ')
+                                        _tmp[j] = f.replace('_', ' ')
                             _s = ' '.join(_tmp)                                    
 
                         if _s[-1] != '.':

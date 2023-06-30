@@ -100,6 +100,17 @@ def call_depccg_pipeline(text: str):
         ],
         tokenize=True,
     )
+    
+    
+    #############################################################
+    # 20230630 Added in Macao
+    # Temporary solution for fixing spacy not knowing some idioms
+    #   for these cases, spacy tags them using '$' sign
+    #############################################################
+    for i, sent in enumerate(doc):    
+        for j, token in enumerate(sent):
+            if token['pos'] == '$':
+                doc[i][j]['pos'] = 'NNP'
 
     # logger.info("supertagging")
     score_result, categories_ = supertagger.predict_doc(

@@ -108,6 +108,8 @@ def main(filepath: str):
               _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive])
     __add2sis('greater than', ['Acc'], r'(Subj) > (Acc)', ['NNP'], _type=JavaTypes.JML_expression_template,
               _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive], _grammar_args=['Subj'])
+    __add2sis('less than', ['Acc'], r'(Subj) < (Acc)', ['NNP'], _type=JavaTypes.JML_expression_template,
+              _specific_arg_types=[JavaTypes.Primitive, JavaTypes.Primitive], _grammar_args=['Subj'])    
     # __add2sis('than', ['x', 'y'], r'_sub(y)2(x)', ['IN'], _type=JavaTypes.JML_expression_result)
     fp = open(filepath, 'w')
     yaml.dump(sis, fp, sort_keys=False, default_style=None, default_flow_style=False)

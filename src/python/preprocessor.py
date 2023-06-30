@@ -113,7 +113,7 @@ PTBTagSet = [
 class Preprocessor:
     classes = []
     symbols_need_to_remove = ['°', 'verb', 'value', '"']
-    correction = {'±': ['is equal to', 'ranges'], 'ranges': ['and', 'to']}
+    correction = {'±': ['is equal to', 'ranges'], 'ranges': ['and', 'to'], '±': ['ranges from', 'ranges']}
     patterns = {
         'null': 'a null_value',
         'true': 'a true_value',
@@ -129,6 +129,7 @@ class Preprocessor:
         'degree': ' ',
         'is between': 'ranges between',
         'ranges between': 'ranges',
+        'ranges over': 'is greater than',
         'all elements in': 'every element of',
         # error handling for GPT when it returns grammatically incorrect sentences
         'is ranges': 'ranges'
@@ -393,6 +394,8 @@ class Preprocessor:
         for symbol in self.correction:
             if symbol in text and self.correction[symbol][0] in text:
                 text = text.replace(self.correction[symbol][0], self.correction[symbol][1])
+        for op in self.operators:
+            text = text.replace(op, ' ' + self.operators[op] + ' ')
         text = ' '.join([i.strip() for i in text.split(' ')])
         if self.classes:
             if text[-1] == '.':
@@ -687,7 +690,7 @@ def main(javafilepath: str, silibpath: str,
         gpt_raw_reply = []
         for i, line in enumerate(lines):
             runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq, 
-                                       openai_key=key, relationships=relationships, debug=False)
+                                       openai_key=key, relationships=relationships, debug=True)
             runner.count = gpt_turbo_count
             print('input line: ', line.strip())
             spec = runner.process(line.strip())
@@ -707,9 +710,12 @@ def main(javafilepath: str, silibpath: str,
                             # 20230623 Added in Macau
                             # write spec pairs into the yaml file
                             #############################################################
+                            pre = preprocessor.process(s.sent.text)
+                            if pre.split(' ')[0].lower() != 'the':
+                                pre = 'The ' + pre
                             processed_data_per_query.append({
                                 'type': 'pair',
-                                'precondition': preprocessor.process(s.sent.text),
+                                'precondition': pre,
                                 'postcondition': preprocessor.process(post)
                             })
             yaml_data.append(processed_data_per_query)
