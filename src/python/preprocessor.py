@@ -691,6 +691,23 @@ def main(javafilepath: str, silibpath: str,
         for i, line in enumerate(lines):
             runner = Gpt_preprocessing(features=features, classes=classes, professional_query=pq, 
                                        openai_key=key, relationships=relationships, debug=True)
+            #########################################################
+            # 20230702 added in Macao
+            # Fixing the problem of GPT that misunderstood the non-alphabets
+            # Such as, (<70, this will not be understand by GPT as parentheses and an operator
+            # This suggests that GPT requires more corpus
+            check = False
+            while True:
+                if check:
+                    break
+                else:
+                    found = re.findall('([^a-zA-Z0-9 ]{2})', line)
+                    if not found:
+                        check = True
+                    else:
+                        for g in found:
+                            line = line.replace(g, ' ' + g[0] + ' ' + g[1] + ' ')
+            #########################################################
             runner.count = gpt_turbo_count
             print('input line: ', line.strip())
             spec = runner.process(line.strip())
