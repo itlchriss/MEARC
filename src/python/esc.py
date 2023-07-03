@@ -63,11 +63,16 @@ def get_program_structure(prog_file_path: str) -> List[str]:
                 m = ''
                 if field.modifiers:
                     m = ' '.join(sort_modifiers(list(field.modifiers))) + ' '
-                if hasattr(field.declarators[0], 'initializer'):
-                    data.append("%s%s %s = %s;\n" % 
-                                (m, field.type.name, field.declarators[0].name, field.declarators[0].initializer.value))
-                else:    
-                    data.append("%s%s %s;\n" % (m, field.type.name, field.declarators[0].name))
+                #######################################################
+                # 20230703 added in Macau
+                # JML will throw "error: Field initializers are not permitted in specification files"
+                # Therefore, we cannot enclose the initializers
+                #######################################################
+                # if hasattr(field.declarators[0], 'initializer'):
+                #     data.append("%s%s %s = %s;\n" % 
+                #                 (m, field.type.name, field.declarators[0].name, field.declarators[0].initializer.value))
+                # else:    
+                data.append("%s%s %s;\n" % (m, field.type.name, field.declarators[0].name))
             for mpath, method in node.filter(javalang.tree.MethodDeclaration):
                 m = ''
                 if method.modifiers:
@@ -93,10 +98,10 @@ def write_JML_files(
         data = ''
         for item in jml:
             if item[0] != 'ALSO':
-                data += "//@ %s\n" % item[0]
-                data += "//@ %s\n" % item[1]
+                data += "//@ %s\n" % item[0].replace('\\\\', '\\')
+                data += "//@ %s\n" % item[1].replace('\\\\', '\\')
             else:
-                data += "//@ %s\n" % item[1]
+                data += "//@ %s\n" % item[1].replace('\\\\', '\\')
         if data:            
             tmp = list(map(lambda x: x.replace('*****JML*****', data), structure))
             with open('%s/%s.query.%d.jml' % (target_path, prog_name, i), 'w+') as fp:  
