@@ -1,7 +1,7 @@
 class RandomForest { 
 
-public static final int B = 0;
-public static final int M = 1;
+public static final String benign = "B";
+public static final String malignant = "M";
 public int randomForest(double radius_mean,double texture_mean,double perimeter_mean,double area_mean,double smoothness_mean,double compactness_mean,double concavity_mean,double concave_points_mean,double symmetry_mean,double fractal_dimension_mean,double radius_se,double texture_se,double perimeter_se,double area_se,double smoothness_se,double compactness_se,double concavity_se,double concave_points_se,double symmetry_se,double fractal_dimension_se,double radius_worst,double texture_worst,double perimeter_worst,double area_worst,double smoothness_worst,double compactness_worst,double concavity_worst,double concave_points_worst,double symmetry_worst,double fractal_dimension_worst){
 double  class0 = 0;
 double  class1 = 0;

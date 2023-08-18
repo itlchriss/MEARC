@@ -52,11 +52,24 @@ class Gpt_preprocessing:
         self.classes = classes
         self.relationships = relationships
         openai.api_key = openai_key
+        # self.allinonequery1 = """
+        #     You break the sentence into separate sentences with consistent sentence structure.
+        #     If and only if there are no conjunctions, you return the input sentence.
+        #     If there are colons, you break the sentence by clarifying the sentence before the colons with the sentences after the colons.
+        #     Replace hypen(-) between numerical values with "to".
+        #     Remove all thousands separators(,) in numerical values.
+        #     """
+        feature_specific_query = ''
+        if any('_mean' in f or '_se' in f for f in self.features):
+            feature_specific_query += """
+            ( mean ± standard deviation ) is an explanation to help you understand that there is a (number ± number) corresponding to the mean and standard deviation values of the subject of the input sentence, in this case you have to use the same subject across the sentences, both mean and standard deviation do not have relationship with worst or best, e.g. the input sentence is "The average X of the benign masses is A ± B  ( mean ± standard deviation )", you should return "The mean of X of the benign masses is A. The standard deviation of X of the benign masses is B.".             
+            Another example with the input sentence is "The sizes of the X vary in the range A-B mm2, with an average of P mm2 and a standard deviation of Q mm2.", you should return "The mean of X is P. The standard deviation of X is Q.".
+            """
         self.allinonequery1 = """
             You break the sentence into separate sentences with consistent sentence structure.
             If and only if there are no conjunctions, you return the input sentence.
-            If there are colons, you break the sentence by clarifying the sentence before the colons with the sentences after the colons.
-            """
+            If there are colons, you break the sentence by clarifying the sentence before the colons with the sentences after the colons. %s                   
+            """ % feature_specific_query
         pq = professional_query
         if not professional_query:
             pq = ''
@@ -79,6 +92,11 @@ class Gpt_preprocessing:
             'Something is less than a number'
             'Something is greater than number' and 'Something is equal to a number';
             "parameter" must be one of these names: %s;        
+            "se" is the abbreviation of "standard deviation", "parameter" with "se" must be referred to "standard deviation" in the sentences;
+            "parameter" with "mean" must be referred to "average" or "mean" in the sentences;
+            "parameter" with "age " must be referred to "age" or "years old" in the sentences, e.g. the sentence is "A ... patient (less than X years old) ...", you should return "The age is less than X.";
+            sentences with "tumors" is always referred to "area", e.g. the sentence is "The mean of ... tumors is X.", you should return "The area_mean is X.", "The standard deviation of ... tumors is X.", you should return "The area_se is X.";
+            %s;
             a numerical value must be an integer or a floating point number;
             a range is an expression with two numerical values and an operator, 
             either "number ± number" or "between number to number";
@@ -93,8 +111,9 @@ class Gpt_preprocessing:
             if you cannot find a value for a parameter, do not return the parameter;
             if you cannot find a parameter for a value, do not return the value;
             if you cannot find any related parameters, you should return the sentence is unrelated;
-            your sentences must have a parameter and a value and a verb.            
-            """ % ','.join(['"%s"' % f for f in features])
+            your sentences must have a parameter and a value and a verb;
+            units such as "years old", "degree" must be removed.
+            """ % (','.join(['"%s"' % f for f in features]), pq)
         debug and print(self.allinonequery1)
         debug and print(self.__allinonequery2)
         # debug and print(self.allinonequery3)
@@ -103,17 +122,22 @@ class Gpt_preprocessing:
         self.debug = debug
 
     def __get_feature_abbr(self) -> Dict[str, List[str]]:
+        import itertools
+        common_words = ['mean', 'se', 'worst', 'best']
         abbr = {}
         for f in self.features:
             if '_' in f:
                 words = f.split('_')
+                words = list(filter(lambda x: x not in common_words, words)) 
+                noun = ' '.join(words)               
                 _abbr = (''.join([word[0] for word in words])).upper()
                 if len(_abbr) > 2:
-                    abbr[f] = []
-                    for i in range(len(_abbr) - 1):
-                        abbr[f].append(_abbr[i:])
+                    perms = list(itertools.combinations(_abbr, 2))
+                    # abbr[f] = [''.join(i) for i in perms]                    
+                    abbr[noun] = [''.join(i) for i in perms]                    
                 else:
-                    abbr[f] = [_abbr]
+                    # abbr[f] = [_abbr]
+                    abbr[noun] = [_abbr]
         return abbr
 
     def __call_gpt_chat(self, query: str):        
@@ -184,6 +208,13 @@ class Gpt_preprocessing:
             for rterms in self.relationships:
                 if any(x in self.features for x in rterms):
                     _rterms += rterms
+            for f in self.features:
+                for rterms in self.relationships:
+                    for y in rterms:
+                        if y in f:
+                            _rterms += rterms
+                            break
+        _rterms = list(set(_rterms))
         for r in _rterms:
             if r in _sent:
                 return True
@@ -193,6 +224,7 @@ class Gpt_preprocessing:
         # return True
 
     def process(self, text: str) -> Dict[str, List[str]]:
+        org_text = text
         self.debug and print('input: %s' % text)
         ##############################################################
         # 20230630 Added in Macao
@@ -231,6 +263,13 @@ class Gpt_preprocessing:
         filtered = []
         # tmp = response.choices[0].message.content
         # self.debug and print('gpt processed: ', tmp)
+        tmp = []
+        for i in gpt_processed:
+            if '\n' in i:
+                tmp += i.split('\n')
+            else:
+                tmp.append(i)
+        gpt_processed = tmp
         for s in gpt_processed:
             if s and len(s) > 2 and len(s.split(':')) == 2:
                 s1 = s.split(':')[0]

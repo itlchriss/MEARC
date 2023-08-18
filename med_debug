@@ -1,4 +1,4 @@
 make depccg ASTDEBUG=1 SIDEBUG=1
 
-#gdb --ex=r --args ./bin/main -f./tests/mr/test$1  -s./tmp/weka3.si.yml,./src/c/lib/med_2023.yml
-lldb -- ./bin/main -f./tmp/$1.conditions.mr.$2  -s./tmp/$1.si.yml,./src/c/lib/med_2023.yml
+gdb --ex=r --args ./bin/main -f./tmp/$1.conditions.mr.$2  -s./tmp/$1.si.yml,./src/c/lib/med_2023.yml
+#lldb -- ./bin/main -f./tmp/$1.conditions.mr.$2  -s./tmp/$1.si.yml,./src/c/lib/med_2023.yml

@@ -127,9 +127,12 @@ class Preprocessor:
         'will': ' ',
         'degrees': ' ',
         'degree': ' ',
+        'mm2': ' ',
         'is between': 'ranges between',
         'ranges between': 'ranges',
         'ranges over': 'is greater than',
+        'is over': 'is greater than',
+        'is higher than': 'is greater than',
         'all elements in': 'every element of',
         # error handling for GPT when it returns grammatically incorrect sentences
         'is ranges': 'ranges'
@@ -661,6 +664,7 @@ def main(javafilepath: str, silibpath: str,
         from gpt_helpers import Gpt_preprocessing
         features = list(get_single_method_parameters(javafilepath))
         classes = list(get_constants_from_javasrc(javafilepath))
+        
         with open(querypath, 'r') as fp:
             lines = fp.readlines()
         pq = None
@@ -693,20 +697,25 @@ def main(javafilepath: str, silibpath: str,
                                        openai_key=key, relationships=relationships, debug=True)
             #########################################################
             # 20230702 added in Macao
-            # Fixing the problem of GPT that misunderstood the non-alphabets
+            # Fixing the problem of GPT that misunderstood the non-alphanumerics
             # Such as, (<70, this will not be understand by GPT as parentheses and an operator
             # This suggests that GPT requires more corpus
-            check = False
-            while True:
-                if check:
-                    break
-                else:
-                    found = re.findall('([^a-zA-Z0-9 ]{2})', line)
-                    if not found:
-                        check = True
-                    else:
-                        for g in found:
-                            line = line.replace(g, ' ' + g[0] + ' ' + g[1] + ' ')
+            # 20230705 added in Macao
+            # the problem can be found also where alphabets and non-alphanumerics present together
+            #  without separator(e.g. space)
+            #  therefore, giving space to all non-alphanumerics
+            # check = False            
+            # while True:
+            #     if check:
+            #         break
+            #     else:
+            #         found = re.findall('([^a-zA-Z0-9 ]{2})', line)
+            #         if not found:
+            #             check = True
+            #         else:
+            #             for g in found:
+            #                 # line = line.replace(g, ' ' + g[0] + ' ' + g[1] + ' ')
+            line = line.replace('(', ' ( ').replace(')', ' ) ').replace('<', ' < ').replace('>', ' > ')
             #########################################################
             runner.count = gpt_turbo_count
             print('input line: ', line.strip())
