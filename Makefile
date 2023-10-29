@@ -11,11 +11,17 @@ OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o main.o
 DEBUG   ?=      1
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
+LDFLAGS = 
 LOCINCL =   -I/usr/local/include 
 LOCLINK =   -L/usr/local/lib
 ifeq ($(UNAME_S),Darwin)
 	LOCINCL = -I/opt/homebrew/Cellar/libyaml/0.2.5/include
 	LOCLINK = -L/opt/homebrew/Cellar/libyaml/0.2.5/lib
+endif
+
+ifeq ($(ANALYSIS), 1)
+	CFLAGS += -fprofile-arcs -ftest-coverage
+	LDFLAGS += -p -g -fprofile-arcs -ftest-coverage
 endif
 
 ifeq ($(DEBUG), 0)
@@ -88,7 +94,7 @@ parser.o:	parser.c
 
 parser.c:	
 		$(BCC) -d -v $(SRC)/parser.y
-		mv parser.tab.c $(BUILD)/parser.c
+		cp parser.tab.c $(BUILD)/parser.c
 		cp parser.tab.h $(BUILD)/tok.h
 		mv parser.tab.h $(BUILD)
 	
@@ -130,7 +136,8 @@ cst.o							:   $(INCL)/util.h
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h
 si.o							:   $(INCL)/si.h 
 clean:
-	rm $(BUILD)/*
+	rm -rf $(BUILD)/*
 	rm ./parser.output
 	rm ./bin/*
+	rm ./parser.tab.c
 	

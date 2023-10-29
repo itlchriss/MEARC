@@ -47,7 +47,6 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
             fprintf(stderr, "walktree: Unknown type(%s) encountered for symbol(%s).\n");
             #endif
             (*haserror)++;
-            goto END;
     }        
 }
 
@@ -79,7 +78,7 @@ void output(struct astnode *root) {
     FILE *stream = open_memstream(&buffer, &size);
     /* 0 indicates no error */
     int haserror = 0;
-    printree(root, stream, &haserror);
+    walktree(root, stream, &haserror);
     if (haserror == 0) {
         fflush(stream);
         /* TODO: add configuration of ensures and requires, and open bracket */

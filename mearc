@@ -61,7 +61,8 @@ def main(config_path: str, prog_file: str) -> None:
     si_file_path = ("%s/%s.si.yml" % (configs.TMP, prog_name))
 
     # create tmp folder
-    run_cmd_without_output('mkdir -p %s; rm -rf %s/*' % (configs.TMP, configs.TMP))
+    # run_cmd_without_output('mkdir -p %s; rm -rf %s/*' % (configs.TMP, configs.TMP))
+    run_cmd_without_output('mkdir -p %s;' % (configs.TMP))
     # preprocessing 
     cmd = "%s ./src/python/preprocessor.py %s %s %s" % (configs.PYCMD, prog_file, configs.STD_SI, configs.TMP)
     run_cmd_show_output(cmd)
