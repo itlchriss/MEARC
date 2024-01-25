@@ -9,6 +9,9 @@ public class Solution {
     private static class UF {
         int[] root;
         long[] sum;
+//@ ensures(*Finally, we return [14,7,2,2,0]. Finally, we return [16,5,3,0].
+Return _an integer array_ `answer`_, of length_ `n`_, where_ `answer[i]` _is the **maximum** segment sum after applying the_ <code>i<sup>th</sup></code> _removal._*);
+
 
         public UF(int n) {
             this.root = new int[n];

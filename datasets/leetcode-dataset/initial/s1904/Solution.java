@@ -6,6 +6,8 @@ public class Solution {
     private static final int MID_NIGHT_END = 1440;
     private static final int MID_NIGHT_START = 0;
     private static final int ROUND_INTERVAL = 15;
+//@ ensures(*Return _the number of full chess rounds you have played in the tournament_.*);
+
 
     public int numberOfRounds(String loginTime, String logoutTime) {
         int loginSerializeTime = serializeTime(loginTime);

@@ -4,6 +4,8 @@ package g0801_0900.s0832_flipping_an_image;
 // #2022_03_24_Time_1_ms_(68.54%)_Space_45_MB_(37.50%)
 
 public class Solution {
+//@ ensures(*Given an `n x n` binary matrix `image`, flip the image **horizontally**, then invert it, and return _the resulting image_.*);
+
     public int[][] flipAndInvertImage(int[][] image) {
         int m = image.length;
         int n = image[0].length;

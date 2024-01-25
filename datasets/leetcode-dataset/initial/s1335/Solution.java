@@ -3,6 +3,9 @@ package g1301_1400.s1335_minimum_difficulty_of_a_job_schedule;
 // #Hard #Array #Dynamic_Programming #2022_03_19_Time_11_ms_(79.28%)_Space_41.6_MB_(59.99%)
 
 public class Solution {
+//@ ensures(*Return _the minimum difficulty of a job schedule_. If you cannot find a schedule for the jobs return `-1`.
+Return _the minimum difficulty of a job schedule_. If you cannot find a schedule for the jobs return `-1`.*);
+
     public int minDifficulty(int[] jobDifficulty, int d) {
         int totalJobs = jobDifficulty.length;
         if (totalJobs < d) {

@@ -8,6 +8,8 @@ package g0501_0600.s0542_01_matrix;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Given an `m x n` binary matrix `mat`, return _the distance of the nearest_ `0` _for each cell_.*);
+
     public int[][] updateMatrix(int[][] mat) {
         int[][] dist = new int[mat.length][mat[0].length];
         for (int i = 0; i < mat.length; i++) {

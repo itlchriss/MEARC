@@ -3,6 +3,8 @@ package g2901_3000.s2928_distribute_candies_among_children_i;
 // #Easy #Math #Enumeration #Combinatorics #2023_12_29_Time_1_ms_(98.72%)_Space_40.9_MB_(6.45%)
 
 public class Solution {
+//@ ensures(*Return _the **total number** of ways to distribute_ `n` _candies among_ `3` _children such that no child gets more than_ `limit` _candies._*);
+
     public int distributeCandies(int n, int limit) {
         int count = 0;
         for (int i = 0; i < Math.min(limit, n) + 1; i++) {

@@ -4,6 +4,8 @@ package g0601_0700.s0672_bulb_switcher_ii;
 // #2022_03_22_Time_0_ms_(100.00%)_Space_38.9_MB_(80.85%)
 
 public class Solution {
+//@ ensures(*Given the two integers `n` and `presses`, return _the number of **different possible statuses** after performing all_ `presses` _button presses_.*);
+
     public int flipLights(int n, int m) {
         if (n == 1 && m > 0) {
             return 2;

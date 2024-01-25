@@ -5,6 +5,8 @@ package g1901_2000.s1913_maximum_product_difference_between_two_pairs;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **maximum** such product difference_.*);
+
     public int maxProductDifference(int[] nums) {
         Arrays.sort(nums);
         int len = nums.length;

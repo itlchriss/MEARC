@@ -4,6 +4,8 @@ package g2201_2300.s2209_minimum_white_tiles_after_covering_with_carpets;
 // #2022_06_10_Time_94_ms_(88.16%)_Space_82.4_MB_(50.00%)
 
 public class Solution {
+//@ ensures(*Return _the **minimum** number of white tiles still visible._*);
+
     public int minimumWhiteTiles(String floor, int numCarpets, int carpetLen) {
         int len = floor.length();
         int[][] dp = new int[numCarpets + 1][len + 1];

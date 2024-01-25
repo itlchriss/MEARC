@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Given a `triangle` array, return _the minimum path sum from top to bottom_.*);
+
     public int minimumTotal(List<List<Integer>> triangle) {
         if (triangle == null || triangle.isEmpty()) {
             return 0;

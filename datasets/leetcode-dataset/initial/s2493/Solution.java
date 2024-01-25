@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Queue;
 
 public class Solution {
+//@ ensures(*Return _the maximum number of groups (i.e., maximum_ `m`_) into which you can divide the nodes_. Return `-1` _if it is impossible to group the nodes with the given conditions_.*);
+
     public int magnificentSets(int n, int[][] edges) {
         List<List<Integer>> adj = new ArrayList<>();
         int[] visited = new int[n + 1];

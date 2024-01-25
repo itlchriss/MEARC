@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Solution {
+//@ ensures(*Given an expression representing a set of words under the given grammar, return _the sorted list of words that the expression represents_.*);
+
     public List<String> braceExpansionII(String expression) {
         Set<String> res = flatten(expression);
         List<String> sorted = new ArrayList<>(res);

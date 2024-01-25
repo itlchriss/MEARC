@@ -6,6 +6,8 @@ package g2401_2500.s2467_most_profitable_path_in_a_tree;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **maximum** net income Alice can have if she travels towards the optimal leaf node._*);
+
     public int mostProfitablePath(int[][] edges, int bob, int[] amount) {
         int n = amount.length;
         int[][] g = packU(n, edges);

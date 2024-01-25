@@ -6,6 +6,8 @@ package g1001_1100.s1027_longest_arithmetic_subsequence;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Given an array `nums` of integers, return the **length** of the longest arithmetic subsequence in `nums`.*);
+
     public int longestArithSeqLength(int[] nums) {
         int max = maxElement(nums);
         int min = minElement(nums);

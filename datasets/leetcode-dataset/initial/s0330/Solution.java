@@ -3,6 +3,8 @@ package g0301_0400.s0330_patching_array;
 // #Hard #Array #Greedy #2022_07_09_Time_1_ms_(60.00%)_Space_44.3_MB_(27.06%)
 
 public class Solution {
+//@ ensures(*Return _the minimum number of patches required_.*);
+
     public int minPatches(int[] nums, int n) {
         int res = 0;
         long sum = 0;

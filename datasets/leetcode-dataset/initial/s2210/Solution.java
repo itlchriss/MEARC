@@ -3,6 +3,9 @@ package g2201_2300.s2210_count_hills_and_valleys_in_an_array;
 // #Easy #Array #2022_06_12_Time_0_ms_(100.00%)_Space_41.8_MB_(60.16%)
 
 public class Solution {
+//@ ensures(*At index 5: There is no non-equal neighbor of 5 on the right, so index 5 is neither a hill nor a valley. There are 3 hills and valleys so we return 3. At index 5: There is no non-equal neighbor of 1 on the right, so index 5 is neither a hill nor a valley. There are 0 hills and valleys so we return 0.
+Return _the number of hills and valleys in_ `nums`.*);
+
     public int countHillValley(int[] nums) {
         int left = nums[0];
         int count = 0;

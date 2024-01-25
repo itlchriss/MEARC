@@ -17,6 +17,8 @@ public class Solution {
     }
 
     private final int[][] memo = new int[1001][1001];
+//@ ensures(*Given two lists, `scores` and `ages`, where each `scores[i]` and `ages[i]` represents the score and age of the <code>i<sup>th</sup></code> player, respectively, return _the highest overall score of all possible basketball teams_.*);
+
 
     public int bestTeamScore(int[] scores, int[] ages) {
         int n = ages.length;

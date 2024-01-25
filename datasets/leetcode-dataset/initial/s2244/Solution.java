@@ -6,6 +6,8 @@ package g2201_2300.s2244_minimum_rounds_to_complete_all_tasks;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **minimum** rounds required to complete all the tasks, or_ `-1` _if it is not possible to complete all the tasks._*);
+
     public int minimumRounds(int[] tasks) {
         Arrays.sort(tasks);
         int rounds = 0;

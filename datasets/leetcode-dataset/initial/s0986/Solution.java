@@ -6,6 +6,8 @@ package g0901_1000.s0986_interval_list_intersections;
 import java.util.ArrayList;
 
 public class Solution {
+//@ ensures(*Return _the intersection of these two interval lists_.*);
+
     public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
         ArrayList<int[]> list = new ArrayList<>();
         int i = 0;

@@ -13,6 +13,8 @@ public class Solution {
     private int prefix;
     private final Random random;
     private final TreeSet<int[]> treeSet;
+//@ ensures(*You need to implement the function `pickIndex()`, which **randomly** picks an index in the range `[0, w.length - 1]` (**inclusive**) and returns it. The **probability** of picking an index `i` is `w[i] / sum(w)`. solution.pickIndex(); // return 0. The only option is to return 0 since there is only one element in w. solution.pickIndex(); // return 1. It is returning the second element (index = 1) that has a probability of 3/4. solution.pickIndex(); // return 1 solution.pickIndex(); // return 1 solution.pickIndex(); // return 1 solution.pickIndex(); // return 0. It is returning the first element (index = 0) that has a probability of 1/4.*);
+
 
     public Solution(int[] w) {
         prefix = 0;

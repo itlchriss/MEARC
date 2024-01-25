@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class Solution {
+//@ ensures(*Return _the K-Sum of the array_.*);
+
     public long kSum(int[] nums, int k) {
         long sum = 0L;
         for (int i = 0; i < nums.length; i++) {

@@ -12,6 +12,8 @@ public class Solution {
     private final List<Integer>[][] graphs = new List[2][];
     private int foodPos;
     private int[][][] memo;
+//@ ensures(*Given a `rows x cols` matrix `grid` and two integers `catJump` and `mouseJump`, return `true` _if Mouse can win the game if both Cat and Mouse play optimally, otherwise return_ `false`.*);
+
 
     public boolean canMouseWin(String[] grid, int catJump, int mouseJump) {
         int m = grid.length;

@@ -3,6 +3,9 @@ package g2301_2400.s2369_check_if_there_is_a_valid_partition_for_the_array;
 // #Medium #Array #Dynamic_Programming #2022_08_16_Time_7_ms_(81.82%)_Space_93.5_MB_(9.09%)
 
 public class Solution {
+//@ ensures(*Return `true` _if the array has **at least** one valid partition_. Otherwise, return `false`. **Explanation:** The array can be partitioned into the subarrays [4,4] and [4,5,6]. This partition is valid, so we return true.
+Return `true` _if the array has **at least** one valid partition_. Otherwise, return `false`.*);
+
     public boolean validPartition(int[] nums) {
         boolean[] canPartition = new boolean[nums.length + 1];
         canPartition[0] = true;

@@ -9,6 +9,9 @@ public class Solution {
     private static final int MOD = 1000000007;
     private static final int MAX = 20001;
     private static final IntMap INT_MAP = new IntMap();
+//@ ensures(*Since the answer may be large, return it modulo <code>10<sup>9</sup> + 7</code>.
+Return _the **count of sub-multisets** within_ `nums` _where the sum of elements in each subset falls within the inclusive range of_ `[l, r]`.*);
+
 
     public int countSubMultisets(List<Integer> nums, int l, int r) {
         INT_MAP.clear();

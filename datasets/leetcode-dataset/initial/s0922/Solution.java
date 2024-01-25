@@ -3,6 +3,8 @@ package g0901_1000.s0922_sort_array_by_parity_ii;
 // #Easy #Array #Sorting #Two_Pointers #2022_03_29_Time_4_ms_(52.95%)_Space_55.6_MB_(17.78%)
 
 public class Solution {
+//@ ensures(*Return _any answer array that satisfies this condition_.*);
+
     public int[] sortArrayByParityII(int[] nums) {
         int i = 0;
         int j = 1;

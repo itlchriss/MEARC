@@ -4,6 +4,8 @@ package g2101_2200.s2120_execution_of_all_suffix_instructions_staying_in_a_grid;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+//@ ensures(*Return _an array_ `answer` _of length_ `m` _where_ `answer[i]` _is **the number of instructions** the robot can execute if the robot **begins executing from** the_ <code>i<sup>th</sup></code> _instruction in_ `s`.*);
+
     public int[] executeInstructions(int n, int[] startPos, String s) {
         int[] answer = new int[s.length()];
         for (int i = 0; i < s.length(); i++) {

@@ -4,6 +4,8 @@ package g2201_2300.s2222_number_of_ways_to_select_buildings;
 // #2022_06_12_Time_19_ms_(98.28%)_Space_42.6_MB_(98.62%)
 
 public class Solution {
+//@ ensures(*Return _the **number of valid ways** to select 3 buildings._*);
+
     public long numberOfWays(String s) {
         long z = 0;
         long o = 0;

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
+//@ ensures(*Return _the **maximum** possible number of ways to **partition**_ `nums` _to satisfy both conditions after changing **at most** one element_.*);
+
     public int waysToPartition(int[] nums, int k) {
         int n = nums.length;
         long[] ps = new long[n];

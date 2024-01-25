@@ -4,6 +4,9 @@ package g1501_1600.s1545_find_kth_bit_in_nth_binary_string;
 
 @SuppressWarnings("java:S1172")
 public class Solution {
+//@ ensures(*Where `+` denotes the concatenation operation, `reverse(x)` returns the reversed string `x`, and `invert(x)` inverts all the bits in `x` (`0` changes to `1` and `1` changes to `0`).
+Return _the_ <code>k<sup>th</sup></code> _bit_ _in_ <code>S<sub>n</sub></code>. It is guaranteed that `k` is valid for the given `n`.*);
+
     public char findKthBit(int n, int k) {
         boolean flip = false;
         while (k != 1) {

@@ -5,6 +5,8 @@ package g1001_1100.s1005_maximize_sum_of_array_after_k_negations;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the largest possible sum of the array after modifying it in this way_.*);
+
     public int largestSumAfterKNegations(int[] nums, int k) {
         Arrays.sort(nums);
         int minIndex = 0;

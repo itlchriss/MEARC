@@ -5,6 +5,8 @@ package g2001_2100.s2090_k_radius_subarray_averages;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Build and return _an array_ `avgs` _of length_ `n` _where_ `avgs[i]` _is the **k-radius average** for the subarray centered at index_ `i`.*);
+
     public int[] getAverages(int[] nums, int k) {
         // initialize result array with -1
         int[] res = new int[nums.length];

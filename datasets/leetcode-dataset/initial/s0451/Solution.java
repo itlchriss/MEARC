@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
+//@ ensures(*Return _the sorted string_. If there are multiple answers, return _any of them_.
+Return _the sorted string_. If there are multiple answers, return _any of them_.*);
+
     public String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {

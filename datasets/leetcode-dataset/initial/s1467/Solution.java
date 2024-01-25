@@ -4,6 +4,8 @@ package g1401_1500.s1467_probability_of_a_two_boxes_having_the_same_number_of_di
 // #2022_03_29_Time_1_ms_(100.00%)_Space_40_MB_(77.08%)
 
 public class Solution {
+//@ ensures(*Return _the probability_ that the two boxes have the same number of distinct balls. Answers within <code>10<sup>-5</sup></code> of the actual value will be accepted as correct.*);
+
     public double getProbability(int[] balls) {
         int m = balls.length;
         int s = 0;

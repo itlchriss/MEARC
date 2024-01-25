@@ -4,6 +4,8 @@ package g1101_1200.s1137_n_th_tribonacci_number;
 // #2023_06_01_Time_0_ms_(100.00%)_Space_39.6_MB_(48.37%)
 
 public class Solution {
+//@ ensures(*Given `n`, return the value of T<sub>n</sub>.*);
+
     public int tribonacci(int n) {
         if (n == 0) {
             return 0;

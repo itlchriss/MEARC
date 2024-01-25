@@ -5,6 +5,8 @@ package g1901_2000.s1921_eliminate_maximum_number_of_monsters;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **maximum** number of monsters that you can eliminate before you lose, or_ `n` _if you can eliminate all the monsters before they reach the city._*);
+
     public int eliminateMaximum(int[] dist, int[] speed) {
         for (int i = 0; i < dist.length; i++) {
             dist[i] = (dist[i] - 1) / speed[i] + 1;

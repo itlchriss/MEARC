@@ -3,6 +3,9 @@ package g2801_2900.s2874_maximum_value_of_an_ordered_triplet_ii;
 // #Medium #Array #2023_12_22_Time_2_ms_(99.67%)_Space_57.5_MB_(41.20%)
 
 public class Solution {
+//@ ensures(*Return _**the maximum value over all triplets of indices**_ `(i, j, k)` _such that_ `i < j < k`_._ If all such triplets have a negative value, return `0`.
+Return _**the maximum value over all triplets of indices**_ `(i, j, k)` _such that_ `i < j < k`_._ If all such triplets have a negative value, return `0`.*);
+
     public long maximumTripletValue(int[] nums) {
         int[] diff = new int[nums.length];
         int tempMax = nums[0];

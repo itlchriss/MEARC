@@ -4,6 +4,8 @@ package g2101_2200.s2170_minimum_operations_to_make_the_array_alternating;
 // #2022_06_09_Time_8_ms_(100.00%)_Space_58.3_MB_(82.64%)
 
 public class Solution {
+//@ ensures(*Return _the **minimum number of operations** required to make the array alternating_.*);
+
     public int minimumOperations(int[] nums) {
         int maxOdd = 0;
         int maxEven = 0;

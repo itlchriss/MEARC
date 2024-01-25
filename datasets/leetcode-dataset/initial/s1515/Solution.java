@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Given an array `positions` where <code>positions[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> is the position of the `ith` customer on the map, return _the minimum sum of the euclidean distances_ to all customers.*);
+
     public double getMinDistSum(int[][] positions) {
         double minX = Integer.MAX_VALUE;
         double minY = Integer.MAX_VALUE;

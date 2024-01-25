@@ -10,6 +10,8 @@ import java.util.Queue;
 import java.util.Set;
 
 public class Solution {
+//@ ensures(*Given a `target` representing the value of the wheels that will unlock the lock, return the minimum total number of turns required to open the lock, or -1 if it is impossible.*);
+
     public int openLock(String[] deadEnds, String target) {
         Set<Integer> visited = new HashSet<>();
         for (String end : deadEnds) {

@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 public class Solution {
     private static final int MOD = 1000000007;
+//@ ensures(*Given `n` the number of rows of the grid, return _the number of ways_ you can paint this `grid`. As the answer may grow large, the answer **must be** computed modulo <code>10<sup>9</sup> + 7</code>.*);
+
 
     public int numOfWays(int n) {
         int[][] dp = new int[n + 1][12];

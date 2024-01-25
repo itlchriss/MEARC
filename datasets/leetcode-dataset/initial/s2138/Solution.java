@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Given the string `s`, the size of each group `k` and the character `fill`, return _a string array denoting the **composition of every group**_ `s` _has been divided into, using the above procedure_.*);
+
     public String[] divideString(String s, int k, char fill) {
         String[] ans = new String[(s.length() % k != 0) ? (s.length() / k) + 1 : s.length() / k];
         int t = k;

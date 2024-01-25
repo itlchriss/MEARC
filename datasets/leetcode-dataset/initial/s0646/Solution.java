@@ -6,6 +6,8 @@ package g0601_0700.s0646_maximum_length_of_pair_chain;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the length longest chain which can be formed_.*);
+
     public int findLongestChain(int[][] pairs) {
         if (pairs.length == 1) {
             return 1;

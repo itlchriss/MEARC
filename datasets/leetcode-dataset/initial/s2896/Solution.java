@@ -5,6 +5,9 @@ package g2801_2900.s2896_apply_operations_to_make_two_strings_equal;
 import java.util.ArrayList;
 
 public class Solution {
+//@ ensures(*Return _the **minimum** cost needed to make the strings_ `s1` _and_ `s2` _equal, or return_ `-1` _if it is impossible._
+Return _the **minimum** cost needed to make the strings_ `s1` _and_ `s2` _equal, or return_ `-1` _if it is impossible._*);
+
     public int minOperations(String s1, String s2, int x) {
         int n = s1.length();
         ArrayList<Integer> diffs = new ArrayList<>();

@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Solution {
+//@ ensures(*Return _the array_ `answer` _as described above_.*);
+
     public int[] findingUsersActiveMinutes(int[][] logs, int k) {
         if (logs.length == 1) {
             int[] res = new int[k];

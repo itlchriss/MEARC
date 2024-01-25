@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Return an array of all the **universal** strings in `words1`. You may return the answer in **any order**.
+Return an array of all the **universal** strings in `words1`. You may return the answer in **any order**.*);
+
     public List<String> wordSubsets(String[] words1, String[] words2) {
         List<String> l1 = new ArrayList<>();
         int[] target = new int[26];

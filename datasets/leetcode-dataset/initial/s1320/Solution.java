@@ -5,6 +5,8 @@ package g1301_1400.s1320_minimum_distance_to_type_a_word_using_two_fingers;
 public class Solution {
     private String word;
     private Integer[][][] dp;
+//@ ensures(*Given the string `word`, return _the minimum total **distance** to type such string using only two fingers_.*);
+
 
     public int minimumDistance(String word) {
         this.word = word;

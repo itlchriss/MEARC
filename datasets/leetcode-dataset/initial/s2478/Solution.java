@@ -4,6 +4,9 @@ package g2401_2500.s2478_number_of_beautiful_partitions;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+//@ ensures(*Return _the number of **beautiful** partitions of_ `s`. Since the answer may be very large, return it **modulo** <code>10<sup>9</sup> + 7</code>.
+Return _the number of **beautiful** partitions of_ `s`. Since the answer may be very large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
     public int beautifulPartitions(String s, int k, int l) {
         char[] cs = s.toCharArray();
         int n = cs.length;

@@ -5,6 +5,8 @@ package g2101_2200.s2144_minimum_cost_of_buying_candies_with_discount;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Given a **0-indexed** integer array `cost`, where `cost[i]` denotes the cost of the <code>i<sup>th</sup></code> candy, return _the **minimum cost** of buying **all** the candies_.*);
+
     public int minimumCost(int[] cost) {
         Arrays.sort(cost);
         int size = 0;

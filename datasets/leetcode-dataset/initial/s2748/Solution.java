@@ -3,6 +3,9 @@ package g2701_2800.s2748_number_of_beautiful_pairs;
 // #Easy #Array #Math #Number_Theory #2023_09_24_Time_11_ms_(91.00%)_Space_43.3_MB_(63.82%)
 
 public class Solution {
+//@ ensures(*Thus, we return 5. Thus, we return 2.
+Return _the total number of beautiful pairs in_ `nums`.*);
+
     public int countBeautifulPairs(int[] nums) {
         int beautifulPairs = 0;
         int i = 0;

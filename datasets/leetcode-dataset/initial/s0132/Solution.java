@@ -5,6 +5,8 @@ package g0101_0200.s0132_palindrome_partitioning_ii;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the minimum cuts needed_ for a palindrome partitioning of `s`.*);
+
     public int minCut(String s) {
         int n = s.length();
         char[] t = s.toCharArray();

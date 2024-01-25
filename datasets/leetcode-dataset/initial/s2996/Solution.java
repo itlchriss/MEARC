@@ -5,6 +5,8 @@ package g2901_3000.s2996_smallest_missing_integer_greater_than_sequential_prefix
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **smallest** integer_ `x` _missing from_ `nums` _such that_ `x` _is greater than or equal to the sum of the **longest** sequential prefix._*);
+
     public int missingInteger(int[] nums) {
         int n = nums.length;
         int sum = nums[0];

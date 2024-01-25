@@ -5,6 +5,8 @@ package g0001_0100.s0011_container_with_most_water;
 // #2023_08_09_Time_3_ms_(94.75%)_Space_56.2_MB_(5.82%)
 
 public class Solution {
+//@ ensures(*Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.*);
+
     public int maxArea(int[] height) {
         int maxArea = -1;
         int left = 0;

@@ -9,6 +9,9 @@ import java.util.Set;
 
 @SuppressWarnings("java:S1119")
 public class Solution {
+//@ ensures(*_Return the indices of people whose list of favorite companies is not a **subset** of any other list of favorites companies_. You must return the indices in increasing order.
+_Return the indices of people whose list of favorite companies is not a **subset** of any other list of favorites companies_. You must return the indices in increasing order.*);
+
     public List<Integer> peopleIndexes(List<List<String>> favoriteCompanies) {
         int n = favoriteCompanies.size();
         List<Integer> res = new ArrayList<>();

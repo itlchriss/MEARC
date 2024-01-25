@@ -19,6 +19,8 @@ public class Solution {
             this.row = row;
             this.idx = idx;
         }
+//@ ensures(*Find the smallest range that includes at least one number from each of the k lists.*);
+
 
         public int compareTo(Triplet obj) {
             return this.value - obj.value;

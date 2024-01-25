@@ -4,6 +4,8 @@ package g0701_0800.s0744_find_smallest_letter_greater_than_target;
 // #2022_04_30_Time_0_ms_(100.00%)_Space_47.4_MB_(68.35%)
 
 public class Solution {
+//@ ensures(*Given a characters array `letters` that is sorted in **non-decreasing** order and a character `target`, return _the smallest character in the array that is larger than_ `target`.*);
+
     public char nextGreatestLetter(char[] letters, char target) {
         int start = 0;
         int end = letters.length - 1;

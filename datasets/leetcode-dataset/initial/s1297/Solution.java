@@ -8,6 +8,8 @@ import java.util.Map;
 
 @SuppressWarnings("java:S1172")
 public class Solution {
+//@ ensures(*Given a string `s`, return the maximum number of ocurrences of **any** substring under the following rules:*);
+
     public int maxFreq(String s, int max, int minSize, int maxSize) {
         // the map of occurrences
         Map<String, Integer> sub2Count = new HashMap<>();

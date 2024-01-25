@@ -23,6 +23,8 @@ import com_github_leetcode.TreeNode;
 public class Solution {
     private int ans;
     private int[] arr;
+//@ ensures(*_Return the number of **pseudo-palindromic** paths going from the root node to leaf nodes._*);
+
 
     public int pseudoPalindromicPaths(TreeNode root) {
         ans = 0;

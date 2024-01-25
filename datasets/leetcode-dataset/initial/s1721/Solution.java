@@ -15,6 +15,8 @@ import com_github_leetcode.ListNode;
  * }
  */
 public class Solution {
+//@ ensures(*Return _the head of the linked list after **swapping** the values of the_ <code>k<sup>th</sup></code> _node from the beginning and the_ <code>k<sup>th</sup></code> _node from the end (the list is **1-indexed**)._*);
+
     public ListNode swapNodes(ListNode head, int k) {
         ListNode beg = null;
         ListNode end = null;

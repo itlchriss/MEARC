@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class Solution {
     private long ans = 0L;
+//@ ensures(*Return _the minimum number of liters of fuel to reach the capital city_.*);
+
 
     public long minimumFuelCost(int[][] roads, int seats) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();

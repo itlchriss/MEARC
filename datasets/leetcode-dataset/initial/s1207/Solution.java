@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+//@ ensures(*Given an array of integers `arr`, return `true` if the number of occurrences of each value in the array is **unique**, or `false` otherwise.*);
+
     public boolean uniqueOccurrences(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int j : arr) {
