@@ -1,0 +1,1 @@
+exists x.(_number{NN}(x) & _the{NNP}(x) & _return{NNP}(x) & exists z1.(_string{NNS}(z1) & True & (x = z1)) & True & exists z5.(_`pref`{NN}(z5) & _contain_{NN}(z5) & _that{NN}(z5) & _`words`{JJ}(z5) & exists z2.(_**prefix**_{NN}(z2) & True & exists e.(_as{VBZ}(e) & (Subj(e) = z5) & (Acc(e) = z2) & True)) & True & exists e.(_in_{VBP}(e) & (Subj(e) = x) & (Acc(e) = z5) & True)))

@@ -1,0 +1,11 @@
+ next() and hasNext().
+
+The next() method is used to retrieve the next combination of length combinationLength in lexicographical order. It returns a string that represents the combination.
+
+The hasNext() method is used to determine if there is a next combination available. It returns a boolean value, true or false, indicating whether there are more combinations to be generated.
+
+For example, let's consider the usage of the CombinationIterator class. We can create an instance of the class, passing the string "abc" and a combination length of 2 as parameters. Then, we can use the next() method to retrieve the combinations in lexicographical order. After each call to next(), we can use the hasNext() method to check if there are more combinations available.
+
+In the first call to next(), the combination "ab" is returned. The hasNext() method returns true, indicating that there are more combinations available. In the second call to next(), the combination "ac" is returned. The hasNext() method still returns true. In the third call to next(), the combination "bc" is returned. Finally, in the fourth call to hasNext(), the method returns false, indicating that there are no more combinations.
+
+In summary, the CombinationIterator class is a useful tool for generating combinations of a given string with a specified length. The next() method retrieves the combinations in lexicographical order, while the hasNext() method determines if there are more combinations available.

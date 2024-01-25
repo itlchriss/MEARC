@@ -1,0 +1,11 @@
+To solve the problem of finding the size of the longest substring in a given string `s` that contains an even number of each vowel ('a', 'e', 'i', 'o', and 'u'), we can implement a Java method called `findTheLongestSubstring`. This method takes a string `s` as a parameter and returns an integer value.
+
+The algorithm for this method involves iterating through each character in the string `s` and keeping track of the count of each vowel encountered. We initialize counters for each vowel to zero. As we traverse the string, if we encounter a vowel, we increment its respective counter. If we encounter a consonant, we do not modify the counters.
+
+To find the longest substring with an even number of each vowel, we need to keep track of the starting index of the current substring and the length of the longest substring found so far. We initialize these variables to zero.
+
+As we iterate through the string, whenever we encounter a vowel, we check if the count of all vowels is even. If it is, we update the length of the longest substring if the current substring is longer. If the count of any vowel is odd, we reset all the counters and update the starting index of the current substring to the next character.
+
+Finally, we return the length of the longest substring found.
+
+By following this algorithm, the `findTheLongestSubstring` method effectively returns the size of the longest substring in the given string `s` that contains an even number of each vowel.

@@ -1,0 +1,5 @@
+The objective of the Java method `nextGreaterElements` is to find the next greater number for each element in the circular integer array `nums`. In this context, a circular integer array means that the element following `nums[nums.length 1]` is `nums[0]`. 
+
+The next greater number of a number `x` is defined as the first greater number to its traversing-order next in the array. If there is no greater number, the method should return `-1` for that element. 
+
+To achieve this, the method will take an integer array `nums` as input and return an integer array as the result. The method will iterate through each element in `nums` and compare it with the elements that come after it in the array. If a greater number is found, it will be stored as the next greater number for that element. If no greater number is found, `-1` will be stored as the next greater number. The method will then return the resulting array.

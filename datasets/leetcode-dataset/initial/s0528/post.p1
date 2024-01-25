@@ -1,0 +1,5 @@
+To randomly select an index within the range `[0, w.length 1]` (inclusive) and return it, the `pickIndex()` function must be implemented. The probability of selecting an index `i` is determined by the ratio of `w[i]` to the sum of all elements in the `w` array. 
+
+When calling `pickIndex()` after the initial call, the function will return 0 if there is only one element in the `w` array, eliminating any other possibility. Subsequent calls to `pickIndex()` will return 1, indicating that the second element (index = 1) has a probability of 3/4. There is also a possibility of the function returning 0, but with a lower probability of 1/4, which occurs when the first element (index = 0) is chosen. 
+
+In summary, the `pickIndex()` function must be implemented to randomly select an index based on the given probabilities, taking into account the parameters and result data type of the `Solution` class's constructor (`public Solution(int[] w)`) and the `pickIndex()` method (`public int pickIndex()`). The algorithm should ensure that no dangling modifiers or pronouns are used, and the description should not explicitly mention the given methods.
