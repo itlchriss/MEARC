@@ -1,0 +1,2 @@
+initial prepare.sh run.sh `int snap()` takes a snapshot of the array and returns the `snap_id`: the total number of times we called `snap()` minus `1`. initial prepare.sh run.sh `int get(index, snap_id)` returns the value at the given `index`, at the time we took the snapshot with the given `snap_id` snapshotArr.snap(); // Take a snapshot, return snap_id = 0 snapshotArr.get(0,0); // Get the value of array[0] with snap_id = 0, return 5
+

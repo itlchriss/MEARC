@@ -1,0 +1,2 @@
+
+initial prepare.sh run.sh `generate(string tokenId, int currentTime)` generates a new token with the given `tokenId` at the given `currentTime` in seconds. initial prepare.sh run.sh `renew(string tokenId, int currentTime)` renews the **unexpired** token with the given `tokenId` at the given `currentTime` in seconds. If there are no unexpired tokens with the given `tokenId`, the request is ignored, and nothing happens. initial prepare.sh run.sh `countUnexpiredTokens(int currentTime)` returns the number of **unexpired** tokens at the given currentTime.

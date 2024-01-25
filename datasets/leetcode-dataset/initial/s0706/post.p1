@@ -1,0 +1,21 @@
+The `get` method in the `myHashMap` class returns the `value` associated with the specified `key` in the `myHashMap` object. If there is no mapping for the `key`, the `get` method will return `-1`. 
+
+After running `myHashMap.get(1)`, the `myHashMap` object will be updated to [[1, 1], [2, 2]]. 
+
+When `myHashMap.get(3)` is executed, the `get` method will return -1 and the `myHashMap` object will remain [[1, 1], [2, 2]]. 
+
+Upon running `myHashMap.get(2)`, the `get` method will return 1 and the `myHashMap` object will become [[1, 1], [2, 1]]. 
+
+Running `myHashMap.get(2)` again will return -1 and the `myHashMap` object will be updated to [[1, 1]]. 
+
+In the absence of a mapping for the `key`, the `get` method will always return `-1`. 
+
+After running `myHashMap.get(1)`, the `myHashMap` object will be updated to [[1, 1], [2, 2]]. 
+
+When `myHashMap.get(3)` is executed, the `get` method will return -1 and the `myHashMap` object will remain [[1, 1], [2, 2]]. 
+
+Upon running `myHashMap.get(2)`, the `get` method will return 1 and the `myHashMap` object will become [[1, 1], [2, 1]]. 
+
+Subsequently, running `myHashMap.get(2)` again will return -1 and the `myHashMap` object will be updated to [[1, 1]]. 
+
+These actions are performed by the `get` method in the `myHashMap` class, which takes an `int` parameter `key` and returns an `int` value. The `myHashMap` object is modified accordingly based on the specified `key` and its associated `value`.

@@ -1,0 +1,11 @@
+
+
+1. Divide `s1` at a random index to create two substrings.
+2. If the decision made randomly is to keep the two substrings in order, proceed to the next step. If the decision is to swap the first substring with the second substring, perform the swap.
+3. Apply the same algorithm recursively to both substrings.
+4. Each of the substrings is divided at a random index.
+5. Perform the swap when the decision made randomly is to swap the substrings. Keep the substrings in the same order if not.
+6. Repeat steps 3-5 until the algorithm stops.
+7. The result is `true` if the resulting string is equal to `s2`. It does not return `false` in any other case.
+
+In summary, the `isScramble` method returns `true` only if there exists at least one possible scenario in which `s1` can be scrambled to become `s2`. If no such scenario exists, the method returns `false`.

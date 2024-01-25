@@ -1,0 +1,2 @@
+**Explanation:** If we seed the machine with nums[3], then we destroy all targets equal to 1,3,5,7,9,... In this case, we would destroy 5 total targets (all except for nums[2]). It is impossible to destroy more than 5 targets, so we return nums[3]. **Explanation:** Seeding the machine with nums[0], or nums[3] destroys 3 targets. It is not possible to destroy more than 3 targets. Since nums[0] is the minimal integer that can destroy 3 targets, we return 1.
+Return _the **minimum value** of_ `nums[i]` _you can seed the machine with to destroy the maximum number of targets._

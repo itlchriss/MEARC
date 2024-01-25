@@ -1,0 +1,5 @@
+The `getKthAncestor` function in the initial `prepare.sh` script returns the kth ancestor of the given `node` if there is one. If there is no such ancestor, the result is -1. This function is part of the `TreeAncestor` class, which has a constructor `TreeAncestor(int n, int[] parent)` and the `getKthAncestor` method with parameters `node` and `k`. 
+
+For example, when calling `treeAncestor.getKthAncestor(3, 1)`, it returns 1, which is the parent of node 3. Similarly, `treeAncestor.getKthAncestor(5, 2)` returns 0, which is the grandparent of node 5. However, in the case of `treeAncestor.getKthAncestor(6, 3)`, the result is -1 because there is no ancestor at that level. 
+
+This algorithmic function ensures that the context of the given Java method is clearly understood, explicitly mentioning the parameters and result data type, and avoiding any dangling modifiers or pronouns.

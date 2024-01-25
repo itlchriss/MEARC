@@ -1,0 +1,2 @@
+initial prepare.sh run.sh `countUnexpiredTokens(int currentTime)` returns the number of **unexpired** tokens at the given currentTime. authenticationManager.`countUnexpiredTokens`(6); // The token with tokenId "aaa" is the only unexpired one at time 6, so return 1. authenticationManager.`countUnexpiredTokens`(15); // The token with tokenId "bbb" expires at time 15, and the token with tokenId "aaa" expired at time 7, so currently no token is unexpired, so return 0.
+

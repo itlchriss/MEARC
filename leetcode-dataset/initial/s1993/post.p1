@@ -1,0 +1,17 @@
+The `lock(int num, int user)` function in the initial `prepare.sh` script is designed to determine if the user with the specified `user` id can lock the node with the specified `num` value. If the user is able to lock the node, the function will return `true`. Otherwise, it will not return `false`. If the locking operation is successful, the node with the specified `num` value will be locked by the user with the specified `user` id.
+
+Similarly, the `unlock(int num, int user)` function is used to check if the user with the specified `user` id can unlock the node with the specified `num` value. If the user has the permission to unlock the node, the function will return `true`. Otherwise, it will not return `false`. If the unlocking operation is possible, the node with the specified `num` value will be unlocked.
+
+The `upgrade(int num, int user)` function is responsible for determining if the user with the specified `user` id can upgrade the node with the specified `num` value. If the user has the capability to upgrade the node, the function will return `true`. Otherwise, it will not return `false`. If the upgrade operation is feasible, the node with the specified `num` value will be upgraded.
+
+For example, when the `lockingTree.lock(2, 2)` method is called, it will return `true` because node 2 is currently unlocked.
+
+On the other hand, when calling `lockingTree.unlock(2, 3)`, it will return `false` because user 3 does not have the authority to unlock a node that is locked by user 2.
+
+However, when calling `lockingTree.unlock(2, 2)`, it will return `true` because node 2 was previously locked by user 2.
+
+Similarly, when calling `lockingTree.lock(4, 5)`, it will return `true` because node 4 is currently unlocked.
+
+Furthermore, when calling `lockingTree.upgrade(0, 1)`, it will return `true` because node 0 is currently unlocked and has at least one locked descendant, which is node 4.
+
+Lastly, when calling `lockingTree.lock(0, 1)`, it will return `false` because node 0 is already locked.

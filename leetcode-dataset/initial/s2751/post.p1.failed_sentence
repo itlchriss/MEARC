@@ -1,0 +1,19 @@
+The method "survivedRobotsHealths" takes in two arrays, "positions" and "healths", as well as a String "directions". It returns a List of Integers, which represents the health of the surviving robots in the same order they were given.
+
+If there are no surviving robots, the method will return an empty array.
+
+The health of the robots is determined by iterating through the positions array and checking the healths array in the same order. The resulting health values are stored in an array, which is then returned.
+
+In the given example, the resulting health array is [2, 17, 9, 15, 10]. However, there are 2 collisions that need to be resolved.
+
+Firstly, robot 1 and robot 2 collide. Since both robots have the same health, they are both removed from the line.
+
+Next, robot 3 and robot 4 collide. Since robot 4's health is smaller, it gets removed from the line. As a result, robot 3's health becomes 15 1 = 14.
+
+Robot 3 remains solely, so the final health array is [14].
+
+In another scenario, robot 1 and robot 2 collide again, resulting in the removal of both robots. Similarly, robot 3 and robot 4 collide and are removed due to their identical health.
+
+In this case, the method will return an empty array, [].
+
+Once no further collisions can occur, the method returns an array containing the health of the remaining robots in the order they were given in the input.
