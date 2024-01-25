@@ -1,1 +1,0 @@
-exists x.(_after{NN}(x) & _`nums`{NNP}(x) & _of_{NNP}(x) & _**score**{NNP}(x) & _minimum{NN}(x) & _the{NNP}(x) & _return{NNP}(x) & exists z1.(_value{NNS}(z1) & True & exists e.(_change{VBG}(e) & (Subj(e) = x) & (Acc(e) = z1) & all z3.(_index_{NN}(z3) -> (True -> (_at{IN}(e,z3) & True))))) & True & True)

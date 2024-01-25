@@ -1,0 +1,3 @@
+exists x.(_sentence{NN}(x) & True & _the{DT}(x) & exists e.(_return{VBZ}(e) & (Subj(e) = x) & True) & _true_value{NN}(x))
+exists x.(_string{VBG}(x) & True & exists z5.(_sequence{NN}(z5) & _same{JJ}(z5) & exists z4.(_value{NNS}(z4) & _char{NN}(z4) & exists z3.(exists e.(_specify{VBN}(e) & (Acc(e) = z3) & _sequence{NN}(z3)) & True & exists e.(_as{IN}(e,z3) & (Subj(e) = z4) & True)) & (z5 = z4)) & True & exists e.(_represent{VBZ}(e) & (Subj(e) = x) & (Acc(e) = z5) & True)))
+-exists x.((x = _it{PRP}) & True & exists z6.(_true_value{NN}(z6) & True & exists e.(_return{VB}(e) & (Subj(e) = x) & (Acc(e) = z6) & _otherwise{RB}(e) & True)))

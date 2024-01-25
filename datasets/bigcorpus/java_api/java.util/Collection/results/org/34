@@ -1,0 +1,1 @@
+exists x.(exists e.(_specify{VBN}(e) & (Acc(e) = x) & _collection{NN}(x)) & True & exists e.(_modify{VBN}(e) & (Acc(e) = x) & True)) & exists x.(_operation{NN}(x) & True & exists e.(exists x.(_progress{NN}(x) & True & _in{IN}(e,x)) & (Subj(e) = x) & True)) -> exists x.(_behavior{NN}(x) & exists z1.(_operation{NN}(z1) & True & (x = z1)) & True & _undefined{JJ}(x))

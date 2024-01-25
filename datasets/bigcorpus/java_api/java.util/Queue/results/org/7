@@ -1,0 +1,1 @@
+all x.((_element{NNS}(x) & _new{JJ}(x)) -> (True -> exists e.(_insert{VBN}(e) & (Acc(e) = x) & exists x.(_tail{NN}(x) & exists z2.(_queue{NN}(z2) & True & (x = z2)) & True & _at{IN}(e,x) & _dash_e{JJ}(e) & exists x.(_queue{NN}(x) & _fifo{NNP}(x) & True & _in{IN}(e,x)) & True & True))))

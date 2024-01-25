@@ -1,7 +1,0 @@
-The task of the `digArtifacts` method is to determine the number of artifacts that can be extracted from a 0-indexed 2D integer array `dig`. This array represents a grid where each element `dig[i] = [ri, ci]` indicates that the cell at coordinates `(ri, ci)` will be excavated. The artifacts in the grid are represented by different colors.
-
-To solve this task, we need to count the number of artifacts that have all their parts uncovered, which are indicated by a 'D' in the grid. For example, if there is a single extractable artifact, specifically the red artifact, the method should return 1. On the other hand, if there is a blue artifact that has one part in cell (1, 1) remaining uncovered, the method should not count it as extractable.
-
-In the given method, the parameter `n` represents the size of the grid, `artifacts` is a 2D array that contains the coordinates of the artifacts, and `dig` is the 2D array representing the grid. The method should return an integer value representing the count of extractable artifacts.
-
-Both the red and blue artifacts have all their parts uncovered (labeled with a 'D') and can be extracted in the same way. Therefore, the method should return a value of 2 in this case.
