@@ -1,9 +1,0 @@
-The `deleteText` function in the TextEditor class is used to delete a specified number of characters to the left of the cursor. It takes an integer parameter `k` which represents the number of characters to be deleted. The function returns an integer value which represents the actual number of characters that were deleted.
-
-To delete the characters, the function first moves the cursor to the left `k` times using the `cursorLeft` function. This function also takes an integer parameter `k` and returns a string containing the last `min(10, len)` characters to the left of the cursor, where `len` is the number of characters to the left of the cursor.
-
-After moving the cursor, the function deletes the characters by calling the `deleteText` function. The function then returns the number of characters that were actually deleted.
-
-Similarly, if the cursor needs to be moved to the right, the `cursorRight` function is used. This function also takes an integer parameter `k` and returns a string containing the last `min(10, len)` characters to the left of the cursor.
-
-In summary, the `deleteText` function in the TextEditor class deletes a specified number of characters to the left of the cursor and returns the actual number of characters that were deleted. The cursor is moved using the `cursorLeft` or `cursorRight` functions, and the resulting string is determined by the `min(10, len)` characters to the left of the cursor.
