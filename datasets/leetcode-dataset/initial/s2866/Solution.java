@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Return _the **maximum possible sum of heights** of a beautiful configuration of towers_.*);
+
     public long maximumSumOfHeights(List<Integer> mH) {
         int n = mH.size();
         Deque<Integer> st = new LinkedList<>();

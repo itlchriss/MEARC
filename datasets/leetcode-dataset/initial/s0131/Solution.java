@@ -9,6 +9,8 @@ import java.util.List;
 
 @SuppressWarnings("java:S5413")
 public class Solution {
+//@ ensures(*Given a string `s`, partition `s` such that every substring of the partition is a **palindrome**. Return all possible palindrome partitioning of `s`.*);
+
     public List<List<String>> partition(String s) {
         List<List<String>> res = new ArrayList<>();
         backtracking(res, new ArrayList<>(), s, 0);

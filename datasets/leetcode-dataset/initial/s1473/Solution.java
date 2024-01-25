@@ -7,6 +7,9 @@ public class Solution {
     private int[] houses;
     private int nColors;
     private int[][] cost;
+//@ ensures(*Return _the minimum cost of painting all the remaining houses in such a way that there are exactly_ `target` _neighborhoods_. If it is not possible, return `-1`.
+Return _the minimum cost of painting all the remaining houses in such a way that there are exactly_ `target` _neighborhoods_. If it is not possible, return `-1`.*);
+
 
     public int minCost(int[] houses, int[][] cost, int nColors, int tGroups) {
         this.cost = cost;

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+//@ ensures(*Given an integer array `nums`, return _the most frequent even element_. If there is a tie, return the **smallest** one. If there is no such element, return `-1`. We return the smallest one, which is 2.*);
+
     public int mostFrequentEven(int[] nums) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
         int mostFrequent = Integer.MAX_VALUE;

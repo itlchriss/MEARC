@@ -21,6 +21,8 @@ public class Solution {
 
         return answer;
     }
+//@ ensures(*Given two integers `start` and `goal`, return _the **minimum** number of **bit flips** to convert_ `start` _to_ `goal`. It can be shown we cannot convert 10 to 7 in less than 3 steps. Hence, we return 3. It can be shown we cannot convert 3 to 4 in less than 3 steps. Hence, we return 3.*);
+
 
     public int minBitFlips(int start, int goal) {
         int answer = start ^ goal;

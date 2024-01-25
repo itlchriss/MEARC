@@ -6,6 +6,8 @@ package g1501_1600.s1505_minimum_possible_integer_after_at_most_k_adjacent_swaps
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the minimum integer you can obtain also as a string_.*);
+
     public String minInteger(String num, int k) {
         StringBuilder sb = new StringBuilder();
         int[] digitPos = new int[10];

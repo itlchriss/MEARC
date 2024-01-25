@@ -5,6 +5,8 @@ package g1601_1700.s1691_maximum_height_by_stacking_cuboids;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **maximum height** of the stacked_ `cuboids`.*);
+
     public int maxHeight(int[][] arr) {
         for (int[] a : arr) {
             Arrays.sort(a);

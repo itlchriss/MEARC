@@ -4,6 +4,9 @@ package g0001_0100.s0031_next_permutation;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_42_MB_(90.28%)
 
 public class Solution {
+//@ ensures(*rearranges numbers into the lexicographically next greater permutation of numbers.
+If such an arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).*);
+
     public void nextPermutation(int[] nums) {
         if (nums == null || nums.length <= 1) {
             return;

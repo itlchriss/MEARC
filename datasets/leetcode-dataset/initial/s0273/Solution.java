@@ -24,6 +24,8 @@ public class Solution {
     private String[] twenties = {
         "Twenty ", "Thirty ", "Forty ", "Fifty ", "Sixty ", "Seventy ", "Eighty ", "Ninety "
     };
+//@ ensures(*Convert a non-negative integer num to its English words representation.*);
+
 
     public String numberToWords(int num) {
         if (num == 0) {

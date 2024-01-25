@@ -12,6 +12,8 @@ public class Solution {
         }
         return sum;
     }
+//@ ensures(*Return _the **absolute** difference between the **element sum** and **digit sum** of_ `nums`.*);
+
 
     public int differenceOfSum(int[] nums) {
         int eleSum = 0;

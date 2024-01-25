@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Return `words` _after performing all operations_. It can be shown that selecting the indices for each operation in **any** arbitrary order will lead to the same result.*);
+
     public List<String> removeAnagrams(String[] words) {
         List<String> result = new ArrayList<>();
         if (words == null || words.length == 0) {

@@ -22,6 +22,8 @@ import com_github_leetcode.TreeNode;
  */
 public class Solution {
     private int maxLength = 0;
+//@ ensures(*Return _the longest **ZigZag** path contained in that tree_.*);
+
 
     public int longestZigZag(TreeNode root) {
         dfs(root, true);

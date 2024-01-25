@@ -5,6 +5,8 @@ package g0301_0400.s0343_integer_break;
 
 public class Solution {
     private int[] arr;
+//@ ensures(*Return _the maximum product you can get_.*);
+
 
     public int integerBreak(int n) {
         arr = new int[n + 1];

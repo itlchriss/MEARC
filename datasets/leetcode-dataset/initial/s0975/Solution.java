@@ -7,6 +7,8 @@ import java.util.Arrays;
 
 public class Solution {
     private int[] valToPos;
+//@ ensures(*Return _the number of **good** starting indices_.*);
+
 
     public int oddEvenJumps(int[] arr) {
         int size = arr.length;

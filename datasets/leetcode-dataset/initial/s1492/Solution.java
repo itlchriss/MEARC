@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Consider a list of all factors of `n` sorted in **ascending order**, return _the_ <code>k<sup>th</sup></code> _factor_ in this list or return `-1` if `n` has less than `k` factors. **Explanation:** Factors list is [1, 2, 4], there is only 3 factors. We should return -1.*);
+
     public int kthFactor(int n, int k) {
         List<Integer> list = new ArrayList<>();
         for (int i = 1; i <= n; i++) {

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Return _an array of booleans_ `answer` _where_ `answer[i]` _is_ `true` _if_ <code>x<sub>i</sub></code> _is divisible by_ `5`.*);
+
     public List<Boolean> prefixesDivBy5(int[] nums) {
         List<Boolean> result = new ArrayList<>(nums.length);
         int remainder = 0;

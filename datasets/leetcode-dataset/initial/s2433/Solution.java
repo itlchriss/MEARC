@@ -3,6 +3,8 @@ package g2401_2500.s2433_find_the_original_array_of_prefix_xor;
 // #Medium #Array #Bit_Manipulation #2022_12_07_Time_2_ms_(96.00%)_Space_54.8_MB_(93.08%)
 
 public class Solution {
+//@ ensures(*You are given an **integer** array `pref` of size `n`. Find and return _the array_ `arr` _of size_ `n` _that satisfies_:*);
+
     public int[] findArray(int[] pref) {
         int[] result = new int[pref.length];
         result[0] = pref[0];

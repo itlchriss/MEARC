@@ -8,6 +8,8 @@ package g0501_0600.s0547_number_of_provinces;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the total number of **provinces**_.*);
+
     public int findCircleNum(int[][] arr) {
         int[] parent = new int[arr.length];
         Arrays.fill(parent, -1);

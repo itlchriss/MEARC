@@ -4,6 +4,8 @@ package g1301_1400.s1385_find_the_distance_value_between_two_arrays;
 // #2022_03_21_Time_5_ms_(65.78%)_Space_44.6_MB_(49.02%)
 
 public class Solution {
+//@ ensures(*Given two integer arrays `arr1` and `arr2`, and the integer `d`, _return the distance value between the two arrays_.*);
+
     public int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
         int count = 0;
         for (int k : arr1) {

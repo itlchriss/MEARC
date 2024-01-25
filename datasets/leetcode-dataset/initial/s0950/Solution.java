@@ -5,6 +5,8 @@ package g0901_1000.s0950_reveal_cards_in_increasing_order;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _an ordering of the deck that would reveal the cards in increasing order_.*);
+
     public int[] deckRevealedIncreasing(int[] deck) {
         Arrays.sort(deck);
         int n = deck.length;

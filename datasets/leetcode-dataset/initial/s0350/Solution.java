@@ -7,6 +7,8 @@ package g0301_0400.s0350_intersection_of_two_arrays_ii;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Given two integer arrays `nums1` and `nums2`, return _an array of their intersection_. Each element in the result must appear as many times as it shows in both arrays and you may return the result in **any order**.*);
+
     public int[] intersect(int[] nums1, int[] nums2) {
         // First sort the array
         Arrays.sort(nums1);

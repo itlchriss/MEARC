@@ -5,6 +5,8 @@ package g1901_2000.s1984_minimum_difference_between_highest_and_lowest_of_k_scor
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **minimum** possible difference_.*);
+
     public int minimumDifference(int[] nums, int k) {
         Arrays.sort(nums);
         int minDiff = nums[nums.length - 1];

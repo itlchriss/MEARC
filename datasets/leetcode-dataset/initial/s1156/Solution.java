@@ -11,6 +11,8 @@ public class Solution {
     private static class Pair {
         char character;
         int count;
+//@ ensures(*Return _the length of the longest substring with repeated characters_.*);
+
 
         public Pair(char c, int count) {
             this.character = c;

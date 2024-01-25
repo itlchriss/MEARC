@@ -4,6 +4,8 @@ package g2101_2200.s2172_maximum_and_sum_of_array;
 // #2022_06_02_Time_21_ms_(87.50%)_Space_41.7_MB_(98.44%)
 
 public class Solution {
+//@ ensures(*Return _the maximum possible **AND sum** of_ `nums` _given_ `numSlots` _slots._*);
+
     public int maximumANDSum(int[] nums, int numSlots) {
         int mask = (int) Math.pow(3, numSlots) - 1;
         int[] memo = new int[mask + 1];

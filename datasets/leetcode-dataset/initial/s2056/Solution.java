@@ -15,6 +15,8 @@ public class Solution {
         {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {1, 1}, {-1, -1}, {-1, 1}, {1, -1}},
         {{1, 1}, {-1, -1}, {-1, 1}, {1, -1}}
     };
+//@ ensures(*Return _the number of **valid** move combinations_.*);
+
 
     public int countCombinations(String[] pieces, int[][] positions) {
         ArrayList<int[]>[] endPosition = new ArrayList[pieces.length];

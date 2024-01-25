@@ -5,6 +5,9 @@ package g2101_2200.s2182_construct_string_with_repeat_limit;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+//@ ensures(*The string is the lexicographically largest repeatLimitedString possible so we return "zzcccac". The string is the lexicographically largest repeatLimitedString possible so we return "bbabaa".
+Return _the **lexicographically largest**_ `repeatLimitedString` _possible_.*);
+
     public String repeatLimitedString(String s, int repeatLimit) {
         char[] result = new char[s.length()];
         int[] freq = new int[128];

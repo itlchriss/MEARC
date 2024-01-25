@@ -6,6 +6,8 @@ package g2201_2300.s2280_minimum_lines_to_represent_a_line_chart;
 import java.util.Arrays;
 
 public class Solution {
+//@ ensures(*Return _the **minimum number of lines** needed to represent the line chart_.*);
+
     public int minimumLines(int[][] stockPrices) {
         if (stockPrices.length == 1) {
             return 0;

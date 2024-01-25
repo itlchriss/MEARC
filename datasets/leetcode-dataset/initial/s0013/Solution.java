@@ -4,6 +4,8 @@ package g0001_0100.s0013_roman_to_integer;
 // #2023_08_09_Time_2_ms_(100.00%)_Space_44.1_MB_(19.16%)
 
 public class Solution {
+//@ ensures(*Given a roman numeral, convert it to an integer.*);
+
     public int romanToInt(String s) {
         int x = 0;
         char y;

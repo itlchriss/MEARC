@@ -3,6 +3,9 @@ package g1801_1900.s1830_minimum_number_of_operations_to_make_string_sorted;
 // #Hard #String #Math #Combinatorics #2022_05_07_Time_125_ms_(94.12%)_Space_42.7_MB_(64.71%)
 
 public class Solution {
+//@ ensures(*Return _the number of operations needed to make the string sorted._ Since the answer can be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.
+Return _the number of operations needed to make the string sorted._ Since the answer can be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
     public int makeStringSorted(String s) {
         int n = s.length();
         int[] count = new int[26];

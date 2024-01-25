@@ -53,6 +53,8 @@ public class Solution {
             quickSelect(points, k, left, curPIdx - 1);
         }
     }
+//@ ensures(*Given an array of `points` where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> represents a point on the **X-Y** plane and an integer `k`, return the `k` closest points to the origin `(0, 0)`. You may return the answer in **any order**. The answer is **guaranteed** to be **unique** (except for the order that it is in).*);
+
 
     public int[][] kClosest(int[][] points, int k) {
         quickSelect(points, k, 0, points.length - 1);

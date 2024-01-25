@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*In this example the resulting split of "|||" will contain only empty strings, so we return an empty array [].
+Return _an array of strings containing the new strings formed after the splits, **excluding empty strings**._*);
+
     public List<String> splitWordsBySeparator(List<String> words, char separator) {
         List<String> list = new ArrayList<>();
         for (String str : words) {

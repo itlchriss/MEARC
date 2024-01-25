@@ -4,6 +4,8 @@ package g1801_1900.s1838_frequency_of_the_most_frequent_element;
 // #Binary_Search_II_Day_9 #2022_05_07_Time_11_ms_(100.00%)_Space_57_MB_(97.86%)
 
 public class Solution {
+//@ ensures(*Return _the **maximum possible frequency** of an element after performing **at most**_ `k` _operations_.*);
+
     public int maxFrequency(int[] nums, int k) {
         countingSort(nums);
         int start = 0;

@@ -15,6 +15,8 @@ import com_github_leetcode.ListNode;
  * }
  */
 public class Solution {
+//@ ensures(*Given the `head` of a singly linked list and two integers `left` and `right` where `left <= right`, reverse the nodes of the list from position `left` to position `right`, and return _the reversed list_.*);
+
     public ListNode reverseBetween(ListNode head, int left, int right) {
         if (left == right) {
             return head;

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ ensures(*Return _the **total area**_. Since the answer may be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.
+Return _the **total area**_. Since the answer may be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
     public int rectangleArea(int[][] rectangles) {
         List<int[]> memo = new ArrayList<>();
         for (int[] rectangle : rectangles) {

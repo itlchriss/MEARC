@@ -3,6 +3,8 @@ package g0901_1000.s0945_minimum_increment_to_make_array_unique;
 // #Medium #Array #Sorting #Greedy #Counting #2022_12_26_Time_5_ms_(99.79%)_Space_54.1_MB_(76.59%)
 
 public class Solution {
+//@ ensures(*Return _the minimum number of moves to make every value in_ `nums` _**unique**_.*);
+
     public int minIncrementForUnique(int[] nums) {
         int max = 0;
         for (int num : nums) {

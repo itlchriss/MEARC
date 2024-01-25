@@ -22,6 +22,8 @@ import com_github_leetcode.TreeNode;
  */
 public class Solution {
     private int max = 0;
+//@ ensures(*Given the root of a binary tree, find the maximum value v for which there exist different nodes a and b where v = |a.val - b.val| and a is an ancestor of b. A node a is an ancestor of b if either: any child of a is equal to b or any child of a is an ancestor of b.*);
+
 
     public int maxAncestorDiff(TreeNode root) {
         traverse(root, -1, -1);

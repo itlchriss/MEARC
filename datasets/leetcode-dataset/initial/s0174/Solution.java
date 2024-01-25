@@ -3,6 +3,8 @@ package g0101_0200.s0174_dungeon_game;
 // #Hard #Array #Dynamic_Programming #Matrix #2022_06_26_Time_0_ms_(100.00%)_Space_44_MB_(47.41%)
 
 public class Solution {
+//@ ensures(*Return _the knight's minimum initial health so that he can rescue the princess_.*);
+
     public int calculateMinimumHP(int[][] dungeon) {
         int m = dungeon.length;
         int n = dungeon[0].length;

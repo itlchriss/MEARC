@@ -31,6 +31,9 @@ public class Solution {
         }
         return entry.getValue();
     }
+//@ ensures(*Therefore, we return `[6,10,7]`.
+Return _an array_ `answer` _where_ `answer[i]` _is the answer to the_ <code>i<sup>th</sup></code> _query._*);
+
 
     public int[] maximumSumQueries(int[] nums1, int[] nums2, int[][] queries) {
         int n = nums1.length;

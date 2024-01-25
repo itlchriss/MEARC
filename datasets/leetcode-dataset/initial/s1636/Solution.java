@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
+//@ ensures(*Return the _sorted array_.*);
+
     public int[] frequencySort(int[] nums) {
         Map<Integer, Integer> count = new HashMap<>();
         for (int num : nums) {
