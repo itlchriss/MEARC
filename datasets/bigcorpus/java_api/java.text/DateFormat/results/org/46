@@ -1,1 +1,0 @@
-exists x.(_get{NNS}(x) & _dash_e{JJ}(x) & _formatter{NN}(x) & _number{NN}(x) & exists z6.(_formatter{NN}(z6) & _date/time{NN}(z6) & True & exists e1.(_use{VBZ}(e1) & (Subj(e1) = z6) & AccI(e1,(exists e.(_format{VB}(e) & (Subj(e) = x) & True) & exists z1.(_time{NN}(z1) & True & exists e.(_parse{VB}(e) & (Subj(e) = x) & (Acc(e) = z1) & True)))) & True)) & True & True)

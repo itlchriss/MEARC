@@ -188,7 +188,6 @@ int __cstrefcomparator(void *_csymptr, void *_astptr) {
     }
 }
 
-/* this function searches the compile symbol table by the name of the variable */
 struct cstsymbol* searchcst(char *symbol) {
     return (struct cstsymbol*)searchqueue(cst, symbol, __cstsymbolcomparator);
 }

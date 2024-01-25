@@ -1,1 +1,0 @@
-In other words, this method returns an Integer object equal to the value of: getInteger(nm, new Integer(val)) but in practice it may be implemented in a manner such as:  Integer result = getInteger(nm, null); return (result == null) ? new Integer(val) : result;  to avoid the unnecessary allocation of an Integer object when the default value is not needed.

@@ -1,1 +1,0 @@
-The most common usage is to construct a new object serving as an initial mapped value or memoized result, as in:   map.computeIfAbsent(key, k -> new Value(f(k))); Or to implement a multi-value map, Map<K,Collection<V>>, supporting multiple values per key:   map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);

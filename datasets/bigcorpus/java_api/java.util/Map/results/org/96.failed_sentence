@@ -1,1 +1,0 @@
-For example, to either create or append a String msg to a value mapping:   map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg)) (Method merge() is often simpler to use for such purposes.) If the function returns null, the mapping is removed (or remains absent if initially absent)

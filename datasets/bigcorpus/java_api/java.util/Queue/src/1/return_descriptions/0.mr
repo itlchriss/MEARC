@@ -1,2 +1,0 @@
-exists x.(_true_value{NN}(x) & True & exists e.(_return{VBN}(e) & (Acc(e) = x) & True)) -> exists x.(_element{NN}(x) & True & exists e.(_add{VBN}(e) & (Acc(e) = x) & exists x.(_queue{NN}(x) & True & (Dat(e) = x)) & True))
-exists x.(_false_value{NN}(x) & True & exists e.(_return{VBN}(e) & (Acc(e) = x) & all x.(_case{NNS}(x) -> (True -> (_in{IN}(e,x) & True))))) -> exists x.((x = _it{PRP}) & True & exists e.(_add{VBN}(e) & (Acc(e) = x) & True))
