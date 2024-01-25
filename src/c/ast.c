@@ -3,6 +3,9 @@
 #include <string.h>
 #include "ast.h"
 #include "util.h"
+#if EVENT_SEMANTICS
+#include "event.h"
+#endif
 
 extern struct astnode *root;
 

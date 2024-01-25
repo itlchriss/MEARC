@@ -1,0 +1,3 @@
+exists x.(_digest{NNS}(x) & True & _equal{JJ}(x))
+exists x.(_statement{NN}(x) & True & _the{DT}(x) & exists e.(_return{VBZ}(e) & (Subj(e) = x) & True) & _true_value{NN}(x))
+\X0 K.exists x.(_statement{NN}(x) & True & _not{RB}(x) & exists z3.(_false_value{NN}(z3) & True & exists e.(_return{VBZ}(e) & (Subj(e) = x) & (Acc(e) = z3) & X0(e) & K(e))))

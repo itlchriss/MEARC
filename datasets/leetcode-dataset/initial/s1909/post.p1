@@ -1,0 +1,5 @@
+The Java method `canBeIncreasing` takes an integer array `nums` as input and determines if the array can be made strictly increasing by removing exactly one element. If the array can be made strictly increasing after removing exactly one element, the method returns `true`. Otherwise, it returns `false`. If the array is already strictly increasing, the method also returns `true`. 
+
+For example, if we remove the element at index 2 (10) from `nums`, the resulting array becomes [1, 2, 5, 7], which is strictly increasing. Therefore, the method should return `true`. On the other hand, if we remove any element from `nums`, the resulting array will be [1, 1], which is not strictly increasing. In this case, the method should not return `true`. 
+
+To determine if the array can be made strictly increasing, the method follows an algorithm that checks if removing any element from the array results in a strictly increasing sequence.

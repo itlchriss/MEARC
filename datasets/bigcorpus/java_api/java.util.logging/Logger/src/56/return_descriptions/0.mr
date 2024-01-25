@@ -1,0 +1,1 @@
+exists x.(_result{NN}(x) & True & exists z2.(_true_value{NN}(z2) & True & (x = z2))) -> exists x.(_output{NN}(x) & True & exists e.(_send{VBN}(e) & (Acc(e) = x) & exists x.(exists z1.(_logger{NN}(z1) & True & Rel(x,z1)) & _parent{NN}(x) & True & (Dat(e) = x)) & True))

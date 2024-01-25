@@ -1,0 +1,1 @@
+exists x.(_retrieve{NNS}(x) & _dash_e{JJ}(x) & True & True) & (exists x.(_deque{NN}(x) & True & _empty{JJ}(x)) -> exists x.(_element{NN}(x) & _last{JJ}(x) & (exists z1.(_deque{NN}(z1) & True & (x = z1)) | exists z2.(_return{NNS}(z2) & True & (x = z2))) & True & exists e.(_null{NN}(e) & (Subj(e) = x) & True))) & exists x.(_remove{VBZ}(x) & True & True)

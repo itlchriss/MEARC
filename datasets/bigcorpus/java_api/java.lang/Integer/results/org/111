@@ -1,0 +1,1 @@
+exists x.(_sequence{NN}(x) & exists z1.(_character{NNS}(z1) & True & (x = z1)) & True & _must{MD}(exists z2.(_value{NN}(z2) & _positive{JJ}(z2) & True & exists e.(_represent{VB}(e) & (Subj(e) = x) & (Acc(e) = z2) & True)))) | exists x.(_numberformatexception{NN}(x) & True & exists e.(_throw{VBN}(e) & (Acc(e) = x) & True))

@@ -1,0 +1,11 @@
+The `ping` method in the `RecentCounter` class adds a new request at a given time `t` in milliseconds. Subsequently, the method returns the count of requests that have occurred in the past 3000 milliseconds, including the new request.
+
+To determine the count of requests within the range `[t 3000, t]`, the method counts the number of requests. This is because the range is defined as [-2999, 1] and there is only one request within this range.
+
+When the `ping` method is called with a parameter of 100, the result is 2. This is because the range is [-2900, 100] and there are two requests within this range.
+
+Similarly, when the `ping` method is called with a parameter of 3001, the result is 3. This is because the range is [1, 3001] and there are three requests within this range.
+
+Even when the `ping` method is called with a parameter of 3002, the result remains 3. This is because the range is [2, 3002] and there are still three requests existing within this range.
+
+In summary, the `ping` method in the `RecentCounter` class adds requests and returns the count of requests within a specific time range. The method takes an integer parameter `t` and returns an integer value. The algorithm counts the number of requests within the specified range to determine the result.

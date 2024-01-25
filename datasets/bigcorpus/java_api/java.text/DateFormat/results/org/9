@@ -1,0 +1,1 @@
+exists x e z3.(_parse{NN}(z3) & _dash_e{JJ}(z3) & _string{NN}(z3) & _date/time{NN}(z3) & True & (Subj(e) = z3) & _accord{VBG}(e) & exists x.(exists e01.(_give{VBN}(e01) & (Acc(e01) = x) & _position{NN}(x) & _parse{NN}(x)) & True & (Dat(e) = x)) & True)

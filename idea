@@ -1,0 +1,66 @@
+# Motivations
+- Based on our symbolic approach, we have the following issues:
+   1. The sentences are too complicated. There are definitions in the documentation that explain specific terms. For instance, the documentation of java.arrays.binarySearch has the documentation for its return as "index of the search key, if it is contained in the array; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the array: the index of the first element greater than the key, or a.length if all elements in the array are less than the specified key.". 
+        - The first sentence describes the behaviour of the method, with insertion point as a term that needs explanations
+        - The term "insertion point" is being explained in the second sentence
+   2. Parameters can be implicitly defined. For instance, the method signature of java.arrays.binarySearch is "public static int binarySearch(int[] a, int key)", 'a' is not mentioned in the documentation listed in 1. . In addition, 'a' is commonly recognised as a determinent in common corpus.
+   3. Composite subjects can be used and the exisiting NLP cannot produce good enough meaning representations. For instance, "The input numbers are greater than or equal to 0." for the method "public static int Sum(int num1, int num2)", neither parameters are mentioned and even the "input numbers" are replaced with "num1" and "num2", the resulting meaning representation is not correct.
+   4. Pronouns are being used.
+   5. [Minor] Existing NLPs such as SpaCy and NLTK tokenise text to sentences with models trained with common corpus, for instance, newspaper and wikipedia. These corpus contain no knowledge from software engineering. Therefore, text contains terms representing the whole class name such as "java.util.Arrays" will be tokenised wrongly.
+    - For instance, we can test spacy with the following sentence "This method is in the class java.util.Arrays, and it is called binarySearch."
+      - The result contains two sentences, and we expect only one sentence should be returned.
+        - This method is in the class java.util.
+        - Arrays, and it is called binarySearch.
+    - We currently solve this problem by splitting the text using '. ', specifically requires the user to type a space (' ') after a period. 
+
+# Problems
+1. The state-of-the-art NLP cannot always generate MR from the code comments
+2. The generated MR is not always correct, regarding to the syntax of the predicates and the semantics of the HOL
+
+# Research questions (RQs)
+1. Can we use a Large Language Model (LLM) without retraining to improve the code comments , such that the state-of-the-art NLP can generate the MR from the improved code comments?
+2. Can we use an LLM without retraining to improve the code comments, such that the state-of-the-art NLP can generate better MRs regarding to the correctness of the syntax and semantics?
+
+# Approach
+- The flow is, let the input sentence as S:
+    1. Preprocessing S
+    2. Attempting to get MR (denoted as M) from S (ccg2lamda)
+    3. If 2 failed, go for GPT-preprocessing; If 2 success, go to 7
+    4. Feeding S to GPT to get S'
+        4.1 Check if there is composite subject or object, if so, ask GPT to rewrite the S into simple declarative sentence
+            - Given "A and B are C" if A and B are nouns, rewriting it into "A is C and B is C".
+            - Given "D contains E and F" if E and F are noun phrases, rewriting it into "D contains E and D contains F."
+        4.2 Check if 'otherwise' is present in S, if so, ask GPT to rewrite S into separate sentences
+    5. Attempting to get M from S' (ccg2lambda)
+    6. If 5 failed, declare 'Failure' and stop
+    7. Feeding M to MEARC and get jml (denoted as J)
+    8. Verifying the program with J
+
+- If M is correct, then J is correct
+- If M is not correct, use GPT to rewrite S to get S', until it is correct
+
+# Evaluations
+1. If the RQ1 holds true, the success rate of generating MRs must be improved.
+2. If the RQ2 holds true, the success rate of generating JMLs must be improved.
+
+# Experiments
+1. Getting a number of code comments, comparing the success rate of
+  - Generating MRs from the code comments using the state-of-the-art NLP only
+  - Improving the code comments with LLM using a prompt, then generating MRs from the improved code comments using the state-of-the-art NLP 
+2. Getting a number of code comments, comparing the success rate of 
+  - Generating JMLs from the code comments improved in experiment 1 using the MEARC only
+  - Improving the code comments improved in experiment 1 with LLM using a prompt, then generating JMLs from the improved code comments using the MEARC
+
+
+# Limitations and threats to validity
+1. GPT is non-deterministic. The return from GPT can be different to what we have in the experiment. Better training with related corpus is a way to have more related sentences.
+
+
+Prompts:
+1. Given the examples "Return success if the input is valid. Return an error message if the input is not valid.", rewrite the sentence "Return the index of the search key if the search key is contained in the array; otherwise, (-(insertion point) - 1)." such that it strictly adheres to the syntax of the given examples.
+   - "Return the index of the search key if it is contained in the array. Return (-(insertion point) - 1) if it is not contained in the array."
+2. Rewrite the sentence "The input numbers are less than or equal to 1000." such that it clearly applies to the context of the given Java method and its parameters, do not remove the method behavioural terms (e.g. result), do not to use past participles as adjectives, uses verbs only 'is', 'are', splits into multiple sentences if conjunctions (i.e. 'and', 'or') are used and joins them with the conjunctions, such as "A and B are greater than C." you should return "A is greater than C and B is greater than C."; the Java method is "public static int Sum(int num1, int num2)".
+   - "The numbers 'num1' and 'num2' are both less than or equal to 1000."
+     - Given that "A and B are C." is converted to "A is C and B is C.", "D contains E and F." is converted to "D contains E and D contains F.". Rewrite the sentence "The numbers num1 and num2 are both less than or equal to 1000." such that it is a simple declarative sentence without composite subject and composite object.
+       - Num1 is less than or equal to 1000, and num2 is less than or equal to 1000.
+3. 

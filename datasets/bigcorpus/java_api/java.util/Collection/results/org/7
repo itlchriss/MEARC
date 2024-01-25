@@ -1,0 +1,1 @@
+exists x.(_return{NNS}(x) & _dash_e{JJ}(x) & _array{NN}(x) & all z3.((exists z2.(_element{NNS}(z2) & exists z1.(_collection{NN}(z1) & True & exists e.(_in{IN}(e,z1) & (Subj(e) = z2) & True)) & (z3 = z2)) & True) -> exists e.(_contain{VBG}(e) & (Subj(e) = x) & (Acc(e) = z3) & True)) & True & True)

@@ -1,6 +1,8 @@
 // Java program to check whether a number is prime or not
 class Prime{        
-    //@ ensures (*If the input n is a prime number, the result is true.*);
+    //@ ensures (*If and only if the input n is a prime number, the result is true.*);
+    //@ requires Prime.isPrime(n);
+    //@ pure
     public static boolean isPrime(int n)
     {                
         if(n <= 1){

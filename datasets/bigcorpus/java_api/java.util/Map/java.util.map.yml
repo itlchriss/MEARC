@@ -1,0 +1,157 @@
+int size():
+- Returns the number of key-value mappings in this map
+- If the map contains more than Integer.MAX_VALUE elements, returns Integer.MAX_VALUE.
+boolean isEmpty():
+- Returns true if this map contains no key-value mappings.
+boolean containsKey(Object key):
+- Returns true if this map contains a mapping for the specified key
+- 'More formally, returns true if and only if this map contains a mapping for a key
+  k such that (key==null ? k==null : key.equals(k))'
+- (There can be at most one such mapping.)
+boolean containsValue(Object value):
+- Returns true if this map maps one or more keys to the specified value
+- 'More formally, returns true if and only if this map contains at least one mapping
+  to a value v such that (value==null ? v==null : value.equals(v))'
+- This operation will probably require time linear in the map size for most implementations
+  of the Map interface.
+V get(Object key):
+- Returns the value to which the specified key is mapped, or null if this map contains
+  no mapping for the key
+- 'More formally, if this map contains a mapping from a key k to a value v such that
+  (key==null ? k==null : key.equals(k)), then this method returns v; otherwise it
+  returns null'
+- (There can be at most one such mapping.) If this map permits null values, then a
+  return value of null does not necessarily indicate that the map contains no mapping
+  for the key; it's also possible that the map explicitly maps the key to null
+- The containsKey operation may be used to distinguish these two cases.
+V put(K key,       V value):
+- Associates the specified value with the specified key in this map (optional operation)
+- If the map previously contained a mapping for the key, the old value is replaced
+  by the specified value
+- (A map m is said to contain a mapping for a key k if and only if m.containsKey(k)
+  would return true.)
+V remove(Object key):
+- Removes the mapping for a key from this map if it is present (optional operation)
+- 'More formally, if this map contains a mapping from key k to value v such that (key==null
+  ?  k==null : key.equals(k)), that mapping is removed'
+- (The map can contain at most one such mapping.) Returns the value to which this
+  map previously associated the key, or null if the map contained no mapping for the
+  key
+- If this map permits null values, then a return value of null does not necessarily
+  indicate that the map contained no mapping for the key; it's also possible that
+  the map explicitly mapped the key to null
+- The map will not contain a mapping for the specified key once the call returns.
+void putAll(Map<? extends K,? extends V> m):
+- Copies all of the mappings from the specified map to this map (optional operation)
+- The effect of this call is equivalent to that of calling put(k, v) on this map once
+  for each mapping from key k to value v in the specified map
+- The behavior of this operation is undefined if the specified map is modified while
+  the operation is in progress.
+void clear():
+- Removes all of the mappings from this map (optional operation)
+- The map will be empty after this call returns.
+Set<K> keySet():
+- Returns a Set view of the keys contained in this map
+- The set is backed by the map, so changes to the map are reflected in the set, and
+  vice-versa
+- If the map is modified while an iteration over the set is in progress (except through
+  the iterator's own remove operation), the results of the iteration are undefined
+- The set supports element removal, which removes the corresponding mapping from the
+  map, via the Iterator.remove, Set.remove, removeAll, retainAll, and clear operations
+- It does not support the add or addAll operations.
+Collection<V> values():
+- Returns a Collection view of the values contained in this map
+- The collection is backed by the map, so changes to the map are reflected in the
+  collection, and vice-versa
+- If the map is modified while an iteration over the collection is in progress (except
+  through the iterator's own remove operation), the results of the iteration are undefined
+- The collection supports element removal, which removes the corresponding mapping
+  from the map, via the Iterator.remove, Collection.remove, removeAll, retainAll and
+  clear operations
+- It does not support the add or addAll operations.
+Set<Map.Entry<K,V>> entrySet():
+- Returns a Set view of the mappings contained in this map
+- The set is backed by the map, so changes to the map are reflected in the set, and
+  vice-versa
+- If the map is modified while an iteration over the set is in progress (except through
+  the iterator's own remove operation, or through the setValue operation on a map
+  entry returned by the iterator) the results of the iteration are undefined
+- The set supports element removal, which removes the corresponding mapping from the
+  map, via the Iterator.remove, Set.remove, removeAll, retainAll and clear operations
+- It does not support the add or addAll operations.
+boolean equals(Object o):
+- Compares the specified object with this map for equality
+- Returns true if the given object is also a map and the two maps represent the same
+  mappings
+- More formally, two maps m1 and m2 represent the same mappings if m1.entrySet().equals(m2.entrySet())
+- This ensures that the equals method works properly across different implementations
+  of the Map interface.
+int hashCode():
+- Returns the hash code value for this map
+- The hash code of a map is defined to be the sum of the hash codes of each entry
+  in the map's entrySet() view
+- This ensures that m1.equals(m2) implies that m1.hashCode()==m2.hashCode() for any
+  two maps m1 and m2, as required by the general contract of Object.hashCode().
+default V getOrDefault(Object key,                        V defaultValue):
+- Returns the value to which the specified key is mapped, or defaultValue if this
+  map contains no mapping for the key.
+default void forEach(BiConsumer<? super K,? super V> action):
+- Performs the given action for each entry in this map until all entries have been
+  processed or the action throws an exception
+- Unless otherwise specified by the implementing class, actions are performed in the
+  order of entry set iteration (if an iteration order is specified.) Exceptions thrown
+  by the action are relayed to the caller.
+default void replaceAll(BiFunction<? super K,? super V,? extends V> function):
+- Replaces each entry's value with the result of invoking the given function on that
+  entry until all entries have been processed or the function throws an exception
+- Exceptions thrown by the function are relayed to the caller.
+default V putIfAbsent(K key,                       V value):
+- If the specified key is not already associated with a value (or is mapped to null)
+  associates it with the given value and returns null, else returns the current value.
+default boolean remove(Object key,                        Object value):
+- Removes the entry for the specified key only if it is currently mapped to the specified
+  value.
+default boolean replace(K key,                         V oldValue,                         V newValue):
+- Replaces the entry for the specified key only if currently mapped to the specified
+  value.
+default V replace(K key,                   V value):
+- Replaces the entry for the specified key only if it is currently mapped to some
+  value.
+default V computeIfAbsent(K key,                           Function<? super K,? extends V> mappingFunction):
+- If the specified key is not already associated with a value (or is mapped to null),
+  attempts to compute its value using the given mapping function and enters it into
+  this map unless null
+- If the function returns null no mapping is recorded
+- If the function itself throws an (unchecked) exception, the exception is rethrown,
+  and no mapping is recorded
+- 'The most common usage is to construct a new object serving as an initial mapped
+  value or memoized result, as in:   map.computeIfAbsent(key, k -> new Value(f(k)));
+  Or to implement a multi-value map, Map<K,Collection<V>>, supporting multiple values
+  per key:   map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);'
+? default V computeIfPresent(K key,                            BiFunction<? super
+  K,? super V,? extends V> remappingFunction)
+: - If the value for the specified key is present and non-null, attempts to compute
+    a new mapping given the key and its current mapped value
+  - If the function returns null, the mapping is removed
+  - If the function itself throws an (unchecked) exception, the exception is rethrown,
+    and the current mapping is left unchanged.
+default V compute(K key,                   BiFunction<? super K,? super V,? extends V> remappingFunction):
+- Attempts to compute a mapping for the specified key and its current mapped value
+  (or null if there is no current mapping)
+- 'For example, to either create or append a String msg to a value mapping:   map.compute(key,
+  (k, v) -> (v == null) ? msg : v.concat(msg)) (Method merge() is often simpler to
+  use for such purposes.) If the function returns null, the mapping is removed (or
+  remains absent if initially absent)'
+- If the function itself throws an (unchecked) exception, the exception is rethrown,
+  and the current mapping is left unchanged.
+? default V merge(K key,                 V value,                 BiFunction<? super
+  V,? super V,? extends V> remappingFunction)
+: - If the specified key is not already associated with a value or is associated with
+    null, associates it with the given non-null value
+  - Otherwise, replaces the associated value with the results of the given remapping
+    function, or removes if the result is null
+  - This method may be of use when combining multiple mapped values for a key
+  - 'For example, to either create or append a String msg to a value mapping:   map.merge(key,
+    msg, String::concat) If the function returns null the mapping is removed'
+  - If the function itself throws an (unchecked) exception, the exception is rethrown,
+    and the current mapping is left unchanged.
