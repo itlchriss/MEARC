@@ -1,7 +1,0 @@
-The function `basicCalculatorIV` takes in an expression, represented by the string `expression`, and an evaluation map, represented by the arrays `evalvars` and `evalints`. The expression is in the form of a mathematical equation, with variables and arithmetic operations. The evaluation map provides the values for some of the variables in the expression.
-
-To simplify the expression, the function evaluates the variables in the expression using the evaluation map. It replaces the variables with their corresponding values in the expression. The result is a simplified expression with only constants and arithmetic operations.
-
-The function then converts the simplified expression into a list of tokens. Each token represents a part of the expression, such as a constant or an arithmetic operation. The tokens are stored in a list, which is the result of the function.
-
-For example, given the expression `expression = "e + 8 a + 5"` and the evaluation map `evalvars = ["e"]` and `evalints = [1]`, the function would return a list of tokens `["-1*a" , "14"]`. This means that the simplified expression is `-1*a + 14`, where `a` is replaced with its evaluated value of `-1` and `e` is replaced with its evaluated value of `1`.

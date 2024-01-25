@@ -1,1 +1,0 @@
-public boolean isPowerOfThree(int n)

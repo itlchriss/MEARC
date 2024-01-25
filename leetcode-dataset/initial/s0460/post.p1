@@ -1,9 +1,0 @@
-The `get` function in the `LFUCache` class allows retrieval of the value associated with the given `key`. If the `key` is not found in the cache, the function returns `-1`. 
-
-For example, when we call `get(1)`, the result is 1. However, when we call `get(2)`, the result is -1 since the key is not found. Similarly, calling `get(3)` yields 3. 
-
-If we call `get(1)` again, the result is -1 once more as the key is still not found. On the other hand, calling `get(3)` again returns 3. 
-
-Finally, when we call `get(4)`, the result is 4. 
-
-This algorithm ensures that the `get` function retrieves the value associated with the given `key` from the cache, returning -1 if the key is not found.
