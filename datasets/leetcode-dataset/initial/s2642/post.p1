@@ -1,1 +1,36 @@
-The `prepare . sh` script, which needs to be run prior to executing any other scripts, should be present in the system.The `run . sh` script that can be executed should be present in the system after running `prepare . sh`.The function `shortestPath` should be present in the system and it should accept two integer parameters `node1` and `node2`.The cost of the path from `node1` to `node2` that has the minimum value should be returned by the function `shortestPath`.If there is no path from `node1` to `node2`, the `shortestPath` function should return the sum of the costs of the edges in the path as the cost of the path.In order for the system to find the shortest path, a graph `g` that can be used should be present.The function for finding the shortest path between two nodes in the graph should have the capability to do so.The cost of the shortest path between two nodes, which is the minimum, should be returned by the function `g . shortestPath`.The minimum cost for a given path should be correctly returned by the `g . shortestPath` function.In the event that there is no path connecting two nodes, the `shortestPath` function of the system should produce the following result: The minimum cost for the path from node 3 to node 2 is 6.The system's capability of finding the shortest path from node 0 to node 3 should be ensured. In case there is no path from node 0 to node 3, the system should return -The minimum cost for the shortest path from node 0 to node 3 should be returned as 6.
+Preconditions for the method `public Graph(int n, int[][] edges)`:
+- The parameter `n` is a positive integer representing the number of nodes in the graph.
+- The parameter `edges` is a 2D array of integers representing the edges in the graph. Each row in the array represents an edge, and the two elements in the row represent the nodes connected by the edge.
+
+Postconditions for the method `public Graph(int n, int[][] edges)`:
+- A new instance of the `Graph` class is created with `n` nodes and the edges specified in the `edges` parameter.
+
+Preconditions for the method `public void addEdge(int[] edge)`:
+- The parameter `edge` is a 1D array of integers representing an edge in the graph. The array should have exactly two elements, representing the nodes connected by the edge.
+
+Postconditions for the method `public void addEdge(int[] edge)`:
+- The edge specified in the `edge` parameter is added to the graph.
+
+Preconditions for the method `public int shortestPath(int node1, int node2)`:
+- The parameters `node1` and `node2` are valid node indices in the graph.
+
+Postconditions for the method `public int shortestPath(int node1, int node2)`:
+- The method returns the minimum cost of a path from `node1` to `node2`. If no path exists, the method returns `-1`.
+
+Preconditions for the method `public Pair(K key, V value)`:
+- The parameters `key` and `value` are valid objects of types `K` and `V` respectively.
+
+Postconditions for the method `public Pair(K key, V value)`:
+- A new instance of the `Pair` class is created with the specified `key` and `value`.
+
+Preconditions for the method `public K getKey()`:
+- The `Pair` object on which the method is called is not null.
+
+Postconditions for the method `public K getKey()`:
+- The method returns the key value of the `Pair` object.
+
+Preconditions for the method `public V getValue()`:
+- The `Pair` object on which the method is called is not null.
+
+Postconditions for the method `public V getValue()`:
+- The method returns the value of the `Pair` object.

@@ -1,1 +1,21 @@
-The smallest-numbered unreserved seat should be able to be fetched by the system.The ability to reserve a seat should be present in the system.The reserved seat number should be able to be returned by the system.When all seats are available, the lowest numbered seat should be returned by the system.When there are multiple available seats, the lowest numbered seat should be returned by the system.When there are multiple available seats with the same number, the lowest numbered seat should be returned by the system.When there are multiple available seats with different numbers, the lowest numbered seat should be returned by the system.After reserving a seat, the list of available seats should be updated by the system.When there is only one seat left, the only available seat should be returned by the system.
+Preconditions for the method public SeatManager(int n):
+- The parameter n must be a positive integer representing the total number of seats in the seat manager.
+
+Postconditions for the method public SeatManager(int n):
+- The seat manager is initialized with n seats.
+- All seats are initially unreserved.
+
+Preconditions for the method public int reserve():
+- There must be at least one unreserved seat available.
+
+Postconditions for the method public int reserve():
+- The smallest-numbered unreserved seat is reserved.
+- The reserved seat is no longer available for reservation.
+- The number of the reserved seat is returned.
+
+Preconditions for the method public void unreserve(int seatNumber):
+- The seatNumber parameter must be a valid seat number that is currently reserved.
+
+Postconditions for the method public void unreserve(int seatNumber):
+- The reserved seat with the specified seat number is unreserved.
+- The unreserved seat becomes available for reservation again.

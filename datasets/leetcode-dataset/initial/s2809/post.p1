@@ -1,1 +1,9 @@
-In order to determine the total value, the sum of all elements in `nums1` should be calculated by the system.The sum of `nums1` should be compared with the value of `x` by the system in order to evaluate their relationship.If the sum of the elements in the `nums1` list is less than or equal to the value of `x`, the minimum time required to achieve this should be returned by the system, indicating the shortest duration needed.If the sum of the elements in the `nums1` list is greater than the value of `x`, the system should return -1 to indicate that it is impossible to make the sum less than or equal to the value of `x`.To guarantee efficiency, the system must execute the operations optimally, aiming to minimize the time required to achieve the desired sum. This applies to the method public int minimumTime, which takes in two lists of integers (nums1 and nums2) and an integer x as parameters.
+Preconditions:
+- The method takes in three parameters: `nums1`, `nums2`, and `x`.
+- `nums1` is a list of integers.
+- `nums2` is a list of integers.
+- `x` is an integer.
+- The sum of all elements in `nums1` is initially 
+Postconditions:
+- The method returns an integer value representing the minimum time required to make the sum of all elements in `nums1` less than or equal to `x`.
+- If it is not possible to make the sum of all elements in `nums1` less than or equal to `x`, the method returns -1.

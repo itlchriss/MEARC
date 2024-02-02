@@ -1,0 +1,10 @@
+Preconditions:
+- The method takes two integer parameters, ar and de, representing the arrival time and the delay in hours respectively.
+- The arrival time (ar) is in the format of hours (0-23).
+- The delay (de) is a positive integer representing the number of hours the train is delayed.
+- The arrival time (ar) is a valid time in the 24-hour format.
+
+Postconditions:
+- The method returns an integer representing the time when the train will arrive at the station.
+- The returned value is in the format of hours (0-23).
+- The returned value is calculated by adding the arrival time (ar) and the delay (de) modulo - If the calculated arrival time is greater than or equal to 24, it is converted to the 24-hour format by subtracting 24 from it.

@@ -1,1 +1,7 @@
-The input for the function should consist of three integers, namely `a`, `b`, and `n`, where `a` and `b` are long integers and `n` is an integer.The maximum value of `(a XOR x) initial prepare . sh run . sh (b XOR x)` should be calculated by the function. The value of `x` should be between 0 and 2^n.The maximum value modulo 10^9 + 7 should be returned by the function, where the function takes in two long parameters, a and b, and an integer parameter n.
+Preconditions:
+- The method takes three integers `a`, `b`, and `n` as input.
+- The value of `a` is greater than or equal to - The value of `b` is greater than or equal to - The value of `n` is greater than or equal to 
+Postconditions:
+- The method returns an integer value.
+- The returned value is the maximum value of `(a XOR x) * (b XOR x)` where `0 <= x < 2^n`.
+- The returned value is modulo `10^9 + 7`.

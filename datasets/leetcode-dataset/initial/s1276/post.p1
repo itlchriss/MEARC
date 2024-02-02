@@ -1,0 +1,9 @@
+Preconditions:
+- The method should take two integer parameters: `tomatoSlices` and `cheeseSlices`.
+- The values of `tomatoSlices` and `cheeseSlices` should be non-negative.
+
+Postconditions:
+- The method should return a List<Integer> containing two elements: `total_jumbo` and `total_small`.
+- The sum of `total_jumbo` and `total_small` should be equal to the number of remaining `tomatoSlices`.
+- The sum of `total_jumbo` and `total_small` should be equal to the number of remaining `cheeseSlices`.
+- If it is not possible to make the remaining `tomatoSlices` and `cheeseSlices` equal to `0`, the method should return an empty List<Integer>.

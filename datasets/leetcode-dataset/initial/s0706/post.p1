@@ -1,1 +1,49 @@
-To ensure proper initialization of the system, the `prepare.sh` script must be executed.After executing the `prepare . sh` script, the `run . sh` script must be run by the system.To fetch the value linked to the given key, the method `int get(int key)` should be present in the system.If the specified key does not have a corresponding mapping in the map, the `get(int key)` method should return a result that is not null. Within the system, there should exist an object called `myHashMap` which is an instance of the class MyHashMap.After invoking the `get(int key)` method with the key 1, a value should be returned. Additionally, the map should be updated to include the key-value pairs [[1, 1], [2, 2]].After invoking the `get(int key)` method with the key 3, the expected result is that it should return - and the map should remain unchanged as [[1, 1], [2, 2]].After the `get(int key)` method is invoked with the key 2, the expected outcome is that it will return a value. Additionally, the map should be updated to [[1, 1], [2, 1]].After invoking the `get(int key)` method with the key 2, the expected result is that it should return - and after calling the `get(int key)` method again with the key 2, the expected outcome is that the map should remain as [[1, 1]].
+Preconditions for the method public MyHashMap():
+
+- No preconditions are mentioned in the given requirements.
+
+Postconditions for the method public MyHashMap():
+
+- A new instance of MyHashMap is created.
+
+Preconditions for the method public void put(int key, int value):
+
+- The key and value parameters are provided.
+
+Postconditions for the method public void put(int key, int value):
+
+- The key-value pair is added to the map.
+
+Preconditions for the method public int get(int key):
+
+- The key parameter is provided.
+
+Postconditions for the method public int get(int key):
+
+- If the map contains a mapping for the key, the value is returned.
+- If the map does not contain a mapping for the key, -1 is returned.
+
+Preconditions for the method public void remove(int key):
+
+- The key parameter is provided.
+
+Postconditions for the method public void remove(int key):
+
+- If the map contains a mapping for the key, it is removed from the map.
+
+Preconditions for the method public int hashCode():
+
+- No preconditions are mentioned in the given requirements.
+
+Postconditions for the method public int hashCode():
+
+- The hash code of the object is returned.
+
+Preconditions for the method public boolean equals(Object obj):
+
+- The obj parameter is provided.
+
+Postconditions for the method public boolean equals(Object obj):
+
+- If the obj parameter is equal to the current object, true is returned.
+- If the obj parameter is not equal to the current object, false is returned.

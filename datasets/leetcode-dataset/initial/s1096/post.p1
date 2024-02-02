@@ -1,1 +1,8 @@
-The expression representing a set of words should be accepted by the system, and the input should be able to be processed by the system.To interpret the expression, the adherence to the specified rules should be ensured by the system, which should follow a given grammar and guarantee that the expression strictly adheres to these rules.The ability to identify the words represented by the expression should be possessed by the system, enabling the recognition and extraction of the pertinent information.Sorting and arranging the identified words in a specific order should be done by the system after they are identified.The expression, ensuring accurate and reflective output of the intended meaning, should ultimately provide the user with a sorted list of words, with the parameter expression representing the input.
+Preconditions:
+The input expression should not be null.
+The input expression should be a valid expression representing a set of words under the given grammar.
+
+Postconditions:
+The method should return a List of Strings.
+The List of Strings should be sorted in ascending order.
+The List of Strings should contain all the words that the expression represents.

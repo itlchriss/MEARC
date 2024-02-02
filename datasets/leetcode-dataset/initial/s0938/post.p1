@@ -1,1 +1,7 @@
-The input for the system should be the root node of a binary search tree.Furthermore, the method should accept two integers, `low` and `high`, which will serve as parameters. The purpose of this method is to calculate the sum of values of all nodes in a binary search tree.The sum of the nodes within the inclusive range `[low, high]` is returned as the output. The calculation of the sum considers only the values of the nodes within this range and involves traversing the binary search tree. Nodes outside the range are excluded from the sum. If the binary search tree is empty, a sum is returned. Similarly, if there are no nodes within the range, a sum is returned. If there is only one node within the range, its value is returned as the sum. For multiple nodes within the range, the sum of their values is calculated. The value of the root node is included in the sum if it falls within the range, otherwise, it is excluded. If both the root node and other nodes are within the range, their values are summed. If nodes within the range exist in both the left and right subtrees, their values are also summed.
+Preconditions:
+The `root` node of the binary search tree is not null.
+The values of `low` and `high` are valid integers.
+
+Postconditions:
+The method returns an integer representing the sum of values of all nodes with a value in the inclusive range `[low, high]`.
+If there are no nodes with values in the inclusive range `[low, high]`, the method returns 0.

@@ -4,6 +4,12 @@ package g2401_2500.s2478_number_of_beautiful_partitions;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the number of **beautiful** partitions of_ `s`. Since the answer may be very large, return it **modulo** <code>10<sup>9</sup> + 7</code>.
+Return _the number of **beautiful** partitions of_ `s`. Since the answer may be very large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int beautifulPartitions(String s, int k, int l) {
         char[] cs = s.toCharArray();
         int n = cs.length;
@@ -45,4 +51,8 @@ public class Solution {
     private boolean prime(char c) {
         return '2' == c || '3' == c || '5' == c || '7' == c;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

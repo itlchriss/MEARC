@@ -1,1 +1,8 @@
-The integer array `arr` should be used as the input.The array should have the smallest `5%` and the largest `5%` of its elements removed.The mean of the remaining integers should be calculated by the function, ensuring that the parameter array is sorted in ascending order and the result is not null.The calculated mean should be returned by the function, ensuring that the parameter array is sorted in ascending order.
+Preconditions:
+The input array `arr` must not be null.
+The input array `arr` must contain at least 10 elements.
+
+Postconditions:
+The method should return a double value representing the mean of the remaining integers after removing the smallest 5% and the largest 5% of the elements.
+The returned mean value should be rounded to two decimal places.
+The original array `arr` should remain unchanged after the method is executed.

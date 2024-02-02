@@ -1,0 +1,16 @@
+Preconditions:
+- The method takes in two arrays of strings: wordlist and queries.
+- The wordlist array contains a list of words.
+- The queries array contains a list of query words.
+- The wordlist and queries arrays are not null.
+
+Postconditions:
+- The method returns an array of strings.
+- The returned array contains the correct word for each query in the queries array.
+- The returned array has the same length as the queries array.
+- If a query word matches a word in the wordlist (case-insensitive), the query word is returned with the same case as the word in the wordlist.
+- If a query word matches a word in the wordlist after replacing the vowels individually, the query word is returned with the same case as the match in the wordlist.
+- If a query word exactly matches a word in the wordlist (case-sensitive), the same word is returned.
+- If a query word matches a word in the wordlist up to capitalization, the first such match in the wordlist is returned.
+- If a query word matches a word in the wordlist up to vowel errors, the first such match in the wordlist is returned.
+- If a query word has no matches in the wordlist, the empty string is returned.

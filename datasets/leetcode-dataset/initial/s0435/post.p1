@@ -1,1 +1,7 @@
-The input for the system should strictly consist of an array of intervals.The array of intervals passed as a parameter should strictly adhere to the representation of each interval as a pair of start and end values.The minimum number of intervals that need to be removed should be calculated by the system.The intervals in the parameter array must not overlap with each other.The output should strictly adhere to the syntax of the given examples and clearly apply to the method public int eraseOverlapIntervals(int[][] intervals) by explicitly relating the parameter intervals to the term "the parameter array". The output should state "The system should return the minimum number of intervals to be removed as output."
+Preconditions:
+The input array `intervals` is not null.
+The input array `intervals` is not empty.
+Each interval in the input array `intervals` is a valid interval represented by an array of size The start and end values of each interval in the input array `intervals` are non-negative integers.
+
+Postconditions:
+The method returns an integer representing the minimum number of intervals that need to be removed to make the rest of the intervals non-overlapping.

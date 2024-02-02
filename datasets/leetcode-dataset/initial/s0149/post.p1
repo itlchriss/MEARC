@@ -1,1 +1,7 @@
-The input for the system should be an array of points.The representation of each point in the array should strictly adhere to the format [x, y], where x and y are the coordinates of the point.The maximum number of points that lie on the same straight line should be calculated by the system.The output should be the maximum number of points when the parameter array is passed to the system.
+Preconditions:
+The input array `points` is not null.
+The input array `points` contains at least two points.
+
+Postconditions:
+The method returns an integer representing the maximum number of points that lie on the same straight line.
+The method does not modify the input array `points`.

@@ -1,1 +1,9 @@
-The list of values that the function is expected to return should strictly adhere to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order."The values in the list should match the values of all nodes that have been flipped.The values in the list can be in any order, just like the parameter array is sorted in ascending order.If the pre-order traversal cannot be matched with the given voyage by flipping the nodes in the tree, the function should return the list [-1].
+Preconditions:
+- The method takes in a TreeNode object representing the root of a binary tree.
+- The method takes in an integer array representing the desired pre-order traversal of the tree.
+- The tree is not empty.
+
+Postconditions:
+- The method returns a List<Integer> object containing the values of all flipped nodes.
+- The order of the values in the list can be in any order.
+- If it is impossible to flip the nodes in the tree to make the pre-order traversal match the given voyage, the method returns the list [-1].

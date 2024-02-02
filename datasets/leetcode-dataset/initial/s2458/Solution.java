@@ -8,6 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*initial prepare.sh run.sh The queries are independent, so the tree returns to its initial state after each query.
+Return _an array_ `answer` _of size_ `m` _where_ `answer[i]` _is the height of the tree after performing the_ <code>i<sup>th</sup></code> _query_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[] treeQueries(TreeNode root, int[] queries) {
         Map<Integer, int[]> levels = new HashMap<>();
         Map<Integer, int[]> map = new HashMap<>();
@@ -50,4 +56,8 @@ public class Solution {
         map.put(root.val, new int[] {height, level});
         return Math.max(left, right) + 1;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

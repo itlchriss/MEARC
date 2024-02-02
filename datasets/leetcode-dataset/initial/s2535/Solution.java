@@ -12,6 +12,11 @@ public class Solution {
         }
         return sum;
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **absolute** difference between the **element sum** and **digit sum** of_ `nums`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int differenceOfSum(int[] nums) {
         int eleSum = 0;
@@ -32,4 +37,8 @@ public class Solution {
         int min = Math.min(eleSum, digitSum);
         return max - min;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

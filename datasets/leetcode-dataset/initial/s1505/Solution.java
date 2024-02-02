@@ -6,6 +6,11 @@ package g1501_1600.s1505_minimum_possible_integer_after_at_most_k_adjacent_swaps
 import java.util.Arrays;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the minimum integer you can obtain also as a string_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String minInteger(String num, int k) {
         StringBuilder sb = new StringBuilder();
         int[] digitPos = new int[10];
@@ -63,4 +68,8 @@ public class Solution {
         }
         return sb.toString();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

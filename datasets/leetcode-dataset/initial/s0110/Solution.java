@@ -21,6 +21,11 @@ import com_github_leetcode.TreeNode;
  * }
  */
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the left and right subtrees of every node differ in height by no more than 1.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public boolean isBalanced(TreeNode root) {
         // Empty Tree is balanced
         if (root == null) {
@@ -64,4 +69,8 @@ public class Solution {
             return 1 + rightHeight;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

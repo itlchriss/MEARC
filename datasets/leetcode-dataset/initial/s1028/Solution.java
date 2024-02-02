@@ -22,6 +22,11 @@ import com_github_leetcode.TreeNode;
  */
 public class Solution {
     private int ptr = 0;
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the output `traversal` of this traversal, recover the tree and return _its_ `root`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public TreeNode recoverFromPreorder(String traversal) {
         return find(traversal, 0);
@@ -52,4 +57,8 @@ public class Solution {
             return null;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

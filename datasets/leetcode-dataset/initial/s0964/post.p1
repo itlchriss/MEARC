@@ -1,1 +1,6 @@
-The initial execution of the program requires running a script named str_prepare.sh.The script named str_run.sh, which needs to be executed, should be present in the program.The division operator (str_/) should yield rational numbers, not null.The expression written by the user using the least number of operators should be allowed by the program.The str_target should be able to be equal to the expression.The expression should be evaluated with the least number of operators used, and the program should return this result.
+Preconditions:
+- The method takes two integer parameters, `x` and `target`.
+- The division operator (`/`) returns rational numbers.
+
+Postconditions:
+- The method returns an integer value representing the least number of operators used to create an expression that equals the given `target`.

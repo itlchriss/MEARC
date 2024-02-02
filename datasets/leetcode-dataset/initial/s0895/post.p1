@@ -1,1 +1,40 @@
-The stack data structure should be present in the system, allowing the storage of elements in a last-in, first-out manner.The function `pop()` should be present in the system, which should remove and return the most frequent element in the stack.In the case where there is a tie for the most frequent element, the system should eliminate and return the element that is closest to the top of the stack.The frequency of each element in the stack should be tracked by the system, indicating that the system should be able to count how many times each element appears.The frequency of each element should be updated accordingly when elements are added or removed from the stack.The element that has been removed from the stack should be returned by the system when the `pop()` function is called.After a node is added to the doubly linked list, the stack should be updated to reflect the change.The updated stack should be returned by the system after removing an element.The expected outcome is that the system returns the most frequent element in the stack when the `pop()` function is called.After the removal of the most frequent element from the stack, the updated stack should be returned by the system.In the case where there is a tie for the most frequent element, the element closest to the top of the stack should be returned by the system.After removing the element closest to the top from the stack, the updated stack should be returned by the system.The condition should be met by the system in cases where the stack is empty and the `pop()` function is called.The case where there is only one element in the stack and the `pop()` function is called should be handled by the system.When the frequency of all elements in the stack is the same and the `pop()` function is called, the system should be able to handle this situation appropriately.
+Preconditions for the Java method public DLL():
+- None
+
+Postconditions for the Java method public DLL():
+- A new doubly linked list object is created.
+
+Preconditions for the Java method public void addNode(int x):
+- A doubly linked list object must exist.
+
+Postconditions for the Java method public void addNode(int x):
+- A new node with the value x is added to the doubly linked list.
+
+Preconditions for the Java method public Node removeNode():
+- A doubly linked list object must exist.
+- The doubly linked list must not be empty.
+
+Postconditions for the Java method public Node removeNode():
+- The node closest to the top of the stack and with the highest frequency is removed and returned.
+- The doubly linked list is updated accordingly.
+
+Preconditions for the Java method public FreqStack():
+- None
+
+Postconditions for the Java method public FreqStack():
+- A new frequency stack object is created.
+
+Preconditions for the Java method public void push(int val):
+- A frequency stack object must exist.
+
+Postconditions for the Java method public void push(int val):
+- The value val is pushed onto the frequency stack.
+
+Preconditions for the Java method public int pop():
+- A frequency stack object must exist.
+- The frequency stack must not be empty.
+
+Postconditions for the Java method public int pop():
+- The most frequent element in the stack is removed and returned.
+- If there is a tie for the most frequent element, the element closest to the stack's top is removed and returned.
+- The frequency stack is updated accordingly.

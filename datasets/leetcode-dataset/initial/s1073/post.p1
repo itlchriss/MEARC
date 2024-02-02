@@ -1,1 +1,7 @@
-The input should consist of two numbers, `arr1` and `arr2`, only if they are in base -2.The condition for the system to add `arr1` and `arr2` together is that both `arr1` and `arr2` must be in base -The result of adding `arr1` and `arr2` will be returned by the system only if the system adds `arr1` and `arr2` together.The format of the output should be the same as the format of the input, which means it should be an array consisting of only 0s and 1s. This is applicable only if the arrays arr1 and arr2 are added together.The absence of leading zeros in the result should only occur when the result is in the same format as the input, similar to how the parameter arrays are sorted in ascending order.
+Preconditions:
+- The input arrays `arr1` and `arr2` must not be null.
+- The input arrays `arr1` and `arr2` must only contain 0s and 1s.
+
+Postconditions:
+- The method should return an array of 0s and 1s representing the sum of `arr1` and `arr2`.
+- The returned array should have no leading zeros.

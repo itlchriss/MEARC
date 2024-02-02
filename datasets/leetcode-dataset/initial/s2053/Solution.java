@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an array of strings `arr`, and an integer `k`, return _the_ <code>k<sup>th</sup></code> _**distinct string** present in_ `arr`. If there are **fewer** than `k` distinct strings, return _an **empty string**_ `""`. Since k == 2, "a" is returned. All strings in arr are distinct, so the 1<sup>st</sup> string "aaa" is returned. **Explanation:** The only distinct string is "b". Since there are fewer than 3 distinct strings, we return an empty string "".*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String kthDistinct(String[] arr, int k) {
         Map<String, Integer> m = new HashMap<>();
         for (String value : arr) {
@@ -22,4 +27,8 @@ public class Solution {
         }
         return "";
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

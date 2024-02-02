@@ -1,1 +1,7 @@
-The input should consist of an integer array `nums` that is taken by the program.The method should identify all sets of three distinct indices `[i, j, k]` in the array `nums` where the elements `nums[i]`, `nums[j]`, and `nums[k]` form a triplet.The condition `i != j`, `i != k`, and `j != k` must be ensured by the program, just like how the result is not null and the parameter array is sorted in ascending order.The calculation of the sum `nums[i] + nums[j] + nums[k]` should be performed by the program.The program should generate a list of lists, where each list represents a triplet. The sum of each triplet should be equal to zero.
+Preconditions:
+The input array `nums` must not be null.
+The input array `nums` must have a length greater than or equal to 
+Postconditions:
+The method should return a list of lists, where each inner list represents a triplet of integers that satisfy the given conditions.
+Each triplet `[nums[i], nums[j], nums[k]]` in the returned list should have distinct indices `i`, `j`, and `k`.
+The sum of the integers in each triplet `[nums[i], nums[j], nums[k]]` should be equal to 0.

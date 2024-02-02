@@ -80,6 +80,12 @@ public class Solution {
         }
         return false;
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **maximum** number of minutes that you can stay in your initial position before moving while still safely reaching the safehouse_. If this is impossible, return `-1`. If you can **always** reach the safehouse regardless of the minutes stayed, return <code>10<sup>9</sup></code>. Thus, -1 is returned. **Explanation:** The figure above shows the initial grid. Notice that the fire is contained by walls and you will always be able to safely reach the safehouse. Thus, 10<sup>9</sup> is returned.
+Return _the **maximum** number of minutes that you can stay in your initial position before moving while still safely reaching the safehouse_. If this is impossible, return `-1`. If you can **always** reach the safehouse regardless of the minutes stayed, return <code>10<sup>9</sup></code>.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int maximumMinutes(int[][] grid) {
         int[][] dir = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
@@ -96,4 +102,8 @@ public class Solution {
         }
         return hi;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

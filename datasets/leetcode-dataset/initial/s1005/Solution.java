@@ -5,6 +5,11 @@ package g1001_1100.s1005_maximize_sum_of_array_after_k_negations;
 import java.util.Arrays;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the largest possible sum of the array after modifying it in this way_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int largestSumAfterKNegations(int[] nums, int k) {
         Arrays.sort(nums);
         int minIndex = 0;
@@ -22,4 +27,8 @@ public class Solution {
         }
         return Arrays.stream(nums).sum();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

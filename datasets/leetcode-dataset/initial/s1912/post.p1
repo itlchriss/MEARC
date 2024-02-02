@@ -1,1 +1,46 @@
-The ability to facilitate the search for movies should be possessed by the system.The five cheapest shops that have an unrented copy of a given movie should be able to be located by the search function.The search results should be sorted in ascending order based on the price parameter.In the event that there is a tie in price, the shop with the smaller shop number should be displayed first.If the number of matching shops is fewer than five, all of the matching shops should be included in the results.If there are no unrented copies in any shop, the method should return an empty list.The functionality to facilitate the booking of movies should be possessed by the system.The capability to support the return of movies should be present in the system.The movies that are currently rented should be able to be reported by the system.The report should display the movies that have the five lowest rental prices.The movies rented from the movie renting system should be sorted in ascending order, taking into consideration their price.In the event of a tie in price, the movie with the smaller shop number should be listed first.When there is a tie, the movie with the smaller movie number should be displayed first, in the case of the method public Point(int movie, int shop, int price), public MovieRentingSystem(int n, int[][] entries), public List<Integer> search(int movie), public void rent(int shop, int movie), public void drop(int shop, int movie), and public List<List<Integer>> report().If the number of rented movies is less than five, all rented movies should be included in the report.In the case where there are no movies currently being rented, the method should return an empty list.
+Behavioural requirements for the Java methods:
+
+public Point(int movie, int shop, int price):
+   - Preconditions:
+     - The movie ID, shop ID, and price must be valid integers.
+   - Postconditions:
+     - A new Point object is created with the given movie ID, shop ID, and price.
+
+public MovieRentingSystem(int n, int[][] entries):
+   - Preconditions:
+     - The number of shops (n) must be a valid integer.
+     - The entries array must be a valid 2D array with each entry containing a valid movie ID, shop ID, and price.
+   - Postconditions:
+     - A new MovieRentingSystem object is created with the given number of shops and entries.
+
+public List<Integer> search(int movie):
+   - Preconditions:
+     - The movie ID must be a valid integer.
+   - Postconditions:
+     - Returns a list of the cheapest 5 shops that have an unrented copy of the given movie.
+     - The list should be sorted by price in ascending order.
+     - If there are less than 5 matching shops, then all of them should be returned.
+     - If no shop has an unrented copy, then an empty list should be returned.
+
+public void rent(int shop, int movie):
+   - Preconditions:
+     - The shop ID and movie ID must be valid integers.
+   - Postconditions:
+     - The movie with the given ID is rented from the shop with the given ID.
+     - The list of unrented movies at the shop is updated accordingly.
+
+public void drop(int shop, int movie):
+   - Preconditions:
+     - The shop ID and movie ID must be valid integers.
+   - Postconditions:
+     - The rented movie with the given ID is dropped off at the shop with the given ID.
+     - The list of unrented movies at the shop is updated accordingly.
+
+public List<List<Integer>> report():
+   - Preconditions: None
+   - Postconditions:
+     - Returns a list of the cheapest 5 rented movies as a 2D list.
+     - Each entry in the list should contain the shop ID and movie ID of the rented movie.
+     - The list should be sorted by price in ascending order.
+     - If there are fewer than 5 rented movies, then all of them should be returned.
+     - If no movies are currently being rented, then an empty list should be returned.

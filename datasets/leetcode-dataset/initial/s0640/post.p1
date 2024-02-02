@@ -1,0 +1,8 @@
+Preconditions:
+The equation parameter must not be null.
+The equation parameter must be a valid equation containing only '+', '-' operations, the variable 'x', and its coefficient.
+
+Postconditions:
+If the equation has a solution, return the value of 'x' in the form of a string "x=#value".
+If the equation has no solution, return "No solution".
+If the equation has infinite solutions, return "Infinite solutions".

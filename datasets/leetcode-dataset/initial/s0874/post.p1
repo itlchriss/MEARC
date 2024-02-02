@@ -1,1 +1,10 @@
-The calculation of the Euclidean distance of the robot from the origin is relied upon by the system in order to determine the exact position.The maximum Euclidean distance that the robot ever reaches from the origin must be continuously monitored and recorded by the system in order to keep track of its farthest point, given the parameters array of commands and array of obstacles.After the maximum Euclidean distance is obtained, the system must square it before producing any output, in relation to the parameters "commands" and "obstacles" being passed to the method.After squaring the maximum Euclidean distance, the final result should be returned by the system.
+Preconditions:
+- The method takes in an array of integers called "commands" and a 2D array of integers called "obstacles".
+- The "commands" array represents the movement commands for the robot.
+- The "obstacles" array represents the positions of obstacles in the form of coordinates.
+- The "commands" array and "obstacles" array are not null.
+
+Postconditions:
+- The method returns an integer value representing the maximum Euclidean distance that the robot ever gets from the origin squared.
+- The returned value is the square of the maximum Euclidean distance.
+- The returned value is always non-negative.

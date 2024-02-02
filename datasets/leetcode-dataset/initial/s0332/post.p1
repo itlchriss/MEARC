@@ -1,0 +1,9 @@
+Preconditions:
+The input `tickets` is a non-null list of lists, where each inner list contains two strings representing the departure and arrival airports of a flight.
+The departure airport for all tickets is "JFK".
+
+Postconditions:
+The method returns a non-null list of strings representing the reconstructed itinerary.
+The itinerary starts with "JFK".
+The itinerary is in the correct order, following the sequence of flights.
+If there are multiple valid itineraries, the returned itinerary is the one with the smallest lexical order when read as a single string.

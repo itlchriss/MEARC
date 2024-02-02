@@ -1,1 +1,9 @@
-To ensure the bug reaches its home, it is necessary for it to discover a viable path leading to the destination.The ability to jump to various positions is possessed by the bug.The `forbidden` array is not allowed to specify positions that it cannot jump to.In order for the bug to successfully reach position `x`, it is necessary to determine the minimum number of jumps required.If there is no possible sequence of jumps that would result in the bug landing on position `x`, the method should return `-1`.
+Preconditions:
+- The `forbidden` array must not be null.
+- The `a`, `b`, and `x` integers must be valid integers.
+- The `a` and `b` integers must be positive integers.
+- The `x` integer must be within the range of the `forbidden` array.
+
+Postconditions:
+- The method should return an integer representing the minimum number of jumps needed for the bug to reach its home.
+- If there is no possible sequence of jumps that lands the bug on position `x`, the method should return -1.

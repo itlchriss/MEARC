@@ -1,1 +1,9 @@
-In order for the system to calculate the minimum number of cells needed and visit them accordingly, the bottom-right cell (m - 1, n - 1) must be reached.To determine the minimum number of cells needed to reach the bottom-right cell, the system should visit cells in a specific order if there is no valid path to reach the bottom-right cell in the parameter grid.To calculate the minimum number of cells required to reach the bottom-right cell, the system should consider all possible paths by examining the grid parameter.In order to determine the minimum number of cells required to reach the bottom-right cell, the prioritization of visiting cells that are closer to it should be implemented.To determine the minimum number of cells required to reach the bottom-right cell, the tracking of the visited cells must be done by the system.Before calculating the minimum number of cells needed to reach the bottom-right cell, the system should check if there is a valid path to it in the parameter grid.
+Preconditions:
+The input grid must be a 2D array of integers.
+The grid must have at least one row and one column.
+The values in the grid must be non-negative integers.
+The bottom-right cell (m - 1, n - 1) must be reachable from the top-left cell (0, 0).
+
+Postconditions:
+The method should return an integer representing the minimum number of cells visited to reach the bottom-right cell.
+If there is no valid path to reach the bottom-right cell, the method should return -1.

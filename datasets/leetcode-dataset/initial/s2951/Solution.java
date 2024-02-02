@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _an array that consists of_ indices _of **peaks** in the given array in **any order**._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public List<Integer> findPeaks(int[] mountain) {
         List<Integer> list = new ArrayList<>();
         for (int i = 1; i < mountain.length - 1; i++) {
@@ -15,4 +20,8 @@ public class Solution {
         }
         return list;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

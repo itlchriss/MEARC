@@ -1,1 +1,7 @@
-The function `popSmallest()` should be present in the system. This function removes the smallest integer from the infinite set and returns this integer at the same time.Upon invoking the `popSmallest()` method, the system ought to provide the smallest integer from the infinite set.Upon invoking the `popSmallest()` method, the system ought to eliminate the smallest integer from the infinite set.After the smallest integer has been removed from the parameter array, the system should add it back to the infinite set.Upon subsequent invocation of `popSmallest()`, the system is expected to yield the subsequent smallest integer from the infinite set.When the method `popSmallest()` is repeatedly invoked, the system is expected to consistently eliminate and retrieve the smallest integers from the infinite set.The case of adding the smallest integer back to the set and subsequently removing it must be handled by the system.The case of not adding the smallest integer back to the set should be handled by the system, instead removing the next smallest integer.
+Preconditions:
+- The infinite set is not empty.
+
+Postconditions:
+- The smallest integer contained in the infinite set is removed and returned.
+- If the smallest integer is added back to the set, it is still considered the smallest integer.
+- The smallest integer is removed from the set after it is returned.

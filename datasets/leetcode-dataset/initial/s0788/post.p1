@@ -1,1 +1,7 @@
-The input for the system should be an integer `n`.The count of good integers within the range `[1, n]` should be calculated by the system.The calculated number of good integers should be returned as output by the system.
+Preconditions:
+- The input `n` is a positive integer.
+
+Postconditions:
+- The method returns an integer representing the number of "good" integers in the range `[1, n]`.
+- A "good" integer is defined as an integer that contains only the digits 0, 1, 2, 5, 6, 8, and 9, and at least one digit that is either 2, 5, 6, or - The method considers each integer in the range `[1, n]` and checks if it is a "good" integer.
+- The method counts and returns the total number of "good" integers found in the range `[1, n]`.

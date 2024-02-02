@@ -1,1 +1,9 @@
-The input for the system should consist of four integers: `length`, `width`, `height`, and `mass`.By considering the dimensions and mass, the determination of the box's category should be performed by the system.If the length, width, and height of the box are such that it is categorized as "Bulky" but not "Heavy", the category of the box should be designated as "Bulky".If the length, width, and height of the box are str_Heavy but not "Bulky, the mass parameter should be used to categorize it as "Heavy.If the values of the parameters length, width, height, and mass do not meet the criteria for being classified as "Bulky" or "Heavy", the appropriate classification for the box should be "Neither".
+Preconditions:
+- The method should take four integer parameters: `length`, `width`, `height`, and `mass`.
+- The values of `length`, `width`, `height`, and `mass` should be non-negative.
+
+Postconditions:
+- The method should return a string representing the category of the box.
+- If the box is "Bulky", the method should return the string "Bulky".
+- If the box is "Heavy", the method should return the string "Heavy".
+- If the box is neither "Bulky" nor "Heavy", the method should return the string "Neither".

@@ -1,2 +1,12 @@
-The method should be capable of efficiently handling an `m x n` matrix as input, where the matrix can include positive and negative values, decimal values, duplicate values, all elements being the same value, an empty matrix, a matrix with only one row or one column, a matrix with different numbers of rows and columns, different data types for its elements, missing or incomplete data, a large number of rows and columns efficiently, a very small number of rows and columns efficiently, a very large range of values efficiently, and a very small range of values efficiently.The array of parameters, matrix, is arranged in ascending order.The matrixRankTransform method should generate a new matrix named `answer` with the same size as the input matrix.The array of parameters, matrix, is arranged in ascending order.The rank of each element in the `answer` matrix should be determined by its value in the input matrix, and each element in the `answer` matrix should represent the rank of the corresponding element in the input matrix, where the input matrix is an array sorted in ascending order.The matrix passed as a parameter is not null. 
-The matrix passed as a parameter is sorted in ascending order.The calculation of the rank of an element in the input matrix should be based on its position, considering both the row and column. The resulting rank should always be an integer value.
+Preconditions:
+The input matrix must not be null.
+The input matrix must have at least one row and one column.
+
+Postconditions:
+The output matrix must have the same dimensions as the input matrix.
+The values in the output matrix must represent the rank of the corresponding values in the input matrix.
+The rank of a value in the output matrix is determined by comparing it with other values in the input matrix. If two or more values are equal, they should have the same rank, which is the maximum rank among them.
+The rank of a value in the output matrix should be one more than the maximum rank of any value that is smaller than it in the input matrix.
+The rank of a value in the output matrix should be one less than the minimum rank of any value that is larger than it in the input matrix.
+If there are multiple values with the same rank in the input matrix, their corresponding values in the output matrix should have the same rank.
+The output matrix should be sorted in non-decreasing order of ranks, both row-wise and column-wise.

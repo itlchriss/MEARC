@@ -1,1 +1,10 @@
-The minimum size subsequence of the array, which is sorted in non-increasing order, must be returned by the solution.To guarantee a unique solution with only one possible subsequence satisfying the conditions, the subsequence with the maximum total sum of all its elements should be returned in case of multiple solutions having the same minimum size.
+Preconditions:
+- The input array nums is not null.
+- The input array nums contains at least one element.
+
+Postconditions:
+- The returned list is not null.
+- The returned list contains a subsequence of the input array nums.
+- The size of the returned list is minimum among all possible subsequences that satisfy the given conditions.
+- If there are multiple subsequences with the same minimum size, the returned list has the maximum total sum of all its elements among those subsequences.
+- The elements in the returned list are sorted in non-increasing order.

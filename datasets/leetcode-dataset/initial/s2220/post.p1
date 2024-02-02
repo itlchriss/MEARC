@@ -1,1 +1,9 @@
-The input for the system should consist of two integers, `start` and `goal`, which will be used as parameters.The minimum number of bit flips required to convert `start` to `goal` should be calculated by the system.The output should be the minimum number of bit flips, which the system should return, when the start parameter is flipped to match the goal parameter.If the conversion of `start` to `goal` in less than 3 steps is not possible, the output of the system should be 3 when `start` is 10 and `goal` is 7.The output should be 3 when the value of `start` is 3 and the value of `goal` is 4, and the system should handle these cases.
+Preconditions:
+- The method takes two integer parameters `start` and `goal`.
+- The values of `start` and `goal` are non-negative integers.
+- The values of `start` and `goal` are within the range of a 32-bit signed integer.
+
+Postconditions:
+- The method returns an integer value representing the minimum number of bit flips required to convert `start` to `goal`.
+- The returned value is non-negative.
+- The returned value is the minimum possible number of bit flips required to convert `start` to `goal`.

@@ -1,1 +1,8 @@
-The number of cold, warm, and hot water cups needed to fill should be able to be tracked by the system.The minimum number of seconds needed to fill up all the cups should be calculated by the system.The input for the system should be a 0-indexed integer array of length 3, which will be handled by the system.The output should strictly be the minimum number of seconds, as the system returns it.
+Preconditions:
+- The input array `amount` must have a length of - The values in the input array `amount` must be non-negative integers.
+
+Postconditions:
+- The method should return an integer representing the minimum number of seconds needed to fill up all the cups.
+- The cups should be filled in the order of cold, warm, and hot water cups.
+- The cups should be filled with the minimum amount of time required to fill each cup.
+- The cups should be filled simultaneously, meaning that the time taken to fill each cup should be counted concurrently.

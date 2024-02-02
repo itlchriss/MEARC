@@ -1,1 +1,8 @@
-The two parameters that the function should take are `sentence` and `searchWord`, where `sentence` represents the sentence to be analyzed and `searchWord` represents the word to search for.The index of the word in `sentence` where `searchWord` is a prefix of this word should be returned as an integer.The index of the first word that matches the prefix should be returned if the search word is a prefix of more than one word in the sentence. The index should be 1-indexed, meaning the first word has an index of 1.If the prefix `searchWord` is not found in any word within the `sentence`, the function should return -1.
+Preconditions:
+- The `sentence` parameter must not be null.
+- The `searchWord` parameter must not be null.
+
+Postconditions:
+- The method should return an integer representing the index of the word in the sentence where the searchWord is a prefix.
+- If the searchWord is a prefix of more than one word, the method should return the index of the first word (minimum index).
+- If there is no word in the sentence where the searchWord is a prefix, the method should return -1.

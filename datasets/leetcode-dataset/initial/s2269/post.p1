@@ -1,0 +1,14 @@
+Preconditions:
+- The method `divisorSubstrings` takes two integer parameters `num` and `k`.
+- The value of `num` should be a positive integer.
+- The value of `k` should be a positive integer.
+
+Postconditions:
+- The method returns an integer value, which is the k-beauty of `num`.
+- The k-beauty of `num` is calculated by finding all the substrings of `num` that are divisible by `k`.
+- The method should handle the case when there are no substrings of `num` that are divisible by `k`. In this case, the method should return - The method should handle the case when `num` itself is divisible by `k`. In this case, the method should count `num` as a valid substring and include it in the calculation of the k-beauty.
+- The method should handle the case when there are multiple substrings of `num` that are divisible by `k`. In this case, the method should count all the valid substrings and include them in the calculation of the k-beauty.
+- The method should handle the case when `num` is a single-digit number. In this case, the method should count `num` as a valid substring and include it in the calculation of the k-beauty.
+- The method should handle the case when `k` is a single-digit number. In this case, the method should count all the single-digit substrings of `num` that are divisible by `k` and include them in the calculation of the k-beauty.
+- The method should handle the case when `k` is greater than `num`. In this case, the method should return 0 as there are no substrings of `num` that are divisible by `k`.
+- The method should handle the case when `k` is equal to In this case, the method should count all the substrings of `num` and include them in the calculation of the k-beauty.

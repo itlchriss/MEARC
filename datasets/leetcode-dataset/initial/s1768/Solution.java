@@ -4,6 +4,11 @@ package g1701_1800.s1768_merge_strings_alternately;
 // #2022_04_27_Time_1_ms_(86.26%)_Space_41.7_MB_(79.68%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the merged string._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String mergeAlternately(String word1, String word2) {
         int size1 = word1.length();
         int size2 = word2.length();
@@ -21,4 +26,8 @@ public class Solution {
         }
         return sb.toString();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

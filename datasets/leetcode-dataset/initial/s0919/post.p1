@@ -1,1 +1,20 @@
-The `prepare . sh` script must be executed before any other scripts, ensuring that the system is properly set up.Upon completion of the execution of the `prepare.sh` script, the system should possess a `run.sh` script that necessitates execution.To perform the insertion of a `TreeNode` with a value equal to `val` into the tree, it is necessary for the system to possess a function `insert(int v)`.When the `TreeNode` is inserted, the complete tree should remain intact.The returned value of the `insert` function should be the value of the parent of the `TreeNode` that was inserted.The function `get_root()` should be present in the system and it should return the root node of the tree.The list of values representing the nodes in the tree should be returned by the `get_root` function in a specific order.
+Preconditions for the method public CBTInserter(TreeNode root):
+- The root parameter must be a valid TreeNode object representing the root of the tree.
+
+Postconditions for the method public CBTInserter(TreeNode root):
+- The CBTInserter object is initialized with the provided root TreeNode.
+
+Preconditions for the method public int insert(int val):
+- The CBTInserter object must be properly initialized.
+- The val parameter must be a valid integer value.
+
+Postconditions for the method public int insert(int val):
+- A new TreeNode with the value val is inserted into the tree.
+- The tree remains complete after the insertion.
+- The parent of the inserted TreeNode is returned as an integer value.
+
+Preconditions for the method public TreeNode getRoot():
+- The CBTInserter object must be properly initialized.
+
+Postconditions for the method public TreeNode getRoot():
+- The root node of the tree is returned as a TreeNode object.

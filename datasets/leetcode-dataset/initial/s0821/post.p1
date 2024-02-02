@@ -1,1 +1,7 @@
-The input for the function should consist of a string `s` and a character `c`, where `s` represents the string and `c` represents the character.The occurrence of the character `c` in the string `s` is a requirement.The array of integers `answer` should be returned by the function, and it should strictly adhere to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order.". The function should relate the parameters of the method public int[] shortestToChar(String s, char c) to the terms used in the examples.The array `answer` should have the same length as the string `s`, indicating that the length of the array should be equal to the length of the string.The array should contain elements `answer[i]` representing the distance from index `i` to the closest occurrence of character `c` in the string `s`.
+Preconditions:
+The input string `s` is not null.
+The input character `c` is present in the string `s`.
+
+Postconditions:
+The returned array `answer` has a length equal to the length of the input string `s`.
+Each element `answer[i]` in the returned array represents the distance from index `i` to the closest occurrence of character `c` in the string `s`.

@@ -22,6 +22,11 @@ import com_github_leetcode.TreeNode;
  */
 public class Solution {
     private int max = 0;
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the root of a binary tree, find the maximum value v for which there exist different nodes a and b where v = |a.val - b.val| and a is an ancestor of b. A node a is an ancestor of b if either: any child of a is equal to b or any child of a is an ancestor of b.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int maxAncestorDiff(TreeNode root) {
         traverse(root, -1, -1);
@@ -44,4 +49,8 @@ public class Solution {
             traverse(root.right, Math.max(root.val, maxAncestor), Math.min(root.val, minAncestor));
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

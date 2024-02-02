@@ -1,1 +1,11 @@
-The input for the system should strictly be an array of intervals.The array of intervals should be represented as a pair of start and end values for each interval.The intervals that are overlapping should be merged by the system.The array of non-overlapping intervals should be returned by the system.The array that is returned should encompass all the intervals present in the input array.The order in which the intervals are arranged should be preserved in the array that is returned.The input arrays, if empty, should be handled by the system.The start and end values of intervals that are the same should be handled by the system.The intervals with negative start and end values should be handled by the system.The method should handle intervals that have floating-point start and end values.The input arrays, which are sorted in ascending order, should be efficiently handled by the system.The intervals with overlapping start and end values should be handled by the system.The condition for the method is that the intervals in the parameter array should have start and end values that do not overlap.The start and end values of intervals that partially overlap should be handled by the system.The intervals with duplicate intervals should be handled by the system.The intervals with gaps between them should be handled by the system.The intervals with multiple overlapping intervals should be handled by the system.The intervals with no overlapping intervals should be handled by the system.The array of intervals, which is the parameter, should be handled by the system in a way that it can handle intervals with only one interval.The intervals with multiple non-overlapping intervals should be handled by the system.
+Preconditions:
+The input array `intervals` is not null.
+Each element in the `intervals` array is an array of size 2, representing the start and end points of an interval.
+The start and end points of each interval are non-negative integers.
+The intervals in the `intervals` array are not sorted.
+
+Postconditions:
+The method returns an array of non-overlapping intervals that cover all the intervals in the input.
+The returned array does not contain any overlapping intervals.
+The returned array is sorted in ascending order based on the start points of the intervals.
+The start and end points of each interval in the returned array are non-negative integers.

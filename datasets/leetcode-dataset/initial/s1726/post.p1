@@ -1,1 +1,6 @@
-The array `nums` must consist solely of positive integers that are distinct from one another.The count of tuples `(a ,  b ,  c ,  d)` that meet the condition `a initial prepare . sh run . sh b = c initial prepare . sh run . sh d` should be returned as the output. This count should be determined by the method public int tupleSameProduct(int[] nums), where the parameter `nums` corresponds to the array mentioned in the condition.The elements `a`, `b`, `c`, and `d` in the tuples must be distinct and exist in the array `nums`, ensuring that the result is not null.The values of the elements `a`, `b`, `c`, and `d` must not be identical to one another.The arrangement of the elements in the tuples is not significant, just like the order of the elements in the parameter array is sorted in ascending order.The count of all possible tuples that satisfy the given condition should be the output.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` contains distinct positive integers.
+
+Postconditions:
+- The method returns an integer representing the number of tuples `(a, b, c, d)` that satisfy the condition `a * b = c * d`, where `a`, `b`, `c`, and `d` are elements of `nums` and `a != b != c != d`.

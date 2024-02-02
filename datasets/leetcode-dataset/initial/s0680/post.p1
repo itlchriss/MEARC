@@ -1,1 +1,6 @@
-The input for the system should strictly be a string `s`.The determination of whether or not the string `s` can be a palindrome should be performed by the system.The deletion of a maximum of one character from the string `s` should be permitted by the system.In the case where the string `s` can potentially be a palindrome by removing at most one character, the expected outcome for the system should be `true`.The system should return `false` if, conversely, the string `s` cannot be a palindrome after deleting at most one character.
+Preconditions:
+The input string `s` is not null.
+
+Postconditions:
+The method returns `true` if the string `s` can be a palindrome after deleting at most one character from it.
+The method returns `false` if the string `s` cannot be a palindrome after deleting at most one character from it.

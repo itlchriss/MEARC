@@ -1,1 +1,16 @@
-The array of words should be used as a parameter, and the array of puzzles should also be used as a parameter when invoking the method. The expected outcome is that the system will return an array.Each element of the output array should represent the number of words in the word list that are valid with respect to the corresponding puzzle.The size of the array of words passed as input should match the size of the array of puzzles returned as output.For each word in the array of words, the system should consider it and check its validity with respect to the corresponding puzzle.The number of valid words available for each puzzle should be tallied by the system.The count of valid words for each puzzle should be stored in the output array, with the system being responsible for this task.The input for the system should consist of the given word list and puzzle, with the word list being represented by the parameter "words" and the puzzle being represented by the parameter "puzzles".The puzzle array should be iterated through by the system, with each puzzle being considered, in order to find the number of valid words.For each puzzle, the word list should be iterated through by the system.The system should check the validity of each word in the current puzzle by the parameter array.The count of valid words for the current puzzle should be incremented by the system when a word is valid.The count of valid words for the current puzzle should be stored in the output array at the corresponding index, with the system being responsible for this task.The output array should be the final result when the system returns, given that the parameter array is sorted in ascending order.
+Preconditions:
+The input array `words` must not be null.
+The input array `puzzles` must not be null.
+The input array `words` must contain at least one word.
+The input array `puzzles` must contain at least one puzzle.
+Each word in the input array `words` must not be null.
+Each puzzle in the input array `puzzles` must not be null.
+Each word in the input array `words` must contain at least one character.
+Each puzzle in the input array `puzzles` must contain at least one character.
+
+Postconditions:
+The returned array `answer` must not be null.
+The length of the returned array `answer` must be equal to the length of the input array `puzzles`.
+Each element in the returned array `answer` must be an integer.
+The value of each element in the returned array `answer` must represent the number of words in the input array `words` that is valid with respect to the corresponding puzzle in the input array `puzzles`.
+The order of elements in the returned array `answer` must correspond to the order of puzzles in the input array `puzzles`.

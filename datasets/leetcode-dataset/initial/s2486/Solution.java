@@ -3,6 +3,11 @@ package g2401_2500.s2486_append_characters_to_string_to_make_subsequence;
 // #Medium #String #Greedy #Two_Pointers #2023_01_26_Time_2_ms_(99.89%)_Space_49.5_MB_(39.30%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the minimum number of characters that need to be appended to the end of_ `s` _so that_ `t` _becomes a **subsequence** of_ `s`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int appendCharacters(String s, String t) {
         int lengthOfT = t.length();
         int indexOfT = 0;
@@ -22,4 +27,8 @@ public class Solution {
         }
         return lengthOfT - (indexOfT);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

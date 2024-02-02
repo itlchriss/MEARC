@@ -1,1 +1,13 @@
-In the case where there is no path available, the expected return value of the system should be `[0, 0]`.The list of two integers should be returned by the system, strictly adhering to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order.", without using any dangling modifier or pronouns. This list should clearly apply to the method public int[] pathsWithMaxScore(List<String> board) by explicitly relating the parameter board to the terms in it.The maximum sum of numeric characters that can be collected should be represented by the first integer in the list.The number of paths that can be taken to achieve the maximum sum should be represented by the second integer in the list.The modulo operation should be applied to the second integer, using `10^9 + 7` as the divisor.
+Preconditions:
+The input `board` is not null.
+The input `board` is a list of strings.
+The strings in `board` are not null.
+The strings in `board` contain only numeric characters and 'X' characters.
+The length of each string in `board` is equal to the length of `board`.
+The length of `board` is greater than 
+Postconditions:
+If there is no path, return `[0, 0]`.
+If there is a path, return a list of two integers.
+The first integer in the list is the maximum sum of numeric characters that can be collected.
+The second integer in the list is the number of paths that can be taken to get the maximum sum.
+The second integer is taken modulo `10^9 + 7`.

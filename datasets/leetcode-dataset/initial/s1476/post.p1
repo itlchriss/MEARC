@@ -1,1 +1,19 @@
-The rectangle initialization should be able to initialize a rectangle with given values.The ability of the system should be such that it can provide the value of a particular coordinate within the rectangle, while strictly adhering to the syntax of the given examples and not using any dangling modifier or pronouns. This should be applicable to the method public SubrectangleQueries(int[][] rectangle) where the rectangle parameter represents the rectangle itself, public void updateSubrectangle(int row1, int col1, int row2, int col2, int newValue) where the parameters row1, col1, row2, col2, and newValue represent the specific coordinates and the new value to be updated, and public int getValue(int row, int col) where the parameters row and col represent the specific coordinate for which the value needs to be retrieved.The ability of the system to update a subrectangle in the rectangle with a given value is necessary.The value of a specific coordinate in the rectangle should be able to be returned by the system after an update has occurred.The rectangle's multiple updates to different subrectangles should be handled by the system.The ability to handle different sizes of rectangles should be present in the system.The rectangle should contain different values that the system can handle.The rectangle's different coordinates in the rectangle should be handled by the system.The ability of the system to handle invalid coordinates and return an appropriate error message should be ensured.The dimensions of the subrectangle should be invalid, and the system should return an appropriate error message.
+Preconditions:
+- The `rectangle` parameter passed to the `SubrectangleQueries` constructor must be a 2D array of integers.
+- The `rectangle` parameter passed to the `SubrectangleQueries` constructor must have at least one row and one column.
+- The `row1` parameter passed to the `updateSubrectangle` method must be a valid row index within the bounds of the `rectangle`.
+- The `col1` parameter passed to the `updateSubrectangle` method must be a valid column index within the bounds of the `rectangle`.
+- The `row2` parameter passed to the `updateSubrectangle` method must be a valid row index within the bounds of the `rectangle`.
+- The `col2` parameter passed to the `updateSubrectangle` method must be a valid column index within the bounds of the `rectangle`.
+- The `row1` parameter passed to the `updateSubrectangle` method must be less than or equal to the `row2` parameter.
+- The `col1` parameter passed to the `updateSubrectangle` method must be less than or equal to the `col2` parameter.
+- The `newValue` parameter passed to the `updateSubrectangle` method can be any integer value.
+
+Postconditions:
+- The `getValue` method returns the value at the specified `row` and `col` coordinates from the `rectangle`.
+- The `updateSubrectangle` method updates the values in the `rectangle` within the specified range (`row1`, `col1`, `row2`, `col2`) to the `newValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` within the specified range are equal to the `newValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` outside the specified range remain unchanged.
+- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates are not affected unless they fall within the specified range.
+- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates within the specified range are equal to the `newValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates outside the specified range remain unchanged.

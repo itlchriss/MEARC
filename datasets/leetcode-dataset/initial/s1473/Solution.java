@@ -7,6 +7,12 @@ public class Solution {
     private int[] houses;
     private int nColors;
     private int[][] cost;
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the minimum cost of painting all the remaining houses in such a way that there are exactly_ `target` _neighborhoods_. If it is not possible, return `-1`.
+Return _the minimum cost of painting all the remaining houses in such a way that there are exactly_ `target` _neighborhoods_. If it is not possible, return `-1`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int minCost(int[] houses, int[][] cost, int nColors, int tGroups) {
         this.cost = cost;
@@ -47,4 +53,8 @@ public class Solution {
         }
         return memo[ithEl][prevClr][tGroups];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

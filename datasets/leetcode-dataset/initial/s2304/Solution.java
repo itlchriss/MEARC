@@ -3,6 +3,11 @@ package g2301_2400.s2304_minimum_path_cost_in_a_grid;
 // #Medium #Array #Dynamic_Programming #Matrix #2022_06_16_Time_6_ms_(99.18%)_Space_65_MB_(98.71%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*The cost of a path in `grid` is the **sum** of all values of cells visited plus the **sum** of costs of all the moves made. Return _the **minimum** cost of a path that starts from any cell in the **first** row and ends at any cell in the **last** row._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int minPathCost(int[][] grid, int[][] moveCost) {
         int m = grid.length;
         int n = grid[0].length;
@@ -23,4 +28,8 @@ public class Solution {
         }
         return min;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

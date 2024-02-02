@@ -1,1 +1,8 @@
-The minimum number of moves needed to convert the board into a chessboard pattern should be determined by the program.If the board cannot be transformed into a chessboard pattern, the minimum number of moves should be returned as the program's output.The board should undergo a transformation so that it takes on the appearance of a chessboard pattern.The board's final state, achieved after the minimum number of moves, must exhibit a chessboard pattern.In cases where the board configuration is impossible to achieve, the program should handle these situations and output -1.
+Preconditions:
+The input board must be a 2-dimensional array.
+The input board must have a size of N x N, where N is an even number.
+The input board must contain only 0s and 1s.
+
+Postconditions:
+The method should return an integer value representing the minimum number of moves required to transform the board into a chessboard pattern.
+If it is impossible to transform the board into a chessboard pattern, the method should return -1.

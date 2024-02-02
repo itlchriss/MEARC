@@ -6,6 +6,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given a balanced parentheses string `s`, return _the **score** of the string_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int scoreOfParentheses(String s) {
         Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < s.length(); i++) {
@@ -26,4 +31,8 @@ public class Solution {
         }
         return score;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

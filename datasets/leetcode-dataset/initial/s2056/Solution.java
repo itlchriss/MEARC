@@ -15,6 +15,11 @@ public class Solution {
         {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {1, 1}, {-1, -1}, {-1, 1}, {1, -1}},
         {{1, 1}, {-1, -1}, {-1, 1}, {1, -1}}
     };
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the number of **valid** move combinations_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int countCombinations(String[] pieces, int[][] positions) {
         ArrayList<int[]>[] endPosition = new ArrayList[pieces.length];
@@ -104,4 +109,8 @@ public class Solution {
         }
         return 1;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

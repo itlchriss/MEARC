@@ -1,1 +1,14 @@
-The integer returned by the function should represent the number of exact matches (value and position) of the guess to the secret word.If the guess is not present in the provided wordlist, the function should return -The function should compare the guess to the secret word and count the number of matches.The counting of matches in the guess and secret word should take into account both the value and position of the characters, as the function should consider.The count of matches should be returned by the function.The length of the guess and secret word should be able to be different, and the function should be able to handle this.The guess method should be capable of handling various characters in both the guess and secret word, while the findSecretWord method should be able to handle different characters in the guess and secret word.The scenario should be accounted for by the function, in cases where there are no matches between the guess and the secret word.The scenario should be accounted for by the function in cases where there are multiple matches between the guess and the secret word.The condition should be met by the function in cases where the length of the guess exceeds that of the secret word.The condition should be able to handle scenarios where the length of the guess is shorter than the length of the secret word.The case where the guess is the same as the secret word should be handled by the function.The condition should be able to handle scenarios where the guess is not present in the provided wordlist.
+Preconditions:
+The method `guess` takes a parameter `word` of type `String`.
+The method `findSecretWord` takes two parameters `wordlist` of type `String[]` and `master` of type `Master`.
+The `wordlist` array contains a list of words.
+The `master` object has a method `guess` that takes a parameter `word` of type `String` and returns an integer.
+
+Postconditions:
+The method `guess` returns an integer representing the number of exact matches (value and position) of the guessed word to the secret word.
+If the guessed word is not in the given `wordlist`, the method `guess` returns -The method `findSecretWord` does not return any value.
+The `master.guess("aaaaaa")` call returns -1 because "aaaaaa" is not in the `wordlist`.
+The `master.guess("acckzz")` call returns 6 because "acckzz" is the secret word and has all 6 matches.
+The `master.guess("ccbazz")` call returns 3 because "ccbazz" has 3 matches.
+The `master.guess("eiowzz")` call returns 2 because "eiowzz" has 2 matches.
+The `master.guess("abcczz")` call returns 4 because "abcczz" has 4 matches.

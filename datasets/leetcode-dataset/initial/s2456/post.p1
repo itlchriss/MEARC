@@ -1,1 +1,10 @@
-The array of strings, which consists of creators and ids, should be in the format [creator, id] for the system to return a 2D array of strings.The first creator in the list should be the one with the highest popularity; the id of the video with the most views for each creator should be included.If the creators array, ids array, and views array are sorted in ascending order, the most popular creator can be returned in any order.
+Preconditions:
+- The input arrays `creators`, `ids`, and `views` must have the same length.
+- The input arrays `creators` and `ids` must not be empty.
+- The input array `views` must not contain negative values.
+
+Postconditions:
+- The method returns a 2D array of strings `answer`.
+- The length of the returned array `answer` is equal to the number of unique creators in the input array `creators` with the highest popularity.
+- Each element in the returned array `answer` is an array of two strings, where the first element is the name of a creator and the second element is the id of their most popular video.
+- The order of the elements in the returned array `answer` can be in any order.

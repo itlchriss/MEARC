@@ -1,1 +1,12 @@
-The input should consist of an integer array `candyType` that the system takes.The candyType array contains integers sorted in ascending order.The length of the array `candyType` should be calculated by the system and stored in a variable `n`, ensuring that it strictly adheres to the syntax of the given examples "The result is not null." and "The parameter array is sorted in ascending order."The candyType array contains integers sorted in ascending order.The variable `result` should store the calculation of `n / 2` when the parameter `candyType` is passed to it.The candyType array contains integers sorted in ascending order.The number of different types of candies that can be eaten should be determined.The candyType array contains integers sorted in ascending order.The maximum number of different types of candies that can be eaten should be returned.
+Preconditions:
+- The input `candyType` is an integer array.
+- The length of `candyType` is `n`.
+- `n` is a positive integer.
+- The elements in `candyType` are positive integers.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value represents the maximum number of different types of candies she can eat.
+- She can only eat `n / 2` candies.
+- The returned value is less than or equal to `n / 2`.
+- The returned value is the maximum possible number of different types of candies she can eat.

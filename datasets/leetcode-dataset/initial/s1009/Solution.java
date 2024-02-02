@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an integer `n`, return _its complement_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int bitwiseComplement(int n) {
         if (n == 0) {
             return 1;
@@ -26,4 +31,8 @@ public class Solution {
         }
         return result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,2 +1,47 @@
-The `all()` method should return `false` if not all values of the bitset are set to 1. 
-The `one()` method should return `true` if there is at least one index with value 1 in the bitset.The total number of bits in the bitset that have value should be returned by the method `count()`. The current composition of the bitset should be represented as a string by the method `toString()`, where each character in the string corresponds to the value at the corresponding bit in the bitset.
+Preconditions and postconditions for the given methods:
+
+public Bitset(int size)
+   - Preconditions: None
+   - Postconditions: 
+     - The Bitset object is created with the specified size.
+
+public void fix(int idx)
+   - Preconditions: 
+     - The Bitset object is not null.
+     - The index (idx) is within the valid range of the Bitset.
+   - Postconditions: 
+     - The bit at the specified index (idx) is set to 
+public void unfix(int idx)
+   - Preconditions: 
+     - The Bitset object is not null.
+     - The index (idx) is within the valid range of the Bitset.
+   - Postconditions: 
+     - The bit at the specified index (idx) is set to 
+public void flip()
+   - Preconditions: 
+     - The Bitset object is not null.
+   - Postconditions: 
+     - All the bits in the Bitset are flipped (0s become 1s and 1s become 0s).
+
+public boolean all()
+   - Preconditions: 
+     - The Bitset object is not null.
+   - Postconditions: 
+     - Returns true if all the bits in the Bitset are 1, false otherwise.
+
+public boolean one()
+   - Preconditions: 
+     - The Bitset object is not null.
+   - Postconditions: 
+     - Returns true if at least one bit in the Bitset is 1, false otherwise.
+
+public int count()
+   - Preconditions: 
+     - The Bitset object is not null.
+   - Postconditions: 
+     - Returns the total number of bits in the Bitset that have value 
+public String toString()
+   - Preconditions: 
+     - The Bitset object is not null.
+   - Postconditions: 
+     - Returns a string representation of the Bitset, where each character in the string represents the value of the corresponding bit in the Bitset.

@@ -1,1 +1,11 @@
-The integer array that contains two elements should be the output.The array of integers, nums, is sorted in ascending order with an index difference and a value difference, resulting in a non-null output.The array of output should consist of two elements, and these elements should be the indices that meet specific conditions, based on the parameters nums, indexDifference, and valueDifference.The array of indices is sorted in ascending order, and the difference between each index and its corresponding value is not null.The array of indices in the output should contain those indices if and only if there exist two indices in the parameter array, nums, that satisfy certain conditions.The array of indices is sorted in ascending order, and the difference between each index and its corresponding value is not null.The array of output should be [-1, -1] solely when there are no indices that fulfill the conditions, where the array of nums, the indexDifference, and the valueDifference are the parameters.One can return any of the multiple choices for the two indices, with the pronoun "str_it" referring to the "output array", which strictly adheres to the syntax of the examples "The result is not null" and "The parameter array is sorted in ascending order". This applies to the method public int[] findIndices(int[] nums, int indexDifference, int valueDifference) by explicitly relating the "nums" parameter to the "output array" and the "indexDifference" and "valueDifference" parameters to the terms in it.The array of integers, nums, is sorted in ascending order with an index difference of indexDifference and a value difference of valueDifference.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` has at least two elements.
+- The input integer `indexDifference` is non-negative.
+- The input integer `valueDifference` is non-negative.
+
+Postconditions:
+- The returned integer array `answer` is not null.
+- The length of the returned integer array `answer` is - If there are two indices `i` and `j` in the input array `nums` such that `nums[i] - nums[j] = valueDifference` and `i - j = indexDifference`, then `answer[0] = i` and `answer[1] = j`.
+- If there are no two indices `i` and `j` in the input array `nums` that satisfy the conditions, then `answer[0] = -1` and `answer[1] = -1`.
+- If there are multiple choices for the two indices `i` and `j` that satisfy the conditions, then any valid choice can be returned.

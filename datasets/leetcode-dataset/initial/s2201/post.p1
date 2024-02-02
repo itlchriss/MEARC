@@ -1,1 +1,9 @@
-The 2D integer array `dig` represents the input where each element signifies a cell to be excavated.The array `dig` consists of pairs of integers `[r, c]`, where each pair represents the row and column indices of a cell that needs to be excavated.The elements in the `dig` array are indexed starting from 0.The count of artifacts that can be extracted is the output.The colors represent the artifacts.In the grid, cells that have been excavated are marked with a 'D'.If all parts of an artifact are uncovered (labeled with a 'D'), it is possible to extract the artifact.If the array of artifacts is not fully excavated, the extraction of any part of it is not possible.The output returns the number of artifacts that can be extracted when the parameters n, artifacts, and dig are provided.
+Preconditions:
+- The input integer `n` represents the size of the 2D array `dig`.
+- The input 2D array `artifacts` represents the locations of artifacts in the grid.
+- The input 2D array `dig` represents the cells that will be excavated.
+
+Postconditions:
+- The method returns an integer representing the number of artifacts that can be extracted.
+- The cells in the `dig` array that correspond to excavated cells are labeled with a 'D'.
+- The artifacts that can be extracted are determined by checking if all parts of the artifact are uncovered (labeled with a 'D') in the `dig` array.

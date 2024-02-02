@@ -1,1 +1,20 @@
-The initial running of the `prepare.sh` script is required for the system to have a properly functioning LFUCache with a specified capacity.The `run.sh` script, which needs to be executed, should be present in the system.The method `int get(int key)` should be present in the system, which retrieves the value of a given key from the cache.If the key is present in the cache, the value of the key should be returned by the `get` method.If the key is not present in the cache, the `get` method should return - The cache called `lfu` should be available in the system.The `lfu` cache should have the capability to retrieve the value of key 1 and return -1 (not found) when the parameter array is not null.The `lfu` cache should have the capability to retrieve the value of key 3 and should return -1 (not found) when attempting to retrieve the value of key 1 again.The `lfu` cache should have the capability to retrieve the value of key 3 once more and return The `lfu` cache should have the capability to retrieve the value of key 4 and return 4.
+Preconditions for the Java method public LFUCache(int capacity):
+- The capacity parameter must be a positive integer.
+
+Postconditions for the Java method public LFUCache(int capacity):
+- The LFUCache object is initialized with the specified capacity.
+
+Preconditions for the Java method public int get(int key):
+- The key parameter must be a valid integer.
+
+Postconditions for the Java method public int get(int key):
+- If the key exists in the cache, the method returns the corresponding value.
+- If the key does not exist in the cache, the method returns -
+Preconditions for the Java method public void put(int key, int value):
+- The key parameter must be a valid integer.
+- The value parameter must be a valid integer.
+
+Postconditions for the Java method public void put(int key, int value):
+- If the key already exists in the cache, the corresponding value is updated.
+- If the key does not exist in the cache and the cache is at its capacity, the least frequently used item is evicted before adding the new key-value pair.
+- If the key does not exist in the cache and the cache is not at its capacity, the new key-value pair is added to the cache.

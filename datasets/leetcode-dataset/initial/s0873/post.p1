@@ -1,1 +1,8 @@
-The `arr` parameter must consist of elements that are strictly increasing.The array `arr` should consist solely of positive integers.The subsequence that the method public int lenLongestFibSubseq(int[] arr) must find should strictly adhere to the condition of being a Fibonacci-like subsequence.The subsequence's length that must be returned is the length of the subsequence formed by the parameter array.If the array parameter does not contain a Fibonacci-like subsequence, the function should return 0.
+Preconditions:
+The input array `arr` is not null.
+The input array `arr` is strictly increasing.
+The input array `arr` contains only positive integers.
+
+Postconditions:
+The method returns an integer value representing the length of the longest Fibonacci-like subsequence in the input array `arr`.
+If a Fibonacci-like subsequence does not exist in the input array `arr`, the method returns 0.

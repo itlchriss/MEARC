@@ -1,1 +1,8 @@
-The constructor of the CombinationIterator class should accept two parameters: a string representing the characters and an integer representing the length of the combination.The method public CombinationIterator(String characters, int combinationLength) should return the next combination of length combinationLength in lexicographical order when the public String next() method is called, and it should only return combinations that are in lexicographical order. Additionally, the public boolean hasNext() method should be used to check if there are more combinations available.The true_value should be returned by the hasNext() method of the CombinationIterator class only if there exists a next combination in the parameter array, which is determined by the public String next() method.The combination returned by the next() method should be in lexicographical order, following the order of the next combination in the sequence.The true_value should be returned by the hasNext() method if there is a next combination available.The false_value should be returned by the hasNext() method if there is no next combination available.
+Preconditions:
+- The input string `characters` must not be null.
+- The input string `characters` must not be empty.
+- The input integer `combinationLength` must be greater than - The input integer `combinationLength` must be less than or equal to the length of the input string `characters`.
+
+Postconditions:
+- The method `next()` returns a string representing the next combination of length `combinationLength` in lexicographical order.
+- The method `hasNext()` returns `true` if and only if there exists a next combination.

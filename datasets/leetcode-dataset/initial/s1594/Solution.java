@@ -7,6 +7,12 @@ public class Solution {
     private static class Tuple {
         long max;
         long min;
+<<<<<<< HEAD
+=======
+//@ ensures(*Return the _maximum non-negative product **modulo**_ <code>10<sup>9</sup> + 7</code>. _If the maximum product is **negative**, return_ `-1`. **Explanation:** It is not possible to get non-negative product in the path from (0, 0) to (2, 2), so return -1.
+Return the _maximum non-negative product **modulo**_ <code>10<sup>9</sup> + 7</code>. _If the maximum product is **negative**, return_ `-1`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
         public Tuple(long a, long b) {
             this.max = a;
@@ -56,4 +62,8 @@ public class Solution {
         }
         return (int) (dp[rows - 1][cols - 1].max % (1e9 + 7));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,1 +1,7 @@
-The condition to be checked by the system is the existence of a common prefix between two strings, which should be determined by the method based on the parameters passed to it, specifically the array of strings.If the parameter array does not have a common prefix, the result should be an empty string.The condition should be handled by the system in cases where the first or second string in the parameter array is empty.The condition of the system should be such that it handles cases where the parameter array contains only whitespace characters, either in one or both of the strings.The case where one or both of the strings contain special characters or symbols should be handled by the system.The scenario of having one or both of the strings containing numbers or digits should be handled by the system.The condition of the system should be such that it handles cases where the parameter array contains both uppercase and lowercase letters.The case where the common prefix is a single character should be handled by the system.The scenario in which the common prefix is a substring of one of the strings should be handled by the system.The entire string should be the common prefix in cases that the system handles.The common prefix, which is a combination of characters from both strings, should be handled by the system.
+Preconditions:
+The input array `strs` should not be null.
+The input array `strs` should not be empty.
+
+Postconditions:
+If there is a common prefix among all strings in the input array `strs`, return the longest common prefix as a string.
+If there is no common prefix among all strings in the input array `strs`, return an empty string `""`.

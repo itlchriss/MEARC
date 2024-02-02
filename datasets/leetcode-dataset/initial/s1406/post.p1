@@ -1,1 +1,7 @@
-The condition for determining if Alice will win is that the parameter array stoneValue should not be null.The condition for determining if Bob will win should be evaluated by the system.The condition for the game to end in a tie should be determined by the system.If the array stoneValue is sorted in ascending order, the system should return str_Alice if Alice will win.If the array stoneValue is sorted in ascending order, the system should return str_Bob if Bob will win.The game will end in a tie if the system should return str_Tie.The scores of Alice and Bob should be compared by the system in order to determine the winner.When comparing the scores, the consideration of a tie should be taken into account by the system.The case where Alice and Bob have the same score should be handled by the system.The scores of Alice and Bob should be used by the system to provide the result of the game.
+Preconditions:
+The input array `stoneValue` is not null.
+The length of the input array `stoneValue` is greater than 
+Postconditions:
+The method returns "Alice" if Alice will win the game.
+The method returns "Bob" if Bob will win the game.
+The method returns "Tie" if Alice and Bob will end the game with the same score.

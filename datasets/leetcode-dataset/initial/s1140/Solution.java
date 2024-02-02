@@ -27,6 +27,11 @@ public class Solution {
         dp[i][m] = ans;
         return ans;
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*Assuming Alice and Bob play optimally, return the maximum number of stones Alice can get. **Explanation:** If Alice takes one pile at the beginning, Bob takes two piles, then Alice takes 2 piles again. Alice can get 2 + 4 + 4 = 10 piles in total. If Alice takes two piles at the beginning, then Bob can take all three piles left. In this case, Alice get 2 + 7 = 9 piles in total. So we return 10 since it's larger.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int stoneGameII(int[] piles) {
         int sum = 0;
@@ -38,4 +43,8 @@ public class Solution {
         }
         return (sum + help(0, 1, piles)) / 2;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

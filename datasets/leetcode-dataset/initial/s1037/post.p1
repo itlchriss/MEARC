@@ -1,1 +1,7 @@
-The array `points` should be the input for the system, consisting of elements in the form of `[x<sub>i</sub> ,  y<sub>i</sub>]` to represent points on the X-Y plane, in order for the method to determine if it is a boomerang.The condition for the system to return `true` is that the points provided form a boomerang.If the points provided do not form a boomerang, the system should return `false`.
+Preconditions:
+The input array `points` must not be null.
+The input array `points` must contain exactly three elements.
+
+Postconditions:
+The method should return `true` if the three points in the input array `points` form a boomerang.
+The method should return `false` if the three points in the input array `points` do not form a boomerang.

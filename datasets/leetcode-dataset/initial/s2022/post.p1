@@ -1,2 +1,7 @@
-To determine if it is feasible to accommodate 2 elements within a 1x1 2D array, the condition of the array's dimensions being m by n should be checked.If the number of elements in the original array is not sufficient to fill an m x n 2D array, the resulting 2D array should be empty.According to a specific procedure, an m x n 2D array should be constructed by the system, based on the original array parameter, where m and n represent the desired dimensions.If the procedure cannot construct the 2D array with dimensions m x n using the original array, the system should return an empty 2D array.The original array is not null. 
-The array of parameters is sorted in ascending order.The system being described in these sentences, which is the system being described, is referred to by the pronouns "str_it" and "the system".
+Preconditions:
+- The original array must not be null.
+- The values of m and n must be greater than or equal to 
+Postconditions:
+- If it is impossible to fit 2 elements in a 1x1 2D array, the method should return an empty 2D array.
+- If it is possible to fit 2 elements in a 1x1 2D array, the method should return an m x n 2D array constructed according to the above procedure.
+- The returned 2D array should have m rows and n columns.

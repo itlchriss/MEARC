@@ -9,6 +9,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Thus, we return an answer of [2, 5, 5]. Thus, we return an answer of [100, 100].
+Return _an integer array_ `ans` _where_ `ans[i]` _represents the height described above after dropping the_ <code>i<sup>th</sup></code> _square_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public List<Integer> fallingSquares(int[][] positions) {
         // Coordinate compression using TreeSet
         Set<Integer> unique = new TreeSet<>();
@@ -45,4 +51,8 @@ public class Solution {
         }
         return list;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

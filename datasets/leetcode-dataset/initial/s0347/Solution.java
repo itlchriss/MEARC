@@ -10,6 +10,11 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an integer array `nums` and an integer `k`, return _the_ `k` _most frequent elements_. You may return the answer in **any order**.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[] topKFrequent(int[] nums, int k) {
         Arrays.sort(nums);
         // Min heap of <number, frequency>
@@ -32,4 +37,8 @@ public class Solution {
         }
         return result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -8,6 +8,11 @@ import java.util.Stack;
 
 @SuppressWarnings("java:S1149")
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
@@ -26,4 +31,8 @@ public class Solution {
         }
         return stack.isEmpty();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,1 +1,9 @@
-The Manhattan distance between the current location and each point should be calculated by the system.The validity of a point should be determined by the system, based on whether the x and y coordinates match any of the points in the given array.The point with the smallest Manhattan distance from the current location should be found by the system.In the case where there exist multiple points having the smallest Manhattan distance, the point with the smallest index should be chosen by the system.In the case where the parameter array does not contain any valid points, the expected return value of the system should be -1.
+Preconditions:
+- The method takes in three parameters: an integer x, an integer y, and a 2D integer array points.
+- The array points contains valid and invalid points.
+- The current location is represented by the coordinates (x, y).
+
+Postconditions:
+- The method returns an integer representing the index of the valid point with the smallest Manhattan distance from the current location.
+- If there are multiple valid points with the smallest Manhattan distance, the method returns the valid point with the smallest index.
+- If there are no valid points, the method returns -1.

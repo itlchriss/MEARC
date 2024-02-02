@@ -1,1 +1,26 @@
-The function `f` should have two string parameters: `prefix` and `suffix`, and it should be a part of the system.The index of a word in the dictionary that has the given `prefix` and `suffix` should be returned by the function `f`.If there are multiple words in the dictionary that match both the given `prefix` and `suffix`, the function should return the highest index among those words.If the given `prefix` and `suffix` do not match any word in the dictionary, the function should return -The system should have a function named `wordFilter . f` that takes two string parameters: `prefix` and `suffix` .The index of a word in the dictionary that has the specified `prefix` and `suffix` should be returned by the function `wordFilter . f`.If there are multiple words in the dictionary that match both the given `prefix` and `suffix`, the function should return the highest index among those words.If the dictionary does not contain any word that matches both the given `prefix` and `suffix`, the function should return -1.
+Preconditions for public WordFilter(String[] words):
+- The input array "words" must not be null.
+
+Postconditions for public WordFilter(String[] words):
+- The WordFilter object is created and initialized with the given array of words.
+
+Preconditions for public void insert(String wd, int weight):
+- The input string "wd" must not be null.
+- The input string "wd" must not be empty.
+- The input integer "weight" must be greater than or equal to 
+Postconditions for public void insert(String wd, int weight):
+- The word "wd" is inserted into the dictionary with the given weight.
+
+Preconditions for public int f(String prefix, String suffix):
+- The input string "prefix" must not be null.
+- The input string "suffix" must not be null.
+
+Postconditions for public int f(String prefix, String suffix):
+- If there is a word in the dictionary that has the prefix "prefix" and the suffix "suffix", the method returns the index of the largest valid index.
+- If there is no such word in the dictionary, the method returns -
+Preconditions for public int startsWith(String pref):
+- The input string "pref" must not be null.
+
+Postconditions for public int startsWith(String pref):
+- If there is a word in the dictionary that starts with the prefix "pref", the method returns the index of the largest valid index.
+- If there is no such word in the dictionary, the method returns -1.

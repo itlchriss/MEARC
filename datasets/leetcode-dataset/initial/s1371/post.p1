@@ -1,1 +1,8 @@
-The input for the system should strictly be a string.The occurrence count of each vowel ('a', 'e', 'i', 'o', 'u') in the provided string should be determined by the system.The method should identify the longest substring in the parameter string that contains each vowel an even number of times.The length of the longest substring should be calculated by the system.The output should be the size of the longest substring when the method public int findTheLongestSubstring(String s) is executed.
+Preconditions:
+The input string `s` must not be null.
+The input string `s` must not be empty.
+
+Postconditions:
+The method should return an integer value representing the size of the longest substring containing each vowel an even number of times.
+The returned value should be greater than or equal to If there are no vowels in the string `s`, the method should return If there is a substring in `s` that contains each vowel an even number of times, the method should return the size of the longest such substring.
+If there are multiple substrings with the same longest length, the method should return the size of the first encountered substring.

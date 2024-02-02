@@ -21,6 +21,12 @@ public class Solution {
     private long binomCoeff(int n, int k) {
         return Math.max(1L, fact[n] * invFact[k] % MOD * invFact[n - k] % MOD);
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*Since the answer may be large, return it modulo <code>10<sup>9</sup> + 7</code>.
+It can be shown that after a finite number of seconds, all the children in the queue will get infected with the disease. An **infection sequence** is the sequential order of positions in which **all** of the non-infected children get infected with the disease. Return _the total number of possible infection sequences_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int numberOfSequence(int n, int[] sick) {
         if (init == 0) {
@@ -42,4 +48,8 @@ public class Solution {
         }
         return (int) (res * binomCoeff(n - sick.length, n - sick[sick.length - 1] - 1) % MOD);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

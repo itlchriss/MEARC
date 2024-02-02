@@ -1,1 +1,32 @@
-A data structure for storing numbers should be present in the system.The method `hasFrequency` should be present in the system and it should accept an integer parameter named `frequency`.The boolean value should be returned by the `hasFrequency` method.The `hasFrequency` method ought to yield `true` if there exists a number in the data structure that appears `frequency` times.The condition of returning `false` by the `hasFrequency` method is when there is no number in the data structure that occurs `frequency` number of times.When the frequency of the number 3 occurs twice in the data structure, the system should return `true` when calling `hasFrequency` with a frequency of 2.When the data structure is empty, calling `hasFrequency` with a frequency of 1 should result in the system returning `false`.When the data structure is empty, calling `hasFrequency` with a frequency of 2 should result in the system returning `false`.When the frequency of the number 3 occurs once in the data structure, the system should return `true` when calling `hasFrequency` with a frequency of 1.
+Preconditions for the method public FrequencyTracker():
+
+- The data structure is empty.
+
+Postconditions for the method public FrequencyTracker():
+
+- The data structure is initialized and ready to store numbers.
+
+Preconditions for the method public void add(int number):
+
+- The number is not already present in the data structure.
+
+Postconditions for the method public void add(int number):
+
+- The number is added to the data structure.
+
+Preconditions for the method public void deleteOne(int number):
+
+- The number is present in the data structure.
+
+Postconditions for the method public void deleteOne(int number):
+
+- One occurrence of the number is removed from the data structure.
+
+Preconditions for the method public boolean hasFrequency(int frequency):
+
+- None.
+
+Postconditions for the method public boolean hasFrequency(int frequency):
+
+- Returns true if there is a number in the data structure that occurs frequency number of times.
+- Returns false if there is no number in the data structure that occurs frequency number of times.

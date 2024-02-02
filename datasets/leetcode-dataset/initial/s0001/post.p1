@@ -1,1 +1,10 @@
-The input for the system should be an array of integers, where the numbers in the array are sorted in ascending order.An integer target should be taken as input by the system.The array should contain two numbers that, when added together, equal the target value.The indices of the two numbers should be returned by the system.The indices should be returned by the system in any order.The array of indices should be returned by the system.If no two numbers in the parameter array add up to the target, the expected result for the system is an empty array.
+Preconditions:
+- The input array `numbers` is not null.
+- The input array `numbers` has at least two elements.
+- The input integer `target` is not null.
+
+Postconditions:
+- The method returns an array of integers.
+- The returned array has exactly two elements.
+- The two elements in the returned array are indices of the two numbers in the input array `numbers` that add up to the `target`.
+- The two numbers at the indices in the input array `numbers` add up to the `target`.

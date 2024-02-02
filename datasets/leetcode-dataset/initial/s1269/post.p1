@@ -1,1 +1,9 @@
-The number of ways for the pointer to remain at index 0 precisely after `steps` steps should be calculated by the function with two integer inputs: `steps` and `arrLen`.The expected outcome is an integer value, and the function should handle cases where the result may be too large by returning the result modulo `10^9 + 7`.
+Preconditions:
+- The method takes two integer parameters `steps` and `arrLen`.
+- The value of `steps` is a non-negative integer.
+- The value of `arrLen` is a positive integer.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value represents the number of ways such that the pointer is still at index 0 after exactly `steps` steps.
+- The returned value is modulo `10^9 + 7`.

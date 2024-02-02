@@ -8,6 +8,12 @@ import java.util.Map;
 public class Solution {
     private Map<String, Integer> map = new HashMap<>();
     private int x;
+<<<<<<< HEAD
+=======
+//@ ensures(*initial prepare.sh run.sh The division operator (`/`) returns rational numbers.
+We would like to write an expression with the least number of operators such that the expression equals the given `target`. Return the least number of operators used.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int leastOpsExpressTarget(int x, int target) {
         this.x = x;
@@ -53,4 +59,8 @@ public class Solution {
         map.put(state, res);
         return res;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

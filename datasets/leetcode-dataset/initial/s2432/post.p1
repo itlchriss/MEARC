@@ -1,1 +1,11 @@
-The task with the longest time should be determinable by the system.The employee(s) who worked on the task with the longest time should be determined by the system.In the case where there is a tie between two or more employees who worked on the task with the longest time, the system should return the smallest id among them, if the parameter array logs is provided.The id of the employee who worked on the task with the longest time should be returned by the system.
+Preconditions:
+- The input parameter "logs" is a 2D array of integers representing the work logs of employees.
+- The "logs" array is not null.
+- The "logs" array has at least one row and one column.
+- Each row in the "logs" array represents the work logs of a single employee.
+- Each column in the "logs" array represents the time spent on a specific task.
+- The values in the "logs" array are non-negative integers.
+
+Postconditions:
+- The method returns an integer representing the id of the employee that worked on the task with the longest time.
+- If there is a tie between two or more employees, the method returns the smallest id among them.

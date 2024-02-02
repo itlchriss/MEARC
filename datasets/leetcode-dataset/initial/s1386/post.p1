@@ -1,1 +1,13 @@
-The capability to ascertain the maximum count of four-person groups that can be allocated on the cinema seats is required, solely when the groups occupy four adjacent seats in a single row.The seating arrangement should ensure that each group of four people occupies four consecutive seats in a single row, without considering seats across an aisle as consecutive.In the case where an aisle splits a group of four people, the group should be split in the middle with two people on each side. This situation is considered exceptional.
+Preconditions:
+The input parameter 'n' represents the total number of rows in the cinema.
+The input parameter 'reservedSeats' is a 2D array representing the reserved seats in the cinema.
+The 'reservedSeats' array contains valid seat numbers within the range of the total number of rows and columns in the cinema.
+The 'reservedSeats' array does not contain duplicate seat numbers.
+The 'reservedSeats' array does not contain seat numbers that are outside the range of the total number of rows and columns in the cinema.
+
+Postconditions:
+The method returns an integer value representing the maximum number of four-person groups that can be assigned on the cinema seats.
+The returned value is greater than or equal to zero.
+The returned value is less than or equal to the total number of rows in the cinema multiplied by 2 (since each row can accommodate at most two four-person groups).
+The method does not modify the input parameters 'n' and 'reservedSeats'.
+The method handles the exceptional case where an aisle splits a four-person group in the middle, allowing two people on each side.

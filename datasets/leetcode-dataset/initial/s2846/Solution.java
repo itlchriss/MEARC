@@ -18,6 +18,12 @@ public class Solution {
             this.w = w;
         }
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*initial prepare.sh run.sh Queries are **independent** of each other, meaning that the tree returns to its initial state** on each new query.
+Return _an array_ `answer` _of length_ `m` _where_ `answer[i]` _is the answer to the_ <code>i<sup>th</sup></code> _query._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int[] minOperationsQueries(int n, int[][] edges, int[][] queries) {
         List<List<Node>> graph = createGraph(edges, n);
@@ -149,4 +155,8 @@ public class Solution {
         }
         return graph;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

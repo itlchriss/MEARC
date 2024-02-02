@@ -3,6 +3,11 @@ package g0401_0500.s0495_teemo_attacking;
 // #Easy #Array #Simulation #2022_07_21_Time_2_ms_(97.97%)_Space_55_MB_(14.20%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **total** number of seconds that Ashe is poisoned_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int findPoisonedDuration(int[] timeSeries, int duration) {
         if (duration == 0) {
             return 0;
@@ -22,4 +27,8 @@ public class Solution {
         }
         return poisonDuration;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

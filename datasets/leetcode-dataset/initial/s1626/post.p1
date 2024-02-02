@@ -1,1 +1,14 @@
-The input for the system should consist of two lists, `scores` and `ages`, which the system should be able to receive.The length of both the scores array and the ages array should be the same, as ensured by the system.Each `scores[i]` and `ages[i]` should be considered by the system as the score and age of the `i-th` player, respectively.The scores array should contain the scores of each basketball team, and the ages array should contain the ages of the players. The overall score of each possible basketball team should be calculated by the system.The highest overall score among all possible basketball teams should be determined by the system, given the parameter array of scores and the parameter array of ages, where the scores array represents the scores of the basketball teams and the ages array represents the ages of the players in the teams, and both arrays are sorted in ascending order.The output should be the highest overall score returned by the system when the scores array and ages array are provided as parameters.
+Preconditions:
+The `scores` array and `ages` array must have the same length.
+The `scores` array and `ages` array must not be empty.
+The `scores` array must only contain non-negative integers.
+The `ages` array must only contain positive integers.
+
+Postconditions:
+The method should return an integer value representing the highest overall score of all possible basketball teams.
+The highest overall score should be calculated based on the given scores and ages of the players.
+The highest overall score should consider the combination of players from both arrays.
+The highest overall score should be determined by selecting players with the highest scores and ages.
+If there are multiple players with the same score, the player with the higher age should be selected.
+The method should not modify the original `scores` and `ages` arrays.
+The method should handle and return the highest overall score even if there are duplicate scores or ages in the arrays.

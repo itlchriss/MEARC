@@ -1,1 +1,8 @@
-The presence of the `target` in the array should be checked by the system.If the `target` is not found in the `nums` array, the system should return `[-1, -1]`.When the array is empty, the system should return `[-1, -1]`.If the `target` is not a valid input, the system should return an `int` array with two elements, `[-1, -1]`.In the case where the array includes duplicate elements, the indices of the first occurrence of the `target` should be returned by the system.In cases where the `nums` array includes multiple instances of the `target`, the first and last occurrences of the `target` should be returned as indices.If the `nums` array contains only one occurrence of the `target` value, the indices of that occurrence should be returned by the system.In the case where the `nums` array contains multiple occurrences of the `target` that are not consecutive, the system should return the indices of the first and last occurrence of the `target`.When the `nums` array contains multiple consecutive occurrences of the `target`, the first and last occurrence of the `target` should be returned as the indices.In the case where the `nums` array has multiple overlapping occurrences of the `target`, the indices of the first and last occurrence of the `target` should be returned by the system.
+Preconditions:
+- The `nums` array is not null.
+- The `nums` array is not empty.
+- The `nums` array is sorted in non-decreasing order.
+
+Postconditions:
+- If `target` is found in the `nums` array, return an array containing the starting and ending indices of the range of `target` in the `nums` array.
+- If `target` is not found in the `nums` array, return `[-1, -1]`.

@@ -5,6 +5,11 @@ package g0001_0100.s0091_decode_ways;
 // #2022_06_21_Time_2_ms_(66.37%)_Space_41.8_MB_(78.45%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given a string `s` containing only digits, return _the **number** of ways to **decode** it_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int numDecodings(String s) {
         if (s.charAt(0) == '0') {
             return 0;
@@ -29,4 +34,8 @@ public class Solution {
         }
         return f[n];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

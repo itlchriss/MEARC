@@ -4,6 +4,11 @@ package g0001_0100.s0014_longest_common_prefix;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_40.2_MB_(83.48%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*If there is no common prefix, return an empty string `""`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String longestCommonPrefix(String[] strs) {
         if (strs.length < 1) {
             return "";
@@ -27,4 +32,8 @@ public class Solution {
         }
         return temp;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

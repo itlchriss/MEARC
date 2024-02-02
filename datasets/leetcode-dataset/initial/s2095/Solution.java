@@ -15,6 +15,11 @@ import com_github_leetcode.ListNode;
  * }
  */
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*You are given the `head` of a linked list. **Delete** the **middle node**, and return _the_ `head` _of the modified linked list_. We return the new list after removing this node.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public ListNode deleteMiddle(ListNode head) {
         if (head.next == null) {
             return null;
@@ -28,4 +33,8 @@ public class Solution {
         slow.next = slow.next.next;
         return head;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

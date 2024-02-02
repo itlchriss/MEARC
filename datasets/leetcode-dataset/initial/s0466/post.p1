@@ -1,1 +1,7 @@
-The ability of the system to compare two strings, `str1` and `str2`, should be ensured.The maximum integer `m` that can be obtained from `str1` such that `str = [str2 ,  m]` can be achieved should be found by the system.The maximum integer `m` should be returned as the result by the system.
+Preconditions:
+The input strings `s1` and `s2` should not be null.
+The input integers `n1` and `n2` should be positive.
+
+Postconditions:
+The method should return an integer value representing the maximum number of times `s2` can be repeated in `s1`.
+The returned value should be greater than or equal to If `s2` cannot be obtained from `s1`, the method should return 0.

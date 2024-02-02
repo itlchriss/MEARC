@@ -1,1 +1,7 @@
-The input for the system should consist of a string `s` and a character `letter`, with the purpose of calculating the percentage of occurrences of the character `letter` in the string `s`.The calculation of the percentage of characters in the string `s` that are equal to the character `letter` should be performed by the system.The calculated percentage should be rounded down to the nearest whole percent, given that the parameter string contains the letter specified.The output should be the rounded down percentage when the letter parameter is passed into the string parameter.In the case where there are no characters in the string `s` that are equal to the character `letter`, the output of the system should be 0.
+Preconditions:
+The input string `s` must not be null.
+The input string `s` must not be empty.
+The input character `letter` must not be null.
+
+Postconditions:
+The method should return an integer value representing the percentage of characters in `s` that equal `letter`, rounded down to the nearest whole percent.

@@ -1,1 +1,6 @@
-The condition to be checked by the system is whether there exists any `[i, j]` pair, where `i + 1 < j`, that can be returned.The array in the parameter is arranged in ascending order, and the outcome is not null.The system is referred to by "str_It", and the `[i, j]` pair is referred to by "any".The array arr is not null.If it is possible, the system should return any valid `[i, j]` pair where the result is not null and the parameter array is sorted in ascending order.The system strictly adheres to the syntax of the given examples, where the pronoun "it" refers to the parameter array, which is sorted in ascending order.The array arr is not null.If a valid `[i ,  j]` pair cannot be found, the system should return `[-1 ,  -1]`.The system strictly adheres to the syntax of the given examples, where the pronoun "it" refers to the parameter array that is sorted in ascending order.
+Preconditions:
+- The input array `arr` is not null.
+- The length of the input array `arr` is greater than or equal to 
+Postconditions:
+- If it is possible to divide the array `arr` into three equal parts, return an array `[i, j]` where `i` is the index of the first element of the second part and `j` is the index of the first element of the third part.
+- If it is not possible to divide the array `arr` into three equal parts, return the array `[-1, -1]`.

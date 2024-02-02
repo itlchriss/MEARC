@@ -4,6 +4,11 @@ package g2301_2400.s2327_number_of_people_aware_of_a_secret;
 // #2022_07_04_Time_7_ms_(80.00%)_Space_44_MB_(10.00%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an integer `n`, return _the number of people who know the secret at the end of day_ `n`. Since the answer may be very large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int peopleAwareOfSecret(int n, int delay, int forget) {
         long[][] dp = new long[n + forget][3];
         // 0: people who currently know the secret (includes [1] below)
@@ -23,4 +28,8 @@ public class Solution {
         }
         return (int) dp[n - 1][0];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

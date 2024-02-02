@@ -1,0 +1,20 @@
+Preconditions for the Java method `public MKAverage(int m, int k)`:
+- The values of `m` and `k` must be positive integers.
+- `m` must be greater than or equal to `2k + 1`.
+
+Postconditions for the Java method `public MKAverage(int m, int k)`:
+- An object of the `MKAverage` class is created with the specified values of `m` and `k`.
+
+Preconditions for the Java method `public void addElement(int num)`:
+- The method `public MKAverage(int m, int k)` must have been called before calling this method.
+- `num` must be an integer.
+
+Postconditions for the Java method `public void addElement(int num)`:
+- The element `num` is added to the current stream of elements.
+
+Preconditions for the Java method `public int calculateMKAverage()`:
+- The method `public MKAverage(int m, int k)` must have been called before calling this method.
+- The method `public void addElement(int num)` must have been called at least `m` times before calling this method.
+
+Postconditions for the Java method `public int calculateMKAverage()`:
+- The MKAverage for the current stream of elements is calculated and returned as an integer rounded down to the nearest integer.

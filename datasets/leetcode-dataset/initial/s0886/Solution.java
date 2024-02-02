@@ -8,6 +8,11 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the integer `n` and the array `dislikes` where <code>dislikes[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that the person labeled <code>a<sub>i</sub></code> does not like the person labeled <code>b<sub>i</sub></code>, return `true` _if it is possible to split everyone into two groups in this way_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public boolean possibleBipartition(int n, int[][] dislikes) {
         // build graph
         Graph g = new Graph(n);
@@ -60,4 +65,8 @@ public class Solution {
             return adj[v];
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -3,6 +3,12 @@ package g2201_2300.s2245_maximum_trailing_zeros_in_a_cornered_path;
 // #Medium #Array #Matrix #Prefix_Sum #2022_06_11_Time_96_ms_(88.49%)_Space_132_MB_(22.37%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*A **cornered path** is defined as a set of adjacent cells with **at most** one turn. More specifically, the path should exclusively move either **horizontally** or **vertically** up to the turn (if there is one), without returning to a previously visited cell. After the turn, the path will then move exclusively in the **alternate** direction: move vertically if it moved horizontally, and vice versa, also without returning to a previously visited cell. The grid on the right is not a cornered path as it requires a return to a previously visited cell.
+Return _the **maximum** number of **trailing zeros** in the product of a cornered path found in_ `grid`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int maxTrailingZeros(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -54,4 +60,8 @@ public class Solution {
         }
         return factors;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -9,6 +9,8 @@
 
 extern struct astnode *root;
 
+extern struct astnode *root;
+
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h

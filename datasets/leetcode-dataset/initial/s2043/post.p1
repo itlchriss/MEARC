@@ -1,1 +1,34 @@
-The ability for users to withdraw money from their accounts should be ensured.Before allowing a withdrawal, the system should verify if the account specified by the parameter "account" has a sufficient balance.If the withdrawal transaction is successful, the true_value should be returned by the system.The account balance should have the withdrawn amount deducted from it by the system.The ability for users to transfer money from one account to another should be present.Before allowing a transfer, the system should check if both accounts have sufficient balance.If the transfer transaction is successful, the system should return a non-null result.The source account balance should have the transferred amount subtracted from it, and the destination account balance should have the transferred amount added to it.The ability for users to deposit money into their accounts should be ensured.If the transaction of deposit is successful, the system should return the value true_value.The account balance should have the deposited amount added to it by the system.If there is insufficient balance in the source account, the system should return the false_value in the event of a failed transfer transaction.In the event that the transfer transaction fails because of invalid account numbers, the system ought to return the false_value.If there is insufficient balance in the account, the false_value should be returned by the system when the withdrawal transaction fails.In the event that an invalid account number causes the withdrawal transaction to fail, the system should return the false_value.
+Preconditions for the method public Bank(long[] balance):
+- The balance array must not be null.
+- The length of the balance array must be greater than 
+Postconditions for the method public Bank(long[] balance):
+- The Bank object is created with the specified balance array.
+
+Preconditions for the method public boolean transfer(int account1, int account2, long money):
+- The account1 and account2 parameters must be valid account numbers.
+- The money parameter must be greater than - The account1 must have a balance greater than or equal to the money parameter.
+
+Postconditions for the method public boolean transfer(int account1, int account2, long money):
+- If the transaction is successful, the money is transferred from account1 to account- If the transaction is successful, the balance of account1 is reduced by the money amount.
+- If the transaction is successful, the balance of account2 is increased by the money amount.
+- If the transaction is successful, the method returns true.
+- If the transaction is not successful, the method returns false.
+
+Preconditions for the method public boolean deposit(int account, long money):
+- The account parameter must be a valid account number.
+- The money parameter must be greater than 
+Postconditions for the method public boolean deposit(int account, long money):
+- If the transaction is successful, the money is deposited into the specified account.
+- If the transaction is successful, the balance of the account is increased by the money amount.
+- If the transaction is successful, the method returns true.
+- If the transaction is not successful, the method returns false.
+
+Preconditions for the method public boolean withdraw(int account, long money):
+- The account parameter must be a valid account number.
+- The money parameter must be greater than - The account must have a balance greater than or equal to the money parameter.
+
+Postconditions for the method public boolean withdraw(int account, long money):
+- If the transaction is successful, the money is withdrawn from the specified account.
+- If the transaction is successful, the balance of the account is reduced by the money amount.
+- If the transaction is successful, the method returns true.
+- If the transaction is not successful, the method returns false.

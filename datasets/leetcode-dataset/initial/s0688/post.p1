@@ -1,1 +1,10 @@
-The probability of the knight remaining on the board should be calculated by the system.The knight's movement on the board should be considered by the system.The condition for determining the knight's movement cessation should be determined by the system.The output should be the calculated probability returned by the system.
+Preconditions:
+The value of n must be greater than or equal to 3, as the board size should be at least 3xThe value of k must be greater than or equal to 0, as the knight can move 0 or more times.
+The value of row must be between 0 and n-1, as it represents the starting row position of the knight on the board.
+The value of column must be between 0 and n-1, as it represents the starting column position of the knight on the board.
+
+Postconditions:
+The method should return a double value representing the probability that the knight remains on the board after it has stopped moving.
+The returned probability should be between 0 and 1, inclusive.
+If the knight is on the board after k moves, the probability should be calculated based on the number of valid moves the knight can make from that position.
+If the knight is off the board after k moves, the probability should be 0.

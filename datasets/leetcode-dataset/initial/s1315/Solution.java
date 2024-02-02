@@ -21,6 +21,11 @@ import com_github_leetcode.TreeNode;
  * }
  */
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the `root` of a binary tree, return _the sum of values of nodes with an **even-valued grandparent**_. If there are no nodes with an **even-valued grandparent**, return `0`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int sumEvenGrandparent(TreeNode root) {
         if (root == null) {
             return 0;
@@ -42,4 +47,8 @@ public class Solution {
         sum = dfs(parent, parent.right, sum);
         return sum;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

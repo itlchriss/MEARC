@@ -1,1 +1,9 @@
-The existence of a town judge can be determined by the system.The label of the town judge should be able to be identified by the system.If the number of people in the town is not null and the trust relationships between them can be identified, the system should return the label of the person who is considered the town judge.If the existence or identification of the town judge cannot be determined, the returned value by the system should be -1.
+Preconditions:
+The method takes two parameters: an integer n representing the number of people in the town and a 2D integer array trust representing the trust relationships between people.
+The trust array must have a length greater than or equal to The trust array must have exactly two columns.
+The trust array must contain only positive integers.
+The trust array must not contain any duplicate rows.
+
+Postconditions:
+If the town judge exists and can be identified, the method should return the label of the town judge as an integer.
+If the town judge does not exist or cannot be identified, the method should return -1 as an integer.

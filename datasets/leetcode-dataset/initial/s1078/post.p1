@@ -1,1 +1,11 @@
-When prompted, the system should return an array of words.The word "str_third" should be returned by the system in all occurrences without exception.The word "str_third" must be searched for within the string "first second third" without any possibility of failure, and the system must perform this search.For each occurrence of the string in the parameter text, the word str_third must be promptly provided by the system.
+Preconditions:
+The method should take three parameters: a string variable named "text", a string variable named "first", and a string variable named "second".
+The "text" parameter should contain a sequence of words.
+The "first" parameter should contain a single word.
+The "second" parameter should contain a single word.
+
+Postconditions:
+The method should return an array of strings.
+The array should contain all the words that occur after the sequence "first second" in the "text" parameter.
+The words should be in the same order as they appear in the "text" parameter.
+If there are no occurrences of the sequence "first second" in the "text" parameter, the method should return an empty array.

@@ -7,6 +7,12 @@ import java.util.Objects;
 import java.util.Queue;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*- Front student leaves the top sandwich and returns to the end of the line making students = [1,0,0,1]. - Front student leaves the top sandwich and returns to the end of the line making students = [0,0,1,1]. - Front student leaves the top sandwich and returns to the end of the line making students = [1,1,0]. - Front student leaves the top sandwich and returns to the end of the line making students = [0,1].
+You are given two integer arrays `students` and `sandwiches` where `sandwiches[i]` is the type of the <code>i<sup>th</sup></code> sandwich in the stack (`i = 0` is the top of the stack) and `students[j]` is the preference of the <code>j<sup>th</sup></code> student in the initial queue (`j = 0` is the front of the queue). Return _the number of students that are unable to eat._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int countStudents(int[] students, int[] sandwiches) {
         Queue<Integer> studentsQueue = new LinkedList<>();
         Queue<Integer> sandwichesQueue = new LinkedList<>();
@@ -29,4 +35,8 @@ public class Solution {
         } while (!studentsQueue.isEmpty());
         return studentsQueue.size();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

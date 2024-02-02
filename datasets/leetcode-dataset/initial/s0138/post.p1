@@ -1,0 +1,20 @@
+Preconditions for public Node():
+- None
+
+Postconditions for public Node():
+- The method creates a new Node object with default values for _val, _next, and _random.
+- The method returns the newly created Node object.
+
+Preconditions for public Node(int _val, Node _next, Node _random):
+- None
+
+Postconditions for public Node(int _val, Node _next, Node _random):
+- The method creates a new Node object with the given values for _val, _next, and _random.
+- The method returns the newly created Node object.
+
+Preconditions for public Node copyRandomList(Node head):
+- The parameter "head" is a reference to the head of a linked list.
+
+Postconditions for public Node copyRandomList(Node head):
+- The method creates a deep copy of the linked list starting from the given head.
+- The method returns the head of the copied linked list.

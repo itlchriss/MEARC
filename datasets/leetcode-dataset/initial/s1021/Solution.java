@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return `s` _after removing the outermost parentheses of every primitive string in the primitive decomposition of_ `s`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String removeOuterParentheses(String s) {
         List<String> primitives = new ArrayList<>();
         int i = 1;
@@ -29,4 +34,8 @@ public class Solution {
         }
         return sb.toString();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

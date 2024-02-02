@@ -21,6 +21,12 @@ import com_github_leetcode.TreeNode;
  * }
  */
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null || q == null) {
             return p == null && q == null;
@@ -29,4 +35,8 @@ public class Solution {
         boolean b2 = isSameTree(p.right, q.right);
         return p.val == q.val && b1 && b2;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

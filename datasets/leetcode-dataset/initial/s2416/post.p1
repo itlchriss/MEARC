@@ -1,1 +1,10 @@
-The array of size n, determined by the value of n, should be returned by the system.The sum of scores for every non-empty prefix of words[i] must be represented by every element in the array.The name of the array that should be used to store the calculated sums of scores is str_answer.The determination of the size of the array should be solely based on the value of n.For every non-empty prefix of the input array words[i], encompassing all possible prefixes, the sum of scores should be calculated.When calculating the sum of scores, all non-empty prefixes of each word in the array of parameters should be considered.The sum of scores for each non-empty prefix of words[i] should be stored in the corresponding index of the answer array, i.e., answer[i].The condition should be met by the system in cases where the element at index i in the array words is empty.The condition of the system should be such that it can handle situations where the length of the array is zero or negative as well.
+Preconditions:
+- The input array `words` is not null.
+- The input array `words` is not empty.
+- Each element in the input array `words` is not null.
+- Each element in the input array `words` is not empty.
+
+Postconditions:
+- The output array `answer` is not null.
+- The output array `answer` has a size of `n`.
+- Each element in the output array `answer` is the sum of scores of every non-empty prefix of the corresponding element in the input array `words`.

@@ -1,1 +1,20 @@
-The input for the system should be an array of strings.The input array, when passed to the system, should be regarded as an English Dictionary.The longest word in the input array should be found by the system.The determination should be made by the system if it is possible to construct the longest word by adding one character at a time using other words in the array.In the case where there is more than one possible answer, the system should return the longest word with the smallest lexicographical order.If the result is null, the system should return an empty string.
+Preconditions for public Node():
+- None
+
+Postconditions for public Node():
+- A new Node object is created.
+
+Preconditions for public void insert(Node curr, String word):
+- curr is a valid Node object.
+- word is a non-null string.
+
+Postconditions for public void insert(Node curr, String word):
+- The word is inserted into the trie represented by the Node curr.
+
+Preconditions for public String longestWord(String[] words):
+- words is a non-null array of strings.
+
+Postconditions for public String longestWord(String[] words):
+- The longest word that can be built one character at a time by other words in words is returned.
+- If there is more than one possible answer, the longest word with the smallest lexicographical order is returned.
+- If there is no answer, an empty string is returned.

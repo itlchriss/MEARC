@@ -1,1 +1,23 @@
-The integer array `nums` is the input.The resulting array `counts` is an integer array that represents the output.The size of the `counts` array matches the size of the `nums` array.The countSmaller method takes an array of integers called nums as a parameter. Each element in the nums array, represented by nums[i], corresponds to an element in the counts array, represented by counts[i]. The value of counts[i] represents the number of smaller elements to the right of nums[i]. The FenwickTree constructor takes an integer n as a parameter, which represents the size of the Fenwick tree. The update method takes two parameters, i and v, where i represents the index of the element to be updated and v represents the new value of that element.The elements in the `counts` array should be ordered in correspondence to the elements in the `nums` array.The integers in the `counts` array should represent the number of smaller elements.The `nums` array can contain positive, negative, or zero elements.The `nums` array, which is the parameter, has the possibility of containing duplicate elements.The `nums` array, if provided, may contain no elements.Based on the elements in the `nums` array, the `counts` array should be calculated.The `counts` array calculation should only consider the elements to the right of the current element in the `nums` array.The counting of the `counts` array should be performed in a way that it counts the number of elements in the `nums` array that are smaller than the current element, ensuring that the calculation strictly adheres to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order."The `counts` array calculation should exclude the current element itself.The output should be the `counts` array.
+Preconditions for the method `public List<Integer> countSmaller(int[] nums)`:
+The input array `nums` is not null.
+The input array `nums` is not empty.
+
+Postconditions for the method `public List<Integer> countSmaller(int[] nums)`:
+The returned `counts` array is not null.
+The length of the returned `counts` array is equal to the length of the input `nums` array.
+Each element in the returned `counts` array is an integer.
+The value of each element in the returned `counts` array represents the number of smaller elements to the right of the corresponding element in the input `nums` array.
+
+Preconditions for the constructor `public FenwickTree(int n)`:
+The input integer `n` is greater than or equal to zero.
+
+Postconditions for the constructor `public FenwickTree(int n)`:
+The FenwickTree object is successfully created.
+The FenwickTree object has a size of `n`.
+
+Preconditions for the method `public void update(int i, int v)`:
+The input integer `i` is a valid index within the FenwickTree object.
+The input integer `v` is a valid value to update the FenwickTree object.
+
+Postconditions for the method `public void update(int i, int v)`:
+The FenwickTree object is successfully updated with the new value `v` at index `i`.

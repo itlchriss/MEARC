@@ -3,6 +3,11 @@ package g2801_2900.s2839_check_if_strings_can_be_made_equal_with_operations_i;
 // #Easy #String #2023_12_12_Time_1_ms_(99.09%)_Space_41.8_MB_(41.03%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return `true` _if you can make the strings_ `s1` _and_ `s2` _equal, and_ `false` _otherwise_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public boolean canBeEqual(String s1, String s2) {
         return isOk(s1, s2, 0) && isOk(s1, s2, 1);
     }
@@ -17,4 +22,8 @@ public class Solution {
         }
         return a == d && b == c;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

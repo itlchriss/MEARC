@@ -1,1 +1,10 @@
-The values in increasing order of their IDs should be returned by the stream; this order should be the case for all values.After each insertion, the stream should return a chunk (list) of values. This chunk should include all the values that have been inserted so far.The concatenation of all the chunks should yield a list of the sorted values, which should encompass all the values that have been inserted, given that the parameter array is sorted in ascending order.The largest possible chunk of currently inserted values that appear next in the order, which should be the one that comes immediately after the previously returned chunk, should be returned by the stream.The insertion of the pair (idKey, value) into the stream should be ensured by the stream, guaranteeing that this insertion is performed for all pairs that require insertion.If there are no more values to be returned, the stream should return an empty chunk in the order. This should be the case when no values appear next in the order.The inserted value should be returned as a chunk by the stream if it appears next in the order; this action should be performed for all values that are inserted and appear immediately after the previously returned chunk.The stream should return multiple chunks if there are multiple values that come after the previously returned chunk in ascending order. This should be the case when there are multiple values that appear next in the order.The stream should handle multiple insertions, ensuring that the corresponding chunks are returned in the correct order. This task must be accomplished for all insertions and their corresponding chunks, maintaining the order.
+Preconditions:
+- The method `public OrderedStream(int n)` is called before calling the `insert` method.
+- The parameter `n` in the `OrderedStream` constructor is a positive integer representing the maximum number of elements in the stream.
+
+Postconditions:
+- The `insert` method inserts a pair `(idKey, value)` into the stream.
+- The `insert` method returns the largest possible chunk of currently inserted values that appear next in the order.
+- The returned chunk is a list of strings.
+- The values in the chunk are in increasing order of their IDs.
+- The concatenation of all the chunks returned by the `insert` method results in a list of the sorted values.

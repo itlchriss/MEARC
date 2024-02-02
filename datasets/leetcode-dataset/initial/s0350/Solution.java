@@ -7,6 +7,11 @@ package g0301_0400.s0350_intersection_of_two_arrays_ii;
 import java.util.Arrays;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given two integer arrays `nums1` and `nums2`, return _an array of their intersection_. Each element in the result must appear as many times as it shows in both arrays and you may return the result in **any order**.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[] intersect(int[] nums1, int[] nums2) {
         // First sort the array
         Arrays.sort(nums1);
@@ -38,4 +43,8 @@ public class Solution {
         // Only return nums1 0th index to kth index value, because that's will be our intersection;
         return Arrays.copyOfRange(nums1, 0, k);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

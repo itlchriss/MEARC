@@ -1,1 +1,8 @@
-The input for the system should strictly be a string of English letters.The input string should contain both a lowercase and uppercase letter of the greatest English letter, and the system should identify it.The identified letter should be converted to uppercase by the system.If there is no letter in the parameter array that satisfies the condition mentioned in the examples, the system should return an empty string.
+Preconditions:
+- The input string `s` should not be null.
+- The input string `s` should not be empty.
+
+Postconditions:
+- The returned string should be in uppercase.
+- The returned string should be the greatest English letter that occurs as both a lowercase and uppercase letter in the input string `s`.
+- If no such letter exists, the returned string should be an empty string.

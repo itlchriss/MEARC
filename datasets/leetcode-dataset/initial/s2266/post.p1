@@ -1,1 +1,7 @@
-The input for the string `pressedKeys` should be taken by the system.The total number of possible text messages that Alice could have sent based on the `pressedKeys` parameter should be calculated by the system.The count of possible text messages should be returned by the system when the pressedKeys parameter is provided.The countTexts method should return the total number of possible text messages modulo 10^9 + 7, given that the parameter pressedKeys represents the keys pressed on the keyboard.
+Preconditions:
+- The method `countTexts` takes a parameter `pressedKeys` of type String.
+- The input `pressedKeys` represents the string received by Bob.
+
+Postconditions:
+- The method returns an integer value representing the total number of possible text messages Alice could have sent.
+- The returned value is the result of the calculation modulo 10^9 + 7.

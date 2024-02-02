@@ -1,1 +1,10 @@
-The array of integers called "aliceSizes" should be used as a parameter for the method, and the array of integers called "bobSizes" should also be used as a parameter for the method. The method should return an integer array called "answer" itself.The initial value of the array, aliceSizes[0], corresponds to the number of candies that Alice needs to exchange.The number of candies that Bob must exchange is represented by the second element of the array, answer[1], which itself represents the number of candies that Bob must exchange.The array aliceSizes should be sorted in ascending order, and the array bobSizes should not be null.At least one answer exists, ensuring that the parameter arrays have a solution.
+Preconditions:
+The input arrays aliceSizes and bobSizes must not be null.
+The input arrays aliceSizes and bobSizes must have at least one element.
+The elements in the input arrays aliceSizes and bobSizes must be positive integers.
+
+Postconditions:
+The method must return an integer array of size The first element of the returned array must be the number of candies in the box that Alice must exchange.
+The second element of the returned array must be the number of candies in the box that Bob must exchange.
+The returned array must contain valid values that satisfy the given conditions.
+If there are multiple valid answers, the method may return any one of them.

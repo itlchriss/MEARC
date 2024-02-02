@@ -1,1 +1,13 @@
-The input for the function should be two non-negative integers, i and j, which will handle non-negative integer inputs for them.The amount of champagne in the jth glass in the ith row should be accurately calculated by the function, which should return the result based on the pouring.The inputs for poured, queryRow, and queryGlass should be 0-indexed. Additionally, the method should be able to handle cases where the ith row or the jth glass does not exist.The pouring of non-negative integer cups of champagne should be handled by the function, and the pouring of champagne into multiple glasses in multiple rows should also be handled.The method should be able to handle scenarios where the amount of champagne poured into the glass is greater than its capacity, as well as scenarios where the amount of champagne poured into the glass is less than or equal to its capacity.The method should handle scenarios where the value of the poured parameter is 0 or less, and the values of the queryRow and queryGlass parameters are specified.
+Preconditions:
+- The method should take two integer parameters, `queryRow` and `queryGlass`, representing the row and glass number to query.
+- The method should take an integer parameter `poured`, representing the number of cups of champagne poured.
+- The method should return a double value representing the fill level of the specified glass.
+
+Postconditions:
+- The method should calculate and return the fill level of the specified glass in the specified row after pouring the given number of cups of champagne.
+- The fill level should be a decimal value between 0 and 1, representing the proportion of the glass that is filled.
+- The fill level should be calculated based on the following rules:
+  - The top glass in the pyramid (row 0, glass 0) is initially filled with the given number of cups of champagne.
+  - Each glass in the pyramid (except for the top glass) receives half of the overflow from the two glasses directly above it.
+  - If a glass receives more champagne than it can hold, the excess champagne overflows equally to the two glasses directly below it.
+  - If a glass does not receive any champagne from the glasses above it, its fill level is   - If a glass receives champagne from the glasses above it, its fill level is the sum of the champagne it receives and any overflow from the glasses above it, divided by   - The fill level of the specified glass in the specified row should be calculated based on the above rules.

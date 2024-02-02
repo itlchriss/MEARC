@@ -1,1 +1,7 @@
-The minimum number of stickers required to spell out the target should be calculated and returned by the system.If the target cannot be spelled out using the stickers available in the parameter array, the minimum number required should be calculated by considering all available stickers.The calculation should only count each sticker once, given that the parameter array is sorted in ascending order.The stickers array should not contain any stickers that are not necessary to spell out the target string.The target should be able to handle both uppercase and lowercase letters in the parameter array.The target should be handled by the system, including special characters and spaces.The target should have multiple occurrences of the same letter, and the stickers array should be handled by the system.The array of stickers should be sorted in ascending order, and the target should be handled by the system in cases where it can be spelled out using a combination of different stickers.The array of stickers should be handled by the system in cases where it cannot be spelled out using any combination of stickers.
+Preconditions:
+- The `stickers` array must not be null.
+- The `target` string must not be null.
+
+Postconditions:
+- The method should return the minimum number of stickers needed to spell out the `target` string.
+- If it is impossible to spell out the `target` string using the given `stickers`, the method should return -1.

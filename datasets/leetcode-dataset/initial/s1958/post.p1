@@ -1,0 +1,9 @@
+Preconditions:
+The `board` parameter must be a 2-dimensional character array representing the current state of the game board.
+The `rMove` parameter must be a valid row index within the bounds of the `board` array.
+The `cMove` parameter must be a valid column index within the bounds of the `board` array.
+The `color` parameter must be a valid character representing the color of the player's move (either 'w' for white or 'b' for black).
+
+Postconditions:
+If changing the cell at `(rMove, cMove)` to `color` is a legal move, the method should return `true`.
+If changing the cell at `(rMove, cMove)` to `color` is not a legal move, the method should return `false`.

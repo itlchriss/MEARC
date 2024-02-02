@@ -1,1 +1,14 @@
-The input for the system should be an expression.The input for the system should be an evaluation map.Using the evaluation map, the expression should be evaluated by the system.The expression should be simplified by the system.The list of tokens representing the simplified expression should be returned by the system.
+Preconditions:
+- The expression string should not be null or empty.
+- The evalvars array should not be null.
+- The evalints array should not be null.
+- The length of evalvars array should be equal to the length of evalints array.
+
+Postconditions:
+- The method should return a list of strings representing the simplified expression.
+- The list should not be null.
+- The list should contain tokens in the correct order.
+- The tokens should be simplified according to the evaluation map provided.
+- The tokens should be in the form of "coefficient*variable" or just "coefficient" if the variable is not present.
+- The coefficients should be integers.
+- The list should not contain any duplicate tokens.

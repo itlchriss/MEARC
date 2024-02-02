@@ -9,6 +9,12 @@ public class Solution {
     private static final int MOD = 1000000007;
     private static final int MAX = 20001;
     private static final IntMap INT_MAP = new IntMap();
+<<<<<<< HEAD
+=======
+//@ ensures(*Since the answer may be large, return it modulo <code>10<sup>9</sup> + 7</code>.
+Return _the **count of sub-multisets** within_ `nums` _where the sum of elements in each subset falls within the inclusive range of_ `[l, r]`.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int countSubMultisets(List<Integer> nums, int l, int r) {
         INT_MAP.clear();
@@ -74,4 +80,8 @@ public class Solution {
             size = 0;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,1 +1,7 @@
-The array `nums` and the integer `k` are included in the input. The maximum sum of a non-empty subsequence of the array should be returned as the output. The subsequence must satisfy the condition that for any two consecutive integers `nums[i]` and `nums[j]`, where `i < j`, the condition `j - i <= k` is met. The subsequence must not be empty, meaning it must contain at least one element from the array.The subsequence is referred to by the pronoun "str_it" in sentence 2, and the maximum sum is referred to by the pronoun "it" in sentence 3.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+- The input integer `k` is greater than or equal to 
+Postconditions:
+- The method returns an integer representing the maximum sum of a non-empty subsequence of the input array `nums`.
+- The subsequence satisfies the condition `j - i <= k` for every two consecutive integers `nums[i]` and `nums[j]`, where `i < j`.

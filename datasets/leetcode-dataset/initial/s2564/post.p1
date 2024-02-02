@@ -1,1 +1,12 @@
-The capability to process multiple queries should be present in the system.The ability to calculate the decimal value of a given substring should be possessed by the system.The capability to calculate the exponentiation of a decimal value should be possessed by the system.The capacity of the system should be such that it can determine the range of the substring satisfying the query, given the parameters of a string and an array of queries.The substring's range as [left, right] should be offered by the system for each query.In situations where the query does not have a substring that meets the criteria, the system should return [-1, -1].
+Preconditions:
+- The input string `s` is not null.
+- The input string `s` is not empty.
+- The input array `queries` is not null.
+- The input array `queries` is not empty.
+- The length of the input array `queries` is equal to the number of queries.
+
+Postconditions:
+- The method returns an array `ans` where `ans[i] = [left_i, right_i]` is the answer to the `i-th` query.
+- The length of the returned array `ans` is equal to the number of queries.
+- For each query, if there is a substring in the specified range that satisfies the condition, the corresponding element in the returned array `ans` is the range `[left_i, right_i]`.
+- For each query, if there is no substring in the specified range that satisfies the condition, the corresponding element in the returned array `ans` is `[-1, -1]`.

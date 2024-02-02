@@ -1,1 +1,10 @@
-If the system is accessible, the most recent 24-hour time in the format str_HH:MM should be provided by the method, using the largest values from the parameter array.If it is the case that no valid time can be made from the sorted array of integers representing the digits, the system should return an empty string.
+Preconditions:
+The input array `arr` must not be null.
+The input array `arr` must contain exactly 4 elements.
+The elements in the input array `arr` must be integers.
+The elements in the input array `arr` must be between 0 and 9 (inclusive).
+
+Postconditions:
+The method should return a string in the format `"HH:MM"`.
+The returned string should represent the latest 24-hour time that can be formed using the elements in the input array `arr`.
+If no valid time can be formed, the method should return an empty string.

@@ -10,6 +10,11 @@ import java.util.List;
 import java.util.Queue;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the maximum number of groups (i.e., maximum_ `m`_) into which you can divide the nodes_. Return `-1` _if it is impossible to group the nodes with the given conditions_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int magnificentSets(int n, int[][] edges) {
         List<List<Integer>> adj = new ArrayList<>();
         int[] visited = new int[n + 1];
@@ -63,4 +68,8 @@ public class Solution {
         }
         return ans;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,3 +1,18 @@
-To ensure proper system initialization, execution of the `prepare.sh` script is necessary.To ensure proper execution of the system, utilize the `run.sh` script.The parameter `letter` should be accepted by the function `boolean query(char letter)` in the system, which is called `StreamChecker` and has the methods `public void insert(String s)` and `public StreamChecker(String[] words)`.The outcome will not be null.
-The array of parameters will be sorted in ascending order.
-This function will yield a value of `true` if any non-empty suffix from the stream forms a word that exists in the `words` list. To access the `query` function, you can utilize the `streamChecker` object provided by the system. If the character passed as an argument does not form a word in the `words` list, the `query` function will return `false`. Conversely, if the character passed as an argument forms a word in the `words` list, the `query` function will return `true`. The responsibility of the `query` function is to check if any non-empty suffix from the stream forms a word in the `words` list. It will return `true` if any non-empty suffix from the stream forms a word in the `words` list, and `false` if no non-empty suffix from the stream forms a word in the `words` list. Additionally, if the character passed as an argument forms a word in the `words` list after a previous character has formed a word, the `query` function will return `true`. Conversely, if the character passed as an argument does not form a word in the `words` list after a previous character has formed a word, the `query` function will return `false`. Similarly, if the character passed as an argument forms a word in the `words` list after multiple characters have formed words, the `query` function will return `true`. On the other hand, if the character passed as an argument does not form a word in the `words` list after multiple characters have formed words, the `query` function will return `false`. Furthermore, if the character passed as an argument forms a word in the `words` list after a specific sequence of characters, the `query` function will return `true`. Conversely, if the character passed as an argument does not form a word in the `words` list after a specific sequence of characters, the `query` function will return `false`. Lastly, if the character passed as an argument forms a word in the `words` list after a specific sequence of characters and other characters in between, the `query` function will return `true`. Conversely, if the character passed as an argument does not form a word in the `words` list after a specific sequence of characters and other characters in between, the `query` function will return `false`.
+Preconditions for the method `public void insert(String s)`:
+- The parameter `s` must be a non-null string.
+
+Postconditions for the method `public void insert(String s)`:
+- The string `s` is inserted into the stream.
+
+Preconditions for the method `public StreamChecker(String[] words)`:
+- The parameter `words` must be a non-null array of strings.
+
+Postconditions for the method `public StreamChecker(String[] words)`:
+- The array `words` is assigned to the instance variable `wordList`.
+
+Preconditions for the method `public boolean query(char letter)`:
+- The parameter `letter` must be a valid character.
+
+Postconditions for the method `public boolean query(char letter)`:
+- If any non-empty suffix from the stream forms a word that is in `wordList`, the method returns `true`.
+- If no non-empty suffix from the stream forms a word that is in `wordList`, the method returns `false`.

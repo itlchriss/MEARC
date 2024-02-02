@@ -1,1 +1,6 @@
-The comparison should be made by the system between each element of the array "str_heights" and the corresponding element of the array "expected".The count of indices should be determined by the system, where the element in the array "str_heights" is not equal to the element in the array "expected".The count of indices where the elements in the array str_heights are not equal to the elements in the array "expected" should be returned by the system.
+Preconditions:
+- The input array `heights` is not null.
+- The input array `heights` is not empty.
+
+Postconditions:
+- The returned value is an integer representing the number of indices where `heights[i]` is not equal to `expected[i]`.

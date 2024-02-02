@@ -1,1 +1,8 @@
-The 0-indexed integer array called `nums` is the input.The integer output represents the smallest index `i` that satisfies the condition `i mod 10 == nums[i]`, where the parameter array `nums` is sorted in ascending order.If the condition is not satisfied by any index, the output should be - All indices in the array have the property `i mod 10 == nums[i]`.The index that satisfies the condition and is the smallest should be returned when the array of parameters is sorted in ascending order.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+
+Postconditions:
+- The method returns an integer value.
+- The returned integer value is the smallest index `i` of `nums` such that `i mod 10 == nums[i]`.
+- If there is no index `i` in `nums` such that `i mod 10 == nums[i]`, the method returns -1.

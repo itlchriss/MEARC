@@ -1,1 +1,9 @@
-If the size of the array is determined, the system should return an array of size `m`.For accuracy to be ensured, the minimum number of operations required to make all elements of the `nums` array equal to `queries[i]` should be represented by each element in the array.The minimum number of operations for each element in the `nums` array should be computed by the system and saved in the corresponding position in the array for the purpose of organizing the information.To ensure that all elements of the `nums` array are equal to `queries[i]`, the system must perform the necessary operations if needed.To prioritize the minimum number of operations needed to equalize all elements, rather than focusing on the maximum or average number of operations, the system should provide a more efficient solution.The array's size should be modified correspondingly to accommodate any provided size, as the system ought to handle various values of `m`.The minimum number of operations for each element must be calculated by the system to ensure accuracy and flexibility, handling various values of `nums` and `queries`, where `nums` is an array and `queries` is an array.
+Preconditions:
+- The input array `nums` must not be null.
+- The input array `queries` must not be null.
+- The length of the input array `nums` must be greater than or equal to - The length of the input array `queries` must be greater than or equal to 
+Postconditions:
+- The returned array `answer` must not be null.
+- The length of the returned array `answer` must be equal to the length of the input array `queries`.
+- Each element in the returned array `answer` must be a non-negative integer.
+- The elements in the returned array `answer` must represent the minimum number of operations required to make all elements of `nums` equal to the corresponding element in `queries`.

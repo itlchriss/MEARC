@@ -1,1 +1,14 @@
-When provided with two integers `a` and `b`, the outcome will be the string `s`.The value of the string `s` can be any string.The integer parameters `a` and `b` determine the absence of both a specific length and format in the string `s`.The values of `a` and `b` do not affect the value of the string `s`.The output of the method is always a string `s`, regardless of the values of the input parameters `a` and `b`.
+Preconditions:
+The method should take two integer parameters `a` and `b`.
+The values of `a` and `b` should be non-negative.
+
+Postconditions:
+The method should return a string `s`.
+The string `s` should contain only the characters 'a' and 'b'.
+The length of the string `s` should be equal to the sum of `a` and `b`.
+The string `s` should not contain any consecutive 'a' characters.
+The string `s` should not contain any consecutive 'b' characters.
+The number of 'a' characters in the string `s` should be equal to `a`.
+The number of 'b' characters in the string `s` should be equal to `b`.
+The order of 'a' and 'b' characters in the string `s` should not matter.
+The string `s` can be any valid string that satisfies the above conditions.

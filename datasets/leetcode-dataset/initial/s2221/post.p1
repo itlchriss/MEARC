@@ -1,1 +1,7 @@
-The triangular sum of a given set of numbers should be able to be calculated by the system.The calculated triangular sum of the given numbers should be returned by the system.In the calculation of the triangular sum, the handling of both positive and negative numbers should be done by the system.The calculation of the triangular sum should handle decimal numbers in the parameter array.The calculation of the triangular sum should handle large numbers without causing any errors or overflows.The method should be able to handle an empty array of numbers and return the triangular sum. The method should also be able to handle an array with only one number and return the same number as the triangular sum.The input array, which contains multiple numbers, should be handled by the system in order to correctly calculate the triangular sum.The calculation of the triangular sum should include duplicate numbers in the input set, and the system should handle them.The input set should be handled by the system, which should ignore non-numeric characters in the calculation of the triangular sum.The input set, which contains only one number and it is zero, should be handled as a special case by the system. In this case, the system should return a triangular sum of 0.
+Preconditions:
+- The input array `nums` must not be null.
+- The input array `nums` must contain at least one element.
+
+Postconditions:
+- The method returns an integer value representing the triangular sum of the elements in the input array `nums`.
+- The method does not modify the input array `nums`.

@@ -19,15 +19,11 @@ do
     index=`echo $filename | sed 's/\..*//'`
     folder=`echo $entry | sed "s/\/$filename//"`
     p1_file="$folder/$index.p1"
-    
-    echo "Calling method to translate $p1_file to MR......."
-    $PYCMD $SCRIPT_PATH/transMR.py $p1_file; rm $folder/*.tok; rm $folder/*.xml; rm $folder/*.log
-    echo "Done.........................................."
 
-    # echo "Calling method to translate $sw_file to MR......."
-    # $PYCMD scripts/transMR.py $sw_file; rm $folder/*.tok; rm $folder/*.xml; rm $folder/*.log
-    # echo "Done.........................................."
-    # echo "Done with $entry....................................."
+    #echo "Calling method to translate $p1_file to MR......."
+    #$PYCMD $SCRIPT_PATH/transMR.py $p1_file; rm $folder/*.tok; rm $folder/*.xml; rm $folder/*.log
+    #echo "Done.........................................."
+
 done
 
 

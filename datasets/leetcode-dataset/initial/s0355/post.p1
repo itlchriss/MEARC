@@ -1,1 +1,12 @@
-The news feed retrieval should be allowed by the system for users.The tweet IDs should be contained in the news feed.The news feed, specific to each user, should be provided.The list of tweet IDs should be returned by the news feed.The tweet ID limit should be applied to the news feed.The tweet IDs in the news feed should be displayed first, with the most recent ones.The news feed updating is required when a user follows or unfollows another user.When a user posts a new tweet, the news feed should update.When a user's followed user posts a new tweet, the news feed should update.The tweet IDs from users that the user is no longer following should not be displayed on the news feed.
+Preconditions:
+- The Twitter object must be instantiated before calling any of the methods.
+- The userId and tweetId parameters passed to the postTweet method must be valid integers.
+- The userId parameter passed to the getNewsFeed, follow, unfollow, and checkNewUser methods must be a valid integer.
+- The followerId and followeeId parameters passed to the follow and unfollow methods must be valid integers.
+
+Postconditions:
+- The postTweet method should add a tweet with the given tweetId to the user's tweet list.
+- The getNewsFeed method should return a list of tweet ids from the user's news feed.
+- The follow method should establish a following relationship between the followerId and followeeId.
+- The unfollow method should remove the following relationship between the followerId and followeeId.
+- The checkNewUser method should check if the given userId is a new user and take appropriate action.

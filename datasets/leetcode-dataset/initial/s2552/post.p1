@@ -1,1 +1,10 @@
-The size of the input array `nums` is `n`, and it is a 0-indexed integer array.The array `nums` is such that it contains all numbers from 1 to n.The count of increasing quadruplets is the output when the array of numbers, nums, is passed as a parameter.The definition of a quadruplet is characterized by four indices: i, j, k, and l, where the parameter array nums is used to count the quadruplets.The condition for the indices i, j, k, and l is that the elements in the array nums must satisfy the following: nums[i] is less than nums[k], nums[k] is less than nums[j], and nums[j] is less than nums[l].The values of i, j, k, and l must be unique.The array `nums` must have indices i, j, k, and l within its range.The values of the indices i, j, k, and l must be arranged in ascending order.If the condition is not satisfied by any quadruplets, the output will be the count of all possible quadruplets that satisfy the condition. If there is only one quadruplet that satisfies the condition, the output will be the count of all possible quadruplets that satisfy the condition. The count of all possible quadruplets that satisfy the condition is the output.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+- The input array `nums` is of size `n`.
+- The elements in the input array `nums` are integers.
+- The elements in the input array `nums` are in the range from 1 to `n`.
+- The input array `nums` is 0-indexed.
+
+Postconditions:
+- The method returns a long value representing the number of increasing quadruplets in the input array `nums`.

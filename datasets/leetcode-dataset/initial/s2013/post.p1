@@ -1,1 +1,17 @@
-The system should possess the capability to detect squares formed by a given set of points, where the set of points is provided.Moreover, the capability to tally the quantity of squares created by a provided set of points should be present in the system.In the case where a query point has the ability to form a square with any points in the data structure, a count should be returned by the system. Similarly, if the query point is unable to form a square with any points in the data structure, the system should also return a count. Additionally, if the query point has the capability to form two distinct squares with the points in the data structure, the system should return a count. To enhance the functionality of the system, it should be able to handle multiple queries for counting squares.The capability to adjust to various query points for counting squares must be present in the system.The data structures containing points for counting squares should be handled by the equipped system, ultimately.
+Preconditions for the method public DetectSquares():
+- The data structure should be initialized and contain points.
+
+Postconditions for the method public DetectSquares():
+- The method should return an instance of the DetectSquares class.
+
+Preconditions for the method public void add(int[] point):
+- The point array should contain two integers representing the x and y coordinates of a point.
+
+Postconditions for the method public void add(int[] point):
+- The point should be added to the data structure.
+
+Preconditions for the method public int count(int[] point):
+- The point array should contain two integers representing the x and y coordinates of a point.
+
+Postconditions for the method public int count(int[] point):
+- The method should return the number of squares that can be formed with the given point and the points in the data structure.

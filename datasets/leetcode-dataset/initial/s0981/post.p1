@@ -1,1 +1,11 @@
-The system should contain a method named `get` that accepts two parameters: a `String` key and an `int` timestamp. This method should return a value that was previously set using the `set` method, with a `timestamp_prev` value that is less than or equal to the provided timestamp.The `get` method should also consider that if there are multiple values that meet the condition mentioned above, it should return the value associated with the largest `timestamp_prev`.If the condition mentioned above is not met by any values, the method should return an empty string instead; otherwise, it should not.The existence of a method called `set` is required by the system. This method should have two parameters: a `String` key and a value. The given value should be stored with the current timestamp. Additionally, the system should have a method called `get`.Additionally, the system should include a method called `timeMap.get` that takes a `String` key and an `int` timestamp as arguments. This method is responsible for retrieving the value associated with the provided key and timestamp, following the aforementioned rules.
+Preconditions:
+- The method `set(String key, String value, int timestamp)` must be called before calling the method `get(String key, int timestamp)`.
+
+Postconditions:
+- The method `get(String key, int timestamp)` returns a value that was previously set using the `set` method.
+- The returned value is associated with the largest `timestamp_prev` that is less than or equal to the given `timestamp`.
+- If there are multiple values with the same `timestamp_prev`, the method returns the value associated with the largest `timestamp_prev`.
+- If there are no values set, the method returns an empty string `""`.
+
+Example:
+- Calling `timeMap.get("foo", 1)` should return "bar" because there is a value associated with "foo" and the largest `timestamp_prev` is - Calling `timeMap.get("foo", 3)` should return "bar" because there is no value associated with "foo" at timestamp 3, but there is a value associated with "foo" at timestamp - Calling `timeMap.get("foo", 4)` should return "bar2" because there is a value associated with "foo" and the largest `timestamp_prev` is 1, which is less than or equal to - Calling `timeMap.get("foo", 5)` should return "bar2" because there is a value associated with "foo" and the largest `timestamp_prev` is 1, which is less than or equal to 5.

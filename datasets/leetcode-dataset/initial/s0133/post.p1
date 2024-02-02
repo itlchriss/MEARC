@@ -1,1 +1,6 @@
-The copy of the given node must always be returned as the first node with `val = 1`, strictly adhering to the syntax of the method's public parameters.The cloned graph must be a reference to the returned copy of the node, ensuring that it strictly adheres to the syntax of the given examples and uses no pronouns, while clearly relating to the parameters and terms in the method public Node cloneGraph(Node node).The graph's copy, which must be a deep copy, requires cloning all nodes and their connections.The process of cloning should strictly adhere to the definition of a deep copy, which is described in the provided link.
+Preconditions:
+The given node must not be null.
+The given node must have a value of 
+Postconditions:
+The returned node must be a reference to the cloned graph.
+The returned node must be a deep copy of the original graph.

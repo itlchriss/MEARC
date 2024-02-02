@@ -1,3 +1,8 @@
-The array of positive integers is the input.The array that represents the lexicographically largest permutation, which is smaller than the input array, is the output.By making exactly one swap of two numbers in the input array, the input array can be transformed into the output array.If it is not possible to obtain a lexicographically smaller permutation of the parameter array by making one swap, the resulting array should be the same as the input array.The array arr is not null.In the second sentence, the array mentioned refers to the parameter array that is sorted in ascending order. 
-In the third sentence, the array mentioned refers to the output array that is mentioned in sentence 2. 
-In the fourth sentence, the array mentioned refers to the output array that is mentioned in sentence 2.
+Preconditions:
+- The input array `arr` is not null.
+- The input array `arr` contains only positive integers.
+
+Postconditions:
+- The returned array is the lexicographically largest permutation that is smaller than the input array `arr`.
+- The returned array can be made with exactly one swap.
+- If it is not possible to create a lexicographically largest permutation that is smaller than the input array `arr` with exactly one swap, then the same array is returned.

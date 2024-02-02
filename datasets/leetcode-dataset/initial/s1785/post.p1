@@ -1,1 +1,9 @@
-The minimum number of elements that need to be added to the array in order to achieve the specific sum, referred to as the str_goal, should be calculated by the system. The array is represented by the parameter nums, the limit is represented by the parameter limit, and the specific sum is represented by the parameter goal.The array must have the property that the absolute value of each element is less than or equal to the specified limit, which is referred to as the str_limit, in order for the method to work correctly.
+Preconditions:
+The input array `nums` must not be null.
+The input array `nums` must not be empty.
+The input integer `limit` must be greater than or equal to The input integer `goal` can be any integer value.
+
+Postconditions:
+The returned integer value must be greater than or equal to The sum of the input array `nums` plus the added elements must be equal to the input integer `goal`.
+The length of the modified array (original array `nums` plus added elements) must be minimized.
+The modified array must maintain the property that the absolute value of each element is less than or equal to the input integer `limit`.

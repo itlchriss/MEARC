@@ -1,1 +1,32 @@
-The ability to efficiently delete a specified number of characters to the left of the cursor should be possessed by the text editor.The number of characters that were actually deleted should be provided by the text editor when the deleteText function is called, thereby giving accurate feedback.The ability to move the cursor to the left a specified number of times, ensuring seamless navigation within the text, is a requirement for the text editor.When the cursorLeft function is invoked, the text editor should return the last 10 characters to the left of the cursor. If there are fewer than 10 characters, all of them should be returned, making it easier to access the desired text.The capability to move the cursor to the right a specified number of times should be present in the text editor, enabling efficient traversal through the text.The text editor should provide the last 10 characters to the left of the cursor, or all characters if there are fewer than 10, ensuring convenient retrieval of the required text when the cursorRight function is called.
+Preconditions for the method public TextEditor():
+- No preconditions mentioned in the given requirements.
+
+Postconditions for the method public TextEditor():
+- A new instance of the TextEditor class is created.
+
+Preconditions for the method public void addText(String text):
+- No preconditions mentioned in the given requirements.
+
+Postconditions for the method public void addText(String text):
+- The given text is added to the text editor.
+
+Preconditions for the method public int deleteText(int k):
+- The cursor must be positioned at a valid location.
+
+Postconditions for the method public int deleteText(int k):
+- The method deletes 'k' characters to the left of the cursor.
+- The method returns the number of characters actually deleted.
+
+Preconditions for the method public String cursorLeft(int k):
+- The cursor must be positioned at a valid location.
+
+Postconditions for the method public String cursorLeft(int k):
+- The method moves the cursor to the left 'k' times.
+- The method returns the last 'min(10, len)' characters to the left of the cursor, where 'len' is the number of characters to the left of the cursor.
+
+Preconditions for the method public String cursorRight(int k):
+- The cursor must be positioned at a valid location.
+
+Postconditions for the method public String cursorRight(int k):
+- The method moves the cursor to the right 'k' times.
+- The method returns the last 'min(10, len)' characters to the left of the cursor, where 'len' is the number of characters to the left of the cursor.

@@ -4,6 +4,11 @@ package g0801_0900.s0832_flipping_an_image;
 // #2022_03_24_Time_1_ms_(68.54%)_Space_45_MB_(37.50%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an `n x n` binary matrix `image`, flip the image **horizontally**, then invert it, and return _the resulting image_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[][] flipAndInvertImage(int[][] image) {
         int m = image.length;
         int n = image[0].length;
@@ -35,4 +40,8 @@ public class Solution {
         }
         return nums;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

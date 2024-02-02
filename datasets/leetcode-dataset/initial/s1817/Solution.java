@@ -6,6 +6,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the array_ `answer` _as described above_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[] findingUsersActiveMinutes(int[][] logs, int k) {
         if (logs.length == 1) {
             int[] res = new int[k];
@@ -36,4 +41,8 @@ public class Solution {
         }
         return result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

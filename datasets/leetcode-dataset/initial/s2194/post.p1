@@ -1,1 +1,6 @@
-The list of cells, represented as strings in the format `(x, y)`, should be provided by the system.Each element in the resulting list should have an x-coordinate that is greater than or equal to the value of r1 and less than or equal to the value of r2. Additionally, each element should have a y-coordinate that is greater than or equal to the value of c1 and less than or equal to the value of c. Furthermore, the elements in the list should be sorted in non-decreasing order, first by columns and then by rows.
+Preconditions:
+- The input string `str` must not be null.
+
+Postconditions:
+- The method should return a list of strings representing cells `(x, y)` that satisfy the conditions `r1 <= x <= r2` and `c1 <= y <= c2`.
+- The cells should be sorted in non-decreasing order first by columns and then by rows.

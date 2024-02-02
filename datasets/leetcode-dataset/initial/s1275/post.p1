@@ -1,1 +1,9 @@
-The input for the system should be a 2D integer array, where each element represents a move to be played on the grid.Upon interpretation of the moves provided in the parameter array, the system is expected to identify the winner of the game, if there is one. The determined winner should then be returned as the output.If the game ends in a draw, the output should be str_Draw.If there are still movements left to play in the parameter array, the output should be str_Pending.
+Preconditions:
+- The input `moves` is a 2D integer array.
+- Each element in `moves` is an array of size 2, where the first element represents the row index and the second element represents the column index.
+- The elements in `moves` are valid indices for the `grid` array.
+
+Postconditions:
+- The method returns a String representing the winner of the game if it exists (`A` or `B`).
+- If the game ends in a draw, the method returns the String `"Draw"`.
+- If there are still movements to play, the method returns the String `"Pending"`.

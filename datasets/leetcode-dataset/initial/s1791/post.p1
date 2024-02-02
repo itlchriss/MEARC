@@ -1,1 +1,10 @@
-The input for the method should be an integer array `edges` that is in the form of a 2D array.Each array in the `edges` parameter should consist of two integers, representing a connection between two nodes.The center of the star graph is expected to be returned by the function, with the given array of edges as the parameter.The node that is connected to all other nodes in the graph is the center of the star graph.The integer representing the center node should be returned.
+Preconditions:
+- The input `edges` is a 2D integer array.
+- Each element in `edges` is an array of size 2, representing an edge between two nodes.
+- The nodes in `edges` are represented by integers.
+- The star graph represented by `edges` has at least 3 nodes.
+
+Postconditions:
+- The method returns an integer representing the center of the star graph.
+- The center of the star graph is a node that is connected to all other nodes in the graph.
+- The center node is represented by an integer.

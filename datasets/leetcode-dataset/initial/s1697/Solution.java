@@ -7,6 +7,12 @@ import java.util.Arrays;
 public class Solution {
     private static class Dsu {
         private int[] parent;
+<<<<<<< HEAD
+=======
+//@ ensures(*For the first query, between 0 and 1 there is no path where each distance is less than 2, thus we return false for this query. For the second query, there is a path (0 -> 1 -> 2) of two edges with distances less than 5, thus we return true for this query.
+Return _a **boolean array**_ `answer`_, where_ `answer.length == queries.length` _and the_ <code>j<sup>th</sup></code> _value of_ `answer` _is_ `true` _if there is a path for_ `queries[j]` _is_ `true`_, and_ `false` _otherwise_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
         public Dsu(int n) {
             parent = new int[n];
@@ -51,4 +57,8 @@ public class Solution {
         }
         return ans;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

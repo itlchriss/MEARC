@@ -6,6 +6,11 @@ package g1801_1900.s1879_minimum_xor_sum_of_two_arrays;
 import java.util.Arrays;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **XOR sum** after the rearrangement_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int minimumXORSum(int[] nums1, int[] nums2) {
         int l = nums1.length;
         int[] dp = new int[1 << l];
@@ -31,4 +36,8 @@ public class Solution {
         dp[state] = min;
         return min;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

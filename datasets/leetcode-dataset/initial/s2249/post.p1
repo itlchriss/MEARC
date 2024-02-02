@@ -1,1 +1,10 @@
-The 2D integer array `circles` should be taken as input by the system.The `circles` array should consist of elements in the form of `[xi ,  yi ,  ri]` , where each element represents the center `(xi ,  yi)` and radius `ri` of a circle.The calculation of the number of lattice points present inside at least one circle should be performed by the system.If the boundary of a circle contains a lattice point, it will be considered inside the circle.The counting of lattice points should only occur once within the system, even if these points are located inside multiple circles.The calculated number of lattice points should be the output of the system when the circles parameter array is provided.
+Preconditions:
+- The input `circles` is a 2D integer array.
+- Each element in `circles` is an array of size 3, representing the center `(x_i, y_i)` and radius `r_i` of a circle.
+- The values of `x_i`, `y_i`, and `r_i` are integers.
+- The values of `x_i` and `y_i` are within the range of integer values.
+- The values of `r_i` are positive integers.
+
+Postconditions:
+- The method returns an integer value representing the number of lattice points that are present inside at least one circle.
+- The returned value is non-negative.

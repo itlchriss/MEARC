@@ -1,2 +1,24 @@
-The stack data structure of the system should be capable of storing integers, with a maximum size specified by the parameter maxSize.The method `pop()` should be responsible for removing and returning the topmost element of the stack, as required by the stack.The stack's top element should be removed and the stack should be updated accordingly to reflect the removal if the stack is empty, after the `pop()` method is called.The top element of the stack should always be returned by the `pop()` method.In the case where the stack has no elements, the return value of the `pop()` operation should be - Moreover, the `pop()` operation should eliminate the top element from the stack.After removing the top element using the `pop()` method, the stack should be updated accordingly, ensuring that the parameter array is sorted in ascending order.The expected behavior is for the `pop()` method to return the top element of the stack and update the stack accordingly, in addition to the fact that the `pop()` method is expected to return the top element of the stack and update the stack accordingly.The outcome will not be null.
-The array of parameters will be sorted in ascending order.The `pop()` method should return -1 if the stack is empty, with the top element removed and the stack updated accordingly.In a similar manner, when the stack is empty, the `pop()` method should return the top element of the stack, modify the stack to remove the top element, and provide -1 as the return value.
+Preconditions for the method public CustomStack(int maxSize):
+- The maxSize parameter must be a positive integer.
+
+Postconditions for the method public CustomStack(int maxSize):
+- The CustomStack object is created with the specified maxSize.
+
+Preconditions for the method public void push(int x):
+- The stack is not full.
+
+Postconditions for the method public void push(int x):
+- The element x is added to the top of the stack.
+
+Preconditions for the method public int pop():
+- The stack is not empty.
+
+Postconditions for the method public int pop():
+- The top element of the stack is removed and returned.
+- If the stack is empty, -1 is returned.
+
+Preconditions for the method public void increment(int k, int val):
+- The stack is not empty.
+
+Postconditions for the method public void increment(int k, int val):
+- The top k elements of the stack are incremented by val.

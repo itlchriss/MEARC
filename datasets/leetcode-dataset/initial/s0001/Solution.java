@@ -8,6 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_. You can return the answer in any order. **Explanation:** Because nums[0] + nums[1] == 9, we return [0, 1].*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> indexMap = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {
@@ -19,4 +24,8 @@ public class Solution {
         }
         return new int[] {-1, -1};
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

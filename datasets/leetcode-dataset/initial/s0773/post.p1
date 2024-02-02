@@ -1,1 +1,17 @@
-Calculating the least number of moves required to solve the puzzle board, the input for the system should be a puzzle board.The number of moves required to solve the puzzle board should be returned by the system. If it is impossible to solve, -1 should be returned by the system.The puzzle board's state should be determined by the system, and it should check if the state is solved.The puzzle board's solvability should be determined by the system, and the minimum number of moves needed for its solution should be calculated.The puzzle board configurations and sizes should be handled by the system.
+Preconditions:
+The `board` parameter must be a valid puzzle board.
+The `depth` parameter must be a non-negative integer.
+The `y` parameter must be a valid row index in the puzzle board.
+The `x` parameter must be a valid column index in the puzzle board.
+
+Postconditions:
+The method should return a Node object representing the state of the board after the least number of moves required to solve it.
+If it is impossible to solve the board, the method should return `-1`.
+The `board` parameter should remain unchanged after the method is executed.
+The `depth` parameter should remain unchanged after the method is executed.
+The `y` parameter should remain unchanged after the method is executed.
+The `x` parameter should remain unchanged after the method is executed.
+The `slidingPuzzle` method should not modify any other variables or objects outside its scope.
+The `swap` method should return a new string representing the board after swapping the positions of the elements at `(y1, x1)` and `(y2, x2)`.
+The `swap` method should not modify the original `board` string.
+The `swap` method should not modify any other variables or objects outside its scope.

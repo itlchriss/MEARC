@@ -4,6 +4,11 @@ package g2901_3000.s2945_find_maximum_non_decreasing_array_length;
 // #2023_12_26_Time_11_ms_(98.10%)_Space_60_MB_(40.30%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the_ **_maximum_** _length of a_ **_non-decreasing_** _array that can be made after applying operations._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int findMaximumLength(int[] nums) {
         int n = nums.length;
         int[] que = new int[n + 1];
@@ -29,4 +34,8 @@ public class Solution {
         }
         return count[n];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

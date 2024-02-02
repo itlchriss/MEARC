@@ -1,1 +1,9 @@
-The `prepare . sh` script, which needs to be run initially, should be present in the system.The `run.sh` script, which needs to be executed, should be present in the system.The function `int query(int left, int right, int threshold)` should be present in the system. This function takes in three parameters: `left`, `right`, and `threshold`.The element in the subarray `arr[left .  .  . right]` that occurs at least `threshold` times should be returned by the `query` function.If the number of occurrences of any element in the subarray is less than `threshold`, the `query` function should return -The system should have a `majorityChecker` object that can call the `query` function.The `query` function, when called with specific parameters, should return the expected result when the `majorityChecker` object is able to do so.The `majorityChecker` object should have the capability to invoke the `query` function using the parameters `0 ,  5 ,  4` and yield the outcome "The result is not null." The `majorityChecker` object should also have the capability to invoke the `query` function using the parameters `0 ,  3 ,  3` and yield the outcome "The parameter array is sorted in ascending order." Furthermore, the `majorityChecker` object should have the capability to invoke the `query` function using the parameters `2 ,  3 ,  2` and yield the outcome 2.
+Preconditions:
+The input array `arr` must not be null.
+The input array `arr` must not be empty.
+The values in the input array `arr` must be integers.
+
+Postconditions:
+The method `query` should return an integer value.
+If there exists an element in the subarray `arr[left...right]` that occurs at least `threshold` times, the method `query` should return that element.
+If there is no element in the subarray `arr[left...right]` that occurs at least `threshold` times, the method `query` should return -1.

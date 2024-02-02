@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `rains` is not null.
+- The input array `rains` contains only non-negative integers.
+- The input array `rains` has a length greater than or equal to 
+Postconditions:
+- The returned array `ans` is not null.
+- The returned array `ans` contains only non-negative integers.
+- The length of the returned array `ans` is equal to the length of the input array `rains`.
+- If it is possible to avoid flood, the returned array `ans` contains the same values as the input array `rains`, except for the elements that represent rainy days. Those elements are replaced with - If it is impossible to avoid flood, the returned array `ans` is an empty array.

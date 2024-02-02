@@ -1,1 +1,19 @@
-The 0-indexed integer array `nums` is the input.The integers `low` and `high` are included in the input.The count of nice pairs should be the output.A defined nice pair is represented as a pair of indices `(i, j)` where `0 <= i < j < nums.length` and `low <= nums[i] * 2 <= nums[j] <= high`.The output should be the count of nice pairs that are to be returned.
+Preconditions for the method `countPairs(int[] nums, int low, int high)`:
+The `nums` array must not be null.
+The `nums` array must have at least two elements.
+The `low` integer must be less than or equal to the `high` integer.
+
+Postconditions for the method `countPairs(int[] nums, int low, int high)`:
+The method returns an integer representing the number of nice pairs.
+
+Preconditions for the constructor `Trie()`:
+No preconditions.
+
+Postconditions for the constructor `Trie()`:
+A new Trie object is created.
+
+Preconditions for the method `insertNumber(int num)`:
+The `num` integer must be a valid integer.
+
+Postconditions for the method `insertNumber(int num)`:
+The `num` integer is inserted into the Trie data structure.

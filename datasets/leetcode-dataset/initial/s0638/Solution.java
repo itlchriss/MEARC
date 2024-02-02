@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the lowest price you have to pay for exactly certain items as given, where you could make optimal use of the special offers_. You are not allowed to buy more items than you want, even if that would lower the overall price. You could use any of the special offers as many times as you want.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int shoppingOffers(List<Integer> price, List<List<Integer>> special, List<Integer> needs) {
         Map<List<Integer>, Integer> map = new HashMap<>();
         shoppingOffersUtil(price, special, needs, map);
@@ -65,4 +70,8 @@ public class Solution {
         }
         return ans;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,1 +1,12 @@
-The size of the output, which should be an integer matrix, must strictly adhere to the dimensions m x n.The height of each cell (i, j) in the matrix should be represented by each element in the array parameter. If there are multiple solutions, any of the heights can be returned.
+Preconditions:
+The input matrix `isWater` must not be null.
+The input matrix `isWater` must have at least one row and one column.
+The input matrix `isWater` must contain only integers.
+
+Postconditions:
+The output matrix `height` must not be null.
+The output matrix `height` must have the same number of rows and columns as the input matrix `isWater`.
+The output matrix `height` must contain only integers.
+The output matrix `height` must have the same values as the input matrix `isWater` for cells that are not water.
+The output matrix `height` must have different values for cells that are water.
+The output matrix `height` must have at least one cell with a non-zero height.

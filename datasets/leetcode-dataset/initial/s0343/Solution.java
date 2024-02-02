@@ -5,6 +5,11 @@ package g0301_0400.s0343_integer_break;
 
 public class Solution {
     private int[] arr;
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the maximum product you can get_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int integerBreak(int n) {
         arr = new int[n + 1];
@@ -27,4 +32,8 @@ public class Solution {
         }
         return arr[n];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

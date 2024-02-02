@@ -1,1 +1,6 @@
-The condition for the input is that it should be a binary tree and it should meet the condition of being a binary tree.The expected outcome is the maximum sum of all keys of any sub-tree, with the additional condition that the sub-tree must also be a Binary Search Tree (BST).All values in the binary tree are negatives, and there are no positive values in the parameter array.If there are no valid sub-trees that are also Binary Search Trees (BSTs), the output should be a BST that is empty.
+Preconditions:
+The input `root` is a binary tree.
+
+Postconditions:
+The method returns an integer representing the maximum sum of all keys of any sub-tree which is also a Binary Search Tree (BST).
+If all values in the tree are negatives, the method returns If the tree is empty, the method returns 0.

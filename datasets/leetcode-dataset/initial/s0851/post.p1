@@ -1,1 +1,15 @@
-The output should be an integer array, where the array represents the result of the method public int[] loudAndRich(int[][] richer, int[] quiet).The array representing the output should have each element representing the individual who is the least quiet among all those who have equal to or more money than the corresponding person in the input array.The value of each element in the output array should indicate the index of the person who is the least quiet, given that the parameter array is sorted in ascending order and the result is not null.The reliance on the smallest value of the str_quiet array for a specific individual is crucial in determining the least quiet person.The individuals who should be compared to identify the least quiet person are only those who have equal to or more money than the person being compared, as the parameter array is sorted in ascending order.The array representing the amount of money possessed by each person is the input array.The str_quiet array represents the quietness level of each person.
+Preconditions:
+- The input parameter `richer` is a 2D array of integers representing the richer relationships between people.
+- The input parameter `quiet` is an array of integers representing the quietness levels of each person.
+- The length of `quiet` is equal to the number of people.
+- The values in `quiet` are non-negative integers.
+- The values in `richer` are valid indices of `quiet` array.
+- The values in `richer` are unique and do not contain any duplicates.
+- The values in `richer` are within the range of valid indices of `quiet` array.
+
+Postconditions:
+- The method returns an integer array `answer`.
+- The length of `answer` is equal to the number of people.
+- The values in `answer` are valid indices of `quiet` array.
+- For each index `x` in `answer`, the value `y` at that index is the least quiet person among all people who definitely have equal to or more money than the person `x`.
+- The value `y` at each index `x` in `answer` is the index of the person with the smallest value of `quiet[y]` among all people who have equal to or more money than the person `x`.

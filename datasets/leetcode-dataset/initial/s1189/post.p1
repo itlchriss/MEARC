@@ -1,1 +1,9 @@
-The `text` input should be accurately and efficiently tracked by the system, ensuring that the characters used are properly accounted for.The `text` input should be prevented from using a character more than once, ensuring that each character is used only once.The count of instances that can be created by utilizing the characters in the `text` input, while considering all potential combinations and permutations, should be determined by the system.
+Preconditions:
+The input `text` should not be null.
+The input `text` should not be empty.
+
+Postconditions:
+The method should return an integer value representing the maximum number of instances that can be formed.
+The returned value should be greater than or equal to The returned value should be the maximum possible number of instances that can be formed using the characters in `text`.
+Each character in `text` can be used at most once to form instances.
+The method should not modify the input `text` parameter.

@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unchecked")
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **longest subsequence repeated**_ `k` _times in string_ `s`_. If multiple such subsequences are found, return the **lexicographically largest** one. If there is no such subsequence, return an **empty** string_. **Explanation:** There is no subsequence repeated 2 times. Empty string is returned.
+Return _the **longest subsequence repeated**_ `k` _times in string_ `s`_. If multiple such subsequences are found, return the **lexicographically largest** one. If there is no such subsequence, return an **empty** string_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String longestSubsequenceRepeatedK(String s, int k) {
         char[] ca = s.toCharArray();
         char[] freq = new char[26];
@@ -56,4 +62,8 @@ public class Solution {
         }
         return true;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,0 +1,9 @@
+Preconditions:
+- The input `head` is a valid ListNode object.
+- The ListNode object `head` is not null.
+
+Postconditions:
+- The method returns an integer array `answer`.
+- The length of the `answer` array is equal to the number of nodes in the ListNode object `head`.
+- For each node in the ListNode object `head`, the corresponding value in the `answer` array is the value of the next greater node.
+- If a node in the ListNode object `head` does not have a next greater node, the corresponding value in the `answer` array is set to 0.

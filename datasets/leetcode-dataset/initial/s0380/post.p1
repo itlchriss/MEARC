@@ -1,1 +1,26 @@
-The existence of a method `getRandom()` that returns a random element from the current set of elements is required, given that the set contains at least one element.The probability of each element being returned should be equal, which the method `getRandom()` should ensure.The condition that the item is not already present, the method `insert(int val)` should have a parameter `val` that represents the item to be inserted into the set. The method should return `true` if the item was successfully inserted.In contrast, if the value was already in the set and could not be inserted, the `insert(int val)` method should return `false`.The presence of the item `val` in the set should be checked before removing it using the method `remove(int val)`. If the item is present, it should be successfully removed and the method should return `true`.In contrast, if the value is not present in the set and cannot be removed, the method `remove(int val)` should return `false`.The presence of at least one element in the set must be guaranteed by the system before invoking the method `getRandom()`.The case where a duplicate value is already present in the set should be handled by the system when the method `insert(int val)` is called. The system should appropriately respond by not inserting the duplicate value.The case where a value that is not present in the set is called with the method `remove(int val)` should be handled by the system. The system should respond appropriately by not attempting to remove the non-existent value.
+Preconditions for the method public RandomizedSet():
+- None
+
+Postconditions for the method public RandomizedSet():
+- The set is initialized and ready to be used.
+
+Preconditions for the method public boolean insert(int val):
+- None
+
+Postconditions for the method public boolean insert(int val):
+- If the item `val` was not present in the set, it is inserted.
+- If the item `val` was already present in the set, it is not inserted.
+
+Preconditions for the method public boolean remove(int val):
+- None
+
+Postconditions for the method public boolean remove(int val):
+- If the item `val` was present in the set, it is removed.
+- If the item `val` was not present in the set, nothing is changed.
+
+Preconditions for the method public int getRandom():
+- At least one element exists in the set.
+
+Postconditions for the method public int getRandom():
+- A random element from the set is returned.
+- Each element in the set has the same probability of being returned.

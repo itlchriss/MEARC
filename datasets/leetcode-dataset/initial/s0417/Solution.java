@@ -10,6 +10,11 @@ import java.util.List;
 public class Solution {
     private int col = 0;
     private int row = 0;
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _a **2D list** of grid coordinates_ `result` _where_ <code>result[i] = [r<sub>i</sub>, c<sub>i</sub>]</code> _denotes that rain water can flow from cell_ <code>(r<sub>i</sub>, c<sub>i</sub>)</code> _to **both** the Pacific and Atlantic oceans_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public List<List<Integer>> pacificAtlantic(int[][] matrix) {
         List<List<Integer>> res = new ArrayList<>();
@@ -59,4 +64,8 @@ public class Solution {
             dfs(i, j - 1, matrix, visited);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

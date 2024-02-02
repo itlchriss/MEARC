@@ -1,1 +1,7 @@
-The array of output values should consist solely of unique values.The array of output values should include values that are present in at least two out of the three arrays of input values.The arrangement of the integers in the resulting array is not important, for the method public List<Integer> twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) when given the sorted arrays nums1, nums2, and nums3.
+Preconditions:
+- The method should take three integer arrays `nums1`, `nums2`, and `nums3` as input parameters.
+
+Postconditions:
+- The method should return a distinct array containing all the values that are present in at least two out of the three input arrays.
+- The returned array should contain only integer values.
+- The order of the values in the returned array can be any order.

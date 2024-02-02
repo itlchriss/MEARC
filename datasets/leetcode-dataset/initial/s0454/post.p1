@@ -1,1 +1,13 @@
-The four integers `(i ,  j ,  k ,  l)` form the tuples.The indices of the elements in the arrays `nums1`, `nums2`, `nums3`, and `nums4` are the integers in the tuples.The arrays `nums1`, `nums2`, `nums3`, and `nums4` all have a length of `n`.The count of all possible combinations of indices `(i, j, k, l)` is the number of tuples returned.The integers in the tuples can be repeated in the arrays nums1, nums2, nums3, and nums4.The integers from different arrays can be used in the tuples.The index of the tuples from different arrays can be the same.The indices of the tuples from the same array can differ.The indices from the same array can be the same for the tuples.The indices of the tuples can vary across different arrays.The indices from different arrays can be the same for the tuples.The indices of the tuples from the same array can differ.The indices from the same array can be the same for the tuples.The total number of valid combinations of indices `(i ,  j ,  k ,  l)` that satisfy the given conditions is equal to the count of tuples returned.The final result of the function is the count of tuples returned.
+Preconditions:
+The arrays `nums1`, `nums2`, `nums3`, and `nums4` must not be null.
+The length of all arrays `nums1`, `nums2`, `nums3`, and `nums4` must be equal to `n`.
+The arrays `nums1`, `nums2`, `nums3`, and `nums4` must contain only integers.
+
+Postconditions:
+The method should return an integer value representing the number of tuples `(i, j, k, l)` that satisfy the given condition.
+The method should handle the case when there are no tuples `(i, j, k, l)` that satisfy the given condition and return The method should handle the case when all arrays `nums1`, `nums2`, `nums3`, and `nums4` are empty and return The method should handle the case when any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is empty and return The method should handle the case when the length of any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is 0 and return The method should handle the case when the length of any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is less than `n` and return The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain negative integers.
+The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain positive integers.
+The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain zero.
+The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain duplicate integers.
+The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain large integers.
+The method should handle the case when the sum of any tuple `(i, j, k, l)` exceeds the maximum value of an integer and return the maximum value of an integer.

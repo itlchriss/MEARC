@@ -1,1 +1,8 @@
-The array returned as output should not be null, and it should strictly adhere to the syntax of the given examples "The result is not null." and "The parameter array is sorted in ascending order." This array should be the result of the method public int[] numberOfLines(int[] widths, String s), where the parameter array widths represents the widths of characters and the parameter String s represents the input string.The size of the resulting array should be The resulting array should be named str_result, when the method numberOfLines is called with the parameters widths and s.
+Preconditions:
+The input array `widths` must not be null.
+The input array `widths` must have a length of The input string `s` must not be null.
+
+Postconditions:
+The returned array `result` must not be null.
+The returned array `result` must have a length of The first element of the returned array `result[0]` must be the number of lines required to write the input string `s` using the given `widths` array.
+The second element of the returned array `result[1]` must be the number of characters on the last line when writing the input string `s` using the given `widths` array.

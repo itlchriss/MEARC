@@ -10,6 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the **minimum** number of operations needed to make_ `target` _a **subsequence** of_ `arr`_._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int minOperations(int[] target, int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < target.length; i++) {
@@ -41,4 +46,8 @@ public class Solution {
 
         return l;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

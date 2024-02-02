@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 Failed
+=======
+exists x.(_str_them{NN}(x) & True & exists e.(_refer{VBZ}(e) & (Subj(e) = x) & exists x.(_shop{NNS}(x) & _matching{NN}(x) & True & (Dat(e) = x)) & True))
+exists x e z2.(_list{NN}(z2) & _empty{JJ}(z2) & True & (Subj(e) = z2) & exists z1.(_result{NN}(z1) & True & _to{TO}(e,z1) & True)) & -exists x.(_shop{NN}(x) & True & exists z3.(_copy{NN}(z3) & _unrented{JJ}(z3) & True & exists e.(_have{VBZ}(e) & (Subj(e) = x) & (Acc(e) = z3) & True)))
+exists x.(_str_they{NN}(x) & True & exists e.(_refer{VBZ}(e) & (Subj(e) = x) & exists x.(exists e06.(_rent{VBN}(e06) & (Acc(e06) = x) & _movie{NNS}(x)) & True & (Dat(e) = x)) & True))
+\F1 F2.all x.((_refer{NNS}(x) & exists z7.((z7 = _they{PRP}) & True & (x = z7)) & True & exists z11.(exists e.(_rent{VBN}(e) & (Acc(e) = z11) & _movie{NNS}(z11)) & True & exists e.(_to{TO}(e,z11) & (Subj(e) = x) & F1(x))) & exists z12.(_fewer{JJR}(z12) & _five{CD}(z12) & True & exists e.((Subj(e) = Subj(e)) & True))) -> F2(x))
+exists x e z14.(_list{NN}(z14) & _empty{JJ}(z14) & True & (Subj(e) = z14) & exists z13.(_result{NN}(z13) & True & _to{TO}(e,z13) & True)) & -exists x.(_movie{NNS}(x) & True & exists e.(_rent{VBN}(e) & (Acc(e) = x) & _currently{RB}(e) & True))
+exists x.(_str_they{NN}(x) & True & exists e.(_refer{VBZ}(e) & (Subj(e) = x) & exists x.(exists e017.(_rent{VBN}(e017) & (Acc(e017) = x) & _movie{NNS}(x)) & True & (Dat(e) = x)) & True))
+\F1 F2.all x.((_refer{NNS}(x) & exists z18.((z18 = _they{PRP}) & True & (x = z18)) & True & exists z22.(exists e.(_rent{VBN}(e) & (Acc(e) = z22) & _movie{NNS}(z22)) & True & exists e.(_to{TO}(e,z22) & (Subj(e) = x) & F1(x))) & exists z23.(_fewer{JJR}(z23) & _five{CD}(z23) & True & exists e.((Subj(e) = Subj(e)) & True))) -> F2(x))
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

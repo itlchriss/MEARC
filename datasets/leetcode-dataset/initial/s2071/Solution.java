@@ -8,6 +8,11 @@ import java.util.Arrays;
 import java.util.Deque;
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the **0-indexed** integer arrays `tasks` and `workers` and the integers `pills` and `strength`, return _the **maximum** number of tasks that can be completed._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int maxTaskAssign(int[] tasks, int[] workers, int pills, int strength) {
         int left = 0;
         int right = Math.min(tasks.length, workers.length);
@@ -51,4 +56,8 @@ public class Solution {
         }
         return true;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

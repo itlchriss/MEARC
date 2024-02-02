@@ -5,6 +5,12 @@ package g2101_2200.s2182_construct_string_with_repeat_limit;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*The string is the lexicographically largest repeatLimitedString possible so we return "zzcccac". The string is the lexicographically largest repeatLimitedString possible so we return "bbabaa".
+Return _the **lexicographically largest**_ `repeatLimitedString` _possible_.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public String repeatLimitedString(String s, int repeatLimit) {
         char[] result = new char[s.length()];
         int[] freq = new int[128];
@@ -42,4 +48,8 @@ public class Solution {
         }
         return new String(result, 0, index);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

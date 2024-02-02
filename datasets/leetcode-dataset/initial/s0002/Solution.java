@@ -4,7 +4,12 @@ package g0001_0100.s0002_add_two_numbers;
 // #Data_Structure_II_Day_10_Linked_List #Programming_Skills_II_Day_15
 // #Big_O_Time_O(max(N,M))_Space_O(max(N,M)) #2024_01_04_Time_1_ms_(100.00%)_Space_44.4_MB_(16.63%)
 
+<<<<<<< HEAD
 import com_github_leetcode.ListNode;
+=======
+// import com_github_leetcode.ListNode;
+import java.util.Objects;
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
 /*
  * Definition for singly-linked list.
@@ -15,6 +20,41 @@ import com_github_leetcode.ListNode;
  * }
  */
 public class Solution {
+<<<<<<< HEAD
+=======
+    public class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode() {}
+
+        public ListNode(int val) {
+            this.val = val;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder result = new StringBuilder("" + val);
+            if (Objects.nonNull(next)) {
+                ListNode current = next;
+                while (current.next != null) {
+                    result.append(", ");
+                    result.append(current.val);
+                    current = current.next;
+                }
+                result.append(", ");
+                result.append(current.val);
+            }
+            return result.toString();
+        }
+    }
+    
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
         ListNode p = l1;

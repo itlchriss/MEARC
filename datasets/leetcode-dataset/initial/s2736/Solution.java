@@ -31,6 +31,12 @@ public class Solution {
         }
         return entry.getValue();
     }
+<<<<<<< HEAD
+=======
+//@ ensures(*Therefore, we return `[6,10,7]`.
+Return _an array_ `answer` _where_ `answer[i]` _is the answer to the_ <code>i<sup>th</sup></code> _query._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int[] maximumSumQueries(int[] nums1, int[] nums2, int[][] queries) {
         int n = nums1.length;
@@ -58,4 +64,8 @@ public class Solution {
         }
         return ans;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

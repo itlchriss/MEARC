@@ -1,1 +1,12 @@
-When calculating the difference between the maximum and minimum weights in the array of marbles, the method should be able to determine the range of weights.The system is referred to by the variable "str_it" in the method, and it is strictly adhered to.The weights array is not null.The ability of the system to determine the maximum score among marble distributions depends on the availability of all the data accessible to it.The system is referred to by the variable "str_it" in a way that strictly adheres to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order.", where the weights array and k are explicitly related to the terms in it.The weights array is not null.The minimum score among marble distributions can be determined by the system, which has access to all the available data, in a similar manner.The system is referred to by the variable "str_it" in the method, and it strictly adheres to the syntax of the method public long putMarbles(int[] weights, int k).The weights array is not null.The difference between the maximum and minimum scores can be accurately returned by the system only if it is able to determine both of them.The system is referred to by the variable "str_it" in a way that strictly adheres to the syntax of the examples "The result is not null." and "The parameter array is sorted in ascending order.", where the weights array and k are explicitly related to the terms in it.
+Preconditions:
+- The method takes in an array of integers called "weights" and an integer called "k".
+- The "weights" array contains positive integers representing the weights of marbles.
+- The integer "k" represents the number of marbles to be distributed.
+- The "weights" array is not null.
+- The "k" value is greater than or equal to 1 and less than or equal to the length of the "weights" array.
+
+Postconditions:
+- The method returns a long value representing the difference between the maximum and minimum scores among marble distributions.
+- The maximum score is the sum of the weights of the heaviest "k" marbles in any distribution.
+- The minimum score is the sum of the weights of the lightest "k" marbles in any distribution.
+- If there is only one possible distribution, where the maximum and minimum scores are the same, the method returns 0.

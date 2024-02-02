@@ -1,1 +1,14 @@
-Upon completion of the merging process, the accounts that are returned should be arranged in a specific format.The first element of each merged account should be the name.All the emails in each merged account should be the remaining elements.The emails within each account merged in the parameter list should be sorted in ascending order.The accounts that have been merged can be returned in any order.The merging of the accounts should rely on email addresses that are common among them.The accounts that have the same email address should be considered as belonging to the same person.Belonging to different individuals should be regarded as the case when accounts have different email addresses.The order in which the accounts are merged in the final result is not important.The outcome will not be empty. The array of parameters will be arranged in ascending order. The ultimate outcome will be a collection of collections, where each internal collection will represent a combined account.
+Preconditions:
+The input list "accounts" is not null.
+Each element in the "accounts" list is a list of strings.
+The first element of each account is the name.
+The rest of the elements in each account are email addresses.
+The email addresses within each account are not necessarily in sorted order.
+
+Postconditions:
+The accounts are merged based on common email addresses.
+The merged accounts are returned as a list of lists of strings.
+The first element of each merged account is the name.
+The rest of the elements in each merged account are email addresses.
+The email addresses within each merged account are in sorted order.
+The order of the merged accounts in the returned list can be any order.

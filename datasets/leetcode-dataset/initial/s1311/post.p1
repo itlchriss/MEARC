@@ -1,1 +1,9 @@
-The shortest path between the user and the person who watched the video should be relied upon by the system in order to determine the level of videos.The friends of the user, as well as the friends of friends, should be identified by the system, ensuring that the result is not null.The videos watched by the user's friends at level 1 should be retrieved by the system, provided that the system has the ability to do so.The capability of the system to retrieve all watched videos by the friends of the user's friends at level 2 is contingent upon the system's ability to do so.The ability of the system to retrieve all watched videos by people with the shortest path exactly equal to the given level is contingent upon the system's ability to do so.The list of videos should be ordered by their frequencies in increasing order, assuming the system is capable of doing so.The ordering of videos with the same frequency alphabetically from least to greatest should be done by the system, provided that the system is able to do so.The array of parameters passed to the method public String toString() is sorted in ascending order.
+Preconditions:
+- The method should be called on an instance of a class that represents a user.
+- The user's ID should be provided as a parameter to the method.
+- The level of videos should be provided as a parameter to the method.
+
+Postconditions:
+- The method should return a string representation of the list of videos.
+- The videos should be ordered by their frequencies in increasing order.
+- If two videos have the same frequency, they should be ordered alphabetically from least to greatest.

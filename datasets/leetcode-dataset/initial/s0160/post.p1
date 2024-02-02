@@ -1,1 +1,7 @@
-The input for the function consists of two singly linked-lists, with each list being treated as a separate entity.The node at which the two lists intersect is the result, indicating the specific node where the intersection occurs.In the absence of an intersection between the two linked lists, the result will be the null value, resulting in a null value.The original structure of the linked lists is maintained after the result is obtained, guaranteeing that the original structure remains unchanged upon completion.The linked structure is created by the judge, and the two heads, `headA` and `headB`, are passed to the program based on the inputs.To ensure acceptance of the solution, the correct intersected node indicating the accurate intersection point must be returned.When there is no intersection between the two lists, the value of intersectVal is assigned as 0, indicating the absence of an intersection.In scenarios where there is no intersection between the two lists, it is possible to assign skipA and skipB values arbitrarily.
+Preconditions:
+- The method takes in two parameters `headA` and `headB`, which are the heads of two singly linked-lists.
+- The linked lists must retain their original structure after the function returns.
+
+Postconditions:
+- If the two linked lists have no intersection at all, the method should return `null`.
+- If the two linked lists intersect, the method should return the node at which the two lists intersect.

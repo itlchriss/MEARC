@@ -1,1 +1,11 @@
-The queue reconstruction should be performed by the function, which should then return it.The array `people` represents the queue, where the input array strictly adheres to the syntax of the given examples and clearly relates to the terms in it.The queue should be formatted as the returned queue, where the array `queue` is formatted in the same way as the returned queue.The format of each element in the `queue` array should strictly adhere to `[hj ,  kj]`, where `[hj ,  kj]` represents the attributes of the jth person in the queue.The `people` array should have the person at the front of the queue located at index 0 in the `queue` array.
+Preconditions:
+- The input array `people` is not null.
+- The input array `people` is a 2D array.
+- Each element in the input array `people` is an array of length - The first element of each subarray in the input array `people` represents the height of a person.
+- The second element of each subarray in the input array `people` represents the number of people in front of the person.
+
+Postconditions:
+- The returned queue `queue` is a 2D array.
+- Each element in the returned queue `queue` is an array of length - The first element of each subarray in the returned queue `queue` represents the height of a person.
+- The second element of each subarray in the returned queue `queue` represents the number of people in front of the person.
+- The order of the elements in the returned queue `queue` represents the correct order of the people in the queue.

@@ -4,6 +4,11 @@ package g2101_2200.s2172_maximum_and_sum_of_array;
 // #2022_06_02_Time_21_ms_(87.50%)_Space_41.7_MB_(98.44%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the maximum possible **AND sum** of_ `nums` _given_ `numSlots` _slots._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public int maximumANDSum(int[] nums, int numSlots) {
         int mask = (int) Math.pow(3, numSlots) - 1;
         int[] memo = new int[mask + 1];
@@ -27,4 +32,8 @@ public class Solution {
         }
         return memo[mask];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

@@ -1,1 +1,10 @@
-The input for the system should be an array `positions` that the system takes.The positions of customers on a map should be contained in the array `positions`.The array should strictly adhere to the syntax of the given examples, where each position is represented as a pair of coordinates `[x<sub>i</sub> ,  y<sub>i</sub>]`.The method should calculate the euclidean distance between the position of each customer and the positions of all other customers, and return the minimum distance sum.The sum of all euclidean distances should be calculated by the system.The minimum sum of euclidean distances should be found by the system.The output should be the minimum sum of euclidean distances, which the system should return.
+Preconditions:
+The input array `positions` is not null.
+The input array `positions` is not empty.
+Each element in the input array `positions` is an array of size 2, representing the x and y coordinates of a customer's position.
+The x and y coordinates of each customer's position are within the valid range of double values.
+
+Postconditions:
+The method returns a double value representing the minimum sum of the euclidean distances to all customers.
+The returned value is greater than or equal to The returned value is rounded to a specific precision, such as two decimal places.
+The method does not modify the input array `positions` or its elements.

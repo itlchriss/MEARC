@@ -8,6 +8,12 @@ public class Solution {
     private final int[] masks = new int[31];
     private final long[][] cache = new long[31][1 << 6];
     private static final long MOD = 1_000_000_007;
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the number of square-free non-empty subsets of the array_ **nums**. Since the answer may be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.
+Return _the number of square-free non-empty subsets of the array_ **nums**. Since the answer may be too large, return it **modulo** <code>10<sup>9</sup> + 7</code>.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int squareFreeSubsets(int[] nums) {
         int[] p = {1, 2, 3, 5, 7, 11, 13};
@@ -57,4 +63,8 @@ public class Solution {
         }
         return (int) res;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

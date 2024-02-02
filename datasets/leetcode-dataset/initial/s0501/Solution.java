@@ -26,6 +26,11 @@ public class Solution {
     private Integer prev = null;
     private int max = 0;
     private int cnt = 1;
+<<<<<<< HEAD
+=======
+//@ ensures(*Given the `root` of a binary search tree (BST) with duplicates, return _all the [mode(s)](https://en.wikipedia.org/wiki/Mode_(statistics)) (i.e., the most frequently occurred element) in it_. If the tree has more than one mode, return them in **any order**.*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
 
     public int[] findMode(TreeNode root) {
         ArrayList<Integer> modes = new ArrayList<>();
@@ -59,4 +64,8 @@ public class Solution {
         prev = root.val;
         traverse(root.right, modes);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

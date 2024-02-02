@@ -1,0 +1,11 @@
+Preconditions:
+The input parameter `costs` is a 2D array of integers representing the cost of flying each person from one city to another.
+The number of rows in `costs` is equal to twice the value of `n`, where `n` is the number of people arriving in each city.
+The number of columns in `costs` is equal to 2, representing the two cities.
+The values in `costs` are non-negative integers.
+
+Postconditions:
+The method returns an integer representing the minimum cost to fly every person to a city.
+The minimum cost is calculated such that exactly `n` people arrive in each city.
+The minimum cost is determined by selecting the optimal combination of people to be flown to each city, considering the cost of flying each person.
+The method does not modify the input parameter `costs`.

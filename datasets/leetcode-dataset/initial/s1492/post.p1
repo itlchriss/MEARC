@@ -1,1 +1,9 @@
-The list of factors, which should be sorted in ascending order, should be returned by the function. The kth factor from the list should also be returned.The kth factor from the list should be returned by the function only if the number of factors of n is less than k.If the number of factors of n is less than k, the expected return value should be -1.
+Preconditions:
+- The method takes two integer parameters, `n` and `k`.
+- `n` is a positive integer.
+- `k` is a positive integer.
+
+Postconditions:
+- The method returns an integer value.
+- If `n` has less than `k` factors, the method returns -- If `n` has at least `k` factors, the method returns the `k`th factor in the list of factors of `n`.
+- The list of factors of `n` is sorted in ascending order.

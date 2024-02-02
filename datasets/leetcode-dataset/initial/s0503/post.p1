@@ -1,1 +1,9 @@
-The circular integer array `nums` should be taken as input by the system.The `nums` array should have its next greater number determined for each element.Consider the number `x` in the array, where the first greater number to its traversing-order next in the array should be regarded as the subsequent greater number of `x`.The method should perform a circular search in order to find the next greater number for each element in the parameter array.For a number in the parameter array that does not have a next greater number, the expected result that the system should return is `-1`.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+
+Postconditions:
+- The method returns an array of integers.
+- The length of the returned array is the same as the length of the input array `nums`.
+- For each element `x` in the input array `nums`, the corresponding element in the returned array is the next greater number of `x` in the array.
+- If the next greater number does not exist for an element `x`, the corresponding element in the returned array is -1.

@@ -1,1 +1,10 @@
-The maximum number of copies that can be produced for a specified target string must be ascertained by the system.Moreover, the ascending order of the parameter array must be considered by the system when determining the quantity of copies that can be produced for each distinct character in the target string.Furthermore, the system should restrict the maximum number of duplicates for a specific character to the highest frequency of that character in the input string.The highest possible quantity of copies that can be created by rearranging the letters from the input string should be indicated by the return value, in addition to the fact that the system ought to offer this.If the input string does not contain enough letters to form the target string, the returned result should be null. Both the input string and target string should be case-insensitive.The maximum number of copies that can be formed should be determined by the system, considering the order of the letters in the input string.The ability to manage special characters and spaces in both the input string and target string is required.The condition of the input string being empty or lacking any letters should be handled by the system.In the case of an empty or letterless target string, the system should still be capable of handling it.
+Preconditions:
+- The method takes two parameters: a string `s` and a string `target`.
+- The string `s` contains only lowercase letters.
+- The string `target` contains only lowercase letters.
+- The string `s` is not null.
+- The string `target` is not null.
+
+Postconditions:
+- The method returns an integer value representing the maximum number of copies of `target` that can be formed by taking letters from `s` and rearranging them.
+- The returned value is greater than or equal to 0.

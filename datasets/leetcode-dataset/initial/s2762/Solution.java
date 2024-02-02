@@ -4,6 +4,11 @@ package g2701_2800.s2762_continuous_subarrays;
 // #2023_09_24_Time_3_ms_(98.28%)_Space_56.8_MB_(61.59%)
 
 public class Solution {
+<<<<<<< HEAD
+=======
+//@ ensures(*Return _the total number of **continuous** subarrays._*);
+
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03
     public long continuousSubarrays(int[] nums) {
         long res = 1;
         int lower = nums[0] - 2;
@@ -28,4 +33,8 @@ public class Solution {
         }
         return res;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98564b86c8a5a162de5f9f90ad7282335e2b2a03

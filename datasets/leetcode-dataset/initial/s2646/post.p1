@@ -1,1 +1,8 @@
-When a set of trips is provided to the system, the system should compute the sum of the total prices for all the trips.The minimum total price sum should be determined by the system, with the parameter array sorted in ascending order.The calculation should consider all of the given trips in the system.The calculation necessary to determine the minimum total price sum should be performed by the system.The minimum total price sum should be returned by the system as the output.
+Preconditions:
+The value of 'n' should be a positive integer representing the number of cities.
+The 'edges' array should be a 2D array representing the connections between cities.
+The 'price' array should be a 1D array representing the cost of traveling between cities.
+The 'trips' array should be a 2D array representing the trips to be performed.
+
+Postconditions:
+The method should return an integer value representing the minimum total price sum to perform all the given trips.

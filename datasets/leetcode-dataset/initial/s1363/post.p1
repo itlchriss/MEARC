@@ -1,1 +1,8 @@
-The input array of digits should be taken as a parameter by the function, ensuring that any given array of digits can be handled.The output of the function should be a string that represents the largest multiple of three. This multiple is formed by concatenating certain digits from the parameter array, which is sorted in ascending order.To ensure the formation of a multiple of three, the digits within the parameter array must be arranged in any order. The resulting output string should accurately reflect this arrangement.In the case where the digits provided cannot be used to form a multiple of three, the output of the function should be an empty string.Furthermore, it is crucial to emphasize that the sorted array of parameters should not include any superfluous leading zeros in the resulting output string.
+Preconditions:
+- The input array `digits` is not null.
+- The input array `digits` contains only non-negative integers.
+
+Postconditions:
+- The method returns a string representing the largest multiple of three that can be formed by concatenating some of the given digits in any order.
+- If there is no answer, the method returns an empty string.
+- The returned string does not contain unnecessary leading zeros.

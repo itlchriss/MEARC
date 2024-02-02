@@ -1,1 +1,8 @@
-The `nums` parameter, representing the input permutation, should strictly adhere to a zero-based indexing system.The output array `ans` should have the same length as the input permutation `nums`, and its indices should start from `0` and go up to `nums.length - 1`. Each index `i` in this range should have the value at index `i` in `ans` equal to the value at index `nums[i]` in `nums`. The result of this process is the output array `ans`.
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is a zero-based permutation, meaning that it contains distinct integers from 0 to `nums.length - 1` in any order.
+
+Postconditions:
+- The output array `ans` is not null.
+- The output array `ans` has the same length as the input array `nums`.
+- For each index `i` from 0 to `nums.length - 1`, `ans[i]` is equal to `nums[nums[i]]`.

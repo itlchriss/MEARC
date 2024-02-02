@@ -1,2 +1,9 @@
-The matrix answer should be able to be returned by the system if it has a function or method.- The system is referred to by the pronoun str_it, and the result is not null.
-- The parameter grid is an array that is sorted in ascending order.The grid passed as the parameter contains sorted arrays in ascending order.The output of the function or method, which should be the matrix answer, should be returned.- The matrix answer is referred to by the pronoun str_which, and it is not null.The grid array contains sorted values in ascending order.The int[][] grid, representing a matrix of values, should be used to compute the difference of distinct values. The resulting matrix, named answer, should be obtained.- The matrix answer is referred to by the pronoun str_which, and it is not null.The grid array contains sorted values in ascending order.The final result, which should be the matrix answer and not an intermediate step, should be obtained.- The matrix answer is referred to by the pronoun str_which, and it is not null.The grid passed as the parameter contains sorted arrays in ascending order.The int[][] grid should be used as is, without any modifications or alterations, and it should be returned as the matrix answer.- The matrix answer is referred to by the pronoun str_which, and it is not null.
+Preconditions:
+- The input grid must not be null.
+- The input grid must have at least one row and one column.
+
+Postconditions:
+- The returned matrix `answer` must have the same number of rows as the input grid.
+- The returned matrix `answer` must have the same number of columns as the input grid.
+- The values in the returned matrix `answer` must be integers.
+- The values in the returned matrix `answer` must represent the difference between the distinct values in the corresponding positions of the input grid.

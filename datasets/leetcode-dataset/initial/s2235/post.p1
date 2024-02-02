@@ -1,1 +1,7 @@
-The input should consist of two integers, and the sum of these integers should be calculated by the system.After performing the calculation on the numbers num1 and num2, the sum should be returned as the output.The input for the method should include positive integers, negative integers, zero, large integers, and small integers, in order for it to be able to handle them.Furthermore, the input for the parameters num1 and num2 should be able to handle decimal numbers.If non-numeric characters are provided as input for the parameters num1 and num2, appropriate error handling should be implemented.The explanation of the calculation performed should be provided, in addition to the fact that the parameters num1 and num2 are integers.The sum of the parameters num1 and num2, which are valid inputs, must be returned accurately, and this accuracy is crucial.Furthermore, when calculating the sum, it is essential to handle overflow or underflow scenarios, ensuring that the result is not null and the parameter array is sorted in ascending order.The capability to handle cases involving a sum of zero, a positive number, a negative number, a decimal number, a large number, or a small number must be present.Lastly, appropriate error handling should be provided in cases where the sum of the parameters num1 and num2 is a non-numeric value.
+Preconditions:
+- The method `sum` takes two integer parameters `num1` and `num2`.
+- The values of `num1` and `num2` are provided as input to the method.
+
+Postconditions:
+- The method returns an integer value which is the sum of `num1` and `num2`.
+- If `num1` is 12 and `num2` is 5, the method returns - If `num1` is -6 and `num2` is 0, the method returns -6.

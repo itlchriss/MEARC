@@ -1,1 +1,7 @@
-The array returned by the system should not be null.The array should be stored in a variable named `ans` by the system.The stored `ans` array should be the same as the returned array, ensuring that the system adheres to this requirement.
+Preconditions:
+- The input array `nums` is not null.
+
+Postconditions:
+- The returned array `ans` is not null.
+- The length of the returned array `ans` is equal to twice the length of the input array `nums`.
+- The elements of the returned array `ans` are the concatenation of the elements of the input array `nums` followed by the elements of the input array `nums` again.

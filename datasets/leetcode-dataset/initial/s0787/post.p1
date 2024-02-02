@@ -1,1 +1,10 @@
-The input for the system should consist of three integers, namely `src`, `dst`, and `k`.The objective of the system is to find the most affordable price from the source (`src`) to the destination (`dst`). The system considers the flight expenses as the basis for determining the minimum total cost. The system also takes into account a maximum limit of `k` stops.If the system does not find a route from the source (`src`) to the destination (`dst`), the system should return `-1`.The route with the minimum total cost from `src` to `dst`, considering the maximum number of stops allowed, should be found by the system.The output should be the cheapest price returned by the system.
+Preconditions:
+The input integer `n` represents the total number of cities.
+The input integer `src` represents the source city.
+The input integer `dst` represents the destination city.
+The input integer `k` represents the maximum number of stops allowed.
+The input 2D array `flights` represents the flights between cities, where each row represents a flight and the first element is the source city, the second element is the destination city, and the third element is the price of the flight.
+
+Postconditions:
+The method returns an integer representing the cheapest price from `src` to `dst` with at most `k` stops.
+If there is no route from `src` to `dst` with at most `k` stops, the method returns -1.
