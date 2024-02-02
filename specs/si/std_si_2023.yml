@@ -1,0 +1,437 @@
+- term: sorted in ascending order
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  g_arity: 1
+  grammar_arguments:
+  - (y)
+  interpretation: \forall int i; (x); ((y))[i - 1] <= ((y))[i]
+- term: sorted in ascending order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
+- term: sorted in ascending numerical order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] <= (x)[k + 1]
+- term: sorted in descending order
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] >= (x)[k + 1]
+- term: greater than or equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) >= (y)
+- term: less than or equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) <= (y)
+- term: correspondingly equal to
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) != null && (y) != null && (x).length == (y).length && ((\forall
+    int i; 0 <= i < (x).length;  ((x)[i] == null && (y)[i] == null) || ((x)[i].equals((y)[i]))))
+- term: deeply equals to
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: ((((x) == null && (y) == null) && (((x) == (y)) || ((x).equals((y)))
+    || Arrays.equals((x), (y)))) || (((x) != null && (y) != null && (x).length ==
+    (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i]
+    == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray()
+    && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))
+- term: length
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '1'
+  interpretation: (x).length
+- term: equals to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: equal to
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '2'
+  interpretation: (x).size() == (y).size() && (\forall int j; 0 <= j < (x).size();
+    ((x).get(j) == null <==> (y).get(j) == null) || ((x).get(j) != null && (y).get(j)
+    != null <==> (x).get(j).equals((y).get(j)))) && (x).equals((y)) && (y).equals((x))
+- term: equal to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '0'
+  - '0'
+  interpretation: (x) == (y)
+- term: true_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'true'
+- term: false_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'false'
+- term: null_value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: 'null'
+- term: be
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
+- term: return value
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \result
+- term: contain
+  syntax:
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
+  interpretation: ((y) == null && (\exists int i; 0 <= i < (x).size(); (x).get(i)
+    == null)) || (\exists int i; 0 <= i < (x).size();(x).get(i) == (y))
+- term: contain
+  syntax:
+  - VBD
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
+  interpretation: \exists int i; 0 <= i < \old((x)).size(); \old((x)).get(i) == (y)
+- term: contain
+  syntax:
+  - VBZ
+  - VB
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '1'
+  - '0'
+  interpretation: '(\exists int i; 0 <= i < (x).length; (x)[i] == (y)) '
+- term: removed from
+  syntax:
+  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  specific_arg_types:
+  - '2'
+  - '0'
+  interpretation: '!(\exists int i; 0 <= i < (y).size(); (y).get(i) == (x))'
+- term: result
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \result
+- term: prime
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x)%k != 0))
+- term: parameter
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \param
+- term: input
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \param
+- term: even
+  syntax:
+  - RB
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) % 2 == 0
+- term: prime number
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x) % k != 0))
+- term: length
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '2'
+  interpretation: (x).size()
+- term: size
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '2'
+  interpretation: (x).size()
+- term: size
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '1'
+  interpretation: (x).length
+- term: sort
+  syntax:
+  - VBN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+- term: index
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (y)
+  g_arity: 1
+  grammar_arguments:
+  - (x)
+  interpretation: \old(Arrays.asList((x)).indexOf((y)))
+- term: if
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (*)
+  - (*)
+  interpretation: ==>
+- term: element
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)[i]
+- term: every element
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: reference
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
+- term: change
+  syntax:
+  - VBN
+  - VBD
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: ((x).size() != \old((x)).size()) || (\exists int i; 0 <= i < (x).size();
+    (x).get(i) != \old((x)).get(i))
+- term: empty
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size() == 0
+- term: number of elements
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x).size()
+- term: for
+  syntax:
+  - NNS
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: \sub(x)2(y)
+- term: all of the elements
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: '\forall int i; 0 <= i < (x).length; '
+- term: all valid indices
+  syntax:
+  - NNS
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: '\forall int i; 0 <= i < (x).length; '
+- term: elements of
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
+- term: elements of
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)
+- term: insertion point
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  g_arity: 2
+  grammar_arguments:
+  - (y)
+  - (z)
+  specific_arg_types:
+  - '1'
+  interpretation: (\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j;
+    ((z)) <= j < (x).length; (y) < (x)[j])
+- term: minus
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) - (y)
+- term: negative
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: -(x)
+- term: Rel
+  syntax:
+  - Rel
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: _gsub(y)2(x)
+- term: of
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: _sub(y)2(x)
+- term: in
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: _sub(y)2(x)
+- term: provide
+  syntax:
+  - VBN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x) != null

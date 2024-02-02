@@ -8,10 +8,50 @@ import java.util.List;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+    // the second and third precondition needs to be inherited
+    // the return type needs to be inherited
+    /*@
+        requires(3 <= input.size() <= 200);
+        requires(\forall int i; 0 <= i < input.size(); -1000000000 <= input.get(i) <= 1000000000);
+        public model pure long sum(List<Integer> input) {
+            long r = 0;            
+            //@ loop_invariant 0 <= i <= input.size();
+            //@ decreasing input.size() - i;
+            for (int i = 0; i < input.size(); ++i) { 
+                r += input.get(i);                
+            }
+            return r;
+        }
+    @*/
+    // the first precondition is wrong, the original one is (1 <= nums.length <= 200) which is too weak for the first loop
+    //@ requires(3 <= nums.length <= 200);
+    //@ requires(\forall int i; 0 <= i < nums.length; -1000000000 <= nums[i] <= 1000000000);
+    //@ requires(-1000000000 <= target <= 1000000000);
+    // these are the correct postconditions
+    //@ ensures(\forall int i; 0 <= i < (\result).size(); \result.get(i) != null);
+    //@ ensures(\forall int i; 0 <= i < (\result).size(); \result.get(i).size() == 4);
+    /*@
+        ensures(
+            \forall int i; 0 <= i < \result.size(); (
+                sum(\result.get(i)) == target
+            )
+        );
+    @*/
+    //@ requires(*The input array `nums` is not null.*);
+    //@ requires(*The input array `nums` has at least 4 elements.*);
+    //@ requires(*The target integer `target` is not null.*);
+    //@ ensures(*The method returns a list of lists, where each inner list represents a unique quadruplet.*);
+    //@ ensures(*Each quadruplet in the returned list contains four integers from the input array `nums`.*);
+    //@ ensures(*The sum of each quadruplet in the returned list is equal to the target integer `target`.*);
+    //@ ensures(*The order of the quadruplets in the returned list can be in any order.*);
+    //@ ensures(*The returned list does not contain any duplicate quadruplets.*);
+    public List<List<Integer>> fourSum(/*@ non_null @*/int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
+        //@ loop_invariant n >= 3;
+        //@ loop_invariant 0 <= i <= n - 3;
+        //@ decreasing n - i;
         for (int i = 0; i < n - 3; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
@@ -21,7 +61,9 @@ public class Solution {
             }
             if ((long) nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target) {
                 continue;
-            }
+            }            
+            //@ loop_invariant i + 1 <= j <= n - 2;
+            //@ decreasing n - j;
             for (int j = i + 1; j < n - 2; j++) {
                 if (j > i + 1 && nums[j] == nums[j - 1]) {
                     continue;
@@ -35,6 +77,10 @@ public class Solution {
                 int tempTarget = target - (nums[i] + nums[j]);
                 int low = j + 1;
                 int high = n - 1;
+                //@ loop_invariant j + 1 <= low < nums.length;
+                //@ decreasing nums.length - low;
+                //@ loop_invariant 0 <= high <= n - 1;
+                //@ decreasing high;
                 while (low < high) {
                     int curSum = nums[low] + nums[high];
                     if (curSum == tempTarget) {
