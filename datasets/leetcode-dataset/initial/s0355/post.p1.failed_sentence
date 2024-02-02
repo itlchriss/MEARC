@@ -1,5 +1,1 @@
-1
-The news feed of User 1, obtained by calling the method `getNewsFeed(1)` in the Java class `Twitter`, should return a list containing 1 tweet id, which is [5]. This is in accordance with the context of the given Java methods `public Twitter()`, `public void postTweet(int userId, int tweetId)`, `public List<Integer> getNewsFeed(int userId)`, `public void follow(int followerId, int followeeId)`, `public void unfollow(int followerId, int followeeId)`, and `public void checkNewUser(int userId)`.
-
-2
-The expected result of calling the method `getNewsFeed(1)` in the Java class `Twitter` is [5].
+The news feed retrieval should be allowed by the system for users.The tweet IDs should be contained in the news feed.The news feed, specific to each user, should be provided.The list of tweet IDs should be returned by the news feed.The tweet ID limit should be applied to the news feed.The tweet IDs in the news feed should be displayed first, with the most recent ones.The news feed updating is required when a user follows or unfollows another user.When a user posts a new tweet, the news feed should update.When a user's followed user posts a new tweet, the news feed should update.The tweet IDs from users that the user is no longer following should not be displayed on the news feed.

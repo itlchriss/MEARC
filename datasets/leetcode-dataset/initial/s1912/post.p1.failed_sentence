@@ -1,12 +1,1 @@
-
-
-"str_it" refers to the renting system.
-"str_them" refers to the matching shops.
-"an empty list" refers to the result when no shop has an unrented copy.
-"str_they" refers to the rented movies.
-"all of them" refers to the rented movies when there are fewer than five.
-"an empty list" refers to the result when no movies are currently being rented.
-"str_they" refers to the rented movies.
-"all of them" refers to the rented movies when there are fewer than five.
-
-The sentence should be rewritten to clearly apply to the context of the given Java method (public Point(int movie, int shop, int price), public MovieRentingSystem(int n, int[][] entries), public List<Integer> search(int movie), public void rent(int shop, int movie), public void drop(int shop, int movie), public List<List<Integer>> report()), explicitly relate the used terms to all parameters and result data type of the given method, use no dangling modifier, use no pronouns, not mention the given method, and use words for describing the algorithm.
+The ability to facilitate the search for movies should be possessed by the system.The five cheapest shops that have an unrented copy of a given movie should be able to be located by the search function.The search results should be sorted in ascending order based on the price parameter.In the event that there is a tie in price, the shop with the smaller shop number should be displayed first.If the number of matching shops is fewer than five, all of the matching shops should be included in the results.If there are no unrented copies in any shop, the method should return an empty list.The functionality to facilitate the booking of movies should be possessed by the system.The capability to support the return of movies should be present in the system.The movies that are currently rented should be able to be reported by the system.The report should display the movies that have the five lowest rental prices.The movies rented from the movie renting system should be sorted in ascending order, taking into consideration their price.In the event of a tie in price, the movie with the smaller shop number should be listed first.When there is a tie, the movie with the smaller movie number should be displayed first, in the case of the method public Point(int movie, int shop, int price), public MovieRentingSystem(int n, int[][] entries), public List<Integer> search(int movie), public void rent(int shop, int movie), public void drop(int shop, int movie), and public List<List<Integer>> report().If the number of rented movies is less than five, all rented movies should be included in the report.In the case where there are no movies currently being rented, the method should return an empty list.
