@@ -7,16 +7,32 @@ alt_rules = [
     ('the method returns', 'the result is')
 ]
 
-def _parameter_syntax_processor(sent: str) -> str:
-    r = re.findall(r'`.*`', sent, re.ASCII)
-    if r:        
-        for p in r:
-            pattern = 'PARAM_%s' % p.replace('`', '')
-            sent = sent.replace(p, pattern)
-    return sent
+# these are java primitive and reference types
+# we should extend this list to support more data types
+datatypes = ['integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection']
+
+class ContextProcessor:
+
+    def __init__(self) -> None:
+        self.contextual_si = {}
+
+    def _parameter_syntax_processor(self):
+        contextual_si = self.contextual_si
+        sent = self.sent
+
+        if r := re.findall('input\s+(%s)\s+`(.*)`' % '|'.join(datatypes), sent, re.ASCII):
+            for type, param in r:
+                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'PARAM_type_%s_sym_%s' % (type, param), sent, re.ASCII)
+                contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
+        elif r := re.findall(r'`.*`', sent, re.ASCII):
+            for param in r:
+                pattern = 'PARAM_%s' % param.replace('`', '')
+                sent = sent.replace(param, pattern)
+                contextual_si['PARAM_%s' % param] = param
+        self.sent = sent
 
 
-def contextprocessor(sent: str) -> str:
-    okay = False
-    sent = _parameter_syntax_processor(sent)
-    return sent
+    def run(self, sent: str) -> str:
+        self.sent = sent
+        self._parameter_syntax_processor()
+        return self.sent

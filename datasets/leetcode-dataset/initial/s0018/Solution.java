@@ -8,6 +8,35 @@ import java.util.List;
 
 @SuppressWarnings("java:S135")
 public class Solution {
+    /*@
+        public model pure boolean _unique(List<Object> list) {
+            java.util.Set<Object> s = new java.util.HashSet<Object>(list);
+            return s.size() == list.size();
+        }
+        public model pure boolean _unique(Integer[] array) {
+            java.util.Set<Integer> s = new java.util.HashSet<Integer>(Arrays.asList(array));
+            return s.size() == array.length;
+        }
+        public model pure boolean _unique(Object[] array) {
+            java.util.Set<Object> s = new java.util.HashSet<Object>(Arrays.asList(array));
+            return s.size() == array.length;
+        }
+        public model pure boolean _check_list_size(List<Object> list, int x) { 
+            return list != null && list.size() == x;
+        }
+        public model pure boolean _check_array_length(Object[] array, int x) { 
+            return array.length == x;
+        }
+        public model pure boolean _is_tuplet(List<Object> list) {
+            return _check_list_size(list, 2);
+        }
+        public model pure boolean _is_triplet(List<Object> list) {
+            return _check_list_size(list, 3);
+        }
+        public model pure boolean _is_quadriplet(List<Object> list) {
+            return _check_list_size(list, 4);
+        }
+    @*/
     // the second and third precondition needs to be inherited
     // the return type needs to be inherited
     /*@

@@ -1,6 +1,7 @@
-from .contextprocess import contextprocessor
+from .contextprocess import ContextProcessor
 
 def runengine(sent: str) -> str:
-    sent = contextprocessor(sent)
-    print(sent)
+    cp = ContextProcessor()
+    sent = cp.run(sent)
+    print('engine:', sent)
     pass
