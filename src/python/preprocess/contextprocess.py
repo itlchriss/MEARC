@@ -4,7 +4,14 @@ import re
 # processing the text related to method return, including the return type, text refer to the result, etc.
 
 alt_rules = [
-    ('the method returns', 'the result is')
+    ('The method returns', 'The result is'),
+    ('The method generates', 'The result is'),
+    ('The method yields', 'The result is'),
+    ('The method produces', 'The result is'),
+    ('where', ''),
+    ('any', ''),
+    ('represents', 'is'),
+    ('distinct', 'unique')
 ]
 
 # these are java primitive and reference types
@@ -31,8 +38,12 @@ class ContextProcessor:
                 contextual_si['PARAM_%s' % param] = param
         self.sent = sent
 
+    def _synonym_syntax_preprocessor(self):
+        for rule in alt_rules:
+            self.sent = self.sent.replace(rule[0], rule[1])
 
     def run(self, sent: str) -> str:
         self.sent = sent
         self._parameter_syntax_processor()
+        self._synonym_syntax_preprocessor()
         return self.sent

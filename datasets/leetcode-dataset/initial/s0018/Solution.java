@@ -9,8 +9,10 @@ import java.util.List;
 @SuppressWarnings("java:S135")
 public class Solution {
     /*@
-        public model pure boolean _unique(List<Object> list) {
-            java.util.Set<Object> s = new java.util.HashSet<Object>(list);
+        requires (list != null);
+        requires (\forall int i; 0 <= i < list.size(); list.get(i) != null);
+        public model pure boolean _unique(List<List<Integer>> list) {
+            java.util.Set<List<Integer>> s = new java.util.HashSet<List<Integer>>(list);
             return s.size() == list.size();
         }
         public model pure boolean _unique(Integer[] array) {
@@ -27,15 +29,23 @@ public class Solution {
         public model pure boolean _check_array_length(Object[] array, int x) { 
             return array.length == x;
         }
-        public model pure boolean _is_tuplet(List<Object> list) {
-            return _check_list_size(list, 2);
+        public model pure boolean _at_least(int[] array, int x, String _compareType) {
+            if (_compareType == "elements") {
+                return array.length >= x;
+            }
+            return false;
         }
-        public model pure boolean _is_triplet(List<Object> list) {
-            return _check_list_size(list, 3);
+        public model pure boolean _at_most(Object[] array, int x, String _compareType) {
+            if (_compareType == "elements") {
+                return array.length <= x;
+            }
+            return false;
         }
-        public model pure boolean _is_quadriplet(List<Object> list) {
-            return _check_list_size(list, 4);
-        }
+ 
+            public model pure boolean _is_quadriplet(List<Object> list) {
+                return _check_list_size(list, 4);
+            }
+
     @*/
     // the second and third precondition needs to be inherited
     // the return type needs to be inherited
@@ -74,6 +84,9 @@ public class Solution {
     //@ ensures(*The sum of each quadruplet in the returned list is equal to the target integer `target`.*);
     //@ ensures(*The order of the quadruplets in the returned list can be in any order.*);
     //@ ensures(*The returned list does not contain any duplicate quadruplets.*);
+    //@ requires(_at_least(nums, 4, "elements"));
+    //@ requires(nums != null);
+    //@ ensures(_unique(\result));
     public List<List<Integer>> fourSum(/*@ non_null @*/int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);
