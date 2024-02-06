@@ -1,0 +1,13 @@
+The method should return an integer value representing the highest possible score.
+The score should be calculated based on the given grid and any number of moves made.
+The grid may be modified during the calculation of the score.
+The original grid should not be modified after the method execution.
+The score should be calculated according to the following rules:
+- Initially, all elements in the grid are either 0 or   - The score is calculated by summing up the decimal value of each row in the grid.
+- The decimal value of a row is calculated by converting the binary representation of the row into a decimal number.
+- The binary representation of a row is obtained by concatenating the binary representation of each element in the row.
+- The binary representation of an element is obtained by converting the element into a binary string.
+- During the calculation of the score, any number of moves can be made.
+- A move is defined as flipping either the entire row or the entire column of the grid.
+- Flipping a row means changing all the elements in the row from 0 to 1 or from 1 to   - Flipping a column means changing all the elements in the column from 0 to 1 or from 1 to   - After each move, the score should be recalculated based on the modified grid.
+- The goal is to maximize the score by making the optimal number of moves.

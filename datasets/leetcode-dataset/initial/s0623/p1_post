@@ -1,0 +1,4 @@
+If the depth is equal to 1, a new root node with the given value is created and the original tree becomes its left subtree.
+For each non-null tree node at depth - 1, two new tree nodes with the given value are created as the left and right subtree roots of the current node.
+The original left subtree of the current node becomes the left subtree of the new left subtree root.
+The original right subtree of the current node becomes the right subtree of the new right subtree root.

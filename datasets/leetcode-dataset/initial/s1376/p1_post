@@ -1,0 +1,5 @@
+The method should return an integer value representing the number of minutes needed to inform all the employees.
+The returned value should be greater than or equal to The returned value should be the minimum possible time required to inform all the employees.
+If there are no employees to inform (n = 0), the method should return If there is only one employee (n = 1), the method should return 0 as there is no need to inform anyone.
+If the 'headID' is the only employee who needs to be informed, the method should return the value of 'informTime[headID]'.
+If there are multiple employees to inform, the method should calculate the time required based on the hierarchy defined by the 'manager' array and 'informTime' array.

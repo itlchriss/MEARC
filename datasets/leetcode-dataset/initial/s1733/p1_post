@@ -1,0 +1,6 @@
+The method returns an integer representing the minimum number of users that need to be taught a language in order for all friends to be able to communicate with each other.
+Additional requirements:
+The method should handle cases where there are no friendships between users. In this case, the method should return 0, as no users need to be taught a language.
+The method should handle cases where all users already know at least one common language. In this case, the method should return 0, as no users need to be taught a language.
+The method should handle cases where it is not possible for all friends to communicate with each other, even if all users are taught a language. In this case, the method should return -1 to indicate that it is not possible to fulfill the requirement.
+The method should handle cases where there are multiple possible languages that can be taught to fulfill the requirement. In this case, the method should return the minimum number of users needed to be taught for any valid language choice.

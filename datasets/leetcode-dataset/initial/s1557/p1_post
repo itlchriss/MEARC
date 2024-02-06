@@ -1,0 +1,13 @@
+The method should return a list of integers representing the smallest set of vertices that can reach all other vertices in the graph.
+The returned list should not contain any duplicate vertices.
+The order of vertices in the returned list can be arbitrary.
+The returned list should only contain vertices that have no incoming edges.
+The returned list should include all vertices that have no incoming edges, even if they have outgoing edges.
+The returned list should not include any vertices that have incoming edges, even if they have no outgoing edges.
+The returned list should include all vertices that have no incoming edges and no outgoing edges.
+The returned list should not include any vertices that have both incoming and outgoing edges.
+The returned list should not include any vertices that have only outgoing edges.
+The returned list should not include any vertices that have only incoming edges.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can be reached from other vertices in the graph.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can reach other vertices in the graph.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can be reached from other vertices and can reach other vertices in the graph.

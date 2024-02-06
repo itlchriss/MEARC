@@ -1,0 +1,8 @@
+If the key is found in the BST, the node with the given key is deleted.
+If the key is not found in the BST, the BST remains unchanged.
+If the node with the given key has no children, it is simply removed from the BST.
+If the node with the given key has only one child, that child replaces the deleted node in the BST.
+If the node with the given key has two children, the node is replaced with its inorder successor or predecessor in the BST.
+The root node reference of the BST may be updated if the root node itself is deleted.
+The BST structure is maintained after deleting the node with the given key.
+The BST remains a valid BST after deleting the node with the given key.

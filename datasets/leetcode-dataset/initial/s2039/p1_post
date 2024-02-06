@@ -1,0 +1,7 @@
+The method returns an integer representing the earliest second starting from which the network becomes idle.
+The network is considered idle if there is no network activity.
+The network activity is determined by the pattern "pat".
+The network activity follows the pattern "pat" until it becomes idle.
+The network becomes idle when there are no more network activities according to the pattern "pat".
+The network may become idle at any second after the initial state.
+The network remains idle after it becomes idle.

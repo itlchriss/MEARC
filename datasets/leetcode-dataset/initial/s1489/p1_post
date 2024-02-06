@@ -1,0 +1,7 @@
+The method should return a list of lists, where each inner list represents a set of critical or pseudo-critical edges.
+The first inner list in the output should contain the indices of the critical edges, i.e., the edges that appear in all minimum spanning trees (MSTs) of the graph.
+The second inner list in the output should contain the indices of the pseudo-critical edges, i.e., the edges that appear in some but not all MSTs of the graph.
+The order of the edges in each inner list does not matter.
+The indices of the edges in the output should be within the range [0, number of edges - 1].
+The output lists should not contain any duplicate edge indices.
+The output lists should be sorted in ascending order of the edge indices.
