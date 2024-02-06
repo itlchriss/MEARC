@@ -1,0 +1,7 @@
+Preconditions:
+- The method should take two string parameters, `haystack` and `needle`.
+- The `haystack` parameter should not be null.
+- The `needle` parameter should not be null.
+
+Postconditions:
+- If `needle` is an empty string, the method should return - If `needle` is not found in `haystack`, the method should return -- If `needle` is found in `haystack`, the method should return the index of the first occurrence of `needle` in `haystack`.

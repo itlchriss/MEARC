@@ -1,0 +1,12 @@
+Preconditions:
+- The input skills array is not null and contains at least one skill.
+- The input people list is not null and contains at least one person.
+- Each person in the people list is not null and contains at least one skill.
+- The skills array and the skills of each person in the people list only contain lowercase English letters.
+- The skills array and the skills of each person in the people list do not contain duplicate skills.
+
+Postconditions:
+- The returned array is not null and contains the indices of the people in the people list.
+- The returned array represents a sufficient team, meaning that the skills of the people in the team cover all the skills in the skills array.
+- The returned array represents a team of the smallest possible size, meaning that there is no other team with fewer people that can cover all the skills in the skills array.
+- The order of the indices in the returned array can be in any order.

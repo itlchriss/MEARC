@@ -1,0 +1,13 @@
+Preconditions:
+The method should take in two string parameters, `s` and `p`, and an integer array parameter `removable`.
+The string `s` should not be null.
+The string `p` should not be null.
+The integer array `removable` should not be null.
+The string `s` should have a length greater than or equal to the length of string `p`.
+The integer array `removable` should have at least one element.
+
+Postconditions:
+The method should return an integer value `k`.
+The value of `k` should be the maximum number of elements that can be removed from `s` such that `p` remains a subsequence of `s`.
+The string `s` should remain unchanged after the removals.
+The string `p` should remain a subsequence of `s` after the removals.

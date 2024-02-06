@@ -1,0 +1,12 @@
+Preconditions:
+The input string "floor" should not be null.
+The input string "floor" should not be empty.
+The input string "floor" should only contain characters 'W' (white tile) and 'C' (carpet tile).
+The input integer "numCarpets" should be greater than or equal to The input integer "carpetLen" should be greater than 
+Postconditions:
+The method should return an integer value representing the minimum number of white tiles still visible.
+The returned value should be greater than or equal to The returned value should be less than or equal to the total number of white tiles in the initial floor.
+The returned value should decrease as the number of carpets increases.
+The returned value should decrease as the length of the carpets increases.
+The returned value should not be affected by the order of the carpets in the input string "floor".
+The returned value should not be affected by the presence of any additional characters in the input string "floor" other than 'W' and 'C'.

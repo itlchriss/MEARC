@@ -1,0 +1,23 @@
+Preconditions for public Node(int val):
+- None
+
+Postconditions for public Node(int val):
+- A new Node object is created with the given value.
+
+Preconditions for public SummaryRanges():
+- None
+
+Postconditions for public SummaryRanges():
+- A new SummaryRanges object is created.
+
+Preconditions for public void addNum(int val):
+- The SummaryRanges object must be initialized.
+
+Postconditions for public void addNum(int val):
+- The integer value is added to the stream of integers.
+
+Preconditions for public int[][] getIntervals():
+- The SummaryRanges object must be initialized.
+
+Postconditions for public int[][] getIntervals():
+- The method returns a list of disjoint intervals representing the summary of the integers in the stream.

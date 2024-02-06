@@ -1,0 +1,15 @@
+The grid parameter must be a 2-dimensional array of integers.
+The grid must not be null.
+The grid must have at least one row and one column.
+Each element in the grid must be a non-negative integer.
+The grid represents a mine where each cell contains a certain amount of gold.
+The player can start at any cell in the grid.
+The player can only move up, down, left, or right to adjacent cells.
+The player cannot move diagonally or move to cells outside the grid.
+The player can only visit each cell once.
+The player can collect the gold in the cell they are currently in.
+The player can only move to a cell with gold if they have not collected gold from that cell before.
+The player can only move to a cell without gold if they have already collected gold from all adjacent cells.
+The player can collect gold from multiple cells in a single path.
+The player's goal is to collect the maximum amount of gold possible.
+The method should return an integer representing the maximum amount of gold that can be collected.

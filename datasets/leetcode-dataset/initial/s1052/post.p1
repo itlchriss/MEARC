@@ -1,0 +1,15 @@
+Preconditions:
+The arrays customers and grumpy must have the same length.
+The array customers must contain positive integers representing the number of customers at each minute of the day.
+The array grumpy must contain binary values (0 or 1) representing whether the shopkeeper is grumpy or not at each minute of the day.
+The integer minutes must be a positive integer representing the number of consecutive minutes the shopkeeper can be grumpy.
+
+Postconditions:
+The method must return an integer representing the maximum number of customers that can be satisfied throughout the day.
+The method should not modify the arrays customers and grumpy.
+The method should not modify the value of the integer minutes.
+The method should consider the minutes parameter to determine the maximum number of customers that can be satisfied.
+The method should only consider the minutes where the shopkeeper is grumpy to calculate the maximum number of customers that can be satisfied.
+The method should consider the minutes where the shopkeeper is not grumpy as already satisfied customers.
+The method should return 0 if the arrays customers and grumpy are empty.
+The method should return 0 if the integer minutes is greater than the length of the arrays customers and grumpy.

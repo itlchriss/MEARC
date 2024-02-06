@@ -1,9 +1,10 @@
 Preconditions:
-- The input `n` is a positive integer.
-- The method `allPossibleFBT` is called with a valid input.
+- The input integer `n` must be a positive integer.
+- The method `allPossibleFBT` must be called with a valid input.
 
 Postconditions:
 - The method `allPossibleFBT` returns a list of `TreeNode` objects.
 - Each `TreeNode` object in the returned list represents the root node of a full binary tree.
-- Each full binary tree in the returned list has `n` nodes.
-- Each node in each full binary tree has a value of - The order of the trees in the returned list can be arbitrary.
+- Each `TreeNode` object in the returned list has `Node.val == 0`.
+- The returned list contains all possible full binary trees with `n` nodes.
+- The order of the trees in the returned list can be arbitrary.

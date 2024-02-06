@@ -1,32 +1,10 @@
-Preconditions for the method public TextEditor():
-- No preconditions mentioned in the given requirements.
+Preconditions:
+- The TextEditor object has been instantiated.
 
-Postconditions for the method public TextEditor():
-- A new instance of the TextEditor class is created.
-
-Preconditions for the method public void addText(String text):
-- No preconditions mentioned in the given requirements.
-
-Postconditions for the method public void addText(String text):
-- The given text is added to the text editor.
-
-Preconditions for the method public int deleteText(int k):
-- The cursor must be positioned at a valid location.
-
-Postconditions for the method public int deleteText(int k):
-- The method deletes 'k' characters to the left of the cursor.
-- The method returns the number of characters actually deleted.
-
-Preconditions for the method public String cursorLeft(int k):
-- The cursor must be positioned at a valid location.
-
-Postconditions for the method public String cursorLeft(int k):
-- The method moves the cursor to the left 'k' times.
-- The method returns the last 'min(10, len)' characters to the left of the cursor, where 'len' is the number of characters to the left of the cursor.
-
-Preconditions for the method public String cursorRight(int k):
-- The cursor must be positioned at a valid location.
-
-Postconditions for the method public String cursorRight(int k):
-- The method moves the cursor to the right 'k' times.
-- The method returns the last 'min(10, len)' characters to the left of the cursor, where 'len' is the number of characters to the left of the cursor.
+Postconditions:
+- The TextEditor object has been instantiated.
+- The TextEditor object has the specified text added.
+- The TextEditor object has the specified number of characters deleted to the left of the cursor.
+- The TextEditor object has the cursor moved to the left the specified number of times.
+- The TextEditor object has the cursor moved to the right the specified number of times.
+- The TextEditor object returns the last 10 characters to the left of the cursor, or the number of characters to the left of the cursor if it is less than 10.

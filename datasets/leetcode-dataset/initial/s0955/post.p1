@@ -5,5 +5,6 @@ Preconditions:
 - The elements in the input array `strs` are not empty.
 
 Postconditions:
-- The returned value is an integer representing the minimum possible length of the deletion indices `answer`.
-- The elements in the input array `strs` are in lexicographic order after the deletions.
+- The returned value is an integer representing the minimum possible length of the `answer` array.
+- The `answer` array is a set of deletion indices.
+- After deleting the characters at the deletion indices in the input array `strs`, the final array has its elements in lexicographic order.

@@ -1,8 +1,11 @@
 Preconditions:
-- The arrays `nums` and `cost` must not be null.
-- The length of the arrays `nums` and `cost` must be the same.
-- The arrays `nums` and `cost` must have at least one element.
+The arrays `nums` and `cost` must have the same length.
+The arrays `nums` and `cost` must not be empty.
+The elements in the array `nums` must be integers.
+The elements in the array `cost` must be integers.
+The elements in the array `cost` must be non-negative.
 
 Postconditions:
-- The method returns a long value representing the minimum total cost.
-- All elements in the array `nums` are equal.
+The method returns a long value representing the minimum total cost.
+All elements in the array `nums` are equal.
+The total cost is minimized, meaning that changing any element in the array `nums` to another value would increase the total cost.

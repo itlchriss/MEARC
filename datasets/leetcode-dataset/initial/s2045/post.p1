@@ -1,0 +1,11 @@
+Preconditions:
+The input `n` is a positive integer representing the total number of vertices in the graph.
+The input `edges` is a 2D array representing the edges between vertices in the graph.
+The input `time` is a positive integer representing the initial time taken to travel from vertex 1 to vertex n.
+The input `change` is a positive integer representing the time taken to change the direction of travel at any vertex.
+
+Postconditions:
+The method returns an integer representing the second minimum time it will take to go from vertex 1 to vertex n.
+The returned time is greater than or equal to the initial time taken to travel from vertex 1 to vertex n.
+The returned time is the second minimum time, meaning there is at least one other path that takes less time to travel from vertex 1 to vertex n.
+The returned time takes into account the time taken to change the direction of travel at any vertex.

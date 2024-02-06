@@ -1,11 +1,12 @@
 Preconditions:
-- The input array `nums` is not null.
-- The input array `nums` has at least 4 elements.
-- The target integer `target` is not null.
+The input array `nums` is not null.
+The input array `nums` has at least four elements.
+The target integer is not null.
 
 Postconditions:
-- The method returns a list of lists, where each inner list represents a unique quadruplet.
-- Each quadruplet in the returned list contains four integers from the input array `nums`.
-- The sum of each quadruplet in the returned list is equal to the target integer `target`.
-- The order of the quadruplets in the returned list can be in any order.
-- The returned list does not contain any duplicate quadruplets.
+The method returns a list of lists, where each inner list represents a unique quadruplet.
+Each quadruplet in the returned list contains four integers from the input array `nums`.
+The sum of the four integers in each quadruplet is equal to the target integer.
+The order of the quadruplets in the returned list can be in any order.
+The returned list does not contain any duplicate quadruplets.
+If there are no quadruplets that satisfy the conditions, an empty list is returned.

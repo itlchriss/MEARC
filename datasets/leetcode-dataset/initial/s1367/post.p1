@@ -1,0 +1,7 @@
+Preconditions:
+The `head` parameter must not be null.
+The `root` parameter must not be null.
+
+Postconditions:
+If all the elements in the linked list starting from `head` correspond to some downward path connected in the binary tree, the method should return true.
+If any element in the linked list starting from `head` does not correspond to a downward path connected in the binary tree, the method should return false.

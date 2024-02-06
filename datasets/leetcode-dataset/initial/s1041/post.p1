@@ -1,8 +1,8 @@
 Preconditions:
-The method takes a string parameter named "instructions".
-The string "instructions" contains a sequence of instructions for the robot.
+The method isRobotBounded takes a String parameter named instructions.
+The instructions parameter represents a sequence of instructions for the robot's movement.
 
 Postconditions:
-The method returns a boolean value.
+The method returns a boolean value indicating whether there exists a circle in the plane such that the robot never leaves the circle.
 If there exists a circle in the plane such that the robot never leaves the circle, the method returns true.
-If there is no circle in the plane such that the robot never leaves the circle, the method returns false.
+If there does not exist a circle in the plane such that the robot never leaves the circle, the method returns false.

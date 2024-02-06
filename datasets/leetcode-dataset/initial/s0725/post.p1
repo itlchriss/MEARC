@@ -1,0 +1,12 @@
+Preconditions:
+The method should take a ListNode object named "head" as a parameter, which represents the head of a linked list.
+The method should take an integer variable named "k" as a parameter, which represents the number of parts the linked list should be split into.
+
+Postconditions:
+The method should return an array of ListNode objects, with each element representing a part of the linked list.
+The length of the returned array should be equal to the value of "k".
+Each element of the returned array should be a valid ListNode object.
+The sum of the lengths of all the ListNode objects in the returned array should be equal to the length of the original linked list.
+If the length of the original linked list is not divisible by "k", the remainder of the division should be distributed as evenly as possible among the parts in the returned array.
+If the length of the original linked list is less than "k", the remaining parts in the returned array should be null.
+If the length of the original linked list is greater than or equal to "k", each part in the returned array should have a length as close to the average length as possible.

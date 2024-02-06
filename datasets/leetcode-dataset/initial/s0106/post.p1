@@ -1,0 +1,13 @@
+Preconditions:
+The `inorder` array is not null.
+The `postorder` array is not null.
+The lengths of `inorder` and `postorder` arrays are equal.
+The `inorder` array contains unique elements.
+The `postorder` array contains unique elements.
+
+Postconditions:
+The method returns a TreeNode object representing the root of the constructed binary tree.
+The binary tree constructed has the same elements as the `inorder` and `postorder` arrays.
+The binary tree constructed follows the inorder and postorder traversal rules.
+The left subtree of any node in the binary tree is constructed using the elements in the `inorder` and `postorder` arrays that come before the current node's element.
+The right subtree of any node in the binary tree is constructed using the elements in the `inorder` and `postorder` arrays that come after the current node's element.

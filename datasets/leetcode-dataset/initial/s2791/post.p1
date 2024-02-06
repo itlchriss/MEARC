@@ -1,7 +1,10 @@
 Preconditions:
-- The input list `parent` is not null.
-- The input string `s` is not null.
+The parent list must not be null.
+The parent list must contain at least one element.
+The parent list must contain unique integer values.
+The string s must not be null.
+The string s must not be empty.
 
 Postconditions:
-- The method returns a long value representing the number of pairs of nodes `(u, v)` that satisfy the given condition.
-- The characters assigned to edges on the path from `u` to `v` can be rearranged to form a palindrome.
+The method returns a long value representing the number of pairs of nodes that satisfy the given conditions.
+The returned value is greater than or equal to zero.

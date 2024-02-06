@@ -1,0 +1,8 @@
+Preconditions:
+The input parameter `n` must be a positive integer representing the total number of users.
+The input parameter `restrictions` must be a 2D array where each element is a pair of integers representing the users who cannot send friend requests to each other.
+The input parameter `requests` must be a 2D array where each element is a pair of integers representing the users who are sending friend requests.
+
+Postconditions:
+The returned boolean array `result` must have a length equal to the number of friend requests in the `requests` array.
+Each element `result[j]` in the `result` array must be a boolean value indicating whether the `jth` friend request is successful or not.

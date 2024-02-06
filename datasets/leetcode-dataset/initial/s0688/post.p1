@@ -6,5 +6,4 @@ The value of column must be between 0 and n-1, as it represents the starting col
 Postconditions:
 The method should return a double value representing the probability that the knight remains on the board after it has stopped moving.
 The returned probability should be between 0 and 1, inclusive.
-If the knight is on the board after k moves, the probability should be calculated based on the number of valid moves the knight can make from that position.
-If the knight is off the board after k moves, the probability should be 0.
+If the knight's final position is outside the board, the probability should be If the knight's final position is on the board, the probability should be calculated based on the number of valid moves the knight can make from that position.

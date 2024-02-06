@@ -4,6 +4,5 @@ The input integer `n` must be a positive integer.
 Postconditions:
 The method should return an integer representing the `n`th digit of the infinite integer sequence.
 The returned digit should be between 1 and 9 (inclusive).
-If `n` is less than or equal to 9, the method should return `n` as the `n`th digit.
-If `n` is greater than 9, the method should calculate the `n`th digit by considering the sequence `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...]`.
-The method should handle large values of `n` efficiently without causing memory or performance issues.
+If `n` is less than or equal to 9, the method should return `n`.
+If `n` is greater than 9, the method should return the `n`th digit of the sequence `[10, 11, 12, ...]`.

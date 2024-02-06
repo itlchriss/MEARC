@@ -1,20 +1,26 @@
-Preconditions for the method `public int compare(int[] a, int[] b)`:
-The arrays `a` and `b` must not be null.
-The arrays `a` and `b` must have the same length.
+Preconditions and postconditions for the Java method `public int compare(int[] a, int[] b)`:
 
-Postconditions for the method `public int compare(int[] a, int[] b)`:
-The method returns an integer value indicating the comparison result between the arrays `a` and `b`.
+Preconditions:
+- The arrays `a` and `b` must not be null.
+- The arrays `a` and `b` must have the same length.
 
-Preconditions for the method `public Node()`:
-There are no specific preconditions for this method.
+Postconditions:
+- The method returns an integer value indicating the comparison result between the arrays `a` and `b`.
 
-Postconditions for the method `public Node()`:
-The method creates a new instance of the `Node` class.
+Preconditions and postconditions for the Java method `public Node()`:
 
-Preconditions for the method `public int[] maximizeXor(int[] nums, int[][] queries)`:
-The array `nums` must not be null.
-The array `queries` must not be null.
-The length of the array `nums` must be greater than The length of the array `queries` must be greater than 
-Postconditions for the method `public int[] maximizeXor(int[] nums, int[][] queries)`:
-The method returns an integer array `answer` where `answer.length` is equal to `queries.length`.
-Each element `answer[i]` in the `answer` array is the answer to the `i-th` query.
+Preconditions:
+- None.
+
+Postconditions:
+- The method creates a new instance of the `Node` class.
+
+Preconditions and postconditions for the Java method `public int[] maximizeXor(int[] nums, int[][] queries)`:
+
+Preconditions:
+- The array `nums` must not be null.
+- The array `queries` must not be null.
+- The length of the array `queries` must be greater than 
+Postconditions:
+- The method returns an integer array `answer` where `answer.length` is equal to the length of the array `queries`.
+- Each element `answer[i]` in the `answer` array is the answer to the `i-th` query.

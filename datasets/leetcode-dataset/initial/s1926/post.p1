@@ -1,0 +1,11 @@
+Preconditions:
+The `maze` parameter must be a 2D character array representing the maze.
+The `entrance` parameter must be an integer array representing the coordinates of the entrance in the maze.
+The `maze` must have at least one exit.
+The `maze` must have a valid entrance at the specified coordinates.
+The `maze` must not be null.
+The `entrance` array must not be null.
+
+Postconditions:
+The method should return an integer representing the number of steps in the shortest path from the entrance to the nearest exit.
+If no path exists from the entrance to any exit, the method should return -1.

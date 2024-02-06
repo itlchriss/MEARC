@@ -7,4 +7,4 @@ Postconditions:
 - The length of the returned array is equal to the total number of spaces in the grid (`rows * cols`).
 - The coordinates in the returned array are valid and within the grid's boundaries.
 - The coordinates in the returned array are in the order they were visited, following a clockwise spiral shape.
-- If a position in the grid is visited multiple times (due to moving outside the grid's boundary and returning later), it appears multiple times in the returned array.
+- Whenever the walk reaches the boundary of the grid, it continues outside the grid but may return to the grid boundary later.

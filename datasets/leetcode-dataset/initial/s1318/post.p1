@@ -1,11 +1,13 @@
 Preconditions:
-The method `minFlips` takes three positive integer inputs `a`, `b`, and `c`.
-The inputs `a`, `b`, and `c` are positive numbers.
+The method `minFlips` takes three positive numbers `a`, `b`, and `c` as input.
+The numbers `a`, `b`, and `c` are positive integers.
+The numbers `a` and `b` are non-negative integers.
+The numbers `a` and `b` have the same number of bits.
+The number of bits in `c` is less than or equal to the number of bits in `a` and `b`.
 
 Postconditions:
-The method returns an integer value representing the minimum number of flips required in some bits of `a` and `b` to make `(a OR b) == c`.
-The returned value is non-negative.
-The returned value is the minimum possible number of flips required to achieve the desired condition.
-The bits of `a` and `b` that need to be flipped are determined based on the condition `(a OR b) == c`.
-The original values of `a` and `b` are not modified by the method.
-The method does not have any side effects.
+The method returns an integer value representing the minimum number of flips required to make `a` OR `b` equal to `c`.
+The bits in `a` and `b` are flipped only if necessary to make `a` OR `b` equal to `c`.
+The original values of `a` and `b` are not modified.
+The method does not modify any other variables or objects outside its scope.
+The method handles all possible combinations of bits in `a`, `b`, and `c` to determine the minimum number of flips required.

@@ -1,6 +1,9 @@
 Preconditions:
-- The method takes in an array of integers `nums` and an integer `key` as parameters.
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+- The input integer `key` is a valid integer.
 
 Postconditions:
-- The method returns an integer value representing the `target` with the maximum count.
-- If no other integers follow an occurrence of `key`, the method returns - If `target = 2` has the maximum number of occurrences following an occurrence of `key`, the method returns - The test cases will be generated in such a way that the `target` with the maximum count is unique.
+- The method returns an integer value.
+- The returned integer value is the `target` with the maximum count.
+- If no other integers follow an occurrence of `key`, the method returns - If `target = 2` has the maximum number of occurrences following an occurrence of `key`, the method returns 2.

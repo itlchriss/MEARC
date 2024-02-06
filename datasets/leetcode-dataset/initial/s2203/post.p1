@@ -1,0 +1,14 @@
+Preconditions:
+- The input parameter `n` represents the number of vertices in the graph.
+- The input parameter `edges` represents the edges of the graph, where each element in the array is an array of two integers representing the vertices connected by the edge.
+- The input parameter `src1` represents the source vertex - The input parameter `src2` represents the source vertex - The input parameter `dest` represents the destination vertex.
+- The graph is represented by the input parameters `n` and `edges`.
+- The graph is a connected graph.
+- The graph may contain cycles.
+- The graph may contain self-loops.
+- The graph may contain multiple edges between the same pair of vertices.
+
+Postconditions:
+- The method returns the minimum weight of a subgraph of the graph.
+- The subgraph must be such that it is possible to reach the destination vertex `dest` from both source vertices `src1` and `src2` via a set of edges of this subgraph.
+- If such a subgraph does not exist, the method returns -1.

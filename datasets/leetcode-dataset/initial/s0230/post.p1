@@ -1,0 +1,11 @@
+Preconditions:
+The `root` parameter is not null.
+The binary search tree is not empty.
+The value of `k` is a positive integer.
+
+Postconditions:
+The method returns an integer value.
+The returned value is the kth smallest value in the binary search tree.
+The returned value is the kth smallest value among all the values of the nodes in the tree.
+The returned value is 1-indexed, meaning the smallest value is at index 1, the second smallest value is at index 2, and so on.
+If the binary search tree has less than k nodes, the method returns -1 or throws an exception to indicate that the kth smallest value does not exist.

@@ -1,8 +1,12 @@
 Preconditions:
-- The method `public BrowserHistory(String homepage)` requires a valid URL string as the `homepage` parameter.
+- The `BrowserHistory` object is initialized with a valid `homepage` URL.
+- The `visit` method is called with a valid `url` parameter.
+- The `back` method is called with a positive integer `steps` parameter.
+- The `forward` method is called with a positive integer `steps` parameter.
 
 Postconditions:
-- The method `public BrowserHistory(String homepage)` initializes a new instance of the `BrowserHistory` class with the specified `homepage` as the starting URL.
-- The method `public void visit(String url)` updates the current URL to the specified `url`.
-- The method `public String back(int steps)` moves the specified number of `steps` back in the browsing history and returns the current URL after moving back.
-- The method `public String forward(int steps)` moves the specified number of `steps` forward in the browsing history and returns the current URL after moving forward.
+- The `visit` method updates the current URL to the specified `url`.
+- The `back` method moves the current URL back in history by `steps` steps, or by the maximum number of steps available if `steps` is greater than the available steps.
+- The `back` method returns the current URL after moving back in history.
+- The `forward` method moves the current URL forward in history by `steps` steps, or by the maximum number of steps available if `steps` is greater than the available steps.
+- The `forward` method returns the current URL after moving forward in history.

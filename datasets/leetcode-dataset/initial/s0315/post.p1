@@ -6,7 +6,7 @@ Postconditions for the method `public List<Integer> countSmaller(int[] nums)`:
 The returned `counts` array is not null.
 The length of the returned `counts` array is equal to the length of the input `nums` array.
 Each element in the returned `counts` array is an integer.
-The value of each element in the returned `counts` array represents the number of smaller elements to the right of the corresponding element in the input `nums` array.
+The value of `counts[i]` is the number of smaller elements to the right of `nums[i]`.
 
 Preconditions for the constructor `public FenwickTree(int n)`:
 The input integer `n` is greater than or equal to zero.
@@ -16,8 +16,8 @@ The FenwickTree object is successfully created.
 The FenwickTree object has a size of `n`.
 
 Preconditions for the method `public void update(int i, int v)`:
-The input integer `i` is a valid index within the FenwickTree object.
-The input integer `v` is a valid value to update the FenwickTree object.
+The FenwickTree object is not null.
+The index `i` is a valid index within the FenwickTree object.
 
 Postconditions for the method `public void update(int i, int v)`:
-The FenwickTree object is successfully updated with the new value `v` at index `i`.
+The value at index `i` in the FenwickTree object is updated to `v`.

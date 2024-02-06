@@ -1,0 +1,14 @@
+Preconditions:
+The `students` array must not be null.
+The `mentors` array must not be null.
+The `students` array must have at least one element.
+The `mentors` array must have at least one element.
+The number of rows in the `students` array must be equal to the number of rows in the `mentors` array.
+The number of columns in the `students` array must be equal to the number of columns in the `mentors` array.
+
+Postconditions:
+The method should return an integer value representing the maximum compatibility score sum.
+The compatibility score sum should be calculated based on the compatibility scores between each student and mentor pair.
+The compatibility score sum should be the maximum possible value that can be achieved by pairing students with mentors.
+The compatibility score sum should be calculated by summing up the compatibility scores of all student-mentor pairs.
+The compatibility score sum should be non-negative.

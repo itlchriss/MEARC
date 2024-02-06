@@ -1,0 +1,11 @@
+Preconditions:
+- The input arrays `parents` and `nums` are not null.
+- The length of `parents` and `nums` is the same.
+- The length of `parents` and `nums` is greater than - The values in `parents` are valid indices within the range of `nums`.
+- The values in `nums` are non-negative integers.
+
+Postconditions:
+- The returned array `ans` is not null.
+- The length of `ans` is the same as the length of `parents` and `nums`.
+- The values in `ans` are non-negative integers.
+- The values in `ans` are the smallest genetic values that are missing from the subtrees rooted at each node.

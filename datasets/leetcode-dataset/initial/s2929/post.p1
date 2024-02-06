@@ -1,0 +1,12 @@
+Preconditions:
+The method should take two parameters: `n` (the total number of candies) and `k` (the limit of candies per child).
+The value of `n` should be a non-negative integer.
+The value of `k` should be a positive integer.
+
+Postconditions:
+The method should return a long value representing the total number of ways to distribute the candies.
+The returned value should be a non-negative integer.
+The returned value should be less than or equal to the total number of ways to distribute `n` candies among 3 children without any limit.
+Each child should receive a number of candies less than or equal to the limit `k`.
+The distribution of candies should be such that no child receives more than the limit `k` candies.
+The distribution of candies should be such that the total number of candies distributed is equal to `n`.

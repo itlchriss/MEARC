@@ -1,0 +1,28 @@
+Preconditions for the method `public RandomizedCollection()`:
+- None
+
+Postconditions for the method `public RandomizedCollection()`:
+- Initializes a new instance of the `RandomizedCollection` class.
+
+Preconditions for the method `public boolean insert(int val)`:
+- None
+
+Postconditions for the method `public boolean insert(int val)`:
+- Inserts the item `val` into the multiset.
+- Returns `true` if the item is not present in the multiset.
+- Returns `false` if the item is already present in the multiset.
+
+Preconditions for the method `public boolean remove(int val)`:
+- None
+
+Postconditions for the method `public boolean remove(int val)`:
+- Removes one occurrence of the item `val` from the multiset if it is present.
+- Returns `true` if the item was present and successfully removed.
+- Returns `false` if the item was not present in the multiset.
+
+Preconditions for the method `public int getRandom()`:
+- None
+
+Postconditions for the method `public int getRandom()`:
+- Returns a random element from the current multiset of elements.
+- The probability of each element being returned is linearly related to the number of same values the multiset contains.

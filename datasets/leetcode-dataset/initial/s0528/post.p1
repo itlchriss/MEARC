@@ -3,9 +3,6 @@ Preconditions:
 - The input array `w` must have at least one element.
 
 Postconditions:
-- The method `pickIndex()` returns an integer value within the range `[0, w.length - 1]`.
+- The method `pickIndex()` returns an integer value representing an index in the range `[0, w.length - 1]`.
 - The probability of picking an index `i` is `w[i] / sum(w)`.
-- If there is only one element in `w`, the method always returns - If there are multiple elements in `w`, the method returns an index with a probability proportional to its corresponding weight in `w`.
-- The method can be called multiple times, and the returned index may vary based on the probability distribution defined by `w`.
-- The method returns the same index multiple times if its corresponding weight in `w` is higher than the other indices.
-- The method returns different indices if their corresponding weights in `w` are equal.
+- If there is only one element in `w`, the method always returns - If there are multiple elements in `w`, the method returns an index with a probability proportional to the element's value in `w` compared to the sum of all elements in `w`.

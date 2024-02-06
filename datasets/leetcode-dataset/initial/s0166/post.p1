@@ -1,10 +1,10 @@
 Preconditions:
-The numerator and denominator must be integers.
-The denominator must not be zero.
+The `numerator` and `denominator` must be integers.
+The `denominator` must not be zero.
 
 Postconditions:
 The method should return a string representation of the fraction.
 If the fraction is a whole number, the string representation should not include a decimal point.
 If the fraction is a proper fraction, the string representation should include a decimal point.
-If the fraction is a repeating decimal, the string representation should indicate the repeating part.
+If the fraction is an improper fraction, the string representation should include both the whole number part and the decimal part.
 If multiple answers are possible, the method can return any of them.

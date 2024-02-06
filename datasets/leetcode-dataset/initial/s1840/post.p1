@@ -1,0 +1,11 @@
+Preconditions:
+The input parameter 'n' must be a positive integer representing the total number of buildings.
+The input parameter 'restrictions' must be a 2D array representing the restrictions on building heights.
+The number of rows in the 'restrictions' array must be equal to the value of 'n'.
+Each row in the 'restrictions' array must contain exactly two elements, representing the left and right restrictions for a building.
+
+Postconditions:
+The method should return an integer value representing the maximum possible height of the tallest building.
+The maximum possible height should be calculated based on the given restrictions on building heights.
+If there are no restrictions on building heights, the maximum possible height should be equal to 'n'.
+If there are restrictions on building heights, the maximum possible height should be calculated by considering the tallest possible building within the given restrictions.

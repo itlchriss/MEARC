@@ -1,8 +1,5 @@
 Preconditions:
-- The input array `amount` must have a length of - The values in the input array `amount` must be non-negative integers.
+- The input array `amount` must be a 0-indexed integer array of length - The values in the input array `amount` must represent the number of cold, warm, and hot water cups needed to fill respectively.
 
 Postconditions:
-- The method should return an integer representing the minimum number of seconds needed to fill up all the cups.
-- The cups should be filled in the order of cold, warm, and hot water cups.
-- The cups should be filled with the minimum amount of time required to fill each cup.
-- The cups should be filled simultaneously, meaning that the time taken to fill each cup should be counted concurrently.
+- The method should return an integer value representing the minimum number of seconds needed to fill up all the cups.

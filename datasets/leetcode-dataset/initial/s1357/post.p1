@@ -1,0 +1,38 @@
+Preconditions:
+- The integer n represents the number of products available in the store.
+- The integer discount represents the discount percentage for the customer.
+- The integer array products represents the list of available products in the store.
+- The integer array prices represents the corresponding prices of the products.
+
+Postconditions:
+- The method returns a double value representing the final total of the bill with the discount applied (if any).
+- The method accepts two integer arrays: product and amount.
+- The integer array product represents the list of products the customer wants to purchase.
+- The integer array amount represents the corresponding quantities of the products the customer wants to purchase.
+
+Example 1:
+- Preconditions:
+  - n = 7
+  - discount = 50
+  - products = [1, 2, 3, 4, 5, 6, 7]
+  - prices = [100, 200, 300, 400, 500, 600, 700]
+- Postconditions:
+  - The method returns 800.  - The method accepts product = [1, 2, 3, 4, 5, 6, 7] and amount = [1, 1, 1, 1, 1, 1, 1].
+
+Example 2:
+- Preconditions:
+  - n = 7
+  - discount = 0
+  - products = [7, 5, 3, 1, 6, 4, 2]
+  - prices = [700, 500, 300, 100, 600, 400, 200]
+- Postconditions:
+  - The method returns 7350.  - The method accepts product = [7, 5, 3, 1, 6, 4, 2] and amount = [10, 10, 10, 9, 9, 9, 7].
+
+Example 3:
+- Preconditions:
+  - n = 4
+  - discount = 0
+  - products = [4]
+  - prices = [4000]
+- Postconditions:
+  - The method returns 4000.  - The method accepts product = [4] and amount = [10].

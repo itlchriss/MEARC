@@ -1,0 +1,25 @@
+Preconditions and postconditions for the given methods:
+
+public TrieNode():
+Preconditions: None
+Postconditions: Creates a new TrieNode object.
+
+public Trie():
+Preconditions: None
+Postconditions: Creates a new Trie object.
+
+public void insert(String word):
+Preconditions: None
+Postconditions: Inserts the string "word" into the trie.
+
+public boolean search(String word):
+Preconditions: None
+Postconditions: Returns true if the string "word" is in the trie, false otherwise.
+
+public boolean search(String word, TrieNode root, int idx):
+Preconditions: None
+Postconditions: Returns true if the string "word" is in the trie starting from the TrieNode "root" at index "idx", false otherwise.
+
+public boolean startsWith(String prefix):
+Preconditions: None
+Postconditions: Returns true if there is a previously inserted string "word" that has the prefix "prefix", false otherwise.

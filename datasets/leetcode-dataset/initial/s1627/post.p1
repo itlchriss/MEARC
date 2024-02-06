@@ -4,7 +4,7 @@ Preconditions:
 - The value of `threshold` must be a positive integer.
 - The value of `queries` must be a two-dimensional array of integers.
 - The length of `queries` must be equal to the length of the array `answer`.
-- Each element in `queries` must be a valid index within the range of `n`.
+- Each element in `queries` must be a pair of integers representing two nodes in a graph.
 
 Postconditions:
 - The method `areConnected` returns an array `answer` of type `List<Boolean>`.
@@ -23,15 +23,14 @@ Postconditions:
 
 Preconditions:
 - The method `find` requires one input parameter `u`.
-- The value of `u` must be a valid index within the range of `n`.
+- The value of `u` must be a valid node in the graph.
 
 Postconditions:
-- The method `find` returns an integer value.
-- The returned value is the representative element of the set that `u` belongs to.
+- The method `find` returns an integer representing the root of the set that `u` belongs to.
 
 Preconditions:
 - The method `union` requires two input parameters `u` and `v`.
-- The values of `u` and `v` must be valid indices within the range of `n`.
+- The values of `u` and `v` must be valid nodes in the graph.
 
 Postconditions:
-- The method `union` performs a union operation on the sets that `u` and `v` belong to.
+- The method `union` merges the sets that `u` and `v` belong to into a single set.

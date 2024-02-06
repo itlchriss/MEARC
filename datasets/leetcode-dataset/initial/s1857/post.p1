@@ -1,0 +1,13 @@
+Preconditions:
+The input string `colors` should not be null.
+The input string `colors` should not be empty.
+The input string `colors` should only contain lowercase letters.
+The input array `edges` should not be null.
+The input array `edges` should not be empty.
+The input array `edges` should only contain valid indices of the `colors` string.
+The input array `edges` should not contain duplicate edges.
+
+Postconditions:
+The method should return an integer value.
+The returned value should be the largest color value of any valid path in the given graph.
+If the graph contains a cycle, the method should return -1.

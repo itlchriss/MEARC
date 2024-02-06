@@ -14,5 +14,5 @@ Preconditions for the method `public boolean query(char letter)`:
 - The parameter `letter` must be a valid character.
 
 Postconditions for the method `public boolean query(char letter)`:
-- If any non-empty suffix from the stream forms a word that is in `wordList`, the method returns `true`.
-- If no non-empty suffix from the stream forms a word that is in `wordList`, the method returns `false`.
+- The method returns `true` if any non-empty suffix from the stream forms a word that is in `wordList`.
+- The stream is updated with the new character `letter`.

@@ -1,0 +1,10 @@
+Preconditions:
+- The method should take two integer parameters, `n` and `k`.
+- The value of `n` should be a positive integer.
+- The value of `k` should be a positive integer.
+- There should be at least `k` happy strings of length `n`.
+
+Postconditions:
+- The method should return a string.
+- If there are less than `k` happy strings of length `n`, the method should return an empty string.
+- If there are `k` or more happy strings of length `n`, the method should return the kth string from the list of happy strings.

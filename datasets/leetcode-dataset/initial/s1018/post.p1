@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+
+Postconditions:
+- The output list `answer` is not null.
+- The size of the output list `answer` is equal to the size of the input array `nums`.
+- Each element `answer[i]` in the output list is a boolean value.
+- If `nums[i]` is divisible by 5, then `answer[i]` is true.
+- If `nums[i]` is not divisible by 5, then `answer[i]` is false.

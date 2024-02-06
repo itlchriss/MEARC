@@ -15,5 +15,6 @@ The returned list should include all vertices that have no incoming edges and no
 The returned list should not include any vertices that have both incoming and outgoing edges.
 The returned list should not include any vertices that have only outgoing edges.
 The returned list should not include any vertices that have only incoming edges.
-The returned list should not include any vertices that are not connected to any other vertices in the graph.
-The returned list should not include any vertices that are not reachable from any other vertices in the graph.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can be reached from other vertices in the graph.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can reach other vertices in the graph.
+The returned list should not include any vertices that have both incoming and outgoing edges, but can be reached from other vertices and can reach other vertices in the graph.

@@ -1,0 +1,14 @@
+Preconditions:
+- The inputText parameter must not be null.
+- The desiredText parameter must not be null.
+- The fromLetters parameter must not be null.
+- The toLetters parameter must not be null.
+- The transformationCost parameter must not be null.
+- The length of fromLetters must be equal to the length of toLetters.
+- The length of fromLetters must be equal to the length of transformationCost.
+- The inputText parameter must only contain characters that are present in fromLetters.
+- The desiredText parameter must only contain characters that are present in fromLetters.
+
+Postconditions:
+- The method returns a long value representing the minimum cost to convert the inputText to the desiredText.
+- If it is impossible to convert the inputText to the desiredText, the method returns -1.

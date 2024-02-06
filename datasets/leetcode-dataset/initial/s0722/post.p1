@@ -1,0 +1,20 @@
+Preconditions:
+The source code must be provided as an array of strings.
+The source code may contain comments in the form of single-line comments (//) or multi-line comments (/* */).
+
+Postconditions:
+The returned value must be a list of strings.
+The returned source code must be in the same format as the input source code, with the comments removed.
+All single-line comments (//) and their corresponding lines must be removed from the source code.
+All multi-line comments (/* */) and their corresponding lines must be removed from the source code.
+The order of the remaining lines in the source code must be preserved.
+Empty lines that were originally part of the comments must be removed from the source code.
+If a line contains both code and a comment, only the comment portion must be removed, and the code portion must be preserved.
+If a line contains a comment that is within a string literal, the comment must not be removed.
+If a line contains a comment that is within a character literal, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in curly braces, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in parentheses, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in square brackets, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in angle brackets, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in double quotes, the comment must not be removed.
+If a line contains a comment that is within a block of code enclosed in single quotes, the comment must not be removed.

@@ -6,5 +6,5 @@ Postconditions:
 - The `insert` method inserts a pair `(idKey, value)` into the stream.
 - The `insert` method returns the largest possible chunk of currently inserted values that appear next in the order.
 - The returned chunk is a list of strings.
-- The values in the chunk are in increasing order of their IDs.
-- The concatenation of all the chunks returned by the `insert` method results in a list of the sorted values.
+- The values in the returned chunk are in increasing order of their IDs.
+- The concatenation of all the returned chunks will result in a list of the sorted values.

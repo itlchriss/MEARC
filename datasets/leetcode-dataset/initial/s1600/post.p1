@@ -1,0 +1,24 @@
+Preconditions for the method `public ThroneInheritance(String kingName)`:
+- The `kingName` parameter must be a valid string representing the name of the king.
+
+Postconditions for the method `public ThroneInheritance(String kingName)`:
+- The `ThroneInheritance` object is initialized with the `kingName` as the first member in the order of inheritance.
+
+Preconditions for the method `public void birth(String parentName, String childName)`:
+- The `parentName` parameter must be a valid string representing the name of an existing member in the order of inheritance.
+- The `childName` parameter must be a valid string representing the name of the new child.
+
+Postconditions for the method `public void birth(String parentName, String childName)`:
+- A new member with the `childName` is added to the order of inheritance as a child of the member with the `parentName`.
+
+Preconditions for the method `public void death(String name)`:
+- The `name` parameter must be a valid string representing the name of an existing member in the order of inheritance.
+
+Postconditions for the method `public void death(String name)`:
+- The member with the `name` is removed from the order of inheritance.
+
+Preconditions for the method `public List<String> getInheritanceOrder()`:
+- None
+
+Postconditions for the method `public List<String> getInheritanceOrder()`:
+- The method returns a list representing the current order of inheritance, excluding dead people.

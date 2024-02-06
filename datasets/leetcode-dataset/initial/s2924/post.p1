@@ -1,0 +1,7 @@
+Preconditions:
+The parameter `n` must be a positive integer representing the number of teams in the tournament.
+The parameter `edges` must be a 2D array representing the matches between teams, where each element `edges[i]` is an array of size 2 containing the indices of the teams playing in the i-th match.
+
+Postconditions:
+If there is a unique champion in the tournament, the method should return the index of the team that will be the champion.
+If there is no unique champion in the tournament (i.e., multiple teams have the same highest score), the method should return -1.

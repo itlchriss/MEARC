@@ -1,20 +1,19 @@
-Preconditions for the Java method `public NumArray(int[] nums)`:
-- The `nums` array must be provided as input.
+Preconditions for the Java method public NumArray(int[] nums):
+- The input array nums is not null.
 
-Postconditions for the Java method `public NumArray(int[] nums)`:
-- The `NumArray` object is created.
-- The `nums` array is stored in the `NumArray` object.
+Postconditions for the Java method public NumArray(int[] nums):
+- The NumArray object is created and initialized with the input array nums.
 
-Preconditions for the Java method `public void update(int index, int val)`:
-- The `index` and `val` parameters must be provided as input.
-- The `index` must be a valid index within the `nums` array.
+Preconditions for the Java method public void update(int index, int val):
+- The index is a valid index within the array nums.
+- The input value val is not null.
 
-Postconditions for the Java method `public void update(int index, int val)`:
-- The value at the specified `index` in the `nums` array is updated to the provided `val`.
+Postconditions for the Java method public void update(int index, int val):
+- The element at the specified index in the array nums is updated with the input value val.
 
-Preconditions for the Java method `public int sumRange(int left, int right)`:
-- The `left` and `right` parameters must be provided as input.
-- The `left` and `right` values must be valid indices within the `nums` array.
+Preconditions for the Java method public int sumRange(int left, int right):
+- The indices left and right are valid indices within the array nums.
+- The index left is less than or equal to the index right.
 
-Postconditions for the Java method `public int sumRange(int left, int right)`:
-- The sum of the elements of `nums` between indices `left` and `right` (inclusive) is returned.
+Postconditions for the Java method public int sumRange(int left, int right):
+- The method returns the sum of the elements of nums between indices left and right inclusive.

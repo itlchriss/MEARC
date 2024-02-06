@@ -1,0 +1,12 @@
+Preconditions:
+The method public Server(int id, int busyTime) should be called before calling the busiestServers method.
+The parameter k should be a positive integer.
+The arrays arrival and load should have the same length.
+The elements in the arrival array should be non-negative integers.
+The elements in the load array should be positive integers.
+
+Postconditions:
+The method busiestServers should return a List<Integer> containing the IDs of the busiest server(s).
+The returned list should only contain valid server IDs (0-indexed).
+The returned list may contain multiple IDs if there are multiple servers with the same maximum load.
+The order of the IDs in the returned list can be arbitrary.

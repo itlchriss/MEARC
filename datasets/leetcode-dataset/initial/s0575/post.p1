@@ -1,12 +1,8 @@
 Preconditions:
-- The input `candyType` is an integer array.
-- The length of `candyType` is `n`.
-- `n` is a positive integer.
-- The elements in `candyType` are positive integers.
+- The input `candyType` is a non-null integer array.
+- The length of `candyType` is greater than - The length of `candyType` is even.
 
 Postconditions:
-- The method returns an integer value.
-- The returned value represents the maximum number of different types of candies she can eat.
-- She can only eat `n / 2` candies.
-- The returned value is less than or equal to `n / 2`.
+- The method returns an integer representing the maximum number of different types of candies she can eat.
+- The returned value is less than or equal to `n / 2`, where `n` is the length of `candyType`.
 - The returned value is the maximum possible number of different types of candies she can eat.

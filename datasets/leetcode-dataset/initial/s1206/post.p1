@@ -1,0 +1,23 @@
+Preconditions and postconditions for the given Java methods:
+
+public Skiplist():
+   - Preconditions: None
+   - Postconditions: A new Skiplist object is created.
+
+public Skiplist(int size):
+   - Preconditions: The size parameter is a positive integer.
+   - Postconditions: A new Skiplist object is created with the specified size.
+
+public boolean search(int target):
+   - Preconditions: None
+   - Postconditions: Returns true if the target integer exists in the Skiplist, false otherwise.
+
+public void add(int num):
+   - Preconditions: None
+   - Postconditions: The integer num is added to the Skiplist.
+
+public boolean erase(int num):
+   - Preconditions: None
+   - Postconditions: 
+     - If num exists in the Skiplist, it is removed and true is returned.
+     - If num does not exist in the Skiplist, nothing is done and false is returned.

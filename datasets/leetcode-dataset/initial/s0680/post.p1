@@ -1,6 +1,7 @@
 Preconditions:
-The input string `s` is not null.
+The input string `s` should not be null.
+The input string `s` should not be empty.
 
 Postconditions:
-The method returns `true` if the string `s` can be a palindrome after deleting at most one character from it.
-The method returns `false` if the string `s` cannot be a palindrome after deleting at most one character from it.
+The method should return `true` if the input string `s` can be a palindrome after deleting at most one character from it.
+The method should return `false` if the input string `s` cannot be a palindrome after deleting at most one character from it.

@@ -1,0 +1,13 @@
+Preconditions:
+The method should take two non-negative integers represented as strings, `num1` and `num2`, as input.
+The input strings should only contain numeric characters (0-9).
+The input strings should not be empty.
+
+Postconditions:
+The method should return a string representing the sum of `num1` and `num2`.
+The returned string should only contain numeric characters (0-9).
+The returned string should not have any leading zeros, except if the sum is zero itself.
+The length of the returned string should be equal to the maximum length of `num1` and `num2`, or one more if there is a carry-over from the addition of the last digits.
+The sum should be calculated by adding the corresponding digits from `num1` and `num2`, taking into account any carry-over from the previous addition.
+If one of the input strings is longer than the other, the remaining digits should be added to the sum without any carry-over.
+If both input strings are empty, the method should return an empty string.

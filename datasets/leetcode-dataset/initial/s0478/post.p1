@@ -1,11 +1,8 @@
 Preconditions:
-The radius value must be a positive number.
-The xCenter value can be any real number.
-The yCenter value can be any real number.
+- The radius, xCenter, and yCenter parameters must be valid double values.
+- The radius must be greater than or equal to - The xCenter and yCenter values must be within the range of valid coordinates.
 
 Postconditions:
-The method should return an array of size The first element of the array should be a random x-coordinate within the circle.
-The second element of the array should be a random y-coordinate within the circle.
-The returned x-coordinate should be within the range (xCenter - radius, xCenter + radius).
-The returned y-coordinate should be within the range (yCenter - radius, yCenter + radius).
-The returned x-coordinate and y-coordinate should be random and different for each call to the method.
+- The method should return an array of size 2, containing the x and y coordinates of a random point inside the circle.
+- The x and y coordinates should be within the range defined by the circle's radius and center.
+- The returned point should be on or inside the circumference of the circle.

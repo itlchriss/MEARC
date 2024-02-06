@@ -1,9 +1,8 @@
 Preconditions:
 The input array `words` is not null.
-The input array `words` contains at least one element.
-The input integers `left` and `right` are valid indices within the range of the input array `words`.
-The value of `left` is less than or equal to the value of `right`.
+The input array `words` is not empty.
+The input integers `left` and `right` are valid indices within the range of the `words` array.
 
 Postconditions:
-The method returns an integer value representing the number of vowel strings within the inclusive range `[left, right]`.
+The method returns an integer value representing the number of vowel strings within the specified range.
 The returned value is greater than or equal to 0.

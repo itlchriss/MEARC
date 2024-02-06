@@ -1,0 +1,11 @@
+Preconditions:
+The plantTime array must not be null.
+The growTime array must not be null.
+The plantTime array and the growTime array must have the same length.
+The plantTime array must contain only non-negative integers.
+The growTime array must contain only positive integers.
+
+Postconditions:
+The method should return an integer representing the earliest possible day where all seeds are blooming.
+If there are no seeds (i.e., the length of the plantTime array is 0), the method should return If there is only one seed (i.e., the length of the plantTime array is 1), the method should return the sum of the plantTime and growTime for that seed.
+If there are multiple seeds, the method should return the maximum value among the sum of plantTime and growTime for each seed.

@@ -1,18 +1,18 @@
-Preconditions for the `public Solution(int nRows, int nCols)` method:
-- The `nRows` parameter must be a positive integer.
-- The `nCols` parameter must be a positive integer.
+Preconditions for the method `public Solution(int nRows, int nCols)`:
+- The parameters `nRows` and `nCols` must be positive integers.
 
-Postconditions for the `public Solution(int nRows, int nCols)` method:
-- The `matrix` variable is initialized as an `nRows x nCols` binary grid with all values set to 
-Preconditions for the `public int[] flip()` method:
-- The `matrix` variable must be initialized and not null.
-- There must be at least one index `(i, j)` in the `matrix` where `matrix[i][j] == 0`.
+Postconditions for the method `public Solution(int nRows, int nCols)`:
+- The object `solution` is created with a binary grid `matrix` of size `nRows` x `nCols`, with all values set to 
+Preconditions for the method `public int[] flip()`:
+- The binary grid `matrix` must be initialized and not empty.
+- There must be at least one index `(i, j)` in the matrix where `matrix[i][j] == 0`.
 
-Postconditions for the `public int[] flip()` method:
-- The index `[i, j]` where `matrix[i][j] == 0` is randomly selected and flipped to - The selected index `[i, j]` is returned as an array `[i, j]`.
+Postconditions for the method `public int[] flip()`:
+- The method returns an array `[i, j]` representing the randomly picked index where `matrix[i][j] == 0`.
+- The value at index `[i, j]` in the matrix is flipped from 0 to - All indices `(i, j)` where `matrix[i][j] == 0` are equally likely to be returned.
 
-Preconditions for the `public void reset()` method:
-- The `matrix` variable must be initialized and not null.
+Preconditions for the method `public void reset()`:
+- The binary grid `matrix` must be initialized and not empty.
 
-Postconditions for the `public void reset()` method:
-- All values in the `matrix` are reset to 0.
+Postconditions for the method `public void reset()`:
+- All values in the matrix are reset to 0.

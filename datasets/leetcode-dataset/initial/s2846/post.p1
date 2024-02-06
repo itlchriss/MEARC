@@ -1,0 +1,10 @@
+Preconditions:
+The method `minOperationsQueries` takes three parameters: `n` (an integer representing the number of nodes in the tree), `edges` (a 2D array representing the edges of the tree), and `queries` (a 2D array representing the queries).
+The `edges` array contains pairs of integers representing the nodes connected by an edge in the tree.
+The `queries` array contains pairs of integers representing the nodes for which the minimum number of operations needs to be calculated.
+The tree is in its initial state before executing any queries.
+
+Postconditions:
+The method returns an array `answer` of length `m`, where `m` is the number of queries.
+Each element `answer[i]` in the `answer` array represents the minimum number of operations required to transform the tree to its initial state for the `i`th query.
+The tree returns to its initial state after executing each query, meaning that any modifications made during a query are undone before the next query is executed.

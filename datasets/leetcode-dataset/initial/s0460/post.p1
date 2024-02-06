@@ -1,20 +1,22 @@
-Preconditions for the Java method public LFUCache(int capacity):
-- The capacity parameter must be a positive integer.
+Preconditions for the `public LFUCache(int capacity)` method:
+- The `capacity` parameter must be a positive integer.
 
-Postconditions for the Java method public LFUCache(int capacity):
-- The LFUCache object is initialized with the specified capacity.
+Postconditions for the `public LFUCache(int capacity)` method:
+- The LFUCache object is initialized with the specified `capacity`.
 
-Preconditions for the Java method public int get(int key):
-- The key parameter must be a valid integer.
+Preconditions for the `public int get(int key)` method:
+- The LFUCache object must be initialized.
+- The `key` parameter must be a valid integer.
 
-Postconditions for the Java method public int get(int key):
-- If the key exists in the cache, the method returns the corresponding value.
-- If the key does not exist in the cache, the method returns -
-Preconditions for the Java method public void put(int key, int value):
-- The key parameter must be a valid integer.
-- The value parameter must be a valid integer.
+Postconditions for the `public int get(int key)` method:
+- If the `key` exists in the cache, the method returns the corresponding value.
+- If the `key` does not exist in the cache, the method returns -
+Preconditions for the `public void put(int key, int value)` method:
+- The LFUCache object must be initialized.
+- The `key` parameter must be a valid integer.
+- The `value` parameter must be a valid integer.
 
-Postconditions for the Java method public void put(int key, int value):
-- If the key already exists in the cache, the corresponding value is updated.
-- If the key does not exist in the cache and the cache is at its capacity, the least frequently used item is evicted before adding the new key-value pair.
-- If the key does not exist in the cache and the cache is not at its capacity, the new key-value pair is added to the cache.
+Postconditions for the `public void put(int key, int value)` method:
+- If the `key` already exists in the cache, the corresponding value is updated with the new `value`.
+- If the `key` does not exist in the cache and the cache is at full capacity, the least frequently used item is evicted from the cache before adding the new key-value pair.
+- If the `key` does not exist in the cache and the cache is not at full capacity, the new key-value pair is added to the cache.

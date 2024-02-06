@@ -4,9 +4,7 @@ The input matrix `isWater` must have at least one row and one column.
 The input matrix `isWater` must contain only integers.
 
 Postconditions:
-The output matrix `height` must not be null.
-The output matrix `height` must have the same number of rows and columns as the input matrix `isWater`.
+The output matrix `height` must be of size `m x n`, where `m` is the number of rows in `isWater` and `n` is the number of columns in `isWater`.
 The output matrix `height` must contain only integers.
-The output matrix `height` must have the same values as the input matrix `isWater` for cells that are not water.
-The output matrix `height` must have different values for cells that are water.
-The output matrix `height` must have at least one cell with a non-zero height.
+The value of `height[i][j]` must represent the height of cell `(i, j)` in the input matrix `isWater`.
+If there are multiple solutions, the output matrix `height` can be any valid solution.

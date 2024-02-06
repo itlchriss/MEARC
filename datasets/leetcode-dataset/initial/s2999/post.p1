@@ -1,11 +1,12 @@
 Preconditions:
-The method should take four parameters: start (long), finish (long), limit (int), and s (String).
-The start parameter should represent the starting value of the range.
-The finish parameter should represent the ending value of the range.
-The limit parameter should represent the maximum limit for a powerful integer.
-The s parameter should be a string.
-
+The method should take four parameters: `start` (the starting number of the range), `finish` (the ending number of the range), `limit` (the limit for powerful integers), and `s` (a string parameter).
+The `start` parameter should be a long data type.
+The `finish` parameter should be a long data type.
+The `limit` parameter should be an integer data type.
+The `s` parameter should be a string data type.
+The `start` parameter should be less than or equal to the `finish` parameter.
+The `limit` parameter should be greater than or equal to 
 Postconditions:
-The method should return a long value representing the total number of powerful integers in the range [start..finish].
-The returned value should be greater than or equal to The returned value should be less than or equal to the total number of integers in the range [start..finish].
-The method should handle cases where the start value is greater than the finish value and return The method should handle cases where the limit is less than or equal to 0 and return The method should handle cases where the s parameter is null and return 0.
+The method should return a long data type representing the total number of powerful integers in the range `[start..finish]`.
+The returned value should be greater than or equal to The returned value should be the sum of all powerful integers in the range `[start..finish]`.
+The method should handle cases where there are no powerful integers in the range `[start..finish]` and return The method should handle cases where the range `[start..finish]` is empty and return 0.

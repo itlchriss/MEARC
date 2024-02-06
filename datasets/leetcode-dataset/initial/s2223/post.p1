@@ -6,100 +6,296 @@ Postconditions:
 The method should return a long value representing the sum of the scores.
 The method should calculate the score for each character in the string `s`.
 The method should ignore any characters in `s` that are not valid for scoring.
-The method should handle both uppercase and lowercase characters in `s`.
-The method should handle special characters in `s`.
-The method should handle numbers in `s`.
-The method should handle spaces in `s`.
-The method should handle punctuation marks in `s`.
-The method should handle non-alphanumeric characters in `s`.
-The method should handle non-English characters in `s`.
-The method should handle multi-byte characters in `s`.
-The method should handle surrogate pairs in `s`.
-The method should handle control characters in `s`.
-The method should handle escape characters in `s`.
-The method should handle whitespace characters in `s`.
-The method should handle line break characters in `s`.
-The method should handle tab characters in `s`.
-The method should handle carriage return characters in `s`.
-The method should handle form feed characters in `s`.
-The method should handle backspace characters in `s`.
-The method should handle null characters in `s`.
-The method should handle characters from different character sets in `s`.
-The method should handle characters with different encodings in `s`.
-The method should handle characters with different byte orderings in `s`.
-The method should handle characters with different normalization forms in `s`.
-The method should handle characters with different collation orders in `s`.
-The method should handle characters with different casing rules in `s`.
-The method should handle characters with different script properties in `s`.
-The method should handle characters with different grapheme cluster boundaries in `s`.
-The method should handle characters with different word boundaries in `s`.
-The method should handle characters with different sentence boundaries in `s`.
-The method should handle characters with different line boundaries in `s`.
-The method should handle characters with different paragraph boundaries in `s`.
-The method should handle characters with different bidirectional properties in `s`.
-The method should handle characters with different joining types in `s`.
-The method should handle characters with different numeric values in `s`.
-The method should handle characters with different general categories in `s`.
-The method should handle characters with different script extensions in `s`.
-The method should handle characters with different age properties in `s`.
-The method should handle characters with different block properties in `s`.
-The method should handle characters with different composition exclusions in `s`.
-The method should handle characters with different decomposition types in `s`.
-The method should handle characters with different decomposition mappings in `s`.
-The method should handle characters with different compatibility mappings in `s`.
-The method should handle characters with different case mappings in `s`.
-The method should handle characters with different normalization mappings in `s`.
-The method should handle characters with different collation mappings in `s`.
-The method should handle characters with different transliteration mappings in `s`.
-The method should handle characters with different segmentation properties in `s`.
-The method should handle characters with different line breaking properties in `s`.
-The method should handle characters with different word breaking properties in `s`.
-The method should handle characters with different sentence breaking properties in `s`.
-The method should handle characters with different grapheme cluster breaking properties in `s`.
-The method should handle characters with different emoji properties in `s`.
-The method should handle characters with different emoji presentation properties in `s`.
-The method should handle characters with different emoji modifier properties in `s`.
-The method should handle characters with different emoji modifier base properties in `s`.
-The method should handle characters with different emoji component properties in `s`.
-The method should handle characters with different regional indicator properties in `s`.
-The method should handle characters with different join control properties in `s`.
-The method should handle characters with different join control values in `s`.
-The method should handle characters with different join control types in `s`.
-The method should handle characters with different join control classes in `s`.
-The method should handle characters with different join control behaviors in `s`.
-The method should handle characters with different join control restrictions in `s`.
-The method should handle characters with different join control conditions in `s`.
-The method should handle characters with different join control actions in `s`.
-The method should handle characters with different join control sequences in `s`.
-The method should handle characters with different join control breakpoints in `s`.
-The method should handle characters with different join control positions in `s`.
-The method should handle characters with different join control groups in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
-The method should handle characters with different join control contexts in `s`.
+The method should handle both uppercase and lowercase characters for scoring.
+The method should handle special characters for scoring.
+The method should handle numbers for scoring.
+The method should handle spaces for scoring.
+The method should handle punctuation marks for scoring.
+The method should handle non-alphanumeric characters for scoring.
+The method should handle multi-byte characters for scoring.
+The method should handle surrogate pairs for scoring.
+The method should handle combining characters for scoring.
+The method should handle control characters for scoring.
+The method should handle whitespace characters for scoring.
+The method should handle characters from different character sets for scoring.
+The method should handle characters from different languages for scoring.
+The method should handle characters with diacritics for scoring.
+The method should handle characters with ligatures for scoring.
+The method should handle characters with accents for scoring.
+The method should handle characters with umlauts for scoring.
+The method should handle characters with cedillas for scoring.
+The method should handle characters with tildes for scoring.
+The method should handle characters with circumflexes for scoring.
+The method should handle characters with grave accents for scoring.
+The method should handle characters with acute accents for scoring.
+The method should handle characters with diaereses for scoring.
+The method should handle characters with macrons for scoring.
+The method should handle characters with breve for scoring.
+The method should handle characters with ogonek for scoring.
+The method should handle characters with carons for scoring.
+The method should handle characters with cedillas for scoring.
+The method should handle characters with hooks for scoring.
+The method should handle characters with rings for scoring.
+The method should handle characters with dots for scoring.
+The method should handle characters with strokes for scoring.
+The method should handle characters with bars for scoring.
+The method should handle characters with underdots for scoring.
+The method should handle characters with underlines for scoring.
+The method should handle characters with overscores for scoring.
+The method should handle characters with double underscores for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines for scoring.
+The method should handle characters with double overscores for scoring.
+The method should handle characters with double bars for scoring.
+The method should handle characters with double strokes for scoring.
+The method should handle characters with double dots for scoring.
+The method should handle characters with double rings for scoring.
+The method should handle characters with double hooks for scoring.
+The method should handle characters with double underdots for scoring.
+The method should handle characters with double underlines

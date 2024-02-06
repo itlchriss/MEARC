@@ -5,9 +5,6 @@ The arrays `nums1`, `nums2`, `nums3`, and `nums4` must contain only integers.
 
 Postconditions:
 The method should return an integer value representing the number of tuples `(i, j, k, l)` that satisfy the given condition.
-The method should handle the case when there are no tuples `(i, j, k, l)` that satisfy the given condition and return The method should handle the case when all arrays `nums1`, `nums2`, `nums3`, and `nums4` are empty and return The method should handle the case when any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is empty and return The method should handle the case when the length of any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is 0 and return The method should handle the case when the length of any of the arrays `nums1`, `nums2`, `nums3`, or `nums4` is less than `n` and return The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain negative integers.
-The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain positive integers.
-The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain zero.
-The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain duplicate integers.
-The method should handle the case when the arrays `nums1`, `nums2`, `nums3`, and `nums4` contain large integers.
-The method should handle the case when the sum of any tuple `(i, j, k, l)` exceeds the maximum value of an integer and return the maximum value of an integer.
+The method should handle the case when no tuples `(i, j, k, l)` satisfy the given condition and return The method should handle the case when all tuples `(i, j, k, l)` satisfy the given condition and return the total number of tuples.
+The method should handle the case when there are duplicate tuples `(i, j, k, l)` and count them as separate tuples.
+The method should not modify the input arrays `nums1`, `nums2`, `nums3`, and `nums4`.

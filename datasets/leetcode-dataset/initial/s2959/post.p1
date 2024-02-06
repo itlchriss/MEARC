@@ -1,0 +1,11 @@
+Preconditions:
+The method should take three parameters: an integer `n`, an integer `maxDistance`, and a two-dimensional integer array `roads`.
+The value of `n` should be a positive integer representing the total number of branches.
+The value of `maxDistance` should be a positive integer representing the maximum allowed distance between any two branches.
+The `roads` array should contain `n` rows and `n` columns, representing the distances between each pair of branches.
+The values in the `roads` array should be non-negative integers.
+
+Postconditions:
+The method should return an integer representing the number of possible sets of closing branches.
+Each set of closing branches should satisfy the condition that the distance between any two branches in the set is at most `maxDistance`.
+The returned value should be non-negative.

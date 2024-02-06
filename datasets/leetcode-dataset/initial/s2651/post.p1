@@ -7,4 +7,4 @@ Preconditions:
 Postconditions:
 - The method returns an integer representing the time when the train will arrive at the station.
 - The returned value is in the format of hours (0-23).
-- The returned value is calculated by adding the arrival time (ar) and the delay (de) modulo - If the calculated arrival time is greater than or equal to 24, it is converted to the 24-hour format by subtracting 24 from it.
+- If the arrival time (ar) plus the delay (de) is greater than or equal to 24, the returned value is the remainder after dividing the sum by - If the arrival time (ar) plus the delay (de) is less than 24, the returned value is the sum of the arrival time and the delay.

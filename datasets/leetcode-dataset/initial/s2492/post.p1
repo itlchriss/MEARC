@@ -1,0 +1,12 @@
+Preconditions:
+The method should take two parameters: an integer `n` representing the number of cities and a 2D integer array `roads` representing the connections between cities.
+The value of `n` should be greater than or equal to The value of `roads` should be a non-empty array.
+The cities should be numbered from 1 to `n`.
+The connections between cities should be represented in the `roads` array as pairs of integers, where each pair represents a road between two cities.
+
+Postconditions:
+The method should return an integer value representing the minimum possible score of a path between cities 1 and `n`.
+The returned score should be the minimum score among all possible paths between cities 1 and `n`.
+The score of a path is determined by the sum of the scores of all roads in that path.
+The score of a road is determined by the absolute difference between the two cities connected by that road.
+The returned score should be non-negative.

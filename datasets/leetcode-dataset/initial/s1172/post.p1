@@ -1,0 +1,28 @@
+Preconditions for the method public DinnerPlates(int capacity):
+- The capacity parameter must be a positive integer.
+
+Postconditions for the method public DinnerPlates(int capacity):
+- The DinnerPlates object is initialized with the specified capacity.
+
+Preconditions for the method public void push(int val):
+- The DinnerPlates object must not be null.
+- The val parameter must be a non-negative integer.
+
+Postconditions for the method public void push(int val):
+- The value val is added to the stack with the most available space.
+- If all stacks are full, a new stack is created and val is added to it.
+
+Preconditions for the method public int pop():
+- The DinnerPlates object must not be null.
+
+Postconditions for the method public int pop():
+- The value at the top of the rightmost non-empty stack is returned and removed from that stack.
+- If all stacks are empty, -1 is returned.
+
+Preconditions for the method public int popAtStack(int index):
+- The DinnerPlates object must not be null.
+- The index parameter must be a non-negative integer.
+
+Postconditions for the method public int popAtStack(int index):
+- The value at the top of the stack with the given index is returned and removed from that stack.
+- If the stack with the given index is empty, -1 is returned.

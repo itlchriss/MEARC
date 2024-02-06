@@ -1,20 +1,20 @@
-Preconditions for the method public CBTInserter(TreeNode root):
-- The root parameter must be a valid TreeNode object representing the root of the tree.
+Preconditions for the method `public CBTInserter(TreeNode root)`:
+- The `root` parameter is a valid `TreeNode` object representing the root of the tree.
 
-Postconditions for the method public CBTInserter(TreeNode root):
-- The CBTInserter object is initialized with the provided root TreeNode.
+Postconditions for the method `public CBTInserter(TreeNode root)`:
+- The `CBTInserter` object is initialized with the provided `root` as the root of the tree.
 
-Preconditions for the method public int insert(int val):
-- The CBTInserter object must be properly initialized.
-- The val parameter must be a valid integer value.
+Preconditions for the method `public int insert(int val)`:
+- The `CBTInserter` object has been initialized with a valid root node.
+- The `val` parameter is a valid integer value.
 
-Postconditions for the method public int insert(int val):
-- A new TreeNode with the value val is inserted into the tree.
+Postconditions for the method `public int insert(int val)`:
+- A new `TreeNode` object with value `val` has been inserted into the tree.
 - The tree remains complete after the insertion.
-- The parent of the inserted TreeNode is returned as an integer value.
+- The value of the parent of the inserted `TreeNode` is returned as an integer.
 
-Preconditions for the method public TreeNode getRoot():
-- The CBTInserter object must be properly initialized.
+Preconditions for the method `public TreeNode getRoot()`:
+- The `CBTInserter` object has been initialized with a valid root node.
 
-Postconditions for the method public TreeNode getRoot():
-- The root node of the tree is returned as a TreeNode object.
+Postconditions for the method `public TreeNode getRoot()`:
+- The root node of the tree is returned as a `TreeNode` object.

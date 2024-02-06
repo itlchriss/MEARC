@@ -1,0 +1,13 @@
+Preconditions:
+The `encodedText` parameter must not be null.
+The `rows` parameter must be a positive integer.
+
+Postconditions:
+The method should return a string value.
+The returned string value should be the original text that was encoded.
+The length of the returned string value should be equal to the length of the `encodedText` parameter.
+The returned string value should be formed by reading the characters from the encoded text in a specific pattern based on the number of rows specified.
+The characters in the returned string value should be arranged in rows, with each row containing a specific number of characters.
+The characters in each row should be read from left to right.
+If the number of characters in the encoded text is not evenly divisible by the number of rows, the last row should contain fewer characters.
+The characters in each row should be concatenated to form the final decoded string.

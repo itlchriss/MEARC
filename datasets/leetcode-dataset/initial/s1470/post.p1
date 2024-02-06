@@ -3,6 +3,10 @@ The input array "nums" must not be null.
 The length of the input array "nums" must be even.
 The value of "n" must be greater than 
 Postconditions:
-The returned array must have a length equal to twice the value of "n".
-The returned array must contain alternating elements from the input array "nums" and their corresponding elements after shuffling.
-The elements in the returned array must be in the form [x1, y1, x2, y2, ..., xn, yn], where xi and yi are elements from the input array "nums" and their corresponding shuffled elements respectively.
+The returned array must not be null.
+The length of the returned array must be equal to the length of the input array "nums".
+The returned array must be in the form [x1, y1, x2, y2, ..., xn, yn].
+The elements in the returned array must be shuffled in a random order.
+The first half of the elements in the returned array must be the first half of the elements in the input array "nums".
+The second half of the elements in the returned array must be the second half of the elements in the input array "nums".
+The order of the elements within each half of the returned array must be the same as the order of the elements within each half of the input array "nums".

@@ -11,9 +11,10 @@ Preconditions:
 
 Postconditions:
 - The `getValue` method returns the value at the specified `row` and `col` coordinates from the `rectangle`.
-- The `updateSubrectangle` method updates the values in the `rectangle` within the specified range (`row1`, `col1`, `row2`, `col2`) to the `newValue`.
-- After calling `updateSubrectangle`, the values in the `rectangle` within the specified range are equal to the `newValue`.
-- After calling `updateSubrectangle`, the values in the `rectangle` outside the specified range remain unchanged.
-- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates are not affected unless they fall within the specified range.
-- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates within the specified range are equal to the `newValue`.
-- After calling `updateSubrectangle`, the values in the `rectangle` at the specified `row` and `col` coordinates outside the specified range remain unchanged.
+- The `updateSubrectangle` method updates the values in the `rectangle` from the `row1` and `col1` coordinates to the `row2` and `col2` coordinates with the `newValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` within the specified coordinates are updated to the `newValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` outside the specified coordinates remain unchanged.
+- After calling `updateSubrectangle`, the values in the `rectangle` within the specified coordinates are not affected by subsequent calls to `updateSubrectangle`.
+- After calling `updateSubrectangle`, the values in the `rectangle` outside the specified coordinates can be updated by subsequent calls to `updateSubrectangle`.
+- After calling `updateSubrectangle`, the values in the `rectangle` within the specified coordinates can be accessed by subsequent calls to `getValue`.
+- After calling `updateSubrectangle`, the values in the `rectangle` outside the specified coordinates can be accessed by subsequent calls to `getValue`.

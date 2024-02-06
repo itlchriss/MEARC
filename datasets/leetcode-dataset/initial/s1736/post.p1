@@ -1,0 +1,9 @@
+Preconditions:
+The input `time` must be a string representing a valid time in the format "HH:MM".
+The input `time` must have at least one hidden digit.
+
+Postconditions:
+The output must be a string representing a valid time in the format "HH:MM".
+The output time must be later than or equal to the input `time`.
+The output time must have the same digits as the input `time` for the non-hidden positions.
+The output time must have the maximum possible value for the hidden digits, while still being a valid time.

@@ -1,0 +1,27 @@
+Preconditions for the method `public Tree getChild(char c)`:
+   - The tree should not be null.
+   - The character `c` should be a valid child of the current tree node.
+
+Postconditions for the method `public Tree getChild(char c)`:
+   - If a child node with character `c` exists, return that child node.
+   - If no child node with character `c` exists, return null.
+
+Preconditions for the method `public int len()`:
+   - The tree should not be null.
+
+Postconditions for the method `public int len()`:
+   - Return the length of the tree.
+
+Preconditions for the method `public static void addWord(Tree root, String word)`:
+   - The root tree should not be null.
+   - The word to be added should not be null or empty.
+
+Postconditions for the method `public static void addWord(Tree root, String word)`:
+   - The word should be added to the tree structure.
+
+Preconditions for the method `public static void deleteWord(Tree root, String word)`:
+   - The root tree should not be null.
+   - The word to be deleted should not be null or empty.
+
+Postconditions for the method `public static void deleteWord(Tree root, String word)`:
+   - The word should be deleted from the tree structure.

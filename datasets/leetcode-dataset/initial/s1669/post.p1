@@ -1,8 +1,11 @@
 Preconditions:
 The method should take in two ListNode objects, list1 and list2, as well as two integers, a and b.
-The ListNode objects list1 and list2 should not be null.
-The integer a should be a valid index within the listThe integer b should be a valid index within the listThe integer a should be less than or equal to b.
+The list1 should not be null.
+The list2 should not be null.
+The value of a should be a valid index within listThe value of b should be a valid index within listThe value of a should be less than or equal to the value of b.
 
 Postconditions:
 The method should return the head of the merged list.
-The merged list should be built by inserting the elements of list2 between the nodes at index a and b in listThe nodes in list2 should be inserted in the same order as they appear in listThe nodes in list1 after index b should be shifted to the right to accommodate the inserted nodes from listThe length of the merged list should be equal to the length of list1 plus the length of list2.
+The merged list should be built by inserting list2 between the nodes at index a and index b in listThe nodes in list2 should be inserted in the same order as they appear in listThe nodes in list1 before index a should remain in the same order.
+The nodes in list1 after index b should remain in the same order.
+The length of the merged list should be equal to the length of list1 plus the length of list2.

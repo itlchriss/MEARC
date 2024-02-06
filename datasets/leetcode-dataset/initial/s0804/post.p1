@@ -1,0 +1,10 @@
+Preconditions:
+- The input array "words" is not null.
+- The input array "words" contains at least one element.
+
+Postconditions:
+- The method returns an integer value representing the number of different transformations among all words in the input array.
+- The method does not modify the input array "words".
+- The method handles both uppercase and lowercase letters in the words.
+- The method considers two words to have the same transformation if their Morse code representations are identical.
+- The method counts each unique transformation only once, even if it appears multiple times in the input array.

@@ -1,0 +1,9 @@
+Preconditions:
+- The method takes in two arrays of strings, `queries` and `dictionary`.
+- The `queries` array contains words that need to be checked for matches in the `dictionary` array.
+- The `dictionary` array contains a list of words to compare against the `queries` array.
+- The method returns a list of strings.
+
+Postconditions:
+- The method returns a list of words from the `queries` array that match with some word from the `dictionary` array after a maximum of two edits.
+- The words in the returned list are in the same order they appear in the `queries` array.

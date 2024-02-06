@@ -1,7 +1,8 @@
 Preconditions:
 The start array must contain the x and y coordinates of the starting point.
 The target array must contain the x and y coordinates of the target point.
-The specialRoads array must contain information about the special roads available.
+The specialRoads array must contain information about the special roads available for travel.
 
 Postconditions:
-The method should return an integer value representing the minimum cost required to go from the starting point to the target point.
+The method should return an integer value representing the minimum cost required to travel from the starting point to the target point.
+If it is not possible to reach the target point from the starting point, the method should return -1.

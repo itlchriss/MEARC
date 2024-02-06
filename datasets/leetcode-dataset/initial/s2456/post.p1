@@ -5,6 +5,6 @@ Preconditions:
 
 Postconditions:
 - The method returns a 2D array of strings `answer`.
-- The length of the returned array `answer` is equal to the number of unique creators in the input array `creators` with the highest popularity.
-- Each element in the returned array `answer` is an array of two strings, where the first element is the name of a creator and the second element is the id of their most popular video.
-- The order of the elements in the returned array `answer` can be in any order.
+- Each element in `answer` is an array of two strings, where the first element represents the creator and the second element represents the id of their most popular video.
+- The creators in `answer` have the highest popularity.
+- The order of elements in `answer` can be arbitrary.

@@ -1,0 +1,18 @@
+Preconditions:
+The method should take three parameters: price (a list of integers representing the price of each item), special (a list of lists representing the special offers), and needs (a list of integers representing the quantity of each item needed).
+The price list should not be empty.
+The special list should not be empty.
+The needs list should not be empty.
+The length of the price list should be equal to the length of the needs list.
+Each element in the price list should be a positive integer.
+Each element in the needs list should be a non-negative integer.
+Each element in the special list should be a list of integers.
+The length of each inner list in the special list should be equal to the length of the price list.
+Each element in the inner lists of the special list should be a non-negative integer.
+
+Postconditions:
+The method should return an integer representing the lowest price to pay for the required items.
+The returned price should be non-negative.
+The returned price should be the lowest possible price considering the special offers.
+The returned price should not exceed the sum of the individual prices of the required items.
+The returned price should not exceed the sum of the individual prices of the required items plus the cost of any additional items purchased through the special offers.

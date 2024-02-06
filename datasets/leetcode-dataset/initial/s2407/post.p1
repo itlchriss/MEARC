@@ -1,0 +1,17 @@
+Preconditions and postconditions for the Java methods:
+
+public SegTree(int n):
+   - Precondition: None
+   - Postcondition: A SegTree object is created with a size of n.
+
+public int query(int l, int r):
+   - Precondition: A SegTree object has been created.
+   - Postcondition: Returns the length of the longest subsequence that meets the requirements within the range [l, r].
+
+public void update(int i, int val):
+   - Precondition: A SegTree object has been created.
+   - Postcondition: Updates the value at index i in the SegTree with the new value val.
+
+public int lengthOfLIS(int[] nums, int k):
+   - Precondition: None
+   - Postcondition: Returns the length of the longest subsequence that meets the requirements in the given array nums, considering the constraint k.

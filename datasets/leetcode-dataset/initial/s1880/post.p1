@@ -1,0 +1,12 @@
+Preconditions:
+- The method takes three parameters: `firstWord`, `secondWord`, and `targetWord`.
+- `firstWord`, `secondWord`, and `targetWord` are non-null strings.
+- `firstWord` and `secondWord` contain only alphabetical characters.
+- `targetWord` contains only alphabetical characters.
+- `firstWord` and `secondWord` represent numerical values when converted to integers.
+- `targetWord` represents a numerical value when converted to an integer.
+
+Postconditions:
+- The method returns a boolean value.
+- If the summation of the numerical values of `firstWord` and `secondWord` equals the numerical value of `targetWord`, the method returns `true`.
+- If the summation of the numerical values of `firstWord` and `secondWord` does not equal the numerical value of `targetWord`, the method returns `false`.

@@ -1,0 +1,8 @@
+Preconditions:
+- The input array `nodeValues` is not null.
+- The input array `edges` is not null.
+- The input integer `maxNumberOfEdges` is greater than or equal to 
+Postconditions:
+- The method returns an integer value representing the maximum star sum.
+- The returned value is -5 if `maxNumberOfEdges` is - The returned value is the sum of all node values if `maxNumberOfEdges` is greater than or equal to the number of nodes in the graph.
+- The returned value is the sum of the node values of the star graph with at most `maxNumberOfEdges` edges.

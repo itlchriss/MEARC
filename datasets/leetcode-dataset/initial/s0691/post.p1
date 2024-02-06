@@ -1,7 +1,7 @@
 Preconditions:
-- The `stickers` array must not be null.
-- The `target` string must not be null.
+The method should take in an array of strings, `stickers`, which represents the available stickers.
+The method should take in a string, `target`, which represents the target word to be spelled out.
 
 Postconditions:
-- The method should return the minimum number of stickers needed to spell out the `target` string.
-- If it is impossible to spell out the `target` string using the given `stickers`, the method should return -1.
+The method should return an integer value representing the minimum number of stickers needed to spell out the target word.
+If it is impossible to spell out the target word using the given stickers, the method should return -1.

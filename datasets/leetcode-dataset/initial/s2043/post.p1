@@ -12,7 +12,7 @@ Postconditions for the method public boolean transfer(int account1, int account2
 - If the transaction is successful, the money is transferred from account1 to account- If the transaction is successful, the balance of account1 is reduced by the money amount.
 - If the transaction is successful, the balance of account2 is increased by the money amount.
 - If the transaction is successful, the method returns true.
-- If the transaction is not successful, the method returns false.
+- If the transaction is unsuccessful, the method returns false.
 
 Preconditions for the method public boolean deposit(int account, long money):
 - The account parameter must be a valid account number.
@@ -21,7 +21,7 @@ Postconditions for the method public boolean deposit(int account, long money):
 - If the transaction is successful, the money is deposited into the specified account.
 - If the transaction is successful, the balance of the account is increased by the money amount.
 - If the transaction is successful, the method returns true.
-- If the transaction is not successful, the method returns false.
+- If the transaction is unsuccessful, the method returns false.
 
 Preconditions for the method public boolean withdraw(int account, long money):
 - The account parameter must be a valid account number.
@@ -31,4 +31,4 @@ Postconditions for the method public boolean withdraw(int account, long money):
 - If the transaction is successful, the money is withdrawn from the specified account.
 - If the transaction is successful, the balance of the account is reduced by the money amount.
 - If the transaction is successful, the method returns true.
-- If the transaction is not successful, the method returns false.
+- If the transaction is unsuccessful, the method returns false.

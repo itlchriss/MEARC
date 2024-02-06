@@ -1,11 +1,12 @@
 Preconditions:
 The `head` parameter must not be null.
 The linked list may be empty.
-The `val` parameter must be an integer.
 
 Postconditions:
 The method should return the new head of the linked list after removing all nodes with `Node.val == val`.
 The order of the remaining nodes in the linked list should be maintained.
-If the linked list is empty, the method should return null.
-If all nodes in the linked list have `Node.val == val`, the method should return null.
-The original linked list should not be modified.
+If the linked list is empty after removing all nodes with `Node.val == val`, the method should return null.
+The original linked list should remain unchanged.
+The method should handle cases where multiple nodes have the same value as `val`.
+The method should handle cases where the linked list contains only one node with `Node.val == val`.
+The method should handle cases where the linked list contains no nodes with `Node.val == val`.

@@ -1,7 +1,9 @@
 Preconditions:
-- The method `countTexts` takes a parameter `pressedKeys` of type String.
-- The input `pressedKeys` represents the string received by Bob.
+The method `countTexts` should be public and return an integer.
+The method should take a single parameter `pressedKeys` of type String.
+The parameter `pressedKeys` should represent the string received by Bob.
 
 Postconditions:
-- The method returns an integer value representing the total number of possible text messages Alice could have sent.
-- The returned value is the result of the calculation modulo 10^9 + 7.
+The method should return the total number of possible text messages Alice could have sent.
+The return value should be an integer.
+If the answer is very large, it should be returned modulo 10^9 + 7.

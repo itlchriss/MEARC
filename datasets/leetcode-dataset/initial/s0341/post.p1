@@ -1,0 +1,10 @@
+Preconditions:
+- The nestedList parameter passed to the NestedIterator constructor must not be null.
+- The nestedList parameter passed to the NestedIterator constructor must not be empty.
+- The nestedList parameter passed to the NestedIterator constructor must only contain objects of type NestedInteger.
+
+Postconditions:
+- The next() method should return the next integer in the nested list.
+- The hasNext() method should return true if there are still some integers in the nested list, and false otherwise.
+- The order of elements returned by the next() method should be [1,1,2,1,1] when called repeatedly until hasNext() returns false.
+- The order of elements returned by the next() method should be [1,4,6] when called repeatedly until hasNext() returns false.

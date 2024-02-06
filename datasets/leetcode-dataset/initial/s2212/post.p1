@@ -1,0 +1,9 @@
+Preconditions:
+- The method should take in two parameters: an integer `numArrows` and an array of integers `aliceArrows`.
+- The `numArrows` parameter should represent the total number of arrows Bob has.
+- The `aliceArrows` parameter should represent the number of arrows Alice shot on each scoring section from 0 to - The `aliceArrows` array should have a length of 12, with each element representing the number of arrows Alice shot on the corresponding scoring section.
+
+Postconditions:
+- The method should return an array of integers `bobArrows`.
+- The `bobArrows` array should have a length of 12, with each element representing the number of arrows Bob shot on the corresponding scoring section.
+- The sum of the values in the `bobArrows` array should equal `numArrows`.

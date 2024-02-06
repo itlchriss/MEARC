@@ -1,0 +1,9 @@
+Preconditions:
+- The input points array must not be null.
+- The input points array must contain at least 4 points.
+- Each point in the input points array must be an array of size 2, representing the x and y coordinates of the point.
+- The x and y coordinates of each point in the input points array must be non-negative integers.
+
+Postconditions:
+- The method should return an integer representing the minimum area of a rectangle formed from the given points.
+- The returned minimum area should be greater than or equal to - If there is no rectangle that can be formed from the given points with sides parallel to the X and Y axes, the method should return 0.

@@ -1,0 +1,8 @@
+Preconditions:
+The input grid must be a 2D array of integers.
+The grid must represent the state of the world, where each cell can be either 0 (empty), 1 (infected), or 2 (wall).
+The grid must have at least one infected region.
+
+Postconditions:
+The method should return an integer value representing the number of walls used to quarantine all the infected regions.
+If the world becomes fully infected, the method should return the total number of walls used.

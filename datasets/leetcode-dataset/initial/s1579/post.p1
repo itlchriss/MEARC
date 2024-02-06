@@ -1,0 +1,15 @@
+Preconditions:
+The method `maxNumEdgesToRemove` takes two parameters: an integer `n` representing the number of nodes in the graph, and a 2D integer array `edges` representing the edges between the nodes.
+The `edges` array contains valid edges, where each edge is represented by a pair of integers (x, y) indicating a connection between node x and node y.
+The `edges` array is not null and has at least one element.
+The values of `n` and the nodes in the `edges` array are within the valid range.
+
+Postconditions:
+The method `maxNumEdgesToRemove` returns an integer representing the maximum number of edges that can be removed from the graph.
+If it is impossible for the graph to be fully traversed by Alice and Bob, the method returns -The method `union` takes four parameters: two integers `x` and `y` representing the nodes to be connected, and two integer arrays `arr` and `rank` representing the disjoint set data structure.
+The `arr` array represents the parent of each node in the disjoint set.
+The `rank` array represents the rank of each node in the disjoint set.
+The method `union` returns a boolean value indicating whether the union operation was successful.
+The method `find` takes two parameters: an integer `x` representing the node to find, and an integer array `arr` representing the disjoint set data structure.
+The `arr` array represents the parent of each node in the disjoint set.
+The method `find` returns an integer representing the root of the set that contains the given node.

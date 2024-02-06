@@ -1,0 +1,8 @@
+Preconditions:
+- The input `expression` is a valid mathematical expression.
+- The input `expression` contains at least one arithmetic operation.
+
+Postconditions:
+- The returned `String` is a modified version of the input `expression` with a pair of parentheses added.
+- The modified `expression` evaluates to the smallest possible value.
+- If there are multiple answers that yield the same result, any of them can be returned.

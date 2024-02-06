@@ -1,0 +1,11 @@
+Preconditions:
+The input array `coins` must not be null.
+The input array `coins` must contain distinct integers.
+The input integer `amount` must be non-negative.
+
+Postconditions:
+The method should return a list of lists, where each inner list represents a unique combination of integers from the input array `coins` that sum up to the target `amount`.
+The order of the combinations in the returned list does not matter.
+Each combination in the returned list should only contain distinct integers.
+The sum of integers in each combination should be equal to the target `amount`.
+If there are no combinations that sum up to the target `amount`, an empty list should be returned.

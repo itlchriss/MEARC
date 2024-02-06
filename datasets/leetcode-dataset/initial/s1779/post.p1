@@ -1,9 +1,10 @@
 Preconditions:
 - The method takes in three parameters: an integer x, an integer y, and a 2D integer array points.
-- The array points contains valid and invalid points.
-- The current location is represented by the coordinates (x, y).
+- The points array represents a list of points, where each point is represented by a pair of integers [x, y].
+- The x and y parameters represent the current location.
+- The points array may be empty or contain multiple points.
 
 Postconditions:
 - The method returns an integer representing the index of the valid point with the smallest Manhattan distance from the current location.
-- If there are multiple valid points with the smallest Manhattan distance, the method returns the valid point with the smallest index.
+- The index is 0-indexed, meaning the first valid point has an index of - If there are multiple valid points with the smallest Manhattan distance, the method returns the valid point with the smallest index.
 - If there are no valid points, the method returns -1.

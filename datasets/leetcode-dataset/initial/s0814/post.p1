@@ -7,10 +7,5 @@ All nodes in the returned tree that do not contain a `1` are removed, along with
 The structure of the returned tree is preserved, with only the necessary nodes and subtrees removed.
 The returned tree may have a different structure than the input tree, but it will still be a valid binary tree.
 The returned tree may have a different root node than the input tree, if the original root node does not contain a `1`.
-The returned tree may have multiple disconnected subtrees, if there are multiple nodes in the input tree that do not contain a `1`.
-The returned tree may have leaf nodes that do not contain a `1`, as long as their parent nodes contain a `1`.
-The returned tree may have internal nodes that do not contain a `1`, as long as their descendant nodes contain a `1`.
-The returned tree may have empty branches, if all nodes in that branch do not contain a `1`.
-The returned tree may have branches with only a single node, if that node contains a `1`.
-The returned tree may have branches with multiple nodes, as long as at least one of the nodes contains a `1`.
-The returned tree may have a different number of nodes than the input tree, as some nodes and subtrees may be removed.
+The returned tree may have different child nodes for each parent node, as long as the child nodes contain a `1`.
+The returned tree may have different levels of depth compared to the input tree, as long as all nodes containing a `1` are preserved.

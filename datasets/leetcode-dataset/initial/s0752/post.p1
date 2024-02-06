@@ -1,0 +1,10 @@
+Preconditions:
+The `deadEnds` array should not be null.
+The `target` string should not be null.
+The `target` string should consist of exactly 4 characters.
+The `deadEnds` array should not contain any null values.
+The `deadEnds` array should not contain any empty strings.
+The `deadEnds` array should not contain any strings with a length other than 
+Postconditions:
+The method should return an integer value representing the minimum total number of turns required to open the lock.
+If it is impossible to open the lock, the method should return -1.

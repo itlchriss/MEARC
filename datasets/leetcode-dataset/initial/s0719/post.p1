@@ -5,7 +5,5 @@ The input integer `k` must be greater than or equal to The input integer `k` mus
 
 Postconditions:
 The method should return an integer value representing the kth smallest distance among all the pairs in the array `nums`.
-The returned distance should be calculated based on the absolute difference between the elements `nums[i]` and `nums[j]`, where `0 <= i < j < nums.length`.
-The returned distance should be the smallest among all the possible distances between pairs in the array `nums`.
-The method should not modify the input array `nums` or its elements.
-The method should not modify the input integer `k`.
+The returned distance should be the distance between the elements `nums[i]` and `nums[j]`, where `0 <= i < j < nums.length`.
+The returned distance should be the kth smallest distance among all the pairs in the array `nums`.

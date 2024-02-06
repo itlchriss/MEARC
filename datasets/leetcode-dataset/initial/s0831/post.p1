@@ -1,0 +1,12 @@
+Preconditions:
+The input string `s` should not be null.
+The input string `s` should not be empty.
+
+Postconditions:
+The returned masked personal information should be a string.
+The returned masked personal information should follow the specified rules.
+
+Additional behavioural requirements:
+If the input string `s` represents an email address, the returned masked personal information should have the same format as the original email address, with the first letter of the email address and the letter before the '@' symbol being converted to lowercase, and the remaining letters being converted to lowercase and replaced with asterisks.
+If the input string `s` represents a phone number, the returned masked personal information should have the same format as the original phone number, with all digits except the last four digits being replaced with asterisks. The last four digits should be displayed as is.
+If the input string `s` represents neither an email address nor a phone number, the method should return an empty string.

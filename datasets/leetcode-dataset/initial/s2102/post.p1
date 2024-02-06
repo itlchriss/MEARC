@@ -1,0 +1,35 @@
+Preconditions and postconditions for the given methods:
+
+public Location(String name, int score)
+   - Preconditions: None
+   - Postconditions: 
+     - Creates a new Location object with the given name and score.
+
+public String getName()
+   - Preconditions: 
+     - The Location object must have a valid name.
+   - Postconditions: 
+     - Returns the name of the Location object.
+
+public int getScore()
+   - Preconditions: 
+     - The Location object must have a valid score.
+   - Postconditions: 
+     - Returns the score of the Location object.
+
+public SORTracker()
+   - Preconditions: None
+   - Postconditions: 
+     - Initializes a new SORTracker object.
+
+public void add(String name, int score)
+   - Preconditions: 
+     - The name and score parameters must be valid.
+   - Postconditions: 
+     - Adds a new Location object with the given name and score to the SORTracker object.
+
+public String get()
+   - Preconditions: 
+     - The SORTracker object must have at least one Location object added.
+   - Postconditions: 
+     - Returns the i-th best location, where i is the number of times this method has been invoked (including this invocation).

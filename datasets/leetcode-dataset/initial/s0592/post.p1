@@ -1,0 +1,15 @@
+Preconditions:
+The input string `expression` should not be null.
+The input string `expression` should not be empty.
+The input string `expression` should only contain valid fraction addition and subtraction expressions.
+The fractions in the expression should be properly formatted with a numerator and denominator separated by a forward slash ("/").
+The numerator and denominator of each fraction should be valid integers.
+The numerator and denominator of each fraction should not be zero.
+
+Postconditions:
+The method should return a string representing the calculation result.
+The returned string should be properly formatted with a numerator and denominator separated by a forward slash ("/").
+The returned string should be in its simplest form, i.e., the numerator and denominator should not have any common factors other than The returned string should be in the form of an irreducible fraction, i.e., the numerator and denominator should not have any common factors other than The returned string should be in the form of a mixed fraction if the numerator is greater than or equal to the denominator, i.e., the whole number part should be included.
+The returned string should be in the form of a proper fraction if the numerator is less than the denominator, i.e., the whole number part should not be included.
+The returned string should have a positive sign if the fraction is positive, and a negative sign if the fraction is negative.
+The returned string should have a numerator of 0 if the fraction is equal to The returned string should have a denominator of 1 if the fraction is an integer.

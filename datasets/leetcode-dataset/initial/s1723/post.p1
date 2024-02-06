@@ -1,0 +1,13 @@
+Preconditions:
+The input array "jobs" must not be null.
+The input array "jobs" must contain at least one element.
+The input array "jobs" must only contain positive integers representing the time required for each job.
+The input integer "k" must be greater than or equal to The input integer "k" must be less than or equal to the length of the input array "jobs".
+
+Postconditions:
+The method returns an integer value representing the minimum possible maximum working time of any assignment.
+The returned value is a non-negative integer.
+The returned value is the minimum possible maximum working time achievable by dividing the jobs among the given number of workers.
+The returned value is calculated based on the optimal assignment of jobs to workers, ensuring that the maximum working time for any worker is minimized.
+The input array "jobs" remains unchanged after the method is executed.
+The input integer "k" remains unchanged after the method is executed.

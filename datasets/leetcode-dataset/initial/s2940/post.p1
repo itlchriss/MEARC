@@ -1,0 +1,11 @@
+Preconditions:
+- The method takes in two parameters: an array of integers called `heights` and a 2D array of integers called `queries`.
+- The `heights` array represents the heights of the buildings.
+- The `queries` array represents the queries made by Alice and Bob.
+- The `heights` array and `queries` array are not null.
+
+Postconditions:
+- The method returns an array of integers called `ans`.
+- The length of the `ans` array is equal to the number of queries.
+- For each query `i`, the value of `ans[i]` represents the index of the leftmost building where Alice and Bob can meet.
+- If Alice and Bob cannot move to a common building on query `i`, the value of `ans[i]` is set to -1.

@@ -1,10 +1,6 @@
 Preconditions:
-The method `public Solution(int[][] rects)` has been called to initialize the object with the given rectangles.
-The given rectangles are valid and cover a non-empty space.
+- The method `public Solution(int[][] rects)` has been called to initialize the object with the given rectangles.
 
 Postconditions:
-The method `public int[] pick()` returns an integer array `[u, v]` representing a random point inside the space covered by one of the given rectangles.
-The returned point `[u, v]` is equally likely to be any integer point inside the covered space.
-The method `public int[] pick()` can be called multiple times, and each time it returns a different random point.
-The returned point `[u, v]` is within the bounds of the space covered by one of the given rectangles.
-The returned point `[u, v]` may or may not be a point that lies on the boundary of the covered space.
+- The method `public int[] pick()` returns an integer array `[u, v]` representing a random point inside the space covered by one of the given rectangles.
+- The returned point `[u, v]` is equally likely to be any integer point inside the space covered by one of the given rectangles.

@@ -1,0 +1,16 @@
+Preconditions:
+The input array "pieces" must not be null.
+The input array "positions" must not be null.
+The input array "pieces" must contain at least one element.
+The input array "positions" must contain at least one element.
+The elements in the input array "pieces" must be non-empty strings.
+The elements in the input array "positions" must be non-empty arrays.
+The length of each element in the input array "positions" must be equal to the length of the input array "pieces".
+The elements in the input array "positions" must contain only non-negative integers.
+
+Postconditions:
+The method should return an integer value representing the number of valid move combinations.
+The returned value should be non-negative.
+The returned value should be zero if there are no valid move combinations.
+The method should not modify the input arrays "pieces" and "positions".
+The method should not have any side effects on the system or external resources.

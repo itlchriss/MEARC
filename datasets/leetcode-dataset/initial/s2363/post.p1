@@ -2,11 +2,10 @@ Preconditions:
 - The input arrays `arr1` and `arr2` are not null.
 - The input arrays `arr1` and `arr2` have the same length.
 - Each element in `arr1` and `arr2` is an array of length 2, representing a value and a weight.
-- The values in `arr1` and `arr2` are in ascending order.
 
 Postconditions:
 - The returned list `ret` is not null.
-- The returned list `ret` contains elements in ascending order by value.
+- The returned list `ret` is a 2D integer array.
 - Each element in `ret` is an array of length 2, representing a value and a weight.
 - The values in `ret` are in ascending order.
-- The weight of each element in `ret` is the sum of weights of all items with the same value.
+- The weights in `ret` are the sum of weights of all items with the same value.

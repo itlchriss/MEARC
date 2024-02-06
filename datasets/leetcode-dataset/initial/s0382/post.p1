@@ -1,8 +1,9 @@
 Preconditions:
-The method should be called after the linked list has been initialized.
+The method `public Solution(ListNode head)` should be called before calling the method `public int getRandom()`.
 The linked list should not be empty.
 
 Postconditions:
-The method should return an integer value.
-The returned value should be one of the values present in the linked list.
-Each value in the linked list should have an equal probability of being returned.
+The method `public int getRandom()` should return a random node's value from the linked list.
+Each node in the linked list should have the same probability of being chosen.
+The method `public int getRandom()` should return either 1, 2, or 3 randomly.
+Each element in the linked list should have an equal probability of being returned by the method `public int getRandom()`.

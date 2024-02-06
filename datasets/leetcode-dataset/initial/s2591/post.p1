@@ -1,0 +1,10 @@
+Preconditions:
+- The method takes two integer parameters: `money` and `children`.
+- The `money` parameter represents the total amount of money available for distribution.
+- The `children` parameter represents the number of children who will receive the money.
+- The `money` parameter must be a positive integer.
+- The `children` parameter must be a positive integer.
+
+Postconditions:
+- The method returns an integer value representing the maximum number of children who can receive exactly 8 dollars.
+- If there is no way to distribute the money to any child in a way that they receive exactly 8 dollars, the method returns -1.

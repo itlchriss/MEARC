@@ -1,0 +1,8 @@
+Preconditions:
+The method should take in three parameters: an integer n representing the number of courses, a 2D integer array relations representing the prerequisite relations between courses, and an integer k representing the maximum number of courses that can be taken in one semester.
+The value of n should be greater than The length of the relations array should be greater than or equal to The value of k should be greater than 
+Postconditions:
+The method should return an integer representing the minimum number of semesters needed to take all courses.
+The returned value should be greater than or equal to The returned value should be less than or equal to the maximum number of semesters possible to complete all courses.
+The method should handle the case where there are no prerequisite relations between courses and return the minimum number of semesters as n divided by k, rounded up to the nearest integer.
+The method should handle the case where there are prerequisite relations between courses and return the minimum number of semesters considering the prerequisite relations and the maximum number of courses that can be taken in one semester.

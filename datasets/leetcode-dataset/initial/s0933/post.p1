@@ -7,5 +7,4 @@ Postconditions:
 - The method `ping` should add the new request at time `t` to the list of requests.
 - The list of requests should be updated to include the new request.
 - The range of requests should be updated to include the new request.
-- The range of requests should be calculated as the inclusive range `[t - 3000, t]`.
-- The method `ping` should return the updated number of requests in the range.
+- The method `ping` should return the number of requests that have happened in the inclusive range `[t - 3000, t]`.

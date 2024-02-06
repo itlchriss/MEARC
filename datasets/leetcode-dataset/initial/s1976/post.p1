@@ -1,0 +1,10 @@
+Preconditions:
+The input parameter `n` is a positive integer representing the number of cities.
+The input parameter `roads` is a 2D array representing the roads between cities. Each element in the array is an array of two integers representing the cities connected by the road.
+The roads array is not null and contains valid city indices.
+The destination city is one of the cities in the input.
+
+Postconditions:
+The method returns an integer representing the number of ways to arrive at the destination city in the shortest amount of time.
+The returned value is the count of all possible paths from the starting city to the destination city.
+The returned value is calculated modulo 10^9 + 7 to handle large results.

@@ -1,0 +1,9 @@
+Preconditions:
+The method should take two integer parameters, `x` and `y`.
+The values of `x` and `y` should be non-negative.
+
+Postconditions:
+The method should return an integer value representing the Hamming distance between `x` and `y`.
+The returned value should be non-negative.
+If `x` and `y` are equal, the method should return If `x` and `y` have different lengths in binary representation, the method should return -1 to indicate an error.
+The method should handle large values of `x` and `y` efficiently without causing any overflow or memory issues.

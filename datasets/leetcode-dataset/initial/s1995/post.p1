@@ -1,6 +1,6 @@
 The array `nums` must be a non-null and non-empty array of integers.
-The array `nums` must have a length of at least The array `nums` must only contain integers.
+The array `nums` must have a length greater than or equal to The array `nums` must only contain integers.
 The quadruplets `(a, b, c, d)` must be distinct, meaning that no two quadruplets can have the same values for `a`, `b`, `c`, and `d`.
 The quadruplets `(a, b, c, d)` must be selected from the elements of the array `nums`.
-The quadruplets `(a, b, c, d)` must be selected in such a way that the indices of the elements in the array `nums` are in increasing order. In other words, the indices of `a`, `b`, `c`, and `d` must satisfy the condition `0 <= a < b < c < d < nums.length`.
-The method should return the number of distinct quadruplets `(a, b, c, d)` that satisfy the above conditions.
+The order of the elements in the quadruplets `(a, b, c, d)` does not matter, meaning that `(a, b, c, d)` is considered the same as `(b, a, c, d)` or any other permutation of the elements.
+The method should return an integer representing the number of distinct quadruplets `(a, b, c, d)` that satisfy the given conditions.

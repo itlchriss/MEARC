@@ -1,0 +1,8 @@
+Preconditions:
+- The `bottom` string must not be null or empty.
+- The `allowed` list must not be null or empty.
+- The `allowed` list must contain at least one element.
+
+Postconditions:
+- The method returns `true` if it is possible to build the pyramid all the way to the top using the given `bottom` and `allowed` list.
+- The method returns `false` if it is not possible to build the pyramid all the way to the top using the given `bottom` and `allowed` list.

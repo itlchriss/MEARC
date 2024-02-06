@@ -1,14 +1,14 @@
 Preconditions:
-- The expression string should not be null or empty.
-- The evalvars array should not be null.
-- The evalints array should not be null.
-- The length of evalvars array should be equal to the length of evalints array.
+The expression parameter must not be null.
+The evalvars parameter must not be null.
+The evalints parameter must not be null.
+The length of evalvars array must be equal to the length of evalints array.
 
 Postconditions:
-- The method should return a list of strings representing the simplified expression.
-- The list should not be null.
-- The list should contain tokens in the correct order.
-- The tokens should be simplified according to the evaluation map provided.
-- The tokens should be in the form of "coefficient*variable" or just "coefficient" if the variable is not present.
-- The coefficients should be integers.
-- The list should not contain any duplicate tokens.
+The method should return a List<String> object.
+The returned list should contain tokens representing the simplified expression.
+The tokens should be in the correct order as per the expression.
+The tokens should be simplified based on the evaluation map provided.
+If a variable in the expression is present in the evalvars array, it should be replaced with the corresponding value from evalints array.
+If a variable in the expression is not present in the evalvars array, it should remain unchanged in the token.
+The tokens should be in the form of "coefficient*variable" if the coefficient is not The tokens should be in the form of "variable" if the coefficient is The tokens should be in the form of "-variable" if the coefficient is -The tokens should be in the form of "constant" if the token represents a constant value.

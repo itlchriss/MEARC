@@ -1,0 +1,8 @@
+Preconditions:
+- The method `next` is called after the `StockSpanner` object is instantiated.
+- The parameter `price` is a positive integer.
+
+Postconditions:
+- The method `next` returns an integer representing the span of the stock's price for the current day.
+- The span is calculated based on the previous prices and the current price.
+- The span is the number of consecutive previous prices (including today's price) that are less than or equal to today's price.

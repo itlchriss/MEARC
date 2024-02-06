@@ -1,7 +1,7 @@
 Preconditions:
-The input array `intervals` is not null.
-The input array `intervals` is not empty.
-Each interval in the input array `intervals` is a valid interval represented by an array of size The start and end values of each interval in the input array `intervals` are non-negative integers.
+- The input array `intervals` is not null.
+- Each interval in `intervals` is represented by an array of size 2, where the first element is the start point and the second element is the end point.
+- The start point of each interval is less than or equal to the end point.
 
 Postconditions:
-The method returns an integer representing the minimum number of intervals that need to be removed to make the rest of the intervals non-overlapping.
+- The method returns an integer representing the minimum number of intervals that need to be removed to make the rest of the intervals non-overlapping.

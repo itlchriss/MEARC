@@ -1,0 +1,13 @@
+Preconditions:
+The method should take two parameters of type TreeNode, named root1 and rootThe TreeNode objects passed as parameters should represent binary search trees.
+
+Postconditions:
+The method should return a List<Integer> object containing all the integers from both trees sorted in ascending order.
+The returned list should not contain any duplicate integers.
+The returned list should be empty if both root1 and root2 are null.
+The returned list should contain all the integers from root1 if root2 is null.
+The returned list should contain all the integers from root2 if root1 is null.
+The returned list should contain all the integers from both root1 and root2 if both are not null.
+The integers in the returned list should be sorted in ascending order.
+The returned list should not modify the original binary search trees.
+The returned list should not contain any integers that are not present in either root1 or rootThe returned list should not contain any integers that are not part of the binary search trees.

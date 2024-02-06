@@ -1,0 +1,9 @@
+Preconditions:
+The `locations` array must not be null.
+The `locations` array must contain at least two elements.
+The `start` and `finish` values must be valid indices within the `locations` array.
+The `fuel` value must be a non-negative integer.
+
+Postconditions:
+The method should return an integer value representing the count of all possible routes from `start` to `finish`.
+The returned value should be modulo `10^9 + 7`.

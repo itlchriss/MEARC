@@ -1,0 +1,9 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The input matrix `mat` has at least one row and one column.
+- The input integer `k` is greater than or equal to 
+Postconditions:
+- The output matrix `answer` is not null.
+- The number of rows in the output matrix `answer` is equal to the number of rows in the input matrix `mat`.
+- The number of columns in the output matrix `answer` is equal to the number of columns in the input matrix `mat`.
+- Each element `answer[i][j]` in the output matrix `answer` is the sum of all elements `mat[r][c]` within the range of `k` rows and `k` columns centered at `mat[i][j]`.

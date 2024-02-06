@@ -1,0 +1,12 @@
+Preconditions:
+The input array "digits" must not be null.
+The input array "digits" must not be empty.
+The input array "digits" must only contain non-negative integers.
+
+Postconditions:
+The returned array must have the same length as the input array "digits".
+The returned array must contain the digits of the incremented large integer.
+The returned array must only contain non-negative integers.
+If the last digit of the input array "digits" is less than 9, the corresponding digit in the returned array must be incremented by one.
+If the last digit of the input array "digits" is 9, the corresponding digit in the returned array must be set to 0 and the digit before it must be incremented by one.
+If the first digit of the input array "digits" is 9 and the last digit is 9, the returned array must have one additional digit with a value of 1 at the beginning.

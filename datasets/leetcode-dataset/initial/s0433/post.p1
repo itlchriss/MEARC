@@ -1,0 +1,12 @@
+Preconditions:
+- The `start` string must not be null.
+- The `end` string must not be null.
+- The `bank` array must not be null.
+- The `bank` array must not be empty.
+- The `start` string must be a valid gene string.
+- The `end` string must be a valid gene string.
+- The `bank` array must contain valid gene strings.
+
+Postconditions:
+- The method returns an integer representing the minimum number of mutations needed to mutate from `start` to `end`.
+- If there is no mutation possible, the method returns -1.

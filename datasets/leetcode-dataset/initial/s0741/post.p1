@@ -1,0 +1,11 @@
+Preconditions:
+- The input grid is a 2D array of integers.
+- The grid has at least one row and one column.
+- The grid contains only the values -1, 0, and - The grid represents a valid game board where the player can move from one cell to another.
+- The player starts at the top-left cell (0, 0).
+- The player can only move right or down to reach the bottom-right cell (n - 1, n - 1).
+
+Postconditions:
+- The method returns an integer representing the maximum number of cherries that can be collected.
+- The grid is modified to reflect the cherries that have been picked up during the trip.
+- The grid remains unchanged after the method execution, except for the cells where cherries have been picked up.

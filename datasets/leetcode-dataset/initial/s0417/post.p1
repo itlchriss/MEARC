@@ -5,5 +5,5 @@ Preconditions:
 Postconditions:
 - The returned list must not be null.
 - The returned list must contain a list of grid coordinates.
-- Each grid coordinate in the returned list must be a list of two integers, representing the row and column indices.
-- The returned list must contain all the grid coordinates where rain water can flow from the cell to both the Pacific and Atlantic oceans.
+- Each grid coordinate in the returned list must be a list of two integers, denoting the row and column of a cell in the matrix.
+- The cells represented by the grid coordinates in the returned list must be able to flow water to both the Pacific and Atlantic oceans.

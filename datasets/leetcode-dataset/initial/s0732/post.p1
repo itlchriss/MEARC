@@ -1,0 +1,11 @@
+Preconditions:
+- The start and end times for each event must be valid integers.
+- The start time must be less than the end time for each event.
+- The start and end times for each event must be within the valid range of integers.
+- The events must be added in chronological order.
+
+Postconditions:
+- The method should return an integer representing the maximum k-booking between all the previous events.
+- The maximum k-booking should be updated after each event is added.
+- If an event intersects with a previous event, the maximum k-booking should be updated accordingly.
+- The maximum k-booking should remain the same if an event does not intersect with any previous events.

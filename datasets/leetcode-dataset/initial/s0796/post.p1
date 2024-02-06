@@ -1,0 +1,10 @@
+Preconditions:
+The method should take two string parameters, `s` and `goal`.
+The strings `s` and `goal` should not be null.
+The strings `s` and `goal` should not be empty.
+The length of `s` and `goal` should be the same.
+
+Postconditions:
+The method should return a boolean value indicating whether `s` can become `goal` after some number of shifts.
+If `s` can become `goal` after some number of shifts, the method should return `true`.
+If `s` cannot become `goal` after any number of shifts, the method should return `false`.

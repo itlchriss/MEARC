@@ -1,14 +1,12 @@
 Preconditions:
 The `scores` array and `ages` array must have the same length.
 The `scores` array and `ages` array must not be empty.
-The `scores` array must only contain non-negative integers.
-The `ages` array must only contain positive integers.
+Each element in the `scores` array must be a non-negative integer.
+Each element in the `ages` array must be a positive integer.
 
 Postconditions:
-The method should return an integer value representing the highest overall score of all possible basketball teams.
-The highest overall score should be calculated based on the given scores and ages of the players.
-The highest overall score should consider the combination of players from both arrays.
-The highest overall score should be determined by selecting players with the highest scores and ages.
-If there are multiple players with the same score, the player with the higher age should be selected.
-The method should not modify the original `scores` and `ages` arrays.
-The method should handle and return the highest overall score even if there are duplicate scores or ages in the arrays.
+The method returns an integer representing the highest overall score of all possible basketball teams.
+The highest overall score is calculated by summing the scores of players in each team.
+Each team must consist of players with consecutive ages.
+Each team must have at least one player.
+The highest overall score is the maximum sum of scores among all possible teams.

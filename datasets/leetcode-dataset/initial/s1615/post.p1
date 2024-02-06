@@ -1,0 +1,11 @@
+Preconditions:
+The value of `n` must be a positive integer.
+The array `roads` must not be null.
+The length of the array `roads` must be greater than or equal to The length of each subarray in `roads` must be The values in each subarray of `roads` must be integers.
+The values in each subarray of `roads` must be within the range of 0 to `n-1`.
+
+Postconditions:
+The method returns an integer value representing the maximal network rank of the entire infrastructure.
+The maximal network rank is calculated based on the given `n` and `roads` array.
+The maximal network rank is the maximum number of direct connections between any two different cities in the infrastructure.
+If there are no roads connecting any cities, the maximal network rank is The method does not modify the values of `n` or `roads`.

@@ -1,0 +1,10 @@
+Preconditions:
+The input parameter "seats" must be a 2-dimensional char array representing the seating arrangement of students.
+The "seats" array must not be null.
+The "seats" array must have at least one row and one column.
+Each element in the "seats" array must be either 'Y' or 'N', representing whether a seat is occupied or not.
+
+Postconditions:
+The method should return an integer value representing the maximum number of students that can take the exam together without any cheating being possible.
+The returned value should be greater than or equal to The returned value should be less than or equal to the total number of seats in the seating arrangement.
+The seating arrangement should remain unchanged after the method is executed.

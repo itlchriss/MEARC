@@ -1,0 +1,19 @@
+Preconditions for public BSTIterator(TreeNode root):
+- The root node of the binary search tree is provided as input.
+
+Postconditions for public BSTIterator(TreeNode root):
+- The binary search tree iterator is initialized with the provided root node.
+
+Preconditions for public int next():
+- The binary search tree iterator has been initialized.
+
+Postconditions for public int next():
+- The iterator moves to the right.
+- The number at the current position of the iterator is returned.
+
+Preconditions for public boolean hasNext():
+- The binary search tree iterator has been initialized.
+
+Postconditions for public boolean hasNext():
+- Returns true if there exists a number in the traversal to the right of the pointer.
+- Returns false if there are no more numbers in the traversal to the right of the pointer.

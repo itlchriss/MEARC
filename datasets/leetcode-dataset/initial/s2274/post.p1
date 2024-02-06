@@ -1,0 +1,9 @@
+Preconditions:
+- The method takes three parameters: bottom (representing the lowest floor number), top (representing the highest floor number), and special (an array representing the special floors).
+- The bottom and top parameters must be valid floor numbers, where bottom <= top.
+- The special array must not be null.
+
+Postconditions:
+- The method returns an integer value representing the maximum number of consecutive floors without a special floor.
+- If all floors are special floors, the method returns - If there are no special floors, the method returns the total number of floors (top - bottom + 1).
+- If there are special floors, the method returns the maximum number of consecutive floors without a special floor.

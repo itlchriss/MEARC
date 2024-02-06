@@ -1,0 +1,11 @@
+Preconditions:
+The dist array must not be null.
+The speed array must not be null.
+The length of the dist array must be equal to the length of the speed array.
+The elements in the dist array must be non-negative integers.
+The elements in the speed array must be positive integers.
+
+Postconditions:
+The method returns an integer value.
+The returned value is the maximum number of monsters that can be eliminated before losing.
+If it is possible to eliminate all the monsters before they reach the city, the method returns the value of n, which is the length of the dist array.

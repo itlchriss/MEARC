@@ -1,13 +1,11 @@
 Preconditions:
 - The method should take two integer parameters, `queryRow` and `queryGlass`, representing the row and glass number to query.
-- The method should take an integer parameter `poured`, representing the number of cups of champagne poured.
-- The method should return a double value representing the fill level of the specified glass.
+- The method should take two integer parameters, `poured` and `totalRows`, representing the number of cups poured and the total number of rows in the champagne tower.
+- The `poured` parameter should be a non-negative integer.
+- The `queryRow` parameter should be a non-negative integer less than or equal to `totalRows`.
+- The `queryGlass` parameter should be a non-negative integer less than or equal to the number of glasses in the `queryRow`.
 
 Postconditions:
-- The method should calculate and return the fill level of the specified glass in the specified row after pouring the given number of cups of champagne.
-- The fill level should be a decimal value between 0 and 1, representing the proportion of the glass that is filled.
-- The fill level should be calculated based on the following rules:
-  - The top glass in the pyramid (row 0, glass 0) is initially filled with the given number of cups of champagne.
-  - Each glass in the pyramid (except for the top glass) receives half of the overflow from the two glasses directly above it.
-  - If a glass receives more champagne than it can hold, the excess champagne overflows equally to the two glasses directly below it.
-  - If a glass does not receive any champagne from the glasses above it, its fill level is   - If a glass receives champagne from the glasses above it, its fill level is the sum of the champagne it receives and any overflow from the glasses above it, divided by   - The fill level of the specified glass in the specified row should be calculated based on the above rules.
+- The method should return a double value representing the amount of champagne in the `queryGlass` of the `queryRow`.
+- The returned value should be between 0 and 1, inclusive.
+- If the `queryRow` or `queryGlass` is invalid (out of range), the method should return 0.

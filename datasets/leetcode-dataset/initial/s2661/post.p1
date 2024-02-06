@@ -1,0 +1,10 @@
+Preconditions:
+The input array `arr` must not be null.
+The input matrix `mat` must not be null.
+The input matrix `mat` must have at least one row and one column.
+The length of the input array `arr` must be equal to the number of columns in the input matrix `mat`.
+The length of the input array `arr` must be greater than or equal to the number of rows in the input matrix `mat`.
+
+Postconditions:
+The method should return an integer value representing the smallest index `i` at which either a row or a column will be completely painted in the input matrix `mat`.
+If there is no completely painted row or column in the input matrix `mat`, the method should return -1.

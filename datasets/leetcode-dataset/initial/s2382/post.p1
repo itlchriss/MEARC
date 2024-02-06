@@ -1,0 +1,25 @@
+Preconditions and postconditions for the given methods:
+
+UF(int n):
+   - Precondition: None
+   - Postcondition: Initializes a new instance of the UF class with n elements.
+
+void insert(int x, int value):
+   - Precondition: The UF instance must be initialized.
+   - Postcondition: Inserts a new element with value into the UF instance at position x.
+
+int find(int x):
+   - Precondition: The UF instance must be initialized.
+   - Postcondition: Returns the root element of the connected component that x belongs to.
+
+void union(int x, int y):
+   - Precondition: The UF instance must be initialized.
+   - Postcondition: Unions the connected components that x and y belong to.
+
+boolean has(int x):
+   - Precondition: The UF instance must be initialized.
+   - Postcondition: Returns true if x is present in the UF instance, false otherwise.
+
+long[] maximumSegmentSum(int[] nums, int[] removeQueries):
+   - Precondition: None
+   - Postcondition: Returns an integer array answer of length n, where answer[i] is the maximum segment sum after applying the i-th removal.

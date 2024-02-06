@@ -1,0 +1,11 @@
+Preconditions:
+- The method takes four integer parameters: rows, cols, rCenter, and cCenter.
+- The values of rows and cols are positive integers.
+- The values of rCenter and cCenter are within the range of the matrix dimensions.
+- The matrix is a two-dimensional array of integers.
+
+Postconditions:
+- The method returns a two-dimensional array of integers.
+- The returned array contains the coordinates of all cells in the matrix.
+- The coordinates are sorted by their distance from (rCenter, cCenter) from the smallest distance to the largest distance.
+- The order of the coordinates in the returned array satisfies the condition of being sorted by distance.

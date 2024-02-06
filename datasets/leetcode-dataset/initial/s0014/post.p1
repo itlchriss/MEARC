@@ -1,7 +1,7 @@
 Preconditions:
-The input array `strs` should not be null.
-The input array `strs` should not be empty.
+- The input array `strs` is not null.
+- The input array `strs` is not empty.
 
 Postconditions:
-If there is a common prefix among all strings in the input array `strs`, return the longest common prefix as a string.
-If there is no common prefix among all strings in the input array `strs`, return an empty string `""`.
+- The method returns a string representing the longest common prefix among the strings in the input array `strs`.
+- If there is no common prefix, the method returns an empty string `""`.

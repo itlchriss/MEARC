@@ -1,7 +1,18 @@
-Preconditions:
-- The infinite set is not empty.
+Preconditions for the method public SmallestInfiniteSet():
+- The method should be called before any other method is called on the SmallestInfiniteSet object.
 
-Postconditions:
+Postconditions for the method public SmallestInfiniteSet():
+- The SmallestInfiniteSet object is initialized and ready to be used.
+
+Preconditions for the method public int popSmallest():
+- The SmallestInfiniteSet object should not be empty.
+
+Postconditions for the method public int popSmallest():
 - The smallest integer contained in the infinite set is removed and returned.
-- If the smallest integer is added back to the set, it is still considered the smallest integer.
-- The smallest integer is removed from the set after it is returned.
+- If the smallest integer is added back to the set using the addBack method, it will be considered as the smallest integer for the next call to popSmallest.
+
+Preconditions for the method public void addBack(int num):
+- The SmallestInfiniteSet object should not be empty.
+
+Postconditions for the method public void addBack(int num):
+- The integer num is added back to the infinite set.

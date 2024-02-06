@@ -1,0 +1,10 @@
+Preconditions:
+- The method must take in two strings, `source` and `target`, representing the source and target strings respectively.
+- The method must take in two string arrays, `original` and `changed`, representing the original and changed versions of the source string respectively.
+- The method must take in an integer array `cost`, representing the cost of each operation.
+- The `original` and `changed` arrays must have the same length.
+- The `cost` array must have the same length as the `original` and `changed` arrays.
+
+Postconditions:
+- The method must return a long value representing the minimum cost to convert the `source` string to the `target` string.
+- If it is impossible to convert the `source` string to the `target` string, the method must return -1.

@@ -1,0 +1,10 @@
+Preconditions:
+The input `n` must be a non-negative integer.
+
+Postconditions:
+The method should return an integer representing the minimum number of days required to eat `n` oranges.
+The returned value should be greater than or equal to If `n` is 0, the method should return 0, indicating that no days are required to eat 0 oranges.
+If `n` is 1, the method should return 1, indicating that 1 day is required to eat 1 orange.
+If `n` is 2, the method should return 2, indicating that 2 days are required to eat 2 oranges.
+If `n` is a multiple of 2, the method should return `n/2`, indicating that `n/2` days are required to eat `n` oranges.
+If `n` is not a multiple of 2, the method should return `n/2 + 1`, indicating that `n/2 + 1` days are required to eat `n` oranges.

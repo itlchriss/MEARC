@@ -1,0 +1,17 @@
+Preconditions:
+The method `hitBricks` takes two parameters: `grid` (a 2D array representing the initial state of the grid) and `hits` (a 2D array representing the positions of bricks to be erased).
+The `grid` parameter should not be null.
+The `hits` parameter should not be null.
+The `grid` parameter should have at least one row and one column.
+The `hits` parameter should have at least one row and two columns.
+The values in the `hits` parameter should be valid positions within the `grid` parameter.
+The `grid` parameter should only contain 0s and 1s, where 0 represents an empty cell and 1 represents a brick.
+
+Postconditions:
+The method `hitBricks` returns an array `result` of integers.
+The length of the `result` array is equal to the number of rows in the `hits` parameter.
+Each element `result[i]` in the `result` array represents the number of bricks that will fall after the `i`th erasure is applied.
+The `grid` parameter is not modified by the method.
+The `grid` parameter remains in a valid state after the method is executed.
+The `result` array does not contain any negative values.
+The `result` array does not contain any values greater than the total number of bricks in the `grid` parameter.

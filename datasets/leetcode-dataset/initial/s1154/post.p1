@@ -1,0 +1,13 @@
+Preconditions:
+The input `date` must be a non-null string.
+The input `date` must be in the format `YYYY-MM-DD`.
+The year in the input `date` must be a valid Gregorian calendar year.
+The month in the input `date` must be a valid Gregorian calendar month.
+The day in the input `date` must be a valid day within the corresponding month and year.
+
+Postconditions:
+The method should return an integer representing the day number of the year.
+The returned day number should be between 1 and 365 (or 366 for leap years).
+If the input `date` is not a valid Gregorian calendar date, the method should return an error code or throw an exception.
+The method should not modify the input `date` string.
+The method should not have any side effects on other variables or objects outside its scope.

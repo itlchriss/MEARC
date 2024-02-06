@@ -1,8 +1,8 @@
 Preconditions:
 The input array `arr` must not be null.
-The input array `arr` must contain at least 10 elements.
+The input array `arr` must have at least one element.
 
 Postconditions:
-The method should return a double value representing the mean of the remaining integers after removing the smallest 5% and the largest 5% of the elements.
-The returned mean value should be rounded to two decimal places.
-The original array `arr` should remain unchanged after the method is executed.
+The returned value must be a double representing the mean of the remaining integers after removing the smallest 5% and the largest 5% of the elements.
+The returned value must be rounded to two decimal places.
+The input array `arr` must remain unchanged after the method is executed.
