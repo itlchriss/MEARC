@@ -107,10 +107,7 @@ KEYWORD_PROG        "Prog"
 KEYWORD_REL         "Rel"
 
 KEYWORD_TRUEP      "TrueP"
-KEYWORD_TRUE       "True"
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
-KEYWORD_TYPE         _type_[a-z]+
-KEYWORD_PARAM        _param_[a-z0-9]+
 VARIABLE               ([a-z]([0-9]+)?)
 %%
 "(" {
@@ -128,12 +125,9 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_FORALL} { yylval.t = handletoken(yytext); return KEYWORD_QUANTIFIER; }
 
 {VARIABLE} { yylval.t = handletoken(yytext); return IDENTIFIER; }
-{KEYWORD_PARAM} { yylval.t = handletoken(yytext); return KEYWORD_PARAM; }
-{KEYWORD_TYPE} { yylval.t = handletoken(yytext); return KEYWORD_TYPE; }
 {PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
 "." { handlecolnum(yytext); return '.'; }
 {KEYWORD_TRUEP} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }
-{KEYWORD_TRUE} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }
 "{" {
     ++cbracket;    
     yylval.t = handletoken(yytext);

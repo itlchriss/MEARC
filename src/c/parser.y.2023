@@ -2,7 +2,6 @@
     #include "core.h"
     #include "util.h"
     #include "cst.h"
-    #include "regex.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
@@ -25,9 +24,9 @@
     // enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG 
+%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
-%token <t> KEYWORD_QUANTIFIER KEYWORD_TYPE KEYWORD_PARAM
+%token <t> KEYWORD_QUANTIFIER
 %token <t> TAG
 /* %token <t> KEYWORD_PROG KEYWORD_REL TAG */
 /* %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
@@ -39,7 +38,7 @@
 /* %type<ptb> pos_tag */
 %type<conntype> connective
 /* %type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag */
-%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term
+%type<node> terms argument term quantified_term predicate_term grammar_term 
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
 %start formula
@@ -113,12 +112,6 @@ term
     : predicate_term {
         $$ = $1;
     }
-    | type_term {
-        $$ = $1;
-    }
-    | param_term {
-        $$ = $1;
-    }
     | quantified_term {
         $$ = $1;
     }
@@ -171,30 +164,13 @@ grammar_term
     }
     ;
 
-type_term
-    : KEYWORD_TYPE '{' TAG '}' '(' arguments ')' {
-        //print_debug("TYPE(%s), Syntax(%s)\n", $1->symbol, $3->symbol);
-        
-    }
-    ;
-
-param_term
-    : KEYWORD_PARAM '{' TAG '}' '(' arguments ')' {
-        //print_debug("PARAM(%s), Syntax(%s)\n", $1->symbol, $3->symbol); 
-        $$ = newastnode(Predicate, $1);
-        for (int i = 0; i < 7; ++i) {
-            popchar($$->token->symbol);
-        }
-        print_debug($$->token->symbol);
-    }
-    ;
 
 predicate_term
     : PREDICATE '{' TAG '}' '(' arguments ')' {
         print_debug("term: PREDICATE '{' TAG '}' '(' arguments ')'");
         #if PARDEBUG
         printf("Predicate(%s), Syntax(%s)\n", $1->symbol, $3->symbol);
-        #endif        
+        #endif
         $$ = newastnode(Predicate, $1);    
         if ($$->token->symbol[0] == '_') {
             /* removing the underscore */
@@ -256,6 +232,7 @@ quantified_term
     }
     ;
 %%
+
 
 void print_debug(char *s) {
     #if PARDEBUG

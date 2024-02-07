@@ -17,13 +17,14 @@ do
   echo "Working with method number $entry..................."
   # for dir in `ls $SRC_PATH/$entry/*_descriptions`
   # for file in `find $SRC_PATH/$entry -type f -name "pre" -o -name "post"`
-  for file in `find $SRC_PATH/$entry -type f -name "post"`
+  for file in `find $SRC_PATH/$entry -type f -name "post.p1"`
   do
     # echo "Processing $dir.........."
     # for file in `find $dir -type f -regex ".*/p.*"`
     # do
       # echo "Calling method to translate $file to MR......."
     echo $file
+    rm $SRC_PATH/$entry/*.mr
     $PYCMD $SCRIPT_PATH/transMR.py $file
     rm $SRC_PATH/$entry/*.tok
     rm $SRC_PATH/$entry/*.xml

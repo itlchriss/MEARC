@@ -4,9 +4,12 @@
 SRC_PATH=$1
 
 
-total=`ls $1 | wc -l`
-echo "Number of tests:" $total
+# total=`ls $1 | wc -l`
+# echo "Number of tests:" $total
 org_count=$(grep -r "Failure" $SRC_PATH/*/post.post.result | wc -l | awk '{print $1}')
+org_s_count=$(grep -r "Success" $SRC_PATH/*/post.post.result | wc -l | awk '{print $1}')
+total=$(($org_count+$org_s_count))
+echo "Number of tests:" $total
 org_rate=$(bc -l <<< "((${total}-${org_count})/${total}) * 100")
 org_rate=$(printf %.2f "$org_rate")
 
