@@ -2,9 +2,13 @@
     #include "core.h"
     #include "util.h"
     #include "cst.h"
+    #include "si.h"
+    #include "regex.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
+    void print_semantic_error(char *);
+    enum java_datatype string2javadatatype(char *);
 
     // From main.c
     // extern int c;
@@ -24,9 +28,9 @@
     // enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG
+%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG 
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
-%token <t> KEYWORD_QUANTIFIER
+%token <t> KEYWORD_QUANTIFIER KEYWORD_TYPE KEYWORD_PARAM
 %token <t> TAG
 /* %token <t> KEYWORD_PROG KEYWORD_REL TAG */
 /* %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
@@ -38,7 +42,7 @@
 /* %type<ptb> pos_tag */
 %type<conntype> connective
 /* %type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag */
-%type<node> terms argument term quantified_term predicate_term grammar_term 
+%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
 %start formula
@@ -112,6 +116,12 @@ term
     : predicate_term {
         $$ = $1;
     }
+    | type_term {
+        $$ = NULL;
+    }
+    | param_term {
+        $$ = $1;
+    }
     | quantified_term {
         $$ = $1;
     }
@@ -164,13 +174,65 @@ grammar_term
     }
     ;
 
+/*
+    if argument is more than one, semantic error
+    search argument in symbol table        
+        if symbol exists, add type to the symbol
+        else add the symbol with the type
+    the type predicate only specifies the type of the symbol, therefore, both the symbol and the type predicate do not need to be added in the AST
+*/
+type_term
+    : KEYWORD_TYPE '{' TAG '}' '(' arguments ')' {
+        //print_debug("TYPE(%s), Syntax(%s)\n", $1->symbol, $3->symbol);
+        if (getnodelistlength($6) > 1) {
+            print_semantic_error("A type predicate can only have one argument.");
+        }
+        struct cstsymbol* cst = searchcst($6->node->token->symbol);
+        for (int i = 0; i < 6; ++i) {
+            popchar($1->symbol);
+        }
+        cst->jtype = string2javadatatype($1->symbol);
+        if (cst->jtype == -1) {
+            printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
+            exit(-1);
+        }
+    }
+    ;
+
+/*
+    if arguments is more than one, semantic error is thrown
+    if the syntax is neither NN, nor NNS, nor NNP, nor NNPS, semantic error is thrown 
+*/
+param_term
+    : KEYWORD_PARAM '{' TAG '}' '(' arguments ')' {
+        //print_debug("PARAM(%s), Syntax(%s)\n", $1->symbol, $3->symbol); 
+        if (getnodelistlength($6) > 1) {
+            print_semantic_error("A type predicate can only have one argument.");
+        }
+        $$ = newastnode(Predicate, $1);
+        for (int i = 0; i < 7; ++i) {
+            popchar($$->token->symbol);
+        }
+        addastchildren($$, $6);
+        $$->syntax = string2ptbsyntax($3->symbol);
+        if ($$->syntax != NN && $$->syntax != NNS && $$->syntax != NNP && $$->syntax != NNPS) {
+            print_semantic_error("A parameter must be regconised as a noun.");
+        }
+        $$->syntax = NN;
+        /*
+            this is added after using LLM. we no longer include the program context here
+        */
+        generate_param_si($$->token->symbol);
+        enqueue(predicates, (void*)$$);        
+    }
+    ;
 
 predicate_term
     : PREDICATE '{' TAG '}' '(' arguments ')' {
         print_debug("term: PREDICATE '{' TAG '}' '(' arguments ')'");
         #if PARDEBUG
         printf("Predicate(%s), Syntax(%s)\n", $1->symbol, $3->symbol);
-        #endif
+        #endif        
         $$ = newastnode(Predicate, $1);    
         if ($$->token->symbol[0] == '_') {
             /* removing the underscore */
@@ -233,11 +295,26 @@ quantified_term
     ;
 %%
 
-
 void print_debug(char *s) {
     #if PARDEBUG
     printf("%s\n", s);
     #endif  
+}
+
+void print_semantic_error(char *s) {
+    printf("Semantic representation semantic error. %s\n", s);
+    exit(-1);
+}
+
+enum java_datatype string2javadatatype(char *s) {
+    if (strcmp(s, "array") == 0)  return JavaArray;
+    else if (strcmp(s, "list") == 0) return JavaList;
+    else if (strcmp(s, "integer") == 0) return JavaInteger;
+    else if (strcmp(s, "short") == 0) return JavaShort;
+    else if (strcmp(s, "long") == 0) return JavaLong;
+    else if (strcmp(s, "float") == 0) return JavaFloat;
+    else if (strcmp(s, "double") == 0) return JavaDouble;
+    else return -1;
 }
 
 extern
