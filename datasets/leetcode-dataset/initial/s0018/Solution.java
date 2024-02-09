@@ -19,13 +19,13 @@ public class Solution {
     // these are the correct postconditions
     //@ ensures(\forall int i; 0 <= i < (\result).size(); \result.get(i) != null);
     //@ ensures(\forall int i; 0 <= i < (\result).size(); \result.get(i).size() == 4);
-    /*@
+    /*
         ensures(
             \forall int i; 0 <= i < \result.size(); (
                 sum(\result.get(i)) == target
             )
         );
-    @*/
+    */
     //@ requires(*The input array `nums` is not null.*);
     //@ requires(*The input array `nums` has at least 4 elements.*);
     //@ requires(*The input integer `target` is not null.*);
@@ -34,10 +34,8 @@ public class Solution {
     //@ ensures(*The sum of each quadruplet in the returned list is equal to the target integer `target`.*);
     //@ ensures(*The order of the quadruplets in the returned list can be in any order.*);
     //@ ensures(*The returned list does not contain any duplicate quadruplets.*);
-    //@ requires(_at_least(nums, 5, "element"));
     //@ requires(nums != null);
-    // ensures(_unique(\result));
-    //@ ensures (\forall int i; 0 <= i < \result.size(); _is_quadriplet(\result.get(i)) == true);
+    //@ ensures(\forall int i,j; 0 <= i < \result.size() && 0 <= j < \result.size() && i != j; \result.get(i) != \result.get(j));
     public List<List<Integer>> fourSum(/*@ non_null @*/int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);
@@ -101,67 +99,4 @@ public class Solution {
         }
         return result;
     }
-
-
-    /*@
-        public static model pure helper boolean _unique(List<List<Integer>> list) {
-            if (list == null) return false;
-            java.util.Set<List<Integer>> s = new java.util.HashSet<List<Integer>>(list);
-            //@ show s.size();
-            return s.size() == list.size();
-        }
-        public model pure boolean _unique(Integer[] array) {
-            java.util.Set<Integer> s = new java.util.HashSet<Integer>(Arrays.asList(array));
-            return s.size() == array.length;
-        }
-        public model pure boolean _unique(Object[] array) {
-            if (array == null) return false;
-            java.util.Set<Object> s = new java.util.HashSet<Object>(Arrays.asList(array));
-            return s.size() == array.length;
-        }
-
-        public model pure boolean _check_array_length(Object[] array, int x) { 
-            return array.length == x;
-        }        
-        
-        public model pure boolean _at_most(Object[] array, int x, String _compareType) {
-            if (_compareType == "elements") {
-                return array.length <= x;
-            }
-            return false;
-        }
- 
-        // public model pure boolean _is_quadriplet(List<Object> list) {
-        //     return _check_list_size(list, 4);
-        // }
-        public static model pure boolean _is_quadriplet(List<Integer> list) {
-            // return _check_list_size(list, 5);
-            return false;
-        }
-        public static model pure boolean _check_list_size(List<Integer> list, int x) { 
-            return list != null && list.size() == x;
-        }
-    @*/
-    /*@
-        requires(3 <= input.size() <= 200);
-        requires(\forall int i; 0 <= i < input.size(); -1000000000 <= input.get(i) <= 1000000000);
-        public model pure long sum(List<Integer> input) {
-            long r = 0;            
-            //@ loop_invariant 0 <= i <= input.size();
-            //@ decreasing input.size() - i;
-            for (int i = 0; i < input.size(); ++i) { 
-                r += input.get(i);                
-            }
-            return r;
-        }
-    @*/
-
-    /*@
-    @ public model pure boolean _at_least(int[] array, int x, String _compareType) {
-    @    if (_compareType == "element") {
-    @        return array.length >= x;
-    @    }
-    @    return false;
-    @ }
-    @*/
 }
