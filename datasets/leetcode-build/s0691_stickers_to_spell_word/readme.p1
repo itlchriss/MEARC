@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `stickers` is not null.
+- The input array `stickers` contains at least one sticker.
+- The length of each sticker in the input array `stickers` is between 1 and 10 (inclusive).
+- The input string `target` is not null.
+- The length of the input string `target` is between 1 and 15 (inclusive).
+- The input string `target` consists of lowercase English letters.
+
+Postconditions:
+- The method returns an integer representing the minimum number of stickers needed to spell out the target string.
+- If it is impossible to form the target string using the given stickers, the method returns -1.

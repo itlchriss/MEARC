@@ -1,0 +1,8 @@
+Preconditions:
+- The input array `w` is not null.
+- The length of the input array `w` is greater than or equal to - Each element in the input array `w` is a positive integer.
+- The sum of all elements in the input array `w` is not zero.
+
+Postconditions:
+- The method returns an integer index in the range `[0, w.length - 1]`.
+- The probability of picking the returned index is `w[index] / sum(w)`.

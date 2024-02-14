@@ -1,0 +1,14 @@
+Preconditions:
+- The input array `packages` must not be null.
+- The input array `boxes` must not be null.
+- The length of the input array `packages` must be greater than 0.
+- The length of the input array `boxes` must be greater than 0.
+- The elements in the input array `packages` must be positive integers.
+- The elements in the input array `boxes` must be positive integers.
+- The elements in the input array `boxes` must be distinct.
+
+Postconditions:
+- The method returns an integer representing the minimum total wasted space.
+- The returned value is greater than or equal to 0.
+- If it is impossible to fit all the packages inside boxes, the method returns -1.
+- The returned value is modulo 10^9 + 7.

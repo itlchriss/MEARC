@@ -1,8 +1,0 @@
-Preconditions:
-- The `n` parameter in the `TreeAncestor` constructor must be a positive integer representing the number of nodes in the tree.
-- The `parent` parameter in the `TreeAncestor` constructor must be an array of integers representing the parent of each node in the tree. The length of the array must be equal to `n`.
-- The `node` parameter in the `getKthAncestor` method must be a valid node in the tree. It must be an integer between 0 and `n-1`.
-- The `k` parameter in the `getKthAncestor` method must be a positive integer.
-
-Postconditions:
-- The `getKthAncestor` method returns an integer representing the `k`th ancestor of the given `node`. If there is no such ancestor, it returns -1.

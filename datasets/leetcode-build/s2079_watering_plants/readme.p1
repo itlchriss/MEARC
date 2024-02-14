@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `plants` is not null.
+- The input array `plants` has at least one element.
+- The input array `plants` contains only positive integers.
+- The input integer `capacity` is greater than or equal to the maximum value in the `plants` array.
+
+Postconditions:
+- The output is an integer representing the number of steps needed to water all the plants.
+- The output is greater than or equal to zero.
+- The output is the sum of the number of steps taken to water each plant and the number of steps taken to refill the watering can.
+- The output is the minimum number of steps needed to water all the plants.

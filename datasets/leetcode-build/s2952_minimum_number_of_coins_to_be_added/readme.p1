@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `coins` is not null.
+- The input array `coins` is not empty.
+- The input array `coins` is a 0-indexed integer array.
+- The input integer `target` is greater than or equal to 1.
+- The input integer `target` is less than or equal to 10^5.
+- The length of the input array `coins` is greater than or equal to 1.
+- The length of the input array `coins` is less than or equal to 10^5.
+- Each element in the input array `coins` is greater than or equal to 1.
+- Each element in the input array `coins` is less than or equal to the input integer `target`.
+
+Postconditions:
+- The method returns an integer representing the minimum number of coins that need to be added to the array.
+- The resulting array after adding the minimum number of coins contains all integers from 1 to the input integer `target`.
+- The resulting array after adding the minimum number of coins is sorted in ascending order.

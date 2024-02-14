@@ -1,0 +1,15 @@
+Preconditions:
+- The input arrays `capacity` and `rocks` must have the same length.
+- The length of the input arrays `capacity` and `rocks` must be greater than or equal to 1.
+- The values in the input array `capacity` must be positive integers.
+- The values in the input array `rocks` must be non-negative integers.
+- The values in the input array `rocks` must not exceed the corresponding values in the input array `capacity`.
+- The value of `additionalRocks` must be a positive integer.
+
+Postconditions:
+- The method returns an integer value representing the maximum number of bags that could have full capacity after placing the additional rocks.
+- The number of rocks in each bag is updated according to the placement of additional rocks.
+- The bags that have full capacity are identified.
+- The method returns the correct maximum number of bags at full capacity.
+- The method does not modify the input arrays `capacity` and `rocks`.
+- The method does not use all of the additional rocks if it is not necessary.

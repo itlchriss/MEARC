@@ -37,22 +37,34 @@ class ContextProcessor:
 
         if r := re.findall('input\s+(%s)\s+`(.*)`' % '|'.join(datatypes), sent, re.ASCII):
             for type, param in r:
-                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'TYPE_%s PARAM_%s' % (type, param), sent, re.ASCII)
+                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s param_%s' % (type, param), sent, re.ASCII)
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
-                contextual_si['PARAM_%s' % (param)] = param
-        elif r := re.findall(r'`.*`', sent, re.ASCII):
+                contextual_si['param_%s' % (param)] = param
+        elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
             for param in r:
-                pattern = 'PARAM_%s' % param.replace('`', '')
+                pattern = 'param_%s' % param.replace('`', '')
                 sent = sent.replace(param, pattern)
-                contextual_si['PARAM_%s' % param] = param
+                contextual_si['param_%s' % param] = param
         self.sent = sent
 
     def _synonym_syntax_preprocessor(self):
         for rule in alt_rules:
             self.sent = self.sent.replace(rule[0], rule[1])
 
+    # converting 'length of x' to 'x's length'
+    def _of_2_possesive(self):
+        arr = self.sent.split(' ')
+        while 'of' in arr:
+            print(self.sent)
+            index = arr.index('of')
+            t = arr[index + 1] + "'s " + arr[index - 1]
+            arr = arr[:index - 1] + [t] + arr[index + 2:]
+        self.sent = ' '.join(arr)
+            
+
     def run(self, sent: str) -> str:
         self.sent = sent
         self._parameter_syntax_processor()
         self._synonym_syntax_preprocessor()
+        self._of_2_possesive()
         return self.sent

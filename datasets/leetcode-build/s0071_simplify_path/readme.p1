@@ -1,0 +1,12 @@
+Preconditions:
+1. The input `path` is a non-null string.
+2. The input `path` starts with a slash `'/'`.
+3. The input `path` is a valid absolute Unix path.
+
+Postconditions:
+1. The output is a non-null string.
+2. The output starts with a single slash `'/'`.
+3. The output does not end with a trailing slash `'/'`.
+4. The output only contains the directories on the path from the root directory to the target file or directory.
+5. The output does not contain any periods `'.'` or double periods `'..'`.
+6. Any multiple consecutive slashes in the output are replaced by a single slash `'/'`.

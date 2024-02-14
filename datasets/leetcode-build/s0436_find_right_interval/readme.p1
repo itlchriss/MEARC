@@ -1,0 +1,12 @@
+Preconditions:
+- The input array `intervals` is not null.
+- The length of `intervals` is greater than or equal to 1.
+- Each interval in `intervals` is an array of length 2.
+- The start point of each interval is unique.
+
+Postconditions:
+- The returned array `result` is not null.
+- The length of `result` is equal to the length of `intervals`.
+- Each element in `result` is an integer.
+- If there is no right interval for an interval `i`, the corresponding element in `result` is -1.
+- If there is a right interval for an interval `i`, the corresponding element in `result` is the index of the right interval in `intervals`.

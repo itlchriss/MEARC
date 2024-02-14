@@ -1,0 +1,12 @@
+Preconditions:
+- The input grid must be a 2D array of positive integers.
+- The grid must have at least 2 rows and 2 columns.
+- The grid must have at most 1000 rows and 1000 columns.
+- The total number of cells in the grid must be between 4 and 10^5.
+- The values in the grid must be between 1 and 10^6.
+
+Postconditions:
+- The method should return an integer representing the maximum number of moves that can be performed.
+- The maximum number of moves should be calculated based on the given rules:
+  - Starting from any cell in the first column, the method should find the maximum number of moves that can be made by moving to cells with strictly bigger values.
+  - The method should return 0 if no moves can be made from any cell in the first column.

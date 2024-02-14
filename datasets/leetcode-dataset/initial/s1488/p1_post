@@ -1,7 +1,0 @@
-The returned array `ans` is not null.
-The returned array `ans` contains only non-negative integers.
-The length of the returned array `ans` is the same as the input array `rains`.
-If it is possible to avoid flood, the returned array `ans` satisfies the following conditions:
-- For any index `i` where `rains[i]` is greater than 0, `ans[i]` is -  - For any index `i` where `rains[i]` is 0, `ans[i]` is a non-negative integer representing the day when the lake at index `i` will be drained.
-- For any index `i` where `rains[i]` is 0, `ans[i]` is unique and does not conflict with other non-negative integers in `ans`.
-If it is impossible to avoid flood, the returned array `ans` is an empty array.

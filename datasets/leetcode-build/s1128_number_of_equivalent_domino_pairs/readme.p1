@@ -1,0 +1,10 @@
+Preconditions:
+- The input `dominoes` is a non-empty list of arrays, where each array has a length of 2.
+- The elements in each array of `dominoes` are integers between 1 and 9.
+
+Postconditions:
+- The method returns an integer representing the number of pairs `(i, j)` where `0 <= i < j < dominoes.length` and `dominoes[i]` is equivalent to `dominoes[j]`.
+- The method correctly determines the equivalence of two dominoes based on the given conditions: either (`a == c` and `b == d`), or (`a == d` and `b == c`).
+- The method handles the case where there are no equivalent domino pairs and returns 0.
+- The method handles the case where there is only one equivalent domino pair and returns 1.
+- The method handles the case where there are multiple equivalent domino pairs and returns the correct count.

@@ -1,0 +1,13 @@
+Preconditions:
+- The input array `edges` is not null.
+- The length of `edges` is equal to `n - 1`, where `n` is the number of nodes in the tree.
+- The input array `amount` is not null.
+- The length of `amount` is equal to `n`.
+- The input integer `bob` is a valid node in the tree, i.e., `0 <= bob < n`.
+- The values in `amount` are even integers in the range `[-10^4, 10^4]`.
+
+Postconditions:
+- The method returns an integer representing the maximum net income Alice can have if she travels towards the optimal leaf node.
+- The net income is calculated based on the game rules described in the requirements.
+- The method does not modify the input arrays `edges` and `amount`.
+- The method terminates and returns a valid result for any valid input.

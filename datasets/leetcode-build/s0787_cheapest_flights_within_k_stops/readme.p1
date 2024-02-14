@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `flights` is not null.
+- The input array `flights` is not empty.
+- The input integers `src`, `dst`, and `k` are valid indices within the range of `n`.
+- The input integer `k` is non-negative.
+
+Postconditions:
+- The method returns an integer representing the cheapest price from `src` to `dst` with at most `k` stops.
+- If there is no route from `src` to `dst` with at most `k` stops, the method returns -1.

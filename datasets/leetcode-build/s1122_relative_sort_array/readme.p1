@@ -1,0 +1,9 @@
+Preconditions:
+- The input arrays `arr1` and `arr2` are not null.
+- The lengths of `arr1` and `arr2` are between 1 and 1000, inclusive.
+- The elements of `arr2` are distinct.
+- Each element in `arr2` is also present in `arr1`.
+
+Postconditions:
+- The relative ordering of items in `arr1` is the same as in `arr2`.
+- Elements that do not appear in `arr2` are placed at the end of `arr1` in ascending order.

@@ -1,0 +1,7 @@
+The method returns an integer representing the maximum distance that can be traveled.
+The distance traveled is calculated based on the mileage of 10 km per liter.
+Whenever 5 liters of fuel are used up in the main tank, if the additional tank has at least 1 liter of fuel, 1 liter of fuel will be transferred from the additional tank to the main tank.
+The injection of fuel from the additional tank is not continuous. It happens suddenly and immediately for every 5 liters consumed.
+After spending 5 liters of fuel, the remaining fuel in the main tank is reduced by 5 liters and increased by 1 liter (if the additional tank has at least 1 liter of fuel).
+The main tank becomes empty when there is no fuel left in it.
+The total distance traveled is the sum of the distances traveled after each fuel consumption.

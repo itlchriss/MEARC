@@ -1,0 +1,8 @@
+Preconditions:
+- The input `edges` is a 2D array representing the original graph.
+- Each element in `edges` is an array of length 3, where the first two elements represent the nodes connected by an edge in the original graph, and the third element represents the number of new nodes to be subdivided from that edge.
+- The input `maxMoves` is a non-negative integer representing the maximum distance allowed to reach a node from node 0.
+- The input `n` is a positive integer representing the number of nodes in the original graph.
+
+Postconditions:
+- The method returns an integer representing the number of nodes that are reachable from node 0 in the new graph.

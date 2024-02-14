@@ -1,0 +1,9 @@
+Preconditions:
+- The input list `nums` must not be null.
+- The input list `nums` must contain at least one element.
+- The input integer `k` must be greater than or equal to - The input integer `k` must be less than or equal to the minimum of `n * (n + 1) / 2` and `10^9`, where `n` is the length of `nums`.
+
+Postconditions:
+- The method returns an integer value representing the maximum possible score after applying at most `k` operations.
+- The returned score is non-negative.
+- The returned score is less than or equal to `10^9 + 7`.

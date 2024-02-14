@@ -1,0 +1,12 @@
+Preconditions:
+1. The input array `edges` is not null.
+2. The length of the input array `edges` is greater than or equal to 2.
+3. The length of the input array `edges` is less than or equal to 10^5.
+4. Each element in the input array `edges` is an integer.
+5. Each element in the input array `edges` is between -1 and n-1, inclusive.
+6. The number of nodes in the graph is equal to the length of the input array `edges`.
+7. Each node in the graph has at most one outgoing edge.
+
+Postconditions:
+1. The output is an integer representing the length of the longest cycle in the graph.
+2. If no cycle exists in the graph, the output is -1.

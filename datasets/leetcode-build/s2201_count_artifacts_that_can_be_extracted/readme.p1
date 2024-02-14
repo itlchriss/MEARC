@@ -1,0 +1,12 @@
+Preconditions:
+- The input grid size `n` is a positive integer.
+- The `artifacts` array is not null and contains valid artifact coordinates.
+- The `dig` array is not null and contains valid excavation coordinates.
+- The entries of `dig` are unique.
+
+Postconditions:
+- The method returns an integer representing the number of artifacts that can be extracted.
+- The artifacts are extracted by excavating cells in the grid.
+- If a cell is excavated and it contains a part of an artifact, that part is uncovered.
+- If all the parts of an artifact are uncovered, it can be extracted.
+- The method does not modify the original grid or artifact coordinates.

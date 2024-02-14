@@ -1,0 +1,8 @@
+Preconditions:
+- The input `n` is a non-negative integer.
+
+Postconditions:
+- The method returns an integer representing the minimum number of operations required to transform `n` into 0.
+- The binary representation of `n` is modified according to the operations described.
+- The rightmost bit of the binary representation of `n` is changed to 0.
+- If the `(i-1)`th bit of the binary representation of `n` is 1 and the `(i-2)`th through 0th bits are 0, then the `i`th bit is changed to 0.

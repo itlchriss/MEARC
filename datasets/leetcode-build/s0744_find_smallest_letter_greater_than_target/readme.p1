@@ -1,0 +1,10 @@
+Preconditions:
+1. The `letters` array is not null.
+2. The `letters` array is sorted in non-decreasing order.
+3. The `letters` array contains at least two different characters.
+4. The `target` character is a lowercase English letter.
+
+Postconditions:
+1. The returned character is larger than the `target` character.
+2. The returned character is the smallest character in the `letters` array that is larger than the `target` character.
+3. If there is no character in the `letters` array that is larger than the `target` character, the returned character is the smallest character in the `letters` array.

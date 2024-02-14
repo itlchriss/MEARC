@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+- The input array `nums` is sorted in ascending order.
+- The input array `nums` contains distinct values.
+- The input integer `target` is within the range of -10^4 to 10^4.
+
+Postconditions:
+- The method returns an integer representing the index of the `target` in the `nums` array if it is present.
+- The method returns -1 if the `target` is not present in the `nums` array.
+- The method has a runtime complexity of O(log n).

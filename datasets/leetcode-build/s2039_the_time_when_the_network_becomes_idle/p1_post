@@ -1,0 +1,13 @@
+**
+1. The method returns the earliest second starting from which the network becomes idle.
+2. The network becomes idle when there are no messages passing between servers or arriving at servers.
+**Additional Preconditions:**
+1. The input `n` is a positive integer.
+2. The length of `patience` is equal to `n`.
+3. The value of `patience[0]` is `0`.
+4. The values in `patience` are positive integers.
+5. The length of `edges` is greater than or equal to 1 and less than or equal to the minimum of `10^5` and `n * (n - 1) / 2`.
+6. Each element in `edges` is a 2-element array.
+7. The values in `edges` are valid server labels (between `0` and `n-1`).
+8. There are no duplicate edges in `edges`.
+9. Each server can directly or indirectly reach another server.

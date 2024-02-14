@@ -1,0 +1,12 @@
+Preconditions:
+- The input array `arr` is not null.
+- The length of the input array `arr` is greater than or equal to 2.
+- The elements in the input array `arr` are positive integers.
+- The elements in the input array `arr` are not necessarily distinct.
+
+Postconditions:
+- The returned array is not null.
+- The length of the returned array is the same as the input array `arr`.
+- The elements in the returned array are in the same order as the input array `arr`, except for at most one swap.
+- If a swap is made, the swapped elements are in lexicographically largest order.
+- If no swap is made, the returned array is the same as the input array `arr`.

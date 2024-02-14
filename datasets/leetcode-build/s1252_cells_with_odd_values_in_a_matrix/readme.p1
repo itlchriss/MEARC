@@ -1,0 +1,13 @@
+Preconditions:
+- The input matrix is initialized to all 0's.
+- The indices array is not null.
+- The length of the indices array is not greater than 100.
+- The values of m and n are between 1 and 50 (inclusive).
+- The values of ri and ci in the indices array are between 0 and m-1 (inclusive) and 0 and n-1 (inclusive) respectively.
+
+Postconditions:
+- The matrix is modified by incrementing the cells on the specified rows and columns.
+- The final matrix contains the number of odd-valued cells.
+- The output is an integer representing the number of odd-valued cells in the final matrix.
+- The time complexity of the method is O(n + m + indices.length).
+- The space complexity of the method is O(n + m).

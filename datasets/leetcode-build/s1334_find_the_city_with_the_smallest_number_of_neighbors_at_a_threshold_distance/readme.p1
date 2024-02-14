@@ -1,0 +1,10 @@
+Preconditions:
+- The input integer `n` represents the number of cities and must be greater than or equal to 2.
+- The input array `edges` represents the bidirectional and weighted edges between cities and must have a length greater than or equal to 1.
+- Each element `edges[i]` in the `edges` array is an array of length 3, where `edges[i][0]` represents the starting city, `edges[i][1]` represents the destination city, and `edges[i][2]` represents the weight of the edge. The starting city and destination city must be integers between 0 and `n-1`.
+- The input integer `maxDist` represents the maximum distance threshold and must be greater than or equal to 1.
+
+Postconditions:
+- The method returns an integer representing the city with the smallest number of reachable cities within the distance threshold. If there are multiple cities with the same smallest number, the method returns the city with the greatest number.
+- The method calculates the distance of a path connecting cities `i` and `j` by summing the weights of the edges along that path.
+- The method determines the neighboring cities at a distance threshold for each city and returns the city with the smallest number of neighboring cities within the distance threshold.

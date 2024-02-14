@@ -1,0 +1,10 @@
+Preconditions:
+- The input grid is not null.
+- The input grid has at least one row and one column.
+- The input row and col are valid indices within the grid.
+- The input color is a valid color value.
+
+Postconditions:
+- The border of the connected component that contains the square grid[row][col] is colored with the specified color.
+- The rest of the grid remains unchanged.
+- The final grid is returned.

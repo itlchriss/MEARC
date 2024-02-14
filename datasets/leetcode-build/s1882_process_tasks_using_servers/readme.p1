@@ -1,0 +1,10 @@
+Preconditions:
+- The `servers` array and `tasks` array must not be null.
+- The lengths of the `servers` array and `tasks` array must be equal to `n` and `m` respectively.
+- The length of the `servers` array and `tasks` array must be between 1 and 2 * 10^5 (inclusive).
+- The values in the `servers` array and `tasks` array must be between 1 and 2 * 10^5 (inclusive).
+
+Postconditions:
+- The returned array `ans` must not be null.
+- The length of the returned array `ans` must be equal to `m`.
+- The values in the returned array `ans` must be indices of the servers, indicating which server each task is assigned to.

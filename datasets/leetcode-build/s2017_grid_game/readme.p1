@@ -1,0 +1,15 @@
+Preconditions:
+- The input grid must be a 2D array of size 2 x n.
+- The grid must be 0-indexed.
+- The grid must contain positive integers representing the number of points at each position.
+- The number of columns in the grid must be equal to n.
+- The number of columns, n, must be greater than or equal to 1 and less than or equal to 5 * 10^4.
+- The number of rows in the grid must be equal to 2.
+- The number of points at each position in the grid must be greater than or equal to 1 and less than or equal to 10^5.
+
+Postconditions:
+- The method must return a long value representing the number of points collected by the second robot.
+- The cells visited by the first robot must be set to 0.
+- The optimal path taken by the first robot must be shown in red.
+- The optimal path taken by the second robot must be shown in blue.
+- The number of points collected by the second robot must be equal to the sum of the points at the positions visited by the second robot.

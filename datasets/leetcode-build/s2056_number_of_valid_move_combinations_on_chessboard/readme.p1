@@ -1,0 +1,13 @@
+Preconditions:
+- The input array `pieces` is not null.
+- The input array `positions` is not null.
+- The length of `pieces` is equal to the length of `positions`.
+- The length of `pieces` is between 1 and 4 (inclusive).
+- Each element in `pieces` is either "rook", "queen", or "bishop".
+- Each element in `positions` is a distinct 2D coordinate on the chessboard, represented as [r, c], where 1 <= r, c <= 8.
+
+Postconditions:
+- The method returns an integer representing the number of valid move combinations.
+- A move combination is valid if, at any given time, no two or more pieces occupy the same square on the chessboard.
+- The number of valid move combinations is calculated based on the type of each piece and their current positions on the chessboard.
+- The method considers all possible moves for each piece and counts the number of valid move combinations.

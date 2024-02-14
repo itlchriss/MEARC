@@ -1,0 +1,7 @@
+Preconditions:
+- The input list `timePoints` must not be null.
+- The input list `timePoints` must contain at least 2 elements.
+- Each element in the input list `timePoints` must be in the format "HH:MM".
+
+Postconditions:
+- The method should return an integer representing the minimum minutes difference between any two time-points in the input list `timePoints`.

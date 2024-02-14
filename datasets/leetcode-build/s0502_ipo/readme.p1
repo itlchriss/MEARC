@@ -1,0 +1,16 @@
+Preconditions:
+1. The value of `k` must be greater than or equal to 1.
+2. The value of `w` must be greater than or equal to 0.
+3. The length of `profits` and `capital` arrays must be the same.
+4. The length of `profits` and `capital` arrays must be greater than or equal to 1.
+5. The values in the `profits` array must be non-negative.
+6. The values in the `capital` array must be non-negative.
+
+Postconditions:
+1. The returned value must be the final maximized capital.
+2. The returned value must be a 32-bit signed integer.
+3. The final maximized capital must be the sum of the initial capital (`w`) and the profits obtained from finishing the selected projects.
+4. The number of distinct projects finished must be at most `k`.
+5. The selected projects must have a minimum capital requirement that is less than or equal to the available capital (`w`).
+6. The selected projects must have the maximum profit among all projects that satisfy the capital requirement.
+7. If there are multiple projects with the same maximum profit, the project with the lowest index should be selected.

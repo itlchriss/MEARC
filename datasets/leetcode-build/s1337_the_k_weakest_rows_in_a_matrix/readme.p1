@@ -1,0 +1,12 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The input matrix `mat` has at least one row.
+- The input matrix `mat` has at least one column.
+- The input matrix `mat` contains only 0s and 1s.
+- The input integer `k` is greater than - The input integer `k` is less than or equal to the number of rows in `mat`.
+
+Postconditions:
+- The output array `result` is not null.
+- The length of the output array `result` is equal to `k`.
+- The elements in the output array `result` are valid indices of rows in `mat`.
+- The elements in the output array `result` are in ascending order, indicating the weakest rows in `mat`.

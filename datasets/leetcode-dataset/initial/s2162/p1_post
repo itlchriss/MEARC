@@ -1,5 +1,0 @@
-The method should return an integer value representing the minimum cost to set the targetSeconds of cooking time.
-The returned cost should be calculated based on the given startAt, moveCost, pushCost, and targetSeconds.
-The minimum cost should be determined by either moving the cooking time by one second or pushing it to the targetSeconds.
-The method should handle cases where the startAt is already equal to the targetSeconds and return a cost of The method should handle cases where the startAt is greater than the targetSeconds and return a cost of (startAt - targetSeconds) * moveCost.
-The method should handle cases where the startAt is less than the targetSeconds and return a cost of (targetSeconds - startAt) * pushCost.

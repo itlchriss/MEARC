@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` is not empty.
+- The elements in the input array `nums` are positive integers.
+- The length of the input array `nums` is less than or equal to 10^5.
+- Each element in the input array `nums` is less than or equal to 10^6.
+
+Postconditions:
+- The output is an integer representing the number of distinct integers in the final array.
+- The final array is formed by taking each integer in the input array, reversing its digits, and adding it to the end of the array.
+- The final array includes the original integers from the input array.
+- The final array includes the reversed integers of the original integers from the input array.
+- The final array only contains distinct integers, i.e., there are no duplicates.
+- The order of the integers in the final array is the same as the order in which they were added.
+- The length of the final array is equal to the sum of the lengths of the input array and the number of distinct reversed integers added.

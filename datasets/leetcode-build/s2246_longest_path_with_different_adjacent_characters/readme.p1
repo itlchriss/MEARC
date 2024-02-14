@@ -1,0 +1,14 @@
+Preconditions:
+- The input array `parent` is not null.
+- The input string `s` is not null.
+- The length of `parent` is equal to the length of `s`.
+- The length of `parent` is greater than or equal to 1.
+- The value of `parent[0]` is -1.
+- The values in `parent` are within the range of 0 to n-1.
+- The input string `s` consists of only lowercase English letters.
+
+Postconditions:
+- The method returns an integer representing the length of the longest path in the tree.
+- The longest path in the tree has no pair of adjacent nodes with the same character assigned to them.
+- The length of the longest path is greater than or equal to 0.
+- The length of the longest path is less than or equal to the number of nodes in the tree.

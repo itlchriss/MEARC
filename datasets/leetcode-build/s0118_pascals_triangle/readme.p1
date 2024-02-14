@@ -1,0 +1,12 @@
+Preconditions:
+- The input `numRows` must be an integer.
+- The input `numRows` must be greater than or equal to 1.
+- The input `numRows` must be less than or equal to 30.
+
+Postconditions:
+- The output is a list of lists of integers.
+- The length of the output list is equal to `numRows`.
+- Each inner list in the output list represents a row in Pascal's triangle.
+- The first element of each inner list is always 1.
+- The last element of each inner list is always 1.
+- Each element in the inner lists (except the first and last elements) is the sum of the two elements directly above it.

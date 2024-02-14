@@ -1,0 +1,17 @@
+The behavioural requirements (preconditions and postconditions) for the Java method `public List<List<Integer>> findSolution(CustomFunction customfunction, int z)` are as follows:
+
+Preconditions:
+1. The `customfunction` parameter must not be null.
+2. The `z` parameter must be a positive integer.
+
+Postconditions:
+1. The method must return a list of lists of integers, representing all positive integer pairs `(x, y)` where `f(x, y) == z`.
+2. The order of the pairs in the returned list does not matter.
+3. The returned list must not contain any duplicate pairs.
+4. Each pair `(x, y)` in the returned list must be a positive integer pair, i.e., both `x` and `y` must be positive integers.
+5. The returned list must contain all valid pairs for the given `z` value, according to the hidden formula of the `customfunction`.
+6. The returned list must not contain any invalid pairs, i.e., pairs `(x, y)` for which `f(x, y) != z`.
+7. The returned list must contain all possible valid pairs for the given `z` value, according to the hidden formula of the `customfunction`.
+8. The method must not modify the state of the `customfunction` object.
+9. The method must not modify the value of the `z` parameter.
+10. The method must terminate and return a result in a reasonable amount of time, even for large input values.

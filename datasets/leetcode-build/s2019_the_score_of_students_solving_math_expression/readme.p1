@@ -1,0 +1,14 @@
+Preconditions:
+1. The input string `s` must be a valid math expression containing only digits `0-9`, addition symbols `'+'`, and multiplication symbols `'*'`.
+2. The length of the input string `s` must be between 3 and 31 (inclusive).
+3. The input array `answers` must have a length `n` where `1 <= n <= 10^4`.
+4. Each element in the input array `answers` must be between 0 and 1000 (inclusive).
+5. The count of all operators (`'+'` and `'*'`) in the math expression must be between 1 and 15 (inclusive).
+6. The correct answer of the expression must be in the range of 0 to 1000 (inclusive).
+
+Postconditions:
+1. The method should return an integer representing the sum of the points of the students.
+2. The sum of the points should be between 0 and 5 times the length of the input array `answers` (inclusive).
+3. If an answer equals the correct answer of the expression, the student will be rewarded 5 points.
+4. If the answer could be interpreted as if the student applied the operators in the wrong order but had correct arithmetic, the student will be rewarded 2 points.
+5. If the answer does not fall into the above two categories, the student will be rewarded 0 points.

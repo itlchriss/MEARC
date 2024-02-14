@@ -1,8 +1,0 @@
-Preconditions:
-- The method `book(int start, int end)` should be called after the initialization of the `MyCalendarTwo` object.
-- The `start` and `end` parameters should be valid integers representing the start and end times of the event.
-
-Postconditions:
-- If the event can be added to the calendar without causing a triple booking, the method should return `true`.
-- If the event cannot be added to the calendar due to a triple booking, the method should return `false`.
-- If the event is successfully added to the calendar, it should be recorded in the calendar to prevent future triple bookings.

@@ -1,0 +1,12 @@
+Preconditions:
+- The input parameters `upper`, `lower`, and `colsum` are valid and satisfy the given constraints.
+- The length of `colsum` is equal to the number of columns in the matrix.
+- The sum of elements in `colsum` is equal to the sum of elements in the upper and lower rows.
+
+Postconditions:
+- The returned matrix is a 2-D integer array.
+- The sum of elements in the upper row of the returned matrix is equal to `upper`.
+- The sum of elements in the lower row of the returned matrix is equal to `lower`.
+- The sum of elements in each column of the returned matrix is equal to the corresponding element in `colsum`.
+- If there are multiple valid solutions, any of them can be returned.
+- If no valid solution exists, an empty 2-D array is returned.

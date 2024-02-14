@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `dist` must not be null.
+- The length of the input array `dist` must be equal to the number of train rides `n`.
+- The number of train rides `n` must be greater than or equal to 1.
+- The distance of each train ride `dist[i]` must be greater than or equal to 1.
+- The input `hour` must be greater than or equal to 1.
+- The input `hour` must have at most two digits after the decimal point.
+
+Postconditions:
+- The method should return a positive integer representing the minimum speed in kilometers per hour.
+- If it is impossible to reach the office on time, the method should return -1.

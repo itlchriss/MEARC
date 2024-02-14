@@ -1,0 +1,12 @@
+Preconditions:
+- The total money, cost of pen, and cost of pencil must be positive integers.
+- The total money must be greater than or equal to the cost of the cheapest writing utensil.
+
+Postconditions:
+- The method returns a long integer representing the number of distinct ways to buy pens and pencils.
+- The returned value is always non-negative.
+
+Additional requirements:
+- The method should handle large input values efficiently.
+- The method should handle cases where the cost of pen and pencil are equal to the total money. In this case, the method should return 1.
+- The method should handle cases where the cost of pen and pencil are both greater than the total money. In this case, the method should return 0.

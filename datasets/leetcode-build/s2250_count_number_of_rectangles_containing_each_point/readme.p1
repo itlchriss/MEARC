@@ -1,0 +1,18 @@
+Preconditions:
+- The input `rectangles` is a 2D integer array.
+- The input `points` is a 2D integer array.
+- The length of the input `rectangles` is greater than or equal to 1.
+- The length of the input `points` is greater than or equal to 1.
+- Each element in `rectangles` is a 2-element array representing the length and height of a rectangle.
+- Each element in `points` is a 2-element array representing the x and y coordinates of a point.
+- The length and height of each rectangle in `rectangles` is greater than or equal to 1.
+- The x and y coordinates of each point in `points` is greater than or equal to 1.
+- The length and height of each rectangle in `rectangles` is less than or equal to 10^9.
+- The x and y coordinates of each point in `points` is less than or equal to 100.
+- All rectangles in `rectangles` are unique.
+- All points in `points` are unique.
+
+Postconditions:
+- The output `count` is an integer array of length `points.length`.
+- Each element in `count` represents the number of rectangles that contain the corresponding point in `points`.
+- The elements in `count` are in the same order as the points in `points`.

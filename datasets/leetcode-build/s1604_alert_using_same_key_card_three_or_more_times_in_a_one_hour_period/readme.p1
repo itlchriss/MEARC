@@ -1,0 +1,10 @@
+Preconditions:
+- The `keyName` and `keyTime` arrays are not null.
+- The lengths of `keyName` and `keyTime` arrays are equal.
+- Each element in `keyTime` is in the format "HH:MM".
+- Each element in `keyName` is a string of lowercase English letters.
+- Each element in `[keyName[i], keyTime[i]]` is unique.
+
+Postconditions:
+- The method returns a list of unique worker names who received an alert for frequent keycard use.
+- The names in the list are sorted in ascending order alphabetically.

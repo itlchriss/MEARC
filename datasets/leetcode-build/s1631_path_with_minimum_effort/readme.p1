@@ -1,0 +1,11 @@
+Preconditions:
+- The input `heights` is a 2D array of integers.
+- The dimensions of `heights` are `rows x columns`.
+- The top-left cell of `heights` is represented by `(0, 0)`.
+- The bottom-right cell of `heights` is represented by `(rows-1, columns-1)`.
+- The input `heights` is a valid grid with positive integer values.
+
+Postconditions:
+- The method returns an integer representing the minimum effort required to travel from the top-left cell to the bottom-right cell.
+- The returned value is the maximum absolute difference in heights between two consecutive cells of the route.
+- The returned value is the minimum possible effort to travel from the top-left cell to the bottom-right cell.

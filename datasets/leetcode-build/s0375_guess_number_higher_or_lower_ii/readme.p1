@@ -1,0 +1,11 @@
+Preconditions:
+- The input `n` is an integer greater than or equal to 1.
+
+Postconditions:
+- The output is an integer representing the minimum amount of money needed to guarantee a win regardless of the number picked by the opponent.
+- The output is 0 if `n` is equal to 1.
+- The output is 1 if `n` is equal to 2.
+- The output is 16 if `n` is equal to 10.
+- The output is the sum of the guessed numbers and the corresponding payments made in the winning strategy.
+- The winning strategy involves guessing numbers within a certain range based on the opponent's response (higher or lower).
+- The worst case scenario in the winning strategy is that the total payment is equal to the output.

@@ -1,0 +1,10 @@
+**
+The method returns an integer representing the second minimum time it will take to go from vertex 1 to vertex n.
+The returned time is the smallest value strictly larger than the minimum time.
+The minimum time is calculated by finding the shortest path from vertex 1 to vertex n, considering the time taken to traverse each edge and the time spent waiting at vertices with red signals.
+The second minimum time is calculated by finding a path from vertex 1 to vertex n that has a time greater than the minimum time and is the smallest among all such paths.
+The path from vertex 1 to vertex n is determined by traversing the graph using the given edges.
+At each vertex, the method checks the color of the traffic signal and waits if the signal is red.
+The method cannot wait at a vertex if the signal is green.
+The method can go through any vertex any number of times, including vertices 1 and n.
+Each vertex can be reached directly or indirectly from every other vertex.

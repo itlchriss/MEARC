@@ -108,6 +108,12 @@ KEYWORD_REL         "Rel"
 
 KEYWORD_TRUEP      "TrueP"
 KEYWORD_TRUE       "True"
+
+KEYWORD_SUBJ        "Subj"
+KEYWORD_ACC         "Acc"
+KEYWORD_ACCI         "AccI"
+KEYWORD_DAT         "Dat"
+
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
 KEYWORD_TYPE         _type_[a-z]+
 KEYWORD_PARAM        _param_[a-z0-9]+
@@ -162,6 +168,11 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_VBG} { yylval.t = handletoken(yytext); return TAG; }
 {KEYWORD_RB}    {yylval.t = handletoken(yytext); return TAG; }
 {KEYWORD_VBD}    {yylval.t = handletoken(yytext); return TAG; }
+
+{KEYWORD_SUBJ}  {yylval.t = handletoken(yytext); return EVENT;}
+{KEYWORD_ACC}  {yylval.t = handletoken(yytext); return EVENT;}
+{KEYWORD_ACCI}  {yylval.t = handletoken(yytext); return EVENT;}
+{KEYWORD_DAT}   {yylval.t = handletoken(yytext); return EVENT;}
 
 "}" {
     if (cbracket <= 0) {

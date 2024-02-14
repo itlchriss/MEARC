@@ -1,0 +1,8 @@
+Preconditions:
+- The input grid `isInfected` is a valid `m x n` binary grid.
+- The dimensions `m` and `n` of the grid satisfy the constraints `1 <= m, n <= 50`.
+- Each element `isInfected[i][j]` in the grid is either `0` or `1`.
+
+Postconditions:
+- The method returns an integer representing the number of walls used to quarantine all the infected regions.
+- If the world becomes fully infected, the method returns the number of walls used.

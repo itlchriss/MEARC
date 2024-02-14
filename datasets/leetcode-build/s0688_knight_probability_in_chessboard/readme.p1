@@ -1,0 +1,9 @@
+Preconditions:
+- The value of `n` must be greater than or equal to 1.
+- The value of `k` must be between 0 and 100 (inclusive).
+- The value of `row` must be between 0 and `n` (inclusive).
+- The value of `column` must be between 0 and `n` (inclusive).
+
+Postconditions:
+- The method returns a double value representing the probability that the knight remains on the board after making exactly `k` moves.
+- The returned probability is between 0 and 1 (inclusive).

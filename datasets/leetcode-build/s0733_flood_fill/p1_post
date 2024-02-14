@@ -1,0 +1,5 @@
+1. The modified image grid is returned as a 2D integer grid.
+2. The modified image grid has the same dimensions as the original image grid.
+3. The pixel at position `(sr, sc)` in the modified image grid has been changed to the new color.
+4. All pixels connected to the starting pixel `(sr, sc)` by a path of the same color have been changed to the new color.
+5. Pixels that are not 4-directionally connected to the starting pixel are not changed to the new color.

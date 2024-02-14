@@ -1,0 +1,12 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of functions.
+- The input `logs` is a list of strings representing the log messages.
+- Each log message in `logs` is formatted as "{function_id}:{start|end}:{timestamp}".
+- The function IDs in `logs` range from 0 to n-- The timestamps in `logs` range from 0 to 10^- There are no two start events happening at the same timestamp.
+- There are no two end events happening at the same timestamp.
+- Each function has an "end" log for each "start" log.
+
+Postconditions:
+- The method returns an array of integers representing the exclusive time of each function.
+- The length of the returned array is equal to n.
+- The value at the i-th index of the returned array represents the exclusive time for the function with ID i.

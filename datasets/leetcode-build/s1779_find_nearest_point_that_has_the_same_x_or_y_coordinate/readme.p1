@@ -1,0 +1,10 @@
+Preconditions:
+- The input integers `x` and `y` must be valid Cartesian coordinates.
+- The input array `points` must not be null.
+- The length of the input array `points` must be greater than or equal to 1.
+- Each element in the input array `points` must be an array of length 2.
+
+Postconditions:
+- The output integer must be the index of a valid point with the smallest Manhattan distance from the current location.
+- If there are multiple valid points with the smallest Manhattan distance, the output must be the valid point with the smallest index.
+- If there are no valid points, the output must be -1.

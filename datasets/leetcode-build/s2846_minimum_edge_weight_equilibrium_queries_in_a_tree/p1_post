@@ -1,0 +1,4 @@
+The method returns an array `answer` of length `m`, where each element `answer[i]` is the answer to the `i`-th query.
+For each query `queries[i] = [a, b]`, the method finds the minimum number of operations required to make the weight of every edge on the path from node `a` to node `b` equal.
+The tree returns to its initial state on each new query, meaning that any changes made to the edge weights during one query do not affect the edge weights in subsequent queries.
+The path from node `a` to node `b` is a sequence of distinct nodes starting with node `a` and ending with node `b`, such that every two adjacent nodes in the sequence share an edge in the tree.

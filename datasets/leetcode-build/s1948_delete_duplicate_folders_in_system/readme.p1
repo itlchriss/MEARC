@@ -1,0 +1,29 @@
+Preconditions:
+The input `paths` is a 2D array representing the file system structure.
+Each element in `paths` represents an absolute path to a folder in the file system.
+The folders in the file system may contain subfolders.
+The folders in the file system may have the same non-empty set of identical subfolders and underlying subfolder structure.
+The folders do not need to be at the root level to be identical.
+The file system may contain duplicate folders.
+The file system may contain empty folders.
+The file system may contain folders with the same name but different subfolder structure.
+The file system may contain folders with the same name but different parent folders.
+The file system may contain folders with the same name but different absolute paths.
+The file system may contain folders with the same name but different levels of nesting.
+The file system may contain folders with the same name but different number of subfolders.
+The file system may contain folders with the same name but different order of subfolders.
+The file system may contain folders with the same name but different subfolder names.
+
+Postconditions:
+The method returns a 2D array `ans` containing the paths of the remaining folders after deleting all the marked folders.
+The remaining folders may be returned in any order.
+The remaining folders do not contain any duplicate folders.
+The remaining folders do not contain any marked folders or their subfolders.
+The remaining folders may contain empty folders.
+The remaining folders may contain folders with the same name but different subfolder structure.
+The remaining folders may contain folders with the same name but different parent folders.
+The remaining folders may contain folders with the same name but different absolute paths.
+The remaining folders may contain folders with the same name but different levels of nesting.
+The remaining folders may contain folders with the same name but different number of subfolders.
+The remaining folders may contain folders with the same name but different order of subfolders.
+The remaining folders may contain folders with the same name but different subfolder names.

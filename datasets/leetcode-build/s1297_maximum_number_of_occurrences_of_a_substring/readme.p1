@@ -1,0 +1,13 @@
+Preconditions:
+- The input string `s` is not null.
+- The input string `s` is not empty.
+- The input integer `max` is greater than or equal to 1.
+- The input integer `minSize` is greater than or equal to 1.
+- The input integer `maxSize` is greater than or equal to `minSize`.
+- The input integer `maxSize` is less than or equal to the length of the input string `s`.
+- The input integer `maxLetters` is greater than or equal to 1.
+- The input integer `maxLetters` is less than or equal to 26.
+
+Postconditions:
+- The method returns an integer representing the maximum number of occurrences of any substring that satisfies the given rules.
+- The returned integer is greater than or equal to 0.

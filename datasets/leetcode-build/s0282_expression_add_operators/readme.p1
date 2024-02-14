@@ -1,0 +1,11 @@
+Preconditions:
+- The input string `num` should not be null.
+- The input string `num` should consist of only digits.
+- The length of the input string `num` should be between 1 and 10 (inclusive).
+- The input integer `target` should be within the range of -2^31 to 2^31 - 1 (inclusive).
+
+Postconditions:
+- The output should be a list of strings.
+- The output list should contain all possible expressions formed by inserting the binary operators '+' , '-' , and/or '*' between the digits of `num`.
+- The expressions in the output list should evaluate to the target value.
+- The operands in the expressions should not contain leading zeros.

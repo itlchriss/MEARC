@@ -1,0 +1,174 @@
+import subprocess
+import sys
+import yaml
+import os
+from typing import Dict, Tuple
+from yaml.loader import SafeLoader
+from optparse import OptionParser
+import glob
+
+_configs = { 'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
+
+optparser = OptionParser()
+optparser.add_option("-d", "--debug", dest="debuglevel", help="debug level. 1 = INFO, 2 = DEBUG")
+optparser.add_option("-f", "--file", dest="prog_path", help="path of the program file")
+optparser.add_option("-c", "--config", dest="config_path", help="path of the config file")
+
+tmpfolder = None
+
+class dot_access_dict(dict):
+    __getattr__ = dict.get
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
+
+def warn_missing_config(key: str) -> None:
+    print('Please fill the value of %s in mearc.config' % key)
+    exit(-1)
+
+
+# def run_cmd_with_output(cmd: str) -> Dict[str, str]:
+def run_cmd_with_output(cmd: str) -> Tuple[str, str]:
+    process = subprocess.run(
+        cmd,
+        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    # process.wait()
+    # return { 'stdout': process.stdout.decode(), 'stderr': process.stderr.decode() }
+    return (process.stdout.decode(), process.stderr.decode())
+
+
+def run_cmd_without_output(cmd: str) -> None:
+    process = subprocess.Popen(
+            cmd,
+            shell=True, stdout=subprocess.PIPE
+        )
+    process.wait()
+
+
+def run_cmd_show_output(cmd: str) -> None:
+    process = subprocess.Popen(
+            cmd,
+            shell=True
+        )
+    process.wait()
+
+
+debug = True
+info = False
+
+def preprocessing(filepath: str):
+    global tmpfolder
+    folder = '/'.join(filepath.split('/')[:-1])
+    tmpfolder = os.path.join(folder, 'tmp')
+    # create tmp folder
+    if not os.path.exists(tmpfolder):
+        os.mkdir(tmpfolder)
+    else:
+        for f in glob.glob(os.path.join(tmpfolder, '*')):
+            os.remove(f)
+    
+    # preprocessing 
+    # cmd = "%s ./src/python/textpreprocessing.py %s %s" % (configs.PYCMD, file_path, configs.STD_SI)
+    cmd = "%s ./src/python/textpreprocessing.py %s" % (configs.PYCMD, filepath)
+    run_cmd_show_output(cmd)
+
+# nlspec: a temporary file path containing a precondition or postcondition
+def deriveMR(nlspec: str, filename: str) -> bool:
+    global tmpfolder
+
+    info and print('INFO:using ccg2lambda to get MR from (%s)' % nlspec)
+    debug and print('DEBUG: ccgslambda - tokenization')
+    process = subprocess.Popen(
+        ("echo \"%s\" | sed -f %s/en/tokenizer.sed > %s/%s.tok" % (nlspec, configs.NLP, tmpfolder, filename)),
+        shell=True, stdout=subprocess.PIPE
+    )        
+    process.wait()
+    debug and print('DEBUG: ccgslambda - C & C parsing')
+    process = subprocess.Popen(
+        ("%s/candc-1.00/bin/candc --models %s/candc-1.00/models --candc-printer xml --input %s/%s.tok > %s/%s.candc.xml" % (configs.NLP, configs.NLP, tmpfolder, filename, tmpfolder, filename)),
+        shell=True, stdout=subprocess.PIPE
+    )
+    process.wait()
+    debug and print('DEBUG: ccglambda - translate C & C parsing result to CCG rules')
+    process = subprocess.Popen(
+        ("%s %s/en/candc2transccg_wsc.py %s/%s.candc.xml > %s/%s.xml" % (configs.PYCMD, configs.NLP, tmpfolder, filename, tmpfolder, filename)),
+        shell=True, stdout=subprocess.PIPE
+    )
+    process.wait()
+    debug and print('DEBUG: ccglambda - mapping CCG rules with the event semantics template')
+    process = subprocess.run(
+        ("%s %s/scripts/semparse_wsc.py %s/%s.xml %s/en/semantic_templates_en_event.yaml > "
+            "%s/%s.mr" % (configs.PYCMD, configs.NLP, tmpfolder, filename, configs.NLP, tmpfolder, filename)),
+        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+
+    mr_error = process.stderr.decode()
+
+    if mr_error:
+        print('%s MR derivation failed.' % filename)
+        return False
+    else:
+        info and print('INFO:MR generation done')
+        with open("%s/%s.mr" % (tmpfolder, filename)) as fp:
+            mr = fp.read()
+        return mr and mr.strip()
+
+def translateJMLbody(filename: str) -> Tuple[bool, str]:
+    global tmpfolder
+    filepath = os.path.join(tmpfolder, filename + '.mr')
+    cmd = "./bin/main -f %s -s %s" % (filepath, configs.STD_SI)
+    debug and print(cmd)
+    jmlbody, error = run_cmd_with_output(cmd)
+    if error or not jmlbody or not jmlbody.strip(): 
+        if not error:
+            error = 'Failed'
+        return (False, error)
+    return (True, jmlbody)
+
+
+def main(configs: dot_access_dict, filepath: str) -> None:
+    global tmpfolder
+    # Preprocessing. 
+    #   1. Extracting the conditions with natural language bodies.
+    #   2. Applying preprocessing rules on the natural language bodies.
+    #   3. Tidying up into a yaml file
+    preprocessing(filepath)
+    conditions_file = "%s/conditions.yml" % (tmpfolder)
+    
+
+    with open(conditions_file) as fp:
+        data = yaml.load(fp, Loader=SafeLoader)
+
+    for i, sent in enumerate(data['requires']):
+        prefix = 'pre.%s' % i
+        if not deriveMR(sent, prefix):
+            debug and print('Failed in MR derviation')
+            continue
+        (r, jmlbody) = translateJMLbody(prefix)
+        if not r:
+            debug and print('Failed in MEARC') and exit(-1)
+            continue
+        # DEBUG USE ONLY
+        print('requires(%s);' % jmlbody.strip())
+
+        
+    # for sent in data['ensures']:
+        # mrderivation
+
+
+if __name__ == "__main__":
+    (options, args) = optparser.parse_args()
+
+    if not options.config_path:
+        print("Please provide a config file")
+    with open(options.config_path) as fp:
+        _config = yaml.load(fp, Loader=SafeLoader)
+    for key in _configs:
+        if not _config[key] or not _config[key].strip():
+            warn_missing_config(key)
+        else:
+            _configs[key] = _config[key]
+    configs = dot_access_dict(_configs)
+
+    main(configs, options.prog_path)

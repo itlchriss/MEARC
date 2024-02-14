@@ -1,0 +1,13 @@
+Preconditions:
+- The input arrays `nums1` and `nums2` must have the same length `n`.
+- The length `n` of the input arrays must be at least 2.
+- The elements of `nums1` and `nums2` must be integers.
+- The value of `diff` must be an integer.
+
+Postconditions:
+- The method returns an integer representing the number of pairs that satisfy the conditions.
+- The returned value is greater than or equal to 0.
+- The returned value is less than or equal to the total number of pairs that can be formed from the indices of `nums1` and `nums2`.
+- For each pair `(i, j)` that satisfies the conditions, the following must hold:
+  - `0 <= i < j <= n - 1`
+  - `nums1[i] - nums1[j] <= nums2[i] - nums2[j] + diff`

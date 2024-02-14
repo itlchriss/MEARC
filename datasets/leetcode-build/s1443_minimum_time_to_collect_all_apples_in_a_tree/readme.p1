@@ -1,0 +1,7 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of vertices in the tree.
+- The input `edges` is a 2D array of size `n-1` where each element `edges[i]` is an array of size 2 representing an edge connecting vertices `a_i` and `b_i`.
+- The input `hasApple` is a List of size `n` where each element `hasApple[i]` is a boolean value indicating whether vertex `i` has an apple or not.
+
+Postconditions:
+- The method returns an integer representing the minimum time in seconds required to collect all apples in the tree, starting at vertex 0 and coming back to this vertex.

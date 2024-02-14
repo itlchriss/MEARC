@@ -1,0 +1,12 @@
+Preconditions:
+- The input matrix `isWater` is not null.
+- The dimensions of the input matrix `isWater` are valid (1 <= m, n <= 1000).
+- There is at least one water cell in the input matrix `isWater`.
+
+Postconditions:
+- The output matrix `height` is not null.
+- The dimensions of the output matrix `height` are the same as the input matrix `isWater`.
+- The height of each cell in the output matrix `height` is non-negative.
+- If a cell in the input matrix `isWater` is a water cell (isWater[i][j] == 1), the corresponding cell in the output matrix `height` has a height of 0.
+- The absolute height difference between any two adjacent cells in the output matrix `height` is at most 1.
+- The maximum height in the output matrix `height` is maximized.

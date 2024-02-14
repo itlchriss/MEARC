@@ -1,0 +1,10 @@
+Preconditions:
+- The input string `s` is not null.
+- The size of each group `k` is a positive integer.
+- The character `fill` is a lowercase English letter.
+
+Postconditions:
+- The output is a string array denoting the composition of every group `s` has been divided into.
+- Each group consists of `k` characters from the string `s`, except for the last group which may have less than `k` characters.
+- If the last group has less than `k` characters, it is completed using the character `fill`.
+- After removing the `fill` character from the last group (if it exists) and concatenating all the groups in order, the resultant string is equal to `s`.

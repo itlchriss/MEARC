@@ -1,0 +1,9 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The input matrix `mat` is a binary matrix, meaning it only contains the values 0 and 1.
+- There is at least one 0 in the input matrix `mat`.
+
+Postconditions:
+- The output matrix `result` has the same dimensions as the input matrix `mat`.
+- For each cell in the output matrix `result`, the value represents the distance to the nearest 0 in the input matrix `mat`.
+- The distance between two adjacent cells in the output matrix `result` is 1.

@@ -1,0 +1,9 @@
+Preconditions:
+- The input arrays `nums1`, `nums2`, `nums3`, and `nums4` must not be null.
+- The length of `nums1`, `nums2`, `nums3`, and `nums4` must be equal to `n`.
+- The value of `n` must be greater than or equal to 1 and less than or equal to 200.
+- The values in `nums1`, `nums2`, `nums3`, and `nums4` must be within the range of -2^28 to 2^28.
+
+Postconditions:
+- The method should return an integer representing the number of tuples `(i, j, k, l)` such that `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`.
+- The returned integer should be greater than or equal to 0.

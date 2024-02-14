@@ -1,7 +1,0 @@
-The method `guess` returns an integer representing the number of exact matches (value and position) of the guessed word to the secret word.
-If the guessed word is not in the given `wordlist`, the method `guess` returns -The method `findSecretWord` does not return any value.
-The `master.guess("aaaaaa")` call returns -1 because "aaaaaa" is not in the `wordlist`.
-The `master.guess("acckzz")` call returns 6 because "acckzz" is the secret word and has all 6 matches.
-The `master.guess("ccbazz")` call returns 3 because "ccbazz" has 3 matches.
-The `master.guess("eiowzz")` call returns 2 because "eiowzz" has 2 matches.
-The `master.guess("abcczz")` call returns 4 because "abcczz" has 4 matches.

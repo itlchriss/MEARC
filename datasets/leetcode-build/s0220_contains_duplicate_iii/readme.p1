@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `nums` is not null.
+- The length of the input array `nums` is greater than or equal to 2.
+- The value of `k` is non-negative.
+- The value of `t` is non-negative.
+
+Postconditions:
+- The method returns a boolean value indicating whether there are two distinct indices `i` and `j` in the array such that `abs(nums[i] - nums[j]) <= t` and `abs(i - j) <= k`.
+- If there are two distinct indices `i` and `j` in the array that satisfy the conditions, the method returns `true`.
+- If there are no two distinct indices `i` and `j` in the array that satisfy the conditions, the method returns `false`.

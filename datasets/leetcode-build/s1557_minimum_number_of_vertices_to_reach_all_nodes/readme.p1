@@ -1,0 +1,9 @@
+Preconditions:
+- The input `n` represents the number of vertices in the graph and must be an integer greater than or equal to 2.
+- The input `edges` represents the directed edges in the graph and must be a list of lists, where each inner list contains two integers representing the source and destination vertices of the edge.
+- The graph is a directed acyclic graph.
+
+Postconditions:
+- The method returns a list of integers representing the smallest set of vertices from which all nodes in the graph are reachable.
+- The returned list may contain any order of vertices.
+- The returned list must include all vertices that are not reachable from any other node.

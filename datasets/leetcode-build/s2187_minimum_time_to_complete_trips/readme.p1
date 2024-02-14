@@ -1,0 +1,12 @@
+Preconditions:
+- The input array `time` is not null.
+- The length of the input array `time` is greater than or equal to 1.
+- The elements in the input array `time` are positive integers.
+- The input integer `totalTrips` is a positive integer.
+
+Postconditions:
+- The method returns a long value representing the minimum time required for all buses to complete at least `totalTrips` trips.
+- The returned minimum time is a positive integer.
+- The returned minimum time is the smallest possible time that satisfies the condition of completing at least `totalTrips` trips.
+- The method does not modify the input array `time`.
+- The method does not modify the input integer `totalTrips`.

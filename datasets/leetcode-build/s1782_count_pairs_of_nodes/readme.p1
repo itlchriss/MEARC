@@ -1,0 +1,23 @@
+Preconditions:
+- The input integer `n` represents the number of nodes in the graph.
+- The input 2D integer array `edges` represents the edges in the graph, where `edges[i] = [u_i, v_i]` indicates that there is an undirected edge between nodes `u_i` and `v_i`.
+- The input integer array `queries` represents the queries to be answered.
+- The length of `queries` is equal to the length of the expected output array `answers`.
+- The constraints on the input values are satisfied:
+  - `2 <= n <= 2 * 10^4`
+  - `1 <= edges.length <= 10^5`
+  - `1 <= u_i, v_i <= n`
+  - `u_i != v_i`
+  - `1 <= queries.length <= 20`
+  - `0 <= queries[j] < edges.length`
+
+Postconditions:
+- The output is an integer array `answers` of length equal to the length of `queries`.
+- Each element `answers[j]` in the output array is the answer to the `j-th` query.
+- The answer to the `j-th` query is the number of pairs of nodes `(a, b)` that satisfy both of the following conditions:
+  - `a < b`
+  - `incident(a, b) > queries[j]`
+- The `incident(a, b)` function is defined as the number of edges that are connected to either node `a` or `b`.
+- The calculations for `incident(a, b)` are performed based on the given graph and edges.
+- The answer to each query is calculated correctly based on the given conditions and the calculated `incident(a, b)` values.
+- The output array `answers` contains the correct answers for all the queries.

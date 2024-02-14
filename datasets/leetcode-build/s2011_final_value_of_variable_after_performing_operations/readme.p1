@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `operations` is not null.
+- The length of the input array `operations` is between 1 and 100.
+- Each element in the input array `operations` is either `"++X"`, `"X++"`, `"--X"`, or `"X--"`.
+
+Postconditions:
+- The return value is an integer representing the final value of `X` after performing all the operations.
+- The value of `X` is incremented by 1 for each occurrence of `"++X"` or `"X++"`.
+- The value of `X` is decremented by 1 for each occurrence of `"--X"` or `"X--"`.
+- The final value of `X` is the sum of all the increments and decrements performed on `X`.

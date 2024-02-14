@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `points` is not null.
+- The length of the input array `points` is at least - The elements in the input array `points` are not null.
+- The length of each element in the input array `points` is - The value of `k` is non-negative.
+- The elements in the input array `points` are sorted in ascending order based on the x-values.
+- The x-values in the input array `points` form a strictly increasing sequence.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value is the maximum value of the equation `y_i + y_j + |x_i - x_j|` where `|x_i - x_j| <= k` and `1 <= i < j <= points.length`.

@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `forbidden` is not null.
+- The integers `a`, `b`, and `x` are greater than or equal to 1.
+- The integers `a`, `b`, and `x` are less than or equal to 2000.
+- The elements in the `forbidden` array are distinct.
+- The position `x` is not in the `forbidden` array.
+
+Postconditions:
+- The method returns an integer representing the minimum number of jumps needed for the bug to reach its home.
+- If there is no possible sequence of jumps that lands the bug on position `x`, the method returns -1.

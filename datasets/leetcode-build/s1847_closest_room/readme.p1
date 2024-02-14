@@ -1,0 +1,16 @@
+Preconditions:
+- The input arrays `rooms` and `queries` are not null.
+- The length of `rooms` is equal to `n`.
+- The length of `queries` is equal to `k`.
+- Each element in `rooms` is an array of length 2.
+- Each element in `queries` is an array of length 2.
+- The values of `roomId_i` in `rooms` are unique.
+- The values of `roomId_j` in `queries` are within the range of 1 to 10^7.
+- The values of `size_i` in `rooms` and `minSize_j` in `queries` are within the range of 1 to 10^7.
+
+Postconditions:
+- The returned array `answer` is not null.
+- The length of `answer` is equal to `k`.
+- Each element in `answer` is an integer.
+- The values in `answer` are the room numbers that satisfy the conditions specified in the requirements.
+- If there is no room that satisfies the conditions for a query, the corresponding element in `answer` is -1.

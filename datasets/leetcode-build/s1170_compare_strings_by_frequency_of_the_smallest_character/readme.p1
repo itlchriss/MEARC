@@ -1,0 +1,10 @@
+Preconditions:
+- The input arrays `queries` and `words` are not null.
+- The length of `queries` is greater than or equal to - The length of `words` is greater than or equal to - The length of each string in `queries` is greater than or equal to 1 and less than or equal to - The length of each string in `words` is greater than or equal to 1 and less than or equal to - Each character in `queries` and `words` is a lowercase English letter.
+
+Postconditions:
+- The returned array `answer` is not null.
+- The length of `answer` is equal to the length of `queries`.
+- Each element in `answer` is an integer.
+- The order of elements in `answer` corresponds to the order of queries in `queries`.
+- For each query `queries[i]`, `answer[i]` is the number of words in `words` such that `f(queries[i])` < `f(W)` for each `W` in `words`.

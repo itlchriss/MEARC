@@ -1,0 +1,11 @@
+Preconditions:
+- The input `arr` is a 2D array representing the connectivity between cities.
+- The length of `arr` is equal to the number of cities `n`.
+- The length of each row in `arr` is equal to the number of cities `n`.
+- Each element in `arr` is either 0 or 1.
+- The diagonal elements of `arr` are all 1.
+
+Postconditions:
+- The method returns an integer representing the total number of provinces.
+- The returned value is greater than or equal to 0.
+- The returned value is less than or equal to the number of cities `n`.

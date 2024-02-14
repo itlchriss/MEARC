@@ -1,0 +1,24 @@
+**Preconditions:**
+
+The input `n` is a positive integer representing the number of vertices in the graph.
+The input `edges` is a 2D integer array representing the edges in the graph.
+The length of `edges` is at least `n - 1` and at most `2 * 10^4` or `n * (n - 1) / 2`, whichever is smaller.
+Each element `edges[i]` is a 2-element array `[u_i, v_i]` representing a bi-directional edge between vertex `u_i` and vertex `v_i`.
+Each vertex pair is connected by at most one edge.
+No vertex has an edge to itself.
+The input `time` is a positive integer representing the time taken to traverse any edge.
+The input `change` is a positive integer representing the time it takes for a traffic signal to change its color from green to red or vice versa.
+All signals change at the same time.
+The journey starts when all signals have just turned green.
+
+**Postconditions:**
+
+The method returns an integer representing the second minimum time it will take to go from vertex 1 to vertex n.
+The returned time is the smallest value strictly larger than the minimum time.
+The minimum time is calculated by finding the shortest path from vertex 1 to vertex n, considering the time taken to traverse each edge and the time spent waiting at vertices with red signals.
+The second minimum time is calculated by finding a path from vertex 1 to vertex n that has a time greater than the minimum time and is the smallest among all such paths.
+The path from vertex 1 to vertex n is determined by traversing the graph using the given edges.
+At each vertex, the method checks the color of the traffic signal and waits if the signal is red.
+The method cannot wait at a vertex if the signal is green.
+The method can go through any vertex any number of times, including vertices 1 and n.
+Each vertex can be reached directly or indirectly from every other vertex.

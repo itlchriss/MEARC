@@ -1,0 +1,13 @@
+Preconditions:
+- The input array `encoded` is not null.
+- The length of `encoded` is equal to `n - 1`, where `n` is the length of the original array `arr`.
+- The elements of `encoded` are non-negative integers.
+- The input integer `first` is not null.
+- The value of `first` is a non-negative integer.
+
+Postconditions:
+- The output array `arr` is not null.
+- The length of `arr` is equal to `n`.
+- The elements of `arr` are non-negative integers.
+- The first element of `arr` is equal to the input integer `first`.
+- For each index `i` from 0 to `n - 2`, the element at index `i + 1` of `arr` is equal to the XOR of the elements at index `i` and `i + 1` of `encoded`.

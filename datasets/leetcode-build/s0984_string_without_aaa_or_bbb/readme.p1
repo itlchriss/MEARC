@@ -1,0 +1,11 @@
+Preconditions:
+- The method takes two integer parameters `a` and `b`.
+- The values of `a` and `b` are non-negative integers.
+- The values of `a` and `b` are within the range of 0 to 100.
+
+Postconditions:
+- The method returns a string `s`.
+- The length of the string `s` is equal to the sum of `a` and `b`.
+- The string `s` contains exactly `a` occurrences of the letter 'a' and exactly `b` occurrences of the letter 'b'.
+- The substring 'aaa' does not occur in the string `s`.
+- The substring 'bbb' does not occur in the string `s`.

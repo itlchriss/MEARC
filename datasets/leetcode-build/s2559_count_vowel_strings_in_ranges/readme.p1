@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `words` is not null.
+- The input array `queries` is not null.
+- The length of `words` is greater than or equal to the maximum value of `r` in `queries`.
+- The length of each string in `words` is between 1 and 40.
+- Each string in `words` consists only of lowercase English letters.
+- The sum of the lengths of all strings in `words` is less than or equal to 3 * 10^5.
+- The length of `queries` is between 1 and 10^5.
+- Each query in `queries` has a valid range, where 0 <= l <= r < length of `words`.
+
+Postconditions:
+- The output array `ans` is not null.
+- The length of `ans` is equal to the length of `queries`.
+- Each element in `ans` is an integer.
+- The value of each element in `ans` is the number of strings in the range l to r (inclusive) of `words` that start and end with a vowel.

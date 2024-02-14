@@ -1,0 +1,19 @@
+Preconditions:
+- The expression must be a valid string consisting of lowercase English letters, digits, '+', '-', '*', '(', ')', and ' '.
+- The expression must not contain any leading or trailing spaces.
+- All tokens in the expression must be separated by a single space.
+- The evalvars array must contain valid variable names consisting of lowercase English letters.
+- The evalints array must contain valid integer values between -100 and 100.
+- The length of the expression must be between 1 and 250.
+- The length of each evalvars string must be between 1 and 20.
+- The length of the evalvars array must be between 0 and 100.
+- The length of the evalints array must be the same as the length of the evalvars array.
+
+Postconditions:
+- The output list must contain tokens representing the simplified expression.
+- Each term of free variables with a non-zero coefficient must be written in sorted order lexicographically.
+- Terms must have degrees equal to the number of free variables being multiplied, counting multiplicity.
+- The largest degree terms must be placed first in the output list, breaking ties by lexicographic order ignoring the leading coefficient of the term.
+- The leading coefficient of each term must be placed directly to the left with an asterisk separating it from the variables (if they exist).
+- A leading coefficient of 1 must still be printed.
+- Terms (including constant terms) with coefficient 0 must not be included in the output list.

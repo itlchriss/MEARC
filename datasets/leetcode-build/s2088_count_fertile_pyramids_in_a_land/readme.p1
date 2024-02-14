@@ -1,0 +1,20 @@
+Preconditions:
+- The input grid is a rectangular binary matrix with dimensions m x n.
+- The grid is 0-indexed.
+- The grid represents the farmland, where each cell is either fertile (1) or barren (0).
+- All cells outside the grid are considered barren.
+
+Postconditions:
+- The method returns the total number of pyramidal and inverse pyramidal plots found in the grid.
+- A pyramidal plot is a set of cells that:
+  - Contains more than 1 cell.
+  - All cells in the plot are fertile (1).
+  - The apex of the pyramid is the topmost cell of the pyramid.
+  - The height of the pyramid is the number of rows it covers.
+  - The plot comprises cells (i, j) where r <= i <= r + h - 1 and c - (i - r) <= j <= c + (i - r), where (r, c) is the apex of the pyramid and h is its height.
+- An inverse pyramidal plot is a set of cells that:
+  - Contains more than 1 cell.
+  - All cells in the plot are fertile (1).
+  - The apex of the inverse pyramid is the bottommost cell of the inverse pyramid.
+  - The height of the inverse pyramid is the number of rows it covers.
+  - The plot comprises cells (i, j) where r - h + 1 <= i <= r and c - (r - i) <= j <= c + (r - i), where (r, c) is the apex of the inverse pyramid and h is its height.

@@ -1,0 +1,11 @@
+Preconditions:
+- The input list `nums` must not be null.
+- The input list `nums` must have at least one element.
+- The integers `l` and `r` must be non-negative.
+- The integer `l` must be less than or equal to `r`.
+- The sum of the elements in `nums` must not exceed 20,000.
+
+Postconditions:
+- The method returns an integer.
+- The returned integer is the count of sub-multisets within `nums` where the sum of elements in each subset falls within the inclusive range of `[l, r]`.
+- The returned integer is modulo 1,000,000,007.

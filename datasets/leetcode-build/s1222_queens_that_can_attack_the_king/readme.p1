@@ -1,0 +1,11 @@
+Preconditions:
+- The chessboard is an 8x8 grid.
+- The input array `queens` contains the coordinates of the Black Queens.
+- The input array `king` contains the coordinates of the White King.
+- The coordinates in `queens` and `king` are valid and within the range of the chessboard (0 to 7).
+- There is at most one piece in each cell of the chessboard.
+
+Postconditions:
+- The method returns a list of coordinates representing the queens that can attack the king.
+- The returned list may be empty if no queens can attack the king.
+- The order of the coordinates in the returned list does not matter.

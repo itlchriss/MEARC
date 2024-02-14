@@ -29,21 +29,33 @@
   arguments:
   - (x)
   interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] >= (x)[k + 1]
-- term: greater than or equal to
+- term: gtoet
   syntax:
   - JJ
-  - JJR
-  - VBG
   arity: 2
   arguments:
   - (x)
   - (y)
   interpretation: (x) >= (y)
-- term: less than or equal to
+- term: gt
   syntax:
   - JJ
-  - JJR
-  - VBG
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) > (y)
+- term: lt
+  syntax:
+  - JJ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) < (y)
+- term: ltoet
+  syntax:
+  - JJ
   arity: 2
   arguments:
   - (x)
@@ -79,17 +91,6 @@
   specific_arg_types:
   - '1'
   interpretation: (x).length
-- term: equals to
-  syntax:
-  - JJ
-  - JJR
-  - VBG
-  - VBZ
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: (x) == (y)
 - term: equal to
   syntax:
   - VBG
@@ -442,5 +443,12 @@
   arguments:
   - (x)
   interpretation: (x) != null
-- term: unique
-  syntax: 
+- term: equal
+  syntax:
+  - JJ
+  arity: 2
+  arguments:
+  - Subj
+  - Dat
+  interpretation: (Subj) == (Dat)
+

@@ -1,0 +1,14 @@
+Preconditions:
+- The lengths of the `creators`, `ids`, and `views` arrays are all equal.
+- The length of the arrays is at least 1 and at most 10^5.
+- The lengths of the `creators[i]` and `ids[i]` strings are at least 1 and at most 5.
+- The `creators[i]` and `ids[i]` strings consist only of lowercase English letters.
+- The `views[i]` values are non-negative integers.
+
+Postconditions:
+- The method returns a 2D array of strings.
+- Each element in the returned array is a 2-element array of strings.
+- The returned array contains the creators with the highest popularity and the ids of their most viewed videos.
+- If multiple creators have the highest popularity, all of them are included in the returned array.
+- If multiple videos have the highest view count for a creator, the lexicographically smallest id is included in the returned array.
+- The order of the elements in the returned array can be arbitrary.

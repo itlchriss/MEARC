@@ -1,0 +1,6 @@
+The method returns an integer representing the minimum number of steps required to spell all the characters in the keyword.
+The characters in `ring` are rotated clockwise or anticlockwise to align each character of `key` at the "12:00" direction.
+Each rotation of the ring counts as one step.
+If a character in `key` is already aligned at the "12:00" direction, pressing the center button counts as one step.
+After pressing the center button, the method proceeds to spell the next character in `key`.
+If all characters in `key` have been spelled, the method finishes and returns the total number of steps taken.

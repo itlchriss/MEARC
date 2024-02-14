@@ -1,0 +1,9 @@
+Preconditions:
+- The input list `usageLimits` must not be null.
+- The length of the input list `usageLimits` must be greater than or equal to 1.
+- Each element in the input list `usageLimits` must be greater than or equal to 1.
+- Each element in the input list `usageLimits` must be less than or equal to 10^9.
+
+Postconditions:
+- The return value must be an integer.
+- The return value must be the maximum number of groups that can be created while satisfying the given conditions.

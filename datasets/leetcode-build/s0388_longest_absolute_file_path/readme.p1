@@ -1,0 +1,8 @@
+Preconditions:
+- The input string must not be null.
+- The input string must not be empty.
+- The input string must be in the correct format, with directories and files separated by new line characters and indented using tab characters.
+
+Postconditions:
+- The method returns an integer representing the length of the longest absolute path to a file in the file system.
+- If there is no file in the system, the method returns 0.

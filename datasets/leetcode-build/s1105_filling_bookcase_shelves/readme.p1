@@ -1,0 +1,14 @@
+Preconditions:
+- The input array `books` is not null.
+- The input array `books` has at least one element.
+- The input integer `shelfWidth` is greater than or equal to 1.
+- The thickness and height of each book in the input array `books` are greater than or equal to 1.
+- The thickness of each book in the input array `books` is less than or equal to `shelfWidth`.
+- The height of each book in the input array `books` is less than or equal to 1000.
+
+Postconditions:
+- The output is an integer representing the minimum possible height of the total bookshelf.
+- The sum of the heights of the shelves is equal to the output.
+- The order of the books on each shelf is the same as the given sequence of books.
+- The sum of the thicknesses of the books on each shelf is less than or equal to `shelfWidth`.
+- The total height of the bookcase has increased by the maximum height of the books placed on each shelf.

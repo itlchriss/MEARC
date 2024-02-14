@@ -1,0 +1,12 @@
+****
+The input `n` is a positive integer representing the number of vertices in the graph.
+The input `edges` is a 2D integer array representing the edges in the graph.
+The length of `edges` is at least `n - 1` and at most `2 * 10^4` or `n * (n - 1) / 2`, whichever is smaller.
+Each element `edges[i]` is a 2-element array `[u_i, v_i]` representing a bi-directional edge between vertex `u_i` and vertex `v_i`.
+Each vertex pair is connected by at most one edge.
+No vertex has an edge to itself.
+The input `time` is a positive integer representing the time taken to traverse any edge.
+The input `change` is a positive integer representing the time it takes for a traffic signal to change its color from green to red or vice versa.
+All signals change at the same time.
+The journey starts when all signals have just turned green.
+**

@@ -1,0 +1,11 @@
+Preconditions:
+- The input `n` represents the number of cities, and it must be greater than or equal to 2 and less than or equal to 5 * 10^4.
+- The input `connections` is a 2D array representing the roads between cities. It must have a length of `n - 1`.
+- Each element in `connections` is an array of length 2, representing a road from city `a` to city `b`.
+- The values of `a` and `b` in each element of `connections` must be between 0 and `n - 1`, inclusive.
+- The values of `a` and `b` in each element of `connections` must be different.
+
+Postconditions:
+- The method returns an integer representing the minimum number of edges that need to be changed in order for each city to be able to reach city 0.
+- The returned value is non-negative.
+- It is guaranteed that each city can reach city 0 after the edges are reoriented.

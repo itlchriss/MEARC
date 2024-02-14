@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `balls` must not be null.
+- The length of the input array `balls` must be greater than or equal to 1 and less than or equal to 8.
+- Each element in the input array `balls` must be greater than or equal to 1 and less than or equal to 6.
+- The sum of all elements in the input array `balls` must be an even number.
+
+Postconditions:
+- The method should return a double value representing the probability that the two boxes have the same number of distinct balls.
+- The returned probability value should be within 10^-5 of the actual value.

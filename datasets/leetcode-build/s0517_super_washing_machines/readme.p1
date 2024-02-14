@@ -1,0 +1,10 @@
+Preconditions:
+- The input array `machines` is not null.
+- The length of the input array `machines` is greater than or equal to 1.
+- The length of the input array `machines` is less than or equal to 10^4.
+- The elements of the input array `machines` are non-negative integers.
+- The number of dresses in each washing machine is less than or equal to 10^5.
+
+Postconditions:
+- The method returns an integer representing the minimum number of moves required to make all the washing machines have the same number of dresses.
+- If it is not possible to make all the washing machines have the same number of dresses, the method returns -1.

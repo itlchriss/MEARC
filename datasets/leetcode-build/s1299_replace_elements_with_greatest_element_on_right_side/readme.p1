@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `arr` is not null.
+- The length of the input array `arr` is greater than or equal to 1.
+- Each element in the input array `arr` is an integer.
+- Each element in the input array `arr` is greater than or equal to 1.
+- Each element in the input array `arr` is less than or equal to 10^5.
+
+Postconditions:
+- The output array has the same length as the input array.
+- The last element of the output array is -1.
+- For each element in the output array except the last one, the value is the greatest element among the elements to its right in the input array.

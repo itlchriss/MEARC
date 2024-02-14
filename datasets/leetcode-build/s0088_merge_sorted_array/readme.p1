@@ -1,0 +1,12 @@
+Preconditions:
+- The input arrays `nums1` and `nums2` are sorted in non-decreasing order.
+- The length of `nums1` is equal to `m + n`.
+- The length of `nums2` is equal to `n`.
+- The values of `m` and `n` are within the range of 0 to 200.
+- The values of `nums1[i]` and `nums2[j]` are within the range of -10^9 to 10^9.
+
+Postconditions:
+- The elements of `nums1` are merged with the elements of `nums2` in non-decreasing order.
+- The merged array is stored inside `nums1`.
+- The first `m` elements of `nums1` represent the merged elements.
+- The last `n` elements of `nums1` are set to 0 and should be ignored.

@@ -1,0 +1,16 @@
+Preconditions:
+- The input array `edges` is not null.
+- The input array `cost` is not null.
+- The length of `edges` is equal to `n - 1`, where `n` is the number of nodes.
+- The length of `cost` is equal to `n`.
+- The values in `edges` are valid node indices, ranging from `0` to `n - 1`.
+- The values in `cost` are valid cost values, ranging from `-10^4` to `10^4`.
+- The input tree is undirected and rooted at node `0`.
+
+Postconditions:
+- The output array `coin` is not null.
+- The length of `coin` is equal to `n`.
+- The values in `coin` represent the number of coins placed at each node.
+- For each node `i` in the tree:
+  - If the size of the subtree of node `i` is less than `3`, `coin[i]` is equal to `1`.
+  - Otherwise, `coin[i]` is equal to the maximum product of cost values assigned to `3` distinct nodes in the subtree of node `i`. If this product is negative, `coin[i]` is equal to `0`.

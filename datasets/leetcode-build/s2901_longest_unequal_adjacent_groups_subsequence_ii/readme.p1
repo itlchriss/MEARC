@@ -1,0 +1,13 @@
+Preconditions:
+- The input integer `n` is greater than or equal to 1.
+- The length of the `words` array is equal to `n`.
+- The length of the `groups` array is equal to `n`.
+- Each string in the `words` array consists of lowercase English letters.
+- Each string in the `words` array has a length between 1 and 10 (inclusive).
+- Each element in the `groups` array is between 1 and `n` (inclusive).
+- The `words` array consists of distinct strings.
+
+Postconditions:
+- The returned list contains strings from the `words` array.
+- The returned list corresponds to a subsequence of indices from the original array `[0, 1, ..., n - 1]`.
+- The returned list satisfies the conditions of having unequal adjacent groups and a hamming distance of 1 between adjacent words.

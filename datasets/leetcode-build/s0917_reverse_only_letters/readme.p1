@@ -1,0 +1,11 @@
+Preconditions:
+- The input string `s` is not null.
+- The length of the input string `s` is between 1 and 100.
+- The characters in the input string `s` have ASCII values in the range [33, 122].
+- The input string `s` does not contain the characters '"' or '\'.
+
+Postconditions:
+- The output string is not null.
+- The length of the output string is the same as the input string.
+- The characters in the output string that are not English letters remain in the same position as in the input string.
+- The English letters in the output string are reversed compared to the input string.

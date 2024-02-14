@@ -1,0 +1,11 @@
+Preconditions:
+- The input arrays `nums` and `removeQueries` must not be null.
+- The length of `nums` and `removeQueries` must be equal.
+- The length of `nums` and `removeQueries` must be greater than or equal to 1.
+- The values in `nums` must be positive integers.
+- The values in `removeQueries` must be valid indices for `nums`.
+
+Postconditions:
+- The length of the returned array `answer` must be equal to the length of `nums`.
+- The values in `answer` must be integers.
+- The values in `answer` must represent the maximum segment sum after applying each removal query.

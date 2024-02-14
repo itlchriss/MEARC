@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `arr` is not null.
+- The length of the input array `arr` is at least 2.
+- The input array `arr` is sorted in strictly increasing order.
+- The first element of the input array `arr` is 1.
+- All elements of the input array `arr` are prime numbers.
+- The input integer `k` is greater than or equal to 1.
+- The input integer `k` is less than or equal to `arr.length * (arr.length - 1) / 2`.
+
+Postconditions:
+- The output array `answer` is not null.
+- The length of the output array `answer` is 2.
+- The first element of the output array `answer` is equal to `arr[i]`, where `i` is the index of the numerator in the fraction.
+- The second element of the output array `answer` is equal to `arr[j]`, where `j` is the index of the denominator in the fraction.
+- The fraction `arr[i] / arr[j]` is the `k`-th smallest fraction considered.

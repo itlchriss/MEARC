@@ -1,0 +1,10 @@
+Preconditions:
+- The input `target` is a positive integer.
+- The input `types` is a 2D integer array with dimensions `n x 2`, where `n` is a positive integer.
+- Each element in `types` is a 2-element array `[count_i, marks_i]`, where `count_i` and `marks_i` are positive integers.
+- The sum of all `count_i` values in `types` is greater than or equal to `target`.
+
+Postconditions:
+- The output is an integer representing the number of ways to earn exactly `target` points in the exam.
+- The output is non-negative.
+- The output is less than or equal to `10^9 + 7`.

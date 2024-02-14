@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `nodeValues` must not be null.
+- The length of the input array `nodeValues` must be equal to `n`.
+- The input array `edges` must not be null.
+- The length of the input array `edges` must be equal to the number of edges in the graph.
+- The input integer `maxNumberOfEdges` must be non-negative.
+
+Postconditions:
+- The method returns an integer representing the maximum star sum of a star graph containing at most `k` edges.
+- The returned maximum star sum is the sum of the values of all the nodes present in the star graph.
+- The returned maximum star sum is the maximum possible sum among all star graphs with at most `k` edges.
+- If there are no edges in the graph (i.e., `edges` is an empty array), the method returns the value of the center node (i.e., `vals[0]`).
+- If `k` is equal to 0, the method returns the value of the center node (i.e., `vals[0]`).
+- If `k` is equal to the number of edges in the graph, the method returns the sum of the values of all nodes in the graph (i.e., the sum of all elements in `nodeValues`).
+- The method does not modify the input arrays `nodeValues` and `edges`.

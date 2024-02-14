@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `nums` is not null.
+- The input array `nums` has a length `n`.
+- The input integer `val` is not null.
+
+Postconditions:
+- The relative order of the elements in `nums` may be changed.
+- The first `k` elements of `nums` hold the final result, where `k` is the number of elements after removing the occurrences of `val`.
+- The remaining elements in `nums` beyond the first `k` elements do not matter.
+- The method returns `k` after placing the final result in the first `k` slots of `nums`.
+- The input array `nums` is modified in-place with O(1) extra memory.
+- The modified `nums` array is sorted with no values equaling `val`.
+- The length of the modified `nums` array is equal to `k`.
+- The modified `nums` array can be in any order as long as it satisfies the above conditions.
+- The method does not allocate extra space for another array.

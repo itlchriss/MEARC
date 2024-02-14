@@ -1,9 +1,0 @@
-Preconditions:
-- The method `addCar` should only be called after the `ParkingSystem` object has been instantiated.
-- The parameters `big`, `medium`, and `small` passed to the `ParkingSystem` constructor should be non-negative integers.
-
-Postconditions:
-- If there is an available parking space of the specified `carType`, the method should return `true`.
-- If there is no available parking space of the specified `carType`, the method should return `false`.
-- If the method returns `true`, it should also update the available parking spaces for the specified `carType` by decrementing the corresponding count.
-- If the method returns `false`, it should not modify the available parking spaces for any `carType`.

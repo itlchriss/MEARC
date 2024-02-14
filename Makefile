@@ -8,7 +8,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o main.o 
+OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o event.o alias.o
 DEBUG   ?=      1
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -75,7 +75,7 @@ ${BUILD}:
 ${BIN}:
 	mkdir -p $(BIN)
 
-main: $(OBJS)
+main: $(OBJS) event.o
 	$(CC) $(CFLAGS) $(addprefix $(BUILD)/, $(OBJS)) -o $(BIN)/main -ll $(LOCLINK) -lyaml
 
 lex-only: lex
@@ -111,6 +111,12 @@ sst.o  : $(SRC)/sst.c
 cst.o  : $(SRC)/cst.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cst.o $<
 
+event.o  : $(SRC)/event.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/event.o $<
+
+alias.o  : $(SRC)/alias.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/alias.o $<
+
 opt.o  : $(SRC)/opt.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/opt.o $<
 
@@ -128,14 +134,16 @@ sem.o  : $(SRC)/sem.c
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
-parser.o						:       $(BUILD)/tok.h
+parser.o						:       $(BUILD)/tok.h $(INCL)/event.h
 lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h
-main.o							:   $(INCL)/si.h
+main.o							:   $(INCL)/si.h $(INCL)/event.h $(INCL)/alias.h
 util.o							:   $(INCL)/util.h
 cst.o							:   $(INCL)/util.h 
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h
+alias.o							:	$(INCL)/alias.h
 si.o							:   $(INCL)/si.h 
+event.o							: 	$(INCL)/event.h
 clean:
 	rm -rf $(BUILD)/*
 	rm ./parser.output

@@ -1,0 +1,15 @@
+Preconditions:
+- The input array `coins` must have a length of `n`.
+- The input array `edges` must have a length of `n - 1`.
+- Each element in the input array `coins` must be either `0` or `1`.
+- Each element in the input array `edges` must be a valid index of a node in the tree.
+- Each element in the input array `edges` must be unique.
+- The input array `edges` must represent a valid tree.
+
+Postconditions:
+- The method should return an integer representing the minimum number of edges needed to collect all the coins and go back to the initial vertex.
+- The method should return `-1` if it is not possible to collect all the coins and go back to the initial vertex.
+- The method should return `0` if there are no coins in the tree.
+- The method should return `0` if there is only one vertex in the tree and it has a coin.
+- The method should return `0` if there is only one vertex in the tree and it does not have a coin.
+- The method should return the minimum number of edges needed to collect all the coins and go back to the initial vertex, considering all possible starting vertices in the tree.

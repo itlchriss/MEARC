@@ -1,0 +1,13 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The input matrix `mat` is a 2D array of integers.
+- The input matrix `mat` has at least one row and one column.
+- The input matrix `mat` has dimensions `m x n`, where `m` is the number of rows and `n` is the number of columns.
+- The values in the input matrix `mat` are positive integers.
+
+Postconditions:
+- The output matrix is a 2D array of integers.
+- The output matrix has the same dimensions as the input matrix `mat`.
+- Each matrix diagonal in the output matrix is sorted in ascending order.
+- The values in each matrix diagonal are the same as the values in the corresponding matrix diagonal of the input matrix `mat`.
+- The values in each row and column of the output matrix are in the same order as the corresponding row and column of the input matrix `mat`, except for the sorted matrix diagonals.

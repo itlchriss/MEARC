@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `arr` must have a length greater than or equal to 3.
+- The elements of `arr` must be integers between 0 and 100.
+- The target value `target` must be an integer between 0 and 300.
+
+Postconditions:
+- The method should return an integer value.
+- The returned value should be the number of tuples `i, j, k` such that `i < j < k` and `arr[i] + arr[j] + arr[k] == target`.
+- The returned value should be modulo `10^9 + 7`.

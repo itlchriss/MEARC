@@ -1,0 +1,9 @@
+The output is an integer array `answers` of length equal to the length of `queries`.
+Each element `answers[j]` in the output array is the answer to the `j-th` query.
+The answer to the `j-th` query is the number of pairs of nodes `(a, b)` that satisfy both of the following conditions:
+- `a < b`
+- `incident(a, b) > queries[j]`
+The `incident(a, b)` function is defined as the number of edges that are connected to either node `a` or `b`.
+The calculations for `incident(a, b)` are performed based on the given graph and edges.
+The answer to each query is calculated correctly based on the given conditions and the calculated `incident(a, b)` values.
+The output array `answers` contains the correct answers for all the queries.

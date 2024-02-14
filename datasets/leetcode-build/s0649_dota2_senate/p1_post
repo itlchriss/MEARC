@@ -1,0 +1,11 @@
+The output is a string that represents the party that announces the victory and changes the Dota2 game.
+The output is either "Radiant" or "Dire".
+Additional behavioral requirements:
+The round-based procedure starts from the first senator to the last senator in the given order.
+Each senator can exercise one of the two rights: ban one senator's right or announce the victory.
+If a senator chooses to ban another senator's right, the senator loses all their rights in the current round and all the following rounds.
+If a senator chooses to announce the victory, they can only do so if all the senators who still have rights to vote are from the same party.
+If a senator's right has been banned, they cannot exercise any rights anymore.
+The procedure will last until the end of voting.
+All the senators who have lost their rights will be skipped during the procedure.
+Each senator will play the best strategy for their own party.

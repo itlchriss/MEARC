@@ -1,0 +1,15 @@
+Preconditions:
+- The input `paths` is not null.
+- The length of `paths` is greater than or equal to 1.
+- Each element in `paths` is not null.
+- Each element in `paths` is a valid directory info string.
+- Each file path in the directory info string is a valid file path.
+- Each file content in the directory info string is a valid file content.
+
+Postconditions:
+- The output is not null.
+- The output is a list of groups of duplicate file paths.
+- Each group in the output contains all the file paths of the files that have the same content.
+- Each file path in the output is a string in the format "directory_path/file_name.txt".
+- The order of the groups in the output can be any order.
+- The order of the file paths within each group in the output can be any order.

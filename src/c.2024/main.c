@@ -4,6 +4,8 @@
 #include "core.h"
 #include "cg.h"
 #include "si.h"
+#include "event.h"
+#include "alias.h"
 
 extern FILE *yyin;
 
@@ -17,9 +19,14 @@ struct queue *cst;
 //  predicate stack, marking the positions of the predicate nodes
 struct queue *predicates;
 
+struct queue *events;
+
 struct queue *operators;
 
 struct queue *silist;
+
+// a table holding the relationship of alias, such as (x = y) in the higher order logic
+struct queue *alias;
 
 struct astnode *root;
 
@@ -87,6 +94,8 @@ int main(int argc, char** argv) {
     cst = initqueue();
     operators = initqueue();
     predicates = initqueue();
+    events = initqueue();
+    alias = initqueue();
 
     #if INFO      
     showprocessinfo("Start Parsing");
@@ -107,6 +116,9 @@ int main(int argc, char** argv) {
     #if CSTDEBUG
     showqueue(cst, showcstsymbol);
     #endif
+    #if EVENTDEBUG
+    showqueue(events, showevent);
+    #endif
 
     #if INFO
     showprocessinfo("Parsing finished");
@@ -125,6 +137,13 @@ int main(int argc, char** argv) {
     */
     root = ast;
     #if INFO
+    showprocessinfo("Start operator resolution");
+    #endif
+    opresolution(operators, cst);        
+    #if INFO
+    showprocessinfo("Finished operator resolution");
+    #endif
+    #if INFO
     showprocessinfo("Start semantic interpretation analysis");
     #endif
     // siidentification(silist);
@@ -137,13 +156,7 @@ int main(int argc, char** argv) {
     #if INFO
     showprocessinfo("Finished semantic interpretation synthesis");
     #endif
-    #if INFO
-    showprocessinfo("Start operator resolution");
-    #endif
-    opresolution(operators, cst);        
-    #if INFO
-    showprocessinfo("Finished operator resolution");
-    #endif
+    
     ast = root;
     #if ASTDEBUG
     showast(ast, 0);
@@ -185,6 +198,12 @@ int main(int argc, char** argv) {
     }
     if (operators) {
         deallocatequeue(operators, NULL);
+    }
+    if (events) {
+        deallocatequeue(events, deallocateevent);
+    }
+    if (alias) {
+        deallocatequeue(alias, NULL);
     }
     return 0; 
 }

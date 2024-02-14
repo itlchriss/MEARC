@@ -1,0 +1,14 @@
+Preconditions:
+- The input values `length`, `width`, `height`, and `mass` are integers.
+- The values of `length`, `width`, and `height` are between 1 and 10^5 (inclusive).
+- The value of `mass` is between 1 and 10^3 (inclusive).
+
+Postconditions:
+- The method returns a string representing the category of the box.
+- If any of the dimensions of the box is greater or equal to 10^4, the category is "Bulky".
+- If the volume of the box is greater or equal to 10^9, the category is "Bulky".
+- If the mass of the box is greater or equal to 100, the category is "Heavy".
+- If the box is both "Bulky" and "Heavy", the category is "Both".
+- If the box is neither "Bulky" nor "Heavy", the category is "Neither".
+- If the box is "Bulky" but not "Heavy", the category is "Bulky".
+- If the box is "Heavy" but not "Bulky", the category is "Heavy".

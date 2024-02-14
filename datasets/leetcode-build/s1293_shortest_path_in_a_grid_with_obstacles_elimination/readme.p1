@@ -1,0 +1,10 @@
+Preconditions:
+- The input grid is a valid m x n integer matrix.
+- The grid contains only 0s and 1s.
+- The upper left corner (0, 0) and the lower right corner (m - 1, n - 1) are both empty cells (0s).
+- The value of k is a positive integer.
+- The value of k is less than or equal to the total number of cells in the grid (m * n).
+
+Postconditions:
+- The method returns an integer representing the minimum number of steps to walk from the upper left corner to the lower right corner, considering the given constraints.
+- If it is not possible to find a walk from the upper left corner to the lower right corner while eliminating at most k obstacles, the method returns -1.

@@ -1,0 +1,6 @@
+The output string `num` is not null.
+The length of `num` is equal to the length of `pattern` + - `num` consists of the digits '1' to '9', where each digit is used at most once.
+For each index i in `pattern`:
+- If `pattern[i]` is 'I', then `num[i]` is less than `num[i + 1]`.
+- If `pattern[i]` is 'D', then `num[i]` is greater than `num[i + 1]`.
+`num` is the lexicographically smallest possible string that meets the conditions.

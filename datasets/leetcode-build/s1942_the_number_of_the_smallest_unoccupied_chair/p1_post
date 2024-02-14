@@ -1,0 +1,8 @@
+The method returns an integer representing the chair number that the `targetFriend` will sit on.
+Additional behavioral requirements:
+The method should handle the case when the `times` array is empty and return -1 or throw an exception indicating an invalid input.
+The method should handle the case when the `targetFriend` is out of the range of valid friend numbers (0 to n-1) and return -1 or throw an exception indicating an invalid input.
+The method should handle the case when there are no unoccupied chairs available and return -1 or throw an exception indicating that all chairs are occupied.
+The method should handle the case when the `times` array contains overlapping time intervals and return the correct chair number based on the arrival and leaving times.
+The method should handle the case when the `times` array contains negative arrival or leaving times and return -1 or throw an exception indicating an invalid input.
+The method should handle the case when the `times` array contains arrival or leaving times that are greater than 10^5 and return -1 or throw an exception indicating an invalid input.

@@ -1,0 +1,12 @@
+Preconditions:
+- The input array `sentences` is not null.
+- The length of the input array `sentences` is greater than or equal to 1.
+- Each element in the input array `sentences` is not null.
+- Each element in the input array `sentences` is a valid sentence (a list of words separated by a single space).
+- Each element in the input array `sentences` does not have leading or trailing spaces.
+- All the words in each element of the input array `sentences` are separated by a single space.
+
+Postconditions:
+- The method returns an integer representing the maximum number of words found in a single sentence.
+- The returned integer is greater than or equal to 1.
+- The returned integer is less than or equal to the total number of words in the input array `sentences`.

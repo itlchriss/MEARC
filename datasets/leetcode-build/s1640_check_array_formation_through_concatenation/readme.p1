@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `arr` is not null.
+- The input array `pieces` is not null.
+- The length of `pieces` is greater than or equal to 1.
+- The length of `arr` is greater than or equal to the length of `pieces`.
+- The sum of the lengths of all arrays in `pieces` is equal to the length of `arr`.
+- The integers in `arr` are distinct.
+- The integers in `pieces` are distinct.
+
+Postconditions:
+- The method returns `true` if it is possible to form the array `arr` from `pieces`, otherwise it returns `false`.

@@ -1,0 +1,12 @@
+Preconditions:
+1. The input `cost` is a non-empty list of lists.
+2. The length of `cost` is equal to `size1`.
+3. Each sublist in `cost` has a length equal to `size2`.
+4. `size1` is greater than or equal to `size2`.
+5. The values in `cost` are non-negative integers.
+6. The values in `cost` are less than or equal to 100.
+
+Postconditions:
+1. The method returns an integer representing the minimum cost to connect the two groups.
+2. The minimum cost is non-negative.
+3. The minimum cost is less than or equal to 100.

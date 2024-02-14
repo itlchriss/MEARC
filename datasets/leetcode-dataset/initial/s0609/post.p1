@@ -1,9 +1,0 @@
-Preconditions:
-- The `paths` array is not null.
-- The `paths` array contains at least one element.
-
-Postconditions:
-- The method returns a list of lists of strings, where each inner list represents a group of duplicate files.
-- Each inner list contains the paths of the duplicate files in the file system.
-- The order of the inner lists in the returned list can be in any order.
-- The order of the paths within each inner list can be in any order.

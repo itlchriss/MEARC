@@ -1,0 +1,11 @@
+Preconditions:
+- The method takes two integer parameters, `num` and `t`.
+- `num` is a positive integer greater than or equal to 1.
+- `t` is a positive integer greater than or equal to 1.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value is the maximum achievable number.
+- The maximum achievable number can be obtained by increasing or decreasing `x` by 1, and simultaneously increasing or decreasing `num` by 1, no more than `t` times.
+- The maximum achievable number is equal to `num` after applying the operations.
+- There exists at least one achievable number.

@@ -1,0 +1,11 @@
+Preconditions:
+- The input string `s` is not null.
+- The input array `spaces` is not null.
+- The length of `s` is greater than or equal to 1.
+- The length of `spaces` is greater than or equal to 1.
+- The values in `spaces` are strictly increasing.
+- The values in `spaces` are within the range of indices in `s`.
+
+Postconditions:
+- The modified string with spaces inserted before the characters at the indices specified in `spaces` is returned.
+- The length of the modified string is equal to the length of `s` plus the number of spaces inserted.

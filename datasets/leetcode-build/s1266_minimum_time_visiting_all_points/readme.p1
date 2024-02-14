@@ -1,0 +1,14 @@
+Preconditions:
+- The input array `points` is not null.
+- The length of the input array `points` is greater than or equal to 2.
+- Each element in the input array `points` is not null.
+- Each element in the input array `points` has a length of 2.
+- The coordinates of each point in the input array `points` are integers.
+- The coordinates of each point in the input array `points` are within the range of -1000 to 1000.
+
+Postconditions:
+- The return value is an integer representing the minimum time in seconds to visit all the points in the order given by `points`.
+- The return value is greater than or equal to 0.
+- The return value is the sum of the time taken to move from each point to the next point in the order given by `points`.
+- The return value is the minimum possible time to visit all the points in the order given by `points` using the allowed movements (vertical, horizontal, or diagonal).
+- The return value is the same for any two arrays `points` that have the same elements in the same order.

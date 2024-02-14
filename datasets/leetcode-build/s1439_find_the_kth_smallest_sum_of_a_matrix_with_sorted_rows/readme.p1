@@ -1,0 +1,10 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The number of rows `m` in `mat` is greater than - The number of columns `n` in `mat` is greater than - The number of rows `m` in `mat` is equal to the length of `mat`.
+- The number of columns `n` in `mat` is equal to the length of `mat[i]` for all `i` from 0 to `m-1`.
+- The elements in each row of `mat` are sorted in non-decreasing order.
+- The value of `k` is greater than - The value of `k` is less than or equal to the minimum of 200 and `n^m`, where `n^m` represents `n` raised to the power of `m`.
+- The elements in `mat` are positive integers.
+- The elements in `mat` are less than or equal to 
+Postconditions:
+- The method returns an integer representing the `k`th smallest array sum among all possible arrays.

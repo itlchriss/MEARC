@@ -1,0 +1,13 @@
+Preconditions:
+- The input `board` is a non-null `m x n` char matrix.
+- The input `click` is a non-null integer array of length 2.
+- The value of `click[0]` is a valid row index in the `board` matrix.
+- The value of `click[1]` is a valid column index in the `board` matrix.
+- The value at `board[click[0]][click[1]]` is either `'M'` or `'E'`.
+
+Postconditions:
+- The value at `board[click[0]][click[1]]` is updated according to the rules of the minesweeper game.
+- If the value at `board[click[0]][click[1]]` is `'M'`, the game is over and the value is changed to `'X'`.
+- If the value at `board[click[0]][click[1]]` is `'E'` and there are no adjacent mines, it is changed to `'B'` and all adjacent unrevealed squares are revealed recursively.
+- If the value at `board[click[0]][click[1]]` is `'E'` and there is at least one adjacent mine, it is changed to a digit (`'1'` to `'8'`) representing the number of adjacent mines.
+- The board is returned when no more squares will be revealed.

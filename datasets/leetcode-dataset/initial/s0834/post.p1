@@ -1,8 +1,0 @@
-Preconditions:
-The input parameter `n` must be a positive integer representing the number of nodes in the tree.
-The input parameter `edges` must be a 2D array representing the edges between nodes in the tree.
-The number of rows in the `edges` array must be equal to `n-1`, as there can be at most `n-1` edges in a tree with `n` nodes.
-
-Postconditions:
-The method should return an array `answer` of length `n`.
-Each element `answer[i]` in the `answer` array should be an integer representing the sum of distances between the `i`th node in the tree and all other nodes.

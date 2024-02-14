@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `nums` is not null.
+- The length of `nums` is at least 2.
+- The integer `key` is present in `nums`.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value is one of the unique integers in `nums`.
+- The returned value is the integer `target` with the maximum count.
+- The count of `target` is the number of times `target` immediately follows an occurrence of `key` in `nums`.
+- The count of `target` is greater than or equal to the count of any other unique integer in `nums` that follows an occurrence of `key`.

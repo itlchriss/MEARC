@@ -1,0 +1,11 @@
+Preconditions:
+- The input equation must be a string.
+- The equation must contain only the characters '+', '-', 'x', and '='.
+- The equation must have exactly one '=' character.
+- The equation must consist of integers with an absolute value in the range [0, 100] without any leading zeros.
+- The variable 'x' must be present in the equation.
+
+Postconditions:
+- If there is no solution for the equation, the method should return the string "No solution".
+- If there are infinite solutions for the equation, the method should return the string "Infinite solutions".
+- If there is exactly one solution for the equation, the method should return a string in the form "x=#value", where #value is the value of 'x' as an integer.

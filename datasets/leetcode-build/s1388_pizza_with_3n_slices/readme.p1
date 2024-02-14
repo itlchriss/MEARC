@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `slices` is not null.
+- The length of the input array `slices` is a multiple of 3.
+- The length of the input array `slices` is between 3 and 500 (inclusive).
+- Each element in the input array `slices` is between 1 and 1000 (inclusive).
+
+Postconditions:
+- The return value is an integer representing the maximum possible sum of slice sizes that can be picked.
+- The return value is greater than or equal to 0.

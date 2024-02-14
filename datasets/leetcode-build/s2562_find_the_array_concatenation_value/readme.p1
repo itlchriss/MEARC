@@ -1,0 +1,13 @@
+Preconditions:
+- The input array `nums` is not null.
+- The length of `nums` is greater than or equal to 1.
+- The elements of `nums` are integers.
+- The elements of `nums` are greater than or equal to 1.
+- The elements of `nums` are less than or equal to 10^4.
+
+Postconditions:
+- The method returns a long value representing the concatenation value of `nums`.
+- The input array `nums` is modified such that it becomes empty after performing the operations.
+- The concatenation value of `nums` is calculated by repeatedly picking the first and last elements of `nums`, concatenating their values, and adding it to the concatenation value.
+- If `nums` has more than one element, the first and last elements are deleted after each operation.
+- If `nums` has only one element, it is deleted after the operation.

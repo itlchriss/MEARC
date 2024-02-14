@@ -1,0 +1,12 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of cities.
+- The input `paths` is a 2D integer array representing the paths of the friends.
+- The length of `paths` is equal to the number of friends `m`.
+- Each path in `paths` is represented by an integer array.
+- Each path in `paths` contains the visited cities in order.
+- Each path in `paths` may contain a city more than once, but the same city will not be listed consecutively.
+- The length of each path in `paths` is not greater than 10^- The same city is not listed multiple times consecutively in each path in `paths`.
+
+Postconditions:
+- The method returns an integer representing the length of the longest common subpath shared by every friend's path.
+- If there is no common subpath at all, the method returns 0.

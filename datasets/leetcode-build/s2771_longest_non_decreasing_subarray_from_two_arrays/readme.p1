@@ -1,0 +1,13 @@
+Preconditions:
+- The input arrays `nums1` and `nums2` are not null.
+- The lengths of `nums1` and `nums2` are equal.
+- The length of `nums1` and `nums2` is at least 1.
+- The elements in `nums1` and `nums2` are integers.
+- The elements in `nums1` and `nums2` are between 1 and 10^9 (inclusive).
+
+Postconditions:
+- The returned value is an integer representing the length of the longest non-decreasing subarray in `nums3`.
+- The length of `nums3` is equal to the length of `nums1` and `nums2`.
+- The elements in `nums3` are either from `nums1` or `nums2`.
+- The subarray in `nums3` starting from index 0 and ending at index `k` (0 <= k < n) is non-decreasing.
+- The length of the longest non-decreasing subarray in `nums3` is maximized.

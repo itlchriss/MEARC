@@ -1,0 +1,11 @@
+Preconditions:
+- The input matrix `mat` is not null.
+- The input matrix `mat` has at least one row and one column.
+- The input integer `k` is greater than or equal to 1.
+- The input integer `k` is less than or equal to the minimum of the number of rows and columns in `mat`.
+
+Postconditions:
+- The output matrix `answer` is not null.
+- The number of rows in the output matrix `answer` is equal to the number of rows in the input matrix `mat`.
+- The number of columns in the output matrix `answer` is equal to the number of columns in the input matrix `mat`.
+- For each element `answer[i][j]` in the output matrix `answer`, the value is equal to the sum of all elements `mat[r][c]` where `i - k <= r <= i + k`, `j - k <= c <= j + k`, and `(r, c)` is a valid position in the matrix.

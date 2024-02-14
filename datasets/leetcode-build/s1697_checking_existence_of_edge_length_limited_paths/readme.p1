@@ -1,0 +1,10 @@
+Preconditions:
+- The input `n` must be an integer greater than or equal to 2.
+- The input `edgeList` must be a non-empty array of arrays, where each inner array has a length of 3.
+- The input `queries` must be a non-empty array of arrays, where each inner array has a length of 3.
+- The values in `edgeList` and `queries` must satisfy the given constraints.
+
+Postconditions:
+- The output `answer` must be a boolean array with a length equal to the length of `queries`.
+- Each element in `answer` must be either `true` or `false`.
+- The values in `answer` must correspond to whether there is a path between the specified nodes in `queries` such that each edge on the path has a distance strictly less than the specified limit.

@@ -1,0 +1,13 @@
+Preconditions:
+- The input `segments` is a 2D integer array.
+- Each element `segments[i]` is an array of length 3.
+- The start value `start_i` of each segment is less than the end value `end_i`.
+- The color value `color_i` of each segment is distinct.
+
+Postconditions:
+- The output is a 2D array `painting`.
+- Each element `painting[j]` is an array of length 3.
+- The start value `left_j` of each segment in `painting` is less than the end value `right_j`.
+- The mixed color sum `mix_j` of each segment in `painting` is the sum of the mixed colors in the corresponding segments of the input `segments`.
+- The segments in `painting` are non-overlapping.
+- The segments in `painting` represent the minimum number of non-overlapping half-closed segments of mixed colors.

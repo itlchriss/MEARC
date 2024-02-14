@@ -1,0 +1,9 @@
+Preconditions:
+- The input integer `n` is a positive integer.
+- The input 2D integer array `queries` is not null.
+- The length of `queries` is greater than or equal to - The values of `row1_i`, `col1_i`, `row2_i`, and `col2_i` in each query are valid indices within the range of the matrix `mat`.
+
+Postconditions:
+- The matrix `mat` is modified by adding 1 to every element in the submatrix specified by each query.
+- The dimensions of the modified matrix `mat` remain the same as the original matrix.
+- The modified matrix `mat` is returned as the output.

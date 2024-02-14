@@ -1,0 +1,15 @@
+Preconditions:
+- The input `rects` is a non-empty array of non-overlapping axis-aligned rectangles.
+- Each rectangle in `rects` is represented by an array of length 4.
+- The first two elements of each rectangle array represent the coordinates of the bottom-left corner point.
+- The last two elements of each rectangle array represent the coordinates of the top-right corner point.
+- The coordinates of the rectangles are within the range of -10^9 to 10^9.
+- The width of each rectangle is less than or equal to 2000.
+- The height of each rectangle is less than or equal to 2000.
+
+Postconditions:
+- The `Solution` object is initialized with the given rectangles.
+- The `pick` method returns a random integer point `[u, v]` inside the space covered by one of the given rectangles.
+- The returned point `[u, v]` has integer coordinates.
+- Any integer point inside the space covered by one of the given rectangles is equally likely to be returned.
+- The `pick` method can be called multiple times and each time it should return a different random point.

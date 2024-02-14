@@ -1,0 +1,8 @@
+Preconditions:
+- The input integers `a` and `b` must be non-negative and less than 2^50.
+- The input integer `n` must be non-negative and less than or equal to 50.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value is the maximum value of `(a XOR x) * (b XOR x)` for all `x` where `0 <= x < 2^n`.
+- The returned value is modulo 10^9 + 7.

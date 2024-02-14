@@ -1,0 +1,9 @@
+1. The method returns an integer value.
+2. The returned integer value is a 32-bit signed integer.
+3. The returned integer value represents the conversion of the input string `str` to an integer.
+4. The returned integer value is positive if the input string `str` does not contain a `'-'` or `'+'` character.
+5. The returned integer value is negative if the input string `str` contains a `'-'` character.
+6. The returned integer value is clamped to the range [-2^31, 2^31 - 1] if it is outside this range.
+7. If the input string `str` does not contain any digits, the returned integer value is 0.
+8. The method ignores any leading whitespace in the input string `str`.
+9. The method stops reading characters from the input string `str` when it encounters a non-digit character or reaches the end of the input string.

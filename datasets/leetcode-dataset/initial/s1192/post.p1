@@ -1,9 +1,0 @@
-Preconditions:
-The method criticalConnections should take two parameters: an integer n representing the number of nodes in the network, and a List of Lists connections representing the connections between nodes.
-The connections List should contain Lists of size 2, where each inner List represents a connection between two nodes.
-The connections List should not be null.
-The number of nodes n should be greater than 
-Postconditions:
-The method should return a List of Lists representing the critical connections in the network.
-Each inner List in the returned List should contain two integers representing the nodes connected by a critical connection.
-The order of the critical connections in the returned List can be arbitrary.

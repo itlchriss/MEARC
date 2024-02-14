@@ -1,0 +1,12 @@
+Preconditions:
+- The length of `beginWord` is between 1 and 10.
+- The length of `endWord` is equal to the length of `beginWord`.
+- The length of `wordList` is between 1 and 5000.
+- Each word in `wordList` has the same length as `beginWord`.
+- `beginWord` and `endWord` consist of lowercase English letters.
+- `beginWord` is not equal to `endWord`.
+- All the words in `wordList` are unique.
+
+Postconditions:
+- The method returns an integer representing the number of words in the shortest transformation sequence from `beginWord` to `endWord`.
+- If no such sequence exists, the method returns 0.

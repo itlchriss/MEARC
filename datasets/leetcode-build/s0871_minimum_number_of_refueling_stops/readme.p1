@@ -1,0 +1,11 @@
+Preconditions:
+- The target distance must be a positive integer greater than or equal to 1.
+- The starting fuel must be a positive integer greater than or equal to 1.
+- The stations array must be a valid array of size 0 to 500.
+- Each station in the stations array must be a valid array of size 2, where the first element represents the position of the station and the second element represents the amount of fuel at the station.
+- The positions of the stations must be in increasing order and less than the target distance.
+- The amount of fuel at each station must be a positive integer greater than or equal to 1.
+
+Postconditions:
+- The method should return the minimum number of refueling stops required to reach the target distance.
+- If it is not possible to reach the target distance, the method should return -1.

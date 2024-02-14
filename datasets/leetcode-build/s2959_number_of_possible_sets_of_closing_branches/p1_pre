@@ -1,0 +1,7 @@
+The input `n` represents the number of branches in the company and must be a positive integer.
+The input `maxDistance` represents the maximum distance allowed between branches and must be a positive integer.
+The input `roads` is a 2D array representing the roads between branches. It can be empty or contain up to 1000 elements.
+Each element in `roads` is a 3-element array `[u, v, w]` where `u` and `v` are branch indices and `w` is the length of the road between them.
+The branch indices `u` and `v` must be between 0 and `n-1`, inclusive.
+The length `w` of each road must be a positive integer between 1 and 1000.
+Initially, all branches are reachable from each other by traveling some roads.

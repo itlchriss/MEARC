@@ -1,0 +1,11 @@
+Preconditions:
+- The value of `startAt` must be between 0 and 9 (inclusive).
+- The value of `moveCost` must be between 1 and 10^5 (inclusive).
+- The value of `pushCost` must be between 1 and 10^5 (inclusive).
+- The value of `targetSeconds` must be between 1 and 6039 (inclusive).
+
+Postconditions:
+- The method returns an integer representing the minimum cost to set the cooking time.
+- The minimum cost is calculated based on the given parameters `startAt`, `moveCost`, `pushCost`, and `targetSeconds`.
+- The minimum cost is the sum of the costs of moving the finger and pushing the digits to set the cooking time.
+- The method considers all possible ways to set the cooking time and returns the minimum cost among them.

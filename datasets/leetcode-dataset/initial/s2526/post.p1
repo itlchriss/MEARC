@@ -1,7 +1,0 @@
-Preconditions:
-- The method `consec` should be called after the `DataStream` object has been initialized with a value and k.
-- The `value` and `k` parameters should be integers.
-
-Postconditions:
-- The method should return a boolean value indicating whether the last `k` integers in the stream are equal to `value`.
-- If there are less than `k` integers in the stream, the method should return `false`.

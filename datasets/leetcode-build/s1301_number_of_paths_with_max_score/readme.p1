@@ -1,0 +1,14 @@
+Preconditions:
+- The input `board` is a non-empty list of strings.
+- The length of each string in `board` is equal to the length of `board`.
+- The length of `board` is between 2 and 100 (inclusive).
+- Each string in `board` consists of characters 'E', 'X', 'S', or numeric characters '1' to '9'.
+- There is at least one 'E' character and one 'S' character in `board`.
+- There is no 'E' character or 'S' character in the same string as an 'X' character.
+
+Postconditions:
+- The output is a list of two integers.
+- The first integer represents the maximum sum of numeric characters that can be collected.
+- The second integer represents the number of paths that result in the maximum sum.
+- The output is taken modulo 10^9 + 7.
+- If there is no path from the bottom right square to the top left square, the output is [0, 0].

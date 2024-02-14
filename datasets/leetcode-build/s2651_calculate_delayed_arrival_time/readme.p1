@@ -1,0 +1,10 @@
+Preconditions:
+- The arrivalTime parameter must be a positive integer.
+- The delayedTime parameter must be a positive integer.
+- The arrivalTime parameter must be less than 24.
+- The delayedTime parameter must be less than or equal to 24.
+
+Postconditions:
+- The method returns an integer representing the delayed arrival time.
+- The delayed arrival time is calculated by adding the arrivalTime and delayedTime parameters.
+- If the delayed arrival time is greater than or equal to 24, the method returns 0.

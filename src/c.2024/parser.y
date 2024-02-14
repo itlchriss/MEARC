@@ -3,17 +3,19 @@
     #include "util.h"
     #include "cst.h"
     #include "si.h"
+    #include "event.h"
     #include "regex.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
     void print_semantic_error(char *);
-    enum java_datatype string2javadatatype(char *);
+    enum explicit_datatype string2javadatatype(char *);
 
     // From main.c
     // extern int c;
     extern struct astnode *ast;  
     extern struct queue *predicates, *operators;
+    extern struct queue *events;
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, error_count = 0;
@@ -31,17 +33,11 @@
 %token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG 
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
 %token <t> KEYWORD_QUANTIFIER KEYWORD_TYPE KEYWORD_PARAM
-%token <t> TAG
-/* %token <t> KEYWORD_PROG KEYWORD_REL TAG */
-/* %token <ptb> KEYWORD_NN KEYWORD_NNS KEYWORD_NNP KEYWORD_NNPS KEYWORD_IN KEYWORD_JJ KEYWORD_JJR KEYWORD_JJS 
-%token <ptb> KEYWORD_VB KEYWORD_VBG KEYWORD_VBZ KEYWORD_VBN KEYWORD_VBP KEYWORD_VBD
-%token <ptb> KEYWORD_DT KEYWORD_CC KEYWORD_CD KEYWORD_PRP KEYWORD_MD
-%token <ptb> KEYWORD_RB */
+%token <t> TAG EVENT
 %left AND IMPLY EQUIV ')'
 
 /* %type<ptb> pos_tag */
 %type<conntype> connective
-/* %type<node> terms argument term quantified_term predicate_term grammar_term grammar_tag */
 %type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
@@ -59,9 +55,13 @@ formula
 
 terms
     : terms connective term {
-        print_debug("terms: terms term");
+        print_debug("(top rule) terms: terms term");
         if ($3 == NULL) {
+            /* case of terms connective TrueP */
             $$ = $1;
+        } else if ($1 == NULL) {
+            /* case of TrueP connective term */
+            $$ = $3;
         } else {
             $$ = newastnode(Connective, NULL);
             $$->conntype = $2;
@@ -73,6 +73,8 @@ terms
         print_debug("terms: terms connective '(' term ')'");
         if ($4 == NULL) {
             $$ = $1;
+        } else if ($1 == NULL) {
+            $$ = $4;
         } else {
             $$ = newastnode(Connective, NULL);
             $$->conntype = $2;
@@ -98,7 +100,11 @@ terms
     }
     | term {
         print_debug("terms: term");
-        $$ = $1;
+        if ($1 == NULL) {
+            $$ = NULL;
+        } else {
+            $$ = $1;
+        }
     }
     | NEG term {
         print_debug("term: NEG term");
@@ -125,6 +131,9 @@ term
     | quantified_term {
         $$ = $1;
     }
+    | event_term {
+        $$ = NULL;
+    }
     | grammar_term {
         $$ = $1;
     }
@@ -145,6 +154,8 @@ term
             addcstsymbol($3->symbol);
             addcstref($3->symbol, right);
         }
+        left->cstptr = searchcst(left->token->symbol);
+        right->cstptr = searchcst(right->token->symbol);
         addastchild($$, left);
         addastchild($$, right);
         enqueue(operators, (void*)$$);
@@ -191,8 +202,8 @@ type_term
         for (int i = 0; i < 6; ++i) {
             popchar($1->symbol);
         }
-        cst->jtype = string2javadatatype($1->symbol);
-        if (cst->jtype == -1) {
+        cst->symbol_datatype = string2javadatatype($1->symbol);
+        if (cst->symbol_datatype == -1) {
             printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
             exit(-1);
         }
@@ -268,6 +279,7 @@ argument
         if (addcstref($1->symbol, $$) != 0) {
             addcstsymbol($1->symbol);
             addcstref($1->symbol, $$);
+            $$->cstptr = searchcst($1->symbol);
         }
     }
     | terms {
@@ -276,21 +288,43 @@ argument
     }
     ;
 
+event_term
+    : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
+        print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'");
+        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);
+    }
+    ;
+
 quantified_term
     : KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' {
         print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
         $$ = newastnode(Quantifier, $2);
-        if (strcmp($1->symbol, "exists") == 0) {
-            $$->qtype = Quantifier_Exists;
-        } else {
-            $$->qtype = Quantifier_ForAll;
-        }
+        // if (strcmp($1->symbol, "exists") == 0) {
+        //     $$->qtype = Quantifier_Exists;
+        // } else {
+        //     $$->qtype = Quantifier_ForAll;
+        // }
+        $$->qtype = Quantifier_Exists;
         if (addcstref($2->symbol, $$) != 0) {
             addcstsymbol($2->symbol);
             addcstref($2->symbol, $$);
         }
         addastchild($$, $5);        
         closecstscope($2->symbol);
+    }
+    | KEYWORD_QUANTIFIER IDENTIFIER '.' '(' '(' terms ')' connective '(' terms ')' {
+        print_debug("all_expr: KEYWORD_ALL IDENTIFIER");
+        $$ = newastnode(Quantifier, $2);
+        $$->qtype = Quantifier_ForAll;
+        if (addcstref($2->symbol, $$) != 0) {
+            addcstsymbol($2->symbol);
+            addcstref($2->symbol, $$);
+        }
+        struct astnode* conn = newastnode(Connective, NULL);
+        conn->conntype = $8;
+        addastchild(conn, $6);
+        addastchild(conn, $10);
+        addastchild($$, conn);
     }
     ;
 %%
@@ -306,8 +340,8 @@ void print_semantic_error(char *s) {
     exit(-1);
 }
 
-enum java_datatype string2javadatatype(char *s) {
-    if (strcmp(s, "array") == 0)  return JavaArray;
+enum explicit_datatype string2javadatatype(char *s) {
+    if (strcmp(s, "array") == 0 || strcmp(s, "arrays") == 0)  return JavaArray;
     else if (strcmp(s, "list") == 0) return JavaList;
     else if (strcmp(s, "integer") == 0) return JavaInteger;
     else if (strcmp(s, "short") == 0) return JavaShort;

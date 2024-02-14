@@ -1,0 +1,9 @@
+Preconditions:
+- The prices array must have at least 2 elements.
+- Each element in the prices array must be between 1 and 100 (inclusive).
+- The money value must be between 1 and 100 (inclusive).
+
+Postconditions:
+- The returned value must be non-negative.
+- If there is a way to buy two chocolates without going into debt, the returned value should be the amount of money left after buying the chocolates.
+- If there is no way to buy two chocolates without going into debt, the returned value should be equal to the initial amount of money.

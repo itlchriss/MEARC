@@ -1,0 +1,11 @@
+Preconditions:
+- The input integers `n` and `k` must be positive.
+- `n` must be greater than or equal to `k`.
+- `n` must be less than or equal to 20.
+
+Postconditions:
+- The output is a list of lists of integers.
+- Each inner list in the output contains `k` numbers.
+- Each inner list in the output is a combination of numbers from the range `[1, n]`.
+- The output may be in any order.
+- The length of the output list is equal to the number of possible combinations of `k` numbers out of the range `[1, n]`.

@@ -1,8 +1,0 @@
-Preconditions:
-- The input array `w` must not be null.
-- The input array `w` must have at least one element.
-
-Postconditions:
-- The method `pickIndex()` returns an integer value representing an index in the range `[0, w.length - 1]`.
-- The probability of picking an index `i` is `w[i] / sum(w)`.
-- If there is only one element in `w`, the method always returns - If there are multiple elements in `w`, the method returns an index with a probability proportional to the element's value in `w` compared to the sum of all elements in `w`.

@@ -1,8 +1,0 @@
-Preconditions:
-The input `n` must be a positive integer.
-The input `n` must be within the range of 1 to 19 (inclusive).
-
-Postconditions:
-The method should return an integer representing the number of structurally unique BSTs that can be formed using `n` nodes.
-The returned value should be greater than or equal to The returned value should be less than or equal to the total number of possible structurally unique BSTs that can be formed using `n` nodes.
-The returned value should be calculated based on the formula for Catalan numbers, which is given by the expression `(2n)! / ((n+1)! * n!)`.

@@ -1,0 +1,5 @@
+The method returns a List of Strings representing all possible times the watch could represent.
+The returned List may be empty if there are no valid times for the given `turnedOn` value.
+Each time in the returned List must be in the format "h:mm" where h is the hour (0-11) and mm is the minute (00-59).
+The hour in each time must not contain a leading zero.
+The minute in each time must consist of two digits and may contain a leading zero.

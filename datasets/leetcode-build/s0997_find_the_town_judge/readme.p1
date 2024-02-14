@@ -1,0 +1,10 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of people in the town.
+- The input `trust` is a 2D array where each element `trust[i]` is an array of length 2 representing a trust relationship between two people.
+- The elements in `trust` are unique pairs.
+- The elements in `trust` are integers between 1 and `n`, inclusive.
+- The length of `trust` is between 0 and 10^4, inclusive.
+
+Postconditions:
+- If there is a town judge, the method returns the label of the town judge as an integer.
+- If there is no town judge, the method returns -1 as an integer.

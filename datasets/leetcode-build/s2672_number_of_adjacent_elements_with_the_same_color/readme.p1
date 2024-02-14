@@ -1,0 +1,16 @@
+Preconditions:
+- The input array `nums` has a length of `n`.
+- All elements in the array `nums` are initially uncolored and have a value of 0.
+- The input 2D array `queries` has a length of `m`.
+- Each query in `queries` is represented by a 2-element array `[index, color]`.
+- The index `index` in each query is a valid index in the array `nums` (0 <= index < n).
+- The color `color` in each query is a valid color (1 <= color <= 10^5).
+
+Postconditions:
+- The output array `answer` has a length of `m`.
+- Each element in the array `answer` represents the number of adjacent elements with the same color after the corresponding query.
+- The elements in the array `nums` are updated according to the queries in `queries`.
+- After each query, the element at index `index` in `nums` is colored with the corresponding color.
+- After each query, the count of adjacent elements with the same color is calculated and stored in the corresponding element of `answer`.
+- The elements in `nums` that are not affected by the queries remain unchanged.
+- The elements in `answer` that are not affected by the queries remain unchanged.

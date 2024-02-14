@@ -1,0 +1,8 @@
+Preconditions:
+- The numerator and denominator are integers.
+- The numerator and denominator are within the range of -2^31 to 2^31 - - The denominator is not equal to zero.
+
+Postconditions:
+- The method returns a string representation of the fraction.
+- If the fractional part is repeating, it is enclosed in parentheses.
+- The length of the returned string is less than 10^4.

@@ -1,0 +1,14 @@
+Preconditions:
+- The length of `beginWord` is between 1 and - The length of `endWord` is the same as `beginWord`.
+- The length of `wordList` is between 1 and - Each word in `wordList` has the same length as `beginWord`.
+- `beginWord` and `endWord` consist of lowercase English letters.
+- `beginWord` is not equal to `endWord`.
+- All the words in `wordList` are unique.
+
+Postconditions:
+- The method returns a list of lists of strings.
+- Each list in the returned list represents a shortest transformation sequence from `beginWord` to `endWord`.
+- Each transformation sequence starts with `beginWord` and ends with `endWord`.
+- Each adjacent pair of words in a transformation sequence differs by a single letter.
+- Each word in a transformation sequence is in `wordList`.
+- If no valid transformation sequence exists, an empty list is returned.

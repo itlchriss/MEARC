@@ -1,0 +1,10 @@
+Preconditions:
+1. The input strings `date1` and `date2` must be in the format `YYYY-MM-DD`.
+2. The input strings `date1` and `date2` must represent valid dates between the years 1971 and 2100.
+
+Postconditions:
+1. The method should return an integer representing the number of days between `date1` and `date2`.
+2. The returned value should be a positive integer.
+3. If `date1` is equal to `date2`, the method should return 0.
+4. If `date1` is before `date2`, the method should return a positive value.
+5. If `date1` is after `date2`, the method should return a negative value.

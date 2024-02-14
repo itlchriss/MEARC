@@ -1,0 +1,14 @@
+Preconditions:
+- The input list `piles` is not null.
+- The input list `piles` contains `n` piles of coins.
+- Each pile in the input list `piles` is not null.
+- Each pile in the input list `piles` contains a positive number of coins.
+- Each pile in the input list `piles` is represented as a list of integers denoting the composition of the pile from top to bottom.
+- The input integer `k` is a positive integer.
+- The input integer `k` represents the number of coins to choose.
+
+Postconditions:
+- The method returns an integer representing the maximum total value of coins that can be obtained by choosing exactly `k` coins optimally.
+- The maximum total value of coins is obtained by choosing coins from the piles in an optimal manner.
+- The method does not modify the input list `piles`.
+- The method does not modify the input integer `k`.

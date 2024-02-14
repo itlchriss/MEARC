@@ -1,0 +1,13 @@
+Preconditions:
+1. The input matrix is not null.
+2. The input matrix has at least one row and one column.
+3. The target value is within the range of -10^8 to 10^8.
+
+Postconditions:
+1. The method returns an integer representing the number of non-empty submatrices that sum to the target.
+2. The method does not modify the input matrix.
+3. The method handles the case where the target is 0 and there are no submatrices that sum to 0.
+4. The method handles the case where the target is negative and there are no submatrices that sum to the negative target.
+5. The method handles the case where the target is positive and there are no submatrices that sum to the positive target.
+6. The method correctly counts the number of submatrices that sum to the target.
+7. The method handles the case where the target is larger than the sum of all elements in the matrix and there are no submatrices that sum to the target.

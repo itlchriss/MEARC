@@ -1,0 +1,4 @@
+The method returns a boolean value indicating whether it is possible to escape regardless of how the ghosts move.
+If it is possible to reach the target before any ghost reaches the player, the method returns `true`.
+If the player reaches any square (including the target) at the same time as a ghost, it does not count as an escape.
+If it is not possible to reach the target before any ghost reaches the player, the method returns `false`.

@@ -1,0 +1,14 @@
+Preconditions:
+1. The input array `points` is not null.
+2. The length of the input array `points` is greater than or equal to 1.
+3. Each element in the input array `points` is an array of length 2.
+4. The x-coordinate and y-coordinate of each point in the input array `points` are within the range -10^4 to 10^4.
+
+Postconditions:
+1. The method returns an integer representing the maximum number of points that lie on the same straight line.
+2. The method does not modify the input array `points`.
+3. The method handles the case when all points in the input array `points` are the same, and returns the length of the input array `points`.
+4. The method handles the case when all points in the input array `points` are collinear, and returns the length of the input array `points`.
+5. The method handles the case when there are multiple lines with different slopes that pass through the same point, and returns the maximum number of points on any of these lines.
+6. The method handles the case when there are multiple lines with the same slope that pass through different points, and returns the maximum number of points on any of these lines.
+7. The method handles the case when there are multiple lines with different slopes that pass through different points, and returns the maximum number of points on any of these lines.

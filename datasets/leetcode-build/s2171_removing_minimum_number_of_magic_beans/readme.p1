@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `beans` is not null.
+- The length of the input array `beans` is greater than or equal to 1.
+- Each element in the input array `beans` is a positive integer.
+
+Postconditions:
+- The method returns a long value representing the minimum number of magic beans that need to be removed.
+- The number of beans in each remaining non-empty bag is equal.
+- Once a bean has been removed from a bag, it cannot be returned to any of the bags.

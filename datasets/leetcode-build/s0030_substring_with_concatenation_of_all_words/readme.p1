@@ -1,0 +1,12 @@
+Preconditions:
+1. The input string `s` is not null.
+2. The input array `words` is not null.
+3. The length of `s` is greater than or equal to the length of each word in `words`.
+4. The length of `words` is greater than 0.
+5. Each word in `words` is not null.
+6. Each word in `words` consists of lowercase English letters.
+
+Postconditions:
+1. The returned list contains the starting indices of all substrings in `s` that are a concatenation of each word in `words` exactly once, in any order, and without any intervening characters.
+2. The order of the indices in the returned list does not matter.
+3. If there are no such substrings, an empty list is returned.

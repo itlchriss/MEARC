@@ -1,0 +1,13 @@
+Preconditions:
+- The input string `directions` is not null.
+- The length of the input string `directions` is greater than or equal to 1.
+- Each character in the input string `directions` is either 'L', 'R', or 'S'.
+
+Postconditions:
+- The method returns an integer representing the total number of collisions that will happen on the road.
+
+Additional behavioural requirements:
+- The method should handle the case where there are no collisions and return 0.
+- The method should correctly calculate the number of collisions when two cars moving in opposite directions collide with each other.
+- The method should correctly calculate the number of collisions when a moving car collides with a stationary car.
+- After a collision, the cars involved should stay at the point where they collided and cannot change their state or direction of motion.

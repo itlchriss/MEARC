@@ -1,0 +1,5 @@
+The method returns an integer representing the total number of seconds that Ashe is poisoned.
+The total number of seconds that Ashe is poisoned is equal to the sum of the durations of all poison effects.
+If the `timeSeries` array is empty, the method returns 0.
+If the `timeSeries` array has only one element, the method returns the value of `duration`.
+If the `timeSeries` array has multiple elements, the method calculates the total number of seconds that Ashe is poisoned by iterating through the array and considering the poison effects of each attack.

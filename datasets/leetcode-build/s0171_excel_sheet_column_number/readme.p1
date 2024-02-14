@@ -1,0 +1,11 @@
+Preconditions:
+1. The input string `columnTitle` is not null.
+2. The input string `columnTitle` is not empty.
+3. The input string `columnTitle` consists only of uppercase English letters.
+4. The length of the input string `columnTitle` is between 1 and 7 (inclusive).
+5. The input string `columnTitle` is within the range of "A" to "FXSHRXW".
+
+Postconditions:
+1. The method returns an integer value representing the corresponding column number of the input string `columnTitle`.
+2. The returned column number is greater than or equal to 1.
+3. The returned column number is less than or equal to 2147483647.

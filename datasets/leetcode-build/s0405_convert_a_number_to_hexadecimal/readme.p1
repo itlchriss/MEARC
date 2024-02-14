@@ -1,0 +1,9 @@
+Preconditions:
+- The input `num` is an integer.
+
+Postconditions:
+- The output is a string representing the hexadecimal representation of `num`.
+- The output string contains only lowercase characters.
+- The output string does not have any leading zeros, except for the case when `num` is zero itself.
+- For negative integers, the two's complement method is used to determine the hexadecimal representation.
+- The output string represents the hexadecimal value of `num` in two's complement form.

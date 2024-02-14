@@ -1,0 +1,22 @@
+**Preconditions:**
+
+1. The input array `costs` is not null.
+2. The length of the input array `costs` is greater than or equal to 1.
+3. The values in the input array `costs` are positive integers.
+4. The input integer `k` is greater than or equal to 1.
+5. The input integer `candidates` is greater than or equal to 1.
+6. The input integer `k` is less than or equal to the length of the input array `costs`.
+7. The input integer `candidates` is less than or equal to the length of the input array `costs`.
+
+**Postconditions:**
+
+1. The output is a long integer representing the total cost to hire exactly `k` workers.
+2. The output is greater than or equal to 0.
+3. The output is the sum of the costs of the workers chosen in each hiring session.
+4. Each worker can only be chosen once.
+5. The number of hiring sessions is equal to `k`.
+6. In each hiring session, exactly one worker is hired.
+7. In each hiring session, the worker with the lowest cost is chosen from either the first `candidates` workers or the last `candidates` workers.
+8. If there are fewer than `candidates` workers remaining, the worker with the lowest cost among them is chosen.
+9. If there are multiple workers with the same lowest cost, the worker with the smallest index is chosen.
+10. The indexing of the workers may be changed in the process.

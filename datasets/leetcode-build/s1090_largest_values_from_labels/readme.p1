@@ -1,0 +1,10 @@
+Preconditions:
+- The length of the `values` array is equal to the length of the `labels` array.
+- The length of the `values` array is greater than or equal to - The length of the `values` array is less than or equal to - The length of the `labels` array is greater than or equal to - The length of the `labels` array is less than or equal to - The elements in the `values` array are integers greater than or equal to - The elements in the `values` array are integers less than or equal to - The elements in the `labels` array are integers greater than or equal to - The elements in the `labels` array are integers less than or equal to - The value of `numWanted` is greater than or equal to - The value of `numWanted` is less than or equal to the length of the `values` array.
+- The value of `useLimit` is greater than or equal to - The value of `useLimit` is less than or equal to the length of the `values` array.
+
+Postconditions:
+- The method returns an integer representing the maximum score of a subset `s`.
+- The maximum score of a subset `s` is the sum of the values in the subset.
+- The size of the subset `s` is less than or equal to `numWanted`.
+- There are at most `useLimit` items with the same label in `s`.

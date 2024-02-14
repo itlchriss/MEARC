@@ -1,0 +1,38 @@
+package g0101_0200.s0154_find_minimum_in_rotated_sorted_array_ii;
+
+// #Hard #Array #Binary_Search #Binary_Search_II_Day_13
+// #2022_06_25_Time_1_ms_(77.09%)_Space_44.6_MB_(7.09%)
+
+public class Solution {
+	//@ requires(*The input array `nums` is not null.*);
+	//@ requires(*The length of the input array `nums` is greater than 0.*);
+	//@ requires(*The input array `nums` is sorted in ascending order.*);
+	//@ requires(*The input array `nums` is rotated between 1 and n times.*);
+	//@ requires(*The input array `nums` may contain duplicates.*);
+	//@ ensures(*The output is an integer representing the minimum element of the input array `nums`.*);
+    public int findMin(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        return find(0, nums.length - 1, nums);
+    }
+
+    private int find(int left, int right, int[] nums) {
+        if (left + 1 >= right) {
+            return Math.min(nums[left], nums[right]);
+        }
+        int mid = left + (right - left) / 2;
+        if (nums[left] == nums[right] && nums[left] == nums[mid]) {
+            return Math.min(find(left, mid, nums), find(mid, right, nums));
+        }
+        if (nums[left] >= nums[right]) {
+            if (nums[mid] >= nums[left]) {
+                return find(mid, right, nums);
+            } else {
+                return find(left, mid, nums);
+            }
+        } else {
+            return find(left, mid, nums);
+        }
+    }
+}

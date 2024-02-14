@@ -1,0 +1,8 @@
+Preconditions:
+- The input arrays `arr1` and `arr2` must not be null.
+- The lengths of `arr1` and `arr2` must be greater than or equal to 1.
+- The elements of `arr1` and `arr2` must be non-negative integers.
+
+Postconditions:
+- The method returns an integer value.
+- The returned value is the XOR sum of the list containing the result of `arr1[i] AND arr2[j]` for every `(i, j)` pair where `0 <= i < arr1.length` and `0 <= j < arr2.length`.

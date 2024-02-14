@@ -1,0 +1,17 @@
+Preconditions:
+- The `dictionary` list is not null.
+- The `sentence` string is not null.
+- The `dictionary` list contains only lowercase letters.
+- The length of each word in the `dictionary` list is between 1 and 100.
+- The `sentence` string contains only lowercase letters and spaces.
+- The length of each word in the `sentence` string is between 1 and 100.
+- Every two consecutive words in the `sentence` string are separated by exactly one space.
+- The `sentence` string does not have leading or trailing spaces.
+
+Postconditions:
+- The returned `sentence` string is the same length as the input `sentence` string.
+- The returned `sentence` string contains only lowercase letters and spaces.
+- The returned `sentence` string has the same number of words as the input `sentence` string.
+- The returned `sentence` string has the same order of words as the input `sentence` string.
+- The returned `sentence` string has replaced all the successors in the input `sentence` string with the root forming it.
+- If a successor can be replaced by more than one root, the returned `sentence` string replaces it with the root that has the shortest length.

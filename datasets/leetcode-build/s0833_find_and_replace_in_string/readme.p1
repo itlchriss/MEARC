@@ -1,0 +1,18 @@
+Preconditions:
+- The input string `s` is not null.
+- The length of `s` is between 1 and 1000.
+- The arrays `indices`, `sources`, and `targets` are not null.
+- The length of `indices`, `sources`, and `targets` is equal to `k`.
+- The value of `k` is between 1 and 100.
+- Each element in `indices` is a valid index in the string `s`.
+- Each element in `sources` and `targets` is not null.
+- The length of each element in `sources` and `targets` is between 1 and 50.
+- The string `s` consists of only lowercase English letters.
+- Each element in `sources` and `targets` consists of only lowercase English letters.
+
+Postconditions:
+- The method returns a string.
+- The length of the returned string is the same as the length of the input string `s`.
+- The returned string is the result of performing all replacement operations on `s`.
+- For each replacement operation, if the substring `sources[i]` occurs at index `indices[i]` in `s`, it is replaced with `targets[i]`.
+- If a replacement operation does not occur (the substring does not occur at the specified index), the corresponding character in the returned string remains the same as the original string `s`.

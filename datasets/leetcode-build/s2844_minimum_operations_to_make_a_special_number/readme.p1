@@ -1,0 +1,10 @@
+Preconditions:
+- The input string `num` must not be null.
+- The length of `num` must be between 1 and 100 (inclusive).
+- `num` must only consist of digits '0' through '9'.
+- `num` must not contain any leading zeros.
+
+Postconditions:
+- The method returns an integer representing the minimum number of operations required to make `num` special.
+- The resulting number after deleting digits from `num` is divisible by 25.
+- The resulting number after deleting digits from `num` is the smallest possible number that is divisible by 25.

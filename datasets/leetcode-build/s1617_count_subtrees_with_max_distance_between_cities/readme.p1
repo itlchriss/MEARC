@@ -1,0 +1,10 @@
+Preconditions:
+- The input `n` is an integer greater than or equal to 2.
+- The input `edges` is a 2D array of size `n-1`.
+- Each element in `edges` is an array of size 2.
+- The elements in `edges` are distinct pairs of integers between 1 and `n`.
+- The cities form a tree, meaning there is a unique path between each pair of cities.
+
+Postconditions:
+- The output is an array of size `n-1`.
+- Each element in the output array represents the number of subtrees in which the maximum distance between any two cities is equal to `d`, where `d` ranges from 1 to `n-1`.

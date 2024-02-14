@@ -1,0 +1,13 @@
+Preconditions:
+- The method `compareTo` should be implemented in a class that represents a `Pair` object.
+- The `Pair` object should have a positive integer `n` representing the number of nodes in the graph.
+- The `Pair` object should have an array `edges` representing the edges in the graph.
+- Each element in the `edges` array should be an array of size 3, representing an edge between two nodes and its weight.
+- The `Pair` object should have a method `distanceToLastNode` that takes a node `x` as input and returns the shortest distance from node `n` to node `x`.
+- The `Pair` object should have a method `getNumberOfRestrictedPaths` that returns the number of restricted paths from node 1 to node `n`.
+
+Postconditions:
+- The method `compareTo` should return an integer value representing the comparison between two `Pair` objects.
+- The returned value should be negative if the current `Pair` object has a smaller number of restricted paths than the input `Pair` object.
+- The returned value should be zero if the current `Pair` object has the same number of restricted paths as the input `Pair` object.
+- The returned value should be positive if the current `Pair` object has a larger number of restricted paths than the input `Pair` object.

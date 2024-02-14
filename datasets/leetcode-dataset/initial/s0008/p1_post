@@ -1,7 +1,0 @@
-The method should return an integer value.
-The returned integer should be a 32-bit signed integer.
-The method should ignore any leading whitespace in the input string.
-The method should check if the next character (if not already at the end of the string) is '-' or '+'. If present, it should determine if the final result is negative or positive respectively.
-The method should read the next characters until the next non-digit character or the end of the input is reached. The rest of the string should be ignored.
-The method should convert the read digits into an integer. If no digits were read, the integer should be The sign should be changed as necessary.
-If the integer is out of the 32-bit signed integer range [-231, 231 - 1], it should be clamped to remain in the range. Integers less than -231 should be clamped to -231, and integers greater than 231 - 1 should be clamped to 231 - 1.

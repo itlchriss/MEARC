@@ -1,9 +1,0 @@
-Preconditions:
-- The input parameter `n` is a positive integer representing the number of nodes in the graph.
-- The input parameter `redEdges` is a 2D array representing the red edges in the graph. Each element in `redEdges` is an array of size 2, where the first element is the starting node of the edge and the second element is the ending node of the edge.
-- The input parameter `blueEdges` is a 2D array representing the blue edges in the graph. Each element in `blueEdges` is an array of size 2, where the first element is the starting node of the edge and the second element is the ending node of the edge.
-
-Postconditions:
-- The method returns an array `answer` of length `n`.
-- Each element `answer[x]` in the `answer` array represents the length of the shortest path from node `0` to node `x` such that the edge colors alternate along the path.
-- If there is no path from node `0` to node `x` such that the edge colors alternate along the path, the value of `answer[x]` is `-1`.

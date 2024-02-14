@@ -1,0 +1,7 @@
+The method returns an array containing `[crashTime, memory1_crash, memory2_crash]`, where `crashTime` is the time (in seconds) when the program crashed and `memory1_crash` and `memory2_crash` are the available bits of memory in the first and second sticks respectively.
+The values of `crashTime`, `memory1_crash`, and `memory2_crash` are non-negative integers.
+The program crashes when neither stick has at least `i` bits of available memory, where `i` is the current second.
+The memory allocation happens every second, starting from the 1st second.
+At the `i`th second, `i` bits of memory are allocated to the stick with more available memory (or from the first memory stick if both have the same available memory).
+The available memory in each stick is updated after each memory allocation.
+The available memory in each stick is non-negative and does not exceed the maximum limit of `2^31 - 1`.

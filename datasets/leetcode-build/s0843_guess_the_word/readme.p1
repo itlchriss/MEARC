@@ -1,0 +1,10 @@
+Preconditions:
+- The `wordlist` array must have at least one element.
+- Each string in the `wordlist` array must be 6 letters long.
+- The `secret` word must exist in the `wordlist` array.
+- The `numguesses` must be equal to 10.
+
+Postconditions:
+- The method returns an integer representing the number of exact matches (value and position) of the guessed word to the secret word.
+- If the guessed word is not in the `wordlist` array, the method returns -1.
+- If the method is called less than or equal to 10 times and at least one of the guesses was the secret word, the test case is passed.

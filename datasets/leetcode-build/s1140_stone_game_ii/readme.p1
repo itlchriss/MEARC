@@ -1,0 +1,13 @@
+Preconditions:
+- The input array `piles` is not null.
+- The length of the input array `piles` is greater than or equal to 1.
+- The length of the input array `piles` is less than or equal to 100.
+- Each element in the input array `piles` is a positive integer.
+- The value of `M` is initially set to 1.
+
+Postconditions:
+- The method returns an integer representing the maximum number of stones Alice can get.
+- The maximum number of stones Alice can get is greater than or equal to 0.
+- The maximum number of stones Alice can get is less than or equal to the sum of all elements in the input array `piles`.
+- The value of `M` is updated to the maximum value of `M` and `X` on each player's turn.
+- The game continues until all the stones have been taken.

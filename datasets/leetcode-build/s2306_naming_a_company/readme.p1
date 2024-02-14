@@ -1,0 +1,18 @@
+Preconditions:
+- The input array `ideas` is not null.
+- The length of the input array `ideas` is at least 2.
+- Each string in the input array `ideas` is not null.
+- Each string in the input array `ideas` has a length between 1 and 10.
+- Each string in the input array `ideas` consists of lowercase English letters.
+- All strings in the input array `ideas` are unique.
+
+Postconditions:
+- The method returns a long value representing the number of distinct valid company names.
+- The method does not modify the input array `ideas`.
+- The method follows the process of naming a company as described in the requirements.
+- The method selects two distinct names from the input array `ideas`.
+- The method swaps the first letters of the selected names.
+- The method checks if both of the new names are not found in the original `ideas`.
+- If both new names are not found in the original `ideas`, the method considers the concatenated name as a valid company name.
+- If both new names are found in the original `ideas`, the method does not consider the concatenated name as a valid company name.
+- The method counts the number of distinct valid company names and returns the count.

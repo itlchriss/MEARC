@@ -1,0 +1,8 @@
+1. The method returns an integer representing the maximum possible sum of a non-empty subarray of `nums`.
+2. The subarray included in the maximum sum does not contain any repeated elements.
+3. The subarray can be circular, meaning the end of the array connects to the beginning of the array.
+4. The next element of `nums[i]` is `nums[(i + 1) % n]` and the previous element of `nums[i]` is `nums[(i - 1 + n) % n]`.
+5. If all elements in the input array `nums` are negative, the method returns the maximum negative value in the array.
+6. If all elements in the input array `nums` are positive, the method returns the sum of all elements in the array.
+7. If the maximum sum of a non-empty subarray is achieved by wrapping around the circular array, the method returns the maximum sum.
+8. If the maximum sum of a non-empty subarray is achieved without wrapping around the circular array, the method returns the maximum sum.

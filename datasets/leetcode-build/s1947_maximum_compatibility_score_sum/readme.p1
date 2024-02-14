@@ -1,0 +1,12 @@
+Preconditions:
+- The input arrays `students` and `mentors` are not null.
+- The length of `students` is equal to the length of `mentors`.
+- The length of each subarray in `students` is equal to the length of each subarray in `mentors`.
+- The length of each subarray in `students` and `mentors` is greater than 0 and less than or equal to 8.
+- Each element in `students` and `mentors` is either 0 or 1.
+
+Postconditions:
+- The returned value is an integer representing the maximum compatibility score sum.
+- The maximum compatibility score sum is the sum of the compatibility scores of the optimal student-mentor pairings.
+- Each student is assigned to one mentor and each mentor is assigned to one student.
+- The compatibility score of a student-mentor pair is the number of answers that are the same for both the student and the mentor.

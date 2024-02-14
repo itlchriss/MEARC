@@ -1,0 +1,9 @@
+Preconditions:
+- The input `n` represents the number of vertices in the tree and must be a positive integer.
+- The input `edges` represents the edges of the undirected tree and must be a 2D array of size `n-1` where each element is a pair of vertices `[a, b]`.
+- The input `t` represents the number of seconds and must be a positive integer.
+- The input `target` represents the target vertex and must be a valid vertex in the tree.
+
+Postconditions:
+- The method returns a double value representing the probability that after `t` seconds the frog is on the vertex `target`.
+- The returned probability is within `10^-5` of the actual answer.

@@ -1,6 +1,0 @@
-The method `get(String key, int timestamp)` returns a value that was previously set using the `set` method.
-The returned value is associated with the largest `timestamp_prev` that is less than or equal to the given `timestamp`.
-If there are multiple values with the same `timestamp_prev`, the method returns the value associated with the largest `timestamp_prev`.
-If there are no values set, the method returns an empty string `""`.
-Example:
-Calling `timeMap.get("foo", 1)` should return "bar" because there is a value associated with "foo" and the largest `timestamp_prev` is - Calling `timeMap.get("foo", 3)` should return "bar" because there is a value associated with "foo" and the largest `timestamp_prev` is 1, which is less than or equal to - Calling `timeMap.get("foo", 4)` should return "bar2" because there is a value associated with "foo" and the largest `timestamp_prev` is 3, which is less than or equal to - Calling `timeMap.get("foo", 5)` should return "bar2" because there is a value associated with "foo" and the largest `timestamp_prev` is 4, which is less than or equal to 5.

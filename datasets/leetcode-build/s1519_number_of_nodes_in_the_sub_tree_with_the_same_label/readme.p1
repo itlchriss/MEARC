@@ -1,0 +1,9 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of nodes in the tree.
+- The input `edges` is a 2D array of size `n-1` representing the edges of the tree.
+- The input `labelsString` is a string of length `n` representing the labels of each node in the tree.
+
+Postconditions:
+- The output is an array of size `n` where `ans[i]` is the number of nodes in the subtree of the `i-th` node which have the same label as node `i`.
+- The output array is in the same order as the nodes in the tree.
+- The output array contains only non-negative integers.

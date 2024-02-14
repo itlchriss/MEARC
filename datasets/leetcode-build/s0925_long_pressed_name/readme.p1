@@ -1,0 +1,7 @@
+Preconditions:
+- The lengths of `name` and `typed` are both greater than or equal to 1.
+- `name` and `typed` consist of only lowercase English letters.
+
+Postconditions:
+- The method returns `true` if it is possible that the characters in `typed` were typed from `name` with some characters (possibly none) being long pressed.
+- The method returns `false` if it is not possible that the characters in `typed` were typed from `name` with some characters (possibly none) being long pressed.

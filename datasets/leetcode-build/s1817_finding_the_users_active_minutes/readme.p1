@@ -1,0 +1,12 @@
+Preconditions:
+- The input `logs` is a 2D integer array.
+- The input `k` is an integer.
+- The length of `logs` is greater than or equal to 1 and less than or equal to 10^4.
+- The ID of each user in `logs` is an integer between 0 and 10^9.
+- The time of each action in `logs` is an integer between 1 and 10^5.
+- The value of `k` is in the range [the maximum UAM for a user, 10^5].
+
+Postconditions:
+- The output `answer` is a 1-indexed array of integers.
+- The length of `answer` is equal to `k`.
+- For each index `j` in `answer` (1 <= j <= k), `answer[j]` is the number of users whose UAM equals `j`.

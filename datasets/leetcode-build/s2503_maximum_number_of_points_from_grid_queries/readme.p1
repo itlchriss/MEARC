@@ -1,0 +1,12 @@
+Preconditions:
+- The input matrix `grid` is a 2D integer array with dimensions `m x n`.
+- The input array `queries` is an integer array with size `k`.
+- The values in `grid` and `queries` are within the range of 1 to 10^6.
+- The dimensions of `grid` satisfy the constraints: 2 <= m, n <= 1000 and 4 <= m * n <= 10^5.
+- The size of `queries` satisfies the constraint: 1 <= k <= 10^4.
+
+Postconditions:
+- The output is an integer array `answer` with size `k`.
+- Each element in `answer` represents the maximum number of points that can be obtained for the corresponding query.
+- The order of elements in `answer` corresponds to the order of queries in the input.
+- The values in `answer` are within the range of 0 to the maximum number of cells in `grid` (m * n).

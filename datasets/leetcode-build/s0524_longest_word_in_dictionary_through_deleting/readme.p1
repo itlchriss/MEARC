@@ -1,0 +1,12 @@
+Preconditions:
+- The input string `s` is not null.
+- The input string array `dictionary` is not null.
+- The length of `s` is between 1 and 1000 (inclusive).
+- The length of `dictionary` is between 1 and 1000 (inclusive).
+- Each string in `dictionary` has a length between 1 and 1000 (inclusive).
+- `s` and each string in `dictionary` consist of lowercase English letters.
+
+Postconditions:
+- The method returns a string that is the longest string in `dictionary` that can be formed by deleting some characters from `s`.
+- If there is more than one possible result, the method returns the longest word with the smallest lexicographical order.
+- If there is no possible result, the method returns an empty string.

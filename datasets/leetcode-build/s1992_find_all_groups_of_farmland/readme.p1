@@ -1,0 +1,10 @@
+Preconditions:
+- The input matrix `land` is not null.
+- The dimensions of `land` are valid (1 <= m, n <= 300).
+- The elements of `land` are either 0 or 1.
+
+Postconditions:
+- The output is a 2D array containing the 4-length arrays for each group of farmland.
+- If there are no groups of farmland, the output is an empty array.
+- The output arrays are in any order.
+- Each group of farmland is represented by a 4-length array [r1, c1, r2, c2], where (r1, c1) is the top left corner and (r2, c2) is the bottom right corner of the group.

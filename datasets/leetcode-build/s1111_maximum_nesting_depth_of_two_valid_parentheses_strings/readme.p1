@@ -1,0 +1,8 @@
+Preconditions:
+- The input `seq` is a valid parentheses string.
+
+Postconditions:
+- The output `answer` is an array of length `seq.length`.
+- Each element in the `answer` array is either 0 or - The sum of the elements in the `answer` array is equal to `seq.length`.
+- The elements in the `answer` array represent the split of `seq` into two disjoint subsequences `A` and `B`, where `0` represents an element in `A` and `1` represents an element in `B`.
+- The split of `seq` into `A` and `B` is such that `max(depth(A), depth(B))` is minimized.

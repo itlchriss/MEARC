@@ -1,0 +1,12 @@
+Preconditions:
+- The input `n` is a positive integer.
+- The value of `n` is between 1 and 30 (inclusive).
+
+Postconditions:
+- The method returns a string representing the `nth` term of the count-and-say sequence.
+- The returned string follows the rules of the count-and-say sequence:
+  - The first term is always "1".
+  - Each subsequent term is obtained by "saying" the previous term.
+  - To "say" a term, it is split into groups of contiguous characters that are the same.
+  - For each group, the number of characters is said, followed by the character itself.
+  - The saying is then converted into a digit string by replacing the counts with numbers and concatenating every saying.

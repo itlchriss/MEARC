@@ -1,0 +1,9 @@
+Preconditions:
+- The input `n` is an integer greater than or equal to 2.
+- The input `delay` is an integer greater than or equal to 1 and less than `forget`.
+- The input `forget` is an integer greater than `delay` and less than or equal to `n`.
+
+Postconditions:
+- The output is an integer representing the number of people who know the secret at the end of day `n`.
+- The output is less than or equal to `n`.
+- The output is modulo `10^9 + 7`.

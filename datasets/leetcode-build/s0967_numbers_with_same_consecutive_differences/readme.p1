@@ -1,0 +1,10 @@
+Preconditions:
+- The input values `n` and `k` must be integers.
+- `n` must be between 2 and 9 (inclusive).
+- `k` must be between 0 and 9 (inclusive).
+
+Postconditions:
+- The method returns an array of non-negative integers.
+- The length of each integer in the array is `n`.
+- The absolute difference between every two consecutive digits in each integer is `k`.
+- The integers in the array must not have leading zeros.

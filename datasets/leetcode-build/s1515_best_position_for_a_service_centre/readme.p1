@@ -1,0 +1,9 @@
+Preconditions:
+- The input array `positions` is not null.
+- The length of the input array `positions` is greater than or equal to 1 and less than or equal to 50.
+- Each element in the input array `positions` is an array of length 2.
+- The values of `x` and `y` in each element of the input array `positions` are integers between 0 and 100.
+
+Postconditions:
+- The output is a double value representing the minimum sum of euclidean distances.
+- The output is within 10^-5 of the actual value.

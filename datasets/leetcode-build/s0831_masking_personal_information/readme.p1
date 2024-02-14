@@ -1,0 +1,13 @@
+Preconditions:
+- The input string `s` is either a valid email address or a phone number.
+- If `s` is an email address, it consists of uppercase and lowercase English letters and exactly one '@' symbol and '.' symbol.
+- If `s` is a phone number, it consists of digits, spaces, and the symbols '(', ')', '-', and '+'.
+- The length of `s` is within the specified constraints (8 <= s.length <= 40 for email addresses, 10 <= s.length <= 20 for phone numbers).
+
+Postconditions:
+- The returned string is the masked personal information.
+- If `s` is an email address, the uppercase letters in the name and domain are converted to lowercase letters.
+- If `s` is an email address, the middle letters of the name (excluding the first and last letters) are replaced by 5 asterisks.
+- If `s` is a phone number, all separation characters are removed.
+- If `s` is a phone number, the masked phone number has the specified format based on the number of digits in the country code.
+- The last 4 digits of the local number are represented as 'XXXX' in the masked phone number.

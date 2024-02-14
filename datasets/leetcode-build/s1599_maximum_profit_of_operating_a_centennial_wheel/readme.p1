@@ -1,0 +1,12 @@
+Preconditions:
+- The input array `customers` must not be null.
+- The length of the input array `customers` must be greater than 0.
+- The values in the input array `customers` must be non-negative integers.
+- The values in the input array `customers` must not exceed 50.
+- The values of `boardingCost` and `runningCost` must be positive integers.
+- The value of `boardingCost` must not exceed 100.
+- The value of `runningCost` must not exceed 100.
+
+Postconditions:
+- The method returns an integer representing the minimum number of rotations needed to maximize profit.
+- If there is no scenario where the profit is positive, the method returns -1.

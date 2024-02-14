@@ -1,0 +1,9 @@
+Preconditions:
+1. The `board` is a 2D array of size 8x8.
+2. The `board` contains only the characters '.', 'W', and 'B'.
+3. The cell `(rMove, cMove)` on the `board` is currently empty (contains '.').
+
+Postconditions:
+1. The `board` is updated with the cell `(rMove, cMove)` changed to the `color`.
+2. The cell `(rMove, cMove)` is the endpoint of a good line (horizontal, vertical, or diagonal) after the change.
+3. If the move is legal, return `true`; otherwise, return `false`.

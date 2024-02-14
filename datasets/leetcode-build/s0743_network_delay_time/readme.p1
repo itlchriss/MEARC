@@ -1,0 +1,12 @@
+Preconditions:
+- The input `times` is a non-empty array of length `times.length`.
+- Each element in `times` is an array of length 3.
+- The input `n` is an integer greater than or equal to 1.
+- The input `k` is an integer between 1 and `n`, inclusive.
+- The values of `u_i` and `v_i` in each element of `times` are integers between 1 and `n`, inclusive.
+- The value of `w_i` in each element of `times` is an integer between 0 and 100, inclusive.
+- All pairs `(u_i, v_i)` in `times` are unique.
+
+Postconditions:
+- The method returns an integer representing the time it takes for all `n` nodes to receive the signal.
+- If it is impossible for all `n` nodes to receive the signal, the method returns -1.

@@ -1,0 +1,13 @@
+Preconditions:
+- The input integer `n` is a positive integer.
+- The input 2D integer array `edges` is not null.
+- The length of `edges` is greater than or equal to 1.
+- Each element `edges[i]` in `edges` is a 2-element array.
+- Each element `edges[i]` in `edges` contains two positive integers `a` and `b`.
+- The positive integers `a` and `b` in each element `edges[i]` are not equal.
+- The positive integers `a` and `b` in each element `edges[i]` are less than or equal to `n`.
+- There is at most one edge between any pair of vertices.
+
+Postconditions:
+- The method returns an integer representing the maximum number of groups `m` into which the nodes can be divided.
+- If it is impossible to group the nodes with the given conditions, the method returns -1.

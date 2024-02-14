@@ -1,7 +1,0 @@
-The method should return a List<String> object.
-The returned list should contain tokens representing the simplified expression.
-The tokens should be in the correct order as per the expression.
-The tokens should be simplified based on the evaluation map provided.
-If a variable in the expression is present in the evalvars array, it should be replaced with the corresponding value from evalints array.
-If a variable in the expression is not present in the evalvars array, it should remain unchanged in the token.
-The tokens should be in the form of "coefficient*variable" if the coefficient is not The tokens should be in the form of "variable" if the coefficient is The tokens should be in the form of "-variable" if the coefficient is -The tokens should be in the form of "constant" if the token represents a constant value.

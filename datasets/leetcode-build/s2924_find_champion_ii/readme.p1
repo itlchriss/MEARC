@@ -1,0 +1,12 @@
+Preconditions:
+- The input `n` is a positive integer representing the number of teams.
+- The input `edges` is a 2D integer array representing the directed edges in the graph.
+- The length of `edges` is equal to `m`.
+- Each element in `edges` is a 2-element array `[u, v]` where `u` and `v` are integers representing team numbers.
+- The team numbers `u` and `v` are in the range from 0 to `n-1`.
+- The input is generated such that if team `a` is stronger than team `b`, team `b` is not stronger than team `a`.
+- The input is generated such that if team `a` is stronger than team `b` and team `b` is stronger than team `c`, then team `a` is stronger than team `c`.
+
+Postconditions:
+- The method returns an integer representing the team that will be the champion of the tournament if there is a unique champion.
+- If there is no unique champion, the method returns -1.

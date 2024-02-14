@@ -1,0 +1,9 @@
+Preconditions:
+- The input strings `word1` and `word2` must not be null.
+- The lengths of `word1` and `word2` must be equal.
+- The lengths of `word1` and `word2` must be between 1 and 100 (inclusive).
+- `word1` and `word2` must consist only of lowercase English letters.
+
+Postconditions:
+- The method returns `true` if the differences between the frequencies of each letter from `'a'` to `'z'` between `word1` and `word2` is at most 3.
+- The method returns `false` otherwise.

@@ -1,0 +1,11 @@
+Preconditions:
+- The input array `arr` is not null.
+- The length of the input array `arr` is at least 2.
+- The elements in the input array `arr` are distinct.
+
+Postconditions:
+- The output is a list of pairs, where each pair `[a, b]` satisfies the following conditions:
+  - `a` and `b` are elements from the input array `arr`.
+  - `a` is less than `b`.
+  - The difference between `b` and `a` is equal to the minimum absolute difference of any two elements in the input array `arr`.
+- The output list is sorted in ascending order with respect to the pairs.

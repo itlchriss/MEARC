@@ -1,0 +1,10 @@
+Preconditions:
+- The `bottom` and `top` values must be valid floor numbers, where `bottom` is less than or equal to `top`.
+- The `special` array must not be empty.
+- The values in the `special` array must be valid floor numbers, where each value is greater than or equal to `bottom` and less than or equal to `top`.
+- All the values in the `special` array must be unique.
+
+Postconditions:
+- The method should return an integer value representing the maximum number of consecutive floors without a special floor.
+- The returned value should be non-negative.
+- If all the floors between `bottom` and `top` (inclusive) are special floors, the method should return 0.

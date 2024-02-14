@@ -1,0 +1,9 @@
+Preconditions:
+- The input string `s` is not null.
+- The length of the input string `s` is at least 2 and at most 12.
+- The input string `s` consists of lowercase English letters only.
+
+Postconditions:
+- The method returns an integer representing the maximum possible product of the lengths of two palindromic subsequences of the input string `s`.
+- The two palindromic subsequences are disjoint, meaning they do not both pick a character at the same index.
+- The product of the lengths of the two palindromic subsequences is maximized.

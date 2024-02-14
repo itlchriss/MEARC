@@ -1,0 +1,127 @@
+package g0101_0200.s0126_word_ladder_ii;
+
+// #Hard #String #Hash_Table #Breadth_First_Search #Backtracking
+// #2022_07_02_Time_19_ms_(60.53%)_Space_43_MB_(90.12%)
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
+public class Solution {
+	//@ requires(*The length of `beginWord` is between 1 and - The length of `endWord` is the same as `beginWord`.*);
+	//@ requires(*The length of `wordList` is between 1 and - Each word in `wordList` has the same length as `beginWord`.*);
+	//@ requires(*`beginWord` and `endWord` consist of lowercase English letters.*);
+	//@ requires(*`beginWord` is not equal to `endWord`.*);
+	//@ requires(*All the words in `wordList` are unique.*);
+	//@ ensures(*The method returns a list of lists of strings.*);
+	//@ ensures(*Each list in the returned list represents a shortest transformation sequence from `beginWord` to `endWord`.*);
+	//@ ensures(*Each transformation sequence starts with `beginWord` and ends with `endWord`.*);
+	//@ ensures(*Each adjacent pair of words in a transformation sequence differs by a single letter.*);
+	//@ ensures(*Each word in a transformation sequence is in `wordList`.*);
+	//@ ensures(*If no valid transformation sequence exists, an empty list is returned.*);
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        List<List<String>> ans = new ArrayList<>();
+        // reverse graph start from endWord
+        Map<String, Set<String>> reverse = new HashMap<>();
+        // remove the duplicate words
+        Set<String> wordSet = new HashSet<>(wordList);
+        // remove the first word to avoid cycle path
+        wordSet.remove(beginWord);
+        // store current layer nodes
+        Queue<String> queue = new LinkedList<>();
+        // first layer has only beginWord
+        queue.add(beginWord);
+        // store nextLayer nodes
+        Set<String> nextLevel = new HashSet<>();
+        // find endWord flag
+        boolean findEnd = false;
+        // traverse current layer nodes
+        while (!queue.isEmpty()) {
+            String word = queue.remove();
+            for (String next : wordSet) {
+                // is ladder words
+                if (isLadder(word, next)) {
+                    // construct the reverse graph from endWord
+                    Set<String> reverseLadders =
+                            reverse.computeIfAbsent(next, k -> new HashSet<>());
+                    reverseLadders.add(word);
+                    if (endWord.equals(next)) {
+                        findEnd = true;
+                    }
+                    // store next layer nodes
+                    nextLevel.add(next);
+                }
+            }
+            // when current layer is all visited
+            if (queue.isEmpty()) {
+                // if find the endWord, then break the while loop
+                if (findEnd) {
+                    break;
+                }
+                // add next layer nodes to queue
+                queue.addAll(nextLevel);
+                // remove all next layer nodes in wordSet
+                wordSet.removeAll(nextLevel);
+                nextLevel.clear();
+            }
+        }
+        // if can't reach endWord from startWord, then return ans.
+        if (!findEnd) {
+            return ans;
+        }
+        Set<String> path = new LinkedHashSet<>();
+        path.add(endWord);
+        // traverse reverse graph from endWord to beginWord
+        findPath(endWord, beginWord, reverse, ans, path);
+        return ans;
+    }
+
+    private void findPath(
+            String endWord,
+            String beginWord,
+            Map<String, Set<String>> graph,
+            List<List<String>> ans,
+            Set<String> path) {
+        Set<String> next = graph.get(endWord);
+        if (next == null) {
+            return;
+        }
+        for (String word : next) {
+            path.add(word);
+            if (beginWord.equals(word)) {
+                List<String> shortestPath = new ArrayList<>(path);
+                // reverse words in shortest path
+                Collections.reverse(shortestPath);
+                // add the shortest path to ans.
+                ans.add(shortestPath);
+            } else {
+                findPath(word, beginWord, graph, ans, path);
+            }
+            path.remove(word);
+        }
+    }
+
+    private boolean isLadder(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int diffCount = 0;
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                diffCount++;
+            }
+            if (diffCount > 1) {
+                return false;
+            }
+        }
+        return diffCount == 1;
+    }
+}

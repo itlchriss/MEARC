@@ -1,0 +1,15 @@
+Preconditions:
+- The length of the `words` array is greater than or equal to 1.
+- The length of each word in the `words` array is greater than or equal to 1 and less than or equal to 15.
+- The length of the `letters` array is greater than or equal to 1 and less than or equal to 100.
+- Each element in the `letters` array is a single lowercase English letter.
+- The length of the `score` array is 26.
+- Each element in the `score` array is an integer between 0 and 10 (inclusive).
+- Each word in the `words` array can only be used once.
+- Each letter in the `letters` array can only be used once.
+
+Postconditions:
+- The method returns an integer representing the maximum score of any valid set of words formed using the given letters.
+- The maximum score is calculated by summing the scores of the letters in each word.
+- The score of each letter is determined by the corresponding element in the `score` array.
+- If no valid set of words can be formed using the given letters, the method returns 0.

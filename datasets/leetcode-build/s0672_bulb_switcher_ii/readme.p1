@@ -1,0 +1,8 @@
+Preconditions:
+- The method takes two integer parameters `n` and `presses`.
+- `n` represents the number of bulbs in the room and must be between 1 and 1000 (inclusive).
+- `presses` represents the number of button presses and must be between 0 and 1000 (inclusive).
+
+Postconditions:
+- The method returns an integer representing the number of different possible statuses after performing all `presses` button presses.
+- The returned value must be between 0 and 2^n (inclusive), where n is the number of bulbs in the room.
