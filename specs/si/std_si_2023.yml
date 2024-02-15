@@ -1,15 +1,5 @@
 - term: sorted in ascending order
   syntax:
-  - JJ
-  arity: 1
-  arguments:
-  - (x)
-  g_arity: 1
-  grammar_arguments:
-  - (y)
-  interpretation: \forall int i; (x); ((y))[i - 1] <= ((y))[i]
-- term: sorted in ascending order
-  syntax:
   - NN
   arity: 1
   arguments:
@@ -37,6 +27,9 @@
   - (x)
   - (y)
   interpretation: (x) >= (y)
+  specific_arg_types:
+  - '0'
+  - '0'
 - term: gt
   syntax:
   - JJ
@@ -45,6 +38,9 @@
   - (x)
   - (y)
   interpretation: (x) > (y)
+  specific_arg_types:
+  - '0'
+  - '0'
 - term: lt
   syntax:
   - JJ
@@ -285,16 +281,6 @@
   arguments:
   - (x)
   interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
-- term: index
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (y)
-  g_arity: 1
-  grammar_arguments:
-  - (x)
-  interpretation: \old(Arrays.asList((x)).indexOf((y)))
 - term: if
   syntax:
   - IN
@@ -383,20 +369,6 @@
   arguments:
   - (x)
   interpretation: (x)
-- term: insertion point
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  g_arity: 2
-  grammar_arguments:
-  - (y)
-  - (z)
-  specific_arg_types:
-  - '1'
-  interpretation: (\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j;
-    ((z)) <= j < (x).length; (y) < (x)[j])
 - term: minus
   syntax:
   - IN

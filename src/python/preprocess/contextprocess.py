@@ -55,8 +55,9 @@ class ContextProcessor:
     def _of_2_possesive(self):
         arr = self.sent.split(' ')
         while 'of' in arr:
-            print(self.sent)
             index = arr.index('of')
+            if arr[index - 2].lower() != 'the':
+                break
             t = arr[index + 1] + "'s " + arr[index - 1]
             arr = arr[:index - 1] + [t] + arr[index + 2:]
         self.sent = ' '.join(arr)

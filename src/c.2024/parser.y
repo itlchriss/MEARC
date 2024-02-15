@@ -198,12 +198,12 @@ type_term
         if (getnodelistlength($6) > 1) {
             print_semantic_error("A type predicate can only have one argument.");
         }
-        struct cstsymbol* cst = searchcst($6->node->token->symbol);
+        struct cstsymbol* c = searchcst($6->node->token->symbol);
         for (int i = 0; i < 6; ++i) {
             popchar($1->symbol);
         }
-        cst->symbol_datatype = string2javadatatype($1->symbol);
-        if (cst->symbol_datatype == -1) {
+        c->datatype = string2javadatatype($1->symbol);
+        if (c->datatype == -1) {
             printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
             exit(-1);
         }
@@ -278,9 +278,9 @@ argument
         $$ = newastnode(Variable, $1);
         if (addcstref($1->symbol, $$) != 0) {
             addcstsymbol($1->symbol);
-            addcstref($1->symbol, $$);
-            $$->cstptr = searchcst($1->symbol);
+            addcstref($1->symbol, $$);            
         }
+        $$->cstptr = searchcst($1->symbol);
     }
     | terms {
         print_debug("argument: terms");
@@ -291,7 +291,7 @@ argument
 event_term
     : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
         print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'");
-        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);
+        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);        
     }
     ;
 
@@ -348,7 +348,7 @@ enum explicit_datatype string2javadatatype(char *s) {
     else if (strcmp(s, "long") == 0) return JavaLong;
     else if (strcmp(s, "float") == 0) return JavaFloat;
     else if (strcmp(s, "double") == 0) return JavaDouble;
-    else return -1;
+    else return None;
 }
 
 extern

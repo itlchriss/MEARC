@@ -347,7 +347,7 @@ void* searchqueue(struct queue *queue, void *data, int (*compare)(void*, void*))
     void *tmp = NULL;
     for (int i = 0; i < queue->count; ++i) {
         tmp = gqueue(queue, i);
-        if (compare(tmp, data) == 0) return tmp;
+        if (compare(tmp, data)) return tmp;
     }
     return NULL;
 }
@@ -358,7 +358,7 @@ struct queue* q_searchqueue(struct queue *queue, void *data, int (*compare)(void
     void *tmp = NULL;
     for (int i = 0; i < queue->count; ++i) {
         tmp = gqueue(queue, i);
-        if (compare(tmp, data) == 0) {
+        if (compare(tmp, data)) {
             enqueue(new, tmp);
         }
     }

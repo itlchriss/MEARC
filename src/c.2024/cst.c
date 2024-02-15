@@ -12,7 +12,12 @@ struct cstsymbol* __searchcst(char *symbol);
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
-    printf("Symbol: %s   Data: %s(%d)   No. of Refs: %d\n", c->symbol, c->data, c->type, c->refs->count);
+    printf("Symbol: %s   No. of Refs: %d\n", c->symbol, c->refs->count);
+    printf("Data: ");
+    for (int i = 0; i < c->datalist->count; ++i) {
+        char *data = (char *)gqueue(c->datalist, i);
+        printf("%s  ", data);
+    }
     printf("===================================================================================\n");
 }
 
@@ -66,13 +71,16 @@ void addcstsymbol(char *symbol) {
     } else {
         struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
         new->symbol = (char*)strdup(symbol);
-        new->data = NULL;
+        // new->data = NULL;
         new->refs = initqueue();
         new->scope = 0;            
         new->type = -1;
         new->si_ptr = NULL;
         new->g_arg_count = 0;
         new->si_q = NULL;
+        new->datatype = None;
+        new->status = Empty;
+        new->datalist = initqueue();
         enqueue(cst, (void*)new);
     }            
 }
@@ -85,6 +93,9 @@ int addcstref(char *symbol, void *pt) {
         #endif
         return 1;
     } else if (c->scope == 0) {
+        for (int i = 0; i < c->refs->count; ++i) {
+            if (gqueue(c->refs, i) == pt) return 0;
+        }
         enqueue(c->refs, pt);
         return 0;
     } else {
@@ -116,75 +127,76 @@ void closecstscope(char *symbol) {
 
 struct cstsymbol* updatecstsymbol(char *data, void *ptr) {
     struct cstsymbol *c = searchsymbolbyref(ptr);
-    if (c->data) {
-        free(c->data);
-    }
-    c->data = (char*)strdup(data);
+    // if (c->data) {
+    //     free(c->data);
+    // }
+    // c->data = (char*)strdup(data);
     return c;
 }
 
 void syncsymbol(struct cstsymbol *c) {
-    if (c->si_q != NULL && c->si_q->count > 0 && c->type == -9) {
-        for (int i = 0; i < c->refs->count; ++i) {
-            struct astnode *node = (struct astnode*)gqueue(c->refs, i);
-            if (node->type != Quantifier) {
-                node->type = MultipleSIs;
-                node->si_q = copyqueue(c->si_q);
-            }            
-        }
-    } else {
-        char *tmp = __combine_3_strings__("(", c->symbol, ")");
-        int check = strsearch(c->data, tmp, NULL);
-        free(tmp);
-        enum astnodetype _type;
-        if (check > 0)  {
-            _type = Template;
-        } else {
-            _type = Synthesised;
-        }
-        for (int i = 0; i < c->refs->count; ++i) {
-            struct astnode *node = (struct astnode*)gqueue(c->refs, i);
-            if (node->type != Quantifier) {
-                node->type = _type;
-                if (node->token->symbol)
-                    free(node->token->symbol);
-                node->token->symbol = (char*)strdup(c->data);
-            }            
-        }
-    }
+    // if (c->si_q != NULL && c->si_q->count > 0 && c->type == -9) {
+    //     for (int i = 0; i < c->refs->count; ++i) {
+    //         struct astnode *node = (struct astnode*)gqueue(c->refs, i);
+    //         if (node->type != Quantifier) {
+    //             node->type = MultipleSIs;
+    //             node->si_q = copyqueue(c->si_q);
+    //         }            
+    //     }
+    // } else {
+    //     char *tmp = __combine_3_strings__("(", c->symbol, ")");
+    //     int check = strsearch(c->data, tmp, NULL);
+    //     free(tmp);
+    //     enum astnodetype _type;
+    //     if (check > 0)  {
+    //         _type = Template;
+    //     } else {
+    //         _type = Synthesised;
+    //     }
+    //     for (int i = 0; i < c->refs->count; ++i) {
+    //         struct astnode *node = (struct astnode*)gqueue(c->refs, i);
+    //         if (node->type != Quantifier) {
+    //             node->type = _type;
+    //             if (node->token->symbol)
+    //                 free(node->token->symbol);
+    //             node->token->symbol = (char*)strdup(c->data);
+    //         }            
+    //     }
+    // }
 }
 
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data) {
-    cstsym->data = (char*) strdup (data);
+    // cstsym->data = (char*) strdup (data);
 }
 
 int __cstsymbolcomparator(void *_pt, void *_symbol) {
     struct cstsymbol* c = (struct cstsymbol*)_pt;
     char *symbol = (char*)_symbol;
-    return strcmp(c->symbol, symbol);
+    if (strcmp(c->symbol, symbol) == 0) return TRUE;
+    else return FALSE;
 }
 
 int __cstsymbolandscopecomparator(void *_pt, void *_symbol) {
     struct cstsymbol* c = (struct cstsymbol*)_pt;
     char *symbol = (char*)_symbol;
-    if (strcmp(c->symbol, symbol) == 0 && c->scope == 0) return 0;
-    else return 1;
+    if (strcmp(c->symbol, symbol) == 0 && c->scope == 0) return TRUE;
+    else return FALSE;
 }
 
 int __ptrcomparator(void *_aptr, void *_baptr) {
     if (_aptr == _baptr) {
-        return 0;
+        return TRUE;
     } else {
-        return 1;
+        return FALSE;
     }
 }
 
 int __cstrefcomparator(void *_csymptr, void *_astptr) {
     struct cstsymbol *c = (struct cstsymbol*)_csymptr;
     if (searchqueue(c->refs, _astptr, __ptrcomparator) == NULL) {
-        return 1;
+        return FALSE;
     } else {
-        return 0;
+        return TRUE;
     }
 }
 
@@ -213,10 +225,16 @@ int getavailablerefs(struct cstsymbol *c) {
     }
 }
 
+void deallocatedata(void *_data) {
+    char *data = (char *)_data;
+    free(data);
+}
+
 void deallocatecstsymbol(void *_cstsymbol) {
     struct cstsymbol *c = (struct cstsymbol *)_cstsymbol;
     free(c->symbol);
-    free(c->data);
+    // free(c->data);
+    deallocatequeue(c->datalist, deallocatedata);
     deallocatequeue(c->refs, NULL);
 }
 

@@ -7,40 +7,18 @@
 
 static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
-// void walktree(struct astnode *root, FILE *s, int *haserror) {
-//     struct queue *queue = initqueue();
-//     struct astnode *node;
-//     enqueue(queue, root);
-//     while (!isempty(queue)) {
-//         node = (struct astnode*) dequeue(queue);
-//         switch(node->type) {
-//             case Synthesised:
-//                 if (node->isnegative == 1) {
-//                     fprintf(s, "!(%s)", node->token->symbol);
-//                 } else {
-//                     fprintf(s, "%s", node->token->symbol);
-//                 }
-//                 break;
-//             default:
-//                 #if CGDEBUG
-//                 fprintf(stderr, "walktree: Unknown type(%s) encountered for symbol(%s).\n");
-//                 #endif
-//                 (*haserror)++;
-//                 goto END;
-//         }        
-//     }
-// END:
-//     deallocatequeue(queue, NULL);
-// }
-
 void printree(struct astnode *node, FILE *s, int *haserror) {
     switch(node->type) {
         case Synthesised:
-            if (node->isnegative == 1) {
-                fprintf(s, "!(%s)", node->token->symbol);
-            } else {
-                fprintf(s, "%s", node->token->symbol);
-            }
+            for (int i = 0; i < node->si_q->count; ++i) {
+                if (node->isnegative == 1) {
+                    fprintf(s, "!(%s)", (char *)gqueue(node->si_q, i));
+                    // fprintf(s, "!(%s)", node->token->symbol);
+                } else {
+                    // fprintf(s, "%s", node->token->symbol);
+                    fprintf(s, "%s", (char *)gqueue(node->si_q, i));
+                }                
+            }            
             break;
         default:
             #if CGDEBUG

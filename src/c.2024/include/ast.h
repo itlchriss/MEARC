@@ -41,8 +41,10 @@ struct astnode {
     /* default 0 for positive. 1 for negative */
     int isnegative;
     /* storing the matched SIs. there can be multiple SIs because multiple Java types can be related to a semantic. */
+    /* if the node->type is Synthesised, this queue holds the synthesised SIs of the subtree rooted at this node. */
     struct queue *si_q;
-    // enum javadatatype jtype;
+    
+
 };
 
 struct astnodelist {

@@ -10,25 +10,21 @@
 
  enum javadatatype { PRIMITIVE = 0, NON_PRIMITIVE, NON_PRIMITIVE_WITH_DIMENSIONS };
 
+struct si_arg {
+    enum explicit_datatype datatype;
+    char *symbol;
+};
 
 
 struct si {
+    /* the term/predicate that is can be matched in the HOL */
     char *symbol;
     /* penn tree bank categories of this si */
-    enum ptbsyntax *syntax;
-    /* number of syntax that can be accepted for synthesising this semantic */
-    int syntax_count;
-    /* number of argument to synthesize this semantic */
-    int arg_count; 
-    /* number of argument to synthesize the grammar relation semantic */
-    int g_arg_count;   
-    /* arguments in the interpretation */
-    char **args;
-    /* grammar arguments in the interpretation */
-    char **g_args;
-    int *arg_types;
+    struct queue *syntax;
+    /* the interpretation of this SI */
     char *interpretation;
-    enum javadatatype jtype;
+    /* arguments accepted by this SI */
+    struct queue *args;
 };
 
 /* 

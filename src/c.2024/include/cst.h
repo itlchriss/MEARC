@@ -5,7 +5,8 @@
 
 
  enum explicit_datatype {
-    JavaInteger,
+    None = -1,
+    JavaInteger = 0,
     JavaShort,
     JavaLong,
     JavaFloat,
@@ -14,25 +15,38 @@
     JavaList
 };
 
+enum symbol_status {
+    Empty,
+    Assigned
+};
+
 // node of compile-time symbol table
 struct cstsymbol {
     // name of the symbol
     char *symbol;
     // value of the symbol stored in the symbol table
-    char *data;
+    // char *data;
+    // updated. there can be multiple data
+    /* there can be multiple predicates that are being resolved to the same variable. this is common in compound subject, such as "A and B are not null" then both A and B are resolved to the same variable.*/
+    struct queue *datalist;
+
     // reference list. denoting the pointers that referenced the symbol
     struct queue *refs;
     /* scope opening. default 0. the value 1 indicates the scope is closed and no more references can be added */
     int scope;
     /* this field is to save the type from si, such type indicates the datatype of the data */
     int type;
-    enum explicit_datatype symbol_datatype;
+    enum explicit_datatype datatype;
     void *si_ptr;
     /* a queue holding the possible SIs if the symbol is not synthesised */
     struct queue *si_q;
     /* this field is assigned when the si_ptr is assigned */
     /* it is for counting the unresolved grammar arguments */
-    int g_arg_count;
+    int g_arg_count;    
+    /*
+        Refining the status of the symbol instead of changing the status of the tree node
+    */
+    enum symbol_status status;
 };
 
 
