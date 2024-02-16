@@ -7,7 +7,9 @@ import os
 
 # these are java primitive and reference types
 # we should extend this list to support more data types
-datatypes = ['integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection']
+datatypes = [
+    'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays'
+    ]
 
 
 rulespath = './rules'
@@ -46,6 +48,17 @@ class ContextProcessor:
                 sent = sent.replace(param, pattern)
                 contextual_si['param_%s' % param] = param
         self.sent = sent
+        
+        # NOTE: there can be words representing types, but there are no keywords such as 'input', 'parameter'
+        #       after doing the above operations, if the words listed in the datatypes have no conflicts with the parameter symbols, 
+        #       we also treat them as types
+        words = sent.split(' ')
+        for d in datatypes:
+            indices = [i for i, w in enumerate(words) if w == d]
+            if indices:
+                for index in indices:
+                    words[index] = 'type_' + words[index]
+        self.sent = ' '.join(words)
 
     def _synonym_syntax_preprocessor(self):
         for rule in alt_rules:

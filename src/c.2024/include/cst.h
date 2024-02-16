@@ -12,7 +12,9 @@
     JavaFloat,
     JavaDouble,
     JavaArray,
-    JavaList
+    JavaList,
+    JavaString,
+    JavaChar
 };
 
 enum symbol_status {
@@ -67,5 +69,13 @@ void removecstref(char *, void *);
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data);
 void renamesymbols();
 void deallocatecstsymbol(void *);
+void deallocatedata(void *);
 int getavailablerefs(struct cstsymbol *);
+
+/* 
+    providing a checking on a valid datatype that is ready for synthesis
+    basically, the data types that have prefix 'Java' are ready for synthesis
+    an exception is 'RelDepend', which is only for predicate 'Rel'
+*/
+int has_datatype(struct cstsymbol *cstptr);
 #endif

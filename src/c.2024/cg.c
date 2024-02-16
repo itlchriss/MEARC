@@ -8,16 +8,17 @@
 static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 void printree(struct astnode *node, FILE *s, int *haserror) {
+    char *formatstr = "%s\n";
+    if (node->isnegative == 1) {
+        formatstr = "!(%s)\n";
+    }
     switch(node->type) {
-        case Synthesised:
-            for (int i = 0; i < node->si_q->count; ++i) {
-                if (node->isnegative == 1) {
-                    fprintf(s, "!(%s)", (char *)gqueue(node->si_q, i));
-                    // fprintf(s, "!(%s)", node->token->symbol);
-                } else {
-                    // fprintf(s, "%s", node->token->symbol);
-                    fprintf(s, "%s", (char *)gqueue(node->si_q, i));
-                }                
+        case Synthesised:      
+            // if (node->cstptr->datatype != None) {
+            //     fprintf(s, "%s\n", "GLR results");
+            // }
+            for (int i = 0; i < node->si_q->count; ++i) {                
+                fprintf(s, formatstr, (char *)gqueue(node->si_q, i));             
             }            
             break;
         default:

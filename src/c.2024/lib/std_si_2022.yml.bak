@@ -1,5 +1,15 @@
 - term: sorted in ascending order
   syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - (x)
+  g_arity: 1
+  grammar_arguments:
+  - (y)
+  interpretation: \forall int i; (x); ((y))[i - 1] <= ((y))[i]
+- term: sorted in ascending order
+  syntax:
   - NN
   arity: 1
   arguments:
@@ -19,39 +29,21 @@
   arguments:
   - (x)
   interpretation: \forall int k; 0 <= k < (x).length - 1; (x)[k] >= (x)[k + 1]
-- term: gtoet
+- term: greater than or equal to
   syntax:
   - JJ
+  - JJR
+  - VBG
   arity: 2
   arguments:
   - (x)
   - (y)
   interpretation: (x) >= (y)
-  specific_arg_types:
-  - '0'
-  - '0'
-- term: gt
+- term: less than or equal to
   syntax:
   - JJ
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: (x) > (y)
-  specific_arg_types:
-  - '0'
-  - '0'
-- term: lt
-  syntax:
-  - JJ
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: (x) < (y)
-- term: ltoet
-  syntax:
-  - JJ
+  - JJR
+  - VBG
   arity: 2
   arguments:
   - (x)
@@ -87,6 +79,17 @@
   specific_arg_types:
   - '1'
   interpretation: (x).length
+- term: equals to
+  syntax:
+  - JJ
+  - JJR
+  - VBG
+  - VBZ
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: (x) == (y)
 - term: equal to
   syntax:
   - VBG
@@ -135,15 +138,6 @@
   arguments:
   - (*)
   interpretation: 'null'
-- term: null
-  syntax:
-  - JJ
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '5'
-  interpretation: '(x) == null'
 - term: be
   syntax:
   - VBZ
@@ -254,15 +248,28 @@
   - NN
   arity: 1
   arguments:
-  - (*)
-  interpretation: __REL__length
+  - (x)
+  specific_arg_types:
+  - '2'
+  interpretation: (x).size()
 - term: size
   syntax:
   - NN
   arity: 1
   arguments:
-  - (*)
-  interpretation: __REL__size
+  - (x)
+  specific_arg_types:
+  - '2'
+  interpretation: (x).size()
+- term: size
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  specific_arg_types:
+  - '1'
+  interpretation: (x).length
 - term: sort
   syntax:
   - VBN
@@ -270,6 +277,16 @@
   arguments:
   - (x)
   interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+- term: index
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (y)
+  g_arity: 1
+  grammar_arguments:
+  - (x)
+  interpretation: \old(Arrays.asList((x)).indexOf((y)))
 - term: if
   syntax:
   - IN
@@ -358,6 +375,20 @@
   arguments:
   - (x)
   interpretation: (x)
+- term: insertion point
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  g_arity: 2
+  grammar_arguments:
+  - (y)
+  - (z)
+  specific_arg_types:
+  - '1'
+  interpretation: (\forall int j; 0 <= j < ((z)); (x)[j] < (y)) && (\forall int j;
+    ((z)) <= j < (x).length; (y) < (x)[j])
 - term: minus
   syntax:
   - IN
@@ -397,73 +428,3 @@
   - (x)
   - (y)
   interpretation: _sub(y)2(x)
-- term: provide
-  syntax:
-  - VBN
-  arity: 1
-  arguments:
-  - (x)
-  interpretation: (x) != null  
-- term: equal
-  syntax:
-  - JJ
-  arity: 2
-  arguments:
-  - Subj
-  - Dat
-  interpretation: (Subj) == (Dat)
-- term: __REL__length
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '5'
-  interpretation: (x).length
-- term: __REL__length
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '6'
-  interpretation: (x).size()
-- term: __REL__length
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '7'
-  interpretation: (x).length()
-- term: __REL__size
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '5'
-  interpretation: (x).length
-- term: __REL__size
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '6'
-  interpretation: (x).size()
-- term: __REL__size
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '7'
-  interpretation: (x).length()
-

@@ -1,13 +1,13 @@
 ensures:
-- The returned array param_answer is not null.
+- The returned type_array param_answer is not null.
 - The param_answer's length is equal to param_n.
 - Each element in param_answer is an integer.
 - The values in param_answer are either non-negative integers or -1.
 requires:
 - The type_integer param_n is gtoet 1.
-- The arrays param_redEdges and param_blueEdges are not null.
+- The type_arrays param_redEdges and param_blueEdges are not null.
 - The param_redEdges's length is not gt 400.
 - The param_blueEdges's length is not gt 400.
-- Each element in param_redEdges is an array of length 2.
-- Each element in param_blueEdges is an array of length 2.
+- Each element in param_redEdges is an type_array of length 2.
+- Each element in param_blueEdges is an type_array of length 2.
 - The values in param_redEdges and param_blueEdges are within the 0's range to `n-1`.

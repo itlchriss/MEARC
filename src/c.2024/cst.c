@@ -165,6 +165,16 @@ void syncsymbol(struct cstsymbol *c) {
     // }
 }
 
+/* 
+    providing a checking on a valid datatype that is ready for synthesis
+    basically, the data types that have prefix 'Java' are ready for synthesis
+    an exception is 'RelDepend', which is only for predicate 'Rel'
+*/
+int has_datatype(struct cstsymbol *cstptr) {
+    if (cstptr->datatype != None) return TRUE;
+    else return FALSE;
+}
+
 void setvalue2cstsymbol(struct cstsymbol *cstsym, char *data) {
     // cstsym->data = (char*) strdup (data);
 }
