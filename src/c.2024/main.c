@@ -363,6 +363,11 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
+                        } else if (strcmp(key, "synthesised_datatype") == 0) {
+                            char *tmp = (char*) strdup(value);
+                            int _t = atoi(tmp);
+                            si->synthesised_datatype = (enum explicit_datatype)_t;
+                            free(tmp);
                         } else {
                             fprintf(stderr, "Syntax error in SI file %s with key %s and value %s\n", filepath, key ,value);
                             exit(-1);

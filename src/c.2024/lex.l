@@ -116,7 +116,7 @@ KEYWORD_DAT         "Dat"
 
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
 KEYWORD_TYPE         _type_[a-z]+
-KEYWORD_PARAM        _param_[a-z0-9]+
+KEYWORD_PARAM        _param_[a-zA-Z0-9]+
 VARIABLE               ([a-z]([0-9]+)?)
 %%
 "(" {

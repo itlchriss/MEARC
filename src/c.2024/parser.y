@@ -82,6 +82,9 @@ terms
             addastchild($$, $4);
         }
     }
+    /* | terms connective terms {
+
+    } */
     | terms connective NEG term {
         print_debug("terms: terms term");
         $$ = newastnode(Connective, NULL);
@@ -216,7 +219,7 @@ type_term
 */
 param_term
     : KEYWORD_PARAM '{' TAG '}' '(' arguments ')' {
-        //print_debug("PARAM(%s), Syntax(%s)\n", $1->symbol, $3->symbol); 
+        // printf("PARAM(%s), Syntax(%s)\n", $1->symbol, $3->symbol); 
         if (getnodelistlength($6) > 1) {
             print_semantic_error("A type predicate can only have one argument.");
         }
@@ -312,20 +315,20 @@ quantified_term
         addastchild($$, $5);        
         closecstscope($2->symbol);
     }
-    | KEYWORD_QUANTIFIER IDENTIFIER '.' '(' '(' terms ')' connective '(' terms ')' {
+    /* | KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' {
         print_debug("all_expr: KEYWORD_ALL IDENTIFIER");
-        $$ = newastnode(Quantifier, $2);
-        $$->qtype = Quantifier_ForAll;
-        if (addcstref($2->symbol, $$) != 0) {
-            addcstsymbol($2->symbol);
-            addcstref($2->symbol, $$);
-        }
-        struct astnode* conn = newastnode(Connective, NULL);
-        conn->conntype = $8;
-        addastchild(conn, $6);
-        addastchild(conn, $10);
-        addastchild($$, conn);
-    }
+        // $$ = newastnode(Quantifier, $2);
+        // $$->qtype = Quantifier_ForAll;
+        // if (addcstref($2->symbol, $$) != 0) {
+        //     addcstsymbol($2->symbol);
+        //     addcstref($2->symbol, $$);
+        // }
+        // struct astnode* conn = newastnode(Connective, NULL);
+        // conn->conntype = $8;
+        // addastchild(conn, $6);
+        // addastchild(conn, $10);
+        // addastchild($$, conn);
+    } */
     ;
 %%
 

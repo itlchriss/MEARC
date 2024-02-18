@@ -14,7 +14,8 @@
     JavaArray,
     JavaList,
     JavaString,
-    JavaChar
+    JavaChar,
+    JavaBool
 };
 
 enum symbol_status {

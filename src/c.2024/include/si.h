@@ -25,6 +25,8 @@ struct si {
     char *interpretation;
     /* arguments accepted by this SI */
     struct queue *args;
+    /* the data type of this SI after synthesis */
+    enum explicit_datatype synthesised_datatype;
 };
 
 /* 

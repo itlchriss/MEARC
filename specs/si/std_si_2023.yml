@@ -78,15 +78,6 @@
     (y).length) && (\forall int i; 0 <= i < (x).length; (((x)[i] == null && (y)[i]
     == null) || ((x)[i] != null && (y)[i] != null && (!(x)[i].getClass().isArray()
     && !(y)[i].getClass().isArray() && (x)[i].equals((y)[i])))))))
-- term: length
-  syntax:
-  - NN
-  arity: 1
-  arguments:
-  - (x)
-  specific_arg_types:
-  - '1'
-  interpretation: (x).length
 - term: equal to
   syntax:
   - VBG
@@ -411,6 +402,8 @@
   arguments:
   - Subj
   - Dat
+  synthesised_datatype:
+  - '9'
   interpretation: (Subj) == (Dat)
 - term: __REL__length
   syntax:
@@ -420,6 +413,8 @@
   - (x)
   specific_arg_types:
   - '5'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).length
 - term: __REL__length
   syntax:
@@ -429,6 +424,8 @@
   - (x)
   specific_arg_types:
   - '6'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).size()
 - term: __REL__length
   syntax:
@@ -438,6 +435,8 @@
   - (x)
   specific_arg_types:
   - '7'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).length()
 - term: __REL__size
   syntax:
@@ -447,6 +446,8 @@
   - (x)
   specific_arg_types:
   - '5'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).length
 - term: __REL__size
   syntax:
@@ -456,6 +457,8 @@
   - (x)
   specific_arg_types:
   - '6'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).size()
 - term: __REL__size
   syntax:
@@ -465,5 +468,7 @@
   - (x)
   specific_arg_types:
   - '7'
+  synthesised_datatype:
+  - '0'
   interpretation: (x).length()
 

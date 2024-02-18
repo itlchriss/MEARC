@@ -5,6 +5,13 @@
 #include <string.h>
 #include "ast.h"
 
+// #ifndef TRUE
+// #define TRUE 1
+// #endif
+// #ifndef FALSE
+// #define FALSE 0
+// #endif
+
 extern int yylex(void);
 extern int yyparse(void);
 extern void yyerror(const char*);
