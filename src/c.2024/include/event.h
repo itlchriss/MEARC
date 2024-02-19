@@ -9,15 +9,15 @@ struct event {
     /*
     *  The event variable of this event. Such as 'e01'
     */
-    char *var;
+    // char *var;
+    struct cstsymbol *cstptr;
     struct queue *entities;
 };
 
 struct entity {
-    char *var;
+    // char *var;
     char *alias;
-    // enum argtype sitype;
-    struct cstsymbol *ptr;
+    struct cstsymbol *cstptr;
     enum gramtype type;
 };
 
@@ -42,4 +42,9 @@ Aliasing the subject of an event using the event itself
 This is an experiment case for possessive pronouns, e.g. A who has B, the event 'has' is a node synthesising the phrase, thus A should be aliased using the synthesised semantics at 'has'
 */
 void aliaseventsubject(struct queue *cst, struct event *ptr);
+/* 
+    loop over all the events to check if the components(related variables) are assigned, then the event is assigned
+    an event must be assigned before synthesising
+*/
+void update_events();
 #endif

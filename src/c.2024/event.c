@@ -4,6 +4,7 @@
 #include <string.h>
 #include "event.h"
 #include "util.h"
+#include "error.h"
 
 extern struct queue *events;
 
@@ -69,6 +70,23 @@ TODO: instead of alias, we should just replace the entity var with the event var
 //     }
 // }
 
+/* 
+    loop over all the events to check if the components(related variables) are assigned, then the event is assigned
+    an event must be assigned before synthesising
+*/
+void update_events() {
+    struct event *e = NULL;
+    for (int i = 0; i < events->count; ++i) {
+        e = (struct event *)gqueue(events, i);
+        int all_assigned = TRUE;
+        for (int j = 0; j < e->entities->count; ++j) {
+            struct entity *en = (struct entity*)gqueue(e->entities, i);
+            if (en->cstptr->status != Assigned) all_assigned = FALSE;
+        }
+        if (all_assigned) e->cstptr->status = Assigned;
+    }
+}
+
 /* this function removes all the relationships in the events relating the input entity variable */
 void removeentityfromevents(char *entityvar) {
     struct event *e;
@@ -76,7 +94,7 @@ void removeentityfromevents(char *entityvar) {
         e = (struct event*)gqueue(events, i);
         for (int j = 0; j < e->entities->count; ++j) {
             struct entity *en = (struct entity*)gqueue(e->entities, i);
-            if (strcmp(en->var, entityvar) == 0) {
+            if (strcmp(en->cstptr->symbol, entityvar) == 0) {
                 rqueue(e->entities, j);
                 deallocateentity(en);
                 break;
@@ -89,7 +107,8 @@ struct event *searchevent(char *eventvar) {
     struct event *e;
     for (int i = 0; i < events->count; ++i) {
         e = (struct event*)gqueue(events, i);
-        if (strcmp(e->var, eventvar) == 0) return e;
+        // if (strcmp(e->var, eventvar) == 0) return e;
+        if (strcmp(e->cstptr->symbol, eventvar) == 0) return e;
     }
     return NULL;
 }
@@ -104,7 +123,9 @@ struct event *newevent(char *eventvar) {
         // printf("Error: duplicated event declaration for %s\n", eventvar);
         // exit(-12);
         struct event *new = (struct event*)malloc(sizeof(struct event));
-        new->var = (char*)strdup(eventvar);
+        // new->var = (char*)strdup(eventvar);
+        new->cstptr = searchcst(eventvar);
+        if (new->cstptr == NULL) internal_error("newevent");
         new->entities = initqueue();
         enqueue(events, (void*)new);
         return new;
@@ -114,43 +135,19 @@ struct event *newevent(char *eventvar) {
 
 void addevententity(struct event *event, char *entityvar, char *gramstr) {
     struct entity *new = (struct entity*)malloc(sizeof(struct entity));
-    new->var = (char*)strdup(entityvar);
+    // new->var = (char*)strdup(entityvar);
     new->type = __string2gramtype(gramstr);
     // new->sitype = -1;
     new->alias = NULL;
     /* find the compile time symbol of the entity variable */
-    new->ptr = searchcst(entityvar);
-    if (new->ptr == NULL) {
+    new->cstptr = searchcst(entityvar);
+    if (new->cstptr == NULL) {
         fprintf(stderr, "An entity variable(%s) is not found in the compile time symbol table. Stopping..", entityvar);
         exit(-1);
     }
-    new->ptr->refs->count -= 1;
+    new->cstptr->refs->count -= 1;
     enqueue(event->entities, (void*)new);
 }
-
-// void syncentitysitype(struct queue *events, char *var, enum argtype type) {
-//     for (int i = 0; i < events->count; ++i) {
-//         struct event *ev = (struct event *)gqueue(events, i);
-//         for (int j = 0; j < ev->entities->count; ++j) {
-//             struct entity *en = (struct entity *)gqueue(ev->entities, j);
-//             if (strcmp(en->var, var) == 0) {
-//                 en->sitype = type;
-//             }
-//         }
-//     }
-// }
-
-// void addentitytoevent(char *eventvar, char *entityvar, char *gramstr) {
-//     struct event *ev = searchevent(events, eventvar);
-//     if (ev == NULL) {
-//         printf("Error: Event %s not found\n", eventvar);
-//         exit(-13);
-//     }
-//     struct entity *en = (struct event*)malloc(sizeof(struct entity));
-//     en->var = (char*)strdup(entityvar);
-//     en->type = string2gramtype(gramstr);
-//     enqueue(ev->entities, (void*)en);
-// }
 
 char *event2template(char *eventvar) {
     /*
@@ -167,18 +164,17 @@ void *__popentityfromevent(char *eventvar) {
 
 void showevent(void *_event) {
     struct event *event = (struct event*)_event;
-    printf("Event: %s\n", event->var);
+    printf("Event: %s\n", event->cstptr->symbol);
     for (int j = 0; j < event->entities->count; ++j) {
         struct entity *entity = (struct entity *)gqueue(event->entities, j);
-        // printf("    ->Entity: %s(%s) alias(%s) SI(%d)\n ", entity->var, gram_name[entity->type], entity->alias, entity->sitype);
         printf("=============================Event symbol===================================\n");
-        printf("    ->Entity: %s(%s) alias(%s) SI\n ", entity->var, gram_name[entity->type], entity->alias);
+        printf("    ->Entity: %s(%s) alias(%s) SI\n ", entity->cstptr->symbol, gram_name[entity->type], entity->alias);
         printf("===================================================================================\n");
     }
 }
 
 void deallocateentity(struct entity *entity) {
-    free(entity->var);
+    // free(entity->var);
     if (entity->alias) {
         free(entity->alias);
     }
@@ -187,7 +183,7 @@ void deallocateentity(struct entity *entity) {
 
 void deallocateevent(void *_event) {
     struct event *event = (struct event*)_event;
-    free(event->var);
+    // free(event->var);
     while (!isempty(event->entities)) {
         deallocateentity((struct entity*)dequeue(event->entities));
     }    

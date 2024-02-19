@@ -3,6 +3,7 @@
 
 #include "util.h"
 #include "cst.h"
+#include "event.h"
 
 // this has to agree exactly with the array in ast.c
 enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, GrammarNotation, MultipleSIs };
@@ -43,7 +44,6 @@ struct astnode {
     /* storing the matched SIs. there can be multiple SIs because multiple Java types can be related to a semantic. */
     /* if the node->type is Synthesised, this queue holds the synthesised SIs of the subtree rooted at this node. */
     struct queue *si_q;
-    
 
 };
 

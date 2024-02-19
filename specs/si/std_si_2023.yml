@@ -24,9 +24,9 @@
   - JJ
   arity: 2
   arguments:
-  - (x)
-  - (y)
-  interpretation: (x) >= (y)
+  - Subj
+  - Acc
+  interpretation: (Subj) >= (Acc)
   specific_arg_types:
   - '0'
   - '0'
@@ -35,9 +35,9 @@
   - JJ
   arity: 2
   arguments:
-  - (x)
-  - (y)
-  interpretation: (x) > (y)
+  - Subj
+  - Acc
+  interpretation: (Subj) > (Acc)
   specific_arg_types:
   - '0'
   - '0'
@@ -46,17 +46,23 @@
   - JJ
   arity: 2
   arguments:
-  - (x)
-  - (y)
-  interpretation: (x) < (y)
+  - Subj
+  - Acc
+  interpretation: (Subj) < (Acc)
+  specific_arg_types:
+  - '0'
+  - '0'
 - term: ltoet
   syntax:
   - JJ
   arity: 2
   arguments:
-  - (x)
-  - (y)
-  interpretation: (x) <= (y)
+  - Subj
+  - Acc
+  interpretation: (Subj) <= (Acc)
+  specific_arg_types:
+  - '0'
+  - '0'
 - term: correspondingly equal to
   syntax:
   - VBG
@@ -131,10 +137,10 @@
   - JJ
   arity: 1
   arguments:
-  - (x)
+  - Subj
   specific_arg_types:
   - '5'
-  interpretation: '(x) == null'
+  interpretation: '(Subj) == null'
 - term: be
   syntax:
   - VBZ

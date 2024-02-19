@@ -294,7 +294,8 @@ argument
 event_term
     : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
         print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'");
-        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);        
+        /* event should accept the cstptr instead of the symbol to speed up the traversal */
+        addevententity(newevent($4->symbol), $7->symbol, $2->symbol);      
     }
     ;
 

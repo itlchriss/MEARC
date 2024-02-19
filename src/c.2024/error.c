@@ -33,3 +33,9 @@ void sideclare_error(char *support_info) {
     fprintf(stderr, "The predicate(%s) should have all its SIs starting with '__Rel__'. If you are not intended to declare it as Rel SI, please correct it.\n", support_info);
     exit(-1);
 }
+
+void internal_error(char *support_info) {
+    fprintf(stderr, "Internal error:");
+    fprintf(stderr, "Please check the function %s\n", support_info);
+    exit(-1);
+}

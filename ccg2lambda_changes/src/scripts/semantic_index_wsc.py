@@ -68,7 +68,7 @@ class SemanticIndex(object):
               + '"base" and "surf". CCG node: {0}\nrule_pattern attributes: {1}'\
               .format(etree.tostring(ccg_tree, pretty_print=True),
                       rule_pattern.attributes)
-            predicate_string = base if base != '*' else surf
+            predicate_string = base if base != '*' and not base.startswith('param_') else surf
             if pos.isalpha():
                 predicate_string = predicate_string + ('{%s}' % pos)
             predicate = lexpr(predicate_string)
