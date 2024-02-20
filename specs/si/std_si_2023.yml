@@ -477,4 +477,10 @@
   synthesised_datatype:
   - '0'
   interpretation: (x).length()
-
+- term: element
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (x)
+  interpretation: (x)[i]

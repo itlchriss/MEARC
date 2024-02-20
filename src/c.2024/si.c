@@ -961,7 +961,6 @@ int __is_event_predicate__(struct astnode *node) {
 
 void sianalysis() {
     struct astnode *node;
-    // struct si *si;
     struct queue *si_q;
     #if SIDEBUG
     printf("si analysis: there are %d predicates in the queue.\n", predicates->count);
@@ -1139,7 +1138,12 @@ void opresolution() {
         node = (struct astnode*)dequeue(operators);
         left = getastchild(node, 0);
         right = getastchild(node, 1);
-        addalias(alias, left->cstptr, right->cstptr);        
+        addalias(alias, left->cstptr, right->cstptr);   
+        if (has_datatype(left->cstptr) && !has_datatype(right->cstptr)) {
+            right->cstptr->datatype = left->cstptr->datatype;
+        } else if  (!has_datatype(left->cstptr) && has_datatype(right->cstptr)) {
+            left->cstptr->datatype = right->cstptr->datatype;
+        }
         removecstref(left->token->symbol, left);
         removecstref(right->token->symbol, right);
         root = deleteastnodeandedge(node, root);

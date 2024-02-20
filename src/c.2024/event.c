@@ -142,8 +142,14 @@ void addevententity(struct event *event, char *entityvar, char *gramstr) {
     /* find the compile time symbol of the entity variable */
     new->cstptr = searchcst(entityvar);
     if (new->cstptr == NULL) {
-        fprintf(stderr, "An entity variable(%s) is not found in the compile time symbol table. Stopping..", entityvar);
-        exit(-1);
+        /* 
+            this is a case that the event semantics comes before predicates 
+            we have to create the compile-time symbol first 
+        */
+        addcstsymbol(entityvar);
+        new->cstptr = searchcst(entityvar);
+        // fprintf(stderr, "An entity variable(%s) is not found in the compile time symbol table. Stopping..", entityvar);
+        // exit(-1);
     }
     new->cstptr->refs->count -= 1;
     enqueue(event->entities, (void*)new);

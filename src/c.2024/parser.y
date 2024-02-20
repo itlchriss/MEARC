@@ -46,16 +46,23 @@
 %%
 
 formula
-    : terms {
+    : quantified_term {
         print_debug("formula: terms");
         ast = $1;
         $1->isroot = 1;
     }
+    | NEG quantified_term {
+        print_debug("formula: NEG terms");
+        ast = $2;
+        $2->isnegative = 1;
+        $2->isroot = 1;
+    }    
     ;
 
+
 terms
-    : terms connective term {
-        print_debug("(top rule) terms: terms term");
+    : term connective terms {
+        print_debug("(top rule) terms: terms connective term");
         if ($3 == NULL) {
             /* case of terms connective TrueP */
             $$ = $1;
@@ -69,7 +76,7 @@ terms
             addastchild($$, $3);
         }
     }
-    | terms connective '(' term ')' {
+    | term connective '(' terms ')' {
         print_debug("terms: terms connective '(' term ')'");
         if ($4 == NULL) {
             $$ = $1;
@@ -81,25 +88,6 @@ terms
             addastchild($$, $1);
             addastchild($$, $4);
         }
-    }
-    /* | terms connective terms {
-
-    } */
-    | terms connective NEG term {
-        print_debug("terms: terms term");
-        $$ = newastnode(Connective, NULL);
-        $4->isnegative = 1;
-        $$->conntype = $2;
-        addastchild($$, $1);
-        addastchild($$, $4);
-    }
-    | terms connective NEG '(' term ')' {
-        print_debug("terms: terms term");
-        $$ = newastnode(Connective, NULL);
-        $5->isnegative = 1;
-        $$->conntype = $2;
-        addastchild($$, $1);
-        addastchild($$, $5);
     }
     | term {
         print_debug("terms: term");
@@ -114,12 +102,8 @@ terms
         $$ = $2;
         $$->isnegative = 1;
     }
-    | NEG '(' term ')' {
-        print_debug("term: NEG term");
-        $$ = $3;
-        $$->isnegative = 1;
-    }
     ;
+
 
 term
     : predicate_term {
@@ -162,7 +146,7 @@ term
         addastchild($$, left);
         addastchild($$, right);
         enqueue(operators, (void*)$$);
-    }    
+    }
     ;
 
 connective
@@ -316,20 +300,20 @@ quantified_term
         addastchild($$, $5);        
         closecstscope($2->symbol);
     }
-    /* | KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' {
-        print_debug("all_expr: KEYWORD_ALL IDENTIFIER");
-        // $$ = newastnode(Quantifier, $2);
-        // $$->qtype = Quantifier_ForAll;
-        // if (addcstref($2->symbol, $$) != 0) {
-        //     addcstsymbol($2->symbol);
-        //     addcstref($2->symbol, $$);
-        // }
-        // struct astnode* conn = newastnode(Connective, NULL);
-        // conn->conntype = $8;
-        // addastchild(conn, $6);
-        // addastchild(conn, $10);
-        // addastchild($$, conn);
-    } */
+    // | '(' KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' ')' {
+    // //     print_debug("all_expr: KEYWORD_ALL IDENTIFIER");
+    // //     // $$ = newastnode(Quantifier, $2);
+    // //     // $$->qtype = Quantifier_ForAll;
+    // //     // if (addcstref($2->symbol, $$) != 0) {
+    // //     //     addcstsymbol($2->symbol);
+    // //     //     addcstref($2->symbol, $$);
+    // //     // }
+    // //     // struct astnode* conn = newastnode(Connective, NULL);
+    // //     // conn->conntype = $8;
+    // //     // addastchild(conn, $6);
+    // //     // addastchild(conn, $10);
+    // //     // addastchild($$, conn);
+    // }
     ;
 %%
 
