@@ -21,13 +21,12 @@ struct entity {
     enum gramtype type;
 };
 
-char *gramtype2string(enum gramtype type);
+
 int countevententity(char *eventvar);
 struct event *searchevent(char *eventvar);
-void removeentityfromevents(char *entityvar);
-// struct event *newevent(struct queue *events, char *eventvar);
-struct event *newevent(char *eventvar);
-void addevententity(struct event *event, char *entityvar, char *gramstr);
+struct event *__searchevent(struct cstsymbol *_cstptr);
+struct event *newevent(struct cstsymbol *cstptr);
+struct entity *newentity(struct cstsymbol *_cstptr, enum gramtype _type);
 void showevent(void *_event);
 void deallocateevent(void *_eventnode);
 

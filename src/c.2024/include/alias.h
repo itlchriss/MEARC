@@ -9,8 +9,11 @@ struct alias {
     struct cstsymbol *b;
 };
 
-void addalias(struct queue *, struct cstsymbol *, struct cstsymbol *);
-struct cstsymbol *searchalias(struct queue *, struct cstsymbol *);
+// void addalias(struct queue *, struct cstsymbol *, struct cstsymbol *);
+// struct cstsymbol *searchalias(struct queue *, struct cstsymbol *);
+
+void addalias(struct cstsymbol *, struct cstsymbol *);
+struct cstsymbol *searchalias(struct cstsymbol *);
 
 
 

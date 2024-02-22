@@ -370,30 +370,6 @@
   arguments:
   - (x)
   interpretation: -(x)
-- term: Rel
-  syntax:
-  - Rel
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: _gsub(y)2(x)
-- term: of
-  syntax:
-  - IN
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: _sub(y)2(x)
-- term: in
-  syntax:
-  - IN
-  arity: 2
-  arguments:
-  - (x)
-  - (y)
-  interpretation: _sub(y)2(x)
 - term: provide
   syntax:
   - VBN
@@ -482,5 +458,18 @@
   - NN
   arity: 1
   arguments:
+  - (*)
+  synthesised_datatype:
+  - '-2'
+  interpretation: [i]
+- term: in
+  syntax:
+  - IN
+  arity: 2
+  arguments:
+  - Subj
   - (x)
-  interpretation: (x)[i]
+  specific_arg_types:
+  - '-1'
+  - '-2'
+  interpretation: (x)(Subj)

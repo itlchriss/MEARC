@@ -30,23 +30,23 @@ def _get_alt_rules():
 class ContextProcessor:
 
     def __init__(self) -> None:
-        self.contextual_si = {}
+        self.dynamic_si = {}
         _get_alt_rules()
 
     def _parameter_syntax_processor(self):
-        contextual_si = self.contextual_si
+        # contextual_si = self.contextual_si
         sent = self.sent
 
         if r := re.findall('input\s+(%s)\s+`(.*)`' % '|'.join(datatypes), sent, re.ASCII):
             for type, param in r:
                 sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s param_%s' % (type, param), sent, re.ASCII)
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
-                contextual_si['param_%s' % (param)] = param
+                # contextual_si['param_%s' % (param)] = param
         elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
             for param in r:
                 pattern = 'param_%s' % param.replace('`', '')
                 sent = sent.replace(param, pattern)
-                contextual_si['param_%s' % param] = param
+                # contextual_si['param_%s' % param] = param
         self.sent = sent
         
         # NOTE: there can be words representing types, but there are no keywords such as 'input', 'parameter'

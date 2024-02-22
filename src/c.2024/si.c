@@ -35,7 +35,14 @@ int __match_interpretation_and_get_type(void *, void *);
 void generate_param_si(char *s);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
-char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "JML_EXPRESSION_TEMPLATE", "OTHERS" };
+// char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "JML_EXPRESSION_TEMPLATE", "OTHERS" };
+
+char *gram_string[] = { "Subj", "Acc", "AccI", "AccE", "Dat", "Gen", "Abl", "Rel", "Voc" };
+char *gram_name[] = { "SubjectOf", "AccusationOf", "IntentionalAccusationOf", "ExtentionalAccusationOf", "Dative", "Genitive", "Ablative", "Relative", "Vocative" };
+
+char *gramtype2string(enum gramtype type) {
+    return gram_string[type];
+}
 
 int __is_noun_predicate__(struct astnode *node) {
     return node->syntax == NN || node->syntax == NNP || node->syntax == NNS || node->syntax == NNPS;
@@ -157,30 +164,6 @@ void __replace_si_at_parent__(struct astnode *node, enum astnodetype type, char 
     node->type = type;
 }
 
-/*
-    node: the node must be a predicate node
-*/
-void __remove_all_children_cst__(struct astnode *node) {
-    struct astnode *child;
-    for (int i = 0; i < countastchildren(node); ++i) {
-        child = getastchild(node, i);
-        /* we do not have to deal with the events here. because the structure is independent to the ast tree as they do not have pointers pointing to each other. we will free the events structure at the end of the program. */
-        removecstref(child->token->symbol, child);
-    }
-}
-
-/*
-    substituting semantic interpretation from a synthesised node into the template from another node
-    _snode: an ast node with type Synthesised, the symbol contains the semantic interpretation
-    _tnode: an ast node with type Template, the symbol contains the template
-*/
-char* __subsititute_synthesised_into_template__(struct astnode *_snode, struct astnode *_tnode) {
-    struct cstsymbol *c = searchsymbolbyref(_tnode);
-    char *tmp = __combine_3_strings__("(", c->symbol, ")");
-    char *new = strrep(_tnode->token->symbol, tmp, _snode->token->symbol);
-    free(tmp);
-    return new;
-}
 
 /*
     obtaining SI from feeding x and y to si's argument
@@ -314,39 +297,9 @@ int __synthesis_predicate_at_root__(struct si *si) {
     return 0;
 }
 
-// void __update_cstsymbol_data__(struct cstsymbol *c, char *data, int datatype) {
-//     if (c->data) {
-//         free(c->data);
-//     }
-//     c->data = (char*)strdup(data);
-//     c->type = datatype;
-// }
 
-void si_alias(struct astnode *node, struct si *si) {
-    // struct astnode *child = getastchild(node, 0); 
-    // struct cstsymbol *c = searchsymbolbyref(child);
-    // __remove_all_children_cst__(node);        
-    // // TODO: not thoroughly checked this line. removed this line if problem raises    
-    // if (si == NULL) {
-    //     if (c->si_q) {
-    //         deallocatequeue(c->si_q, NULL);
-    //     }
-    //     c->si_q = copyqueue(node->si_q);
-    //     /* inidicate this symbol is not resolved due to multiple SIs */
-    //     c->type = -9;
-    // } else {
-    //     c->si_ptr = si;  
-    //     __update_cstsymbol_data__(c, si->interpretation, si->jtype);
-    //     if (c->si_q) {
-    //         deallocatequeue(c->si_q, NULL);
-    //     }   
-    // }
-    // syncsymbol(c);    
-    // root = deleteastnodeandedge(node, root);
-}
 
 void __post_operation_si_subtree_synthesis__(struct astnode *node) {
-    __remove_all_children_cst__(node);        
     node->type = Synthesised; 
     deleteastchildren(node);
 }
@@ -361,26 +314,7 @@ void __combinatorial_subtree_si_synthesis__(struct astnode *node, struct queue *
     __post_operation_si_subtree_synthesis__(node);
 }
 
-void si_substitution(struct astnode *dest, struct astnode *sinode, struct astnode *datanode, struct si *si) {
-    // struct cstsymbol *c = searchsymbolbyref(sinode);
-    // char *s = strrep(si->interpretation, si->args[0], datanode->token->symbol);
-    // __update_cstsymbol_data__(c, s, 0);
-    // /* checking this sentence */
-    // __remove_all_children_cst__(dest);
-    // syncsymbol(c);
-    // root = deleteastnodeandedge(dest, root);
-}
 
-/*
-    Using the SI in the datanode to substitute in the argument of sinode
-*/
-void sibling_si_synthesis(struct astnode *node, struct astnode *sinode, struct astnode *datanode) {
-    // char *s = __subsititute_synthesised_into_template__(datanode, sinode);
-    // struct cstsymbol *c = updatecstsymbol(s, sinode);     
-    // __remove_all_children_cst__(node);
-    // syncsymbol(c);        
-    // root = deleteastnodeandedge(node, root);
-}
 
 /*
     operations of
@@ -394,10 +328,7 @@ void __subtree_with_direct_syntax_operation__(struct astnode *subtree_root, stru
         enqueue(cstptr->datalist, (char *)strdup(interpretation));
     }
     cstptr->status = Assigned;
-    for (int i = 0; i < countastchildren(subtree_root); ++i) {
-        struct astnode *child = (struct astnode *)getastchild(subtree_root, i);
-        removecstref(child->cstptr->symbol, child);
-    }
+    cstptr->ref_count--;
     root = deleteastnodeandedge(subtree_root, root);
 }
 
@@ -405,7 +336,6 @@ int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
     struct si *targetsi = (struct si *)gqueue(node->si_q, 0);
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
-
     /*
         if a variable is a component of a event, such as Subj(e) = x, then x is a subject of event e,
         then after assigning value to x, we have to check if all components of e are assigned.
@@ -553,25 +483,16 @@ int DT_code_synthesis(struct astnode *node) { return 0; }
 int EX_code_synthesis(struct astnode *node) { return 0; }
 int FW_code_synthesis(struct astnode *node) { return 0; }
 int IN_code_synthesis(struct astnode *node) {      
+    struct astnode *eventnode = NULL, *varnode = NULL;
+    if (((struct astnode *)getastchild(node, 0))->cstptr->symbol[0] == 'e') {
+        eventnode = (struct astnode *)getastchild(node, 0);
+        varnode = (struct astnode *)getastchild(node, 1);
+    } else {
+        eventnode = (struct astnode *)getastchild(node, 1);
+        varnode = (struct astnode *)getastchild(node, 0);
+    }
 
-    // if (getastchild(node, 0)->type == MultipleSIs && getastchild(node, 1)->type == Synthesised) {
-    //     struct astnode *sinode = getastchild(node, 0), *datanode = getastchild(node, 1);
-    //     struct queue *si_q = searchqueue(sinode->si_q, datanode, __preposition_argtype_simatcher);
-    //     if (si == NULL) {
-    //         fprintf(stderr, "No SI matched for predicate(%s) with syntax (IN)\n", node->token->symbol);
-    //         exit(-100);
-    //     }
-    //     si_substitution(node, sinode, datanode, si);
-    // } else {
-    //     struct astnode *x = getastchild(node, 0), *y = getastchild(node, 1);
-    //     if (strcmp(si->interpretation, "\\sub(x)2(y)") == 0) {
-    //         sibling_si_synthesis(node, y, x);
-    //     } else if (strcmp(si->interpretation, "\\sub(y)2(x)") == 0) {
-    //         sibling_si_synthesis(node, x, y);
-    //     } else {
-    //         subtree_si_synthesis(node, si);
-    //     }
-    // }
+    
     return 0;
 }
 int JJ_code_synthesis(struct astnode *node) { return Jseries_code_synthesis(node); }
@@ -712,82 +633,6 @@ int event_synthesis(struct astnode *node) {
     deallocatequeue(siq, NULL);
     /* the resulting operations */
     __post_operation_si_subtree_synthesis__(node);
-//     char *s = NULL;
-//     struct entity *en = NULL;
-//     if (si->interpretation[0] == '_') {
-//         struct cstsymbol *subj_ptr, *acc_ptr;
-//         en = (struct entity*)gqueue((void*)e->entities, 0);
-//         if (en->type == SubjectOf) {
-//             subj_ptr = en->ptr;
-//             acc_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
-//         } else {
-//             acc_ptr = en->ptr;
-//             subj_ptr = (struct cstsymbol*)((struct entity*)gqueue((void*)e->entities, 1))->ptr;
-//         }
-//         /* keywords. the synthesis process is up to what the keywords have specified. */
-//         if (strcmp(si->interpretation, "_sub(Subj)2(Acc)") == 0) {
-//             /* 
-//                 The synthesised SI of the entity with Subj is substituted to that of the entity with Acc.
-//                 The synthesised SI of the Acc entity must have the type of JML_expression_template.
-//                 After the substitution, both the Subj and Acc entity cst pointer's data field has the synthesised SI.
-//             */
-//             struct si *_si = (struct si *)acc_ptr->si_ptr;
-//             s = strrep(_si->interpretation, _si->args[0], subj_ptr->data); 
-//             acc_ptr->type = si->jtype;                 
-//         } else if (strcmp(si->interpretation, "_event_sub(Subj)2(Acc)") == 0) {
-//             /*
-//                 This case is substituting the SI based on the event arguments. 
-//                 The previous case is for substitution based on the accusation's arguments
-//             */
-//             // notice here we use (Subj) directly, because we follow the command directly
-//             s = strrep(acc_ptr->data, "(Subj)", subj_ptr->data); 
-//             acc_ptr->type = si->jtype;     
-//         }
-//     } else {
-//         s = (char *)strdup(si->interpretation);
-//         for (int i = 0; i < e->entities->count; ++i) {
-//             /* 
-//                 get the compile symbol table pointer, and the get the data.
-//                 the argument of SI is named using the grammar relationship string, such as Subj
-//                 substitution is done replacing the SI synthesised in the data field of CST symbol to the grammar relationship string
-//             */
-//             en = (struct entity*)gqueue((void*)e->entities, i);
-//             /* 
-//                     because the entity variables should have been synthesised before coming to this point. 
-//                     we should not be able to search the symbol by the reference as the references are removed before synthesising the SI.
-//                     therefore, we should search the symbol by the symbol name.
-//                     there is no risk by using the symbol name because all symbol names are made unique.
-//             */
-//             struct cstsymbol *c = searchcst(en->var);
-//             if (c->data == NULL) {
-//                 /*
-//                     there can be no predicates accepting the symbol.
-//                     because some sentences can have an aliased variable as such argument, this is common in some clauses, as well as using corpora verb like 'be'
-//                     in this case, we have to search the alias table
-//                 */
-//                struct cstsymbol *tmp = searchalias(alias, c);
-//                if (tmp == NULL || tmp->data == NULL) {
-//                     /*
-//                     this means something wrong in the MR. we should not proceed with it, a semantic check should be done in the MR.
-//                     */
-//                    fprintf(stderr, "Semantic error. No meaning for the variable %s and no alias too. Please check with the MR.\n", c->symbol);
-//                    exit(-1);
-//                }
-//                c = tmp;
-//             }
-//             char *arg = __combine_3_strings__("(", gramtype2string(en->type), ")");
-//             char *tmp = strrep(s, arg, c->data);
-//             free(arg);
-//             free(s);
-//             s = tmp;
-//             c->type = si->jtype;
-//         }
-//     }
-//     /* 
-//     s contains the synthesised SI 
-//     */
-//    __remove_all_children_cst__(node);
-//     __replace_si_at_parent__(node, Synthesised, s);
     return 0;
 }
 
@@ -1000,7 +845,6 @@ void sianalysis() {
                     fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-10);
                 }
-                __remove_all_children_cst__(node);
                 if (node->parent->type != Connective) {
                     fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-10);
@@ -1010,6 +854,10 @@ void sianalysis() {
                     fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
                     exit(-11);                
                 } else {
+                    for (int i = 0; i < countastchildren(node); ++i) {
+                        struct astnode *_tmp = (struct astnode *)getastchild(node, i);
+                        _tmp->cstptr->ref_count--;
+                    }
                     root = deleteastnodeandedge(node, root);
                 }
                 continue;
@@ -1108,16 +956,6 @@ void sisynthesis() {
             (*code_syntheses[node->syntax])(node);       
         }
         /* ================================================================================================ */
-
-        // int x = (*code_syntheses[node->syntax])(node);       
-        // if (check != 0) {
-        //     #if SIDEBUG
-        //     printf("si synthesis: predicate %s(%s) code synthesis is not done in this loop.\n", node->token->symbol, ptbsyntax2string(node->syntax));
-        //     #endif
-        //     enqueue(predicates, (void*)node);
-        // } else {
-        //     count = predicates->count;
-        // }
         #if ASTDEBUG
         showast(root, 0);
         showqueue(cst, showcstsymbol);
@@ -1138,14 +976,19 @@ void opresolution() {
         node = (struct astnode*)dequeue(operators);
         left = getastchild(node, 0);
         right = getastchild(node, 1);
-        addalias(alias, left->cstptr, right->cstptr);   
+        // addalias(alias, left->cstptr, right->cstptr);   
+        addalias(left->cstptr, right->cstptr);   
         if (has_datatype(left->cstptr) && !has_datatype(right->cstptr)) {
             right->cstptr->datatype = left->cstptr->datatype;
         } else if  (!has_datatype(left->cstptr) && has_datatype(right->cstptr)) {
             left->cstptr->datatype = right->cstptr->datatype;
         }
-        removecstref(left->token->symbol, left);
-        removecstref(right->token->symbol, right);
+        /*
+            because we are going to remove these two nodes
+            decreasing the count before deletion or the pointer is not found
+        */
+        left->cstptr->ref_count--;
+        right->cstptr->ref_count--;
         root = deleteastnodeandedge(node, root);
         #ifdef SIDEBUG
         showast(root, 0);
@@ -1192,7 +1035,8 @@ int __simatcher(void *_si, void *_astnode) {
 int __eventsimatcher(void *_si, void *_astnode) {
     struct si* si = (struct si*)_si;
     struct astnode *node = (struct astnode*)_astnode, *child = getastchild(node, 0);
-    struct event *event = searchevent(child->token->symbol);
+    // struct event *event = searchevent(child->token->symbol);    
+    struct event *event = __searchevent(child->cstptr);    
     if (strcmp(si->symbol, node->token->symbol) == 0 &&
         search_syntax(si, node->syntax) == TRUE &&
         si->args->count == event->entities->count

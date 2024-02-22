@@ -30,6 +30,10 @@ struct queue *alias;
 
 struct astnode *root;
 
+// for parsing only
+struct queue *scopes;
+struct queue *_events;
+
 #if INFO
 void showprocessinfo(char *msg) {
     printf("======================================%s=========================================\n", msg);
@@ -96,7 +100,10 @@ int main(int argc, char** argv) {
     predicates = initqueue();
     events = initqueue();
     alias = initqueue();
-
+    /* for parsing only */
+    _events = initqueue();    
+    scopes = initqueue();
+    ///////////////////////
     #if INFO      
     showprocessinfo("Start Parsing");
     #endif
@@ -109,7 +116,7 @@ int main(int argc, char** argv) {
     #if CSTDEBUG 
     showqueue(cst, showcstsymbol);
     #endif
-    renamesymbols(cst);
+
     #if INFO
     showprocessinfo("After rename cst symbols");
     #endif
@@ -193,14 +200,14 @@ int main(int argc, char** argv) {
     if (ast) {
         deallocateast(ast);
     }
+    if (events) {
+        deallocatequeue(events, deallocateevent);
+    }
     if (cst) {
         deallocatequeue(cst, deallocatecstsymbol);
     }
     if (operators) {
         deallocatequeue(operators, NULL);
-    }
-    if (events) {
-        deallocatequeue(events, deallocateevent);
     }
     if (alias) {
         deallocatequeue(alias, NULL);

@@ -2,7 +2,7 @@ import os
 import sys
 import glob
 import yaml
-from typing import Dict, List
+from typing import Dict, List, Tuple
 from preprocess.engine import runengine
 
 modelspecspath = './specs/models'
@@ -31,17 +31,23 @@ def _get_conditions(text: str) -> Dict[str, str]:
     return conditions
 
 
-def main(filecontent: str) -> Dict[str, List[str]]:    
+def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:    
     models, si = _get_specs()
     conditions = _get_conditions(filecontent)
     
     results = { 'ensures': [], 'requires': []}
+    sis = []
     for t in conditions:
         clist = conditions[t]
         for i, c in enumerate(clist):
-            results[t].append(runengine(c))
+            s, si = runengine(c)
+            results[t].append(s)
+            if si:
+                for v in list(si.values()):
+                    if v not in sis:
+                        sis.append(v)
     
-    return results
+    return results, sis
 
 if __name__ == "__main__":
     filepath = sys.argv[1]
@@ -52,12 +58,17 @@ if __name__ == "__main__":
     if not filecontent or not filecontent.strip():
         exit(1)
     filecontent = filecontent.strip()
-    results = main(filecontent)
+    conditions, sis = main(filecontent)
 
     folder = '/'.join(filepath.split('/')[:-1])
     tmpfolder = os.path.join(folder, 'tmp')
     if not os.path.exists(tmpfolder):
         os.mkdir(tmpfolder)
-    
+        
     with open(os.path.join(tmpfolder, 'conditions.yml'), 'w') as fp:
-        yaml.dump(results, fp, sort_keys=False, allow_unicode=True)
+        yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True)
+        
+    with open(os.path.join(tmpfolder, 'dynamic_si.yml'), 'w') as fp:
+        yaml.dump(sis, fp, sort_keys=False, allow_unicode=True)
+    
+    

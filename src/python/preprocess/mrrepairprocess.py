@@ -22,16 +22,53 @@ func_map = {
 }
 
 rules = [
-    { 'pattern': ['an', 'array', 'of', 'length', '__num__'], 'format': 'a __num__-length array'}
+    { 
+        'pattern': ['an', 'array', 'of', 'length', '__num__'], 
+        'format': 'a __num__-length array', 
+        'symbol': '__num__-length', 
+        'interpretation': '(Subj).length == __num__',
+        'syntax': 'JJ',
+        'arguments': ['Subj'],
+        'specific_arg_types': '5',
+        'synthesised_datatype': '9'
+    }
 ]
 
 class RepairProcessor:    
+    
+    dynamic_si = {}
+    
     def __init__(self):
         pass
     
     def __process_rule__(self, words, rule, index):
-        print(words[index])
-        pass
+        f = rule['format']
+        pattern = rule['pattern']
+        symbol = rule['symbol']
+        interpretation = rule['interpretation']
+        
+        pairs = []
+        for i, x in enumerate(pattern):
+            if x in func_map.keys():
+                f = f.replace(x, words[index + i])
+                pairs.append((x, words[index + i]))
+                
+        if pairs:
+            for k,v in pairs:
+                symbol = symbol.replace(k, v)     
+                interpretation = interpretation.replace(k, v)           
+        self.dynamic_si[symbol] = { 
+                                   'term': symbol.replace('-', '_dash_'),
+                                   'syntax': [rule['syntax']],
+                                   'arity': len(rule['arguments']),
+                                   'arguments': rule['arguments'], 
+                                   'specific_arg_types': [rule['specific_arg_types']], 
+                                   'synthesised_datatype': [rule['synthesised_datatype']],                                   
+                                   'interpretation': interpretation,
+                                   }        
+        words = words[:index] + [f] + words[index + len(pattern):]
+        return ' '.join(words)
+    
         
     def run(self, sent: str) -> str:
         if sent[-1] == '.':
@@ -40,7 +77,7 @@ class RepairProcessor:
         for r in rules:
             pattern = r['pattern']
             if (i := __words_contain_pattern__(words, pattern)) >= 0:
-                self.__process_rule__(words, r, i)
+                sent = self.__process_rule__(words, r, i)
                     
         
         return sent

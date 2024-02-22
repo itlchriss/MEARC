@@ -3,23 +3,27 @@
 #include "util.h"
 #include <stdlib.h>
 
+extern struct queue *alias;
 
-void addalias(struct queue *_alias, struct cstsymbol *_a, struct cstsymbol *_b) {
+
+// void addalias(struct queue *_alias, struct cstsymbol *_a, struct cstsymbol *_b) {
+void addalias(struct cstsymbol *_a, struct cstsymbol *_b) {
     struct alias *new = (struct alias*) malloc (sizeof(struct alias));
     new->a = _a;
     new->b = _b;
-    enqueue(_alias, (void*)new);
+    enqueue(alias, (void*)new);
 }
 
-int __aliascomparator(void *_alias, void *_target) {
-    struct alias *alias = (struct alias*)_alias;
+int __aliascomparator(void *_a, void *_target) {
+    struct alias *_alias = (struct alias*)_a;
     struct cstsymbol *target = (struct cstsymbol*)_target;
-    if (alias->a == target || alias->b == target) return 0;
-    else return 1;
+    if (_alias->a == target || _alias->b == target) return TRUE;
+    else return FALSE;
 }
 
-struct cstsymbol *searchalias(struct queue *_alias, struct cstsymbol *target) {
-    struct alias *tmp = searchqueue(_alias, target, __aliascomparator);
+// struct cstsymbol *searchalias(struct queue *_alias, struct cstsymbol *target) {
+struct cstsymbol *searchalias(struct cstsymbol *target) {
+    struct alias *tmp = searchqueue(alias, target, __aliascomparator);
     if (tmp == NULL) return NULL;
     else {
         if (tmp->a == target) return tmp->b;
