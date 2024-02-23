@@ -9,13 +9,13 @@ extern struct queue *cst;
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
-    printf("Symbol: %s  \n", c->symbol);
+    printf("Symbol: %s  (datatype: %d)\n", c->symbol, c->datatype);
     printf("Data: ");
     for (int i = 0; i < c->datalist->count; ++i) {
         char *data = (char *)gqueue(c->datalist, i);
         printf("%s  ", data);
     }
-    printf("===================================================================================\n");
+    printf("\n===================================================================================\n");
 }
 
 
@@ -27,6 +27,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;
+    new->last_syn_src = NULL;
     enqueue(cst, (void*)new);
     return new;
 }

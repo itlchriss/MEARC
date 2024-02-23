@@ -24,6 +24,11 @@ enum symbol_status {
     Assigned
 };
 
+// struct synthesised_data {
+//     char *data;
+//     enum explicit_datatype datatype;
+// };
+
 // node of compile-time symbol table
 struct cstsymbol {
     // name of the symbol
@@ -44,6 +49,11 @@ struct cstsymbol {
         Number of nodes that referenced this ptr
     */
     int ref_count;
+
+    /*
+        Pointing to the last synthesised node that provides the current synthesised datalist
+    */
+    struct astnode *last_syn_src;
 };
 
 

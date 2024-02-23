@@ -461,7 +461,7 @@
   - (*)
   synthesised_datatype:
   - '-2'
-  interpretation: [i]
+  interpretation: '[i]'
 - term: in
   syntax:
   - IN
@@ -470,6 +470,14 @@
   - Subj
   - (x)
   specific_arg_types:
-  - '-1'
   - '-2'
+  - '5'
   interpretation: (x)(Subj)
+- term: Rel
+  syntax:
+  - Rel
+  arity: 2
+  arguments:
+  - (x)
+  - (y)
+  interpretation: REL(x,y)

@@ -153,7 +153,14 @@ int main(int argc, char** argv) {
     #if INFO
     showprocessinfo("Start semantic interpretation analysis");
     #endif
-    // siidentification(silist);
+    
+    #if DEBUG
+    for (int i = 0; i < cst->count; ++i) {
+        struct cstsymbol *c = (struct cstsymbol *)gqueue(cst, i);
+        printf("%s has %d references\n", c->symbol, c->ref_count);
+    }
+    #endif
+
     sianalysis();
     #if INFO
     showprocessinfo("Finished semantic interpretation analysis");

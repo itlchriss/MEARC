@@ -61,7 +61,7 @@ int __is_event_variable__(struct astnode *node) {
 */
 int __match_event_si_with_2_arg_datatype__(void *_si, void *_astnode) {
     struct astnode *node = (struct astnode *)_astnode;
-    struct event *event = (struct event *)searchevent(getastchild(node, 0)->token->symbol);
+    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
     struct si *si = (struct si *)_si;
     /* a predicate not accepting 2 arguments can be filtered out */
     if (si->args->count != 2) return FALSE;
@@ -74,6 +74,30 @@ int __match_event_si_with_2_arg_datatype__(void *_si, void *_astnode) {
         ) return TRUE;
     else
         return FALSE;
+}
+
+/*
+    Match an SI with ONE argument data type, where there are two arguments need to be synthesised
+    this is because only one argument has data type
+    therefore, we match all SIs that accept two arguments, while these SIs should accept the same order of argument datatypes,
+    for instance, denote the 1st child as x and the 2nd child as y,
+    if x has a datatype, then y does not have a datatype
+    such that, the node's predicate should be P(x, y) where P is the predicate symbol of the input _astnode
+    the function returns true if the si accepts two arguments, the 1st argument has the same datatype as x's.
+*/
+int __match_event_si_with_1_datatype_and_1_asterisk__(void *_si, void *_astnode) {
+    struct astnode *node = (struct astnode *)_astnode;
+    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
+    struct si *si = (struct si *)_si;
+    /* a predicate not accepting 2 arguments can be filtered out */
+    if (si->args->count != 2) return FALSE;
+    struct entity *en1 = (struct entity *)gqueue(event->entities, 0), *en2 = (struct entity *)gqueue(event->entities, 1);
+    struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
+    if (
+        (has_datatype(en1->cstptr) && en1->cstptr->datatype == arg1->datatype) ||
+        (has_datatype(en2->cstptr) && en2->cstptr->datatype == arg2->datatype)
+    ) return TRUE;
+    else return FALSE;
 }
 
 /*
@@ -134,7 +158,7 @@ int __match_si_with_1_arg_datatype__(void *_si, void *_astnode) {
 */
 int __match_event_si_with_1_arg_datatype__(void *_si, void *_astnode) {
     struct astnode *node = (struct astnode *)_astnode;
-    struct event *event = (struct event *)searchevent(getastchild(node, 0)->token->symbol);
+    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
     struct si *si = (struct si *)_si;
     /* a predicate not accepting only 1 argument can be filtered out */
     if (si->args->count != 1) return FALSE;
@@ -142,6 +166,29 @@ int __match_event_si_with_1_arg_datatype__(void *_si, void *_astnode) {
     struct entity *en1 = (struct entity *)gqueue(event->entities, 0);
     if (arg1->datatype == en1->cstptr->datatype &&
         strcmp(gramtype2string(en1->type), arg1->symbol) == 0
+        ) return TRUE;
+    else
+        return FALSE;
+}
+
+
+/*
+    Match an event SI specifically for prepositions (IN)
+    because preposition predicates always accept 2 arguments, one is an event and another is a valid entity
+    we have to check the datatype of the entity inside the event, as well as the datatype of the valid entity in the prepositions' arguments
+*/
+int __match_event_si_for_prepositions_1_datatype_1_asterisk__(void *_si, void *_astnode) {
+    struct astnode *node = (struct astnode *)_astnode;
+    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
+    struct cstsymbol *var_cstptr = ((struct astnode *)getastchild(node, 1))->cstptr;
+    struct cstsymbol *en_cstptr = ((struct entity *)gqueue(event->entities, 0))->cstptr;
+    struct si *si = (struct si *)_si;
+    /* a predicate not accepting only 1 argument can be filtered out */
+    if (si->args->count != 2) return FALSE;
+    struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
+    if (
+        (has_datatype(en_cstptr) && arg1->datatype == en_cstptr->datatype) ||
+        (has_datatype(var_cstptr) && arg2->datatype == var_cstptr->datatype)
         ) return TRUE;
     else
         return FALSE;
@@ -212,7 +259,7 @@ struct queue *__enhance_si__(struct astnode *x, struct si *si) {
 /* obtaining semantic interpretation from the template of parent node and synthesising it with its event entities */
 struct queue *__obtain_si_from_subtree_with_precise_datatypes__(struct astnode *parent, struct si* si) {
     struct queue *result = initqueue();    
-    struct event *event = searchevent(getastchild(parent, 0)->token->symbol);
+    struct event *event = (struct event *)__searchevent(getastchild(parent, 0)->cstptr);
     // if (countastchildren(parent) == 1) {
     if (event->entities->count == 1) {
         /* the case of only one child. this is applied to those that should be an adjective or adverb */
@@ -335,13 +382,8 @@ void __subtree_with_direct_syntax_operation__(struct astnode *subtree_root, stru
 int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
     struct si *targetsi = (struct si *)gqueue(node->si_q, 0);
+    if (targetsi->synthesised_datatype != None && child->cstptr->datatype == None) child->cstptr->datatype = targetsi->synthesised_datatype;
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
-    /*
-        if a variable is a component of a event, such as Subj(e) = x, then x is a subject of event e,
-        then after assigning value to x, we have to check if all components of e are assigned.
-        if so, then we update e as Assigned
-    */
-    update_events();
     return 0;
 }
 
@@ -452,15 +494,6 @@ int Jseries_code_synthesis(struct astnode *node) {
 }
 
 int Vseries_code_synthesis(struct astnode *node) {
-    // struct astnode *child;
-    // /* Verbs usually accepts 2 arguments (subject, object). Thus, verbs cannot be resolved before both arguments are resolved. */
-    // for (int i = 0; i < countastchildren(node); ++i) {
-    //     child = getastchild(node, i);
-    //     if (child->type != Synthesised) {
-    //         return 1;
-    //     }
-    // }
-    // subtree_si_synthesis(node, si);
     return 0;
 }
 
@@ -492,7 +525,18 @@ int IN_code_synthesis(struct astnode *node) {
         varnode = (struct astnode *)getastchild(node, 0);
     }
 
-    
+    struct entity *en = (struct entity *)gqueue(__searchevent(eventnode->cstptr)->entities, 0);    
+    if (has_datatype(en->cstptr) && has_datatype(varnode->cstptr)) {
+        /* TO BE DONE HERE */
+    } else if (has_datatype(en->cstptr) || has_datatype(varnode->cstptr)) {
+        node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions_1_datatype_1_asterisk__);
+        if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
+        else {
+
+        }
+    } else {
+
+    }
     return 0;
 }
 int JJ_code_synthesis(struct astnode *node) { return Jseries_code_synthesis(node); }
@@ -599,7 +643,7 @@ struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct eve
 
 
 int event_synthesis(struct astnode *node) {
-    struct event *e = searchevent(getastchild(node, 0)->token->symbol);    
+    struct event *e = __searchevent(getastchild(node, 0)->cstptr);
     struct queue *siq = NULL;
     
     if (e->entities->count == 1) {
@@ -613,6 +657,9 @@ int event_synthesis(struct astnode *node) {
 
         }
         node->si_q = __1_event_entities_combinatorial_subtree_si_synthesis__(e, siq);
+        printf("variable(%s) has %d references.\n", en1->cstptr->symbol, en1->cstptr->ref_count);
+        en1->cstptr->ref_count--;
+        en1->cstptr->last_syn_src = node;        
     } else {
         /* cases that predicates have two components */        
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0), *en2 = (struct entity *)gqueue(e->entities, 1);
@@ -622,17 +669,23 @@ int event_synthesis(struct astnode *node) {
             if (siq->count == 0) sinotfound_error(node->token->symbol);
             else if (siq->count > 1) siconflict_error(node->token->symbol);
         } else if (has_datatype(en1->cstptr) || has_datatype(en2->cstptr)) {
-
+            siq = q_searchqueue(node->si_q, node, __match_event_si_with_1_datatype_and_1_asterisk__);
+            if (siq->count == 0) sinotfound_error(node->token->symbol);            
         } else {
 
         }        
         /* combinatorially forming all possible SI synthesis from 2 entities */
         node->si_q = __2_event_entities_combinatorial_subtree_si_synthesis__(e, siq);        
+        en1->cstptr->ref_count--;
+        en2->cstptr->ref_count--;
+        printf("variable(%s) has %d references.\n", en1->cstptr->symbol, en1->cstptr->ref_count);
+        printf("variable(%s) has %d references.\n", en2->cstptr->symbol, en2->cstptr->ref_count);
     }    
+    e->cstptr->ref_count--;
     /* since the SIs are only for this synthesis, it should have no effect on the overall SI list. we should deallocate ASAP */
     deallocatequeue(siq, NULL);
     /* the resulting operations */
-    __post_operation_si_subtree_synthesis__(node);
+    __post_operation_si_subtree_synthesis__(node);    
     return 0;
 }
 
@@ -804,91 +857,121 @@ int __is_event_predicate__(struct astnode *node) {
     }
 }
 
-void sianalysis() {
-    struct astnode *node;
-    struct queue *si_q;
-    #if SIDEBUG
-    printf("si analysis: there are %d predicates in the queue.\n", predicates->count);
-    #endif
-    /* 
-        sorting the predicates according to the semantic interpretation found 
-        1st priority: all predicates with 1-argument si, and the argument is '*'. these predicates can be synthesised without any affects from other predicates
-        2nd priority: all predicates with 1-argument si, and the argument is not '*'
-        3rd priority: all other predicates which syntax are not preposition (IN).
-        4th priority: predicates which syntax are prepositions. IN predicates require two arguments which are both synthesised, otherwise the code synthesis will be very difficult to compose, such as, Template in synthesis, variable in synthesis, variable in synthesis to template, etc.
-    */
-    struct queue *tmp = initqueue(), *two_args_preds = initqueue(), *in_preds = initqueue();
-    while (!isempty(predicates)) {
-        node = (struct astnode*)dequeue(predicates);
-        // reset the si pointer for checking a node dequeue from the predicates queue
-        si_q = NULL;
-        if (selfSI[node->syntax] == 0) {
-            // generate runtime SI
-            node->si_q = initqueue();
-            enqueue(node->si_q, (void*)__generate_runtime_si__(node));
-            push(tmp, node);
-        } else if (__is_event_predicate__(node) == TRUE) { 
-            si_q = q_searchqueue(silist, node, __eventsimatcher);
-            if (si_q == NULL || si_q->count == 0) {
-                /* 
-                    there can be a possibility that all the relevant entities are not going to be synthesised. in another words, the relevant entities do not have predicates matched with SI. if this is the case, this event is useless.
-                */
-                fprintf(stderr, "Symbol error(si analysis): Please provide the SI for the event predicate(%s)\n", node->token->symbol);
-            } else {
-                node->si_q = si_q;
-                enqueue(two_args_preds, node);
+int __search_visited_variables__(void *_child_cstptr, void *_input_cstptr) {
+    struct cstsymbol *child = (struct cstsymbol *)_child_cstptr;
+    struct cstsymbol *input = (struct cstsymbol *)_input_cstptr;
+    if (child == input) return TRUE;
+    else return FALSE;
+}
+
+
+int satisfy(struct astnode *node, struct queue *visited_variables) {
+    if (countastchildren(node) == 1) {
+        struct event *e = __searchevent(getastchild(node, 0)->cstptr);
+        if (e->entities->count == 1) {
+            struct entity *en = (struct entity *)gqueue(e->entities, 0);
+            /*
+                used in function satisfy only 
+                if an entity's cstptr's ref_count == 1, this means that the cstptr is only referenced by this entity only
+                then, we replace this entity's pointer by its aliased cstptr
+            */
+            if (en->cstptr->ref_count == 1) {
+                struct cstsymbol *_aliased_cstptr = searchalias(en->cstptr);
+                if (_aliased_cstptr == NULL) internal_error("Please check with si.c -> satisfy function. There is an entity that does not have an alias, and its cstptr is only referenced by itself.");
+                en->cstptr = _aliased_cstptr;
             }
+            if (!searchqueue(visited_variables, en->cstptr, __search_visited_variables__)) return 0;
+            else return 1;
         } else {
-            si_q = q_searchqueue(silist, node, __simatcher);
-            if (si_q == NULL || si_q->count == 0) {
-                if (node->isroot) {
-                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
-                    exit(-10);
+            for (int i = 0; i < e->entities->count; ++i) {
+                struct entity *en = (struct entity *)gqueue(e->entities, i);
+                if (en->cstptr->ref_count == 1) {
+                    struct cstsymbol *_aliased_cstptr = searchalias(en->cstptr);
+                    if (_aliased_cstptr == NULL) internal_error("Please check with si.c -> satisfy function. There is an entity that does not have an alias, and its cstptr is only referenced by itself.");
+                    en->cstptr = _aliased_cstptr;
                 }
-                if (node->parent->type != Connective) {
-                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
-                    exit(-10);
-                } else if (
-                    node->parent->conntype != Op_And &&
-                    node->parent->conntype != Op_Or) {
-                    fprintf(stderr, "Symbol error(si analysis): Please provide the SI for predicate(%s)\n", node->token->symbol);
-                    exit(-11);                
+                if (!searchqueue(visited_variables, en->cstptr, __search_visited_variables__)) return 0;
+            }       
+            /* make it to the last one to be resolved */
+            return 2;
+        } 
+    } else {
+        int hasevent = FALSE;
+        for (int i = 0; i < countastchildren(node); ++i) {
+            if (getastchild(node, i)->cstptr->symbol[0] == 'e') { hasevent = TRUE; continue; }
+            if (!searchqueue(visited_variables, getastchild(node, i)->cstptr, __search_visited_variables__)) return 0;
+        }
+        if (hasevent) 
+            return 1;
+        else
+            return 2;
+    }
+}
+
+void check_validity(struct astnode *node) {
+    if (node->si_q->count == 0) {
+        sinotfound_error(node->token->symbol);
+    }
+}
+
+
+void sianalysis() {
+    struct astnode *node = NULL;
+    struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
+    int check = -1;    
+    while (!isempty(predicates)) {
+        node = (struct astnode *)dequeue(predicates);
+        node->si_q = initqueue();
+        switch(node->syntax) {
+            case CD:
+                enqueue(node->si_q, (void*)__generate_runtime_si__(node));
+                check_validity(node);
+                enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);
+                enqueue(target, (void *)node);
+                break;
+            case NN:
+                node->si_q = q_searchqueue(silist, node, __simatcher);
+                check_validity(node);
+                enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);
+                enqueue(target, (void *)node);
+                break;
+            case Gram_Rel:
+                if (satisfy(node, visited_variables)) enqueue(target, (void *)node);
+                else {
+                    struct astnode *tmp = dequeue(predicates);
+                    push(predicates, node);
+                    push(predicates, tmp);
+                }
+                break;
+            default:
+                check = satisfy(node, visited_variables);
+                if (!check) {
+                    struct astnode *tmp = dequeue(predicates);
+                    push(predicates, node);
+                    push(predicates, tmp);
                 } else {
-                    for (int i = 0; i < countastchildren(node); ++i) {
-                        struct astnode *_tmp = (struct astnode *)getastchild(node, i);
-                        _tmp->cstptr->ref_count--;
-                    }
-                    root = deleteastnodeandedge(node, root);
+                    node->si_q = q_searchqueue(silist, node, __simatcher);
+                    check_validity(node);
+                    if (check == 1) 
+                        enqueue(target, (void *)node);
+                    else
+                        enqueue(last, (void *)node);
                 }
-                continue;
-            } else { 
-                node->si_q = si_q;
-                if (node->syntax == IN) {
-                    enqueue(in_preds, node);
-                } else if (node->syntax == NN) {
-                    struct si *si = (struct si*)gqueue(si_q, 0);
-                    struct si_arg *arg = (struct si_arg*)gqueue(si->args, 0);
-                    if (si_q->count == 1 && strcmp(arg->symbol, "*") == 0) {
-                        push(tmp, node);
-                    } else {
-                        enqueue(tmp, node);
-                    }
-                } else {
-                    enqueue(two_args_preds, node);
-                }
-            }
+                break;
         }
     }
-    while (!isempty(two_args_preds)) {
-        enqueue(tmp, dequeue(two_args_preds));
+    while (!isempty(last)) enqueue(target, dequeue(last));
+    #if SIDEBUG
+    printf("Analysed predicate sequence:\n");
+    for (int i = 0; i < target->count; ++i) {
+        node = (struct astnode *)gqueue(target, i);
+        printf("predicate %s\n", node->token->symbol);
     }
-    while (!isempty(in_preds)) {
-        enqueue(tmp, dequeue(in_preds));
-    }
-    deallocatequeue(two_args_preds, NULL);
+    #endif
+    deallocatequeue(last, NULL);
     deallocatequeue(predicates, NULL);
-    deallocatequeue(in_preds, NULL);
-    predicates = tmp;
+    deallocatequeue(visited_variables, NULL);
+    predicates = target;
 }
 
 /* 
@@ -961,6 +1044,13 @@ void sisynthesis() {
         showqueue(cst, showcstsymbol);
         fflush(stdout);
         #endif
+
+        /*
+            if a variable is a component of a event, such as Subj(e) = x, then x is a subject of event e,
+            then after assigning value to x, we have to check if all components of e are assigned.
+            if so, then we update e as Assigned
+        */
+        update_events();
     }
     #if SIDEBUG
     printf("si synthesis finished\n");
@@ -1020,7 +1110,13 @@ int __simatcher(void *_si, void *_astnode) {
     int child_count = countastchildren(node);
     if (strcmp(node->token->symbol, si->symbol) == 0 &&
                 search_syntax(si, node->syntax) == TRUE && 
-                si->args->count == child_count) 
+                (si->args->count == child_count || 
+                    (
+                        getastchild(node, 0)->cstptr->symbol[0] == 'e' && 
+                        si->args->count == __searchevent(getastchild(node, 0)->cstptr)->entities->count
+                    )
+                )
+        ) 
         return TRUE;
     else
         return FALSE;
@@ -1035,7 +1131,6 @@ int __simatcher(void *_si, void *_astnode) {
 int __eventsimatcher(void *_si, void *_astnode) {
     struct si* si = (struct si*)_si;
     struct astnode *node = (struct astnode*)_astnode, *child = getastchild(node, 0);
-    // struct event *event = searchevent(child->token->symbol);    
     struct event *event = __searchevent(child->cstptr);    
     if (strcmp(si->symbol, node->token->symbol) == 0 &&
         search_syntax(si, node->syntax) == TRUE &&

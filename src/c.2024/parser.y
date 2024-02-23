@@ -298,7 +298,7 @@ type_term
                 rqueue(_scope->astnodes, i);
                 break;
             }
-        }
+        };
         _scope->datatype = string2javadatatype($1->symbol);
         if (_scope->datatype == -1) {
             printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
@@ -406,9 +406,6 @@ quantified_term
         }
         addastchild($$, $5);  
         struct scope *_scope = searchscope($2->symbol);
-        #if DEBUG
-        printf("resolve variable %s, with %d references\n", _scope->symbol, _scope->astnodes->count);
-        #endif
         $$->cstptr = newcstsymbol($2->symbol);
         $$->cstptr->datatype = _scope->datatype;
         $$->cstptr->ref_count = _scope->astnodes->count;
