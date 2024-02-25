@@ -81,7 +81,7 @@
         struct scope *scope = (struct scope *)_scope;
         free(scope->symbol);
         deallocatequeue(scope->astnodes, NULL);
-        free(scope);
+        // free(scope);
     }
 
     struct scope *searchscope(char *_symbol) {
@@ -401,8 +401,10 @@ quantified_term
         $$ = newastnode(Quantifier, $2);
         if (strcmp($1->symbol, "exists") == 0) {
             $$->qtype = Quantifier_Exists;
+            $$->quantified_ranges = NULL;
         } else {
             $$->qtype = Quantifier_ForAll;
+            $$->quantified_ranges = initqueue();
         }
         addastchild($$, $5);  
         struct scope *_scope = searchscope($2->symbol);

@@ -154,6 +154,19 @@ int __match_si_with_1_arg_datatype__(void *_si, void *_astnode) {
 }
 
 /*
+    Match an SI with one argument data type
+*/
+int __match_si_with_input_arg_datatype__(void *_si, void *_astnode) {
+    struct astnode *node = (struct astnode *)_astnode;
+    struct si *si = (struct si *)_si;
+    /* a predicate accepts more than 1 argument can be filtered out */
+    if (si->args->count != 1) return FALSE;
+    struct si_arg *arg = (struct si_arg *)gqueue(si->args, 0);
+    if (arg->datatype == node->cstptr->datatype) return TRUE;
+    else return FALSE;
+}
+
+/*
     Match an SI with one event data type
 */
 int __match_event_si_with_1_arg_datatype__(void *_si, void *_astnode) {
@@ -231,6 +244,27 @@ struct queue *__obtain_si_(struct astnode *x, struct astnode *y, struct si *si) 
             tmp = strrep(s, arg2->symbol, ydata);            
             free(s);
             enqueue(result, (void *)tmp);
+        }
+    }
+    return result;
+}
+
+struct queue *__obtain_si_with_cstptr_(struct cstsymbol *x, struct cstsymbol *y, struct queue *siq) {    
+    struct queue *result = initqueue();
+    for (int k = 0; k < siq->count; ++k) {
+        struct si *si = (struct si *)gqueue(siq, k);
+        struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
+        for (int i = 0; i < x->datalist->count; ++i) {
+            for (int j = 0; j < y->datalist->count; ++j) {
+                char *s = (char *)strdup(si->interpretation);
+                char *xdata = (char *)gqueue(x->datalist, i), *ydata = (char *)gqueue(y->datalist, j);
+                char *tmp = strrep(s, arg1->symbol, xdata);
+                free(s);
+                s = tmp;
+                tmp = strrep(s, arg2->symbol, ydata);            
+                free(s);
+                enqueue(result, (void *)tmp);
+            }
         }
     }
     return result;
@@ -382,7 +416,9 @@ void __subtree_with_direct_syntax_operation__(struct astnode *subtree_root, stru
 int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
     struct si *targetsi = (struct si *)gqueue(node->si_q, 0);
-    if (targetsi->synthesised_datatype != None && child->cstptr->datatype == None) child->cstptr->datatype = targetsi->synthesised_datatype;
+    // if (targetsi->synthesised_datatype != None && child->cstptr->datatype == None) child->cstptr->datatype = targetsi->synthesised_datatype;
+    if (targetsi->synthesised_datatype != None) 
+        child->cstptr->datatype = targetsi->synthesised_datatype;
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
     return 0;
 }
@@ -532,11 +568,15 @@ int IN_code_synthesis(struct astnode *node) {
         node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions_1_datatype_1_asterisk__);
         if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
         else {
-
+            node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
         }
     } else {
 
     }
+    deallocatequeue(en->cstptr->datalist, deallocatedata);
+    en->cstptr->datalist = initqueue();
+    while (!isempty(node->si_q)) enqueue(en->cstptr->datalist, dequeue(node->si_q));
+    root = deleteastnodeandedge(node, root);
     return 0;
 }
 int JJ_code_synthesis(struct astnode *node) { return Jseries_code_synthesis(node); }
@@ -730,7 +770,8 @@ int Gram_Rel_synthesis(struct astnode *node) {
     if (d->si_q->count == 0) sinotfound_error(rel_symbol);
     enum explicit_datatype synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
     if (has_datatype(x->cstptr)) {
-        struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_1_arg_datatype__);
+        // struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_1_arg_datatype__);
+        struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_input_arg_datatype__);
         if (siq->count == 0) sinotfound_error(rel_symbol);
         else if (siq->count > 1) siconflict_error(rel_symbol);
         else {
@@ -802,6 +843,7 @@ struct si* __add_runtime_si(char *term, enum ptbsyntax syntax, char *interpretat
     } else {
         arg->datatype = -1;
     }
+    new->synthesised_datatype = None;
     enqueue(new->args, (void*)arg);
     new->interpretation = (char*)strdup(interpretation);
     new->syntax = initqueue();
@@ -930,6 +972,9 @@ void sianalysis() {
                 enqueue(target, (void *)node);
                 break;
             case NN:
+            case NNS:
+            case NNP:
+            case NNPS:
                 node->si_q = q_searchqueue(silist, node, __simatcher);
                 check_validity(node);
                 enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);

@@ -64,12 +64,14 @@ class ContextProcessor:
         for rule in alt_rules:
             self.sent = self.sent.replace(rule[0], rule[1])
 
+    possessable_terms = ['length']
+
     # converting 'length of x' to 'x's length'
     def _of_2_possesive(self):
         arr = self.sent.split(' ')
         while 'of' in arr:
             index = arr.index('of')
-            if arr[index - 2].lower() != 'the':
+            if arr[index - 2].lower() != 'the' or not arr[index + 1] in self.possessable_terms:
                 break
             t = arr[index + 1] + "'s " + arr[index - 1]
             arr = arr[:index - 1] + [t] + arr[index + 2:]

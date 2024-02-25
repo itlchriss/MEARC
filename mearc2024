@@ -117,7 +117,11 @@ def deriveMR(nlspec: str, filename: str) -> bool:
 def translateJMLbody(filename: str) -> Tuple[bool, str]:
     global tmpfolder
     filepath = os.path.join(tmpfolder, filename + '.mr')
-    cmd = "./bin/main -f %s -s %s" % (filepath, configs.STD_SI)
+    dynamic_si_filepath = os.path.join(tmpfolder, 'dynamic_si.yml')
+    if os.path.exists(dynamic_si_filepath):
+        cmd = "./bin/main -f %s -s %s,%s" % (filepath, configs.STD_SI, dynamic_si_filepath)
+    else:
+        cmd = "./bin/main -f %s -s %s" % (filepath, configs.STD_SI)
     debug and print(cmd)
     jmlbody, error = run_cmd_with_output(cmd)
     if error or not jmlbody or not jmlbody.strip(): 

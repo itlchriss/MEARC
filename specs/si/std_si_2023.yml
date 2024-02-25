@@ -459,20 +459,18 @@
   arity: 1
   arguments:
   - (*)
-  synthesised_datatype:
-  - '-2'
   interpretation: '[i]'
 - term: in
   syntax:
   - IN
   arity: 2
   arguments:
-  - Subj
-  - (x)
+  - (Subj)
+  - (y)
   specific_arg_types:
-  - '-2'
   - '5'
-  interpretation: (x)(Subj)
+  - '-1'
+  interpretation: (y)(Subj)
 - term: Rel
   syntax:
   - Rel

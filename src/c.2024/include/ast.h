@@ -21,6 +21,10 @@ struct token {
     int line, column;
 };
 
+struct quantified_range {
+    int from, to;
+};
+
 struct astnode {
     enum astnodetype type;        
     struct token *token;    
@@ -30,8 +34,14 @@ struct astnode {
     enum contextualtype ctype;
     /* type of quantifier if the type == Quantifier */
     enum quantifiertype qtype;
-    /* type of the node with extra grammar information */
-    // enum grammartype gtype;
+    /* 
+        specify the ranges when the qtype is ForAll. 
+        the default range is 0 to x's length or size, where x is the quantified variable
+        if x has no datatype, then the ranges are applied to all types and n JMLs with different range types are generated
+        each element in this queue specifies a range.
+        if there are multiple ranges, they are connected with the operator AND(&&)
+    */
+    struct queue *quantified_ranges;
     /* type of connective if the type == Connective */
     enum conntype conntype;
     /* type of word, according to penn-tree bank */

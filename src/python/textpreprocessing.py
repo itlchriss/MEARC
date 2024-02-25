@@ -60,6 +60,7 @@ if __name__ == "__main__":
     filecontent = filecontent.strip()
     conditions, sis = main(filecontent)
 
+
     folder = '/'.join(filepath.split('/')[:-1])
     tmpfolder = os.path.join(folder, 'tmp')
     if not os.path.exists(tmpfolder):

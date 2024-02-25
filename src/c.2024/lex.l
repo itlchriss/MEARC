@@ -99,6 +99,7 @@ KEYWORD_CD          "CD"
 KEYWORD_PRP         "PRP"
 KEYWORD_MD          "MD"
 KEYWORD_RB          "RB"
+KEYWORD_TO          "TO"
 
 KEYWORD_EXISTS      "exists"
 KEYWORD_FORALL      "all"
@@ -167,6 +168,7 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_MD} { yylval.t = handletoken(yytext); return TAG; }
 {KEYWORD_VBG} { yylval.t = handletoken(yytext); return TAG; }
 {KEYWORD_RB}    {yylval.t = handletoken(yytext); return TAG; }
+{KEYWORD_TO}    {yylval.t = handletoken(yytext); return TAG; }
 {KEYWORD_VBD}    {yylval.t = handletoken(yytext); return TAG; }
 
 {KEYWORD_SUBJ}  {yylval.t = handletoken(yytext); return EVENT;}

@@ -219,6 +219,7 @@ int main(int argc, char** argv) {
     if (alias) {
         deallocatequeue(alias, NULL);
     }
+
     return 0; 
 }
 
@@ -294,6 +295,7 @@ struct queue* readSI(char *dstfilepaths) {
                 #endif
                 if (!si) {
                     si = (struct si*) malloc (sizeof(struct si));
+                    si->synthesised_datatype = None;
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
