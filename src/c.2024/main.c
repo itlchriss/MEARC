@@ -31,8 +31,7 @@ struct queue *alias;
 struct astnode *root;
 
 // for parsing only
-struct queue *scopes;
-struct queue *_events;
+struct queue *_events, *_datarefs;
 
 #if INFO
 void showprocessinfo(char *msg) {
@@ -101,8 +100,8 @@ int main(int argc, char** argv) {
     events = initqueue();
     alias = initqueue();
     /* for parsing only */
+    _datarefs = initqueue();
     _events = initqueue();    
-    scopes = initqueue();
     ///////////////////////
     #if INFO      
     showprocessinfo("Start Parsing");

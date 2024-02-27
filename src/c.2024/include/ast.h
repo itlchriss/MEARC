@@ -6,9 +6,8 @@
 #include "event.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, NoSI, Operator, GrammarNotation, MultipleSIs };
-// enum grammartype { Gram_Prog, Gram_Rel };
-enum astsemtype { Sem_Static, Sem_Dynamic };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, Operator, GrammarNotation, MultipleSIs, TypePredicate, EventVariable, EventEntity };
+
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Or,  Op_Equivalent, Op_Imply };
 // Penn tree bank syntax

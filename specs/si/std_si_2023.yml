@@ -384,6 +384,9 @@
   arguments:
   - Subj
   - Dat
+  specific_arg_types:
+  - '0'
+  - '-1'
   synthesised_datatype:
   - '9'
   interpretation: (Subj) == (Dat)
@@ -479,3 +482,49 @@
   - (x)
   - (y)
   interpretation: REL(x,y)
+- term: type_array
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  synthesised_datatype:
+  - '5'
+  interpretation: ''
+- term: type_arrays
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arity: 1
+  arguments:
+  - (*)
+  synthesised_datatype:
+  - '5'
+  interpretation: ''
+- term: type_integer
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  synthesised_datatype:
+  - '0'
+  interpretation: ''
+- term: keyword_result
+  syntax:
+  - NN
+  arity: 1
+  arguments:
+  - (*)
+  interpretation: \result
+- term: return
+  syntax:
+  - VBN
+  arity: 1
+  arguments:
+  - Acc
+  specific_arg_types:
+  - '5'
+  interpretation: \result

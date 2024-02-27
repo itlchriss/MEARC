@@ -9,7 +9,7 @@ extern struct queue *cst;
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
-    printf("Symbol: %s  (datatype: %d)\n", c->symbol, c->datatype);
+    printf("Symbol: %s  (datatype: %d)    Number of Refs: %d\n", c->symbol, c->datatype, c->ref_count);
     printf("Data: ");
     for (int i = 0; i < c->datalist->count; ++i) {
         char *data = (char *)gqueue(c->datalist, i);

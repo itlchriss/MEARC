@@ -2,12 +2,13 @@ from .contextprocess import ContextProcessor
 from .mrrepairprocess import RepairProcessor
 from typing import Tuple
 
-def runengine(sent: str) -> Tuple[str, dict]:
+# sent: requirement statement in natural language
+# t: the type of requirement. Currently it is either 'requires' or 'ensures'
+def runengine(sent: str, t: str) -> Tuple[str, dict]:
     cp = ContextProcessor()
     rp = RepairProcessor()
     dynamic_si = {}
-    sent = rp.run(sent)
-    # dynamic_si |= rp.dynamic_si
+    sent = rp.run(sent, t)
     if rp.dynamic_si:
         for key in rp.dynamic_si.keys():
             if key not in dynamic_si.keys():
@@ -17,4 +18,6 @@ def runengine(sent: str) -> Tuple[str, dict]:
         for key in cp.dynamic_si.keys():
             if key not in dynamic_si.keys():
                 dynamic_si[key] = cp.dynamic_si[key]
+    if sent[-1] != '.':
+        sent += '.'
     return sent, dynamic_si

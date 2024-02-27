@@ -3,18 +3,18 @@ import os
 import re
 import shutil
 from glob import glob
+from typing import List
 
 
 root_path = './datasets/leetcode-dataset/initial'
 
 
-def _getfile(path:str) -> str:
+def _getfile(path:str) -> List[str]:
     tmp = None
-    print(path)
     if os.path.exists(path):
         with open(path, 'r') as fp:
             tmp = fp.read()
-        if tmp:
+        if tmp and tmp.strip():
             tmp = tmp.strip()
     return tmp
 
@@ -25,16 +25,17 @@ def main(srcpath:str):
     if not program:
         print('Program is not found under %s' % srcpath)
         return
-    pre = _getfile(os.path.join(srcpath, "pre"))
-    post = _getfile(os.path.join(srcpath, "post"))    
-    tmp = ''
-    # if pre:
-    #     tmp += '//@ requires(*%s*);\n' % pre 
+    pre = _getfile(os.path.join(srcpath, "p1_pre"))
+    post = _getfile(os.path.join(srcpath, "p1_post"))    
+    tmp = []
+    if pre:
+        tmp += ['//@ requires(*%s*);' % i for i in pre.split('\n')]
     if post:
-        tmp += '//@ ensures(*%s*);\n' % post 
+        tmp += ['//@ ensures(*%s*);' % i for i in post.split('\n')]
     if not tmp:
         print('No specifications found under %s' % srcpath)
         exit(-2)
+    tmp = '\n'.join(tmp)
     r = re.search(r'(\s+)?public.*\)(\s+)?[{]?', program, re.ASCII)
     program = program[:r.start()] + '\n' + tmp + program[r.start():]
     if not os.path.exists(os.path.join(srcpath, "Solution.java.no_annotation")):
@@ -46,7 +47,5 @@ def main(srcpath:str):
 
 
 if __name__ == "__main__":
-    # main(sys.argv[1])
-    for d in glob(os.path.join(root_path, '*'), recursive = False):
-        with open(os.path.join(d, "formula_constraints"), "w+") as fp:
-            fp.write("")
+    main(sys.argv[1])
+    

@@ -405,7 +405,7 @@ void __combinatorial_subtree_si_synthesis__(struct astnode *node, struct queue *
 */
 void __subtree_with_direct_syntax_operation__(struct astnode *subtree_root, struct astnode *targetnode, char *interpretation) {
     struct cstsymbol *cstptr = targetnode->cstptr;
-    if (interpretation != NULL) {
+    if (interpretation != NULL && strlen(interpretation) > 0) {
         enqueue(cstptr->datalist, (char *)strdup(interpretation));
     }
     cstptr->status = Assigned;
@@ -697,7 +697,6 @@ int event_synthesis(struct astnode *node) {
 
         }
         node->si_q = __1_event_entities_combinatorial_subtree_si_synthesis__(e, siq);
-        printf("variable(%s) has %d references.\n", en1->cstptr->symbol, en1->cstptr->ref_count);
         en1->cstptr->ref_count--;
         en1->cstptr->last_syn_src = node;        
     } else {
@@ -718,8 +717,6 @@ int event_synthesis(struct astnode *node) {
         node->si_q = __2_event_entities_combinatorial_subtree_si_synthesis__(e, siq);        
         en1->cstptr->ref_count--;
         en2->cstptr->ref_count--;
-        printf("variable(%s) has %d references.\n", en1->cstptr->symbol, en1->cstptr->ref_count);
-        printf("variable(%s) has %d references.\n", en2->cstptr->symbol, en2->cstptr->ref_count);
     }    
     e->cstptr->ref_count--;
     /* since the SIs are only for this synthesis, it should have no effect on the overall SI list. we should deallocate ASAP */
@@ -920,7 +917,9 @@ int satisfy(struct astnode *node, struct queue *visited_variables) {
             if (en->cstptr->ref_count == 1) {
                 struct cstsymbol *_aliased_cstptr = searchalias(en->cstptr);
                 if (_aliased_cstptr == NULL) internal_error("Please check with si.c -> satisfy function. There is an entity that does not have an alias, and its cstptr is only referenced by itself.");
+                _aliased_cstptr->datatype = en->cstptr->datatype;
                 en->cstptr = _aliased_cstptr;
+                en->cstptr->ref_count++;
             }
             if (!searchqueue(visited_variables, en->cstptr, __search_visited_variables__)) return 0;
             else return 1;
@@ -960,7 +959,8 @@ void check_validity(struct astnode *node) {
 void sianalysis() {
     struct astnode *node = NULL;
     struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
-    int check = -1;    
+    int check = -1;
+    // showqueue(cst, showcstsymbol);
     while (!isempty(predicates)) {
         node = (struct astnode *)dequeue(predicates);
         node->si_q = initqueue();
@@ -1063,6 +1063,11 @@ void sisynthesis() {
                     semantic_error("Synthesis is stopped because a event predicate(%s) has not completed component synthesis.", node->token->symbol);
                 } else {
                     event_synthesis(node);
+                }
+
+                /* Experimental: past participles have no individual meaning unless it is applied to an entity which is synthesised with a noun semantics. therefore, the semantics of past participles applying an entity should become part of the semantics of such entity. concluding this idea, after past pariticiple synthesis, the node should be deleted because its semantics is already applied to the entity */
+                if (node->syntax == VBN) {
+                    root = deleteastnodeandedge(node, root);
                 }
             } else if (child->cstptr->status != Assigned && 
                 !__is_noun_predicate__(node) && 

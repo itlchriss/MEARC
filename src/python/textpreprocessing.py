@@ -40,13 +40,12 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
     for t in conditions:
         clist = conditions[t]
         for i, c in enumerate(clist):
-            s, si = runengine(c)
-            results[t].append(s)
+            s, si = runengine(c, t)
+            results[t].append(s)            
             if si:
                 for v in list(si.values()):
                     if v not in sis:
-                        sis.append(v)
-    
+                        sis.append(v)    
     return results, sis
 
 if __name__ == "__main__":

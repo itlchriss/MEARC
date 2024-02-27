@@ -5,6 +5,7 @@
     #include "si.h"
     #include "event.h"
     #include "regex.h"
+    #include "error.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
@@ -15,19 +16,16 @@
     // extern int c;
     extern struct astnode *ast;  
     extern struct queue *predicates, *operators;
-    extern struct queue *events;
+    extern struct queue *events, *silist;
 
-    extern struct queue *scopes;   
 
     /* for parsing only */
-    extern struct queue *_events; 
+    extern struct queue *_events, *_datarefs;
 
-    struct scope {
-        /* symbol of the scope */
-        char *symbol;
-        /* datatype of the symbol, if there is a type_term before the symbol is declared */
+    struct _dataref {
+        struct astnode *node;
+        /* datatype of the node, if there is a type_term before the symbol is declared */
         enum explicit_datatype datatype;
-        struct queue *astnodes;
     };
 
     struct _event {
@@ -60,65 +58,66 @@
         return new;
     }
 
+    struct _dataref *newtmpdataref(struct astnode *_node, enum explicit_datatype datatype) {
+        struct _dataref *new = (struct _dataref *)malloc(sizeof(struct _dataref));
+        new->node = _node;
+        new->datatype = datatype;
+        return new;
+    }
+
     void pruneeventsubtrees() {
         while (!isempty(_events)) {
             struct _event *_e = (struct _event*)dequeue(_events);
             struct event *event = newevent(_e->_eventnode->cstptr);
+            // printf("Event %s(%p) -> Entity %s(%p)\n", 
+            //     _e->_eventnode->cstptr->symbol, 
+            //     _e->_entitynode->cstptr,
+            //     _e->_entitynode->cstptr->symbol,
+            //     _e->_entitynode->cstptr);
             enqueue(event->entities, (void *)newentity(_e->_entitynode->cstptr, __string2gramtype(_e->_subtree_root->token->symbol)));
-            deallocateast(_e->_subtree_root);
+            deleteastchild(_e->_subtree_root->parent, _e->_subtree_root);
+            // deallocateast(_e->_subtree_root);
         }
     }
 
-    struct scope *newscope(char *_symbol) {
-        struct scope *new = (struct scope *)malloc(sizeof(struct scope));
-        new->astnodes = initqueue();
-        new->symbol = (char *)strdup(_symbol);
-        new->datatype = None;
-        return new;
-    }
-
-    void deallocatescope(void *_scope) {
-        struct scope *scope = (struct scope *)_scope;
-        free(scope->symbol);
-        deallocatequeue(scope->astnodes, NULL);
-        // free(scope);
-    }
-
-    struct scope *searchscope(char *_symbol) {
-        for (int i = 0; i < scopes->count; ++i) {
-            struct scope *_scope = (struct scope *)gqueue(scopes, i);
-            if (strcmp(_scope->symbol, _symbol) == 0) return _scope;
-        }
-        return NULL;
-    }
-
-    void refcst2nodesinscope(struct scope *_scope, struct cstsymbol *_cstptr) {
-        while (!isempty(_scope->astnodes)) {
-            struct astnode *node = (struct astnode *)dequeue(_scope->astnodes);
-            node->cstptr = _cstptr;
-        }
-    }
-
-    void popscope(struct scope *_scope) {        
-        for (int i = 0; i < scopes->count; ++i) {
-            struct scope *_tmp = (struct scope *)gqueue(scopes, i);
-            if (_scope == _tmp) {
-                deallocatescope(_scope);
-                rqueue(scopes, i);
-                break;
+    int __search_syntax(struct si* si, enum ptbsyntax ptb) {
+        for (int i = 0; i < si->syntax->count; ++i) {
+            if ((enum ptbsyntax)gqueue(si->syntax, i) == ptb) {
+                return TRUE;
             }
         }
+        return FALSE;
     }
 
-    struct scope *assignscope(struct astnode *node) {
-        struct scope *_scope = NULL;
-        if ((_scope = searchscope(node->token->symbol)) == NULL) {
-            _scope = newscope(node->token->symbol);
-        }
-        enqueue(_scope->astnodes, node);
-        enqueue(scopes, (void *)_scope);    
-        return _scope;
+    int __javatype_simatcher(void *_si, void *_astnode) {
+        struct si* si = (struct si*)_si;
+        struct astnode *node = (struct astnode *)_astnode;
+        if (strcmp(node->token->symbol, si->symbol) == 0 &&
+                    __search_syntax(si, node->syntax) == TRUE) 
+            return TRUE;
+        else
+            return FALSE;
     }
+
+    struct queue *search_symbols(struct astnode *subtree_root, char *symbol) {
+        struct queue *queue = initqueue();
+        struct queue *cstptrs = initqueue();
+        for (int i = 0; i < countastchildren(subtree_root); ++i) {
+            enqueue(queue, (void *)getastchild(subtree_root, i));
+        }
+        while (!isempty(queue)) {
+            struct astnode *node = (struct astnode *)dequeue(queue);            
+            if ((node->type == Variable || node->type == EventEntity || node->type == EventVariable) && strcmp(node->token->symbol, symbol) == 0 && node->cstptr == NULL) {
+                enqueue(cstptrs, (void *)node);
+            }
+            for (int i = 0; i < countastchildren(node); ++i) {
+                enqueue(queue, (void *)getastchild(node, i));
+            }
+        }        
+        deallocatequeue(queue, NULL);
+        return cstptrs;
+    }
+
 
     // c is for the line counter of hols
     int lbracs = 0, rbracs = 0, lineNum = 1, colNum = 1, error_count = 0;
@@ -141,7 +140,7 @@
 
 /* %type<ptb> pos_tag */
 %type<conntype> connective
-%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term
+%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term event_term
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
 %start formula
@@ -154,8 +153,8 @@ formula
         ast = $1;
         $1->isroot = 1;
         pruneeventsubtrees();
-        deallocatequeue(scopes, NULL);
         deallocatequeue(_events, NULL);
+        deallocatequeue(_datarefs, NULL);
     }
     | NEG quantified_term {
         print_debug("formula: NEG terms");
@@ -163,8 +162,8 @@ formula
         $2->isnegative = 1;
         $2->isroot = 1;
         pruneeventsubtrees();
-        deallocatequeue(scopes, NULL);
         deallocatequeue(_events, NULL);
+        deallocatequeue(_datarefs, NULL);
     }    
     ;
 
@@ -219,7 +218,7 @@ term
         $$ = $1;
     }
     | type_term {
-        $$ = NULL;
+        $$ = $1;
     }
     | param_term {
         $$ = $1;
@@ -228,7 +227,8 @@ term
         $$ = $1;
     }
     | event_term {
-        $$ = NULL;
+        // $$ = NULL;
+        $$ = $1;
     }
     | grammar_term {
         $$ = $1;
@@ -242,8 +242,6 @@ term
         $$ = newastnode(Operator, $2);
         struct astnode *left = newastnode(Variable, $1);
         struct astnode *right = newastnode(Variable, $3);
-        assignscope(left);
-        assignscope(right);
         addastchild($$, left);
         addastchild($$, right);
         enqueue(operators, (void*)$$);
@@ -286,24 +284,20 @@ type_term
         if (getnodelistlength($6) > 1) {
             print_semantic_error("A type predicate can only have one argument.");
         }
-        // struct cstsymbol* c = searchcst($6->node->token->symbol);
-        for (int i = 0; i < 6; ++i) {
-            popchar($1->symbol);
-        }
-        struct scope *_scope = searchscope($6->node->token->symbol);
-        /* the type has already been resolved. so we no longer need this node */
-        for (int i = 0; i < _scope->astnodes->count; ++i) {
-            struct astnode *_node = (struct astnode *)gqueue(_scope->astnodes, i);
-            if (_node == $6->node) {
-                rqueue(_scope->astnodes, i);
-                break;
-            }
-        };
-        _scope->datatype = string2javadatatype($1->symbol);
-        if (_scope->datatype == -1) {
+        popchar($1->symbol);
+        $$ = newastnode(TypePredicate, $1);
+        addastchildren($$, $6);
+        $$->syntax = string2ptbsyntax($3->symbol);
+        struct queue *siq = q_searchqueue(silist, $$, __javatype_simatcher);
+        if (siq->count == 0) {
+            syntax_error("SI for type predicate(%s) is not found.", $1->symbol);
+        } 
+        struct si *si = (struct si *)gqueue(siq, 0);
+        if (si->synthesised_datatype == -1) {
             printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
             exit(-1);
-        }        
+        } 
+        enqueue(_datarefs, (void *)newtmpdataref($$, si->synthesised_datatype));                       
     }
     ;
 
@@ -373,7 +367,6 @@ argument
     : IDENTIFIER {
         print_debug("argument: IDENTIFIER");        
         $$ = newastnode(Variable, $1);
-        assignscope($$);
     }
     | terms {
         print_debug("argument: terms");
@@ -384,20 +377,22 @@ argument
 event_term
     : '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')' {
         print_debug("event_term: '(' EVENT '(' IDENTIFIER ')' EQUAL IDENTIFIER ')'"); 
-        struct astnode *subtree_root = newastnode(GrammarNotation, $2);
-        struct astnode *eventnode = newastnode(Variable, $4);
-        struct astnode *entitynode = newastnode(Variable, $7);
-        addastchild(subtree_root, eventnode);
-        addastchild(subtree_root, entitynode);
-        assignscope(eventnode);
-        assignscope(entitynode);
-        enqueue(_events, (void *)newtmpevent(subtree_root, eventnode, entitynode));
+        // struct astnode *subtree_root = newastnode(GrammarNotation, $2);
+        $$ = newastnode(GrammarNotation, $2);
+        struct astnode *eventnode = newastnode(EventVariable, $4);
+        struct astnode *entitynode = newastnode(EventEntity, $7);
+        addastchild($$, eventnode);
+        addastchild($$, entitynode);
+        enqueue(_events, (void *)newtmpevent($$, eventnode, entitynode));
     }
     ;
 
 quantified_term
     : KEYWORD_QUANTIFIER IDENTIFIER '.' '(' terms ')' {
-        print_debug("quantify_expr: KEYWORD_EXISTS IDENTIFIER");
+        print_debug("quantify_expr: KEYWORD_QUANTIFIER IDENTIFIER");
+        #if PARDEBUG
+        printf("quantified variable: %s\n", $2->symbol);
+        #endif
         $$ = newastnode(Quantifier, $2);
         if (strcmp($1->symbol, "exists") == 0) {
             $$->qtype = Quantifier_Exists;
@@ -406,13 +401,42 @@ quantified_term
             $$->qtype = Quantifier_ForAll;
             $$->quantified_ranges = initqueue();
         }
+        struct queue *in_scope_symbol_nodes = search_symbols($5, $2->symbol);
+        if (in_scope_symbol_nodes->count == 0) {
+            printf("Precaution: there are no entity(%s) references in the quantified scope.\n", $2->symbol);
+        }
         addastchild($$, $5);  
-        struct scope *_scope = searchscope($2->symbol);
         $$->cstptr = newcstsymbol($2->symbol);
-        $$->cstptr->datatype = _scope->datatype;
-        $$->cstptr->ref_count = _scope->astnodes->count;
-        refcst2nodesinscope(_scope, $$->cstptr);    
-        popscope(_scope);
+        $$->cstptr->datatype = -1;
+
+        $$->cstptr->ref_count += in_scope_symbol_nodes->count;
+        /* finding all the variable nodes that have the same symbol as the quantified variable, and find if there is a node has TYPE resolved */
+        for (int i = 0; i < in_scope_symbol_nodes->count; ++i) {
+            struct astnode *_node = (struct astnode *)gqueue(in_scope_symbol_nodes, i);
+            if (_node->parent->type == TypePredicate) {
+                if ($$->cstptr->datatype != -1) {
+                    /* 
+                        If there is an entity that has two or more datatypes found, it is hard to perform all combinations in the JML.
+                        Maybe we can support this feature in the future.
+                    */
+                    semantic_error("The entity(%s) has two or more datatypes found. Please solve this conflict.", $2->symbol);
+                } else {
+                    for (int j = 0; j < _datarefs->count; ++j) {
+                        struct _dataref *ref = (struct _dataref *)gqueue(_datarefs, j);
+                        if (ref->node == _node->parent) {
+                            $$->cstptr->datatype = ref->datatype;
+                            /* the variable is being removed. deduct the reference count */
+                            $$->cstptr->ref_count--;
+                            deleteastchild(ref->node->parent, ref->node);
+                            break;
+                        }
+                    }
+                }
+            } else {
+                _node->cstptr = $$->cstptr;
+            }
+        }
+        deallocatequeue(in_scope_symbol_nodes, NULL);
     }
     ;
 %%

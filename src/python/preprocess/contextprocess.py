@@ -71,7 +71,7 @@ class ContextProcessor:
         arr = self.sent.split(' ')
         while 'of' in arr:
             index = arr.index('of')
-            if arr[index - 2].lower() != 'the' or not arr[index + 1] in self.possessable_terms:
+            if arr[index - 2].lower() != 'the' or not arr[index - 1] in self.possessable_terms:
                 break
             t = arr[index + 1] + "'s " + arr[index - 1]
             arr = arr[:index - 1] + [t] + arr[index + 2:]

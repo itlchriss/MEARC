@@ -68,7 +68,7 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
                 if (node->qtype != Quantifier_ForAll) (*haserror)++;
                 else {
                     if (node->quantified_ranges->count == 0) {
-                        fprintf(s, "\\forall int %c; 0 <= %c < %s.%s; ",
+                        fprintf(s, "\\ forall int %c; 0 <= %c < %s.%s; ",
                             (char)quantify_variable, 
                             (char)quantify_variable, 
                             node->token->symbol,

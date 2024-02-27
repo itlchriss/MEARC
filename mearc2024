@@ -35,7 +35,7 @@ def run_cmd_with_output(cmd: str) -> Tuple[str, str]:
     )
     # process.wait()
     # return { 'stdout': process.stdout.decode(), 'stderr': process.stderr.decode() }
-    return (process.stdout.decode(), process.stderr.decode())
+    return (process.stdout.decode().replace('\ f', "\\f"), process.stderr.decode())
 
 
 def run_cmd_without_output(cmd: str) -> None:
@@ -155,6 +155,19 @@ def main(configs: dot_access_dict, filepath: str) -> None:
             continue
         # DEBUG USE ONLY
         print('requires(%s);' % jmlbody.strip())
+        
+    for i, sent in enumerate(data['ensures']):
+        prefix = 'post.%s' % i
+        if not deriveMR(sent, prefix):
+            debug and print('Failed in MR derviation')
+            continue
+        (r, result) = translateJMLbody(prefix)
+        if not r:
+            # In this case, the jmlbody 
+            debug and print('Failed in MEARC') and print(result) and exit(-1)
+            continue
+        # DEBUG USE ONLY
+        print('ensures(%s);' % result.strip())
 
         
     # for sent in data['ensures']:

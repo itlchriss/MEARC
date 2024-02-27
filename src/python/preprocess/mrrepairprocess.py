@@ -21,7 +21,7 @@ func_map = {
     '__num__': __check_is_numeric__
 }
 
-rules = [
+general_syntax_rules = [
     { 
         'pattern': ['an', 'array', 'of', 'length', '__num__'], 
         'format': 'a __num__-length array', 
@@ -34,14 +34,23 @@ rules = [
     }
 ]
 
+reqtype_ignore_rules = {
+    'requires': {
+        },
+    'ensures': {
+        "`answer`": 'keyword_result'
+    }
+}
+
 class RepairProcessor:    
     
     dynamic_si = {}
+    _t = None
     
     def __init__(self):
         pass
     
-    def __process_rule__(self, words, rule, index):
+    def __process_general_syntax_rule__(self, words, rule, index):
         f = rule['format']
         pattern = rule['pattern']
         symbol = rule['symbol']
@@ -70,14 +79,16 @@ class RepairProcessor:
         return ' '.join(words)
     
         
-    def run(self, sent: str) -> str:
+    def run(self, sent: str, t: str) -> str:
+        self._t = t
         if sent[-1] == '.':
             sent = sent[:-1]
         words = sent.split(' ')
-        for r in rules:
+        for r in general_syntax_rules:
             pattern = r['pattern']
             if (i := __words_contain_pattern__(words, pattern)) >= 0:
-                sent = self.__process_rule__(words, r, i)
-                    
+                sent = self.__process_general_syntax_rule__(words, r, i)
+        for k in reqtype_ignore_rules[t].keys():
+            sent = sent.replace(k, reqtype_ignore_rules[t][k])
         
         return sent
