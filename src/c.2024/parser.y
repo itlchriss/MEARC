@@ -69,14 +69,9 @@
         while (!isempty(_events)) {
             struct _event *_e = (struct _event*)dequeue(_events);
             struct event *event = newevent(_e->_eventnode->cstptr);
-            // printf("Event %s(%p) -> Entity %s(%p)\n", 
-            //     _e->_eventnode->cstptr->symbol, 
-            //     _e->_entitynode->cstptr,
-            //     _e->_entitynode->cstptr->symbol,
-            //     _e->_entitynode->cstptr);
             enqueue(event->entities, (void *)newentity(_e->_entitynode->cstptr, __string2gramtype(_e->_subtree_root->token->symbol)));
-            deleteastchild(_e->_subtree_root->parent, _e->_subtree_root);
-            // deallocateast(_e->_subtree_root);
+
+            deleteastnodeandedge(_e->_subtree_root, ast);
         }
     }
 

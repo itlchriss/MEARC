@@ -32,6 +32,7 @@ int __eventsimatcher(void *, void *);
 int __sisymbol_duplicated(void *, void *);
 int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
+int __is_Rel_dependent__(struct cstsymbol *);
 void generate_param_si(char *s);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
@@ -562,6 +563,8 @@ int IN_code_synthesis(struct astnode *node) {
     }
 
     struct entity *en = (struct entity *)gqueue(__searchevent(eventnode->cstptr)->entities, 0);    
+
+
     if (has_datatype(en->cstptr) && has_datatype(varnode->cstptr)) {
         /* TO BE DONE HERE */
     } else if (has_datatype(en->cstptr) || has_datatype(varnode->cstptr)) {
@@ -571,7 +574,18 @@ int IN_code_synthesis(struct astnode *node) {
             node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
         }
     } else {
-
+        if (__is_Rel_dependent__(en->cstptr)) {
+            char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
+            struct queue *relq = q_searchqueue(silist, rel_symbol, __match_si_with_symbol_only__);
+            if (relq->count == 0) sinotfound_error(rel_symbol);
+            deallocatequeue(en->cstptr->datalist, deallocatedata);
+            en->cstptr->datalist = initqueue();
+            while (!isempty(relq)) {
+                struct si *_rel_si = (struct si *)dequeue(relq);
+                enqueue(en->cstptr->datalist, (void *)strdup(_rel_si->interpretation));
+            }
+        }
+        node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
     }
     deallocatequeue(en->cstptr->datalist, deallocatedata);
     en->cstptr->datalist = initqueue();

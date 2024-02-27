@@ -98,7 +98,7 @@ def deriveMR(nlspec: str, filename: str) -> bool:
     process.wait()
     debug and print('DEBUG: ccglambda - mapping CCG rules with the event semantics template')
     process = subprocess.run(
-        ("%s %s/scripts/semparse_wsc.py %s/%s.xml %s/en/semantic_templates_en_event_flat.yaml > "
+        ("%s %s/scripts/semparse_wsc.py %s/%s.xml %s/en/semantic_templates_en_event_flat_mearc.yaml > "
             "%s/%s.mr" % (configs.PYCMD, configs.NLP, tmpfolder, filename, configs.NLP, tmpfolder, filename)),
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )

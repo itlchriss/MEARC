@@ -82,5 +82,5 @@ class ContextProcessor:
         self.sent = sent
         self._parameter_syntax_processor()
         self._synonym_syntax_preprocessor()
-        self._of_2_possesive()
+        # self._of_2_possesive()
         return self.sent
