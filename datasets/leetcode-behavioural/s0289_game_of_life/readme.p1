@@ -1,0 +1,9 @@
+Method behavioural requirements:
+- The integer 2D array parameter `board` must not be null.
+- The next state of the `m x n` grid `board` must be calculated according to the rules of the Game of Life.
+- Any live cell with fewer than two live neighbors must die.
+- Any live cell with two or three live neighbors must survive to the next generation.
+- Any live cell with more than three live neighbors must die.
+- Any dead cell with exactly three live neighbors must become alive.
+- The next state of the `m x n` grid `board` must be updated simultaneously.
+- The method `gameOfLife` must update the `board` in-place.

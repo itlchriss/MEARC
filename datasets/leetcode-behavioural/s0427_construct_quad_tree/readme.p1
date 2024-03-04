@@ -1,0 +1,3 @@
+Method behavioural requirements:
+- If the current grid has the same value (i.e all `1's` or all `0's`), set `isLeaf` to True and set `val` to the value of the grid. Set the four children (`topLeft`, `topRight`, `bottomLeft`, `bottomRight`) to Null.
+- If the current grid has different values, set `isLeaf` to False and set `val` to any value. Divide the current grid into four sub-grids and recurse for each of the children with the proper sub-grid.

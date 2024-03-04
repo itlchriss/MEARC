@@ -1,0 +1,6 @@
+- The integer array parameter `intervals` must not be null.
+- The integer array parameter `intervals` must have a length greater than 0.
+- The integer array parameter `intervals` must contain arrays of length 2, where the first element is the start point and the second element is the end point.
+- The integer result array must have the same length as the integer array parameter `intervals`.
+- For each interval `i` in the integer array parameter `intervals`, if there exists a right interval `j`, the result at index `i` is the index `j`.
+- If no right interval exists for interval `i`, the result at index `i` is -1.

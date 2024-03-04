@@ -1,0 +1,9 @@
+Method behavioural requirements:
+- The integer parameter `n` must be between 1 and 100.
+- The integer list parameter `logs` must have a length between 1 and 500.
+- The integer function ID `function_id` in the logs must be between 0 and n-1.
+- The timestamp `timestamp` in the logs must be between 0 and 10^9.
+- No two start events can happen at the same timestamp.
+- No two end events can happen at the same timestamp.
+- Each function ID has an "end" log for each "start" log.
+- The integer array result must contain the exclusive time for each function ID.

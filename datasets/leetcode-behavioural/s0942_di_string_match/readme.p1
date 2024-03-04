@@ -1,0 +1,5 @@
+- The string parameter `s` must not be null.
+- The integer array result `perm` must contain integers in the range `[0, n]` where `n` is the length of the string parameter `s`.
+- The integer array result `perm` must satisfy the conditions specified by the string parameter `s`:
+  - If `s[i] == 'I'`, then `perm[i] < perm[i + 1]`.
+  - If `s[i] == 'D'`, then `perm[i] > perm[i + 1]`.

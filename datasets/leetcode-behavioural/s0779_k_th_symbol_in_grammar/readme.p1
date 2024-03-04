@@ -1,0 +1,5 @@
+- The integer parameter `n` must be greater than or equal to 1.
+- The integer parameter `k` must be greater than or equal to 1 and less than or equal to 2^(n-1).
+- The integer result is the k-th (1-indexed) symbol in the n-th row of the table.
+- The table is constructed based on the rules where each occurrence of 0 is replaced with 01 and each occurrence of 1 is replaced with 10 from the previous row.
+- The result is determined by following the construction rules for the table up to the n-th row and identifying the k-th symbol in that row.

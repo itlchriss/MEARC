@@ -1,0 +1,6 @@
+- The integer array parameter `queries` must not be null.
+- The integer array parameter `queries` must have a length greater than 0.
+- The integer array parameter `queries` must contain subarrays where each subarray has a length of 2.
+- For each subarray in the integer array parameter `queries`, the first element `n_i` must be a positive integer and the second element `k_i` must be a positive integer.
+- The integer array result `answer` must have a length equal to the length of the integer array parameter `queries`.
+- For each subarray in the integer array parameter `queries`, the integer result in the corresponding index of the integer array result `answer` must be the number of ways to place positive integers into an array of size `n_i` such that the product of the integers is `k_i`, modulo 10^9 + 7.

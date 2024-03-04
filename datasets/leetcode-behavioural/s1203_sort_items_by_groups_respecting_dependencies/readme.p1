@@ -1,0 +1,9 @@
+- The integer parameter `n` must be greater than or equal to 1 and less than or equal to 3 * 10^4.
+- The integer parameter `m` must be greater than or equal to 1 and less than or equal to `n`.
+- The integer array parameter `group` length must be equal to the integer array parameter `beforeItems` length and equal to `n`.
+- The integer array parameter `group` elements must be between -1 and `m - 1`.
+- The integer array parameter `beforeItems` must not contain duplicate elements.
+- The integer array parameter `beforeItems[i]` elements must be between 0 and `n - 1` and not equal to `i`.
+- The integer array result must be a sorted list of items where items belonging to the same group are next to each other and respecting the dependencies specified in the `beforeItems` list.
+- If there is more than one solution, any valid solution can be returned.
+- If there is no solution, an empty list must be returned.

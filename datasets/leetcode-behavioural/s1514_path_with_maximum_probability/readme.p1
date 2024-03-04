@@ -1,0 +1,7 @@
+- The integer parameter `n` must be greater than or equal to 2.
+- The integer array parameter `edges` must not be null and must have a length greater than or equal to 0.
+- The double array parameter `succProb` must not be null and must have the same length as the integer array parameter `edges`.
+- The integer parameter `start` must be greater than or equal to 0 and less than `n`.
+- The integer parameter `end` must be greater than or equal to 0 and less than `n`, and must not be equal to `start`.
+- The double result is the maximum probability of success to go from the integer parameter `start` to the integer parameter `end`.
+- If there is no path from the integer parameter `start` to the integer parameter `end`, the double result is 0.

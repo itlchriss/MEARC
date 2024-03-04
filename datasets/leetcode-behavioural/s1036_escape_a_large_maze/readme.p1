@@ -1,0 +1,6 @@
+Method behavioural requirements:
+- The integer array parameter `blocked` may contain up to 200 blocked squares, each represented by a pair of coordinates.
+- The integer array parameter `source` represents the starting square coordinates.
+- The integer array parameter `target` represents the target square coordinates.
+- If the target square is accessible from the source square through a sequence of valid moves, the boolean result is true.
+- If the target square is not accessible from the source square due to blocked squares or going outside the grid boundaries, the boolean result is false.

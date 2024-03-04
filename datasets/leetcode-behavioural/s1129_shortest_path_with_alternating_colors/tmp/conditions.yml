@@ -1,0 +1,13 @@
+ensures:
+- The returned type_array keyword_result is not null.
+- The length of keyword_result is equal to param_n.
+- Each element in keyword_result is an type_integer.
+- The values in keyword_result are either non-negative integers or -1.
+requires:
+- The type_integer param_n is gtoet 1.
+- The type_arrays param_redEdges and param_blueEdges are not null.
+- The length of param_redEdges is not gt 400.
+- The length of param_blueEdges is not gt 400.
+- Each element in param_redEdges is a 2-length type_array.
+- Each element in param_blueEdges is a 2-length type_array.
+- The values in param_redEdges and param_blueEdges are in the range of 0 to `n-1`.

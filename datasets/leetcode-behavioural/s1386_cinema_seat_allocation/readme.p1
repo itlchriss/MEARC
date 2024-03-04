@@ -1,0 +1,7 @@
+Method behavioural requirements:
+- The integer parameter `n` represents the number of rows in the cinema.
+- The integer array parameter `reservedSeats` contains the numbers of seats already reserved, where each element is an array of size 2 representing the row and seat number.
+- The integer result is the maximum number of four-person groups that can be assigned on the cinema seats.
+- A four-person group occupies four adjacent seats in one single row.
+- Seats across an aisle are not considered adjacent, except when an aisle splits a four-person group in the middle.
+- In the case where an aisle splits a four-person group, there are two people on each side of the aisle.

@@ -1,0 +1,8 @@
+Method behavioural requirements:
+- The integer parameter `h` must be greater than or equal to 2.
+- The integer parameter `w` must be greater than or equal to 2.
+- The integer array parameter `horizontalCuts` must have a length greater than or equal to 1 and less than `h - 1`.
+- The integer array parameter `verticalCuts` must have a length greater than or equal to 1 and less than `w - 1`.
+- Each element in the integer array parameter `horizontalCuts` must be greater than or equal to 1 and less than `h`.
+- Each element in the integer array parameter `verticalCuts` must be greater than or equal to 1 and less than `w`.
+- The integer result is the maximum area of a piece of cake after cutting at each horizontal and vertical position provided in the arrays `horizontalCuts` and `verticalCuts`, modulo 10^9 + 7.

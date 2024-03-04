@@ -1,0 +1,6 @@
+Method behavioural requirements:
+- The string parameter `s` must not be null.
+- The integer parameter `max` must be greater than or equal to 1 and less than or equal to 26.
+- The integer parameter `minSize` must be greater than or equal to 1 and less than or equal to the minimum of 26 and the length of string parameter `s`.
+- The integer parameter `maxSize` must be greater than or equal to `minSize` and less than or equal to the minimum of 26 and the length of string parameter `s`.
+- The integer result is the maximum number of occurrences of any substring that satisfies the conditions specified in the business requirement.

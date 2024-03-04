@@ -1,0 +1,8 @@
+Method behavioural requirements:
+- The integer parameter `n` must be greater than or equal to 1.
+- The integer parameter `k` must be greater than or equal to 1 and less than or equal to `n`.
+- The integer array parameter `relations` must not be null.
+- The integer array parameter `relations` must have a length less than or equal to `n * (n-1) / 2`.
+- Each element in the integer array parameter `relations` must be an array of length 2.
+- The elements in each array of the integer array parameter `relations` must be unique and within the range of `1` to `n`.
+- The integer result is the minimum number of semesters needed to take all courses.

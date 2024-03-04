@@ -1,0 +1,10 @@
+Method behavioural requirements:
+- The integer parameter `n` must be between 2 and 100.
+- The length of the integer array parameter `edges` must be between 1 and the minimum of 200 and `n * (n - 1) / 2`.
+- Each element of the integer array parameter `edges` must have a length of 3.
+- The first element of each edge in the integer array parameter `edges` must be between 0 and `n - 1`.
+- The second element of each edge in the integer array parameter `edges` must be between 0 and `n - 1` and greater than the first element.
+- The third element of each edge in the integer array parameter `edges` must be between 1 and 1000.
+- All pairs of nodes `(a_i, b_i)` in the integer array parameter `edges` must be distinct.
+- The result is a list containing two lists, where the first list represents the critical edges and the second list represents the pseudo-critical edges in the minimum spanning tree of the given graph.
+- The indices of the edges in the output lists can be in any order.

@@ -1,0 +1,6 @@
+- The character matrix parameter `box` must not be null.
+- The character matrix parameter `box` must have dimensions `m x n`, where `m` is the number of rows and `n` is the number of columns.
+- The character matrix result must have dimensions `n x m`, where `n` is the number of rows and `m` is the number of columns.
+- The stones in the character matrix `box` fall down until they land on an obstacle, another stone, or the bottom of the box.
+- The obstacles' positions are not affected by gravity.
+- The inertia from the box's rotation does not affect the stones' horizontal positions.

@@ -1,0 +1,6 @@
+- If the integer array parameter `rains` is empty, the integer array result is also empty.
+- If the integer array parameter `rains` contains only positive values, the integer array result is filled with -1 values.
+- If the integer array parameter `rains` contains a mix of positive values and zeros, the integer array result must satisfy the following conditions:
+  - For each zero in the `rains` array, the corresponding index in the result array must contain either -1 or a valid lake index to dry.
+  - If a zero in the `rains` array corresponds to a lake that is already full, the result array must contain a valid lake index to dry in order to avoid a flood.
+  - If it is impossible to avoid a flood, the result array is empty.

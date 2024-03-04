@@ -1,0 +1,9 @@
+Method behavioural requirements:
+- The integer matrix parameter `isWater` must not be null.
+- The integer matrix parameter `isWater` must have a size of m x n where m and n are positive integers.
+- Each cell in the integer matrix parameter `isWater` must be either 0 (land cell) or 1 (water cell).
+- The integer matrix result `height` must have a size of m x n where m and n are the same as the size of the integer matrix parameter `isWater`.
+- The height of each cell in the integer matrix result `height` must be non-negative.
+- The height of a water cell in the integer matrix result `height` must be 0.
+- The absolute height difference between any two adjacent cells in the integer matrix result `height` must be at most 1.
+- The maximum height in the integer matrix result `height` must be maximized.

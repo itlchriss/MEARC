@@ -1,0 +1,5 @@
+- If the character at index `i` in the string parameter `dominoes` is 'L' and there is no adjacent domino on the left, the character at index `i` remains 'L'.
+- If the character at index `i` in the string parameter `dominoes` is 'R' and there is no adjacent domino on the right, the character at index `i` remains 'R'.
+- If the character at index `i` in the string parameter `dominoes` is 'L' and there is a falling domino on the right at index `j`, where `j > i`, the characters between index `i` and `j` (inclusive) change to 'L'.
+- If the character at index `i` in the string parameter `dominoes` is 'R' and there is a falling domino on the left at index `j`, where `j < i`, the characters between index `j` and `i` (inclusive) change to 'R'.
+- If there are falling dominoes from both sides at index `i`, the character at index `i` remains '.'.

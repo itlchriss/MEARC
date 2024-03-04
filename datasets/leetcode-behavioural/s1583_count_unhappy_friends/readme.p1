@@ -1,0 +1,13 @@
+Method behavioural requirements:
+- The integer parameter `n` must be even.
+- The integer 2D array parameter `preferences` must have a length equal to the integer parameter `n`.
+- Each sub-array in the integer 2D array parameter `preferences` must have a length equal to `n - 1`.
+- The integer values in each sub-array of the integer 2D array parameter `preferences` must be in the range from 0 to `n - 1`.
+- Each sub-array in the integer 2D array parameter `preferences` must not contain the index of its own sub-array.
+- All integer values in each sub-array of the integer 2D array parameter `preferences` must be unique.
+- The integer 2D array parameter `pairs` must have a length equal to `n/2`.
+- Each sub-array in the integer 2D array parameter `pairs` must have a length equal to 2.
+- The integers in each sub-array of the integer 2D array parameter `pairs` must not be equal to each other.
+- The integers in each sub-array of the integer 2D array parameter `pairs` must be in the range from 0 to `n - 1`.
+- Each person in the integer 2D array parameter `preferences` must be contained in exactly one pair.
+- The integer result is the number of unhappy friends.

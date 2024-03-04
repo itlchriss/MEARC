@@ -1,0 +1,6 @@
+Method behavioural requirements:
+- The integer parameter `rows` must be greater than or equal to 1.
+- The integer parameter `cols` must be greater than or equal to 1.
+- The integer parameter `rCenter` must be greater than or equal to 0 and less than `rows`.
+- The integer parameter `cCenter` must be greater than or equal to 0 and less than `cols`.
+- The integer array result must contain the coordinates of all cells in the matrix, sorted by their distance from `(rCenter, cCenter)` from the smallest distance to the largest distance.

@@ -1,0 +1,5 @@
+- The list parameter `tickets` must not be null.
+- The list parameter `tickets` must contain lists where each inner list has exactly 2 elements representing the departure and arrival airports of one flight.
+- The itinerary result must begin with "JFK".
+- The itinerary result must use all the tickets once and only once.
+- If there are multiple valid itineraries, the returned itinerary must have the smallest lexical order when read as a single string.

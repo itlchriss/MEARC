@@ -1,0 +1,5 @@
+Method behavioural requirements:
+- The integer 2D array parameter `orders` must not be null.
+- For each order in the integer 2D array parameter `orders`, if the order type is `buy` (0), the order must be added to the backlog if there are no corresponding `sell` orders with prices smaller than or equal to the current `buy` order's price.
+- For each order in the integer 2D array parameter `orders`, if the order type is `sell` (1), the order must be added to the backlog if there are no corresponding `buy` orders with prices larger than or equal to the current `sell` order's price.
+- After processing all orders in the integer 2D array parameter `orders`, the total amount of orders in the backlog must be returned modulo 10^9 + 7.

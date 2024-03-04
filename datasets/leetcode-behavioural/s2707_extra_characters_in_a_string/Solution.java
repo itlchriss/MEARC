@@ -1,0 +1,39 @@
+package g2701_2800.s2707_extra_characters_in_a_string;
+
+// #Medium #Array #String #Hash_Table #Dynamic_Programming #Trie
+// #2023_09_15_Time_37_ms_(74.40%)_Space_44.2_MB_(74.60%)
+
+import java.util.Arrays;
+
+public class Solution {
+//@ ensures(*Preconditions:*);
+//@ ensures(*The input string `s` is not null.*);
+//@ ensures(*The input dictionary is not null.*);
+//@ ensures(*The length of `s` is greater than or equal to 1.*);
+//@ ensures(*The length of the dictionary is greater than or equal to 1.*);
+//@ ensures(*Each word in the dictionary is not null.*);
+//@ ensures(*Each word in the dictionary consists of only lowercase English letters.*);
+//@ ensures(*The dictionary contains distinct words.*);
+//@ ensures(**);
+//@ ensures(*Postconditions:*);
+//@ ensures(*The method returns an integer representing the minimum number of extra characters left over.*);
+//@ ensures(*The returned value is greater than or equal to 0.*);
+    public int minExtraChar(String s, String[] dictionary) {
+        return tabulationApproach(s, dictionary);
+    }
+
+    private int tabulationApproach(String s, String[] dictionary) {
+        int m = s.length();
+        int[] dp = new int[m + 1];
+        for (int i = m - 1; i >= 0; i--) {
+            dp[i] = dp[i + 1] + 1;
+            int finalI = i;
+            Arrays.stream(dictionary)
+                    .filter(word -> s.startsWith(word, finalI))
+                    .mapToInt(String::length)
+                    .map(n -> dp[finalI + n])
+                    .forEach(prev -> dp[finalI] = Math.min(dp[finalI], prev));
+        }
+        return dp[0];
+    }
+}

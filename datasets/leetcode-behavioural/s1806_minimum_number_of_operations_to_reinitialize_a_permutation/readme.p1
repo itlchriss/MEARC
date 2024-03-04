@@ -1,0 +1,7 @@
+Method behavioural requirements:
+- The integer parameter `n` must be even.
+- The integer array `perm` must be of size `n` and initialized such that `perm[i] == i` for all `i` (0-indexed).
+- After each operation, the integer array `perm` must be updated according to the given rules:
+    - If `i % 2 == 0`, then `arr[i] = perm[i / 2]`.
+    - If `i % 2 == 1`, then `arr[i] = perm[n / 2 + (i - 1) / 2]`.
+- The minimum non-zero number of operations needed to return the permutation to its initial value must be returned as the integer result.

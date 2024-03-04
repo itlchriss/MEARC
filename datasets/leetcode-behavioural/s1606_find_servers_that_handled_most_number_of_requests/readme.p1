@@ -1,0 +1,8 @@
+- The integer parameter `id` must be a positive integer representing the ID of the server.
+- The integer parameter `busyTime` must be a positive integer representing the time it takes for the server to complete a request.
+- The server must handle requests sequentially, one at a time.
+- If all servers are busy, the request must be dropped.
+- If the server with ID equal to `(i % k)` is available, the request must be assigned to that server.
+- If the server with ID equal to `(i % k)` is busy, the request must be assigned to the next available server, wrapping around the list of servers if necessary.
+- The method must return a list containing the IDs of the busiest server(s).
+- The busiest server(s) is determined by the server(s) that handled the most number of requests successfully.

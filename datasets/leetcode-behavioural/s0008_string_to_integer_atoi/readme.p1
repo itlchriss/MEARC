@@ -1,0 +1,6 @@
+- The string parameter `str` is read in and leading whitespace is ignored.
+- If the next character after leading whitespace is '-' or '+', the result is negative or positive respectively.
+- The characters after '-' or '+' are read until the next non-digit character or the end of the input is reached.
+- The digits are converted into an integer. If no digits were read, the integer is 0.
+- If the integer is out of the 32-bit signed integer range [-2^31, 2^31 - 1], it is clamped to remain in the range.
+- The final result is the integer after the above steps are executed.

@@ -1,0 +1,6 @@
+Method behavioural requirements:
+- The integer array parameter `w` must not be null.
+- The integer array parameter `w` must have a length between 1 and 10^4.
+- Each element in the integer array parameter `w` must be between 1 and 10^5.
+- The integer result of the `pickIndex()` method must be in the range [0, w.length - 1].
+- The probability of picking an index `i` is `w[i] / sum(w)`.

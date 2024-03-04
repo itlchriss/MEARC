@@ -1,0 +1,23 @@
+package g1501_1600.s1512_number_of_good_pairs;
+
+// #Easy #Array #Hash_Table #Math #Counting #2022_04_09_Time_1_ms_(84.97%)_Space_42.2_MB_(9.05%)
+
+public class Solution {
+//@ ensures(*Preconditions:*);
+//@ ensures(*The input array `nums` is not null.*);
+//@ ensures(*The length of the input array `nums` is greater than or equal to - Each element in the input array `nums` is an integer.*);
+//@ ensures(*Each element in the input array `nums` is greater than or equal to - Each element in the input array `nums` is less than or equal to *);
+//@ ensures(*Postconditions:*);
+//@ ensures(*The method returns an integer representing the number of good pairs in the input array `nums`.*);
+    public int numIdenticalPairs(int[] nums) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}

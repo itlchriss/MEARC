@@ -1,0 +1,4 @@
+- The Node class must have the following attributes: val (boolean), isLeaf (boolean), topLeft (Node), topRight (Node), bottomLeft (Node), bottomRight (Node).
+- If the current grid has the same value (i.e all 1's or all 0's), set isLeaf True and set val to the value of the grid and set the four children to Null.
+- If the current grid has different values, set isLeaf to False and set val to any value and divide the current grid into four sub-grids.
+- Recurse for each of the children with the proper sub-grid.

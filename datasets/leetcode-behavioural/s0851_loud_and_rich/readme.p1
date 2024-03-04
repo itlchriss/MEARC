@@ -1,0 +1,7 @@
+- The integer array parameter `richer` must not be null.
+- The integer array parameter `quiet` must not be null.
+- The integer array parameter `quiet` must have unique values.
+- The integer array result `answer` must have the same length as the integer array parameter `quiet`.
+- For each element `x` in the integer array parameter `richer`, if `richer[x] = [a, b]`, then the integer value of `a` must be richer than the integer value of `b`.
+- For each element `x` in the integer array parameter `richer`, the integer value of `quiet[x]` must be the quietness level of person `x`.
+- For each element `x` in the integer array result `answer`, if `answer[x] = y`, then person `y` must be the least quiet person among all people who definitely have equal to or more money than person `x`.

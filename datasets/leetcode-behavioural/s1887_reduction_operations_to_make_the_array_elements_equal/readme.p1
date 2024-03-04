@@ -1,0 +1,7 @@
+Method behavioural requirements:
+- The integer array parameter `nums` must not be null.
+- The integer result is the number of operations required to make all elements in the integer array `nums` equal.
+- For each operation:
+  - Find the largest value in the integer array `nums`. Let its index be `i` and its value be `largest`.
+  - Find the next largest value in the integer array `nums` strictly smaller than `largest`. Let its value be `nextLargest`.
+  - Reduce `nums[i]` to `nextLargest`.

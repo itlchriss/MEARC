@@ -1,0 +1,3 @@
+Method behavioural requirements:
+- For each element in the integer array parameter `prices`, if there exists a minimum index `j` such that `j > i` and `prices[j] <= prices[i]`, the final price is `prices[i] - prices[j]`.
+- If there is no such index `j` for an element in the integer array parameter `prices`, the final price remains the same as `prices[i]`.

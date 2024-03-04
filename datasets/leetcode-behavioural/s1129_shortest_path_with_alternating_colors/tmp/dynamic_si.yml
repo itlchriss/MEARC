@@ -1,0 +1,11 @@
+- term: 2_dash_length
+  syntax:
+  - JJ
+  arity: 1
+  arguments:
+  - Subj
+  specific_arg_types:
+  - '5'
+  synthesised_datatype:
+  - '9'
+  interpretation: (Subj).length == 2

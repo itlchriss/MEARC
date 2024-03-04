@@ -1,0 +1,8 @@
+- For each group of duplicate files, the list of file paths must be in the format "directory_path/file_name.txt".
+- The list of groups of duplicate file paths must be returned in any order.
+- Each directory info string in the input list must follow the format "root/d1/d2/.../dm f1.txt(f1_content) f2.txt(f2_content) ... fn.txt(fn_content)".
+- The output list must contain all the duplicate files in the file system in terms of their paths.
+- A group of duplicate files consists of at least two files that have the same content.
+- The file content must be considered for identifying duplicate files.
+- The constraints on the input paths must be adhered to.
+- The method must handle the given follow-up questions regarding searching files in a real file system and optimizing for large file content and limited file reading capabilities.

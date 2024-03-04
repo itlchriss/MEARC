@@ -1,0 +1,9 @@
+Method behavioural requirements:
+- If the input string parameter `code` is wrapped in a valid closed tag, the boolean result is true.
+- The valid closed tag has the format `<TAG_NAME>TAG_CONTENT</TAG_NAME>`, where TAG_NAME and TAG_CONTENT are valid.
+- A valid TAG_NAME contains only upper-case letters and has a length in the range [1,9].
+- A valid TAG_CONTENT may contain other valid closed tags, cdata, and any characters except unmatched `<`, unmatched start and end tags, and unmatched or closed tags with an invalid TAG_NAME.
+- An unmatched start tag exists if no end tag with the same TAG_NAME is found, and vice versa, considering the issue of unbalanced nested tags.
+- An unmatched `<` is found if a subsequent `>` cannot be found, and all characters until the next `>` should be parsed as TAG_NAME.
+- CDATA has the format `<![CDATA[CDATA_CONTENT]]>`, where CDATA_CONTENT is the characters between `<![CDATA[` and the first subsequent `]]>`.
+- CDATA_CONTENT may contain any characters and should be treated as regular characters, not parsed as tags.
