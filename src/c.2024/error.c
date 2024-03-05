@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+void sisyntax_error(char *filepath, char *key, char *value) {
+    fprintf(stderr, "Syntax error:");
+    fprintf(stderr, "Cannot parse SI file %s with key %s and value %s\n", filepath, key ,value);
+    exit(-1);
+}
 
 void semantic_error(char *s, char *support_info) {
     fprintf(stderr, "Semantic error:");

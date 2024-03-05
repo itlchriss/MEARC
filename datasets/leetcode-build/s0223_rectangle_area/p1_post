@@ -1,7 +1,0 @@
-The method should return an integer value representing the total area covered by the two rectangles.
-The returned area should be calculated by summing the areas of the two rectangles and subtracting the overlapping area.
-The area of a rectangle can be calculated by multiplying the length (difference between x-coordinates) by the width (difference between y-coordinates).
-The overlapping area can be calculated by finding the intersection of the two rectangles and calculating its area.
-The intersection of the two rectangles can be found by determining the maximum of the minimum x-coordinate and the minimum of the maximum x-coordinate, and the maximum of the minimum y-coordinate and the minimum of the maximum y-coordinate.
-If the two rectangles do not overlap, the overlapping area should be 0.
-The method should handle cases where one rectangle is completely inside the other rectangle. In such cases, the overlapping area should be equal to the area of the smaller rectangle.

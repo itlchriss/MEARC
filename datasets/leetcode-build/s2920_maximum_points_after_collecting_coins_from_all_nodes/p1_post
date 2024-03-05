@@ -1,9 +1,0 @@
-The method should return an integer representing the maximum points that can be obtained after collecting the coins from all the tree nodes.
-Behavioural requirements:
-The method should collect all the coins from each node in the tree.
-The method should collect the coins in a way that ensures the coins at a node can only be collected if the coins of its ancestors have been already collected.
-If the coins at a node are collected using the first way, the method should subtract `k` from the number of coins and add the result to the total points.
-If the coins at a node are collected using the first way and the result is negative, the method should subtract the absolute value of the result from the total points.
-If the coins at a node are collected using the second way, the method should divide the number of coins by 2 and add the floor value to the total points.
-If the coins at a node are collected using the second way, the method should recursively apply the second way to all the nodes in the subtree of the current node.
-The method should return the maximum points that can be obtained after collecting the coins from all the tree nodes.

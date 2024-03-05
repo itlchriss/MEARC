@@ -6,6 +6,7 @@
 #include "si.h"
 #include "event.h"
 #include "alias.h"
+#include "error.h"
 
 extern FILE *yyin;
 
@@ -38,6 +39,12 @@ void showprocessinfo(char *msg) {
     printf("======================================%s=========================================\n", msg);
 }
 #endif
+
+int get_datatype(char *s) {
+    if (strcmp(s, "*") == 0) return -2;
+    else if (strcmp(s, "-1") == 0) return UNDEFINED;
+    else return atoi(s);
+}
 
 
 //TODO: we have to store every queue per root node.
@@ -230,7 +237,7 @@ struct queue* readSI(char *dstfilepaths) {
     yaml_parser_t parser;    
     while (_t != NULL) {
         filepath = (char*)strdup(_t);
-        fp = fopen(filepath, "rb");        
+        fp = fopen(filepath, "r");        
         if (!fp) {
             fprintf(stderr, "Cannot open SI file at %s\n", filepath);
             exit(-1);
@@ -246,14 +253,15 @@ struct queue* readSI(char *dstfilepaths) {
         yaml_parser_initialize(&parser);
         yaml_parser_set_input_file(&parser, fp);
         #if SIDEBUG
-        printf("Trying to read SI from file at %s\n", filepath);
+        printf("Reading SI from file at %s\n", filepath);
         #endif
         int token_flag = -1;
         yaml_token_t  token;   /* new variable */
         struct si *si = NULL;
         char *key, *value;
-        int tmp_arg_count = -1;
+        struct si_arg *arg = NULL;
          do {
+            START:
             yaml_parser_scan(&parser, &token);
             SWITCH:
             switch(token.type)
@@ -294,7 +302,10 @@ struct queue* readSI(char *dstfilepaths) {
                 #endif
                 if (!si) {
                     si = (struct si*) malloc (sizeof(struct si));
-                    si->synthesised_datatype = None;
+                    si->synthesised_datatype = (struct datatype *)malloc(sizeof(struct datatype));
+                    si->synthesised_datatype->p = UNDEFINED;
+                    si->synthesised_datatype->r = UNDEFINED;
+                    si->synthesised_datatype->types = initqueue();
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
@@ -319,29 +330,71 @@ struct queue* readSI(char *dstfilepaths) {
                 if (token_flag == 1) {
                     key = (char*) strdup((char*)token.data.scalar.value);
                     if (strcmp(key, "arguments") == 0) {
-                        si->args = initqueue();
-                        int i = 0;                            
-                        while (i < tmp_arg_count) {
-                            yaml_parser_scan(&parser, &token);
-                            if (token.type == YAML_SCALAR_TOKEN) {
-                                struct si_arg *arg = (struct si_arg*)malloc (sizeof(struct si_arg));
-                                arg->symbol = (char*) strdup((char*)token.data.scalar.value);
-                                enqueue(si->args, (void*)arg);
-                                ++i;                                
+                        si->args = initqueue();            
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_BLOCK_ENTRY_TOKEN);
+                        while (token.type == YAML_BLOCK_ENTRY_TOKEN) {
+                            while (token.type != YAML_BLOCK_END_TOKEN) {
+                                switch (token.type) {
+                                    case YAML_BLOCK_MAPPING_START_TOKEN:
+                                        arg = (struct si_arg*)malloc (sizeof(struct si_arg));
+                                        arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
+                                        arg->datatype->p = UNDEFINED;
+                                        arg->datatype->r = UNDEFINED;
+                                        arg->datatype->types = NULL;
+                                        break;
+                                    case YAML_KEY_TOKEN:
+                                        yaml_parser_scan(&parser, &token);
+                                        #if SIDEBUG
+                                        printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                        #endif
+                                        if (strcmp((char*)token.data.scalar.value, "symbol") == 0) {
+                                            yaml_parser_scan(&parser, &token);     
+                                            yaml_parser_scan(&parser, &token);                                        
+                                            arg->symbol = (char *)strdup((char*)token.data.scalar.value);
+                                            #if SIDEBUG
+                                            printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                            #endif
+                                        } else if (strcmp((char*)token.data.scalar.value, "primitive_type") == 0) {
+                                            yaml_parser_scan(&parser, &token);
+                                            yaml_parser_scan(&parser, &token);     
+                                            arg->datatype->p = (enum primitive_datatype)get_datatype((char *)token.data.scalar.value);
+                                            #if SIDEBUG
+                                            printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                            #endif                                            
+                                        } else if (strcmp((char*)token.data.scalar.value, "reference_type") == 0) {
+                                            yaml_parser_scan(&parser, &token);
+                                            yaml_parser_scan(&parser, &token);     
+                                            arg->datatype->r = (enum reference_datatype)get_datatype((char *)token.data.scalar.value);
+                                            #if SIDEBUG
+                                            printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                            #endif                                            
+                                        } else if (strcmp((char*)token.data.scalar.value, "type_names") == 0) {
+                                            arg->datatype->types = initqueue();
+                                            yaml_parser_scan(&parser, &token);
+                                            while (token.type != YAML_KEY_TOKEN) {
+                                                if (token.type == YAML_SCALAR_TOKEN) {
+                                                    #if SIDEBUG
+                                                    printf("(Value token) YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                                                    #endif                                                                             
+                                                    enqueue(arg->datatype->types, (void *)strdup((char *)token.data.scalar.value));                                                        
+                                                }                  
+                                                yaml_parser_scan(&parser, &token);
+                                            }
+                                            goto SWITCH;                                                                                                                  
+                                        } else {
+                                            sisyntax_error(filepath, si->symbol, "arguments");
+                                        }                                    
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                yaml_parser_scan(&parser, &token);                            
                             }
-                        }                            
-                    } else if (strcmp(key, "specific_arg_types") == 0) {                        
-                        int i = 0;                            
-                        while (i < si->args->count) {
-                            yaml_parser_scan(&parser, &token);
-                            if (token.type == YAML_SCALAR_TOKEN) {
-                                struct si_arg *arg = (struct si_arg*)gqueue(si->args, i);
-                                char *tmp = (char*)token.data.scalar.value;
-                                int _t = atoi(tmp);
-                                arg->datatype = (enum explicit_datatype)_t;
-                                ++i;
-                            }
-                        }  
+                            enqueue(si->args, (void *)arg);
+                            yaml_parser_scan(&parser, &token);       
+                        }
+                        // yaml_parser_scan(&parser, &token); 
+                        goto START;
                     } else if (strcmp(key, "syntax") == 0) {
                         si->syntax = initqueue();
                         /* skip the YAML_VALUE_TOKEN */
@@ -357,14 +410,37 @@ struct queue* readSI(char *dstfilepaths) {
                             yaml_parser_scan(&parser, &token);                      
                         }                                                                         
                         goto SWITCH;
+                    } else if (strcmp(key, "synthesised_datatype") == 0) {
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_SCALAR_TOKEN);
+                        while (token.type != YAML_SCALAR_TOKEN) yaml_parser_scan(&parser, &token);
+                        #if SIDEBUG
+                        printf("(SYNTHESISED DATATYPE) YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                        #endif  
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_SCALAR_TOKEN);
+                        #if SIDEBUG
+                        printf("(SYNTHESISED DATATYPE) YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                        #endif                                 
+                        char *tmp = (char *)strdup((char *)token.data.scalar.value);
+                        si->synthesised_datatype->p = (enum primitive_datatype)get_datatype(tmp);
+                        free(tmp);
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_SCALAR_TOKEN);
+                        #if SIDEBUG
+                        printf("(SYNTHESISED DATATYPE) YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                        #endif                               
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_SCALAR_TOKEN);
+                        #if SIDEBUG
+                        printf("(SYNTHESISED DATATYPE) YAML_SCALAR_TOKEN: %s \n", token.data.scalar.value); 
+                        #endif                             
+                        tmp = (char *)strdup((char *)token.data.scalar.value);
+                        si->synthesised_datatype->r = (enum reference_datatype)get_datatype(tmp);
+                        free(tmp);
+                        do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_KEY_TOKEN);
+                        goto SWITCH;
                     }
                 } else if (token_flag == 2) {
                     value = (char*) strdup((char*)token.data.scalar.value);
                     if (key && value) {
-                        if (strcmp(key, "arity") == 0) {
-                            // si->arg_count = atoi(value);     
-                            tmp_arg_count = atoi(value);                        
-                        } else if (strcmp(key, "term") == 0) {
+                        if (strcmp(key, "term") == 0) {
                             si->symbol = (char*) strdup(value);
                             trim(si->symbol);
                             /* 
@@ -378,14 +454,8 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
-                        } else if (strcmp(key, "synthesised_datatype") == 0) {
-                            char *tmp = (char*) strdup(value);
-                            int _t = atoi(tmp);
-                            si->synthesised_datatype = (enum explicit_datatype)_t;
-                            free(tmp);
                         } else {
-                            fprintf(stderr, "Syntax error in SI file %s with key %s and value %s\n", filepath, key ,value);
-                            exit(-1);
+                            sisyntax_error(filepath, key, value);
                         }                        
                     }
                     free(key);
@@ -408,13 +478,11 @@ struct queue* readSI(char *dstfilepaths) {
 
         /* Cleanup */
         yaml_parser_delete(&parser);   
-        fclose(fp);
+        fclose(fp);        
         _t = strtok_r(NULL, ",", &pos);
     }
     yaml_parser_delete(&parser);
-    #if SIDEBUG
-    showqueue(new, showsi);
-    #endif
+
     return new;
 }
 

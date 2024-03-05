@@ -1,9 +1,0 @@
-Preconditions:
-- The input array `nums` is not null.
-- The length of the input array `nums` is greater than or equal to 1.
-- All elements in the input array `nums` are integers.
-- All elements in the input array `nums` are between 0 and 9 (inclusive).
-
-Postconditions:
-- The returned index `i` is the smallest index in the input array `nums` such that `i mod 10 == nums[i]`.
-- If there is no index in the input array `nums` that satisfies the condition `i mod 10 == nums[i]`, then the method returns -1.

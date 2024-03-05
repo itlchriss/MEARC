@@ -1,5 +1,37 @@
 from .contextprocess import datatypes
 from typing import List
+from enum import Enum
+
+
+
+# the enumeration and constant UNDEFINED values must be consistent with the declarations in cst.h
+UNDEFINED = -1
+ANY = '*'
+
+class IntEnum(Enum):
+    def __int__(self):
+        return self.value
+    
+    def __str__(self):
+        return str(self.value)
+
+class Primitive_datatype(IntEnum):
+    Boolean = 0
+    Byte = 1
+    Char = 2
+    Short = 3
+    Integer = 4
+    Long = 5
+    Float = 6
+    Double = 7
+    
+
+
+class Reference_datatype(IntEnum):
+    Array = 0
+    String = 1
+    Object = 2
+
 
 # denote __type__ as datatype in datatypes
 # denote __num__ as a numerical value
@@ -21,6 +53,23 @@ func_map = {
     '__num__': __check_is_numeric__
 }
 
+# general_syntax_rules = [
+#     { 
+#         'pattern': ['an', 'array', 'of', 'length', '__num__'], 
+#         'format': 'a __num__-length array', 
+#         'symbol': '__num__-length', 
+#         'interpretation': '(Subj).length == __num__',
+#         'syntax': 'JJ',
+#         'arguments': ['Subj'],
+#         'specific_arg_types': '5',
+#         'synthesised_datatype': '9'
+#     }
+# ]
+
+label_primitive_type = 'primitive_type'
+label_reference_type = 'reference_type'
+label_symbol = 'symbol'
+
 general_syntax_rules = [
     { 
         'pattern': ['an', 'array', 'of', 'length', '__num__'], 
@@ -28,11 +77,17 @@ general_syntax_rules = [
         'symbol': '__num__-length', 
         'interpretation': '(Subj).length == __num__',
         'syntax': 'JJ',
-        'arguments': ['Subj'],
-        'specific_arg_types': '5',
-        'synthesised_datatype': '9'
+        'arguments': [
+            {
+                label_symbol: 'Subj',
+                label_primitive_type: ANY,
+                label_reference_type: str(Reference_datatype.Array)
+            }
+            ],
+        'synthesised_datatype': { label_primitive_type: str(Primitive_datatype.Boolean), label_reference_type: str(UNDEFINED) }
     }
 ]
+
 
 reqtype_ignore_rules = {
     'requires': {
@@ -69,10 +124,8 @@ class RepairProcessor:
         self.dynamic_si[symbol] = { 
                                    'term': symbol.replace('-', '_dash_'),
                                    'syntax': [rule['syntax']],
-                                   'arity': len(rule['arguments']),
-                                   'arguments': rule['arguments'], 
-                                   'specific_arg_types': [rule['specific_arg_types']], 
-                                   'synthesised_datatype': [rule['synthesised_datatype']],                                   
+                                   'arguments': rule['arguments'],  
+                                   'synthesised_datatype': rule['synthesised_datatype'],                                   
                                    'interpretation': interpretation,
                                    }        
         words = words[:index] + [f] + words[index + len(pattern):]

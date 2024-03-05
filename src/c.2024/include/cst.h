@@ -3,31 +3,49 @@
 
 #include "util.h"
 
+#ifndef UNDEFINED
+#define UNDEFINED -1
+#endif
+#ifndef ALLOWED
+#define ALLOWED 1
+#endif
+#ifndef NOTALLOWED
+#define NOTALLOWED 0
+#endif
 
- enum explicit_datatype {
-    Indexing = -2,
-    None = -1,
-    JavaInteger = 0,
-    JavaShort,
-    JavaLong,
-    JavaFloat,
-    JavaDouble,
-    JavaArray,
-    JavaList,
-    JavaString,
-    JavaChar,
-    JavaBool
+enum primitive_datatype {
+    AnyPrimitiveType = -2,
+    Boolean = 0,
+    Byte = 1,
+    Char = 2,
+    Short = 3,
+    Integer = 4,
+    Long = 5,
+    Float = 6,
+    Double = 7
 };
+
+// Class, Interface are treated as Object
+enum reference_datatype {
+    AnyRefType = -2,
+    Array = 0,
+    String = 1,
+    Object = 2
+};
+
+// type stores the type of class and interface
+struct datatype {
+    enum primitive_datatype p;
+    enum reference_datatype r;
+    /* all elements in this queue must be C-strings. each C-string represents a type name */
+    struct queue *types;
+};
+
 
 enum symbol_status {
     Empty,
     Assigned
 };
-
-// struct synthesised_data {
-//     char *data;
-//     enum explicit_datatype datatype;
-// };
 
 // node of compile-time symbol table
 struct cstsymbol {
@@ -37,8 +55,17 @@ struct cstsymbol {
     // updated. there can be multiple data
     /* there can be multiple predicates that are being resolved to the same variable. this is common in compound subject, such as "A and B are not null" then both A and B are resolved to the same variable.*/
     struct queue *datalist;
+    /* 
+        This is a flag distinguishing if the current datalist can contain multiple data 
+        The reason why we need this is to check if the MR semantics is correct.
+        If there is a term, which is defined as plural, then the entity it accepts as argument should allow multiple data.
+        Otherwise, this entity should allow single data.        
+    */
+    // TODO BE ADDED
+    // int allow_multi_data;
 
-    enum explicit_datatype datatype;
+    // enum explicit_datatype datatype;
+    struct datatype *datatype;
     /* a queue holding the possible SIs if the symbol is not synthesised */
     struct queue *si_q;
     /*
@@ -49,11 +76,6 @@ struct cstsymbol {
         Number of nodes that referenced this ptr
     */
     int ref_count;
-
-    /*
-        Pointing to the last synthesised node that provides the current synthesised datalist
-    */
-    struct astnode *last_syn_src;
 };
 
 

@@ -1,9 +1,0 @@
-Preconditions:
-- The input values `m` and `n` must be positive integers.
-- There must be at least one free cell in the binary matrix.
-
-Postconditions:
-- The binary matrix is initialized with all values set to 0.
-- The `flip` method returns a random index `[i, j]` of the matrix where `matrix[i][j] == 0` and flips it to 1.
-- All indices `(i, j)` where `matrix[i][j] == 0` are equally likely to be returned by the `flip` method.
-- The `reset` method resets all the values of the matrix to be 0.

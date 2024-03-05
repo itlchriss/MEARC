@@ -1,9 +1,0 @@
-Preconditions:
-- The input `properties` is a 2D integer array.
-- The length of `properties` is at least 2 and at most 10^5.
-- Each element in `properties` is an array of length 2.
-- The attack and defense values in `properties` are integers between 1 and 10^5 (inclusive).
-
-Postconditions:
-- The method returns an integer representing the number of weak characters.
-- A character is considered weak if there exists another character with both attack and defense levels strictly greater than the character's attack and defense levels.

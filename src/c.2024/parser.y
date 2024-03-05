@@ -10,7 +10,6 @@
 
     void print_debug(char *);
     void print_semantic_error(char *);
-    enum explicit_datatype string2javadatatype(char *);
 
     // From main.c
     // extern int c;
@@ -25,7 +24,8 @@
     struct _dataref {
         struct astnode *node;
         /* datatype of the node, if there is a type_term before the symbol is declared */
-        enum explicit_datatype datatype;
+        // enum explicit_datatype datatype;
+        struct datatype *datatype;
     };
 
     struct _event {
@@ -58,10 +58,11 @@
         return new;
     }
 
-    struct _dataref *newtmpdataref(struct astnode *_node, enum explicit_datatype datatype) {
+    // struct _dataref *newtmpdataref(struct astnode *_node, enum explicit_datatype datatype) {
+    struct _dataref *newtmpdataref(struct astnode *_node, struct datatype *_datatype) {
         struct _dataref *new = (struct _dataref *)malloc(sizeof(struct _dataref));
         new->node = _node;
-        new->datatype = datatype;
+        new->datatype = _datatype;
         return new;
     }
 
@@ -288,10 +289,6 @@ type_term
             syntax_error("SI for type predicate(%s) is not found.", $1->symbol);
         } 
         struct si *si = (struct si *)gqueue(siq, 0);
-        if (si->synthesised_datatype == -1) {
-            printf("A type predicate(%s) is being used that is not currently supported.", $1->symbol);
-            exit(-1);
-        } 
         enqueue(_datarefs, (void *)newtmpdataref($$, si->synthesised_datatype));                       
     }
     ;
@@ -402,31 +399,43 @@ quantified_term
         }
         addastchild($$, $5);  
         $$->cstptr = newcstsymbol($2->symbol);
-        $$->cstptr->datatype = -1;
 
         $$->cstptr->ref_count += in_scope_symbol_nodes->count;
         /* finding all the variable nodes that have the same symbol as the quantified variable, and find if there is a node has TYPE resolved */
         for (int i = 0; i < in_scope_symbol_nodes->count; ++i) {
             struct astnode *_node = (struct astnode *)gqueue(in_scope_symbol_nodes, i);
             if (_node->parent->type == TypePredicate) {
-                if ($$->cstptr->datatype != -1) {
-                    /* 
-                        If there is an entity that has two or more datatypes found, it is hard to perform all combinations in the JML.
-                        Maybe we can support this feature in the future.
-                    */
-                    semantic_error("The entity(%s) has two or more datatypes found. Please solve this conflict.", $2->symbol);
-                } else {
-                    for (int j = 0; j < _datarefs->count; ++j) {
-                        struct _dataref *ref = (struct _dataref *)gqueue(_datarefs, j);
-                        if (ref->node == _node->parent) {
-                            $$->cstptr->datatype = ref->datatype;
-                            /* the variable is being removed. deduct the reference count */
-                            $$->cstptr->ref_count--;
-                            deleteastchild(ref->node->parent, ref->node);
-                            break;
-                        }
+                struct _dataref *ref = NULL;
+                for (int j = 0; j < _datarefs->count; ++j) {
+                    ref = (struct _dataref *)gqueue(_datarefs, j);
+                    if (ref->node == _node->parent) {
+                        break;
                     }
                 }
+                /* TO BE DONE: needed refinement. incoming type can be a primitive type, and the stored type is a reference type */
+                if (has_datatype($$->cstptr)) {
+                    /* 
+                        Try to merge datatype 
+                        two datatypes can be merged if * in a type and another is not
+                        for instance, datatype X has primitive type as * and Y has primitive type as 0,
+                        however, if both their primitive types have valid types, we consider that the entity may have two or more datatypes
+                            being specified, providing combinatorial results are considered as future work.
+                    */
+                    if (($$->cstptr->datatype->p >= 0 && ref->datatype->p >= 0) || ($$->cstptr->datatype->r >= 0 && ref->datatype->r >= 0)) {
+                        semantic_error("The entity(%s) has two or more datatypes found. Please solve this conflict.", $2->symbol);
+                    } else {
+                        if (ref->datatype->p >= 0) $$->cstptr->datatype->p = ref->datatype->p;
+                        if (ref->datatype->r >= 0) $$->cstptr->datatype->r = ref->datatype->r;
+                        if (ref->datatype->r == 2) {
+                            while(!isempty(ref->datatype->types)) enqueue($$->cstptr->datatype->types, (void *)dequeue(ref->datatype->types));
+                        }
+                    }
+                } else {
+                    $$->cstptr->datatype = ref->datatype;
+                }
+                /* the variable is being removed. deduct the reference count */
+                $$->cstptr->ref_count--;
+                deleteastchild(ref->node->parent, ref->node);
             } else {
                 _node->cstptr = $$->cstptr;
             }
@@ -445,17 +454,6 @@ void print_debug(char *s) {
 void print_semantic_error(char *s) {
     printf("Semantic representation semantic error. %s\n", s);
     exit(-1);
-}
-
-enum explicit_datatype string2javadatatype(char *s) {
-    if (strcmp(s, "array") == 0 || strcmp(s, "arrays") == 0)  return JavaArray;
-    else if (strcmp(s, "list") == 0) return JavaList;
-    else if (strcmp(s, "integer") == 0) return JavaInteger;
-    else if (strcmp(s, "short") == 0) return JavaShort;
-    else if (strcmp(s, "long") == 0) return JavaLong;
-    else if (strcmp(s, "float") == 0) return JavaFloat;
-    else if (strcmp(s, "double") == 0) return JavaDouble;
-    else return None;
 }
 
 extern

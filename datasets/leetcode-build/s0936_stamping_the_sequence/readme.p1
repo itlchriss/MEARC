@@ -1,8 +1,0 @@
-Preconditions:
-- The length of `stamp` is at least 1 and at most the length of `target`.
-- The length of `target` is at least 1 and at most 1000.
-- `stamp` and `target` consist of lowercase English letters.
-
-Postconditions:
-- The returned array contains the indices of the left-most letter being stamped at each turn.
-- The returned array is empty if it is not possible to obtain `target` from `s` within `10 * target.length` turns.

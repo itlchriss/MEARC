@@ -8,10 +8,9 @@
     Each semantic interpretation is UNIQUE because each interpretation has a unique composite key of (term and penn-tree bank category).
 */
 
- enum javadatatype { PRIMITIVE = 0, NON_PRIMITIVE, NON_PRIMITIVE_WITH_DIMENSIONS };
-
 struct si_arg {
-    enum explicit_datatype datatype;
+    // enum explicit_datatype datatype;
+    struct datatype *datatype;
     char *symbol;
 };
 
@@ -26,7 +25,8 @@ struct si {
     /* arguments accepted by this SI */
     struct queue *args;
     /* the data type of this SI after synthesis */
-    enum explicit_datatype synthesised_datatype;
+    // enum explicit_datatype synthesised_datatype;
+    struct datatype *synthesised_datatype;
 };
 
 /* 

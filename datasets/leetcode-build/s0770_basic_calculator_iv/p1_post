@@ -1,7 +1,0 @@
-The output list must contain tokens representing the simplified expression.
-Each term of free variables with a non-zero coefficient must be written in sorted order lexicographically.
-Terms must have degrees equal to the number of free variables being multiplied, counting multiplicity.
-The largest degree terms must be placed first in the output list, breaking ties by lexicographic order ignoring the leading coefficient of the term.
-The leading coefficient of each term must be placed directly to the left with an asterisk separating it from the variables (if they exist).
-A leading coefficient of 1 must still be printed.
-Terms (including constant terms) with coefficient 0 must not be included in the output list.

@@ -1,9 +1,0 @@
-Preconditions:
-- The method should take two integer parameters `numBottles` and `numExchange`.
-- The value of `numBottles` should be between 1 and 100 (inclusive).
-- The value of `numExchange` should be between 2 and 100 (inclusive).
-
-Postconditions:
-- The method should return an integer value representing the maximum number of water bottles that can be drunk.
-- The number of water bottles that can be drunk is calculated by adding `numBottles` with the integer division of `numBottles` by `numExchange`, and adding 1 to the result.
-- The method should handle the case when `numBottles` is less than `numExchange` and return `numBottles` as the result.

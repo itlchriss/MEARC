@@ -9,7 +9,7 @@ extern struct queue *cst;
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
-    printf("Symbol: %s  (datatype: %d)    Number of Refs: %d\n", c->symbol, c->datatype, c->ref_count);
+    printf("Symbol: %s  (datatype: p(%d) r(%d))    Number of Refs: %d\n", c->symbol, c->datatype->p, c->datatype->r, c->ref_count);
     printf("Data: ");
     for (int i = 0; i < c->datalist->count; ++i) {
         char *data = (char *)gqueue(c->datalist, i);
@@ -23,11 +23,13 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     struct cstsymbol *new = (struct cstsymbol*) malloc (sizeof(struct cstsymbol));
     new->symbol = (char*)strdup(symbol);     
     new->si_q = NULL;
-    new->datatype = None;
+    new->datatype = (struct datatype *)malloc(sizeof(struct datatype));
+    new->datatype->p = UNDEFINED;
+    new->datatype->r = UNDEFINED;
+    new->datatype->types = initqueue();
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;
-    new->last_syn_src = NULL;
     enqueue(cst, (void*)new);
     return new;
 }
@@ -39,7 +41,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     an exception is 'RelDepend', which is only for predicate 'Rel'
 */
 int has_datatype(struct cstsymbol *cstptr) {
-    if (cstptr->datatype >= 0) return TRUE;
+    if (cstptr->datatype->p >= 0 || cstptr->datatype->r >= 0) return TRUE;
     else return FALSE;
 }
 
@@ -72,5 +74,8 @@ void deallocatecstsymbol(void *_cstsymbol) {
     struct cstsymbol *c = (struct cstsymbol *)_cstsymbol;
     free(c->symbol);
     deallocatequeue(c->datalist, deallocatedata);
+    if (c->datatype->types) {
+        deallocatequeue(c->datatype->types, deallocatedata);
+    }
 }
 

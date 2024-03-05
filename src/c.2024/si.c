@@ -418,7 +418,7 @@ int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
     struct si *targetsi = (struct si *)gqueue(node->si_q, 0);
     // if (targetsi->synthesised_datatype != None && child->cstptr->datatype == None) child->cstptr->datatype = targetsi->synthesised_datatype;
-    if (targetsi->synthesised_datatype != None) 
+    if (targetsi->synthesised_datatype != NULL) 
         child->cstptr->datatype = targetsi->synthesised_datatype;
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
     return 0;
@@ -546,7 +546,7 @@ int CC_code_synthesis(struct astnode *node) { return 0; }
     The predicate is a cardinal number. Therefore, the synthesised semantics must be an integer/long. We assume it as integer first.
 */
 int CD_code_synthesis(struct astnode *node) { 
-    ((struct astnode *)getastchild(node, 0))->cstptr->datatype = JavaInteger;
+    ((struct astnode *)getastchild(node, 0))->cstptr->datatype->p = Integer;
     return __direct_syntax_synthesis__(node);
 }
 int DT_code_synthesis(struct astnode *node) { return 0; }
@@ -711,8 +711,7 @@ int event_synthesis(struct astnode *node) {
 
         }
         node->si_q = __1_event_entities_combinatorial_subtree_si_synthesis__(e, siq);
-        en1->cstptr->ref_count--;
-        en1->cstptr->last_syn_src = node;        
+        en1->cstptr->ref_count--;       
     } else {
         /* cases that predicates have two components */        
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0), *en2 = (struct entity *)gqueue(e->entities, 1);
@@ -779,7 +778,8 @@ int Gram_Rel_synthesis(struct astnode *node) {
     char *rel_symbol = (char *)gqueue(d->cstptr->datalist, 0);
     d->si_q = q_searchqueue(silist, (void *)rel_symbol, __match_si_with_symbol_only__);
     if (d->si_q->count == 0) sinotfound_error(rel_symbol);
-    enum explicit_datatype synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
+    // enum explicit_datatype synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
+    struct datatype *synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
     if (has_datatype(x->cstptr)) {
         // struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_1_arg_datatype__);
         struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_input_arg_datatype__);
@@ -844,17 +844,17 @@ int (*code_syntheses[])(struct astnode *) = {CC_code_synthesis, CD_code_synthesi
 struct si* __add_runtime_si(char *term, enum ptbsyntax syntax, char *interpretation) {
     struct si *new = (struct si*) malloc (sizeof(struct si));
     new->symbol = (char*)strdup(term);
-    // new->args = (char**)malloc(sizeof(char*) * new->arg_count);
-    // new->args[0] = (char*)malloc(sizeof(char) * 4);
     new->args = initqueue();
     struct si_arg *arg = (struct si_arg *)malloc(sizeof(struct si_arg));
     arg->symbol = (char*) strdup("(*)");
-    if (syntax == CD) {
-        arg->datatype = JavaInteger;
-    } else {
-        arg->datatype = -1;
-    }
-    new->synthesised_datatype = None;
+    arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
+    arg->datatype->p = UNDEFINED;
+    arg->datatype->r = UNDEFINED;
+    arg->datatype->types = NULL;
+    new->synthesised_datatype = (struct datatype *)malloc(sizeof(struct datatype));
+    new->synthesised_datatype->p = Integer;
+    new->synthesised_datatype->r = UNDEFINED;
+    new->synthesised_datatype->types = NULL;
     enqueue(new->args, (void*)arg);
     new->interpretation = (char*)strdup(interpretation);
     new->syntax = initqueue();
@@ -1236,16 +1236,17 @@ int search_syntax(struct si* si, enum ptbsyntax ptb) {
 void showsi(void *_si) {
     struct si *si = (struct si*)_si;
     printf("==========================Semantic interpretations: =========================\n");
-    printf("Symbol          Syntactic Category       Arity     Arguments    Interpretation\n");
+    printf("Symbol          Syntactic Category       Arguments    Interpretation\n");
     printf("Symbol: %s   Syntactic Category: ", si->symbol);        
     for (int j = 0; j < si->syntax->count; ++j) {
         printf("%s ", ptbsyntax2string((enum ptbsyntax)gqueue(si->syntax, j)));
     }
-    printf("  Arity: %d   Arguments: ", si->args->count);
+    printf("  Arguments: ");
     for (int j = 0; j < si->args->count; ++j) {
         struct si_arg *arg = (struct si_arg*)gqueue(si->args, j);
-        printf("%s(%d)", arg->symbol, arg->datatype);
+        printf("%s(p:%d, r:%d)", arg->symbol, arg->datatype->p, arg->datatype->r);
     }
+    printf("     Synthesised datatype: p:%d, r:%d   ", si->synthesised_datatype->p, si->synthesised_datatype->r);
     printf("   %s\n", si->interpretation);
     printf("============================================================================\n");
 }

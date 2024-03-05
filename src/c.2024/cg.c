@@ -9,17 +9,24 @@ static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 static int quantify_variable = 105;
 
-char *get_length_str(enum explicit_datatype t) {
-    switch (t)
+/* 
+    a function deciding the length representation in java
+    by default we consider it is a collection, which uses size() to access the size
+    because array is a sequence that is not extendable,
+        and String is an immutable reference, so it is also non-extendable
+    TO BE DONE: we can also make it a bit further to support custom class/interface, 
+        such that if such class/interface has a function to access its size, 
+        developer can write an SI to support it
+*/
+char *get_length_str(enum reference_datatype r) {
+    switch (r)
     {
-    case JavaArray:
-        return "length";
-    case JavaList:
-        return "size";
-    case JavaString:
+    case Array:
+        return "length";        
+    case String:
         return "length()";
     default:
-        return NULL;
+        return "size()";
     }
 }
 
@@ -72,7 +79,7 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
                             (char)quantify_variable, 
                             (char)quantify_variable, 
                             node->token->symbol,
-                            get_length_str(node->cstptr->datatype));
+                            get_length_str(node->cstptr->datatype->r));
                     } else {
                         /* to be done for specified or multiple ranges */
                         

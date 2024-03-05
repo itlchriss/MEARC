@@ -1,9 +1,0 @@
-Preconditions:
-1. The input `x` is a signed 32-bit integer.
-2. The environment does not allow storing 64-bit integers.
-
-Postconditions:
-1. The method returns an integer value.
-2. The returned value is the reverse of the input `x` with its digits reversed.
-3. If the reversed value of `x` is outside the range of a signed 32-bit integer, the method returns 0.
-4. If the reversed value of `x` is within the range of a signed 32-bit integer, the method returns the reversed value.

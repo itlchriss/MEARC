@@ -1,8 +1,0 @@
-Preconditions:
-- The input `n` is a positive integer representing the length of the wooden plank.
-- The input arrays `left` and `right` contain unique integers representing the positions of the ants moving to the left and right respectively.
-- The length of `left` and `right` arrays combined is less than or equal to `n + 1`.
-
-Postconditions:
-- The output is an integer representing the moment when the last ant(s) fall out of the plank.
-- The output is equal to the maximum value between the maximum position in the `left` array and the difference between `n` and the minimum position in the `right` array.

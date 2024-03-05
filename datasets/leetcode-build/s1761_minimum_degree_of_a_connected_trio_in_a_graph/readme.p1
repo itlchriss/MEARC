@@ -1,9 +1,0 @@
-Preconditions:
-- The input `n` is an integer representing the number of nodes in the graph.
-- The input `edges` is a 2D array where each element `edges[i]` is an array of size 2 representing an undirected edge between two nodes.
-- The elements in `edges` are valid node indices, i.e., `1 <= edges[i][0], edges[i][1] <= n`.
-- The graph represented by `n` and `edges` is undirected and connected.
-
-Postconditions:
-- The method returns an integer representing the minimum degree of a connected trio in the graph.
-- If the graph has no connected trios, the method returns -1.

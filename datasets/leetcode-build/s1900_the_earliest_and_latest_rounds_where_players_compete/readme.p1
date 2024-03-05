@@ -1,9 +1,0 @@
-Preconditions:
-- The value of `n` must be between 2 and 28 (inclusive).
-- The value of `firstPlayer` must be greater than or equal to 1 and less than `secondPlayer`.
-- The value of `secondPlayer` must be less than or equal to `n`.
-
-Postconditions:
-- The output array must contain two values, representing the earliest and latest possible round numbers in which the two players will compete against each other.
-- The earliest possible round number must be greater than or equal to 1 and less than or equal to the number of rounds required for all players to compete against each other.
-- The latest possible round number must be greater than or equal to the earliest possible round number and less than or equal to the number of rounds required for all players to compete against each other.

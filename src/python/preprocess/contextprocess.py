@@ -59,6 +59,11 @@ class ContextProcessor:
                 for index in indices:
                     words[index] = 'type_' + words[index]
         self.sent = ' '.join(words)
+        
+        # NOTE: because LLM has already recognised the parameter. If 'param_' exists, it means that LLM has provided the parameter information and we have tackled it.
+        #       therefore, in this case, the word 'parameter' can be skipped.
+        if 'param_' in self.sent:
+            self.sent = self.sent.replace('parameter', '');
 
     def _synonym_syntax_preprocessor(self):
         for rule in alt_rules:
@@ -82,5 +87,5 @@ class ContextProcessor:
         self.sent = sent
         self._parameter_syntax_processor()
         self._synonym_syntax_preprocessor()
-        # self._of_2_possesive()
+        
         return self.sent

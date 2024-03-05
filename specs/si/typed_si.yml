@@ -1,0 +1,368 @@
+- term: gtoet
+  syntax:
+  - JJ
+  arguments:  
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: Acc
+    primitive_type: '*'
+    reference_type: '-1'
+  interpretation: (Subj) >= (Acc)
+- term: gt
+  syntax:
+  - JJ
+  arguments:  
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: Acc
+    primitive_type: '*'
+    reference_type: '-1'
+  interpretation: (Subj) > (Acc)
+- term: lt
+  syntax:
+  - JJ
+  arguments:  
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: Acc
+    primitive_type: '*'
+    reference_type: '-1'
+  interpretation: (Subj) < (Acc)
+- term: ltoet
+  syntax:
+  - JJ
+  arguments:  
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: Acc
+    primitive_type: '*'
+    reference_type: '-1'
+  interpretation: (Subj) <= (Acc)
+- term: null
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '-1'
+    reference_type: '*'
+  interpretation: '(Subj) == null'
+- term: true
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '-1'
+    reference_type: '*'
+  interpretation: '(Subj) == true'
+- term: false
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '-1'
+    reference_type: '*'
+  interpretation: '(Subj) == true'
+- term: be
+  syntax:
+  - VBZ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: y
+    primitive_type: '*'
+    reference_type: '-1'
+  interpretation: (x) == (y)
+- term: result
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  interpretation: \result
+- term: prime
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '3'
+    reference_type: '-1'
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x)%k != 0))
+- term: prime
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x)%k != 0))
+- term: prime
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '5'
+    reference_type: '-1'
+  interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
+    (x)/2; (x)%k != 0))
+- term: even
+  syntax:
+  - RB
+  arguments:
+  - symbol: x
+    primitive_type: '3'
+    reference_type: '-1'
+  interpretation: (x) % 2 == 0
+- term: even
+  syntax:
+  - RB
+  arguments:
+  - symbol: x
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x) % 2 == 0
+- term: even
+  syntax:
+  - RB
+  arguments:
+  - symbol: x
+    primitive_type: '5'
+    reference_type: '-1'
+  interpretation: (x) % 2 == 0
+- term: length
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  interpretation: __REL__length
+- term: size
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  interpretation: __REL__size
+- term: sort
+  syntax:
+  - VBN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+- term: sort
+  syntax:
+  - VBN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names: 
+      - 'list'      
+      - 'collection'
+  interpretation: \forall int k; 0 <= k && k < (x).size()-1; (x).get(k) <= (x).get(k+1)
+- term: element
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: (x)[i]
+- term: reference
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: (x)
+- term: empty
+  syntax:
+  - JJ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: (x).length == 0
+- term: empty
+  syntax:
+  - JJ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '1'
+  interpretation: (x).length() == 0
+- term: empty
+  syntax:
+  - JJ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+      - 'list'
+      - 'collection'
+  interpretation: (x).size() == 0
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '-1'
+  - symbol: Dat
+    primitive_type: '*'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '0'
+    reference_type: '-1'
+  interpretation: (Subj) == (Dat)
+- term: __REL__length
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).length
+- term: __REL__length
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+      - 'list'
+      - 'collection'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).size()
+- term: __REL__length
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '1'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).length()
+- term: __REL__size
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).length
+- term: __REL__size
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+      - 'list'
+      - 'collection'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).size()
+- term: __REL__size
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '1'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: (x).length()
+- term: element
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  interpretation: __REL__element
+- term: in
+  syntax:
+  - IN
+  arguments:
+  - symbol: y
+    primitive_type: '*'
+    reference_type: '0'
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+    - __REL__element
+  interpretation: (y)[i]
+- term: Rel
+  syntax:
+  - Rel
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '*'
+  - symbol: y
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: REL(x,y)
+- term: type_array
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
+- term: type_arrays
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
+- term: type_integer
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: ''
+- term: keyword_result
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  interpretation: \result
+- term: return
+  syntax:
+  - VBN
+  arguments:
+  - symbol: '*'
+  interpretation: \result

@@ -1,9 +1,0 @@
-Preconditions:
-- The input `n` is a positive integer representing the number of buildings.
-- The input `requests` is a non-empty array of length `m` where each element is an array of length 2 representing a transfer request.
-- Each transfer request in `requests` is valid, meaning the values of `from_i` and `to_i` are between 0 and `n-1`, inclusive.
-
-Postconditions:
-- The method returns an integer representing the maximum number of achievable requests.
-- The maximum number of achievable requests is determined by finding a combination of transfers that results in a net change of zero for each building.
-- The method considers all possible combinations of transfers to find the maximum number of achievable requests.
