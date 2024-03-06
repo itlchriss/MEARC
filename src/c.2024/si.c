@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "util.h"
 #include "si.h"
 #include "ast.h"
@@ -54,52 +55,79 @@ int __is_event_variable__(struct astnode *node) {
 }
 
 
+/*
+    checking if AT LEAST one type from either queue x or y is in another queue
+    if so, the result is true
+*/
+int __contain_type__(struct queue *x, struct queue *y) {
+    for (int i = 0; i < x->count; ++i) {
+        char *sx = (char *)gqueue(x, i);
+        for (int j = 0; j < y->count; ++j) {
+            char *sy = (char *)gqueue(y, j);
+            if (strcmp(sx, sy) == 0) return TRUE;
+        }
+    }
+    return FALSE;
+}
 
 /*
-    Match an SI with argument data types, where both arguments from the event have data type
-    there will not have another order of matching because the arguments need to be declared using grammar components,
-    such as Subj, Acc
+    a datatype comparator
+    if two datatypes are equal, then the result is true
+    else the result is false
+    NOTE: true can indicate two datatypes are conditionally equal,
+        because one of the datatype may have ANY in p or r or both, this is treated as wildcard
 */
-int __match_event_si_with_2_arg_datatype__(void *_si, void *_astnode) {
-    struct astnode *node = (struct astnode *)_astnode;
-    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
-    struct si *si = (struct si *)_si;
-    /* a predicate not accepting 2 arguments can be filtered out */
-    if (si->args->count != 2) return FALSE;
-    struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
-    struct entity *en1 = (struct entity *)gqueue(event->entities, 0), *en2 = (struct entity *)gqueue(event->entities, 1);
-    if (arg1->datatype == en1->cstptr->datatype && 
-        arg2->datatype == en2->cstptr->datatype &&
-        strcmp(gramtype2string(en1->type), arg1->symbol) == 0 &&
-        strcmp(gramtype2string(en2->type), arg2->symbol) == 0
-        ) return TRUE;
+int __compare_datatype__(struct datatype *x, struct datatype *y) {
+    /* 
+        1st condition: ANY can be equal to any datatype. therefore, two ANYs in p and r implies two datatypes are equal 
+                       one ANY and another type is explicitly equal also implies true
+                       an exceptional case is when r == Object and both r is explicitly equal, 
+                        then we have to check if there are any type names exist in both datatypes, for instance,
+                            if x->r == y->r == Object, and both x->types and y->types have 'list', the result is true
+                            if x->r == y->r == Object, and x->types have 'list', 'collection' and y->types have 'map', the result is false
+    */
+    if (
+        ((x->p == ANY || y->p == ANY) && (x->r == ANY || y->r == ANY)) ||
+        (
+            (x->p == ANY || y->p == ANY) && 
+            x->r == y->r && 
+            (
+                (x->r == Object && __contain_type__(x->types, y->types)) || 
+                x->r != Object
+            )
+        ) ||
+        ((x->r == ANY || y->r == ANY) && x->p == y->p) ||
+        (x->p == y->p && x->r == y->r)
+    ) 
+        return TRUE;
     else
         return FALSE;
 }
 
-/*
-    Match an SI with ONE argument data type, where there are two arguments need to be synthesised
-    this is because only one argument has data type
-    therefore, we match all SIs that accept two arguments, while these SIs should accept the same order of argument datatypes,
-    for instance, denote the 1st child as x and the 2nd child as y,
-    if x has a datatype, then y does not have a datatype
-    such that, the node's predicate should be P(x, y) where P is the predicate symbol of the input _astnode
-    the function returns true if the si accepts two arguments, the 1st argument has the same datatype as x's.
-*/
-int __match_event_si_with_1_datatype_and_1_asterisk__(void *_si, void *_astnode) {
-    struct astnode *node = (struct astnode *)_astnode;
-    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
-    struct si *si = (struct si *)_si;
-    /* a predicate not accepting 2 arguments can be filtered out */
-    if (si->args->count != 2) return FALSE;
-    struct entity *en1 = (struct entity *)gqueue(event->entities, 0), *en2 = (struct entity *)gqueue(event->entities, 1);
-    struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
-    if (
-        (has_datatype(en1->cstptr) && en1->cstptr->datatype == arg1->datatype) ||
-        (has_datatype(en2->cstptr) && en2->cstptr->datatype == arg2->datatype)
-    ) return TRUE;
-    else return FALSE;
+
+struct queue *__match_event_si__(struct queue *siq, int count, ...) {
+    va_list valist;
+
+    struct queue *result = initqueue();    
+    for (int i = 0; i < siq->count; ++i) {
+        struct si *si = (struct si *)gqueue(siq, i);        
+        va_start(valist, count);    
+        int match = TRUE;
+        for (int j = 0; j < count; ++j) {
+            struct si_arg *arg = (struct si_arg *)gqueue(si->args, j);
+            struct datatype *datatype = (struct datatype *)va_arg(valist, void *);
+            if (!__compare_datatype__(arg->datatype, datatype)) { 
+                match = FALSE; 
+                break; 
+            }
+        }        
+        va_end(valist);
+        if (match) enqueue(result, (void *)si);
+    }    
+    return result;
 }
+
+
 
 /*
     Match an SI with argument data types, where both arguments without using event
@@ -157,14 +185,15 @@ int __match_si_with_1_arg_datatype__(void *_si, void *_astnode) {
 /*
     Match an SI with one argument data type
 */
-int __match_si_with_input_arg_datatype__(void *_si, void *_astnode) {
-    struct astnode *node = (struct astnode *)_astnode;
+int __match_si_with_input_arg_datatype__(void *_si, void *_datatype) {
+    struct datatype *datatype = (struct datatype *)_datatype;
     struct si *si = (struct si *)_si;
     /* a predicate accepts more than 1 argument can be filtered out */
     if (si->args->count != 1) return FALSE;
     struct si_arg *arg = (struct si_arg *)gqueue(si->args, 0);
-    if (arg->datatype == node->cstptr->datatype) return TRUE;
-    else return FALSE;
+    // if (__compare_datatype__(arg->datatype, datatype)) return TRUE;
+    // else return FALSE;
+    return __compare_datatype__(arg->datatype, datatype);
 }
 
 /*
@@ -178,7 +207,7 @@ int __match_event_si_with_1_arg_datatype__(void *_si, void *_astnode) {
     if (si->args->count != 1) return FALSE;
     struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0);
     struct entity *en1 = (struct entity *)gqueue(event->entities, 0);
-    if (arg1->datatype == en1->cstptr->datatype &&
+    if (__compare_datatype__(arg1->datatype, en1->cstptr->datatype) &&
         strcmp(gramtype2string(en1->type), arg1->symbol) == 0
         ) return TRUE;
     else
@@ -191,7 +220,7 @@ int __match_event_si_with_1_arg_datatype__(void *_si, void *_astnode) {
     because preposition predicates always accept 2 arguments, one is an event and another is a valid entity
     we have to check the datatype of the entity inside the event, as well as the datatype of the valid entity in the prepositions' arguments
 */
-int __match_event_si_for_prepositions_1_datatype_1_asterisk__(void *_si, void *_astnode) {
+int __match_event_si_for_prepositions__(void *_si, void *_astnode) {
     struct astnode *node = (struct astnode *)_astnode;
     struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
     struct cstsymbol *var_cstptr = ((struct astnode *)getastchild(node, 1))->cstptr;
@@ -201,8 +230,7 @@ int __match_event_si_for_prepositions_1_datatype_1_asterisk__(void *_si, void *_
     if (si->args->count != 2) return FALSE;
     struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
     if (
-        (has_datatype(en_cstptr) && arg1->datatype == en_cstptr->datatype) ||
-        (has_datatype(var_cstptr) && arg2->datatype == var_cstptr->datatype)
+        __compare_datatype__(arg1->datatype, en_cstptr->datatype) && __compare_datatype__(arg2->datatype, var_cstptr->datatype)
         ) return TRUE;
     else
         return FALSE;
@@ -417,9 +445,14 @@ void __subtree_with_direct_syntax_operation__(struct astnode *subtree_root, stru
 int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
     struct si *targetsi = (struct si *)gqueue(node->si_q, 0);
-    // if (targetsi->synthesised_datatype != None && child->cstptr->datatype == None) child->cstptr->datatype = targetsi->synthesised_datatype;
-    if (targetsi->synthesised_datatype != NULL) 
+    /*
+        if both p and r are ANY, then it is not specific, so we should not inherit it to overwrite the entity datatype        
+    */
+    if (targetsi->synthesised_datatype != NULL && 
+        targetsi->synthesised_datatype->p != AnyPrimitiveType &&
+        targetsi->synthesised_datatype->r != AnyRefType) { 
         child->cstptr->datatype = targetsi->synthesised_datatype;
+    }
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
     return 0;
 }
@@ -522,6 +555,39 @@ int __semantic_enhancement_synthesis__(struct astnode *node) {
 }
 
 
+int __Rel_synthesis__(
+    struct cstsymbol *xptr, struct cstsymbol *relptr, struct queue *rel_siq) {    
+    struct queue *results = initqueue();
+    for (int i = 0; i < xptr->datalist->count; ++i) {
+        for (int j = 0; j < rel_siq->count; ++j) {
+            struct si *si = (struct si *)gqueue(rel_siq, j);
+            struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0);
+            char *s = (char *)strdup(si->interpretation), *symbol = __combine_3_strings__("(", arg1->symbol, ")");
+            char *tmp = strrep(s, symbol, (char *)gqueue(xptr->datalist, i));
+            free(symbol);
+            free(s);
+            s = tmp;                    
+            enqueue(results, (void *)s);
+        }
+    }
+    /*
+        no matter what is in d's datalist, they have to be popped out because the data is synthesised.
+        WHY d? the subject of a sentence with a term "x's d" representing a posessive relationship is d, and not x. this is based on observation in the HOL.
+    */
+    deallocatequeue(relptr->datalist, deallocatedata);
+    relptr->datalist = initqueue();
+    for (int i = 0; i < results->count; ++i) {
+        enqueue(relptr->datalist, gqueue(results, i));
+    }
+    deallocatequeue(results, NULL);    
+    /* the synthesised datatype must be defined in the SI */
+    /* TODO: we should perform a checking in the very beginning to acknowledge the users the possible errors in the SI template */
+    relptr->datatype = ((struct si *)gqueue(rel_siq, 0))->synthesised_datatype;
+
+    return 0;
+}
+
+
 int Jseries_code_synthesis(struct astnode *node) {
     if (countastchildren(node) == 1) {
         return __semantic_enhancement_synthesis__(node);
@@ -564,32 +630,29 @@ int IN_code_synthesis(struct astnode *node) {
 
     struct entity *en = (struct entity *)gqueue(__searchevent(eventnode->cstptr)->entities, 0);    
 
+    node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
+    if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
 
-    if (has_datatype(en->cstptr) && has_datatype(varnode->cstptr)) {
-        /* TO BE DONE HERE */
-    } else if (has_datatype(en->cstptr) || has_datatype(varnode->cstptr)) {
-        node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions_1_datatype_1_asterisk__);
-        if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
-        else {
-            node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
-        }
+    if (__is_Rel_dependent__(en->cstptr)) {
+        char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
+        struct queue *relq = q_searchqueue(silist, rel_symbol, __match_si_with_symbol_only__);
+        if (relq->count == 0) sinotfound_error(rel_symbol);
+        /*
+            do a filtering of the rel_siq by the datatype of xptr
+        */
+        struct queue *siq = q_searchqueue(relq, varnode->cstptr->datatype, __match_si_with_input_arg_datatype__);
+        if (siq->count == 0) sinotfound_error(rel_symbol);
+        deallocatequeue(relq, NULL);
+        deallocatequeue(en->cstptr->datalist, deallocatedata);
+        en->cstptr->datalist = initqueue();
+        __Rel_synthesis__(varnode->cstptr, en->cstptr, siq);
     } else {
-        if (__is_Rel_dependent__(en->cstptr)) {
-            char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
-            struct queue *relq = q_searchqueue(silist, rel_symbol, __match_si_with_symbol_only__);
-            if (relq->count == 0) sinotfound_error(rel_symbol);
-            deallocatequeue(en->cstptr->datalist, deallocatedata);
-            en->cstptr->datalist = initqueue();
-            while (!isempty(relq)) {
-                struct si *_rel_si = (struct si *)dequeue(relq);
-                enqueue(en->cstptr->datalist, (void *)strdup(_rel_si->interpretation));
-            }
-        }
         node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
+        deallocatequeue(en->cstptr->datalist, deallocatedata);
+        en->cstptr->datalist = initqueue();
+        while (!isempty(node->si_q)) enqueue(en->cstptr->datalist, dequeue(node->si_q));
     }
-    deallocatequeue(en->cstptr->datalist, deallocatedata);
-    en->cstptr->datalist = initqueue();
-    while (!isempty(node->si_q)) enqueue(en->cstptr->datalist, dequeue(node->si_q));
+
     root = deleteastnodeandedge(node, root);
     return 0;
 }
@@ -703,29 +766,17 @@ int event_synthesis(struct astnode *node) {
     if (e->entities->count == 1) {
         /* cases that predicates only have Subj */
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0);
-        if (has_datatype(en1->cstptr)) {
-            siq = q_searchqueue(node->si_q, node, __match_event_si_with_1_arg_datatype__);
-            if (siq->count == 0) sinotfound_error(node->token->symbol);
-            else if (siq->count > 1) siconflict_error(node->token->symbol);            
-        } else {
+        siq = __match_event_si__(node->si_q, 1, en1->cstptr->datatype);
+        if (siq->count == 0) sinotfound_error(node->token->symbol);
 
-        }
         node->si_q = __1_event_entities_combinatorial_subtree_si_synthesis__(e, siq);
         en1->cstptr->ref_count--;       
     } else {
         /* cases that predicates have two components */        
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0), *en2 = (struct entity *)gqueue(e->entities, 1);
-        if (has_datatype(en1->cstptr) && has_datatype(en2->cstptr)) {
-            /* both components have data types */
-            siq = q_searchqueue(node->si_q, node, __match_event_si_with_2_arg_datatype__);
-            if (siq->count == 0) sinotfound_error(node->token->symbol);
-            else if (siq->count > 1) siconflict_error(node->token->symbol);
-        } else if (has_datatype(en1->cstptr) || has_datatype(en2->cstptr)) {
-            siq = q_searchqueue(node->si_q, node, __match_event_si_with_1_datatype_and_1_asterisk__);
-            if (siq->count == 0) sinotfound_error(node->token->symbol);            
-        } else {
+        siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype);
+        if (siq->count == 0) sinotfound_error(node->token->symbol);
 
-        }        
         /* combinatorially forming all possible SI synthesis from 2 entities */
         node->si_q = __2_event_entities_combinatorial_subtree_si_synthesis__(e, siq);        
         en1->cstptr->ref_count--;
@@ -754,6 +805,7 @@ int __is_Rel_dependent__(struct cstsymbol *c) {
 
 
 
+
 /*
     synthesising Rel predicates
     the Rel predicates must accept 2 SI-Assigned arguments
@@ -778,58 +830,11 @@ int Gram_Rel_synthesis(struct astnode *node) {
     char *rel_symbol = (char *)gqueue(d->cstptr->datalist, 0);
     d->si_q = q_searchqueue(silist, (void *)rel_symbol, __match_si_with_symbol_only__);
     if (d->si_q->count == 0) sinotfound_error(rel_symbol);
-    // enum explicit_datatype synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
-    struct datatype *synthesised_datatype = ((struct si *)gqueue(d->si_q, 0))->synthesised_datatype;
-    if (has_datatype(x->cstptr)) {
-        // struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_1_arg_datatype__);
-        struct queue *siq = q_searchqueue(d->si_q, x, __match_si_with_input_arg_datatype__);
-        if (siq->count == 0) sinotfound_error(rel_symbol);
-        else if (siq->count > 1) siconflict_error(rel_symbol);
-        else {
-            struct si *si = (struct si*)gqueue(siq, 0);
-            struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0);
-            char *xdata = (char *)gqueue(x->cstptr->datalist, 0), *s = (char *)strdup(si->interpretation);
-            char *tmp = strrep(s, arg1->symbol, xdata);
-            free(s);
-            s = tmp;
-            /* 
-                because d has a data type, therefore, there is only 1 SI left 
-                we have to pop all the existing SIs in d's data
-                WHY d? the subject of a sentence with a term "x's d" representing a posessive relationship is d, and not x. this is based on observation in the HOL.
-            */
-            deallocatequeue(d->cstptr->datalist, deallocatedata);
-            d->cstptr->datalist = initqueue();
-            __subtree_with_direct_syntax_operation__(node, d, s);
-        }
-        deallocatequeue(siq, NULL);        
-    } else {
-        struct queue *results = initqueue();
-        for (int i = 0; i < x->cstptr->datalist->count; ++i) {
-            for (int j = 0; j < d->si_q->count; ++j) {
-                struct si *si = (struct si *)gqueue(d->si_q, j);
-                struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0);
-                char *xdata = (char *)gqueue(x->cstptr->datalist, i), *s = (char *)strdup(si->interpretation);
-                char *tmp = strrep(s, arg1->symbol, xdata);
-                free(s);
-                s = tmp;                    
-                enqueue(results, (void *)s);
-            }
-        }
-        /*
-            no matter what is in d's datalist, they have to be popped out because the data is synthesised.
-            WHY d? the subject of a sentence with a term "x's d" representing a posessive relationship is d, and not x. this is based on observation in the HOL.
-        */
-        deallocatequeue(d->cstptr->datalist, deallocatedata);
-        d->cstptr->datalist = initqueue();
-        for (int i = 0; i < results->count; ++i) {
-            enqueue(d->cstptr->datalist, gqueue(results, i));
-        }
-        deallocatequeue(results, NULL);
-        __subtree_with_direct_syntax_operation__(node, d, NULL);
-    }
-    /* the synthesised datatype must be defined in the SI */
-    /* TODO: we should perform a checking in the very beginning to acknowledge the users the possible errors in the SI template */
-    d->cstptr->datatype = synthesised_datatype;
+    struct queue *siq = q_searchqueue(d->si_q, x->cstptr->datatype, __match_si_with_input_arg_datatype__);
+    if (siq->count == 0) sinotfound_error(rel_symbol);
+    __Rel_synthesis__(x->cstptr, d->cstptr, siq);
+    deallocatequeue(siq, NULL);
+    __subtree_with_direct_syntax_operation__(node, d, NULL);
     return 0;
 }
 
@@ -848,12 +853,17 @@ struct si* __add_runtime_si(char *term, enum ptbsyntax syntax, char *interpretat
     struct si_arg *arg = (struct si_arg *)malloc(sizeof(struct si_arg));
     arg->symbol = (char*) strdup("(*)");
     arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
-    arg->datatype->p = UNDEFINED;
-    arg->datatype->r = UNDEFINED;
+    arg->datatype->p = AnyPrimitiveType;
+    arg->datatype->r = AnyRefType;
     arg->datatype->types = NULL;
     new->synthesised_datatype = (struct datatype *)malloc(sizeof(struct datatype));
-    new->synthesised_datatype->p = Integer;
-    new->synthesised_datatype->r = UNDEFINED;
+    if (syntax == CD) {
+        new->synthesised_datatype->p = Integer;
+        new->synthesised_datatype->r = UNDEFINED;
+    } else {
+        new->synthesised_datatype->p = AnyPrimitiveType;
+        new->synthesised_datatype->r = AnyRefType;
+    }    
     new->synthesised_datatype->types = NULL;
     enqueue(new->args, (void*)arg);
     new->interpretation = (char*)strdup(interpretation);

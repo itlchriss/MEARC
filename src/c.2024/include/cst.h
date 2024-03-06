@@ -6,6 +6,12 @@
 #ifndef UNDEFINED
 #define UNDEFINED -1
 #endif
+#ifndef ANY
+#define ANY -2
+#endif
+#ifndef RELTYPE
+#define RELTYPE -9
+#endif
 #ifndef ALLOWED
 #define ALLOWED 1
 #endif

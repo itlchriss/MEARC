@@ -47,8 +47,27 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: '-1'
-    reference_type: '*'
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: '(Subj) == null'
+- term: null
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '1'
+  interpretation: '(Subj) == null'
+- term: null
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+    - 'list'
+    - 'collection'
   interpretation: '(Subj) == null'
 - term: true
   syntax:
@@ -139,6 +158,9 @@
   - NN
   arguments:
   - symbol: '*'
+  synthesised_datatype:
+    primitive_type: 'R'
+    reference_type: 'R'
   interpretation: __REL__length
 - term: size
   syntax:
@@ -241,8 +263,8 @@
     primitive_type: '*'
     reference_type: '2'
     type_names:
-      - 'list'
-      - 'collection'
+    - 'list'
+    - 'collection'
   synthesised_datatype:
     primitive_type: '4'
     reference_type: '-1'
@@ -366,3 +388,18 @@
   arguments:
   - symbol: '*'
   interpretation: \result
+- term: of
+  syntax:
+  - IN
+  arguments:
+  - symbol: x
+    primitive_type: 'R'
+    reference_type: 'R'
+  - symbol: y
+    primitive_type: '*'
+    reference_type: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: __INVOKE__REL__
+

@@ -9,13 +9,17 @@ import java.util.Map;
 
 public class Solution {
 //@ requires(*The integer array parameter `numbers` must not be null.*);
-//@ requires(*The integer array parameter `numbers` must have a length greater than or equal to 2.*);
+//@ requires(*The length of the integer array parameter `numbers` must be greater than or equal to 2.*);
 //@ requires(*The integer parameter `target` must be within the range of -10^9 to 10^9.*);
 //@ ensures(*The integer result is an array of length 2 containing the indices of the two numbers in the integer array parameter `numbers` that add up to the integer parameter `target`.*);
-//@ ensures(*The indices in the result array must be in ascending order.*);
+//@ ensures(*The result array must be sorted in ascending order.*);
 //@ ensures(*Each element in the result array must be a valid index within the integer array parameter `numbers`.*);
-//@ ensures(*The result array must contain exactly two distinct indices.*);
-//@ ensures(*The result array must contain the indices of two numbers in the integer array parameter `numbers` that add up to the integer parameter `target`.*);
+// the following is still too complicated. separate it into two, one for length and another for distinct
+//@ ensures(*The array result must contain unique elements.*);
+//@ ensures(*The elements in the array result must be unique*);
+//@ ensures(*The length of the array result must be equal to 2.*);
+//@ ensures(*The array result must contain exactly two distinct elements.*);
+//@ ensures(*The array result must contain the indices of two numbers in the integer array parameter `numbers` that add up to the integer parameter `target`.*);
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> indexMap = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {

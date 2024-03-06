@@ -1,33 +1,10 @@
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.0.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.1.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.2.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.3.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.4.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.5.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/pre.6.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/post.0.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/post.1.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/post.2.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
 
-# echo '----------------------------------'
-# ./bin/main -f ./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/post.3.mr -s ./specs/si/std_si_2023.yml,./datasets/leetcode-build/s1129_shortest_path_with_alternating_colors/tmp/dynamic_si.yml
-
-
-for entry in `find ./datasets/leetcode-build/s$1* -type f -name "*.mr" | sort`
+for entry in `find ./datasets/leetcode-behavioural/s$1* -type f -name "*.mr" | sort`
 do
     filename=`echo $entry | sed 's/.*\///'`
     index=`echo $filename | sed 's/\..*//'`
     folder=`echo $entry | sed "s/\/$filename//"`
-    echo "./bin/main -f $entry -s ./specs/si/std_si_2023.yml,$folder/dynamic_si.yml"    
-    ./bin/main -f $entry -s ./specs/si/std_si_2023.yml,$folder/dynamic_si.yml
+    echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
+    ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
     echo '----------------------------------'
 done

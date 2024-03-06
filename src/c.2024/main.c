@@ -41,7 +41,8 @@ void showprocessinfo(char *msg) {
 #endif
 
 int get_datatype(char *s) {
-    if (strcmp(s, "*") == 0) return -2;
+    if (strcmp(s, "*") == 0) return ANY;
+    else if (strcmp(s, "R") == 0) return RELTYPE;
     else if (strcmp(s, "-1") == 0) return UNDEFINED;
     else return atoi(s);
 }
@@ -85,13 +86,8 @@ int main(int argc, char** argv) {
     } 
     
     /* A structure implemented by a queue containing semantic interpretations */  
-    #if INFO      
-    showprocessinfo("Start reading SI information");
-    #endif
     silist = readSI(dstfiles);
-    #if INFO      
-    showprocessinfo("Finished reading SI information");
-    #endif
+
 
     FILE *fp = fopen(specfile, "r");
     if (!fp) {
@@ -110,31 +106,17 @@ int main(int argc, char** argv) {
     _datarefs = initqueue();
     _events = initqueue();    
     ///////////////////////
-    #if INFO      
-    showprocessinfo("Start Parsing");
-    #endif
     yyin = fp;
     yyparse();
     fclose(fp);
-    #if INFO
-    showprocessinfo("Before rename cst symbols");
-    #endif
     #if CSTDEBUG 
     showqueue(cst, showcstsymbol);
-    #endif
-
-    #if INFO
-    showprocessinfo("After rename cst symbols");
     #endif
     #if CSTDEBUG
     showqueue(cst, showcstsymbol);
     #endif
     #if EVENTDEBUG
     showqueue(events, showevent);
-    #endif
-
-    #if INFO
-    showprocessinfo("Parsing finished");
     #endif
 
     #if ASTDEBUG
@@ -149,65 +131,20 @@ int main(int argc, char** argv) {
         For each abstract syntax tree, we traverse all nodes to find the nodes which are predicates, trying to map the semantic interpretations from si list
     */
     root = ast;
-    #if INFO
-    showprocessinfo("Start operator resolution");
-    #endif
     opresolution(operators, cst);        
-    #if INFO
-    showprocessinfo("Finished operator resolution");
-    #endif
-    #if INFO
-    showprocessinfo("Start semantic interpretation analysis");
-    #endif
-    
-    #if DEBUG
-    for (int i = 0; i < cst->count; ++i) {
-        struct cstsymbol *c = (struct cstsymbol *)gqueue(cst, i);
-        printf("%s has %d references\n", c->symbol, c->ref_count);
-    }
-    #endif
-
     sianalysis();
-    #if INFO
-    showprocessinfo("Finished semantic interpretation analysis");
-    showprocessinfo("Start semantic interpretation synthesis");
-    #endif
     sisynthesis();
-    #if INFO
-    showprocessinfo("Finished semantic interpretation synthesis");
-    #endif
-    
     ast = root;
     #if ASTDEBUG
     showast(ast, 0);
     #endif
-    #if INFO
-    showprocessinfo("Start AST simplification");
-    #endif
     ast = astsimplification(ast);
     ast = astsimplification(ast);
-    #if INFO
-    showprocessinfo("Finished AST simplification");
-    #endif
     #if ASTDEBUG
     showast(ast, 0);
     #endif 
     deallocatequeue(silist, deallocatesi);
-
-    #if ASTDEBUG
-    printf("Printing debugging info.................\n");
-    showast(ast, 0);        
-    showqueue(cst, showcstsymbol);
-    printf("\n");    
-    #endif
-
-    #if INFO
-    showprocessinfo("Start Code generation");
-    #endif
     output(ast);
-    #if INFO
-    showprocessinfo("Finished Code generation");
-    #endif
 
     /* free resources */
     if (ast) {
@@ -380,6 +317,7 @@ struct queue* readSI(char *dstfilepaths) {
                                                 }                  
                                                 yaml_parser_scan(&parser, &token);
                                             }
+                                            enqueue(si->args, (void *)arg);
                                             goto SWITCH;                                                                                                                  
                                         } else {
                                             sisyntax_error(filepath, si->symbol, "arguments");
