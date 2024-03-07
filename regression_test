@@ -1,10 +1,36 @@
 
-for entry in `find ./datasets/leetcode-behavioural/s$1* -type f -name "*.mr" | sort`
+# for entry in `find ./datasets/leetcode-behavioural/s$1* -type f -name "*.mr" | sort`
+# do
+#     # filename=`echo $entry | sed 's/.*\///'`
+#     # index=`echo $filename | sed 's/\..*//'`
+#     # folder=`echo $entry | sed "s/\/$filename//"`
+#     echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
+#     # ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
+#     # echo '----------------------------------'
+# done
+
+# for d in `find ./datasets/leetcode-behavioural -type d -name "s*" | sort`
+# do
+#     python scripts/insertcomment.py $d
+# done
+
+# 1992 samples
+
+for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort`
 do
     filename=`echo $entry | sed 's/.*\///'`
     index=`echo $filename | sed 's/\..*//'`
     folder=`echo $entry | sed "s/\/$filename//"`
-    echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
-    ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
-    echo '----------------------------------'
+    python mearc2024 -c mearc.config -f $entry
 done
+
+
+# for entry in `find ./datasets/leetcode-behavioural -type f -name "*.mr" | sort`
+# do
+#     # filename=`echo $entry | sed 's/.*\///'`
+#     # index=`echo $filename | sed 's/\..*//'`
+#     # folder=`echo $entry | sed "s/\/$filename//"`
+#     echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
+#     # ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
+#     # echo '----------------------------------'
+# done

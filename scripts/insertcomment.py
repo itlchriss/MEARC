@@ -6,7 +6,7 @@ from glob import glob
 from typing import List
 
 
-root_path = './datasets/leetcode-dataset/initial'
+root_path = './datasets/leetcode-behavioural'
 
 
 def _getfile(path:str) -> List[str]:
@@ -25,11 +25,8 @@ def main(srcpath:str):
     if not program:
         print('Program is not found under %s' % srcpath)
         return
-    pre = _getfile(os.path.join(srcpath, "p1_pre"))
-    post = _getfile(os.path.join(srcpath, "p1_post"))    
+    post = _getfile(os.path.join(srcpath, "readme.p1"))    
     tmp = []
-    if pre:
-        tmp += ['//@ requires(*%s*);' % i for i in pre.split('\n')]
     if post:
         tmp += ['//@ ensures(*%s*);' % i for i in post.split('\n')]
     if not tmp:

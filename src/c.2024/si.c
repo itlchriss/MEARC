@@ -762,26 +762,25 @@ struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct eve
 int event_synthesis(struct astnode *node) {
     struct event *e = __searchevent(getastchild(node, 0)->cstptr);
     struct queue *siq = NULL;
+    struct queue * (*funcptr)(struct event *, struct queue *);
     
     if (e->entities->count == 1) {
         /* cases that predicates only have Subj */
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0);
         siq = __match_event_si__(node->si_q, 1, en1->cstptr->datatype);
-        if (siq->count == 0) sinotfound_error(node->token->symbol);
 
-        node->si_q = __1_event_entities_combinatorial_subtree_si_synthesis__(e, siq);
-        en1->cstptr->ref_count--;       
+        funcptr = &__1_event_entities_combinatorial_subtree_si_synthesis__;
     } else {
         /* cases that predicates have two components */        
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0), *en2 = (struct entity *)gqueue(e->entities, 1);
         siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype);
-        if (siq->count == 0) sinotfound_error(node->token->symbol);
 
         /* combinatorially forming all possible SI synthesis from 2 entities */
-        node->si_q = __2_event_entities_combinatorial_subtree_si_synthesis__(e, siq);        
-        en1->cstptr->ref_count--;
-        en2->cstptr->ref_count--;
+        funcptr = &__2_event_entities_combinatorial_subtree_si_synthesis__;
     }    
+    if (siq->count == 0) sinotfound_error(node->token->symbol);
+    node->si_q = (*funcptr)(e, siq);
+    for (int i = 0; i < e->entities->count; ++i) ((struct entity *)gqueue(e->entities, i))->cstptr->ref_count--;
     e->cstptr->ref_count--;
     /* since the SIs are only for this synthesis, it should have no effect on the overall SI list. we should deallocate ASAP */
     deallocatequeue(siq, NULL);
