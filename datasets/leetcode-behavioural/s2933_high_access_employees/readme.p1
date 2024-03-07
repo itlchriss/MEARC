@@ -1,0 +1,8 @@
+- The input parameter `accessTimes` is a 2D list of strings with a length between 1 and 100.
+- Each inner list in `accessTimes` has a length of 2.
+- The first element of each inner list represents the name of an employee and consists only of English lowercase letters.
+- The second element of each inner list represents the access time of the employee and is in 24-hour time format with four digits.
+- An employee is considered high-access if they have accessed the system three or more times within a one-hour period.
+- Times with exactly one hour of difference are not considered part of the same one-hour period.
+- Access times at the start and end of the day are not counted within the same one-hour period.
+- The output is a list of names of high-access employees with any order.

@@ -1,7 +1,15 @@
-Method behavioural requirements:
-- The integer array parameter `source` and `target` must not be null.
-- The integer array parameter `source` and `target` must have the same length.
-- The integer array parameter `allowedSwaps` must not be null.
-- The integer array parameter `allowedSwaps` must have a length of 2.
-- The integer array parameter `allowedSwaps` must have elements within the range of the length of the integer array parameter `source`.
-- The integer result is the minimum Hamming distance between the integer array parameter `source` and `target` after performing any amount of swap operations specified in the integer array parameter `allowedSwaps`.
+- The integer arrays `source` and `target` must have the same length `n`.
+- The integer array `source` can be transformed by swapping elements at indices specified in the `allowedSwaps` array.
+- The Hamming distance between the transformed `source` array and the `target` array must be minimized.
+- The method must return the minimum Hamming distance after performing any amount of swap operations on the `source` array.
+- The method must handle cases where there are no allowed swaps (empty `allowedSwaps` array).
+- The method must handle cases where the `allowedSwaps` array is not empty and contains pairs of indices to swap.
+- The method must handle cases where the `allowedSwaps` array may allow multiple swaps on the same pair of indices.
+- The method must handle cases where the `allowedSwaps` array may allow swaps in any order.
+- The method must handle cases where the `allowedSwaps` array may contain duplicate pairs of indices.
+- The method must handle cases where the `allowedSwaps` array may contain pairs of indices that are out of bounds for the `source` array.
+- The method must handle cases where the `source` and `target` arrays contain integers within the specified constraints.
+- The method must handle cases where the `n` value is within the specified constraints.
+- The method must handle cases where the `allowedSwaps` array length is within the specified constraints.
+- The method must handle cases where the `allowedSwaps` array pairs of indices are within the bounds of the `source` array.
+- The method must return an integer representing the minimum Hamming distance between the transformed `source` array and the `target` array.

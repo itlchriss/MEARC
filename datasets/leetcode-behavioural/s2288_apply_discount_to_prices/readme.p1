@@ -1,0 +1,7 @@
+- For each word in the string `sentence` that represents a price (a sequence of digits preceded by a dollar sign), apply a discount of `discount%` on the price and update the word in the sentence.
+- All updated prices should be represented with exactly two decimal places.
+- The updated sentence should maintain the same structure and spacing as the original sentence.
+- If a word representing a price does not have decimal places after applying the discount, add ".00" to ensure two decimal places.
+- The method should handle prices with at most 10 digits.
+- The method should handle discounts ranging from 0% to 100%.
+- The method should return a string representing the modified sentence with updated prices.

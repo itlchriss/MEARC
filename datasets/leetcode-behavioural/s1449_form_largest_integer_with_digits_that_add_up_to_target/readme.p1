@@ -1,4 +1,6 @@
-- If the integer array parameter `cost` is not of length 9, the string result is "0".
-- If the integer parameter `target` is less than 1 or greater than 5000, the string result is "0".
-- If there is no way to paint any integer with total cost equal to the integer parameter `target`, the string result is "0".
-- If there is a way to paint an integer with total cost equal to the integer parameter `target`, the string result is the maximum integer that can be painted.
+- The string result is the maximum integer that can be painted with the given `cost` array and `target` integer.
+- The total cost used to paint the integer must be equal to the `target`.
+- The integer painted must not have any `0` digits.
+- If there is no way to paint any integer given the condition, the string result is "0".
+- The `cost` array length is 9.
+- All values in the `cost` array are greater than or equal to 1 and less than or equal to 5000.

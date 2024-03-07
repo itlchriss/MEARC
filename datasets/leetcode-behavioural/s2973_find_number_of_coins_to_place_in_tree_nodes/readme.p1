@@ -1,0 +1,10 @@
+- The integer array parameter `edges` represents an undirected tree with `n` nodes labeled from `0` to `n - 1`, rooted at node `0`.
+- The integer array parameter `edges` has a length of `n - 1`.
+- Each element in the integer array parameter `edges` is an array of length 2, where `edges[i] = [a_i, b_i]` indicates an edge between nodes `a_i` and `b_i` in the tree.
+- The integer array parameter `cost` has a length of `n`, where `cost[i]` is the cost assigned to the `i-th` node.
+- The integer result array `coin` has a size of `n`, where `coin[i]` represents the number of coins placed at node `i`.
+- If the size of the subtree of a node `i` is less than `3`, place `1` coin at that node.
+- If the size of the subtree of a node `i` is greater than or equal to `3`, place an amount of coins equal to the maximum product of cost values assigned to `3` distinct nodes in the subtree of node `i`.
+- If the maximum product of cost values assigned to `3` distinct nodes in the subtree of node `i` is negative, place `0` coins at that node.
+- The coins placed on each node are calculated based on the above rules.
+- The output array `coin` contains the calculated number of coins for each node in the tree.

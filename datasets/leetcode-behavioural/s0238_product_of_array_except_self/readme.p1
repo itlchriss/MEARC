@@ -1,3 +1,8 @@
-- The integer array parameter `nums` must not be null.
-- The integer array result `answer` must have the same length as the integer array parameter `nums`.
-- Each element in the integer array result `answer` must be equal to the product of all elements in the integer array parameter `nums` except the corresponding element at the same index.
+- The integer array parameter `nums` must have a length greater than or equal to 2 and less than or equal to 100000.
+- All values in the integer array parameter `nums` must be greater than or equal to -30 and less than or equal to 30.
+- The integer array result is of the same length as the integer array parameter `nums`.
+- Each element in the integer array result is equal to the product of all elements in the integer array parameter `nums` except the corresponding element at that index.
+- The product of any prefix or suffix of the integer array parameter `nums` is guaranteed to fit in a 32-bit integer.
+- The algorithm must run in O(n) time complexity.
+- The algorithm must not use the division operation.
+- The algorithm must solve the problem without using more than O(1) extra space.

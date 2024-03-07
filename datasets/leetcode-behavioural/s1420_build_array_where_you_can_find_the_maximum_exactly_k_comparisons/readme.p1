@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` represents the number of integers in the array `arr`.
-- The integer parameter `m` represents the maximum value of each integer in the array `arr`.
-- The integer parameter `k` represents the value of `search_cost` after applying the algorithm to the array `arr`.
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 100.
+- The integer parameter `k` is greater than or equal to 0 and is less than or equal to `n`.
 - The integer result is the number of ways to build the array `arr` under the mentioned conditions, computed modulo 10^9 + 7.

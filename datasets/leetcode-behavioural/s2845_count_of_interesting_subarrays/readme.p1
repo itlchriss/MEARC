@@ -1,0 +1,7 @@
+Method behavioural specifications:
+- The integer list parameter `nums` must not be null.
+- The integer parameter `modulo` is greater than or equal to 1 and is less than or equal to 10^9.
+- The integer parameter `k` is greater than or equal to 0 and is less than `modulo`.
+- The long result is the count of interesting subarrays satisfying the given condition.
+- A subarray is a contiguous non-empty sequence of elements within the array.
+- An interesting subarray `nums[l..r]` has `cnt` number of indices `i` in the range `[l, r]` such that `nums[i] % modulo == k`, and `cnt % modulo == k`.

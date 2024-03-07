@@ -1,0 +1,6 @@
+- If the integer array parameter `customers` and the binary array parameter `grumpy` have the same length `n`, the integer result is the maximum number of customers that can be satisfied throughout the day.
+- The integer parameter `minutes` is greater than or equal to 1 and is less than or equal to `n` which is less than or equal to 20000.
+- The integer array parameter `customers` contains values greater than or equal to 0 and less than or equal to 1000.
+- The binary array parameter `grumpy` contains values of 0 or 1.
+- The binary array parameter `grumpy` value is 1 if the bookstore owner is grumpy during the `i-th` minute, and 0 otherwise.
+- The integer result is calculated by summing the values of `customers[i]` for the minutes where `grumpy[i]` is 0, and adding the maximum sum of `customers[i]` for a consecutive sequence of `minutes` minutes where `grumpy[i]` is 1.

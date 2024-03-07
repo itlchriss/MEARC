@@ -1,10 +1,8 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer 2D array parameter `paths` must not be null.
-- The integer 2D array parameter `paths` must have a length less than or equal to 2 times the value of `n`.
-- Each subarray in the integer 2D array parameter `paths` must have a length of 2.
-- The values in each subarray of the integer 2D array parameter `paths` must be within the range of 1 to `n`.
-- The values in each subarray of the integer 2D array parameter `paths` must be distinct.
-- Each garden in the integer parameter `n` must have at most 3 paths coming into or leaving it.
-- The integer array result `answer` must have a length equal to the value of `n`.
-- The integer array result `answer` must contain values denoting the type of flower planted in each garden, which are 1, 2, 3, or 4.
-- For any two gardens connected by a path in the integer 2D array parameter `paths`, they must have different types of flowers planted in them.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.
+- The integer array parameter `paths` has a length that is less than or equal to 20000.
+- Each element in the integer array parameter `paths` is an array of length 2.
+- The integer array parameter `paths` contains pairs of integers where each integer is greater than or equal to 1 and is less than or equal to `n`.
+- The integer array result has a length equal to `n`.
+- Each element in the integer array result is one of the values 1, 2, 3, or 4.
+- For any two gardens connected by a path, they have different types of flowers planted.
+- The result array `answer` is a valid choice where each garden has a different type of flower compared to its connected gardens.

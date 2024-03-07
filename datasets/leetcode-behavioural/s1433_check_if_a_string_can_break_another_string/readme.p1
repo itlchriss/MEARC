@@ -1,2 +1,4 @@
-- For all permutations of string `s1` and `s2` of size `n`, if there exists a permutation of `s1` that can break some permutation of `s2` or vice-versa, the boolean result is true.
-- A string `x` can break string `y` if for all indices `i` between `0` and `n-1`, `x[i] >= y[i]` in alphabetical order.
+- If all permutations of string `s1` can break some permutations of string `s2` or vice-versa, the boolean result is true.
+- If there is no permutation of string `s1` that can break any permutation of string `s2` and vice-versa, the boolean result is false.
+- The length of strings `s1` and `s2` is equal to `n` where `n` is greater than or equal to 1 and less than or equal to 100000.
+- All characters in strings `s1` and `s2` are lowercase English letters.

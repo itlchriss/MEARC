@@ -1,5 +1,8 @@
-- If the string parameter `s` is empty, the list result is also empty.
-- If the string parameter `s` has a length greater than 12, the list result is empty.
-- Each string in the list result is a valid IP address consisting of four integers separated by dots.
-- Each integer in the valid IP address is between 0 and 255 (inclusive) and does not have leading zeros.
-- The valid IP addresses in the list result are formed by inserting dots into the string parameter `s` without reordering or removing any digits.
+- The string parameter `s` must not be null.
+- The string parameter `s` must contain only digits.
+- The length of the string parameter `s` is between 0 and 20.
+- The list of strings result contains valid IP addresses formed by inserting dots into the string parameter `s`.
+- Each valid IP address in the list result consists of exactly four integers separated by single dots.
+- Each integer in the valid IP address is between 0 and 255 (inclusive) and cannot have leading zeros.
+- The valid IP addresses in the list result are unique.
+- The valid IP addresses in the list result are in any order.

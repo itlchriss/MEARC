@@ -1,3 +1,6 @@
-- For each element in the input array `cpdomains`, the integer count and all its subdomains must be included in the output list.
-- The count for each subdomain must be the sum of all counts for that subdomain across all elements in the input array.
-- The order of the elements in the output list can be arbitrary.
+- The integer parameter `d` is an array of strings representing count-paired domains.
+- Each count-paired domain in the input array follows the format "rep domain1.domain2.domain3" or "rep domain1.domain2" where `rep` is an integer representing the number of visits to the domain.
+- The output is a list of strings representing the count-paired domains of each subdomain in the input array.
+- The output list may contain the count-paired domains in any order.
+- Each subdomain in the output list will have the format "rep subdomain1.subdomain2...subdomainN" where `rep` is the total number of visits to that subdomain.
+- The subdomains in the output list are derived from the count-paired domains in the input array by considering all parent domains implicitly visited.

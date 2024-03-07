@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 1 and less than or equal to 5000.
-- The integer array parameter `rollMax` must have a length of 6.
-- Each element in the integer array parameter `rollMax` must be greater than or equal to 1 and less than or equal to 15.
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 5000.
+- The length of the integer array parameter `rollMax` is 6.
+- All values in the integer array parameter `rollMax` are greater than or equal to 1 and are less than or equal to 15.
 - The integer result is the number of distinct sequences that can be obtained with exact `n` rolls, modulo 10^9 + 7.

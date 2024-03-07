@@ -1,5 +1,7 @@
-Method behavioural requirements:
 - The integer matrix parameter `mat` must not be null.
-- The integer parameter `k` must be greater than or equal to 1.
-- The integer matrix result `answer` must have dimensions `m x n`, where `m` is the number of rows in the integer matrix parameter `mat` and `n` is the number of columns in the integer matrix parameter `mat`.
-- Each element `answer[i][j]` in the integer matrix result `answer` is the sum of elements `mat[r][c]` where `i - k <= r <= i + k`, `j - k <= c <= j + k`, and `(r, c)` is a valid position in the integer matrix parameter `mat`.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 100.
+- The integer matrix result `answer` has dimensions `m x n`, where `m` is the number of rows in the matrix `mat` and `n` is the number of columns in the matrix `mat`.
+- Each element in the integer matrix result `answer` is the sum of elements in the submatrix of `mat` defined by the conditions:
+    - `i - k <= r <= i + k`
+    - `j - k <= c <= j + k`
+    - `(r, c)` is a valid position in the matrix.

@@ -1,4 +1,6 @@
 - The integer array parameter `arr` must not be null.
-- The integer parameter `target` must be within the range of 1 to 10^5.
+- The integer array parameter `arr` length is greater than or equal to 1 and is less than or equal to 10000.
+- All values in the integer array parameter `arr` are greater than or equal to 1 and are less than or equal to 100000.
+- The integer parameter `target` is greater than or equal to 1 and is less than or equal to 100000.
 - The integer result is the integer `value` such that changing all integers larger than `value` in the array `arr` to be equal to `value` results in the sum of the array closest to the `target`.
 - If there is a tie, the minimum such integer is returned as the result.

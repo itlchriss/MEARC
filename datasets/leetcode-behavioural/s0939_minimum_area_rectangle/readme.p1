@@ -1,3 +1,5 @@
-- The integer array of arrays parameter `points` must not be null.
-- The integer result is the minimum area of a rectangle formed from the points in the integer array of arrays parameter `points`, with sides parallel to the X and Y axes.
-- If there is no rectangle that can be formed from the points in the integer array of arrays parameter `points`, the integer result is 0.
+- The integer array parameter `points` must not be null.
+- The integer array parameter `points` must have a length greater than or equal to 1 and less than or equal to 500.
+- Each element in the integer array parameter `points` must have a length of 2.
+- The integer result is the minimum area of a rectangle formed from the points, with sides parallel to the X and Y axes.
+- If there is no rectangle that can be formed from the given points, the integer result is 0.

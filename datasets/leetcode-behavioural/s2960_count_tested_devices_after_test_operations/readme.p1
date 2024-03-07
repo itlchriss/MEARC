@@ -1,0 +1,6 @@
+- The integer array parameter `batteryPercentages` must not be null.
+- The length of the integer array parameter `batteryPercentages` is greater than or equal to 1 and is less than or equal to 100.
+- The integer result is the number of devices that will be tested after performing the test operations in order.
+- If the integer array parameter `batteryPercentages[i]` is greater than 0, the count of tested devices is incremented.
+- If the integer array parameter `batteryPercentages[i]` is greater than 0, the battery percentage of all devices with indices `j` in the range `[i + 1, n - 1]` is decreased by 1, ensuring their battery percentage never goes below 0.
+- If the integer array parameter `batteryPercentages[i]` is 0, move to the next device without performing any test.

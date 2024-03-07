@@ -1,3 +1,6 @@
+Method behavioural specifications:
 - The integer matrix parameter `mat` must not be null.
-- The resulting matrix must have the same dimensions as the input matrix `mat`.
-- Each matrix diagonal in the resulting matrix must be sorted in ascending order.
+- The resulting matrix is the same size as the input matrix `mat`.
+- Each matrix diagonal in the resulting matrix is sorted in ascending order.
+- The sorting of each matrix diagonal starts from the topmost row or leftmost column and proceeds towards the bottom-right direction.
+- The values in each matrix diagonal are rearranged in ascending order without changing their positions relative to each other.

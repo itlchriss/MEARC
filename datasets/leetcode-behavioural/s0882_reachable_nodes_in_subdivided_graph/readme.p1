@@ -1,5 +1,8 @@
-Method behavioural requirements:
-- The integer 2D array parameter `edges` must not be null.
-- The integer parameter `maxMoves` must be greater than or equal to 0.
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer result is the number of nodes that are reachable from node 0 in the new graph.
+- The integer array parameter `edges` represents the original graph with each element in the form [u, v, cnt], where u and v are nodes in the original graph and cnt is the total number of new nodes to subdivide the edge between u and v.
+- The integer parameter `maxMoves` represents the maximum distance from node 0 within which nodes are considered reachable.
+- The integer parameter `n` represents the total number of nodes in the original graph.
+- The integer result is the number of nodes that are reachable from node 0 in the new graph after subdividing the edges based on the given criteria.
+- The result includes nodes that are directly connected to node 0 as well as nodes that are reachable within the specified maximum distance.
+- The result does not include node 0 itself.
+- The result is calculated based on the edge subdivisions and the maximum distance specified.
+- The result is an integer representing the total number of reachable nodes.

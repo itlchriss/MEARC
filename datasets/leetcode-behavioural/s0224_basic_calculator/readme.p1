@@ -1,7 +1,7 @@
-- The string parameter `s` must not be null.
-- The integer result is the evaluation result of the mathematical expression represented by the string parameter `s`.
-- The mathematical expression in the string parameter `s` must be valid.
-- The mathematical expression in the string parameter `s` must not use the '+' operator as a unary operation.
-- The mathematical expression in the string parameter `s` may use the '-' operator as a unary operation.
-- There must be no two consecutive operators in the mathematical expression represented by the string parameter `s`.
-- Every number and running calculation in the mathematical expression represented by the string parameter `s` must fit in a signed 32-bit integer.
+- The integer result is the evaluation of the valid expression represented by the string parameter `s`.
+- The string parameter `s` consists of digits, '+', '-', '(', ')', and ' '.
+- The string parameter `s` represents a valid expression.
+- '+' is not used as a unary operation.
+- '-' could be used as a unary operation.
+- There will be no two consecutive operators in the input.
+- Every number and running calculation will fit in a signed 32-bit integer.

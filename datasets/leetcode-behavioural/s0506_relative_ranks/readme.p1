@@ -1,7 +1,6 @@
-- The integer array parameter `nums` must not be null.
-- The size of the string array result is equal to the length of integer array parameter `nums`.
-- The string array result contains the rank of each athlete based on their score, following the specified ranking rules:
-  - The 1st place athlete's rank is "Gold Medal".
-  - The 2nd place athlete's rank is "Silver Medal".
-  - The 3rd place athlete's rank is "Bronze Medal".
-  - For the 4th place to the nth place athlete, their rank is their placement number (i.e., the xth place athlete's rank is "x").
+- The integer array parameter `nums` is not null.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.
+- All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 1000000.
+- All values in the integer array parameter `nums` are unique.
+- The length of the string array result is equal to the length of the integer array parameter `nums`.
+- The string array result contains the rank of each athlete based on their score as described in the business requirement.

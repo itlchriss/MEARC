@@ -1,5 +1,7 @@
-- The integer array parameter `nums` must not be null.
-- The integer result is the maximum score after performing `n` operations on the integer array parameter `nums`.
-- In each operation, the score is calculated as `i * gcd(x, y)`, where `i` is the operation index and `gcd(x, y)` is the greatest common divisor of the chosen elements `x` and `y`.
-- After each operation, the chosen elements `x` and `y` are removed from the integer array parameter `nums`.
-- The maximum score is achieved by choosing the optimal pair of elements `x` and `y` in each operation to maximize the total score.
+- The integer array parameter `nums` must have a length of `2 * n`.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 7.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 1000000.
+- The integer result is the maximum score achievable after performing `n` operations.
+- In each operation, the score received is `i * gcd(x, y)`, where `i` is the operation index and `gcd(x, y)` is the greatest common divisor of `x` and `y`.
+- The elements `x` and `y` chosen in each operation are removed from the `nums` array.
+- The maximum score is the sum of scores obtained in each operation.

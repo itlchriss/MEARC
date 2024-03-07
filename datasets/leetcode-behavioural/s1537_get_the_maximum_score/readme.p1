@@ -1,6 +1,4 @@
-Method behavioural requirements:
-- The integer array parameter `nums1` and `nums2` must not be null.
-- The integer result is the maximum score obtained from all possible valid paths of the given sorted arrays `nums1` and `nums2`.
-- The valid path is defined as choosing either `nums1` or `nums2` to traverse from index-0, traversing the current array from left to right, and changing the path to the other array if a repeated value is encountered.
-- The score is the sum of unique values in a valid path.
-- The result is returned modulo 10^9 + 7.
+- The integer array parameter `nums1` and `nums2` are sorted in ascending order.
+- The integer result is the maximum score obtained by traversing the valid paths in the given context.
+- The integer result is the sum of unique values in a valid path.
+- The integer result is modulo 10^9 + 7.

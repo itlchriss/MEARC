@@ -1,3 +1,7 @@
-- If the gene string parameter `start` is equal to the gene string parameter `end`, the integer result is 0.
-- If the gene string parameter `end` is not present in the gene bank parameter `bank`, the integer result is -1.
-- If there exists a valid mutation path from the gene string parameter `start` to the gene string parameter `end` using the gene bank parameter `bank`, the integer result is the minimum number of mutations needed to mutate from the gene string parameter `start` to the gene string parameter `end`.
+- The integer result is the minimum number of mutations needed to mutate from the gene string `start` to the gene string `end`.
+- If there is no valid mutation path from the gene string `start` to the gene string `end`, the integer result is -1.
+- The gene string `start` is assumed to be a valid starting point and might not be included in the gene bank.
+- The gene bank `bank` records all valid gene mutations.
+- The gene bank `bank` may contain 0 to 10 gene strings, each of length 8.
+- The gene strings `start`, `end`, and each gene string in the gene bank `bank` consist of characters 'A', 'C', 'G', or 'T'.
+- The length of the gene strings `start` and `end` is 8 characters.

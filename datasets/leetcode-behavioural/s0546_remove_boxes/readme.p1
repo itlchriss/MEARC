@@ -1,7 +1,3 @@
-Method behavioural requirements:
 - The integer array parameter `boxes` must not be null.
-- The integer result is the maximum points that can be obtained by removing boxes according to the rules specified.
-- The integer array parameter `boxes` may contain positive numbers representing different colors.
-- The continuous boxes with the same color can be chosen and removed in each round to earn points.
-- The points earned in each round are calculated as `k * k`, where `k` is the number of boxes removed.
-- The maximum points are achieved by strategically choosing which boxes to remove in each round.
+- The integer array parameter `boxes` length is greater than or equal to 1 and is less than or equal to 100.
+- The integer result is the maximum points that can be obtained by removing boxes.

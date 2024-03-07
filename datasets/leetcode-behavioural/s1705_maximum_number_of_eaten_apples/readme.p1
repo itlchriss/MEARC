@@ -1,4 +1,6 @@
-Method behavioural requirements:
-- The integer array parameter `apples` and the integer array parameter `days` must not be null.
-- The integer array parameter `apples` and the integer array parameter `days` must have the same length.
+- The integer array parameter `apples` and `days` must have the same length `n`.
+- The integer array parameter `apples` and `days` must not be null.
+- The integer array parameter `apples` and `days` must have a length greater than or equal to 1 and less than or equal to 20000.
+- The integer array parameter `apples` and `days` must contain values greater than or equal to 0 and less than or equal to 20000.
 - The integer result is the maximum number of apples that can be eaten.
+- The maximum number of apples that can be eaten is determined by eating at most one apple a day for each day, considering the growth and rotting of apples according to the given conditions.

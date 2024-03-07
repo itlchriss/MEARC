@@ -1,8 +1,7 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer array parameter `blacklist` must not be null.
-- The integer array parameter `blacklist` must contain unique integers.
-- The integer array parameter `blacklist` must have a length less than or equal to the minimum of 10^5 and `n - 1`.
-- The integer elements in the array parameter `blacklist` must be in the range from 0 to `n - 1`.
-- The integer result of the `pick()` method must be in the range from 0 to `n - 1`.
-- The integer result of the `pick()` method must not be in the `blacklist`.
-- The integer result of the `pick()` method must be equally likely to be any integer from the range `[0, n - 1]` that is not in the `blacklist`.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10^9.
+- The length of the integer array parameter `blacklist` is greater than or equal to 0 and is less than or equal to the minimum of 10^5 and `n` - 1.
+- All values in the integer array parameter `blacklist` are unique.
+- The `Solution` class constructor initializes the object with the integer `n` and the blacklisted integers `blacklist`.
+- The `pick` method returns a random integer in the range `[0, n - 1]` that is not in `blacklist`.
+- Any integer in the mentioned range and not in `blacklist` should be equally likely to be returned.
+- The `pick` method should minimize the number of calls to the built-in random function of the language.

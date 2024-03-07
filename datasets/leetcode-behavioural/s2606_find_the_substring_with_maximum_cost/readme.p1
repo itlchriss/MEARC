@@ -1,0 +1,7 @@
+- The integer result is the maximum cost among all substrings of the string `s`.
+- The cost of an empty string is considered 0.
+- The cost of a substring is the sum of the values of each character in the substring.
+- If a character in the substring is not in the string `chars`, then its value is its corresponding position (1-indexed) in the alphabet.
+- If a character in the substring is in the string `chars`, then its value is the corresponding value in the `vals` array at the same index as the character in `chars`.
+- The value of characters in the substring is calculated as described above.
+- The maximum cost among all substrings of the string `s` is returned as the integer result.

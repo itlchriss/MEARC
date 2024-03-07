@@ -1,0 +1,10 @@
+- If the input string `num` is of even length and consists of digits and '?' characters, the boolean result is true if Alice will win the game and false if Bob will win the game.
+- The game starts with Alice playing first.
+- On each turn, a player chooses an index where `num[i] == '?'` and replaces `num[i]` with any digit between '0' and '9'.
+- The game ends when there are no more '?' characters in `num`.
+- For Bob to win, the sum of the digits in the first half of `num` must be equal to the sum of the digits in the second half.
+- For Alice to win, the sums must not be equal.
+- Alice and Bob play optimally to maximize their chances of winning.
+- The method signature is `public boolean sumGame(String num)`.
+- The length of the input string `num` is even and is between 2 and 100000 characters.
+- The input string `num` consists of only digits and '?' characters.

@@ -1,6 +1,5 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer 2D array parameter `mines` must not be null.
-- The integer 2D array parameter `mines` must have a length greater than or equal to 1 and less than or equal to 5000.
-- The integer 2D array parameter `mines` must contain unique pairs of integers within the range of 0 to `n`.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 500.
+- The length of the integer array parameter `mines` is greater than or equal to 1 and is less than or equal to 5000.
+- The integer array parameter `mines` contains unique pairs of integers within the range of 0 to `n`.
 - The integer result is the order of the largest axis-aligned plus sign of 1's contained in the `n x n` binary grid `grid`.
-- If there is no axis-aligned plus sign of 1's in the `n x n` binary grid `grid`, the integer result is 0.
+- If there is no plus sign, the integer result is 0.

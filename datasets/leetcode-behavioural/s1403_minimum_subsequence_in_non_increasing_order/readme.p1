@@ -1,5 +1,6 @@
 - The integer array parameter `nums` must not be null.
-- The integer collection result is a subsequence of the integer array parameter `nums` such that the sum of its elements is strictly greater than the sum of elements not included in the subsequence.
-- If there are multiple solutions, the subsequence returned must have the minimum size.
-- If there are still multiple solutions, the subsequence returned must have the maximum total sum of all its elements.
-- The elements in the integer collection result must be sorted in non-increasing order.
+- The size of the integer list result is less than or equal to the size of the integer array parameter `nums`.
+- The sum of elements in the integer list result is strictly greater than the sum of elements not included in the result.
+- If there are multiple solutions, the result is the subsequence with the minimum size.
+- If there are still multiple solutions, the result is the subsequence with the maximum total sum of all its elements.
+- The result is sorted in non-increasing order.

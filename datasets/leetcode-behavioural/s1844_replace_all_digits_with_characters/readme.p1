@@ -1,1 +1,6 @@
-- For every odd index `i`, the character at index `i` in the string parameter `s` is replaced with the character obtained by shifting the character at index `i-1` by the value of the digit at index `i`.
+- For every odd index `i`, the character at index `i` in the string `s` is replaced with the character obtained by shifting the character at index `i-1` by the value of the digit at index `i`.
+- The method `shift(c, x)` returns the `x`-th character after character `c`.
+- The result string after replacing all digits in `s` will only contain lowercase English letters.
+- The length of the result string will be the same as the original string `s`.
+- The characters in the result string will be determined by the shifting operation described above.
+- The shifting operation will not result in any character exceeding `'z'`.

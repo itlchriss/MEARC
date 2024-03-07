@@ -1,2 +1,7 @@
-- The integer result is the final value of the expression after applying the minimum number of operations to change it.
-- The integer result is the minimum cost to change the final value of the expression.
+- The integer result `val` is the final value of the expression after applying the minimum number of operations.
+- The integer result `minFlips` is the minimum cost to change the final value of the expression.
+- The expression must be a valid boolean expression consisting of the characters '1', '0', '&', '|', '(', and ')'.
+- The cost of changing the final value of an expression is the number of operations performed on the expression.
+- The types of operations include turning a '1' into a '0', turning a '0' into a '1', turning a '&' into a '|', and turning a '|' into a '&'.
+- The '&' operator does not take precedence over the '|' operator in the order of calculation.
+- Parentheses must be evaluated first, then in left-to-right order.

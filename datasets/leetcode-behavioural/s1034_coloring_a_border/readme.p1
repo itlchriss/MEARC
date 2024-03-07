@@ -1,4 +1,4 @@
 - The integer matrix parameter `grid` must not be null.
-- The integer parameters `row` and `col` must be within the bounds of the integer matrix parameter `grid`.
-- The integer parameter `color` must be within the range of 1 to 1000.
-- The integer matrix result is the final grid after coloring the border of the connected component that contains the square `grid[row][col]` with the integer parameter `color`.
+- The integer parameters `row` and `col` must be within the bounds of the matrix `grid`.
+- The integer parameter `color` must be greater than or equal to 1 and less than or equal to 1000.
+- The integer matrix result is the final grid after coloring the border of the connected component that contains the square `grid[row][col]` with the specified `color`.

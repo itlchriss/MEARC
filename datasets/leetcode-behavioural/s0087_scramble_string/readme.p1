@@ -1,5 +1,5 @@
-- If the length of the string parameter `s1` is 1, the boolean result is true.
-- If the length of the string parameter `s1` is greater than 1, the string parameter `s1` is split into two non-empty substrings at a random index, denoted as `x` and `y`.
-- The two substrings `x` and `y` of the string parameter `s1` are randomly decided to be swapped or kept in the same order.
-- The algorithm is recursively applied on each of the two substrings `x` and `y`.
-- If the string parameter `s2` is a scrambled string of the string parameter `s1`, the boolean result is true.
+- If the length of the string parameter `s1` is equal to 1, the boolean result is true.
+- If the length of the string parameter `s1` is greater than 1, the string parameter `s1` is split into two non-empty substrings at a random index.
+- The two substrings of the string parameter `s1` are randomly decided to be swapped or kept in the same order.
+- The algorithm is applied recursively on each of the two substrings of the string parameter `s1`.
+- The boolean result is true if the string parameter `s2` is a scrambled string of the string parameter `s1`, otherwise, the boolean result is false.

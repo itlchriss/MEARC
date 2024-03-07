@@ -1,4 +1,8 @@
-- If the length of the string parameter `s` is not equal to the length of the string parameter `t`, the boolean result is false.
-- If the integer parameter `k` is less than the absolute difference between the ASCII values of the characters in the string parameter `s` and the string parameter `t`, the boolean result is false.
-- If the integer parameter `k` is equal to the absolute difference between the ASCII values of the characters in the string parameter `s` and the string parameter `t`, the boolean result is true.
-- If the integer parameter `k` is greater than the absolute difference between the ASCII values of the characters in the string parameter `s` and the string parameter `t`, the boolean result is true.
+- The string parameter `s` and `t` contain only lowercase English letters.
+- The integer parameter `k` is greater than or equal to 0 and is less than or equal to 10^9.
+- The boolean result is true if it's possible to convert string `s` into string `t` in no more than `k` moves, otherwise the boolean result is false.
+- During each move, a character at a specific index `j` in string `s` can be shifted by `i` times, where `i` is the move number.
+- Each index `j` in string `s` can only be chosen once for shifting.
+- Shifting a character means replacing it by the next letter in the alphabet, wrapping around so that 'z' becomes 'a'.
+- The number of moves required to convert string `s` into string `t` is the sum of the shifts needed for each character in `s` to match the corresponding character in `t`.
+- If the total number of shifts required is less than or equal to `k`, the result is true. Otherwise, the result is false.

@@ -1,0 +1,6 @@
+Method behavioural specifications:
+- The integer matrix parameter `grid` must be a 0-indexed binary matrix.
+- The integer list result contains row indices of a good subset sorted in ascending order.
+- A good subset of rows is defined as a non-empty subset where the sum of each column is at most half of the length of the subset.
+- If there are multiple good subsets, any of them can be returned.
+- If there are no good subsets, an empty list is returned.

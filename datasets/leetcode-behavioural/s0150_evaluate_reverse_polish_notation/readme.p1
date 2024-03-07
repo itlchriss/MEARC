@@ -1,4 +1,5 @@
 - The string array parameter `tokens` must not be null.
+- The string array parameter `tokens` must contain valid operators: `+`, `-`, `*`, and `/`, or integers in the range `[-200, 200]`.
 - The integer result is the evaluation of the arithmetic expression in Reverse Polish Notation represented by the string array parameter `tokens`.
-- The division operation between two integers should truncate toward zero.
-- The arithmetic expression in Reverse Polish Notation represented by the string array parameter `tokens` is always valid and will not result in division by zero.
+- Division between two integers should truncate toward zero.
+- The expression represented by the string array parameter `tokens` will always evaluate to a result without any division by zero operation.

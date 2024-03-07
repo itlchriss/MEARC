@@ -1,5 +1,6 @@
-- If the integer parameter `target` is less than or equal to 0, the integer result is 0.
-- If the integer parameter `startFuel` is less than 0, the integer result is -1.
-- If the integer 2D array parameter `stations` is null or empty, the integer result is -1.
-- If the integer parameter `target` is less than the first element of the last array in the integer 2D array parameter `stations`, the integer result is -1.
-- The integer result is the minimum number of refueling stops the car must make in order to reach the integer parameter `target`. If it cannot reach the destination, the integer result is -1.
+- The integer parameter `target` is greater than or equal to 1 and is less than or equal to 10^9.
+- The integer parameter `startFuel` is greater than or equal to 1 and is less than or equal to 10^9.
+- The length of the integer array parameter `stations` is less than or equal to 500.
+- The integer array parameter `stations` contains subarrays where the first element represents the position of the gas station in miles east of the starting position and the second element represents the amount of fuel in liters at that gas station.
+- The integer result is the minimum number of refueling stops the car must make in order to reach the destination.
+- If the car cannot reach the destination, the integer result is -1.

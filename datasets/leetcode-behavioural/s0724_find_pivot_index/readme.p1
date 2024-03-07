@@ -1,3 +1,5 @@
 - The integer array parameter `nums` must not be null.
-- If there exists a leftmost pivot index where the sum of all numbers strictly to the left of the index is equal to the sum of all numbers strictly to the right of the index, the integer result is the leftmost pivot index.
-- If no such leftmost pivot index exists, the integer result is -1.
+- The integer result is the leftmost pivot index of the integer array `nums`.
+- If no pivot index exists, the integer result is -1.
+- The left sum is the sum of all numbers strictly to the left of the pivot index.
+- The right sum is the sum of all numbers strictly to the right of the pivot index.

@@ -1,4 +1,5 @@
 - The integer array parameter `nums` must not be null.
-- The size of the list of lists result is equal to the number of unique triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
-- Each triplet `[nums[i], nums[j], nums[k]]` in the list result must not contain duplicate elements.
-- If there are no valid triplets that satisfy the conditions, the list result is empty.
+- The length of the integer array parameter `nums` is less than or equal to 3000.
+- All values in the integer array parameter `nums` are greater than or equal to -100000 and are less than or equal to 100000.
+- The result is a list of lists containing triplets `[nums[i], nums[j], nums[k]]` where `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+- The solution set must not contain duplicate triplets.

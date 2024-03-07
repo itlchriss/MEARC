@@ -1,4 +1,3 @@
-- The integer 2D array parameter `groups` must not be null.
-- The integer array parameter `nums` must not be null.
-- The boolean result is true if it is possible to choose `n` disjoint subarrays from the integer array parameter `nums` such that the `i`th subarray is equal to `groups[i]` and if `i > 0`, the `(i-1)`th subarray appears before the `i`th subarray in `nums`.
-- The boolean result is false if it is not possible to choose `n` disjoint subarrays from the integer array parameter `nums` as described above.
+- The boolean result is true if it is possible to choose `n` disjoint subarrays from the integer array `nums` such that the `i-th` subarray is equal to `groups[i]` and if `i > 0`, the `(i-1)-th` subarray appears before the `i-th` subarray in `nums`.
+- The subarrays are considered disjoint if there is no index `k` such that `nums[k]` belongs to more than one subarray.
+- The subarray is defined as a contiguous sequence of elements within an array.

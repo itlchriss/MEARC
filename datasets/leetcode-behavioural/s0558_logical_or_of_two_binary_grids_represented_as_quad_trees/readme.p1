@@ -1,4 +1,8 @@
-- The Node class must have the following attributes: val (boolean), isLeaf (boolean), topLeft (Node), topRight (Node), bottomLeft (Node), bottomRight (Node).
-- If the current grid has the same value (i.e all 1's or all 0's), set isLeaf True and set val to the value of the grid and set the four children to Null.
-- If the current grid has different values, set isLeaf to False and set val to any value and divide the current grid into four sub-grids.
-- Recurse for each of the children with the proper sub-grid.
+- The Quad-Tree node `val` attribute can be assigned either True or False when `isLeaf` is False.
+- The Quad-Tree node `isLeaf` attribute must be True if the node is a leaf node and False if the node has four children.
+- The Quad-Tree node must have four children: `topLeft`, `topRight`, `bottomLeft`, and `bottomRight`.
+- The Quad-Tree can be constructed from a two-dimensional area by following the steps mentioned in the context.
+- The Quad-Tree format for input/output is serialized using level order traversal, where `null` signifies a path terminator with no node below.
+- The Quad-Tree node representation in the serialized format is a list `[isLeaf, val]`, where True is represented as 1 and False is represented as 0.
+- The Quad-Tree must be valid and represent a `n * n` grid.
+- The size of the grid `n` must be a power of 2, where `n = 2^x` and `0 <= x <= 9`.

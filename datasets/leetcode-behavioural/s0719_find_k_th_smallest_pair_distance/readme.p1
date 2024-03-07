@@ -1,3 +1,6 @@
 - The integer array parameter `nums` must not be null.
-- The integer parameter `k` must be greater than 0 and less than or equal to `n * (n - 1) / 2`, where `n` is the length of the integer array parameter `nums`.
-- The integer result is the `k`<sup>th</sup> smallest distance among all pairs of integers in the integer array parameter `nums`.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the total number of pairs possible in the `nums` array.
+- The integer result is the `k`-th smallest distance among all pairs of integers in the `nums` array.
+- The distance of a pair of integers `a` and `b` is defined as the absolute difference between `a` and `b`.
+- The pairs of integers are formed by selecting two elements from the `nums` array such that the first element's index is less than the second element's index.
+- The result is the `k`-th smallest distance among all possible pairs of integers in the `nums` array.

@@ -1,3 +1,5 @@
 - The integer array parameter `points` must not be null.
-- The integer result is the minimum cost to connect all points in the integer array parameter `points`.
-- The minimum cost is calculated by finding the Manhattan distance between each pair of points and connecting them with the minimum total distance.
+- The integer array parameter `points` must contain integer coordinates of points on a 2D-plane.
+- The integer result is the minimum cost to make all points connected.
+- The minimum cost is calculated based on the Manhattan distance between points, which is defined as the absolute difference in x-coordinates plus the absolute difference in y-coordinates.
+- All points are considered connected if there is exactly one simple path between any two points.

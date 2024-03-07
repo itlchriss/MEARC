@@ -1,5 +1,7 @@
 - The integer array parameter `nums` must not be null.
 - The integer array parameter `queries` must not be null.
-- For each query in the integer array parameter `queries`, the integer value at the index specified in the query must be updated by adding the value specified in the query.
-- After updating the integer value at the specified index in each query, the sum of even values in the integer array parameter `nums` must be calculated.
-- The integer array result `answer` must contain the sum of even values after each query, where `answer[i]` is the answer to the ith query.
+- The integer array parameter `queries` must have a length greater than or equal to 1 and less than or equal to 10000.
+- The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 10000.
+- The integer array parameter `queries` must contain arrays of length 2.
+- The integer array parameter `queries` must contain arrays where the first element is greater than or equal to -10000 and less than or equal to 10000, and the second element is greater than or equal to 0 and less than the length of `nums`.
+- The integer array result is the answer to each query, where each element is the sum of even values in `nums` after applying the corresponding query.

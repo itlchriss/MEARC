@@ -1,0 +1,7 @@
+Method behavioural specifications:
+- The integer parameter `startAt` is greater than or equal to 0 and is less than or equal to 9.
+- The integer parameters `moveCost` and `pushCost` are greater than or equal to 1 and are less than or equal to 100000.
+- The integer parameter `targetSeconds` is greater than or equal to 1 and is less than or equal to 6039.
+- The integer result is the minimum cost to set the target seconds of cooking time.
+- The result is calculated based on the minimum cost of moving the finger and pushing the digits to set the target seconds.
+- The result is obtained by considering all possible ways to set the cooking time and selecting the one with the minimum cost.

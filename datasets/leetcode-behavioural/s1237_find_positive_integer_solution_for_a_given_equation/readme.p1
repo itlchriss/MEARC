@@ -1,4 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `z` must be a positive integer.
-- The method must return a list of positive integer pairs `x` and `y` where `f(x, y) == z`.
-- The function `f(x, y)` must be monotonically increasing, i.e., `f(x, y) < f(x + 1, y)` and `f(x, y) < f(x, y + 1)`.
+Method behavioural specifications:
+- The integer parameter `z` is the target value that the function `f(x, y)` should equal to.
+- The function `f(x, y)` is monotonically increasing, meaning `f(x, y) < f(x + 1, y)` and `f(x, y) < f(x, y + 1)`.
+- The method `findSolution` should return a list of lists, where each inner list contains two positive integers `x` and `y` that satisfy the equation `f(x, y) == z`.
+- The order of the pairs in the output list does not matter.

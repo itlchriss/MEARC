@@ -1,2 +1,4 @@
-- If there exists a contiguous subarray `[nums_l, nums_l+1, ..., nums_r-1, nums_r]` of the integer array parameter `nums` such that the sum of elements in this subarray is greater than or equal to the integer parameter `target`, the integer result is the minimal length of this subarray.
-- If there is no such contiguous subarray in the integer array parameter `nums` that satisfies the sum condition, the integer result is 0.
+- The integer parameter `target` is greater than or equal to 1 and is less than or equal to 10^9.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10^5.
+- The integer result is the minimal length of a contiguous subarray of the integer array `nums` of which the sum is greater than or equal to the integer parameter `target`.
+- If there is no such subarray, the integer result is 0.

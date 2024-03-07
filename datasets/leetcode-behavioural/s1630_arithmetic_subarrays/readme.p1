@@ -1,6 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The integer array parameters `l` and `r` must have the same length.
-- The integer array parameters `l` and `r` must have a length greater than or equal to 2.
-- The integer array parameters `l` and `r` must have valid indices such that `0 <= l[i] < r[i] < n` where `n` is the length of the integer array parameter `nums`.
-- The boolean list result has a length equal to the length of the integer array parameters `l` and `r`.
-- For each query represented by the indices `l[i]` and `r[i]`, the subarray `nums[l[i]], nums[l[i]+1], ... , nums[r[i]]` can be rearranged to form an arithmetic sequence if the boolean result at index `i` is true, otherwise false.
+- The integer array parameter `nums` must have a length greater than or equal to 2 and less than or equal to 500.
+- The integer arrays `l` and `r` must have the same length, which is greater than or equal to 1 and less than or equal to 500.
+- The integer arrays `l` and `r` must have valid indices such that `0 <= l[i] < r[i] < n` where `n` is the length of the integer array `nums`.
+- The boolean list result must have the same length as the arrays `l` and `r`.
+- Each boolean element in the result list is true if the subarray `nums[l[i]], nums[l[i]+1], ... , nums[r[i]]` can be rearranged to form an arithmetic sequence, and false otherwise.

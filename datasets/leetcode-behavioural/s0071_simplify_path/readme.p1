@@ -1,8 +1,6 @@
-- If the string parameter `path` is an absolute path starting with a slash `'/'`, the string result is the simplified canonical path.
-- Any period `'.'` in the string parameter `path` refers to the current directory and should be removed in the string result.
-- Any double period `'..'` in the string parameter `path` refers to the directory up a level and should be removed along with the previous directory in the string result.
-- Any multiple consecutive slashes (i.e. `'//'`) in the string parameter `path` should be treated as a single slash `'/'` in the string result.
-- The string result should start with a single slash `'/'`.
-- Any two directories in the string result should be separated by a single slash `'/'`.
-- The string result should not end with a trailing `'/'`.
-- The string result should only contain the directories on the path from the root directory to the target file or directory, without any period `'.'` or double period `'..'`.
+- The string parameter `path` is an absolute path starting with a slash `'/'`.
+- The string result is the simplified canonical path.
+- The canonical path starts with a single slash `'/'`.
+- Any two directories in the canonical path are separated by a single slash `'/'`.
+- The canonical path does not end with a trailing `'/'`.
+- The canonical path only contains directories on the path from the root directory to the target file or directory, excluding periods `'.'` or double periods `'..'`.

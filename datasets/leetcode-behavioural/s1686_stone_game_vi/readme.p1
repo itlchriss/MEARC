@@ -1,5 +1,7 @@
-- The integer array parameter `aliceValues` and `bobValues` must not be null.
-- The integer array parameter `aliceValues` and `bobValues` must have the same length.
-- The integer result is 1 if Alice wins the game.
-- The integer result is -1 if Bob wins the game.
-- The integer result is 0 if the game results in a draw.
+- If the integer array parameter `aliceValues` and the integer array parameter `bobValues` have the same number of elements, the integer result is either 1, -1, or 0.
+- If the integer result is 1, Alice wins the game.
+- If the integer result is -1, Bob wins the game.
+- If the integer result is 0, the game results in a draw.
+- The integer array parameter `aliceValues` and the integer array parameter `bobValues` must not be null.
+- The length of the integer array parameter `aliceValues` and the integer array parameter `bobValues` is equal to the integer parameter `n`.
+- All values in the integer array parameter `aliceValues` and the integer array parameter `bobValues` are greater than or equal to 1 and are less than or equal to 100.

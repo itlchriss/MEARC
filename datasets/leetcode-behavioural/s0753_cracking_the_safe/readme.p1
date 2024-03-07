@@ -1,5 +1,5 @@
-- The integer parameter `n` must be between 1 and 4.
-- The integer parameter `k` must be between 1 and 10.
 - The string result must be of minimum length that will unlock the safe at some point of entering it.
-- The string result must consist of digits in the range `[0, k-1]`.
-- The string result must unlock the safe by entering each digit in the correct sequence.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 4.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 10.
+- The string result must contain a sequence of `n` digits where each digit can be in the range `[0, k - 1]`.
+- The string result must unlock the safe at some point of entering it.

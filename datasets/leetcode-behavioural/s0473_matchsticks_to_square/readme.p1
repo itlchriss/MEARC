@@ -1,5 +1,4 @@
 - The integer array parameter `matchsticks` must not be null.
-- The integer array parameter `matchsticks` must have a length between 1 and 15.
-- Each element in the integer array parameter `matchsticks` must have a value between 1 and 10^8.
-- If it is possible to form a square using all the matchsticks, the boolean result is true.
-- If it is not possible to form a square using all the matchsticks, the boolean result is false.
+- All values in the integer array parameter `matchsticks` are greater than or equal to 1 and are less than or equal to 100000000.
+- The length of the integer array parameter `matchsticks` is greater than or equal to 1 and is less than or equal to 15.
+- The boolean result is true if it is possible to form a square using all the matchsticks without breaking any stick, and false otherwise.

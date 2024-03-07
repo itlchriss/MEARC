@@ -1,3 +1,6 @@
-- The integer parameter `a` must be a positive integer.
-- The integer array parameter `b` must be an array of extremely large positive integers.
-- The integer result is the value of `a` raised to the power of the integer array `b` elements, modulo 1337.
+- The positive integer parameter `a` is raised to the power of the extremely large positive integer parameter `b` and then modulo `1337` is calculated.
+- The integer result is the result of the above calculation.
+- The integer parameter `a` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
+- The length of the integer array parameter `b` is greater than or equal to 1 and is less than or equal to 2000.
+- All values in the integer array parameter `b` are greater than or equal to 0 and are less than or equal to 9.
+- The integer array parameter `b` does not contain leading zeros.

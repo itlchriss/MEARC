@@ -1,9 +1,8 @@
 - The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must have a length between 2 and 100,000.
-- Each element in the integer array parameter `nums` must be between 1 and 100.
+- The integer array parameter `nums` length is greater than or equal to 2 and is less than or equal to 100000.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 100.
 - The integer array parameter `queries` must not be null.
-- The integer array parameter `queries` must have a length between 1 and 20,000.
-- Each subarray in the integer array parameter `queries` must have two elements where the first element is less than the second element and both elements are within the bounds of the integer array parameter `nums`.
-- The integer array result `ans` must have the same length as the integer array parameter `queries`.
-- The integer array result `ans` must contain the minimum absolute difference for each subarray specified in the integer array parameter `queries`.
-- If all elements in a subarray are the same, the minimum absolute difference is -1.
+- The length of the integer array parameter `queries` is greater than or equal to 1 and is less than or equal to 20000.
+- The integer array result `ans` length is equal to the length of the integer array parameter `queries`.
+- Each element in the integer array result `ans` is the minimum absolute difference of the subarray `nums[li...ri]` containing the elements of `nums` between the 0-based indices `li` and `ri` (inclusive).
+- The value of the minimum absolute difference is calculated as `|x|` where `x` is the difference between two elements in the subarray.

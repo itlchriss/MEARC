@@ -1,3 +1,7 @@
-- The string array parameter `queries` and `words` must not be null.
-- The integer array result `answer` must have the same length as the string array parameter `queries`.
-- For each query string `queries[i]`, the integer result `answer[i]` is the number of words in the string array `words` such that `f(queries[i])` < `f(W)` for each word `W` in the string array `words`.
+- The integer array parameter `queries` and the integer array parameter `words` must not be null.
+- The length of the integer array parameter `queries` and the integer array parameter `words` must be greater than or equal to 1 and less than or equal to 2000.
+- The length of each string in the integer array parameter `queries` and the integer array parameter `words` must be greater than or equal to 1 and less than or equal to 10.
+- The integer array result `answer` must be returned, where each element `answer[i]` is the answer to the `i`th query.
+- The integer result of `f(s)` is the frequency of the lexicographically smallest character in a non-empty string `s`.
+- For each query `queries[i]`, the number of words in `words` such that `f(queries[i])` is less than `f(W)` for each `W` in `words` must be counted.
+- The integer array result `answer` must contain the count of words in `words` such that `f(queries[i])` is less than `f(W)` for each `W` in `words`.

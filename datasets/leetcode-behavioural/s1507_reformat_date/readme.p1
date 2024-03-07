@@ -1,8 +1,8 @@
-- The string parameter `date` must be in the format `Day Month Year`.
-- The string parameter `date`'s `Day` must be in the set `{"1st", "2nd", "3rd", "4th", ..., "30th", "31st"`.
-- The string parameter `date`'s `Month` must be in the set `{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"`.
-- The string parameter `date`'s `Year` must be in the range `[1900, 2100]`.
+- The string parameter `date` is in the format `Day Month Year`.
+- The string parameter `date` contains a day in the set `{"1st", "2nd", "3rd", ..., "30th", "31st"}`.
+- The string parameter `date` contains a month in the set `{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}`.
+- The string parameter `date` contains a year in the range `[1900, 2100]`.
 - The string result is in the format `YYYY-MM-DD`.
-- The string result's `YYYY` denotes the 4 digit year.
-- The string result's `MM` denotes the 2 digit month.
-- The string result's `DD` denotes the 2 digit day.
+- The string result's year `YYYY` is a 4-digit number.
+- The string result's month `MM` is a 2-digit number.
+- The string result's day `DD` is a 2-digit number.

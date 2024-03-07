@@ -1,0 +1,6 @@
+- The string parameter `pattern` must have a length greater than or equal to 1 and less than or equal to 8.
+- The string parameter `pattern` consists only of the characters 'I' and 'D'.
+- The string result `num` must consist of digits from '1' to '9', each used at most once.
+- If `pattern[i] == 'I'`, then `num[i] < num[i + 1]`.
+- If `pattern[i] == 'D'`, then `num[i] > num[i + 1]`.
+- The string result `num` is the lexicographically smallest possible string that meets the conditions specified by the `pattern`.

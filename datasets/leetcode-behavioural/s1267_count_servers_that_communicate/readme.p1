@@ -1,2 +1,5 @@
-- If there are no servers that can communicate with any other server in the integer matrix parameter `grid`, the integer result is 0.
-- If there are servers that can communicate with at least one other server in the integer matrix parameter `grid`, the integer result is the number of servers that can communicate with any other server.
+- The integer matrix parameter `grid` must not be null.
+- The integer matrix parameter `grid` must have a length `m` and each row must have a length `n`.
+- The integer result is the number of servers that can communicate with at least one other server.
+- If a server can communicate with at least one other server, it is counted in the result.
+- If a server cannot communicate with any other server, it is not counted in the result.

@@ -1,2 +1,6 @@
-- The integer 2D array parameter `matrix` must not be null.
-- The integer result is the minimum sum of any falling path through the integer 2D array parameter `matrix`.
+- The integer matrix parameter `matrix` must not be null.
+- The integer matrix parameter `matrix` must be a square matrix (n x n).
+- The integer result is the minimum sum of any falling path through the integer matrix `matrix`.
+- A falling path starts at any element in the first row and chooses the element in the next row that is either directly below or diagonally left/right.
+- The next element from position (row, col) will be (row + 1, col - 1), (row + 1, col), or (row + 1, col + 1).
+- The output must be an integer representing the minimum sum of any falling path through the matrix.

@@ -1,11 +1,11 @@
-- If the input string parameter `s` represents an email address:
-  - The uppercase letters in the name and domain must be converted to lowercase letters.
-  - The middle letters of the name must be replaced by 5 asterisks "*****".
-- If the input string parameter `s` represents a phone number:
-  - All separation characters ('+', '-', '(', ')', ' ') must be removed.
-  - The masked phone number should have the form:
-    - "***-***-XXXX" if the country code has 0 digits.
-    - "+*-***-***-XXXX" if the country code has 1 digit.
-    - "+**-***-***-XXXX" if the country code has 2 digits.
-    - "+***-***-***-XXXX" if the country code has 3 digits.
-  - "XXXX" represents the last 4 digits of the local number.
+- If the input string `s` represents an email address:
+    - The uppercase letters in the name and domain must be converted to lowercase letters.
+    - The middle letters of the name (excluding the first and last letters) must be replaced by 5 asterisks "*****".
+- If the input string `s` represents a phone number:
+    - All separation characters ('+', '-', '(', ')', ' ') must be removed.
+    - The masked phone number should have the form:
+        - "***-***-XXXX" if the country code has 0 digits.
+        - "+*-***-***-XXXX" if the country code has 1 digit.
+        - "+**-***-***-XXXX" if the country code has 2 digits.
+        - "+***-***-***-XXXX" if the country code has 3 digits.
+    - "XXXX" represents the last 4 digits of the local number.

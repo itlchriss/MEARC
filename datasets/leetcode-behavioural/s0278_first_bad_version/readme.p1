@@ -1,2 +1,4 @@
-- If the integer parameter `bad` is equal to 1, the integer result is 1.
-- If the integer parameter `bad` is greater than 1, the integer result is the first bad version found by calling the `isBadVersion(version)` API with the minimum number of calls.
+- The integer parameter `bad` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
+- The integer result is the first bad version, which causes all following versions to be bad.
+- The method should minimize the number of calls to the API `bool isBadVersion(version)`.
+- The method should return the correct first bad version based on the API calls made.

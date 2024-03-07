@@ -1,2 +1,7 @@
-- If the character at index `i` in string parameter `s1` is equivalent to the character at index `i` in string parameter `s2`, the character at index `i` in string parameter `baseStr` is transformed to the lexicographically smallest equivalent character.
-- The resulting string after transforming characters in string parameter `baseStr` based on the equivalency information from string parameters `s1` and `s2` is returned as the string result.
+- The string parameters `s1`, `s2`, and `baseStr` must consist of lowercase English letters.
+- The length of the string parameters `s1`, `s2`, and `baseStr` must be between 1 and 1000.
+- The characters in `s1[i]` and `s2[i]` are considered equivalent.
+- The equivalence relation between characters must follow reflexivity, symmetry, and transitivity.
+- The lexicographically smallest equivalent string of `baseStr` must be returned based on the equivalency information from `s1` and `s2`.
+- The characters in each group of equivalent characters must be sorted in lexicographical order.
+- The output string must have the same length as `baseStr`.

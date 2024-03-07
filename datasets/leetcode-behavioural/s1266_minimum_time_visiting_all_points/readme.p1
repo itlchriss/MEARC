@@ -1,0 +1,7 @@
+- The integer array parameter `points` must not be null.
+- The integer array parameter `points` must have a length of `n`.
+- The integer result is the minimum time in seconds to visit all the points in the order given by the `points` array.
+- The time to move from one point to another is calculated based on the rules provided:
+    - In 1 second, you can move vertically by one unit, move horizontally by one unit, or move diagonally `sqrt(2)` units.
+    - The points must be visited in the same order as they appear in the array.
+    - Passing through points that appear later in the order is allowed but does not count as visits.

@@ -1,0 +1,5 @@
+- The integer array parameter `clips` must not be null.
+- Each element in the integer array parameter `clips` must be an array of two integers representing the start and end time of a video clip.
+- The integer parameter `time` is greater than or equal to 1 and is less than or equal to 100.
+- The integer result is the minimum number of clips needed to cover the entire sporting event `[0, time]`.
+- If it is impossible to cover the entire sporting event `[0, time]` with the given clips, the integer result is -1.

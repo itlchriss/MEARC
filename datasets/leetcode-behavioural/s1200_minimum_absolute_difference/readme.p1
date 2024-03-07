@@ -1,6 +1,8 @@
 - The integer array parameter `arr` must not be null.
-- The pairs in the integer collection result are in ascending order with respect to pairs.
-- For each pair `[a, b]` in the integer collection result:
-  - `a` and `b` are from the integer array parameter `arr`.
-  - `a` is less than `b`.
-  - The absolute difference between `b` and `a` is equal to the minimum absolute difference of any two elements in the integer array parameter `arr`.
+- The length of the integer array parameter `arr` is greater than or equal to 2 and is less than or equal to 100000.
+- All values in the integer array parameter `arr` are distinct.
+- The integer array result is a list of pairs in ascending order.
+- Each pair `[a, b]` in the result list follows:
+    - `a` and `b` are from the `arr`.
+    - `a` is less than `b`.
+    - The absolute difference between `b` and `a` is equal to the minimum absolute difference of any two elements in `arr`.

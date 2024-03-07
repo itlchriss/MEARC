@@ -1,8 +1,8 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 1.
-- The 2D array of integer parameter `lamps` must not be null.
-- The 2D array of integer parameter `queries` must not be null.
-- The length of each sub-array in the 2D array of integer parameter `lamps` must be equal to 2.
-- The length of each sub-array in the 2D array of integer parameter `queries` must be equal to 2.
-- The integer result array `ans` must have the same length as the 2D array of integer parameter `queries`.
-- For each query in the 2D array of integer parameter `queries`, after determining whether the cell in the query was illuminated or not, the lamp at the cell and its 8 adjacent lamps must be turned off.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 1000000000.
+- The length of the integer array parameter `lamps` is less than or equal to 20000.
+- The length of the integer array parameter `queries` is less than or equal to 20000.
+- Each element in the integer array parameter `lamps` is an array of length 2 representing the row and column of a lamp position.
+- Each element in the integer array parameter `queries` is an array of length 2 representing the row and column of a query.
+- The integer array result is of length equal to the length of the integer array parameter `queries`.
+- Each element in the integer array result is either 0 or 1, where 1 indicates that the corresponding cell in the query was illuminated and 0 indicates that the lamp was not illuminated.
+- After answering each query, the lamp at the queried cell and its 8 adjacent lamps are turned off if they exist.

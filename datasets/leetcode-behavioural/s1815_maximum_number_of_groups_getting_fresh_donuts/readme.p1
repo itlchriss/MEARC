@@ -1,5 +1,4 @@
-Method behavioural requirements:
-- The integer parameter `batchSize` must be between 1 and 9, inclusive.
-- The integer array parameter `groups` must have a length between 1 and 30, inclusive.
-- Each element in the integer array parameter `groups` must be between 1 and 10^9, inclusive.
+- The integer parameter `batchSize` is greater than or equal to 1 and is less than or equal to 9.
+- The length of the integer array parameter `groups` is greater than or equal to 1 and is less than or equal to 30.
+- All values in the integer array parameter `groups` are greater than or equal to 1 and are less than or equal to 10^9.
 - The integer result is the maximum possible number of happy groups after rearranging the groups.

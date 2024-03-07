@@ -1,6 +1,7 @@
-Method behavioural requirements:
-- The integer parameter `n` represents the number of vertices in the undirected tree.
-- The integer 2D array parameter `edges` represents the edges of the undirected tree.
-- The integer parameter `t` represents the number of seconds.
-- The integer parameter `target` represents the target vertex.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the integer array parameter `edges` is equal to `n - 1`.
+- Each element in the integer array parameter `edges` has a length of 2.
+- The integer parameters `t` and `target` are greater than or equal to 1.
+- The integer parameter `t` is less than or equal to 50.
+- The integer parameter `target` is less than or equal to `n`.
 - The double result is the probability that after `t` seconds the frog is on the vertex `target`.

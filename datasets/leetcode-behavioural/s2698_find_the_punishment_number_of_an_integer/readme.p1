@@ -1,0 +1,6 @@
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 1000.
+- The integer result is the punishment number of the integer parameter `n`.
+- The punishment number of `n` is defined as the sum of the squares of all integers `i` such that:
+    - `1 <= i <= n`
+    - The decimal representation of `i * i` can be partitioned into contiguous substrings such that the sum of the integer values of these substrings equals `i`.

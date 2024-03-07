@@ -1,5 +1,8 @@
-Method behavioural requirements:
 - The integer array parameter `ghosts` must not be null.
 - The integer array parameter `target` must not be null.
-- The boolean result is true if it is possible to reach the integer array parameter `target` before any ghost reaches the player.
-- The boolean result is false if any ghost can reach the integer array parameter `target` at the same time as the player.
+- The integer array parameter `target` length must be 2.
+- The integer array parameter `ghosts` length must be less than or equal to 100.
+- The integer array parameter `ghosts` must contain arrays of length 2.
+- The integer array parameter `ghosts` elements must be within the range -10000 to 10000.
+- The integer array parameter `target` elements must be within the range -10000 to 10000.
+- The boolean result is true if it is possible to escape to the target before any ghost reaches the player, otherwise false.

@@ -1,3 +1,4 @@
-- If the string parameter `s` is empty, the string result is an empty string.
-- If the string parameter `s` contains a nice substring, the string result is the longest nice substring of the string parameter `s`.
-- If there are multiple longest nice substrings in the string parameter `s`, the string result is the substring of the earliest occurrence.
+- The string parameter `s` must not be null.
+- The string result is the longest substring of `s` that is nice.
+- If there are multiple longest nice substrings, the result is the substring of the earliest occurrence.
+- If there are no nice substrings, the result is an empty string.

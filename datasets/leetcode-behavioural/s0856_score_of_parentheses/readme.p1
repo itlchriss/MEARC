@@ -1,3 +1,6 @@
-- If the string parameter `s` is equal to "()", the integer result is 1.
-- If the string parameter `s` is in the form "(A)", where `A` is a balanced parentheses string, the integer result is 2 times the score of `A`.
-- If the string parameter `s` is in the form "AB", where `A` and `B` are balanced parentheses strings, the integer result is the sum of the scores of `A` and `B`.
+- The string parameter `s` is a balanced parentheses string.
+- The integer result is the score of the balanced parentheses string `s`.
+- The integer result is based on the following rules:
+    - If the balanced parentheses string `s` is "()", the score is 1.
+    - If the balanced parentheses string `s` is in the form AB, the score is the sum of the scores of A and B.
+    - If the balanced parentheses string `s` is in the form (A), the score is twice the score of A.

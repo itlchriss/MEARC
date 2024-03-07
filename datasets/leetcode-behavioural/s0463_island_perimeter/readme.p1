@@ -1,3 +1,6 @@
 - The integer 2D array parameter `grid` must not be null.
-- The integer result is the perimeter of the island represented by the integer 2D array parameter `grid`.
+- The integer 2D array parameter `grid` must have a length of `row` and each row must have a length of `col`.
+- The integer result is the perimeter of the island represented by the `grid`.
 - The perimeter is calculated by counting the number of edges of land cells that are adjacent to water cells or the boundary of the grid.
+- The perimeter is the sum of all edges of land cells that are not surrounded by other land cells.
+- The perimeter calculation does not include diagonal connections between land cells.

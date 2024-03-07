@@ -1,4 +1,6 @@
-- If the string parameter `command` contains the substring "G", the string result is "G".
-- If the string parameter `command` contains the substring "()", the string result is "o".
-- If the string parameter `command` contains the substring "(al)", the string result is "al".
-- The concatenated result of interpreting the substrings in the original order is the string result.
+- The string parameter `command` consists of characters `"G"`, `"()"`, and/or `"(al)"`.
+- The string result is the concatenation of the interpreted strings based on the following rules:
+    - `"G"` is interpreted as the string `"G"`.
+    - `"()"` is interpreted as the string `"o"`.
+    - `"(al)"` is interpreted as the string `"al"`.
+- The final concatenated result is returned as the string result.

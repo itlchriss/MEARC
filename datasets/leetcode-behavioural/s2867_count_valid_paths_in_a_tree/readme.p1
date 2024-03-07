@@ -1,0 +1,7 @@
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
+- The 2D integer array parameter `edges` has a length of `n - 1`.
+- Each element in the 2D integer array parameter `edges` is an array of length 2 representing an edge between two nodes.
+- The integer result is the number of valid paths in the tree.
+- A path `(a, b)` is considered valid if there exists exactly one prime number among the node labels in the path from node `a` to node `b`.
+- The path `(a, b)` is a sequence of distinct nodes starting with node `a` and ending with node `b` such that every two adjacent nodes in the sequence share an edge in the tree.
+- Paths `(a, b)` and `(b, a)` are considered the same and counted only once.

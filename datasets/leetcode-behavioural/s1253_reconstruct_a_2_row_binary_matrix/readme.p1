@@ -1,9 +1,9 @@
-Method behavioural requirements:
-- The integer parameter `upper` represents the sum of elements in the 0-th row.
-- The integer parameter `lower` represents the sum of elements in the 1-st row.
-- The integer array parameter `colsum` represents the sum of elements in each column.
-- The 2-D integer array result must have 2 rows and `colsum.length` columns.
-- Each element in the result array must be either 0 or 1.
-- The sum of elements in each column of the result array must match the corresponding element in the `colsum` array.
-- If there are multiple valid solutions, any of them can be accepted.
-- If no valid solution exists, the result must be an empty 2-D array.
+Method behavioural specifications:
+- The integer parameter `upper` is greater than or equal to 0 and is less than or equal to the length of the integer array `colsum`.
+- The integer parameter `lower` is greater than or equal to 0 and is less than or equal to the length of the integer array `colsum`.
+- All values in the integer array parameter `colsum` are greater than or equal to 0 and are less than or equal to 2.
+- The length of the list result is 2.
+- Each element in the list result is a list of integers.
+- The sum of elements in the 0-th row of the matrix is equal to the integer parameter `upper`.
+- The sum of elements in the 1-st row of the matrix is equal to the integer parameter `lower`.
+- The sum of elements in the i-th column of the matrix is equal to the i-th element of the integer array `colsum`.

@@ -1,4 +1,6 @@
-Method behavioural requirements:
-- The integer 2D array parameter `events` must not be null.
-- The integer parameter `k` must be within the range of 1 to the length of the integer 2D array `events`.
+- The integer array parameter `events` must not be null.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array parameter `events`.
 - The integer result is the maximum sum of values that can be received by attending events.
+- If two events overlap, only one event can be attended.
+- If multiple events have the same value, the one with the earlier start day should be attended.
+- If multiple events have the same start day, the one with the higher value should be attended.

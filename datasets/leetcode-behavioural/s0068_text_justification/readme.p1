@@ -1,7 +1,9 @@
-- The string array parameter `words` must not be null.
-- The integer parameter `maxWidth` must be greater than 0.
-- The size of the string collection result is less than or equal to the size of the string array parameter `words`.
-- Each line in the string collection result has exactly `maxWidth` characters.
-- Extra spaces between words are distributed as evenly as possible.
-- If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.
+- The integer array parameter `words` contains at least one word.
+- Each word in the integer array parameter `words` is a character sequence consisting of non-space characters only.
+- Each word's length in the integer array parameter `words` is greater than 0 and does not exceed `maxWidth`.
+- The integer parameter `maxWidth` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the string list result is equal to the number of lines required to fully justify the text.
+- Each line in the string list result has exactly `maxWidth` characters.
+- Extra spaces between words in each line are distributed as evenly as possible.
+- If the number of spaces on a line does not divide evenly between words, the empty slots on the left are assigned more spaces than the slots on the right.
 - The last line of text is left-justified and no extra space is inserted between words.

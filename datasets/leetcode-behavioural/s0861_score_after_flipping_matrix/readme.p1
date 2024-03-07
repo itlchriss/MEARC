@@ -1,2 +1,8 @@
-- The integer 2D array parameter `grid` must not be null.
-- The integer result is the highest possible score of the integer 2D array parameter `grid` after making any number of moves.
+- The integer matrix parameter `grid` must not be null.
+- The integer matrix parameter `grid` must have a length `m` and each row must have a length `n`.
+- The integer matrix parameter `grid` must consist of only 0s and 1s.
+- The integer result is the highest possible score of the matrix after making any number of moves.
+- A move consists of toggling each value in a row or column (changing all 0s to 1s and all 1s to 0s).
+- The score of the matrix is the sum of binary numbers interpreted from each row.
+- The highest possible score is achieved by maximizing the binary numbers in each row.
+- The output format should be a list with '-' as bullets.

@@ -1,0 +1,7 @@
+Method behavioural specifications:
+- The integer array parameter `nums` must not be null.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to half the length of the integer array `nums`.
+- The integer result is a list of all good indices sorted in increasing order.
+- Each good index `i` in the range `k <= i < n - k` satisfies the conditions:
+    - The `k` elements before index `i` are in non-increasing order.
+    - The `k` elements after index `i` are in non-decreasing order.

@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer 2D array parameter `points` must not be null.
-- The integer result is the number of boomerangs formed by the points in the integer 2D array parameter `points`.
-- A boomerang is a tuple of points (i, j, k) where the distance between i and j is equal to the distance between i and k.
-- The order of the tuple matters in determining a boomerang.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 500.
+- The integer array parameter `points` contains `n` distinct points in the plane, where each point is represented as an array of two integers `[x, y]`.
+- The integer result is the number of boomerangs, where a boomerang is a tuple of points `(i, j, k)` such that the distance between `i` and `j` equals the distance between `i` and `k`.
+- The order of the tuple matters, meaning that `(i, j, k)` is different from `(i, k, j)`.
+- The integer result represents the total number of unique boomerangs that can be formed from the given points.

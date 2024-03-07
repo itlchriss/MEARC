@@ -1,5 +1,7 @@
-- The integer parameter `k` must be between 2 and 9, inclusive.
-- The integer parameter `n` must be between 1 and 60, inclusive.
-- The integer collection result must contain lists of integers representing valid combinations of `k` numbers that sum up to `n`.
+- The integer parameter `k` is greater than or equal to 2 and is less than or equal to 9.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 60.
+- The integer collection result contains lists of integers representing valid combinations of `k` numbers that sum up to `n`.
 - Each list in the integer collection result must not contain the same combination twice.
-- Each list in the integer collection result must contain `k` numbers from 1 to 9, with each number used at most once.
+- Each list in the integer collection result may contain numbers from 1 to 9 only.
+- Each number in the list is used at most once.
+- The order of the combinations in the integer collection result is not specified.

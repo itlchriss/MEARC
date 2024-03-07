@@ -1,0 +1,8 @@
+- If the string parameter `expression` is equal to "t", the boolean result is true.
+- If the string parameter `expression` is equal to "f", the boolean result is false.
+- If the string parameter `expression` is in the format "!(expr)", the boolean result is the logical NOT of the inner expression `expr`.
+- If the string parameter `expression` is in the format "&(expr1,expr2,...)", the boolean result is the logical AND of 2 or more inner expressions `expr1, expr2, ...`.
+- If the string parameter `expression` is in the format "|(expr1,expr2,...)", the boolean result is the logical OR of 2 or more inner expressions `expr1, expr2, ...`.
+- The length of the string parameter `expression` is greater than or equal to 1 and is less than or equal to 20000.
+- The characters in the string parameter `expression` are limited to {'(', ')', '&', '|', '!', 't', 'f', ','}.
+- The string parameter `expression` is a valid expression representing a boolean.

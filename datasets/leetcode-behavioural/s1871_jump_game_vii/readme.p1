@@ -1,4 +1,7 @@
-- The string parameter `s` must not be null.
-- The integer parameter `minJump` must be greater than or equal to 1 and less than or equal to the length of the string parameter `s`.
-- The integer parameter `maxJump` must be greater than or equal to the integer parameter `minJump` and less than or equal to the length of the string parameter `s`.
-- The boolean result is true if it is possible to reach the index `s.length - 1` in the string parameter `s` based on the given conditions, otherwise the boolean result is false.
+- The string parameter `s` must have a length greater than or equal to 2 and less than or equal to 100000.
+- The string parameter `s` must only contain characters '0' or '1'.
+- The first character of the string parameter `s` must be '0'.
+- The integer parameter `minJump` must be greater than or equal to 1 and less than the length of string parameter `s`.
+- The integer parameter `maxJump` must be greater than or equal to `minJump` and less than the length of string parameter `s`.
+- The boolean result is true if it is possible to reach the index `s.length - 1` in the string parameter `s` based on the given conditions.
+- The boolean result is false if it is not possible to reach the index `s.length - 1` in the string parameter `s` based on the given conditions.

@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 2 and less than or equal to 28.
-- The integer parameter `firstPlayer` must be greater than or equal to 1 and less than `secondPlayer`.
-- The integer parameter `secondPlayer` must be less than or equal to `n`.
-- The integer array result contains two values representing the earliest and latest possible round numbers in which the players `firstPlayer` and `secondPlayer` will compete against each other.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 28.
+- The integer parameter `firstPlayer` is greater than or equal to 1 and is less than the integer parameter `secondPlayer`, which is less than or equal to `n`.
+- The integer array result contains two values, representing the earliest possible round number and the latest possible round number in which the players `firstPlayer` and `secondPlayer` will compete against each other.
+- The values in the integer array result are within the valid round number range based on the given constraints.
+- The scenarios provided in the examples are valid and represent the earliest and latest possible round numbers for the players to compete against each other.

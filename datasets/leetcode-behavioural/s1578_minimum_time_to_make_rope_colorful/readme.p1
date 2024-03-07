@@ -1,3 +1,8 @@
-- If the string parameter `s` is empty, the integer result is 0.
-- If the string parameter `s` contains only one character, the integer result is 0.
-- If the string parameter `s` contains consecutive characters that are the same, Bob needs to remove the balloons with the highest costs to make the rope colorful. The integer result is the sum of the costs of the balloons that need to be removed to ensure no consecutive balloons have the same color.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `neededTime` contains values greater than or equal to 1 and less than or equal to 10000.
+- The length of the integer array parameter `neededTime` is equal to the length of the string parameter `colors`.
+- The integer result is the minimum time Bob needs to make the rope colorful by removing balloons.
+- Bob can remove balloons to ensure that no two consecutive balloons have the same color.
+- The integer result is the total time taken to remove the necessary balloons to achieve a colorful rope.
+- The integer result is calculated based on the time needed to remove each balloon specified in the `neededTime` array.
+- The string parameter `colors` contains only lowercase English letters.

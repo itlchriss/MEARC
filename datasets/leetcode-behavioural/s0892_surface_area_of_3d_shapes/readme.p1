@@ -1,3 +1,5 @@
-Method behavioural requirements:
-- The integer 2D array parameter `grid` must not be null.
-- The integer result is the total surface area of the resulting shapes after gluing adjacent cubes in the integer 2D array parameter `grid`.
+- The integer 2D array parameter `grid` represents a grid of towers of cubes.
+- The integer result is the total surface area of the resulting irregular 3D shapes formed by gluing adjacent cubes.
+- The integer result includes the bottom face of each shape in the surface area calculation.
+- The length of the integer 2D array `grid` is equal to the integer parameter `n`.
+- All values in the integer 2D array `grid` are greater than or equal to 0 and are less than or equal to 50.

@@ -1,0 +1,5 @@
+- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` must have a length greater than or equal to 2 and less than or equal to 100000.
+- The integer result is the number of valid splits in the integer array `nums`.
+- A valid split at index `i` is defined as the sum of the first `i + 1` elements being greater than or equal to the sum of the last `n - i - 1` elements, where `n` is the length of the array.
+- A valid split at index `i` must have at least one element to the right of `i`, meaning `0 <= i < n - 1`.

@@ -1,2 +1,5 @@
-- If the string array parameter `strs` contains at least one element, the string result is the longest common prefix among all strings in the string array parameter `strs`.
-- If there is no common prefix among all strings in the string array parameter `strs`, the string result is an empty string `""`.
+- The string array parameter `strs` must not be null.
+- The string array parameter `strs` must have a length greater than or equal to 1 and less than or equal to 200.
+- Each string in the string array parameter `strs` must consist of only lower-case English letters.
+- The string result is the longest common prefix string amongst the array of strings.
+- If there is no common prefix, the string result is an empty string `""`.

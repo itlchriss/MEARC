@@ -1,5 +1,3 @@
-- The integer array parameter `arr` must have a length of 4.
-- The elements of the integer array parameter `arr` must be between 0 and 9 (inclusive).
-- The string result is in the format "HH:MM", where `HH` is between `00` and `23`, and `MM` is between `00` and `59`.
-- If a valid 24-hour time can be made using each digit exactly once from the integer array parameter `arr`, the string result is the latest valid 24-hour time in "HH:MM" format.
-- If no valid 24-hour time can be made from the integer array parameter `arr`, the string result is an empty string.
+- The integer array parameter `arr` must contain exactly 4 unique digits between 0 and 9.
+- The string result is in the format "HH:MM", where HH is between 00 and 23, and MM is between 00 and 59.
+- If no valid time can be made, the string result is an empty string.

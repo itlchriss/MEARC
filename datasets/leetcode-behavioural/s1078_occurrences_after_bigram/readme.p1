@@ -1,2 +1,6 @@
-- If the string parameter `text` contains occurrences of the form "first second third", where `second` comes immediately after `first` and `third` comes immediately after `second`, the string array result contains all the words `third` for each occurrence of "first second third".
-- The string array result contains the words `third` in the order they appear in the text after the corresponding "first second" occurrence.
+- The length of the string array result is equal to the number of occurrences of the pattern "first second third" in the input text.
+- Each element in the string array result is the word "third" that follows the pattern "first second third" in the input text.
+- The string parameter `text` consists of lowercase English letters and spaces.
+- All words in the string parameter `text` are separated by a single space.
+- The string parameters `first` and `second` consist of lowercase English letters.
+- The length of the string parameters `first` and `second` is greater than or equal to 1 and is less than or equal to 10.

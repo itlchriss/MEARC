@@ -1,7 +1,7 @@
-Method behavioural requirements:
-- The string parameter `bottom` must have a length between 2 and 6.
-- The integer list parameter `allowed` must have a length between 0 and 216.
+- The string parameter `bottom` must have a length greater than or equal to 2 and less than or equal to 6.
+- The integer list parameter `allowed` must have a length less than or equal to 216.
 - Each string in the integer list parameter `allowed` must have a length of 3.
-- The characters in the string parameter `bottom` and all strings in the integer list parameter `allowed` must be from the set {'A', 'B', 'C', 'D', 'E', 'F'}.
-- All values in the integer list parameter `allowed` must be unique.
-- The boolean result is true if the pyramid can be built all the way to the top with every triangular pattern in the pyramid being in the integer list parameter `allowed`, otherwise false.
+- The characters in all input strings must be from the set {'A', 'B', 'C', 'D', 'E', 'F'}.
+- All values in the integer list `allowed` must be unique.
+- The boolean result is true if the pyramid can be built all the way to the top such that every triangular pattern in the pyramid is in the `allowed` list.
+- The boolean result is false if the pyramid cannot be built according to the allowed triangular patterns.

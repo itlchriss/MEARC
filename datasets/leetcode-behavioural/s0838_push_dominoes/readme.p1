@@ -1,5 +1,8 @@
-- If the character at index `i` in the string parameter `dominoes` is 'L' and there is no adjacent domino on the left, the character at index `i` remains 'L'.
-- If the character at index `i` in the string parameter `dominoes` is 'R' and there is no adjacent domino on the right, the character at index `i` remains 'R'.
-- If the character at index `i` in the string parameter `dominoes` is 'L' and there is a falling domino on the right at index `j`, where `j > i`, the characters between index `i` and `j` (inclusive) change to 'L'.
-- If the character at index `i` in the string parameter `dominoes` is 'R' and there is a falling domino on the left at index `j`, where `j < i`, the characters between index `j` and `i` (inclusive) change to 'R'.
-- If there are falling dominoes from both sides at index `i`, the character at index `i` remains '.'.
+- The string parameter `dominoes` must not be null.
+- The string result represents the final state of the dominoes after being pushed.
+- The string result has the same length as the input string `dominoes`.
+- The characters in the string result are either 'L', 'R', or '.'.
+- If a domino is pushed to the left ('L'), it will push the adjacent domino on the left.
+- If a domino is pushed to the right ('R'), it will push the adjacent domino on the right.
+- If a vertical domino has dominoes falling on it from both sides, it stays still.
+- A falling domino expends no additional force to a falling or already fallen domino.

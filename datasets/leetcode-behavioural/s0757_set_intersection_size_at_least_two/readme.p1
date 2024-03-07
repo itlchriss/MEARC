@@ -1,2 +1,5 @@
-- For each integer interval in the 2D integer array parameter `intervals`, the intersection of the integer set result with the interval has a size of at least two.
-- The integer result is the minimum size of the integer set `S` that fulfills the above condition.
+- The integer array parameter `intervals` must have a length greater than or equal to 1 and less than or equal to 3000.
+- Each element in the integer array parameter `intervals` must be an array of length 2.
+- The first element `a` in each interval array must be greater than or equal to 0 and less than the second element `b`.
+- The second element `b` in each interval array must be greater than the first element `a` and less than or equal to 100000000.
+- The integer result is the minimum size of a set `S` such that for every integer interval `A` in `intervals`, the intersection of `S` with `A` has a size of at least two.

@@ -1,0 +1,5 @@
+- The integer array parameter `nums` must not be null.
+- The integer result is the largest prime number that lies on at least one of the diagonals of the integer array `nums`.
+- If no prime number is present on any of the diagonals, the integer result is 0.
+- An integer is considered prime if it is greater than 1 and has no positive integer divisors other than 1 and itself.
+- An integer `val` is considered to be on one of the diagonals of `nums` if there exists an integer `i` such that `nums[i][i] = val` or an integer `i` such that `nums[i][nums.length - i - 1] = val`.

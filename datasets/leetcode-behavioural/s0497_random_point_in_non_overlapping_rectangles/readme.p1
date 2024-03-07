@@ -1,9 +1,11 @@
 - The integer array parameter `rects` must not be null.
-- The integer array parameter `rects` must contain non-overlapping axis-aligned rectangles.
-- The integer array parameter `rects` must have each rectangle defined by four integer values `[a, b, x, y]` where `(a, b)` is the bottom-left corner point and `(x, y)` is the top-right corner point.
-- The integer array parameter `rects` must have each rectangle with dimensions such that `x - a <= 2000` and `y - b <= 2000`.
-- The integer array parameter `rects` must have each rectangle with coordinates such that `-10^9 <= a < x <= 10^9` and `-10^9 <= b < y <= 10^9`.
-- The integer array parameter `rects` must not have overlapping rectangles.
-- The integer array parameter `rects` must have at most 10^4 calls to the `pick` method.
-- The `Solution` class must be initialized with the given rectangles `rects`.
-- The `pick` method must return a random integer point `[u, v]` inside the space covered by one of the given rectangles.
+- The integer array parameter `rects` length is greater than or equal to 1 and is less than or equal to 100.
+- Each element in the integer array parameter `rects` is an array of length 4.
+- The integer array parameter `rects` elements are non-overlapping axis-aligned rectangles.
+- The integer array parameter `rects` elements are in the format `[a, b, x, y]` where `(a, b)` is the bottom-left corner point and `(x, y)` is the top-right corner point of the rectangle.
+- The integer coordinates of the rectangles are within the range of -10^9 to 10^9.
+- The width of the rectangles `(x - a)` is less than or equal to 2000.
+- The height of the rectangles `(y - b)` is less than or equal to 2000.
+- The `Solution` class initializes with the given rectangles `rects`.
+- The `pick` method returns a random integer point `[u, v]` inside the space covered by one of the given rectangles.
+- Any integer point inside the space covered by one of the given rectangles should be equally likely to be returned.

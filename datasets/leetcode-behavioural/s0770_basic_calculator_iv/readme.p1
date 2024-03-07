@@ -1,0 +1,7 @@
+- The list of strings result must contain terms with non-zero coefficients.
+- Each term in the list result must be formatted as follows:
+    - The leading coefficient of the term is placed directly to the left with an asterisk separating it from the variables (if they exist). A leading coefficient of 1 is still printed.
+    - For each term of free variables with a non-zero coefficient, the free variables within a term must be written in sorted order lexicographically.
+    - Terms have degrees equal to the number of free variables being multiplied, counting multiplicity.
+    - The largest degree terms of the answer must be written first, breaking ties by lexicographic order ignoring the leading coefficient of the term.
+- Terms (including constant terms) with coefficient 0 must not be included in the list result.

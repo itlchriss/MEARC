@@ -1,5 +1,10 @@
-- The integer array parameter `releaseTimes` must not be null.
-- The string parameter `keysPressed` must not be null.
-- The integer array parameter `releaseTimes` must be sorted in ascending order.
 - The character result is the key of the keypress that had the longest duration.
-- If there are multiple keypresses with the longest duration, the lexicographically largest key among them is returned.
+- If there are multiple keypresses with the longest duration, the lexicographically largest key is returned.
+- The integer array parameter `releaseTimes` and the string parameter `keysPressed` have the same length `n`.
+- The integer array parameter `releaseTimes` is sorted in ascending order.
+- The duration of the keypress is calculated as `releaseTimes[i] - releaseTimes[i - 1]` where `i` is the index of the keypress.
+- The duration of the first keypress is `releaseTimes[0]`.
+- The keypresses are associated with the characters in the string `keysPressed`.
+- The keypress for each character in `keysPressed` corresponds to the duration calculated from `releaseTimes`.
+- The keypress with the longest duration is determined by comparing the durations of all keypresses.
+- If multiple keypresses have the longest duration, the lexicographically largest key is chosen as the result.

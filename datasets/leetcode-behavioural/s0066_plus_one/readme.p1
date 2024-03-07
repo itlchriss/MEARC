@@ -1,4 +1,7 @@
-- The integer array parameter `digits` must not be null.
-- The integer array parameter `digits` represents a large integer where each element is a digit of the integer.
-- The integer array parameter `digits` does not contain any leading zeros.
-- After incrementing the large integer represented by the integer array parameter `digits` by one, the resulting array of digits is returned as the integer array result.
+- The integer array parameter `digits` represents a large integer without any leading zeros.
+- The integer array result represents the large integer obtained by incrementing the input large integer by one.
+- The length of the integer array result is equal to the length of the integer array parameter `digits` or one greater if a carry is generated.
+- Each element in the integer array result is a digit from 0 to 9.
+- If the last digit in the integer array parameter `digits` is less than 9, the last digit in the integer array result is incremented by one.
+- If the last digit in the integer array parameter `digits` is 9 and generates a carry, the last digit in the integer array result is 0, and a carry is propagated to the preceding digit.
+- If the first digit in the integer array parameter `digits` is 9 and generates a carry, a new digit with the value of 1 is added to the beginning of the integer array result.

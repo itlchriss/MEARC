@@ -1,3 +1,8 @@
-- The string array parameter `board` must have a length of 3.
-- Each string in the string array parameter `board` must have a length of 3.
-- The characters in the string array parameter `board` must be either 'X', 'O', or ' '.
+- If the Tic-Tac-Toe board is in a valid state according to the rules of Tic-Tac-Toe, the boolean result is true.
+- If the Tic-Tac-Toe board is not in a valid state according to the rules of Tic-Tac-Toe, the boolean result is false.
+- The Tic-Tac-Toe board is a 3x3 array represented by a string array.
+- The characters in the Tic-Tac-Toe board can only be 'X', 'O', or ' '.
+- Players take turns placing characters 'X' and 'O' into empty squares.
+- The game ends when there are three of the same non-empty character filling any row, column, or diagonal.
+- The game also ends if all squares are non-empty.
+- No more moves can be played if the game is over.

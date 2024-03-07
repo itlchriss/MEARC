@@ -1,4 +1,5 @@
-Method behavioural requirements:
-- The integer array parameter `arr` must not be null.
-- The integer parameters `a`, `b`, and `c` must be non-negative.
-- The integer result is the number of good triplets satisfying the conditions specified in the business requirement.
+- The integer array parameter `arr` must have a length greater than or equal to 3 and less than or equal to 100.
+- The integer parameters `a`, `b`, and `c` must be greater than or equal to 0 and less than or equal to 1000.
+- The integer result is the number of good triplets satisfying the conditions.
+- A good triplet is defined as a triplet (arr[i], arr[j], arr[k]) where 0 <= i < j < k < arr.length and |arr[i] - arr[j]| <= a, |arr[j] - arr[k]| <= b, and |arr[i] - arr[k]| <= c.
+- The result must be greater than or equal to 0.

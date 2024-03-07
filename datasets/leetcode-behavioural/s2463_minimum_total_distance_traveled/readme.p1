@@ -1,0 +1,11 @@
+- The integer list parameter `robot` contains the positions of robots on the X-axis.
+- The 2D integer array parameter `factory` contains pairs of factory positions and repair limits.
+- The integer result is the minimum total distance traveled by all robots.
+- Robots move in one direction, either negative or positive on the X-axis.
+- Robots move at the same speed.
+- Robots do not collide if they move in the same direction.
+- Robots do not collide if they move in opposite directions and meet.
+- Robots stop moving when they reach a factory that has not reached its repair limit.
+- The initial direction of movement for some robots can be set at any moment.
+- The total distance traveled by a robot from position `x` to position `y` is `|y - x|`.
+- If a robot passes by a factory that reached its repair limit, it crosses it as if it does not exist.

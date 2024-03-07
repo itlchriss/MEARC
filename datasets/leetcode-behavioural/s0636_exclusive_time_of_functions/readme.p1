@@ -1,9 +1,9 @@
-Method behavioural requirements:
-- The integer parameter `n` must be between 1 and 100.
-- The integer list parameter `logs` must have a length between 1 and 500.
-- The integer function ID `function_id` in the logs must be between 0 and n-1.
-- The timestamp `timestamp` in the logs must be between 0 and 10^9.
-- No two start events can happen at the same timestamp.
-- No two end events can happen at the same timestamp.
-- Each function ID has an "end" log for each "start" log.
-- The integer array result must contain the exclusive time for each function ID.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the list parameter `logs` is greater than or equal to 1 and is less than or equal to 500.
+- The integer result is an array where the value at the i-th index represents the exclusive time for the function with ID i.
+- The exclusive time of a function is the sum of execution times for all function calls in the program.
+- The exclusive time includes the time spent in recursive calls.
+- The logs list contains strings formatted as "{function_id}:{"start" | "end"}:{timestamp}".
+- Each function has a corresponding "end" log for each "start" log.
+- No two start events will happen at the same timestamp.
+- No two end events will happen at the same timestamp.

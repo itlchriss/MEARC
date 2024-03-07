@@ -1,5 +1,8 @@
-- Every cell in the 9x9 char array parameter `board` must contain a digit from 1-9 or a '.' character.
-- After executing the method with the given method signature, the char array parameter `board` must satisfy the following rules:
-    - Each digit from 1-9 must occur exactly once in each row.
-    - Each digit from 1-9 must occur exactly once in each column.
-    - Each digit from 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+- The character array parameter `board` must have a length of 9.
+- Each row in the character array parameter `board` must have a length of 9.
+- Each element in the character array parameter `board` must be a digit from 1 to 9 or '.'.
+- The method `solveSudoku` must fill the empty cells of the Sudoku puzzle following the rules:
+    - Each digit from 1 to 9 must occur exactly once in each row.
+    - Each digit from 1 to 9 must occur exactly once in each column.
+    - Each digit from 1 to 9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+- The output of the method `solveSudoku` must be a solved Sudoku puzzle where all empty cells are filled with the correct digits.

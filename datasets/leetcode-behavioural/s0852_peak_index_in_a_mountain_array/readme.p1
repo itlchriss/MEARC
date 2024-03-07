@@ -1,3 +1,2 @@
-- The integer array parameter `arr` has a length greater than or equal to 3.
-- There exists an integer `i` such that `0 < i < arr.length - 1` and the elements of the integer array parameter `arr` satisfy the mountain property.
-- The integer result `i` is such that `arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`.
+- The integer array parameter `arr` is guaranteed to be a mountain array.
+- The integer result is an index `i` such that `arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`.

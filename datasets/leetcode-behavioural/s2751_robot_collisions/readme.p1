@@ -1,0 +1,12 @@
+Method behavioural specifications:
+- The integer array parameter `positions` must not be null.
+- The integer array parameter `healths` must not be null.
+- The string parameter `directions` must not be null.
+- The length of the integer array parameter `positions` must be equal to the length of the integer array parameter `healths` and the length of the string parameter `directions`.
+- The integer array parameter `positions` contains unique values.
+- The string parameter `directions` only contains 'L' or 'R'.
+- If two robots collide, the robot with lower health is removed from the line, and the health of the other robot decreases by one.
+- If both robots have the same health, they are both removed from the line.
+- The surviving robot continues in the same direction it was going.
+- The output is a list of integers representing the health of the robots that survive the collisions, in the same order that the robots were given in the input.
+- If there are no survivors, the output is an empty list.

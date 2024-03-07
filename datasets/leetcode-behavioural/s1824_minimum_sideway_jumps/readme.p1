@@ -1,5 +1,9 @@
 - The integer array parameter `obstacles` must not be null.
-- The integer array parameter `obstacles` must have a length of `n + 1`.
-- The integer array parameter `obstacles` must contain obstacles ranging from 0 to 3.
-- The integer array parameter `obstacles` must have no obstacles at points 0 and n.
-- The integer result is the minimum number of side jumps the frog needs to reach any lane at point n starting from lane 2 at point 0.
+- The integer array parameter `obstacles` has a length of `n + 1`.
+- The integer array parameter `obstacles` contains obstacles ranging from 0 to 3.
+- The frog starts at point 0 in the second lane.
+- The frog wants to jump to point `n`.
+- The frog can only travel from point `i` to point `i + 1` on the same lane if there is no obstacle at point `i + 1`.
+- The frog can perform a side jump to jump to another lane at the same point if there is no obstacle on the new lane.
+- The frog needs to reach any lane at point `n` starting from lane 2 at point 0.
+- The output is the minimum number of side jumps the frog needs to reach any lane at point `n` starting from lane 2 at point 0.

@@ -1,3 +1,4 @@
-- The integer 2D array parameter `points` must not be null.
-- The integer parameter `k` must be greater than or equal to 0.
-- The integer result is the maximum value of the equation `y_i + y_j + |x_i - x_j|` where `|x_i - x_j| <= k` and `1 <= i < j <= points.length`.
+- The integer array parameter `points` must not be null.
+- The integer parameter `k` is greater than or equal to 0 and is less than or equal to 200000000.
+- The integer result is the maximum value of the equation `yi + yj + |xi - xj|` where `|xi - xj| <= k` and `1 <= i < j <= points.length`.
+- It is guaranteed that there exists at least one pair of points that satisfy the constraint `|xi - xj| <= k`.

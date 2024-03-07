@@ -1,4 +1,7 @@
-- For each group of consecutive repeating characters in the character array parameter `chars`:
-    - If the group's length is 1, the character remains unchanged in the character array parameter `chars`.
-    - If the group's length is greater than 1, the character is followed by the group's length in the character array parameter `chars`.
-- The new length of the character array `chars` is returned after compressing the consecutive repeating characters.
+- For each group of consecutive repeating characters in the input character array `chars`:
+    - If the group's length is 1, the character remains uncompressed.
+    - If the group's length is greater than 1, the character is followed by the group's length.
+- The compressed string should be stored in the input character array `chars`.
+- Group lengths that are 10 or longer will be split into multiple characters in `chars`.
+- The method should return the new length of the input array after compression.
+- The algorithm should use only constant extra space.

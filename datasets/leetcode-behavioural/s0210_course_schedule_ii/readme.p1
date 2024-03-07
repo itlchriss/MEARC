@@ -1,3 +1,9 @@
-- If it is possible to finish all courses, the integer array result contains the ordering of courses to take to finish all courses.
-- If there are multiple valid answers, any of them can be returned.
-- If it is impossible to finish all courses, an empty integer array is returned.
+- The integer parameter `numCourses` is greater than or equal to 1 and is less than or equal to 2000.
+- The length of the integer array parameter `prerequisites` is less than or equal to `numCourses * (numCourses - 1)`.
+- Each element in the integer array parameter `prerequisites` is an array of length 2.
+- The integer elements in each array in the integer array parameter `prerequisites` are greater than or equal to 0 and are less than `numCourses`.
+- The first element in each array in the integer array parameter `prerequisites` is not equal to the second element.
+- All pairs in the integer array parameter `prerequisites` are distinct.
+- The length of the integer array result is equal to `numCourses`.
+- All values in the integer array result are unique.
+- The integer array result represents the ordering of courses to take to finish all courses.

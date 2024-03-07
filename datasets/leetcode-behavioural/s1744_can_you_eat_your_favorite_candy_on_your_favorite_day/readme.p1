@@ -1,11 +1,8 @@
-Method behavioural requirements:
 - The integer array parameter `candiesCount` must not be null.
 - The 2D integer array parameter `queries` must not be null.
-- The integer array parameter `candiesCount` must have a length between 1 and 10^5.
-- Each element in the integer array parameter `candiesCount` must be between 1 and 10^5.
-- The 2D integer array parameter `queries` must have a length between 1 and 10^5.
-- Each sub-array in the 2D integer array parameter `queries` must have a length of 3.
-- The integer parameter `favoriteType` in each sub-array of the 2D integer array parameter `queries` must be between 0 and the length of the integer array parameter `candiesCount`.
-- The integer parameter `favoriteDay` in each sub-array of the 2D integer array parameter `queries` must be between 0 and 10^9.
-- The integer parameter `dailyCap` in each sub-array of the 2D integer array parameter `queries` must be between 1 and 10^9.
-- The boolean array result `answer` must have a length equal to the length of the 2D integer array parameter `queries`.
+- The length of the integer array parameter `candiesCount` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `candiesCount` are greater than or equal to 1 and are less than or equal to 100000.
+- The length of the 2D integer array parameter `queries` is greater than or equal to 1 and is less than or equal to 100000.
+- Each sub-array in the 2D integer array parameter `queries` has a length of 3.
+- The integer result is a boolean array with a length equal to the length of the 2D integer array parameter `queries`.
+- The boolean result at index `i` is true if a candy of type `favoriteType_i` can be eaten on day `favoriteDay_i` without eating more than `dailyCap_i` candies on any day, and false otherwise.

@@ -1,3 +1,4 @@
-- For each pair of integers in the integer array parameter `arr`, the sum of the pair must be divisible by the integer parameter `k`.
-- If there exists a way to divide the integer array parameter `arr` into exactly `n / 2` pairs such that the sum of each pair is divisible by the integer parameter `k`, the boolean result is true.
-- If there is no way to divide the integer array parameter `arr` into exactly `n / 2` pairs such that the sum of each pair is divisible by the integer parameter `k`, the boolean result is false.
+- The integer array parameter `arr` has an even length `n`.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 100000.
+- The boolean result is true if it is possible to divide the array `arr` into exactly `n / 2` pairs such that the sum of each pair is divisible by `k`.
+- The boolean result is false if it is not possible to divide the array `arr` into `n / 2` pairs each with a sum divisible by `k`.

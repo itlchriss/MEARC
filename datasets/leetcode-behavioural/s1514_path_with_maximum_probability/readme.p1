@@ -1,7 +1,10 @@
-- The integer parameter `n` must be greater than or equal to 2.
-- The integer array parameter `edges` must not be null and must have a length greater than or equal to 0.
-- The double array parameter `succProb` must not be null and must have the same length as the integer array parameter `edges`.
-- The integer parameter `start` must be greater than or equal to 0 and less than `n`.
-- The integer parameter `end` must be greater than or equal to 0 and less than `n`, and must not be equal to `start`.
-- The double result is the maximum probability of success to go from the integer parameter `start` to the integer parameter `end`.
-- If there is no path from the integer parameter `start` to the integer parameter `end`, the double result is 0.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 10000.
+- The integer parameters `start` and `end` are greater than or equal to 0 and are less than `n`.
+- The integer parameters `start` and `end` are not equal.
+- The integer parameters `a` and `b` in the edge list are greater than or equal to 0 and are less than `n`.
+- The integer parameters `a` and `b` in the edge list are not equal.
+- The double array `succProb` length is equal to the edge list length and is greater than or equal to 0 and is less than or equal to 1.
+- There is at most one edge between every two nodes.
+- The double result is the maximum probability of success to go from the `start` node to the `end` node.
+- If there is no path from `start` to `end`, the double result is 0.
+- The difference between the result and the correct answer should be at most 1e-5.

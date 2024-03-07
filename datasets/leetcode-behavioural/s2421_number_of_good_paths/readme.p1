@@ -1,0 +1,14 @@
+- The integer array parameter `vals` must not be null.
+- The length of the integer array parameter `vals` is equal to the integer `n`.
+- The integer array parameter `edges` must not be null.
+- The length of the integer array parameter `edges` is equal to `n - 1`.
+- The integer array parameter `edges` contains pairs of integers representing edges between nodes.
+- The integer result is the number of distinct good paths in the tree.
+- A good path is a simple path where the starting and ending nodes have the same value, and all nodes between them have values less than or equal to the starting node.
+- Paths and their reverse are counted as the same path.
+- Single nodes are considered valid paths.
+- The constraints for the input values are as follows:
+    - `n` is greater than or equal to 1 and is less than or equal to 30000.
+    - The values in the `vals` array are greater than or equal to 0 and are less than or equal to 100000.
+    - The values in the `edges` array are valid pairs of indices within the range of `n`.
+    - The tree represented by `edges` is valid.

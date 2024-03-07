@@ -1,5 +1,4 @@
-- The string parameter `s` must not be null.
-- The integer result is the corresponding column number of the string parameter `s` based on the Excel sheet column title mapping.
-- The integer result is within the range of [1, 2147483647].
-- The string parameter `s` consists only of uppercase English letters.
-- The length of the string parameter `s` is between 1 and 7 characters.
+- The string parameter `columnTitle` consists only of uppercase English letters.
+- The length of the string parameter `columnTitle` is greater than or equal to 1 and is less than or equal to 7.
+- The integer result is the corresponding column number of the string parameter `columnTitle`.
+- The integer result is greater than or equal to 1 and is less than or equal to 2147483647.

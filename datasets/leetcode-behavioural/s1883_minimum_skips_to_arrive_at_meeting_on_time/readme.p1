@@ -1,4 +1,6 @@
 - The integer array parameter `dist` must not be null.
-- The integer parameter `speed` must be greater than 0.
-- The integer parameter `hoursBefore` must be greater than 0.
+- The integer array parameter `dist` length is equal to the integer parameter `n`.
+- All values in the integer array parameter `dist` are greater than or equal to 1 and are less than or equal to 100000.
+- The integer parameter `speed` is greater than or equal to 1 and is less than or equal to 1000000.
+- The integer parameter `hoursBefore` is greater than or equal to 1 and is less than or equal to 10000000.
 - The integer result is the minimum number of skips required to arrive at the meeting on time, or -1 if it is impossible.

@@ -1,5 +1,6 @@
-- The integer 2D array parameter `rectangles` must not be null.
-- The boolean result is true if all the rectangles in the integer 2D array parameter `rectangles` together form an exact cover of a rectangular region.
-- The boolean result is false if there is a gap between the rectangular regions in the integer 2D array parameter `rectangles`.
-- The boolean result is false if there is a gap in the top center of the rectangular regions in the integer 2D array parameter `rectangles`.
-- The boolean result is false if two rectangles in the integer 2D array parameter `rectangles` overlap with each other.
+- The boolean result is true if all the rectangles in the `rectangles` array together form an exact cover of a rectangular region.
+- The boolean result is false if there is a gap between the rectangular regions, if there is a gap in the top center, or if two rectangles overlap with each other.
+- The length of the `rectangles` array is greater than or equal to 1 and is less than or equal to 20000.
+- Each element in the `rectangles` array is an array of length 4.
+- The values in each rectangle array represent the bottom-left point coordinates `(x, y)` and the top-right point coordinates `(a, b)` of the rectangle.
+- The values of `x`, `y`, `a`, and `b` in each rectangle array are greater than or equal to -100000 and are less than or equal to 100000.

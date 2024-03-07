@@ -1,4 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must be sorted in ascending order.
-- If the integer array parameter `nums` contains the integer parameter `target`, the integer result is the index of the integer parameter `target`.
-- If the integer array parameter `nums` does not contain the integer parameter `target`, the integer result is -1.
+- The integer array parameter `nums` is sorted in ascending order.
+- The integer parameter `target` is within the range of -10000 to 10000.
+- The integer result is the index of the integer parameter `target` in the integer array parameter `nums` if `target` exists.
+- The integer result is -1 if the integer parameter `target` does not exist in the integer array parameter `nums`.
+- The algorithm must have O(log n) runtime complexity.

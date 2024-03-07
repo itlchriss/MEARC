@@ -1,3 +1,5 @@
-- If the string parameter `word1` is non-empty, append the first character in `word1` to the string result `merge` and delete it from `word1`.
-- If the string parameter `word2` is non-empty, append the first character in `word2` to the string result `merge` and delete it from `word2`.
-- The string result `merge` is the lexicographically largest merge that can be constructed from the strings `word1` and `word2`.
+- The string parameter `word1` and the string parameter `word2` must consist only of lowercase English letters.
+- The string result `merge` is constructed by appending characters from `word1` and `word2` in a way that creates the lexicographically largest merge.
+- The string result `merge` is constructed by choosing characters from `word1` and `word2` in a way that follows the specified rules.
+- The string result `merge` is constructed by appending characters from `word1` and `word2` until both `word1` and `word2` are empty.
+- The string result `merge` is lexicographically larger than any other possible merge that can be constructed from `word1` and `word2`.

@@ -1,4 +1,6 @@
 - The integer array parameter `nums` and the integer array parameter `index` must not be null.
-- The integer array parameter `index` must not contain any negative values.
-- The integer array parameter `index` must not contain any values greater than the length of the integer array parameter `index`.
-- The integer array result is the target array created by inserting the elements of the integer array parameter `nums` at the corresponding indices specified in the integer array parameter `index`.
+- The length of the integer array parameter `nums` must be equal to the length of the integer array parameter `index`.
+- The integer array result is the target array created by inserting elements from `nums` at the corresponding index specified in `index`.
+- The elements from `nums` are inserted into the target array at the index specified in `index` from left to right.
+- The target array is returned after all elements from `nums` and `index` have been processed.
+- The target array must be valid and follow the insertion rules specified in the functional requirement.

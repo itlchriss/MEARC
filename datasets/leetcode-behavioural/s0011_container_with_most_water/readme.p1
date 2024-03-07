@@ -1,4 +1,5 @@
 - The integer array parameter `height` must not be null.
-- The integer result is the maximum area of water that the container can contain based on the integer array parameter `height`.
-- The maximum area of water is calculated by finding the area between two vertical lines represented by the array elements, where the area is the minimum of the two heights multiplied by the distance between the two lines.
-- The maximum area of water must be calculated by considering all possible pairs of vertical lines in the array and finding the pair that gives the maximum area.
+- The integer array parameter `height` must have a length greater than or equal to 2 and less than or equal to 100000.
+- All values in the integer array parameter `height` must be greater than or equal to 0 and less than or equal to 10000.
+- The integer result is the maximum area of water that can be contained by the two lines in the container formed by the vertical lines represented by the integer array parameter `height`.
+- The integer result is greater than or equal to 0.

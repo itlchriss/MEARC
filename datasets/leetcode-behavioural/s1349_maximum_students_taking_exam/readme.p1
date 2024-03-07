@@ -1,5 +1,6 @@
-- The character matrix parameter `seats` must not be null.
 - The integer result is the maximum number of students that can take the exam together without any cheating being possible.
-- Students must be placed in seats in good condition.
-- Students can see the answers of those sitting next to the left, right, upper left, and upper right, but cannot see the answers of the student sitting directly in front or behind.
-- The maximum number of students must be placed in available seats without cheating.
+- Students can only be placed in seats denoted by a '.' character.
+- Students can see the answers of those sitting next to the left, right, upper left, and upper right, but cannot see the answers of the student sitting directly in front or behind them.
+- The input matrix `seats` contains only characters '.' and '#'.
+- The number of rows `m` in the matrix `seats` is greater than or equal to 1 and is less than or equal to 8.
+- The number of columns `n` in each row of the matrix `seats` is greater than or equal to 1 and is less than or equal to 8.

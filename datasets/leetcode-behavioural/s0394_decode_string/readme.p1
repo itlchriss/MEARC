@@ -1,2 +1,8 @@
-- If the string parameter `s` is in the format `k[encoded_string]`, where `k` is a positive integer and `encoded_string` is a valid encoded string, the string result is the decoded string that repeats `encoded_string` exactly `k` times.
-- If the string parameter `s` does not follow the specified encoding rule, the behaviour of the method is undefined.
+- The string parameter `s` is decoded according to the encoding rule `k[encoded_string]`.
+- The integer `k` in the encoding rule is a positive integer.
+- The decoded string result is returned.
+- The input string `s` is always valid with no extra white spaces and well-formed square brackets.
+- The original data does not contain any digits except for the repeat numbers `k`.
+- The decoded string result does not contain any digits.
+- The length of the input string `s` is between 1 and 30 characters.
+- All integers in the input string `s` are in the range of 1 to 300.

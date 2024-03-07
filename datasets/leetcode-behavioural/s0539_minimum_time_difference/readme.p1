@@ -1,2 +1,3 @@
-- The integer collection parameter `timePoints` must not be null.
-- The integer result is the minimum difference in minutes between any two time-points in the integer collection parameter `timePoints`.
+- The integer collection parameter `timePoints` must contain at least 2 elements and at most 20000 elements.
+- Each element in the integer collection parameter `timePoints` is in the format "HH:MM".
+- The integer result is the minimum number of minutes difference between any two time-points in the integer collection parameter `timePoints`.

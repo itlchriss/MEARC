@@ -1,4 +1,7 @@
-- The integer parameter `n` must be greater than or equal to 2.
-- The integer collection parameter `connections` must have a length greater than or equal to `n - 1`.
-- The integer collection parameter `connections` must not contain repeated connections.
-- The integer collection result must contain a list of critical connections in the network.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
+- The length of the list parameter `connections` is greater than or equal to `n - 1` and is less than or equal to 100000.
+- The integer values `a_i` and `b_i` in each connection list are greater than or equal to 0 and are less than `n`.
+- The values of `a_i` and `b_i` in each connection list are not equal.
+- There are no repeated connections in the list parameter `connections`.
+- The result is a list of lists containing critical connections in the network.
+- The critical connections are represented as pairs of servers `[a_i, b_i]` that, if removed, will make some servers unable to reach other servers.

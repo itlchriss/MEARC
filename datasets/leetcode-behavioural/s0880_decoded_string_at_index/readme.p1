@@ -1,3 +1,6 @@
-- The string parameter `s` must not be null.
-- The integer parameter `k` must be greater than or equal to 1 and less than or equal to the length of the decoded string.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the decoded string.
 - The string result is the k<sup>th</sup> letter in the decoded string.
+- The decoded string is formed by reading the encoded string character by character and following the decoding steps mentioned.
+- If a digit `d` is encountered in the encoded string, the entire current tape is repeated `d - 1` more times in total.
+- If a letter is encountered in the encoded string, that letter is written onto the tape.
+- The decoded string is guaranteed to have less than 2<sup>63</sup> letters.

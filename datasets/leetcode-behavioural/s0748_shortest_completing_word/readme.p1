@@ -1,5 +1,8 @@
 - The string parameter `licensePlate` must not be null.
-- The string array parameter `words` must not be null.
-- The string result is a word from the string array parameter `words` that is the shortest completing word for the string parameter `licensePlate`.
-- The completing word must contain all the letters in the `licensePlate` string, ignoring numbers and spaces, and treating letters as case insensitive.
-- If there are multiple shortest completing words, the method must return the first one that occurs in the `words` array.
+- The length of the string parameter `licensePlate` is greater than or equal to 1 and is less than or equal to 7.
+- The string parameter `licensePlate` contains only digits, letters (uppercase or lowercase), or space ' '.
+- The length of the string array parameter `words` is greater than or equal to 1 and is less than or equal to 1000.
+- The length of each string in the string array parameter `words` is greater than or equal to 1 and is less than or equal to 15.
+- The string result is the shortest completing word in the string array `words` that contains all the letters in the `licensePlate`.
+- The result is guaranteed to exist.
+- If there are multiple shortest completing words, the first one that occurs in `words` is returned.

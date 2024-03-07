@@ -1,7 +1,6 @@
-Method behavioural requirements:
+Method behavioural specifications:
 - The integer matrix parameter `image` must not be null.
 - The integer matrix parameter `image` must be a square matrix (n x n).
-- The resulting image is obtained by first reversing each row of the input image matrix, then inverting the values (0 to 1 and 1 to 0) in the resulting matrix.
-- The resulting image matrix must have the same dimensions as the input image matrix.
-- Each row of the resulting image matrix is the reverse of the corresponding row in the input image matrix.
-- Each element in the resulting image matrix is the inversion of the corresponding element in the reversed input image matrix.
+- Each row of the integer matrix parameter `image` is reversed horizontally.
+- Each element in the reversed integer matrix parameter `image` is inverted (0 becomes 1, and 1 becomes 0).
+- The resulting integer matrix is returned as the output.

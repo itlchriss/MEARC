@@ -1,5 +1,7 @@
 - The string parameter `s` must not be null.
-- The integer array result `perm` must contain integers in the range `[0, n]` where `n` is the length of the string parameter `s`.
-- The integer array result `perm` must satisfy the conditions specified by the string parameter `s`:
-  - If `s[i] == 'I'`, then `perm[i] < perm[i + 1]`.
-  - If `s[i] == 'D'`, then `perm[i] > perm[i + 1]`.
+- The length of the integer array result is equal to the length of the string parameter `s`.
+- The integer array result contains a permutation of integers from 0 to the length of the string parameter `s`.
+- For each character in the string parameter `s`:
+    - If the character is 'I', the corresponding elements in the integer array result are in increasing order.
+    - If the character is 'D', the corresponding elements in the integer array result are in decreasing order.
+- The integer array result can be any valid permutation that satisfies the given string parameter `s`.

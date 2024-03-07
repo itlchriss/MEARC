@@ -1,2 +1,4 @@
-- The integer array parameter `nums` must not be null.
-- The integer result is the size of the largest connected component in the graph.
+- The integer array parameter `nums` contains unique positive integers.
+- The integer result is the size of the largest connected component in the graph formed by the integers in the array `nums`.
+- The graph is formed by connecting two integers `nums[i]` and `nums[j]` with an undirected edge if they share a common factor greater than 1.
+- The size of the largest connected component is the number of nodes in the largest connected subgraph in the graph.

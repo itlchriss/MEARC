@@ -1,2 +1,5 @@
-Method behavioural requirements:
-- If the integer array parameter `students` and the integer array parameter `sandwiches` are both not null and have the same length, the integer result is the number of students that are unable to eat after simulating the lunch break scenario described in the business requirement.
+- If the integer array parameter `students` and the integer array parameter `sandwiches` are both not null and have the same length,
+- The integer result is the number of students that are unable to eat.
+- If a student prefers the sandwich on the top of the stack, they will take it and leave the queue.
+- If a student does not prefer the sandwich on the top of the stack, they will leave it and go to the end of the queue.
+- The process continues until none of the queue students want to take the top sandwich and are thus unable to eat.

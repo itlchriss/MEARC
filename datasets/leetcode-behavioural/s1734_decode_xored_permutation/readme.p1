@@ -1,4 +1,6 @@
-- The integer array parameter `encoded` must not be null.
-- The length of the integer array result is equal to the length of the integer array parameter `encoded` plus 1.
-- The integer array result is a permutation of the first `n` positive integers, where `n` is always odd.
-- Each element in the integer array result is calculated by XORing the corresponding elements in the integer array parameter `encoded` and the integer array result.
+- The integer array parameter `encoded` must have a length of `n - 1`, where `n` is always odd.
+- The integer array result `perm` must have a length of `n`, where `n` is always odd.
+- Each element in the integer array result `perm` is a permutation of the first `n` positive integers.
+- Each element in the integer array result `perm` is unique.
+- Each element in the integer array result `perm` is calculated based on the XOR operation between consecutive elements in the integer array parameter `encoded`.
+- The integer array result `perm` is guaranteed to exist and be unique.

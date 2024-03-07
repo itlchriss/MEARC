@@ -1,0 +1,7 @@
+- If the query exactly matches a word in the wordlist (case-sensitive), the correct word is the same word back.
+- If the query matches a word up to capitalization, the correct word is the first such match in the wordlist.
+- If the query matches a word up to vowel errors, the correct word is the first such match in the wordlist.
+- If the query has no matches in the wordlist, the correct word is an empty string.
+- The correct word should maintain the same case as the match in the wordlist.
+- The correct word should handle both capitalization and vowel errors.
+- The correct word should be returned for each query in the list of queries.

@@ -1,0 +1,10 @@
+- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100000.
+- All values in the integer array parameter `nums` must be greater than or equal to 1 and less than or equal to 100000.
+- The values in the final modified array returned by the method must be less than or equal to 10^8.
+- The method must find any two adjacent numbers in `nums` that are non-coprime.
+- If no such numbers are found, the method must stop the process.
+- If two adjacent non-coprime numbers are found, the method must delete them and replace them with their LCM (Least Common Multiple).
+- The method must repeat the process as long as it keeps finding two adjacent non-coprime numbers.
+- The final modified array returned by the method must be the same regardless of the order in which adjacent non-coprime numbers are replaced.
+- The method must return a list of integers representing the final modified array.

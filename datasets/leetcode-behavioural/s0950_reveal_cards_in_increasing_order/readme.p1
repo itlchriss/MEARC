@@ -1,2 +1,6 @@
 - The integer array parameter `deck` must not be null.
-- The integer array result is an ordering of the integer array parameter `deck` that would reveal the cards in increasing order.
+- The integer array result is an ordering of the deck that would reveal the cards in increasing order.
+- The first entry in the result is considered to be the top of the deck.
+- After revealing each card, if there are still cards in the deck, the next top card is put at the bottom of the deck.
+- The order of the deck before reordering does not matter.
+- The values in the result array are unique.

@@ -1,5 +1,6 @@
-Method behavioural requirements:
-- The string parameter `num` must have a length between 2 and 1000.
-- The integer parameter `k` must be between 1 and 1000.
-- The string parameter `num` must only consist of digits.
+- The integer parameter `k` is greater than or equal to 2 and is less than or equal to 1000.
+- The length of the string parameter `num` is greater than or equal to 2 and is less than or equal to 1000.
+- The string parameter `num` only consists of digits.
 - The integer result is the minimum number of adjacent digit swaps needed to reach the kth smallest wonderful integer.
+- The kth smallest wonderful integer exists for the given input.
+- The method should not return any negative values for the number of swaps.

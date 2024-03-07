@@ -1,4 +1,7 @@
 - The string array parameter `words` must not be null.
-- The string result is the longest word in the string array `words` that can be built one character at a time by other words in the string array `words`.
+- The string array parameter `words` must have a length greater than or equal to 1 and less than or equal to 1000.
+- Each string in the string array parameter `words` must have a length greater than or equal to 1 and less than or equal to 30.
+- Each string in the string array parameter `words` consists of lowercase English letters.
+- The string result is the longest word in the `words` array that can be built one character at a time by other words in the `words` array.
 - If there are multiple possible answers, the result is the longest word with the smallest lexicographical order.
 - If there is no answer, the result is an empty string.

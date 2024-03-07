@@ -1,4 +1,6 @@
-- The string parameter `board` represents the current state of the puzzle board.
-- The integer parameter `depth` represents the number of moves taken to reach the current state of the puzzle board.
-- The integer parameter `y` represents the row index of the empty square (0) in the puzzle board.
-- The integer parameter `x` represents the column index of the empty square (0) in the puzzle board.
+- The integer parameter `depth` represents the depth of the current state in the search tree.
+- The integer parameter `y` represents the y-coordinate of the empty square.
+- The integer parameter `x` represents the x-coordinate of the empty square.
+- The string parameter `board` represents the current state of the board.
+- The integer result is the least number of moves required to solve the board state represented by the string parameter `board`.
+- If it is impossible to solve the board state represented by the string parameter `board`, the integer result is -1.

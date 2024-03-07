@@ -1,4 +1,7 @@
 - The integer array parameter `dist` must not be null.
-- The double parameter `hour` must have at most two digits after the decimal point.
-- If it is impossible to reach the office on time, the integer result is -1.
-- The integer result is the minimum positive integer speed (in kilometers per hour) that all the trains must travel at for the person to reach the office on time.
+- The integer array parameter `dist` must have a length greater than or equal to 1 and less than or equal to 100000.
+- All values in the integer array parameter `dist` must be greater than or equal to 1 and less than or equal to 100000.
+- The floating-point number parameter `hour` must be greater than or equal to 1 and less than or equal to 1000000000.
+- The floating-point number parameter `hour` will have at most two digits after the decimal point.
+- The integer result is the minimum positive integer speed (in kilometers per hour) that all the trains must travel at for the individual to reach the office on time.
+- If it is impossible to be on time, the integer result is -1.

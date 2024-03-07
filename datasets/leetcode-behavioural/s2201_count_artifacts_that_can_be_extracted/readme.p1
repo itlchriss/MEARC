@@ -1,0 +1,12 @@
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 1000.
+- The length of the integer 2D array parameter `artifacts` and `dig` is greater than or equal to 1 and is less than or equal to the minimum of n^2 and 100000.
+- Each sub-array in the integer 2D array parameter `artifacts` has a length of 4.
+- Each sub-array in the integer 2D array parameter `dig` has a length of 2.
+- The values in the sub-arrays of `artifacts` and `dig` are within the range of 0 to n-1.
+- The first two values in each sub-array of `artifacts` represent the top-left cell coordinates, and the last two values represent the bottom-right cell coordinates.
+- The first value in each sub-array of `dig` represents the row coordinate, and the second value represents the column coordinate.
+- No two artifacts overlap in the grid.
+- Each artifact covers at most 4 cells.
+- The cells excavated by the `dig` array are unique.
+- The method returns the number of artifacts that can be extracted based on the excavated cells.

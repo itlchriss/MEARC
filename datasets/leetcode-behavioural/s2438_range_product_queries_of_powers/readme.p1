@@ -1,0 +1,6 @@
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10^9.
+- The integer array parameter `powers` is composed of the minimum number of powers of 2 that sum to `n`, sorted in non-decreasing order, and there is only one way to form the array.
+- The 2D integer array parameter `queries` represents queries where each query is in the form of [left_i, right_i].
+- The integer array result `answers` is equal in length to the `queries` array.
+- Each element in the `answers` array is the product of all `powers[j]` with left_i <= j <= right_i.
+- Each element in the `answers` array should be returned modulo 10^9 + 7.

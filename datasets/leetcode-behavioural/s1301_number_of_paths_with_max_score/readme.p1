@@ -1,5 +1,7 @@
-- The list of strings parameter `board` must not be null.
-- The maximum sum of numeric characters collected must be returned as the first integer in the list.
-- The number of paths that result in the maximum sum must be returned as the second integer in the list.
-- The result must be modulo `10^9 + 7`.
-- If there is no path to reach the top left square marked with 'E', the output list must be [0, 0].
+- The integer array parameter `board` must be a square board with dimensions `n x n`, where `2 <= n <= 100`.
+- The characters on the board can be numeric characters `1, 2, ..., 9`, obstacles `'X'`, start `'S'`, and end `'E'`.
+- The starting point is always at the bottom right square marked with `'S'`, and the goal is to reach the top left square marked with `'E'`.
+- In one move, the player can go up, left, or up-left diagonally only if there is no obstacle `'X'` in that direction.
+- The result is a list of two integers: the first integer is the maximum sum of numeric characters collected, and the second integer is the number of paths that lead to that maximum sum.
+- If there is no path to reach the top left square marked with `'E'`, the result should be `[0, 0]`.
+- The second integer in the result should be modulo `10^9 + 7`.

@@ -1,5 +1,4 @@
-Method behavioural requirements:
-- For each query in the integer array parameter `queries`, the integer result in the returned array is the number of points inside the circle described by the query.
+Method behavioural specifications:
+- For each query in the `queries` array, the integer result is the number of points inside the circle described by the query.
 - Points on the border of the circle are considered inside.
-- The returned array has the same length as the integer array parameter `queries`.
-- The order of the results in the returned array corresponds to the order of the queries in the integer array parameter `queries`.
+- The integer array result `answer` has a length equal to the number of queries in the `queries` array.

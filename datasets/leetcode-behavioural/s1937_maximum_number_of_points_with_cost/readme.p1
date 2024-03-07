@@ -1,0 +1,6 @@
+- The integer matrix parameter `points` must not be null.
+- The integer matrix parameter `points` must have a length `m` and each row must have a length `n`.
+- The integer result is the maximum number of points achievable by picking one cell from each row of the matrix.
+- The integer result is calculated by adding the points of the picked cells and subtracting the absolute difference between the column indices of adjacent picked cells.
+- The absolute difference between column indices is calculated as abs(c1 - c2) where c1 and c2 are the column indices of the picked cells in adjacent rows.
+- The integer result is greater than or equal to 0.

@@ -1,4 +1,6 @@
 - The integer array parameter `arr` must not be null.
-- The integer parameter `start` must be within the bounds of the integer array parameter `arr`.
-- The boolean result is true if there exists a path starting from the index `start` in the integer array parameter `arr` that leads to an index with value 0.
-- The boolean result is false if there is no path starting from the index `start` in the integer array parameter `arr` that leads to an index with value 0.
+- The integer array parameter `arr` length is greater than or equal to 1 and is less than or equal to 50000.
+- All values in the integer array parameter `arr` are non-negative integers.
+- The integer parameter `start` is greater than or equal to 0 and is less than the length of the integer array parameter `arr`.
+- The boolean result is true if there exists a way to reach any index with value 0 starting from the index `start` in the integer array parameter `arr`.
+- The boolean result is false if there is no way to reach any index with value 0 starting from the index `start` in the integer array parameter `arr`.

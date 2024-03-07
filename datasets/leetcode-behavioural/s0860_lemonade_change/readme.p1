@@ -1,3 +1,4 @@
-Method behavioural requirements:
-- If the integer array parameter `bills` is such that for each customer, the correct change can be provided with the available bills, the boolean result is true.
-- If the integer array parameter `bills` is such that for at least one customer, the correct change cannot be provided with the available bills, the boolean result is false.
+- If the integer array parameter `bills` contains only elements 5, 10, or 20, the boolean result is true.
+- If the integer array parameter `bills` contains elements other than 5, 10, or 20, the boolean result is false.
+- If the integer array parameter `bills` is in the order where each customer pays with either a $5, $10, or $20 bill, and you can provide correct change to each customer, the boolean result is true.
+- If the integer array parameter `bills` is not in the order where each customer pays with either a $5, $10, or $20 bill, or you cannot provide correct change to each customer, the boolean result is false.

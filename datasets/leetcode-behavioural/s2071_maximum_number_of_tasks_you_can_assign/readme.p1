@@ -1,0 +1,15 @@
+- The integer array parameter `tasks` and `workers` must not be null.
+- The length of the integer array parameter `tasks` and `workers` is greater than or equal to 1 and is less than or equal to 50000.
+- All values in the integer array parameter `tasks` and `workers` are greater than or equal to 0 and are less than or equal to 1000000000.
+- The integer parameters `pills` and `strength` are greater than or equal to 0 and are less than or equal to 1000000000.
+- The integer result is the maximum number of tasks that can be completed.
+- Each worker can only be assigned to a single task.
+- Each worker must have a strength greater than or equal to the task's strength requirement.
+- Each worker can receive at most one magical pill.
+- The magical pill increases a worker's strength by the specified amount.
+- The magical pill can be given to any worker.
+- The magical pill can only be given once to each worker.
+- The magical pill can only be given to workers with strength less than the task's strength requirement.
+- The magical pill cannot be given to a worker if it does not make the worker strong enough for any task.
+- The magical pill can be given to multiple workers.
+- The magical pill can be given to different workers for different tasks.

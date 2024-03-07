@@ -1,5 +1,5 @@
 - The integer array parameter `instructions` must not be null.
-- The integer array parameter `instructions` must have a length between 1 and 10^5.
-- Each element in the integer array parameter `instructions` must be between 1 and 10^5.
+- The integer array parameter `instructions` must have a length greater than or equal to 1 and less than or equal to 100000.
+- All values in the integer array parameter `instructions` must be greater than or equal to 1 and less than or equal to 100000.
 - The integer result is the total cost to insert all elements from the integer array parameter `instructions` into the sorted array `nums`.
-- The total cost must be returned modulo 10^9 + 7.
+- The integer result is modulo 10^9 + 7.

@@ -1,5 +1,4 @@
-Method behavioural requirements:
 - The integer array parameter `nums` must not be null.
-- The integer parameter `k` must be greater than 0.
-- If there exists a continuous subarray of size at least two in the integer array parameter `nums` whose elements sum up to a multiple of the integer parameter `k`, the boolean result is true.
-- If there is no continuous subarray of size at least two in the integer array parameter `nums` whose elements sum up to a multiple of the integer parameter `k`, the boolean result is false.
+- The integer parameter `k` must be greater than 0 and less than 2^31 - 1.
+- The boolean result is true if there exists a continuous subarray of size at least two in the integer array `nums` whose elements sum up to a multiple of `k`.
+- The boolean result is false if there is no such continuous subarray in the integer array `nums`.

@@ -1,0 +1,5 @@
+- The integer array parameter `grid` must not be null.
+- The integer array parameter `grid` must have a size of `m x n`, where `m` and `n` are greater than or equal to 1 and less than or equal to 100000.
+- Each cell in the integer array parameter `grid` contains a positive integer greater than or equal to 1 and less than or equal to 1000.
+- The integer result is the maximum number of trailing zeros in the product of a valid cornered path found in the `grid`.
+- A valid cornered path is defined as a set of adjacent cells with at most one turn, moving either horizontally or vertically up to the turn, without returning to a previously visited cell. After the turn, the path will then move exclusively in the alternate direction: vertically if it moved horizontally, and vice versa, also without returning to a previously visited cell.

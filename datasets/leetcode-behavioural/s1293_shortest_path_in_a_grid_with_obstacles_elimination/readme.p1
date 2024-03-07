@@ -1,5 +1,6 @@
 - The integer matrix parameter `grid` must not be null.
-- The integer parameter `k` must be greater than or equal to 0.
-- If it is possible to walk from the upper left corner to the lower right corner without eliminating any obstacles, the integer result is the minimum number of steps to achieve this.
-- If it is possible to walk from the upper left corner to the lower right corner by eliminating at most `k` obstacles, the integer result is the minimum number of steps to achieve this.
-- If it is not possible to find a walk from the upper left corner to the lower right corner by eliminating at most `k` obstacles, the integer result is -1.
+- The integer matrix parameter `grid` must have dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
+- Each cell in the integer matrix parameter `grid` must be either `0` (empty) or `1` (obstacle).
+- The integer parameter `k` must be greater than or equal to 0 and less than or equal to the total number of obstacles in the grid.
+- The integer result is the minimum number of steps to walk from the upper left corner `(0, 0)` to the lower right corner `(m - 1, n - 1)` given that you can eliminate at most `k` obstacles.
+- If it is not possible to find such a walk, the integer result is -1.

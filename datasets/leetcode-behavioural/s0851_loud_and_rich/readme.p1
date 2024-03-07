@@ -1,7 +1,8 @@
 - The integer array parameter `richer` must not be null.
 - The integer array parameter `quiet` must not be null.
-- The integer array parameter `quiet` must have unique values.
-- The integer array result `answer` must have the same length as the integer array parameter `quiet`.
-- For each element `x` in the integer array parameter `richer`, if `richer[x] = [a, b]`, then the integer value of `a` must be richer than the integer value of `b`.
-- For each element `x` in the integer array parameter `richer`, the integer value of `quiet[x]` must be the quietness level of person `x`.
-- For each element `x` in the integer array result `answer`, if `answer[x] = y`, then person `y` must be the least quiet person among all people who definitely have equal to or more money than person `x`.
+- The length of the integer array parameter `quiet` is equal to the length of the integer array parameter `richer`.
+- The integer array result `answer` must not be null.
+- The length of the integer array result `answer` is equal to the length of the integer array parameter `quiet`.
+- Each element in the integer array result `answer` is an index referring to the least quiet person among all people who definitely have equal to or more money than the corresponding person in the integer array parameter `richer`.
+- The integer array result `answer` contains unique values.
+- The integer array result `answer` is filled based on the logic that the person with more money is considered richer and the person with lower quietness is considered quieter.

@@ -1,6 +1,8 @@
-- The integer parameter `n` must be greater than or equal to 2.
-- The 2D integer array parameter `edges` must not be null and must have a length greater than or equal to 1.
-- Each sub-array in the 2D integer array parameter `edges` must have a length of 2.
-- The integer array parameter `queries` must not be null and must have a length between 1 and 20.
-- The integer result array length must be equal to the length of the integer array parameter `queries`.
-- The integer result array must contain the answer for each query where the number of pairs of nodes `(a, b)` that satisfy the conditions `a < b` and `incident(a, b) > queries[j]`.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 20000.
+- The length of the 2D integer array parameter `edges` is greater than or equal to 1 and is less than or equal to 100000.
+- The values in each sub-array of the 2D integer array parameter `edges` are greater than or equal to 1 and are less than or equal to `n`.
+- The values in each sub-array of the 2D integer array parameter `edges` are not equal to each other.
+- The length of the integer array parameter `queries` is greater than or equal to 1 and is less than or equal to 20.
+- The values in the integer array parameter `queries` are greater than or equal to 0 and are less than the length of the 2D integer array parameter `edges`.
+- The length of the integer array result `answers` is equal to the length of the integer array parameter `queries`.
+- All values in the integer array result `answers` are greater than or equal to 0.

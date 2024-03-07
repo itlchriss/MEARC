@@ -1,3 +1,6 @@
-Method behavioural requirements:
-- The integer parameter `pf` must be greater than or equal to 1.
+- The integer parameter `pf` is greater than or equal to 1 and is less than or equal to 10^9.
 - The integer result is the number of nice divisors of `n` modulo 10^9 + 7.
+- The number of prime factors of `n` is at most `pf`.
+- The number of nice divisors of `n` is maximized.
+- A divisor of `n` is nice if it is divisible by every prime factor of `n`.
+- The output format is a list with '-' as bullets.

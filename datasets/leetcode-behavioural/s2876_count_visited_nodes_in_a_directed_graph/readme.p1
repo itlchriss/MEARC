@@ -1,0 +1,6 @@
+- The integer list parameter `edges` must not be null.
+- The integer list parameter `edges` must be 0-indexed.
+- The integer list parameter `edges` must contain `n` directed edges.
+- The integer list parameter `edges` must indicate the existence of an edge from node `i` to node `edges[i]`.
+- The integer result is an array where each element `answer[i]` represents the number of different nodes that will be visited if the process starts from node `i`.
+- The number of different nodes visited is determined by starting from a node `x` and visiting other nodes through edges until reaching a node that has already been visited in the same process.

@@ -1,3 +1,3 @@
-Method behavioural requirements:
-- The string parameters `s1` and `s2` must consist of lowercase letters.
-- The integer result is the minimum number of operations needed to achieve the goal of satisfying one of the three conditions specified in the business requirement.
+- If the input strings `a` and `b` consist of only one distinct letter, the integer result is 0.
+- If every letter in string `a` is strictly less than every letter in string `b` in the alphabet, the integer result is the minimum number of operations needed to achieve this condition.
+- If every letter in string `b` is strictly less than every letter in string `a` in the alphabet, the integer result is the minimum number of operations needed to achieve this condition.

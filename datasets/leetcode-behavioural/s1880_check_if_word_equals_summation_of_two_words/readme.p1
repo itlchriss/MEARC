@@ -1,4 +1,7 @@
-- The string parameter `firstWord` must consist of lowercase English letters from 'a' to 'j' inclusive.
-- The string parameter `secondWord` must consist of lowercase English letters from 'a' to 'j' inclusive.
-- The string parameter `targetWord` must consist of lowercase English letters from 'a' to 'j' inclusive.
-- The integer result is true if the summation of the numerical values of `firstWord` and `secondWord` equals the numerical value of `targetWord`, otherwise false.
+- The numerical value of the string `firstWord` is the concatenation of the letter values of each letter in `firstWord`, which is then converted into an integer.
+- The numerical value of the string `secondWord` is the concatenation of the letter values of each letter in `secondWord`, which is then converted into an integer.
+- The numerical value of the string `targetWord` is the concatenation of the letter values of each letter in `targetWord`, which is then converted into an integer.
+- The boolean result is true if the summation of the numerical values of `firstWord` and `secondWord` equals the numerical value of `targetWord`.
+- The boolean result is false if the summation of the numerical values of `firstWord` and `secondWord` does not equal the numerical value of `targetWord`.
+- The length of `firstWord`, `secondWord`, and `targetWord` is greater than or equal to 1 and is less than or equal to 8.
+- All characters in `firstWord`, `secondWord`, and `targetWord` are lowercase English letters from 'a' to 'j' inclusive.

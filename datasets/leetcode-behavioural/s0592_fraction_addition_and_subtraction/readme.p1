@@ -1,8 +1,6 @@
-- The string parameter `expression` must only contain valid characters: '0' to '9', '/', '+', and '-'.
-- The fractions in the input expression must have the format ±numerator/denominator.
-- If the first input fraction or the output is positive, the '+' sign must be omitted.
-- Each fraction in the input and output must be an irreducible fraction.
-- The numerator and denominator of each fraction in the input expression will always be in the range [1, 10].
-- If the denominator of a fraction is 1, it means the fraction is actually an integer in a fraction format.
-- The number of given fractions in the input expression will be in the range [1, 10].
-- The numerator and denominator of the final result must be valid and within the range of a 32-bit integer.
+- The string parameter `expression` only contains valid fractions in the format `±numerator/denominator`, where the numerator and denominator are in the range `[1, 10]`.
+- The output string result is in the format `±numerator/denominator`, representing an irreducible fraction.
+- If the final result is an integer, it should be converted to the format of a fraction with a denominator of `1`.
+- The output string result does not contain the `'+'` sign if the fraction is positive.
+- The output string result only contains `'0'` to `'9'`, `'/'`, `'+'`, and `'-'`.
+- The numerator and denominator of the final result are guaranteed to be valid and within the range of a 32-bit integer.

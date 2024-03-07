@@ -1,3 +1,6 @@
-- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` is not null.
 - The integer array parameter `nums` is a permutation of the numbers in the range `[0, n - 1]`.
-- The integer result is the longest length of a set `s[k]` where `s[k] = {nums[k], nums[nums[k]], nums[nums[nums[k]]], ... }` and stops before a duplicate element occurs in `s[k]`.
+- The integer result is the longest length of a set `s[k]`.
+- The set `s[k]` is built according to the rule specified.
+- The set `s[k]` stops adding elements right before a duplicate element occurs.
+- The elements in the set `s[k]` are unique.

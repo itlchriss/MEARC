@@ -1,2 +1,12 @@
-- If there exists at least one shortest transformation sequence from the `beginWord` to the `endWord` using the dictionary `wordList`, the result is a list of lists where each inner list represents a sequence of words from `beginWord` to `endWord`.
-- If there is no valid transformation sequence from the `beginWord` to the `endWord` using the dictionary `wordList`, the result is an empty list.
+- The list of lists result contains all the shortest transformation sequences from the `beginWord` to the `endWord`, or an empty list if no such sequence exists.
+- Each transformation sequence in the list of lists result is represented as a list of words `[beginWord, s1, s2, ..., sk]`.
+- Every adjacent pair of words in each transformation sequence differs by a single letter.
+- Every word `si` for `1 <= i <= k` in each transformation sequence is present in the `wordList`. Note that `beginWord` does not need to be in `wordList`.
+- The last word `sk` in each transformation sequence is equal to the `endWord`.
+- The `beginWord` and `endWord` are not the same.
+- All words in the `wordList` are unique.
+- The length of `beginWord` is between 1 and 5 characters.
+- The length of `endWord` is the same as `beginWord`.
+- The length of each word in the `wordList` is the same as `beginWord`.
+- The number of words in the `wordList` is between 1 and 1000.
+- All words in `beginWord`, `endWord`, and `wordList` consist of lowercase English letters.

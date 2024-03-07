@@ -1,5 +1,8 @@
-Method behavioural requirements:
+Method behavioural specifications:
 - The integer 2D array parameter `grid` must not be null.
-- The integer result is the size `k` of the largest magic square that can be found within the integer 2D array parameter `grid`.
-- The largest magic square has a side length of `k`.
-- Every row sum, column sum, and diagonal sum of the largest magic square is equal.
+- The integer result is the size `k` of the largest magic square that can be found within the integer 2D array `grid`.
+- The size `k` represents the side length of the largest magic square.
+- The integers in the magic square do not have to be distinct.
+- Every row sum, column sum, and diagonal sum of the magic square must be equal.
+- The integers in the magic square must satisfy the condition that every row sum, every column sum, and both diagonal sums are all equal.
+- The size `k` of the largest magic square must be returned as the integer result.

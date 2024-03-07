@@ -1,0 +1,8 @@
+- The integer array parameter `nums` must not be null.
+- The length of the integer array parameter `nums` is greater than or equal to 2 and is less than or equal to 2000.
+- All values in the integer array parameter `nums` are non-negative integers and are less than or equal to 1000.
+- The length of the integer array result is equal to the length of the integer array parameter `nums`.
+- After performing all operations, the resulting array must have all `0`'s shifted to the end of the array.
+- Each operation is applied sequentially on the array elements.
+- If `nums[i] == nums[i + 1]`, then the `i-th` element is multiplied by `2` and the `i+1-th` element is set to `0`.
+- If `nums[i] != nums[i + 1]`, the operation is skipped.

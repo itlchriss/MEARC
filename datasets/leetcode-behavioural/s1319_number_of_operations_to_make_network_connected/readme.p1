@@ -1,2 +1,5 @@
-- If it is possible to make all the computers connected, the integer result is the minimum number of times the cables need to be extracted and placed between disconnected computers to achieve this.
-- If it is not possible to make all the computers connected, the integer result is -1.
+- The integer parameter `totalNumberOfComputers` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `connections` is greater than or equal to 1 and is less than or equal to the minimum of `totalNumberOfComputers * (totalNumberOfComputers - 1) / 2` and 100000.
+- The integer array parameter `connections` contains arrays of length 2 representing connections between computers.
+- The integer result is the minimum number of times cables need to be extracted and placed to make all computers connected.
+- If it is not possible to make all computers connected, the integer result is -1.

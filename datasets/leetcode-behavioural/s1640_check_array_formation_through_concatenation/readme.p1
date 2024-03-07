@@ -1,2 +1,8 @@
-- If the integer array parameter `arr` can be formed by concatenating the arrays in the integer array of arrays parameter `pieces` in any order without reordering the integers in each array, the boolean result is true.
-- If the integer array parameter `arr` cannot be formed by concatenating the arrays in the integer array of arrays parameter `pieces` without reordering the integers in each array, the boolean result is false.
+- The boolean result is true if it is possible to form the integer array `arr` from the integer arrays in `pieces` without reordering the integers within each array.
+- The boolean result is false if it is not possible to form the integer array `arr` from the integer arrays in `pieces` without reordering the integers within each array.
+- The length of the integer array `arr` is greater than or equal to the length of the integer array `pieces`.
+- The sum of the lengths of all integer arrays in `pieces` is equal to the length of the integer array `arr`.
+- Each integer array in `pieces` contains distinct integers.
+- The integers in the integer array `arr` are distinct.
+- The integers in the integer arrays in `pieces` are distinct.
+- The integer array `arr` and the integer arrays in `pieces` are not modified during the process of checking if `arr` can be formed from `pieces`.

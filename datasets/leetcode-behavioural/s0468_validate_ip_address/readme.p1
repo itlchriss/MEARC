@@ -1,3 +1,5 @@
-- If the string parameter `ip` is a valid IPv4 address, the string result is "IPv4".
-- If the string parameter `ip` is a valid IPv6 address, the string result is "IPv6".
-- If the string parameter `ip` is not a valid IPv4 or IPv6 address, the string result is "Neither".
+- If the string parameter `queryIP` is a valid IPv4 address, the string result is "IPv4".
+- If the string parameter `queryIP` is a valid IPv6 address, the string result is "IPv6".
+- If the string parameter `queryIP` is not a valid IPv4 or IPv6 address, the string result is "Neither".
+- The string parameter `queryIP` consists only of English letters, digits, '.', and ':'.
+- The string result is either "IPv4", "IPv6", or "Neither" based on the validity of the IP address format.

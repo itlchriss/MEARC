@@ -1,4 +1,6 @@
-- The string parameter `s` must have an even length and consist of digits from 0 to 9.
-- The integer parameter `a` must be between 1 and 9 (inclusive).
-- The integer parameter `b` must be between 1 and the length of string parameter `s` - 1 (inclusive).
+- The string parameter `s` must have an even length.
+- The string parameter `s` consists of digits from 0 to 9 only.
+- The integer parameter `a` is greater than or equal to 1 and is less than or equal to 9.
+- The integer parameter `b` is greater than or equal to 1 and is less than the length of string parameter `s`.
 - The string result is the lexicographically smallest string that can be obtained by applying the operations of adding `a` to all odd indices and rotating `s` to the right by `b` positions on the string parameter `s`.
+- The lexicographically smallest string is determined based on the comparison of characters in the string.

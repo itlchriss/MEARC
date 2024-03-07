@@ -1,10 +1,10 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 1 and less than or equal to 20000.
-- The integer array parameter `edges` must have a length greater than or equal to `n - 1` and less than or equal to 40000.
-- Each element in the integer array parameter `edges` must be an array of length 3.
-- The first and second elements of each array in the integer array parameter `edges` must be between 1 and `n`.
-- The first and second elements of each array in the integer array parameter `edges` must not be equal.
-- The third element of each array in the integer array parameter `edges` must be between 1 and 100000.
-- There must be at most one edge between any two nodes.
-- There must be at least one path between any two nodes.
-- The integer result is the number of restricted paths from node 1 to node `n`, modulo 10^9 + 7.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 20000.
+- The length of the edges array parameter is greater than or equal to `n - 1` and is less than or equal to 40000.
+- Each element in the edges array is an array of length 3.
+- The first and second elements of each edge array are greater than or equal to 1 and are less than or equal to `n`.
+- The first and second elements of each edge array are not equal.
+- The third element of each edge array is greater than or equal to 1 and is less than or equal to 100000.
+- There is at most one edge between any two nodes.
+- There is at least one path between any two nodes.
+- The method signature includes a `compareTo` method with a parameter of type `Pair`.
+- The output format should be a list with '-' as bullets.

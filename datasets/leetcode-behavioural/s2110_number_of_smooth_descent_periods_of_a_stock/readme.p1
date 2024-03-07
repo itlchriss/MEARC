@@ -1,0 +1,7 @@
+- The integer array parameter `prices` must not be null.
+- The integer array parameter `prices` must have a length greater than or equal to 1 and less than or equal to 100000.
+- All values in the integer array parameter `prices` must be greater than or equal to 1 and less than or equal to 100000.
+- The long result is the number of smooth descent periods in the integer array parameter `prices`.
+- A smooth descent period consists of one or more contiguous days where the price on each day is lower than the price on the preceding day by exactly 1.
+- The first day of the period is exempted from the rule of being lower by exactly 1.
+- Each smooth descent period must be counted individually, including periods with only one day.

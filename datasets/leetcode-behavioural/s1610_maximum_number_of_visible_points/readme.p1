@@ -1,6 +1,9 @@
-Method behavioural requirements:
-- The integer collection parameter `points` must not be null.
-- The integer parameter `angle` must be in the range [0, 360).
-- The integer collection parameter `location` must contain exactly 2 elements.
-- The integer collection parameter `points` must contain at least 1 element.
-- The integer result is the maximum number of points visible within the field of view defined by the integer parameter `angle` and the integer collection parameter `location`.
+- The integer parameter `angle` is greater than or equal to 0 and is less than 360.
+- The length of the integer collection parameter `points` is greater than or equal to 1 and is less than or equal to 100000.
+- Each element in the integer collection parameter `points` is a list of two integers representing integral coordinates on the X-Y plane.
+- The integer collection parameter `location` is a list of two integers representing integral coordinates on the X-Y plane.
+- The integer result is the maximum number of points that can be seen within the field of view determined by the angle and the location.
+- Points at the same coordinate do not obstruct the view of other points.
+- Points at the location specified by `location` are always visible.
+- The field of view is an inclusive range of angles [d - angle/2, d + angle/2] where d is the amount in degrees that the observer rotates counterclockwise.
+- The angle formed by the point, the observer's position, and the immediate east direction from the observer's position must be within the field of view for the point to be visible.

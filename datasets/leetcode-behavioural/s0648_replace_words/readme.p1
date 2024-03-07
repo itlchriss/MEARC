@@ -1,5 +1,10 @@
-- For each word in the input `sentence`, if the word has a **successor** that can be replaced by more than one **root** from the `dictionary`, the word should be replaced with the **root** that has the shortest length.
-- The output `sentence` should have all the **successors** replaced with their corresponding **roots** from the `dictionary`.
-- The output `sentence` should maintain the same word order as the input `sentence`.
-- The output `sentence` should only contain lower-case letters and spaces.
-- The output `sentence` should not have leading or trailing spaces.
+- The string parameter `sentence` is not null.
+- The list parameter `dictionary` is not null.
+- The length of each string in the list parameter `dictionary` is greater than or equal to 1 and is less than or equal to 100.
+- Each string in the list parameter `dictionary` consists of only lower-case letters.
+- The length of the string parameter `sentence` is greater than or equal to 1 and is less than or equal to 1000000.
+- The number of words in the string parameter `sentence` is in the range [1, 1000].
+- The length of each word in the string parameter `sentence` is in the range [1, 1000].
+- Every two consecutive words in the string parameter `sentence` are separated by exactly one space.
+- The string parameter `sentence` does not have leading or trailing spaces.
+- The string result is the `sentence` after replacing all the successors with the root forming it, using the root with the shortest length if there are multiple roots that can replace a successor.

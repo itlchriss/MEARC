@@ -1,3 +1,9 @@
-- If the integer parameter `version1` is less than the integer parameter `version2`, the integer result is -1.
-- If the integer parameter `version1` is greater than the integer parameter `version2`, the integer result is 1.
-- If the integer parameter `version1` is equal to the integer parameter `version2`, the integer result is 0.
+- If the integer result is -1, the version number `version1` is less than the version number `version2`.
+- If the integer result is 1, the version number `version1` is greater than the version number `version2`.
+- If the integer result is 0, the version number `version1` is equal to the version number `version2`.
+- The version numbers `version1` and `version2` consist of one or more revisions joined by a dot '.'.
+- Each revision consists of digits and may contain leading zeros.
+- Every revision contains at least one character.
+- Revisions are 0-indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on.
+- Revisions are compared using their integer value ignoring any leading zeros.
+- If a version number does not specify a revision at an index, then treat the revision as 0.

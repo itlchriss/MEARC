@@ -1,5 +1,6 @@
 - The integer array parameter `inventory` must not be null.
-- The integer array parameter `inventory` length must be between 1 and 10^5.
-- Each element in the integer array parameter `inventory` must be between 1 and 10^9.
-- The integer parameter `orders` must be between 1 and the sum of all elements in the integer array parameter `inventory`, or 10^9, whichever is smaller.
+- The length of the integer array parameter `inventory` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `inventory` are greater than or equal to 1 and are less than or equal to 1000000000.
+- The integer parameter `orders` is greater than or equal to 1 and is less than or equal to the sum of all elements in the integer array parameter `inventory` and is less than or equal to 1000000000.
 - The integer result is the maximum total value that can be attained after selling the specified number of colored balls.
+- The integer result is modulo 1000000007.

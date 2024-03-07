@@ -1,3 +1,5 @@
-- The integer 2D array parameter `coordinates` must not be null.
-- If the points represented by the integer 2D array parameter `coordinates` make a straight line in the XY plane, the boolean result is true.
-- If the points represented by the integer 2D array parameter `coordinates` do not make a straight line in the XY plane, the boolean result is false.
+- The integer array parameter `coordinates` must not be null.
+- The integer array parameter `coordinates` must have a length greater than or equal to 2 and less than or equal to 1000.
+- Each element in the integer array parameter `coordinates` must be an array of length 2.
+- The integer array parameter `coordinates` must not contain duplicate points.
+- The boolean result is true if the points in the integer array parameter `coordinates` form a straight line in the XY plane.

@@ -1,4 +1,6 @@
-- The string parameter `s` must not be null.
-- The character parameter `c` must be a lowercase English letter.
-- The integer array result `answer` must have the same length as the string parameter `s`.
-- For each index `i` in the string parameter `s`, the integer result at index `i` is the distance from index `i` to the closest occurrence of character `c` in the string parameter `s`.
+- The integer array result `answer` has the same length as the input string `s`.
+- Each element in the integer array result `answer` represents the distance from the corresponding index in the input string `s` to the closest occurrence of character `c`.
+- The distance between two indices `i` and `j` is calculated as the absolute difference `abs(i - j)`.
+- The character `c` occurs at least once in the input string `s`.
+- The input string `s` has a length between 1 and 10000.
+- All characters in the input string `s` and the character `c` are lowercase English letters.

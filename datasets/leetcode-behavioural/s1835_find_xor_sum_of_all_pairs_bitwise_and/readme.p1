@@ -1,4 +1,4 @@
-- The integer array parameter `arr1` must not be null.
-- The integer array parameter `arr2` must not be null.
-- The integer result is the XOR sum of the bitwise AND of all elements in the list created by performing `arr1[i] AND arr2[j]` for every combination of indices `i` and `j`.
-- The XOR sum is calculated by performing bitwise XOR on all elements in the list created by performing `arr1[i] AND arr2[j]` for every combination of indices `i` and `j`.
+- The integer array parameter `arr1` and `arr2` must not be null.
+- The length of the integer array parameter `arr1` and `arr2` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `arr1` and `arr2` are greater than or equal to 0 and are less than or equal to 1000000000.
+- The integer result is the XOR sum of the bitwise AND of all elements in the list created by performing `arr1[i] AND arr2[j]` for every pair `(i, j)` where `0 <= i < arr1.length` and `0 <= j < arr2.length`.

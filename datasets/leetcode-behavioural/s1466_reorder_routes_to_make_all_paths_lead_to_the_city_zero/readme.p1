@@ -1,6 +1,5 @@
-- The integer parameter `n` must be greater than or equal to 2 and less than or equal to 5 * 10^4.
-- The integer 2D array parameter `connections` must have a length equal to `n - 1`.
-- Each element in the integer 2D array parameter `connections` must have a length of 2.
-- The integer elements in the integer 2D array parameter `connections` must be within the range of 0 to `n - 1`.
-- The integer elements in each element of the integer 2D array parameter `connections` must be different from each other.
-- The integer result is the minimum number of edges changed to ensure that each city can visit city 0.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 50000.
+- The length of the integer array parameter `connections` is equal to `n - 1`.
+- Each element in the integer array parameter `connections` is an array of length 2 representing a road from city `a` to city `b`.
+- The integer result is the minimum number of edges that need to be changed to ensure that each city can visit city 0.
+- The result must be greater than or equal to 0.

@@ -1,3 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 1 and less than or equal to 15.
-- The integer result is the number of beautiful arrangements that can be constructed for the given integer parameter `n`.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 15.
+- The integer result is the number of beautiful arrangements that can be constructed for the given `n`.
+- For each integer `i` from 1 to `n`, the beautiful arrangement must satisfy either of the following conditions:
+    - The `perm[i]` is divisible by `i`.
+    - The `i` is divisible by `perm[i]`.

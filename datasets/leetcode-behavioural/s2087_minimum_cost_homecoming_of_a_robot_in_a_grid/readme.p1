@@ -1,0 +1,17 @@
+- The integer array parameter `startPos` must not be null.
+- The integer array parameter `homePos` must not be null.
+- The integer array parameter `rowCosts` must not be null.
+- The integer array parameter `colCosts` must not be null.
+- The integer array parameter `startPos` length is 2.
+- The integer array parameter `homePos` length is 2.
+- The integer array parameter `rowCosts` length is equal to the integer parameter `m`.
+- The integer array parameter `colCosts` length is equal to the integer parameter `n`.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `rowCosts` are greater than or equal to 0 and are less than or equal to 10000.
+- All values in the integer array parameter `colCosts` are greater than or equal to 0 and are less than or equal to 10000.
+- The integer parameter `startPos[0]` is greater than or equal to 0 and is less than `m`.
+- The integer parameter `startPos[1]` is greater than or equal to 0 and is less than `n`.
+- The integer parameter `homePos[0]` is greater than or equal to 0 and is less than `m`.
+- The integer parameter `homePos[1]` is greater than or equal to 0 and is less than `n`.
+- The integer result is the minimum total cost for the robot to return home.

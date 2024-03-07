@@ -1,3 +1,9 @@
-- The integer parameter `x` must be between 2 and 100.
-- The integer parameter `target` must be between 1 and 2 * 10^8.
-- The integer result is the least number of operators used to write an expression that equals the given `target`.
+- The integer parameter `x` is greater than or equal to 2 and is less than or equal to 100.
+- The integer parameter `target` is greater than or equal to 1 and is less than or equal to 200000000.
+- The integer result is the least number of operators used to form an expression that equals the given `target`.
+- The expression must adhere to the conventions specified:
+    - The division operator returns rational numbers.
+    - There are no parentheses placed anywhere.
+    - The usual order of operations is followed: multiplication and division happen before addition and subtraction.
+    - The unary negation operator (`-`) is not allowed.
+- The expression must be formed using the least number of operators possible to achieve the `target` value.

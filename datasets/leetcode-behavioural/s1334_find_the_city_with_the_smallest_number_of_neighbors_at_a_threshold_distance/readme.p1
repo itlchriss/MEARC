@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` represents the number of cities.
-- The integer 2D array parameter `edges` represents the bidirectional and weighted edges between cities.
-- The integer parameter `maxDist` represents the maximum distance threshold.
-- The integer result is the city with the smallest number of reachable cities within the distance threshold, with the greatest number taking precedence in case of ties.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100.
+- The length of the integer 2D array parameter `edges` is greater than or equal to 1 and is less than or equal to `n * (n - 1) / 2`.
+- Each element in the integer 2D array parameter `edges` has a length of 3.
+- The integer result is the city with the smallest number of cities that are reachable through some path and whose distance is at most `maxDist`.
+- If there are multiple cities with the smallest number of reachable cities, the city with the greatest number is returned.

@@ -1,6 +1,11 @@
-Method behavioural requirements:
-- The integer parameter `n` represents the number of nodes in the undirected graph.
-- The integer array parameter `edgeList` contains edges between nodes, where each element is in the form [u, v, dis] representing an edge between nodes u and v with distance dis.
-- The integer array parameter `queries` contains queries in the form [p, q, limit], where p and q are nodes and limit is the maximum distance allowed on the path between p and q.
-- The boolean array result `answer` has a length equal to the length of queries.
-- For each query in `queries`, the boolean value in `answer` is true if there exists a path between p and q where each edge on the path has a distance strictly less than the limit, and false otherwise.
+- The integer parameter `n` in the constructor `Dsu(int n)` is greater than or equal to 2 and is less than or equal to 100000.
+- The length of the integer array parameter `edgeList` in the method `CheckingExistenceOfEdgeLengthLimitedPaths` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `queries` in the method `CheckingExistenceOfEdgeLengthLimitedPaths` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `edgeList` contains arrays of length 3 where each array represents an edge between two nodes with a distance.
+- The integer array parameter `queries` contains arrays of length 3 where each array represents a query with two nodes and a limit distance.
+- The integer parameters `u_i`, `v_i`, `p_j`, `q_j` in the `edgeList` and `queries` arrays are greater than or equal to 0 and are less than `n`.
+- The integer parameters `u_i` and `v_i` in the `edgeList` arrays are not equal.
+- The integer parameters `p_j` and `q_j` in the `queries` arrays are not equal.
+- The integer parameters `dis_i` and `limit_j` in the `edgeList` and `queries` arrays are greater than or equal to 1 and are less than or equal to 1000000000.
+- The boolean array result `answer` in the method `CheckingExistenceOfEdgeLengthLimitedPaths` has a length equal to the length of the `queries` array.
+- The boolean value in the `answer` array is true if there is a path for the corresponding query, and false otherwise.

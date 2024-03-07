@@ -1,4 +1,8 @@
-- The integer parameter `maxChoosableInteger` must be between 1 and 20.
-- The integer parameter `desiredTotal` must be between 0 and 300.
-- If the first player can force a win, the boolean result is true.
-- If the first player cannot force a win, the boolean result is false.
+- The integer parameter `maxChoosableInteger` is greater than or equal to 1 and is less than or equal to 20.
+- The integer parameter `desiredTotal` is greater than or equal to 0 and is less than or equal to 300.
+- The boolean result is true if the first player can force a win, otherwise false.
+- The first player and the second player play optimally.
+- The first player cannot reuse integers that have been chosen previously.
+- The first player and the second player take turns choosing integers from 1 to `maxChoosableInteger`.
+- The running total starts from 0 and the player who first causes the running total to reach or exceed `desiredTotal` wins.
+- The method should return true if the first player can force a win under the given constraints.

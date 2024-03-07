@@ -1,0 +1,8 @@
+- The length of the string parameter `message` is greater than or equal to 1 and is less than or equal to 10000.
+- The string parameter `message` consists only of lowercase English letters and spaces.
+- The integer parameter `limit` is greater than or equal to 1 and is less than or equal to 10000.
+- The length of each string in the string array result is equal to the integer parameter `limit`, except for the last string whose length can be at most `limit`.
+- Each string in the string array result has the suffix `"<a/b>"`, where `"b"` is replaced with the total number of parts and `"a"` is replaced with the index of the part.
+- When the suffixes are removed and the strings are concatenated in order, they should be equal to the original `message`.
+- The resulting parts should be formed to contain as few parts as possible.
+- If it is impossible to split `message` as required, the method should return an empty array.

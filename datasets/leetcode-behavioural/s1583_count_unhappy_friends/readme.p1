@@ -1,13 +1,12 @@
-Method behavioural requirements:
-- The integer parameter `n` must be even.
-- The integer 2D array parameter `preferences` must have a length equal to the integer parameter `n`.
-- Each sub-array in the integer 2D array parameter `preferences` must have a length equal to `n - 1`.
-- The integer values in each sub-array of the integer 2D array parameter `preferences` must be in the range from 0 to `n - 1`.
-- Each sub-array in the integer 2D array parameter `preferences` must not contain the index of its own sub-array.
-- All integer values in each sub-array of the integer 2D array parameter `preferences` must be unique.
-- The integer 2D array parameter `pairs` must have a length equal to `n/2`.
-- Each sub-array in the integer 2D array parameter `pairs` must have a length equal to 2.
-- The integers in each sub-array of the integer 2D array parameter `pairs` must not be equal to each other.
-- The integers in each sub-array of the integer 2D array parameter `pairs` must be in the range from 0 to `n - 1`.
-- Each person in the integer 2D array parameter `preferences` must be contained in exactly one pair.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 500.
+- The length of the integer array parameter `preferences` is equal to `n`.
+- Each sub-array in the integer array parameter `preferences` has a length of `n - 1`.
+- All values in the sub-arrays of the integer array parameter `preferences` are between 0 and `n - 1`.
+- The sub-arrays in the integer array parameter `preferences` do not contain the index of the sub-array.
+- All values in the sub-arrays of the integer array parameter `preferences` are unique.
+- The length of the integer array parameter `pairs` is equal to `n/2`.
+- Each sub-array in the integer array parameter `pairs` has a length of 2.
+- The values in the sub-arrays of the integer array parameter `pairs` are between 0 and `n - 1`.
+- The values in the sub-arrays of the integer array parameter `pairs` are unique.
+- Each person is contained in exactly one pair.
 - The integer result is the number of unhappy friends.

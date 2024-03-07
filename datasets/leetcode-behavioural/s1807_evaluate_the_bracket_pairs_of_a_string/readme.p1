@@ -1,2 +1,8 @@
-- If the string parameter `s` contains a bracket pair with a key that matches a key in the 2D string list `knowledge`, replace the bracket pair with the corresponding value from the `knowledge` list.
-- If the string parameter `s` contains a bracket pair with a key that does not match any key in the `knowledge` list, replace the bracket pair with a question mark "?".
+- If the key in the bracket pair of the string `s` is found in the 2D string array `knowledge`, replace the key and the bracket pair with the corresponding value from the array.
+- If the key in the bracket pair of the string `s` is not found in the 2D string array `knowledge`, replace the key and the bracket pair with a question mark "?".
+- The resulting string after evaluating all bracket pairs should be returned.
+- The length of the string `s` is greater than or equal to 1 and is less than or equal to 100000.
+- The number of elements in the 2D string array `knowledge` is less than or equal to 100000.
+- Each key and value in the 2D string array `knowledge` is a non-empty string consisting of lowercase English letters.
+- The keys in the bracket pairs of the string `s` are non-empty strings.
+- There are no nested bracket pairs in the string `s`.

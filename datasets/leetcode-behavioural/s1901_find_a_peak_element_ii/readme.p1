@@ -1,4 +1,6 @@
-- The integer 2D array parameter `mat` must not be null.
-- The integer array result is a length 2 array containing the indices `[i,j]` of a peak element in the 2D grid `mat`.
-- The peak element at index `[i,j]` must be strictly greater than all of its adjacent neighbors to the left, right, top, and bottom.
-- The algorithm must run in `O(m log(n))` or `O(n log(m))` time.
+- The integer matrix parameter `mat` is a 2D grid where no two adjacent cells are equal.
+- The integer matrix parameter `mat` has an outer perimeter with the value -1 in each cell.
+- The integer matrix parameter `mat` has dimensions m x n where m and n are greater than or equal to 1 and less than or equal to 500.
+- The integer result is a length 2 array [i, j] representing a peak element mat[i][j].
+- The peak element mat[i][j] is strictly greater than all of its adjacent neighbors to the left, right, top, and bottom.
+- The algorithm must run in O(m log(n)) or O(n log(m)) time.

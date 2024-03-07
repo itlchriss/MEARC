@@ -1,0 +1,10 @@
+- The integer parameters `m`, `n`, `introvertsCount`, and `extrovertsCount` must be greater than or equal to 1 and less than or equal to 5.
+- The integer parameters `introvertsCount` and `extrovertsCount` must be greater than or equal to 0 and less than or equal to the minimum of `m * n` and 6.
+- The integer result is the maximum possible grid happiness calculated based on the given conditions.
+- The happiness of each person is calculated based on their type (introvert or extrovert) and the number of neighbors they have.
+- The grid happiness is the sum of each person's happiness.
+- The grid should be populated with the specified number of introverts and extroverts.
+- The happiness calculation for introverts involves starting happiness of 120 and losing 30 happiness for each neighbor.
+- The happiness calculation for extroverts involves starting happiness of 40 and gaining 20 happiness for each neighbor.
+- The neighbors of a person are the directly adjacent cells north, east, south, and west of the person's cell.
+- The maximum possible grid happiness should be returned as the integer result.

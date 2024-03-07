@@ -1,0 +1,8 @@
+- The integer array parameter `start` and `target` must have a length of 2.
+- The integer parameters `startX` and `targetX` in the arrays `start` and `target` must be greater than or equal to 1 and less than or equal to 100000.
+- The integer parameters `startY` and `targetY` in the arrays `start` and `target` must be greater than or equal to 1 and less than or equal to 100000.
+- The integer 2D array parameter `specialRoads` must have a length between 1 and 200.
+- Each sub-array in the `specialRoads` array must have a length of 5.
+- The integer parameters `x1i`, `y1i`, `x2i`, and `y2i` in each sub-array of `specialRoads` must satisfy the conditions `startX <= x1i, x2i <= targetX` and `startY <= y1i, y2i <= targetY`.
+- The integer parameter `costi` in each sub-array of `specialRoads` must be greater than or equal to 1 and less than or equal to 100000.
+- The integer result is the minimum cost required to go from the position `(startX, startY)` to `(targetX, targetY)` considering the special roads provided in the `specialRoads` array.

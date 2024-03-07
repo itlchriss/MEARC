@@ -1,6 +1,7 @@
-Method behavioural requirements:
+Method behavioural specifications:
 - The integer array parameter `boxes` must not be null.
-- The integer parameter `portsCount` must be greater than or equal to 1.
-- The integer parameter `maxBoxes` must be greater than or equal to 1.
-- The integer parameter `maxWeight` must be greater than or equal to 1.
+- The length of the integer array parameter `boxes` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer parameter `portsCount` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer parameter `maxBoxes` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer parameter `maxWeight` is greater than or equal to 1 and is less than or equal to 100000.
 - The integer result is the minimum number of trips the ship needs to make to deliver all boxes to their respective ports.

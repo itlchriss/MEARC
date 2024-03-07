@@ -1,3 +1,6 @@
-- If the integer 2D array parameter `grid` contains no fresh oranges, the integer result is 0.
-- If the integer 2D array parameter `grid` contains fresh oranges that become rotten due to adjacent rotten oranges, the integer result is the minimum number of minutes that must elapse until no cell has a fresh orange.
-- If it is impossible for all fresh oranges to become rotten, the integer result is -1.
+- The integer 2 in the 2D integer array parameter `grid` represents a rotten orange.
+- The integer 1 in the 2D integer array parameter `grid` represents a fresh orange.
+- The integer 0 in the 2D integer array parameter `grid` represents an empty cell.
+- Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
+- The integer result is the minimum number of minutes that must elapse until no cell has a fresh orange.
+- If it is impossible for no cell to have a fresh orange, the integer result is -1.

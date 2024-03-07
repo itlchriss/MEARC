@@ -1,7 +1,10 @@
-- The string array parameter `words` must not be null.
-- The character array parameter `letters` must not be null.
-- The integer array parameter `score` must not be null.
+- The integer array parameter `score` contains 26 elements representing the score of each letter from 'a' to 'z'.
+- The integer array parameter `letters` contains single letters that may be repeating.
+- The integer array parameter `words` contains a list of words.
 - The integer result is the maximum score of any valid set of words formed by using the given letters.
-- Each letter in the character array parameter `letters` can only be used once.
-- Each word in the string array parameter `words` cannot be used two or more times.
-- The score of letters 'a', 'b', 'c', ..., 'z' is given by `score[0]`, `score[1]`, ..., `score[25]` respectively.
+- Each letter in the `letters` array can only be used once.
+- Each word in the `words` array cannot be used two or more times.
+- It is not necessary to use all characters in the `letters` array.
+- The score of each letter is determined by the corresponding index in the `score` array.
+- The score of a word is calculated by summing the scores of each letter in the word.
+- The maximum score is achieved by forming a valid set of words that maximizes the total score based on the available letters and their scores.

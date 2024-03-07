@@ -1,3 +1,4 @@
-- If the non-negative integer parameter `x` is 0, the integer result is 0.
-- If the non-negative integer parameter `x` is 1, the integer result is 1.
-- If the non-negative integer parameter `x` is greater than 1, the integer result is the truncated square root of the integer parameter `x`.
+- The integer parameter `x` is greater than or equal to 0 and is less than or equal to 2^31 - 1.
+- The integer result is the square root of the integer parameter `x`, with the decimal digits truncated.
+- The integer result is the integer part of the square root of the integer parameter `x`.
+- The method does not use any built-in exponent function or operator to calculate the square root.

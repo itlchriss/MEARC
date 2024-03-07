@@ -1,4 +1,9 @@
-- The string array parameter `words` must not be null.
-- The integer parameter `k` must be greater than 0 and less than or equal to the number of unique words in the string array `words`.
-- The string collection result is sorted by frequency from highest to lowest.
-- If two words have the same frequency, they must be sorted by lexicographical order.
+- The integer parameter `k` is greater than or equal to 1.
+- The length of the string array parameter `words` is less than or equal to 500.
+- All strings in the string array parameter `words` consist of lowercase English letters.
+- The integer result is a list of strings containing the `k` most frequent words.
+- The result is sorted by frequency from highest to lowest.
+- Words with the same frequency are sorted by lexicographical order.
+- The result list does not contain duplicates.
+- The result list has a length less than or equal to the number of unique words in the input array.
+- The time complexity of the solution is O(n log(k)), and the space complexity is O(n).

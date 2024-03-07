@@ -1,7 +1,10 @@
-- The integer collection parameter `forest` must not be null.
-- The integer collection parameter `forest` represents a forest where each element in the list is a row of the forest matrix.
-- The integer collection parameter `forest` must have a size `m` representing the number of rows in the forest.
-- Each row in the integer collection parameter `forest` must have a size `n` representing the number of columns in the forest.
-- The integer elements in the forest matrix can have values `0`, `1`, or any number greater than `1`.
 - The integer result is the minimum steps needed to walk to cut off all the trees in the forest.
-- If it is not possible to cut off all the trees, the integer result is `-1`.
+- If it is impossible to cut off all the trees, the integer result is -1.
+- The forest is represented as an m x n matrix.
+- The value 0 in the matrix represents a cell that cannot be walked through.
+- The value 1 in the matrix represents an empty cell that can be walked through.
+- A number greater than 1 in the matrix represents a tree in a cell that can be walked through, and the number represents the tree's height.
+- The trees in the forest have unique heights.
+- The trees must be cut off in order from shortest to tallest.
+- The starting point to cut off trees is at (0, 0).
+- The steps can be taken in any of the four directions: north, east, south, and west.

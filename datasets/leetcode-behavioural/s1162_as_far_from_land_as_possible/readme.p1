@@ -1,2 +1,6 @@
-- If the integer 2D array parameter `grid` contains only values 0 and 1, the integer result is the maximum distance of a water cell to the nearest land cell using the Manhattan distance.
-- If there is no land or water in the integer 2D array parameter `grid`, the integer result is -1.
+- The integer 2D array parameter `grid` must not be null.
+- The integer result is the maximum distance of a water cell to the nearest land cell in the integer 2D array `grid`.
+- If no land or water exists in the grid, the integer result is -1.
+- The Manhattan distance is used to calculate the distance between two cells in the grid.
+- The distance between two cells `(x0, y0)` and `(x1, y1)` is `|x0 - x1| + |y0 - y1|`.
+- The integer result is the maximum distance achievable in the grid.

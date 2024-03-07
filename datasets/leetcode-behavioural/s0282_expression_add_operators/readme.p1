@@ -1,4 +1,4 @@
-- The string parameter `num` must not be null and must contain only digits.
+- The string parameter `num` must contain only digits.
 - The integer parameter `target` must be within the range of -2^31 to 2^31 - 1.
-- The string collection result contains all possible expressions formed by inserting the binary operators '+' '-' '*' between the digits of the string parameter `num` such that the resultant expression evaluates to the integer parameter `target`.
-- Operands in the expressions should not contain leading zeros.
+- The list of strings result contains all possibilities of inserting the binary operators '+' , '-' , and '*' between the digits of the string `num` to evaluate to the integer `target`.
+- Operands in the returned expressions should not contain leading zeros.

@@ -1,8 +1,6 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 2 and less than or equal to 15.
-- The integer array parameter `edges` must have a length equal to `n-1`.
-- The integer array parameter `edges` must contain arrays of length 2.
-- The integers `u_i` and `v_i` in each array of the integer array parameter `edges` must be between 1 and `n`.
-- All pairs of integers `(u_i, v_i)` in the integer array parameter `edges` must be distinct.
-- The integer array result must have a length of `n-1`.
-- The `d`th element of the integer array result must represent the number of subtrees in which the maximum distance between any two cities is equal to `d`.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 15.
+- The length of the integer array parameter `edges` is equal to `n-1`.
+- Each element in the integer array parameter `edges` is an array of size 2 representing a bidirectional edge between cities.
+- The integer array result has a size of `n-1`.
+- Each element in the integer array result represents the number of subtrees in which the maximum distance between any two cities in the subtree is equal to `d`, where `d` ranges from 1 to `n-1`.
+- The distance between two cities is defined as the number of edges in the path between them.

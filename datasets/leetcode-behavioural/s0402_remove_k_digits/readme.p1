@@ -1,3 +1,5 @@
-- If the string parameter `num` is not null and the integer parameter `k` is greater than or equal to 0, the string result is the smallest possible integer after removing `k` digits from `num`.
-- If the string parameter `num` consists of only digits and does not have any leading zeros except for the zero itself, the string result must not contain leading zeroes.
-- If the integer parameter `k` is greater than or equal to the length of the string parameter `num`, the string result is "0".
+- The string parameter `num` consists of only digits.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the string parameter `num`.
+- The string result is the smallest possible integer after removing `k` digits from `num`.
+- The output must not contain leading zeroes.
+- If all digits are removed, the result is "0".

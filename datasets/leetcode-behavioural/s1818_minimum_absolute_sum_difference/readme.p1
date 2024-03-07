@@ -1,4 +1,7 @@
-Method behavioural requirements:
-- The integer array parameter `nums1` and `nums2` must not be null.
-- The integer result is the minimum absolute sum difference after replacing at most one element in the integer array `nums1`.
+- The integer array parameter `nums1` and `nums2` must have the same length `n`.
+- The integer result is the minimum absolute sum difference after replacing at most one element in the array `nums1`.
 - The integer result must be modulo 10^9 + 7.
+- The absolute sum difference is defined as the sum of the absolute difference between corresponding elements in `nums1` and `nums2`.
+- At most one element in `nums1` can be replaced with any other element in `nums1` to minimize the absolute sum difference.
+- The absolute difference between two elements is calculated as `|x|` where `x` is the difference between the two elements.
+- The output format should be a list with '-' as bullets.

@@ -1,4 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must have a length greater than or equal to 4.
-- The integer array parameter `nums` must contain distinct elements.
-- The integer result is the maximum product difference between pairs of elements in the integer array parameter `nums`.
+- The integer array parameter `nums` must have a length greater than or equal to 4 and less than or equal to 10000.
+- All values in the integer array parameter `nums` must be greater than or equal to 1 and less than or equal to 10000.
+- The integer result is the maximum product difference between two pairs of distinct indices in the integer array `nums`.
+- The integer result is calculated as the product of two pairs of elements at distinct indices, where the product difference between the two pairs is maximized.
+- The integer result is the maximum possible value of `(nums[w] * nums[x]) - (nums[y] * nums[z])` for distinct indices `w`, `x`, `y`, and `z` in the integer array `nums`.

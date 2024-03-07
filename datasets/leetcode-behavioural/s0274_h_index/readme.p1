@@ -1,3 +1,5 @@
 - The integer array parameter `citations` must not be null.
-- The integer result is the researcher's `h-index` calculated based on the number of citations received for each paper in the integer array parameter `citations`.
-- The `h-index` is determined by finding the maximum value `h` such that `h` papers have at least `h` citations each, and the remaining papers have no more than `h` citations each.
+- The length of the integer array parameter `citations` is greater than or equal to 1 and is less than or equal to 5000.
+- All values in the integer array parameter `citations` are greater than or equal to 0 and are less than or equal to 1000.
+- The integer result is the researcher's `h-index`.
+- The `h-index` is the maximum value where `h` papers have at least `h` citations each, and the remaining `n - h` papers have no more than `h` citations each.

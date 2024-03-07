@@ -1,4 +1,7 @@
 - The integer array parameter `people` must not be null.
-- The integer array parameter `people` must contain attributes of people in a queue, where each element is an array of two integers representing the height and the number of people in front with greater or equal height.
-- The integer array result `queue` must be formatted as an array where each element is an array of two integers representing the height and the number of people in front for each person in the reconstructed queue.
-- The reconstructed queue must satisfy the conditions specified in the input array `people`, where each person's position is determined by the number of people in front with greater or equal height.
+- The integer array parameter `people` must have a length greater than or equal to 1 and less than or equal to 2000.
+- Each element in the integer array parameter `people` must be an array of length 2.
+- The first element of each sub-array in the integer array parameter `people` must be greater than or equal to 0 and less than or equal to 10^6.
+- The second element of each sub-array in the integer array parameter `people` must be greater than or equal to 0 and less than the length of the integer array parameter `people`.
+- The reconstructed queue returned as an integer array must have the same length as the input `people` array.
+- The reconstructed queue must be ordered based on the height and number of people in front as specified in the input `people` array.

@@ -1,3 +1,6 @@
-- For each required skill in the string array parameter `skills`, there must be at least one person in the list of list of strings parameter `people` who has that skill in the integer array result.
-- The integer array result represents a sufficient team of the smallest possible size.
-- The integer array result may be returned in any order.
+- The integer array parameter `skills` must not be null.
+- The integer collection parameter `people` must not be null.
+- The size of the integer array result is less than or equal to the size of the integer collection parameter `people`.
+- The integer array result contains the index of each person in the integer collection parameter `people` representing a sufficient team with all the required skills in the integer array parameter `skills`.
+- The integer array result represents a team of the smallest possible size.
+- The order of the integers in the integer array result does not matter.

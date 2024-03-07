@@ -1,3 +1,5 @@
-- The integer matrix parameter `matrix` must not be null.
-- The integer parameter `k` must be greater than 0 and less than or equal to the square of the length of the integer matrix parameter `matrix`.
-- The integer result is the k<sup>th</sup> smallest element in the sorted order of the integer matrix parameter `matrix`.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the square of the length of the `matrix`.
+- The integer result is the `k`th smallest element in the sorted order of the `matrix`.
+- The memory complexity of the solution is better than O(n^2).
+- The elements in the `matrix` are sorted in non-decreasing order.
+- The integer result is unique.

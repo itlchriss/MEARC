@@ -1,0 +1,7 @@
+- The integer array parameter `nums` must not be null.
+- The integer parameter `pivot` must be an element of the integer array parameter `nums`.
+- The integer array `nums` is rearranged such that every element less than `pivot` appears before every element greater than `pivot`, and every element equal to `pivot` appears in between the elements less than and greater than `pivot`.
+- The relative order of the elements less than `pivot` and the elements greater than `pivot` is maintained.
+- For elements less than `pivot`, if `i < j` and `nums[i] < pivot` and `nums[j] < pivot`, then the position of `i` is less than the position of `j`.
+- For elements greater than `pivot`, if `i < j` and `nums[i] > pivot` and `nums[j] > pivot`, then the position of `i` is less than the position of `j`.
+- The rearranged integer array `nums` is returned after the rearrangement.

@@ -1,6 +1,5 @@
-Method behavioural requirements:
-- The integer array parameter `data` must not be null.
-- The integer array parameter `data` must have a length between 1 and 2 * 10^4.
-- Each element in the integer array parameter `data` must be between 0 and 255.
-- The boolean result is true if the integer array parameter `data` represents a valid UTF-8 encoding according to the specified rules.
-- The boolean result is false if the integer array parameter `data` does not represent a valid UTF-8 encoding according to the specified rules.
+- The integer array parameter `data` represents the data for UTF-8 encoding.
+- The integer array parameter `data` length is greater than or equal to 1 and is less than or equal to 20000.
+- Each integer in the integer array parameter `data` is greater than or equal to 0 and is less than or equal to 255.
+- The boolean result is true if the integer array parameter `data` is a valid UTF-8 encoding.
+- The boolean result is false if the integer array parameter `data` is not a valid UTF-8 encoding.

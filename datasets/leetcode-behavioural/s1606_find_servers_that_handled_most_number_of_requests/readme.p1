@@ -1,8 +1,9 @@
-- The integer parameter `id` must be a positive integer representing the ID of the server.
-- The integer parameter `busyTime` must be a positive integer representing the time it takes for the server to complete a request.
-- The server must handle requests sequentially, one at a time.
-- If all servers are busy, the request must be dropped.
-- If the server with ID equal to `(i % k)` is available, the request must be assigned to that server.
-- If the server with ID equal to `(i % k)` is busy, the request must be assigned to the next available server, wrapping around the list of servers if necessary.
-- The method must return a list containing the IDs of the busiest server(s).
-- The busiest server(s) is determined by the server(s) that handled the most number of requests successfully.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `arrival` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `load` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `arrival` are strictly increasing.
+- All values in the integer array parameter `arrival` are positive integers.
+- All values in the integer array parameter `load` are positive integers.
+- The length of the integer list result is less than or equal to the integer parameter `k`.
+- All values in the integer list result are unique.
+- The integer list result contains the IDs (0-indexed) of the busiest server(s).

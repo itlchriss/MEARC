@@ -1,3 +1,8 @@
-- The string parameter `num1` must be a valid complex number.
-- The string parameter `num2` must be a valid complex number.
-- The string result is the complex number that represents the multiplication of the two complex numbers `num1` and `num2`.
+- The string parameters `num1` and `num2` represent valid complex numbers.
+- The integer part of the complex numbers represented by the string parameters `num1` and `num2` is in the range [-100, 100].
+- The imaginary part of the complex numbers represented by the string parameters `num1` and `num2` is in the range [-100, 100].
+- The imaginary unit i is defined as i^2 = -1.
+- The string result represents the multiplication of the complex numbers represented by the string parameters `num1` and `num2`.
+- The string result is in the form of "real+imaginaryi" where real and imaginary are integers.
+- The string result is simplified to the form of "0+imaginaryi" if the real part is 0.
+- The string result is simplified to the form of "real" if the imaginary part is 0.

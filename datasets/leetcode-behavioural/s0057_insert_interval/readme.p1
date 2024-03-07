@@ -1,6 +1,7 @@
-- The integer 2D array parameter `intervals` must not be null.
-- The integer array parameter `intervals` must be sorted in ascending order by the first element of each interval.
-- The integer array parameter `newInterval` must not be null.
-- The integer array parameter `newInterval` must represent a valid interval where the first element is less than or equal to the second element.
-- The integer 2D array result `intervals` after the insertion must be sorted in ascending order by the first element of each interval.
-- The integer 2D array result `intervals` after the insertion must not have any overlapping intervals.
+- The integer array parameter `intervals` is a non-overlapping array of intervals sorted in ascending order by the start of each interval.
+- The integer array parameter `newInterval` represents another interval to be inserted into the `intervals` array.
+- The integer array result is the `intervals` array after inserting the `newInterval` such that the `intervals` array remains sorted in ascending order by the start of each interval and does not have any overlapping intervals.
+- If the `newInterval` overlaps with existing intervals in the `intervals` array, the overlapping intervals should be merged.
+- The length of the integer array result may be greater than, equal to, or less than the length of the input `intervals` array.
+- The start and end values of the intervals in the `intervals` array and the `newInterval` are within the constraints specified in the context.
+- The result should follow the same format as the input, with each interval represented as a pair of start and end values.

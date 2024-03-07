@@ -1,0 +1,8 @@
+- The string parameter `number` must consist of digits, spaces, and/or dashes.
+- All spaces and dashes in the string parameter `number` must be removed.
+- The digits in the string parameter `number` must be grouped from left to right into blocks of length 3 until there are 4 or fewer digits remaining.
+- If there are 2 digits remaining, they must be in a single block of length 2.
+- If there are 3 digits remaining, they must be in a single block of length 3.
+- If there are 4 digits remaining, they must be split into two blocks of length 2 each.
+- The blocks must be joined by dashes.
+- The resulting phone number after formatting must not have any blocks of length 1 and must have at most two blocks of length 2.

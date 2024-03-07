@@ -1,4 +1,5 @@
-- The integer array parameter `timeSeries` must not be null.
-- The integer array parameter `timeSeries` must be sorted in non-decreasing order.
-- The integer result is the total number of seconds that Ashe is poisoned after executing the method with the given method signature.
-- The total number of seconds that Ashe is poisoned includes all the time intervals where Ashe is poisoned due to Teemo's attacks.
+- The integer array parameter `timeSeries` is sorted in non-decreasing order.
+- The integer parameter `duration` is greater than or equal to 0 and is less than or equal to 10^7.
+- The integer result is the total number of seconds that Ashe is poisoned.
+- If Teemo attacks Ashe at second `t`, Ashe is poisoned during the inclusive time interval `[t, t + duration - 1]`.
+- If Teemo attacks again before the poison effect ends, the timer for it is reset, and the poison effect will end `duration` seconds after the new attack.

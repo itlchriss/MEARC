@@ -1,4 +1,4 @@
-- The integer parameter `n` must be a positive integer.
-- The integer result is the smallest integer that has exactly the same digits as the integer parameter `n` and is greater in value than `n`.
-- If no such positive integer exists, the integer result is -1.
-- The returned integer should fit in a 32-bit integer, if there is a valid answer but it does not fit in a 32-bit integer, the integer result is -1.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
+- The integer result is the smallest integer which has exactly the same digits as the integer parameter `n` and is greater in value than `n`.
+- If no such positive integer exists, the result is -1.
+- The returned integer should fit in a 32-bit integer, if there is a valid answer but it does not fit in a 32-bit integer, the result is -1.

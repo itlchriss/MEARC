@@ -1,0 +1,13 @@
+- The boolean result is true if it is possible to make the matrix disconnect by flipping at most one cell.
+- The boolean result is false if it is not possible to make the matrix disconnect by flipping at most one cell.
+- The integer matrix parameter `g` is a 0-indexed binary matrix.
+- The matrix `g` represents a grid where you can move from a cell to any adjacent cell that has the value 1.
+- The matrix `g` is considered disconnected if there is no path from the cell (0, 0) to the cell (m - 1, n - 1).
+- Flipping a cell changes its value from 0 to 1 or from 1 to 0.
+- Flipping is allowed for at most one cell in the matrix `g`.
+- Flipping is not allowed for the cells (0, 0) and (m - 1, n - 1).
+- The integer parameters `m` and `n` represent the dimensions of the matrix `g`.
+- The dimensions of the matrix `g` are between 1 and 1000.
+- The total number of cells in the matrix `g` is between 1 and 100000.
+- Each cell in the matrix `g` contains either 0 or 1.
+- The cells (0, 0) and (m - 1, n - 1) in the matrix `g` have the value 1.

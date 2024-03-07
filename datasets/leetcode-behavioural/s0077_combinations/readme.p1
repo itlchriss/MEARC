@@ -1,4 +1,6 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer parameter `k` must be greater than or equal to 1.
-- The integer collection result must contain all possible combinations of `k` numbers out of the range `[1, n]`.
-- The order of the combinations in the integer collection result can be arbitrary.
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 20.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to `n`.
+- The size of the list of lists result is equal to the number of combinations of `k` numbers out of the range `[1, n]`.
+- Each combination in the list of lists result consists of `k` unique numbers within the range `[1, n]`.
+- The order of combinations in the list of lists result may vary.

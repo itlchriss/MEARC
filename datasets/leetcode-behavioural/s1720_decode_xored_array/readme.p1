@@ -1,7 +1,8 @@
 - The integer array parameter `encoded` must not be null.
-- The integer parameter `first` must not be null.
-- The integer array result `arr` must have a length of `n` where `n` is greater than or equal to 2.
-- Each element in the integer array result `arr` must be a non-negative integer.
-- Each element in the integer array result `arr` must be unique.
-- The integer array result `arr` must satisfy the equation `encoded[i] = arr[i] XOR arr[i + 1]` for each `i` from 0 to `n-2`.
-- The first element of the integer array result `arr` must be equal to the integer parameter `first`.
+- The integer array parameter `encoded` length is equal to the integer parameter `n` minus 1.
+- All values in the integer array parameter `encoded` are greater than or equal to 0 and are less than or equal to 100000.
+- The integer parameter `first` is greater than or equal to 0 and is less than or equal to 100000.
+- The length of the integer array result is equal to the integer parameter `n`.
+- The integer array result `arr` satisfies the condition `arr[i] XOR arr[i + 1] = encoded[i]` for all valid indices `i`.
+- The first element of the integer array result `arr` is equal to the integer parameter `first`.
+- The integer array result `arr` is unique and the answer exists.

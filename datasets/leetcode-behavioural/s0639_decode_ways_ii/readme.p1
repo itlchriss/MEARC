@@ -1,3 +1,4 @@
-- If the string parameter `s` is "*", the integer result is 9.
-- If the string parameter `s` is "1*", the integer result is 18.
-- If the string parameter `s` is "2*", the integer result is 15.
+- The string parameter `s` must not be null.
+- The string parameter `s` must contain only digits from '0' to '9' and the '*' character.
+- The integer result is the number of ways to decode the string parameter `s`.
+- The integer result must be modulo 10^9 + 7.

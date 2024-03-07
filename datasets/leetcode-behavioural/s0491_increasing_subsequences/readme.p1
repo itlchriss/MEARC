@@ -1,4 +1,5 @@
-Method behavioural requirements:
-- The integer array parameter `nums` must not be null.
-- The integer collection result contains all the different possible increasing subsequences of the integer array parameter `nums` with at least two elements.
-- Two equal integers in the integer array parameter `nums` should be considered a special case of an increasing sequence.
+- The integer array parameter `nums` must have a length greater than or equal to 2 and less than or equal to 15.
+- All values in the integer array parameter `nums` must be greater than or equal to -100 and less than or equal to 100.
+- The result is a list of lists containing all different possible increasing subsequences of the given array with at least two elements.
+- Two equal integers in the array should also be considered as a special case of an increasing sequence.
+- The order of the subsequences in the output list may vary.

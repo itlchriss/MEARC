@@ -1,2 +1,4 @@
-- The character 2D array parameter `board` must not be null.
 - The integer result is the number of pawns that the white rook is attacking.
+- The white rook can move in one of the four cardinal directions (north, east, south, or west) until it reaches the edge of the board, captures a black pawn, or is blocked by a white bishop.
+- The white rook is considered attacking a pawn if it can capture the pawn on its turn.
+- The method must return the number of available captures for the white rook based on the given chessboard configuration.

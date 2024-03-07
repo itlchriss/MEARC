@@ -1,5 +1,4 @@
-- The integer array parameter `cost` must not be null.
-- The integer array parameter `cost` must have a length greater than or equal to 2.
-- The integer result is the minimum cost to reach the top of the floor after executing the method with the given method signature.
-- The minimum cost is calculated based on the cost of each step in the integer array parameter `cost`.
-- The minimum cost is determined by starting at either index 0 or index 1 and climbing one or two steps at a time.
+- The integer array parameter `cost` must have a length greater than or equal to 2 and less than or equal to 1000.
+- All values in the integer array parameter `cost` must be greater than or equal to 0 and less than or equal to 999.
+- The integer result is the minimum cost to reach the top of the floor.
+- The total cost is calculated by starting at either index 0 or index 1, paying the cost at each step, and climbing either one or two steps at a time.

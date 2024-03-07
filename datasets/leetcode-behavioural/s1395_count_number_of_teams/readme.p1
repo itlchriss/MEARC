@@ -1,3 +1,3 @@
-- The integer array parameter `rating` must not be null.
-- The integer result is the number of valid teams that can be formed with the soldiers' ratings in the integer array parameter `rating`.
-- A team is considered valid if the ratings of the soldiers satisfy the condition (`rating[i] < rating[j] < rating[k]`) or (`rating[i] > rating[j] > rating[k]`) where (`0 <= i < j < k < n`).
+- The integer array parameter `rating` contains unique values.
+- The integer result is the number of valid teams that can be formed.
+- A team is considered valid if the soldiers' ratings satisfy the condition (`rating[i] < rating[j] < rating[k]`) or (`rating[i] > rating[j] > rating[k]`) where (`0 <= i < j < k < n`).

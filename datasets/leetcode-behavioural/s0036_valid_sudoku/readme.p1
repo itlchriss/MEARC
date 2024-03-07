@@ -1,4 +1,8 @@
-- For the 9x9 Sudoku board represented by the character 2D array parameter `board`, the boolean result is true if the board is valid according to the Sudoku rules.
-- Each row in the Sudoku board must contain the digits 1-9 without repetition.
-- Each column in the Sudoku board must contain the digits 1-9 without repetition.
-- Each of the nine 3x3 sub-boxes of the Sudoku board grid must contain the digits 1-9 without repetition.
+- For the method `isValidSudoku(char[][] board)`, the boolean result is true if the `9 x 9` Sudoku board is valid according to the following rules:
+    - Each row must contain the digits `1-9` without repetition.
+    - Each column must contain the digits `1-9` without repetition.
+    - Each of the nine `3 x 3` sub-boxes of the grid must contain the digits `1-9` without repetition.
+    - The boolean result is false if any of the above rules are violated.
+- The `board` parameter must be a 9 x 9 char array.
+- The char array `board` must only contain digits `1-9` or '.'.
+- The method does not need to solve the Sudoku board, only validate the filled cells according to the mentioned rules.

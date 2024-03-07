@@ -1,0 +1,11 @@
+- The integer matrix parameter `maze` must not be null.
+- The integer array parameter `entrance` must not be null.
+- The integer array parameter `entrance` must have a length of 2.
+- The integer array parameter `entrance`'s first element must be greater than or equal to 0 and less than the number of rows in the matrix `maze`.
+- The integer array parameter `entrance`'s second element must be greater than or equal to 0 and less than the number of columns in the matrix `maze`.
+- The character matrix `maze` must have a length of `m`.
+- Each row in the character matrix `maze` must have a length of `n`.
+- The character matrix `maze` must only contain characters `'.'` or `'+'`.
+- The character at the entrance position in the matrix `maze` must be `'.'`.
+- The integer result is the number of steps in the shortest path from the entrance to the nearest exit.
+- If no path exists to reach an exit from the entrance, the integer result is -1.

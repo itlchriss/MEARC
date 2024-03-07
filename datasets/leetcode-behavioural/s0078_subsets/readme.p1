@@ -1,5 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The size of the list of lists result is equal to 2 raised to the power of the length of the integer array parameter `nums`.
-- Each list in the list of lists result is a subset of the integer array parameter `nums`.
-- The list of lists result must not contain duplicate subsets.
-- The order of subsets in the list of lists result is not specified.
+Method behavioural specifications:
+- The integer array parameter `nums` contains unique elements.
+- The result is a list of lists representing all possible subsets (power set) of the integer array parameter `nums`.
+- The solution set does not contain duplicate subsets.
+- The order of subsets in the solution set can be in any order.

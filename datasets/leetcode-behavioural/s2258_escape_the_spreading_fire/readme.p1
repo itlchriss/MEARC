@@ -1,0 +1,8 @@
+- The integer 2D array parameter `grid` must not be null.
+- The integer 2D array parameter `grid` must have a size of `m x n` where `m` and `n` are greater than or equal to 2 and less than or equal to 300.
+- The integer values in the 2D array `grid` must be either 0, 1, or 2.
+- The top-left cell of the `grid` is represented by the value 0, the fire is represented by the value 1, and the wall is represented by the value 2.
+- The safehouse is located at the bottom-right cell of the `grid`.
+- The method `maximumMinutes` returns the maximum number of minutes that can be stayed in the initial position before moving while still safely reaching the safehouse.
+- If it is impossible to reach the safehouse, the method returns -1.
+- If it is always possible to reach the safehouse regardless of the minutes stayed, the method returns 10^9.

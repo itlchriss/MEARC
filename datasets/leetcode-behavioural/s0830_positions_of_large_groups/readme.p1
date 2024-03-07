@@ -1,5 +1,5 @@
-- The string parameter `s` must not be null.
 - The list of lists result contains intervals of every large group sorted in increasing order by start index.
-- A large group is identified by an interval [start, end] where start and end denote the start and end indices (inclusive) of the group.
-- A large group is considered to have 3 or more characters.
-- Each sublist in the result list represents a large group with the start index at index 0 and the end index at index 1.
+- Each sublist in the result list represents a large group interval with the start index and end index (inclusive).
+- A group is considered large if it has 3 or more characters.
+- The input string `s` contains only lowercase English letters.
+- The length of the input string `s` is between 1 and 1000.

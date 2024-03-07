@@ -1,8 +1,9 @@
-Method behavioural requirements:
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer parameter `k` must be greater than or equal to 1 and less than or equal to `n`.
-- The integer array parameter `relations` must not be null.
-- The integer array parameter `relations` must have a length less than or equal to `n * (n-1) / 2`.
-- Each element in the integer array parameter `relations` must be an array of length 2.
-- The elements in each array of the integer array parameter `relations` must be unique and within the range of `1` to `n`.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 15.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to `n`.
+- The length of the integer array parameter `relations` is less than or equal to `n * (n-1) / 2`.
+- Each element in the integer array parameter `relations` is an array of length 2.
+- The integer values in each array of `relations` are greater than or equal to 1 and are less than or equal to `n`.
+- The first element of each array in `relations` is not equal to the second element.
+- All pairs in `relations` are unique.
+- The given graph is a directed acyclic graph.
 - The integer result is the minimum number of semesters needed to take all courses.

@@ -1,5 +1,7 @@
 - The string parameter `s` must not be null.
-- The list of list of strings result contains all possible palindrome partitioning of the string parameter `s`.
-- Each substring in the partition must be a palindrome.
-- The length of the string parameter `s` is between 1 and 16, inclusive.
-- The string parameter `s` contains only lowercase English letters.
+- The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 16.
+- The result is a list of lists of strings, where each inner list represents a palindrome partitioning of the string `s`.
+- Each inner list contains substrings of `s` that form palindromes.
+- Each substring in the inner list is a palindrome.
+- The inner lists in the result are unique.
+- The substrings in each inner list are in the same order as they appear in the original string `s`.

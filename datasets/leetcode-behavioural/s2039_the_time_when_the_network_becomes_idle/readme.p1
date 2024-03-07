@@ -1,0 +1,11 @@
+Method behavioural specifications:
+- The integer array parameter `edges` must not be null.
+- The integer array parameter `patience` must not be null.
+- The length of the integer array parameter `patience` is equal to the number of servers `n`.
+- The integer array parameter `patience` must have a value of 0 at index 0.
+- The integer array parameter `patience` values are greater than or equal to 1 and less than or equal to 100000.
+- The number of servers `n` is greater than or equal to 2 and less than or equal to 100000.
+- The number of edges is greater than or equal to 1 and less than or equal to the minimum of 100000 and `n * (n - 1) / 2`.
+- The edges in the integer array parameter `edges` are valid server indices.
+- The network becomes idle when there are no messages passing between servers or arriving at servers.
+- The method returns the earliest second starting from which the network becomes idle.

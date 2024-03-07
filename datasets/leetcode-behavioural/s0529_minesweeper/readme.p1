@@ -1,4 +1,9 @@
-- If a mine 'M' is revealed at the position specified by the integer array parameter `click`, the character at that position in the char matrix parameter `board` is changed to 'X'.
-- If an empty square 'E' with no adjacent mines is revealed at the position specified by the integer array parameter `click`, the character at that position in the char matrix parameter `board` is changed to 'B' and all adjacent unrevealed squares are revealed recursively.
-- If an empty square 'E' with at least one adjacent mine is revealed at the position specified by the integer array parameter `click`, the character at that position in the char matrix parameter `board` is changed to a digit ('1' to '8') representing the number of adjacent mines.
-- The updated char matrix `board` is returned when no more squares will be revealed.
+- The character matrix parameter `board` must not be null.
+- The integer array parameter `click` must not be null.
+- The length of the integer array parameter `click` is 2.
+- The integer array parameter `click` contains valid indices within the bounds of the character matrix `board`.
+- The character matrix `board` is updated according to the rules specified in the business requirement.
+- If a mine 'M' is revealed, the character matrix `board` should change it to 'X'.
+- If an empty square 'E' with no adjacent mines is revealed, the character matrix `board` should change it to 'B' and reveal all adjacent unrevealed squares recursively.
+- If an empty square 'E' with at least one adjacent mine is revealed, the character matrix `board` should change it to a digit representing the number of adjacent mines.
+- The updated character matrix `board` is returned when no more squares will be revealed.

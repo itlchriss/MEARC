@@ -1,3 +1,5 @@
-Method behavioural requirements:
-- The integer parameter `n` must be between 1 and 1000.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 1000.
 - The integer result is the minimum number of moves needed to determine the value of `f` with certainty.
+- The method must follow the optimal strategy described in the examples to determine the value of `f`.
+- The method must handle the scenario where both eggs break, one egg breaks, or neither egg breaks appropriately to determine the value of `f`.
+- The method must drop the eggs strategically to minimize the number of moves needed to determine the value of `f`.

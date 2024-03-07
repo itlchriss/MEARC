@@ -1,3 +1,5 @@
-Method behavioural requirements:
 - The integer array parameter `nums` must not be null.
-- The integer result is the maximum sum of an ascending subarray in the integer array parameter `nums`.
+- The integer result is the maximum possible sum of an ascending subarray in the integer array `nums`.
+- A subarray is defined as a contiguous sequence of numbers in an array.
+- A subarray `[nums[l], nums[l+1], ..., nums[r-1], nums[r]]` is ascending if for all `i` where `l <= i < r`, `nums[i] < nums[i+1]`.
+- Note that a subarray of size `1` is considered ascending.

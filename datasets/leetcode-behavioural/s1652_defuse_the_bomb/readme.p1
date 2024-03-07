@@ -1,0 +1,7 @@
+- The integer array parameter `code` must not be null.
+- The integer array parameter `code` is circular, meaning the next element after the last element is the first element, and the previous element before the first element is the last element.
+- The integer parameter `k` is greater than or equal to -(n-1) and is less than or equal to n-1, where n is the length of the integer array parameter `code`.
+- Each element in the integer array result is replaced simultaneously based on the value of the integer parameter `k`.
+- If `k > 0`, each element in the integer array result is replaced by the sum of the next `k` numbers in the circular array `code`.
+- If `k < 0`, each element in the integer array result is replaced by the sum of the previous `k` numbers in the circular array `code`.
+- If `k == 0`, each element in the integer array result is replaced by 0.

@@ -1,2 +1,7 @@
-- If the string parameter `allowed` contains distinct characters, and the array of string parameter `words` contains strings where all characters in each string appear in the string `allowed`, the integer result is the number of consistent strings in the array `words`.
-- The integer result is greater than or equal to 0.
+- The integer result is the number of consistent strings in the array `words`.
+- A string is consistent if all characters in the string appear in the string `allowed`.
+- The string parameter `allowed` contains distinct characters.
+- The length of the string parameter `allowed` is greater than or equal to 1 and is less than or equal to 26.
+- The length of each string in the array `words` is greater than or equal to 1 and is less than or equal to 10.
+- The length of the array `words` is greater than or equal to 1 and is less than or equal to 10000.
+- The characters in `allowed` and `words[i]` are lowercase English letters.

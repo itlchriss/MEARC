@@ -1,2 +1,6 @@
-- If the string parameter `num` can be split into a Fibonacci-like sequence, the integer list result contains the Fibonacci-like sequence.
-- If the string parameter `num` cannot be split into a Fibonacci-like sequence, the integer list result is empty.
+- The integer parameter `num` must have a length greater than or equal to 3 and less than or equal to 200.
+- The integer values in the list result must be non-negative and fit in a 32-bit signed integer type (0 <= f[i] < 2^31).
+- The length of the list result must be greater than or equal to 3.
+- For all indices i such that 0 <= i < length of list result - 2, the sum of f[i] and f[i + 1] must be equal to f[i + 2].
+- Each piece of the split sequence in the list result must not have extra leading zeroes, except if the piece is the number 0 itself.
+- If it is impossible to split the string `num` into a Fibonacci-like sequence, an empty list [] must be returned.

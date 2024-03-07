@@ -1,3 +1,6 @@
-- If the string parameter `s` is an empty string or a single character not equal to "(" or ")", the integer result is 0.
-- If the string parameter `s` can be written as AB, where A and B are VPS's, the integer result is the maximum of the depth of A and the depth of B.
-- If the string parameter `s` can be written as (A), where A is a VPS, the integer result is 1 plus the depth of A.
+- The integer parameter `s` must be a valid parentheses string (VPS).
+- The integer result is the nesting depth of the VPS `s`.
+- The nesting depth of an empty string is 0.
+- The nesting depth of a string with a single character not equal to "(" or ")" is 0.
+- The nesting depth of a concatenation of two VPS is the maximum of the nesting depths of the two VPS.
+- The nesting depth of a VPS enclosed in parentheses is 1 plus the nesting depth of the enclosed VPS.

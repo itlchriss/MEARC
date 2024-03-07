@@ -1,3 +1,5 @@
-Method behavioural requirements:
-- If there is a clear path from the top-left cell to the bottom-right cell in the binary matrix `grid`, the integer result is the length of the shortest clear path.
-- If there is no clear path from the top-left cell to the bottom-right cell in the binary matrix `grid`, the integer result is -1.
+- The integer matrix parameter `grid` must not be null.
+- The integer matrix parameter `grid` must be a square matrix (i.e., number of rows is equal to number of columns).
+- The integer matrix parameter `grid` must contain only 0s and 1s.
+- The integer result is the length of the shortest clear path in the matrix.
+- If there is no clear path, the integer result is -1.

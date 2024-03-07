@@ -1,2 +1,5 @@
-- If an element in the integer matrix parameter `matrix` is 0, the entire row and column containing that element are set to 0.
-- The integer matrix parameter `matrix` is modified in place and returned as the result.
+- For the integer matrix parameter `matrix`, if an element is 0, the entire row and column containing that element are set to 0.
+- The integer matrix `matrix` is modified in place.
+- The integer matrix `matrix` has dimensions `m x n`, where `m` is the number of rows and `n` is the number of columns.
+- The integer matrix `matrix` elements are within the range of -2^31 to 2^31 - 1.
+- The method `setZeroes` does not return anything.

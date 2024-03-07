@@ -1,0 +1,8 @@
+Method behavioural specifications:
+- The integer 2D list parameter `grid` must not be null.
+- The integer 2D list parameter `grid` must have a size of `n x n`, where `n` is greater than or equal to 1 and is less than or equal to 400.
+- Each cell in the integer 2D list parameter `grid` must contain either 0 or 1.
+- The integer result is the maximum safeness factor of all paths leading to cell `(n - 1, n - 1)`.
+- The safeness factor of a path is defined as the minimum Manhattan distance from any cell in the path to any thief in the grid.
+- An adjacent cell of cell `(r, c)` is one of the cells `(r, c + 1)`, `(r, c - 1)`, `(r + 1, c)`, and `(r - 1, c)` if it exists.
+- The Manhattan distance between two cells `(a, b)` and `(x, y)` is equal to `|a - x| + |b - y|`, where `|val|` denotes the absolute value of `val`.

@@ -1,2 +1,4 @@
-- The integer parameter `columnNumber` must be greater than or equal to 1 and less than or equal to 2^31 - 1.
-- The string result is the corresponding column title of the integer parameter `columnNumber` as it appears in an Excel sheet.
+- The integer parameter `columnNumber` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
+- The string result is the corresponding column title in an Excel sheet for the integer parameter `columnNumber`.
+- The string result consists of uppercase letters only.
+- The string result is constructed based on the mapping where 'A' corresponds to 1, 'B' corresponds to 2, and so on until 'Z' corresponds to 26, then 'AA' corresponds to 27, 'AB' corresponds to 28, and so on following the Excel sheet column title pattern.

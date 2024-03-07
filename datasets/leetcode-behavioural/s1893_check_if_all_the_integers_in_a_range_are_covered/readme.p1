@@ -1,4 +1,4 @@
-Method behavioural requirements:
-- For each integer `x` in the inclusive range `[left, right]`, there must exist at least one interval in the 2D integer array parameter `ranges` such that `start_i <= x <= end_i`.
-- If every integer in the inclusive range `[left, right]` is covered by at least one interval in the 2D integer array parameter `ranges`, the boolean result is true.
-- If there exists an integer in the inclusive range `[left, right]` that is not covered by any interval in the 2D integer array parameter `ranges`, the boolean result is false.
+- For the method `isCovered`, the integer array parameter `ranges` must not be null.
+- For the method `isCovered`, the integer parameters `left` and `right` must be greater than or equal to 1 and less than or equal to 50.
+- The boolean result is true if each integer in the inclusive range `[left, right]` is covered by at least one interval in `ranges`.
+- The boolean result is false if any integer in the inclusive range `[left, right]` is not covered by any interval in `ranges`.

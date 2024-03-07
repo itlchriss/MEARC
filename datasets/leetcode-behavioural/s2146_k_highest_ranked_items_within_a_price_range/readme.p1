@@ -1,0 +1,13 @@
+Method behavioural specifications:
+- The integer array parameter `grid` must not be null.
+- The integer array parameter `grid` must have a length `m` and each sub-array within `grid` must have a length `n`.
+- The integer values in the `grid` array must be between 0 and 10^5.
+- The integer array parameter `pricing` must have a length of 2.
+- The integer values in the `pricing` array must be between 2 and 10^5, where the first value is less than or equal to the second value.
+- The integer array parameter `start` must have a length of 2.
+- The integer values in the `start` array must be within the bounds of the `grid` array.
+- The integer parameter `k` must be greater than 0 and less than or equal to the total number of elements in the `grid` array.
+- The output is a list of `Item` objects, each representing a position in the grid with attributes `row`, `col`, `dist`, and `price`.
+- The `Item` objects in the output list must be sorted by rank in descending order.
+- The rank is determined by the following criteria in order: distance (shorter distance has higher rank), price (lower price has higher rank within the price range), row number (smaller row number has higher rank), column number (smaller column number has higher rank).
+- If there are fewer than `k` reachable items within the price range, all reachable items must be included in the output list.

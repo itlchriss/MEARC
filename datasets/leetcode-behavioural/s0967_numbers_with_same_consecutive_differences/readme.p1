@@ -1,4 +1,6 @@
-- The integer parameter `n` must be between 2 and 9, inclusive.
-- The integer parameter `k` must be between 0 and 9, inclusive.
-- The integer array result must contain all non-negative integers of length `n` such that the absolute difference between every two consecutive digits is `k`.
-- Every number in the integer array result must not have leading zeros.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 9.
+- The integer parameter `k` is greater than or equal to 0 and is less than or equal to 9.
+- The length of the integer array result can vary.
+- All non-negative integers in the integer array result have a length of `n`.
+- The absolute difference between every two consecutive digits in each integer in the result is equal to `k`.
+- All numbers in the result must not have leading zeros.

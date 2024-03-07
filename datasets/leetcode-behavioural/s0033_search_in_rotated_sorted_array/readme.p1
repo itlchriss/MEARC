@@ -1,4 +1,5 @@
-- The integer array parameter `nums` must not be null.
 - The integer array parameter `nums` is sorted in ascending order with distinct values.
-- The integer result is the index of the integer parameter `target` in the integer array parameter `nums` if `target` is in `nums`.
-- If the integer parameter `target` is not in the integer array parameter `nums`, the integer result is -1.
+- The integer array parameter `nums` is possibly rotated at an unknown pivot index `k` such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]`.
+- The integer result is the index of the integer parameter `target` if it is in the integer array `nums`.
+- If the integer parameter `target` is not in the integer array `nums`, the integer result is -1.
+- The algorithm must have a runtime complexity of `O(log n)`.

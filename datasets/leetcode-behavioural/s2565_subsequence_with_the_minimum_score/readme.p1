@@ -1,0 +1,5 @@
+- The integer result is the minimum possible score to make string `t` a subsequence of string `s`.
+- The integer result is 0 if no characters are removed from string `t`.
+- If characters are removed from string `t`, the score is calculated as `right - left + 1`, where `left` is the minimum index among all removed characters and `right` is the maximum index among all removed characters.
+- The strings `s` and `t` consist of only lowercase English letters.
+- The length of strings `s` and `t` is between 1 and 100000.

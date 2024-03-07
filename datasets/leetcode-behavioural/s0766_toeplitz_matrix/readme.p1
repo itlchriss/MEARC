@@ -1,2 +1,7 @@
-- For the integer 2D array parameter `matrix`, if every diagonal from top-left to bottom-right has the same elements, the boolean result is true.
-- For the integer 2D array parameter `matrix`, if any diagonal from top-left to bottom-right has different elements, the boolean result is false.
+Method behavioural specifications:
+- The boolean result is true if every diagonal from top-left to bottom-right in the integer matrix parameter `matrix` has the same elements.
+- The boolean result is false if any diagonal from top-left to bottom-right in the integer matrix parameter `matrix` has different elements.
+- The integer matrix parameter `matrix` has dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
+- The integer matrix parameter `matrix` contains elements ranging from 0 to 99.
+- The integer matrix parameter `matrix` is stored in memory.
+- The method can only load at most one row of the matrix into memory at once.

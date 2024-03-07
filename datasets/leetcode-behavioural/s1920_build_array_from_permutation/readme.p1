@@ -1,3 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The size of integer array result `ans` is equal to the length of integer array parameter `nums`.
-- For each index `i` from 0 to the length of integer array parameter `nums`, the integer array result `ans` at index `i` is equal to the integer array parameter `nums` at the index specified by the value of the integer array parameter `nums` at index `i`.
+- The integer array parameter `nums` is a zero-based permutation with distinct integers from 0 to `nums.length - 1`.
+- The length of the integer array result `ans` is the same as the length of the integer array parameter `nums`.
+- For each index `i` from 0 to `nums.length - 1`, the integer array result `ans[i]` is equal to `nums[nums[i]]`.
+- The integer array result `ans` is returned.
+- The constraints are that `1 <= nums.length <= 1000` and `0 <= nums[i] < nums.length`.

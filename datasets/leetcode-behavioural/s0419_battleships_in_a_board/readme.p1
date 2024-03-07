@@ -1,6 +1,9 @@
-- The character matrix parameter `board` must not be null.
-- The integer result is the number of battleships on the character matrix parameter `board`.
-- Battleships can only be placed horizontally or vertically on the character matrix parameter `board`.
-- Battleships are represented by the character 'X' on the character matrix parameter `board`.
-- Battleships are separated by at least one horizontal or vertical cell on the character matrix parameter `board`.
-- There are no adjacent battleships on the character matrix parameter `board`.
+- The integer result is the number of battleships on the board.
+- Battleships can only be placed horizontally or vertically on the board.
+- Battleships are represented by 'X' and empty cells are represented by '.'.
+- Battleships are either in the shape of '1 x k' or 'k x 1', where k can be any size.
+- At least one horizontal or vertical cell separates between two battleships.
+- The method should be able to handle boards with dimensions up to 200x200.
+- The method should count the battleships in one pass.
+- The method should use only O(1) extra memory.
+- The method should not modify the values in the board.

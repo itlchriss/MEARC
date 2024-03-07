@@ -1,3 +1,9 @@
-- If there exist two integers `N` and `M` in the integer array parameter `arr` such that `N` is the double of `M`, the boolean result is true.
-- The integer array parameter `arr` must not be null.
-- The integer array parameter `arr` must have a length greater than or equal to 2.
+- If there exist two integers `N` and `M` in the integer array parameter `arr` such that `N` is the double of `M` (i.e., `N = 2 * M`), the boolean result is true.
+- If there are two indices `i` and `j` in the integer array parameter `arr` such that:
+    - `i` is not equal to `j`,
+    - `i` and `j` are both greater than or equal to 0 and less than the length of the array `arr`,
+    - `arr[i]` is equal to `2 * arr[j]`,
+the boolean result is true.
+- If there are no such integers `N` and `M` or indices `i` and `j` in the integer array parameter `arr` that satisfy the conditions, the boolean result is false.
+- The length of the integer array parameter `arr` is greater than or equal to 2 and is less than or equal to 500.
+- All values in the integer array parameter `arr` are greater than or equal to -1000 and are less than or equal to 1000.

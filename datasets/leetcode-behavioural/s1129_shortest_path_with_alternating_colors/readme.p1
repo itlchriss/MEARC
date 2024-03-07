@@ -1,6 +1,5 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer 2D array parameter `redEdges` must not be null.
-- The integer 2D array parameter `blueEdges` must not be null.
-- The integer array result `answer` must not be null.
-- The length of the integer array result `answer` must be equal to the integer parameter `n`.
-- Each element in the integer array result `answer` must be either the length of the shortest path from node 0 to node x such that the edge colors alternate along the path, or -1 if such a path does not exist.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the integer array parameter `redEdges` and `blueEdges` is less than or equal to 400.
+- Each element in the integer array parameter `redEdges` and `blueEdges` is an array of length 2.
+- The integer array result `answer` has a length of `n`.
+- Each element in the integer array result `answer` is the length of the shortest path from node 0 to node x such that the edge colors alternate along the path, or -1 if such a path does not exist.

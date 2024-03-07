@@ -1,5 +1,4 @@
 - If the length of string parameter `s` is not equal to the length of string parameter `goal`, the boolean result is false.
-- If the characters in string parameter `s` can be swapped to match the characters in string parameter `goal`, the boolean result is true.
-- If the characters in string parameter `s` cannot be swapped to match the characters in string parameter `goal`, the boolean result is false.
-- If the characters in string parameter `s` can be swapped to match the characters in string parameter `goal`, but the resulting strings are not equal, the boolean result is false.
-- If the characters in string parameter `s` are the same and there are at least two identical characters in string parameter `s`, the boolean result is true.
+- If the string parameter `s` is equal to the string parameter `goal` and there exist at least two identical characters in the string parameter `s`, the boolean result is true.
+- If the string parameter `s` is not equal to the string parameter `goal` and there exist two indices `i` and `j` (0-indexed) such that `i != j` and swapping the characters at `s[i]` and `s[j]` results in a string equal to `goal`, the boolean result is true.
+- If none of the above conditions are met, the boolean result is false.

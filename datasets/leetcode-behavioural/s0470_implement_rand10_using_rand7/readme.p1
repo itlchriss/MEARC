@@ -1,2 +1,5 @@
-- The integer result of `rand10()` is a uniform random integer in the range `[1, 10]`.
-- The `rand10()` function should only call the `rand7()` API and should not call any other API.
+- The integer result of the method `rand10()` is a uniform random integer in the range [1, 10].
+- The method `rand10()` can only call the API `rand7()` and should not call any other API.
+- The method `rand10()` should be able to generate a uniform random integer in the range [1, 10] for each call.
+- The method `rand10()` should adhere to the constraints of the input parameter `n`, which is the number of times the function will be called during testing.
+- The method `rand10()` should aim to minimize the number of calls to the `rand7()` function to optimize performance.

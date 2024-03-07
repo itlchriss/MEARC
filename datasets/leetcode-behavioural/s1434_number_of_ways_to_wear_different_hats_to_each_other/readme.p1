@@ -1,5 +1,4 @@
-Method behavioural requirements:
-- The integer collection parameter `hats` must not be null.
-- The integer collection parameter `hats` must contain `n` lists, where each list represents the hats preferred by a person.
-- Each list within the integer collection parameter `hats` must contain unique integers representing the hats preferred by a person.
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10.
+- Each list in the 2D integer array parameter `hats` contains unique integers.
 - The integer result is the number of ways that the `n` people wear different hats to each other, modulo 10^9 + 7.

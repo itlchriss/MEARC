@@ -1,4 +1,6 @@
 - The string parameter `s` must not be null.
-- The integer collection parameter `pairs` must not be null.
-- The integer collection parameter `pairs` must contain pairs of indices where each pair consists of two integers within the range of the length of the string parameter `s`.
-- The string result is the lexicographically smallest string that `s` can be changed to after using the swaps specified in the integer collection parameter `pairs`.
+- The list parameter `pairs` must not be null.
+- The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 100000.
+- The number of elements in the list parameter `pairs` is less than or equal to 100000.
+- Each element in the list parameter `pairs` is a list of two integers where both integers are greater than or equal to 0 and less than the length of the string parameter `s`.
+- The string result is the lexicographically smallest string that can be obtained after swapping characters at the specified pairs of indices in the string parameter `s`.

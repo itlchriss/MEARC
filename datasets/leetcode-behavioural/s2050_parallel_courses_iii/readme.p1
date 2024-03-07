@@ -1,0 +1,9 @@
+Method behavioural specifications:
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50000.
+- The length of the 2D integer array parameter `relations` is less than or equal to the minimum of n * (n - 1) / 2 and 50000.
+- Each pair [prevCourse, nextCourse] in the 2D integer array parameter `relations` has two elements where both elements are greater than or equal to 1 and less than or equal to n, and the two elements are not equal.
+- All pairs [prevCourse, nextCourse] in the 2D integer array parameter `relations` are unique.
+- The length of the integer array parameter `time` is equal to n.
+- Each element in the integer array parameter `time` is greater than or equal to 1 and is less than or equal to 10000.
+- The directed graph formed by the relations is acyclic.
+- The integer result is the minimum number of months needed to complete all the courses.

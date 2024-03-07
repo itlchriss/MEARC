@@ -1,4 +1,8 @@
-- The integer 2D array parameter `matrix` must not be null.
-- The integer result is the length of the longest increasing path in the integer 2D array parameter `matrix`.
-- The path can only move in four directions: left, right, up, or down.
+- The integer matrix parameter `matrix` must not be null.
+- The integer matrix parameter `matrix` must have a length `m` and each row in the matrix must have a length `n`.
+- The integer matrix parameter `matrix` must contain values between 0 and 2^31 - 1.
+- The integer result is the length of the longest increasing path in the `matrix`.
+- From each cell in the `matrix`, movement is allowed in four directions: left, right, up, or down.
 - Moving diagonally or outside the boundary is not allowed.
+- The longest increasing path is a sequence of cells in the `matrix` where each cell value is greater than the previous cell value.
+- The output must be an integer representing the length of the longest increasing path in the `matrix`.

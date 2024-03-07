@@ -1,4 +1,7 @@
-- The integer array parameter `arr` is replaced with its corresponding rank.
+- The integer array parameter `arr` must not be null.
+- The integer array result has the same length as the integer array parameter `arr`.
+- The integer array result contains the rank of each element in the integer array parameter `arr`.
 - The rank is an integer starting from 1.
-- The larger the element, the larger the rank. If two elements are equal, their rank must be the same.
-- The rank should be as small as possible.
+- The larger the element in the integer array parameter `arr`, the larger the rank in the integer array result.
+- If two elements in the integer array parameter `arr` are equal, their rank in the integer array result must be the same.
+- The rank in the integer array result should be as small as possible.

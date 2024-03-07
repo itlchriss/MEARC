@@ -1,2 +1,5 @@
-- For each element `arr1[i]` in the integer array parameter `arr1`, if there is no element `arr2[j]` in the integer array parameter `arr2` such that `|arr1[i]-arr2[j]| <= d`, increment the integer result by 1.
-- The integer result is the number of elements in the integer array parameter `arr1` such that there is not any element in the integer array parameter `arr2` satisfying the condition `|arr1[i]-arr2[j]| <= d`.
+- The integer array parameter `arr1` and `arr2` must not be null.
+- The length of the integer array parameter `arr1` and `arr2` is greater than or equal to 1 and is less than or equal to 500.
+- All values in the integer array parameter `arr1` and `arr2` are greater than or equal to -1000 and are less than or equal to 1000.
+- The integer parameter `d` is greater than or equal to 0 and is less than or equal to 100.
+- The integer result is the number of elements in the integer array `arr1` such that there is not any element in the integer array `arr2` where the absolute difference between the elements is less than or equal to `d`.

@@ -1,7 +1,4 @@
-Method behavioural requirements:
 - The string parameter `word` must not be null.
-- The long result is the number of wonderful non-empty substrings in the string parameter `word`.
-- Each occurrence of the same substring in the string parameter `word` must be counted separately.
-- A substring is a contiguous sequence of characters in a string.
-- A wonderful string is a string where at most one letter appears an odd number of times.
-- The wonderful substrings must be counted based on the constraints specified in the business requirement.
+- The string parameter `word` must consist of lowercase English letters from 'a' to 'j'.
+- The long result is the number of wonderful non-empty substrings in the string `word`.
+- If the same substring appears multiple times in the string `word`, each occurrence is counted separately.

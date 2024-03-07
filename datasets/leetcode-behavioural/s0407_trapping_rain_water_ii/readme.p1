@@ -1,6 +1,5 @@
-Method behavioural requirements:
-- The integer matrix parameter `heightMap` must not be null.
-- The integer matrix parameter `heightMap` must have dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
-- The integer result is the volume of water trapped after raining in the 2D elevation map represented by the integer matrix parameter `heightMap`.
-- The volume of water trapped is calculated based on the height of each unit cell in the integer matrix parameter `heightMap`.
-- The volume of water trapped is the total sum of water trapped between the blocks in the 2D elevation map.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 200.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 200.
+- All values in the 2D integer matrix parameter `heightMap` are greater than or equal to 0 and are less than or equal to 20000.
+- The integer result is the volume of water that can be trapped after raining.
+- The integer result is greater than or equal to 0.

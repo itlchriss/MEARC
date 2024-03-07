@@ -1,7 +1,8 @@
-- The integer parameter `n` must be greater than or equal to 1.
-- The integer 2D array parameter `edges` must have a length equal to `n - 1`.
-- Each element of the integer 2D array parameter `edges` must have a length of 2.
-- The integer elements in the integer 2D array parameter `edges` must be within the range of 0 to `n - 1`.
-- The integer elements in each element of the integer 2D array parameter `edges` must be different from each other.
-- The string parameter `labelsString` must have a length equal to `n`.
-- The string parameter `labelsString` must consist only of lowercase English letters.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `edges` is equal to `n - 1`.
+- Each element in the integer array parameter `edges` has a length of 2.
+- The integer array parameter `edges` contains unique pairs of integers where each integer is greater than or equal to 0 and is less than `n`.
+- The length of the string parameter `labelsString` is equal to `n`.
+- The string parameter `labelsString` consists only of lowercase English letters.
+- The length of the integer array result is equal to `n`.
+- Each element in the integer array result represents the number of nodes in the subtree of the corresponding node which have the same label as that node.

@@ -1,6 +1,8 @@
-- If the string parameter `text` contains the entity `&quot;`, the string result replaces `&quot;` with `"`.
-- If the string parameter `text` contains the entity `&apos;`, the string result replaces `&apos;` with `'`.
-- If the string parameter `text` contains the entity `&amp;`, the string result replaces `&amp;` with `&`.
-- If the string parameter `text` contains the entity `&gt;`, the string result replaces `&gt;` with `>`.
-- If the string parameter `text` contains the entity `&lt;`, the string result replaces `&lt;` with `<`.
-- If the string parameter `text` contains the entity `&frasl;`, the string result replaces `&frasl;` with `/`.
+- If the input `text` contains the HTML entity `&quot;`, the result is the input `text` with the entity replaced by `"`.
+- If the input `text` contains the HTML entity `&apos;`, the result is the input `text` with the entity replaced by `'`.
+- If the input `text` contains the HTML entity `&amp;`, the result is the input `text` with the entity replaced by `&`.
+- If the input `text` contains the HTML entity `&gt;`, the result is the input `text` with the entity replaced by `>`.
+- If the input `text` contains the HTML entity `&lt;`, the result is the input `text` with the entity replaced by `<`.
+- If the input `text` contains the HTML entity `&frasl;`, the result is the input `text` with the entity replaced by `/`.
+- The length of the input `text` is greater than or equal to 1 and is less than or equal to 100000.
+- The output `String` after replacing the entities by the special characters.

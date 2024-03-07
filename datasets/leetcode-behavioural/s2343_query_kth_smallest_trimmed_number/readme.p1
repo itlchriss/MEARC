@@ -1,0 +1,8 @@
+- The integer array parameter `nums` must be a 0-indexed array of strings, where each string is of equal length and consists of only digits.
+- The 2D integer array parameter `queries` must be a 0-indexed 2D integer array where each `queries[i] = [ki, trimi]`.
+- The integer parameter `ki` in each query must be between 1 and the length of `nums`.
+- The integer parameter `trimi` in each query must be between 1 and the length of each string in `nums`.
+- For each query, the method must trim each number in `nums` to its rightmost `trimi` digits.
+- The method must determine the index of the ki-th smallest trimmed number in `nums`. If two trimmed numbers are equal, the number with the lower index is considered smaller.
+- After determining the index of the ki-th smallest trimmed number, the method must reset each number in `nums` to its original length.
+- The method must return an array `answer` of the same length as `queries`, where `answer[i]` is the answer to the i-th query.

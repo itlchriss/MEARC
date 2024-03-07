@@ -1,4 +1,8 @@
-- The integer array parameter `nums` must not be null.
-- The integer result is a list of lists of integers representing unique quadruplets `[nums[a], nums[b], nums[c], nums[d]]` such that `nums[a] + nums[b] + nums[c] + nums[d] == target`.
-- The integers `a`, `b`, `c`, and `d` must be distinct.
-- The order of the quadruplets in the output list can be in any order.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 200.
+- All values in the integer array parameter `nums` are greater than or equal to -10^9 and are less than or equal to 10^9.
+- The integer parameter `target` is greater than or equal to -10^9 and is less than or equal to 10^9.
+- The length of the list of lists result is not fixed and can vary.
+- Each list in the list of lists result contains four distinct integers from the integer array parameter `nums`.
+- The sum of the four integers in each list in the list of lists result is equal to the integer parameter `target`.
+- The order of the quadruplets in the list of lists result can be in any order.
+- All quadruplets in the list of lists result are unique.

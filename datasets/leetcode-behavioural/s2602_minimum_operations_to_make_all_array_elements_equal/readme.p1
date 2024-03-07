@@ -1,0 +1,8 @@
+Method behavioural specifications:
+- The integer array parameter `nums` consists of positive integers.
+- The integer array parameter `queries` has a size of `m`.
+- For each query in the integer array parameter `queries`, the minimum number of operations to make all elements of `nums` equal to the query value is calculated.
+- The operation can be either increasing or decreasing an element of the array by 1.
+- After each query, the array `nums` is reset to its original state.
+- The total number of operations for each query is calculated by the sum of individual operations needed to make all elements equal to the query value.
+- The output is a list of `m` long integers, where each element represents the minimum number of operations for the corresponding query in the `queries` array.

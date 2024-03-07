@@ -1,7 +1,8 @@
-Method behavioural requirements:
-- The integer 2D array parameter `customers` must not be null.
-- The integer 2D array parameter `customers` must have a length between 1 and 10^5.
-- Each sub-array within the integer 2D array parameter `customers` must have a length of 2.
-- The integer elements within each sub-array of the integer 2D array parameter `customers` must be between 1 and 10^4.
-- The arrival times within the integer 2D array parameter `customers` must be sorted in non-decreasing order.
-- The average waiting time of all customers must be returned as a double.
+- The integer array parameter `customers` must not be null.
+- The integer array parameter `customers` length is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `customers` contains subarrays where the first element represents the arrival time of the customer and the second element represents the time needed to prepare the order.
+- The arrival times in the integer array parameter `customers` are sorted in non-decreasing order.
+- The chef prepares food for customers in the order they were given in the input.
+- The average waiting time of all customers is returned as a double.
+- The average waiting time is calculated by summing up the waiting times of each customer (finish time - arrival time) and dividing by the total number of customers.
+- Solutions within 10^-5 from the actual answer are considered accepted.

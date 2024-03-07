@@ -1,5 +1,5 @@
-Method behavioural requirements:
-- The integer collection parameter `cost` must not be null.
-- The integer collection parameter `cost` must have a size of `size1`.
-- Each element in the integer collection parameter `cost` must have a size of `size2`.
+- The integer list parameter `cost` must have a size of `size1`.
+- Each sublist in the integer list parameter `cost` must have a size of `size2`.
 - The integer result is the minimum cost to connect the two groups.
+- Each point in the first group must be connected to at least one point in the second group.
+- Each point in the second group must be connected to at least one point in the first group.

@@ -1,0 +1,7 @@
+- The integer parameter `id` represents the unique ID of a student.
+- The integer parameter `points` represents the points of a student, which initially starts at 0.
+- Each positive word in a feedback report increases the points of a student by 3.
+- Each negative word in a feedback report decreases the points of a student by 1.
+- The method must rank the students in non-increasing order by their points.
+- If more than one student has the same points, the student with the lower ID ranks higher.
+- The method must return the top `k` students after ranking them.

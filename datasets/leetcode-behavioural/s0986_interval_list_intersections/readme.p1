@@ -1,5 +1,7 @@
-- The integer array parameter `firstList` must not be null.
-- The integer array parameter `secondList` must not be null.
+- The integer array parameter `firstList` and `secondList` must not be null.
+- The integer array parameter `firstList` and `secondList` must be in sorted order.
 - The integer array result contains closed intervals that represent the intersection of the intervals in `firstList` and `secondList`.
-- The closed intervals in the integer array result are pairwise disjoint and in sorted order.
-- The closed intervals in the integer array result are represented as `[start, end]` where `start <= end`.
+- Each closed interval in the integer array result is represented as `[start, end]` where `start` is less than or equal to `end`.
+- The integer array result may be empty if there is no intersection between the intervals in `firstList` and `secondList`.
+- The integer array result may contain multiple closed intervals representing the intersections between the intervals in `firstList` and `secondList`.
+- The integer array result must be pairwise disjoint, meaning no two intervals in the result should overlap or share any common elements.

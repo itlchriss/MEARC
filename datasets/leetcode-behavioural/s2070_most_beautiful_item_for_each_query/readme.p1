@@ -1,0 +1,8 @@
+- The integer array parameter `items` must not be null.
+- The integer array parameter `items` length is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `items` contains subarrays of length 2 where the first element represents the price and the second element represents the beauty of an item.
+- The integer array parameter `queries` must not be null.
+- The integer array parameter `queries` length is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array result `answer` has the same length as the `queries` array.
+- For each query in the `queries` array, the maximum beauty of an item whose price is less than or equal to the query value is determined.
+- If no item exists with a price less than or equal to the query value, the answer for that query is 0.

@@ -1,3 +1,8 @@
-- The 2D integer matrix parameter `matrix` must not be null.
-- The size of the 2D list result is equal to the number of grid coordinates where rain water can flow to both the Pacific and Atlantic oceans.
-- Each element in the result list is a 2-element list where the first element represents the row index and the second element represents the column index of a grid coordinate where rain water can flow to both the Pacific and Atlantic oceans.
+- The 2D list result contains grid coordinates where rainwater can flow from a cell to both the Pacific and Atlantic oceans.
+- Each element in the result list is a list of two integers [r, c] representing the row and column indices of a cell.
+- The integer matrix parameter `heights` must not be null.
+- The integer matrix parameter `heights` has a length m and each row has a length n.
+- The integer values in the matrix `heights` are between 0 and 10^5.
+- The result list may contain duplicate coordinates if multiple paths exist for water to flow to both oceans from the same cell.
+- The result list should not contain coordinates outside the bounds of the matrix `heights`.
+- The result list should be in the same order as the cells are visited during the traversal process.
