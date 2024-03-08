@@ -105,6 +105,16 @@ class RepairProcessor:
     def __init__(self):
         pass
     
+    def __process_negative__(self, sent):
+        words = sent.split(' ')
+        targets = {}
+        for w in words:
+            if w.startswith('-') and w.replace('-', '').isnumeric():
+                targets[w] = 'negative ' + w.replace('-', '')
+        for k in targets:
+            sent = sent.replace(k, targets[k])
+        return sent
+    
     def __process_general_syntax_rule__(self, words, rule, index):
         f = rule['format']
         pattern = rule['pattern']
@@ -143,5 +153,5 @@ class RepairProcessor:
                 sent = self.__process_general_syntax_rule__(words, r, i)
         for k in reqtype_ignore_rules[t].keys():
             sent = sent.replace(k, reqtype_ignore_rules[t][k])
-        
+        sent = self.__process_negative__(sent)
         return sent

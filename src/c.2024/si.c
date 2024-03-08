@@ -629,9 +629,7 @@ int IN_code_synthesis(struct astnode *node) {
     }
 
     struct entity *en = (struct entity *)gqueue(__searchevent(eventnode->cstptr)->entities, 0);    
-
-    node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
-    if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
+    
 
     if (__is_Rel_dependent__(en->cstptr)) {
         char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
@@ -646,7 +644,14 @@ int IN_code_synthesis(struct astnode *node) {
         deallocatequeue(en->cstptr->datalist, deallocatedata);
         en->cstptr->datalist = initqueue();
         __Rel_synthesis__(varnode->cstptr, en->cstptr, siq);
+        /* the final datatype should be stored in the entity's cstptr, and such datatype should be the one from the rel symbol */
+        en->cstptr->datatype->p = varnode->cstptr->datatype->p;
+        en->cstptr->datatype->r = varnode->cstptr->datatype->r;
+        for (int i = 0; i < varnode->cstptr->datalist->count; ++i) 
+            enqueue(en->cstptr->datatype->types, gqueue(varnode->cstptr->datalist, i));
     } else {
+        node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
+        if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
         node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
         deallocatequeue(en->cstptr->datalist, deallocatedata);
         en->cstptr->datalist = initqueue();
@@ -1014,9 +1019,25 @@ void sianalysis() {
             default:
                 check = satisfy(node, visited_variables);
                 if (!check) {
-                    struct astnode *tmp = dequeue(predicates);
-                    push(predicates, node);
-                    push(predicates, tmp);
+                    struct astnode *tmp = NULL;
+                    struct queue *tmpqueue = initqueue();
+                    enqueue(tmpqueue, (void *)node);
+                    for (int i = 0; i < predicates->count; ++i) {
+                        tmp = (struct astnode *)dequeue(predicates);
+                        if (tmp->syntax != NN && 
+                            tmp->syntax != NNS && 
+                            tmp->syntax != NNP && 
+                            tmp->syntax != NNPS && 
+                            tmp->syntax != CD) {
+                            enqueue(tmpqueue, (void *)tmp);
+                            }
+                        else {
+                            push(tmpqueue, (void *)tmp);
+                            break;
+                        }
+                    }
+                    while (!isempty(tmpqueue)) enqueue(predicates, (void *)dequeue(tmpqueue));
+                    deallocatequeue(tmpqueue, NULL);
                 } else {
                     node->si_q = q_searchqueue(silist, node, __simatcher);
                     check_validity(node);

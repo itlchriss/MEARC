@@ -1,24 +1,90 @@
-- term: gtoet
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '0'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '0'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '3'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '3'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '4'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '5'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '5'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '6'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '6'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: negative
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '7'
+    reference_type: '-1'
+  synthesised_datatype:
+    primitive_type: '7'
+    reference_type: '-1'
+  interpretation: -(Subj)
+- term: gtoe
   syntax:
   - JJ
   arguments:  
   - symbol: Subj
     primitive_type: '*'
-    reference_type: '-1'
-  - symbol: Acc
+    reference_type: '*'
+  - symbol: Dat
     primitive_type: '*'
-    reference_type: '-1'
-  interpretation: (Subj) >= (Acc)
+    reference_type: '*'
+  interpretation: (Subj) >= (Dat)
 - term: gt
   syntax:
   - JJ
   arguments:  
   - symbol: Subj
     primitive_type: '*'
-    reference_type: '-1'
+    reference_type: '*'
   - symbol: Acc
     primitive_type: '*'
-    reference_type: '-1'
+    reference_type: '*'
   interpretation: (Subj) > (Acc)
 - term: lt
   syntax:
@@ -26,22 +92,22 @@
   arguments:  
   - symbol: Subj
     primitive_type: '*'
-    reference_type: '-1'
+    reference_type: '*'
   - symbol: Acc
     primitive_type: '*'
-    reference_type: '-1'
+    reference_type: '*'
   interpretation: (Subj) < (Acc)
-- term: ltoet
+- term: ltoe
   syntax:
   - JJ
   arguments:  
   - symbol: Subj
     primitive_type: '*'
-    reference_type: '-1'
-  - symbol: Acc
+    reference_type: '*'
+  - symbol: Dat
     primitive_type: '*'
-    reference_type: '-1'
-  interpretation: (Subj) <= (Acc)
+    reference_type: '*'
+  interpretation: (Subj) <= (Dat)
 - term: null
   syntax:
   - JJ
@@ -187,14 +253,14 @@
       - 'list'      
       - 'collection'
   interpretation: \forall int k; 0 <= k && k < (x).size()-1; (x).get(k) <= (x).get(k+1)
-- term: element
+- term: value
   syntax:
   - NNS
   arguments:
-  - symbol: x
+  - symbol: '*'
     primitive_type: '*'
-    reference_type: '0'
-  interpretation: (x)[i]
+    reference_type: '*'
+  interpretation: __REL__value
 - term: reference
   syntax:
   - NN
@@ -321,6 +387,8 @@
   - NN
   arguments:
   - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: __REL__element
 - term: in
   syntax:
@@ -334,6 +402,7 @@
     reference_type: '2'
     type_names:
     - __REL__element
+    - __REL__value
   interpretation: (y)[i]
 - term: Rel
   syntax:
@@ -402,4 +471,102 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation: __INVOKE__REL__
+- term: __REL__element
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: (x)[i]
+- term: __REL__element
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '1'
+  synthesised_datatype:
+    primitive_type: '2'
+    reference_type: '*'
+  interpretation: (x).charAt(i)
+- term: __REL__element
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+    - 'list'
+    - 'collection'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: (x).get(i)
+- term: __REL__value
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '0'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: (x)[i]
+- term: __REL__value
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '1'
+  synthesised_datatype:
+    primitive_type: '2'
+    reference_type: '*'
+  interpretation: (x).charAt(i)
+- term: __REL__value
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '2'
+    type_names:
+    - 'list'
+    - 'collection'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: (x).get(i)
+- term: unique
+  syntax:
+  - JJ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '*'
+  - symbol: __REF__type
+    primitive_type: '*'
+    reference_type: '2'  
+    type_names:
+    - 'list'
+    - 'collection'
+  interpretation: Collections.frequency((__REF__type), (x)) == 1
+- term: unique
+  syntax:
+  - JJ
+  arguments:
+  - symbol: x
+    primitive_type: '*'
+    reference_type: '*'
+  - symbol: __REF__type
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
+    
 

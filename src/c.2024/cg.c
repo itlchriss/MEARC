@@ -74,11 +74,12 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
             case Quantifier:
                 if (node->qtype != Quantifier_ForAll) (*haserror)++;
                 else {
+                    char * type_name = (char *)gqueue(node->cstptr->datatype->types, 0);
                     if (node->quantified_ranges->count == 0) {
                         fprintf(s, "\\ forall int %c; 0 <= %c < %s.%s; ",
                             (char)quantify_variable, 
-                            (char)quantify_variable, 
-                            node->token->symbol,
+                            (char)quantify_variable,
+                            type_name,
                             get_length_str(node->cstptr->datatype->r));
                     } else {
                         /* to be done for specified or multiple ranges */

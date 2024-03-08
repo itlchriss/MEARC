@@ -28,7 +28,7 @@ def main(srcpath:str):
     post = _getfile(os.path.join(srcpath, "readme.p1"))    
     tmp = []
     if post:
-        tmp += ['//@ ensures(*%s*);' % i for i in post.split('\n')]
+        tmp += ['//@ ensures(*%s*);' % re.sub(r'^-\s+', '', i) for i in post.split('\n')]
     if not tmp:
         print('No specifications found under %s' % srcpath)
         exit(-2)
