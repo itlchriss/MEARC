@@ -449,8 +449,8 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         if both p and r are ANY, then it is not specific, so we should not inherit it to overwrite the entity datatype        
     */
     if (targetsi->synthesised_datatype != NULL && 
-        targetsi->synthesised_datatype->p != AnyPrimitiveType &&
-        targetsi->synthesised_datatype->r != AnyRefType) { 
+        targetsi->synthesised_datatype->p >= 0 &&
+        targetsi->synthesised_datatype->r >= 0) { 
         child->cstptr->datatype = targetsi->synthesised_datatype;
     }
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
@@ -648,7 +648,7 @@ int IN_code_synthesis(struct astnode *node) {
         en->cstptr->datatype->p = varnode->cstptr->datatype->p;
         en->cstptr->datatype->r = varnode->cstptr->datatype->r;
         for (int i = 0; i < varnode->cstptr->datalist->count; ++i) 
-            enqueue(en->cstptr->datatype->types, gqueue(varnode->cstptr->datalist, i));
+            enqueue(en->cstptr->datatype->types, (char*)strdup(gqueue(varnode->cstptr->datalist, i)));
     } else {
         node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
         if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
@@ -706,6 +706,18 @@ int WP_code_synthesis(struct astnode *node) { return 0; }
 int WP_POS_code_synthesis(struct astnode *node) { return 0; }
 int WRB_code_synthesis(struct astnode *node) { return 0; }
 
+
+char *__do_lazy_resolve__(char *s, struct entity *en) {
+    int occur[strlen(s)/7 + 1];
+    if (strsearch(s, "__REF__type", occur) != 0) {
+        char *tmp = strrep(s, "(__REF__type)", (char *)gqueue(en->cstptr->datatype->types, 0));
+        free(s);
+        return tmp;
+    } else {
+        return s;
+    }
+}
+
 /*
     combinatorially forming all possible SI synthesis for 2 event entities
     the reason why it is a combinatorial problem is that,
@@ -749,17 +761,22 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
 struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct event *event, struct queue *siq) {
     struct queue *result = initqueue();
     struct entity *en1 = (struct entity *)gqueue(event->entities, 0);
-    char *t1 = __combine_3_strings__("(", gramtype2string(en1->type), ")");
+    // char *t1 = __combine_3_strings__("(", gramtype2string(en1->type), ")");
     for (int i = 0; i < siq->count; ++i) {
-        struct si *si = (struct si *)gqueue(siq, i);        
+        struct si *si = (struct si *)gqueue(siq, i);   
+        char *t1 = __combine_3_strings__(
+            "(", 
+            ((struct si_arg *)gqueue(si->args, 0))->symbol, 
+            ")");      
         for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
             char *d1 = (char *)gqueue(en1->cstptr->datalist, j), *s = (char *)strdup(si->interpretation);                
             char *tmp = strrep(s, t1, d1);
             free(s);
+            tmp = __do_lazy_resolve__(tmp, en1);
             enqueue(result, (void *)tmp);       
         }
+        free(t1);
     }
-    free(t1);
     return result;
 }
 
@@ -988,9 +1005,9 @@ void sianalysis() {
     struct astnode *node = NULL;
     struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
     int check = -1;
-    // showqueue(cst, showcstsymbol);
     while (!isempty(predicates)) {
         node = (struct astnode *)dequeue(predicates);
+        // printf("analysing %s...\n", node->token->symbol);
         node->si_q = initqueue();
         switch(node->syntax) {
             case CD:
@@ -1081,8 +1098,7 @@ void sisynthesis() {
     }
     #endif
 
-    // int count = predicates->count;
-    // int check = 0;
+    
     while (!isempty(predicates)) {    
         node = (struct astnode*)dequeue(predicates);
         #if SIDEBUG

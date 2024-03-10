@@ -8,7 +8,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o event.o alias.o
+OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o event.o alias.o error.o
 DEBUG   ?=      1
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -129,8 +129,8 @@ dst.o  : $(SRC)/dst.c
 si.o	: $(SRC)/si.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/si.o $<		
 
-sem.o  : $(SRC)/sem.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
+error.o	: $(SRC)/error.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/error.o $<		
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
