@@ -307,6 +307,7 @@ param_term
         for (int i = 0; i < 7; ++i) {
             popchar($$->token->symbol);
         }
+        $$->token->symbol[strlen($$->token->symbol) - 1] = '\0';
         addastchildren($$, $6);
         $$->syntax = string2ptbsyntax($3->symbol);
         if ($$->syntax != NN && $$->syntax != NNS && $$->syntax != NNP && $$->syntax != NNPS) {

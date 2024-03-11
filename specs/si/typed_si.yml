@@ -167,6 +167,8 @@
   - NN
   arguments:
   - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: \result
 - term: prime
   syntax:
@@ -384,7 +386,7 @@
   interpretation: (x).length()
 - term: element
   syntax:
-  - NN
+  - NNS
   arguments:
   - symbol: '*'
     primitive_type: '*'
@@ -415,7 +417,7 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation: REL(x,y)
-- term: type_array
+- term: type_array_
   syntax:
   - NN
   arguments:
@@ -424,7 +426,16 @@
     primitive_type: '*'
     reference_type: '0'
   interpretation: ''
-- term: type_arrays
+- term: type_string_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '1'
+  interpretation: ''
+- term: type_arrays_
   syntax:
   - NN
   - NNS
@@ -436,7 +447,7 @@
     primitive_type: '*'
     reference_type: '0'
   interpretation: ''
-- term: type_integer
+- term: type_integer_
   syntax:
   - NN
   arguments:
@@ -549,10 +560,8 @@
   arguments:
   - symbol: x
     primitive_type: '*'
-    reference_type: '*'
-  - symbol: __REF__type
-    primitive_type: '*'
-    reference_type: '2'  
+    reference_type: '2'
+    lazy_resolve: __REF__type
     type_names:
     - 'list'
     - 'collection'
@@ -563,10 +572,17 @@
   arguments:
   - symbol: x
     primitive_type: '*'
-    reference_type: '*'
-  - symbol: __REF__type
+    reference_type: '0'
+    lazy_resolve: __REF__type
+  interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
+- term: sum
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
     primitive_type: '*'
     reference_type: '0'
-  interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
+    lazy_resolve: __REF__type
+  interpretation: \sum int i; 0 <= i < __REF__type.length; (x)
     
 

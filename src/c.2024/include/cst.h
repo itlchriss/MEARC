@@ -43,6 +43,11 @@ enum reference_datatype {
 struct datatype {
     enum primitive_datatype p;
     enum reference_datatype r;
+    /* 
+        special keywords to resolve runtime elements, currently at most 1 keyword can be used
+        __REF__type: the type stored in the types of an entity
+    */
+    char *lazy_resolve;
     /* all elements in this queue must be C-strings. each C-string represents a type name */
     struct queue *types;
 };

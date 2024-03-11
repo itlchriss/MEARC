@@ -26,6 +26,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->datatype = (struct datatype *)malloc(sizeof(struct datatype));
     new->datatype->p = UNDEFINED;
     new->datatype->r = UNDEFINED;
+    new->datatype->lazy_resolve = NULL;
     new->datatype->types = initqueue();
     new->status = Empty;
     new->datalist = initqueue();
@@ -67,7 +68,8 @@ int __ptrcomparator(void *_aptr, void *_baptr) {
 
 void deallocatedata(void *_data) {
     char *data = (char *)_data;
-    free(data);
+    if (data)
+        free(data);
 }
 
 void deallocatecstsymbol(void *_cstsymbol) {

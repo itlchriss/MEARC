@@ -117,8 +117,6 @@ event.o  : $(SRC)/event.c
 alias.o  : $(SRC)/alias.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/alias.o $<
 
-opt.o  : $(SRC)/opt.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/opt.o $<
 
 cg.o  : $(SRC)/cg.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cg.o $<		
@@ -132,8 +130,8 @@ dst.o  : $(SRC)/dst.c
 si.o	: $(SRC)/si.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/si.o $<		
 
-sem.o  : $(SRC)/sem.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/sem.o $<		
+error.o	: $(SRC)/error.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/error.o $<		
 
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h

@@ -8,7 +8,8 @@ import os
 # these are java primitive and reference types
 # we should extend this list to support more data types
 datatypes = [
-    'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays'
+    'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays',
+    'string', 'strings'
     ]
 
 
@@ -39,12 +40,12 @@ class ContextProcessor:
 
         if r := re.findall('input\s+(%s)\s+`(.*)`' % '|'.join(datatypes), sent, re.ASCII):
             for type, param in r:
-                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s param_%s' % (type, param), sent, re.ASCII)
+                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
                 # contextual_si['param_%s' % (param)] = param
         elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
             for param in r:
-                pattern = 'param_%s' % param.replace('`', '')
+                pattern = 'param_%s_' % param.replace('`', '')
                 sent = sent.replace(param, pattern)
                 # contextual_si['param_%s' % param] = param
         self.sent = sent
@@ -57,7 +58,7 @@ class ContextProcessor:
             indices = [i for i, w in enumerate(words) if w == d]
             if indices:
                 for index in indices:
-                    words[index] = 'type_' + words[index]
+                    words[index] = 'type_' + words[index] + '_'
         self.sent = ' '.join(words)
         
         # NOTE: because LLM has already recognised the parameter. If 'param_' exists, it means that LLM has provided the parameter information and we have tackled it.

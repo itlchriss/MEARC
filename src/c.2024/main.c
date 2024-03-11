@@ -305,6 +305,13 @@ struct queue* readSI(char *dstfilepaths) {
                                             #if SIDEBUG
                                             printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
                                             #endif                                            
+                                        } else if(strcmp((char *)token.data.scalar.value, "lazy_resolve") == 0) {
+                                            yaml_parser_scan(&parser, &token);
+                                            yaml_parser_scan(&parser, &token);     
+                                            arg->datatype->lazy_resolve = (char *)strdup((char *)token.data.scalar.value);
+                                            #if SIDEBUG
+                                            printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                            #endif  
                                         } else if (strcmp((char*)token.data.scalar.value, "type_names") == 0) {
                                             arg->datatype->types = initqueue();
                                             yaml_parser_scan(&parser, &token);
