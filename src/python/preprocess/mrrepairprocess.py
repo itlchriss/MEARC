@@ -1,6 +1,7 @@
 from .contextprocess import datatypes
 from typing import List
 from enum import Enum
+import math
 
 
 
@@ -114,6 +115,17 @@ class RepairProcessor:
         for k in targets:
             sent = sent.replace(k, targets[k])
         return sent
+
+    def __process_power_sign__(self, sent):
+        words = sent.split(' ')
+        targets = {}
+        for w in words:
+            if "^" in w and w.replace('^', '').isnumeric():
+                arr = w.split('^')
+                targets[w] = str(math.pow(int(arr[0]), int(arr[1])))
+        for k in targets:
+            sent = sent.replace(k, targets[k])
+        return sent
     
     def __process_general_syntax_rule__(self, words, rule, index):
         f = rule['format']
@@ -154,4 +166,5 @@ class RepairProcessor:
         for k in reqtype_ignore_rules[t].keys():
             sent = sent.replace(k, reqtype_ignore_rules[t][k])
         sent = self.__process_negative__(sent)
+        sent = self.__process_power_sign__(sent)
         return sent

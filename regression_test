@@ -18,13 +18,13 @@ else
 
 # 1992 samples
 
-
-for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head`
+for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
        folder=`echo $entry | sed "s/\/$filename//"`
-       python mearc2024 -c mearc.config -f $entry
+       python scripts/insertcomment.py $folder
+       python mearc2024 -c mearc.config -f $entry       
 done
 fi
 

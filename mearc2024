@@ -54,7 +54,7 @@ def run_cmd_show_output(cmd: str) -> None:
     process.wait()
 
 
-debug = True
+debug = False
 info = False
 
 def preprocessing(filepath: str):
@@ -147,11 +147,11 @@ def main(configs: dot_access_dict, filepath: str) -> None:
     for i, sent in enumerate(data['requires']):
         prefix = 'pre.%s' % i
         if not deriveMR(sent, prefix):
-            debug and print('Failed in MR derviation')
+            debug and print('Failed in MR derviation for ', filepath)
             continue
         (r, jmlbody) = translateJMLbody(prefix)
         if not r:
-            debug and print('Failed in MEARC') and exit(-1)
+            debug and print('Failed in MEARC')
             continue
         # DEBUG USE ONLY
         print('requires(%s);' % jmlbody.strip())
@@ -159,12 +159,13 @@ def main(configs: dot_access_dict, filepath: str) -> None:
     for i, sent in enumerate(data['ensures']):
         prefix = 'post.%s' % i
         if not deriveMR(sent, prefix):
-            debug and print('Failed in MR derviation')
+            debug and print('Failed in MR derviation for ', filepath)
             continue
         (r, result) = translateJMLbody(prefix)
         if not r:
             # In this case, the jmlbody 
-            debug and print('Failed in MEARC') and print(result) and exit(-1)
+            print('Failed in MEARC')
+            debug and print(result)
             continue
         # DEBUG USE ONLY
         print('ensures(%s);' % result.strip())

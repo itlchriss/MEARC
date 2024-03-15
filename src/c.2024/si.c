@@ -1005,7 +1005,15 @@ void sianalysis() {
     struct astnode *node = NULL;
     struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
     int check = -1;
+    // for (int i = 0; i < predicates->count; ++i) {
+    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+    // }
+    /* two sortings, at most n^4 */
+    int count = 0, max = predicates->count * predicates->count * predicates->count * predicates->count; 
     while (!isempty(predicates)) {
+        if (count > max) {
+            internal_error("SI analysis has exceeded the maximum count. please check with the MR. ");
+        }
         node = (struct astnode *)dequeue(predicates);
         // printf("analysing %s...\n", node->token->symbol);
         node->si_q = initqueue();
@@ -1039,6 +1047,10 @@ void sianalysis() {
                     struct astnode *tmp = NULL;
                     struct queue *tmpqueue = initqueue();
                     enqueue(tmpqueue, (void *)node);
+                    // printf("before...\n");
+                    // for (int i = 0; i < predicates->count; ++i) {
+                    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+                    // }
                     for (int i = 0; i < predicates->count; ++i) {
                         tmp = (struct astnode *)dequeue(predicates);
                         if (tmp->syntax != NN && 
@@ -1047,14 +1059,21 @@ void sianalysis() {
                             tmp->syntax != NNPS && 
                             tmp->syntax != CD) {
                             enqueue(tmpqueue, (void *)tmp);
+                            // printf("enqueue %s...\n", tmp->token->symbol);
                             }
                         else {
+                            // printf("pushing %s...\n", tmp->token->symbol);
                             push(tmpqueue, (void *)tmp);
                             break;
                         }
                     }
-                    while (!isempty(tmpqueue)) enqueue(predicates, (void *)dequeue(tmpqueue));
+                    while (!isempty(tmpqueue)) {
+                        push(predicates, (void *)pop(tmpqueue));
+                    }
                     deallocatequeue(tmpqueue, NULL);
+                    // for (int i = 0; i < predicates->count; ++i) {
+                    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+                    // }
                 } else {
                     node->si_q = q_searchqueue(silist, node, __simatcher);
                     check_validity(node);
@@ -1065,6 +1084,7 @@ void sianalysis() {
                 }
                 break;
         }
+        count++;
     }
     while (!isempty(last)) enqueue(target, dequeue(last));
     #if SIDEBUG

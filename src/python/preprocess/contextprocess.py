@@ -85,8 +85,7 @@ class ContextProcessor:
             
 
     def run(self, sent: str) -> str:
-        self.sent = sent
-        self._parameter_syntax_processor()
+        self.sent = sent        
         self._synonym_syntax_preprocessor()
-        
+        self._parameter_syntax_processor()
         return self.sent

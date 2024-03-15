@@ -466,5 +466,5 @@ void yyerror(const char *s) {
     for(int i = 0; i < colNum - 1; i++)
         fprintf(stderr,"_");
     fprintf(stderr,"^\n"); 
-    /* exit(-1); */    
+    exit(-1); 
 }
