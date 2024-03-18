@@ -1,5 +1,6 @@
 - The string result must be of minimum length that will unlock the safe at some point of entering it.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 4.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to 10.
-- The string result must contain a sequence of `n` digits where each digit can be in the range `[0, k - 1]`.
-- The string result must unlock the safe at some point of entering it.
+- The string result must contain all possible combinations of digits from 0 to k-1 of length n.
+- The string result must contain all possible combinations of digits from 0 to k-1 of length n in a cyclic manner to ensure the safe is unlocked at some point.
+- The string result must contain all possible combinations of digits from 0 to k-1 of length n in a cyclic manner to ensure the safe is unlocked at some point even if the password is entered in reverse order.

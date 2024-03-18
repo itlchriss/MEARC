@@ -1,8 +1,5 @@
 - The string parameter `formula` consists of English letters, digits, '(', and ')'.
 - The string parameter `formula` is always valid.
-- The length of the string parameter `formula` is between 1 and 1000 characters.
-- The string result contains the count of each atom in the formula.
-- The count of each atom is in sorted order.
-- The count of each atom is followed by its count if that count is greater than 1.
-- The count of each atom is represented as the first name, followed by its count (if greater than 1), followed by the second name, and so on.
-- The count of each atom fits in a 32-bit integer.
+- The length of the string parameter `formula` is greater than or equal to 1 and is less than or equal to 1000.
+- The string result is in the form of the first element name (in sorted order), followed by its count (if that count is more than 1), followed by the second element name (in sorted order), followed by its count (if that count is more than 1), and so on.
+- The string result represents the count of each atom in the chemical formula.

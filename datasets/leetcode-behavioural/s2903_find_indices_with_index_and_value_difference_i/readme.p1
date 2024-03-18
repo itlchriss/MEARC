@@ -1,9 +1,9 @@
-- The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100.
-- All values in the integer array parameter `nums` must be greater than or equal to 0 and less than or equal to 50.
-- The integer parameter `indexDifference` must be greater than or equal to 0 and less than or equal to 100.
-- The integer parameter `valueDifference` must be greater than or equal to 0 and less than or equal to 50.
-- The integer array result `answer` must have a length of 2.
-- All values in the integer array result `answer` must be unique.
-- If there exist two indices `i` and `j` in the range `[0, n - 1]` such that `abs(i - j) >= indexDifference` and `abs(nums[i] - nums[j]) >= valueDifference`, the integer array result `answer` is `[i, j]`.
-- If there are multiple valid choices for the two indices `i` and `j`, any valid choice can be returned.
-- If there are no two indices `i` and `j` that satisfy both conditions, the integer array result `answer` is `[-1, -1]`.
+- The integer array parameter `nums` must not be null.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100.
+- All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 50.
+- The integer parameter `indexDifference` is greater than or equal to 0 and is less than or equal to 100.
+- The integer parameter `valueDifference` is greater than or equal to 0 and is less than or equal to 50.
+- The length of the integer array result is 2 if there are two indices that satisfy the conditions.
+- The length of the integer array result is 2 if there are two indices that satisfy the conditions.
+- All values in the integer array result are unique.
+- If there are no two indices that satisfy the conditions, the integer array result is [-1, -1].

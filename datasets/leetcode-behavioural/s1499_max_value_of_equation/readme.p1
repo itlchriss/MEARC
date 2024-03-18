@@ -1,4 +1,5 @@
 - The integer array parameter `points` must not be null.
+- The length of the integer array parameter `points` is greater than or equal to 2 and is less than or equal to 100000.
+- The length of each sub-array in the integer array parameter `points` is equal to 2.
 - The integer parameter `k` is greater than or equal to 0 and is less than or equal to 200000000.
 - The integer result is the maximum value of the equation `yi + yj + |xi - xj|` where `|xi - xj| <= k` and `1 <= i < j <= points.length`.
-- It is guaranteed that there exists at least one pair of points that satisfy the constraint `|xi - xj| <= k`.

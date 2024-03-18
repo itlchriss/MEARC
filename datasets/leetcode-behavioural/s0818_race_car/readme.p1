@@ -1,11 +1,12 @@
 - The integer parameter `target` is greater than or equal to 1 and is less than or equal to 10000.
 - The integer result is the length of the shortest sequence of instructions to reach the target position.
-- The sequence of instructions consists of 'A' (accelerate) and 'R' (reverse).
+- The sequence of instructions consists of 'A' (accelerate) and 'R' (reverse) commands.
 - When the instruction is 'A':
     - The position increases by the current speed.
     - The speed doubles.
 - When the instruction is 'R':
-    - If the speed is positive, it becomes -1.
-    - If the speed is negative, it becomes 1.
+    - If the speed is positive, it becomes negative.
+    - If the speed is negative, it becomes positive.
 - The position can be negative.
 - The speed can be positive or negative.
+- The sequence of instructions must be the shortest possible to reach the target position.

@@ -1,5 +1,8 @@
-- The integer array parameter `edges` must not be null.
 - The integer array parameter `coins` must not be null.
+- The integer array parameter `coins` must have a length greater than or equal to 2 and less than or equal to 100000.
+- All values in the integer array parameter `coins` must be greater than or equal to 0 and less than or equal to 10000.
+- The 2D integer array parameter `edges` must not be null.
+- The length of the 2D integer array parameter `edges` must be equal to the length of the integer array parameter `coins` minus 1.
+- All values in the 2D integer array parameter `edges` must be within the range of the length of the integer array parameter `coins`.
 - The integer parameter `k` must be greater than or equal to 0 and less than or equal to 10000.
 - The integer result is the maximum points that can be obtained after collecting coins from all the tree nodes.
-- The integer result is greater than or equal to 0.

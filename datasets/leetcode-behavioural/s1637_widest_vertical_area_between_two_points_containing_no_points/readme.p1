@@ -1,6 +1,5 @@
 - The integer parameter `points` is a 2D array where each element is an array of length 2 representing a point `[x, y]`.
-- The integer result is the widest vertical area between two points such that no points are inside the area.
-- The points on the edge of a vertical area are not considered included in the area.
-- The width of the vertical area is the maximum width possible.
-- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
-- The x and y coordinates of each point in the `points` array are greater than or equal to 0 and are less than or equal to 1000000000.
+- The integer result is the maximum width of the vertical area between two points such that no points are inside the area.
+- Points on the edge of a vertical area are not considered included in the area.
+- The width of the vertical area is calculated based on the x-coordinates of the points.
+- The result is greater than or equal to 0.

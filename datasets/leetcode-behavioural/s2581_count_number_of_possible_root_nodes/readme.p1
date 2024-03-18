@@ -1,9 +1,9 @@
 - The integer array parameter `eg` represents an undirected tree with `n` nodes labeled from `0` to `n - 1`.
 - The integer array parameter `eg` has a length of `n - 1`.
-- Each element in the integer array parameter `eg` is an edge between nodes `a_i` and `b_i` in the tree.
+- Each element in the integer array parameter `eg` is an array of length 2 representing an edge between nodes `a_i` and `b_i` in the tree.
 - The integer array parameter `gu` represents Bob's guesses about the tree.
 - The integer array parameter `gu` has a length of at least 1 and at most 100000.
-- Each element in the integer array parameter `gu` is a guess where `u_j` is the parent of `v_j` in the tree.
+- Each element in the integer array parameter `gu` is an array of length 2 representing Bob's guess that `u_j` is the parent of `v_j`.
 - The integer parameter `k` represents the minimum number of correct guesses Bob needs to have.
 - The integer result is the number of possible nodes that can be the root of Alice's tree.
-- If there is no such tree, the result is 0.
+- If there is no such tree, the integer result is 0.

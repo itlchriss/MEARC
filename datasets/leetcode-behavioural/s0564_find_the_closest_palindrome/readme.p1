@@ -2,5 +2,6 @@
 - The string parameter `n` consists of only digits.
 - The string parameter `n` does not have leading zeros.
 - The string parameter `n` represents an integer in the range [1, 10^18 - 1].
-- The string result is the closest palindrome integer to the string parameter `n`.
-- If there is a tie, the smaller palindrome integer is returned.
+- The string result is the closest integer (not including itself) to the string parameter `n`, which is a palindrome.
+- If there is a tie, the string result is the smaller one.
+- The closest integer is defined as the absolute difference minimized between two integers.

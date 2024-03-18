@@ -1,7 +1,5 @@
-- The integer array parameter `queries` must not be null.
-- The string parameter `s` must not be null and must have a length greater than or equal to 1 and less than or equal to 10000.
-- The integer result is a 2D array where each element is an array of two integers representing the left and right endpoints of the substring that satisfies the XOR condition for each query.
-- If no substring satisfies the XOR condition for a query, the corresponding answer should be `[-1, -1]`.
-- The decimal value of a substring is calculated by converting the binary substring to decimal.
-- The XOR operation is performed between the decimal value of the substring and the given query values.
-- The answer should include the minimum left index if there are multiple substrings that satisfy the XOR condition for a query.
+- The string parameter `s` must not be null and must consist of binary characters '0' and '1'.
+- The integer array parameter `queries` must not be null and must have a length greater than or equal to 1 and less than or equal to 100000.
+- Each element in the integer array parameter `queries` must be an array of length 2 containing integers within the range of 0 to 10^9.
+- The integer array result `ans` must have the same length as the integer array parameter `queries`.
+- Each element in the integer array result `ans` must be an array of length 2 containing integers representing the endpoints of the shortest substring that satisfies the given conditions or [-1, -1] if no such substring exists.

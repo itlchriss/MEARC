@@ -1,4 +1,5 @@
-- The integer array parameter `gas` and `cost` must have the same length `n`.
-- All values in the integer array parameters `gas` and `cost` are greater than or equal to 0 and are less than or equal to 10000.
+- The integer array parameter `gas` and `cost` must not be null.
+- The length of the integer array parameter `gas` and `cost` is equal to `n`.
+- All values in the integer array parameter `gas` and `cost` are greater than or equal to 0 and are less than or equal to 10000.
 - The integer result is the starting gas station's index if it is possible to travel around the circuit once in the clockwise direction.
 - If it is not possible to travel around the circuit once, the integer result is -1.

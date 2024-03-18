@@ -1,15 +1,11 @@
 - The integer result is the lowest number of moves to acquire all keys.
-- If it is impossible to acquire all keys, the integer result is -1.
-- The input grid is a 2D array of characters representing the layout of the grid.
-- The grid contains the following characters:
-    - '.' represents an empty cell.
-    - '#' represents a wall.
-    - '@' represents the starting point.
-    - Lowercase letters represent keys.
-    - Uppercase letters represent locks.
-- One move consists of walking one space in one of the four cardinal directions.
-- You cannot walk outside the grid or walk into a wall.
-- If you walk over a key, you can pick it up.
-- You cannot walk over a lock unless you have its corresponding key.
-- There is exactly one lowercase and one uppercase letter of the first k letters of the English alphabet in the grid, where k is between 1 and 6.
-- The letters used to represent keys and locks were chosen in the same order as the English alphabet.
+- If it is impossible to acquire all keys, the integer result is equal to -1.
+- The input grid must be a list of strings representing the grid.
+- The grid must have dimensions m x n where 1 <= m, n <= 30.
+- The grid must contain the following characters: '.', '#', '@', lowercase letters representing keys, and uppercase letters representing locks.
+- There must be exactly one lowercase and one uppercase letter of the first k letters of the English alphabet in the grid, where 1 <= k <= 6.
+- The keys and locks must be in corresponding pairs in the grid.
+- The keys and locks must be chosen in the same order as the English alphabet.
+- Each key in the grid must be unique.
+- Each key in the grid must have a matching lock.
+- The method signature is public int shortestPathAllKeys(String[] stringGrid).

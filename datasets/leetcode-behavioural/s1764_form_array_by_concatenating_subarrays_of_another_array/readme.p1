@@ -1,3 +1,2 @@
-- The boolean result is true if it is possible to choose `n` disjoint subarrays from the integer array `nums` such that the `i-th` subarray is equal to `groups[i]` and if `i > 0`, the `(i-1)-th` subarray appears before the `i-th` subarray in `nums`.
-- The subarrays are considered disjoint if there is no index `k` such that `nums[k]` belongs to more than one subarray.
-- The subarray is defined as a contiguous sequence of elements within an array.
+- The boolean result is equal to the true literal if it is possible to choose `n` disjoint subarrays from the array `nums` such that the `i-th` subarray is equal to `groups[i]` and if `i > 0`, the `(i-1)-th` subarray appears before the `i-th` subarray in `nums`.
+- The boolean result is equal to the false literal if it is not possible to choose `n` disjoint subarrays from the array `nums` as specified above.

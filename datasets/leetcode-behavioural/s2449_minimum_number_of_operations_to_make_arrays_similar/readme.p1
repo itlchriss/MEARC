@@ -1,7 +1,6 @@
 - The integer array parameter `nums` and `target` must have the same length.
-- The integer array parameter `nums` and `target` must contain positive integers.
+- All values in the integer array parameters `nums` and `target` are greater than or equal to 1 and are less than or equal to 1000000.
 - The integer result is the minimum number of operations required to make the integer array `nums` similar to the integer array `target`.
-- In one operation, two distinct indices `i` and `j` can be chosen where `0 <= i, j < nums.length`.
+- In each operation, two distinct indices `i` and `j` are chosen where `0 <= i, j < nums.length`.
 - In each operation, `nums[i]` is incremented by 2 and `nums[j]` is decremented by 2.
 - Two arrays are considered similar if the frequency of each element is the same.
-- The test cases are generated such that `nums` can always be made similar to `target`.

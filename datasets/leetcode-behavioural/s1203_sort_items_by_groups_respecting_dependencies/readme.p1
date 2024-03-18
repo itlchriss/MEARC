@@ -1,10 +1,11 @@
-- The integer parameters `n` and `m` are greater than or equal to 1 and are less than or equal to 30000.
-- The length of the integer array parameter `group` is equal to the integer parameter `n`.
-- Each value in the integer array parameter `group` is greater than or equal to -1 and is less than or equal to the integer parameter `m` minus 1.
-- The length of the list parameter `beforeItems` is equal to the integer parameter `n`.
-- Each list in the list parameter `beforeItems` contains unique elements.
-- Each element in the list parameter `beforeItems` is greater than or equal to 0 and is less than the integer parameter `n`.
-- The length of the integer array result is equal to the integer parameter `n`.
-- The integer array result contains a sorted list of items such that items belonging to the same group are next to each other and satisfy the relations specified in the `beforeItems` list.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 30000.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to `n`.
+- All values in the integer array parameter `group` are greater than or equal to -1 and are less than or equal to `m-1`.
+- The length of the integer array parameter `group` is equal to `n`.
+- The length of the list parameter `beforeItems` is equal to `n`.
+- The length of each list element in the list parameter `beforeItems` is less than or equal to `n-1`.
+- All values in each list element in the list parameter `beforeItems` are unique.
+- The integer array result contains a sorted list of items such that items belonging to the same group are next to each other.
+- The items in the sorted list follow the relations specified in the `beforeItems` list.
 - If there is more than one solution, any valid solution can be returned.
 - If there is no solution, an empty list is returned.

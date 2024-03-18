@@ -1,4 +1,7 @@
-- The integer 2D array parameter `grid` must have a size of 2 x n.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50000.
-- All values in the integer 2D array parameter `grid` are greater than or equal to 1 and are less than or equal to 100000.
-- The long result is the number of points collected by the second robot after both robots play optimally.
+- All values in the 2D integer array parameter `grid` are greater than or equal to 1 and are less than or equal to 100000.
+- The integer result is the number of points collected by the second robot.
+- The first robot moves optimally to minimize the points collected by the second robot.
+- The second robot moves optimally to maximize the points collected.
+- The paths of the first and second robots may intersect.
+- For all cells visited by the first robot, the value in the grid is set to 0.

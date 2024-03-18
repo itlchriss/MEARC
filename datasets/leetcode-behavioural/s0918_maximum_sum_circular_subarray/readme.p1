@@ -1,5 +1,7 @@
 - The integer array parameter `nums` must not be null.
 - The integer result is the maximum possible sum of a non-empty subarray of the circular integer array `nums`.
-- The subarray may only include each element of the fixed buffer `nums` at most once.
-- The length of the circular integer array `nums` is greater than or equal to 1 and is less than or equal to 30000.
-- All values in the circular integer array `nums` are greater than or equal to -30000 and are less than or equal to 30000.
+- The subarray may only include each element of the circular integer array `nums` at most once.
+- The circular array connects the end to the beginning, meaning the next element of `nums[i]` is `nums[(i + 1) % n]` and the previous element of `nums[i]` is `nums[(i - 1 + n) % n]`.
+- For a subarray `nums[i], nums[i + 1], ..., nums[j]`, there should not exist `i <= k1`, `k2 <= j` with `k1 % n == k2 % n`.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 30000.
+- All values in the integer array parameter `nums` are greater than or equal to -30000 and are less than or equal to 30000.

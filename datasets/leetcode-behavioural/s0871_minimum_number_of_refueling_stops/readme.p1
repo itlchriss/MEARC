@@ -1,6 +1,8 @@
 - The integer parameter `target` is greater than or equal to 1 and is less than or equal to 10^9.
 - The integer parameter `startFuel` is greater than or equal to 1 and is less than or equal to 10^9.
-- The length of the integer array parameter `stations` is less than or equal to 500.
-- The integer array parameter `stations` contains subarrays where the first element represents the position of the gas station in miles east of the starting position and the second element represents the amount of fuel in liters at that gas station.
-- The integer result is the minimum number of refueling stops the car must make in order to reach the destination.
-- If the car cannot reach the destination, the integer result is -1.
+- The integer array parameter `stations` has a length greater than or equal to 0 and is less than or equal to 500.
+- The integer array parameter `stations` is sorted in ascending order based on the position of the gas stations.
+- The position of each gas station in the integer array parameter `stations` is greater than or equal to 0 and is less than the `target`.
+- The fuel amount of each gas station in the integer array parameter `stations` is greater than or equal to 1 and is less than 10^9.
+- The integer result is the minimum number of refueling stops the car must make to reach the destination.
+- If the car cannot reach the destination, the integer result is equal to -1.

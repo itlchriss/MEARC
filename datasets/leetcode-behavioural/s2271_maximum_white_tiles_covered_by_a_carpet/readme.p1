@@ -1,7 +1,6 @@
 - The integer array parameter `tiles` must not be null.
-- The integer array parameter `tiles` must have a length greater than or equal to 1 and less than or equal to 50000.
-- Each element in the integer array parameter `tiles` must be an array of length 2.
-- The integer array parameter `tiles` must not contain overlapping ranges.
-- The integer parameters `l_i` and `r_i` in each element of the integer array parameter `tiles` must be greater than or equal to 1 and less than or equal to 1000000000.
-- The integer parameter `carpetLen` must be greater than or equal to 1 and less than or equal to 1000000000.
+- The integer array parameter `tiles` length is greater than or equal to 1 and is less than or equal to 50000.
+- Each element in the integer array parameter `tiles` is an array of length 2.
+- The integer array parameter `tiles` element at index `i` has two elements where the first element is greater than or equal to 1 and is less than or equal to 10^9, and the second element is greater than or equal to the first element and is less than or equal to 10^9.
+- The integer parameter `carpetLength` is greater than or equal to 1 and is less than or equal to 10^9.
 - The integer result is the maximum number of white tiles that can be covered by the carpet.

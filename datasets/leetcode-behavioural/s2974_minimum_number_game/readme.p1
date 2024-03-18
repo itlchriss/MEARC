@@ -1,5 +1,5 @@
-- The integer array parameter `nums` has an even length.
+- The integer array parameter `nums` must have an even length.
 - In each round, the minimum element from the integer array `nums` is removed alternately by Alice and Bob.
-- After removing the minimum element, the removed element is appended to the integer array `arr` alternately by Bob and Alice.
+- After removing the minimum element, Bob appends it to the resulting array `arr`, followed by Alice appending the removed element.
 - The game continues until the integer array `nums` becomes empty.
-- The resulting integer array `arr` is returned as the output.
+- The resulting array `arr` contains the elements appended by Bob and Alice in the order they were removed from `nums`.

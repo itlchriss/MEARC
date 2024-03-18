@@ -1,4 +1,5 @@
-- The integer parameters `x`, `y`, and `bound` must be greater than or equal to 1 and less than or equal to 100.
-- The integer result is a list of powerful integers that have a value less than or equal to the integer parameter `bound`.
-- Each powerful integer in the result list can be represented as x^i + y^j for some integers i >= 0 and j >= 0.
-- Each value in the result list should occur at most once.
+Method behavioural specifications:
+- The integer parameters `x`, `y`, and `bound` are greater than or equal to 1 and are less than or equal to 100.
+- The integer list result contains all powerful integers that can be represented as x^i + y^j for some integers i >= 0 and j >= 0.
+- Each value in the integer list result occurs at most once.
+- The values in the integer list result are less than or equal to the integer parameter `bound`.

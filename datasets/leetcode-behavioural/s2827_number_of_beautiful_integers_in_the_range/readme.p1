@@ -1,7 +1,9 @@
 - The integer parameter `low` is greater than 0 and is less than or equal to 10^9.
-- The integer parameter `high` is greater than or equal to `low` and is less than or equal to 10^9.
+- The integer parameter `high` is greater than or equal to the integer parameter `low` and is less than or equal to 10^9.
 - The integer parameter `k` is greater than 0 and is less than or equal to 20.
 - The integer result is the number of beautiful integers in the range `[low, high]`.
-- A number is considered beautiful if it meets the following conditions:
+- A number is considered beautiful if it meets both conditions: 
     - The count of even digits in the number is equal to the count of odd digits.
     - The number is divisible by `k`.
+- The beautiful integers in the range `[low, high]` are inclusive.
+- The output should be the count of beautiful integers within the specified range.

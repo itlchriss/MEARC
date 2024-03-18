@@ -1,3 +1,6 @@
-- The integer matrix parameter `grid` must be a 0-indexed `m x n` matrix.
+- The integer matrix parameter `grid` is a 0-indexed `m x n` matrix.
 - The integer result is the minimum number of cells needed to visit to reach the bottom-right cell `(m - 1, n - 1)`.
-- If there is no valid path to reach the bottom-right cell, the integer result is -1.
+- If there is no valid path to reach the bottom-right cell `(m - 1, n - 1)`, the integer result is equal to -1.
+- The integer result is greater than or equal to -1.
+- The integer result is less than or equal to `m + n - 2`.
+- The integer result is equal to the number of cells visited in a valid path to reach the bottom-right cell `(m - 1, n - 1)`.

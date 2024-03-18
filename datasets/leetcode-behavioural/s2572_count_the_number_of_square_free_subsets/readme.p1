@@ -1,9 +1,6 @@
 Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` is 0-indexed.
-- The integer result is the number of square-free non-empty subsets of the array `nums`.
+- The integer array parameter `nums` length is greater than or equal to 1 and is less than or equal to 1000.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 30.
+- The integer result is the number of square-free non-empty subsets of the integer array `nums`.
 - The integer result is modulo 10^9 + 7.
-- A square-free subset is a subset of the array `nums` where the product of its elements is a square-free integer.
-- A square-free integer is an integer that is divisible by no square number other than 1.
-- A non-empty subset of `nums` is an array obtained by deleting some (possibly none but not all) elements from `nums`.
-- Two subsets are different if and only if the chosen indices to delete are different.

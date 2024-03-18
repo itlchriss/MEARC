@@ -1,4 +1,6 @@
-- The integer array parameter `distance` must not be null.
-- The integer array parameter `distance` must have a length equal to `n`.
-- The integer parameters `start` and `destination` must be greater than or equal to 0 and less than `n`.
-- The integer result is the shortest distance between the `start` and `destination` stops.
+- The integer array parameter `distance` contains the distances between all pairs of neighboring bus stops.
+- The integer parameter `start` represents the starting bus stop.
+- The integer parameter `destination` represents the destination bus stop.
+- The integer result is the shortest distance between the starting bus stop and the destination bus stop.
+- The integer result is greater than or equal to 0.
+- The integer result is less than or equal to the sum of all distances in the `distance` array.

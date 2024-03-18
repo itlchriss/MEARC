@@ -1,5 +1,7 @@
 Method behavioural specifications:
-- The integer matrix parameter `matrix` must not be null.
-- The integer matrix parameter `matrix` must be a 0-indexed binary matrix.
-- The integer parameter `numSelect` is greater than or equal to 1 and is less than or equal to the number of columns in the matrix.
-- The integer result is the maximum number of rows that can be covered by selecting `numSelect` distinct columns from the matrix.
+- The integer matrix parameter `matrix` is a 0-indexed binary matrix with dimensions `m x n`.
+- The integer parameter `numSelect` is the number of distinct columns to be selected from the matrix.
+- The integer result is the maximum number of rows that can be covered by selecting `numSelect` columns.
+- A row is considered covered if for each cell in the row where the value is 1, the corresponding column is present in the selected set of columns, or if no cell in the row has a value of 1.
+- The selected set of columns must be chosen in a way that maximizes the number of covered rows.
+- The result should be the maximum number of rows that can be covered by the selected set of columns.

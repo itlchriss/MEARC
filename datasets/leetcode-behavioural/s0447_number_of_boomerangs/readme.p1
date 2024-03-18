@@ -2,4 +2,5 @@
 - The integer array parameter `points` contains `n` distinct points in the plane, where each point is represented as an array of two integers `[x, y]`.
 - The integer result is the number of boomerangs, where a boomerang is a tuple of points `(i, j, k)` such that the distance between `i` and `j` equals the distance between `i` and `k`.
 - The order of the tuple matters, meaning that `(i, j, k)` is different from `(i, k, j)`.
-- The integer result represents the total number of unique boomerangs that can be formed from the given points.
+- The result is equal to 0 if no boomerangs are found.
+- The result is greater than or equal to 0.

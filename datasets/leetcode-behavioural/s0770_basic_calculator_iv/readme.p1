@@ -1,7 +1,15 @@
-- The list of strings result must contain terms with non-zero coefficients.
-- Each term in the list result must be formatted as follows:
-    - The leading coefficient of the term is placed directly to the left with an asterisk separating it from the variables (if they exist). A leading coefficient of 1 is still printed.
-    - For each term of free variables with a non-zero coefficient, the free variables within a term must be written in sorted order lexicographically.
-    - Terms have degrees equal to the number of free variables being multiplied, counting multiplicity.
-    - The largest degree terms of the answer must be written first, breaking ties by lexicographic order ignoring the leading coefficient of the term.
-- Terms (including constant terms) with coefficient 0 must not be included in the list result.
+- The list of strings result contains terms with non-zero coefficients.
+- Each term in the list result is formatted as follows:
+    - The free variables within a term are sorted lexicographically.
+    - Terms are ordered by degree, with the largest degree terms appearing first.
+    - The leading coefficient of the term is placed to the left with an asterisk separating it from the variables.
+    - Terms with a coefficient of 0 are not included in the result.
+- The expression is evaluated in the following order: brackets first, then multiplication, and finally addition and subtraction.
+- Variables are strings of lowercase letters without leading coefficients or unary operators.
+- The input expression consists of lowercase English letters, digits, '+', '-', '*', '(', ')', and spaces.
+- The input expression does not contain leading or trailing spaces.
+- Tokens in the expression are separated by a single space.
+- The number of evalvars is between 0 and 100.
+- The length of each evalvar is between 1 and 20.
+- The evalints array has the same length as evalvars.
+- The values in evalints range from -100 to 100.

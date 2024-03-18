@@ -1,6 +1,6 @@
 - The integer parameter `num` must have a length greater than or equal to 3 and less than or equal to 200.
-- The integer values in the list result must be non-negative and fit in a 32-bit signed integer type (0 <= f[i] < 2^31).
-- The length of the list result must be greater than or equal to 3.
-- For all indices i such that 0 <= i < length of list result - 2, the sum of f[i] and f[i + 1] must be equal to f[i + 2].
-- Each piece of the split sequence in the list result must not have extra leading zeroes, except if the piece is the number 0 itself.
-- If it is impossible to split the string `num` into a Fibonacci-like sequence, an empty list [] must be returned.
+- The integer values in the Fibonacci-like sequence result must be non-negative and fit in a 32-bit signed integer type.
+- Each piece in the Fibonacci-like sequence result must not have extra leading zeroes, except if the piece is the number 0 itself.
+- The length of the Fibonacci-like sequence result must be greater than or equal to 3.
+- The sum of each pair of consecutive elements in the Fibonacci-like sequence result must be equal to the next element in the sequence.
+- If it is impossible to split the string `num` into a Fibonacci-like sequence, the method must return an empty list.

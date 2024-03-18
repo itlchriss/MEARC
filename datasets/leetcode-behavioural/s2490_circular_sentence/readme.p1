@@ -1,4 +1,7 @@
-- The string parameter `sentence` is a sentence consisting of words separated by a single space with no leading or trailing spaces.
-- The words in the sentence consist of only uppercase and lowercase English letters.
-- The sentence is circular if the last character of a word is equal to the first character of the next word, and the last character of the last word is equal to the first character of the first word.
-- The boolean result is true if the sentence is circular, otherwise false.
+- The string parameter `sentence` must not be null.
+- The string parameter `sentence` must have a length greater than or equal to 1 and less than or equal to 500.
+- The string parameter `sentence` must consist of only lowercase and uppercase English letters and spaces.
+- The words in the string parameter `sentence` must be separated by a single space.
+- There are no leading or trailing spaces in the string parameter `sentence`.
+- The boolean result is equal to the true literal if the sentence is circular according to the given definition.
+- The boolean result is equal to the false literal if the sentence is not circular according to the given definition.

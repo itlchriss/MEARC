@@ -1,5 +1,5 @@
-- The integer parameter `num1` is a numeric string representing a number greater than or equal to 1 and less than or equal to 10^22.
-- The integer parameter `num2` is a numeric string representing a number greater than or equal to `num1` and less than or equal to 10^22.
-- The integer parameters `min_sum` and `max_sum` are integers representing the minimum and maximum sum of digits of a good integer respectively, where 1 <= `min_sum` <= `max_sum` <= 400.
-- The integer result is the number of good integers between `num1` and `num2` inclusive, where a good integer is defined as an integer `x` such that `num1 <= x <= num2` and `min_sum <= digit_sum(x) <= max_sum`.
+- The integer parameter `num1` is greater than or equal to 1 and is less than or equal to 10^22.
+- The integer parameter `num2` is greater than or equal to `num1` and is less than or equal to 10^22.
+- The integer parameters `min_sum` and `max_sum` are greater than or equal to 1 and are less than or equal to 400.
+- The integer result is the number of integers `x` such that `num1 <= x <= num2` and `min_sum <= digit_sum(x) <= max_sum`.
 - The integer result is returned modulo 10^9 + 7.

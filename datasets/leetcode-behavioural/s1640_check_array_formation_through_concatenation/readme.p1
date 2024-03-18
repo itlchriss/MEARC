@@ -1,8 +1,8 @@
-- The boolean result is true if it is possible to form the integer array `arr` from the integer arrays in `pieces` without reordering the integers within each array.
-- The boolean result is false if it is not possible to form the integer array `arr` from the integer arrays in `pieces` without reordering the integers within each array.
-- The length of the integer array `arr` is greater than or equal to the length of the integer array `pieces`.
-- The sum of the lengths of all integer arrays in `pieces` is equal to the length of the integer array `arr`.
-- Each integer array in `pieces` contains distinct integers.
+- The integer array parameter `arr` must not be null.
+- The integer array parameter `pieces` must not be null.
 - The integers in the integer array `arr` are distinct.
 - The integers in the integer arrays in `pieces` are distinct.
-- The integer array `arr` and the integer arrays in `pieces` are not modified during the process of checking if `arr` can be formed from `pieces`.
+- The length of the integer array `arr` is greater than or equal to the length of the integer array `pieces`.
+- The sum of the lengths of the integer arrays in `pieces` is equal to the length of the integer array `arr`.
+- Each integer array in `pieces` cannot have its integers reordered.
+- The boolean result is equal to the true literal if it is possible to form the array `arr` from the arrays in `pieces`.

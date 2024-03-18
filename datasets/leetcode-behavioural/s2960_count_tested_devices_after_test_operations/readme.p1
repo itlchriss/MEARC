@@ -3,4 +3,4 @@
 - The integer result is the number of devices that will be tested after performing the test operations in order.
 - If the integer array parameter `batteryPercentages[i]` is greater than 0, the count of tested devices is incremented.
 - If the integer array parameter `batteryPercentages[i]` is greater than 0, the battery percentage of all devices with indices `j` in the range `[i + 1, n - 1]` is decreased by 1, ensuring their battery percentage never goes below 0.
-- If the integer array parameter `batteryPercentages[i]` is 0, move to the next device without performing any test.
+- If the integer array parameter `batteryPercentages[i]` is equal to 0, move to the next device without performing any test.

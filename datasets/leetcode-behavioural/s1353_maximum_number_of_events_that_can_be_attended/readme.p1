@@ -1,5 +1,5 @@
 - The integer array parameter `events` must not be null.
-- The length of the integer array parameter `events` is greater than or equal to 1 and is less than or equal to 100000.
-- Each element in the integer array parameter `events` is an array of length 2.
-- The integer array parameter `events[i]` contains the start day `startDay_i` and end day `endDay_i` of event `i`.
+- The length of each event in the integer array parameter `events` is equal to 2.
+- The integer parameter `startDay` of each event in the integer array parameter `events` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer parameter `endDay` of each event in the integer array parameter `events` is greater than or equal to the corresponding `startDay` and is less than or equal to 100000.
 - The integer result is the maximum number of events that can be attended.

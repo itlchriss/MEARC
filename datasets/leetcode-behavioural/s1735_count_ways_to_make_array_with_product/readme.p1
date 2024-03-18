@@ -1,5 +1,6 @@
 - The integer array parameter `queries` must not be null.
 - The length of the integer array parameter `queries` is greater than or equal to 1 and is less than or equal to 10000.
-- The length of the integer array result is equal to the length of the integer array parameter `queries`.
+- Each element in the integer array parameter `queries` is an array of size 2.
+- The integer result is an integer array where the length is equal to the length of the integer array parameter `queries`.
 - Each element in the integer array result is the answer to the corresponding query in the integer array parameter `queries`.
-- The integer result is the number of ways to place positive integers into an array of size `ni` such that the product of the integers is `ki`, modulo 10^9 + 7.
+- The integer result is the number of different ways positive integers can be placed into an array of size `ni` such that the product of the integers is `ki`, modulo 10^9 + 7.

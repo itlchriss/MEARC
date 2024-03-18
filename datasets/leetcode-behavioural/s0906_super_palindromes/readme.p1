@@ -1,6 +1,5 @@
-- The string parameters `left` and `right` must represent positive integers.
-- The integer result is the number of super-palindromes integers in the inclusive range `[left, right]`.
-- A super-palindrome is a palindrome that is also the square of a palindrome.
-- The result must be inclusive of the values of `left` and `right`.
-- The result must be greater than or equal to 0.
-- The result must be calculated efficiently for large integer ranges.
+- The string parameters `left` and `right` must consist of only digits.
+- The string parameters `left` and `right` cannot have leading zeros.
+- The string parameters `left` and `right` represent integers in the range [1, 10^18 - 1].
+- The string parameter `left` is less than or equal to the string parameter `right`.
+- The integer result is the number of super-palindromes integers in the inclusive range [left, right].

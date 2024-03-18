@@ -4,3 +4,4 @@
 - Any two directories in the canonical path are separated by a single slash `'/'`.
 - The canonical path does not end with a trailing `'/'`.
 - The canonical path only contains directories on the path from the root directory to the target file or directory, excluding periods `'.'` or double periods `'..'`.
+- Multiple consecutive slashes in the canonical path are replaced by a single slash.

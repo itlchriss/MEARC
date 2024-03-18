@@ -1,6 +1,6 @@
-- The integer array parameter `heights` must not be null.
-- The length of the integer array parameter `heights` is greater than or equal to 1 and is less than or equal to 100000.
-- All values in the integer array parameter `heights` are greater than or equal to 1 and are less than or equal to 100000.
-- All values in the integer array parameter `heights` are unique.
-- The length of the integer array result is equal to the length of the integer array parameter `heights`.
-- Each element in the integer array result is the number of people the corresponding person can see to their right in the queue.
+- The integer array parameter `heights` contains distinct integers representing the heights of people in a queue.
+- The integer array result `answer` has a length of `n`, where `n` is the number of people in the queue.
+- Each element in the integer array result `answer` represents the number of people the corresponding person can see to their right in the queue.
+- The `i`th person can see the `j`th person to their right if `i < j` and `min(heights[i], heights[j]) > max(heights[i+1], heights[i+2], ..., heights[j-1])`.
+- The values in the integer array result `answer` are calculated based on the visibility criteria mentioned above.
+- The values in the integer array result `answer` are unique and correspond to the number of visible people to the right of each person in the queue.

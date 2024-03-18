@@ -1,7 +1,6 @@
 - The integer array parameter `buildings` must not be null.
-- The integer array parameter `buildings` must have a length between 1 and 10000.
-- The integer array parameter `buildings` must be sorted by the left edge of each building in non-decreasing order.
-- Each element in the integer array parameter `buildings` must be an array of three integers representing the left edge, right edge, and height of a building.
+- The integer array parameter `buildings` must have a length greater than or equal to 1 and less than or equal to 10000.
+- Each element in the integer array parameter `buildings` must be an array of length 3, where the first element represents the x coordinate of the left edge of the building, the second element represents the x coordinate of the right edge of the building, and the third element represents the height of the building.
 - The integer result is a list of key points sorted by their x-coordinate in the form [[x1,y1],[x2,y2],...] representing the skyline formed by the buildings collectively.
-- Each key point in the result list is the left endpoint of a horizontal segment in the skyline except for the last point which always has a y-coordinate of 0 to mark the skyline's termination.
+- Each key point in the result list is the left endpoint of some horizontal segment in the skyline except the last point, which always has a y-coordinate of 0 to mark the skyline's termination.
 - There must be no consecutive horizontal lines of equal height in the output skyline.

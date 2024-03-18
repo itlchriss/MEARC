@@ -1,4 +1,6 @@
 - The integer array parameter `positions` must not be null.
-- The integer array parameter `positions` length is greater than or equal to 1 and is less than or equal to 1000.
-- The integer array parameter `positions` contains arrays of length 2 where the first element is greater than or equal to 1 and is less than or equal to 10^8, and the second element is greater than or equal to 1 and is less than or equal to 10^6.
-- The integer list result contains the height of the current tallest stack of squares after dropping each square in the `positions` array.
+- The length of the integer array parameter `positions` is greater than or equal to 1 and is less than or equal to 1000.
+- The integer array parameter `positions` contains arrays where each array has two elements: `left_i` and `sideLength_i`.
+- The integer result is a list of integers representing the height of the current tallest stack of squares after dropping each square.
+- The height of the current tallest stack of squares is calculated based on the rules described in the business requirement.
+- The height of the current tallest stack of squares is recorded after each square is dropped.

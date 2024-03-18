@@ -1,11 +1,8 @@
-- If the mouse wins the game, the integer result is 1.
-- If the cat wins the game, the integer result is 2.
-- If the game is a draw, the integer result is 0.
-- The integer result is based on the optimal gameplay of both players.
-- The input graph must be a 2D array representing the graph where each index `i` contains a list of nodes that are connected to node `i`.
-- The length of the graph array is between 3 and 50.
-- Each node in the graph array contains unique connected nodes.
-- The nodes in the graph array are represented by integers from 0 to the length of the graph array.
-- The mouse starts at node 1, the cat starts at node 2, and there is a hole at node 0.
-- The game ends when the cat occupies the same node as the mouse, the mouse reaches the hole, or a position is repeated.
-- The game outcome is determined by the above conditions and the optimal gameplay of both players.
+- If the mouse wins the game, the integer result is equal to 1.
+- If the cat wins the game, the integer result is equal to 2.
+- If the game is a draw, the integer result is equal to 0.
+- The integer array parameter `graph` must have a length greater than or equal to 3 and less than or equal to 50.
+- Each element in the integer array parameter `graph` must have a length greater than or equal to 1 and less than the length of the integer array parameter `graph`.
+- All values in the integer array parameter `graph` must be greater than or equal to 0 and less than the length of the integer array parameter `graph`.
+- All values in the integer array parameter `graph` must not be equal to the index of the element itself.
+- All elements in the integer array parameter `graph` must be unique.

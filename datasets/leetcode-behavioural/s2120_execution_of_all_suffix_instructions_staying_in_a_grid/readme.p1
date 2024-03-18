@@ -1,7 +1,7 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 500.
 - The integer array parameter `startPos` has a length of 2.
 - The integer array parameter `startPos` values are both greater than or equal to 0 and less than `n`.
-- The string parameter `s` consists of only the characters 'L', 'R', 'U', and 'D'.
+- The string parameter `s` has a length `m` where `m` is greater than or equal to 1 and is less than or equal to 500.
 - The integer array result `answer` has a length equal to the length of string `s`.
-- For each index `i` in the result `answer`, `answer[i]` represents the number of instructions the robot can execute if it begins executing from the `i-th` instruction in string `s`.
+- Each element in the integer array result `answer` represents the number of instructions the robot can execute if it begins executing from the corresponding index in string `s`.
 - The robot stops executing instructions if the next instruction will move it off the grid or if there are no more instructions left to execute.

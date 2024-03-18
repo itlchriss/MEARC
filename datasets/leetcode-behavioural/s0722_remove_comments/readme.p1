@@ -3,3 +3,6 @@ Method behavioural specifications:
 - If the string `"/*"` occurs in a line or block comment, it is also ignored.
 - Each string in the output list will be non-empty.
 - Implicit newline characters can be deleted by block comments.
+- The output format should be the same as the input format, with each line of code separated by newline characters.
+- Every open block comment will eventually be closed.
+- The output list should not contain any control characters, single quote, or double quote characters.

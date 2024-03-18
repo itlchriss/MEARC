@@ -1,7 +1,9 @@
 - The integer array parameter `nums` is sorted in non-decreasing order.
-- The integer result `k` represents the number of unique elements in the array `nums` after removing duplicates such that each unique element appears at most twice.
+- The integer result is the number of unique elements in the array `nums` after removing duplicates such that each unique element appears at most twice.
 - The relative order of the elements in the array `nums` should be kept the same.
-- The first `k` elements of the array `nums` should hold the final result.
-- The remaining elements beyond the first `k` elements in the array `nums` are not specified.
-- The method must modify the input array `nums` in-place with O(1) extra memory.
-- The integer result `k` must be returned after placing the final result in the first `k` slots of the array `nums`.
+- The first `k` elements of the array `nums` should hold the final result after removing duplicates.
+- The length of the integer array `nums` does not change, and the final result is placed in the first `k` slots of the array `nums`.
+- The integer result `k` is equal to the number of elements in the array `nums` after removing duplicates.
+- The integer result `k` is greater than or equal to 0 and is less than or equal to 30000.
+- The integer result `k` is equal to the length of the expected answer with correct length.
+- The values of the first `k` elements in the array `nums` are equal to the values of the expected answer with correct length.

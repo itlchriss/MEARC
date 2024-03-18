@@ -1,5 +1,5 @@
 - The integer parameter `purchaseAmount` is greater than or equal to 0 and is less than or equal to 100.
 - The integer result is the account balance after making a purchase worth the integer parameter `purchaseAmount` dollars from the store.
-- The account balance is rounded to the nearest multiple of 10, where the largest multiple is chosen if there are multiple nearest multiples of 10.
-- If the purchase amount is already a multiple of 10, the account balance remains the same as the initial balance.
-- The account balance is calculated as the initial balance minus the rounded purchase amount.
+- The account balance is rounded to the nearest multiple of 10.
+- If there are multiple nearest multiples of 10, the largest multiple is chosen.
+- The account balance is calculated as the initial balance of 100 dollars minus the rounded purchase amount.

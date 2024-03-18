@@ -1,8 +1,6 @@
 - The integer matrix parameter `matrix` must not be null.
 - The integer matrix result `answer` has the same dimensions as the integer matrix parameter `matrix`.
-- The integer matrix result `answer` contains the rank of each element in the integer matrix parameter `matrix`.
-- The rank of an element in the integer matrix result `answer` is determined by comparing it to other elements in the same row and column.
-- The rank of an element in the integer matrix result `answer` is an integer starting from 1.
+- Each element in the integer matrix result `answer` is the rank of the corresponding element in the integer matrix parameter `matrix`.
+- The rank of an element is an integer starting from 1.
 - If two elements `p` and `q` are in the same row or column, the rank of `p` is less than the rank of `q` if `p < q`, equal if `p == q`, and greater if `p > q`.
-- The rank of an element in the integer matrix result `answer` should be as small as possible.
-- The integer values in the integer matrix result `answer` are unique under the given rules.
+- The rank should be as small as possible while satisfying the above conditions.

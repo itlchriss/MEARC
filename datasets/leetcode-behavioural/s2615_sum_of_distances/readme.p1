@@ -1,4 +1,4 @@
 - The integer array parameter `nums` must not be null.
 - The length of the integer array `arr` is equal to the length of the integer array parameter `nums`.
-- For each index `i` in the integer array parameter `nums`, if there exists an index `j` such that `nums[j] == nums[i]` and `j != i`, then `arr[i]` is the sum of `|i - j|` over all `j` that satisfy the condition.
-- If there is no such index `j` for a given index `i`, then `arr[i]` is set to 0.
+- For each index `i` in the integer array parameter `nums`, if there exists an index `j` such that `nums[j] == nums[i]` and `j != i`, then `arr[i]` is equal to the sum of `|i - j|` over all `j` that satisfy the condition.
+- For each index `i` in the integer array parameter `nums`, if there is no index `j` such that `nums[j] == nums[i]` and `j != i`, then `arr[i]` is set to 0.

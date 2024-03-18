@@ -1,5 +1,7 @@
-- The integer 2D array parameter `grid` must not be null.
-- The integer 2D array parameter `grid` must have a length of `n` and each row in the array must have a length of `n`.
-- The integer 2D array parameter `grid` must contain values of -1, 0, or 1.
-- The integer 2D array parameter `grid` must have a value of 0 at position (0, 0).
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50.
+- The integer 2D array parameter `grid` has a length of `n` and each sub-array in `grid` also has a length of `n`.
+- The values in the `grid` array are either -1, 0, or 1.
+- The starting position in the `grid` array at (0, 0) is not equal to -1.
+- The ending position in the `grid` array at (n - 1, n - 1) is not equal to -1.
 - The integer result is the maximum number of cherries that can be collected following the specified rules.
+- If there is no valid path between (0, 0) and (n - 1, n - 1), the result is 0.

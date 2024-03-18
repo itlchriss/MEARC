@@ -1,4 +1,7 @@
 - The string parameter `date` represents a Gregorian calendar date formatted as `YYYY-MM-DD`.
-- The integer result is the day number of the year corresponding to the date provided in the string parameter `date`.
+- The integer result is the day number of the year corresponding to the given date.
 - The integer result is greater than or equal to 1 and is less than or equal to 366, considering leap years.
-- The integer result is calculated based on the provided date within the constraints of Jan 1st, 1900, and Dec 31st, 2019.
+- The integer result is the sum of days in the months preceding the given date's month and the day of the given date.
+- The integer result is calculated based on the Gregorian calendar rules.
+- The integer result is calculated considering leap years.
+- The integer result is calculated based on the given date being between Jan 1st, 1900, and Dec 31st, 2019.

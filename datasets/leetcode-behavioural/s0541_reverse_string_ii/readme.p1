@@ -1,5 +1,5 @@
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to 10000.
 - The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 10000.
-- The string result is obtained by reversing the first `k` characters for every `2k` characters counting from the start of the string.
+- The string result is the original string `s` with the first `k` characters reversed for every `2k` characters counting from the start of the string.
 - If there are fewer than `k` characters left, all of them are reversed.
-- If there are less than `2k` but greater than or equal to `k` characters, the first `k` characters are reversed, and the rest are left unchanged.
+- If there are less than `2k` but greater than or equal to `k` characters left, the first `k` characters are reversed, and the rest are left as original.

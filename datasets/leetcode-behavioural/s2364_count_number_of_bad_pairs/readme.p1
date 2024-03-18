@@ -1,3 +1,4 @@
-- The integer array parameter `nums` must be 0-indexed.
-- A pair of indices `(i, j)` is a bad pair if `i < j` and `j - i != nums[j] - nums[i]`.
-- The integer result is the total number of bad pairs in the integer array `nums`.
+- The integer array parameter `nums` must not be null.
+- The total number of bad pairs in the integer array `nums` is returned as a long result.
+- A pair of indices `(i, j)` is considered a bad pair if `i < j` and `j - i != nums[j] - nums[i]`.
+- The result is the total count of bad pairs in the integer array `nums`.

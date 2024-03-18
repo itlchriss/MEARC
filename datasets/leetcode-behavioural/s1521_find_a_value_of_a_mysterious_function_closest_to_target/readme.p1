@@ -1,4 +1,5 @@
 - The integer array parameter `arr` must not be null.
 - The integer parameter `target` is greater than or equal to 0 and is less than or equal to 10000000.
 - The integer result is the minimum possible value of the absolute difference between the result of calling `func(arr, l, r)` and the integer parameter `target`.
-- The integer result is obtained by finding the values `l` and `r` where `0 <= l, r < arr.length` that minimize the absolute difference between the result of calling `func(arr, l, r)` and the integer parameter `target`.
+- The integer parameters `l` and `r` must be greater than or equal to 0 and less than the length of the integer array parameter `arr`.
+- The integer result is the minimum possible value of `|func(arr, l, r) - target|`.

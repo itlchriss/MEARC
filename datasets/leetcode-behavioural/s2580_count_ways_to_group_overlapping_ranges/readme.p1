@@ -1,5 +1,4 @@
 - The integer array parameter `ranges` must not be null.
 - Each element in the integer array parameter `ranges` must be an array of length 2.
-- The integer parameter `start` in each element of the integer array parameter `ranges` must be greater than or equal to 0 and less than or equal to the corresponding `end` value.
-- The integer parameter `end` in each element of the integer array parameter `ranges` must be greater than or equal to the corresponding `start` value and less than or equal to 10^9.
+- The integer values in each sub-array must be non-negative and the first value must be less than or equal to the second value.
 - The integer result is the total number of ways to split the `ranges` into two groups, modulo 10^9 + 7.

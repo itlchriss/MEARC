@@ -2,5 +2,4 @@
 - The integer result is the sum of all elements on the primary diagonal and all elements on the secondary diagonal that are not part of the primary diagonal.
 - The primary diagonal consists of elements where the row index is equal to the column index.
 - The secondary diagonal consists of elements where the row index + column index is equal to n - 1, where n is the size of the matrix.
-- The elements on the primary diagonal are only counted once.
-- The integer result is equal to the sum of elements at positions (i, i) and (i, n - 1 - i) for i from 0 to n - 1.
+- Elements on the secondary diagonal that are also on the primary diagonal should only be counted once in the sum.

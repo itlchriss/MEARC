@@ -1,13 +1,9 @@
 - The integer result is the integer value of the given Lisp-like expression.
 - The expression can be an integer, let expression, add expression, mult expression, or an assigned variable.
-- A let expression takes the form "(let v1 e1 v2 e2 ... vn en expr)", where let is always the string "let", then there are one or more pairs of alternating variables and expressions.
-- An add expression takes the form "(add e1 e2)" where add is always the string "add", and the result is the addition of the evaluation of e1 and e2.
-- A mult expression takes the form "(mult e1 e2)" where mult is always the string "mult", and the result is the multiplication of the evaluation of e1 and e2.
-- Variable names start with a lowercase letter, followed by zero or more lowercase letters or digits.
-- The names "add", "let", and "mult" are protected and will never be used as variable names.
-- The concept of scope is applied, where the innermost scope is checked first for the value of a variable, then outer scopes are checked sequentially.
+- The let expression takes the form "(let v1 e1 v2 e2 ... vn en expr)", where variables are assigned values sequentially and the value of the let expression is the value of the final expression.
+- The add expression takes the form "(add e1 e2)" and returns the addition of the evaluations of e1 and e2.
+- The mult expression takes the form "(mult e1 e2)" and returns the multiplication of the evaluations of e1 and e2.
+- Variable names start with a lowercase letter followed by zero or more lowercase letters or digits.
+- The concept of scope is applied, where the innermost scope is checked first for the value of a variable.
 - All expressions are legal and guaranteed to evaluate to an integer.
 - The answer and all intermediate calculations are guaranteed to fit in a 32-bit integer.
-- The expression length is between 1 and 2000 characters.
-- There are no leading or trailing spaces in the expression.
-- All tokens in the expression are separated by a single space.

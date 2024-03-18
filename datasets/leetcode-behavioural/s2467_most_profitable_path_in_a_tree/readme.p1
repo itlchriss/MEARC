@@ -1,4 +1,6 @@
-- The integer array parameter `edges` must not be null.
-- The integer parameter `bob` is greater than or equal to 1 and is less than the length of the integer array parameter `edges`.
-- The integer array parameter `amount` must not be null.
+- The integer array parameter `edges` must have a length greater than or equal to 2 and less than or equal to 100000.
+- The integer array parameter `edges` must represent a valid tree.
+- The integer parameter `bob` must be greater than or equal to 1 and less than the length of the integer array parameter `edges`.
+- The integer array parameter `amount` must have the same length as the integer array parameter `edges`.
+- Each element in the integer array parameter `amount` must be an even integer in the range [-10000, 10000].
 - The integer result is the maximum net income Alice can have if she travels towards the optimal leaf node.

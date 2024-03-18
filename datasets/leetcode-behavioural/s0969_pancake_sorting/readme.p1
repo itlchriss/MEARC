@@ -1,7 +1,6 @@
-Method behavioural specifications:
 - The integer array parameter `arr` must not be null.
-- The integer array parameter `arr` contains unique integers from 1 to the length of `arr`.
+- The integer array parameter `arr` must contain unique integers from 1 to the length of the array.
 - The length of the integer array parameter `arr` is less than or equal to 100.
-- The integer array result is a list of `k` values corresponding to a sequence of pancake flips that sort the `arr`.
-- Each `k` value in the integer array result is greater than or equal to 1 and is less than or equal to the length of `arr`.
-- The number of pancake flips performed to sort the `arr` is within 10 times the length of `arr`.
+- The integer array result must contain valid `k` values corresponding to a sequence of pancake flips that sort the array `arr`.
+- The integer array result must be empty if the input array `arr` is already sorted.
+- The number of pancake flips performed must be within 10 times the length of the array `arr`.

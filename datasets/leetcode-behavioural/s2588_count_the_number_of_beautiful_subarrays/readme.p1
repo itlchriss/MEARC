@@ -1,5 +1,10 @@
 Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100000.
-- All values in the integer array parameter `nums` must be greater than or equal to 0 and less than or equal to 1000000.
-- The long result is the number of beautiful subarrays in the integer array `nums`.
+- The integer result is the number of beautiful subarrays in the integer array `nums`.
+- A subarray is considered beautiful if it is possible to make all of its elements equal to 0 after applying the specified operation any number of times.
+- A subarray is a contiguous non-empty sequence of elements within the array.
+- In one operation, two different indices `i` and `j` can be chosen such that `0 <= i, j < nums.length`.
+- A non-negative integer `k` can be chosen such that the kth bit (0-indexed) in the binary representation of `nums[i]` and `nums[j]` is 1.
+- The operation involves subtracting 2^k from `nums[i]` and `nums[j]`.
+- The operation can be applied any number of times to make all elements in a subarray equal to 0.
+- The method should return the total count of beautiful subarrays in the array `nums`.

@@ -1,8 +1,5 @@
-- If the start time of event1 is equal to the end time of event1, the boolean result is false.
-- If the start time of event2 is equal to the end time of event2, the boolean result is false.
-- If the end time of event1 is less than the start time of event1, the boolean result is false.
-- If the end time of event2 is less than the start time of event2, the boolean result is false.
-- If the end time of event1 is equal to the start time of event2, the boolean result is false.
-- If the end time of event2 is equal to the start time of event1, the boolean result is false.
-- If the end time of event1 is less than the start time of event2 or the end time of event2 is less than the start time of event1, the boolean result is false.
-- If none of the above conditions are met, the boolean result is true.
+- If the string array parameter `event1` and the string array parameter `event2` represent two inclusive events that happened on the same day, the boolean result is equal to the true literal if there is a non-empty intersection between the two events.
+- If the string array parameter `event1` and the string array parameter `event2` represent two inclusive events that happened on the same day, the boolean result is equal to the false literal if there is no intersection between the two events.
+- The length of each string array parameter `event1` and `event2` is equal to 2.
+- The length of each string in the string array parameter `event1` and `event2` is equal to 5.
+- The time format of each string in the string array parameter `event1` and `event2` follows the `HH:MM` format.

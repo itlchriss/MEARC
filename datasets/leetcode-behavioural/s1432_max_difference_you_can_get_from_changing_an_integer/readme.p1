@@ -1,3 +1,9 @@
 - The integer parameter `num` is greater than or equal to 1 and is less than or equal to 100000000.
 - The integer result is the maximum difference between the two integers obtained after applying the specified operations to the integer parameter `num`.
-- The new integer obtained after the operations cannot have any leading zeros and cannot be 0.
+- The maximum difference is calculated by finding the largest possible integer `a` and the smallest possible integer `b` after applying the operations twice.
+- The first operation involves replacing a digit `x` with another digit `y` in the decimal representation of `num`.
+- The second operation involves replacing a different digit `x` with another digit `y` in the decimal representation of the integer obtained after the first operation.
+- The digit `y` can be equal to `x` in both operations.
+- The new integers `a` and `b` obtained after the two operations cannot have any leading zeros and cannot be equal to 0.
+- The maximum difference is the absolute difference between `a` and `b`.
+- The maximum difference is returned as the integer result.

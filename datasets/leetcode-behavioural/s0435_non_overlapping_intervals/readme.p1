@@ -1,5 +1,4 @@
 - The integer array parameter `intervals` must not be null.
-- The integer array parameter `intervals` must have a length greater than or equal to 1 and less than or equal to 100000.
-- Each element in the integer array parameter `intervals` must be an array of length 2.
-- The integer array parameter `intervals` must satisfy the condition `-5 * 10^4 <= start_i < end_i <= 5 * 10^4`.
+- The integer array parameter `intervals` must contain subarrays of length 2.
+- The integer subarrays in the `intervals` parameter must have the first element less than the second element.
 - The integer result is the minimum number of intervals that need to be removed to make the rest of the intervals non-overlapping.

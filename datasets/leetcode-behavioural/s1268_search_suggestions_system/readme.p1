@@ -1,10 +1,6 @@
-- The list of lists of strings result must have a length equal to the length of the string parameter `searchWord`.
-- Each list of strings in the result must contain at most three product names from the string array parameter `products`.
-- The suggested products in each list must have a common prefix with the corresponding characters of the string parameter `searchWord`.
-- If there are more than three products with a common prefix, the system must return the three lexicographically minimum products.
-- The strings in the string array parameter `products` must be sorted lexicographically.
-- The strings in the string array parameter `products` must be unique.
-- The length of each string in the string array parameter `products` must be greater than or equal to 1 and less than or equal to 3000.
-- The sum of the lengths of all strings in the string array parameter `products` must be greater than or equal to 1 and less than or equal to 20000.
-- The length of the string parameter `searchWord` must be greater than or equal to 1 and less than or equal to 1000.
-- The characters in the string parameter `searchWord` must be lowercase English letters.
+- The list of lists of strings result must have the same length as the searchWord parameter.
+- Each list of strings in the result must contain at most three product names from the products array.
+- The suggested products in each list must have a common prefix with the searchWord.
+- If there are more than three products with a common prefix, the result must contain the three lexicographically minimum products.
+- The suggested products must be sorted lexicographically.
+- The strings in the products array are unique and consist of lowercase English letters.

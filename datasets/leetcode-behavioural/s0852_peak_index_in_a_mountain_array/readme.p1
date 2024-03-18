@@ -1,2 +1,7 @@
-- The integer array parameter `arr` is guaranteed to be a mountain array.
-- The integer result is an index `i` such that `arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`.
+- The integer array parameter `arr` has a length greater than or equal to 3.
+- There exists an integer `i` such that `0 < i < arr.length - 1` and the following conditions hold:
+    - `arr[0] < arr[1] < ... arr[i-1] < arr[i]`
+    - `arr[i] > arr[i+1] > ... > arr[arr.length - 1]`
+- The integer result is any `i` such that `arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`.
+- The integer result is greater than or equal to 0 and is less than the length of the integer array `arr`.
+- The integer result is unique.

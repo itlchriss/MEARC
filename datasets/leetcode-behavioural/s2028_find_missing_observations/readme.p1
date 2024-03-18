@@ -1,8 +1,8 @@
 - The integer array parameter `rolls` contains the observations of `m` rolls.
 - The integer parameter `mean` is the average value of the `n + m` rolls.
 - The integer parameter `n` represents the number of missing observations.
-- The integer array result has a length of `n`.
-- The sum of the `n + m` rolls is divisible by `n + m`.
-- The average value of the `n + m` rolls is exactly equal to the integer parameter `mean`.
+- The integer array result must have a length of `n`.
+- The sum of all `n + m` rolls must be divisible by `n + m`.
+- The average value of the `n + m` rolls must be exactly equal to the `mean` parameter.
 - If there are multiple valid arrays that satisfy the conditions, any of them can be returned.
-- If no valid array exists, an empty array is returned.
+- If no valid array exists, an empty array must be returned.

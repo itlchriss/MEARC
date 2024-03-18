@@ -1,5 +1,9 @@
-- The number of elements in the output list is equal to the number of elements in the input `puzzles` array.
-- Each element in the output list represents the number of valid words in the `words` array that satisfy the conditions specified for the corresponding puzzle in the `puzzles` array.
-- A word is considered valid if it contains the first letter of the puzzle and each letter in the word is present in the puzzle.
-- The output list should contain the count of valid words for each puzzle in the same order as the input `puzzles` array.
-- The output list may contain 0 if there are no valid words for a particular puzzle.
+- The integer array parameter `words` must not be null.
+- The integer array parameter `puzzles` must not be null.
+- The length of the integer array parameter `words` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of each string in the integer array parameter `words` is greater than or equal to 4 and is less than or equal to 50.
+- The length of the integer array parameter `puzzles` is greater than or equal to 1 and is less than or equal to 10000.
+- Each string in the integer array parameter `puzzles` has a length of 7.
+- Each string in the integer array parameter `words` and `puzzles` consists of lowercase English letters.
+- Each string in the integer array parameter `puzzles` does not contain repeated characters.
+- The size of the integer list result is equal to the length of the integer array parameter `puzzles`.

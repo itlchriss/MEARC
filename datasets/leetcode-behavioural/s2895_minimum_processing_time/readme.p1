@@ -1,6 +1,5 @@
-- The integer list parameter `processorTime` must have a length greater than or equal to 1 and less than or equal to 25000.
-- The integer list parameter `tasks` must have a length greater than or equal to 1 and less than or equal to 100000.
-- All values in the integer list parameter `processorTime` must be greater than or equal to 0 and less than or equal to 1000000000.
-- All values in the integer list parameter `tasks` must be greater than or equal to 1 and less than or equal to 1000000000.
-- The length of the integer list parameter `tasks` must be equal to 4 times the length of the integer list parameter `processorTime`.
+- The integer list parameter `processorTime` must not be null.
+- The integer list parameter `tasks` must not be null.
+- The size of the integer list parameter `processorTime` is equal to the size of the integer list parameter `tasks`.
+- The size of the integer list parameter `processorTime` is equal to 4 times the number of processors `n`.
 - The integer result is the minimum time when all tasks have been executed by the processors.

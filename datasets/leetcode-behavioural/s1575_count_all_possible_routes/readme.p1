@@ -1,8 +1,6 @@
-- The integer array parameter `locations` contains distinct positive integers representing the positions of cities.
-- The integer parameter `start` represents the starting city.
-- The integer parameter `finish` represents the ending city.
-- The integer parameter `fuel` represents the initial amount of fuel.
-- The integer result is the count of all possible routes from the starting city to the ending city.
-- The fuel cannot become negative at any point during the route.
-- It is allowed to visit any city more than once.
-- The result should be returned modulo 10^9 + 7.
+- The integer array parameter `locations` contains distinct positive integers.
+- The integer parameter `start` is greater than or equal to 0 and is less than the length of the integer array parameter `locations`.
+- The integer parameter `finish` is greater than or equal to 0 and is less than the length of the integer array parameter `locations`.
+- The integer parameter `fuel` is greater than or equal to 1 and is less than or equal to 200.
+- The integer result is the count of all possible routes from the integer parameter `start` to the integer parameter `finish`.
+- The integer result is modulo 10^9 + 7.

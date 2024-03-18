@@ -1,3 +1,8 @@
 - The integer matrix parameter `grid` is a 0-indexed `m x n` matrix consisting of positive integers.
 - The integer result is the maximum number of moves that can be performed starting from any cell in the first column of the matrix.
 - The maximum number of moves is determined by traversing the grid in the following way: from a cell `(row, col)`, you can move to any of the cells `(row - 1, col + 1)`, `(row, col + 1)`, and `(row + 1, col + 1)` such that the value of the cell you move to is strictly bigger than the value of the current cell.
+- The constraints for the matrix `grid` are as follows:
+    - The number of rows `m` is greater than or equal to 2 and less than or equal to 1000.
+    - The number of columns `n` is greater than or equal to 2 and less than or equal to 1000.
+    - The total number of elements in the matrix `grid` is greater than or equal to 4 and less than or equal to 100000.
+    - All values in the matrix `grid` are positive integers ranging from 1 to 1000000.

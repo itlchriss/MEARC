@@ -1,6 +1,5 @@
-- The integer arrays `quality` and `wage` must have the same length.
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the arrays `quality` and `wage`.
-- The double result is the least amount of money needed to form a paid group satisfying the conditions specified.
+- The integer array parameter `quality` and `wage` must not be null.
+- The length of the integer array parameter `quality` and `wage` must be equal.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array parameters `quality` and `wage`.
+- The double result is the least amount of money needed to form a paid group satisfying the conditions specified in the business requirement.
 - The double result is within 10^-5 of the actual answer.
-- Every worker in the paid group should be paid in the ratio of their quality compared to other workers in the paid group.
-- Every worker in the paid group must be paid at least their minimum wage expectation.

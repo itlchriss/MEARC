@@ -1,7 +1,5 @@
-Method behavioural specifications:
-- The boolean result is true if every diagonal from top-left to bottom-right in the integer matrix parameter `matrix` has the same elements.
-- The boolean result is false if any diagonal from top-left to bottom-right in the integer matrix parameter `matrix` has different elements.
-- The integer matrix parameter `matrix` has dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
-- The integer matrix parameter `matrix` contains elements ranging from 0 to 99.
-- The integer matrix parameter `matrix` is stored in memory.
-- The method can only load at most one row of the matrix into memory at once.
+- The boolean result is equal to the true literal if the `m x n` matrix parameter `matrix` is a Toeplitz matrix.
+- The boolean result is equal to the false literal if the `m x n` matrix parameter `matrix` is not a Toeplitz matrix.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 20.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 20.
+- All values in the `m x n` matrix parameter `matrix` are greater than or equal to 0 and are less than or equal to 99.

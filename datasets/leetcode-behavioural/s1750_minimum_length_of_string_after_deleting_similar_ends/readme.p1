@@ -1,4 +1,5 @@
 - The string parameter `s` must have a length greater than or equal to 1 and less than or equal to 100000.
-- The string parameter `s` must consist only of characters 'a', 'b', and 'c'.
-- The integer result is the minimum length of the string `s` after performing the specified operation any number of times.
-- The result must be greater than or equal to 0.
+- The string parameter `s` must only consist of characters 'a', 'b', and 'c'.
+- The integer result is the minimum length of the string `s` after applying the specified algorithm any number of times.
+- The result is obtained by removing non-empty prefixes and suffixes from the string `s` where all characters in the prefix and suffix are equal, do not intersect, and are the same.
+- The result is obtained by applying the algorithm to remove the prefixes and suffixes in an optimal sequence to minimize the length of the string `s`.

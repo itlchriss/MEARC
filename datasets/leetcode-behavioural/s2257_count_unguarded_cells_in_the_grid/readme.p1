@@ -1,7 +1,7 @@
 Method behavioural specifications:
 - The integer parameters `m` and `n` are greater than or equal to 1 and are less than or equal to 100000.
-- The length of the 2D integer array `guards` and `walls` is greater than or equal to 1 and is less than or equal to 50000.
+- The length of the 2D integer array parameter `guards` and `walls` is greater than or equal to 1 and is less than or equal to 50000.
 - The sum of the lengths of the 2D integer arrays `guards` and `walls` is less than or equal to the product of `m` and `n`.
-- Each element in the 2D integer array `guards` and `walls` has a length of 2.
-- The integer values in the 2D integer array `guards` and `walls` are within the bounds of the grid `m x n`.
+- Each element in the 2D integer array parameter `guards` and `walls` has a length of 2.
+- The integer values in the 2D integer array parameter `guards` and `walls` are unique.
 - The integer result is the number of unoccupied cells that are not guarded.

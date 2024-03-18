@@ -1,10 +1,7 @@
-- The integer parameters `n` and `m` are greater than or equal to 1 and are less than or equal to 50.
-- The length of the 2D integer array parameter `indices` is greater than or equal to 1 and is less than or equal to 100.
-- The integer result is the number of odd-valued cells in the matrix after applying the increment to all locations in `indices`.
-- The final matrix contains only integers.
-- The final matrix dimensions are `m x n`.
-- The final matrix cells are incremented based on the indices provided.
-- The final matrix cells are incremented by both row and column for each location in `indices`.
-- The final matrix cells are considered odd if their value is not divisible by 2.
-- The method should solve the problem in `O(n + m + indices.length)` time complexity.
-- The method should use only `O(n + m)` extra space.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 50.
+- The length of the 2D integer array parameter `indices` is less than or equal to 100.
+- The integer array parameter `indices` contains pairs of integers representing 0-indexed locations.
+- For each pair of integers in `indices`, all cells in the corresponding row and column are incremented.
+- The result is the number of odd-valued cells in the matrix after applying the increments specified in `indices`.
+- The result is an integer.

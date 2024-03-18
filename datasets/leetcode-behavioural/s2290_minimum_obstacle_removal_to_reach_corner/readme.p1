@@ -1,4 +1,10 @@
-- The integer 2D array parameter `grid` must be a 0-indexed array of size `m x n`.
-- The integer result is the minimum number of obstacles to remove to move from the upper left corner `(0, 0)` to the lower right corner `(m - 1, n - 1)`.
+Method behavioural specifications:
+- The 2D integer array parameter `grid` must not be null.
+- The integer result is the minimum number of obstacles to remove in order to move from the upper left corner to the lower right corner.
 - The integer result is greater than or equal to 0.
-- The integer result is the minimum number of obstacles to remove to create a path from the upper left corner to the lower right corner.
+- The integer result is less than or equal to the total number of obstacles in the grid.
+- The grid must have at least one empty cell at the upper left corner `(0, 0)` and the lower right corner `(m - 1, n - 1)`.
+- The grid must have a size of `m x n` where `m` and `n` are greater than or equal to 1 and less than or equal to 100000.
+- Each cell in the grid must have a value of either 0 (empty cell) or 1 (obstacle).
+- The grid must have at least one path from the upper left corner to the lower right corner.
+- The method should return the minimum number of obstacles to remove to create a path from the upper left corner to the lower right corner.

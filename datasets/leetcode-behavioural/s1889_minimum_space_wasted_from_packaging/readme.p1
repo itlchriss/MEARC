@@ -1,9 +1,9 @@
 - The integer array parameter `packages` must not be null.
 - The 2D integer array parameter `boxes` must not be null.
-- The length of the integer array parameter `packages` is greater than or equal to 1 and is less than or equal to 100000.
-- The length of the 2D integer array parameter `boxes` is greater than or equal to 1 and is less than or equal to 100000.
-- The elements in the integer array parameter `packages` are greater than or equal to 1 and are less than or equal to 100000.
-- The elements in the 2D integer array parameter `boxes` are distinct, greater than or equal to 1, and are less than or equal to 100000.
+- The length of the integer array parameter `packages` is equal to the number of packages `n`.
+- The length of the 2D integer array parameter `boxes` is equal to the number of suppliers `m`.
+- Each element in the integer array parameter `packages` is greater than or equal to 1 and is less than or equal to 100000.
+- Each element in the 2D integer array parameter `boxes` is an array of distinct box sizes, where each box size is greater than or equal to 1 and is less than or equal to 100000.
 - The sum of the lengths of the arrays in the 2D integer array parameter `boxes` is less than or equal to 100000.
 - The integer result is the minimum total wasted space by choosing the box supplier optimally, or -1 if it is impossible to fit all the packages inside boxes.
-- The integer result is modulo 1000000007.
+- The integer result is modulo 10^9 + 7.

@@ -1,9 +1,9 @@
 - The integer array parameter `rooms` must not be null.
 - The integer array parameter `rooms` must have a length greater than or equal to 1 and less than or equal to 100000.
-- Each element in the integer array parameter `rooms` must be an array of length 2 where the first element represents a unique room number and the second element represents the size of the room.
+- Each element in the integer array parameter `rooms` must be an array of length 2 where the first element represents the room number and the second element represents the size of the room.
+- Each room number in the integer array parameter `rooms` is unique.
 - The integer array parameter `queries` must not be null.
 - The integer array parameter `queries` must have a length greater than or equal to 1 and less than or equal to 10000.
-- Each element in the integer array parameter `queries` must be an array of length 2 where the first element represents a preferred room number and the second element represents the minimum size required.
+- Each element in the integer array parameter `queries` must be an array of length 2 where the first element represents the preferred room number and the second element represents the minimum size required.
 - The integer result is an array of length equal to the length of the integer array parameter `queries`.
-- Each element in the integer array result is the room number that satisfies the conditions specified in the query.
-- If there is no room that satisfies the conditions in a query, the corresponding element in the integer array result is -1.
+- Each element in the integer array result is the room number that satisfies the query conditions or -1 if no such room exists.

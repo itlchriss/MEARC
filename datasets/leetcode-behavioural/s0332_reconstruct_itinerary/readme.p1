@@ -3,8 +3,4 @@
 - The reconstructed itinerary must start with `"JFK"`.
 - If there are multiple valid itineraries, the one with the smallest lexical order when read as a single string should be returned.
 - All tickets in the input list `tickets` must be used exactly once in the reconstructed itinerary.
-- The reconstructed itinerary must contain all the airports mentioned in the tickets.
-- The length of the input list `tickets` is between 1 and 300.
-- Each ticket in the input list `tickets` consists of two strings, each of length 3, representing the departure and arrival airports.
-- The departure and arrival airports consist of uppercase English letters.
-- The departure airport is not the same as the arrival airport for each ticket.
+- The input list `tickets` forms at least one valid itinerary.

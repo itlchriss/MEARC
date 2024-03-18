@@ -1,7 +1,6 @@
-- The boolean result is true if the string parameter `word` can be placed in the 2D character array parameter `board` according to the given rules.
-- The boolean result is false if the string parameter `word` cannot be placed in the 2D character array parameter `board` according to the given rules.
-- The 2D character array parameter `board` must not contain any characters other than lowercase English letters, ' ', and '#'.
+- The boolean result is equal to the true literal if the string parameter `word` can be placed in the `m x n` matrix `board` according to the specified rules.
+- The `m x n` matrix `board` must not contain any characters other than lowercase English letters, `' '`, or `'#'`.
 - The string parameter `word` must contain only lowercase English letters.
-- The length of the string parameter `word` must be less than or equal to the maximum of the number of rows and columns in the 2D character array parameter `board`.
-- The 2D character array parameter `board` must have dimensions such that the product of the number of rows and columns is between 1 and 200,000.
-- The placement of the string parameter `word` in the 2D character array parameter `board` must adhere to the specified rules for horizontal and vertical placement.
+- The length of the string parameter `word` must be greater than or equal to 1 and less than or equal to the maximum of `m` and `n`.
+- The `m x n` matrix `board` must have dimensions such that `1 <= m * n <= 2 * 10^5`.
+- The boolean result is equal to the false literal if the string parameter `word` cannot be placed in the `m x n` matrix `board` according to the specified rules.

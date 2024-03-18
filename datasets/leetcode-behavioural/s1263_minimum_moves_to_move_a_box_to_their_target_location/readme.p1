@@ -1,2 +1,7 @@
-- The integer result is the minimum number of pushes required to move the box to the target.
-- If there is no way to reach the target, the integer result is -1.
+- The integer result is the minimum number of pushes required to move the box to the target position.
+- If there is no way to reach the target, the integer result is equal to -1.
+- The grid parameter must not be null.
+- The grid parameter must be a 2D array of characters.
+- The grid parameter must contain characters '.', '#', 'S', 'T', or 'B'.
+- There is only one character 'S', 'B', and 'T' in the grid.
+- The grid must have dimensions m x n where 1 <= m, n <= 20.

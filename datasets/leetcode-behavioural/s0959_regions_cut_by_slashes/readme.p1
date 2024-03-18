@@ -1,6 +1,7 @@
 - The integer result is the number of regions in the grid represented by the string array parameter `grid`.
-- The string array parameter `grid` is a square grid with dimensions `n x n`, where each cell contains a `'/'`, `'\'`, or a blank space `' '`.
-- The backslash character `'\'` is represented as `'\\'` in the string array parameter `grid`.
-- The number of regions is determined by the contiguous regions formed by the characters in the grid.
-- The integer result is greater than or equal to 0.
-- The integer result is less than or equal to the total number of cells in the grid.
+- The string array parameter `grid` has a length `n` where `1 <= n <= 30`.
+- Each element in the string array parameter `grid` represents a row in the grid.
+- Each character in the grid can be one of the following: '/', '\', or ' '.
+- The characters in the grid divide the square into contiguous regions.
+- Backslash characters are escaped, so '\\' is represented as '\\\\'.
+- The output should be an integer representing the number of regions in the grid.

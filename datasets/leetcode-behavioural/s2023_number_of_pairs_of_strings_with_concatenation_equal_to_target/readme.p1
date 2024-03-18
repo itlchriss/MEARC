@@ -1,6 +1,5 @@
-- If the string array parameter `nums` contains digit strings `nums[i]` and `nums[j]` such that the concatenation of `nums[i] + nums[j]` is equal to the digit string parameter `target`, the integer result is incremented by 1.
-- The integer result represents the number of pairs of indices `(i, j)` where `i != j` that satisfy the concatenation condition.
 - The length of the string array parameter `nums` is greater than or equal to 2 and is less than or equal to 100.
-- The length of each digit string `nums[i]` in the string array parameter `nums` is greater than or equal to 1 and is less than or equal to 100.
-- The length of the digit string parameter `target` is greater than or equal to 2 and is less than or equal to 100.
-- All digit strings `nums[i]` and `target` consist of digits and do not have leading zeros.
+- The length of each string in the string array parameter `nums` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the string parameter `target` is greater than or equal to 2 and is less than or equal to 100.
+- All strings in the string array parameter `nums` and the string parameter `target` consist of digits and do not have leading zeros.
+- The integer result is the number of pairs of indices (i, j) where i is not equal to j, and the concatenation of nums[i] + nums[j] is equal to the target string.

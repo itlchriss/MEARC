@@ -1,8 +1,4 @@
 - The string parameter `dominoes` must not be null.
-- The string result represents the final state of the dominoes after being pushed.
-- The string result has the same length as the input string `dominoes`.
+- The string result is the final state of the dominoes after being pushed according to the rules specified.
+- The length of the string result is equal to the length of the string parameter `dominoes`.
 - The characters in the string result are either 'L', 'R', or '.'.
-- If a domino is pushed to the left ('L'), it will push the adjacent domino on the left.
-- If a domino is pushed to the right ('R'), it will push the adjacent domino on the right.
-- If a vertical domino has dominoes falling on it from both sides, it stays still.
-- A falling domino expends no additional force to a falling or already fallen domino.

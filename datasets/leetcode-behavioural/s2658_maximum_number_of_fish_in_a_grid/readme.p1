@@ -1,4 +1,6 @@
 Method behavioural specifications:
 - The integer 2D matrix parameter `grid` must not be null.
 - The integer result is the maximum number of fish the fisher can catch if he chooses his starting cell optimally.
-- If no water cell exists in the grid, the integer result is 0.
+- If no water cell exists in the grid, the integer result is equal to 0.
+- The fisher can catch all the fish at a water cell and move to any adjacent water cell.
+- An adjacent cell of the cell `(r, c)` is one of the cells `(r, c + 1)`, `(r, c - 1)`, `(r + 1, c)`, or `(r - 1, c)` if it exists.

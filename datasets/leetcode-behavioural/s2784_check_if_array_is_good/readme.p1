@@ -1,7 +1,5 @@
-Method behavioural specifications:
-- The integer array parameter `nums` is considered **good** if it is a permutation of the array `base[n]`.
-- The array `base[n]` is defined as `[1, 2, ..., n - 1, n, n]`, where it contains integers from 1 to n-1 exactly once, followed by two occurrences of n.
-- The boolean result is true if the given array `nums` is a permutation of `base[n]`, where n is the maximum element in `nums`.
-- The boolean result is false if the length of the given array `nums` does not match the length of `base[n]` for the corresponding n.
-- The integer array parameter `nums` must have a length between 1 and 100.
-- All values in the integer array parameter `nums` must be between 1 and 200.
+- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` length is greater than or equal to 1 and is less than or equal to 100.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 200.
+- The boolean result is equal to the true literal if the integer array parameter `nums` is a permutation of the array `base[n]` where `base[n] = [1, 2, ..., n - 1, n, n]`.
+- The boolean result is equal to the false literal if the integer array parameter `nums` is not a permutation of the array `base[n]`.

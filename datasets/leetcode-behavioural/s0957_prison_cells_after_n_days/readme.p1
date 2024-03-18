@@ -1,4 +1,10 @@
 - The integer array parameter `cells` must have a length of 8.
 - All values in the integer array parameter `cells` must be either 0 or 1.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 1000000000.
-- The integer array result is the state of the prison cells after `n` days.
+- The integer array result is equal to the state of the prison cells after `n` days.
+- The state of the prison cells changes according to the rules specified:
+    - If a cell has two adjacent neighbors that are both occupied or both vacant, then the cell becomes occupied.
+    - Otherwise, it becomes vacant.
+- The first and last cells in the row cannot have two adjacent neighbors.
+- The result array must have a length of 8.
+- The result array must contain 0s and 1s.

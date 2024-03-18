@@ -1,7 +1,5 @@
 - The integer parameter `left` is greater than or equal to 1 and is less than or equal to the integer parameter `right`.
 - The string result is in the format "<pre>...<suf>eC" where `<pre>` denotes the first 5 digits of the product, `<suf>` denotes the last 5 digits of the product after removing all trailing zeros, and `C` denotes the count of trailing zeros.
+- If the number of digits in the product is greater than 10, the product is abbreviated as "<pre>...<suf>eC".
+- If the number of digits in the product is less than or equal to 10, the product remains unchanged.
 - The string result represents the abbreviated product of all integers in the inclusive range `[left, right]`.
-- If the number of digits in the product is greater than 10, the string result is abbreviated as mentioned above.
-- If the number of digits in the product is less than or equal to 10, the string result remains unchanged.
-- The string result contains the product of all integers in the inclusive range `[left, right]`.
-- The string result is correctly formatted according to the given examples.

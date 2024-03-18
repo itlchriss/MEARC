@@ -1,8 +1,6 @@
 - The integer list parameter `nums` contains `n` positive integers.
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the minimum of `n * (n + 1) / 2` and `10^9`.
+- The integer parameter `k` is greater than or equal to 1.
 - The integer result is the maximum possible score after applying at most `k` operations.
-- The result is returned modulo `10^9 + 7`.
-- The operation involves choosing a non-empty subarray `nums[l, ..., r]` that hasn't been chosen previously.
-- The element `x` with the highest prime score in the chosen subarray is selected. If multiple elements have the same highest prime score, the one with the smallest index is chosen.
-- The score is multiplied by the selected element `x`.
-- The maximum possible score is calculated based on the described operations.
+- The maximum possible score is calculated by choosing non-empty subarrays of `nums` and selecting an element with the highest prime score within the subarray.
+- The prime score of an integer `x` is the number of distinct prime factors of `x`.
+- The maximum possible score is returned modulo 10^9 + 7.

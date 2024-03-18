@@ -3,5 +3,5 @@
 - All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 1000000000.
 - The integer parameter `indexDifference` is greater than or equal to 0 and is less than or equal to 100000.
 - The integer parameter `valueDifference` is greater than or equal to 0 and is less than or equal to 1000000000.
-- The length of the integer array result is 2 if there are two indices that satisfy the conditions, otherwise it is -1.
-- All values in the integer array result are unique.
+- The length of the integer array result is 2 if there are two indices that satisfy the conditions, and the values are within the range of `[0, n - 1]`.
+- If there are no two indices that satisfy the conditions, the integer array result is `[-1, -1]`.

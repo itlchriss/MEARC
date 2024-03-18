@@ -1,5 +1,7 @@
 - The integer list parameter `triangle` must not be null.
 - The integer list parameter `triangle` must have a length greater than or equal to 1 and less than or equal to 200.
-- The length of the first list in the integer list parameter `triangle` must be equal to 1.
-- The length of each subsequent list in the integer list parameter `triangle` must be one more than the length of the previous list.
+- The length of each list in the integer list parameter `triangle` must be equal to the index of the list plus one.
 - The integer result is the minimum path sum from the top to the bottom of the triangle.
+- The integer result is calculated by moving to an adjacent number of the row below at each step.
+- The integer result is calculated by summing the path with the smallest sum.
+- The integer result is within the range of -10000 to 10000.

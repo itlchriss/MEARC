@@ -1,7 +1,7 @@
-Method behavioural specifications:
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 500.
 - The length of the integer array `languages` is equal to `m` where `m` is greater than or equal to 1 and is less than or equal to 500.
 - Each element in the integer array `languages` contains unique values ranging from 1 to `n`.
+- The length of each sub-array in the integer array `languages` is greater than or equal to 1 and is less than or equal to `n`.
 - The length of the integer array `friendships` is greater than or equal to 1 and is less than or equal to 500.
-- All tuples `(u_i, v_i)` in the integer array `friendships` are unique.
+- All tuples `(u_i, v_i)` in the integer array `friendships` are unique and satisfy the condition `1 <= u_i < v_i <= languages.length`.
 - The integer result is the minimum number of users needed to teach a language so that all friends can communicate with each other.

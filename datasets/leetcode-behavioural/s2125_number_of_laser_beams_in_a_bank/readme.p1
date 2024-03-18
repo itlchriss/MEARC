@@ -1,7 +1,4 @@
+- The integer array parameter `bank` must not be null.
+- The length of the string array parameter `bank` is greater than or equal to 1 and is less than or equal to 500.
+- The length of each string in the string array parameter `bank` is greater than or equal to 1 and is less than or equal to 500.
 - The integer result is the total number of laser beams in the bank.
-- A laser beam exists between two security devices if they are located on different rows and there are no security devices in the rows between them.
-- The input bank is a 2D binary string array representing the floor plan of the bank.
-- Each row in the bank array consists of '0's and '1's, where '0' represents an empty cell and '1' represents a cell with a security device.
-- The method should handle cases where there are no security devices on different rows, resulting in a total number of laser beams equal to 0.
-- The method should handle cases where there are security devices on different rows, resulting in the calculation of the total number of laser beams based on the conditions specified.
-- The method should handle cases where the bank array dimensions are within the constraints of 1 <= m, n <= 500.

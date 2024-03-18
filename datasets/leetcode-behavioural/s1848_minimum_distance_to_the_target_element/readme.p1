@@ -1,5 +1,5 @@
-- The integer array parameter `nums` has a length greater than or equal to 1 and less than or equal to 1000.
-- All values in the integer array parameter `nums` are greater than or equal to 1 and less than or equal to 10000.
-- The integer parameter `start` is greater than or equal to 0 and less than the length of the integer array parameter `nums`.
+- The integer array parameter `nums` length is greater than or equal to 1 and is less than or equal to 1000.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 10000.
+- The integer parameter `start` is greater than or equal to 0 and is less than the length of the integer array parameter `nums`.
 - The integer parameter `target` exists in the integer array parameter `nums`.
-- The integer result is the absolute difference between the index `i` where `nums[i]` is equal to `target` and the integer parameter `start`.
+- The integer result is the absolute value of the index `i` where `nums[i]` is equal to `target` and `abs(i - start)` is minimized.

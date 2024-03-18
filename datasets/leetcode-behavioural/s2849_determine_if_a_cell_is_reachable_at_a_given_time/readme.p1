@@ -1,3 +1,4 @@
-- The integer parameters `sx`, `sy`, `fx`, `fy`, and `t` must be greater than or equal to 0 and less than or equal to 10^9.
-- The boolean result is true if the cell `(fx, fy)` can be reached from the cell `(sx, sy)` after exactly `t` seconds by moving to any of its adjacent cells.
-- The boolean result is false if the cell `(fx, fy)` cannot be reached from the cell `(sx, sy)` after exactly `t` seconds by moving to any of its adjacent cells.
+- The integer parameters `sx`, `sy`, `fx`, `fy` must be greater than or equal to 1 and less than or equal to 10^9.
+- The non-negative integer parameter `t` must be greater than or equal to 0 and less than or equal to 10^9.
+- The boolean result is equal to the true literal if the cell `(fx, fy)` can be reached from the cell `(sx, sy)` after exactly `t` seconds by moving to any of its adjacent cells.
+- The boolean result is equal to the false literal if the cell `(fx, fy)` cannot be reached from the cell `(sx, sy)` after exactly `t` seconds by moving to any of its adjacent cells.

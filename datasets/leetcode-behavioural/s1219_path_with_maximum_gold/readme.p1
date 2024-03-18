@@ -1,9 +1,10 @@
-- The integer parameter `grid` must not be null.
+- The integer parameter `grid` is a 2D array representing a gold mine with dimensions `m x n`.
 - The integer result is the maximum amount of gold that can be collected following the given conditions.
-- The maximum amount of gold can be collected by moving one step left, right, up, or down from each cell.
-- The maximum amount of gold can only be collected once from each cell.
-- Cells with 0 gold cannot be visited.
-- The starting and stopping positions for collecting gold can be any cell with gold.
-- The grid size `m x n` must be within the constraints of 1 <= m, n <= 15.
-- The amount of gold in each cell is between 0 and 100.
-- There are at most 25 cells containing gold.
+- The result is obtained by traversing the grid starting from any cell with gold, moving one step at a time to the left, right, up, or down, collecting all the gold in each cell visited.
+- The result is the sum of gold collected from all cells visited during the traversal.
+- The result is greater than or equal to 0.
+- The result is less than or equal to the sum of gold in all cells of the grid.
+- The grid may contain cells with 0 gold, which cannot be visited.
+- Each cell in the grid contains an integer representing the amount of gold in that cell, where 0 indicates an empty cell.
+- The dimensions of the grid `m x n` are such that `1 <= m, n <= 15`.
+- There are at most 25 cells in the grid containing gold.

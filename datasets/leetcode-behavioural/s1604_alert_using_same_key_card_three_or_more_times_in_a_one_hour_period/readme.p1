@@ -1,9 +1,7 @@
-- The List<String> result contains unique worker names who received an alert for frequent keycard use.
-- The worker names in the List<String> result are sorted in ascending order alphabetically.
-- The worker names in the List<String> result are unique.
-- The worker names in the List<String> result are determined based on the keyName and keyTime inputs.
-- The time period for alerting is defined as three or more key-card uses within a one-hour period.
-- The time format for keyTime is in "HH:MM" 24-hour format.
-- The keyName and keyTime inputs are unique pairs.
-- The length of keyName and keyTime arrays is between 1 and 100,000.
-- Each keyName entry has a length between 1 and 10 characters and contains only lowercase English letters.
+- The List of String parameter `keyName` and `keyTime` must not be null.
+- The length of the List of String parameter `keyName` and `keyTime` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the List of String parameter `keyName` is equal to the length of the List of String parameter `keyTime`.
+- Each element in the List of String parameter `keyTime` is in the format "HH:MM".
+- Each pair of elements in the List of String parameters `keyName` and `keyTime` is unique.
+- The List of String result contains unique worker names who received an alert for frequent keycard use.
+- The worker names in the List of String result are sorted in ascending order alphabetically.

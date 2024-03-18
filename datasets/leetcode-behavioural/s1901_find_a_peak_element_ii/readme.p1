@@ -1,6 +1,5 @@
-- The integer matrix parameter `mat` is a 2D grid where no two adjacent cells are equal.
-- The integer matrix parameter `mat` has an outer perimeter with the value -1 in each cell.
-- The integer matrix parameter `mat` has dimensions m x n where m and n are greater than or equal to 1 and less than or equal to 500.
-- The integer result is a length 2 array [i, j] representing a peak element mat[i][j].
-- The peak element mat[i][j] is strictly greater than all of its adjacent neighbors to the left, right, top, and bottom.
-- The algorithm must run in O(m log(n)) or O(n log(m)) time.
+- The integer matrix parameter `mat` is a 2D grid with dimensions `m x n`.
+- All elements in the integer matrix parameter `mat` are unique.
+- The integer matrix parameter `mat` is surrounded by an outer perimeter with the value -1 in each cell.
+- The integer result is a length 2 array `[i, j]` representing a peak element in the matrix `mat`.
+- The algorithm must run in `O(m log(n))` or `O(n log(m))` time.

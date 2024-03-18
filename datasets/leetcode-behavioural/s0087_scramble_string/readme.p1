@@ -1,5 +1,4 @@
-- If the length of the string parameter `s1` is equal to 1, the boolean result is true.
-- If the length of the string parameter `s1` is greater than 1, the string parameter `s1` is split into two non-empty substrings at a random index.
-- The two substrings of the string parameter `s1` are randomly decided to be swapped or kept in the same order.
-- The algorithm is applied recursively on each of the two substrings of the string parameter `s1`.
-- The boolean result is true if the string parameter `s2` is a scrambled string of the string parameter `s1`, otherwise, the boolean result is false.
+- The string parameters `s1` and `s2` must be of the same length.
+- The length of the string parameters `s1` and `s2` is greater than or equal to 1 and is less than or equal to 30.
+- The string parameters `s1` and `s2` consist of lower-case English letters.
+- The boolean result is equal to the true literal if `s2` is a scrambled string of `s1`, otherwise, the boolean result is equal to the false literal.

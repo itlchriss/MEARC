@@ -1,16 +1,7 @@
 - The integer array parameter `a` must not be null.
-- The integer array parameter `a` contains positive integers.
+- The integer array parameter `a` must contain positive integers.
 - The integer array parameter `queries` must not be null.
-- The integer array parameter `queries` contains arrays of length 2.
-- The integer array parameter `queries` contains positive integers.
-- The integer array result `answer` must not be null.
-- The length of the integer array result `answer` is equal to the length of the integer array parameter `queries`.
-- Each element in the integer array result `answer` is the XOR of elements from the specified range in the integer array parameter `a`.
-- The XOR operation is performed on elements from the specified range in the integer array parameter `a`.
-- The XOR operation is performed from the element at index `left` to the element at index `right` in the integer array parameter `a`.
-- The XOR operation is performed inclusively on the elements at index `left` and `right` in the integer array parameter `a`.
-- The XOR operation is performed on the binary representation of the elements in the integer array parameter `a`.
-- The binary representation of the elements in the integer array parameter `a` is considered for the XOR operation.
-- The XOR values for each query in the integer array parameter `queries` are calculated correctly.
-- The XOR values for each query are stored in the corresponding index of the integer array result `answer`.
-- The XOR values are calculated by performing the XOR operation on the elements specified by the queries in the integer array parameter `a`.
+- The integer array parameter `queries` must have a length between 1 and 30000.
+- Each element in the integer array parameter `queries` must be an array of length 2.
+- The integer array result must have a length equal to the length of the integer array parameter `queries`.
+- Each element in the integer array result must be the XOR of elements in the integer array parameter `a` from the specified range in the corresponding query.

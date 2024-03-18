@@ -1,9 +1,7 @@
-- If the graph is bipartite, the boolean result is true.
-- If the graph is not bipartite, the boolean result is false.
-- The 2D array parameter `graph` represents an undirected graph with `n` nodes.
-- Each node in the graph is numbered between 0 and `n - 1`.
-- The array `graph[u]` for each node `u` contains nodes that node `u` is adjacent to.
-- There are no self-edges in the graph.
-- There are no parallel edges in the graph.
-- If node `v` is in `graph[u]`, then node `u` is in `graph[v]`.
-- The graph may not be connected, meaning there may be nodes `u` and `v` with no path between them.
+- The boolean result is equal to the true literal if the graph is bipartite, meaning the nodes can be partitioned into two independent sets A and B such that every edge connects a node in set A and a node in set B.
+- The boolean result is equal to the false literal if there is no way to partition the nodes into two independent sets such that every edge connects a node in one set and a node in the other set.
+- The integer 2D array parameter `graph` represents an undirected graph with `n` nodes, where each node is numbered between 0 and `n - 1`.
+- The integer 2D array parameter `graph` must not contain self-edges (each sub-array does not contain the index of its own node).
+- The integer 2D array parameter `graph` must not contain parallel edges (each sub-array does not contain duplicate values).
+- If node `v` is in the sub-array of node `u` in `graph`, then node `u` must be in the sub-array of node `v` in `graph` (the graph is undirected).
+- The graph may not be connected, meaning there may be two nodes `u` and `v` such that there is no path between them.

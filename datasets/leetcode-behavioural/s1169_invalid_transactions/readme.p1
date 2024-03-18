@@ -1,4 +1,4 @@
 - If the amount in a transaction exceeds $1000, the transaction is considered invalid.
 - If a transaction occurs within (and including) 60 minutes of another transaction with the same name in a different city, the transaction is considered invalid.
-- The input parameter `input` is an array of strings where each string represents a transaction in the format "{name},{time},{amount},{city}".
-- The output is a list of transactions that are considered possibly invalid, which may be returned in any order.
+- The method must return a list of transactions that are possibly invalid.
+- The list of invalid transactions can be returned in any order.

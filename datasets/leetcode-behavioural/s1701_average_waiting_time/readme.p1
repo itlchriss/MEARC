@@ -1,8 +1,8 @@
 - The integer array parameter `customers` must not be null.
-- The integer array parameter `customers` length is greater than or equal to 1 and is less than or equal to 100000.
-- The integer array parameter `customers` contains subarrays where the first element represents the arrival time of the customer and the second element represents the time needed to prepare the order.
-- The arrival times in the integer array parameter `customers` are sorted in non-decreasing order.
+- The length of the integer array parameter `customers` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `customers` is a 2D array where each sub-array `customers[i]` represents the arrival time and preparation time of the `i-th` customer.
+- The arrival times in the sub-arrays of `customers` are sorted in non-decreasing order.
+- The integer result is the average waiting time of all customers.
+- The average waiting time is calculated by summing up the waiting times of each customer and dividing by the total number of customers.
+- The waiting time of a customer is the difference between the time the chef finishes preparing the customer's order and the time the customer arrived.
 - The chef prepares food for customers in the order they were given in the input.
-- The average waiting time of all customers is returned as a double.
-- The average waiting time is calculated by summing up the waiting times of each customer (finish time - arrival time) and dividing by the total number of customers.
-- Solutions within 10^-5 from the actual answer are considered accepted.

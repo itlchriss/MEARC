@@ -1,8 +1,8 @@
-- The integer result is the minimum number of steps required to spell all characters in the keyword.
-- The string parameter `ring` and `key` consist of only lowercase English letters.
-- The length of the string parameters `ring` and `key` is between 1 and 100.
-- The character `key[i]` must be aligned at the "12:00" direction by rotating the `ring` clockwise or anticlockwise.
-- Each rotation of the ring by one place counts as one step.
-- Pressing the center button after aligning the character `key[i]` at the "12:00" direction also counts as one step.
-- After pressing the center button, the next character in the key is spelled.
-- The key can always be spelled by rotating the ring.
+- The integer result is the minimum number of steps to spell all the characters in the string `key`.
+- The string parameter `ring` and `key` consist of only lower case English letters.
+- The length of the string parameters `ring` and `key` is greater than or equal to 1 and is less than or equal to 100.
+- The character in the string parameter `key` must be aligned at the "12:00" direction by rotating the string parameter `ring` clockwise or anticlockwise.
+- Each rotation of the string parameter `ring` counts as one step.
+- Pressing the center button to spell a character also counts as one step.
+- The character in the string parameter `key` must be aligned at the "12:00" direction before pressing the center button.
+- The final output is the total number of steps required to spell all characters in the string `key`.

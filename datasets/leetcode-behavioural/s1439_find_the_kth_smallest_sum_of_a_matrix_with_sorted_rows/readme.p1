@@ -1,4 +1,4 @@
-- The integer matrix parameter `mat` has `m` rows and `n` columns.
-- All rows in the integer matrix parameter `mat` are sorted in non-decreasing order.
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the minimum of 200 and n^m.
-- The integer result is the kth smallest array sum among all possible arrays formed by choosing exactly one element from each row of the matrix `mat`.
+- The integer matrix parameter `mat` must have `m` rows and `n` columns where `m` is greater than or equal to 1 and less than or equal to 40, and `n` is greater than or equal to 1 and less than or equal to 40.
+- All values in the integer matrix parameter `mat` are greater than or equal to 1 and less than or equal to 5000.
+- The integer parameter `k` is greater than or equal to 1 and less than or equal to the minimum of 200 and `n` to the power of `m`.
+- The integer result is the `k`-th smallest array sum among all possible arrays formed by choosing exactly one element from each row of the matrix `mat`.

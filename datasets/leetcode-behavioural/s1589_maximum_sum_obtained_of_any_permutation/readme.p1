@@ -4,5 +4,6 @@
 - All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 100000.
 - The length of the integer array parameter `requests` is greater than or equal to 1 and is less than or equal to 100000.
 - Each element in the integer array parameter `requests` is an array of length 2.
-- The integer values in each array of `requests` are such that the first value is less than or equal to the second value and both are less than the length of the `nums` array.
-- The integer result is the maximum total sum of all requests among all permutations of `nums`, modulo 10^9 + 7.
+- The integer values in each array of `requests` are such that the first value is greater than or equal to 0, less than the second value, and less than the length of the `nums` array.
+- The integer result is the maximum total sum of all requests among all permutations of `nums`.
+- The integer result is modulo 10^9 + 7.

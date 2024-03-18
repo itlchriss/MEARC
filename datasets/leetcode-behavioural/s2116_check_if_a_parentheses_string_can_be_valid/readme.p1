@@ -1,4 +1,4 @@
-- If the character at index `i` in the string `locked` is '1', the character at index `i` in the string `s` cannot be changed.
-- If the character at index `i` in the string `locked` is '0', the character at index `i` in the string `s` can be changed to either '(' or ')'.
-- The boolean result is true if it is possible to make the string `s` a valid parentheses string by changing the characters at the indices where `locked` is '0'.
-- The boolean result is false if it is not possible to make the string `s` a valid parentheses string by changing the characters at the indices where `locked` is '0'.
+- If the binary string parameter `locked` at index `i` is equal to '1', the character in the parentheses string parameter `s` at index `i` cannot be changed.
+- If the binary string parameter `locked` at index `i` is equal to '0', the character in the parentheses string parameter `s` at index `i` can be changed to either '(' or ')'.
+- The boolean result is equal to the true literal if the parentheses string parameter `s` can be transformed into a valid parentheses string based on the above conditions.
+- The boolean result is equal to the false literal if the parentheses string parameter `s` cannot be transformed into a valid parentheses string based on the above conditions.

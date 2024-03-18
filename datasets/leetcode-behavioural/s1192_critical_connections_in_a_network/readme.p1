@@ -1,7 +1,6 @@
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
 - The length of the list parameter `connections` is greater than or equal to `n - 1` and is less than or equal to 100000.
-- The integer values `a_i` and `b_i` in each connection list are greater than or equal to 0 and are less than `n`.
-- The values of `a_i` and `b_i` in each connection list are not equal.
+- Each element in the list parameter `connections` is a list of two integers `[a, b]` where `0 <= a, b <= n - 1` and `a != b`.
 - There are no repeated connections in the list parameter `connections`.
-- The result is a list of lists containing critical connections in the network.
-- The critical connections are represented as pairs of servers `[a_i, b_i]` that, if removed, will make some servers unable to reach other servers.
+- The result is a list of lists containing critical connections in the network in any order.
+- Each element in the result list is a list of two integers `[a, b]` representing a critical connection where `0 <= a, b <= n - 1` and `a != b`.

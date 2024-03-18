@@ -1,3 +1,8 @@
-- The integer 2D array parameter `grid` must not be null.
-- The integer result is the total area of all three projections of the cubes onto the xy, yz, and zx planes.
-- The integer result is greater than or equal to 0.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 50.
+- All values in the 2D integer array parameter `grid` are greater than or equal to 0 and are less than or equal to 50.
+- The integer result is the total area of all three projections of the 3D shape represented by the grid.
+- The total area includes the projection onto the xy plane, yz plane, and zx plane.
+- The total area is calculated by summing the areas of the shadows cast by the cubes onto each plane.
+- The shadow area on each plane is determined by the maximum height of the cubes in each row or column in the grid.
+- The shadow area on each plane does not consider overlapping shadows.
+- The total area is the sum of the areas of the shadows on the xy, yz, and zx planes.

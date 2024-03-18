@@ -1,7 +1,7 @@
 - The integer matrix parameter `grid` must not be null.
 - The integer matrix parameter `grid` must be a 0-indexed `m x n` binary matrix.
 - The integer matrix result `diff` is a 0-indexed `m x n` difference matrix.
-- The integer result `diff[i][j]` is calculated as `onesRow[i] + onesCol[j] - zerosRow[i] - zerosCol[j]`.
+- The integer result `diff[i][j]` is calculated as follows: `onesRow[i] + onesCol[j] - zerosRow[i] - zerosCol[j]`.
 - The number of ones in the `i-th` row is denoted as `onesRow[i]`.
 - The number of ones in the `j-th` column is denoted as `onesCol[j]`.
 - The number of zeros in the `i-th` row is denoted as `zerosRow[i]`.

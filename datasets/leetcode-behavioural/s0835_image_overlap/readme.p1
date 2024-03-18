@@ -1,4 +1,7 @@
-- The integer matrix parameter `img1` and `img2` must be square matrices of size `n x n`.
+- The integer matrix parameter `img1` and `img2` are square matrices of size `n x n`.
 - The integer result is the largest possible overlap between the two images.
-- The overlap is calculated by counting the number of positions that have a `1` in both images after translating one image by sliding all the `1` bits left, right, up, and/or down any number of units.
-- The translation does not include any rotation, and any `1` bits that are translated outside of the matrix borders are erased.
+- The translation of one image involves sliding all the `1` bits left, right, up, and/or down any number of units.
+- Any `1` bits that are translated outside of the matrix borders are erased.
+- The number of positions that have a `1` in both images is counted to determine the overlap.
+- The integer result is equal to the number of positions that have a `1` in both images after the translation.
+- The integer result is greater than or equal to 0.

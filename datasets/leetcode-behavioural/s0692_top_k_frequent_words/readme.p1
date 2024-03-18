@@ -1,9 +1,5 @@
-- The integer parameter `k` is greater than or equal to 1.
-- The length of the string array parameter `words` is less than or equal to 500.
-- All strings in the string array parameter `words` consist of lowercase English letters.
-- The integer result is a list of strings containing the `k` most frequent words.
-- The result is sorted by frequency from highest to lowest.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the number of unique words in the `words` array.
+- The list of strings result is sorted by frequency from highest to lowest.
 - Words with the same frequency are sorted by lexicographical order.
-- The result list does not contain duplicates.
-- The result list has a length less than or equal to the number of unique words in the input array.
-- The time complexity of the solution is O(n log(k)), and the space complexity is O(n).
+- The length of the list result is equal to the integer parameter `k`.
+- The list result contains the `k` most frequent strings from the `words` array.

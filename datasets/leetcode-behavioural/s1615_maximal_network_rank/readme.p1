@@ -1,6 +1,7 @@
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100.
 - The length of the integer array parameter `roads` is less than or equal to `n * (n - 1) / 2`.
 - Each element in the integer array parameter `roads` is an array of length 2.
-- The integer array parameter `roads` contains pairs of integers where each integer is between 0 and `n-1`.
-- The integer array parameter `roads` does not contain duplicate pairs.
+- The values in each array of `roads` are between 0 and `n-1`.
+- The values in each array of `roads` are not equal.
+- There is at most one road connecting each pair of cities.
 - The integer result is the maximal network rank of the entire infrastructure.

@@ -1,7 +1,10 @@
 - The string parameter `code` must be wrapped in a valid closed tag.
-- A closed tag has the format `<TAG_NAME>TAG_CONTENT</TAG_NAME>`, where the TAG_NAME in start and end tags should be the same.
-- The TAG_NAME in a valid closed tag must only contain upper-case letters and have a length in the range [1,9].
-- The TAG_CONTENT in a valid closed tag may contain other valid closed tags, cdata, and any characters except unmatched `<`, unmatched start and end tags, and unmatched or closed tags with invalid TAG_NAME.
-- A start tag is unmatched if no end tag exists with the same TAG_NAME, and vice versa. Consider the issue of unbalanced tags when nested.
-- An unmatched `<` is found if a subsequent `>` cannot be found. All characters between `<` and the next `>` should be parsed as TAG_NAME.
-- CDATA has the format `<![CDATA[CDATA_CONTENT]]>`, where CDATA_CONTENT is the characters between `<![CDATA[` and the first subsequent `]]>`. CDATA_CONTENT may contain any characters and should be treated as regular text, not parsed as a tag.
+- A closed tag in the code must have the format `<TAG_NAME>TAG_CONTENT</TAG_NAME>`.
+- The TAG_NAME in the start and end tags must be the same for a closed tag to be valid.
+- A valid TAG_NAME must only contain uppercase letters and have a length in the range [1,9].
+- A valid TAG_CONTENT may contain other valid closed tags, cdata, and any characters except unmatched `<`, unmatched start and end tags, and unmatched or closed tags with invalid TAG_NAME.
+- An unmatched start tag is one where no end tag exists with the same TAG_NAME, and vice versa. Consider the issue of unbalanced nesting of tags.
+- An unmatched `<` is one where a subsequent `>` cannot be found. All characters between `<` and the next `>` should be parsed as TAG_NAME.
+- CDATA has the format `<![CDATA[CDATA_CONTENT]]>`, and the CDATA_CONTENT is the characters between `<![CDATA[` and the first subsequent `]]>`.
+- CDATA_CONTENT may contain any characters and should be treated as regular text, not parsed as a tag.
+- The method must return true if the code snippet is valid according to the specified rules, and false otherwise.

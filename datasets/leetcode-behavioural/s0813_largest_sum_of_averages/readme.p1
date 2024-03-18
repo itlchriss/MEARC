@@ -1,8 +1,7 @@
-Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array `nums`.
-- The double result is the maximum score achievable by partitioning the array `nums` into at most `k` non-empty adjacent subarrays.
+- The double result is the maximum score achievable by partitioning the integer array `nums` into at most `k` non-empty adjacent subarrays.
 - The score is the sum of the averages of each subarray.
-- The partition must use every integer in the array `nums`.
 - The score is not necessarily an integer.
-- The answer will be accepted if it is within 10^-6 of the actual answer.
+- The partition must use every integer in the integer array `nums`.
+- The answer should be within 10^-6 of the actual answer.

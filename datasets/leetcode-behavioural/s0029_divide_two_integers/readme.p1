@@ -1,6 +1,6 @@
 - The integer parameter `dividend` is within the range of [-2^31, 2^31 - 1].
 - The integer parameter `divisor` is within the range of [-2^31, 2^31 - 1] and is not equal to 0.
-- The integer result is the quotient after dividing the integer parameter `dividend` by the integer parameter `divisor`.
-- The integer result is truncated towards zero.
+- The integer result is the quotient after dividing `dividend` by `divisor`.
+- The integer division truncates towards zero, meaning it loses its fractional part.
 - If the quotient is strictly greater than 2^31 - 1, the result is 2^31 - 1.
 - If the quotient is strictly less than -2^31, the result is -2^31.

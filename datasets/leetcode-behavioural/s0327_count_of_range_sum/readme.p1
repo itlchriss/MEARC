@@ -1,5 +1,6 @@
 - The integer array parameter `nums` must not be null.
-- The integer parameters `lower` and `upper` must satisfy the condition `-10^5 <= lower <= upper <= 10^5`.
+- The integer array parameter `nums` length is greater than or equal to 1 and is less than or equal to 100000.
+- All values in the integer array parameter `nums` are greater than or equal to -2^31 and are less than or equal to 2^31 - 1.
+- The integer parameters `lower` and `upper` are greater than or equal to -10^5 and are less than or equal to 10^5.
 - The integer result is the number of range sums that lie in the inclusive range `[lower, upper]`.
-- The range sum `S(i, j)` is the sum of elements in the `nums` array between indices `i` and `j` inclusive, where `i <= j`.
 - The answer is guaranteed to fit in a 32-bit integer.

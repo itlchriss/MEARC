@@ -1,5 +1,4 @@
 - The string parameter `s` is a special binary string.
-- The string result is the lexicographically largest resulting string possible after applying the mentioned operations on the string.
-- The result string must satisfy the properties of a special binary string:
-    - The number of `0`'s is equal to the number of `1`'s.
-    - Every prefix of the binary string has at least as many `1`'s as `0`'s.
+- The string result is the lexicographically largest string possible after applying the mentioned operations on the string.
+- The result string is obtained by choosing two consecutive, non-empty, special substrings of the input string and swapping them.
+- Two substrings are considered consecutive if the last character of the first substring is exactly one index before the first character of the second substring.

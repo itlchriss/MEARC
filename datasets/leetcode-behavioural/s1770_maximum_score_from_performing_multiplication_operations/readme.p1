@@ -1,6 +1,9 @@
-- The integer array parameter `nums` and `multipliers` must not be null.
-- The length of the integer array parameter `nums` must be greater than or equal to the length of the integer array parameter `multipliers`.
-- The integer result is the maximum score after performing exactly `m` operations.
-- The integer result is the sum of the products of the chosen integers from either the start or the end of the array `nums` and the corresponding multipliers.
+- The integer array parameter `nums` and `multipliers` are 1-indexed.
+- The integer array parameter `nums` has a size of `n` and the integer array parameter `multipliers` has a size of `m`, where `n >= m`.
+- The integer result is the maximum score after performing `m` operations.
+- On each operation, one integer `x` is chosen from either the start or the end of the array `nums`.
+- The score is calculated by adding `multipliers[i] * x` to the current score.
 - The chosen integer `x` is removed from the array `nums` after each operation.
-- The total score is the sum of all products calculated during the operations.
+- Exactly `m` operations must be performed.
+- The total score is the sum of all scores obtained from the operations.
+- The maximum score is returned as the final result.

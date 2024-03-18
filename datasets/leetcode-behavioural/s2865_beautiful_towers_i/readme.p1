@@ -2,8 +2,4 @@
 - The length of the integer list parameter `maxHeights` is greater than or equal to 1 and is less than or equal to 1000.
 - All values in the integer list parameter `maxHeights` are greater than or equal to 1 and are less than or equal to 1000000000.
 - The long result is the maximum possible sum of heights of a beautiful configuration of towers.
-- The heights of the towers in the beautiful configuration must satisfy the conditions:
-    - 1 <= heights[i] <= maxHeights[i]
-    - The heights form a mountain array with a peak at index i where:
-        - For all 0 < j <= i, heights[j - 1] <= heights[j]
-        - For all i <= k < n - 1, heights[k + 1] <= heights[k]
+- The beautiful configuration of towers must satisfy the conditions mentioned in the business requirement.

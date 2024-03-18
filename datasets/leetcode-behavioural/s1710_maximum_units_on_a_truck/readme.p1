@@ -1,4 +1,6 @@
-- The integer 2D array parameter `boxTypes` must not be null.
-- The length of the integer 2D array parameter `boxTypes` is greater than or equal to 1 and is less than or equal to 1000.
+- The integer array parameter `boxTypes` must not be null.
+- The length of the integer array parameter `boxTypes` is greater than or equal to 1 and is less than or equal to 1000.
 - The integer parameter `truckSize` is greater than or equal to 1 and is less than or equal to 1000000.
 - The integer result is the maximum total number of units that can be put on the truck.
+- The total number of units is calculated by multiplying the number of boxes of each type with the number of units per box and summing them up.
+- The boxes to be put on the truck can be chosen from any type as long as the total number of boxes does not exceed `truckSize`.

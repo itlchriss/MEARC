@@ -2,8 +2,7 @@ Method behavioural specifications:
 - The integer 2D array parameter `board` represents the current state of the game board.
 - The next state of the game board is calculated by applying the four rules of the Game of Life simultaneously to every cell in the current state.
 - Any live cell with fewer than two live neighbors dies.
-- Any live cell with two or three live neighbors lives on to the next generation.
+- Any live cell with two or three live neighbors survives.
 - Any live cell with more than three live neighbors dies.
-- Any dead cell with exactly three live neighbors becomes a live cell.
-- The output is the next state of the game board after applying the rules.
-- The method `gameOfLife` updates the `board` in-place to reflect the next state.
+- Any dead cell with exactly three live neighbors becomes alive.
+- The output is the next state of the game board.

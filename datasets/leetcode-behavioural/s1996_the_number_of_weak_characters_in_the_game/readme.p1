@@ -1,4 +1,7 @@
 - The integer 2D array parameter `properties` must have a length greater than or equal to 2 and less than or equal to 100000.
 - Each element in the integer 2D array parameter `properties` must have a length of 2.
-- The integer values for attack and defense in each element of the integer 2D array parameter `properties` must be greater than or equal to 1 and less than or equal to 100000.
-- The integer result is the number of weak characters in the game, where a character is weak if there exists another character with both attack and defense levels strictly greater than the character's attack and defense levels.
+- The integer result is the number of weak characters in the game.
+- A character is considered weak if there exists another character with both attack and defense levels strictly greater than the character's attack and defense levels.
+- The attack and defense levels of the characters are determined by the values in the 2D integer array parameter `properties`.
+- The attack level of a character is represented by the first element in each sub-array of `properties`.
+- The defense level of a character is represented by the second element in each sub-array of `properties`.

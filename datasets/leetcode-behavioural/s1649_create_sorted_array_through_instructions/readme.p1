@@ -2,4 +2,5 @@
 - The integer array parameter `instructions` must have a length greater than or equal to 1 and less than or equal to 100000.
 - All values in the integer array parameter `instructions` must be greater than or equal to 1 and less than or equal to 100000.
 - The integer result is the total cost to insert all elements from the integer array parameter `instructions` into the sorted array `nums`.
-- The integer result is modulo 10^9 + 7.
+- The total cost is calculated as the sum of the minimum of the number of elements in `nums` that are strictly less than the current element and the number of elements in `nums` that are strictly greater than the current element for each element in `instructions`.
+- The total cost is returned modulo 10^9 + 7.

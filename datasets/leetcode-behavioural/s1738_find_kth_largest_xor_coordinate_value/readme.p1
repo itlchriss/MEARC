@@ -1,9 +1,6 @@
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the product of the number of rows and columns in the 2D `matrix`.
-- The integer result is the `k`th largest XOR coordinate value of all coordinates in the `matrix`.
-- The XOR value of a coordinate `(a, b)` is calculated by XORing all elements in the submatrix from `(0, 0)` to `(a, b)` inclusive.
-- The coordinates are 0-indexed.
-- The coordinates are considered in row-major order.
-- The XOR value of a coordinate `(a, b)` is the result of XORing all elements in the submatrix from `(0, 0)` to `(a, b)` inclusive.
-- The XOR value of a coordinate `(a, b)` is the XOR of all elements in the submatrix from `(0, 0)` to `(a, b)` inclusive.
-- The XOR value of a coordinate `(a, b)` is the result of XORing all elements in the submatrix from `(0, 0)` to `(a, b)` inclusive.
-- The XOR value of a coordinate `(a, b)` is the XOR of all elements in the submatrix from `(0, 0)` to `(a, b)` inclusive.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the product of the number of rows and columns in the matrix.
+- The integer result is the k<sup>th</sup> largest XOR coordinate value in the matrix.
+- The XOR coordinate value of a coordinate (a, b) is the result of XORing all matrix elements within the rectangle defined by (0, 0) as the top-left corner and (a, b) as the bottom-right corner.
+- The matrix elements are indexed starting from 0.
+- The matrix dimensions are between 1 and 1000 for both rows and columns.
+- The matrix elements are non-negative integers between 0 and 10<sup>6</sup>.

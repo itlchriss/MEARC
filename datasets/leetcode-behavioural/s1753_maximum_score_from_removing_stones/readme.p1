@@ -1,8 +1,6 @@
 - The integer parameters `a`, `b`, and `c` must be greater than or equal to 1 and less than or equal to 100000.
-- The integer result is the maximum score that can be obtained by playing the solitaire game with three piles of stones.
+- The integer result is the maximum score achievable by playing the solitaire game with three piles of stones.
 - The game stops when there are fewer than two non-empty piles.
 - Each turn, two different non-empty piles are chosen, one stone is taken from each, and 1 point is added to the score.
-- The game continues until there are fewer than two non-empty piles.
-- The optimal moves are determined by taking stones from different piles to maximize the score.
-- The explanation of the output should include the starting state and the sequence of optimal moves taken to reach the final state with fewer than two non-empty piles.
-- The total score obtained from the optimal moves should be included in the output explanation.
+- The game ends when there are fewer than two non-empty piles.
+- The output format is a list with '-' as bullets.

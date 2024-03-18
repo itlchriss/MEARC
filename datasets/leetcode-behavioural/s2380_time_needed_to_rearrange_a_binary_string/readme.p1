@@ -1,5 +1,5 @@
 - The integer parameter `s` is a binary string with a length greater than or equal to 1 and less than or equal to 1000.
-- The integer result is the number of seconds needed to complete the process of replacing all occurrences of "01" with "10" in the binary string parameter `s`.
+- The integer result is the number of seconds needed to complete the process of replacing all occurrences of "01" with "10" until no occurrences of "01" exist.
+- The process of replacing all occurrences of "01" with "10" occurs simultaneously in one second.
 - The process repeats until no occurrences of "01" exist.
-- The process replaces all occurrences of "01" simultaneously.
-- The process completes when no occurrences of "01" exist in the binary string parameter `s`.
+- The integer result is equal to 0 if no occurrences of "01" exist in the binary string `s`.

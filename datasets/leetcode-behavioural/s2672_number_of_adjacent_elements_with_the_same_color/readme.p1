@@ -1,6 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
 - The length of the 2D integer array parameter `q` is greater than or equal to 1 and is less than or equal to 100000.
 - Each sub-array in the 2D integer array parameter `q` has a length of 2.
-- The integer values in each sub-array of the 2D integer array parameter `q` are within the specified constraints.
+- The integer values in the sub-arrays of the 2D integer array parameter `q` are within the range of 0 to `n-1` for the first element and 1 to 100000 for the second element.
 - The length of the integer array result is equal to the length of the 2D integer array parameter `q`.
-- Each element in the integer array result represents the number of adjacent elements with the same color after the corresponding query in the 2D integer array parameter `q`.
+- Each element in the integer array result represents the number of adjacent elements with the same color after the corresponding query.

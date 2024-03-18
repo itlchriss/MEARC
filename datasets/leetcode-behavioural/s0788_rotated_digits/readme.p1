@@ -1,9 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.
 - The integer result is the number of good integers in the range [1, n].
-- A number is considered good if after rotating each digit individually by 180 degrees, we get a valid number that is different from the original number.
-- Each digit must be rotated, and we cannot choose to leave it alone.
-- A valid number is one where each digit remains a digit after rotation.
-- The digits 0, 1, and 8 rotate to themselves.
-- The digits 2 and 5 rotate to each other.
-- The digits 6 and 9 rotate to each other.
-- The rest of the numbers do not rotate to any other number and become invalid.
+- A good integer is defined as an integer where after rotating each digit individually by 180 degrees, we get a valid number that is different from the original number.
+- Valid numbers are those where each digit remains a digit after rotation, such as 0, 1, 8, 2, 5, 6, and 9.
+- Invalid numbers are those where the digits do not rotate to any other number and become invalid.
+- The output should be the count of good integers in the range [1, n].

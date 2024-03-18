@@ -1,6 +1,7 @@
-- The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must contain distinct numbers.
-- The integer parameter `start` must be within the range 0 to 1000.
-- The integer parameter `goal` must be within the range -10^9 to 10^9.
-- The integer result is the minimum number of operations needed to convert `start` into `goal`.
-- If it is not possible to convert `start` into `goal`, the integer result is -1.
+- The integer array parameter `nums` contains distinct numbers.
+- The integer parameter `start` is within the range 0 to 1000.
+- The integer parameter `goal` is within the range -10^9 to 10^9.
+- The integer result is the minimum number of operations needed to convert `start` into `goal`, and -1 if it is not possible.
+- For each index `i` in the array `nums`, the number `x` can be set to `x + nums[i]`, `x - nums[i]`, or `x ^ nums[i]`.
+- Operations that set `x` to be out of the range 0 <= x <= 1000 are valid.
+- No more operations can be done after `x` is out of the range 0 <= x <= 1000.

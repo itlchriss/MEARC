@@ -1,7 +1,5 @@
-Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` is modified during the operation.
-- The concatenation value of `nums` is initially equal to 0.
-- If there exists more than one number in `nums`, the concatenation value is updated by adding the concatenation of the first and last elements to the current concatenation value, and then deleting these elements from `nums`.
-- If there is only one element in `nums`, the concatenation value is updated by adding the value of this element to the current concatenation value, and then deleting this element from `nums`.
-- The final result returned is the concatenation value of `nums`.
+- The integer result is the concatenation value of the integer array `nums`.
+- If there exists more than one number in `nums`, the concatenation value is calculated by picking the first element and last element in `nums` respectively, adding the value of their concatenation to the concatenation value of `nums`, and then deleting the first and last element from `nums`.
+- If only one element exists in `nums`, its value is added to the concatenation value of `nums` and then deleted.
+- The concatenation value is returned as the final result.

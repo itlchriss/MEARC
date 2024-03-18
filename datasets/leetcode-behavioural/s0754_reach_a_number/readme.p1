@@ -1,15 +1,7 @@
 - The integer parameter `target` is greater than or equal to -10^9 and is less than or equal to 10^9.
 - The integer parameter `target` is not equal to 0.
 - The integer result is the minimum number of moves required to reach the destination.
-- The minimum number of moves is the minimum `numMoves` to reach the destination.
-- On each move, the number of steps taken is equal to the move number.
-- The direction of each move can be either left or right.
-- The direction of the move is chosen by the sign of the step (positive for right, negative for left).
-- The steps taken in each move are incremental, starting from 1 step in the first move.
-- The steps taken in each move increase by 1 for each subsequent move.
-- The steps taken in each move are cumulative, i.e., the total steps taken up to the `i`th move is the sum of the steps taken in all previous moves.
-- The steps taken in each move can be in either direction (left or right).
-- The steps taken in each move can be in the opposite direction of the previous move.
-- The steps taken in each move can be in the same direction as the previous move.
-- The steps taken in each move can be in the same direction as the previous move, but with a greater number of steps.
-- The steps taken in each move can be in the opposite direction of the previous move, but with a greater number of steps.
+- The minimum number of moves is calculated based on the given conditions:
+    - On each move, the person can go left or right.
+    - During the i-th move, the person takes i steps in the chosen direction.
+    - The person starts at position 0 on an infinite number line and the destination is at position `target`.

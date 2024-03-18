@@ -1,7 +1,7 @@
-- If the integer array parameter `aliceValues` and the integer array parameter `bobValues` have the same number of elements, the integer result is either 1, -1, or 0.
-- If the integer result is 1, Alice wins the game.
-- If the integer result is -1, Bob wins the game.
-- If the integer result is 0, the game results in a draw.
-- The integer array parameter `aliceValues` and the integer array parameter `bobValues` must not be null.
-- The length of the integer array parameter `aliceValues` and the integer array parameter `bobValues` is equal to the integer parameter `n`.
-- All values in the integer array parameter `aliceValues` and the integer array parameter `bobValues` are greater than or equal to 1 and are less than or equal to 100.
+- If Alice wins the game, the integer result is equal to 1.
+- If Bob wins the game, the integer result is equal to -1.
+- If the game results in a draw, the integer result is equal to 0.
+- The integer arrays `aliceValues` and `bobValues` must have the same length `n`.
+- All values in the integer arrays `aliceValues` and `bobValues` are greater than or equal to 1 and are less than or equal to 100.
+- The integer result is determined based on the optimal play of both players and their respective values for each stone.
+- The method `compareTo` compares the points earned by Alice and Bob and returns the result accordingly.

@@ -3,3 +3,5 @@
 - All values in the integer array parameters `chargeTimes` and `runningCosts` are greater than or equal to 1 and are less than or equal to 100000.
 - The integer parameter `budget` is greater than or equal to 1 and is less than or equal to 10^15.
 - The integer result is the maximum number of consecutive robots that can be run within budget.
+- The total cost of running `k` chosen robots is equal to `max(chargeTimes) + k * sum(runningCosts)`, where `max(chargeTimes)` is the largest charge cost among the `k` robots and `sum(runningCosts)` is the sum of running costs among the `k` robots.
+- The maximum number of consecutive robots that can be run within budget is determined by finding the maximum value of `k` such that the total cost does not exceed the budget.

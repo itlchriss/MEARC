@@ -1,11 +1,9 @@
 - The integer array parameter `nums1` and `nums2` must not be null.
 - The length of the integer array parameter `nums1` and `nums2` is greater than or equal to 1 and is less than or equal to 100000.
 - The length of the integer array parameter `nums1` is equal to the length of the integer array parameter `nums2`.
-- The 2D integer array parameter `queries` is not null.
+- The 2D integer array parameter `queries` must not be null.
 - The length of the 2D integer array parameter `queries` is greater than or equal to 1 and is less than or equal to 100000.
-- Each query in the 2D integer array parameter `queries` is an array of length 3.
-- For a query of type 1, the integer parameters `l` and `r` are greater than or equal to 0 and are less than the length of `nums1` - 1.
-- For a query of type 2, the integer parameter `p` is greater than or equal to 0 and is less than or equal to 1000000.
-- For a query of type 3, the integer parameters `l` and `r` are both 0.
-- The integer array result contains the answers to the third type queries.
-- The length of the integer array result is equal to the number of third type queries.
+- The length of each inner array in the 2D integer array parameter `queries` is equal to 3.
+- The integer values in the inner arrays of the 2D integer array parameter `queries` follow the specified constraints.
+- The integer array result is an array containing the answers to the third type queries.
+- The length of the integer array result is equal to the number of third type queries in the 2D integer array parameter `queries`.

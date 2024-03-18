@@ -1,7 +1,6 @@
 - The integer parameter `source` is greater than or equal to 0 and is less than 1000000.
 - The integer parameter `target` is greater than or equal to 0 and is less than 1000000.
 - The length of the integer array parameter `routes` is greater than or equal to 1 and is less than or equal to 500.
-- Each element in the integer array parameter `routes` is unique.
-- The sum of the lengths of all arrays in the integer array parameter `routes` is less than or equal to 100000.
-- The integer result is the least number of buses needed to travel from the `source` bus stop to the `target` bus stop.
-- If it is not possible to travel from the `source` bus stop to the `target` bus stop, the integer result is -1.
+- The length of each integer array in the integer array parameter `routes` is greater than or equal to 1 and is less than or equal to 100000.
+- All values in each integer array in the integer array parameter `routes` are unique.
+- The integer result is the least number of buses needed to travel from the `source` bus stop to the `target` bus stop. If it is not possible to reach the `target` bus stop from the `source` bus stop, the result is -1.

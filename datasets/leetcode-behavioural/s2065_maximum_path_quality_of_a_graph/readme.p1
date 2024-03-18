@@ -1,5 +1,8 @@
-Method behavioural specifications:
-- The integer parameter `i` represents the node number.
-- The integer parameter `time` represents the time taken to travel between nodes.
-- The integer array result is a list of nodes representing the maximum quality path.
-- The integer result is the maximum quality of a valid path.
+- The integer parameter `i` is the node number.
+- The integer parameter `time` is the time taken to travel to the node.
+- The integer result is the maximum quality of a valid path in the graph.
+- The integer result is the sum of the values of the unique nodes visited in the path.
+- Each node's value is added at most once to the sum.
+- The total time taken to complete the path is at most `maxTime`.
+- The nodes visited in the path are unique.
+- There are at most four edges connected to each node.

@@ -1,12 +1,7 @@
 - The input parameter `box` must be a 2D character array representing a side-view of a box.
-- The output is an `n x m` matrix representing the box after rotating it 90 degrees clockwise.
-- Stones in the box fall down until they land on an obstacle, another stone, or the bottom of the box.
-- Gravity does not affect the obstacles' positions, and the rotation does not affect the stones' horizontal positions.
-- The output matrix must have the same number of rows as the number of columns in the input matrix and vice versa.
-- The output matrix must have the stones falling down according to the gravity rules.
-- The output matrix must have the obstacles remain stationary.
-- The output matrix must have the stones' horizontal positions unchanged after rotation.
-- The output matrix must have the stones land on an obstacle, another stone, or the bottom of the box.
-- The output matrix must have the stones represented by `'#'`, obstacles by `'*'`, and empty spaces by `'.'`.
-- The constraints for the input matrix dimensions are `1 <= m, n <= 500`.
-- Each stone in the input matrix rests on an obstacle, another stone, or the bottom of the box.
+- The output result is an `n x m` matrix representing the box after rotating it 90 degrees clockwise.
+- Each cell in the output matrix can be one of the following characters: `'#'`, `'*'`, or `'.'`.
+- Stones in the box fall due to gravity until they land on an obstacle, another stone, or the bottom of the box.
+- Gravity does not affect the positions of obstacles, and the rotation does not affect the horizontal positions of stones.
+- The output matrix must have the dimensions `n x m`, where `n` is the number of columns in the input `box` and `m` is the number of rows in the input `box`.
+- The output matrix must represent the box after the described rotation.

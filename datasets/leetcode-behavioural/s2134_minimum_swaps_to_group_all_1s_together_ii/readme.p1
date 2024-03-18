@@ -1,3 +1,8 @@
+Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
-- The integer result is the minimum number of swaps required to group all `1`s present in the array together at any location.
-- The integer result is greater than or equal to 0.
+- The integer array parameter `nums` length is greater than or equal to 1 and is less than or equal to 100000.
+- The integer result is the minimum number of swaps required to group all 1's present in the array together at any location.
+- The minimum number of swaps required is 0 if all the 1's are already grouped together due to the circular property of the array.
+- The minimum number of swaps required is 1 if there is at least one way to group all the 1's together using 1 swap.
+- The minimum number of swaps required is 2 if there is at least one way to group all the 1's together using 2 swaps.
+- There is no way to group all 1's together with 0 swaps.

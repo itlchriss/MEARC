@@ -1,14 +1,17 @@
-- For each group of duplicate file paths in the output list, it contains all the file paths of the files that have the same content.
-- Each file path in the output list is a string in the format "directory_path/file_name.txt".
-- The input list `paths` contains directory info strings in the format "root/d1/d2/.../dm f1.txt(f1_content) f2.txt(f2_content) ... fn.txt(fn_content)".
-- Each directory info string in the input list represents a unique directory.
-- The output list may contain the groups of duplicate file paths in any order.
-- A group of duplicate files consists of at least two files that have the same content.
-- The file content is enclosed in parentheses after the file name in the directory info string.
-- The constraints for the input list `paths` are as follows:
-    - 1 <= paths.length <= 2 * 10^4
-    - 1 <= paths[i].length <= 3000
-    - 1 <= sum(paths[i].length) <= 5 * 10^5
-    - paths[i] consists of English letters, digits, '/', '.', '(', ')', and ' '.
-    - No files or directories share the same name in the same directory.
-- The method signature for finding duplicate files is public List<List<String>> findDuplicate(String[] paths).
+- The list of directory info strings `paths` must not be null.
+- Each directory info string in the input list must follow the format `"root/d1/d2/.../dm f1.txt(f1_content) f2.txt(f2_content) ... fn.txt(fn_content)"`.
+- Each file path in the output list must be in the format `"directory_path/file_name.txt"`.
+- The output list must contain groups of duplicate file paths, where each group consists of file paths of files that have the same content.
+- Each group in the output list must contain at least two file paths.
+- The output list may be in any order.
+- The method must return an empty list if no duplicate files are found.
+- The method must handle cases where multiple files have the same content.
+- The method must handle cases where files are located in different directories but have the same content.
+- The method must handle cases where files have the same name but are located in different directories.
+- The method must handle cases where directories have no files.
+- The method must handle cases where directories have no subdirectories.
+- The method must handle cases where directories have no content in the files.
+- The method must handle cases where the file content is very large (GB level) efficiently.
+- The method must handle cases where files can only be read by 1kb each time efficiently.
+- The method must optimize time complexity and memory consumption.
+- The method must ensure that the duplicated files found are not false positives.

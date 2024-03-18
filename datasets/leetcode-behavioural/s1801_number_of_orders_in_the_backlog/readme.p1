@@ -1,6 +1,8 @@
 - The integer array parameter `orders` must not be null.
-- The integer array parameter `orders` must have a length between 1 and 100000.
-- Each element in the integer array parameter `orders` must be an array of length 3.
-- The integer elements `price`, `amount`, and `orderType` in each element of the integer array parameter `orders` must be between 1 and 1000000000.
-- The integer result is the total amount of orders in the backlog after processing all orders from the input.
-- The integer result is calculated modulo 1000000007.
+- The integer array parameter `orders` length is greater than or equal to 1 and is less than or equal to 100000.
+- Each element in the integer array parameter `orders` is an array of length 3.
+- The integer parameter `price` in each element of the integer array parameter `orders` is greater than or equal to 1 and is less than or equal to 1000000000.
+- The integer parameter `amount` in each element of the integer array parameter `orders` is greater than or equal to 1 and is less than or equal to 1000000000.
+- The integer parameter `orderType` in each element of the integer array parameter `orders` is either 0 or 1.
+- The integer result is the total amount of orders in the backlog after placing all the orders from the input.
+- The integer result is modulo 1000000007.

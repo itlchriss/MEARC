@@ -1,7 +1,9 @@
-- The Quad-Tree node `val` attribute can be assigned either True or False when `isLeaf` is False.
-- The Quad-Tree node `isLeaf` attribute can be assigned either True or False.
-- If the current grid has the same value (all 1's or all 0's), the Quad-Tree node `isLeaf` attribute is True and the `val` attribute is set to the value of the grid. The four children of the node are set to Null.
-- If the current grid has different values, the Quad-Tree node `isLeaf` attribute is False and the `val` attribute can be set to any value. The current grid is divided into four sub-grids.
-- Recurse for each of the children with the proper sub-grid.
-- The output represents the serialized format of a Quad-Tree using level order traversal, where `null` signifies a path terminator where no node exists below.
-- The node is represented as a list `[isLeaf, val]` where True is represented as 1 and False is represented as 0.
+- The Quad-Tree root node must have a boolean value `val` representing the grid of 1's or 0's.
+- The Quad-Tree root node must have a boolean value `isLeaf` indicating if it is a leaf node or has children.
+- If the current grid has the same value (all 1's or all 0's), the `isLeaf` attribute of the node must be set to True and the `val` attribute must be set to the value of the grid.
+- If the current grid has different values, the `isLeaf` attribute of the node must be set to False and the `val` attribute can be set to any value.
+- If the current grid has different values, the current grid must be divided into four sub-grids represented by the `topLeft`, `topRight`, `bottomLeft`, and `bottomRight` children nodes.
+- Recursion must be used to construct the Quad-Tree for each of the children nodes with the proper sub-grid.
+- The Quad-Tree must be represented in a serialized format using level order traversal.
+- The serialized format must use a list `[isLeaf, val]` where True is represented as 1 and False is represented as 0.
+- The output must represent the Quad-Tree structure with proper connections between nodes and leaf nodes.

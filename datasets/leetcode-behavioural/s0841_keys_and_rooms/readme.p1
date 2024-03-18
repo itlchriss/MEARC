@@ -1,10 +1,2 @@
-- The boolean result is true if all rooms can be visited, i.e., if all rooms can be unlocked.
-- The boolean result is false if there is at least one room that cannot be visited due to missing keys.
-- The integer parameter `n` is the number of rooms, where rooms are labeled from 0 to n-1.
-- The integer array parameter `rooms` represents the set of keys available in each room.
-- Each key in a room unlocks another room, denoted by the number on the key.
-- The keys in each room are distinct.
-- The sum of the lengths of keys in all rooms is between 1 and 3000.
-- The number of rooms is between 2 and 1000.
-- The values of keys in each room are unique.
-- The length of the integer list parameter `rooms` is equal to the number of rooms `n`.
+- The boolean result is equal to the true literal if it is possible to visit all rooms by obtaining keys from each room in the given list of rooms.
+- The boolean result is equal to the false literal if it is not possible to visit all rooms by obtaining keys from each room in the given list of rooms.

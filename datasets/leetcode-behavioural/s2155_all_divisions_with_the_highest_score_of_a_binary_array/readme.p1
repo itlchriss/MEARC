@@ -1,13 +1,8 @@
 Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
 - The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100000.
-- The integer array parameter `nums` must only contain elements that are either 0 or 1.
+- The integer array parameter `nums` contains only 0 or 1 values.
 - The integer collection result contains all distinct indices that have the highest possible division score.
-- The division score of an index `i` is the sum of the number of `0`'s in `numsLeft` and the number of `1`'s in `numsRight`.
-- The division score is calculated as follows:
-    - numsLeft contains all elements of `nums` between index 0 and i-1 (inclusive).
-    - numsRight contains all elements of `nums` between index i and n-1 (inclusive).
-    - If i == 0, numsLeft is empty, and numsRight has all elements of `nums`.
-    - If i == n, numsLeft has all elements of `nums`, and numsRight is empty.
-- The division score is the sum of the number of 0's in numsLeft and the number of 1's in numsRight.
-- The method may return the answer in any order.
+- The division score of an index `i` is the sum of the number of `0`'s in `nums` from index 0 to `i-1` and the number of `1`'s in `nums` from index `i` to `n-1`.
+- If multiple indices have the highest possible division score, all of them should be included in the result list.
+- The result list can be returned in any order.

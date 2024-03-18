@@ -1,7 +1,6 @@
 - The integer array parameter `logs` must not be null.
-- The length of the integer array parameter `logs` is greater than or equal to 1 and is less than or equal to 10000.
-- The integer array parameter `logs` contains subarrays of length 2 where the first element represents the user ID and the second element represents the time of action.
-- The integer parameter `k` is greater than or equal to the maximum UAM for a user and is less than or equal to 100000.
-- The integer array result `answer` is of size `k` and is 1-indexed.
-- Each element in the integer array result `answer` represents the number of users whose UAM equals the index of the element.
-- The values in the integer array result `answer` are greater than or equal to 0.
+- The integer parameter `k` is greater than or equal to 1.
+- The integer array result `answer` has a size of `k`.
+- Each element in the integer array result `answer` represents the number of users whose UAM equals the index of that element.
+- The UAM for a user is defined as the number of unique minutes in which the user performed an action.
+- A minute can only be counted once for a user, even if multiple actions occur during it.

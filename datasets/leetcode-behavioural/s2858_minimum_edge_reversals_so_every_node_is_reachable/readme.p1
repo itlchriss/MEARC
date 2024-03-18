@@ -1,6 +1,9 @@
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
 - The length of the 2D integer array parameter `edges` is equal to `n - 1`.
 - Each element in the 2D integer array parameter `edges` has a length of 2.
+- The first element of each inner array in the 2D integer array parameter `edges` is greater than or equal to 0 and is less than `n`.
+- The second element of each inner array in the 2D integer array parameter `edges` is greater than or equal to 0 and is less than `n`.
+- The first element of each inner array in the 2D integer array parameter `edges` is not equal to the second element of the same inner array.
+- The input is generated in such a way that if the edges were bi-directional, the graph would form a tree.
 - The integer array result has a length equal to `n`.
-- Each element in the integer array result represents the minimum number of edge reversals required to reach any other node starting from the corresponding node.
-- The output array should be returned as the result.
+- Each element in the integer array result represents the minimum number of edge reversals required so it is possible to reach any other node starting from that node through a sequence of directed edges.

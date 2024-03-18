@@ -1,5 +1,6 @@
 - The integer array parameter `prices` must have a length greater than or equal to 2 and less than or equal to 50.
 - All values in the integer array parameter `prices` must be greater than or equal to 1 and less than or equal to 100.
 - The integer parameter `money` must be greater than or equal to 1 and less than or equal to 100.
-- The integer result is the amount of money leftover after buying two chocolates.
-- If there is no way to buy two chocolates without ending up in debt, the result is the initial amount of money `money`.
+- The integer result is the amount of money left after buying two chocolates.
+- If there is no way to buy two chocolates without going into debt, the result is equal to the integer parameter `money`.
+- The leftover money must be non-negative.

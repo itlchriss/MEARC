@@ -1,8 +1,6 @@
-- The integer array parameter `commands` must not be null.
-- The integer array parameter `commands` length is greater than or equal to 1 and is less than or equal to 10000.
-- The integer array parameter `commands` elements are either -2, -1, or an integer in the range [1, 9].
-- The integer array parameter `obstacles` must not be null.
-- The integer array parameter `obstacles` length is greater than or equal to 0 and is less than or equal to 10000.
-- The integer array parameter `obstacles` elements are within the range [-30000, 30000].
-- The integer result is less than 2^31.
+- The integer array parameter `commands` must have a length greater than or equal to 1 and less than or equal to 10000.
+- Each element in the integer array parameter `commands` must be either -2, -1, or an integer in the range [1, 9].
+- The integer array parameter `obstacles` must have a length greater than or equal to 0 and less than or equal to 10000.
+- The x and y coordinates of each obstacle in the integer array parameter `obstacles` must be within the range [-30000, 30000].
+- The integer result is guaranteed to be less than 2^31.
 - The integer result is the maximum Euclidean distance that the robot ever gets from the origin squared.

@@ -2,4 +2,6 @@
 - The integer array parameter `prices` length is greater than or equal to 1 and is less than or equal to 50000.
 - All values in the integer array parameter `prices` are greater than or equal to 1 and are less than 50000.
 - The integer parameter `fee` is greater than or equal to 0 and is less than 50000.
-- The integer result is the maximum profit achievable by buying and selling stocks based on the given prices and transaction fee.
+- The integer result is the maximum profit achievable considering the transaction fee.
+- The maximum profit is calculated by buying at a lower price and selling at a higher price while considering the transaction fee for each transaction.
+- The total profit is the sum of the differences between selling and buying prices minus the transaction fee for each transaction.

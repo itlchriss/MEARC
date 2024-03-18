@@ -1,5 +1,5 @@
 - The integer parameter `maxTime` is greater than or equal to 1 and is less than or equal to 1000.
-- The integer array parameter `passingFees` contains passing fees for each city and has a length equal to the number of cities `n`.
-- The 2D integer array parameter `edges` represents the roads between cities, where each row `[x_i, y_i, time_i]` denotes a road between cities `x_i` and `y_i` that takes `time_i` minutes to travel.
-- The integer result is the minimum cost to complete the journey from city 0 to city `n - 1` within `maxTime` minutes, considering passing fees and travel times.
-- If it is impossible to complete the journey within `maxTime` minutes, the result is -1.
+- The length of the integer array parameter `passingFees` is equal to the integer `n`.
+- The length of the 2D integer array parameter `edges` is greater than or equal to `n - 1` and is less than or equal to 1000.
+- The integer result is the minimum cost to complete the journey within the given `maxTime` minutes, or -1 if it is not possible to complete the journey within the given time.
+- The integer result is the summation of passing fees for each city passed through during the journey, including the source and destination cities.

@@ -1,5 +1,5 @@
-- The integer array parameter `intervals` must have a length greater than or equal to 1 and less than or equal to 3000.
-- Each element in the integer array parameter `intervals` must be an array of length 2.
-- The first element `a` in each interval array must be greater than or equal to 0 and less than the second element `b`.
-- The second element `b` in each interval array must be greater than the first element `a` and less than or equal to 100000000.
+Method behavioural specifications:
+- The integer parameter `intervals` is a two-dimensional array with a length greater than or equal to 1 and less than or equal to 3000.
+- Each sub-array in the `intervals` array has a length of 2.
+- The integers `a` and `b` in each sub-array are greater than or equal to 0 and less than or equal to 100000000.
 - The integer result is the minimum size of a set `S` such that for every integer interval `A` in `intervals`, the intersection of `S` with `A` has a size of at least two.

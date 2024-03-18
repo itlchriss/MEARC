@@ -1,6 +1,5 @@
 - The integer array parameter `arr` contains unique integers that are either 1 or prime numbers.
-- The integer array parameter `arr` is sorted in strictly increasing order.
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the total number of fractions that can be formed from the elements of `arr`.
-- The integer array result is of size 2, where the first element is an element from `arr[i]` and the second element is an element from `arr[j]`.
-- The fractions to be considered are formed by dividing the elements of `arr` in sorted order.
-- The k-th smallest fraction considered is returned as the result.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the total number of possible fractions that can be formed from the elements of `arr`.
+- The integer array result is of size 2, where `result[0]` is equal to one of the elements in `arr` and `result[1]` is equal to another element in `arr`.
+- The fractions to be considered are formed by dividing the elements of `arr` in all possible combinations.
+- The `k`-th smallest fraction is returned as the result.

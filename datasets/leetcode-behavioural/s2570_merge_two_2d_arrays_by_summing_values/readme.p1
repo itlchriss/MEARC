@@ -1,5 +1,8 @@
-Method behavioural specifications:
-- The integer 2D array parameter `nums1` and `nums2` contain unique ids and are sorted in ascending order by id.
-- The resulting integer 2D array must be sorted in ascending order by id.
-- Each id in the resulting array should be included only once, and its value should be the sum of the values of this id in the two input arrays.
+- The integer 2D array parameter `nums1` and `nums2` must not be null.
+- Each sub-array in the integer 2D array parameter `nums1` and `nums2` must have a length of 2.
+- Each sub-array in the integer 2D array parameter `nums1` and `nums2` must contain unique ids.
+- Each sub-array in the integer 2D array parameter `nums1` and `nums2` must be sorted in ascending order by id.
+- The integer 2D array result must be sorted in ascending order by id.
+- Each id in the resulting array should be included only once.
+- The value of each id in the resulting array should be the sum of the values of this id in the two input arrays.
 - If an id does not exist in one of the input arrays, its value in that array is considered to be 0.

@@ -1,6 +1,6 @@
 - The string parameter `command` consists of characters `"G"`, `"()"`, and/or `"(al)"`.
 - The string result is the concatenation of the interpreted strings based on the following rules:
-    - `"G"` is interpreted as the string `"G"`.
-    - `"()"` is interpreted as the string `"o"`.
-    - `"(al)"` is interpreted as the string `"al"`.
-- The final concatenated result is returned as the string result.
+    - The character `"G"` is interpreted as the string `"G"`.
+    - The substring `"()"` is interpreted as the string `"o"`.
+    - The substring `"(al)"` is interpreted as the string `"al"`.
+- The final concatenated result is the interpretation of the `command` string.

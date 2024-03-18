@@ -1,5 +1,6 @@
 - The integer matrix parameter `grid` must not be null.
-- The integer matrix parameter `grid` must be a square matrix (i.e., number of rows is equal to number of columns).
-- The integer matrix parameter `grid` must contain only 0s and 1s.
-- The integer result is the length of the shortest clear path in the matrix.
-- If there is no clear path, the integer result is -1.
+- The integer matrix parameter `grid` must be a square matrix (i.e., number of rows equals number of columns).
+- The integer result is the length of the shortest clear path in the binary matrix `grid`.
+- If there is no clear path in the binary matrix `grid`, the integer result is equal to -1.
+- A clear path in the binary matrix `grid` is a path from the top-left cell to the bottom-right cell where all visited cells are 0 and all adjacent cells are 8-directionally connected.
+- The length of a clear path is the number of visited cells in the path.

@@ -1,6 +1,7 @@
-- The decoded message is a string.
-- The decoded message is obtained by substituting each letter in the message using the substitution table derived from the key.
-- Spaces in the message are transformed to themselves.
-- The substitution table is created by taking the first appearance of all 26 lowercase English letters in the key as the order of the substitution table.
-- The substitution table is aligned with the regular English alphabet.
-- The decoded message should be returned as the result after decoding the message using the substitution table.
+- The string parameter `key` must have a length greater than or equal to 26 and less than or equal to 2000.
+- The string parameter `key` consists of lowercase English letters and spaces.
+- The string parameter `key` contains every letter in the English alphabet ('a' to 'z') at least once.
+- The string parameter `message` must have a length greater than or equal to 1 and less than or equal to 2000.
+- The string parameter `message` consists of lowercase English letters and spaces.
+- The result is the decoded message obtained by substituting each letter in the `message` using the substitution table generated from the `key`.
+- Spaces in the `message` are transformed to themselves.

@@ -1,7 +1,7 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2000.
 - The length of the integer array parameter `dislikes` is less than or equal to 10000.
-- Each element in the integer array parameter `dislikes` has a length of 2.
-- The integer values in each element of the integer array parameter `dislikes` are greater than or equal to 1 and are less than or equal to `n`.
-- The first value in each element of the integer array parameter `dislikes` is less than the second value.
-- All pairs of values in the integer array parameter `dislikes` are unique.
-- The boolean result is true if it is possible to split everyone into two groups such that disliked persons are not in the same group.
+- Each element in the integer array parameter `dislikes` is an array of length 2.
+- The integer values in each array of `dislikes` are greater than or equal to 1 and are less than or equal to `n`.
+- The first element in each array of `dislikes` is less than the second element.
+- All pairs of `dislikes` are unique.
+- The boolean result is equal to the true literal if it is possible to split everyone into two groups such that no person dislikes another person in the same group.

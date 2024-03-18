@@ -1,6 +1,7 @@
-- The integer array parameter `nums1` and `nums2` must be sorted in ascending order.
+- The integer array parameter `nums1` and the integer array parameter `nums2` must be sorted in ascending order.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to 1000.
-- The result is a list of lists containing pairs `(u, v)` with the smallest sums.
-- Each pair `(u, v)` consists of one element from the `nums1` array and one element from the `nums2` array.
-- The length of the result list is equal to `k`.
-- All pairs in the result list have unique combinations of elements from `nums1` and `nums2`.
+- The size of the list result is equal to the integer parameter `k`.
+- Each element in the list result is a list of two integers representing a pair `(u, v)` where `u` is an element from `nums1` and `v` is an element from `nums2`.
+- The pairs in the list result are the `k` pairs with the smallest sums.
+- The pairs in the list result are selected from the combinations of elements from `nums1` and `nums2`.
+- The pairs in the list result are ordered by their sums in ascending order.

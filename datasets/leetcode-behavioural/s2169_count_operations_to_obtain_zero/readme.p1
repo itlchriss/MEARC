@@ -1,4 +1,5 @@
-- If the integer parameter `num1` is greater than or equal to the integer parameter `num2`, subtract the integer parameter `num2` from the integer parameter `num1`.
-- If the integer parameter `num1` is less than the integer parameter `num2`, subtract the integer parameter `num1` from the integer parameter `num2`.
-- Repeat the above steps until either `num1` or `num2` becomes 0.
-- The integer result is the total number of operations required to make either `num1` or `num2` equal to 0.
+- If the integer parameter `num1` is greater than or equal to the integer parameter `num2`, the integer result is the number of operations required to make `num1 = 0`.
+- If the integer parameter `num1` is less than the integer parameter `num2`, the integer result is the number of operations required to make `num2 = 0`.
+- If the integer parameter `num1` is equal to the integer parameter `num2`, the integer result is 1.
+- The integer result is greater than or equal to 1.
+- The integer result is less than or equal to the sum of the integer parameters `num1` and `num2`.

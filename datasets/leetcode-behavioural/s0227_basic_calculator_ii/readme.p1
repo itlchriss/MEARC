@@ -1,9 +1,9 @@
 - The string parameter `s` represents a valid mathematical expression.
-- The integer result is the value of the evaluated expression.
-- The integer division truncates towards zero.
-- All intermediate results will be in the range of [-2^31, 2^31 - 1].
-- The method does not use any built-in function that evaluates strings as mathematical expressions.
+- The integer result is the value of the evaluated expression represented by the string parameter `s`.
+- The integer division in the expression truncates toward zero.
+- All intermediate results during the evaluation of the expression will be within the range of [-2^31, 2^31 - 1].
+- The method does not use any built-in function that evaluates strings as mathematical expressions, such as `eval()`.
 - The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 3 * 10^5.
-- The expression in the string parameter `s` consists of integers and operators ('+', '-', '*', '/') separated by spaces.
-- All integers in the expression are non-negative integers in the range [0, 2^31 - 1].
-- The answer fits in a 32-bit integer.
+- The string parameter `s` consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.
+- All integers in the expression are non-negative integers within the range [0, 2^31 - 1].
+- The answer will fit in a 32-bit integer.

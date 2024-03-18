@@ -1,4 +1,10 @@
 Method behavioural specifications:
 - The integer 2D array parameter `statements` must not be null.
-- The integer 2D array parameter `statements` must have a size of `n x n` where `n` is greater than or equal to 2 and less than or equal to 15.
+- The length of the integer 2D array parameter `statements` is equal to `n x n` where `n` is greater than or equal to 2 and is less than or equal to 15.
 - The integer result is the maximum number of people who can be good based on the statements made by the `n` people.
+- Each person in the array does not make a statement about themselves (i.e., `statements[i][i] = 2` for all `0 <= i < n`).
+- The statements made by each person in the array can be one of the following:
+    - `0` representing a statement made by the person that the other person is bad.
+    - `1` representing a statement made by the person that the other person is good.
+    - `2` representing no statement made by the person about the other person.
+- The method should consider both good and bad persons based on the statements made and determine the maximum number of good people possible.

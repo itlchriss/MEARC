@@ -1,6 +1,5 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
-- The binary string parameter `s` has a length equal to the integer parameter `n`.
-- The string parameter `s` consists of only '0' and '1' characters.
+- The string parameter `s` is a binary string of length `n`.
 - The long result is the minimum cost to make all characters of the string `s` equal.
-- The minimum cost is calculated by applying the two types of operations described in the business requirement.
-- The cost of inverting characters at index `i` is `i + 1` for the first type of operation and `n - i` for the second type of operation.
+- The cost of inverting all characters from index `0` to index `i` is `i + 1`.
+- The cost of inverting all characters from index `i` to index `n - 1` is `n - i`.

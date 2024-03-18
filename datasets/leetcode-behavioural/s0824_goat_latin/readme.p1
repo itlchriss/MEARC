@@ -1,8 +1,7 @@
-- If the string parameter `sentence` is empty, the string result is also empty.
-- Each word in the string parameter `sentence` is separated by a single space.
-- Each word in the string parameter `sentence` consists of English letters only.
-- The string result is the final sentence representing the conversion from sentence to Goat Latin.
-- For each word in the string parameter `sentence`:
-    - If the word begins with a vowel ('a', 'e', 'i', 'o', or 'u'), append "ma" to the end of the word.
-    - If the word begins with a consonant, remove the first letter and append it to the end, then add "ma".
-    - Add one letter 'a' to the end of the word per its word index in the sentence, starting with 1.
+- If the string parameter `sentence` is not null and consists of words separated by spaces, the string result is the final sentence representing the conversion from `sentence` to Goat Latin.
+- Each word in the resulting sentence follows the rules of Goat Latin:
+    - If a word begins with a vowel ('a', 'e', 'i', 'o', or 'u'), append "ma" to the end of the word.
+    - If a word begins with a consonant, remove the first letter and append it to the end, then add "ma".
+    - Add one letter 'a' to the end of each word per its word index in the sentence, starting with 1.
+- The resulting sentence consists of words separated by spaces.
+- The resulting sentence has no leading or trailing spaces.

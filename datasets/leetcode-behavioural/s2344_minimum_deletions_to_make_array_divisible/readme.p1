@@ -1,4 +1,5 @@
-- The integer array parameter `nums` must contain only positive integers.
-- The integer array parameter `numsDivide` must contain only positive integers.
-- The integer result is the minimum number of deletions from the integer array `nums` such that the smallest element in `nums` divides all the elements in `numsDivide`.
-- If it is not possible for the smallest element in `nums` to divide all the elements in `numsDivide`, the integer result is -1.
+- The integer array parameter `nums` and `numsDivide` must not be null.
+- The integer array parameter `nums` and `numsDivide` must have a length greater than or equal to 1 and less than or equal to 100000.
+- All values in the integer array parameter `nums` and `numsDivide` must be greater than or equal to 1 and less than or equal to 1000000000.
+- If the smallest element in the integer array `nums` divides all the elements of the integer array `numsDivide`, the integer result is equal to the minimum number of deletions needed to achieve this.
+- If the smallest element in the integer array `nums` does not divide all the elements of the integer array `numsDivide`, the integer result is equal to -1.

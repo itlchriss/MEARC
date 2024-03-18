@@ -1,9 +1,7 @@
 Method behavioural specifications:
-- The integer array parameter `candidates` must not be null.
-- The integer array parameter `candidates` length is greater than or equal to 1 and is less than or equal to 30.
-- All values in the integer array parameter `candidates` are greater than or equal to 1 and are less than or equal to 200.
-- The integer parameter `target` is greater than or equal to 1 and is less than or equal to 500.
-- The result is a list of lists of integers representing unique combinations of `candidates` where the chosen numbers sum to `target`.
-- The result list may contain up to 150 unique combinations for the given input.
-- The same number from `candidates` can be chosen an unlimited number of times in a combination.
-- Two combinations are considered unique if the frequency of at least one of the chosen numbers is different.
+- The integer array parameter `coins` must not be null.
+- The integer parameter `amount` is greater than or equal to 1 and is less than or equal to 500.
+- The integer result is a list of lists where each inner list represents a unique combination of integers from the `coins` array that sum up to the `amount`.
+- Each combination in the result list is unique, meaning the frequency of at least one chosen number is different.
+- The number of unique combinations in the result list is less than 150 for the given input.
+- The order of combinations in the result list can be arbitrary.

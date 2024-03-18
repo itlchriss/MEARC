@@ -1,7 +1,6 @@
 - The integer array parameter `adjacentPairs` must not be null.
-- The integer array parameter `adjacentPairs` must have a length of `n - 1`.
-- Each element in the integer array parameter `adjacentPairs` must have a length of 2.
-- The integer array result `nums` must have a length of `n`.
-- The integer array result `nums` must contain `n` unique elements.
-- The elements in the integer array result `nums` must form adjacent pairs as specified in the `adjacentPairs` input.
-- If there are multiple solutions, any valid solution is acceptable.
+- The length of the integer array parameter `adjacentPairs` is equal to the integer result array `nums`'s length.
+- The integer array result `nums` contains `n` unique elements.
+- Every pair of adjacent elements in the integer array result `nums` is present in the 2D integer array parameter `adjacentPairs`.
+- The order of adjacent pairs in the 2D integer array parameter `adjacentPairs` does not affect the result.
+- If there are multiple solutions, any valid solution can be returned.

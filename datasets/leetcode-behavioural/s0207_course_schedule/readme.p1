@@ -1,7 +1,7 @@
-- If the integer parameter `numCourses` is less than or equal to 1 and is greater than or equal to 100000, the boolean result is false.
-- If the length of the integer array parameter `prerequisites` is greater than 5000, the boolean result is false.
-- If the length of each element in the integer array parameter `prerequisites` is not equal to 2, the boolean result is false.
-- If the integer values in each element of the integer array parameter `prerequisites` are not within the range of 0 to `numCourses`, the boolean result is false.
-- If there are duplicate pairs in the integer array parameter `prerequisites`, the boolean result is false.
-- If it is possible to finish all courses based on the prerequisites provided, the boolean result is true.
-- If it is impossible to finish all courses based on the prerequisites provided, the boolean result is false.
+- The integer parameter `numCourses` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `prerequisites` is less than or equal to 5000.
+- Each element in the integer array `prerequisites` is an array of length 2.
+- The integer elements in each array in `prerequisites` are greater than or equal to 0 and are less than `numCourses`.
+- All pairs in `prerequisites` are unique.
+- If it is possible to finish all courses based on the prerequisites provided, the boolean result is equal to the true literal.
+- If it is impossible to finish all courses based on the prerequisites provided, the boolean result is equal to the false literal.

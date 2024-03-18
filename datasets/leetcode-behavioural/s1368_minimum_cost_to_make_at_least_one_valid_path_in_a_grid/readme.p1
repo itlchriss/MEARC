@@ -3,3 +3,5 @@
 - All values in the 2D integer array parameter `grid` are greater than or equal to 1 and are less than or equal to 4.
 - The integer result is the minimum cost to make the grid have at least one valid path.
 - The minimum cost is calculated by modifying the sign on a cell with a cost of 1, and this modification can only be done once.
+- The valid path in the grid starts from the upper left cell (0, 0) and ends at the bottom-right cell (m - 1, n - 1) following the signs on the grid.
+- The valid path does not have to be the shortest.

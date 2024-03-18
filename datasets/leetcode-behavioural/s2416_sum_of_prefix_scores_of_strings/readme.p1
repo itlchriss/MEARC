@@ -3,3 +3,6 @@
 - Each element in the integer array parameter `words` is a non-empty string consisting of lowercase English letters.
 - The integer array result `answer` is of size `n`, where `n` is the length of the integer array parameter `words`.
 - Each element in the integer array result `answer` is the sum of scores of every non-empty prefix of the corresponding string in the integer array parameter `words`.
+- The score of a string `word` is the number of strings in the integer array parameter `words` such that `word` is a prefix of those strings.
+- A string is considered as a prefix of itself.
+- The total score for each string in the integer array parameter `words` is calculated correctly based on the given rules.

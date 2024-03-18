@@ -3,6 +3,5 @@
 - All values in the integer array parameter `encoded` are greater than or equal to 0 and are less than or equal to 100000.
 - The integer parameter `first` is greater than or equal to 0 and is less than or equal to 100000.
 - The length of the integer array result is equal to the integer parameter `n`.
-- The integer array result `arr` satisfies the condition `arr[i] XOR arr[i + 1] = encoded[i]` for all valid indices `i`.
-- The first element of the integer array result `arr` is equal to the integer parameter `first`.
-- The integer array result `arr` is unique and the answer exists.
+- All values in the integer array result are unique.
+- The integer array result is the original array `arr` such that `encoded[i] = arr[i] XOR arr[i + 1]` and `arr[0] = first`.

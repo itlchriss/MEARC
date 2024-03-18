@@ -1,6 +1,6 @@
 - The string parameter `s` must have an even length.
 - The integer array parameter `queries` must have a length greater than or equal to 1 and less than or equal to 100000.
 - Each query in the integer array parameter `queries` must have a length of 4.
-- The integer parameters `a`, `b`, `c`, and `d` in each query must satisfy the conditions `0 <= a <= b < n / 2` and `n / 2 <= c <= d < n`.
-- The boolean array result has a length equal to the length of the integer array parameter `queries`.
-- Each element in the boolean array result is true if it is possible to make the string `s` a palindrome by performing the operations specified by the corresponding query, and false otherwise.
+- The integer values in each query must adhere to the specified constraints.
+- The boolean array result has a length equal to the number of queries.
+- Each boolean value in the result array is equal to true if it is possible to make the string `s` a palindrome by performing the operations specified in the corresponding query, and false otherwise.

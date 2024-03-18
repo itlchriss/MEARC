@@ -1,7 +1,8 @@
-- For each string `a` in the `words1` array, if every letter in each string `b` in the `words2` array occurs in `a` including multiplicity, the string `a` is considered universal.
-- The result is a list of all universal strings in the `words1` array.
-- The result list may be returned in any order.
-- The length of the `words1` array and the `words2` array is greater than or equal to 1 and is less than or equal to 10000.
-- The length of each string in the `words1` array and the `words2` array is greater than or equal to 1 and is less than or equal to 10.
-- All strings in the `words1` array and the `words2` array consist only of lowercase English letters.
-- All strings in the `words1` array are unique.
+- The length of the string array parameter `words1` is greater than or equal to 1 and is less than or equal to 10000.
+- The length of the string array parameter `words2` is greater than or equal to 1 and is less than or equal to 10000.
+- The length of each string in the string array parameter `words1` is greater than or equal to 1 and is less than or equal to 10.
+- The length of each string in the string array parameter `words2` is greater than or equal to 1 and is less than or equal to 10.
+- All characters in each string in the string array parameter `words1` are lowercase English letters.
+- All characters in each string in the string array parameter `words2` are lowercase English letters.
+- All strings in the string array parameter `words1` are unique.
+- The size of the string collection result is equal to the number of universal strings in the string array parameter `words1`.

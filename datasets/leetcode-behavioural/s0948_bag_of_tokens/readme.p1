@@ -1,6 +1,4 @@
 - The integer array parameter `tokens` may have a length of up to 1000.
+- All values in the integer array parameter `tokens` are greater than or equal to 0 and are less than 10000.
 - The integer parameter `power` is greater than or equal to 0 and is less than 10000.
 - The integer result is the largest possible score achievable after playing any number of tokens.
-- The tokens can be played in any order and each token can be played at most once.
-- If the current power is at least the value of a token, the token can be played face up, losing power and gaining score.
-- If the current score is at least 1, the token can be played face down, gaining power and losing score.

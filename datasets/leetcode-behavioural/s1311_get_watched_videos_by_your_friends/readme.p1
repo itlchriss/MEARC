@@ -1,9 +1,10 @@
-- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100.
-- The length of the watchedVideos array and friends array is equal to `n`.
-- The length of each inner array in the watchedVideos array is greater than or equal to 1 and is less than or equal to 100.
-- The length of each string in the watchedVideos array is greater than or equal to 1 and is less than or equal to 8.
-- The length of the friends array at index `i` is greater than or equal to 0 and is less than `n`.
-- The values in the friends array at index `i` are between 0 and `n-1`.
 - The integer parameter `id` is greater than or equal to 0 and is less than `n`.
 - The integer parameter `level` is greater than or equal to 1 and is less than `n`.
-- If the friends array at index `i` contains `j`, then the friends array at index `j` contains `i`.
+- The length of the watchedVideos array and friends array is equal to `n`.
+- The length of each inner array in the watchedVideos array is greater than or equal to 1 and is less than or equal to 100.
+- The length of each string in the inner arrays of the watchedVideos array is greater than or equal to 1 and is less than or equal to 8.
+- The length of each inner array in the friends array is less than `n`.
+- The values in the friends array are within the range of 0 to `n-1`.
+- If the friends array at index `i` contains value `j`, then the friends array at index `j` contains value `i`.
+- The output is a list of watched videos ordered by their frequencies in increasing order.
+- If videos have the same frequency, they are ordered alphabetically from least to greatest.

@@ -1,5 +1,4 @@
-Method behavioural specifications:
-- The integer matrix parameter `mat` and the integer matrix parameter `target` must have the same dimensions.
-- The integer matrix parameter `mat` and the integer matrix parameter `target` must consist of only 0s and 1s.
-- The boolean result is true if it is possible to make the integer matrix parameter `mat` equal to the integer matrix parameter `target` by rotating `mat` in 90-degree increments.
-- The boolean result is false if it is impossible to make the integer matrix parameter `mat` equal to the integer matrix parameter `target` by rotating `mat` in 90-degree increments.
+- The integer matrix parameter `mat` and the integer matrix parameter `target` must have the same dimensions, `n x n`.
+- The integer matrix parameter `mat` and the integer matrix parameter `target` must only contain binary values, either `0` or `1`.
+- The boolean result is equal to the true literal if it is possible to make the integer matrix `mat` equal to the integer matrix `target` by rotating `mat` in 90-degree increments.
+- The boolean result is equal to the false literal if it is not possible to make the integer matrix `mat` equal to the integer matrix `target` by rotating `mat` in 90-degree increments.

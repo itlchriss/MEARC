@@ -1,6 +1,6 @@
 - The integer parameter `row` is greater than or equal to 2 and is less than or equal to 20000.
 - The integer parameter `col` is greater than or equal to 2 and is less than or equal to 20000.
 - The integer result is the last day where it is possible to walk from the top to the bottom by only walking on land cells.
-- The 2D array parameter `cells` has a length equal to the product of `row` and `col`.
-- Each element in the 2D array parameter `cells` is an array of length 2, where the first element is greater than or equal to 1 and less than or equal to `row`, and the second element is greater than or equal to 1 and less than or equal to `col`.
-- All values in the 2D array `cells` are unique.
+- The 2D integer array parameter `cells` has a length equal to the product of `row` and `col`.
+- Each sub-array in the 2D integer array parameter `cells` contains two unique integers representing the row and column coordinates of the flooded cell on a specific day.
+- The values in the 2D integer array parameter `cells` are unique.

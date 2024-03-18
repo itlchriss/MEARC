@@ -1,8 +1,8 @@
 - The integer array parameter `arr` must not be null.
-- The integer array parameter `arr` must have a length greater than or equal to 1 and less than or equal to 1000.
-- All values in the integer array parameter `arr` must be greater than or equal to 1 and less than or equal to 100000.
-- The integer parameter `d` must be greater than or equal to 1 and less than or equal to the length of the integer array parameter `arr`.
-- The integer result is the maximum number of indices that can be visited by following the jumping rules specified in the context.
+- The integer array parameter `arr` length is greater than or equal to 1 and is less than or equal to 1000.
+- All values in the integer array parameter `arr` are greater than or equal to 1 and are less than or equal to 100000.
+- The integer parameter `d` is greater than or equal to 1 and is less than or equal to the length of the integer array parameter `arr`.
+- The integer result is the maximum number of indices that can be visited by following the jumping rules specified in the business requirement.
 - The jumping rules specify that a jump can only be made from index `i` to index `j` if `arr[i] > arr[j]` and `arr[i] > arr[k]` for all indices `k` between `i` and `j`.
-- The jumping rules also specify that a jump can be made from index `i` to index `i + x` where `i + x < arr.length` and `0 < x <= d`, or from index `i` to index `i - x` where `i - x >= 0` and `0 < x <= d`.
-- The jumping rules prohibit jumping outside of the array at any time.
+- The jumping rules also specify that the jump can be made from index `i` to index `j` if `i + x < arr.length` and `0 < x <= d`, or `i - x >= 0` and `0 < x <= d`.
+- The jumping rules further specify that the jump cannot go outside of the array at any time.

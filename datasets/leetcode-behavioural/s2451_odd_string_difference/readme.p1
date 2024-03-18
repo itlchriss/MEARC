@@ -1,5 +1,8 @@
 - The length of the string array parameter `words` is greater than or equal to 3 and is less than or equal to 100.
-- All strings in the string array parameter `words` have the same difference integer array, except for one string.
+- All strings in the string array parameter `words` have the same length `n`.
 - The length of each string in the string array parameter `words` is greater than or equal to 2 and is less than or equal to 20.
-- The characters in each string in the string array parameter `words` are lowercase English letters.
+- All strings in the string array parameter `words` consist of lowercase English letters.
 - The string result is the string in the string array `words` that has a different difference integer array.
+- The difference integer array of each string in the string array `words` is of length `n - 1`.
+- The difference integer array of each string `words[i]` is calculated as `difference[i][j] = words[i][j+1] - words[i][j]` where `0 <= j <= n - 2`.
+- The difference between two letters is the difference between their positions in the alphabet, where the position of 'a' is 0, 'b' is 1, and 'z' is 25.

@@ -1,6 +1,7 @@
 - The integer array parameter `intervals` must not be null.
-- The length of each sub-array in the integer array parameter `intervals` is 2.
-- The integer parameters `start` and `end` in each sub-array are unique.
-- The integer array result must have the same length as the integer array parameter `intervals`.
-- For each interval `i` in the integer array parameter `intervals`, the integer result at index `i` is the index of the right interval for interval `i`.
-- If no right interval exists for interval `i`, the integer result at index `i` is -1.
+- The length of each sub-array in the integer array parameter `intervals` is equal to 2.
+- The integer parameters `start` and `end` in each sub-array are greater than or equal to -1000000 and are less than or equal to 1000000.
+- The `start` point of each interval in the `intervals` array is unique.
+- The length of the integer array result is equal to the length of the integer array parameter `intervals`.
+- If there is no right interval for a specific interval `i`, the corresponding element in the integer array result is equal to -1.
+- If there is a right interval for a specific interval `i`, the corresponding element in the integer array result is the index of the right interval in the `intervals` array.

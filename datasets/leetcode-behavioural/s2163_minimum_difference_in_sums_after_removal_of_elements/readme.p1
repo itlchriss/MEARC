@@ -1,3 +1,9 @@
-- The integer array parameter `nums` has a length of `3 * n`.
+- The integer array parameter `nums` must have a length of `3 * n`.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
-- The integer result is the minimum possible difference between the sums of the two parts after removing `n` elements from the integer array `nums`.
+- The integer result is the minimum possible difference between the sums of the two parts after the removal of `n` elements.
+- The difference in sums is calculated as `sum_first - sum_second`.
+- The minimum difference is the smallest value obtained after removing `n` elements and dividing the remaining array into two equal parts.
+- The elements to be removed must form a subsequence of size exactly `n`.
+- The remaining `2 * n` elements are divided into two equal parts.
+- The difference in sums is calculated as the sum of the first `n` elements minus the sum of the next `n` elements.
+- The minimum difference is returned as the final result.

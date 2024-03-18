@@ -1,4 +1,4 @@
-- The integer array parameter `nums` must have a length of `2 * n`, where `n` is a positive integer.
-- Each element in the integer array `nums` must belong to exactly one pair.
-- The elements present in a pair must be equal.
-- The boolean result is true if `nums` can be divided into `n` pairs, otherwise false.
+- The integer array parameter `nums` must have a length of `2 * n`, where `n` is greater than or equal to 1 and is less than or equal to 500.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 500.
+- The boolean result is equal to the true literal if `nums` can be divided into `n` pairs such that each element belongs to exactly one pair and the elements present in a pair are equal.
+- The boolean result is equal to the false literal if there is no way to divide `nums` into `n` pairs such that the pairs satisfy every condition.

@@ -1,3 +1,6 @@
 - The string parameter `loginTime` and `logoutTime` are in the format `hh:mm`.
 - The integer result is the number of full chess rounds played between the `loginTime` and `logoutTime`.
 - If the `logoutTime` is earlier than the `loginTime`, it means the player has played from `loginTime` to midnight and from midnight to `logoutTime`.
+- The number of full rounds played is calculated based on the 15-minute interval rounds starting from `00:00` to `23:45`.
+- The number of full rounds played is inclusive of both the start and end times.
+- The integer result is greater than or equal to 0.

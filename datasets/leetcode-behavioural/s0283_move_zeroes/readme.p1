@@ -1,6 +1,5 @@
 - The integer array parameter `nums` must not be null.
-- The relative order of the non-zero elements in the integer array parameter `nums` must be maintained.
-- All `0`'s in the integer array parameter `nums` must be moved to the end of the array.
-- The total number of operations done must be minimized.
+- All non-zero elements in the integer array parameter `nums` must maintain their relative order.
+- All zero elements in the integer array parameter `nums` must be moved to the end of the array while maintaining the relative order of non-zero elements.
 - The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.
-- Each element in the integer array parameter `nums` is greater than or equal to -2147483648 and is less than or equal to 2147483647.
+- The values in the integer array parameter `nums` are greater than or equal to -2^31 and are less than or equal to 2^31 - 1.

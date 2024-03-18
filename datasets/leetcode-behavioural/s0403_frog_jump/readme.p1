@@ -1,6 +1,7 @@
-- The integer array parameter `stones` is sorted in ascending order.
-- The integer array parameter `stones` has a length greater than or equal to 2 and less than or equal to 2000.
-- All values in the integer array parameter `stones` are greater than or equal to 0 and less than or equal to 2^31 - 1.
-- The first element of the integer array parameter `stones` is 0.
-- The boolean result is true if the frog can jump to the last stone based on the given constraints.
-- The boolean result is false if the frog cannot jump to the last stone based on the given constraints.
+- The integer array parameter `stones` must not be null.
+- The integer array parameter `stones` must have a length greater than or equal to 2 and less than or equal to 2000.
+- All values in the integer array parameter `stones` must be greater than or equal to 0 and less than or equal to 2^31 - 1.
+- The first element of the integer array parameter `stones` must be 0.
+- The integer array parameter `stones` must be sorted in strictly ascending order.
+- The boolean result is equal to the true literal if the frog can jump to the last stone based on the given conditions.
+- The boolean result is equal to the false literal if the frog cannot jump to the last stone based on the given conditions.

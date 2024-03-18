@@ -1,7 +1,6 @@
-Method behavioural specifications:
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to 10000.
 - The 2D integer array parameter `time` has a length equal to the integer parameter `k`.
-- Each sub-array in the 2D integer array parameter `time` has a length of 4.
+- Each sub-array in the 2D integer array parameter `time` has a length equal to 4.
 - The values in each sub-array of the 2D integer array parameter `time` are greater than or equal to 1 and are less than or equal to 1000.
-- The integer result is the time at which the last worker reaches the left bank after all `n` boxes have been put in the new warehouse.
+- The integer result is the instance of time at which the last worker reaches the left bank of the river after all `n` boxes have been put in the new warehouse.

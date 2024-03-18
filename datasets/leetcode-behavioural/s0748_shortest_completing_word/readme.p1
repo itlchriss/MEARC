@@ -3,6 +3,6 @@
 - The string parameter `licensePlate` contains only digits, letters (uppercase or lowercase), or space ' '.
 - The length of the string array parameter `words` is greater than or equal to 1 and is less than or equal to 1000.
 - The length of each string in the string array parameter `words` is greater than or equal to 1 and is less than or equal to 15.
-- The string result is the shortest completing word in the string array `words` that contains all the letters in the `licensePlate`.
-- The result is guaranteed to exist.
-- If there are multiple shortest completing words, the first one that occurs in `words` is returned.
+- The string result is the shortest completing word in the string array parameter `words` that contains all the letters in the string parameter `licensePlate`.
+- The letters in the string parameter `licensePlate` are treated as case insensitive.
+- If there are multiple shortest completing words, the method returns the first one that occurs in the string array parameter `words`.

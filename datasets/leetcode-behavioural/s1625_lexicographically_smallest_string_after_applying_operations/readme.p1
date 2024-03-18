@@ -2,5 +2,9 @@
 - The string parameter `s` consists of digits from 0 to 9 only.
 - The integer parameter `a` is greater than or equal to 1 and is less than or equal to 9.
 - The integer parameter `b` is greater than or equal to 1 and is less than the length of string parameter `s`.
-- The string result is the lexicographically smallest string that can be obtained by applying the operations of adding `a` to all odd indices and rotating `s` to the right by `b` positions on the string parameter `s`.
-- The lexicographically smallest string is determined based on the comparison of characters in the string.
+- The string result is the lexicographically smallest string that can be obtained by applying the operations on the string parameter `s`.
+- The operations can be applied any number of times and in any order.
+- The operations include adding `a` to all odd indices of the string parameter `s` and rotating `s` to the right by `b` positions.
+- Digits post 9 are cycled back to 0 when adding `a` to odd indices.
+- The lexicographically smaller string is determined based on the position where two strings differ, with the earlier appearing digit considered smaller.
+- The output string should be the smallest possible string that can be obtained through the operations.

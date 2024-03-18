@@ -1,7 +1,11 @@
 - The integer array parameter `ranks` and the character array parameter `suits` must have a length of 5.
 - The integer array parameter `ranks` contains values between 1 and 13.
 - The character array parameter `suits` contains characters between 'a' and 'd'.
-- The string result is "Flush" if all cards have the same suit.
-- The string result is "Three of a Kind" if three cards have the same rank.
-- The string result is "Pair" if two cards have the same rank.
-- The string result is "High Card" if none of the above conditions are met.
+- The string result is one of the following: "Flush", "Three of a Kind", "Pair", or "High Card" based on the best poker hand that can be made with the given cards.
+- The return value is case-sensitive.
+- The "Flush" hand consists of five cards with the same suit.
+- The "Three of a Kind" hand consists of three cards with the same rank.
+- The "Pair" hand consists of two cards with the same rank.
+- The "High Card" hand is any single card.
+- If multiple types of hands can be made, the best hand is determined based on the hierarchy provided.
+- The result must be one of the specified hand types based on the given cards.

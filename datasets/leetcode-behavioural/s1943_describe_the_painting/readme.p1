@@ -1,10 +1,12 @@
 Method behavioural specifications:
 - The integer array parameter `segments` must not be null.
-- Each segment in the integer 2D array parameter `segments` must have a length of 3.
-- The integer values in each segment must satisfy the constraints: <code>1 <= start<sub>i</sub> < end<sub>i</sub> <= 10<sup>5</sup></code> and <code>1 <= color<sub>i</sub> <= 10<sup>9</sup></code>.
-- Each `color<sub>i</sub>` value in the segments is distinct.
-- The 2D array result `painting` must describe the finished painting with the minimum number of non-overlapping half-closed segments of mixed colors.
-- Each segment in the 2D array result `painting` must have a length of 3.
-- The half-closed segments in the 2D array result `painting` must be represented as <code>[left<sub>j</sub>, right<sub>j</sub>, mix<sub>j</sub>]</code>.
-- The sum of mixed colors in each segment of the 2D array result `painting` must be the sum of the elements in the set of mixed colors.
-- The segments in the 2D array result `painting` can be returned in any order.
+- Each segment in the integer array parameter `segments` is represented by a 2D array with three elements: start, end, and color.
+- The start value of each segment is greater than or equal to 1 and less than the end value.
+- The end value of each segment is greater than the start value and less than or equal to 100000.
+- The color value of each segment is greater than or equal to 1 and less than or equal to 1000000000.
+- The color values in the overlapping segments are mixed to form a new color represented as a set of mixed colors.
+- The output is a 2D array `painting` describing the finished painting with non-overlapping half-closed segments.
+- Each element in the `painting` array is represented by a 2D array with three elements: left, right, and mix.
+- The left value of each segment is included in the segment, and the right value is not included.
+- The mix value of each segment is the sum of the mixed colors in that segment.
+- The segments in the `painting` array can be returned in any order.

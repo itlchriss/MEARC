@@ -1,9 +1,8 @@
 - The integer array parameter `tasks1` must not be null.
 - The length of the integer array parameter `tasks1` is equal to `n`.
 - The integer array result is the order in which the CPU will process the tasks.
-- The integer array result contains the indices of the tasks in the order they are processed.
-- The CPU will process tasks based on the following criteria:
-    - If the CPU is idle and there are no available tasks to process, the CPU remains idle.
-    - If the CPU is idle and there are available tasks, the CPU will choose the one with the shortest processing time. If multiple tasks have the same shortest processing time, it will choose the task with the smallest index.
-    - Once a task is started, the CPU will process the entire task without stopping.
-    - The CPU can finish a task then start a new one instantly.
+- The order is determined based on the following criteria:
+  - If the CPU is idle and there are no available tasks to process, the CPU remains idle.
+  - If the CPU is idle and there are available tasks, the CPU will choose the one with the shortest processing time. If multiple tasks have the same shortest processing time, it will choose the task with the smallest index.
+  - Once a task is started, the CPU will process the entire task without stopping.
+  - The CPU can finish a task then start a new one instantly.

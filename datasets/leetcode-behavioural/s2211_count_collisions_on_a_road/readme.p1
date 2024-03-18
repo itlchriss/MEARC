@@ -1,4 +1,7 @@
-- The total number of collisions is returned as an integer result.
+- The total number of collisions is an integer result.
 - The string parameter `directions` must not be null.
 - The length of the string parameter `directions` is greater than or equal to 1 and is less than or equal to 100000.
 - The characters in the string parameter `directions` are either 'L', 'R', or 'S'.
+- The total number of collisions is calculated based on the collisions between cars moving in opposite directions and between moving cars and stationary cars.
+- When two cars moving in opposite directions collide, the number of collisions increases by 2.
+- When a moving car collides with a stationary car, the number of collisions increases by 1.

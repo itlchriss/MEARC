@@ -1,6 +1,10 @@
-- The first row of the output list must be the header row with the first column as "Table" followed by the names of the food items in alphabetical order.
-- The subsequent rows must represent each table's orders, with the first column being the table number and the remaining columns denoting the quantity of each food item ordered by that table.
-- The rows must be sorted in numerically increasing order based on the table number.
-- Each table's row must contain the count of each food item ordered by that table, with zeros for items not ordered.
-- The output list must not contain customer names and must only display table numbers and food items.
-- The output list must follow the specified format and order as described in the examples provided.
+- The integer list parameter `orders` must not be null.
+- The integer list parameter `orders` must have a length greater than or equal to 1 and less than or equal to 50000.
+- Each element in the integer list parameter `orders` must be a list of size 3.
+- The length of the inner list in the integer list parameter `orders` must be equal to 3.
+- The length of the strings `customerName` and `foodItem` in the inner list of the integer list parameter `orders` must be between 1 and 20.
+- The strings `customerName` and `foodItem` in the inner list of the integer list parameter `orders` must consist of lowercase and uppercase English letters and the space character.
+- The integer `tableNumber` in the inner list of the integer list parameter `orders` must be a valid integer between 1 and 500.
+- The result is a list of lists of strings representing the display table.
+- The first row of the result list must have the header "Table" followed by the names of the food items in alphabetical order.
+- The remaining rows of the result list must denote how many of each food item each table ordered, sorted in numerically increasing order.

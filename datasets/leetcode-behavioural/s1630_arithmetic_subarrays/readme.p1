@@ -1,5 +1,5 @@
 - The integer array parameter `nums` must have a length greater than or equal to 2 and less than or equal to 500.
 - The integer arrays `l` and `r` must have the same length, which is greater than or equal to 1 and less than or equal to 500.
-- The integer arrays `l` and `r` must have valid indices such that `0 <= l[i] < r[i] < n` where `n` is the length of the integer array `nums`.
+- The integer arrays `l` and `r` must have valid indices such that `0 <= l[i] < r[i] < n`, where `n` is the length of the integer array parameter `nums`.
 - The boolean list result must have the same length as the arrays `l` and `r`.
-- Each boolean element in the result list is true if the subarray `nums[l[i]], nums[l[i]+1], ... , nums[r[i]]` can be rearranged to form an arithmetic sequence, and false otherwise.
+- Each boolean element in the result list is equal to `true` if the subarray `nums[l[i]], nums[l[i]+1], ... , nums[r[i]]` can be rearranged to form an arithmetic sequence, and `false` otherwise.

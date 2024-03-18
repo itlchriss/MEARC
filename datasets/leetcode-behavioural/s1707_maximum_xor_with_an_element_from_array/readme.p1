@@ -1,5 +1,7 @@
-- The integer array parameter `nums` contains non-negative integers.
-- The integer array parameter `queries` contains arrays of length 2.
-- The integer array result `answer` has the same length as the `queries` array.
-- The integer result in the `answer` array is the maximum bitwise XOR value of `x_i` and any element of `nums` that does not exceed `m_i`.
-- If all elements in `nums` are larger than `m_i`, the result in the `answer` array is -1.
+- The integer array parameter `nums` must not be null.
+- The integer array parameter `queries` must not be null.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100000.
+- The length of each integer array in the integer array parameter `queries` is equal to 2.
+- The integer parameters `x_i` and `m_i` in each query are greater than or equal to 0 and are less than or equal to 1000000000.
+- The length of the integer array result is equal to the length of the integer array parameter `queries`.
+- Each element in the integer array result is the maximum bitwise XOR value of `x_i` and any element of `nums` that does not exceed `m_i`, or -1 if all elements in `nums` are larger than `m_i`.

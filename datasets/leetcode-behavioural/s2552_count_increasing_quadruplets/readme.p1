@@ -1,4 +1,2 @@
-Method behavioural specifications:
-- The integer array parameter `nums` has a length greater than or equal to 4 and less than or equal to 4000.
-- All values in the integer array parameter `nums` are unique and are between 1 and the length of the array `nums`.
-- The long result is the number of increasing quadruplets (i, j, k, l) where 0 <= i < j < k < l < n and nums[i] < nums[k] < nums[j] < nums[l].
+- The integer array parameter `nums` must be of size `n` and contain all numbers from `1` to `n`.
+- The long result is the number of increasing quadruplets `(i, j, k, l)` where `0 <= i < j < k < l < n` and `nums[i] < nums[k] < nums[j] < nums[l]`.

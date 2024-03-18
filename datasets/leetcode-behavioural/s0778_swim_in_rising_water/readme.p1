@@ -1,4 +1,9 @@
 - The integer matrix parameter `grid` must not be null.
-- The integer matrix parameter `grid` must have a length of `n x n`.
-- Each value in the integer matrix parameter `grid` must be greater than or equal to 0 and less than `n^2`.
-- The integer result is the least time until reaching the bottom right square `(n - 1, n - 1)` starting from the top left square `(0, 0)`.
+- The integer matrix parameter `grid` must be a square matrix (n x n).
+- The integer matrix parameter `grid` must contain unique values.
+- The integer result is the least time until reaching the bottom right square (n - 1, n - 1) starting from the top left square (0, 0).
+- The time starts at 0 and increases incrementally.
+- At each time `t`, the depth of water everywhere is `t`.
+- The swim is allowed from a square to another 4-directionally adjacent square only if the elevation of both squares individually is at most `t`.
+- The swim can cover infinite distances in zero time.
+- The swim must stay within the boundaries of the grid during the swim.

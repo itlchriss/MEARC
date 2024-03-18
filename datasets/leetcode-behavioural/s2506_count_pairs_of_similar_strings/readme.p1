@@ -1,5 +1,5 @@
-- For the method `similarPairs(String[] words)`, the integer result is the number of pairs (i, j) such that 0 <= i < j <= words.length - 1 and the two strings words[i] and words[j] are similar.
-- The integer parameter `words` is a string array with a length greater than or equal to 1 and less than or equal to 100.
-- Each string in the string array parameter `words` consists of only lowercase English letters.
-- The length of the string array parameter `words` does not change.
+- For each pair of strings in the string array parameter `words`, if the two strings are similar (consist of the same characters), increment the count of similar pairs.
+- The integer result is the total count of pairs of strings in the string array parameter `words` that are similar.
 - The integer result is greater than or equal to 0.
+- The length of the string array parameter `words` is greater than or equal to 1 and is less than or equal to 100.
+- Each string in the string array parameter `words` consists of only lowercase English letters.

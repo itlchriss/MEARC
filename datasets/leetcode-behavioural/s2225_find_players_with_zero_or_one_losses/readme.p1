@@ -1,7 +1,6 @@
-Method behavioural specifications:
-- The integer array parameter `matches` contains unique match outcomes where `matches[i] = [winner_i, loser_i]`.
-- The integer result is a list of size 2.
-- The first list in the result contains all players who have not lost any matches.
-- The second list in the result contains all players who have lost exactly one match.
-- The values in both lists are returned in increasing order.
-- Only players who have played at least one match are considered.
+- The list `answer` returned by the method `findWinners` must contain two lists.
+- The first list in `answer` must contain all players who have not lost any matches.
+- The second list in `answer` must contain all players who have lost exactly one match.
+- The values in both lists must be in increasing order.
+- Only players who have played at least one match should be considered.
+- No two matches will have the same outcome.

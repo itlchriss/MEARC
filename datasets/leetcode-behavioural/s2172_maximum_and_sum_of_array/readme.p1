@@ -1,6 +1,6 @@
-- The integer array parameter `nums` contains `n` integers where `n` is greater than or equal to 1 and is less than or equal to `2 * numSlots`.
+- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` length is equal to the integer parameter `n`.
 - The integer parameter `numSlots` is greater than or equal to 1 and is less than or equal to 9.
-- The integer result is the maximum possible AND sum of the integer array `nums` given `numSlots` slots.
-- The placement of numbers into slots should ensure that each slot contains at most two numbers.
-- The AND sum of a given placement is the sum of the bitwise AND of every number with its respective slot number.
-- The output should be the maximum possible AND sum achieved by placing the numbers into the slots as per the given constraints.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2 times the integer parameter `numSlots`.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and are less than or equal to 15.
+- The integer result is the maximum possible AND sum of the integer array `nums` given the integer parameter `numSlots` slots.

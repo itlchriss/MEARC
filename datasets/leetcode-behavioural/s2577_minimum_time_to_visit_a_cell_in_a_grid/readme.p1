@@ -1,6 +1,7 @@
-- The integer matrix parameter `grid` must not be null.
-- The integer matrix parameter `grid` must have a length `m` and each row must have a length `n`.
-- The integer matrix parameter `grid` must consist of non-negative integers.
-- The integer matrix parameter `grid` represents the minimum time required to visit each cell.
 - The integer result is the minimum time required to visit the bottom-right cell of the matrix.
-- If it is not possible to visit the bottom-right cell, the result is -1.
+- If it is not possible to visit the bottom-right cell, the integer result is equal to -1.
+- The integer parameter `m` is greater than or equal to 2 and is less than or equal to 1000.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 1000.
+- The product of the integer parameters `m` and `n` is greater than or equal to 4 and is less than or equal to 100000.
+- All values in the 2D integer array parameter `grid` are greater than or equal to 0 and are less than or equal to 100000.
+- The value of `grid[0][0]` is equal to 0.

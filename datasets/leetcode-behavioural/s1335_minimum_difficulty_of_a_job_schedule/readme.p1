@@ -2,5 +2,5 @@
 - The integer array parameter `jobDifficulty` length is greater than or equal to 1 and is less than or equal to 300.
 - All values in the integer array parameter `jobDifficulty` are greater than or equal to 0 and are less than or equal to 1000.
 - The integer parameter `d` is greater than or equal to 1 and is less than or equal to 10.
-- The integer result is the minimum difficulty of a job schedule.
-- If a valid schedule cannot be found for the given jobs, the integer result is -1.
+- If a valid schedule exists for the jobs, the integer result is the minimum difficulty of the job schedule.
+- If a valid schedule does not exist for the jobs, the integer result is equal to -1.

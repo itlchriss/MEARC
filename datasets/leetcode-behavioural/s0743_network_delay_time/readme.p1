@@ -1,5 +1,10 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
 - The length of the integer array parameter `times` is greater than or equal to 1 and is less than or equal to 6000.
 - Each element in the integer array parameter `times` is an array of length 3.
-- The integer result is the time it takes for all `n` nodes to receive the signal.
-- If it is impossible for all the `n` nodes to receive the signal, the integer result is -1.
+- The first and second elements of each array in the integer array parameter `times` are greater than or equal to 1 and are less than or equal to `n`.
+- The first and second elements of each array in the integer array parameter `times` are not equal.
+- The third element of each array in the integer array parameter `times` is greater than or equal to 0 and is less than or equal to 100.
+- All pairs of the first and second elements in the arrays in the integer array parameter `times` are unique.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to `n`.
+- The integer result is the time it takes for all `n` nodes to receive the signal from the given node `k`.
+- If it is impossible for all `n` nodes to receive the signal, the integer result is equal to -1.

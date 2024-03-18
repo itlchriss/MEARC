@@ -1,9 +1,12 @@
-- The integer parameters `m` and `n` must be greater than or equal to 2 and less than or equal to 100000.
-- The integer matrix parameter `coordinates` must have a length less than or equal to 10000.
-- The integer matrix parameter `coordinates` must contain pairs of distinct coordinates within the grid.
-- The integer array result `arr` must have a size of 5.
-- Each element in the integer array result `arr` represents the number of blocks that contain exactly `i` black cells.
-- The grid is defined as a `m x n` grid where cells not present in `coordinates` are white.
-- A block is defined as a `2 x 2` submatrix of the grid.
+- The integer parameter `m` is greater than or equal to 2 and is less than or equal to 100000.
+- The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
+- The integer matrix parameter `coordinates` may have a length of up to 10000.
+- Each element in the integer matrix parameter `coordinates` is an array of length 2.
+- The first element of each array in the integer matrix parameter `coordinates` is greater than or equal to 0 and is less than `m`.
+- The second element of each array in the integer matrix parameter `coordinates` is greater than or equal to 0 and is less than `n`.
+- The integer array result has a size of 5.
+- Each element in the integer array result represents the number of blocks that contain exactly `i` black cells.
+- The grid is 0-indexed.
+- A block is defined as a 2x2 submatrix of the grid.
 - The blocks are counted based on the number of black cells they contain.
-- The output format of the method should be a list with '-' as bullets.
+- The output array `arr` should be 0-indexed.

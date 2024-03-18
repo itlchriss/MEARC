@@ -1,4 +1,5 @@
-Method behavioural specifications:
 - The integer array parameter `nums` must not be null.
 - The integer result is the sum of all XOR totals for every subset of the integer array `nums`.
+- The XOR total of an array is defined as the bitwise XOR of all its elements, or 0 if the array is empty.
 - Subsets with the same elements should be counted multiple times.
+- An array `a` is a subset of an array `b` if `a` can be obtained from `b` by deleting some (possibly zero) elements of `b`.

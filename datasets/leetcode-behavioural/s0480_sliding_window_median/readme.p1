@@ -1,6 +1,5 @@
 - The integer array parameter `nums` must not be null.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array `nums`.
 - The length of the double array result is equal to the length of the integer array `nums` minus `k` plus 1.
-- Each element in the double array result is the median of the sliding window of size `k` moving from the very left of the array to the very right.
-- The median is calculated as the middle value in an ordered integer list, or the mean of the two middle values if the size of the list is even.
-- Answers within 10^-5 of the actual value will be accepted.
+- Each element in the double array result is the median of the corresponding sliding window in the original array.
+- The double array result must be accurate within 10^-5 of the actual value.

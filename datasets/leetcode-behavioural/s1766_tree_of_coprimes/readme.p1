@@ -1,7 +1,5 @@
-- The integer array parameter `nums` must not be null.
-- The 2D integer array parameter `edges` must not be null.
-- The length of the integer array parameter `nums` is equal to the number of nodes in the tree.
-- The length of the 2D integer array parameter `edges` is equal to the number of nodes minus 1.
-- The integer array result `ans` is of size `n`, where `n` is the number of nodes in the tree.
-- Each element in the integer array result `ans` is the closest ancestor to the corresponding node such that the value of the node and the value of the ancestor are coprime.
-- If there is no such ancestor for a node, the corresponding element in the integer array result `ans` is -1.
+- The integer array parameter `nums` contains values associated with each node in the tree.
+- The 2D integer array parameter `edges` represents the edges between nodes in the tree.
+- The integer array result `ans` has a size of `n`, where `n` is the number of nodes in the tree.
+- Each element in the integer array result `ans` represents the closest ancestor to the corresponding node such that the values of the node and its ancestor are coprime.
+- If there is no such ancestor for a node, the corresponding element in the integer array result `ans` is equal to -1.

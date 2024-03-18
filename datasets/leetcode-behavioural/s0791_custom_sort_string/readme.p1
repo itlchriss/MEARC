@@ -1,7 +1,7 @@
-- The characters in the string parameter `s` should be permuted in such a way that they match the order specified in the string parameter `order`.
-- If a character `x` occurs before a character `y` in the string parameter `order`, then `x` should occur before `y` in the permuted string.
-- The returned string can be any permutation of the string parameter `s` that satisfies the specified order.
-- All characters in the string parameters `order` and `s` are lowercase English letters.
-- All characters in the string parameter `order` are unique.
-- The length of the string parameter `order` is between 1 and 26.
-- The length of the string parameter `s` is between 1 and 200.
+- The string parameter `order` contains unique characters that represent the custom sorting order.
+- The string parameter `s` contains characters that need to be permuted to match the custom sorting order specified in the `order` string.
+- The string result is a permutation of the characters in the `s` string that satisfies the custom sorting order specified in the `order` string.
+- If a character `x` occurs before a character `y` in the `order` string, then `x` should occur before `y` in the permuted string.
+- Characters in the `s` string that do not appear in the `order` string can be placed at any position in the returned string.
+- The length of the returned string is equal to the length of the `s` string.
+- The characters in the returned string are a permutation of the characters in the `s` string that satisfies the custom sorting order specified in the `order` string.

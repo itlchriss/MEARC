@@ -1,4 +1,5 @@
 - The integer array parameter `prices` must not be null.
 - The length of the integer array result is equal to the length of the integer array parameter `prices`.
-- For each element in the integer array parameter `prices`, if there exists an element with a lower price and a higher index, the final price is calculated by subtracting the lower price from the current price.
-- If there is no element with a lower price and a higher index, the final price remains the same as the current price.
+- For each element in the integer array parameter `prices`, if there exists an element at a higher index with a value less than or equal to the current element, the final price is calculated by subtracting the value of the element at the higher index from the current element.
+- If there is no element at a higher index with a value less than or equal to the current element, the final price remains the same as the current element.
+- The final price for each item is stored in the corresponding index of the integer array result.

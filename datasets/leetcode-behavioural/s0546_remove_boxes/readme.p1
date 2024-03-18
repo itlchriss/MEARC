@@ -1,3 +1,6 @@
 - The integer array parameter `boxes` must not be null.
-- The integer array parameter `boxes` length is greater than or equal to 1 and is less than or equal to 100.
+- The integer array parameter `boxes` contains positive numbers.
 - The integer result is the maximum points that can be obtained by removing boxes.
+- The maximum points are calculated by choosing continuous boxes with the same color, removing them, and getting `k * k` points each time.
+- The maximum points are returned after removing all boxes.
+- The length of the integer array parameter `boxes` is less than or equal to 100.

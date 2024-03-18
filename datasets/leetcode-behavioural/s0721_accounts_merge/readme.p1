@@ -1,6 +1,10 @@
-- The List parameter `accounts` must not be null.
-- The List result contains lists where the first element is the name and the rest of the elements are emails in sorted order.
-- The List result can be in any order.
-- The emails within each account in the List parameter `accounts` must be sorted.
-- The emails within each account in the List result must be sorted.
-- The emails within each account in the List result must be unique.
+- The input parameter `accounts` is a list of lists of strings, where each inner list represents an account with the first element being the name and the rest being emails.
+- The output is a list of lists of strings, where each inner list represents a merged account with the first element being the name and the rest being emails in sorted order.
+- Each merged account must contain the common emails shared between accounts belonging to the same person.
+- The order of the merged accounts in the output list can be arbitrary.
+- The length of the input list `accounts` is between 1 and 1000.
+- Each inner list in `accounts` has a length between 2 and 10.
+- The values in the inner lists are between 1 and 30.
+- The first element of each inner list in `accounts` consists of English letters.
+- The email addresses in the inner lists (excluding the first element) are valid email addresses.
+- The email addresses within each merged account must be sorted in ascending order.

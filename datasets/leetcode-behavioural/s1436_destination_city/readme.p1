@@ -1,6 +1,7 @@
 - The string result is the destination city, which is the city without any path outgoing to another city.
 - The input parameter `paths` is a list of lists where each inner list contains two strings representing a direct path from one city to another.
 - The graph formed by the paths is a line without any loops.
-- There will be exactly one destination city in the graph.
-- The destination city can be reached by following the paths in the order specified in the input.
-- The destination city is the city that does not have any outgoing path to another city.
+- The destination city is guaranteed to be unique.
+- The length of the input list `paths` is between 1 and 100.
+- Each inner list in `paths` contains two strings representing the source city and the destination city.
+- The strings representing the cities consist of lowercase and uppercase English letters and the space character.

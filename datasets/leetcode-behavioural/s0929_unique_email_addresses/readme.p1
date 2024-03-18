@@ -1,4 +1,8 @@
-- The integer array parameter `A` must not be null.
-- The integer array parameter `A` must contain valid integers within the specified constraints.
-- The length of the integer array result is 2.
-- All values in the integer array result are unique.
+- The string array parameter `emails` must not be null.
+- The length of each string in the string array parameter `emails` is greater than or equal to 1 and is less than or equal to 100.
+- Each string in the string array parameter `emails` consists of lowercase English letters, '+', '.', and '@'.
+- Each string in the string array parameter `emails` contains exactly one '@' character.
+- All local and domain names in each string in the string array parameter `emails` are non-empty.
+- Local names in each string in the string array parameter `emails` do not start with a '+' character.
+- Domain names in each string in the string array parameter `emails` end with the ".com" suffix.
+- The integer result is the number of different addresses that actually receive mails after applying the rules for valid emails.

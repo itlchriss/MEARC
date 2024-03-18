@@ -2,5 +2,5 @@
 - The integer array parameter `coins` length is greater than or equal to 1 and is less than or equal to 12.
 - All values in the integer array parameter `coins` are greater than or equal to 1 and are less than or equal to 2^31 - 1.
 - The integer parameter `amount` is greater than or equal to 0 and is less than or equal to 10^4.
-- If the total amount of money represented by the integer parameter `amount` can be made up by any combination of the coins in the integer array parameter `coins`, the integer result is the fewest number of coins needed to make up that amount.
-- If the total amount of money represented by the integer parameter `amount` cannot be made up by any combination of the coins in the integer array parameter `coins`, the integer result is -1.
+- The integer result is the fewest number of coins needed to make up the `amount`.
+- If the `amount` of money cannot be made up by any combination of the coins, the integer result is equal to -1.

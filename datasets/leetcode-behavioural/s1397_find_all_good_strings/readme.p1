@@ -1,8 +1,8 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 500.
 - The string parameter `s1` has a length equal to `n`.
 - The string parameter `s2` has a length equal to `n`.
-- The string parameter `s1` is alphabetically less than or equal to the string parameter `s2`.
+- The string parameter `s1` is alphabetically less than or equal to `s2`.
 - The string parameter `evil` has a length greater than or equal to 1 and is less than or equal to 50.
 - All strings consist of lowercase English letters.
-- The integer result is the number of good strings that meet the specified criteria.
-- The integer result is modulo 10^9 + 7.
+- The integer result is the number of good strings modulo 10^9 + 7.
+- A good string has a size equal to `n`, is alphabetically greater than or equal to `s1`, is alphabetically smaller than or equal to `s2`, and does not contain the string `evil` as a substring.

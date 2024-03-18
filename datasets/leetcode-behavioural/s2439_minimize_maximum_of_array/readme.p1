@@ -1,5 +1,4 @@
-- The integer array parameter `nums` must be 0-indexed and contain `n` non-negative integers.
-- The integer result is the minimum possible value of the maximum integer in the `nums` array after performing any number of operations.
-- In each operation, an integer `i` such that `1 <= i < n` must be chosen, and `nums[i]` must be decreased by 1 while `nums[i - 1]` is increased by 1.
-- The maximum integer in the `nums` array cannot be less than the minimum possible value returned.
-- The constraints for `n` are `2 <= n <= 10^5` and for `nums[i]` are `0 <= nums[i] <= 10^9`.
+- The integer array parameter `nums` must be 0-indexed and comprise of `n` non-negative integers.
+- In one operation, the integer `i` chosen must satisfy `1 <= i < n` and `nums[i] > 0`.
+- After each operation, the maximum integer value in the array `nums` must be minimized.
+- The method must return the minimum possible value of the maximum integer in the array `nums` after performing any number of operations.

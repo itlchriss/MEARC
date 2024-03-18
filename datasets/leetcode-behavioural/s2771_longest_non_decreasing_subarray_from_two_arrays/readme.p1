@@ -1,9 +1,6 @@
-- The integer arrays `nums1` and `nums2` must have the same length `n`.
-- The integer array `nums3` must have the same length `n` as `nums1` and `nums2`.
-- For each index `i` in the range `[0, n - 1]`, the value at index `i` in `nums3` must be either `nums1[i]` or `nums2[i]`.
-- The method must return an integer representing the length of the longest non-decreasing subarray in `nums3`.
-- A subarray is defined as a contiguous non-empty sequence of elements within an array.
-- The method must choose the values in `nums3` optimally to maximize the length of the longest non-decreasing subarray.
-- The method must handle cases where multiple non-decreasing subarrays of the same length exist and return the maximum achievable length.
-- The constraints for the input arrays `nums1` and `nums2` must be strictly adhered to.
-- The method signature must match the given context.
+- The integer arrays `nums1` and `nums2` must be of the same length `n`.
+- The integer arrays `nums1` and `nums2` must have a length greater than or equal to 1 and less than or equal to 100000.
+- The integer arrays `nums1` and `nums2` must contain values greater than or equal to 1 and less than or equal to 1000000000.
+- The integer array result must have a length of 1.
+- The integer result represents the length of the longest non-decreasing subarray in `nums3`.
+- The subarray in `nums3` must be contiguous and non-empty.

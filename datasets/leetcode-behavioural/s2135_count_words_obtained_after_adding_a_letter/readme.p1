@@ -1,7 +1,7 @@
 - For each string in the `targetWords` array, the method must check if it is possible to choose a string from the `startWords` array and perform the conversion operations described.
 - The conversion operation involves appending any lowercase letter that is not present in the string to its end, followed by rearranging the letters of the new string in any arbitrary order.
 - The method must return the number of strings in the `targetWords` array that can be obtained by performing the operations on any string from the `startWords` array.
-- The strings in the `startWords` array must not actually change during this process.
+- The strings in the `startWords` array must not change during this process.
 - The method must handle cases where there is no string in the `startWords` array that can be used to obtain a string from the `targetWords` array.
 - The method must adhere to the constraints specified for the input arrays `startWords` and `targetWords`.
 - The method signature must be `public int wordCount(String[] startWords, String[] targetWords)`.

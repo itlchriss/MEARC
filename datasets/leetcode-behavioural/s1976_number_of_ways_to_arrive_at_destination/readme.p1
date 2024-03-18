@@ -1,8 +1,8 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 200.
 - The length of the 2D integer array parameter `roads` is greater than or equal to `n - 1` and is less than or equal to `n * (n - 1) / 2`.
 - Each element in the 2D integer array parameter `roads` has a length of 3.
-- The integer elements `u_i` and `v_i` in the 2D integer array parameter `roads` are greater than or equal to 0 and are less than or equal to `n - 1`.
-- The integer element `time_i` in the 2D integer array parameter `roads` is greater than or equal to 1 and is less than or equal to 10^9.
-- The integer elements `u_i` and `v_i` in the 2D integer array parameter `roads` are not equal.
+- The integer values in each element of the 2D integer array parameter `roads` are within the range of 0 to `n - 1` for `u_i` and `v_i`, and 1 to 10^9 for `time_i`.
+- The integer values `u_i` and `v_i` in each element of the 2D integer array parameter `roads` are not equal.
 - There is at most one road connecting any two intersections.
-- The integer result is the number of ways to travel from intersection 0 to intersection `n - 1` in the shortest amount of time, modulo 10^9 + 7.
+- The integer result is the number of ways to travel from intersection 0 to intersection `n - 1` in the shortest amount of time.
+- The integer result is returned modulo 10^9 + 7.

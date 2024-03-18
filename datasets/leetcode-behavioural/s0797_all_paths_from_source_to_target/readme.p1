@@ -3,7 +3,9 @@ Method behavioural specifications:
 - The integer result is a list of all possible paths from node `0` to node `n - 1`.
 - Each path in the result is represented as a list of integers.
 - The order of paths in the result list is arbitrary.
-- Each node in the graph can be visited from its parent node.
-- There are no self-loops in the graph.
-- All nodes in the graph are unique.
-- The input graph is guaranteed to be a DAG.
+- Each element in the result list is a valid path from node `0` to node `n - 1` in the given DAG.
+- The input graph `graph` is guaranteed to be a DAG.
+- The input graph `graph` has `n` nodes where `2 <= n <= 15`.
+- All elements in `graph[i]` are unique and satisfy `0 <= graph[i][j] < n`.
+- There are no self-loops in the input graph.
+- The result list may contain multiple paths from node `0` to node `n - 1`.

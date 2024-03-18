@@ -8,8 +8,7 @@
 - Each worker can receive at most one magical pill.
 - The magical pill increases a worker's strength by the specified amount.
 - The magical pill can be given to any worker.
-- The magical pill can only be given once to each worker.
-- The magical pill can only be given to workers with strength less than the task's strength requirement.
-- The magical pill cannot be given to a worker if it does not make the worker strong enough for any task.
-- The magical pill can be given to multiple workers.
-- The magical pill can be given to different workers for different tasks.
+- The magical pill can only be given to a worker once.
+- The magical pill must be given to a worker before assigning tasks.
+- The tasks are assigned based on the strength of the workers after considering the magical pill.
+- The tasks are assigned in a way that maximizes the number of completed tasks.

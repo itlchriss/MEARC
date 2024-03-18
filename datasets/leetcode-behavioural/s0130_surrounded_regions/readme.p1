@@ -1,8 +1,7 @@
-- For the method `solve(char[][] board)`:
 - All 'O's that are not on the border and are not connected to an 'O' on the border should be flipped to 'X'.
-- Two cells are considered connected if they are adjacent cells connected horizontally or vertically.
-- The input `board` is a 2D character array containing 'X' and 'O'.
-- The output should be the modified `board` with surrounded regions flipped to 'X'.
-- The dimensions of the `board` should be such that `1 <= m, n <= 200`.
-- The input `board` should have dimensions `m x n`.
-- The output `board` should have the same dimensions as the input `board`.
+- Two cells are considered connected if they are adjacent horizontally or vertically.
+- The method should not flip 'O's that are on the border of the board to 'X'.
+- The method signature should be public void solve(char[][] board).
+- The input board should be a matrix of characters containing 'X' and 'O'.
+- The dimensions of the board should be m x n where 1 <= m, n <= 200.
+- The characters in the board should be either 'X' or 'O'.

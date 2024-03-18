@@ -1,7 +1,5 @@
-- The string parameter `paragraph` consists of English letters, space ' ', or symbols: "!?',;.".
+- The string parameter `paragraph` consists of English letters, space ' ', or one of the symbols: "!?',;.".
 - The string array parameter `banned` contains lowercase English words.
 - The string result is the most frequent word in the `paragraph` that is not in the `banned` array.
-- The result is in lowercase.
-- The result is unique.
-- The result is not case-sensitive.
-- Punctuation is ignored when determining the most frequent word.
+- The result is returned in lowercase.
+- The result is unique and there is at least one word that is not banned.

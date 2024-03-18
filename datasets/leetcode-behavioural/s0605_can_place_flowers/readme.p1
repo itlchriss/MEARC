@@ -1,4 +1,7 @@
-- The integer array parameter `flowerbed` contains 0's and 1's.
+- The integer array parameter `flowerbed` must not be null.
+- The length of the integer array parameter `flowerbed` is greater than or equal to 1 and is less than or equal to 20000.
+- All values in the integer array parameter `flowerbed` are either 0 or 1.
+- There are no adjacent elements in the integer array parameter `flowerbed` that are both equal to 1.
 - The integer parameter `n` is greater than or equal to 0 and is less than or equal to the length of the integer array parameter `flowerbed`.
-- The boolean result is true if `n` new flowers can be planted in the `flowerbed` without violating the no-adjacent-flowers rule.
-- The boolean result is false if `n` new flowers cannot be planted in the `flowerbed` without violating the no-adjacent-flowers rule.
+- If the integer result is equal to the true literal, `n` new flowers can be planted in the `flowerbed` without violating the no-adjacent-flowers rule.
+- If the integer result is equal to the false literal, `n` new flowers cannot be planted in the `flowerbed` without violating the no-adjacent-flowers rule.

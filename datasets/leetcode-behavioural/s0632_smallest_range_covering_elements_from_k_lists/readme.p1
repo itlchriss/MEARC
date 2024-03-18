@@ -1,7 +1,6 @@
-- The integer array parameter `nums` must not be null.
-- The integer array parameter `nums` must have a length equal to `k`.
-- Each integer array in the `nums` array must be sorted in non-decreasing order.
-- Each integer array in the `nums` array must have a length between 1 and 50.
-- Each element in the integer arrays within the `nums` array must be between -10^5 and 10^5.
-- The integer array result must have a length of 2.
-- The values in the integer array result must be within the ranges of the smallest range that includes at least one number from each of the `k` lists.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 3500.
+- The length of each integer list in the list of integer lists `nums` is greater than or equal to 1 and is less than or equal to 50.
+- All values in each integer list in the list of integer lists `nums` are greater than or equal to -100000 and are less than or equal to 100000.
+- Each integer list in the list of integer lists `nums` is sorted in non-decreasing order.
+- The method `compareTo` must return an integer value representing the comparison result between two `Triplet` objects.
+- The method `compareTo` must follow the comparison rules where a range `[a, b]` is considered smaller than range `[c, d]` if `b - a < d - c` or if `a < c` when `b - a == d - c`.

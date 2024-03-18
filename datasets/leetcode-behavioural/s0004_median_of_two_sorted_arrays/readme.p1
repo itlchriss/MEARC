@@ -1,5 +1,9 @@
 - The double result is the median of the two sorted arrays `nums1` and `nums2`.
-- The overall run time complexity should be O(log (m+n)).
-- The integer array parameter `nums1` has a length `m` and the integer array parameter `nums2` has a length `n`.
-- The integer array parameter `nums1` and `nums2` contain elements within the range of -10^6 to 10^6.
-- The sum of the lengths of `nums1` and `nums2` is between 1 and 2000.
+- The overall run time complexity of the method should be O(log (m+n)).
+- The integer array parameter `nums1` and `nums2` must not be null.
+- The length of the integer array parameter `nums1` is equal to `m`.
+- The length of the integer array parameter `nums2` is equal to `n`.
+- The integer result is within the range of -10^6 to 10^6.
+- The integer result is rounded to five decimal places.
+- If the length of the merged array of `nums1` and `nums2` is odd, the median is the middle element.
+- If the length of the merged array of `nums1` and `nums2` is even, the median is the average of the two middle elements.

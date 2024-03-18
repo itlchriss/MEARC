@@ -1,3 +1,4 @@
 - The integer parameter `numBottles` is greater than or equal to 1 and is less than or equal to 100.
 - The integer parameter `numExchange` is greater than or equal to 2 and is less than or equal to 100.
-- The integer result is the maximum number of water bottles that can be drunk, considering the exchange rate of `numExchange` empty bottles for one full bottle.
+- The integer result is the maximum number of water bottles that can be consumed.
+- The number of water bottles consumed is calculated by adding the initial `numBottles`, the number of times `numExchange` empty bottles can be exchanged for a full bottle, and the remaining bottles after all possible exchanges.

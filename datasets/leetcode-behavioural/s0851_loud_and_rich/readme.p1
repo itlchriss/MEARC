@@ -1,8 +1,5 @@
 - The integer array parameter `richer` must not be null.
 - The integer array parameter `quiet` must not be null.
 - The length of the integer array parameter `quiet` is equal to the length of the integer array parameter `richer`.
-- The integer array result `answer` must not be null.
-- The length of the integer array result `answer` is equal to the length of the integer array parameter `quiet`.
-- Each element in the integer array result `answer` is an index referring to the least quiet person among all people who definitely have equal to or more money than the corresponding person in the integer array parameter `richer`.
-- The integer array result `answer` contains unique values.
-- The integer array result `answer` is filled based on the logic that the person with more money is considered richer and the person with lower quietness is considered quieter.
+- The integer array result is equal to the length of the integer array parameter `quiet`.
+- Each element in the integer array result is the least quiet person among all people who definitely have equal to or more money than the corresponding person in the integer array parameter `richer`.

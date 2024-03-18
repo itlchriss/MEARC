@@ -1,3 +1,6 @@
 - The integer array parameter `nums` must not be null.
 - The integer parameter `goal` must be within the range of -10^9 to 10^9.
 - The integer result is the minimum possible value of the absolute difference between the sum of the subsequence's elements and the goal.
+- The absolute difference is minimized by choosing a subsequence of `nums` such that the sum of its elements is closest to `goal`.
+- If there are multiple subsequences with the same absolute difference, the subsequence with the smallest sum is chosen.
+- The length of the integer array parameter `nums` is less than or equal to 40.

@@ -2,4 +2,6 @@
 - The integer matrix parameter `grid` must be a 2D array of size `m x n`, where `m` and `n` are greater than or equal to 1 and less than or equal to 50.
 - The integer matrix result `answer` must be of size `m x n`.
 - The value of each cell `(r, c)` in the matrix `answer` is calculated based on the number of distinct values in the top-left diagonal and bottom-right diagonal of the corresponding cell `(r, c)` in the matrix `grid`.
-- The value of `answer[r][c]` is equal to the absolute difference between the number of distinct values in the top-left diagonal and bottom-right diagonal of the cell `(r, c)` in the matrix `grid`.
+- The top-left diagonal of a cell `(r, c)` includes all cells `(r1, c1)` where `r1 < r` and `c1 < c` in the same diagonal.
+- The bottom-right diagonal of a cell `(r, c)` includes all cells `(r1, c1)` where `r1 > r` and `c1 > c` in the same diagonal.
+- The value of each cell `(r, c)` in the matrix `answer` is the absolute difference between the number of distinct values in the top-left diagonal and bottom-right diagonal of the corresponding cell `(r, c)` in the matrix `grid`.

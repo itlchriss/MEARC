@@ -1,6 +1,5 @@
 - The integer parameter `d` is an array of strings representing count-paired domains.
-- Each count-paired domain in the input array follows the format "rep domain1.domain2.domain3" or "rep domain1.domain2" where `rep` is an integer representing the number of visits to the domain.
-- The output is a list of strings representing the count-paired domains of each subdomain in the input array.
-- The output list may contain the count-paired domains in any order.
-- Each subdomain in the output list will have the format "rep subdomain1.subdomain2...subdomainN" where `rep` is the total number of visits to that subdomain.
-- The subdomains in the output list are derived from the count-paired domains in the input array by considering all parent domains implicitly visited.
+- Each count-paired domain in the input array follows the format "rep domain.subdomain.subdomain" or "rep domain.subdomain".
+- The integer result is a list of count-paired domains for each subdomain in the input array.
+- The count for each subdomain is the sum of counts for all parent domains.
+- The order of the count-paired domains in the output list can be arbitrary.

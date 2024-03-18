@@ -1,7 +1,8 @@
-- The integer array parameter `cars` must not be null.
-- The length of the integer array parameter `cars` is greater than or equal to 1 and is less than or equal to 100000.
-- The integer array parameter `cars` contains subarrays of length 2, where the first element represents the position of the car and the second element represents the speed of the car.
-- The position of each car in the integer array parameter `cars` is in increasing order.
-- The speed of each car in the integer array parameter `cars` is greater than or equal to 1 and is less than or equal to 1000000.
-- The integer array result `answer` contains the time, in seconds, at which each car in the `cars` array collides with the next car, or -1 if the car does not collide with the next car.
-- The double result in the `answer` array is within 10^-5 of the actual answer.
+- The double array parameter `cars` must not be null.
+- The length of the double array parameter `cars` is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array `cars[i]` is of length 2, where `cars[i][0]` represents the position of the `i-th` car and `cars[i][1]` represents the speed of the `i-th` car.
+- The position of the `i-th` car is less than the position of the `i+1-th` car.
+- The speed of the `i-th` car is greater than or equal to 1 and is less than or equal to 1000000.
+- The double array result is of length equal to the length of the double array parameter `cars`.
+- Each element in the double array result represents the time, in seconds, at which the `i-th` car collides with the next car, or -1 if the car does not collide with the next car.
+- The time values in the double array result are within 10^-5 of the actual answers.

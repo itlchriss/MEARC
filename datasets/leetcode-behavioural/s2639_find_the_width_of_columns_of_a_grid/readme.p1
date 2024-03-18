@@ -1,6 +1,3 @@
 - The integer matrix parameter `grid` must not be null.
-- The integer matrix parameter `grid` must have a length `m` and each row in the matrix must have a length `n`.
-- The integer array result `ans` must have a size `n`.
-- Each element in the integer array result `ans` is the width of the corresponding column in the integer matrix `grid`.
-- The width of a column is defined as the maximum length of its integers.
-- The length of an integer `x` with `len` digits is equal to `len` if `x` is non-negative, and `len + 1` otherwise.
+- The length of the integer array result is equal to the number of columns in the integer matrix `grid`.
+- Each element in the integer array result is the maximum length of integers in the corresponding column of the integer matrix `grid`.

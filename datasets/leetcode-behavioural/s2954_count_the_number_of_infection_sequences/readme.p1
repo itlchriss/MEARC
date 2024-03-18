@@ -1,5 +1,5 @@
 Method behavioural specifications:
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100000.
-- The integer array parameter `sick` is not null and contains at least one element.
+- The length of the integer array parameter `sick` is greater than or equal to 1 and is less than `n`.
 - The integer array parameter `sick` is sorted in increasing order.
 - The integer result is the total number of possible infection sequences modulo 10^9 + 7.

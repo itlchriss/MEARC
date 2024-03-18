@@ -1,4 +1,6 @@
-- The integer array parameter `nums` must have an even length.
-- The integer parameter `limit` must be greater than or equal to 1 and less than or equal to 100000.
+- The integer array parameter `nums` has an even length `n`.
+- The integer parameter `limit` is greater than or equal to 1 and is less than or equal to 100000.
 - The integer result is the minimum number of moves required to make the integer array `nums` complementary.
-- After executing the method with the given method signature, the integer array `nums` is complementary, meaning for all indices `i`, `nums[i] + nums[n - 1 - i]` equals the same number.
+- In each move, any integer in the integer array `nums` can be replaced with another integer between 1 and `limit`, inclusive.
+- The integer array `nums` is complementary if for all indices `i` (0-indexed), `nums[i] + nums[n - 1 - i]` equals the same number.
+- The output format should be a list with '-' as bullets.

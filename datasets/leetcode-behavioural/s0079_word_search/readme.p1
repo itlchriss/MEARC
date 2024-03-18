@@ -1,7 +1,7 @@
-- The boolean result is true if the string parameter `word` exists in the character grid parameter `board`.
-- The characters in the string `word` can only be constructed from letters of sequentially adjacent cells in the character grid `board`, where adjacent cells are horizontally or vertically neighboring.
-- The same letter cell in the character grid `board` may not be used more than once.
-- The length of the string parameter `word` is greater than or equal to 1 and is less than or equal to 15.
-- The number of rows `m` in the character grid `board` is greater than or equal to 1 and is less than or equal to 6.
-- The number of columns `n` in each row of the character grid `board` is greater than or equal to 1 and is less than or equal to 6.
-- The characters in the character grid `board` and the string `word` consist of only lowercase and uppercase English letters.
+- The character array parameter `board` must not be null.
+- The string parameter `word` must not be null.
+- The string parameter `word` length is greater than or equal to 1 and is less than or equal to 15.
+- The character array parameter `board` length `m` is greater than or equal to 1 and is less than or equal to 6.
+- The character array parameter `board` length `n` is greater than or equal to 1 and is less than or equal to 6.
+- The boolean result is equal to the true literal if the string parameter `word` exists in the character array parameter `board` following the given rules.
+- The boolean result is equal to the false literal if the string parameter `word` does not exist in the character array parameter `board` following the given rules.

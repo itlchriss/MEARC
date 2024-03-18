@@ -1,5 +1,7 @@
 - The integer array parameter `logs` must not be null.
-- Each element in the integer array parameter `logs` must be an array of length 2.
-- The integer array parameter `logs` must have a length greater than or equal to 1 and less than or equal to 100.
-- The integer values in each element of the integer array parameter `logs` must satisfy the condition `1950 <= birth_i < death_i <= 2050`.
+- Each element in the integer array parameter `logs` must be an array of length 2, where the first element represents the birth year and the second element represents the death year of a person.
+- The birth year of each person must be less than the death year of that person.
+- The birth year and death year of each person must be within the range of 1950 to 2050.
 - The integer result is the earliest year with the maximum population.
+- The maximum population is the number of people alive during a specific year, where a person is counted in the population if they were alive during that year (inclusive range of birth year to death year - 1).
+- If there are multiple years with the maximum population, the earliest year among them should be returned.

@@ -1,9 +1,8 @@
-Method behavioural specifications:
-- The integer 2D array parameter `triplets` must have a length greater than or equal to 1 and less than or equal to 100000.
-- Each triplet in the integer 2D array parameter `triplets` must have a length of 3.
-- The integer array parameter `target` must have a length of 3.
-- The integer result is true if it is possible to obtain the target triplet [x, y, z] as an element of triplets, otherwise false.
-- To obtain the target triplet [x, y, z], the operation of updating triplets[j] to become [max(ai, aj), max(bi, bj), max(ci, cj)] can be applied any number of times (possibly zero).
-- The indices i and j chosen for the update operation must be different (i != j).
-- The updated triplet [max(ai, aj), max(bi, bj), max(ci, cj)] is added to triplets.
-- The target triplet [x, y, z] must be an element of triplets after applying the update operation.
+- The integer array parameter `triplets` must not be null.
+- The integer array parameter `triplets` length is greater than or equal to 1 and is less than or equal to 100000.
+- Each element in the integer array parameter `triplets` is an array of length 3.
+- Each element in the integer array parameter `triplets` contains integers `ai`, `bi`, and `ci` where 1 <= ai, bi, ci <= 1000.
+- The integer array parameter `target` must not be null.
+- The integer array parameter `target` length is equal to 3.
+- The integer array parameter `target` contains integers `x`, `y`, and `z` where 1 <= x, y, z <= 1000.
+- The boolean result is equal to the true literal if it is possible to obtain the target triplet `[x, y, z]` as an element of triplets after applying the given operation, or false otherwise.

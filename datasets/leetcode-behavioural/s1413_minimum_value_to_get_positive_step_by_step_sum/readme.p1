@@ -1,7 +1,6 @@
 - The integer array parameter `nums` must not be null.
 - The integer result is the minimum positive value of `startValue` such that the step by step sum is never less than 1.
-- The step by step sum calculation should start with the `startValue` and add elements from `nums` from left to right.
-- The `startValue` should be incremented until the step by step sum is never less than 1.
-- The `startValue` should be positive.
+- The step by step sum calculation starts with the `startValue` and adds elements from `nums` from left to right.
+- The step by step sum must always be greater than or equal to 1.
 - The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100.
 - All values in the integer array parameter `nums` are greater than or equal to -100 and are less than or equal to 100.

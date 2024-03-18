@@ -1,7 +1,7 @@
 - The robot's position and direction are represented by two integers (x, y) where (0, 0) is the initial position and the positive y-axis is the north direction.
 - The robot can receive three types of instructions: "G" to move one unit forward, "L" to turn 90 degrees anti-clockwise, and "R" to turn 90 degrees clockwise.
 - The robot repeats the given instructions forever.
-- The method should return true if there exists a circle in the plane such that the robot never leaves the circle, based on the repeated instructions.
-- The method should return false if the robot does not go into a cycle and keeps advancing in the same direction.
+- The method should return true if there exists a circle in the plane such that the robot never leaves the circle based on the repeated instructions.
+- The method should return false if the robot keeps advancing in a straight line without entering a cycle.
 - The method should handle instructions of length up to 100 characters.
-- The instructions should only contain characters 'G', 'L', or 'R'.
+- The instructions should only consist of characters 'G', 'L', or 'R'.

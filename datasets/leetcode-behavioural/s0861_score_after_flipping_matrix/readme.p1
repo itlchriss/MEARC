@@ -2,7 +2,6 @@
 - The integer matrix parameter `grid` must have a length `m` and each row must have a length `n`.
 - The integer matrix parameter `grid` must consist of only 0s and 1s.
 - The integer result is the highest possible score of the matrix after making any number of moves.
+- The highest possible score is calculated by interpreting each row of the matrix as a binary number and summing these numbers.
 - A move consists of toggling each value in a row or column (changing all 0s to 1s and all 1s to 0s).
-- The score of the matrix is the sum of binary numbers interpreted from each row.
-- The highest possible score is achieved by maximizing the binary numbers in each row.
-- The output format should be a list with '-' as bullets.
+- The highest possible score is returned after applying any number of moves, including zero moves.

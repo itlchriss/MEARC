@@ -1,7 +1,7 @@
 - The string parameter `input` represents a file system with directories and files.
 - The method returns an integer representing the length of the longest absolute path to a file in the abstracted file system.
 - If there are no files in the system, the method returns 0.
-- Each directory and file has a unique absolute path in the file system, represented by the order of directories that must be opened to reach the file/directory itself, concatenated by '/'.
+- Each directory and file has a unique absolute path, which is the order of directories that must be opened to reach the file/directory itself, all concatenated by '/'.
 - Directory names consist of letters, digits, and/or spaces.
 - File names are of the form `name.extension`, where `name` and `extension` consist of letters, digits, and/or spaces.
 - The input string may contain lowercase or uppercase English letters, a new line character '\n', a tab character '\t', a dot '.', a space ' ', and digits.

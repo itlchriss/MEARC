@@ -2,7 +2,7 @@
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to `n`.
 - The integer result is the winner of the game, which is the last friend remaining after following the game rules.
 - The game starts at the 1st friend and proceeds in a clockwise direction.
-- Friends are counted in a clockwise direction, including the friend where the counting started.
-- The friend who is counted at the `k`th position in the clockwise direction loses the game and leaves the circle.
-- If there is more than one friend remaining in the circle, the game continues with the friend immediately clockwise of the friend who just lost.
-- The game repeats until only one friend is left in the circle, who is then declared as the winner.
+- The game involves counting `k` friends in the clockwise direction, including the friend where the counting started.
+- The friend who is counted at the end of each round leaves the circle.
+- If there is more than one friend remaining, the game continues with the next friend clockwise to the one who just left.
+- The game repeats until only one friend remains, who is then declared the winner.

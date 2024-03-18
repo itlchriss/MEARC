@@ -1,6 +1,7 @@
 Method behavioural specifications:
-- The integer arrays `cost` and `time` must be of the same length.
 - The integer arrays `cost` and `time` must not be null.
-- All values in the integer array `cost` must be greater than or equal to 1 and less than or equal to 1000000.
-- All values in the integer array `time` must be greater than or equal to 1 and less than or equal to 500.
+- The length of the integer arrays `cost` and `time` must be equal.
+- The length of the integer arrays `cost` and `time` is greater than or equal to 1 and is less than or equal to 500.
+- All values in the integer array `cost` are greater than or equal to 1 and are less than or equal to 1000000.
+- All values in the integer array `time` are greater than or equal to 1 and are less than or equal to 500.
 - The integer result is the minimum amount of money required to paint the `n` walls.

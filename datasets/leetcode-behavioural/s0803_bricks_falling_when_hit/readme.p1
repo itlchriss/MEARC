@@ -1,12 +1,5 @@
-- The integer 2D array parameter `grid` represents a binary grid where each 1 represents a stable brick and each 0 represents an empty space.
-- The integer 2D array parameter `hits` represents a sequence of erasures to apply to the grid.
-- The integer array result represents the number of bricks that will fall after each erasure is applied.
+- If the brick at the location specified by the integer array parameter `hits` is erased, all bricks that are no longer stable due to this erasure will fall.
+- The integer array result contains the number of bricks that will fall after each erasure specified in the integer array parameter `hits` is applied.
 - If an erasure refers to a location with no brick, no bricks will fall.
-- The result array will have the same length as the hits array.
-- The result array will contain the number of bricks that fall after each erasure is applied in the order specified by the hits array.
-- The stability of a brick is defined by being directly connected to the top of the grid or having at least one other stable brick in its four adjacent cells.
-- Once a brick falls, it is immediately erased from the grid.
-- Bricks that are no longer stable due to an erasure will fall.
-- Bricks that are no longer connected to the top or adjacent to another stable brick will fall.
-- The grid will be updated after each erasure by removing the brick at the specified location.
-- The result array will be updated accordingly based on the number of bricks that fall after each erasure.
+- The integer array parameter `grid` represents a binary grid where each 1 represents a brick and each 0 represents an empty space.
+- A brick is considered stable if it is directly connected to the top of the grid or if at least one other brick in its four adjacent cells is stable.

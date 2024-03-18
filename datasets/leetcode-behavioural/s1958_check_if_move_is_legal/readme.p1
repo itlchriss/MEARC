@@ -1,4 +1,2 @@
-- If changing the cell at position `(rMove, cMove)` to the color `color` results in a legal move, the boolean result is true.
-- If changing the cell at position `(rMove, cMove)` to the color `color` does not result in a legal move, the boolean result is false.
-- A legal move is defined as changing a free cell to the color `color` such that the cell becomes the endpoint of a good line (horizontal, vertical, or diagonal).
-- A good line is a line of three or more cells where the endpoints are one color and the middle cells are the opposite color, with no free cells in the line.
+- The boolean result is equal to the true literal if changing the cell at position `(rMove, cMove)` to the color `color` is a legal move.
+- The boolean result is equal to the false literal if changing the cell at position `(rMove, cMove)` to the color `color` is not a legal move.

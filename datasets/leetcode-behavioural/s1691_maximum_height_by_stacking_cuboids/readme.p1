@@ -1,4 +1,6 @@
-- The integer array parameter `arr` must not be null.
-- The integer array parameter `arr` must have a length greater than or equal to 1 and less than or equal to 100.
-- Each element in the integer array parameter `arr` must be an array of length 3 representing the dimensions of a cuboid.
-- The integer result is the maximum height achievable by stacking the cuboids according to the given constraints.
+- The integer parameter `arr` is a 2D array representing `n` cuboids, where each cuboid is represented as an array of three integers `[width, length, height]`.
+- The integer result is the maximum height achievable by stacking the cuboids on each other.
+- Each cuboid can be placed on another cuboid if its width, length, and height are less than or equal to the width, length, and height of the other cuboid.
+- Cuboids can be rearranged by rotating them to fit on top of each other.
+- The total height is calculated by summing the heights of the stacked cuboids.
+- The maximum height of the stacked cuboids should be returned as the integer result.

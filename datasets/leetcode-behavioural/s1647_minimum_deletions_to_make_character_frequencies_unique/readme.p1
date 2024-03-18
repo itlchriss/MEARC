@@ -1,6 +1,6 @@
-- The integer parameter `s` must not be null.
+- The string parameter `s` must not be null.
+- The string parameter `s` contains only lowercase English letters.
 - The integer result is the minimum number of characters needed to be deleted to make the string `s` good.
 - The frequency of a character in the string `s` is the number of times it appears in the string.
-- A string is considered good if there are no two different characters in the string that have the same frequency.
-- The length of the string `s` is greater than or equal to 1 and is less than or equal to 100000.
-- The string `s` contains only lowercase English letters.
+- If there are no two different characters in the string `s` that have the same frequency, the integer result is equal to 0.
+- If there are characters in the string `s` that have the same frequency, the integer result is the minimum number of characters needed to be deleted to make the string `s` good.

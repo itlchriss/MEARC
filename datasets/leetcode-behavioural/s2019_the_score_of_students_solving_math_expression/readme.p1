@@ -1,6 +1,11 @@
-- The integer parameter `answers` must not be null.
-- The integer array parameter `answers` must contain the submitted answers of the students in no particular order.
+- The integer parameter `n` is greater than or equal to 3 and is less than or equal to 31.
+- The string parameter `s` represents a valid expression that contains only digits 0-9, '+' and '*' only.
+- The count of all operators ('+' and '*') in the math expression is greater than or equal to 1 and is less than or equal to 15.
+- The integer operands in the expression are in the inclusive range [0, 9].
+- The integer result is in the range of [0, 1000].
+- The integer array parameter `answers` length is equal to the integer parameter `n`.
+- The integer array parameter `answers` values are greater than or equal to 0 and are less than or equal to 1000.
 - The integer result is the sum of the points of the students.
-- If an answer in the integer array parameter `answers` equals the correct answer of the expression, the student is rewarded 5 points.
-- If an answer in the integer array parameter `answers` could be interpreted as if the student applied the operators in the wrong order but had correct arithmetic, the student is rewarded 2 points.
-- If an answer in the integer array parameter `answers` does not fall into the above categories, the student is rewarded 0 points.
+- If an answer equals the correct answer of the expression, the student is rewarded 5 points.
+- If the answer could be interpreted as if the student applied the operators in the wrong order but had correct arithmetic, the student is rewarded 2 points.
+- If the answer does not fall into the above categories, the student is rewarded 0 points.

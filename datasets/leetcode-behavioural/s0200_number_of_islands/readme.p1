@@ -1,9 +1,6 @@
 - The integer result is the number of islands in the 2D binary grid `grid`.
-- An island is formed by connecting adjacent lands horizontally or vertically.
-- All four edges of the grid are surrounded by water.
+- An island is a group of adjacent '1's (land) surrounded by '0's (water) horizontally or vertically.
+- All four edges of the grid are considered surrounded by water.
 - The input grid is represented as a 2D array of characters.
-- The characters in the grid are either '1' (land) or '0' (water).
-- The grid has a height of `m` and a width of `n`, where `1 <= m, n <= 300`.
-- The grid is surrounded by water on all four edges.
-- Islands are formed by connecting adjacent lands horizontally or vertically.
-- The number of islands is the count of separate land masses in the grid.
+- The length of the grid rows `m` is greater than or equal to 1 and is less than or equal to 300.
+- The length of the grid columns `n` is greater than or equal to 1 and is less than or equal to 300.

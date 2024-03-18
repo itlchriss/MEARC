@@ -1,6 +1,12 @@
-- If the strings `s` and `t` represent the same rational number, the boolean result is true.
-- The rational numbers represented by the strings `s` and `t` may include an integer part, a non-repeating part, and a repeating part.
-- The integer part does not have leading zeros except for zero itself.
-- The length of the integer part is between 1 and 4 characters.
-- The length of the non-repeating part is between 0 and 4 characters.
-- The length of the repeating part is between 1 and 4 characters.
+- The string parameters `s` and `t` represent non-negative rational numbers.
+- The rational numbers can be represented using up to three parts: `<IntegerPart>`, `<NonRepeatingPart>`, and a `<RepeatingPart>`.
+- The number can be represented in one of the following three ways:
+    - `<IntegerPart>`
+    - `<IntegerPart>.<NonRepeatingPart>`
+    - `<IntegerPart>.<NonRepeatingPart>(<RepeatingPart>)`
+- The repeating portion of a decimal expansion is denoted within a pair of round brackets.
+- The method returns true if and only if the strings `s` and `t` represent the same number.
+- The `<IntegerPart>` does not have leading zeros except for zero itself.
+- The length of `<IntegerPart>` is between 1 and 4.
+- The length of `<NonRepeatingPart>` is between 0 and 4.
+- The length of `<RepeatingPart>` is between 1 and 4.

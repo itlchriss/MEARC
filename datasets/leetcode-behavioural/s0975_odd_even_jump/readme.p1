@@ -1,6 +1,7 @@
 - The integer array parameter `arr` must not be null.
-- The integer result is the number of good starting indices where, starting from that index, the end of the array can be reached by following the odd and even jump rules.
-- A starting index is considered good if, starting from that index, the end of the array can be reached by jumping some number of times (possibly 0 or more than once).
-- During odd-numbered jumps, the jump is made to the index `j` such that `arr[i] <= arr[j]` and `arr[j]` is the smallest possible value. If there are multiple such indices `j`, the jump is made to the smallest such index `j`.
-- During even-numbered jumps, the jump is made to the index `j` such that `arr[i] >= arr[j]` and `arr[j]` is the largest possible value. If there are multiple such indices `j`, the jump is made to the smallest such index `j`.
+- The integer result is the number of good starting indices where starting from that index, the end of the array can be reached by jumping some number of times.
+- A starting index is considered good if, starting from that index, the end of the array can be reached by following the odd and even jump rules.
+- During odd-numbered jumps, the jump is made to the index `j` such that `arr[i] <= arr[j]` and `arr[j]` is the smallest possible value.
+- During even-numbered jumps, the jump is made to the index `j` such that `arr[i] >= arr[j]` and `arr[j]` is the largest possible value.
+- If there are multiple indices `j` that satisfy the conditions for jumping, the smallest index `j` is chosen.
 - It may be the case that for some index `i`, there are no legal jumps.

@@ -1,5 +1,6 @@
-- The string parameter `s` must consist of lowercase English letters.
-- The 2D integer array parameter `shifts` must have a length greater than or equal to 1 and less than or equal to 50000.
-- Each element in the 2D integer array parameter `shifts` must have a length of 3.
-- The integer values in each element of the 2D integer array parameter `shifts` must satisfy the constraints: 0 <= start_i <= end_i < s.length and 0 <= direction_i <= 1.
-- The final string result after applying all shifts to `s` must consist of lowercase English letters.
+- The string parameter `s` consists of lowercase English letters.
+- The 2D integer array parameter `shifts` has a length greater than or equal to 1 and is less than or equal to 50000.
+- Each element in the 2D integer array parameter `shifts` has a length of 3.
+- The integer values in the 2D integer array parameter `shifts` are such that 0 is less than or equal to the first element, which is less than or equal to the second element, and the second element is less than the length of the string parameter `s`.
+- The integer values in the 2D integer array parameter `shifts` are such that the third element is either 0 or 1.
+- The string result is the final string after applying all the shifts specified in the 2D integer array parameter `shifts` to the string parameter `s`.

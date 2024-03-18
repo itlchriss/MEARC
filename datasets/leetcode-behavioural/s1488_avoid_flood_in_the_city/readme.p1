@@ -2,7 +2,6 @@
 - The length of the integer array parameter `rains` is greater than or equal to 1 and is less than or equal to 100000.
 - The integer array result `ans` must not be null.
 - The length of the integer array result `ans` is equal to the length of the integer array parameter `rains`.
-- If the integer parameter `rains[i]` is greater than 0, the integer array result `ans[i]` is -1.
+- If the integer parameter `rains[i]` is greater than 0, the integer array result `ans[i]` is equal to -1.
 - If the integer parameter `rains[i]` is equal to 0, the integer array result `ans[i]` is the lake chosen to dry on the `ith` day.
-- If there are multiple valid answers, any of them can be returned.
-- If it is impossible to avoid flood, an empty array is returned.
+- If it is impossible to avoid flood, the integer array result is an empty array.

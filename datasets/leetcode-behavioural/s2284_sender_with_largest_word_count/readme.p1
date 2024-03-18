@@ -1,8 +1,9 @@
 - The string array parameter `messages` and `senders` must not be null.
-- The length of the string array parameter `messages` and `senders` must be equal.
-- Each element in the string array parameter `messages` must consist of uppercase and lowercase English letters and spaces.
-- Each element in the string array parameter `senders` must consist of uppercase and lowercase English letters only.
-- All words in each element of the string array parameter `messages` must be separated by a single space.
-- Each element in the string array parameter `messages` must not have leading or trailing spaces.
-- The string result is the sender with the largest word count.
-- If there is more than one sender with the largest word count, the sender with the lexicographically largest name is returned.
+- The length of the string array parameter `messages` is equal to the length of the string array parameter `senders`.
+- Each element in the string array parameter `messages` is a message sent by the corresponding sender in the string array parameter `senders`.
+- A message is a list of words separated by a single space with no leading or trailing spaces.
+- The word count of a sender is the total number of words sent by the sender.
+- The sender with the largest word count is returned.
+- If there is more than one sender with the largest word count, the one with the lexicographically largest name is returned.
+- Uppercase letters come before lowercase letters in lexicographical order.
+- The output is a string representing the sender with the largest word count.

@@ -1,8 +1,7 @@
 Method behavioural specifications:
 - The integer array parameter `arr` must not be null.
-- The long result is the score obtained after applying the algorithm described in the business requirement.
+- The integer result is the score obtained after applying the algorithm described in the business requirement.
 - The score is calculated by choosing the smallest unmarked integer in the array, adding its value to the score, and marking the chosen element and its two adjacent elements if they exist.
 - The process is repeated until all elements in the array are marked.
 - If there is a tie for the smallest unmarked integer, the one with the smallest index is chosen.
-- The algorithm ensures that each element is marked only once.
-- The score is the sum of values of all chosen integers during the process.
+- The score is the sum of all values of the chosen integers during the process.

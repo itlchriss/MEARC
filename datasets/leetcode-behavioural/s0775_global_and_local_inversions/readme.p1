@@ -1,6 +1,8 @@
 - The integer array parameter `nums` represents a permutation of all integers in the range `[0, n - 1]`.
-- The boolean result is true if the number of global inversions is equal to the number of local inversions.
+- The boolean result is equal to the true literal if the number of global inversions is equal to the number of local inversions.
+- The boolean result is equal to the false literal if the number of global inversions is not equal to the number of local inversions.
 - The number of global inversions is the number of different pairs `(i, j)` where `0 <= i < j < n` and `nums[i] > nums[j]`.
 - The number of local inversions is the number of indices `i` where `0 <= i < n - 1` and `nums[i] > nums[i + 1]`.
-- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100000.
-- All integers in the integer array parameter `nums` are unique.
+- The length of the integer array parameter `nums` is equal to `n`.
+- The integer array parameter `nums` contains unique integers.
+- The integer array parameter `nums` contains integers in the range `[0, n - 1]`.

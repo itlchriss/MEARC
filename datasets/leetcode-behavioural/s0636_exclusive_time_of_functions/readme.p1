@@ -1,9 +1,14 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
 - The length of the list parameter `logs` is greater than or equal to 1 and is less than or equal to 500.
+- Each element in the list parameter `logs` is formatted as a string `"{function_id}:{"start" | "end"}:{timestamp}"`.
 - The integer result is an array where the value at the i-th index represents the exclusive time for the function with ID i.
 - The exclusive time of a function is the sum of execution times for all function calls in the program.
-- The exclusive time includes the time spent in recursive calls.
-- The logs list contains strings formatted as "{function_id}:{"start" | "end"}:{timestamp}".
-- Each function has a corresponding "end" log for each "start" log.
-- No two start events will happen at the same timestamp.
-- No two end events will happen at the same timestamp.
+- The exclusive time is calculated based on the start and end timestamps in the logs.
+- A function can be called multiple times, possibly recursively.
+- The exclusive time includes the time spent by the function itself and any recursive calls it makes.
+- The exclusive time for a function is the total time it spends executing, including any recursive calls.
+- The exclusive time for each function is calculated based on the logs provided.
+- The exclusive time for a function is the difference between the end timestamp and the start timestamp of that function.
+- The exclusive time for a function is the sum of all execution times for that function in the logs.
+- The exclusive time for a function is calculated by considering the timestamps of start and end events for that function.
+- The exclusive time for a function is the total time spent executing that function, including any recursive calls it makes.

@@ -1,6 +1,5 @@
-- The integer array parameter `values` must have a length greater than or equal to 2 and less than or equal to 50000.
-- All values in the integer array parameter `values` must be greater than or equal to 1 and less than or equal to 1000.
-- The integer result is the maximum score of a pair of sightseeing spots calculated as `values[i] + values[j] + i - j`, where `i` and `j` are indices of the sightseeing spots and `i < j`.
-- The maximum score is achieved when the sum of the values of the sightseeing spots minus the distance between them is maximized.
-- The length of the integer array result is 2.
-- All values in the integer array result are unique.
+- The integer array parameter `values` has a length greater than or equal to 2 and less than or equal to 50000.
+- All values in the integer array parameter `values` are greater than or equal to 1 and less than or equal to 1000.
+- The integer result is the maximum score of a pair of sightseeing spots.
+- The maximum score of a pair of sightseeing spots is calculated as `values[i] + values[j] + i - j`, where `i` and `j` are indices of the sightseeing spots and `i < j`.
+- The maximum score of a pair of sightseeing spots is the maximum value obtained from the calculation `values[i] + values[j] + i - j` for all valid pairs of `i` and `j`.

@@ -1,5 +1,4 @@
 - The integer 2D array parameter `grid` must not be null.
-- The integer 2D array parameter `grid` must have a length of `row` and each row must have a length of `col`.
-- The integer values in the integer 2D array parameter `grid` must be between 0 and 15.
-- The integer result is the number of 3 x 3 magic square subgrids in the given `grid`.
-- Each subgrid must be contiguous within the `grid`.
+- The integer 2D array parameter `grid` must have a row length and column length greater than or equal to 1 and less than or equal to 10.
+- All values in the integer 2D array parameter `grid` must be greater than or equal to 0 and less than or equal to 15.
+- The integer result is the number of 3 x 3 magic square subgrids inside the integer 2D array parameter `grid`.

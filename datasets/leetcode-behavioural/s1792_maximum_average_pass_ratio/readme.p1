@@ -1,6 +1,8 @@
-- The integer 2D array parameter `classes` must not be null.
-- Each element in the integer 2D array parameter `classes` must contain exactly 2 elements.
-- The integer parameter `extraStudents` is greater than or equal to 1 and is less than or equal to 100000.
-- The integer result is the maximum possible average pass ratio after assigning the `extraStudents` students.
-- The average pass ratio is calculated by summing the pass ratios of all classes and dividing by the number of classes.
-- The pass ratio of a class is the number of students passing the exam divided by the total number of students in the class.
+- The integer array parameter `classes` must not be null.
+- The integer array parameter `classes` must have a length greater than or equal to 1 and less than or equal to 100000.
+- Each element in the integer array parameter `classes` must be an array of length 2.
+- The integer parameter `pass_i` in each element of the integer array parameter `classes` must be greater than or equal to 1 and less than or equal to the corresponding `total_i`.
+- The integer parameter `total_i` in each element of the integer array parameter `classes` must be greater than or equal to 1 and less than or equal to 100000.
+- The integer parameter `extraStudents` must be greater than or equal to 1 and less than or equal to 100000.
+- The double result is the maximum possible average pass ratio after assigning the `extraStudents` students.
+- The double result must be within 10^-5 of the actual answer.

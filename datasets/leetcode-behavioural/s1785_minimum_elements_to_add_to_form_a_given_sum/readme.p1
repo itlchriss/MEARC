@@ -1,6 +1,6 @@
-- The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100000.
-- The integer parameter `limit` must be greater than or equal to 1 and less than or equal to 1000000.
-- All values in the integer array parameter `nums` must be greater than or equal to -limit and less than or equal to limit.
-- The integer parameter `goal` must be greater than or equal to -1000000000 and less than or equal to 1000000000.
+- The integer array parameter `nums` has a length greater than or equal to 1 and less than or equal to 100000.
+- The integer parameter `limit` is greater than or equal to 1 and less than or equal to 1000000.
+- All values in the integer array parameter `nums` are greater than or equal to -limit and less than or equal to limit.
+- The integer parameter `goal` is greater than or equal to -1000000000 and less than or equal to 1000000000.
 - The integer result is the minimum number of elements needed to add to the array `nums` to make the sum equal to `goal`.
-- The sum of the array after adding the elements must maintain the property that `abs(nums[i]) <= limit`.
+- The array `nums` must maintain its property that the absolute value of each element is less than or equal to `limit`.

@@ -1,7 +1,7 @@
 - The integer result is the index of the word in the `sentence` where the `searchWord` is a prefix of this word, with indexing starting from 1.
 - If the `searchWord` is a prefix of more than one word in the `sentence`, the index of the first word (minimum index) is returned.
-- If there is no word in the `sentence` where the `searchWord` is a prefix, the result is -1.
-- The length of the `sentence` is greater than or equal to 1 and is less than or equal to 100.
-- The length of the `searchWord` is greater than or equal to 1 and is less than or equal to 10.
-- The `sentence` consists of lowercase English letters and spaces.
-- The `searchWord` consists of lowercase English letters.
+- If the `searchWord` is not a prefix of any word in the `sentence`, -1 is returned.
+- The `sentence` parameter consists of lowercase English letters and spaces.
+- The `searchWord` parameter consists of lowercase English letters.
+- The length of the `sentence` parameter is between 1 and 100.
+- The length of the `searchWord` parameter is between 1 and 10.

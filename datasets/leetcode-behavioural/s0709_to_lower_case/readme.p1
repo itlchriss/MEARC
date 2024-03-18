@@ -1,4 +1,5 @@
-- The string parameter `s` must not be null.
-- The string result is the string parameter `s` with all uppercase letters replaced by their corresponding lowercase letters.
+- If the string parameter `s` contains uppercase letters, the string result is equal to the string parameter `s` with all uppercase letters replaced by their corresponding lowercase letters.
+- If the string parameter `s` does not contain any uppercase letters, the string result is equal to the string parameter `s`.
 - The length of the string result is equal to the length of the string parameter `s`.
-- The string result contains only printable ASCII characters.
+- The string result consists of printable ASCII characters.
+- The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 100.

@@ -1,8 +1,10 @@
-- If the input string `colors` is empty, the boolean result is false.
-- If the input string `colors` has a length of 1, the boolean result is false.
-- If the input string `colors` has a length greater than 1, the boolean result is determined based on the game rules described in the context.
-- Alice moves first and can only remove a piece colored 'A' if both its neighbors are also colored 'A'.
-- Bob moves second and can only remove a piece colored 'B' if both its neighbors are also colored 'B'.
-- Players cannot remove pieces from the edge of the line.
+- If the input string `colors` is empty, the boolean result is equal to false.
+- If the input string `colors` contains only one character, the boolean result is equal to false.
+- If the input string `colors` contains only two characters and both characters are the same, the boolean result is equal to false.
+- If the input string `colors` contains only two characters and both characters are different, the boolean result is is equal to true.
+- If the input string `colors` contains more than two characters, the boolean result is determined based on the game rules described in the context.
+- Alice can only remove a piece colored 'A' if both its neighbors are also colored 'A'.
+- Bob can only remove a piece colored 'B' if both its neighbors are also colored 'B'.
+- Alice moves first.
 - If a player cannot make a move on their turn, that player loses and the other player wins.
-- The boolean result is true if Alice wins the game, and false if Bob wins the game.
+- The boolean result is true if Alice wins and false if Bob wins.

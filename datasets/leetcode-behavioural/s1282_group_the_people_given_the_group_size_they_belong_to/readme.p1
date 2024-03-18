@@ -1,6 +1,6 @@
 - The integer array parameter `groupSizes` must not be null.
-- The size of the resulting list of groups is equal to the length of the integer array parameter `groupSizes`.
-- Each group in the resulting list contains people whose group size matches the corresponding value in the integer array parameter `groupSizes`.
-- Each person appears in exactly one group.
-- Every person is in a group.
+- The size of the integer collection result is equal to the length of integer array parameter `groupSizes`.
+- Each group in the result list must contain the number of people specified by the corresponding element in the `groupSizes` array.
+- Each person should appear in exactly one group.
+- Every person must be in a group.
 - If there are multiple valid solutions, any of them can be returned.

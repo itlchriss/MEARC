@@ -1,6 +1,5 @@
 - The integer 2D array parameter `nums` must not be null.
 - The integer result is the final score after performing the specified operations on the 2D integer array `nums`.
-- For each row in the matrix, the largest number is selected and removed. In case of a tie, any of the tied numbers can be chosen.
-- The highest number amongst all those removed in the previous step is identified and added to the score.
-- The process continues until the matrix becomes empty.
-- The final score is the sum of all the highest numbers selected from each row.
+- The final score is the sum of the highest numbers selected from each row in the matrix.
+- In case of a tie for the highest number in a row, any of the tied numbers can be selected.
+- The final score is the sum of all the highest numbers selected from each row in the matrix.

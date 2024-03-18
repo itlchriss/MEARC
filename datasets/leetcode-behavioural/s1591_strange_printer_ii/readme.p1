@@ -1,4 +1,5 @@
-- The boolean result is true if it is possible to print the matrix `targetGrid`.
-- The boolean result is false if it is impossible to form `targetGrid` because it is not allowed to print the same color in different turns.
-- The integer matrix parameter `targetGrid` must have dimensions `m x n` where `m` and `n` are greater than or equal to 1 and less than or equal to 60.
-- All values in the integer matrix parameter `targetGrid` must be greater than or equal to 1 and less than or equal to 60.
+- The boolean result is equal to the true literal if it is possible to print the matrix `targetGrid`.
+- The boolean result is equal to the false literal if it is not possible to print the matrix `targetGrid`.
+- The integer matrix parameter `targetGrid` must have dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
+- All values in the integer matrix parameter `targetGrid` are greater than or equal to 1 and are less than or equal to 60.
+- The same color cannot be used again once it has been used for printing a rectangular pattern on the grid.

@@ -1,7 +1,8 @@
 - The integer array parameter `edges` must not be null.
-- The integer array parameter `edges` must have a size of `n`.
-- The integer array parameter `edges` must contain values from -1 to n-1.
-- The integer parameters `node1` and `node2` must be greater than or equal to 0 and less than n.
+- The integer array parameter `edges` must have a size greater than or equal to 2 and less than or equal to 100000.
+- The integer array parameter `edges` must contain values between -1 and the size of the array.
+- The integer array parameter `edges` must not have self-referencing edges (edges[i] != i).
+- The integer parameters `node1` and `node2` must be greater than or equal to 0 and less than the size of the array.
 - The integer result is the index of the node that can be reached from both `node1` and `node2`, such that the maximum between the distance from `node1` to that node, and from `node2` to that node is minimized.
 - If there are multiple answers, the result is the node with the smallest index.
 - If no possible answer exists, the result is -1.

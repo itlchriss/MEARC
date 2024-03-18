@@ -1,9 +1,7 @@
-- The integer 2D array parameter `events` must have a length greater than or equal to 2 and less than or equal to 100000.
-- Each element in the integer 2D array parameter `events` must have a length of 3.
-- The integer values in the `events` array must satisfy the following constraints:
-    - The start time `startTime_i` is greater than or equal to 1 and less than or equal to the end time `endTime_i`.
-    - The end time `endTime_i` is greater than or equal to the start time `startTime_i` and less than or equal to 1000000000.
-    - The value `value_i` is greater than or equal to 1 and less than or equal to 1000000.
+- The integer array parameter `events` must not be null.
+- The length of the integer array parameter `events` is greater than or equal to 2 and is less than or equal to 100000.
+- Each element in the integer array parameter `events` is an array of length 3.
+- The integer parameter `startTime` in each element of the integer array parameter `events` is greater than or equal to 1 and is less than or equal to 1000000000.
+- The integer parameter `endTime` in each element of the integer array parameter `events` is greater than or equal to the corresponding `startTime` and is less than or equal to 1000000000.
+- The integer parameter `value` in each element of the integer array parameter `events` is greater than or equal to 1 and is less than or equal to 1000000.
 - The integer result is the maximum sum of values from attending at most two non-overlapping events.
-- The start time and end time of events are inclusive, meaning you cannot attend two events where one ends and the other starts at the same time.
-- If an event with end time `t` is attended, the next event must start at or after `t + 1`.

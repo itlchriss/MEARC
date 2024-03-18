@@ -1,6 +1,7 @@
 - The integer parameter `capacity` is greater than or equal to 1 and is less than or equal to 100000.
-- The length of the integer array parameter `trips` is greater than or equal to 1 and is less than or equal to 1000.
+- The integer array parameter `trips` has a length greater than or equal to 1 and less than or equal to 1000.
 - Each element in the integer array parameter `trips` has a length of 3.
-- The integer parameter `numPassengers` in each element of the integer array parameter `trips` is greater than or equal to 1 and is less than or equal to 100.
-- The integer parameters `from` and `to` in each element of the integer array parameter `trips` are greater than or equal to 0 and `from` is less than `to` and `to` is less than or equal to 1000.
-- The boolean result is true if it is possible to pick up and drop off all passengers for all the given trips, and false otherwise.
+- The integer value `numPassengers` in each element of the integer array parameter `trips` is greater than or equal to 1 and is less than or equal to 100.
+- The integer values `from` and `to` in each element of the integer array parameter `trips` are such that `from` is greater than or equal to 0, `to` is greater than `from`, and `to` is less than or equal to 1000.
+- The boolean result is equal to the true literal if it is possible to pick up and drop off all passengers for all the given trips.
+- The boolean result is equal to the false literal if it is not possible to pick up and drop off all passengers for all the given trips.

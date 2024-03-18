@@ -1,4 +1,7 @@
 - The string parameter `s` consists of lowercase English letters.
 - The integer array parameter `shifts` has the same length as the string parameter `s`.
-- Each element in the integer array parameter `shifts` is greater than or equal to 0 and is less than or equal to 10^9.
-- The final string after applying all shifts to the string `s` is returned as the result.
+- The integer array parameter `shifts` contains non-negative integers.
+- The final string result after applying all shifts to the string `s` consists of lowercase English letters.
+- Each letter in the final string result is shifted according to the corresponding value in the `shifts` array.
+- The shifting of a letter wraps around so that 'z' becomes 'a'.
+- The final string result is the concatenation of the shifted letters in `s` after applying all shifts specified in the `shifts` array.

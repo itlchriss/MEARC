@@ -1,11 +1,5 @@
-- The integer arrays `nums1` and `nums2` must have the same length `n`.
-- The integer arrays `nums1` and `nums2` must have a length greater than or equal to 1 and less than or equal to 100000.
-- The integer arrays `nums1` and `nums2` must contain elements greater than or equal to 1 and less than or equal to 10000.
-- The integer result is the maximum possible score obtained by either swapping a subarray between `nums1` and `nums2` or not swapping at all.
+- The integer arrays `nums1` and `nums2` must not be null.
+- The length of the integer arrays `nums1` and `nums2` is equal to `n`.
+- The integer arrays `nums1` and `nums2` contain elements that are greater than or equal to 1 and less than or equal to 10000.
+- The integer result is the maximum possible score obtained by either swapping or not swapping subarrays between `nums1` and `nums2`.
 - The maximum possible score is the maximum of the sum of elements in `nums1` and the sum of elements in `nums2`.
-- The subarray to be swapped is defined by the indices `left` and `right` where `0 <= left <= right < n`.
-- The subarray swap operation can be applied once or not at all.
-- The subarray swap operation involves swapping the elements in the subarray `nums1[left...right]` with the elements in the subarray `nums2[left...right]`.
-- The score calculation involves summing all elements in the resulting arrays after the swap operation.
-- The resulting arrays after the swap operation are used to calculate the maximum possible score.
-- The integer result is greater than or equal to the sum of elements in `nums1` and is greater than or equal to the sum of elements in `nums2`.

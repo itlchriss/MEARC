@@ -1,12 +1,13 @@
+- For each person `i`, the integer array parameter `preferences[i]` contains a list of friends sorted in the order of preference.
+- The integer parameter `n` is always even.
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 500.
-- The length of the integer array parameter `preferences` is equal to `n`.
-- Each sub-array in the integer array parameter `preferences` has a length of `n - 1`.
-- All values in the sub-arrays of the integer array parameter `preferences` are between 0 and `n - 1`.
-- The sub-arrays in the integer array parameter `preferences` do not contain the index of the sub-array.
-- All values in the sub-arrays of the integer array parameter `preferences` are unique.
-- The length of the integer array parameter `pairs` is equal to `n/2`.
-- Each sub-array in the integer array parameter `pairs` has a length of 2.
-- The values in the sub-arrays of the integer array parameter `pairs` are between 0 and `n - 1`.
-- The values in the sub-arrays of the integer array parameter `pairs` are unique.
+- The integer array parameter `preferences` has a length equal to `n`.
+- Each integer array in the integer array parameter `preferences` has a length equal to `n-1`.
+- All values in each integer array in the integer array parameter `preferences` are unique and are within the range from 0 to `n-1`.
+- The integer array parameter `pairs` has a length equal to `n/2`.
+- Each integer array in the integer array parameter `pairs` has a length equal to 2.
+- The values in each integer array in the integer array parameter `pairs` are unique and are within the range from 0 to `n-1`.
 - Each person is contained in exactly one pair.
 - The integer result is the number of unhappy friends.
+- If a friend `x` is paired with `y` and there exists a friend `u` who is paired with `v`, and `x` prefers `u` over `y` and `u` prefers `x` over `v`, then `x` is considered unhappy.
+- The integer result is equal to the number of unhappy friends.

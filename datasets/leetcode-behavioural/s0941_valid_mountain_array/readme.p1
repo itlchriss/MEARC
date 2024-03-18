@@ -1,6 +1,6 @@
 - The integer array parameter `arr` must have a length greater than or equal to 3.
-- There must exist an index `i` such that `0 < i < arr.length - 1` and the following conditions hold:
-    - The elements of the array `arr` from index 0 to index `i` must be in ascending order.
-    - The elements of the array `arr` from index `i` to the last index must be in descending order.
-- If the conditions above are met, the boolean result is true indicating that the array is a valid mountain array.
-- If the conditions are not met, the boolean result is false indicating that the array is not a valid mountain array.
+- There exists an integer `i` such that `0 < i < arr.length - 1` and the following conditions are met:
+    - The elements of the array `arr` from index 0 to index `i` are in ascending order.
+    - The elements of the array `arr` from index `i` to the last index are in descending order.
+- If the conditions above are met, the boolean result is equal to the true literal.
+- If the conditions above are not met, the boolean result is equal to the false literal.

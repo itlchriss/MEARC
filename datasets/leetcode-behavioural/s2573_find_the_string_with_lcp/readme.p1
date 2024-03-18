@@ -1,9 +1,4 @@
-- The string result `word` must be the alphabetically smallest string that corresponds to the given `lcp` matrix.
-- If there is no string that corresponds to the given `lcp` matrix, the string result is an empty string.
-- The `lcp` matrix must be a square matrix with dimensions `n x n`, where `n` is the length of the string.
-- Each element in the `lcp` matrix must be between 0 and `n`.
-- The string `word` must consist of lowercase English letters.
-- The string `word` must have a length of `n`.
-- The lexicographical order of the string `word` is determined by the position of the letters in the alphabet.
-- The string `word` must satisfy the condition that the longest common prefix between substrings `word[i,n-1]` and `word[j,n-1]` is equal to the corresponding value in the `lcp` matrix at position `[i][j]`.
-- The string `word` must be constructed based on the given `lcp` matrix.
+- The integer matrix parameter `lcp` must be a square matrix (n x n) where n is greater than or equal to 1 and is less than or equal to 1000.
+- All values in the integer matrix parameter `lcp` must be greater than or equal to 0 and less than or equal to n.
+- The string result is the alphabetically smallest string `word` that corresponds to the `lcp` matrix.
+- If there is no such string that corresponds to the `lcp` matrix, the result is an empty string.

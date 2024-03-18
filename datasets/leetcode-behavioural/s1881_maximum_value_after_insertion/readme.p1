@@ -1,4 +1,11 @@
 - The string parameter `n` represents a very large integer and is in the range of [1, 9].
 - The integer parameter `x` is in the range of [1, 9].
-- The string result is the maximum value of `n` after inserting `x` anywhere in the decimal representation of `n`.
-- The digit `x` cannot be inserted to the left of the negative sign in case `n` represents a negative number.
+- The string parameter `n` may represent a negative number, but `x` cannot be inserted to the left of the negative sign.
+- The method returns a string representing the maximum value of `n` after inserting `x` anywhere in the decimal representation of `n`.
+- The method must handle cases where multiple insertions of `x` can result in different maximum values of `n`.
+- The method must handle cases where inserting `x` at different positions in `n` can result in the same maximum value.
+- The method must handle cases where the maximum value of `n` after inserting `x` is negative.
+- The method must handle cases where the length of the string parameter `n` is within the range of [1, 100000].
+- The method must handle cases where the integer parameter `x` is within the range of [1, 9].
+- The method must handle cases where the digits in the string parameter `n` are within the range of [1, 9].
+- The method must handle cases where the string parameter `n` is a valid representation of an integer.

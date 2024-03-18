@@ -1,4 +1,4 @@
-- The integer array parameter `arr` must have a length that is even.
-- All values in the integer array parameter `arr` must be within the range of -100000 to 100000.
-- The boolean result is true if it is possible to reorder the integer array `arr` such that `arr[2 * i + 1] = 2 * arr[2 * i]` for every `0 <= i < len(arr) / 2`.
-- The boolean result is false otherwise.
+- The length of the integer array parameter `arr` is even.
+- All values in the integer array parameter `arr` are greater than or equal to -100000 and are less than or equal to 100000.
+- The boolean result is equal to the true literal if it is possible to reorder the integer array parameter `arr` such that `arr[2 * i + 1] = 2 * arr[2 * i]` for every `0 <= i < len(arr) / 2`.
+- The boolean result is equal to the false literal if it is not possible to reorder the integer array parameter `arr` as specified.

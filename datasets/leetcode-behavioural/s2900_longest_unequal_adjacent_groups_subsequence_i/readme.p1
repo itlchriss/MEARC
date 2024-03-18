@@ -1,6 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100.
 - The length of the string array parameter `words` is equal to the integer parameter `n`.
 - The length of the binary array parameter `groups` is equal to the integer parameter `n`.
-- The string array result contains words corresponding to the indices in the selected subsequence.
-- The selected subsequence is the longest subsequence where adjacent groups are not equal.
+- The result is a string array containing the words corresponding to the indices in the selected subsequence.
+- The selected subsequence is the longest subsequence of indices where `groups[i] != groups[i+1]` for each `i` where `0 < i + 1 < k`.
 - If there are multiple valid answers, any of them can be returned.

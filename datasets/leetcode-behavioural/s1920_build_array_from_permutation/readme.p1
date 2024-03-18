@@ -1,5 +1,6 @@
 - The integer array parameter `nums` is a zero-based permutation with distinct integers from 0 to `nums.length - 1`.
 - The length of the integer array result `ans` is the same as the length of the integer array parameter `nums`.
-- For each index `i` from 0 to `nums.length - 1`, the integer array result `ans[i]` is equal to `nums[nums[i]]`.
-- The integer array result `ans` is returned.
-- The constraints are that `1 <= nums.length <= 1000` and `0 <= nums[i] < nums.length`.
+- For each index `i` from 0 to `nums.length - 1`, the value at index `i` in the integer array result `ans` is equal to the value at index `nums[i]` in the integer array parameter `nums`.
+- The integer array result `ans` is built by assigning `ans[i] = nums[nums[i]]` for each index `i` from 0 to `nums.length - 1`.
+- The elements in the integer array result `ans` are in the same order as specified by the above assignment.
+- The integer array result `ans` does not use any extra space, i.e., it is built in-place without using additional memory (O(1) memory).

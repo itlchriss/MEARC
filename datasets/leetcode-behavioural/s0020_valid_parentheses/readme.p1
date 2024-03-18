@@ -1,3 +1,6 @@
-- The string parameter `s` must not be null.
-- The boolean result is true if the input string `s` contains valid parentheses according to the given constraints.
-- The boolean result is false if the input string `s` contains invalid parentheses according to the given constraints.
+- If the input string parameter `s` contains only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`, the boolean result is equal to the true literal.
+- If the input string parameter `s` is valid according to the following conditions:
+    1. Open brackets must be closed by the same type of brackets.
+    2. Open brackets must be closed in the correct order.
+  the boolean result is equal to the true literal.
+- If the input string parameter `s` is not valid according to the above conditions, the boolean result is equal to the false literal.

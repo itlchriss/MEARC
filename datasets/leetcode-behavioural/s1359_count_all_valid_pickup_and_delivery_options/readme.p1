@@ -1,2 +1,5 @@
+Method behavioural specifications:
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 500.
 - The integer result is the count of all valid pickup/delivery sequences modulo 10^9 + 7.
+- Each valid sequence consists of n pairs of pickup and delivery services, where delivery(i) is always after pickup(i).
+- The output format should be a list with '-' as bullets.

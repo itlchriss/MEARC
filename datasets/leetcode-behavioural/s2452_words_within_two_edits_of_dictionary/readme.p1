@@ -1,5 +1,5 @@
-- The length of each string in the string array parameter `queries` and `dictionary` is equal.
-- All strings in the string array parameter `queries` and `dictionary` are composed of lowercase English letters.
-- The length of the string arrays `queries` and `dictionary` is between 1 and 100.
-- The string array result contains all words from the string array parameter `queries` that match with some word from the string array parameter `dictionary` after a maximum of two edits.
-- The order of words in the string array result is the same as they appear in the string array parameter `queries`.
+- The length of each string in the string array parameter `queries` and the string array parameter `dictionary` is equal.
+- All strings in the string array parameter `queries` and the string array parameter `dictionary` are composed of lowercase English letters.
+- The length of the string array result is less than or equal to the length of the string array parameter `queries`.
+- The strings in the string array result are in the same order as they appear in the string array parameter `queries`.
+- Each string in the string array result, after a maximum of two edits, equals some string from the string array parameter `dictionary`.

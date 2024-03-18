@@ -1,10 +1,7 @@
 - The integer array parameter `nums` represents the initial positions of marbles.
-- The integer arrays `moveFrom` and `moveTo` are of equal length and represent the steps to move marbles from one position to another.
+- The integer arrays `moveFrom` and `moveTo` represent the steps to move marbles from one position to another.
+- The length of the `moveFrom` array is equal to the length of the `moveTo` array.
 - At each step `i`, all marbles at position `moveFrom[i]` are moved to position `moveTo[i]`.
 - The final output is a sorted list of occupied positions after all steps are completed.
 - A position is considered occupied if there is at least one marble in that position.
-- The output list contains unique positions where marbles are present.
-- The output list is sorted in ascending order.
-- The length of the output list is less than or equal to the length of the input array `nums`.
-- The input arrays `nums`, `moveFrom`, and `moveTo` contain integers within the specified constraints.
-- The method `relocateMarbles` returns a list of integers representing the final occupied positions after all steps are completed.
+- The output list contains positions that are occupied by marbles after all steps are completed.

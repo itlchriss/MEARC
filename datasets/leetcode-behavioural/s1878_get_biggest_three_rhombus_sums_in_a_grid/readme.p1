@@ -1,10 +1,10 @@
+Method behavioural specifications:
 - The integer matrix parameter `grid` must not be null.
 - The integer matrix parameter `grid` must have dimensions `m x n`.
-- The integer result is an array of the three biggest distinct rhombus sums in descending order.
+- The integer result is an array containing the three biggest distinct rhombus sums in descending order.
 - If there are less than three distinct values, the result array contains all of them.
 - The rhombus sum is the sum of the elements that form the border of a regular rhombus shape in the grid.
-- The rhombus shape must have the shape of a square rotated 45 degrees with each of the corners centered in a grid cell.
+- The rhombus must have the shape of a square rotated 45 degrees with each of the corners centered in a grid cell.
 - The rhombus can have an area of 0.
 - The result array contains the three biggest distinct rhombus sums.
-- The result array is in descending order.
-- The result array contains integers.
+- The result array is sorted in descending order.

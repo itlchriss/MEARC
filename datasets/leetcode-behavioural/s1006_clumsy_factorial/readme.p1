@@ -1,8 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.
 - The integer result is the clumsy factorial of the integer parameter `n`.
-- The clumsy factorial is calculated using the integers in decreasing order with the operations '*', '/', '+', and '-' in that fixed rotation.
-- The operations are applied following the usual order of operations of arithmetic.
-- Multiplication and division steps are processed before addition or subtraction steps.
-- Multiplication and division steps are processed from left to right.
+- The integer result is calculated using the following operations in order: multiply `'*'`, divide `'/'`, add `'+'`, and subtract `'-'`.
 - The division used is floor division.
-- The output format should be a list with '-' as bullets.
+- All multiplication and division steps are performed before any addition or subtraction steps.
+- Multiplication and division steps are processed from left to right.

@@ -1,6 +1,6 @@
 - The integer parameter `n` is greater than or equal to 3 and is less than or equal to 100000.
 - The length of the 2D integer array parameter `edges` is less than or equal to 100000.
 - Each element in the 2D integer array parameter `edges` has a length of 3.
-- The integer parameters `src1`, `src2`, and `dest` are pairwise distinct and are greater than or equal to 0 and less than `n - 1`.
+- The integer parameters `src1`, `src2`, and `dest` are pairwise distinct and are greater than or equal to 0 and are less than `n - 1`.
 - The integer result is the minimum weight of a subgraph of the graph such that it is possible to reach `dest` from both `src1` and `src2` via a set of edges of this subgraph.
-- If such a subgraph does not exist, the integer result is -1.
+- If such a subgraph does not exist, the integer result is equal to -1.

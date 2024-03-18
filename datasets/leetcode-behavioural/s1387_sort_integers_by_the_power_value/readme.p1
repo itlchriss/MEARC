@@ -1,7 +1,10 @@
 - The integer parameter `lo` is greater than or equal to 1 and is less than or equal to 1000.
 - The integer parameter `hi` is greater than or equal to 1 and is less than or equal to 1000.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to the difference between `hi` and `lo` plus 1.
-- The integer result is the `k`th integer in the range `[lo, hi]` sorted by the power value.
-- The power of an integer `x` is defined as the number of steps needed to transform `x` into `1` using the given steps.
-- The power value of an integer `x` will fit in a 32-bit signed integer.
-- For any integer `x` in the range `[lo, hi]`, it is guaranteed that `x` will transform into `1` using the given steps.
+- The integer result is the `k`-th integer in the range `[lo, hi]` sorted by the power value.
+- The power of an integer `x` is defined as the number of steps needed to transform `x` into `1` using the following steps:
+    - if `x` is even then `x = x / 2`
+    - if `x` is odd then `x = 3 * x + 1`
+- For any integer `x` in the range `[lo, hi]`, it is guaranteed that `x` will transform into `1` using the defined steps and that the power of `x` will fit in a 32-bit signed integer.
+- If two or more integers have the same power value, they are sorted in ascending order.
+- The result is the `k`-th integer in the range `[lo, hi]` after sorting by the power value.

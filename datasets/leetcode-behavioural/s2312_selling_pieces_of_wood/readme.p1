@@ -1,9 +1,9 @@
 - The integer parameter `m` is greater than or equal to 1 and is less than or equal to 200.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 200.
-- The integer array parameter `prices` has a length greater than or equal to 1 and less than or equal to 20000.
-- Each element in the integer array `prices` has a length of 3.
-- The first element of each sub-array in `prices` is greater than or equal to 1 and is less than or equal to `m`.
-- The second element of each sub-array in `prices` is greater than or equal to 1 and is less than or equal to `n`.
-- The third element of each sub-array in `prices` is greater than or equal to 1 and is less than or equal to 1000000.
-- All shapes of wood represented by `(hi, wi)` in `prices` are pairwise distinct.
+- The length of the 2D integer array parameter `prices` is greater than or equal to 1 and is less than or equal to 20000.
+- Each element in the 2D integer array parameter `prices` has a length of 3.
+- The first element of each inner array in the 2D integer array parameter `prices` is greater than or equal to 1 and is less than or equal to `m`.
+- The second element of each inner array in the 2D integer array parameter `prices` is greater than or equal to 1 and is less than or equal to `n`.
+- The third element of each inner array in the 2D integer array parameter `prices` is greater than or equal to 1 and is less than or equal to 1000000.
+- All shapes of wood represented by the pairs `(h_i, w_i)` in the 2D integer array parameter `prices` are unique.
 - The long result is the maximum money that can be earned after cutting an `m x n` piece of wood according to the given prices.

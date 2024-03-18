@@ -1,7 +1,9 @@
 - The long result is the number of pairs of nodes (u, v) such that u < v and the characters assigned to edges on the path from u to v can be rearranged to form a palindrome.
 - The integer list parameter `parent` represents a valid tree.
-- The integer list parameter `parent` has a length of n where n is greater than or equal to 1 and is less than or equal to 100000.
 - The string parameter `s` consists of only lowercase English letters.
-- The length of the string parameter `s` is equal to the length of the integer list parameter `parent`.
-- The characters assigned to edges on the path from u to v can be rearranged to form a palindrome if and only if the characters form a palindrome.
-- The characters assigned to edges on the path from u to v can be rearranged to form a palindrome if and only if the characters can be rearranged to read the same backwards as forwards.
+- The length of the integer list parameter `parent` is equal to the length of the string parameter `s`.
+- The integer list parameter `parent` has a size of n where 1 <= n <= 10^5.
+- The integer values in the integer list parameter `parent` are between 0 and n - 1.
+- The integer value at index 0 of the integer list parameter `parent` is equal to -1.
+- The characters in the string parameter `s` are lowercase English letters.
+- The number of pairs of nodes (u, v) is returned as a long result.

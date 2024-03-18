@@ -2,4 +2,6 @@
 - The integer array parameter `positions` must not be null.
 - The length of the integer array parameter `positions` is greater than or equal to 1 and is less than or equal to 50.
 - Each element in the integer array parameter `positions` is an array of length 2.
-- The integer values in each element of the integer array parameter `positions` are greater than or equal to 0 and are less than or equal to 100.
+- The integer values in the integer array parameter `positions` are greater than or equal to 0 and are less than or equal to 100.
+- The double result is within 10^-5 of the actual value.
+- The method signature is public double getMinDistSum(int[][] positions).

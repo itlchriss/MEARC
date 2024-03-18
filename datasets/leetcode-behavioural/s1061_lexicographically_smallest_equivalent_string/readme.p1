@@ -1,7 +1,7 @@
 - The string parameters `s1`, `s2`, and `baseStr` must consist of lowercase English letters.
-- The length of the string parameters `s1`, `s2`, and `baseStr` must be between 1 and 1000.
-- The characters in `s1[i]` and `s2[i]` are considered equivalent.
-- The equivalence relation between characters must follow reflexivity, symmetry, and transitivity.
-- The lexicographically smallest equivalent string of `baseStr` must be returned based on the equivalency information from `s1` and `s2`.
-- The characters in each group of equivalent characters must be sorted in lexicographical order.
-- The output string must have the same length as `baseStr`.
+- The length of the string parameters `s1`, `s2`, and `baseStr` is greater than or equal to 1 and is less than or equal to 1000.
+- The characters in `s1[i]` and `s2[i]` are equivalent characters.
+- The equivalency relation follows reflexivity, symmetry, and transitivity rules.
+- The lexicographically smallest equivalent string of `baseStr` is returned based on the equivalency information from `s1` and `s2`.
+- The characters in each group are equivalent and sorted in lexicographical order.
+- The output string is the lexicographically smallest equivalent string of `baseStr`.

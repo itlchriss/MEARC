@@ -1,8 +1,9 @@
 - The integer array parameter `coins` must not be null.
 - The length of the integer array parameter `coins` is equal to the integer `n`.
 - The integer array parameter `edges` must not be null.
-- The length of the integer 2D array parameter `edges` is equal to `n - 1`.
-- The integer 2D array parameter `edges` contains pairs of integers representing edges between nodes in the tree.
+- The length of the integer array parameter `edges` is equal to `n - 1`.
+- The integer array parameter `edges` contains pairs of integers representing edges between nodes in the tree.
 - The integer array parameter `coins` contains values of either 0 or 1, where 1 indicates the presence of a coin in the vertex.
-- The integer result is the minimum number of edges needed to collect all coins and return to the initial vertex.
-- The result includes counting each edge multiple times if passed multiple times during the traversal.
+- The integer result is the minimum number of edges needed to collect all the coins and return to the initial vertex.
+- The result is calculated based on the given conditions of collecting coins within a distance of at most 2 from the current vertex or moving to adjacent vertices in the tree.
+- If an edge is passed multiple times, it should be counted multiple times in the answer.

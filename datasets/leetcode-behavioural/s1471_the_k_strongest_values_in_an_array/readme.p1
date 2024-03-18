@@ -1,8 +1,9 @@
 - The integer array parameter `arr` must not be null.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array `arr`.
 - The integer array result is of length `k`.
-- The elements in the integer array result are the `k` strongest values in the array `arr`.
-- The strength of a value `arr[i]` is determined by comparing it to the median `m` of the array:
-    - If `|arr[i] - m| > |arr[j] - m|`, then `arr[i]` is stronger than `arr[j]`.
-    - If `|arr[i] - m| == |arr[j] - m|`, then `arr[i]` is stronger than `arr[j]` if `arr[i] > arr[j]`.
-- The order of the elements in the integer array result is arbitrary.
+- All values in the integer array result are unique.
+- The values in the integer array result are the `k` strongest values in the array `arr` based on the given criteria.
+- The median `m` of the array `arr` is calculated as the element at position `((n - 1) / 2)` in the sorted list, where `n` is the length of the array `arr`.
+- For each pair of values `arr[i]` and `arr[j]`, if `|arr[i] - m| > |arr[j] - m|`, then `arr[i]` is considered stronger than `arr[j]`.
+- If `|arr[i] - m| == |arr[j] - m|`, then `arr[i]` is considered stronger than `arr[j]` if `arr[i] > arr[j]`.
+- The order of the elements in the result array is arbitrary.

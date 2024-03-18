@@ -1,6 +1,11 @@
-- The integer 2D array parameter `grid` must not be null.
-- The integer 2D array parameter `grid` must have a length of `row` and each row must have a length of `col`.
-- The integer result is the perimeter of the island represented by the `grid`.
-- The perimeter is calculated by counting the number of edges of land cells that are adjacent to water cells or the boundary of the grid.
-- The perimeter is the sum of all edges of land cells that are not surrounded by other land cells.
-- The perimeter calculation does not include diagonal connections between land cells.
+- The integer array parameter `grid` must not be null.
+- The integer array parameter `grid` must represent a map where `grid[i][j] = 1` represents land and `grid[i][j] = 0` represents water.
+- The integer array parameter `grid` must be completely surrounded by water.
+- There is exactly one island in the `grid`.
+- The island in the `grid` doesn't have "lakes".
+- The perimeter of the island must be determined.
+- The integer result is the perimeter of the island.
+- The perimeter is calculated by counting the number of yellow stripes in the image.
+- The width and height of the grid do not exceed 100.
+- The length of the integer array parameter `grid` is equal to the number of rows.
+- The length of each row in the integer array parameter `grid` is equal to the number of columns.

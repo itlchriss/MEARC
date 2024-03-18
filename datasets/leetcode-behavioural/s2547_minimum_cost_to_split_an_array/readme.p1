@@ -1,6 +1,5 @@
 - The integer array parameter `nums` must not be null.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to 10^9.
 - The integer result is the minimum possible cost of splitting the integer array `nums`.
-- The importance value of a subarray is calculated as `k + trimmed(subarray).length`.
-- The trimmed version of a subarray is obtained by removing all numbers that appear only once in the subarray.
-- The cost of a split is the sum of the importance values of each subarray in the split.
+- The importance value of a subarray is `k + trimmed(subarray).length`.
+- The cost of a split is the sum of the importance value of each subarray in the split.

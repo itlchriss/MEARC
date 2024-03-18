@@ -1,7 +1,5 @@
-- The integer array parameter `jobs` contains the amount of time it takes to complete each job.
-- The integer parameter `k` represents the number of workers available.
-- Each job must be assigned to exactly one worker.
-- The working time of a worker is the sum of the time it takes to complete all jobs assigned to them.
-- The goal is to minimize the maximum working time of any worker.
+- The integer array parameter `jobs` must not be null.
+- The length of the integer array parameter `jobs` is greater than or equal to 1 and is less than or equal to 12.
+- All values in the integer array parameter `jobs` are greater than or equal to 1 and are less than or equal to 10000000.
+- The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array parameter `jobs`.
 - The integer result is the minimum possible maximum working time of any assignment.
-- The constraints are that `1 <= k <= jobs.length <= 12` and `1 <= jobs[i] <= 10^7`.

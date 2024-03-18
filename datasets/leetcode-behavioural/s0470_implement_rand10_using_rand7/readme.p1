@@ -1,5 +1,7 @@
-- The integer result of the method `rand10()` is a uniform random integer in the range [1, 10].
+- The integer result of the method `rand10()` is a uniform random integer in the range `[1, 10]`.
 - The method `rand10()` can only call the API `rand7()` and should not call any other API.
-- The method `rand10()` should be able to generate a uniform random integer in the range [1, 10] for each call.
-- The method `rand10()` should adhere to the constraints of the input parameter `n`, which is the number of times the function will be called during testing.
-- The method `rand10()` should aim to minimize the number of calls to the `rand7()` function to optimize performance.
+- The method `rand10()` should be implemented to generate a uniform random integer in the range `[1, 10]` using the `rand7()` API.
+- The method `rand10()` should be able to handle multiple calls based on the value of the internal argument `n`.
+- The method `rand10()` should return a list of integers based on the number of times it is called, with each integer being a result of a call to `rand10()`.
+- The method `rand10()` should adhere to the constraints specified for the input value of `n`.
+- The method `rand10()` should aim to minimize the number of calls to the `rand7()` API to optimize performance.

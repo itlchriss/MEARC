@@ -1,8 +1,8 @@
 - The integer array parameter `nums` in the `Solution` constructor must not be null.
 - The integer array parameter `nums` in the `Solution` constructor may contain duplicates.
 - The integer parameter `target` in the `pick` method must be an integer from the `nums` array.
-- The `pick` method should return the index of a given `target` number in the `nums` array.
-- If there are multiple valid indices for the `target`, each index should have an equal probability of being returned.
+- The `pick` method must return a random index `i` from `nums` where `nums[i] == target`.
+- If there are multiple valid indices `i` for the given `target`, each index should have an equal probability of being returned.
 - The `pick` method should handle at most 10^4 calls.
-- The `pick` method should return null if the `Solution` constructor is called.
-- The `pick` method should return the index of the `target` number in the `nums` array.
+- The `pick` method should return null when called directly after the `Solution` constructor.
+- The `pick` method should return the correct index based on the given `target` in the `nums` array.

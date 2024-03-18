@@ -1,5 +1,6 @@
 - The character array parameter `letters` is sorted in non-decreasing order.
+- The character array parameter `letters` contains at least two different characters.
 - The character parameter `target` is a lowercase English letter.
-- The character result is the smallest character in the array `letters` that is larger than the character `target`.
-- If the character `target` is 'z' and the array `letters` contains 'a' and 'b', the result is 'a'.
-- The array `letters` contains at least two different characters.
+- The character result is the smallest character in the character array `letters` that is larger than the character `target`.
+- If the character `target` is greater than or equal to the last character in the character array `letters`, the result is the first character in the character array `letters`.
+- If the character `target` is less than the last character in the character array `letters`, the result is the smallest character in the character array `letters` that is larger than the character `target`.

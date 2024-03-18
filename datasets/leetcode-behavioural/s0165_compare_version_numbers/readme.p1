@@ -1,9 +1,9 @@
-- If the integer result is -1, the version number `version1` is less than the version number `version2`.
-- If the integer result is 1, the version number `version1` is greater than the version number `version2`.
-- If the integer result is 0, the version number `version1` is equal to the version number `version2`.
-- The version numbers `version1` and `version2` consist of one or more revisions joined by a dot '.'.
-- Each revision consists of digits and may contain leading zeros.
-- Every revision contains at least one character.
-- Revisions are 0-indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on.
-- Revisions are compared using their integer value ignoring any leading zeros.
-- If a version number does not specify a revision at an index, then treat the revision as 0.
+- The string parameter `version1` and `version2` must only contain digits and dots.
+- The string parameter `version1` and `version2` must be valid version numbers.
+- The length of the string parameter `version1` and `version2` is greater than or equal to 1 and is less than or equal to 500.
+- The integer result is equal to -1 if `version1` is less than `version2`.
+- The integer result is equal to 1 if `version1` is greater than `version2`.
+- The integer result is equal to 0 if `version1` is equal to `version2`.
+- If a revision is not specified at an index, it is treated as 0.
+- Revisions are compared in left-to-right order.
+- Leading zeros in revisions are ignored when comparing revisions.

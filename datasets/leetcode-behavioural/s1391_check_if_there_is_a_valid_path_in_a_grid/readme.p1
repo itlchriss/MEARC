@@ -1,8 +1,7 @@
-- The boolean result is true if there is a valid path in the grid connecting the upper-left cell (0, 0) to the bottom-right cell (m - 1, n - 1).
-- The boolean result is false if there is no valid path in the grid connecting the upper-left cell (0, 0) to the bottom-right cell (m - 1, n - 1).
-- The grid parameter `grid` must not be null.
-- The grid parameter `grid` must have a length `m` and each row in the grid must have a length `n`.
-- The values in the grid parameter `grid` must be between 1 and 6 inclusive.
-- The grid parameter `grid` represents streets connecting different cells in the grid.
-- The path should only follow the streets as represented by the values in the grid.
+- The boolean result is equal to the true literal if there exists a valid path in the grid from the upper-left cell to the bottom-right cell following the streets as described.
+- The boolean result is equal to the false literal if there is no valid path in the grid from the upper-left cell to the bottom-right cell following the streets as described.
+- The integer 2D array parameter `grid` must have a length `m` and each row in the array must have a length `n`.
+- The integer values in the `grid` array must be between 1 and 6 inclusive.
+- The starting point is the upper-left cell `(0, 0)` and the ending point is the bottom-right cell `(m - 1, n - 1)`.
+- The path should only follow the streets as described in the grid.
 - It is not allowed to change any street in the grid.

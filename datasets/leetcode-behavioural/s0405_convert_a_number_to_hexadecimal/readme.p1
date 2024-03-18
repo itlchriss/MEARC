@@ -1,4 +1,5 @@
 - The integer parameter `num` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1.
-- The string result is the hexadecimal representation of the integer parameter `num`.
-- The string result contains only lowercase characters.
-- The string result does not have any leading zeros except for the zero itself.
+- The string result is a hexadecimal representation of the integer parameter `num`.
+- For negative integers, the two's complement method is used to represent the hexadecimal value.
+- All letters in the hexadecimal string result are lowercase characters.
+- There are no leading zeros in the hexadecimal string result except for the zero itself.

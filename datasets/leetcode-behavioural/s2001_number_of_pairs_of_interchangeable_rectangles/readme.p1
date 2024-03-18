@@ -1,4 +1,8 @@
 - The integer array parameter `rec` must not be null.
-- The length of each sub-array in the integer 2D array parameter `rec` must be 2.
-- The integer values in each sub-array in the integer 2D array parameter `rec` must be greater than or equal to 1 and less than or equal to 100000.
+- The length of the integer array parameter `rec` is greater than or equal to 1 and is less than or equal to 100000.
+- Each element in the integer array parameter `rec` is an array of length 2 representing the width and height of a rectangle.
 - The integer result is the number of pairs of interchangeable rectangles in the `rec` array.
+- Two rectangles `i` and `j` (`i < j`) are considered interchangeable if they have the same width-to-height ratio.
+- The interchangeable pairs of rectangles are determined by comparing the width-to-height ratio of each pair of rectangles in the `rec` array.
+- The interchangeable pairs of rectangles are counted based on the equality of the width-to-height ratios.
+- The result represents the total number of interchangeable pairs of rectangles in the `rec` array.

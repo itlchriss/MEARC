@@ -1,6 +1,6 @@
 - The string parameter `sentence` must not be null.
-- The integer result is the number of valid words in the sentence.
+- The integer result is the number of valid words in the string `sentence`.
 - A valid word in the sentence must meet the following criteria:
-    - It only contains lowercase letters, hyphens, and/or punctuation marks (no digits).
-    - There is at most one hyphen, and if present, it must be surrounded by lowercase characters.
-    - There is at most one punctuation mark, and if present, it must be at the end of the token.
+  - It only contains lowercase letters, hyphens, and/or punctuation marks (no digits).
+  - There is at most one hyphen '-' present, and if it exists, it must be surrounded by lowercase characters.
+  - There is at most one punctuation mark, and if present, it must be at the end of the token.

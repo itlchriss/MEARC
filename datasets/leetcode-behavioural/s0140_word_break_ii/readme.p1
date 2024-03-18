@@ -1,7 +1,7 @@
-- The string parameter `s` must have a length greater than or equal to 1 and less than or equal to 20.
-- The length of the list parameter `wordDict` must be greater than or equal to 1 and less than or equal to 1000.
-- Each string in the list parameter `wordDict` must have a length greater than or equal to 1 and less than or equal to 10.
+- The string parameter `s` must not be null and its length is greater than or equal to 1 and less than or equal to 20.
+- The list of strings parameter `wordDict` must not be null and its length is greater than or equal to 1 and less than or equal to 1000.
+- Each string in the list parameter `wordDict` must not be null and its length is greater than or equal to 1 and less than or equal to 10.
 - All strings in the list parameter `wordDict` consist of only lowercase English letters.
 - All strings in the list parameter `wordDict` are unique.
-- The list result contains all possible sentences constructed from the string parameter `s` by adding spaces to form valid dictionary words from the list parameter `wordDict`.
+- The list of strings result contains all possible sentences where each word is a valid dictionary word and spaces are added in the string parameter `s`.
 - The order of sentences in the list result is not specified.

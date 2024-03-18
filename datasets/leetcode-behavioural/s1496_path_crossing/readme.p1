@@ -1,4 +1,4 @@
-- The string parameter `path` must have a length greater than or equal to 1 and less than or equal to 10000.
-- The characters in the string parameter `path` must be either 'N', 'S', 'E', or 'W'.
-- The boolean result is true if the path crosses itself at any point, meaning the location is visited more than once.
-- The boolean result is false if the path does not cross itself at any point, meaning each location is visited only once.
+- The string parameter `path` must not be null.
+- The string parameter `path` length is greater than or equal to 1 and is less than or equal to 10000.
+- The boolean result is equal to the true literal if the path crosses itself at any point.
+- The boolean result is equal to the false literal if the path does not cross itself at any point.

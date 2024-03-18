@@ -1,5 +1,6 @@
-- The integer result is the shortest distance needed to reach the string `target` from the `startIndex` in the circular string array `words`.
-- If the string `target` does not exist in the circular string array `words`, the integer result is -1.
-- The circular array `words` is a 0-indexed array where the next element of `words[i]` is `words[(i + 1) % n]` and the previous element of `words[i]` is `words[(i - 1 + n) % n]`, where `n` is the length of `words`.
-- The `startIndex` is within the range of the circular string array `words`.
-- The string `target` and all strings in the circular string array `words` consist of only lowercase English letters.
+- The integer result is the shortest distance needed to reach the string `target` from the `startIndex`.
+- If the string `target` does not exist in the `words` array, the integer result is equal to -1.
+- The integer parameter `startIndex` is greater than or equal to 0 and is less than the length of the `words` array.
+- The length of the `words` array is greater than or equal to 1 and is less than or equal to 100.
+- The length of each string in the `words` array is greater than or equal to 1 and is less than or equal to 100.
+- The strings in the `words` array and the `target` string consist of only lowercase English letters.

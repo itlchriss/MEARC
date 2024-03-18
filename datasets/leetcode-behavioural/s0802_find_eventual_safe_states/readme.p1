@@ -1,7 +1,8 @@
-- The integer 2D array parameter `graph` must not be null.
-- The integer 2D array parameter `graph` must be 0-indexed.
-- The integer 2D array parameter `graph` represents a directed graph where `graph[i]` is an integer array of nodes adjacent to node `i`.
+- The integer array parameter `graph` must not be null.
+- The integer array parameter `graph` is a 2D array representing a directed graph where `graph[i]` is an integer array of nodes adjacent to node `i`.
+- The integer array parameter `graph` is 0-indexed.
+- The integer array parameter `graph` is sorted in a strictly increasing order.
+- The integer result is a list containing all the safe nodes of the graph.
+- The list of safe nodes should be sorted in ascending order.
 - A node is considered a terminal node if there are no outgoing edges from that node.
 - A node is considered a safe node if every possible path starting from that node leads to a terminal node.
-- The result is a list containing all safe nodes of the graph.
-- The result list should be sorted in ascending order.

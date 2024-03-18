@@ -1,4 +1,4 @@
-- If the integer array parameter `bills` contains only elements 5, 10, or 20, the boolean result is true.
-- If the integer array parameter `bills` contains elements other than 5, 10, or 20, the boolean result is false.
-- If the integer array parameter `bills` is in the order where each customer pays with either a $5, $10, or $20 bill, and you can provide correct change to each customer, the boolean result is true.
-- If the integer array parameter `bills` is not in the order where each customer pays with either a $5, $10, or $20 bill, or you cannot provide correct change to each customer, the boolean result is false.
+- If the integer array parameter `bills` contains only the integer 5, the boolean result is equal to the true literal.
+- If the integer array parameter `bills` contains the integer 10, the integer array parameter `bills` must contain the integer 5 before the integer 10.
+- If the integer array parameter `bills` contains the integer 20, the integer array parameter `bills` must contain either one integer 10 and one integer 5 or three integers 5 before the integer 20.
+- If the integer array parameter `bills` does not meet the above conditions, the boolean result is equal to the false literal.

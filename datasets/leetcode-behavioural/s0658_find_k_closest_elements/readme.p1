@@ -1,6 +1,8 @@
 - The integer array parameter `arr` is sorted in ascending order.
 - The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array `arr`.
 - The integer parameter `x` is greater than or equal to -10000 and is less than or equal to 10000.
-- The integer collection result contains `k` closest integers to `x` in the integer array `arr`.
-- If two integers have the same absolute difference from `x`, the integer closer to `x` is selected.
-- The integer collection result is sorted in ascending order.
+- The length of the integer list result is equal to the integer parameter `k`.
+- The integer list result contains the `k` closest integers to `x` in the integer array `arr`.
+- An integer `a` is closer to `x` than an integer `b` if:
+    - `|a - x| < |b - x|`, or
+    - `|a - x| == |b - x|` and `a < b`.

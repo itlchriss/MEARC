@@ -1,10 +1,11 @@
 - The integer result is the minimum steps needed to walk to cut off all the trees in the forest.
-- If it is impossible to cut off all the trees, the integer result is -1.
+- If it is impossible to cut off all the trees, the integer result is equal to -1.
 - The forest is represented as an m x n matrix.
 - The value 0 in the matrix represents a cell that cannot be walked through.
 - The value 1 in the matrix represents an empty cell that can be walked through.
-- A number greater than 1 in the matrix represents a tree in a cell that can be walked through, and the number represents the tree's height.
-- The trees in the forest have unique heights.
+- A number greater than 1 in the matrix represents a tree in a cell that can be walked through, and the number is the tree's height.
 - The trees must be cut off in order from shortest to tallest.
-- The starting point to cut off trees is at (0, 0).
+- No two trees have the same height.
+- At least one tree needs to be cut off.
+- The starting point is at (0, 0).
 - The steps can be taken in any of the four directions: north, east, south, and west.

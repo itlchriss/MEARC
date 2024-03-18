@@ -1,6 +1,6 @@
+Method behavioural specifications:
 - The integer list parameter `nums` must not be null.
 - The integer list parameter `nums` length is greater than or equal to 1 and is less than or equal to 20000.
 - The integer parameters `m` and `k` are greater than or equal to 1 and `m` is less than or equal to `k` and both are less than or equal to the length of the integer list parameter `nums`.
 - The long result is the maximum sum out of all almost unique subarrays of length `k` of `nums`.
-- An almost unique subarray contains at least `m` distinct elements.
-- If no such subarray exists, the long result is 0.
+- If no almost unique subarray of length `k` exists, the long result is equal to 0.

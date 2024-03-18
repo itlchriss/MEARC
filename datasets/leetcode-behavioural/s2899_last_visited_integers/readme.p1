@@ -1,6 +1,3 @@
 - The integer list result contains the last visited integers based on the given algorithm.
-- For each occurrence of the string "prev" in the input list `words`, the last visited integer is determined as follows:
-    - Let `k` be the number of consecutive "prev" strings seen so far (including the current string).
-    - Let `nums` be the array of integers seen so far and `nums_reverse` be the reverse of `nums`.
-    - The integer at index `(k - 1)` of `nums_reverse` will be the last visited integer for this "prev".
-    - If `k` is greater than the total number of visited integers, the last visited integer will be -1.
+- For each occurrence of the string "prev" in the input list `words`, the last visited integer is determined as per the specified algorithm.
+- If the total number of consecutive "prev" strings seen so far is greater than the total visited integers, the last visited integer will be -1.

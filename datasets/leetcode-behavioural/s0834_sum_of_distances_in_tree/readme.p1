@@ -1,4 +1,8 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 30000.
 - The length of the integer array parameter `edges` is equal to `n - 1`.
-- Each element in the integer array parameter `edges` is an array of length 2 representing an edge between two nodes.
-- The integer result is an array of length `n` where each element `answer[i]` represents the sum of distances between the `i-th` node in the tree and all other nodes.
+- Each element in the integer array parameter `edges` is an array of length 2.
+- The integer values in each array element of `edges` are greater than or equal to 0 and are less than `n`.
+- The first value in each array element of `edges` is not equal to the second value.
+- The input represents a valid tree structure.
+- The integer array result has a length of `n`.
+- Each element in the integer array result represents the sum of distances between the corresponding node and all other nodes in the tree.

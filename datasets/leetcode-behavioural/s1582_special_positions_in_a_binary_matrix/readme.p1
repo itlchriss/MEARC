@@ -1,8 +1,5 @@
-Method behavioural specifications:
 - The integer matrix parameter `mat` must not be null.
 - The integer result is the number of special positions in the integer matrix `mat`.
 - A position `(i, j)` is considered special if `mat[i][j]` is equal to 1 and all other elements in row `i` and column `j` are equal to 0.
 - Rows and columns are 0-indexed.
-- The integer matrix `mat` has dimensions `m x n` where `m` is the number of rows and `n` is the number of columns.
-- The integer `m` is greater than or equal to 1 and is less than or equal to 100.
-- The integer `n` is greater than or equal to 1 and is less than or equal to 100.
+- The integer result is greater than or equal to 0.

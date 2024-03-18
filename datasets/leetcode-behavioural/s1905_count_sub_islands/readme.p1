@@ -1,5 +1,6 @@
-Method behavioural specifications:
 - The integer matrix parameter `grid1` and `grid2` must have the same dimensions.
 - All values in the integer matrices `grid1` and `grid2` are either 0 or 1.
 - The integer result is the number of islands in `grid2` that are considered sub-islands.
+- An island is a group of 1's connected 4-directionally (horizontal or vertical).
+- Any cells outside of the grid are considered water cells.
 - An island in `grid2` is considered a sub-island if there is an island in `grid1` that contains all the cells that make up this island in `grid2`.

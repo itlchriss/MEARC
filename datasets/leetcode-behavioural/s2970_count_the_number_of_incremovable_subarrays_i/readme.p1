@@ -1,5 +1,6 @@
-- The integer array parameter `nums` must be a 0-indexed array of positive integers.
+- The integer array parameter `nums` must not be null.
 - The integer result is the total number of incremovable subarrays of the integer array `nums`.
-- An incremovable subarray is a subarray of `nums` where removing the subarray results in `nums` becoming strictly increasing.
+- An incremovable subarray is a contiguous non-empty sequence of elements within the array `nums` that, when removed, causes the array to become strictly increasing.
 - An empty array is considered strictly increasing.
-- A subarray is a contiguous non-empty sequence of elements within an array.
+- The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 50.
+- All values in the integer array `nums` are greater than or equal to 1 and are less than or equal to 50.

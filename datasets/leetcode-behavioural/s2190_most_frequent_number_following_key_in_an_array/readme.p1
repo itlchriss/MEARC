@@ -1,5 +1,6 @@
-- The integer array parameter `nums` must not be null.
+- The integer array parameter `nums` has a length greater than or equal to 2 and less than or equal to 1000.
+- All values in the integer array parameter `nums` are greater than or equal to 1 and less than or equal to 1000.
 - The integer parameter `key` is present in the integer array `nums`.
 - The integer result is the `target` with the maximum count of occurrences following an occurrence of `key` in the integer array `nums`.
-- For every unique integer `target` in `nums`, the count of occurrences where `target` immediately follows an occurrence of `key` in `nums` is calculated.
-- The `target` with the maximum count of occurrences following an occurrence of `key` is returned as the result.
+- For each unique integer `target` in the integer array `nums`, the count of occurrences where `target` immediately follows an occurrence of `key` is calculated.
+- The `target` with the maximum count of occurrences following an occurrence of `key` is returned as the integer result.

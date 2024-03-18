@@ -1,4 +1,5 @@
 - The integer array parameter `slices` must not be null.
 - The length of the integer array parameter `slices` is a multiple of 3.
-- All values in the integer array parameter `slices` are greater than or equal to 1 and less than or equal to 1000.
-- The integer result is the maximum possible sum of slice sizes that can be picked following the given rules.
+- The integer result is the maximum possible sum of slice sizes that can be picked.
+- The integer result is greater than or equal to 0.
+- The integer result is less than or equal to the sum of all elements in the integer array parameter `slices`.

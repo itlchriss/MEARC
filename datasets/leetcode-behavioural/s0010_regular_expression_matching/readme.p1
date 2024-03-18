@@ -1,6 +1,9 @@
 - The string parameter `s` must not be null.
 - The string parameter `p` must not be null.
-- The boolean result is true if the string parameter `s` matches the pattern specified in the string parameter `p`.
-- The boolean result is false if the string parameter `s` does not match the pattern specified in the string parameter `p`.
-- The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 20.
-- The length of the string parameter `p` is greater than or equal to 1 and is less than or equal to 30.
+- The boolean result is equal to the true literal if the input string `s` matches the pattern `p` according to the regular expression rules specified.
+- The boolean result is equal to the false literal if the input string `s` does not match the pattern `p` according to the regular expression rules specified.
+- The length of the input string `s` is greater than or equal to 1 and is less than or equal to 20.
+- The length of the pattern `p` is greater than or equal to 1 and is less than or equal to 30.
+- The input string `s` contains only lowercase English letters.
+- The pattern `p` contains only lowercase English letters, '.', and '*'.
+- For each appearance of the character '*', there will be a previous valid character to match.

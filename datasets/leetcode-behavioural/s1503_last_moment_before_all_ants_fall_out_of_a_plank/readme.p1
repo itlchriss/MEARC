@@ -1,6 +1,8 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.
-- The length of the integer array parameter `left` is less than or equal to the sum of the length of the integer array parameter `right` and 1.
-- The length of the integer array parameter `right` is less than or equal to the sum of the length of the integer array parameter `left` and 1.
-- All values in the integer array parameter `left` are unique and are greater than or equal to 0 and are less than or equal to `n`.
-- All values in the integer array parameter `right` are unique and are greater than or equal to 0 and are less than or equal to `n`.
+- The length of the integer array parameter `left` is less than or equal to the length of the plank `n` plus 1.
+- The length of the integer array parameter `right` is less than or equal to the length of the plank `n` plus 1.
+- All values in the integer array parameter `left` are greater than or equal to 0 and are less than or equal to `n`.
+- All values in the integer array parameter `right` are greater than or equal to 0 and are less than or equal to `n`.
+- The sum of the lengths of the integer arrays `left` and `right` is greater than or equal to 1 and is less than or equal to the length of the plank `n` plus 1.
+- All values in the integer arrays `left` and `right` are unique and each value appears only in one of the two arrays.
 - The integer result is the moment when the last ant(s) fall out of the plank.

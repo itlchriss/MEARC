@@ -1,5 +1,6 @@
 - The integer array parameter `coordinates` must not be null.
-- The integer array parameter `coordinates` must have a length greater than or equal to 2 and less than or equal to 1000.
-- Each element in the integer array parameter `coordinates` must be an array of length 2.
-- The integer array parameter `coordinates` must not contain duplicate points.
-- The boolean result is true if the points in the integer array parameter `coordinates` form a straight line in the XY plane.
+- The length of the integer array parameter `coordinates` is greater than or equal to 2 and is less than or equal to 1000.
+- Each element in the integer array parameter `coordinates` is a 2-element array representing a coordinate point.
+- The integer array parameter `coordinates` contains no duplicate points.
+- The boolean result is equal to the true literal if the points in the integer array parameter `coordinates` form a straight line in the XY plane.
+- The boolean result is equal to the false literal if the points in the integer array parameter `coordinates` do not form a straight line in the XY plane.

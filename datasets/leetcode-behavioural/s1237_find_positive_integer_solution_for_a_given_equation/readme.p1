@@ -1,5 +1,7 @@
 Method behavioural specifications:
-- The integer parameter `z` is the target value that the function `f(x, y)` should equal to.
-- The function `f(x, y)` is monotonically increasing, meaning `f(x, y) < f(x + 1, y)` and `f(x, y) < f(x, y + 1)`.
-- The method `findSolution` should return a list of lists, where each inner list contains two positive integers `x` and `y` that satisfy the equation `f(x, y) == z`.
-- The order of the pairs in the output list does not matter.
+- The integer parameter `z` is greater than 0.
+- The method `findSolution` must return a list of lists containing positive integer pairs `x` and `y` where `customfunction.f(x, y) == z`.
+- The function `customfunction.f(x, y)` is monotonically increasing.
+- The judge will provide a `function_id` to determine which implementation of `CustomFunction` to test the code with.
+- The judge will compare the results of the `findSolution` method with the answer key generated for the specific `z`.
+- The solution will be considered correct if the results match the answer key.

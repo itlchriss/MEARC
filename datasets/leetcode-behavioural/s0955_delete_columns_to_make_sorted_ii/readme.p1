@@ -1,5 +1,6 @@
 - The integer array parameter `strs` must not be null.
 - The length of each string in the array `strs` is equal to the length of the first string in the array `strs`.
-- The integer result is the minimum possible value of `answer.length` after deleting columns to make the final array lexicographically sorted.
-- The integer result is greater than or equal to 0.
-- The integer result is less than or equal to the length of the strings in the array `strs`.
+- The integer result is the minimum possible value of the deletion indices `answer.length` to make the final array lexicographically ordered.
+- The deletion indices `answer` must be such that after deletions, the final array has its elements in lexicographic order.
+- If the initial array `strs` is not in lexicographic order, at least one deletion is required.
+- If the initial array `strs` is already in lexicographic order, no deletions are needed.

@@ -1,6 +1,7 @@
 - The integer array parameter `prices` must not be null.
-- The integer array parameter `prices` length is greater than or equal to 1 and is less than or equal to 100000.
+- The length of the integer array parameter `prices` is greater than or equal to 1 and is less than or equal to 100000.
 - All values in the integer array parameter `prices` are greater than or equal to 0 and are less than or equal to 100000.
-- The integer result is the maximum profit achievable by completing at most two transactions with the given stock prices.
-- The maximum profit is calculated by buying and selling the stock at different days, ensuring that the stock is sold before buying again.
-- If no profitable transactions can be made, the integer result is 0.
+- The integer result is the maximum profit that can be achieved by completing at most two transactions.
+- The maximum profit is calculated by buying and selling the stock according to the given constraints.
+- The maximum profit is equal to the sum of profits obtained from the two transactions.
+- If no transactions can be done to achieve a profit, the integer result is equal to 0.

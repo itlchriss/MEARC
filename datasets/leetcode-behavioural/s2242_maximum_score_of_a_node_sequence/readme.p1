@@ -1,7 +1,5 @@
 - The integer array parameter `scores` must not be null.
 - The 2D integer array parameter `edges` must not be null.
-- The length of the integer array parameter `scores` is equal to the number of nodes in the graph.
-- The length of each inner array in the 2D integer array parameter `edges` is 2.
-- The integer values in the 2D integer array parameter `edges` represent edges connecting nodes in the graph.
+- The length of the integer array parameter `scores` is equal to the length of the first dimension of the 2D integer array parameter `edges`.
 - The integer result is the maximum score of a valid node sequence with a length of 4.
-- If no valid node sequence with a length of 4 exists, the integer result is -1.
+- If no valid node sequence with a length of 4 exists, the integer result is equal to -1.

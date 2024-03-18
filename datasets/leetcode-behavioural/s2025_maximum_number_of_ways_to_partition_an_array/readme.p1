@@ -1,11 +1,5 @@
 - The integer array parameter `nums` must not be null.
 - The integer array parameter `nums` length is greater than or equal to 2 and is less than or equal to 100000.
+- All values in the integer array parameter `nums` are greater than or equal to -100000 and are less than or equal to 100000.
 - The integer parameter `k` is greater than or equal to -100000 and is less than or equal to 100000.
-- The integer result is the maximum possible number of ways to partition the `nums` array to satisfy both conditions after changing at most one element.
-- If changing one element to `k` can increase the number of ways to partition, the result should reflect that change.
-- The number of ways to partition is the number of pivot indices that satisfy the given conditions.
-- The pivot index `pivot` must be between 1 and `n-1`.
-- The sum of elements before `pivot` must be equal to the sum of elements after `pivot`.
-- The method should handle the scenario where changing one element to `k` can create more ways to partition the array.
-- The method should handle the scenario where leaving the array unchanged is the optimal approach for maximizing the number of ways to partition.
-- The method should return the maximum number of ways to partition the array after considering the possible change of one element to `k`.
+- The integer result is the maximum possible number of ways to partition the integer array `nums` after changing at most one element to the integer parameter `k`.

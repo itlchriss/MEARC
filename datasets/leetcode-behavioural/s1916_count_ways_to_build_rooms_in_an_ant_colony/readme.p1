@@ -1,6 +1,5 @@
-- The integer array parameter `prevRoom` must not be null.
-- The length of the integer array parameter `prevRoom` is greater than or equal to 2 and is less than or equal to 100000.
-- The integer array parameter `prevRoom` is 0-indexed.
-- The integer array parameter `prevRoom` must satisfy the condition `prevRoom[0] = -1`.
-- The integer array parameter `prevRoom` must have a direct connection between the previous room and the current room to build.
+- The integer array parameter `prevRoom` must be a 0-indexed array.
+- The integer array parameter `prevRoom` must have a length greater than or equal to 2 and less than or equal to 100000.
+- The integer array parameter `prevRoom` must have the value -1 at index 0.
+- The integer array parameter `prevRoom` must have values between 0 and n-1 for all indices from 1 to n-1.
 - The integer result is the number of different orders to build all the rooms in, modulo 10^9 + 7.

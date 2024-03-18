@@ -1,3 +1,10 @@
 - The string parameter `target` consists only of English lowercase letters.
 - The string result is a sequence of moves that makes the answer equal to the `target` in the minimum number of moves.
-- The moves include 'U' to move the position up one row, 'D' to move the position down one row, 'L' to move the position left one column, 'R' to move the position right one column, and '!' to add the character `board[r][c]` at the current position `(r, c)` to the answer.
+- The moves are represented by characters 'U', 'D', 'L', 'R', and '!' where:
+    - 'U' moves the position up one row if the position exists on the board.
+    - 'D' moves the position down one row if the position exists on the board.
+    - 'L' moves the position left one column if the position exists on the board.
+    - 'R' moves the position right one column if the position exists on the board.
+    - '!' adds the character `board[r][c]` at the current position `(r, c)` to the answer.
+- The board is represented by the 2D array `board = ["abcde", "fghij", "klmno", "pqrst", "uvwxy", "z"]`.
+- The starting position is `(0, 0)` corresponding to the character `board[0][0]`.

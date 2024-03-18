@@ -1,6 +1,7 @@
 - The integer parameter `m` is greater than or equal to 1 and is less than or equal to 40000.
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 40000.
-- The integer array parameter `ops` contains arrays of length 2.
-- The integer array parameter `ops` may be empty.
-- The integer array parameter `ops` contains elements where the first element is greater than or equal to 1 and is less than or equal to `m`, and the second element is greater than or equal to 1 and is less than or equal to `n`.
-- The integer result is the number of maximum integers in the matrix `M` after performing all the operations specified in the `ops` array.
+- The length of the integer array parameter `ops` is less than or equal to 10000.
+- Each element in the integer array parameter `ops` has a length of 2.
+- The first element of each element in the integer array parameter `ops` is greater than or equal to 1 and is less than or equal to `m`.
+- The second element of each element in the integer array parameter `ops` is greater than or equal to 1 and is less than or equal to `n`.
+- The integer result is the number of maximum integers in the matrix after performing all the operations.

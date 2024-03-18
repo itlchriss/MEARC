@@ -1,3 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 200.
 - The integer result is the minimum amount of money needed to guarantee a win regardless of the number picked by the opponent.
-- The worst-case scenario is considered where the maximum amount of money needs to be paid to guarantee a win.
+- The worst-case scenario is considered where the opponent always picks the number that requires the maximum amount of money to guess.
+- The strategy to determine the minimum amount of money needed involves guessing numbers within a certain range based on the feedback received from the opponent.
+- The guessing strategy involves minimizing the cost of guessing by selecting numbers strategically to reduce the overall cost of guessing the correct number.
+- The guessing strategy aims to cover all possible scenarios and ensure a win with the minimum amount of money spent.

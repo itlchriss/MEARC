@@ -1,8 +1,9 @@
-- The character array parameter `board` must have a length of 9.
-- Each row in the character array parameter `board` must have a length of 9.
-- Each element in the character array parameter `board` must be a digit from 1 to 9 or '.'.
-- The method `solveSudoku` must fill the empty cells of the Sudoku puzzle following the rules:
-    - Each digit from 1 to 9 must occur exactly once in each row.
-    - Each digit from 1 to 9 must occur exactly once in each column.
-    - Each digit from 1 to 9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
-- The output of the method `solveSudoku` must be a solved Sudoku puzzle where all empty cells are filled with the correct digits.
+- The 2D character array parameter `board` must have a length of 9.
+- Each row in the 2D character array parameter `board` must have a length of 9.
+- Each element in the 2D character array parameter `board` must be a digit from '1' to '9' or '.'.
+- The method `solveSudoku` must fill in the empty cells of the `board` parameter to solve the Sudoku puzzle.
+- The solution must satisfy the following rules:
+    - Each digit from '1' to '9' must occur exactly once in each row.
+    - Each digit from '1' to '9' must occur exactly once in each column.
+    - Each digit from '1' to '9' must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+- The output of the method `solveSudoku` should be the solved Sudoku puzzle in the form of a 2D character array.

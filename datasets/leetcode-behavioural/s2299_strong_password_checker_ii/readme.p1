@@ -3,6 +3,6 @@
 - The string parameter `password` must contain at least one uppercase letter.
 - The string parameter `password` must contain at least one digit.
 - The string parameter `password` must contain at least one special character from the string "!@#$%^&*()-+".
-- The string parameter `password` must not have 2 of the same characters in adjacent positions.
-- The boolean result is true if the string parameter `password` meets all the above requirements to be considered a strong password.
-- The boolean result is false if the string parameter `password` does not meet any of the above requirements to be considered a strong password.
+- The string parameter `password` must not contain 2 of the same character in adjacent positions.
+- The boolean result is equal to the true literal if the string parameter `password` meets all the above requirements to be considered a strong password.
+- The boolean result is equal to the false literal if the string parameter `password` does not meet any of the above requirements to be considered a strong password.

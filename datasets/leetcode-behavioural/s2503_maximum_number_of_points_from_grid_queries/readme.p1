@@ -1,7 +1,6 @@
 - The integer matrix parameter `grid` must not be null.
 - The integer array parameter `queries` must not be null.
-- The length of the integer array parameter `queries` is equal to the size of the array `answer`.
-- For each integer `queries[i]`, the integer result `answer[i]` is the maximum number of points that can be obtained by starting in the top left cell of the matrix and following the specified process.
-- If `queries[i]` is strictly greater than the value of the current cell, one point is obtained if it is the first time visiting the cell, and movement to any adjacent cell in all 4 directions is allowed.
-- If `queries[i]` is not strictly greater than the value of the current cell, no points are obtained, and the process ends.
-- For each query, it is allowed to visit the same cell multiple times.
+- The length of the integer array parameter `queries` is equal to `k`.
+- The integer array result `answer` has a length equal to the length of the integer array parameter `queries`.
+- For each integer `queries[i]`, the maximum number of points in the resulting array `answer` is calculated based on the rules provided in the business requirement.
+- The resulting array `answer` contains the maximum number of points for each query in the same order as the queries array.

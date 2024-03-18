@@ -1,3 +1,6 @@
 - The integer parameter `start` is greater than or equal to 0 and is less than or equal to 10^9.
 - The integer parameter `goal` is greater than or equal to 0 and is less than or equal to 10^9.
 - The integer result is the minimum number of bit flips required to convert the integer parameter `start` to the integer parameter `goal`.
+- The binary representation of the integer parameter `start` and the integer parameter `goal` must be considered for determining the minimum number of bit flips.
+- The minimum number of bit flips must be calculated by choosing a bit in the binary representation of the integer parameter `start` and flipping it to match the binary representation of the integer parameter `goal`.
+- The minimum number of bit flips must be returned as the integer result.

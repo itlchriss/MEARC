@@ -1,5 +1,6 @@
 - The string parameter `s` consists of lowercase English letters.
-- The integer array parameter `queries` has a length greater than or equal to 1 and less than or equal to 100000.
-- Each element in the integer array parameter `queries` is an array of length 3.
-- The integer result is a list of boolean values.
-- The boolean result at index `i` in the list is true if the substring `s[left_i...right_i]` for the `i-th` query can be rearranged to form a palindrome after replacing up to `k_i` characters, otherwise false.
+- The integer array parameter `queries` length is greater than or equal to 1 and is less than or equal to 100000.
+- The integer array parameter `queries` contains arrays of length 3 where each array represents a query with elements `left`, `right`, and `k`.
+- The integer result is a list of boolean values where each boolean value represents the result of the corresponding query in the `queries` array.
+- For each query, the substring of `s` from index `left` to index `right` inclusive can be rearranged and up to `k` characters can be replaced with any lowercase English letter.
+- If the substring after the operations above can be rearranged to form a palindrome string, the boolean result is equal to the true literal. Otherwise, the boolean result is equal to the false literal.

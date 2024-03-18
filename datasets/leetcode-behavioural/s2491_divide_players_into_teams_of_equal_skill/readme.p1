@@ -1,4 +1,4 @@
 - The integer array parameter `skill` must have an even length.
-- The integer array parameter `skill` must contain positive integers.
-- The integer result is the sum of the chemistry of all the teams.
-- If there is no way to divide the players into teams such that the total skill of each team is equal, the result is -1.
+- All values in the integer array parameter `skill` must be greater than or equal to 1 and less than or equal to 1000.
+- The integer result is the sum of the chemistry of all the teams formed by dividing the players into `n / 2` teams of size 2, where the total skill of each team is equal.
+- If there is no way to divide the players into teams such that the total skill of each team is equal, the integer result is equal to -1.

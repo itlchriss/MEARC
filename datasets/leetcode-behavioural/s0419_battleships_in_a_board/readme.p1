@@ -1,9 +1,9 @@
 - The integer result is the number of battleships on the board.
 - Battleships can only be placed horizontally or vertically on the board.
-- Battleships are represented by 'X' and empty cells are represented by '.'.
-- Battleships are either in the shape of '1 x k' or 'k x 1', where k can be any size.
-- At least one horizontal or vertical cell separates between two battleships.
-- The method should be able to handle boards with dimensions up to 200x200.
-- The method should count the battleships in one pass.
-- The method should use only O(1) extra memory.
-- The method should not modify the values in the board.
+- Battleships are represented by the character 'X' on the board.
+- Battleships are separated by at least one horizontal or vertical cell.
+- The board is represented by a 2D character array.
+- The board dimensions are m x n where m is the number of rows and n is the number of columns.
+- The board contains only '.' or 'X' characters.
+- The integer parameter `m` is greater than or equal to 1 and is less than or equal to 200.
+- The integer parameter `n` is greater than or equal to 1 and is less than or equal to 200.

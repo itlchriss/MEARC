@@ -1,6 +1,8 @@
-- The input parameter `paths` is a 2D array where each element `paths[i]` represents an absolute path to the i-th folder in the file system.
-- The output is a 2D array `ans` containing the paths of the remaining folders after deleting all the marked folders.
+- The input parameter `paths` is a 2D list where each element `paths[i]` represents an absolute path to the i-th folder in the file system.
+- Each path in the input list `paths` consists of lowercase English letters.
+- The output is a 2D list `ans` containing the paths of the remaining folders after deleting all the marked folders.
+- The paths in the output list `ans` may be returned in any order.
 - Folders are considered identical if they contain the same non-empty set of identical subfolders and underlying subfolder structure.
-- Identical folders and their subfolders are marked for deletion and will be deleted from the file system.
-- The file system will only run the deletion process once, so any folders that become identical after the initial deletion are not deleted.
-- The order of paths in the output array `ans` does not matter.
+- If two or more folders are identical, mark the folders as well as all their subfolders for deletion.
+- The file system will delete all marked folders and their subfolders.
+- The file system only runs the deletion once, so any folders that become identical after the initial deletion are not deleted.

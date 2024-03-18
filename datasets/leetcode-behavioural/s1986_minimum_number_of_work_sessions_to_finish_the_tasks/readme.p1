@@ -1,5 +1,6 @@
+Method behavioural specifications:
 - The integer array parameter `tasks` must not be null.
-- The length of the integer array parameter `tasks` is equal to the integer parameter `n`.
+- The length of the integer array parameter `tasks` is greater than or equal to 1 and is less than or equal to 14.
 - All values in the integer array parameter `tasks` are greater than or equal to 1 and are less than or equal to 10.
-- The integer parameter `sessionTime` is greater than or equal to the maximum element in the integer array `tasks`.
-- The integer result is the minimum number of work sessions needed to finish all the tasks following the given conditions.
+- The integer parameter `sessionTime` is greater than or equal to the maximum element in the integer array `tasks` and is less than or equal to 15.
+- The integer result is the minimum number of work sessions needed to finish all the tasks following the specified conditions.

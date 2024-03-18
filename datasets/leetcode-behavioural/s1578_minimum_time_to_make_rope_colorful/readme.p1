@@ -1,8 +1,6 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.
 - The integer array parameter `neededTime` contains values greater than or equal to 1 and less than or equal to 10000.
-- The length of the integer array parameter `neededTime` is equal to the length of the string parameter `colors`.
-- The integer result is the minimum time Bob needs to make the rope colorful by removing balloons.
-- Bob can remove balloons to ensure that no two consecutive balloons have the same color.
-- The integer result is the total time taken to remove the necessary balloons to achieve a colorful rope.
-- The integer result is calculated based on the time needed to remove each balloon specified in the `neededTime` array.
-- The string parameter `colors` contains only lowercase English letters.
+- The integer result is the minimum time Bob needs to make the rope colorful.
+- The integer result is greater than or equal to 0.
+- The integer result is less than or equal to the sum of all elements in the integer array parameter `neededTime`.
+- The integer result is the sum of the time needed to remove the balloons at the indices specified to make the rope colorful.

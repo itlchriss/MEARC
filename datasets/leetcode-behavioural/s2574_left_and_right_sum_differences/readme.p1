@@ -1,5 +1,5 @@
 - The integer array parameter `nums` must not be null.
-- The length of the integer array `answer` is equal to the length of the integer array `nums`.
-- Each element in the integer array `answer` is the absolute difference between the corresponding elements in the arrays `leftSum` and `rightSum`.
-- The integer array `leftSum` is the sum of elements to the left of the index `i` in the array `nums`. If there is no such element, `leftSum[i] = 0`.
-- The integer array `rightSum` is the sum of elements to the right of the index `i` in the array `nums`. If there is no such element, `rightSum[i] = 0`.
+- The length of the integer array `answer` is equal to the length of the integer array parameter `nums`.
+- Each element in the integer array `answer` is equal to the absolute difference between the sum of elements to the left and to the right of the corresponding index in the integer array parameter `nums`.
+- If there are no elements to the left of a certain index `i`, the sum is considered as 0.
+- If there are no elements to the right of a certain index `i`, the sum is considered as 0.

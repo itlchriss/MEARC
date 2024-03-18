@@ -1,5 +1,6 @@
 - The double parameter `radius` is greater than 0 and is less than or equal to 10^8.
 - The double parameters `xCenter` and `yCenter` are greater than or equal to -10^7 and are less than or equal to 10^7.
-- The method `randPoint()` returns a random point inside the circle as an array `[x, y]`.
+- The method `randPoint()` returns a random point inside the circle defined by the radius and center position.
 - A point on the circumference of the circle is considered to be inside the circle.
-- At most 3 * 10^4 calls will be made to the `randPoint()` method.
+- The return value of `randPoint()` is an array of two doubles `[x, y]`.
+- At most 3 * 10^4 calls will be made to `randPoint()`.

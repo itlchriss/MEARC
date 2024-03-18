@@ -1,11 +1,12 @@
 Method behavioural specifications:
-- The integer array parameter `edges` must not be null.
-- The integer array parameter `patience` must not be null.
-- The length of the integer array parameter `patience` is equal to the number of servers `n`.
-- The integer array parameter `patience` must have a value of 0 at index 0.
-- The integer array parameter `patience` values are greater than or equal to 1 and less than or equal to 100000.
-- The number of servers `n` is greater than or equal to 2 and less than or equal to 100000.
-- The number of edges is greater than or equal to 1 and less than or equal to the minimum of 100000 and `n * (n - 1) / 2`.
-- The edges in the integer array parameter `edges` are valid server indices.
+- The integer array parameter `edges` represents the network connections between servers, where each subarray [u, v] indicates a message channel between servers u and v.
+- The integer array parameter `patience` represents the resend interval for each data server, where patience[i] indicates the number of seconds a data server i will wait before resending a message.
+- The integer result is the earliest second starting from which the network becomes idle.
+- At the beginning of second 0, each data server sends its message to the master server for processing.
+- Starting from second 1, at the beginning of every second, each data server checks if it has received a reply to the message it sent from the master server.
+- If a data server has not received a reply, it will resend the message periodically based on its patience value.
+- If a data server has received a reply, no more resending will occur from that server.
 - The network becomes idle when there are no messages passing between servers or arriving at servers.
-- The method returns the earliest second starting from which the network becomes idle.
+- The network becomes idle when all data servers have received replies to their messages and no more resending is required.
+- The network becomes idle when there are no more messages in transit between servers.
+- The network becomes idle when all messages have been processed and replied to by the master server.

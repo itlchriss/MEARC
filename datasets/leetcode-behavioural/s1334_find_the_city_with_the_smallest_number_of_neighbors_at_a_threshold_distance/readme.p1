@@ -1,5 +1,8 @@
 - The integer parameter `n` is greater than or equal to 2 and is less than or equal to 100.
-- The length of the integer 2D array parameter `edges` is greater than or equal to 1 and is less than or equal to `n * (n - 1) / 2`.
-- Each element in the integer 2D array parameter `edges` has a length of 3.
+- The length of the integer array parameter `edges` is greater than or equal to 1 and is less than or equal to `n * (n - 1) / 2`.
+- Each element in the integer array parameter `edges` has a length of 3.
+- The integer values in each element of the integer array parameter `edges` are within the range of `0` to `n-1`.
+- The integer values in the third position of each element of the integer array parameter `edges` are greater than or equal to 1 and are less than or equal to 10000.
+- The integer parameter `maxDist` is greater than or equal to 1 and is less than or equal to 10000.
 - The integer result is the city with the smallest number of cities that are reachable through some path and whose distance is at most `maxDist`.
 - If there are multiple cities with the smallest number of reachable cities, the city with the greatest number is returned.

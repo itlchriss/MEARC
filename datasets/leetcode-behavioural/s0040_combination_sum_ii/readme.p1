@@ -3,6 +3,7 @@ Method behavioural specifications:
 - The integer array parameter `candidates` length is greater than or equal to 1 and is less than or equal to 100.
 - All values in the integer array parameter `candidates` are greater than or equal to 1 and are less than or equal to 50.
 - The integer parameter `target` is greater than or equal to 1 and is less than or equal to 30.
-- The result is a list of lists containing unique combinations of numbers from `candidates` that sum up to `target`.
-- Each number in `candidates` can only be used once in a combination.
-- The solution set must not contain duplicate combinations.
+- The result is a list of lists of integers.
+- Each list in the result contains unique combinations of numbers from the `candidates` array that sum to the `target`.
+- Each number in the `candidates` array can only be used once in a combination.
+- The solution set does not contain duplicate combinations.
