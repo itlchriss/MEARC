@@ -1,0 +1,86 @@
+ROOT=./
+NLP=../NLP/ccg2lambda
+STD_SI=./specs/si/typed_si.yml
+PYCMD=python
+TMP=./tmp
+OPENJML=../openjml-0.17-a15
+
+filename=`echo $1 | sed 's/.*\///'`
+index=`echo $filename | sed 's/\..*//'`
+folder=`echo $1 | sed "s/\/$filename//"`
+
+# 9: full
+# 1: text-preprocessing
+# 2: mr derivation with text-preprocessing
+# 3: compile only
+full=9
+compile=3
+preproc=1
+mrderive=2
+flag=$full
+if [ "$#" -eq 2 ]
+then
+    if [ "$2" == "compile" ]
+    then
+        flag=$compile
+    elif [ "$2" == "preproc" ]
+    then
+        flag=$preproc
+    elif [ "$2" == "mrderive" ]
+    then
+        flag=$mrderive
+    else
+        flag=$full
+    fi
+fi
+
+# Preprocessing
+# - Extracting the conditions from the input java file
+# - Preprocessing the text
+# - Writing the results into a conditions.yml
+if [ "$flag" -eq "$preproc" ] || [ "$flag" -eq "$full" ] 
+then
+    $PYCMD ./src/python/textpreprocessing.py $1
+fi
+
+
+# Meaning representation derivation
+if [ "$flag" -eq "$mrderive" ] || [ "$flag" -eq "$full" ]
+then
+    IFS=$'\n'
+    i=0
+    for condition in `niet ".ensures" $folder/tmp/conditions.yml`;
+    do
+        printf '%s\n' "$condition" | sed -f $NLP/en/tokenizer.sed > $folder/tmp/post.$i.tok
+        $NLP/candc-1.00/bin/candc --models $NLP/candc-1.00/models --candc-printer xml --input $folder/tmp/post.$i.tok > $folder/tmp/post.$i.candc.xml
+        $PYCMD $NLP/en/candc2transccg_wsc.py $folder/tmp/post.$i.candc.xml > $folder/tmp/post.$i.ccg.xml
+        $PYCMD $NLP/scripts/semparse_wsc.py $folder/tmp/post.$i.ccg.xml $NLP/en/semantic_templates_en_event_flat_mearc.yaml > $folder/tmp/post.$i.mr
+        $PYCMD ./src/python/depccg/nltk2normal.py $folder/tmp/post.$i.mr
+        i=$((i + 1))
+    done
+    IFS=$' \t\n'
+fi
+
+# MEARC compilation
+if [ "$flag" -eq "$compile" ] || [ "$flag" -eq "$full" ]
+then
+    for mr in `grep -lr exists $folder/tmp/*.mr`;
+    do
+        cmd=''
+        if test -f $folder/tmp/dynamic_si.yml; then
+            cmd="./bin/main -f $mr -s $STD_SI,$folder/tmp/dynamic_si.yml"
+        else
+            cmd="./bin/main -f $mr -s $STD_SI"
+        fi
+        # printf '%s\n' "$cmd"
+        ans=`$cmd`
+
+        # [[ -z "$ans"] && [ "$ans" == *"error"* ]] printf '%s\n' "$ans" || printf 'ensures(%s);\n' "$ans"
+        if [[ "$ans" == *"error"* ]]; then
+            printf "%s\n" "$ans"
+        elif [[ ! -z "$ans" ]]; then
+            printf "ensures(%s);\n" "$ans"
+        fi
+        printf '\n'
+    done
+fi

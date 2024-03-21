@@ -582,7 +582,10 @@ int __Rel_synthesis__(
     deallocatequeue(results, NULL);    
     /* the synthesised datatype must be defined in the SI */
     /* TODO: we should perform a checking in the very beginning to acknowledge the users the possible errors in the SI template */
-    relptr->datatype = ((struct si *)gqueue(rel_siq, 0))->synthesised_datatype;
+    struct datatype *dt = ((struct si *)gqueue(rel_siq, 0))->synthesised_datatype;
+    relptr->datatype->p = dt->p;
+    relptr->datatype->r = dt->r;
+    relptr->datatype->types = initqueue();
 
     return 0;
 }
@@ -644,9 +647,6 @@ int IN_code_synthesis(struct astnode *node) {
         deallocatequeue(en->cstptr->datalist, deallocatedata);
         en->cstptr->datalist = initqueue();
         __Rel_synthesis__(varnode->cstptr, en->cstptr, siq);
-        /* the final datatype should be stored in the entity's cstptr, and such datatype should be the one from the rel symbol */
-        en->cstptr->datatype->p = varnode->cstptr->datatype->p;
-        en->cstptr->datatype->r = varnode->cstptr->datatype->r;
         for (int i = 0; i < varnode->cstptr->datalist->count; ++i) 
             enqueue(en->cstptr->datatype->types, (char*)strdup(gqueue(varnode->cstptr->datalist, i)));
     } else {
@@ -761,21 +761,30 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
 struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct event *event, struct queue *siq) {
     struct queue *result = initqueue();
     struct entity *en1 = (struct entity *)gqueue(event->entities, 0);
-    // char *t1 = __combine_3_strings__("(", gramtype2string(en1->type), ")");
     for (int i = 0; i < siq->count; ++i) {
         struct si *si = (struct si *)gqueue(siq, i);   
-        char *t1 = __combine_3_strings__(
-            "(", 
-            ((struct si_arg *)gqueue(si->args, 0))->symbol, 
-            ")");      
-        for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
-            char *d1 = (char *)gqueue(en1->cstptr->datalist, j), *s = (char *)strdup(si->interpretation);                
-            char *tmp = strrep(s, t1, d1);
-            free(s);
-            tmp = __do_lazy_resolve__(tmp, en1);
-            enqueue(result, (void *)tmp);       
+        if (strcmp(((struct si_arg *)gqueue(si->args, 0))->symbol, "*") == 0) {
+            deallocatequeue(en1->cstptr->datalist, deallocatedata);
+            en1->cstptr->datalist = initqueue();
+            char *tmp = strdup(si->interpretation);
+            enqueue(en1->cstptr->datalist, (void *)tmp);
+            result = NULL;
+        } else {
+            char *t1 = __combine_3_strings__(
+                "(", 
+                ((struct si_arg *)gqueue(si->args, 0))->symbol, 
+                ")");      
+        
+            for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
+                char *d1 = (char *)gqueue(en1->cstptr->datalist, j), *s = (char *)strdup(si->interpretation);         
+                char *tmp;
+                tmp = strrep(s, t1, d1);
+                free(s);
+                tmp = __do_lazy_resolve__(tmp, en1);
+                enqueue(result, (void *)tmp);       
+            }
+            free(t1);
         }
-        free(t1);
     }
     return result;
 }
@@ -808,6 +817,10 @@ int event_synthesis(struct astnode *node) {
     deallocatequeue(siq, NULL);
     /* the resulting operations */
     __post_operation_si_subtree_synthesis__(node);    
+    if (node->si_q == NULL || (node->syntax == VBN && e->entities->count == 1)) {
+        /* a special case referring to line 768. the node's predicate accepts ANY argument and the SI is applied to the argument entity */
+        root = deleteastnodeandedge(node, root);
+    }
     return 0;
 }
 
@@ -950,10 +963,16 @@ int __search_visited_variables__(void *_child_cstptr, void *_input_cstptr) {
 
 
 int satisfy(struct astnode *node, struct queue *visited_variables) {
+    #if SIANALYSIS
+    printf("checking satify %s...\n", node->token->symbol);
+    #endif
     if (countastchildren(node) == 1) {
         struct event *e = __searchevent(getastchild(node, 0)->cstptr);
         if (e->entities->count == 1) {
             struct entity *en = (struct entity *)gqueue(e->entities, 0);
+            #if SIANALYSIS
+            printf("checking entity %s\n", en->cstptr->symbol);
+            #endif
             /*
                 used in function satisfy only 
                 if an entity's cstptr's ref_count == 1, this means that the cstptr is only referenced by this entity only
@@ -1005,9 +1024,11 @@ void sianalysis() {
     struct astnode *node = NULL;
     struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
     int check = -1;
-    // for (int i = 0; i < predicates->count; ++i) {
-    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
-    // }
+    #if SIANALYSIS
+    for (int i = 0; i < predicates->count; ++i) {
+        printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+    }
+    #endif
     /* two sortings, at most n^4 */
     int count = 0, max = predicates->count * predicates->count * predicates->count * predicates->count; 
     while (!isempty(predicates)) {
@@ -1015,7 +1036,9 @@ void sianalysis() {
             internal_error("SI analysis has exceeded the maximum count. please check with the MR. ");
         }
         node = (struct astnode *)dequeue(predicates);
-        // printf("analysing %s...\n", node->token->symbol);
+        #if SIANALYSIS
+        printf("analysing %s...\n", node->token->symbol);
+        #endif
         node->si_q = initqueue();
         switch(node->syntax) {
             case CD:
@@ -1047,22 +1070,31 @@ void sianalysis() {
                     struct astnode *tmp = NULL;
                     struct queue *tmpqueue = initqueue();
                     enqueue(tmpqueue, (void *)node);
-                    // printf("before...\n");
-                    // for (int i = 0; i < predicates->count; ++i) {
-                    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
-                    // }
+                    #if SIANALYSIS
+                    printf("before...\n");
                     for (int i = 0; i < predicates->count; ++i) {
+                        printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+                    }
+                    #endif
+                    while (!isempty(predicates)) {
                         tmp = (struct astnode *)dequeue(predicates);
+                        #if SIANALYSIS
+                        printf("checking %s(%d)\n", tmp->token->symbol, tmp->syntax);
+                        #endif
                         if (tmp->syntax != NN && 
                             tmp->syntax != NNS && 
                             tmp->syntax != NNP && 
                             tmp->syntax != NNPS && 
                             tmp->syntax != CD) {
                             enqueue(tmpqueue, (void *)tmp);
-                            // printf("enqueue %s...\n", tmp->token->symbol);
+                            #if SIANALYSIS
+                            printf("enqueue %s...\n", tmp->token->symbol);
+                            #endif
                             }
                         else {
-                            // printf("pushing %s...\n", tmp->token->symbol);
+                            #if SIANALYSIS
+                            printf("pushing %s...\n", tmp->token->symbol);
+                            #endif
                             push(tmpqueue, (void *)tmp);
                             break;
                         }
@@ -1071,9 +1103,11 @@ void sianalysis() {
                         push(predicates, (void *)pop(tmpqueue));
                     }
                     deallocatequeue(tmpqueue, NULL);
-                    // for (int i = 0; i < predicates->count; ++i) {
-                    //     printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
-                    // }
+                    #if SIANALYSIS
+                    for (int i = 0; i < predicates->count; ++i) {
+                        printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
+                    }
+                    #endif
                 } else {
                     node->si_q = q_searchqueue(silist, node, __simatcher);
                     check_validity(node);
@@ -1087,7 +1121,7 @@ void sianalysis() {
         count++;
     }
     while (!isempty(last)) enqueue(target, dequeue(last));
-    #if SIDEBUG
+    #if SIANALYSIS
     printf("Analysed predicate sequence:\n");
     for (int i = 0; i < target->count; ++i) {
         node = (struct astnode *)gqueue(target, i);
@@ -1144,11 +1178,7 @@ void sisynthesis() {
                 } else {
                     event_synthesis(node);
                 }
-
-                /* Experimental: past participles have no individual meaning unless it is applied to an entity which is synthesised with a noun semantics. therefore, the semantics of past participles applying an entity should become part of the semantics of such entity. concluding this idea, after past pariticiple synthesis, the node should be deleted because its semantics is already applied to the entity */
-                if (node->syntax == VBN) {
-                    root = deleteastnodeandedge(node, root);
-                }
+                
             } else if (child->cstptr->status != Assigned && 
                 !__is_noun_predicate__(node) && 
                 node->syntax != CD) {

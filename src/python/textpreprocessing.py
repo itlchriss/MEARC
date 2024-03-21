@@ -48,6 +48,10 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
                         sis.append(v)    
     return results, sis
 
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
+
 if __name__ == "__main__":
     filepath = sys.argv[1]
 
@@ -69,6 +73,6 @@ if __name__ == "__main__":
         yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True)
         
     with open(os.path.join(tmpfolder, 'dynamic_si.yml'), 'w') as fp:
-        yaml.dump(sis, fp, sort_keys=False, allow_unicode=True)
+        yaml.dump(sis, fp, sort_keys=False, allow_unicode=True, Dumper=NoAliasDumper)
     
     

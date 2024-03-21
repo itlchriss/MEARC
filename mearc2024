@@ -5,6 +5,7 @@ import os
 from typing import Dict, Tuple
 from yaml.loader import SafeLoader
 from optparse import OptionParser
+from src.python.depccg.nltk2normal import normalisation
 import glob
 
 _configs = { 'ROOT': 'ROOT', 'NLP': 'NLP', 'STD_SI': 'STD_SI', 'PYCMD': 'PYCMD', 'TMP': 'TMP'}
@@ -55,7 +56,7 @@ def run_cmd_show_output(cmd: str) -> None:
 
 
 debug = False
-info = False
+info = True
 
 def preprocessing(filepath: str):
     global tmpfolder
@@ -110,12 +111,21 @@ def deriveMR(nlspec: str, filename: str) -> bool:
         return False
     else:
         info and print('INFO:MR generation done')
+        mr = None
         with open("%s/%s.mr" % (tmpfolder, filename)) as fp:
             mr = fp.read()
+        if not mr or not mr.strip() or mr.strip == 'Failed':
+            return False       
+        else:
+            with open("%s/%s.mr" % (tmpfolder, filename), 'w') as fp:
+                mr = normalisation(mr)
+                # print(mr)
+                fp.write(mr)                
         return mr and mr.strip()
 
 def translateJMLbody(filename: str) -> Tuple[bool, str]:
     global tmpfolder
+    info and print('INFO:Starting MEARC')
     filepath = os.path.join(tmpfolder, filename + '.mr')
     dynamic_si_filepath = os.path.join(tmpfolder, 'dynamic_si.yml')
     if os.path.exists(dynamic_si_filepath):
@@ -124,6 +134,7 @@ def translateJMLbody(filename: str) -> Tuple[bool, str]:
         cmd = "./bin/main -f %s -s %s" % (filepath, configs.STD_SI)
     debug and print(cmd)
     jmlbody, error = run_cmd_with_output(cmd)
+    info and print('INFO:MEARC process ended')
     if error or not jmlbody or not jmlbody.strip(): 
         if not error:
             error = 'Failed'
@@ -165,7 +176,7 @@ def main(configs: dot_access_dict, filepath: str) -> None:
         if not r:
             # In this case, the jmlbody 
             print('Failed in MEARC')
-            debug and print(result)
+            print(result)
             continue
         # DEBUG USE ONLY
         print('ensures(%s);' % result.strip())
@@ -173,6 +184,7 @@ def main(configs: dot_access_dict, filepath: str) -> None:
         
     # for sent in data['ensures']:
         # mrderivation
+       
 
 
 if __name__ == "__main__":

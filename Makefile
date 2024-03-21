@@ -34,31 +34,35 @@ else
 # endif
 
 	ifeq ($(LEXDEBUG), 1)
-	CFLAGS += -DLEXDEBUG
+	CFLAGS += -DLEXDEBUG -DDEBUG
 	endif
 
 	ifeq ($(PARDEBUG), 1)
-		CFLAGS += -DPARDEBUG
+		CFLAGS += -DPARDEBUG -DDEBUG
 	endif
 
 	ifeq ($(SIDEBUG), 1)
-		CFLAGS += -DSIDEBUG
+		CFLAGS += -DSIDEBUG -DDEBUG
 	endif
 
 	ifeq ($(ASTDEBUG), 1)
-		CFLAGS += -DASTDEBUG
+		CFLAGS += -DASTDEBUG -DDEBUG
 	endif
 
 	ifeq ($(CSTDEBUG), 1)
-		CFLAGS += -DCSTDEBUG
+		CFLAGS += -DCSTDEBUG -DDEBUG
 	endif
 
 	ifeq ($(INFO), 1)
-		CFLAGS += -DINFO
+		CFLAGS += -DINFO -DDEBUG
+	endif
+
+	ifeq ($(SIANALYSIS), 1)
+		CFLAGS += -DSIANALYSIS -DDEBUG
 	endif
 
 	ifeq ($(MEMDEBUG), 1)
-		CFLAGS += -DMEMDEBUG
+		CFLAGS += -DMEMDEBUG -DDEBUG
 	endif
 endif
 

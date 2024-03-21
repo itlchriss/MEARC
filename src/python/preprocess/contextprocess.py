@@ -9,7 +9,7 @@ import os
 # we should extend this list to support more data types
 datatypes = [
     'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays',
-    'string', 'strings'
+    'string', 'strings', 'matrix', 'boolean'
     ]
 
 

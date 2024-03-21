@@ -64,7 +64,7 @@
     primitive_type: '7'
     reference_type: '-1'
   interpretation: -(Subj)
-- term: gtoe
+- term: greater_than_or_equal
   syntax:
   - JJ
   arguments:  
@@ -75,29 +75,29 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation: (Subj) >= (Dat)
-- term: gt
+- term: greater_than
   syntax:
   - JJ
   arguments:  
   - symbol: Subj
     primitive_type: '*'
     reference_type: '*'
-  - symbol: Acc
+  - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
-  interpretation: (Subj) > (Acc)
-- term: lt
+  interpretation: (Subj) > (Dat)
+- term: less_than
   syntax:
   - JJ
   arguments:  
   - symbol: Subj
     primitive_type: '*'
     reference_type: '*'
-  - symbol: Acc
+  - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
-  interpretation: (Subj) < (Acc)
-- term: ltoe
+  interpretation: (Subj) < (Dat)
+- term: less_than_or_equal
   syntax:
   - JJ
   arguments:  
@@ -108,6 +108,14 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation: (Subj) <= (Dat)
+- term: literal
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ''
 - term: null
   syntax:
   - JJ
@@ -139,18 +147,18 @@
   syntax:
   - JJ
   arguments:
-  - symbol: Subj
+  - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
-  interpretation: '(Subj) == true'
+  interpretation: 'true'
 - term: false
   syntax:
   - JJ
   arguments:
-  - symbol: Subj
+  - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
-  interpretation: '(Subj) == true'
+  interpretation: 'false'
 - term: be
   syntax:
   - VBZ
@@ -456,6 +464,15 @@
     primitive_type: '4'
     reference_type: '-1'
   interpretation: ''
+- term: type_boolean_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '0'
+    reference_type: '-1'
+  interpretation: ''
 - term: keyword_result
   syntax:
   - NN
@@ -584,5 +601,15 @@
     reference_type: '0'
     lazy_resolve: __REF__type
   interpretation: \sum int i; 0 <= i < __REF__type.length; (x)
-    
+- term: evenly_divided
+  syntax:
+  - VBN
+  arguments:
+  - symbol: Subj
+    primitive_type: '4'    
+    reference_type: '-1'
+  - symbol: Acc
+    primitive_type: '4'    
+    reference_type: '-1'
+  interpretation: (Acc) % (Subj) == 0
 

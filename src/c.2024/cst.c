@@ -15,6 +15,12 @@ void showcstsymbol(void *_symbol) {
         char *data = (char *)gqueue(c->datalist, i);
         printf("%s  ", data);
     }
+    if (c->datatype->types->count > 0) {
+        printf("    Types");
+        for (int i = 0; i < c->datatype->types->count; ++i) {
+            printf("%s  ", (char *)gqueue(c->datatype->types, i));
+        }
+    }
     printf("\n===================================================================================\n");
 }
 
@@ -68,15 +74,17 @@ int __ptrcomparator(void *_aptr, void *_baptr) {
 
 void deallocatedata(void *_data) {
     char *data = (char *)_data;
+    
     if (data)
         free(data);
 }
 
 void deallocatecstsymbol(void *_cstsymbol) {
     struct cstsymbol *c = (struct cstsymbol *)_cstsymbol;
-    free(c->symbol);
+    if (c->symbol)
+        free(c->symbol);
     deallocatequeue(c->datalist, deallocatedata);
-    if (c->datatype->types) {
+    if (c->datatype->types && c->datatype->types->count > 0) {
         deallocatequeue(c->datatype->types, deallocatedata);
     }
 }

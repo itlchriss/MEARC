@@ -144,23 +144,34 @@
 %%
 
 formula
-    : quantified_term {
-        print_debug("formula: terms");
+    // : quantified_term {
+    //     print_debug("formula: terms");
+    //     ast = $1;
+    //     $1->isroot = 1;
+    //     pruneeventsubtrees();
+    //     deallocatequeue(_events, NULL);
+    //     deallocatequeue(_datarefs, NULL);
+    // }
+    // | NEG quantified_term {
+    //     print_debug("formula: NEG terms");
+    //     ast = $2;
+    //     $2->isnegative = 1;
+    //     $2->isroot = 1;
+    //     pruneeventsubtrees();
+    //     deallocatequeue(_events, NULL);
+    //     deallocatequeue(_datarefs, NULL);
+    // }
+    // | terms IMPLY terms {
+
+    // }    
+    // ;
+    : terms {
         ast = $1;
         $1->isroot = 1;
         pruneeventsubtrees();
         deallocatequeue(_events, NULL);
         deallocatequeue(_datarefs, NULL);
     }
-    | NEG quantified_term {
-        print_debug("formula: NEG terms");
-        ast = $2;
-        $2->isnegative = 1;
-        $2->isroot = 1;
-        pruneeventsubtrees();
-        deallocatequeue(_events, NULL);
-        deallocatequeue(_datarefs, NULL);
-    }    
     ;
 
 
@@ -191,6 +202,19 @@ terms
             $$->conntype = $2;
             addastchild($$, $1);
             addastchild($$, $4);
+        }
+    }
+    | '(' terms ')' connective term  {
+        print_debug("terms: terms connective '(' term ')'");
+        if ($2 == NULL) {
+            $$ = $5;
+        } else if ($5 == NULL) {
+            $$ = $2;
+        } else {
+            $$ = newastnode(Connective, NULL);
+            $$->conntype = $4;
+            addastchild($$, $2);
+            addastchild($$, $5);
         }
     }
     | term {
