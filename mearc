@@ -38,7 +38,7 @@ fi
 # - Extracting the conditions from the input java file
 # - Preprocessing the text
 # - Writing the results into a conditions.yml
-if [ "$flag" -eq "$preproc" ] || [ "$flag" -eq "$full" ] 
+if [ "$flag" -eq "$preproc" ] || [ "$flag" -eq "$mrderive" ] || [ "$flag" -eq "$full" ] 
 then
     $PYCMD ./src/python/textpreprocessing.py $1
 fi

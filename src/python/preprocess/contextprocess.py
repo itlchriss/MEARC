@@ -68,7 +68,7 @@ class ContextProcessor:
 
     def _synonym_syntax_preprocessor(self):
         for rule in alt_rules:
-            self.sent = self.sent.replace(rule[0], rule[1])
+            self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
 
     possessable_terms = ['length']
 

@@ -349,7 +349,7 @@ def demo(function):
         
 def normalisation(rawmr):
     # return removeBrackets(str(remove_true(lexpr(rawmr))))
-    return str(remove_true(lexpr(rawmr)))
+    return removeParentheses(str(remove_true(lexpr(rawmr))))
 
 def __get_parentheses_matches__(text):
     istart = []  # stack of indices of opening parentheses
