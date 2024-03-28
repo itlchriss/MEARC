@@ -1,15 +1,24 @@
-total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | wc -l`
+# total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | wc -l`
+total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | awk 'END {print NR}'`
 # missing count mr 
-p2ok=`grep -r 'ensures' result | grep -v 'bad input' | wc -l`
-derivationerror=`grep -r 'ERROR:root:' result | wc -l`
-p1ok=`grep -rlZv '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | xargs -0 grep -l 'exists' | wc -l`
-p1failed=`grep -rl 'Failed' ./datasets/leetcode-behavioural/*/tmp/*.mr | wc -l`
-p1unreducted=`grep -rl '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | wc -l`
+p2ok=`grep -r 'ensures' result | grep -v 'bad input' | awk 'END {print NR}'`
+derivationerror=`grep -r 'Sentence:' result | awk 'END {print NR}'`
+# find ./datasets/leetcode-behavioural -type f -name "*.mr" | sort > totalprocessed
+# grep -rlZv '\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | xargs -0 grep -rl 'exists|all' | sort > p1ok
+# find ./datasets/leetcode-behavioural/ -name "*.mr" -type f -empty > p1empty
+# grep -rl 'Failed' ./datasets/leetcode-behavioural/*/tmp/*.mr | sort > p1failed
+# grep -rl '\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | sort > p1unreducted
+p1ok=`grep -rlZv '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | xargs -0 grep -lE 'exists|all' | awk 'END {print NR}'`
+p1failed=`grep -rl 'Failed' ./datasets/leetcode-behavioural/*/tmp/*.mr | awk 'END {print NR}'`
+p1unreducted=`grep -rl '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | awk 'END {print NR}'`
+p1empty=`find ./datasets/leetcode-behavioural/ -name "*.mr" -type f -empty | awk 'END {print NR}'`
 p1percent=`bc -l <<<"($p1ok / $total) * 100"`
 p2percent=`bc -l <<< "($p2ok / $p1ok) * 100"`
 echo 'Total sentence processed: ' $total
 echo 'P1 success cases: ' $p1ok
 echo 'P1 failed cases: ' $p1failed
+echo 'P1 empty MR cases: ' $p1empty
+echo 'Derivation error in result: ' $derivationerror
 echo 'P1 reducted incompletely cases: ' $p1unreducted
 echo 'P2 success cases: ' $p2ok
 echo 'P1 successful rate: ' $p1percent

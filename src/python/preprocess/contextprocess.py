@@ -43,7 +43,8 @@ class ContextProcessor:
                 sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
                 # contextual_si['param_%s' % (param)] = param
-        elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
+        # elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
+        elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
             for param in r:
                 pattern = 'param_%s_' % param.replace('`', '')
                 sent = sent.replace(param, pattern)
