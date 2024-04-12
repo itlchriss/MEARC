@@ -2,6 +2,7 @@
 #define CST_H
 
 #include "util.h"
+#include "si.h"
 
 #ifndef UNDEFINED
 #define UNDEFINED -1
@@ -31,6 +32,7 @@ enum primitive_datatype {
     Double = 7
 };
 
+
 // Class, Interface are treated as Object
 enum reference_datatype {
     AnyRefType = -2,
@@ -39,10 +41,22 @@ enum reference_datatype {
     Object = 2
 };
 
+/*
+Definition must be the same as interpretation_type in si.h
+*/
+enum intermediate_SI_type {
+    INT_SI_TYPE_UNDEFINED = -1,
+    INT_SI_TYPE_DIRECT = 0,
+    INT_SI_TYPE_EXPR = 1,
+    INT_SI_TYPE_MODIFIER = 2,
+    INT_SI_TYPE_JAVA_METHOD = 3
+};
+
 // type stores the type of class and interface
 struct datatype {
     enum primitive_datatype p;
     enum reference_datatype r;
+    enum intermediate_SI_type i;
     /* 
         special keywords to resolve runtime elements, currently at most 1 keyword can be used
         __REF__type: the type stored in the types of an entity
@@ -50,6 +64,8 @@ struct datatype {
     char *lazy_resolve;
     /* all elements in this queue must be C-strings. each C-string represents a type name */
     struct queue *types;
+    /* only use when r == 2 */
+    struct datatype *element_datatype;
 };
 
 
@@ -83,6 +99,8 @@ struct cstsymbol {
         Refining the status of the symbol instead of changing the status of the tree node
     */
     enum symbol_status status;
+    /* type of the synthesised intermediate SI type, refer to interpretation_type in si.h */
+    int interpretation_type;
     /*
         Number of nodes that referenced this ptr
     */

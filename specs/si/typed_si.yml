@@ -8,6 +8,7 @@
   synthesised_datatype:
     primitive_type: '0'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
   syntax:
@@ -19,6 +20,7 @@
   synthesised_datatype:
     primitive_type: '3'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
   syntax:
@@ -30,6 +32,7 @@
   synthesised_datatype:
     primitive_type: '4'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
   syntax:
@@ -41,6 +44,7 @@
   synthesised_datatype:
     primitive_type: '5'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
   syntax:
@@ -52,6 +56,7 @@
   synthesised_datatype:
     primitive_type: '6'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
   syntax:
@@ -63,6 +68,7 @@
   synthesised_datatype:
     primitive_type: '7'
     reference_type: '-1'
+  interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: greater_than_or_equal
   syntax:
@@ -74,6 +80,7 @@
   - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'expression'
   interpretation: (Subj) >= (Dat)
 - term: greater_than
   syntax:
@@ -85,6 +92,7 @@
   - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'expression'
   interpretation: (Subj) > (Dat)
 - term: less_than
   syntax:
@@ -96,6 +104,7 @@
   - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'expression'
   interpretation: (Subj) < (Dat)
 - term: less_than_or_equal
   syntax:
@@ -107,6 +116,7 @@
   - symbol: Dat
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'expression'
   interpretation: (Subj) <= (Dat)
 - term: literal
   syntax:
@@ -123,6 +133,7 @@
   - symbol: Subj
     primitive_type: '*'
     reference_type: '0'
+  interpretation_type: 'expression'
   interpretation: '(Subj) == null'
 - term: null
   syntax:
@@ -131,6 +142,7 @@
   - symbol: Subj
     primitive_type: '*'
     reference_type: '1'
+  interpretation_type: 'expression'
   interpretation: '(Subj) == null'
 - term: null
   syntax:
@@ -142,6 +154,7 @@
     type_names:
     - 'list'
     - 'collection'
+  interpretation_type: 'expression'
   interpretation: '(Subj) == null'
 - term: true
   syntax:
@@ -150,6 +163,7 @@
   - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: 'true'
 - term: false
   syntax:
@@ -158,6 +172,7 @@
   - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: 'false'
 - term: be
   syntax:
@@ -251,7 +266,8 @@
   - symbol: x
     primitive_type: '*'
     reference_type: '0'
-  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] <= (x)[k+1]
+  interpretation_type: 'expression'
+  interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] __COMP__ (x)[k+1]
 - term: sort
   syntax:
   - VBN
@@ -262,7 +278,26 @@
     type_names: 
       - 'list'      
       - 'collection'
-  interpretation: \forall int k; 0 <= k && k < (x).size()-1; (x).get(k) <= (x).get(k+1)
+  interpretation_type: 'expression'
+  interpretation: \forall int k; 0 <= k && k < (x).size()-1; (x).get(k) __COMP__ (x).get(k+1)
+- term: ascending_order
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'modifier'
+  interpretation: '<='
+- term: descending_order
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'modifier'
+  interpretation: '>'
 - term: value
   syntax:
   - NNS
@@ -286,6 +321,7 @@
   - symbol: x
     primitive_type: '*'
     reference_type: '0'
+  interpretation_type: 'expression'
   interpretation: (x).length == 0
 - term: empty
   syntax:
@@ -294,6 +330,7 @@
   - symbol: x
     primitive_type: '*'
     reference_type: '1'
+  interpretation_type: 'expression'
   interpretation: (x).length() == 0
 - term: empty
   syntax:
@@ -305,6 +342,7 @@
     type_names:
       - 'list'
       - 'collection'
+  interpretation_type: 'expression'
   interpretation: (x).size() == 0
 - term: equal
   syntax:
@@ -319,6 +357,7 @@
   synthesised_datatype:
     primitive_type: '0'
     reference_type: '-1'
+  interpretation_type: 'expression'
   interpretation: (Subj) == (Dat)
 - term: __REL__length
   syntax:
@@ -413,7 +452,18 @@
     type_names:
     - __REL__element
     - __REL__value
+  interpretation_type: 'modifier'
   interpretation: (y)[i]
+- term: in
+  syntax:
+  - IN
+  arguments:
+  - symbol: e
+    interpretation_type: 'expression'
+  - symbol: x
+    interpretation_type: 'modifier'
+  interpretation_type: 'modifier'
+  interpretation: __COMP__
 - term: Rel
   syntax:
   - Rel
@@ -433,6 +483,15 @@
   synthesised_datatype:
     primitive_type: '*'
     reference_type: '0'
+  interpretation: ''
+- term: type_list_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '2'
   interpretation: ''
 - term: type_string_
   syntax:
@@ -464,6 +523,33 @@
     primitive_type: '4'
     reference_type: '-1'
   interpretation: ''
+- term: type_double_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '7'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_long_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '5'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
 - term: type_boolean_
   syntax:
   - NN
@@ -478,12 +564,14 @@
   - NN
   arguments:
   - symbol: '*'
+  interpretation_type: 'value'
   interpretation: \result
 - term: return
   syntax:
   - VBN
   arguments:
   - symbol: '*'
+  interpretation_type: 'value'
   interpretation: \result
 - term: of
   syntax:
@@ -498,6 +586,7 @@
   synthesised_datatype:
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: __INVOKE__REL__
 - term: __REL__element
   syntax:
@@ -545,6 +634,7 @@
   synthesised_datatype:
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: (x)[i]
 - term: __REL__value
   syntax:
@@ -556,6 +646,7 @@
   synthesised_datatype:
     primitive_type: '2'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: (x).charAt(i)
 - term: __REL__value
   syntax:
@@ -570,6 +661,7 @@
   synthesised_datatype:
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'modifier'
   interpretation: (x).get(i)
 - term: unique
   syntax:
@@ -582,6 +674,7 @@
     type_names:
     - 'list'
     - 'collection'
+  interpretation_type: 'expression'
   interpretation: Collections.frequency((__REF__type), (x)) == 1
 - term: unique
   syntax:
@@ -591,6 +684,7 @@
     primitive_type: '*'
     reference_type: '0'
     lazy_resolve: __REF__type
+  interpretation_type: 'expression'
   interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
 - term: sum
   syntax:
@@ -600,6 +694,7 @@
     primitive_type: '*'
     reference_type: '0'
     lazy_resolve: __REF__type
+  interpretation_type: 'expression'
   interpretation: \sum int i; 0 <= i < __REF__type.length; (x)
 - term: evenly_divided
   syntax:
@@ -611,5 +706,40 @@
   - symbol: Acc
     primitive_type: '4'    
     reference_type: '-1'
+  interpretation_type: 'expression'
   interpretation: (Acc) % (Subj) == 0
-
+- term: comma
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '","'
+- term: period
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '"."'
+- term: alphabets
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: 'Character.isAlphabetic'
+- term: contain
+  syntax:
+  - VBZ
+  - VB
+  arguments:
+  - symbol: 'x'
+    primitive_type: '-1'
+    reference_type: '1'
+  - symbol: 'y'
+    interpretation_type: 'java_method'
+  interpretation: '\exists int i; 0 <= i < (x).length(); (y)((x).codePointAt(i))'

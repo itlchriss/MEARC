@@ -8,6 +8,19 @@
     Each semantic interpretation is UNIQUE because each interpretation has a unique composite key of (term and penn-tree bank category).
 */
 
+/*
+    Type for the interpretation
+    If the type is a modifier, then the intermediate SI is stored in CST only, the subtree is removed
+    If the type is an expression, the intermediate SI is stored in the subtree root
+*/
+enum interpretation_type {
+    SI_INT_TYPE_UNDEFINED = -1,
+    SI_INT_TYPE_DIRECT = 0,
+    SI_INT_TYPE_EXPR = 1,
+    SI_INT_TYPE_MODIFIER = 2,
+    SI_INT_TYPE_JAVA_METHOD = 3
+};
+
 struct si_arg {
     // enum explicit_datatype datatype;
     struct datatype *datatype;
@@ -22,6 +35,8 @@ struct si {
     struct queue *syntax;
     /* the interpretation of this SI */
     char *interpretation;
+    /* type of this SI */
+    enum interpretation_type type;
     /* arguments accepted by this SI */
     struct queue *args;
     /* the data type of this SI after synthesis */

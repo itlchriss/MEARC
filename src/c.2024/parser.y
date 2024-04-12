@@ -128,7 +128,7 @@
     // enum grammartype gtype;
 }
 
-%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG 
+%token <t> PREDICATE IDENTIFIER KEYWORD_TRUEP '.' NEG
 %token <t> COMMA '(' ')' EQUAL AND OR IMPLY EQUIV '{' '}'
 %token <t> KEYWORD_QUANTIFIER KEYWORD_TYPE KEYWORD_PARAM
 %token <t> TAG EVENT
@@ -446,8 +446,21 @@ quantified_term
                         however, if both their primitive types have valid types, we consider that the entity may have two or more datatypes
                             being specified, providing combinatorial results are considered as future work.
                     */
-                    if (($$->cstptr->datatype->p >= 0 && ref->datatype->p >= 0) || ($$->cstptr->datatype->r >= 0 && ref->datatype->r >= 0)) {
+                    if (($$->cstptr->datatype->p >= 0 && ref->datatype->p >= 0) || ($$->cstptr->datatype->r == ref->datatype->r)) {                        
                         semantic_error("The entity(%s) has two or more datatypes found. Please solve this conflict.", $2->symbol);
+                    } else if (($$->cstptr->datatype->r == String || ref->datatype->r == String) && $$->cstptr->datatype->r != ref->datatype->r) {
+                        /* we can only use whatever we want when the parsed datatype is an array or a list */
+                        /* if the parsed datatype is an array, then the incoming datatype can only be a primitive type */
+                        /* if the parsed datatype is a list, then the incoming datatype can be any type */
+                        /* TODO: custom types are not supported currently */
+                        $$->cstptr->datatype->element_datatype = (struct datatype *)malloc(sizeof(struct datatype));
+                        $$->cstptr->datatype->element_datatype->types = initqueue();
+                        $$->cstptr->datatype->element_datatype->r = String;
+                        $$->cstptr->datatype->element_datatype->p = AnyPrimitiveType;     
+                        if ($$->cstptr->datatype->r == String) {
+                            $$->cstptr->datatype->p = ref->datatype->p;
+                            $$->cstptr->datatype->r = ref->datatype->r;
+                        }
                     } else {
                         if (ref->datatype->p >= 0) $$->cstptr->datatype->p = ref->datatype->p;
                         if (ref->datatype->r >= 0) $$->cstptr->datatype->r = ref->datatype->r;

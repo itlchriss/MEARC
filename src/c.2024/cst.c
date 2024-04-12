@@ -32,8 +32,10 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->datatype = (struct datatype *)malloc(sizeof(struct datatype));
     new->datatype->p = UNDEFINED;
     new->datatype->r = UNDEFINED;
+    new->interpretation_type = -1;
     new->datatype->lazy_resolve = NULL;
     new->datatype->types = initqueue();
+    new->datatype->element_datatype = NULL;
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;
@@ -86,6 +88,9 @@ void deallocatecstsymbol(void *_cstsymbol) {
     deallocatequeue(c->datalist, deallocatedata);
     if (c->datatype->types && c->datatype->types->count > 0) {
         deallocatequeue(c->datatype->types, deallocatedata);
+    }
+    if (c->datatype->element_datatype) {
+        deallocatequeue(c->datatype->element_datatype->types, deallocatedata);
     }
 }
 

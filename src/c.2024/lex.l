@@ -116,6 +116,7 @@ KEYWORD_ACCI         "AccI"
 KEYWORD_DAT         "Dat"
 
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
+EXPR                (_expr[0-9]+_)
 KEYWORD_TYPE         _type_[a-z]+_
 KEYWORD_PARAM        _param_[a-zA-Z0-9]+_
 VARIABLE               ([a-z]([0-9]+)?)
@@ -138,6 +139,7 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_PARAM} { yylval.t = handletoken(yytext); return KEYWORD_PARAM; }
 {KEYWORD_TYPE} { yylval.t = handletoken(yytext); return KEYWORD_TYPE; }
 {PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
+{EXPR} { yylval.t = handletoken(yytext); return PREDICATE; }
 "." { handlecolnum(yytext); return '.'; }
 {KEYWORD_TRUEP} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }
 {KEYWORD_TRUE} { yylval.t = handletoken(yytext); return KEYWORD_TRUEP; }

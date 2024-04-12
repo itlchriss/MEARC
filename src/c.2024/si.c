@@ -236,6 +236,24 @@ int __match_event_si_for_prepositions__(void *_si, void *_astnode) {
         return FALSE;
 }
 
+/* for the eventnode has intermediate SI, we need to match with the intermediate SI type */
+int __match_event_int_si_for_prepositions__(void *_si, void *_astnode) {
+    struct astnode *node = (struct astnode *)_astnode;
+    struct event *event = (struct event *)__searchevent(getastchild(node, 0)->cstptr);
+    struct cstsymbol *var_cstptr = ((struct astnode *)getastchild(node, 1))->cstptr;
+    struct cstsymbol *en_cstptr = event->cstptr;
+    struct si *si = (struct si *)_si;
+    /* a predicate not accepting only 1 argument can be filtered out */
+    if (si->args->count != 2) return FALSE;
+    struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0), *arg2 = (struct si_arg *)gqueue(si->args, 1);
+    if (
+        (en_cstptr->interpretation_type == arg1->datatype->i && var_cstptr->interpretation_type == arg2->datatype->i) ||
+        (en_cstptr->interpretation_type == arg2->datatype->i && var_cstptr->interpretation_type == arg1->datatype->i)
+        ) return TRUE;
+    else
+        return FALSE;
+}
+
 /*
     Match an SI with the symbol only. this is used in finding REL SI
 */
@@ -295,6 +313,20 @@ struct queue *__obtain_si_with_cstptr_(struct cstsymbol *x, struct cstsymbol *y,
                 enqueue(result, (void *)tmp);
             }
         }
+    }
+    return result;
+}
+
+struct queue *__COMP__cmd_synthesis__(struct cstsymbol *expr_ptr, struct cstsymbol *mod_or_direct_ptr) {    
+    struct queue *result = initqueue();
+    char *mod_or_direct_semantics = (char *)gqueue(mod_or_direct_ptr->datalist, 0);
+    for (int k = 0; k < expr_ptr->datalist->count; ++k) {
+        char *int_si = (char *)gqueue(expr_ptr->datalist, k);
+        /* TODO: there should be only one mod_or_direct semantics. however, users can claim that there are numerous of them 
+                we currently only support one unique mod_or_direct semantics in this synthesis
+        */
+        char *tmp = strrep(int_si, "__COMP__", mod_or_direct_semantics);
+        enqueue(result, (void *)tmp);
     }
     return result;
 }
@@ -453,6 +485,7 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         targetsi->synthesised_datatype->r >= 0) { 
         child->cstptr->datatype = targetsi->synthesised_datatype;
     }
+    if (targetsi->type != -1) child->cstptr->interpretation_type = targetsi->type;
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
     return 0;
 }
@@ -650,12 +683,24 @@ int IN_code_synthesis(struct astnode *node) {
         for (int i = 0; i < varnode->cstptr->datalist->count; ++i) 
             enqueue(en->cstptr->datatype->types, (char*)strdup(gqueue(varnode->cstptr->datalist, i)));
     } else {
-        node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
-        if (node->si_q->count == 0) sinotfound_error(node->token->symbol);
-        node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
+        if (eventnode->cstptr->datalist->count > 0) {
+            node->si_q = q_searchqueue(node->si_q, node, __match_event_int_si_for_prepositions__);
+            if (node->si_q->count == 0) sinotfound_error(node->token->symbol);        
+            /* perform synthesis using the intermediate SI stored in eventnode */
+            node->si_q = __COMP__cmd_synthesis__(eventnode->cstptr, varnode->cstptr);
+            /* write back the data to the event node */
+            deallocatequeue(eventnode->cstptr->datalist, deallocatedata);
+            eventnode->cstptr->datalist = initqueue();
+            for (int i = 0; i < node->si_q->count; ++i) enqueue(eventnode->cstptr->datalist, (char *)strdup((char *)gqueue(node->si_q, i)));
+
+        } else {
+            node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
+            if (node->si_q->count == 0) sinotfound_error(node->token->symbol);        
+            node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
+        }        
         deallocatequeue(en->cstptr->datalist, deallocatedata);
         en->cstptr->datalist = initqueue();
-        while (!isempty(node->si_q)) enqueue(en->cstptr->datalist, dequeue(node->si_q));
+        for (int i = 0; i < node->si_q->count; ++i) enqueue(en->cstptr->datalist, (char *)strdup((char *)gqueue(node->si_q, i)));
     }
 
     root = deleteastnodeandedge(node, root);
@@ -810,17 +855,36 @@ int event_synthesis(struct astnode *node) {
         funcptr = &__2_event_entities_combinatorial_subtree_si_synthesis__;
     }    
     if (siq->count == 0) sinotfound_error(node->token->symbol);
-    node->si_q = (*funcptr)(e, siq);
+    node->si_q = (*funcptr)(e, siq);    
     for (int i = 0; i < e->entities->count; ++i) ((struct entity *)gqueue(e->entities, i))->cstptr->ref_count--;
-    e->cstptr->ref_count--;
-    /* since the SIs are only for this synthesis, it should have no effect on the overall SI list. we should deallocate ASAP */
-    deallocatequeue(siq, NULL);
+    e->cstptr->datalist = initqueue();
+    /* storing the synthesised intermediate SI into the event, such that the INT SI can be referenced in the later events if such event is accepted as argument */
+    for (int i = 0; i < node->si_q->count; ++i) enqueue(e->cstptr->datalist, gqueue(node->si_q, i));
+    e->cstptr->interpretation_type = INT_SI_TYPE_EXPR;
+    e->cstptr->ref_count--;    
     /* the resulting operations */
     __post_operation_si_subtree_synthesis__(node);    
-    if (node->si_q == NULL || (node->syntax == VBN && e->entities->count == 1)) {
-        /* a special case referring to line 768. the node's predicate accepts ANY argument and the SI is applied to the argument entity */
+    // if (node->si_q == NULL || (node->syntax == VBN && e->entities->count == 1)) {
+    //     /* a special case referring to line 768. the node's predicate accepts ANY argument and the SI is applied to the argument entity */
+    //     root = deleteastnodeandedge(node, root);
+    // }
+    if (((struct si *)gqueue(siq, 0))->type == SI_INT_TYPE_MODIFIER) {
+        struct entity *en1 = (struct entity *)gqueue(e->entities, 0);
+        // while (!isempty(en1->cstptr->datalist)) dequeue(en1->cstptr->datalist);
+        en1->cstptr->datalist = initqueue();
+        // while (!isempty(node->si_q)) enqueue(en1->cstptr->datalist, dequeue(node->si_q));
+        for (int i = 0; i < node->si_q->count; ++i) {
+            enqueue(en1->cstptr->datalist, gqueue(node->si_q, i));
+        }
+        root = deleteastnodeandedge(node, root);        
+    } else if (node->si_q == NULL) {
         root = deleteastnodeandedge(node, root);
+    } else {
+        struct entity *en1 = (struct entity *)gqueue(e->entities, 0);
+        en1->cstptr->interpretation_type = SI_INT_TYPE_EXPR;
     }
+    /* since the SIs are only for this synthesis, it should have no effect on the overall SI list. we should deallocate ASAP */
+    deallocatequeue(siq, NULL);
     return 0;
 }
 

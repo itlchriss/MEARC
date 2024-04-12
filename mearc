@@ -76,10 +76,16 @@ then
         ans=`$cmd`
 
         # [[ -z "$ans"] && [ "$ans" == *"error"* ]] printf '%s\n' "$ans" || printf 'ensures(%s);\n' "$ans"
-        if [[ "$ans" == *"error"* ]]; then
+        if [ "$ans" == *"error"* ] || [ "$ans" == *"Lexer:"* ] || [ "$ans" == *"Parser:"* ]; then
             printf "%s\n" "$ans"
         elif [[ ! -z "$ans" ]]; then
+            mkdir -p $folder/jml
+            filename=$(basename $mr)
+            filename_without_extension="${filename%.*}"
+            filename=$filename_without_extension
+            filename+=".jml"
             printf "ensures(%s);\n" "$ans"
+            printf "ensures(%s);\n" "$ans" > $folder/jml/$filename
         fi
         printf '\n'
     done

@@ -243,6 +243,7 @@ struct queue* readSI(char *dstfilepaths) {
                     si->synthesised_datatype->p = UNDEFINED;
                     si->synthesised_datatype->r = UNDEFINED;
                     si->synthesised_datatype->types = initqueue();
+                    si->type = -1;
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
@@ -309,6 +310,21 @@ struct queue* readSI(char *dstfilepaths) {
                                             yaml_parser_scan(&parser, &token);
                                             yaml_parser_scan(&parser, &token);     
                                             arg->datatype->lazy_resolve = (char *)strdup((char *)token.data.scalar.value);
+                                            #if SIDEBUG
+                                            printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
+                                            #endif  
+                                        } else if (strcmp((char*)token.data.scalar.value, "interpretation_type") == 0) {
+                                            yaml_parser_scan(&parser, &token);
+                                            yaml_parser_scan(&parser, &token);     
+                                            if (strcmp((char *)token.data.scalar.value, "expression") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_EXPR;
+                                            } else if (strcmp((char *)token.data.scalar.value, "modifier") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_MODIFIER;
+                                            } else if (strcmp((char *)token.data.scalar.value, "java_method") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_JAVA_METHOD;
+                                            } else {                                
+                                                arg->datatype->i = SI_INT_TYPE_UNDEFINED;
+                                            }
                                             #if SIDEBUG
                                             printf("(Value token) YAML_SCALAR_TOKEN: %s\n", (char*)token.data.scalar.value);
                                             #endif  
@@ -379,6 +395,14 @@ struct queue* readSI(char *dstfilepaths) {
                         tmp = (char *)strdup((char *)token.data.scalar.value);
                         si->synthesised_datatype->r = (enum reference_datatype)get_datatype(tmp);
                         free(tmp);
+
+                        if (si->synthesised_datatype->r == Object) {
+                            tmp = (char *)strdup(si->symbol);
+                            for (int i = 0; i < 5; ++i) popchar(tmp);
+                            tmp[strlen(tmp) - 1] = '\0';
+                            enqueue(si->synthesised_datatype->types, (void *)tmp);
+                        }
+
                         do { yaml_parser_scan(&parser, &token); } while (token.type != YAML_KEY_TOKEN);
                         goto SWITCH;
                     }
@@ -399,6 +423,17 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
+                        } else if (strcmp(key, "interpretation_type") == 0) {
+                            // si->interpretation = (char*) strdup(value);
+                            if (strcmp(value, "expression") == 0) {
+                                si->type = SI_INT_TYPE_EXPR;
+                            } else if (strcmp(value, "modifier") == 0) {
+                                si->type = SI_INT_TYPE_MODIFIER;
+                            } else if (strcmp(value, "java_method") == 0) { 
+                                si->type = SI_INT_TYPE_JAVA_METHOD;
+                            } else {                                
+                                si->type = SI_INT_TYPE_UNDEFINED;
+                            }
                         } else {
                             sisyntax_error(filepath, key, value);
                         }                        

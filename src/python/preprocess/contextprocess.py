@@ -44,6 +44,12 @@ class ContextProcessor:
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
                 # contextual_si['param_%s' % (param)] = param
         # elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
+        elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
+            # the case of composite subject/object with two parameters
+            # we should convert both of them
+            for param in r[0]:
+                pattern = 'param_%s_' % param.replace('`', '')
+                sent = sent.replace(param, pattern)
         elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
             for param in r:
                 pattern = 'param_%s_' % param.replace('`', '')
@@ -68,8 +74,10 @@ class ContextProcessor:
             self.sent = self.sent.replace('parameter', '');
 
     def _synonym_syntax_preprocessor(self):
-        for rule in alt_rules:
-            self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
+        if self.sent[-1] == '.':
+            self.sent = self.sent[:-1]        
+        for rule in alt_rules:            
+            self.sent = self.sent.replace(rule[0], ' ' + rule[1] + ' ')
 
     possessable_terms = ['length']
 

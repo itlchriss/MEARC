@@ -45,6 +45,10 @@ def __check_is_numeric__(word: str) -> bool:
 def __check_is_param__(word: str) -> bool:
     return word.startswith('`') and word[-1] == '`'
 
+def __check_is_expr__(word: str) -> bool:
+    pattern = r'_expr\d+_'
+    return re.match(pattern, word)
+
 def __check_is_type__(word: str) -> bool:
     return False 
 
@@ -75,6 +79,7 @@ func_map = {
     '__type__': __check_is_type__,
     '__sum__': __perform_sum__,
     '__diff__': __perform_diff__,
+    '__expr__': __check_is_expr__
 }
 
 # general_syntax_rules = [
@@ -222,6 +227,33 @@ general_syntax_rules = [
     { 
         'pattern': ['is', 'within', 'the', 'range', 'of', 'negative', '__num__', 'to', '__num__'], 
         'format': 'is greater_than_or_equal to negative __num__ and is less_than_or_equal to __num__', 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['has', 'a', 'length', 'of', '__num__'], 
+        'format': "'s length is equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['has', 'a', 'length', 'of', '__expr__'], 
+        'format': "'s length is equal to __expr__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['is', 'of', 'length', '__num__'], 
+        'format': "'s length is equal to __num__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',

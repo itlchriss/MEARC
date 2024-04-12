@@ -1,7 +1,10 @@
 # total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | wc -l`
 total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | awk 'END {print NR}'`
 # missing count mr 
-p2ok=`grep -r 'ensures' result | grep -v 'bad input' | awk 'END {print NR}'`
+# p2ok=`grep -r 'ensures' result | grep -v 'bad input' | awk 'END {print NR}'`
+# p2ok=`grep -r 'ensures' result2 | grep -v 'bad input' | awk 'END {print NR}'`
+p2ok=`grep -r 'ensures' ./datasets/leetcode-behavioural/*/jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
+# derivationerror=`grep -r 'Sentence:' result | awk 'END {print NR}'`
 derivationerror=`grep -r 'Sentence:' result | awk 'END {print NR}'`
 # find ./datasets/leetcode-behavioural -type f -name "*.mr" | sort > totalprocessed
 # grep -rlZv '\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | xargs -0 grep -rl 'exists|all' | sort > p1ok
