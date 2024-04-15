@@ -712,35 +712,63 @@
 - term: comma
   syntax:
   - NN
+  - NNS
   arguments:
   - symbol: '*'
     primitive_type: '*'
     reference_type: '*'
-  interpretation: '","'
+  interpretation_type: 'java_char'
+  interpretation: "','"
 - term: period
   syntax:
   - NN
+  - NNS
   arguments:
   - symbol: '*'
     primitive_type: '*'
     reference_type: '*'
-  interpretation: '"."'
-- term: alphabets
+  interpretation_type: 'java_char'
+  interpretation: "'.'"
+- term: alphabet
   syntax:
-  - NN
+  - NNS
   arguments:
   - symbol: '*'
     primitive_type: '*'
     reference_type: '*'
+  interpretation_type: 'java_method'
   interpretation: 'Character.isAlphabetic'
+- term: digit
+  syntax:
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'java_method'
+  interpretation: 'Character.isDigit'
+- term: contain_only
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: '-1'
+    reference_type: '1'
+  - symbol: 'Acc'
+    interpretation_type: 'java_method'
+  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).codePointAt(i))'
 - term: contain
   syntax:
   - VBZ
   - VB
+  - VBP
   arguments:
-  - symbol: 'x'
+  - symbol: 'Subj'
     primitive_type: '-1'
     reference_type: '1'
-  - symbol: 'y'
+  - symbol: 'Acc'
     interpretation_type: 'java_method'
-  interpretation: '\exists int i; 0 <= i < (x).length(); (y)((x).codePointAt(i))'
+  spec_init_type: 'char'
+  interpretation: '\exists int i; 0 <= i < (Subj).length(); (Acc)((Subj).codePointAt(i))'

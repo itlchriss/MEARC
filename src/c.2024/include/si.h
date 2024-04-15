@@ -42,6 +42,18 @@ struct si {
     /* the data type of this SI after synthesis */
     // enum explicit_datatype synthesised_datatype;
     struct datatype *synthesised_datatype;
+    /* 
+        only used when the interpretation is a quantify expression 
+        according to the JML spec,
+        the last part of the quantify expression is called spec-initializer
+        this is a type to specify such spec-initializer in the interpretation as a template.
+        for instance, 
+        \forall int i; 0 <= i < x.length(); k
+        k is a spec-initializer which can be a function of x, or it can be anything
+        spec_init_type is the type of k
+        this integer should be consistent with the declaration of enum primitive_datatype in cst.h
+    */
+    int spec_init_type;
 };
 
 /* 

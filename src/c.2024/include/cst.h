@@ -49,7 +49,16 @@ enum intermediate_SI_type {
     INT_SI_TYPE_DIRECT = 0,
     INT_SI_TYPE_EXPR = 1,
     INT_SI_TYPE_MODIFIER = 2,
-    INT_SI_TYPE_JAVA_METHOD = 3
+    INT_SI_TYPE_JAVA_METHOD = 3,
+
+    INT_SI_TYPE_JAVA_BOOLEAN = 50,
+    INT_SI_TYPE_JAVA_BYTE = 51,
+    INT_SI_TYPE_JAVA_CHAR = 52,
+    INT_SI_TYPE_JAVA_SHORT = 53,
+    INT_SI_TYPE_JAVA_INTEGER = 54,
+    INT_SI_TYPE_JAVA_LONG = 55,
+    INT_SI_TYPE_JAVA_FLOAT = 56,
+    INT_SI_TYPE_JAVA_DOUBLE = 57
 };
 
 // type stores the type of class and interface

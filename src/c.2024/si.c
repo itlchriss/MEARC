@@ -485,7 +485,10 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         targetsi->synthesised_datatype->r >= 0) { 
         child->cstptr->datatype = targetsi->synthesised_datatype;
     }
-    if (targetsi->type != -1) child->cstptr->interpretation_type = targetsi->type;
+    if (targetsi->type != -1) {
+        child->cstptr->interpretation_type = targetsi->type;
+        child->cstptr->datatype->i = targetsi->type;
+    }
     __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
     return 0;
 }
@@ -793,7 +796,13 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                 char *tmp = strrep(s, t1, d1);
                 free(s);
                 s = tmp;
-                tmp = strrep(s, t2, d2);
+                if (en2->cstptr->datatype->i >= 50 && si->spec_init_type != AnyPrimitiveType) {
+                    char *_d2 = __combine_3_strings__(d2, " ==", " ");
+                    tmp = strrep(s, t2, _d2);
+                    free(_d2);
+                } else {
+                    tmp = strrep(s, t2, d2);
+                }
                 free(s);
                 enqueue(result, (void *)tmp);
             }            
@@ -1091,6 +1100,17 @@ void check_validity(struct astnode *node) {
 }
 
 
+int __match_same_child_variable__(void *_node, void *_inputnode) {
+    struct astnode *current = (struct astnode *)_node;
+    struct astnode *input = (struct astnode *)_inputnode;
+
+    struct astnode *child1 = getastchild(current, 0), *child2 = getastchild(input, 0);
+    if (child1->cstptr == child2->cstptr) 
+        return TRUE;
+    else
+        return FALSE;
+}
+
 void sianalysis() {
     struct astnode *node = NULL;
     struct queue *visited_variables = initqueue(), *target = initqueue(), *last = initqueue();
@@ -1100,6 +1120,36 @@ void sianalysis() {
         printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
     }
     #endif
+    /* 
+        adverbs that are restrictive such as 'only' must be resolved first.
+        they are resolved by combining them to the verb predicate, 
+        how do we indicate which verb to combine?
+        check the event variable, they should have the same event variable
+        if there is no event variable the same as an adverb, 
+        the MR is considered to have semantic error
+    */
+    struct queue *rbqueue = initqueue();
+    while (!isempty(predicates)) {
+        node = (struct astnode *)dequeue(predicates);
+        if (node->syntax == RB) enqueue(rbqueue, (void *)node);
+        else enqueue(target, (void *)node);
+    }
+    while (!isempty(target)) { enqueue(predicates, dequeue(target)); }
+    target = initqueue();
+    while (!isempty(rbqueue)) {
+        node = (struct astnode *)dequeue(rbqueue);
+        /* find the predicate that accepts the same variable */
+        struct astnode *r = searchqueue(predicates, node, __match_same_child_variable__);
+        /* if not found, throw semantic error */
+        if (r == NULL) semantic_error("Event variable matching for adverb predicate(%s) has failed.", node->token->symbol);
+        /* if found, append the adverb predicate to that predicate */
+        char *tmp = __combine_3_strings__(r->token->symbol, "_", node->token->symbol);
+        free(r->token->symbol);
+        r->token->symbol = tmp;
+        /* delete the node */
+        root = deleteastnodeandedge(node, root);
+    }
+
     /* two sortings, at most n^4 */
     int count = 0, max = predicates->count * predicates->count * predicates->count * predicates->count; 
     while (!isempty(predicates)) {

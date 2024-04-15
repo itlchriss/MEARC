@@ -239,6 +239,7 @@ struct queue* readSI(char *dstfilepaths) {
                 #endif
                 if (!si) {
                     si = (struct si*) malloc (sizeof(struct si));
+                    si->spec_init_type = -2;
                     si->synthesised_datatype = (struct datatype *)malloc(sizeof(struct datatype));
                     si->synthesised_datatype->p = UNDEFINED;
                     si->synthesised_datatype->r = UNDEFINED;
@@ -423,6 +424,26 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
+                        } else if (strcmp(key, "spec_init_type") == 0) {
+                            if (strcmp(value, "boolean") == 0) {
+                                si->spec_init_type = 0;
+                            } else if (strcmp(value, "byte") == 0) {
+                                si->spec_init_type = 1;
+                            } else if (strcmp(value, "char") == 0) {
+                                si->spec_init_type = 2;
+                            } else if (strcmp(value, "short") == 0) {
+                                si->spec_init_type = 3;
+                            } else if (strcmp(value, "integer") == 0) {
+                                si->spec_init_type = 4;
+                            } else if (strcmp(value, "long") == 0) {
+                                si->spec_init_type = 5;
+                            } else if (strcmp(value, "float") == 0) {
+                                si->spec_init_type = 6;
+                            } else if (strcmp(value, "double") == 0) {
+                                si->spec_init_type = 7;
+                            } else {
+                                syntax_error("The spec_init_type(%s) is not supported currently.", value);
+                            }
                         } else if (strcmp(key, "interpretation_type") == 0) {
                             // si->interpretation = (char*) strdup(value);
                             if (strcmp(value, "expression") == 0) {
@@ -431,7 +452,23 @@ struct queue* readSI(char *dstfilepaths) {
                                 si->type = SI_INT_TYPE_MODIFIER;
                             } else if (strcmp(value, "java_method") == 0) { 
                                 si->type = SI_INT_TYPE_JAVA_METHOD;
-                            } else {                                
+                            } else if (strcmp(value, "java_boolean") == 0) {
+                                si->type = 50;
+                            } else if (strcmp(value, "java_byte") == 0) {
+                                si->type = 51;
+                            } else if (strcmp(value, "java_char") == 0) {
+                                si->type = 52;
+                            } else if (strcmp(value, "java_short") == 0) {
+                                si->type = 53;
+                            } else if (strcmp(value, "java_integer") == 0) {
+                                si->type = 54;
+                            } else if (strcmp(value, "java_long") == 0) {
+                                si->type = 55;
+                            } else if (strcmp(value, "java_float") == 0) {
+                                si->type = 56;
+                            } else if (strcmp(value, "java_double") == 0) {
+                                si->type = 57;
+                            }  else {                                
                                 si->type = SI_INT_TYPE_UNDEFINED;
                             }
                         } else {
