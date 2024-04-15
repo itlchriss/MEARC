@@ -66,6 +66,23 @@ def __perform_diff__(sent: list) -> str:
 def __html2pow__(sent: list) -> str:
     pass
 
+
+words_4_chartype = [
+    'digits', 'English letters', 'alphabets', 'numbers'
+]
+
+def __check_is_chartype__(word: str) -> str:
+    return word in words_4_chartype
+
+
+word_4_restrictive_adverb = [
+    'only'
+]
+
+def __check_is_restrictive_adverb__(word: str) -> str:
+    return word in word_4_restrictive_adverb
+
+
 # returning the index that the pattern starts at, or -1 indicates the pattern is not found
 def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
     for i in range(len(words) - len(pattern) + 1):        
@@ -83,7 +100,9 @@ func_map = {
     '__sum__': __perform_sum__,
     '__diff__': __perform_diff__,
     '__expr__': __check_is_expr__,
-    '__comparative__': __check_is_comparative__
+    '__comparative__': __check_is_comparative__,
+    '__chartype__': __check_is_chartype__,
+    '__restrictive_adverb__': __check_is_restrictive_adverb__
 }
 
 # general_syntax_rules = [
@@ -285,6 +304,15 @@ general_syntax_rules = [
     { 
         'pattern': ['must', 'have', 'a', 'length', '__comparative__'], 
         'format': "'s length is __comparative__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['consist', 'of', '__chartype__', '__restrictive_adverb__'], 
+        'format': "only contain __chartype__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',

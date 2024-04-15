@@ -37,9 +37,10 @@ class ContextProcessor:
     def _parameter_syntax_processor(self):
         # contextual_si = self.contextual_si
         sent = self.sent
-
-        if r := re.findall('input\s+(%s)\s+`(.*)`' % '|'.join(datatypes), sent, re.ASCII):
+        # print('before cp: ', sent)
+        if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
             for type, param in r:
+                # print(type, param)
                 sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
                 # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
                 # contextual_si['param_%s' % (param)] = param
@@ -56,6 +57,7 @@ class ContextProcessor:
                 sent = sent.replace(param, pattern)
                 # contextual_si['param_%s' % param] = param
         self.sent = sent
+        # print('cp: ', sent)
         
         # NOTE: there can be words representing types, but there are no keywords such as 'input', 'parameter'
         #       after doing the above operations, if the words listed in the datatypes have no conflicts with the parameter symbols, 

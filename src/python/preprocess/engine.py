@@ -9,17 +9,21 @@ def __fix_to_cases__(sent: str) -> str:
     sent = re.sub(r'(to\s+)+', 'to ', sent)
     sent = re.sub(r'(is\s+)+', 'is ', sent)
     sent = re.sub(r'is\s+is', 'is ', sent)
+    sent = re.sub(r'are\s+is', 'are ', sent)
     sent = re.sub(r'to\s+to', 'to ', sent)
     exprs = {}
     # for all remaining strings in quotes (``), we treat them as expressions and separatedly stored
+    # print(sent)
     if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_]+`)', sent):        
         for i, e in enumerate(r):
-            exprs['expr' + str(i)] = e
-            sent = sent.replace(e, '_expr' + str(i) + '_', 1)
+            index = chr(i + 97)
+            exprs['expr_' + index] = e
+            sent = sent.replace(e, ' expr_' + index, 1)
     if r := re.findall(r'(\'.*\')', sent):
         for i, e in enumerate(r):
-            exprs['str' + str(i)] = e
-            sent = sent.replace(e, '_str' + str(i) + '_', 1)
+            index = chr(i + 97)
+            exprs['str_' + index] = e
+            sent = sent.replace(e, ' str_' + index, 1)
     words = sent.split(' ')
     targets = {}
     for w in words:
@@ -27,7 +31,7 @@ def __fix_to_cases__(sent: str) -> str:
             targets[w] = w.replace("^", "_pow_")
     for k in targets.keys():
         sent = sent.replace(k, targets[k])
-    # if r := re.findall(r'', sent):
+        
     return sent
 
 # sent: requirement statement in natural language
