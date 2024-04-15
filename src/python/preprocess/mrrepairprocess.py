@@ -52,6 +52,9 @@ def __check_is_expr__(word: str) -> bool:
 def __check_is_type__(word: str) -> bool:
     return False 
 
+def __check_is_comparative__(word: str) -> bool:
+    return word.endswith('er')
+
 def __perform_sum__(sent: list) -> str:
     a = int(sent[0])
     b = int(sent[2])
@@ -79,7 +82,8 @@ func_map = {
     '__type__': __check_is_type__,
     '__sum__': __perform_sum__,
     '__diff__': __perform_diff__,
-    '__expr__': __check_is_expr__
+    '__expr__': __check_is_expr__,
+    '__comparative__': __check_is_comparative__
 }
 
 # general_syntax_rules = [
@@ -259,6 +263,33 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['must', 'have', 'a', 'length', 'of', '__num__'], 
+        'format': "'s length is equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['must', 'have', 'a', 'length', '__param__'], 
+        'format': "'s length is equal to __param__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['must', 'have', 'a', 'length', '__comparative__'], 
+        'format': "'s length is __comparative__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
     }
 ]
 
@@ -373,7 +404,8 @@ class RepairProcessor:
         if sent[-1] == '.':
             sent = sent[:-1]   
         if ',' in sent:
-            sent = sent.replace(',', ' , ')        
+            sent = sent.replace(',', ' , ')   
+        sent = re.sub(r'\s+', ' ', sent)     
         sent = self.__process_power_sign__(sent)
         sent = self.__process_range_sign__(sent)
         sent = self.__process_negative__(sent)  
@@ -385,5 +417,5 @@ class RepairProcessor:
                 words = sent.split(' ')        
         for k in reqtype_ignore_rules[t].keys():
             sent = sent.replace(k, reqtype_ignore_rules[t][k])        
-
+        sent = re.sub(r'\s+\'s', '\'s', sent)
         return sent

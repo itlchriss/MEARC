@@ -8,6 +8,8 @@ def __fix_to_cases__(sent: str) -> str:
     # repeated 'to' is replaced as a single 'to'
     sent = re.sub(r'(to\s+)+', 'to ', sent)
     sent = re.sub(r'(is\s+)+', 'is ', sent)
+    sent = re.sub(r'is\s+is', 'is ', sent)
+    sent = re.sub(r'to\s+to', 'to ', sent)
     exprs = {}
     # for all remaining strings in quotes (``), we treat them as expressions and separatedly stored
     if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_]+`)', sent):        
@@ -46,6 +48,8 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
                 dynamic_si[key] = cp.dynamic_si[key]
     sent = __fix_to_cases__(sent)
     sent = rp.run(sent, t)
+    sent = cp.run(sent)
+    sent = __fix_to_cases__(sent)
     if sent[-1] != '.':
         sent += '.'
     return sent, dynamic_si

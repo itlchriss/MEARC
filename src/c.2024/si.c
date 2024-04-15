@@ -612,6 +612,15 @@ int __Rel_synthesis__(
     for (int i = 0; i < results->count; ++i) {
         enqueue(relptr->datalist, gqueue(results, i));
     }
+    /* 
+        saving the relative datatype for the case of ForAll
+        such that we can use it in the code generation to decide the type 
+        in the range
+    */
+    relptr->datatype->relative_datatype = (struct datatype *)malloc(sizeof(struct datatype));
+    relptr->datatype->relative_datatype->p = xptr->datatype->p;
+    relptr->datatype->relative_datatype->r = xptr->datatype->r;
+    ////////
     deallocatequeue(results, NULL);    
     /* the synthesised datatype must be defined in the SI */
     /* TODO: we should perform a checking in the very beginning to acknowledge the users the possible errors in the SI template */
@@ -870,11 +879,9 @@ int event_synthesis(struct astnode *node) {
     // }
     if (((struct si *)gqueue(siq, 0))->type == SI_INT_TYPE_MODIFIER) {
         struct entity *en1 = (struct entity *)gqueue(e->entities, 0);
-        // while (!isempty(en1->cstptr->datalist)) dequeue(en1->cstptr->datalist);
         en1->cstptr->datalist = initqueue();
-        // while (!isempty(node->si_q)) enqueue(en1->cstptr->datalist, dequeue(node->si_q));
         for (int i = 0; i < node->si_q->count; ++i) {
-            enqueue(en1->cstptr->datalist, gqueue(node->si_q, i));
+            enqueue(en1->cstptr->datalist, strdup(gqueue(node->si_q, i)));
         }
         root = deleteastnodeandedge(node, root);        
     } else if (node->si_q == NULL) {

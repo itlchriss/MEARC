@@ -76,11 +76,18 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
                 else {
                     char * type_name = (char *)gqueue(node->cstptr->datatype->types, 0);
                     if (node->quantified_ranges->count == 0) {
+                        char *length_str = NULL;
+                        if (node->cstptr->datatype->relative_datatype) {
+                            length_str = get_length_str(node->cstptr->datatype->relative_datatype->r);
+                        } else {
+                            length_str = get_length_str(node->cstptr->datatype->r);
+                        }
                         fprintf(s, "\\ forall int %c; 0 <= %c < %s.%s; ",
                             (char)quantify_variable, 
                             (char)quantify_variable,
                             type_name,
-                            get_length_str(node->cstptr->datatype->r));
+                            length_str
+                            );
                     } else {
                         /* to be done for specified or multiple ranges */
                         

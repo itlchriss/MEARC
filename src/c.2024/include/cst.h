@@ -66,6 +66,8 @@ struct datatype {
     struct queue *types;
     /* only use when r == 2 */
     struct datatype *element_datatype;
+    /* when a compile symbol is a rel symbol, after its synthesis, we store the datatype of the symbol that decides the SI of this rel symbol*/
+    struct datatype *relative_datatype;
 };
 
 
