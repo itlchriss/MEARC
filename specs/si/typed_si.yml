@@ -756,6 +756,15 @@
     reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isDigit'
+- term: alphanumeric
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'java_method'
+  interpretation: 'Character.isLetter'
 - term: contain_only
   syntax:
   - VBZ
