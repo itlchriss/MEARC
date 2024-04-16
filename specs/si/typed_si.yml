@@ -503,6 +503,15 @@
     primitive_type: '*'
     reference_type: '1'
   interpretation: ''
+- term: type_character_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '2'
+    reference_type: '-1'
+  interpretation: ''
 - term: type_arrays_
   syntax:
   - NN
@@ -759,6 +768,20 @@
   - symbol: 'Acc'
     interpretation_type: 'java_method'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).codePointAt(i))'
+- term: contain_only
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: '-1'
+    reference_type: '1'
+  - symbol: 'Acc'
+    primitive_type: '2'
+    reference_type: '-1'
+  spec_init_type: 'char'
+  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).codePointAt(i)'
 - term: contain
   syntax:
   - VBZ

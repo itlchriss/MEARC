@@ -42,10 +42,11 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
         for i, c in enumerate(clist):
             s, si = runengine(c, t)
             results[t].append(s)            
-            if si:
-                for v in list(si.values()):
-                    if v not in sis:
-                        sis.append(v)    
+            # if si:
+            #     for v in list(si.values()):
+            #         if v not in sis:
+            #             sis.append(v)    
+            sis.append(list(si.values()))
     return results, sis
 
 class NoAliasDumper(yaml.SafeDumper):
@@ -71,8 +72,9 @@ if __name__ == "__main__":
         
     with open(os.path.join(tmpfolder, 'conditions.yml'), 'w') as fp:
         yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True)
-        
-    with open(os.path.join(tmpfolder, 'dynamic_si.yml'), 'w') as fp:
-        yaml.dump(sis, fp, sort_keys=False, allow_unicode=True, Dumper=NoAliasDumper)
+    
+    for i, v in enumerate(sis):        
+        with open(os.path.join(tmpfolder, 'dynamic_si.%s.yml' % str(i)), 'w') as fp:
+            yaml.dump(v, fp, sort_keys=False, allow_unicode=True, Dumper=NoAliasDumper)
     
     

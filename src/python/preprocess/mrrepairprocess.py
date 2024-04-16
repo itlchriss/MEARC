@@ -336,6 +336,24 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['consists', 'of', '__restrictive_adverb__'], 
+        'format': "only contains", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['consists', '__restrictive_adverb__', 'of'], 
+        'format': "only contains", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
     }
 ]
 
