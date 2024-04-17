@@ -35,6 +35,7 @@ int __preposition_argtype_simatcher(void *, void *);
 int __match_interpretation_and_get_type(void *, void *);
 int __is_Rel_dependent__(struct cstsymbol *);
 void generate_param_si(char *s);
+int has_Rel_SI(struct queue *siq);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
 // char *javadatatype_name[] = { "PRIMITIVE", "ARRAY", "COLLECTION", "JML_EXPRESSION_RESULT", "JML_EXPRESSION_TEMPLATE", "OTHERS" };
@@ -52,6 +53,13 @@ int __is_noun_predicate__(struct astnode *node) {
 
 int __is_event_variable__(struct astnode *node) {
     return node->token->symbol[0] == 'e';
+}
+
+int check_need_assigned_entity(struct astnode *node) {
+    struct si *si = (struct si *)gqueue(node->si_q, 0);
+    struct si_arg *arg = (struct si_arg *)gqueue(si->args, 0);
+    if (arg->datatype != NULL && (arg->datatype->p != AnyPrimitiveType || arg->datatype->r != AnyRefType)) return TRUE;
+    else return FALSE;
 }
 
 
@@ -312,6 +320,23 @@ struct queue *__obtain_si_with_cstptr_(struct cstsymbol *x, struct cstsymbol *y,
                 free(s);
                 enqueue(result, (void *)tmp);
             }
+        }
+    }
+    return result;
+}
+
+
+struct queue *__obtain_si_with_1_cstptr_(struct cstsymbol *x, struct queue *siq) {    
+    struct queue *result = initqueue();
+    for (int k = 0; k < siq->count; ++k) {
+        struct si *si = (struct si *)gqueue(siq, k);
+        struct si_arg *arg1 = (struct si_arg *)gqueue(si->args, 0);
+        for (int i = 0; i < x->datalist->count; ++i) {
+            char *s = (char *)strdup(si->interpretation);
+            char *xdata = (char *)gqueue(x->datalist, i);
+            char *tmp = strrep(s, arg1->symbol, xdata);
+            free(s);    
+            enqueue(result, (void *)tmp);
         }
     }
     return result;
@@ -650,7 +675,22 @@ int Vseries_code_synthesis(struct astnode *node) {
 
 
 int Nseries_code_synthesis(struct astnode *node) {
-    return __direct_syntax_synthesis__(node);
+    /* Rel SI always needs typed entity. therefore, the first condition is not work to exclude them */
+    if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {
+        /* get the aliased ptr of the child node cstptr */
+        struct cstsymbol *_aliased_cstptr = searchalias(getastchild(node, 0)->cstptr);
+        /* check if the aliased ptr is assigned */
+        /* return FALSE to indicate the aliased ptr is not assigned yet */
+        if (_aliased_cstptr->status != Assigned) return FALSE;
+        /* if assigned, use the intermediate si of the aliased ptr to do the synthesis and replace the node->si_q */
+        node->si_q = __obtain_si_with_1_cstptr_(_aliased_cstptr, node->si_q);        
+        free(node->token->symbol);
+        node->token->symbol = (char *)strdup((char *)gqueue(node->si_q, 0));
+        __post_operation_si_subtree_synthesis__(node);
+        return TRUE;
+    } else {
+        return __direct_syntax_synthesis__(node);
+    }
 }
 
 
@@ -877,7 +917,9 @@ int event_synthesis(struct astnode *node) {
     for (int i = 0; i < e->entities->count; ++i) ((struct entity *)gqueue(e->entities, i))->cstptr->ref_count--;
     e->cstptr->datalist = initqueue();
     /* storing the synthesised intermediate SI into the event, such that the INT SI can be referenced in the later events if such event is accepted as argument */
-    for (int i = 0; i < node->si_q->count; ++i) enqueue(e->cstptr->datalist, gqueue(node->si_q, i));
+    if (node->si_q != NULL) {
+        for (int i = 0; i < node->si_q->count; ++i) enqueue(e->cstptr->datalist, gqueue(node->si_q, i));
+    }
     e->cstptr->interpretation_type = INT_SI_TYPE_EXPR;
     e->cstptr->ref_count--;    
     /* the resulting operations */
@@ -914,6 +956,14 @@ int __is_Rel_dependent__(struct cstsymbol *c) {
     char *data = (char *)gqueue(c->datalist, 0);
     int occur[strlen(data)/7 + 1];
     if (strsearch(data, "__REL__", occur) != 0) return TRUE;        
+    else return FALSE;
+}
+
+
+int has_Rel_SI(struct queue *siq) {
+    struct si *si = (struct si *)gqueue(siq, 0);
+    int occur[strlen(si->interpretation)/7 + 1];
+    if (strsearch(si->interpretation, "__REL__", occur) != 0) return TRUE;        
     else return FALSE;
 }
 
@@ -1173,9 +1223,25 @@ void sianalysis() {
             case NNP:
             case NNPS:
                 node->si_q = q_searchqueue(silist, node, __simatcher);
-                check_validity(node);
-                enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);
-                enqueue(target, (void *)node);
+                check_validity(node);                
+                if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {
+                    /* current assumption of this case is that there must be an alias to the variable */
+                    struct cstsymbol *_aliased_cstptr = searchalias(getastchild(node, 0)->cstptr);
+                    if (_aliased_cstptr == NULL) {
+                        semantic_error("Please check with sianalysis function for case NN. An entity for predicate(%s) that does not have an alias, and its cstptr is only referenced by itself.", node->token->symbol);
+                    } else {
+                        if (!searchqueue(visited_variables, _aliased_cstptr, __search_visited_variables__)) {
+                            /* TODO: we should implement the node relocation, inserting the node just after the aliased node is visited */
+                            internal_error("SI analysis (not yet implemented part): The aliased variable is not yet visisted\n");
+                        } else {
+                            enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);
+                            enqueue(target, (void *)node);
+                        }                        
+                    }
+                } else {
+                    enqueue(visited_variables, (void *)getastchild(node, 0)->cstptr);
+                    enqueue(target, (void *)node);
+                }
                 break;
             case Gram_Rel:
                 if (satisfy(node, visited_variables)) enqueue(target, (void *)node);
@@ -1317,6 +1383,11 @@ void sisynthesis() {
                     semantic_error("Synthesis is stopped because a predicate(%s) has children that are not Assigned.", node->token->symbol);
                 }
             }
+            /* TODO: 
+                if the return is FALSE, we should push it back to the predicates queue. 
+                there is a case in NN, that the predicate depends on a variable with type.
+                therefore, the variable needs to wait for its aliased variable to be assigned.                
+            */
             (*code_syntheses[node->syntax])(node);       
         }
         /* ================================================================================================ */

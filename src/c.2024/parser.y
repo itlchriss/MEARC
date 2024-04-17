@@ -172,11 +172,32 @@ formula
         deallocatequeue(_events, NULL);
         deallocatequeue(_datarefs, NULL);
     }
+    // | NEG terms {
+    //     ast = $2;
+    //     $2->isroot = 1;
+    //     $2->isnegative = 1;
+    //     pruneeventsubtrees();
+    //     deallocatequeue(_events, NULL);
+    //     deallocatequeue(_datarefs, NULL);
+    // }
     ;
 
 
 terms
-    : term connective terms {
+    :  NEG term connective terms {
+        print_debug("(top rule) terms: NEG terms connective term");
+        $2->isnegative = 1;
+        if ($4 == NULL) {
+            /* case of terms connective TrueP */
+            $$ = $2;
+        } else {
+            $$ = newastnode(Connective, NULL);
+            $$->conntype = $3;
+            addastchild($$, $2);
+            addastchild($$, $4);
+        }
+    }
+    | term connective terms {
         print_debug("(top rule) terms: terms connective term");
         if ($3 == NULL) {
             /* case of terms connective TrueP */
