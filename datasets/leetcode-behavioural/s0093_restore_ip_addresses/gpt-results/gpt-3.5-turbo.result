@@ -1,0 +1,8 @@
+- requires s != null && s.length() <= 20;
+- requires s.matches("[0-9]+");
+- ensures \result != null;
+- ensures (\forall String ip; \result.contains(ip); isValidIP(ip));
+- ensures (\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2));
+- ensures \result.size() >= 0;
+
+public List<String> restoreIpAddresses(String s) {}

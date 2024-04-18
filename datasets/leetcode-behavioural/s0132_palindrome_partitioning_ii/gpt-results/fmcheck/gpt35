@@ -1,0 +1,19 @@
+./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+            dp[j + 1] = Math.min(dp[j + 1], dp[i] + 1);
+                                              ^
+./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method expandAround
+        while (i >= 0 && j < t.length && t[i] == t[j]) {
+                                                  ^
+./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+        while (i >= 0 && j < t.length && t[i] == t[j]) {
+                                          ^
+./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+            dp[j + 1] = Math.min(dp[j + 1], dp[i] + 1);
+              ^
+./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:12: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minCut: g0101_0200.s0132_palindrome_partitioning_ii.Solution.minCut(java.lang.String) (parameter s)
+    public int minCut(String s) {
+                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0132_palindrome_partitioning_ii/gpt-results/build/Solution.java:12:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+6 verification failures

@@ -1,0 +1,4 @@
+- public void solveSudoku(char[][] board)
+- requires board != null && board.length == 9 && (\forall int i; 0 <= i && i < board.length; board[i].length == 9)
+- ensures (\forall int i; 0 <= i && i < board.length; (\forall int j; 0 <= j && j < board[i].length; board[i][j] is a digit or '.' && board[i][j] != null))
+- ensures the sudoku puzzle is solved correctly according to the rules mentioned above

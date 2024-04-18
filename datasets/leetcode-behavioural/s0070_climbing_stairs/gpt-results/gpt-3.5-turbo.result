@@ -1,0 +1,7 @@
+- public int climbStairs(int n)
+- requires n >= 1 && n <= 45;
+- ensures \result >= 0;
+- ensures \result == 1 ==> n == 1;
+- ensures \result == 2 ==> n == 2;
+- ensures \result == 3 ==> n == 3;
+- ensures \result == climbStairs(n-1) + climbStairs(n-2);

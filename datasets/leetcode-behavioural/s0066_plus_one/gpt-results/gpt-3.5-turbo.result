@@ -1,0 +1,10 @@
+- public int[] plusOne(int[] digits)
+- requires digits != null && digits.length >= 1 && digits.length <= 100
+- requires (\forall int i; 0 <= i && i < digits.length; 0 <= digits[i] && digits[i] <= 9)
+- requires (\forall int i; 0 <= i && i < digits.length - 1; digits[i] != 0)
+- ensures \result != null
+- ensures \result.length == digits.length
+- ensures (\forall int i; 0 <= i && i < digits.length - 1; \result[i] == digits[i])
+- ensures \result[digits.length - 1] == digits[digits.length - 1] + 1
+- ensures (\forall int i; 0 <= i && i < digits.length - 1; \result[i] != 0)
+- ensures \result[digits.length - 1] != 10

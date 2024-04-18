@@ -1,0 +1,5 @@
+- requires s1 != null && s2 != null
+- requires s1.length() == s2.length()
+- requires s1.length() >= 1 && s1.length() <= 30
+- requires s1.matches("[a-z]+") && s2.matches("[a-z]+")
+- ensures \result == true || \result == false

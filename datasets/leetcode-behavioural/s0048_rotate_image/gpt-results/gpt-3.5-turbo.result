@@ -1,0 +1,6 @@
+- requires matrix != null && matrix.length == matrix[0].length;
+- requires matrix.length >= 1 && matrix.length <= 20;
+- requires (\forall int i; 0 <= i && i < matrix.length; matrix[i].length == matrix.length);
+- requires (\forall int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix.length; -1000 <= matrix[i][j] && matrix[i][j] <= 1000);
+- modifies matrix;
+- ensures (\forall int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix.length; matrix[i][j] == \old(matrix[matrix.length - 1 - j][i]));

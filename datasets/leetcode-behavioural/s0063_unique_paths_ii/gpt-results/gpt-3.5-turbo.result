@@ -1,0 +1,10 @@
+- public int uniquePathsWithObstacles(int[][] obstacleGrid)
+- requires obstacleGrid != null && obstacleGrid.length > 0 && obstacleGrid[0].length > 0;
+- requires obstacleGrid.length <= 100 && obstacleGrid[0].length <= 100;
+- requires (\forall int i; 0 <= i && i < obstacleGrid.length; obstacleGrid[i].length == obstacleGrid[0].length);
+- ensures \result >= 0;
+- ensures \result == 0 ==> (\exists int i; 0 <= i && i < obstacleGrid.length; (\exists int j; 0 <= j && j < obstacleGrid[0].length; obstacleGrid[i][j] == 1));
+- ensures \result == 1 ==> (\forall int i; 0 <= i && i < obstacleGrid.length; (\forall int j; 0 <= j && j < obstacleGrid[0].length; obstacleGrid[i][j] == 1));
+- ensures \result == 2 ==> (\forall int i; 0 <= i && i < obstacleGrid.length; (\forall int j; 0 <= j && j < obstacleGrid[0].length; obstacleGrid[i][j] == 0));
+- ensures \result == 0 ==> (\forall int i; 0 <= i && i < obstacleGrid.length; (\forall int j; 0 <= j && j < obstacleGrid[0].length; obstacleGrid[i][j] == 0));
+- ensures \result == 1 ==> (\exists int i; 0 <= i && i < obstacleGrid.length; (\exists int j; 0 <= j && j < obstacleGrid[0].length; obstacleGrid[i][j] == 0));

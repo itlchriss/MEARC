@@ -1,0 +1,12 @@
+./datasets/leetcode-behavioural/s0131_palindrome_partitioning/gpt-results/build/Solution.java:19: error: incompatible types: ArrayList<E> cannot be converted to List<String>
+        backtracking(res, new ArrayList<>(), s, 0);
+                          ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./datasets/leetcode-behavioural/s0131_palindrome_partitioning/gpt-results/build/Solution.java:25: error: incompatible types: ArrayList<E> cannot be converted to List<String>
+            res.add(new ArrayList<>(currArr));
+                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors

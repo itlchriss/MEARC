@@ -1,0 +1,7 @@
+./datasets/leetcode-behavioural/s0049_group_anagrams/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method groupAnagrams: (Caller: g0001_0100.s0049_group_anagrams.Solution.groupAnagrams(java.lang.String[]), Callee: java.lang.String.toCharArray())
+            char[] ch = s.toCharArray();
+                                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0049_group_anagrams/gpt-results/build/Solution.java:28:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 verification failures

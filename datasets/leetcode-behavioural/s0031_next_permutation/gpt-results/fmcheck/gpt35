@@ -1,0 +1,25 @@
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method nextPermutation
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+                             ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method nextPermutation
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+                                        ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method nextPermutation
+            while (nums[j] <= nums[i]) {
+                       ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method nextPermutation
+            while (nums[j] <= nums[i]) {
+                       ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method swap
+        nums[i] = nums[j];
+                      ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method swap
+        int temp = nums[i];
+                       ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method swap
+        int temp = nums[i];
+                       ^
+./datasets/leetcode-behavioural/s0031_next_permutation/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method swap
+        nums[i] = nums[j];
+                      ^
+8 verification failures

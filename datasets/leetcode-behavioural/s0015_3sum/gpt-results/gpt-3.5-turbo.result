@@ -1,0 +1,8 @@
+- requires nums != null;
+- requires nums.length <= 3000;
+- requires (\forall int i; 0 <= i && i < nums.length; -10^5 <= nums[i] && nums[i] <= 10^5);
+- ensures \result != null;
+- ensures (\forall List<Integer> triplet; \result.contains(triplet); triplet.size() == 3);
+- ensures (\forall List<Integer> triplet; \result.contains(triplet); (\forall int i, j; 0 <= i && i < 3 && 0 <= j && j < 3 && i != j; triplet.get(i) != triplet.get(j)));
+- ensures (\forall List<Integer> triplet; \result.contains(triplet); triplet.get(0) + triplet.get(1) + triplet.get(2) == 0);
+- ensures (\forall List<Integer> triplet1, triplet2; \result.contains(triplet1) && \result.contains(triplet2) && triplet1 != triplet2; !triplet1.equals(triplet2));

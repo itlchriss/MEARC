@@ -1,0 +1,25 @@
+./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:133: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method countAndSay: (Caller: g0001_0100.s0038_count_and_say.Solution.countAndSay(int), Callee: java.lang.StringBuilder.append(int))
+        res.append(count).append(prev.charAt(prev.length() - 1));
+                  ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:133:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:133: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method countAndSay: (Caller: g0001_0100.s0038_count_and_say.Solution.countAndSay(int), Callee: java.lang.String.charAt(int))
+        res.append(count).append(prev.charAt(prev.length() - 1));
+                                            ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:133:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:129: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method countAndSay: (Caller: g0001_0100.s0038_count_and_say.Solution.countAndSay(int), Callee: java.lang.StringBuilder.append(int))
+                res.append(count).append(prev.charAt(i - 1));
+                          ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:129:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:129: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method countAndSay: (Caller: g0001_0100.s0038_count_and_say.Solution.countAndSay(int), Callee: java.lang.String.charAt(int))
+                res.append(count).append(prev.charAt(i - 1));
+                                                    ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0038_count_and_say/gpt-results/build/Solution.java:129:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+8 verification failures

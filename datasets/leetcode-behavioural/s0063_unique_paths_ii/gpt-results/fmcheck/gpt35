@@ -1,0 +1,17 @@
+./datasets/leetcode-behavioural/s0063_unique_paths_ii/gpt-results/build/Solution.java:26: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                obstacleGrid[i][0] = 0;
+                             ^
+  Reason: Double rewriting of ident: i i_1632_1632___32 i_1632_1646___35
+./datasets/leetcode-behavioural/s0063_unique_paths_ii/gpt-results/build/Solution.java:28: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                obstacleGrid[i][0] = obstacleGrid[i - 1][0];
+                             ^
+  Reason: Double rewriting of ident: i i_1632_1632___32 i_1632_1646___35
+./datasets/leetcode-behavioural/s0063_unique_paths_ii/gpt-results/build/Solution.java:41: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    obstacleGrid[i][j] = 0;
+                                 ^
+  Reason: Double rewriting of ident: i i_2086_2086___64 i_2086_2100___67
+./datasets/leetcode-behavioural/s0063_unique_paths_ii/gpt-results/build/Solution.java:43: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
+                                 ^
+  Reason: Double rewriting of ident: i i_2086_2086___64 i_2086_2100___67
+4 errors

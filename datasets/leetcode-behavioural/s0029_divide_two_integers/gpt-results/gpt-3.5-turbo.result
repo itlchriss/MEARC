@@ -1,0 +1,6 @@
+- //@ requires divisor != 0;
+- //@ requires dividend >= Integer.MIN_VALUE && dividend <= Integer.MAX_VALUE;
+- //@ requires divisor >= Integer.MIN_VALUE && divisor <= Integer.MAX_VALUE;
+- //@ ensures \result == dividend / divisor;
+- //@ ensures (\result > Integer.MAX_VALUE) ==> (\result == Integer.MAX_VALUE);
+- //@ ensures (\result < Integer.MIN_VALUE) ==> (\result == Integer.MIN_VALUE);

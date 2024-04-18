@@ -1,0 +1,31 @@
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+                   ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+                   ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+              ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+              ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method dfs: g0101_0200.s0120_triangle.Solution.dfs(java.util.List<java.util.List<java.lang.Integer>>,int[][],int,int) (parameter triangle)
+    private int dfs(List<List<Integer>> triangle, int[][] dp, int row, int col) {
+                                        ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:30:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method dfs: g0101_0200.s0120_triangle.Solution.dfs(java.util.List<java.util.List<java.lang.Integer>>,int[][],int,int) (parameter triangle)
+    private int dfs(List<List<Integer>> triangle, int[][] dp, int row, int col) {
+                                        ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:30:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method minimumTotal: g0101_0200.s0120_triangle.Solution.minimumTotal(java.util.List<java.util.List<java.lang.Integer>>) (parameter triangle)
+    public int minimumTotal(List<List<Integer>> triangle) {
+                                                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0120_triangle/gpt-results/build/Solution.java:19:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+10 verification failures

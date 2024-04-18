@@ -1,0 +1,7 @@
+- requires num1 != null && num2 != null;
+- requires num1.matches("\\d+") && num2.matches("\\d+");
+- requires num1.length() <= 200 && num2.length() <= 200;
+- requires !num1.startsWith("0") && !num2.startsWith("0");
+- ensures \result != null;
+- ensures \result.matches("\\d+");
+- ensures \result.equals(multiply(num1, num2));

@@ -1,0 +1,3 @@
+- public int mySqrt(int x)
+- requires x >= 0;
+- ensures \result * \result <= x && ( \result + 1) * ( \result + 1) > x;

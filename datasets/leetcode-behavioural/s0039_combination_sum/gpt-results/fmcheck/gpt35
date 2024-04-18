@@ -1,0 +1,19 @@
+./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method combinationSumRec
+        if (amount - coins[n - 1] >= 0) {
+                          ^
+./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method combinationSumRec
+        if (amount - coins[n - 1] >= 0) {
+                          ^
+./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method combinationSumRec: g0001_0100.s0039_combination_sum.Solution.combinationSumRec(int,int[],int,java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>) (parameter subList)
+            int n, int[] coins, int amount, List<Integer> subList, List<List<Integer>> ans) {
+                                                          ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:25:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method combinationSumRec: g0001_0100.s0039_combination_sum.Solution.combinationSumRec(int,int[],int,java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>) (parameter ans)
+            int n, int[] coins, int amount, List<Integer> subList, List<List<Integer>> ans) {
+                                                                                       ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0039_combination_sum/gpt-results/build/Solution.java:25:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+6 verification failures

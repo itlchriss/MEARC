@@ -1,0 +1,6 @@
+- requires nums != null && (\forall int i; 0 <= i && i < nums.length; nums[i] != null);
+- requires nums.length >= 1 && nums.length <= 10;
+- requires (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);
+- ensures \result != null;
+- ensures (\forall List<Integer> subset; \result.contains(subset); subset != null && (\forall int num; subset.contains(num); nums.contains(num)));
+- ensures (\forall List<Integer> subset1, subset2; \result.contains(subset1) && \result.contains(subset2) && subset1 != subset2; !subset1.equals(subset2));

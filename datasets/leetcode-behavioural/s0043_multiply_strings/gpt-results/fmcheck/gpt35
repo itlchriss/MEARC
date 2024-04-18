@@ -1,0 +1,49 @@
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method convertToStr
+        char[] chars = new char[res.length - i];
+                                           ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                 ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                 ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                       ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                                  ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                       ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method convertToStr
+            chars[k] = (char) (res[i] + '0');
+                  ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:11: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method getIntArray
+            arr[i] = chars[i] - '0';
+               ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method multiply
+                res[k] += arr2[i] * arr1[j];
+                   ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:48: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method multiply
+            int temp = res[i] + carry;
+                          ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:53: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method multiply
+        while (i < res.length && res[i] == 0) {
+                                    ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:49: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method multiply
+            res[i] = temp % 10;
+                ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method multiply
+                res[k] += arr2[i] * arr1[j];
+                   ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:41: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method multiply
+                res[k] += arr2[i] * arr1[j];
+                    ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method multiply
+                res[k] += arr2[i] * arr1[j];
+                                        ^
+./datasets/leetcode-behavioural/s0043_multiply_strings/gpt-results/build/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method multiply
+                res[k] += arr2[i] * arr1[j];
+                              ^
+16 verification failures

@@ -1,0 +1,5 @@
+- public String getPermutation(int n, int k)
+- requires n >= 1 && n <= 9;
+- requires k >= 1 && k <= factorial(n);
+- ensures the result is a valid permutation sequence of length n;
+- ensures the result is the kth permutation sequence when all permutations are listed in order.

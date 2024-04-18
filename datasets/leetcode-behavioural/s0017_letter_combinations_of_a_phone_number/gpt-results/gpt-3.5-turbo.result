@@ -1,0 +1,5 @@
+- requires digits != null && digits.matches("[2-9]*");
+- ensures \result != null;
+- ensures (\forall String s; \result.contains(s); s.length() == digits.length());
+- ensures (\forall String s; \result.contains(s); (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'a' || s.charAt(i) == 'b' || s.charAt(i) == 'c' || s.charAt(i) == 'd' || s.charAt(i) == 'e' || s.charAt(i) == 'f'));
+- ensures (\forall String s1, s2; \result.contains(s1) && \result.contains(s2); s1.equals(s2) == false);

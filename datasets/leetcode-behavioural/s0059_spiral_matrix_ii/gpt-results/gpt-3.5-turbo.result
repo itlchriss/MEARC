@@ -1,0 +1,23 @@
+- public /*@ pure @*/ int[][] generateMatrix(int n);
+- requires n >= 1 && n <= 20;
+- ensures \result.length == n && \result[0].length == n;
+- ensures isSpiralOrder(\result, n);
+
+/*@ public normal_behavior
+  @ requires n >= 1 && n <= 20;
+  @ ensures \result.length == n && \result[0].length == n;
+  @ ensures isSpiralOrder(\result, n);
+  @ assignable \nothing;
+  @*/
+public int[][] generateMatrix(int n) {
+    // implementation here
+}
+
+/*@ public normal_behavior
+  @ requires matrix.length == n && matrix[0].length == n;
+  @ ensures isSpiralOrder(matrix, n);
+  @ assignable \nothing;
+  @*/
+public boolean isSpiralOrder(int[][] matrix, int n) {
+    // implementation here
+}

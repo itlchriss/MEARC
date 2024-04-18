@@ -1,0 +1,4 @@
+- requires nums != null && (\forall int i; 0 <= i && i < nums.length; nums[i] >= -1000000000 && nums[i] <= 1000000000)
+- ensures \result >= 0
+- ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] == nums[j] ==> \result == \old(\result))
+- ensures (\exists int[] sequence; (\forall int i; 0 <= i && i < sequence.length - 1; (\exists int j; 0 <= j && j < nums.length; sequence[i] == nums[j] && sequence[i+1] == nums[j] + 1)) && sequence.length == \result)

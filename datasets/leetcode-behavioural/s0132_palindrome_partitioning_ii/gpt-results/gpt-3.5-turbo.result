@@ -1,0 +1,6 @@
+- requires s != null && s.length() >= 1 && s.length() <= 2000;
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+- ensures \result >= 0;
+- ensures (\exists int cuts; cuts >= 0; isPalindromePartition(s, cuts));
+- pure helper method boolean isPalindromePartition(String s, int cuts);
+- pure helper method boolean isPalindrome(String s, int start, int end);

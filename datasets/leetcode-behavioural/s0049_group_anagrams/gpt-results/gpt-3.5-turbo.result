@@ -1,0 +1,11 @@
+- requires strs != null && (\forall int i; 0 <= i && i < strs.length; strs[i] != null);
+- requires (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; i != j ==> !strs[i].equals(strs[j]));
+- requires strs.length >= 1 && strs.length <= 10000;
+- requires (\forall int i; 0 <= i && i < strs.length; strs[i].length() >= 0 && strs[i].length() <= 100);
+- requires (\forall int i; 0 <= i && i < strs.length; (\forall int j; 0 <= j && j < strs.length; i != j ==> strs[i].length() == strs[j].length()));
+- ensures \result != null;
+- ensures (\forall int i; 0 <= i && i < \result.size(); \result.get(i) != null);
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> !\result.get(i).equals(\result.get(j))));
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.get(i).size(); \result.get(i).get(j) != null));
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.get(i).size(); \result.get(i).get(j).length() >= 0 && \result.get(i).get(j).length() <= 100));
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.get(i).size(); (\forall int k; 0 <= k && k < \result.get(i).size(); j != k ==> \result.get(i).get(j).length() == \result.get(i).get(k).length()));

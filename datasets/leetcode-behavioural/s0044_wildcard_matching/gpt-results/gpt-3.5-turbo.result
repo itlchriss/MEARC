@@ -1,0 +1,6 @@
+- requires inputString != null && pattern != null;
+- requires inputString.length() <= 2000 && pattern.length() <= 2000;
+- requires inputString.matches("[a-z]*") && pattern.matches("[a-z?*]*");
+- ensures \result == true || \result == false;
+- ensures \result == true ==> inputString.length() > 0;
+- ensures \result == true ==> pattern.length() > 0;

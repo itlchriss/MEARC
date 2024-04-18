@@ -1,0 +1,13 @@
+./datasets/leetcode-behavioural/s0130_surrounded_regions/gpt-results/build/Solution.java:67: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+                || board[row][column] != 'O') {
+                             ^
+./datasets/leetcode-behavioural/s0130_surrounded_regions/gpt-results/build/Solution.java:52: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'X';
+                          ^
+  Reason: Double rewriting of ident: i i_2331_2331___56 i_2331_2356___59
+./datasets/leetcode-behavioural/s0130_surrounded_regions/gpt-results/build/Solution.java:56: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'O';
+                          ^
+  Reason: Double rewriting of ident: i i_2331_2331___56 i_2331_2356___59
+2 errors
+1 verification failure

@@ -1,0 +1,7 @@
+error: An error while executing a proof script for backtracking: (error "line 1517 column 303: invalid function application, sort mismatch on argument at position 2")
+  >>>(define-fun BL_1360bodyBegin_2__A7 () Bool (forall ((|QQHIS| REF) ) (! (=> (and (distinct |QQHIS| NULL) (and (distinct |QQHIS| NULL) (javaSubType (javaTypeOf |QQHIS|) T_java_util_Collection))) (= (java_util_List_size$_H12_1582 |QQHIS|) (arrLength0 (select |java.lang.Iterable_values_209_0___7| |QQHIS|)))) :pattern ( (java_util_List_size$_H12_1582 |QQHIS|) ))))
+error: An error while executing a proof script for hasBit: (error "line 726 column 185: operator is applied to arguments of the wrong sort")
+  >>>(define-fun |_JML__tmp603| () Bool (bvsge (arrLength0 (select |java.lang.Iterable_values_209_209___23| (select |g0001_0100.s0037_sudoku_solver.Solution_-285686156| |`THIS|))) #x00000000))
+error: An error while executing a proof script for solveSudoku: (error "line 1278 column 181: operator is applied to arguments of the wrong sort")
+  >>>(define-fun |_JML__tmp90| () Bool (bvsge (arrLength0 (select |java.lang.Iterable_values_209_0___6| (select |g0001_0100.s0037_sudoku_solver.Solution_-266336319| |`THIS|))) #x00000000))
+3 errors

@@ -1,0 +1,13 @@
+./datasets/leetcode-behavioural/s0135_candy/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method candy
+            if (ratings[i + 1] > ratings[i]) {
+                                        ^
+./datasets/leetcode-behavioural/s0135_candy/gpt-results/build/Solution.java:22: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method candy
+            if (ratings[i - 1] > ratings[i] && candies[i - 1] < candies[i] + 1) {
+                                        ^
+./datasets/leetcode-behavioural/s0135_candy/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method candy
+            if (ratings[i + 1] > ratings[i]) {
+                       ^
+./datasets/leetcode-behavioural/s0135_candy/gpt-results/build/Solution.java:22: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method candy
+            if (ratings[i - 1] > ratings[i] && candies[i - 1] < candies[i] + 1) {
+                       ^
+4 verification failures

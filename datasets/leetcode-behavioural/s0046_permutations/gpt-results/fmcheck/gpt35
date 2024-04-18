@@ -1,0 +1,12 @@
+./datasets/leetcode-behavioural/s0046_permutations/gpt-results/build/Solution.java:24: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+        permuteRecur(nums, finalResult, new ArrayList<>(), new boolean[nums.length]);
+                                        ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./datasets/leetcode-behavioural/s0046_permutations/gpt-results/build/Solution.java:31: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+            finalResult.add(new ArrayList<>(currResult));
+                            ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors

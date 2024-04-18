@@ -1,0 +1,17 @@
+./datasets/leetcode-behavioural/s0087_scramble_string/gpt-results/build/Solution.java:19: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                        dp[i][j][len] = s1.charAt(i) == s2.charAt(j);
+                           ^
+  Reason: Double rewriting of ident: i i_604_604___21 i_604_625___40
+./datasets/leetcode-behavioural/s0087_scramble_string/gpt-results/build/Solution.java:19: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                        dp[i][j][len] = s1.charAt(i) == s2.charAt(j);
+                              ^
+  Reason: Double rewriting of ident: j j_657_657___22 j_657_678___41
+./datasets/leetcode-behavioural/s0087_scramble_string/gpt-results/build/Solution.java:22: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                            dp[i][j][len] =
+                               ^
+  Reason: Double rewriting of ident: i i_604_604___21 i_604_625___40
+./datasets/leetcode-behavioural/s0087_scramble_string/gpt-results/build/Solution.java:22: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                            dp[i][j][len] =
+                                  ^
+  Reason: Double rewriting of ident: j j_657_657___22 j_657_678___41
+4 errors
