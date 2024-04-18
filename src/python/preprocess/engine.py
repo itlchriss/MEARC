@@ -46,7 +46,8 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
         b = t[2]
         _type = 'type_' + lemmatizer.lemmatize(t[3]) + '_'
         sent = re.sub(r'%s\s+%s\s+%s\s+%s' % (a, conj, b, t[3]), r'the %s %s %s the %s %s' % (_type, a, conj, _type, b), sent)
-        
+
+    
     # fixing the case that the NLP is not correct for the 'or'. The MR incorrectly provides the two predicates accept the same entity.
     sent = re.sub(r'or str_', 'or the str_', sent)
     sent = re.sub(r'or expr_', 'or the expr_', sent)

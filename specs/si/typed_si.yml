@@ -163,7 +163,7 @@
   - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
-  interpretation_type: 'modifier'
+  interpretation_type: 'java_boolean'
   interpretation: 'true'
 - term: false
   syntax:
@@ -172,7 +172,7 @@
   - symbol: '*'
     primitive_type: '-1'
     reference_type: '*'
-  interpretation_type: 'modifier'
+  interpretation_type: 'java_boolean'
   interpretation: 'false'
 - term: be
   syntax:
@@ -765,6 +765,18 @@
     reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLetter'
+- term: lowercase_alphabets
+  syntax:
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  synthesised_datatype:
+    primitive_type: '2'
+    reference_type: '-1'
+  interpretation_type: 'java_method'
+  interpretation: 'Character.isLowerCase'
 - term: contain_only
   syntax:
   - VBZ
@@ -776,12 +788,13 @@
     reference_type: '1'
   - symbol: 'Acc'
     interpretation_type: 'java_method'
-  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).codePointAt(i))'
+  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).charAt(i))'
 - term: contain_only
   syntax:
   - VBZ
   - VB
   - VBP
+  - VBG
   arguments:
   - symbol: 'Subj'
     primitive_type: '-1'
@@ -790,12 +803,13 @@
     primitive_type: '2'
     reference_type: '-1'
   spec_init_type: 'char'
-  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).codePointAt(i)'
+  interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).charAt(i)'
 - term: contain
   syntax:
   - VBZ
   - VB
   - VBP
+  - VBG
   arguments:
   - symbol: 'Subj'
     primitive_type: '-1'
@@ -803,4 +817,12 @@
   - symbol: 'Acc'
     interpretation_type: 'java_method'
   spec_init_type: 'char'
-  interpretation: '\exists int i; 0 <= i < (Subj).length(); (Acc)((Subj).codePointAt(i))'
+  interpretation: '\exists int i; 0 <= i < (Subj).length(); (Acc)((Subj).charAt(i))'
+- term: palindrome
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'num'
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: '\forall int i; 0 <= i && i < String.valueOf((num)).length() / 2; String.valueOf((num)).charAt(i) == String.valueOf((num)).charAt(String.valueOf((num)).length() - 1 - i)'
