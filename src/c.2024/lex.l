@@ -2,6 +2,7 @@
     int bracket = 0, cbracket = 0;
     #include "core.h"
     #include "tok.h"    
+    #include "util.h"
     extern YYSTYPE yylval; /* for passing value to parser */
     extern int lineNum, colNum; /* line number from cal.tab.c */ 
     // #define __LOG_LEVEL__ 1
@@ -49,10 +50,21 @@
         colNum += strlen(token);
         // printf("Colnum: %d\n", colNum);
     }
+    void *denormalise_text(char *text, char *norm, char *denorm) {
+        char *tmp = strrep(text, norm, denorm);
+        if (tmp != NULL) { 
+            return (char *)strdup(tmp);
+        } else {
+            return text;
+        }
+    }
     struct token * handletoken(char *text) {
         #if LEXDEBUG
         printf("Token: %s\n", text);
         #endif  
+        text = denormalise_text(text, "dash_", "-");
+        text = denormalise_text(text, "_DOT", ".");
+
         struct token *new = newtoken(text, lineNum, colNum);        
         handlecolnum(text);
         return new;

@@ -1,0 +1,26 @@
+PYCMD="../venv/openai/bin/python"
+OPENJML="../openjml-0.17-a15/openjml "
+ESC_FLAG="-esc"
+BIGINT_FLAGS="--spec-math bigint --code-math bigint"
+
+# for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -100`
+# do
+    # file="${entry//Solution.java/readme.md}"
+    # $PYCMD ./src/python/llmapproach.py $file
+    # echo 'Done...' $file
+# done
+
+# rm ./datasets/leetcode-behavioural/s*/gpt-results/build/Solution.java 
+for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -100`
+do
+    jmls=()
+    # src="${entry//Solution.java/}"
+    src=$(dirname "$entry")
+    # mkdir -p $path/build
+    filename=`echo $(dirname "$entry") | sed 's/.*\///' `
+    mkdir -p ./fmcheck/gpt35/$filename
+    $PYCMD ./scripts/insertjml.py $src llm > ./fmcheck/gpt35/$filename/Solution.java
+    # $OPENJML ./fmcheck/gpt35/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/gpt35/$filename/check
+    $OPENJML ./fmcheck/gpt35/$filename/Solution.java --timeout 180 > ./fmcheck/gpt35/$filename/p2check
+done
+

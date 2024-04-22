@@ -9,6 +9,7 @@ static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
 static int quantify_variable = 105;
 
+static int pindex = 0;
 /* 
     a function deciding the length representation in java
     by default we consider it is a collection, which uses size() to access the size
@@ -32,15 +33,16 @@ char *get_length_str(enum reference_datatype r) {
 
 
 void printree(struct astnode *node, FILE *s, int *haserror) {
-    char *formatstr = "%s\n";
+    char *formatstr = "%s";
     if (node->isnegative == 1) {
-        formatstr = "!(%s)\n";
+        formatstr = "!(%s)";
     }
     switch(node->type) {
         case Synthesised:      
-            for (int i = 0; i < node->si_q->count; ++i) {                
-                fprintf(s, formatstr, (char *)gqueue(node->si_q, i));             
-            }            
+            // for (int i = 0; i < node->si_q->count; ++i) {                
+            //     fprintf(s, formatstr, (char *)gqueue(node->si_q, i));             
+            // }  
+            fprintf(s, formatstr, (char *)gqueue(node->si_q, pindex));             
             break;
         default:
             #if CGDEBUG
@@ -110,21 +112,37 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
 }
 
 void output(struct astnode *root) {
+    int pmax = 1;
+    struct queue *p = initqueue();
+    enqueue(p, (void *)root);
+    while (!isempty(p)) {
+        struct astnode *tmp = dequeue(p);
+        if (tmp->si_q != NULL && tmp->si_q->count > 1) {
+            pmax = tmp->si_q->count;
+        }
+        for (int i = 0; i < countastchildren(tmp); ++i) {
+            enqueue(p, (void *)getastchild(tmp, i));
+        }
+    }
     char *buffer;
     size_t size;
-    FILE *stream = open_memstream(&buffer, &size);
-    /* 0 indicates no error */
-    int haserror = 0;
-    walktree(root, stream, &haserror);
-    if (haserror == 0) {
-        fflush(stream);
-        /* TODO: add configuration of ensures and requires, and open bracket */
-        printf("%s\n", buffer);
-        /* TODO: add close bracket and colon (;) */
-    } else {
-        fprintf(stderr, "Failed\n");
+    FILE *stream;
+    fprintf(stdout, "pcount:%d\n", pmax);
+    for (;pindex < pmax; ++pindex) {
+        stream = open_memstream(&buffer, &size);
+        /* 0 indicates no error */
+        int haserror = 0;
+        walktree(root, stream, &haserror);
+        if (haserror == 0) {
+            fflush(stream);
+            /* TODO: add configuration of ensures and requires, and open bracket */
+            printf("%s\n", buffer);
+            /* TODO: add close bracket and colon (;) */
+        } else {
+            fprintf(stderr, "Failed\n");
+        }
+        fclose(stream);
     }
-    fclose(stream);
 }
 
 

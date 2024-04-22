@@ -1,0 +1,21 @@
+PYCMD="../venv/openai/bin/python"
+OPENJML="../openjml-0.17-a15/openjml "
+ESC_FLAG="-esc"
+BIGINT_FLAGS="--spec-math bigint --code-math bigint"
+
+
+rm -rf ./fmcheck/hart/*
+for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -100`
+do
+    jmls=()
+    # src="${entry//Solution.java/}"
+    src=$(dirname "$entry")
+    path="${entry//Solution.java/gpt-results}"
+    # mkdir -p $path/build
+    filename=`echo $(dirname "$entry") | sed 's/.*\///' `
+    mkdir -p ./fmcheck/hart/$filename
+    $PYCMD ./scripts/insertjml.py $src hart > ./fmcheck/hart/$filename/Solution.java
+    # $OPENJML ./fmcheck/hart/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/hart/$filename/check
+    $OPENJML ./fmcheck/hart/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/hart/$filename/p2check
+done
+

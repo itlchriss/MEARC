@@ -85,8 +85,21 @@ then
             mkdir -p $folder/jml            
             filename=$filename_without_extension
             filename+=".jml"
-            printf "ensures(%s);\n" "$ans"
-            printf "ensures(%s);\n" "$ans" > $folder/jml/$filename
+            IFS=$'\n' read -rd '' -a lines <<< "$ans"
+            line1="${lines[0]}"
+            if [[ "$line1[0]" =~ pcount:([0-9]+) ]]; then
+                pcount="${BASH_REMATCH[1]}"
+                for i in $(seq 1 $pcount); do
+                    body="${lines[$i]}"
+                    body="${body//\\ /\\}"
+                    printf "ensures(%s);\n" "$body"
+                    printf "ensures(%s);\n" "$body" > $folder/jml/$filename
+                done
+            else
+                printf "Failed"
+            fi
+            # printf "ensures(%s);\n" "$ans"
+            # printf "ensures(%s);\n" "$ans" > $folder/jml/$filename
         fi
         printf '\n'
     done

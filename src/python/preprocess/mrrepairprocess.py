@@ -63,6 +63,9 @@ def __perform_sum__(sent: list) -> str:
 def __perform_diff__(sent: list) -> str:
     return str(pd.eval(' '.join(sent)))
 
+def __perform_product__(sent: list) -> str:
+    return str(pd.eval(' '.join(sent)))
+
 def __html2pow__(sent: list) -> str:
     pass
 
@@ -99,6 +102,7 @@ func_map = {
     '__type__': __check_is_type__,
     '__sum__': __perform_sum__,
     '__diff__': __perform_diff__,
+    '__product__': __perform_product__,
     '__expr__': __check_is_expr__,
     '__comparative__': __check_is_comparative__,
     '__chartype__': __check_is_chartype__,
@@ -196,6 +200,15 @@ general_syntax_rules = [
     { 
         'pattern': ['__num__', '-', '__num__'], 
         'format': '__diff__', 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__num__', '*', '__num__'], 
+        'format': '__product__', 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',
