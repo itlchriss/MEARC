@@ -1,0 +1,12 @@
+./fmcheck/hart/s0078_subsets/Solution.java:15: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+        solve(nums, new ArrayList<>(), res, 0);
+                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./fmcheck/hart/s0078_subsets/Solution.java:20: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+        res.add(new ArrayList<>(temp));
+                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors

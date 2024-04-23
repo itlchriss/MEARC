@@ -1,0 +1,31 @@
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                               ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+                nums[i + 1] = nums[j];
+                    ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:11:) in method removeDuplicates
+        return i + 1;
+        ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:11: verify: Associated declaration: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26:
+//@ ensures((\forall int i; \result <= i && i < nums.length; (\exists int j; 0 <= j && j < \result; nums[j] == nums[i])));
+    ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:10:) in method removeDuplicates
+        return i + 1;
+        ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:10: verify: Associated declaration: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26:
+//@ ensures((\forall int i, j; 0 <= i && i < j && j < \result; nums[i] != nums[j]));
+    ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:9:) in method removeDuplicates
+        return i + 1;
+        ^
+./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:9: verify: Associated declaration: ./fmcheck/gpt35/s0026_remove_duplicates_from_sorted_array/Solution.java:26:
+//@ ensures(\result >= 0 && \result <= nums.length);
+    ^
+10 verification failures

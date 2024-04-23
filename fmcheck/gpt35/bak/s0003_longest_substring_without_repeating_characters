@@ -1,0 +1,37 @@
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method lengthOfLongestSubstring
+            lastIndices[i] = -1;
+                       ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:10:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); (\forall int k; i <= k < j; (\forall int l; i <= l < j; k != l))));
+    ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method lengthOfLongestSubstring
+            if (lastIndices[cur] < start) {
+                           ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:11:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:11: verify: Associated declaration: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); (\exists int k; i <= k <= j; (\forall int l; i <= l <= j; k != l))));
+    ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:9:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:9: verify: Associated declaration: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37:
+//@ ensures(\result >= 0);
+    ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:13:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:13: verify: Associated declaration: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37:
+//@ ensures((\exists int i, j; 0 <= i <= j < s.length(); j - i == \result));
+    ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:12:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:12: verify: Associated declaration: ./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); j - i <= \result));
+    ^
+12 verification failures

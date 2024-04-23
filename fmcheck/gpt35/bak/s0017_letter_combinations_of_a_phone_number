@@ -1,0 +1,57 @@
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method findCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.findCombinations(int,java.lang.String,java.lang.String[],java.lang.StringBuilder,java.util.List<java.lang.String>) (parameter nums)
+            int start, String nums, String[] letters, StringBuilder curr, List<String> ans) {
+                              ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method findCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.findCombinations(int,java.lang.String,java.lang.String[],java.lang.StringBuilder,java.util.List<java.lang.String>) (parameter curr)
+            int start, String nums, String[] letters, StringBuilder curr, List<String> ans) {
+                                                                    ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method findCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.findCombinations(int,java.lang.String,java.lang.String[],java.lang.StringBuilder,java.util.List<java.lang.String>) (parameter ans)
+            int start, String nums, String[] letters, StringBuilder curr, List<String> ans) {
+                                                                                       ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method findCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.findCombinations(int,java.lang.String,java.lang.String[],java.lang.StringBuilder,java.util.List<java.lang.String>) (parameter nums)
+            int start, String nums, String[] letters, StringBuilder curr, List<String> ans) {
+                              ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:29:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+error: An error while executing a proof script for findCombinations: (error "Solver has unexpectedly terminated")
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method letterCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.letterCombinations(java.lang.String) (parameter digits)
+    public List<String> letterCombinations(String digits) {
+                                                  ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:17:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:14:) in method letterCombinations
+            return Collections.emptyList();
+            ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:14: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19:
+//@ ensures((\forall String s; \result.contains(s); s.length() == digits.length()));
+    ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method letterCombinations: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution.letterCombinations(java.lang.String) (for result type)
+            return Collections.emptyList();
+            ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:16:) in method letterCombinations
+            return Collections.emptyList();
+            ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:16: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:19:
+//@ ensures((\forall String s1, s2; \result.contains(s1) && \result.contains(s2); s1.equals(s2) == false));
+    ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:15:) in method letterCombinations
+        return ans;
+        ^
+./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:15: verify: Associated declaration: ./datasets/leetcode-behavioural/s0017_letter_combinations_of_a_phone_number/gpt-results/build/Solution.java:25:
+//@ ensures((\forall String s; \result.contains(s); (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'a' || s.charAt(i) == 'b' || s.charAt(i) == 'c' || s.charAt(i) == 'd' || s.charAt(i) == 'e' || s.charAt(i) == 'f')));
+    ^
+1 error
+18 verification failures

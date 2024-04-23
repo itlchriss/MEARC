@@ -1,0 +1,85 @@
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:8: verify: The prover cannot establish an assertion (NullField) in method Solution
+    private Boolean[][] cache;
+                        ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:14:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:14: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18:
+//@ ensures(\result == false ==> !s.matches(p));
+    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:11:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:11: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18:
+//@ ensures(\result == true ==> s.length() > 0);
+    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:13:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:13: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18:
+//@ ensures(\result == true ==> s.matches(p));
+    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:12:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:12: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:18:
+//@ ensures(\result == true ==> p.length() > 0);
+    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                 ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                 ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: (Parameter: p, Caller: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int), Callee: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int))
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter p)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter s)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyBadArrayAssignment) in method isMatch
+        cache[i][j] = result;
+                    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        cache[i][j] = result;
+                ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                    ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: (Parameter: s, Caller: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int), Callee: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int))
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        cache[i][j] = result;
+             ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter s)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter p)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0010_regular_expression_matching/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+28 verification failures

@@ -1,0 +1,31 @@
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                               ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+                nums[i + 1] = nums[j];
+                    ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:11:) in method removeDuplicates
+        return i + 1;
+        ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:11: verify: Associated declaration: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26:
+//@ ensures((\forall int i; \result <= i && i < nums.length; (\exists int j; 0 <= j && j < \result; nums[j] == nums[i])));
+    ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:10:) in method removeDuplicates
+        return i + 1;
+        ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26:
+//@ ensures((\forall int i, j; 0 <= i && i < j && j < \result; nums[i] != nums[j]));
+    ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:9:) in method removeDuplicates
+        return i + 1;
+        ^
+./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:9: verify: Associated declaration: ./datasets/leetcode-behavioural/s0026_remove_duplicates_from_sorted_array/gpt-results/build/Solution.java:26:
+//@ ensures(\result >= 0 && \result <= nums.length);
+    ^
+10 verification failures

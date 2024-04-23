@@ -1,0 +1,19 @@
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method findMedianSortedArrays
+            int l1 = cut1 == 0 ? Integer.MIN_VALUE : nums1[cut1 - 1];
+                                                          ^
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findMedianSortedArrays
+            int l1 = cut1 == 0 ? Integer.MIN_VALUE : nums1[cut1 - 1];
+                                                          ^
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:45: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:12:) in method findMedianSortedArrays
+        return 0.0f;
+        ^
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:12: verify: Associated declaration: ./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:45:
+//@ ensures(\result == 2.0);
+    ^
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (Postcondition: ./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:13:) in method findMedianSortedArrays
+                    return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+                    ^
+./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:13: verify: Associated declaration: ./datasets/leetcode-behavioural/s0004_median_of_two_sorted_arrays/gpt-results/build/Solution.java:36:
+//@ ensures(\result == 2.5);
+    ^
+6 verification failures

@@ -1,0 +1,22 @@
+./fmcheck/gpt35/s0078_subsets/Solution.java:13: error: bad operand types for binary operator '!='
+//@ requires(nums != null && (\forall int i; 0 <= i && i < nums.length; nums[i] != null));
+                                                                                ^
+  first type:  int
+  second type: <null>
+./fmcheck/gpt35/s0078_subsets/Solution.java:17: error: cannot find symbol
+//@ ensures((\forall List<Integer> subset; \result.contains(subset); subset != null && (\forall int num; subset.contains(num); nums.contains(num))));
+                                                                                                                                   ^
+  symbol:   method contains(int)
+  location: variable nums of type int[]
+./fmcheck/gpt35/s0078_subsets/Solution.java:20: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+        solve(nums, new ArrayList<>(), res, 0);
+                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./fmcheck/gpt35/s0078_subsets/Solution.java:25: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+        res.add(new ArrayList<>(temp));
+                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+4 errors

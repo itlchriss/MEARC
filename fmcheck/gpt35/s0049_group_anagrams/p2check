@@ -1,0 +1,4 @@
+./fmcheck/gpt35/s0049_group_anagrams/Solution.java:18: error: ')' expected
+//@ ensures((\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.get(i).size(); (\forall int k; 0 <= k && k < \result.get(i).size(); j != k ==> \result.get(i).get(j).length() == \result.get(i).get(k).length())));
+                                                                                                                                                                                                                                                  ^
+1 error

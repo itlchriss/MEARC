@@ -1,0 +1,10 @@
+./fmcheck/gpt35/s0135_candy/Solution.java:9: error: A \result expression is not allowed in an old environment
+//@ ensures((\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] < ratings[i + 1] ==> \result > \old(\result)));
+                                                                                                             ^
+./fmcheck/gpt35/s0135_candy/Solution.java:10: error: A \result expression is not allowed in an old environment
+//@ ensures((\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] > ratings[i + 1] ==> \result > \old(\result)));
+                                                                                                             ^
+./fmcheck/gpt35/s0135_candy/Solution.java:11: error: A \result expression is not allowed in an old environment
+//@ ensures((\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] <= ratings[i + 1] ==> \result >= \old(\result)));
+                                                                                                               ^
+3 errors

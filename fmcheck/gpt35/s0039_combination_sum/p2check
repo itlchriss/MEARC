@@ -1,0 +1,11 @@
+./fmcheck/gpt35/s0039_combination_sum/Solution.java:13: error: cannot find symbol
+//@ ensures((\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2) && list1 != list2; !isPermutation(list1, list2)));
+                                                                                                                        ^
+  symbol:   method isPermutation(List<Integer>,List<Integer>)
+  location: class Solution
+./fmcheck/gpt35/s0039_combination_sum/Solution.java:15: error: cannot find symbol
+//@ ensures((\forall List<Integer> list; \result.contains(list); sumList(list) == amount));
+                                                                 ^
+  symbol:   method sumList(List<Integer>)
+  location: class Solution
+2 errors

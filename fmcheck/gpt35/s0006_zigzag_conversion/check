@@ -1,0 +1,43 @@
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:8:) in method convert
+        return buf.toString();
+        ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:8: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41:
+//@ ensures(\result.length() == s.length());
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:9:) in method convert
+            return s;
+            ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:9: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:18:
+//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:11:) in method convert
+            return s;
+            ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:11: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:18:
+//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:12:) in method convert
+        return buf.toString();
+        ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:12: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41:
+//@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)) || Character.isLowerCase(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:10:) in method convert
+        return buf.toString();
+        ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:10: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41:
+//@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:13:) in method convert
+        return buf.toString();
+        ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:13: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41:
+//@ ensures((\forall int i; 0 <= i && i < s.length(); s.charAt(i) == \result.charAt(i) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+    ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:14:) in method convert
+        return buf.toString();
+        ^
+./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:14: verify: Associated declaration: ./fmcheck/gpt35/s0006_zigzag_conversion/Solution.java:41:
+//@ ensures((\forall int i; 0 <= i && i < \result.length(); s.charAt(i) == \result.charAt(i) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
+    ^
+14 verification failures

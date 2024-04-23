@@ -1,0 +1,28 @@
+./fmcheck/gpt35/s0027_remove_element/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeElement
+                while (nums[j] == val) {
+                           ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeElement
+            if (nums[i] == val) {
+                    ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeElement
+                while (nums[j] == val) {
+                           ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0027_remove_element/Solution.java:9:) in method removeElement
+                        return len - occurTimes;
+                        ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:9: verify: Associated declaration: ./fmcheck/gpt35/s0027_remove_element/Solution.java:28:
+//@ ensures((\forall int i; 0 <= i && i < \result; nums[i] != val));
+    ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0027_remove_element/Solution.java:10:) in method removeElement
+                        return len - occurTimes;
+                        ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:10: verify: Associated declaration: ./fmcheck/gpt35/s0027_remove_element/Solution.java:28:
+//@ ensures((\forall int i, j; 0 <= i && i < j && j < \result; nums[i] <= nums[j]));
+    ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./fmcheck/gpt35/s0027_remove_element/Solution.java:8:) in method removeElement
+                        return len - occurTimes;
+                        ^
+./fmcheck/gpt35/s0027_remove_element/Solution.java:8: verify: Associated declaration: ./fmcheck/gpt35/s0027_remove_element/Solution.java:28:
+//@ ensures(\result >= 0 && \result <= nums.length);
+    ^
+9 verification failures

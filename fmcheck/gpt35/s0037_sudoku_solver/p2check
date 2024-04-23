@@ -1,0 +1,13 @@
+./fmcheck/gpt35/s0037_sudoku_solver/Solution.java:13: error: ',', ')', or '[' expected
+//@ ensures(the sudoku puzzle is solved correctly according to the rules mentioned above);
+                      ^
+./fmcheck/gpt35/s0037_sudoku_solver/Solution.java:13: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(the sudoku puzzle is solved correctly according to the rules mentioned above);
+                              ^
+./fmcheck/gpt35/s0037_sudoku_solver/Solution.java:15: error: ')' expected
+//@ ensures((\forall int i; 0 <= i && i < board.length; (\forall int j; 0 <= j && j < board[i].length; board[i][j] is a digit or '.' && board[i][j] != null)));
+                                                                                                                  ^
+./fmcheck/gpt35/s0037_sudoku_solver/Solution.java:15: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures((\forall int i; 0 <= i && i < board.length; (\forall int j; 0 <= j && j < board[i].length; board[i][j] is a digit or '.' && board[i][j] != null)));
+                                                                                                                   ^
+4 errors

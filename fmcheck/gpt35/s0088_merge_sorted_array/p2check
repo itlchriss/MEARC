@@ -1,0 +1,21 @@
+./fmcheck/gpt35/s0088_merge_sorted_array/Solution.java:9: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < m + n; -10^9 <= nums1[i] && nums1[i] <= 10^9));
+                                                     ^
+  first type:  int
+  second type: boolean
+./fmcheck/gpt35/s0088_merge_sorted_array/Solution.java:9: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < m + n; -10^9 <= nums1[i] && nums1[i] <= 10^9));
+                                                                                     ^
+  first type:  boolean
+  second type: int
+./fmcheck/gpt35/s0088_merge_sorted_array/Solution.java:13: error: bad operand types for binary operator '^'
+//@ requires((\forall int j; 0 <= j && j < n; -10^9 <= nums2[j] && nums2[j] <= 10^9));
+                                                 ^
+  first type:  int
+  second type: boolean
+./fmcheck/gpt35/s0088_merge_sorted_array/Solution.java:13: error: bad operand types for binary operator '^'
+//@ requires((\forall int j; 0 <= j && j < n; -10^9 <= nums2[j] && nums2[j] <= 10^9));
+                                                                                 ^
+  first type:  boolean
+  second type: int
+4 errors

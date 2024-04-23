@@ -1,0 +1,13 @@
+./datasets/leetcode-behavioural/s0018_4sum/gpt-results/build/Solution.java:14: error: Expected a semicolon to separate the parts of a JML quantified expression
+//@ ensures((\forall List<Integer> quad : \result; quad.size() == 4));
+                                        ^
+./datasets/leetcode-behavioural/s0018_4sum/gpt-results/build/Solution.java:15: error: Expected a semicolon to separate the parts of a JML quantified expression
+//@ ensures((\forall List<Integer> quad : \result; nums[quad.get(0)] + nums[quad.get(1)] + nums[quad.get(2)] + nums[quad.get(3)] == target));
+                                        ^
+./datasets/leetcode-behavioural/s0018_4sum/gpt-results/build/Solution.java:15: error: ')' expected
+//@ ensures((\forall List<Integer> quad : \result; nums[quad.get(0)] + nums[quad.get(1)] + nums[quad.get(2)] + nums[quad.get(3)] == target));
+                                                                   ^
+./datasets/leetcode-behavioural/s0018_4sum/gpt-results/build/Solution.java:16: error: Expected a semicolon to separate the parts of a JML quantified expression
+//@ ensures((\forall List<Integer> quad1, quad2 : \result; quad1 != quad2 ==> !quad1.equals(quad2)));
+                                                ^
+4 errors
