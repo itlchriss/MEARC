@@ -1,0 +1,11 @@
+MAJOR="../../major"
+GENSCRIPT="../scripts/createmutants.py"
+
+for folder in `find ./gpt35 -type d -name "s*"`
+do
+    echo $folder
+    $MAJOR/bin/major --mml $MAJOR/mml/all.mml.bin $folder/Solution.java
+    mv major.log $folder
+    mv mutants.log $folder
+    python $GENSCRIPT $folder
+done
