@@ -376,6 +376,15 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'length'], 
+        'format': "__param__'s length", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
     }
 ]
 

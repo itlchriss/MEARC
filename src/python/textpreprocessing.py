@@ -71,7 +71,7 @@ if __name__ == "__main__":
         os.mkdir(tmpfolder)
         
     with open(os.path.join(tmpfolder, 'conditions.yml'), 'w') as fp:
-        yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True)
+        yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True, width=float("inf"))
     
     for i, v in enumerate(sis):        
         with open(os.path.join(tmpfolder, 'dynamic_si.%s.yml' % str(i)), 'w') as fp:

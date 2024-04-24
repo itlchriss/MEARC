@@ -1,4 +1,4 @@
-PYCMD="../venv/openai/bin/python"
+PYCMD="python"
 OPENJML="../openjml-0.17-a15/openjml "
 ESC_FLAG="-esc"
 BIGINT_FLAGS="--spec-math bigint --code-math bigint"
@@ -14,7 +14,7 @@ do
     # mkdir -p $path/build
     filename=`echo $(dirname "$entry") | sed 's/.*\///' `
     mkdir -p ./fmcheck/hart/$filename
-    $PYCMD ./scripts/insertjml.py $src hart > ./fmcheck/hart/$filename/Solution.java
+    $PYCMD scripts/insertjml.py $src hart > ./fmcheck/hart/$filename/Solution.java
     # $OPENJML ./fmcheck/hart/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/hart/$filename/check
     $OPENJML ./fmcheck/hart/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/hart/$filename/p2check
 done

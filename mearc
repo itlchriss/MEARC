@@ -64,7 +64,7 @@ fi
 # MEARC compilation
 if [ "$flag" -eq "$compile" ] || [ "$flag" -eq "$full" ]
 then
-    for mr in `grep -lr exists $folder/tmp/*.mr`;
+    for mr in `grep -lEr 'exists|all' $folder/tmp/*.mr`;
     do
         filename=$(basename $mr)
         filename_without_extension="${filename%.*}"

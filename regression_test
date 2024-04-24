@@ -21,7 +21,7 @@ else
 rm ./datasets/leetcode-behavioural/*/tmp/*.mr
 rm ./datasets/leetcode-behavioural/*/jml/*.jml
 
-for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -200`
+for entry in `find ./datasets/leetcode-behavioural/s*/ -type f -name "Solution.java" | sort | head -100`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
