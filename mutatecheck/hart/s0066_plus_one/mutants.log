@@ -1,0 +1,50 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:digits.length - 1 |==> digits.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:digits.length - 1 |==> digits.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:digits.length - 1 |==> digits.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:digits.length - 1 |==> digits.length / 1
+5:ROR:>=(int,int):==(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:i >= 0 |==> i == 0
+6:ROR:>=(int,int):>(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:i >= 0 |==> i > 0
+7:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):12:i >= 0 |==> true
+8:AOR:-(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:digits.length - 1 |==> digits.length % 1
+9:AOR:-(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:digits.length - 1 |==> digits.length * 1
+10:AOR:-(int,int):+(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:digits.length - 1 |==> digits.length + 1
+11:AOR:-(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:digits.length - 1 |==> digits.length / 1
+12:ROR:==(int,int):<=(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:i == digits.length - 1 |==> i <= digits.length - 1
+13:ROR:==(int,int):>=(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:i == digits.length - 1 |==> i >= digits.length - 1
+14:ROR:==(int,int):FALSE(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):13:i == digits.length - 1 |==> false
+15:AOR:+(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry |==> digits[i] % carry
+16:AOR:+(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry |==> digits[i] * carry
+17:AOR:+(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry |==> digits[i] - carry
+18:AOR:+(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry |==> digits[i] / carry
+19:AOR:+(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry + num |==> (digits[i] + carry) % num
+20:AOR:+(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry + num |==> (digits[i] + carry) * num
+21:AOR:+(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry + num |==> digits[i] + carry - num
+22:AOR:+(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):14:digits[i] + carry + num |==> (digits[i] + carry) / num
+23:AOR:+(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):16:digits[i] + carry |==> digits[i] % carry
+24:AOR:+(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):16:digits[i] + carry |==> digits[i] * carry
+25:AOR:+(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):16:digits[i] + carry |==> digits[i] - carry
+26:AOR:+(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):16:digits[i] + carry |==> digits[i] / carry
+27:AOR:/(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):18:sum / 10 |==> sum % 10
+28:AOR:/(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):18:sum / 10 |==> sum * 10
+29:AOR:/(int,int):+(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):18:sum / 10 |==> sum + 10
+30:AOR:/(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):18:sum / 10 |==> sum - 10
+31:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0066_plus_one.Solution@plusOne(int[]):18:carry = sum / 10; |==> <NO-OP>
+32:AOR:%(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):19:sum % 10 |==> sum * 10
+33:AOR:%(int,int):+(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):19:sum % 10 |==> sum + 10
+34:AOR:%(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):19:sum % 10 |==> sum - 10
+35:AOR:%(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):19:sum % 10 |==> sum / 10
+36:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0066_plus_one.Solution@plusOne(int[]):19:digits[i] = sum % 10; |==> <NO-OP>
+37:ROR:!=(int,int):<(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):21:carry != 0 |==> carry < 0
+38:ROR:!=(int,int):>(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):21:carry != 0 |==> carry > 0
+39:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):21:carry != 0 |==> true
+40:AOR:+(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):22:digits.length + 1 |==> digits.length % 1
+41:AOR:+(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):22:digits.length + 1 |==> digits.length * 1
+42:AOR:+(int,int):-(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):22:digits.length + 1 |==> digits.length - 1
+43:AOR:+(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):22:digits.length + 1 |==> digits.length / 1
+44:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0066_plus_one.Solution@plusOne(int[]):23:ans[0] = carry; |==> <NO-OP>
+45:AOR:-(int,int):%(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):24:ans.length - 1 |==> ans.length % 1
+46:AOR:-(int,int):*(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):24:ans.length - 1 |==> ans.length * 1
+47:AOR:-(int,int):+(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):24:ans.length - 1 |==> ans.length + 1
+48:AOR:-(int,int):/(int,int):g0001_0100.s0066_plus_one.Solution@plusOne(int[]):24:ans.length - 1 |==> ans.length / 1
+49:STD:<CALL>:<NO-OP>:g0001_0100.s0066_plus_one.Solution@plusOne(int[]):24:System.arraycopy(digits, 0, ans, 1, ans.length - 1); |==> <NO-OP>
+50:STD:<RETURN>:<NO-OP>:g0001_0100.s0066_plus_one.Solution@plusOne(int[]):25:return ans; |==> <NO-OP>

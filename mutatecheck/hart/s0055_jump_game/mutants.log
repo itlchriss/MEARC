@@ -1,0 +1,21 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):15:i < sz |==> i != sz
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):15:i < sz |==> i <= sz
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):15:i < sz |==> false
+4:STD:<DEC>:<NO-OP>:g0001_0100.s0055_jump_game.Solution@canJump(int[]):17:tmp--; |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):18:tmp < 0 |==> tmp != 0
+6:ROR:<(int,int):<=(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):18:tmp < 0 |==> tmp <= 0
+7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):18:tmp < 0 |==> false
+8:STD:<RETURN>:<NO-OP>:g0001_0100.s0055_jump_game.Solution@canJump(int[]):21:return false; |==> <NO-OP>
+9:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0055_jump_game.Solution@canJump(int[]):34:tmp = Math.max(tmp, nums[i]); |==> <NO-OP>
+10:AOR:+(int,int):%(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp |==> i % tmp
+11:AOR:+(int,int):*(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp |==> i * tmp
+12:AOR:+(int,int):-(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp |==> i - tmp
+13:AOR:+(int,int):/(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp |==> i / tmp
+14:AOR:-(int,int):%(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:sz - 1 |==> sz % 1
+15:AOR:-(int,int):*(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:sz - 1 |==> sz * 1
+16:AOR:-(int,int):+(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:sz - 1 |==> sz + 1
+17:AOR:-(int,int):/(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:sz - 1 |==> sz / 1
+18:ROR:>=(int,int):==(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp >= sz - 1 |==> i + tmp == sz - 1
+19:ROR:>=(int,int):>(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp >= sz - 1 |==> i + tmp > sz - 1
+20:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0055_jump_game.Solution@canJump(int[]):35:i + tmp >= sz - 1 |==> true
+21:STD:<RETURN>:<NO-OP>:g0001_0100.s0055_jump_game.Solution@canJump(int[]):36:return true; |==> <NO-OP>

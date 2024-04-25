@@ -1,0 +1,16 @@
+./fmcheck/gpt35/s0001_two_sum/Solution.java:11: error: bad operand types for binary operator '^'
+//@ requires(-10^9 <= target <= 10^9);
+                ^
+  first type:  int
+  second type: boolean
+./fmcheck/gpt35/s0001_two_sum/Solution.java:15: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < numbers.length; -10^9 <= numbers[i] && numbers[i] <= 10^9));
+                                                              ^
+  first type:  int
+  second type: boolean
+./fmcheck/gpt35/s0001_two_sum/Solution.java:15: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < numbers.length; -10^9 <= numbers[i] && numbers[i] <= 10^9));
+                                                                                                  ^
+  first type:  boolean
+  second type: int
+3 errors

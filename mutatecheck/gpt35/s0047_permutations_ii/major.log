@@ -1,0 +1,362 @@
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.ArrayList, g0001_0100.s0047_permutations_ii.Solution]]]]
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0047_permutations_ii.Solution
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: permuteUnique([int[] nums])List<List<Integer>>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 1: (STD) ans = new ArrayList<>(); -> <NO-OP>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 2: (STD) permute(nums, 0); -> <NO-OP>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: permute([int[] nums, int p])void
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.permute(line 24, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  nums.length - 1 
+            mutant:                    nums.length % 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.permute(line 24, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  nums.length - 1 
+            mutant:                    nums.length * 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.permute(line 24, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  nums.length - 1 
+            mutant:                    nums.length + 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.permute(line 24, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  nums.length - 1 
+            mutant:                    nums.length / 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.permute(line 24, col 15)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  p >= nums.length - 1 
+            mutant:                    p == nums.length - 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.permute(line 24, col 15)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  p >= nums.length - 1 
+            mutant:                    p > nums.length - 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.permute(line 24, col 15)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  p >= nums.length - 1 
+            mutant:                    true
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 10: (STD) t.add(n); -> <NO-OP>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 11: (STD) ans.add(t); -> <NO-OP>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 12: (STD) return; -> <NO-OP>
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.permute(line 32, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  p + 1 
+            mutant:                    p % 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.permute(line 32, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  p + 1 
+            mutant:                    p * 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.permute(line 32, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  p + 1 
+            mutant:                    p - 1
+[04/24 17:40:55] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.permute(line 32, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  p + 1 
+            mutant:                    p / 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 17: (STD) permute(nums, p + 1); -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.permute(line 34, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  p + 1 
+            mutant:                    p % 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.permute(line 34, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  p + 1 
+            mutant:                    p * 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.permute(line 34, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  p + 1 
+            mutant:                    p - 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.permute(line 34, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  p + 1 
+            mutant:                    p / 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.permute(line 34, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < nums.length 
+            mutant:                    i != nums.length
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.permute(line 34, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < nums.length 
+            mutant:                    i <= nums.length
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.permute(line 34, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < nums.length 
+            mutant:                    false
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.permute(line 35, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  nums[i] != nums[p] 
+            mutant:                    nums[i] < nums[p]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.permute(line 35, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  nums[i] != nums[p] 
+            mutant:                    nums[i] > nums[p]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.permute(line 35, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  nums[i] != nums[p] 
+            mutant:                    true
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.permute(line 35, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 % nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.permute(line 35, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 * nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.permute(line 35, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 - nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.permute(line 35, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 / nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.permute(line 35, col 36)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  nums[i] != nums[p] && !used[10 + nums[i]] 
+            mutant:                    nums[i] != nums[p] == !used[10 + nums[i]]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.permute(line 35, col 36)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  nums[i] != nums[p] && !used[10 + nums[i]] 
+            mutant:                    false
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.permute(line 35, col 25)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  nums[i] != nums[p] && !used[10 + nums[i]] 
+            mutant:                    nums[i] != nums[p]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.permute(line 35, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  nums[i] != nums[p] && !used[10 + nums[i]] 
+            mutant:                    !used[10 + nums[i]]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.permute(line 36, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 % nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.permute(line 36, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 * nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.permute(line 36, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 - nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.permute(line 36, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  10 + nums[i] 
+            mutant:                    10 / nums[i]
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 40: (STD) used[10 + nums[i]] = true; -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 41: (STD) swap(nums, p, i); -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.permute(line 38, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  p + 1 
+            mutant:                    p % 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.permute(line 38, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  p + 1 
+            mutant:                    p * 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.permute(line 38, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  p + 1 
+            mutant:                    p - 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.permute(line 38, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  p + 1 
+            mutant:                    p / 1
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 46: (STD) permute(nums, p + 1); -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 47: (STD) swap(nums, p, i); -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: swap([int[] nums, int i, int j])void
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 48: (STD) nums[i] = nums[j]; -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 49: (STD) nums[j] = t; -> <NO-OP>
+[04/24 17:40:56] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 49 mutants (81 ms)

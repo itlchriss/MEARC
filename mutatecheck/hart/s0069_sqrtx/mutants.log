@@ -1,0 +1,79 @@
+1:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):10:x / 2 |==> x % 2
+2:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):10:x / 2 |==> x * 2
+3:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):10:x / 2 |==> x + 2
+4:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):10:x / 2 |==> x - 2
+5:AOR:-(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:end - start |==> end % start
+6:AOR:-(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:end - start |==> end * start
+7:AOR:-(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:end - start |==> end + start
+8:AOR:-(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:end - start |==> end / start
+9:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:(end - start) / 2 |==> (end - start) % 2
+10:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:(end - start) / 2 |==> (end - start) * 2
+11:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:(end - start) / 2 |==> (end - start) + 2
+12:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:(end - start) / 2 |==> (end - start) - 2
+13:AOR:+(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:start + (end - start) / 2 |==> start % ((end - start) / 2)
+14:AOR:+(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:start + (end - start) / 2 |==> start * ((end - start) / 2)
+15:AOR:+(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:start + (end - start) / 2 |==> start - (end - start) / 2
+16:AOR:+(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):11:start + (end - start) / 2 |==> start / ((end - start) / 2)
+17:ROR:==(int,int):<=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):12:x == 0 |==> x <= 0
+18:ROR:==(int,int):>=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):12:x == 0 |==> x >= 0
+19:ROR:==(int,int):FALSE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):12:x == 0 |==> false
+20:STD:<RETURN>:<NO-OP>:g0001_0100.s0069_sqrtx.Solution@mySqrt(int):13:return 0; |==> <NO-OP>
+21:ROR:<=(int,int):<(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):15:start <= end |==> start < end
+22:ROR:<=(int,int):==(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):15:start <= end |==> start == end
+23:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):15:start <= end |==> true
+24:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:x / sqrt |==> x % sqrt
+25:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:x / sqrt |==> x * sqrt
+26:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:x / sqrt |==> x + sqrt
+27:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:x / sqrt |==> x - sqrt
+28:ROR:==(int,int):<=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:sqrt == x / sqrt |==> sqrt <= x / sqrt
+29:ROR:==(int,int):>=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:sqrt == x / sqrt |==> sqrt >= x / sqrt
+30:ROR:==(int,int):FALSE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):16:sqrt == x / sqrt |==> false
+31:STD:<RETURN>:<NO-OP>:g0001_0100.s0069_sqrtx.Solution@mySqrt(int):17:return sqrt; |==> <NO-OP>
+32:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:x / sqrt |==> x % sqrt
+33:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:x / sqrt |==> x * sqrt
+34:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:x / sqrt |==> x + sqrt
+35:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:x / sqrt |==> x - sqrt
+36:ROR:>(int,int):!=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:sqrt > x / sqrt |==> sqrt != x / sqrt
+37:ROR:>(int,int):>=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:sqrt > x / sqrt |==> sqrt >= x / sqrt
+38:ROR:>(int,int):FALSE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):18:sqrt > x / sqrt |==> false
+39:AOR:-(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):19:sqrt - 1 |==> sqrt % 1
+40:AOR:-(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):19:sqrt - 1 |==> sqrt * 1
+41:AOR:-(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):19:sqrt - 1 |==> sqrt + 1
+42:AOR:-(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):19:sqrt - 1 |==> sqrt / 1
+43:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0069_sqrtx.Solution@mySqrt(int):19:end = sqrt - 1; |==> <NO-OP>
+44:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:x / sqrt |==> x % sqrt
+45:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:x / sqrt |==> x * sqrt
+46:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:x / sqrt |==> x + sqrt
+47:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:x / sqrt |==> x - sqrt
+48:ROR:<(int,int):!=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:sqrt < x / sqrt |==> sqrt != x / sqrt
+49:ROR:<(int,int):<=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:sqrt < x / sqrt |==> sqrt <= x / sqrt
+50:ROR:<(int,int):FALSE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):20:sqrt < x / sqrt |==> false
+51:AOR:+(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):21:sqrt + 1 |==> sqrt % 1
+52:AOR:+(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):21:sqrt + 1 |==> sqrt * 1
+53:AOR:+(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):21:sqrt + 1 |==> sqrt - 1
+54:AOR:+(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):21:sqrt + 1 |==> sqrt / 1
+55:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0069_sqrtx.Solution@mySqrt(int):21:start = sqrt + 1; |==> <NO-OP>
+56:AOR:-(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:end - start |==> end % start
+57:AOR:-(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:end - start |==> end * start
+58:AOR:-(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:end - start |==> end + start
+59:AOR:-(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:end - start |==> end / start
+60:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:(end - start) / 2 |==> (end - start) % 2
+61:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:(end - start) / 2 |==> (end - start) * 2
+62:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:(end - start) / 2 |==> (end - start) + 2
+63:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:(end - start) / 2 |==> (end - start) - 2
+64:AOR:+(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:start + (end - start) / 2 |==> start % ((end - start) / 2)
+65:AOR:+(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:start + (end - start) / 2 |==> start * ((end - start) / 2)
+66:AOR:+(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:start + (end - start) / 2 |==> start - (end - start) / 2
+67:AOR:+(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:start + (end - start) / 2 |==> start / ((end - start) / 2)
+68:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0069_sqrtx.Solution@mySqrt(int):23:sqrt = start + (end - start) / 2; |==> <NO-OP>
+69:AOR:/(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:x / sqrt |==> x % sqrt
+70:AOR:/(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:x / sqrt |==> x * sqrt
+71:AOR:/(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:x / sqrt |==> x + sqrt
+72:AOR:/(int,int):-(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:x / sqrt |==> x - sqrt
+73:ROR:>(int,int):!=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:sqrt > x / sqrt |==> sqrt != x / sqrt
+74:ROR:>(int,int):>=(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:sqrt > x / sqrt |==> sqrt >= x / sqrt
+75:ROR:>(int,int):FALSE(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):25:sqrt > x / sqrt |==> false
+76:AOR:-(int,int):%(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):26:sqrt - 1 |==> sqrt % 1
+77:AOR:-(int,int):*(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):26:sqrt - 1 |==> sqrt * 1
+78:AOR:-(int,int):+(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):26:sqrt - 1 |==> sqrt + 1
+79:AOR:-(int,int):/(int,int):g0001_0100.s0069_sqrtx.Solution@mySqrt(int):26:sqrt - 1 |==> sqrt / 1

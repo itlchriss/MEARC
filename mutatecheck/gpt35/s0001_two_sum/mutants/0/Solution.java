@@ -8,16 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ requires(-10^9 <= target <= 10^9);
+// requires(-10^9 <= target <= 10^9);
 //@ ensures((\result != null && \result.length == 2));
 //@ requires(numbers != null && numbers.length >= 2);
 //@ ensures((\exists int i, j; 0 <= i && i < numbers.length && 0 <= j && j < numbers.length && i != j; numbers[i] + numbers[j] == target));
-//@ requires((\forall int i; 0 <= i && i < numbers.length; -10^9 <= numbers[i] && numbers[i] <= 10^9));
+// requires((\forall int i; 0 <= i && i < numbers.length; -10^9 <= numbers[i] && numbers[i] <= 10^9));
 //@ ensures(numbers[\result[0]] + numbers[\result[1]] == target);
 //@ ensures((\forall int i; 0 <= i && i < \result.length; 0 <= \result[i] && \result[i] < numbers.length));
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> indexMap = new HashMap<>();
+        //@ loop_invariant 0 <= i <= numbers.length;
         for (int i = 0; i != numbers.length; i++) {
+            //@ assume target - numbers[i] >= Integer.MIN_VALUE && target - numbers[i] <= Integer.MAX_VALUE;
             Integer requiredNum = target - numbers[i];
             if (indexMap.containsKey(requiredNum)) {
                 return new int[] {indexMap.get(requiredNum), i};

@@ -1,0 +1,196 @@
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.Collections, java.util.ArrayList, g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution]]]]
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0017_letter_combinations_of_a_phone_number.Solution
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: letterCombinations([String digits])List<String>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.letterCombinations(line 15, col 27)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  digits.isEmpty() 
+            mutant:                    false
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.letterCombinations(line 15, col 27)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  digits.isEmpty() 
+            mutant:                    true
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 3: (STD) return Collections.emptyList(); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 4: (STD) findCombinations(0, digits, letters, sb, ans); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: findCombinations([int start, String nums, String[] letters, StringBuilder curr, List<String> ans])void
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.findCombinations(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  curr.length() == nums.length() 
+            mutant:                    curr.length() <= nums.length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.findCombinations(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  curr.length() == nums.length() 
+            mutant:                    curr.length() >= nums.length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.findCombinations(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  curr.length() == nums.length() 
+            mutant:                    false
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 8: (STD) ans.add(curr.toString()); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 9: (STD) return; -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.findCombinations(line 31, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < nums.length() 
+            mutant:                    i != nums.length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.findCombinations(line 31, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < nums.length() 
+            mutant:                    i <= nums.length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.findCombinations(line 31, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < nums.length() 
+            mutant:                    false
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.findCombinations(line 33, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < letters[n].length() 
+            mutant:                    j != letters[n].length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.findCombinations(line 33, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < letters[n].length() 
+            mutant:                    j <= letters[n].length()
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.findCombinations(line 33, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < letters[n].length() 
+            mutant:                    false
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 16: (STD) curr.append(ch); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.findCombinations(line 36, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.findCombinations(line 36, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.findCombinations(line 36, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.findCombinations(line 36, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 21: (STD) findCombinations(i + 1, nums, letters, curr, ans); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.findCombinations(line 37, col 49)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  curr.length() - 1 
+            mutant:                    curr.length() % 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.findCombinations(line 37, col 49)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  curr.length() - 1 
+            mutant:                    curr.length() * 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.findCombinations(line 37, col 49)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  curr.length() - 1 
+            mutant:                    curr.length() + 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.findCombinations(line 37, col 49)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  curr.length() - 1 
+            mutant:                    curr.length() / 1
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 26: (STD) curr.deleteCharAt(curr.length() - 1); -> <NO-OP>
+[04/24 17:41:42] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 26 mutants (59 ms)

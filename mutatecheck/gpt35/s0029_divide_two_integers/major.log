@@ -1,0 +1,470 @@
+[04/24 17:40:43] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0029_divide_two_integers.Solution]]]]
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0029_divide_two_integers.Solution
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: divide([int dividend, int divisor])int
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.divide(line 14, col 39)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  dividend > 0 
+            mutant:                    dividend != 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.divide(line 14, col 39)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  dividend > 0 
+            mutant:                    dividend >= 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.divide(line 14, col 39)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  dividend > 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.divide(line 14, col 54)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  divisor < 0 
+            mutant:                    divisor != 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.divide(line 14, col 54)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  divisor < 0 
+            mutant:                    divisor <= 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.divide(line 14, col 54)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  divisor < 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.divide(line 14, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 
+            mutant:                    dividend > 0 == divisor < 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.divide(line 14, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.divide(line 14, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 
+            mutant:                    dividend > 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.divide(line 14, col 54)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 
+            mutant:                    divisor < 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.divide(line 14, col 70)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  dividend < 0 
+            mutant:                    dividend != 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.divide(line 14, col 70)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  dividend < 0 
+            mutant:                    dividend <= 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.divide(line 14, col 70)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  dividend < 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.divide(line 14, col 85)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  divisor > 0 
+            mutant:                    divisor != 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.divide(line 14, col 85)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  divisor > 0 
+            mutant:                    divisor >= 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.divide(line 14, col 85)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  divisor > 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.divide(line 14, col 74)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  dividend < 0 && divisor > 0 
+            mutant:                    dividend < 0 == divisor > 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.divide(line 14, col 74)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  dividend < 0 && divisor > 0 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.divide(line 14, col 70)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  dividend < 0 && divisor > 0 
+            mutant:                    dividend < 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.divide(line 14, col 85)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  dividend < 0 && divisor > 0 
+            mutant:                    divisor > 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.divide(line 14, col 58)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0 
+            mutant:                    (dividend > 0 && divisor < 0) != (dividend < 0 && divisor > 0)
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.divide(line 14, col 43)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0 
+            mutant:                    dividend > 0 && divisor < 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.divide(line 14, col 74)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0 
+            mutant:                    dividend < 0 && divisor > 0
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.divide(line 14, col 58)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0 
+            mutant:                    true
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.divide(line 18, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> ==(long,long)
+            original:                  divide >= divisorAbs 
+            mutant:                    divide == divisorAbs
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.divide(line 18, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> >(long,long)
+            original:                  divide >= divisorAbs 
+            mutant:                    divide > divisorAbs
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.divide(line 18, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> TRUE(long,long)
+            original:                  divide >= divisorAbs 
+            mutant:                    true
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.divide(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> ==(long,long)
+            original:                  divide >= temp 
+            mutant:                    divide == temp
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.divide(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> >(long,long)
+            original:                  divide >= temp 
+            mutant:                    divide > temp
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.divide(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(long,long) |==> TRUE(long,long)
+            original:                  divide >= temp 
+            mutant:                    true
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 31: (STD) divide -= temp; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 32: (STD) ans += cnt; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 33: (STD) cnt <<= 1; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 34: (STD) temp <<= 1; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.divide(line 28, col 13)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
+            original:                  isNegative 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.divide(line 28, col 13)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
+            original:                  isNegative 
+            mutant:                    true
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.divide(line 29, col 19)
+            mutation operator group:   ORU
+            mutation operator:         ---(long) |==> +++(long)
+            original:                  -ans 
+            mutant:                    +ans
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.divide(line 29, col 19)
+            mutation operator group:   ORU
+            mutation operator:         ---(long) |==> ~(long)
+            original:                  -ans 
+            mutant:                    ~ans
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 39: (STD) ans = -ans; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.divide(line 31, col 22)
+            mutation operator group:   ORU
+            mutation operator:         ---(int) |==> +++(int)
+            original:                  -(1 << 31) 
+            mutant:                    +(1 << 31)
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.divide(line 31, col 22)
+            mutation operator group:   ORU
+            mutation operator:         ---(int) |==> ~(int)
+            original:                  -(1 << 31) 
+            mutant:                    ~(1 << 31)
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.divide(line 31, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << 31 
+            mutant:                    1 >> 31
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.divide(line 31, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << 31 
+            mutant:                    1 >>> 31
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.divide(line 32, col 25)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << 31 
+            mutant:                    1 >> 31
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.divide(line 32, col 25)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << 31 
+            mutant:                    1 >>> 31
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.divide(line 32, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  (1 << 31) - 1 
+            mutant:                    (1 << 31) % 1
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.divide(line 32, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  (1 << 31) - 1 
+            mutant:                    (1 << 31) * 1
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.divide(line 32, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  (1 << 31) - 1 
+            mutant:                    (1 << 31) + 1
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.divide(line 32, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  (1 << 31) - 1 
+            mutant:                    (1 << 31) / 1
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.divide(line 33, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> !=(long,long)
+            original:                  ans < intMin 
+            mutant:                    ans != intMin
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.divide(line 33, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> <=(long,long)
+            original:                  ans < intMin 
+            mutant:                    ans <= intMin
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.divide(line 33, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> FALSE(long,long)
+            original:                  ans < intMin 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.divide(line 33, col 33)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> !=(long,long)
+            original:                  ans > intMax 
+            mutant:                    ans != intMax
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.divide(line 33, col 33)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> >=(long,long)
+            original:                  ans > intMax 
+            mutant:                    ans >= intMax
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.divide(line 33, col 33)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> FALSE(long,long)
+            original:                  ans > intMax 
+            mutant:                    false
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.divide(line 33, col 26)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  ans < intMin || ans > intMax 
+            mutant:                    ans < intMin != ans > intMax
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.divide(line 33, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  ans < intMin || ans > intMax 
+            mutant:                    ans < intMin
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.divide(line 33, col 33)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  ans < intMin || ans > intMax 
+            mutant:                    ans > intMax
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.divide(line 33, col 26)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  ans < intMin || ans > intMax 
+            mutant:                    true
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 60: (STD) ans = intMax; -> <NO-OP>
+[04/24 17:40:44] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 60 mutants (86 ms)

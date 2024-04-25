@@ -116,6 +116,11 @@ struct cstsymbol {
         Number of nodes that referenced this ptr
     */
     int ref_count;
+
+    /*
+    * The predicate(astnode) of this event cstpointer is refered to. Such as sort(e01) then e01->astptr = ptr(sort)
+    */
+    struct astnode *astptr;
 };
 
 

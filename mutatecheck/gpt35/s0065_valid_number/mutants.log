@@ -1,0 +1,107 @@
+1:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s == null |==> false
+2:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s.length() == 0 |==> s.length() <= 0
+3:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s.length() == 0 |==> s.length() >= 0
+4:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s.length() == 0 |==> false
+5:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s == null || s.length() == 0 |==> s == null != (s.length() == 0)
+6:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s == null || s.length() == 0 |==> s == null
+7:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s == null || s.length() == 0 |==> s.length() == 0
+8:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):9:s == null || s.length() == 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):10:return false; |==> <NO-OP>
+10:ROR:<(int,int):!=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):15:i < s.length() |==> i != s.length()
+11:ROR:<(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):15:i < s.length() |==> i <= s.length()
+12:ROR:<(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):15:i < s.length() |==> false
+13:ROR:>=(int,int):==(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 |==> c == 48
+14:ROR:>=(int,int):>(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 |==> c > 48
+15:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 |==> true
+16:ROR:<=(int,int):<(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c <= 57 |==> c < 57
+17:ROR:<=(int,int):==(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c <= 57 |==> c == 57
+18:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c <= 57 |==> true
+19:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 && c <= 57 |==> c >= 48 == c <= 57
+20:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 && c <= 57 |==> false
+21:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 && c <= 57 |==> c >= 48
+22:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):17:c >= 48 && c <= 57 |==> c <= 57
+23:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):18:numberSeen = true; |==> <NO-OP>
+24:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' |==> c <= '+'
+25:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' |==> c >= '+'
+26:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' |==> false
+27:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '-' |==> c <= '-'
+28:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '-' |==> c >= '-'
+29:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '-' |==> false
+30:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' || c == '-' |==> c == '+' != (c == '-')
+31:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' || c == '-' |==> c == '+'
+32:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' || c == '-' |==> c == '-'
+33:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):19:c == '+' || c == '-' |==> true
+34:AOR:-(int,int):%(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:s.length() - 1 |==> s.length() % 1
+35:AOR:-(int,int):*(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:s.length() - 1 |==> s.length() * 1
+36:AOR:-(int,int):+(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:s.length() - 1 |==> s.length() + 1
+37:AOR:-(int,int):/(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:s.length() - 1 |==> s.length() / 1
+38:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:i == s.length() - 1 |==> i <= s.length() - 1
+39:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:i == s.length() - 1 |==> i >= s.length() - 1
+40:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:i == s.length() - 1 |==> false
+41:ROR:!=(int,int):<(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 |==> i < 0
+42:ROR:!=(int,int):>(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 |==> i > 0
+43:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 |==> true
+44:AOR:-(int,int):%(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i % 1
+45:AOR:-(int,int):*(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i * 1
+46:AOR:-(int,int):+(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i + 1
+47:AOR:-(int,int):/(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i / 1
+48:ROR:!=(int,int):<(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'e' |==> s.charAt(i - 1) < 'e'
+49:ROR:!=(int,int):>(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'e' |==> s.charAt(i - 1) > 'e'
+50:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'e' |==> true
+51:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' |==> i != 0 == (s.charAt(i - 1) != 'e')
+52:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' |==> false
+53:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' |==> i != 0
+54:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' |==> s.charAt(i - 1) != 'e'
+55:AOR:-(int,int):%(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i % 1
+56:AOR:-(int,int):*(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i * 1
+57:AOR:-(int,int):+(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i + 1
+58:AOR:-(int,int):/(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i - 1 |==> i / 1
+59:ROR:!=(int,int):<(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'E' |==> s.charAt(i - 1) < 'E'
+60:ROR:!=(int,int):>(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'E' |==> s.charAt(i - 1) > 'E'
+61:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:s.charAt(i - 1) != 'E' |==> true
+62:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E' |==> (i != 0 && s.charAt(i - 1) != 'e') == (s.charAt(i - 1) != 'E')
+63:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E' |==> false
+64:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E' |==> i != 0 && s.charAt(i - 1) != 'e'
+65:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E' |==> s.charAt(i - 1) != 'E'
+66:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:i == s.length() - 1 || (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') |==> i == s.length() - 1 != (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E')
+67:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):20:i == s.length() - 1 || (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') |==> i == s.length() - 1
+68:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i == s.length() - 1 || (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') |==> (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E')
+69:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):21:i == s.length() - 1 || (i != 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') |==> true
+70:STD:<RETURN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):22:return false; |==> <NO-OP>
+71:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):24:c == '.' |==> c <= '.'
+72:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):24:c == '.' |==> c >= '.'
+73:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):24:c == '.' |==> false
+74:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):25:eSeen || decimalSeen |==> eSeen != decimalSeen
+75:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):25:eSeen || decimalSeen |==> eSeen
+76:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):25:eSeen || decimalSeen |==> decimalSeen
+77:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):25:eSeen || decimalSeen |==> true
+78:STD:<RETURN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):26:return false; |==> <NO-OP>
+79:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):28:decimalSeen = true; |==> <NO-OP>
+80:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' |==> c <= 'e'
+81:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' |==> c >= 'e'
+82:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' |==> false
+83:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'E' |==> c <= 'E'
+84:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'E' |==> c >= 'E'
+85:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'E' |==> false
+86:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' || c == 'E' |==> c == 'e' != (c == 'E')
+87:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' || c == 'E' |==> c == 'e'
+88:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' || c == 'E' |==> c == 'E'
+89:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):29:c == 'e' || c == 'E' |==> true
+90:AOR:-(int,int):%(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:s.length() - 1 |==> s.length() % 1
+91:AOR:-(int,int):*(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:s.length() - 1 |==> s.length() * 1
+92:AOR:-(int,int):+(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:s.length() - 1 |==> s.length() + 1
+93:AOR:-(int,int):/(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:s.length() - 1 |==> s.length() / 1
+94:ROR:==(int,int):<=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 |==> i <= s.length() - 1
+95:ROR:==(int,int):>=(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 |==> i >= s.length() - 1
+96:ROR:==(int,int):FALSE(int,int):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 |==> false
+97:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen |==> i == s.length() - 1 != eSeen
+98:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen |==> i == s.length() - 1
+99:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen |==> eSeen
+100:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen |==> true
+101:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen || !numberSeen |==> (i == s.length() - 1 || eSeen) != !numberSeen
+102:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen || !numberSeen |==> i == s.length() - 1 || eSeen
+103:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen || !numberSeen |==> !numberSeen
+104:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):30:i == s.length() - 1 || eSeen || !numberSeen |==> true
+105:STD:<RETURN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):31:return false; |==> <NO-OP>
+106:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):33:eSeen = true; |==> <NO-OP>
+107:STD:<RETURN>:<NO-OP>:g0001_0100.s0065_valid_number.Solution@isNumber(java.lang.String):35:return false; |==> <NO-OP>

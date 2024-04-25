@@ -1,0 +1,398 @@
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.ArrayList, g0001_0100.s0054_spiral_matrix.Solution]]]]
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0054_spiral_matrix.Solution
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: spiralOrder([int[][] matrix])List<Integer>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.spiralOrder(line 16, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  matrix.length - 1 
+            mutant:                    matrix.length % 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.spiralOrder(line 16, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  matrix.length - 1 
+            mutant:                    matrix.length * 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.spiralOrder(line 16, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  matrix.length - 1 
+            mutant:                    matrix.length + 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.spiralOrder(line 16, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  matrix.length - 1 
+            mutant:                    matrix.length / 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.spiralOrder(line 17, col 37)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  matrix[0].length - 1 
+            mutant:                    matrix[0].length % 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.spiralOrder(line 17, col 37)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  matrix[0].length - 1 
+            mutant:                    matrix[0].length * 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.spiralOrder(line 17, col 37)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  matrix[0].length - 1 
+            mutant:                    matrix[0].length + 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.spiralOrder(line 17, col 37)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  matrix[0].length - 1 
+            mutant:                    matrix[0].length / 1
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.spiralOrder(line 18, col 18)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  r <= bigR 
+            mutant:                    r < bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.spiralOrder(line 18, col 18)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  r <= bigR 
+            mutant:                    r == bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.spiralOrder(line 18, col 18)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  r <= bigR 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.spiralOrder(line 18, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  c <= bigC 
+            mutant:                    c < bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.spiralOrder(line 18, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  c <= bigC 
+            mutant:                    c == bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.spiralOrder(line 18, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  c <= bigC 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.spiralOrder(line 18, col 26)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  r <= bigR && c <= bigC 
+            mutant:                    r <= bigR == c <= bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.spiralOrder(line 18, col 26)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  r <= bigR && c <= bigC 
+            mutant:                    false
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.spiralOrder(line 18, col 18)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  r <= bigR && c <= bigC 
+            mutant:                    r <= bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.spiralOrder(line 18, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  r <= bigR && c <= bigC 
+            mutant:                    c <= bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.spiralOrder(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  i <= bigC 
+            mutant:                    i < bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.spiralOrder(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  i <= bigC 
+            mutant:                    i == bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.spiralOrder(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  i <= bigC 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 22: (STD) list.add(matrix[r][i]); -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 23: (STD) r++; -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.spiralOrder(line 23, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  i <= bigR 
+            mutant:                    i < bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.spiralOrder(line 23, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  i <= bigR 
+            mutant:                    i == bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.spiralOrder(line 23, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  i <= bigR 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 27: (STD) list.add(matrix[i][bigC]); -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 28: (STD) bigC--; -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.spiralOrder(line 27, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  i >= c 
+            mutant:                    i == c
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.spiralOrder(line 27, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  i >= c 
+            mutant:                    i > c
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.spiralOrder(line 27, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  i >= c 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.spiralOrder(line 27, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  r <= bigR 
+            mutant:                    r < bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.spiralOrder(line 27, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  r <= bigR 
+            mutant:                    r == bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.spiralOrder(line 27, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  r <= bigR 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.spiralOrder(line 27, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i >= c && r <= bigR 
+            mutant:                    i >= c == r <= bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.spiralOrder(line 27, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i >= c && r <= bigR 
+            mutant:                    false
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.spiralOrder(line 27, col 34)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i >= c && r <= bigR 
+            mutant:                    i >= c
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.spiralOrder(line 27, col 44)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i >= c && r <= bigR 
+            mutant:                    r <= bigR
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 39: (STD) list.add(matrix[bigR][i]); -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 40: (STD) bigR--; -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.spiralOrder(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  i >= r 
+            mutant:                    i == r
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.spiralOrder(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  i >= r 
+            mutant:                    i > r
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.spiralOrder(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  i >= r 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.spiralOrder(line 31, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  c <= bigC 
+            mutant:                    c < bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.spiralOrder(line 31, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  c <= bigC 
+            mutant:                    c == bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.spiralOrder(line 31, col 44)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  c <= bigC 
+            mutant:                    true
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.spiralOrder(line 31, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i >= r && c <= bigC 
+            mutant:                    i >= r == c <= bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.spiralOrder(line 31, col 39)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i >= r && c <= bigC 
+            mutant:                    false
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.spiralOrder(line 31, col 34)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i >= r && c <= bigC 
+            mutant:                    i >= r
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.spiralOrder(line 31, col 44)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i >= r && c <= bigC 
+            mutant:                    c <= bigC
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 51: (STD) list.add(matrix[i][c]); -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 52: (STD) c++; -> <NO-OP>
+[04/24 17:42:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 52 mutants (63 ms)

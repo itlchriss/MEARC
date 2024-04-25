@@ -1,0 +1,4 @@
+./fmcheck/gpt35/s0068_text_justification/Solution.java:16: warning: A non-pure method is being called where it is not permitted: java.lang.String.contains(java.lang.CharSequence)
+//@ ensures((\forall int i; 0 <= i && i < \result.size() - 1; \result.get(i).contains(" ")));
+                                                                                     ^
+1 warning

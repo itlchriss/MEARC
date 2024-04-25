@@ -1,0 +1,47 @@
+1:ROR:==(int,int):<=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 |==> open <= 0
+2:ROR:==(int,int):>=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 |==> open >= 0
+3:ROR:==(int,int):FALSE(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 |==> false
+4:ROR:==(int,int):<=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:close == 0 |==> close <= 0
+5:ROR:==(int,int):>=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:close == 0 |==> close >= 0
+6:ROR:==(int,int):FALSE(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:close == 0 |==> false
+7:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 && close == 0 |==> open == 0 == (close == 0)
+8:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 && close == 0 |==> false
+9:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 && close == 0 |==> open == 0
+10:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):22:open == 0 && close == 0 |==> close == 0
+11:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):23:str.add(sb.toString()); |==> <NO-OP>
+12:STD:<RETURN>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):24:return str; |==> <NO-OP>
+13:ROR:>(int,int):!=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):26:open > 0 |==> open != 0
+14:ROR:>(int,int):>=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):26:open > 0 |==> open >= 0
+15:ROR:>(int,int):FALSE(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):26:open > 0 |==> false
+16:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):27:sb.append('('); |==> <NO-OP>
+17:AOR:-(int,int):%(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):28:open - 1 |==> open % 1
+18:AOR:-(int,int):*(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):28:open - 1 |==> open * 1
+19:AOR:-(int,int):+(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):28:open - 1 |==> open + 1
+20:AOR:-(int,int):/(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):28:open - 1 |==> open / 1
+21:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):28:generate(sb, str, open - 1, close); |==> <NO-OP>
+22:AOR:-(int,int):%(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):29:sb.length() - 1 |==> sb.length() % 1
+23:AOR:-(int,int):*(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):29:sb.length() - 1 |==> sb.length() * 1
+24:AOR:-(int,int):+(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):29:sb.length() - 1 |==> sb.length() + 1
+25:AOR:-(int,int):/(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):29:sb.length() - 1 |==> sb.length() / 1
+26:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):29:sb.deleteCharAt(sb.length() - 1); |==> <NO-OP>
+27:ROR:>(int,int):!=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 |==> close != 0
+28:ROR:>(int,int):>=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 |==> close >= 0
+29:ROR:>(int,int):FALSE(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 |==> false
+30:ROR:<(int,int):!=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:open < close |==> open != close
+31:ROR:<(int,int):<=(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:open < close |==> open <= close
+32:ROR:<(int,int):FALSE(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:open < close |==> false
+33:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 && open < close |==> close > 0 == open < close
+34:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 && open < close |==> false
+35:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 && open < close |==> close > 0
+36:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):31:close > 0 && open < close |==> open < close
+37:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):32:sb.append(')'); |==> <NO-OP>
+38:AOR:-(int,int):%(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):33:close - 1 |==> close % 1
+39:AOR:-(int,int):*(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):33:close - 1 |==> close * 1
+40:AOR:-(int,int):+(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):33:close - 1 |==> close + 1
+41:AOR:-(int,int):/(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):33:close - 1 |==> close / 1
+42:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):33:generate(sb, str, open, close - 1); |==> <NO-OP>
+43:AOR:-(int,int):%(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):34:sb.length() - 1 |==> sb.length() % 1
+44:AOR:-(int,int):*(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):34:sb.length() - 1 |==> sb.length() * 1
+45:AOR:-(int,int):+(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):34:sb.length() - 1 |==> sb.length() + 1
+46:AOR:-(int,int):/(int,int):g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):34:sb.length() - 1 |==> sb.length() / 1
+47:STD:<CALL>:<NO-OP>:g0001_0100.s0022_generate_parentheses.Solution@generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int):34:sb.deleteCharAt(sb.length() - 1); |==> <NO-OP>

@@ -1,0 +1,16 @@
+./fmcheck/gpt35/s0054_spiral_matrix/Solution.java:15: error: cannot find symbol
+//@ ensures(\result == (\exists int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; matrix[i][j] == num));
+                                                                                                                         ^
+  symbol:   variable num
+  location: class Solution
+./fmcheck/gpt35/s0054_spiral_matrix/Solution.java:15: error: bad operand types for binary operator '=='
+//@ ensures(\result == (\exists int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; matrix[i][j] == num));
+                    ^
+  first type:  List<Integer>
+  second type: boolean
+./fmcheck/gpt35/s0054_spiral_matrix/Solution.java:17: error: cannot find symbol
+//@ ensures((\forall int i; 0 <= i && i < \result.size(); matrixContains(matrix, \result.get(i))));
+                                                          ^
+  symbol:   method matrixContains(int[][],Integer)
+  location: class Solution
+3 errors

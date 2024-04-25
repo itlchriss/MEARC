@@ -1,0 +1,326 @@
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Set, java.util.Queue, java.util.Map, java.util.List, java.util.LinkedList, java.util.LinkedHashSet, java.util.HashSet, java.util.HashMap, java.util.Collections, java.util.ArrayList, g0101_0200.s0126_word_ladder_ii.Solution]]]]
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0101_0200.s0126_word_ladder_ii.Solution
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: findLadders([String beginWord, String endWord, List<String> wordList])List<List<String>>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 1: (STD) wordSet.remove(beginWord); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 2: (STD) queue.add(beginWord); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.findLadders(line 40, col 29)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  isLadder(word, next) 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.findLadders(line 40, col 29)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  isLadder(word, next) 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 5: (STD) reverseLadders.add(word); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.findLadders(line 45, col 39)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  endWord.equals(next) 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.findLadders(line 45, col 39)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  endWord.equals(next) 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 8: (STD) findEnd = true; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 9: (STD) nextLevel.add(next); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.findLadders(line 53, col 30)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  queue.isEmpty() 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.findLadders(line 53, col 30)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  queue.isEmpty() 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.findLadders(line 55, col 21)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
+            original:                  findEnd 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.findLadders(line 55, col 21)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
+            original:                  findEnd 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 14: (STD) break; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 15: (STD) queue.addAll(nextLevel); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 16: (STD) wordSet.removeAll(nextLevel); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 17: (STD) nextLevel.clear(); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.findLadders(line 66, col 14)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
+            original:                  findEnd 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.findLadders(line 66, col 14)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
+            original:                  findEnd 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 20: (STD) return ans; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 21: (STD) path.add(endWord); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 22: (STD) findPath(endWord, beginWord, reverse, ans, path); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: findPath([String endWord, String beginWord, Map<String, Set<String>> graph, List<List<String>> ans, Set<String> path])void
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.findPath(line 83, col 18)
+            mutation operator group:   ROR
+            mutation operator:         ==(java.lang.Object,java.lang.Object) |==> FALSE(java.lang.Object,java.lang.Object)
+            original:                  next == null 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 24: (STD) return; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 25: (STD) path.add(word); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.findPath(line 88, col 33)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  beginWord.equals(word) 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.findPath(line 88, col 33)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  beginWord.equals(word) 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 28: (STD) Collections.reverse(shortestPath); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 29: (STD) ans.add(shortestPath); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 30: (STD) findPath(word, beginWord, graph, ans, path); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 31: (STD) path.remove(word); -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: isLadder([String s, String t])boolean
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.isLadder(line 102, col 24)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  s.length() != t.length() 
+            mutant:                    s.length() < t.length()
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.isLadder(line 102, col 24)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  s.length() != t.length() 
+            mutant:                    s.length() > t.length()
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.isLadder(line 102, col 24)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  s.length() != t.length() 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 35: (STD) return false; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.isLadder(line 107, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < n 
+            mutant:                    i != n
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.isLadder(line 107, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < n 
+            mutant:                    i <= n
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.isLadder(line 107, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < n 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.isLadder(line 108, col 29)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  s.charAt(i) != t.charAt(i) 
+            mutant:                    s.charAt(i) < t.charAt(i)
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.isLadder(line 108, col 29)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  s.charAt(i) != t.charAt(i) 
+            mutant:                    s.charAt(i) > t.charAt(i)
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.isLadder(line 108, col 29)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  s.charAt(i) != t.charAt(i) 
+            mutant:                    true
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 42: (STD) diffCount++; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.isLadder(line 111, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  diffCount > 1 
+            mutant:                    diffCount != 1
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.isLadder(line 111, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  diffCount > 1 
+            mutant:                    diffCount >= 1
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.isLadder(line 111, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  diffCount > 1 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 46: (STD) return false; -> <NO-OP>
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.isLadder(line 115, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  diffCount == 1 
+            mutant:                    diffCount <= 1
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.isLadder(line 115, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  diffCount == 1 
+            mutant:                    diffCount >= 1
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.isLadder(line 115, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  diffCount == 1 
+            mutant:                    false
+[04/24 17:42:28] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 49 mutants (100 ms)

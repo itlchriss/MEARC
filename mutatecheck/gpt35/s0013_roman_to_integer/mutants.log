@@ -1,0 +1,43 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):13:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):13:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):13:i < s.length() |==> false
+4:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):17:x = getX(s, x, i, 1, 'V', 'X'); |==> <NO-OP>
+5:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):18:break; |==> <NO-OP>
+6:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):20:x += 5; |==> <NO-OP>
+7:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):21:break; |==> <NO-OP>
+8:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):23:x = getX(s, x, i, 10, 'L', 'C'); |==> <NO-OP>
+9:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):24:break; |==> <NO-OP>
+10:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):26:x += 50; |==> <NO-OP>
+11:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):27:break; |==> <NO-OP>
+12:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):29:x = getX(s, x, i, 100, 'D', 'M'); |==> <NO-OP>
+13:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):30:break; |==> <NO-OP>
+14:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):32:x += 500; |==> <NO-OP>
+15:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):33:break; |==> <NO-OP>
+16:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):35:x += 1000; |==> <NO-OP>
+17:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):36:break; |==> <NO-OP>
+18:STD:<BREAK>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@romanToInt(java.lang.String):38:break; |==> <NO-OP>
+19:AOR:+(int,int):%(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 |==> i % 1
+20:AOR:+(int,int):*(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 |==> i * 1
+21:AOR:+(int,int):-(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 |==> i - 1
+22:AOR:+(int,int):/(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 |==> i / 1
+23:ROR:==(int,int):<=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 == s.length() |==> i + 1 <= s.length()
+24:ROR:==(int,int):>=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 == s.length() |==> i + 1 >= s.length()
+25:ROR:==(int,int):FALSE(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):45:i + 1 == s.length() |==> false
+26:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):46:x += i2; |==> <NO-OP>
+27:AOR:+(int,int):%(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:i + 1 |==> i % 1
+28:AOR:+(int,int):*(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:i + 1 |==> i * 1
+29:AOR:+(int,int):-(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:i + 1 |==> i - 1
+30:AOR:+(int,int):/(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:i + 1 |==> i / 1
+31:ROR:==(int,int):<=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:s.charAt(i + 1) == v |==> s.charAt(i + 1) <= v
+32:ROR:==(int,int):>=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:s.charAt(i + 1) == v |==> s.charAt(i + 1) >= v
+33:ROR:==(int,int):FALSE(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):47:s.charAt(i + 1) == v |==> false
+34:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):48:x -= i2; |==> <NO-OP>
+35:AOR:+(int,int):%(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:i + 1 |==> i % 1
+36:AOR:+(int,int):*(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:i + 1 |==> i * 1
+37:AOR:+(int,int):-(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:i + 1 |==> i - 1
+38:AOR:+(int,int):/(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:i + 1 |==> i / 1
+39:ROR:==(int,int):<=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:s.charAt(i + 1) == x2 |==> s.charAt(i + 1) <= x2
+40:ROR:==(int,int):>=(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:s.charAt(i + 1) == x2 |==> s.charAt(i + 1) >= x2
+41:ROR:==(int,int):FALSE(int,int):g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):49:s.charAt(i + 1) == x2 |==> false
+42:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):50:x -= i2; |==> <NO-OP>
+43:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0013_roman_to_integer.Solution@getX(java.lang.String,int,int,int,char,char):52:x += i2; |==> <NO-OP>

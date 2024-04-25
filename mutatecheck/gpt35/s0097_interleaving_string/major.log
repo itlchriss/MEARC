@@ -1,0 +1,624 @@
+[04/24 17:41:23] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0097_interleaving_string.Solution]]]]
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0097_interleaving_string.Solution
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: isInterleave([String s1, String s2, String s3])boolean
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.isInterleave(line 19, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  s1.length() + s2.length() 
+            mutant:                    s1.length() % s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.isInterleave(line 19, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  s1.length() + s2.length() 
+            mutant:                    s1.length() * s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.isInterleave(line 19, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  s1.length() + s2.length() 
+            mutant:                    s1.length() - s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.isInterleave(line 19, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  s1.length() + s2.length() 
+            mutant:                    s1.length() / s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.isInterleave(line 19, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  s3.length() != (s1.length() + s2.length()) 
+            mutant:                    s3.length() < (s1.length() + s2.length())
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.isInterleave(line 19, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  s3.length() != (s1.length() + s2.length()) 
+            mutant:                    s3.length() > (s1.length() + s2.length())
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.isInterleave(line 19, col 25)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  s3.length() != (s1.length() + s2.length()) 
+            mutant:                    true
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 8: (STD) return false; -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.isInterleave(line 22, col 53)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  s1.length() + 1 
+            mutant:                    s1.length() % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.isInterleave(line 22, col 53)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  s1.length() + 1 
+            mutant:                    s1.length() * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.isInterleave(line 22, col 53)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  s1.length() + 1 
+            mutant:                    s1.length() - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.isInterleave(line 22, col 53)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  s1.length() + 1 
+            mutant:                    s1.length() / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.isInterleave(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  s2.length() + 1 
+            mutant:                    s2.length() % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.isInterleave(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  s2.length() + 1 
+            mutant:                    s2.length() * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.isInterleave(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  s2.length() + 1 
+            mutant:                    s2.length() - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.isInterleave(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  s2.length() + 1 
+            mutant:                    s2.length() / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: isInterleave([String s1, String s2, String s3, int i1, int i2, int i3, Boolean[][] cache])boolean
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.isInterleave(line 28, col 27)
+            mutation operator group:   ROR
+            mutation operator:         !=(java.lang.Object,java.lang.Object) |==> TRUE(java.lang.Object,java.lang.Object)
+            original:                  cache[i1][i2] != null 
+            mutant:                    true
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 18: (STD) return cache[i1][i2]; -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.isInterleave(line 31, col 16)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  i1 == s1.length() 
+            mutant:                    i1 <= s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.isInterleave(line 31, col 16)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  i1 == s1.length() 
+            mutant:                    i1 >= s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.isInterleave(line 31, col 16)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  i1 == s1.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.isInterleave(line 31, col 37)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  i2 == s2.length() 
+            mutant:                    i2 <= s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.isInterleave(line 31, col 37)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  i2 == s2.length() 
+            mutant:                    i2 >= s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.isInterleave(line 31, col 37)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  i2 == s2.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.isInterleave(line 31, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() 
+            mutant:                    i1 == s1.length() == (i2 == s2.length())
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.isInterleave(line 31, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.isInterleave(line 31, col 16)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() 
+            mutant:                    i1 == s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.isInterleave(line 31, col 37)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() 
+            mutant:                    i2 == s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.isInterleave(line 31, col 58)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  i3 == s3.length() 
+            mutant:                    i3 <= s3.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.isInterleave(line 31, col 58)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  i3 == s3.length() 
+            mutant:                    i3 >= s3.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.isInterleave(line 31, col 58)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  i3 == s3.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.isInterleave(line 31, col 52)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() && i3 == s3.length() 
+            mutant:                    (i1 == s1.length() && i2 == s2.length()) == (i3 == s3.length())
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.isInterleave(line 31, col 52)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() && i3 == s3.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.isInterleave(line 31, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() && i3 == s3.length() 
+            mutant:                    i1 == s1.length() && i2 == s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.isInterleave(line 31, col 58)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i1 == s1.length() && i2 == s2.length() && i3 == s3.length() 
+            mutant:                    i3 == s3.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 36: (STD) return true; -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.isInterleave(line 35, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i1 < s1.length() 
+            mutant:                    i1 != s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.isInterleave(line 35, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i1 < s1.length() 
+            mutant:                    i1 <= s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.isInterleave(line 35, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i1 < s1.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.isInterleave(line 35, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    s1.charAt(i1) <= s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.isInterleave(line 35, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    s1.charAt(i1) >= s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.isInterleave(line 35, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.isInterleave(line 35, col 30)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i1 < s1.length() && s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    i1 < s1.length() == (s1.charAt(i1) == s3.charAt(i3))
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.isInterleave(line 35, col 30)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i1 < s1.length() && s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.isInterleave(line 35, col 16)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i1 < s1.length() && s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    i1 < s1.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.isInterleave(line 35, col 47)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i1 < s1.length() && s1.charAt(i1) == s3.charAt(i3) 
+            mutant:                    s1.charAt(i1) == s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.isInterleave(line 36, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i1 + 1 
+            mutant:                    i1 % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.isInterleave(line 36, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i1 + 1 
+            mutant:                    i1 * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.isInterleave(line 36, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i1 + 1 
+            mutant:                    i1 - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.isInterleave(line 36, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i1 + 1 
+            mutant:                    i1 / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.isInterleave(line 36, col 62)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.isInterleave(line 36, col 62)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.isInterleave(line 36, col 62)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.isInterleave(line 36, col 62)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 55: (STD) result = isInterleave(s1, s2, s3, i1 + 1, i2, i3 + 1, cache); -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.isInterleave(line 38, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i2 < s2.length() 
+            mutant:                    i2 != s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.isInterleave(line 38, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i2 < s2.length() 
+            mutant:                    i2 <= s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.isInterleave(line 38, col 16)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i2 < s2.length() 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.isInterleave(line 38, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    s2.charAt(i2) <= s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.isInterleave(line 38, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    s2.charAt(i2) >= s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.isInterleave(line 38, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.isInterleave(line 38, col 30)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i2 < s2.length() && s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    i2 < s2.length() == (s2.charAt(i2) == s3.charAt(i3))
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.isInterleave(line 38, col 30)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i2 < s2.length() && s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    false
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.isInterleave(line 38, col 16)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i2 < s2.length() && s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    i2 < s2.length()
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.isInterleave(line 38, col 47)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i2 < s2.length() && s2.charAt(i2) == s3.charAt(i3) 
+            mutant:                    s2.charAt(i2) == s3.charAt(i3)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.isInterleave(line 39, col 64)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i2 + 1 
+            mutant:                    i2 % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.isInterleave(line 39, col 64)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i2 + 1 
+            mutant:                    i2 * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.isInterleave(line 39, col 64)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i2 + 1 
+            mutant:                    i2 - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.isInterleave(line 39, col 64)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i2 + 1 
+            mutant:                    i2 / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.isInterleave(line 39, col 72)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 % 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.isInterleave(line 39, col 72)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 * 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.isInterleave(line 39, col 72)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 - 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.isInterleave(line 39, col 72)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i3 + 1 
+            mutant:                    i3 / 1
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.isInterleave(line 39, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  result || isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache) 
+            mutant:                    result != isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.isInterleave(line 39, col 22)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  result || isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache) 
+            mutant:                    result
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.isInterleave(line 39, col 44)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  result || isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache) 
+            mutant:                    isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache)
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.isInterleave(line 39, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  result || isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache) 
+            mutant:                    true
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 78: (STD) result = result || isInterleave(s1, s2, s3, i1, i2 + 1, i3 + 1, cache); -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 79: (STD) cache[i1][i2] = result; -> <NO-OP>
+[04/24 17:41:24] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 79 mutants (110 ms)

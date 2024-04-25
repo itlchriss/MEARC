@@ -1,0 +1,28 @@
+1:ROR:!=(int,int):<(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):10:x != 0 |==> x < 0
+2:ROR:!=(int,int):>(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):10:x != 0 |==> x > 0
+3:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):10:x != 0 |==> true
+4:AOR:*(long,long):%(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:rev * 10 |==> rev % 10
+5:AOR:*(long,long):+(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:rev * 10 |==> rev + 10
+6:AOR:*(long,long):-(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:rev * 10 |==> rev - 10
+7:AOR:*(long,long):/(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:rev * 10 |==> rev / 10
+8:AOR:%(int,int):*(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:x % 10 |==> x * 10
+9:AOR:%(int,int):+(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:x % 10 |==> x + 10
+10:AOR:%(int,int):-(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:x % 10 |==> x - 10
+11:AOR:%(int,int):/(int,int):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:x % 10 |==> x / 10
+12:AOR:+(long,long):%(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:(rev * 10) + (x % 10) |==> (rev * 10) % (x % 10)
+13:AOR:+(long,long):*(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:(rev * 10) + (x % 10) |==> (rev * 10) * (x % 10)
+14:AOR:+(long,long):-(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:(rev * 10) + (x % 10) |==> (rev * 10) - (x % 10)
+15:AOR:+(long,long):/(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:(rev * 10) + (x % 10) |==> (rev * 10) / (x % 10)
+16:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0007_reverse_integer.Solution@reverse(int):11:rev = (rev * 10) + (x % 10); |==> <NO-OP>
+17:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0007_reverse_integer.Solution@reverse(int):12:x /= 10; |==> <NO-OP>
+18:ROR:>(long,long):!=(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE |==> rev != Integer.MAX_VALUE
+19:ROR:>(long,long):>=(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE |==> rev >= Integer.MAX_VALUE
+20:ROR:>(long,long):FALSE(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE |==> false
+21:ROR:<(long,long):!=(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev < Integer.MIN_VALUE |==> rev != Integer.MIN_VALUE
+22:ROR:<(long,long):<=(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev < Integer.MIN_VALUE |==> rev <= Integer.MIN_VALUE
+23:ROR:<(long,long):FALSE(long,long):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev < Integer.MIN_VALUE |==> false
+24:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE |==> rev > Integer.MAX_VALUE != rev < Integer.MIN_VALUE
+25:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE |==> rev > Integer.MAX_VALUE
+26:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE |==> rev < Integer.MIN_VALUE
+27:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0007_reverse_integer.Solution@reverse(int):14:rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE |==> true
+28:STD:<RETURN>:<NO-OP>:g0001_0100.s0007_reverse_integer.Solution@reverse(int):15:return 0; |==> <NO-OP>

@@ -1,0 +1,37 @@
+1:COR:<METHOD_INVOCATION(boolean)>:TRUE:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):21:wordDict.contains(endWord) |==> false
+2:COR:<METHOD_INVOCATION(boolean)>:FALSE:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):21:wordDict.contains(endWord) |==> true
+3:STD:<RETURN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):22:return 0; |==> <NO-OP>
+4:STD:<CALL>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):26:beginSet.add(beginWord); |==> <NO-OP>
+5:STD:<CALL>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):27:endSet.add(endWord); |==> <NO-OP>
+6:COR:&&(boolean,boolean):==(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):28:!beginSet.isEmpty() && !endSet.isEmpty() |==> !beginSet.isEmpty() == !endSet.isEmpty()
+7:COR:&&(boolean,boolean):FALSE(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):28:!beginSet.isEmpty() && !endSet.isEmpty() |==> false
+8:COR:&&(boolean,boolean):LHS(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):28:!beginSet.isEmpty() && !endSet.isEmpty() |==> !beginSet.isEmpty()
+9:COR:&&(boolean,boolean):RHS(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):28:!beginSet.isEmpty() && !endSet.isEmpty() |==> !endSet.isEmpty()
+10:ROR:>(int,int):!=(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):29:beginSet.size() > endSet.size() |==> beginSet.size() != endSet.size()
+11:ROR:>(int,int):>=(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):29:beginSet.size() > endSet.size() |==> beginSet.size() >= endSet.size()
+12:ROR:>(int,int):FALSE(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):29:beginSet.size() > endSet.size() |==> false
+13:STD:<ASSIGN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):31:beginSet = endSet; |==> <NO-OP>
+14:STD:<ASSIGN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):32:endSet = temp; |==> <NO-OP>
+15:ROR:<(int,int):!=(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):37:i < strLen |==> i != strLen
+16:ROR:<(int,int):<=(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):37:i < strLen |==> i <= strLen
+17:ROR:<(int,int):FALSE(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):37:i < strLen |==> false
+18:ROR:<=(int,int):<(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):39:j <= 'z' |==> j < 'z'
+19:ROR:<=(int,int):==(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):39:j <= 'z' |==> j == 'z'
+20:ROR:<=(int,int):TRUE(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):39:j <= 'z' |==> true
+21:STD:<ASSIGN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):40:chars[i] = j; |==> <NO-OP>
+22:COR:<METHOD_INVOCATION(boolean)>:TRUE:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):42:endSet.contains(temp) |==> false
+23:COR:<METHOD_INVOCATION(boolean)>:FALSE:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):42:endSet.contains(temp) |==> true
+24:AOR:+(int,int):%(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):43:len + 1 |==> len % 1
+25:AOR:+(int,int):*(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):43:len + 1 |==> len * 1
+26:AOR:+(int,int):-(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):43:len + 1 |==> len - 1
+27:AOR:+(int,int):/(int,int):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):43:len + 1 |==> len / 1
+28:STD:<RETURN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):43:return len + 1; |==> <NO-OP>
+29:COR:&&(boolean,boolean):==(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):45:!visited.contains(temp) && wordSet.contains(temp) |==> !visited.contains(temp) == wordSet.contains(temp)
+30:COR:&&(boolean,boolean):FALSE(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):45:!visited.contains(temp) && wordSet.contains(temp) |==> false
+31:COR:&&(boolean,boolean):LHS(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):45:!visited.contains(temp) && wordSet.contains(temp) |==> !visited.contains(temp)
+32:COR:&&(boolean,boolean):RHS(boolean,boolean):Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):45:!visited.contains(temp) && wordSet.contains(temp) |==> wordSet.contains(temp)
+33:STD:<CALL>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):46:tempSet.add(temp); |==> <NO-OP>
+34:STD:<CALL>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):47:visited.add(temp); |==> <NO-OP>
+35:STD:<ASSIGN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):50:chars[i] = old; |==> <NO-OP>
+36:STD:<ASSIGN>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):53:beginSet = tempSet; |==> <NO-OP>
+37:STD:<INC>:<NO-OP>:Solution@ladderLength(java.lang.String,java.lang.String,java.util.List<java.lang.String>):54:len++; |==> <NO-OP>

@@ -1,0 +1,85 @@
+1:AOR:-(int,int):%(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):10:s.length() - 1 |==> s.length() % 1
+2:AOR:-(int,int):*(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):10:s.length() - 1 |==> s.length() * 1
+3:AOR:-(int,int):+(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):10:s.length() - 1 |==> s.length() + 1
+4:AOR:-(int,int):/(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):10:s.length() - 1 |==> s.length() / 1
+5:ROR:<(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j |==> i != j
+6:ROR:<(int,int):<=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j |==> i <= j
+7:ROR:<(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j |==> false
+8:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j && isNotAlphaNumeric(s.charAt(i)) |==> i < j == isNotAlphaNumeric(s.charAt(i))
+9:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j && isNotAlphaNumeric(s.charAt(i)) |==> false
+10:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j && isNotAlphaNumeric(s.charAt(i)) |==> i < j
+11:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):16:i < j && isNotAlphaNumeric(s.charAt(i)) |==> isNotAlphaNumeric(s.charAt(i))
+12:STD:<INC>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):17:i++; |==> <NO-OP>
+13:ROR:<(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j |==> i != j
+14:ROR:<(int,int):<=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j |==> i <= j
+15:ROR:<(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j |==> false
+16:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j && isNotAlphaNumeric(s.charAt(j)) |==> i < j == isNotAlphaNumeric(s.charAt(j))
+17:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j && isNotAlphaNumeric(s.charAt(j)) |==> false
+18:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j && isNotAlphaNumeric(s.charAt(j)) |==> i < j
+19:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):20:i < j && isNotAlphaNumeric(s.charAt(j)) |==> isNotAlphaNumeric(s.charAt(j))
+20:STD:<DEC>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):21:j--; |==> <NO-OP>
+21:ROR:>=(int,int):==(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):26:i >= j |==> i == j
+22:ROR:>=(int,int):>(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):26:i >= j |==> i > j
+23:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):26:i >= j |==> true
+24:STD:<BREAK>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):27:break; |==> <NO-OP>
+25:ROR:!=(int,int):<(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):37:left != right |==> left < right
+26:ROR:!=(int,int):>(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):37:left != right |==> left > right
+27:ROR:!=(int,int):TRUE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):37:left != right |==> true
+28:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):38:res = false; |==> <NO-OP>
+29:STD:<INC>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):40:i++; |==> <NO-OP>
+30:STD:<DEC>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@isPalindrome(java.lang.String):41:j--; |==> <NO-OP>
+31:ROR:<(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' |==> c != 'a'
+32:ROR:<(int,int):<=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' |==> c <= 'a'
+33:ROR:<(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' |==> false
+34:ROR:>(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'z' |==> c != 'z'
+35:ROR:>(int,int):>=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'z' |==> c >= 'z'
+36:ROR:>(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'z' |==> false
+37:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' || c > 'z' |==> c < 'a' != c > 'z'
+38:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' || c > 'z' |==> c < 'a'
+39:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' || c > 'z' |==> c > 'z'
+40:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'a' || c > 'z' |==> true
+41:ROR:<(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' |==> c != 'A'
+42:ROR:<(int,int):<=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' |==> c <= 'A'
+43:ROR:<(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' |==> false
+44:ROR:>(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'Z' |==> c != 'Z'
+45:ROR:>(int,int):>=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'Z' |==> c >= 'Z'
+46:ROR:>(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > 'Z' |==> false
+47:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' || c > 'Z' |==> c < 'A' != c > 'Z'
+48:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' || c > 'Z' |==> c < 'A'
+49:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' || c > 'Z' |==> c > 'Z'
+50:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < 'A' || c > 'Z' |==> true
+51:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') |==> (c < 'a' || c > 'z') == (c < 'A' || c > 'Z')
+52:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') |==> false
+53:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') |==> (c < 'a' || c > 'z')
+54:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') |==> (c < 'A' || c > 'Z')
+55:ROR:<(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' |==> c != '0'
+56:ROR:<(int,int):<=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' |==> c <= '0'
+57:ROR:<(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' |==> false
+58:ROR:>(int,int):!=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > '9' |==> c != '9'
+59:ROR:>(int,int):>=(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > '9' |==> c >= '9'
+60:ROR:>(int,int):FALSE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c > '9' |==> false
+61:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' || c > '9' |==> c < '0' != c > '9'
+62:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' || c > '9' |==> c < '0'
+63:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' || c > '9' |==> c > '9'
+64:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:c < '0' || c > '9' |==> true
+65:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < '0' || c > '9') |==> ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) == (c < '0' || c > '9')
+66:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < '0' || c > '9') |==> false
+67:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < '0' || c > '9') |==> (c < 'a' || c > 'z') && (c < 'A' || c > 'Z')
+68:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isNotAlphaNumeric(char):47:(c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < '0' || c > '9') |==> (c < '0' || c > '9')
+69:ROR:>=(int,int):==(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' |==> c == 'A'
+70:ROR:>=(int,int):>(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' |==> c > 'A'
+71:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' |==> true
+72:ROR:<=(int,int):<(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c <= 'Z' |==> c < 'Z'
+73:ROR:<=(int,int):==(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c <= 'Z' |==> c == 'Z'
+74:ROR:<=(int,int):TRUE(int,int):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c <= 'Z' |==> true
+75:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' && c <= 'Z' |==> c >= 'A' == c <= 'Z'
+76:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' && c <= 'Z' |==> false
+77:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' && c <= 'Z' |==> c >= 'A'
+78:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0125_valid_palindrome.Solution@isUpper(char):51:c >= 'A' && c <= 'Z' |==> c <= 'Z'
+79:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):55:isUpper(c) |==> false
+80:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):55:isUpper(c) |==> true
+81:AOR:+(int,int):%(int,int):g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):56:c + 32 |==> c % 32
+82:AOR:+(int,int):*(int,int):g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):56:c + 32 |==> c * 32
+83:AOR:+(int,int):-(int,int):g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):56:c + 32 |==> c - 32
+84:AOR:+(int,int):/(int,int):g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):56:c + 32 |==> c / 32
+85:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0125_valid_palindrome.Solution@upperToLower(char):56:c = (char)(c + 32); |==> <NO-OP>

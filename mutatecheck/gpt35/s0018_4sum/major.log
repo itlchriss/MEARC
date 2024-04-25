@@ -1,0 +1,1742 @@
+[04/24 17:40:39] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.Arrays, java.util.ArrayList, g0001_0100.s0018_4sum.Solution]]]]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0018_4sum.Solution
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: fourSum([int[] nums, int target])List<List<Integer>>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 1: (STD) Arrays.sort(nums); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.fourSum(line 21, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 3 
+            mutant:                    n % 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.fourSum(line 21, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 3 
+            mutant:                    n * 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.fourSum(line 21, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 3 
+            mutant:                    n + 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.fourSum(line 21, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 3 
+            mutant:                    n / 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.fourSum(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < n - 3 
+            mutant:                    i != n - 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.fourSum(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < n - 3 
+            mutant:                    i <= n - 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.fourSum(line 21, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < n - 3 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.fourSum(line 22, col 19)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  i > 0 
+            mutant:                    i != 0
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.fourSum(line 22, col 19)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  i > 0 
+            mutant:                    i >= 0
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.fourSum(line 22, col 19)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  i > 0 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.fourSum(line 22, col 44)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 1 
+            mutant:                    i % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.fourSum(line 22, col 44)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 1 
+            mutant:                    i * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.fourSum(line 22, col 44)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 1 
+            mutant:                    i + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.fourSum(line 22, col 44)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 1 
+            mutant:                    i / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.fourSum(line 22, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  nums[i] == nums[i - 1] 
+            mutant:                    nums[i] <= nums[i - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.fourSum(line 22, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  nums[i] == nums[i - 1] 
+            mutant:                    nums[i] >= nums[i - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.fourSum(line 22, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  nums[i] == nums[i - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.fourSum(line 22, col 23)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  i > 0 && nums[i] == nums[i - 1] 
+            mutant:                    i > 0 == (nums[i] == nums[i - 1])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.fourSum(line 22, col 23)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  i > 0 && nums[i] == nums[i - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.fourSum(line 22, col 19)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  i > 0 && nums[i] == nums[i - 1] 
+            mutant:                    i > 0
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.fourSum(line 22, col 34)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  i > 0 && nums[i] == nums[i - 1] 
+            mutant:                    nums[i] == nums[i - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 23: (STD) continue; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.fourSum(line 25, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.fourSum(line 25, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.fourSum(line 25, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.fourSum(line 25, col 41)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.fourSum(line 25, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[i + 1] 
+            mutant:                    (long)nums[i] % nums[i + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.fourSum(line 25, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[i + 1] 
+            mutant:                    (long)nums[i] * nums[i + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.fourSum(line 25, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[i + 1] 
+            mutant:                    (long)nums[i] - nums[i + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.fourSum(line 25, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[i + 1] 
+            mutant:                    (long)nums[i] / nums[i + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.fourSum(line 25, col 55)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 2 
+            mutant:                    i % 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.fourSum(line 25, col 55)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 2 
+            mutant:                    i * 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.fourSum(line 25, col 55)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 2 
+            mutant:                    i - 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.fourSum(line 25, col 55)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 2 
+            mutant:                    i / 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.fourSum(line 25, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    ((long)nums[i] + nums[i + 1]) % nums[i + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.fourSum(line 25, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    ((long)nums[i] + nums[i + 1]) * nums[i + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.fourSum(line 25, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (long)nums[i] + nums[i + 1] - nums[i + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.fourSum(line 25, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    ((long)nums[i] + nums[i + 1]) / nums[i + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.fourSum(line 25, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 3 
+            mutant:                    i % 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.fourSum(line 25, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 3 
+            mutant:                    i * 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.fourSum(line 25, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 3 
+            mutant:                    i - 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.fourSum(line 25, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 3 
+            mutant:                    i / 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.fourSum(line 25, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] 
+            mutant:                    ((long)nums[i] + nums[i + 1] + nums[i + 2]) % nums[i + 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.fourSum(line 25, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] 
+            mutant:                    ((long)nums[i] + nums[i + 1] + nums[i + 2]) * nums[i + 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.fourSum(line 25, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] 
+            mutant:                    (long)nums[i] + nums[i + 1] + nums[i + 2] - nums[i + 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.fourSum(line 25, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] 
+            mutant:                    ((long)nums[i] + nums[i + 1] + nums[i + 2]) / nums[i + 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.fourSum(line 25, col 74)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> !=(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target 
+            mutant:                    (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] != target
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.fourSum(line 25, col 74)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> >=(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target 
+            mutant:                    (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] >= target
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.fourSum(line 25, col 74)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> FALSE(long,long)
+            original:                  (long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 51: (STD) break; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.fourSum(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 3 
+            mutant:                    n % 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.fourSum(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 3 
+            mutant:                    n * 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.fourSum(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 3 
+            mutant:                    n + 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.fourSum(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 3 
+            mutant:                    n / 3
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.fourSum(line 28, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[n - 3] 
+            mutant:                    (long)nums[i] % nums[n - 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.fourSum(line 28, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[n - 3] 
+            mutant:                    (long)nums[i] * nums[n - 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.fourSum(line 28, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[n - 3] 
+            mutant:                    (long)nums[i] - nums[n - 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.fourSum(line 28, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[n - 3] 
+            mutant:                    (long)nums[i] / nums[n - 3]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.fourSum(line 28, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.fourSum(line 28, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.fourSum(line 28, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.fourSum(line 28, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.fourSum(line 28, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] 
+            mutant:                    ((long)nums[i] + nums[n - 3]) % nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.fourSum(line 28, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] 
+            mutant:                    ((long)nums[i] + nums[n - 3]) * nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.fourSum(line 28, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] 
+            mutant:                    (long)nums[i] + nums[n - 3] - nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.fourSum(line 28, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] 
+            mutant:                    ((long)nums[i] + nums[n - 3]) / nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.fourSum(line 28, col 69)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.fourSum(line 28, col 69)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.fourSum(line 28, col 69)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.fourSum(line 28, col 69)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.fourSum(line 28, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[i] + nums[n - 3] + nums[n - 2]) % nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.fourSum(line 28, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[i] + nums[n - 3] + nums[n - 2]) * nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.fourSum(line 28, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] 
+            mutant:                    (long)nums[i] + nums[n - 3] + nums[n - 2] - nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.fourSum(line 28, col 60)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[i] + nums[n - 3] + nums[n - 2]) / nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.fourSum(line 28, col 74)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> !=(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target 
+            mutant:                    (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] != target
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.fourSum(line 28, col 74)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> <=(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target 
+            mutant:                    (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] <= target
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.fourSum(line 28, col 74)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> FALSE(long,long)
+            original:                  (long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 79: (STD) continue; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.fourSum(line 31, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.fourSum(line 31, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.fourSum(line 31, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.fourSum(line 31, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.fourSum(line 31, col 39)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.fourSum(line 31, col 39)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.fourSum(line 31, col 39)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.fourSum(line 31, col 39)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.fourSum(line 31, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < n - 2 
+            mutant:                    j != n - 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.fourSum(line 31, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < n - 2 
+            mutant:                    j <= n - 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.fourSum(line 31, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < n - 2 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.fourSum(line 32, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.fourSum(line 32, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.fourSum(line 32, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.fourSum(line 32, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 95: Solution.fourSum(line 32, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  j > i + 1 
+            mutant:                    j != i + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 96: Solution.fourSum(line 32, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  j > i + 1 
+            mutant:                    j >= i + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.fourSum(line 32, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  j > i + 1 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.fourSum(line 32, col 52)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  j - 1 
+            mutant:                    j % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.fourSum(line 32, col 52)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  j - 1 
+            mutant:                    j * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.fourSum(line 32, col 52)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  j - 1 
+            mutant:                    j + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.fourSum(line 32, col 52)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  j - 1 
+            mutant:                    j / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.fourSum(line 32, col 42)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  nums[j] == nums[j - 1] 
+            mutant:                    nums[j] <= nums[j - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.fourSum(line 32, col 42)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  nums[j] == nums[j - 1] 
+            mutant:                    nums[j] >= nums[j - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 104
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 104: Solution.fourSum(line 32, col 42)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  nums[j] == nums[j - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 105
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 105: Solution.fourSum(line 32, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  j > i + 1 && nums[j] == nums[j - 1] 
+            mutant:                    j > i + 1 == (nums[j] == nums[j - 1])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 106
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 106: Solution.fourSum(line 32, col 31)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  j > i + 1 && nums[j] == nums[j - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 107
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 107: Solution.fourSum(line 32, col 23)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  j > i + 1 && nums[j] == nums[j - 1] 
+            mutant:                    j > i + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 108
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 108: Solution.fourSum(line 32, col 42)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  j > i + 1 && nums[j] == nums[j - 1] 
+            mutant:                    nums[j] == nums[j - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 109
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 109: (STD) continue; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 110
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 110: Solution.fourSum(line 35, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  j + 1 
+            mutant:                    j % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 111
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 111: Solution.fourSum(line 35, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  j + 1 
+            mutant:                    j * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 112
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 112: Solution.fourSum(line 35, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  j + 1 
+            mutant:                    j - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 113
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 113: Solution.fourSum(line 35, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  j + 1 
+            mutant:                    j / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 114
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 114: Solution.fourSum(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[j] + nums[j + 1] 
+            mutant:                    (long)nums[j] % nums[j + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 115
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 115: Solution.fourSum(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[j] + nums[j + 1] 
+            mutant:                    (long)nums[j] * nums[j + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 116
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 116: Solution.fourSum(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[j] + nums[j + 1] 
+            mutant:                    (long)nums[j] - nums[j + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 117
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 117: Solution.fourSum(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[j] + nums[j + 1] 
+            mutant:                    (long)nums[j] / nums[j + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 118
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 118: Solution.fourSum(line 35, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  j + 2 
+            mutant:                    j % 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 119
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 119: Solution.fourSum(line 35, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  j + 2 
+            mutant:                    j * 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 120
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 120: Solution.fourSum(line 35, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  j + 2 
+            mutant:                    j - 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 121
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 121: Solution.fourSum(line 35, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  j + 2 
+            mutant:                    j / 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 122
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 122: Solution.fourSum(line 35, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] 
+            mutant:                    ((long)nums[j] + nums[j + 1]) % nums[j + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 123
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 123: Solution.fourSum(line 35, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] 
+            mutant:                    ((long)nums[j] + nums[j + 1]) * nums[j + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 124
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 124: Solution.fourSum(line 35, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] 
+            mutant:                    (long)nums[j] + nums[j + 1] - nums[j + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 125
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 125: Solution.fourSum(line 35, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] 
+            mutant:                    ((long)nums[j] + nums[j + 1]) / nums[j + 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 126
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 126: Solution.fourSum(line 35, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target % nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 127
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 127: Solution.fourSum(line 35, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target * nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 128
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 128: Solution.fourSum(line 35, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target + nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 129
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 129: Solution.fourSum(line 35, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target / nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 130
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 130: Solution.fourSum(line 35, col 64)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> !=(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] > target - nums[i] 
+            mutant:                    (long)nums[j] + nums[j + 1] + nums[j + 2] != target - nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 131
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 131: Solution.fourSum(line 35, col 64)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> >=(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] > target - nums[i] 
+            mutant:                    (long)nums[j] + nums[j + 1] + nums[j + 2] >= target - nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 132
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 132: Solution.fourSum(line 35, col 64)
+            mutation operator group:   ROR
+            mutation operator:         >(long,long) |==> FALSE(long,long)
+            original:                  (long)nums[j] + nums[j + 1] + nums[j + 2] > target - nums[i] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 133
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 133: (STD) break; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 134
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 134: Solution.fourSum(line 38, col 45)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 135
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 135: Solution.fourSum(line 38, col 45)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 136
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 136: Solution.fourSum(line 38, col 45)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 137
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 137: Solution.fourSum(line 38, col 45)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 138
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 138: Solution.fourSum(line 38, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[j] + nums[n - 2] 
+            mutant:                    (long)nums[j] % nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 139
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 139: Solution.fourSum(line 38, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[j] + nums[n - 2] 
+            mutant:                    (long)nums[j] * nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 140
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 140: Solution.fourSum(line 38, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[j] + nums[n - 2] 
+            mutant:                    (long)nums[j] - nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 141
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 141: Solution.fourSum(line 38, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[j] + nums[n - 2] 
+            mutant:                    (long)nums[j] / nums[n - 2]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 142
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 142: Solution.fourSum(line 38, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 143
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 143: Solution.fourSum(line 38, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 144
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 144: Solution.fourSum(line 38, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 145
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 145: Solution.fourSum(line 38, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 146
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 146: Solution.fourSum(line 38, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> %(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[j] + nums[n - 2]) % nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 147
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 147: Solution.fourSum(line 38, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> *(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[j] + nums[n - 2]) * nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 148
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 148: Solution.fourSum(line 38, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> -(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] 
+            mutant:                    (long)nums[j] + nums[n - 2] - nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 149
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 149: Solution.fourSum(line 38, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(long,long) |==> /(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] 
+            mutant:                    ((long)nums[j] + nums[n - 2]) / nums[n - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 150
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 150: Solution.fourSum(line 38, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target % nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 151
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 151: Solution.fourSum(line 38, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target * nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 152
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 152: Solution.fourSum(line 38, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target + nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 153
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 153: Solution.fourSum(line 38, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  target - nums[i] 
+            mutant:                    target / nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 154
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 154: Solution.fourSum(line 38, col 64)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> !=(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] < target - nums[i] 
+            mutant:                    (long)nums[j] + nums[n - 2] + nums[n - 1] != target - nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 155
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 155: Solution.fourSum(line 38, col 64)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> <=(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] < target - nums[i] 
+            mutant:                    (long)nums[j] + nums[n - 2] + nums[n - 1] <= target - nums[i]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 156
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 156: Solution.fourSum(line 38, col 64)
+            mutation operator group:   ROR
+            mutation operator:         <(long,long) |==> FALSE(long,long)
+            original:                  (long)nums[j] + nums[n - 2] + nums[n - 1] < target - nums[i] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 157
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 157: (STD) continue; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 158
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 158: Solution.fourSum(line 41, col 52)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] % nums[j]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 159
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 159: Solution.fourSum(line 41, col 52)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] * nums[j]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 160
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 160: Solution.fourSum(line 41, col 52)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] - nums[j]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 161
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 161: Solution.fourSum(line 41, col 52)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] / nums[j]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 162
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 162: Solution.fourSum(line 41, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  target - (nums[i] + nums[j]) 
+            mutant:                    target % (nums[i] + nums[j])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 163
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 163: Solution.fourSum(line 41, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  target - (nums[i] + nums[j]) 
+            mutant:                    target * (nums[i] + nums[j])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 164
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 164: Solution.fourSum(line 41, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  target - (nums[i] + nums[j]) 
+            mutant:                    target + (nums[i] + nums[j])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 165
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 165: Solution.fourSum(line 41, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  target - (nums[i] + nums[j]) 
+            mutant:                    target / (nums[i] + nums[j])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 166
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 166: Solution.fourSum(line 42, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  j + 1 
+            mutant:                    j % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 167
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 167: Solution.fourSum(line 42, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  j + 1 
+            mutant:                    j * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 168
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 168: Solution.fourSum(line 42, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  j + 1 
+            mutant:                    j - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 169
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 169: Solution.fourSum(line 42, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  j + 1 
+            mutant:                    j / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 170
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 170: Solution.fourSum(line 43, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 171
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 171: Solution.fourSum(line 43, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 172
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 172: Solution.fourSum(line 43, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 173
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 173: Solution.fourSum(line 43, col 30)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 174
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 174: Solution.fourSum(line 44, col 28)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  low < high 
+            mutant:                    low != high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 175
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 175: Solution.fourSum(line 44, col 28)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  low < high 
+            mutant:                    low <= high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 176
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 176: Solution.fourSum(line 44, col 28)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  low < high 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 177
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 177: Solution.fourSum(line 45, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[low] + nums[high] 
+            mutant:                    nums[low] % nums[high]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 178
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 178: Solution.fourSum(line 45, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[low] + nums[high] 
+            mutant:                    nums[low] * nums[high]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 179
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 179: Solution.fourSum(line 45, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[low] + nums[high] 
+            mutant:                    nums[low] - nums[high]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 180
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 180: Solution.fourSum(line 45, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[low] + nums[high] 
+            mutant:                    nums[low] / nums[high]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 181
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 181: Solution.fourSum(line 46, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  curSum == tempTarget 
+            mutant:                    curSum <= tempTarget
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 182
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 182: Solution.fourSum(line 46, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  curSum == tempTarget 
+            mutant:                    curSum >= tempTarget
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 183
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 183: Solution.fourSum(line 46, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  curSum == tempTarget 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 184
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 184: (STD) tempList.add(nums[i]); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 185
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 185: (STD) tempList.add(nums[j]); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 186
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 186: (STD) tempList.add(nums[low]); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 187
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 187: (STD) tempList.add(nums[high]); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 188
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 188: (STD) result.add(tempList); -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 189
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 189: (STD) low++; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 190
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 190: (STD) high--; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 191
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 191: Solution.fourSum(line 55, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  low < high 
+            mutant:                    low != high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 192
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 192: Solution.fourSum(line 55, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  low < high 
+            mutant:                    low <= high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 193
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 193: Solution.fourSum(line 55, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  low < high 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 194
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 194: Solution.fourSum(line 55, col 68)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  low - 1 
+            mutant:                    low % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 195
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 195: Solution.fourSum(line 55, col 68)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  low - 1 
+            mutant:                    low * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 196
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 196: Solution.fourSum(line 55, col 68)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  low - 1 
+            mutant:                    low + 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 197
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 197: Solution.fourSum(line 55, col 68)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  low - 1 
+            mutant:                    low / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 198
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 198: Solution.fourSum(line 55, col 56)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  nums[low] == nums[low - 1] 
+            mutant:                    nums[low] <= nums[low - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 199
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 199: Solution.fourSum(line 55, col 56)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  nums[low] == nums[low - 1] 
+            mutant:                    nums[low] >= nums[low - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 200
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 200: Solution.fourSum(line 55, col 56)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  nums[low] == nums[low - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 201
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 201: Solution.fourSum(line 55, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  low < high && nums[low] == nums[low - 1] 
+            mutant:                    low < high == (nums[low] == nums[low - 1])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 202
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 202: Solution.fourSum(line 55, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  low < high && nums[low] == nums[low - 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 203
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 203: Solution.fourSum(line 55, col 36)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  low < high && nums[low] == nums[low - 1] 
+            mutant:                    low < high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 204
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 204: Solution.fourSum(line 55, col 56)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  low < high && nums[low] == nums[low - 1] 
+            mutant:                    nums[low] == nums[low - 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 205
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 205: (STD) low++; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 206
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 206: Solution.fourSum(line 58, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  low < high 
+            mutant:                    low != high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 207
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 207: Solution.fourSum(line 58, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  low < high 
+            mutant:                    low <= high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 208
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 208: Solution.fourSum(line 58, col 36)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  low < high 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 209
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 209: Solution.fourSum(line 58, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  high + 1 
+            mutant:                    high % 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 210
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 210: Solution.fourSum(line 58, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  high + 1 
+            mutant:                    high * 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 211
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 211: Solution.fourSum(line 58, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  high + 1 
+            mutant:                    high - 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 212
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 212: Solution.fourSum(line 58, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  high + 1 
+            mutant:                    high / 1
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 213
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 213: Solution.fourSum(line 58, col 57)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  nums[high] == nums[high + 1] 
+            mutant:                    nums[high] <= nums[high + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 214
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 214: Solution.fourSum(line 58, col 57)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  nums[high] == nums[high + 1] 
+            mutant:                    nums[high] >= nums[high + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 215
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 215: Solution.fourSum(line 58, col 57)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  nums[high] == nums[high + 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 216
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 216: Solution.fourSum(line 58, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  low < high && nums[high] == nums[high + 1] 
+            mutant:                    low < high == (nums[high] == nums[high + 1])
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 217
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 217: Solution.fourSum(line 58, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  low < high && nums[high] == nums[high + 1] 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 218
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 218: Solution.fourSum(line 58, col 36)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  low < high && nums[high] == nums[high + 1] 
+            mutant:                    low < high
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 219
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 219: Solution.fourSum(line 58, col 57)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  low < high && nums[high] == nums[high + 1] 
+            mutant:                    nums[high] == nums[high + 1]
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 220
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 220: (STD) high--; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 221
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 221: Solution.fourSum(line 61, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  curSum < tempTarget 
+            mutant:                    curSum != tempTarget
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 222
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 222: Solution.fourSum(line 61, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  curSum < tempTarget 
+            mutant:                    curSum <= tempTarget
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 223
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 223: Solution.fourSum(line 61, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  curSum < tempTarget 
+            mutant:                    false
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 224
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 224: (STD) low++; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 225
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 225: (STD) high--; -> <NO-OP>
+[04/24 17:40:40] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 225 mutants (196 ms)

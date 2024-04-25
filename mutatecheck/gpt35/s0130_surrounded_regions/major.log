@@ -1,0 +1,836 @@
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0101_0200.s0130_surrounded_regions.Solution]]]]
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0101_0200.s0130_surrounded_regions.Solution
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: solve([char[][] board])void
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.solve(line 15, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board.length == 0 
+            mutant:                    board.length <= 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.solve(line 15, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board.length == 0 
+            mutant:                    board.length >= 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.solve(line 15, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board.length == 0 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 4: (STD) return; -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.solve(line 19, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < board[0].length 
+            mutant:                    i != board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.solve(line 19, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < board[0].length 
+            mutant:                    i <= board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.solve(line 19, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < board[0].length 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.solve(line 21, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[0][i] == 'O' 
+            mutant:                    board[0][i] <= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.solve(line 21, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[0][i] == 'O' 
+            mutant:                    board[0][i] >= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.solve(line 21, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[0][i] == 'O' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 11: (STD) dfs(board, 0, i); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.solve(line 26, col 36)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.solve(line 26, col 36)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.solve(line 26, col 36)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.solve(line 26, col 36)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.solve(line 26, col 44)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[board.length - 1][i] == 'O' 
+            mutant:                    board[board.length - 1][i] <= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.solve(line 26, col 44)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[board.length - 1][i] == 'O' 
+            mutant:                    board[board.length - 1][i] >= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.solve(line 26, col 44)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[board.length - 1][i] == 'O' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.solve(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.solve(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.solve(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.solve(line 28, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  board.length - 1 
+            mutant:                    board.length / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 23: (STD) dfs(board, board.length - 1, i); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.solve(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < board.length 
+            mutant:                    i != board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.solve(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < board.length 
+            mutant:                    i <= board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.solve(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < board.length 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.solve(line 34, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[i][0] == 'O' 
+            mutant:                    board[i][0] <= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.solve(line 34, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[i][0] == 'O' 
+            mutant:                    board[i][0] >= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.solve(line 34, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[i][0] == 'O' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 30: (STD) dfs(board, i, 0); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.solve(line 39, col 42)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.solve(line 39, col 42)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.solve(line 39, col 42)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.solve(line 39, col 42)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.solve(line 39, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[i][board[0].length - 1] == 'O' 
+            mutant:                    board[i][board[0].length - 1] <= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.solve(line 39, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[i][board[0].length - 1] == 'O' 
+            mutant:                    board[i][board[0].length - 1] >= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.solve(line 39, col 47)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[i][board[0].length - 1] == 'O' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.solve(line 41, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.solve(line 41, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.solve(line 41, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.solve(line 41, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  board[0].length - 1 
+            mutant:                    board[0].length / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 42: (STD) dfs(board, i, board[0].length - 1); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.solve(line 45, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < board.length 
+            mutant:                    i != board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.solve(line 45, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < board.length 
+            mutant:                    i <= board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.solve(line 45, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < board.length 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.solve(line 46, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < board[0].length 
+            mutant:                    j != board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.solve(line 46, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < board[0].length 
+            mutant:                    j <= board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.solve(line 46, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < board[0].length 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.solve(line 47, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[i][j] == 'O' 
+            mutant:                    board[i][j] <= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.solve(line 47, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[i][j] == 'O' 
+            mutant:                    board[i][j] >= 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.solve(line 47, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[i][j] == 'O' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 52: (STD) board[i][j] = 'X'; -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.solve(line 51, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[i][j] == '#' 
+            mutant:                    board[i][j] <= '#'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.solve(line 51, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[i][j] == '#' 
+            mutant:                    board[i][j] >= '#'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.solve(line 51, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[i][j] == '#' 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 56: (STD) board[i][j] = 'O'; -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: dfs([char[][] board, int row, int column])void
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.dfs(line 60, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  row < 0 
+            mutant:                    row != 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.dfs(line 60, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  row < 0 
+            mutant:                    row <= 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.dfs(line 60, col 17)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  row < 0 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.dfs(line 61, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  row >= board.length 
+            mutant:                    row == board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.dfs(line 61, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  row >= board.length 
+            mutant:                    row > board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.dfs(line 61, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  row >= board.length 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.dfs(line 61, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  row < 0 || row >= board.length 
+            mutant:                    row < 0 != row >= board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.dfs(line 60, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length 
+            mutant:                    row < 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.dfs(line 61, col 24)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length 
+            mutant:                    row >= board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.dfs(line 61, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  row < 0 || row >= board.length 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.dfs(line 62, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  column < 0 
+            mutant:                    column != 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.dfs(line 62, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  column < 0 
+            mutant:                    column <= 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.dfs(line 62, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  column < 0 
+            mutant:                    false
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.dfs(line 62, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 
+            mutant:                    (row < 0 || row >= board.length) != column < 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.dfs(line 61, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 
+            mutant:                    row < 0 || row >= board.length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.dfs(line 62, col 27)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 
+            mutant:                    column < 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.dfs(line 62, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.dfs(line 63, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  column >= board[0].length 
+            mutant:                    column == board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.dfs(line 63, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  column >= board[0].length 
+            mutant:                    column > board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.dfs(line 63, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  column >= board[0].length 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.dfs(line 63, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length 
+            mutant:                    (row < 0 || row >= board.length || column < 0) != column >= board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.dfs(line 62, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length 
+            mutant:                    row < 0 || row >= board.length || column < 0
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.dfs(line 63, col 27)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length 
+            mutant:                    column >= board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.dfs(line 63, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.dfs(line 64, col 39)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  board[row][column] != 'O' 
+            mutant:                    board[row][column] < 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.dfs(line 64, col 39)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  board[row][column] != 'O' 
+            mutant:                    board[row][column] > 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.dfs(line 64, col 39)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  board[row][column] != 'O' 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.dfs(line 64, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' 
+            mutant:                    (row < 0 || row >= board.length || column < 0 || column >= board[0].length) != (board[row][column] != 'O')
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.dfs(line 63, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' 
+            mutant:                    row < 0 || row >= board.length || column < 0 || column >= board[0].length
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.dfs(line 64, col 39)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' 
+            mutant:                    board[row][column] != 'O'
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.dfs(line 64, col 17)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' 
+            mutant:                    true
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 88: (STD) return; -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 89: (STD) board[row][column] = '#'; -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.dfs(line 68, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  row + 1 
+            mutant:                    row % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.dfs(line 68, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  row + 1 
+            mutant:                    row * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.dfs(line 68, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  row + 1 
+            mutant:                    row - 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.dfs(line 68, col 24)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  row + 1 
+            mutant:                    row / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 94: (STD) dfs(board, row + 1, column); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 95: Solution.dfs(line 69, col 24)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  row - 1 
+            mutant:                    row % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 96: Solution.dfs(line 69, col 24)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  row - 1 
+            mutant:                    row * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.dfs(line 69, col 24)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  row - 1 
+            mutant:                    row + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.dfs(line 69, col 24)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  row - 1 
+            mutant:                    row / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 99: (STD) dfs(board, row - 1, column); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.dfs(line 70, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  column + 1 
+            mutant:                    column % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.dfs(line 70, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  column + 1 
+            mutant:                    column * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.dfs(line 70, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  column + 1 
+            mutant:                    column - 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.dfs(line 70, col 32)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  column + 1 
+            mutant:                    column / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 104
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 104: (STD) dfs(board, row, column + 1); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 105
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 105: Solution.dfs(line 71, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  column - 1 
+            mutant:                    column % 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 106
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 106: Solution.dfs(line 71, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  column - 1 
+            mutant:                    column * 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 107
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 107: Solution.dfs(line 71, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  column - 1 
+            mutant:                    column + 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 108
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 108: Solution.dfs(line 71, col 32)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  column - 1 
+            mutant:                    column / 1
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 109
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 109: (STD) dfs(board, row, column - 1); -> <NO-OP>
+[04/24 17:41:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 109 mutants (118 ms)

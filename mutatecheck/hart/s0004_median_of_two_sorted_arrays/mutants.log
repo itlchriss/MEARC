@@ -1,0 +1,95 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):11:nums2.length < nums1.length |==> nums2.length != nums1.length
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):11:nums2.length < nums1.length |==> nums2.length <= nums1.length
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):11:nums2.length < nums1.length |==> false
+4:STD:<RETURN>:<NO-OP>:g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):12:return findMedianSortedArrays(nums2, nums1); |==> <NO-OP>
+5:ROR:<=(int,int):<(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):20:low <= high |==> low < high
+6:ROR:<=(int,int):==(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):20:low <= high |==> low == high
+7:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):20:low <= high |==> true
+8:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:low + high |==> low % high
+9:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:low + high |==> low * high
+10:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:low + high |==> low - high
+11:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:low + high |==> low / high
+12:AOR:/(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:(low + high) / 2 |==> (low + high) % 2
+13:AOR:/(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:(low + high) / 2 |==> (low + high) * 2
+14:AOR:/(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:(low + high) / 2 |==> (low + high) + 2
+15:AOR:/(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):21:(low + high) / 2 |==> (low + high) - 2
+16:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 |==> n1 % n2
+17:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 |==> n1 * n2
+18:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 |==> n1 - n2
+19:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 |==> n1 / n2
+20:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 + 1 |==> (n1 + n2) % 1
+21:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 + 1 |==> (n1 + n2) * 1
+22:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 + 1 |==> n1 + n2 - 1
+23:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:n1 + n2 + 1 |==> (n1 + n2) / 1
+24:AOR:/(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:(n1 + n2 + 1) / 2 |==> (n1 + n2 + 1) % 2
+25:AOR:/(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:(n1 + n2 + 1) / 2 |==> (n1 + n2 + 1) * 2
+26:AOR:/(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:(n1 + n2 + 1) / 2 |==> (n1 + n2 + 1) + 2
+27:AOR:/(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:(n1 + n2 + 1) / 2 |==> (n1 + n2 + 1) - 2
+28:AOR:-(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:((n1 + n2 + 1) / 2) - cut1 |==> ((n1 + n2 + 1) / 2) % cut1
+29:AOR:-(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:((n1 + n2 + 1) / 2) - cut1 |==> ((n1 + n2 + 1) / 2) * cut1
+30:AOR:-(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:((n1 + n2 + 1) / 2) - cut1 |==> ((n1 + n2 + 1) / 2) + cut1
+31:AOR:-(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):22:((n1 + n2 + 1) / 2) - cut1 |==> ((n1 + n2 + 1) / 2) / cut1
+32:ROR:==(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 == 0 |==> cut1 <= 0
+33:ROR:==(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 == 0 |==> cut1 >= 0
+34:ROR:==(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 == 0 |==> false
+35:AOR:-(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 - 1 |==> cut1 % 1
+36:AOR:-(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 - 1 |==> cut1 * 1
+37:AOR:-(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 - 1 |==> cut1 + 1
+38:AOR:-(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):23:cut1 - 1 |==> cut1 / 1
+39:ROR:==(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 == 0 |==> cut2 <= 0
+40:ROR:==(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 == 0 |==> cut2 >= 0
+41:ROR:==(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 == 0 |==> false
+42:AOR:-(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 - 1 |==> cut2 % 1
+43:AOR:-(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 - 1 |==> cut2 * 1
+44:AOR:-(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 - 1 |==> cut2 + 1
+45:AOR:-(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):24:cut2 - 1 |==> cut2 / 1
+46:ROR:==(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):25:cut1 == n1 |==> cut1 <= n1
+47:ROR:==(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):25:cut1 == n1 |==> cut1 >= n1
+48:ROR:==(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):25:cut1 == n1 |==> false
+49:ROR:==(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):26:cut2 == n2 |==> cut2 <= n2
+50:ROR:==(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):26:cut2 == n2 |==> cut2 >= n2
+51:ROR:==(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):26:cut2 == n2 |==> false
+52:ROR:<=(int,int):<(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 |==> l1 < r2
+53:ROR:<=(int,int):==(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 |==> l1 == r2
+54:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 |==> true
+55:ROR:<=(int,int):<(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l2 <= r1 |==> l2 < r1
+56:ROR:<=(int,int):==(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l2 <= r1 |==> l2 == r1
+57:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l2 <= r1 |==> true
+58:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 && l2 <= r1 |==> l1 <= r2 == l2 <= r1
+59:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 && l2 <= r1 |==> false
+60:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 && l2 <= r1 |==> l1 <= r2
+61:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):27:l1 <= r2 && l2 <= r1 |==> l2 <= r1
+62:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:n1 + n2 |==> n1 % n2
+63:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:n1 + n2 |==> n1 * n2
+64:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:n1 + n2 |==> n1 - n2
+65:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:n1 + n2 |==> n1 / n2
+66:AOR:%(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 |==> (n1 + n2) * 2
+67:AOR:%(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 |==> (n1 + n2) + 2
+68:AOR:%(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 |==> (n1 + n2) - 2
+69:AOR:%(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 |==> (n1 + n2) / 2
+70:ROR:==(int,int):<=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 == 0 |==> (n1 + n2) % 2 <= 0
+71:ROR:==(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 == 0 |==> (n1 + n2) % 2 >= 0
+72:ROR:==(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):28:(n1 + n2) % 2 == 0 |==> false
+73:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:Math.max(l1, l2) + Math.min(r1, r2) |==> Math.max(l1, l2) % Math.min(r1, r2)
+74:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:Math.max(l1, l2) + Math.min(r1, r2) |==> Math.max(l1, l2) * Math.min(r1, r2)
+75:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:Math.max(l1, l2) + Math.min(r1, r2) |==> Math.max(l1, l2) - Math.min(r1, r2)
+76:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:Math.max(l1, l2) + Math.min(r1, r2) |==> Math.max(l1, l2) / Math.min(r1, r2)
+77:AOR:/(double,double):%(double,double):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:(Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 |==> (Math.max(l1, l2) + Math.min(r1, r2)) % 2.0
+78:AOR:/(double,double):*(double,double):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:(Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 |==> (Math.max(l1, l2) + Math.min(r1, r2)) * 2.0
+79:AOR:/(double,double):+(double,double):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:(Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 |==> (Math.max(l1, l2) + Math.min(r1, r2)) + 2.0
+80:AOR:/(double,double):-(double,double):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:(Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 |==> (Math.max(l1, l2) + Math.min(r1, r2)) - 2.0
+81:STD:<RETURN>:<NO-OP>:g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):29:return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0; |==> <NO-OP>
+82:STD:<RETURN>:<NO-OP>:g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):31:return Math.max(l1, l2); |==> <NO-OP>
+83:ROR:>(int,int):!=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):32:l1 > r2 |==> l1 != r2
+84:ROR:>(int,int):>=(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):32:l1 > r2 |==> l1 >= r2
+85:ROR:>(int,int):FALSE(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):32:l1 > r2 |==> false
+86:AOR:-(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):33:cut1 - 1 |==> cut1 % 1
+87:AOR:-(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):33:cut1 - 1 |==> cut1 * 1
+88:AOR:-(int,int):+(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):33:cut1 - 1 |==> cut1 + 1
+89:AOR:-(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):33:cut1 - 1 |==> cut1 / 1
+90:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):33:high = cut1 - 1; |==> <NO-OP>
+91:AOR:+(int,int):%(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):35:cut1 + 1 |==> cut1 % 1
+92:AOR:+(int,int):*(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):35:cut1 + 1 |==> cut1 * 1
+93:AOR:+(int,int):-(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):35:cut1 + 1 |==> cut1 - 1
+94:AOR:+(int,int):/(int,int):g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):35:cut1 + 1 |==> cut1 / 1
+95:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0004_median_of_two_sorted_arrays.Solution@findMedianSortedArrays(int[],int[]):35:low = cut1 + 1; |==> <NO-OP>

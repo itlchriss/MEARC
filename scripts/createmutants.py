@@ -22,9 +22,13 @@ mutants = []
 import re
 for log in mutantslog:
     if r := re.match(r'(\d+):[A-Z]+:.*\(.*,.*\):(\d+):(.*)\s+\|==>\s+(.*)', log, re.ASCII):
-        mutants.append(createmutant(int(r.group(2)), r.group(3), r.group(4), program.copy()))
+        mutants.append((r.group(2), createmutant(int(r.group(2)), r.group(3), r.group(4), program.copy())))
 
-for i, p in enumerate(mutants):
+for i, t in enumerate(mutants):
+    p = t[1]
+    line = t[0]
     os.makedirs(os.path.join(folder, "mutants", str(i)), exist_ok=True)
     with open(os.path.join(folder, "mutants", str(i), "Solution.java"), 'w') as fp:
         fp.write(p)
+    with open(os.path.join(folder, "mutants", str(i), "line.txt"), 'w') as fp:
+        fp.write(line)

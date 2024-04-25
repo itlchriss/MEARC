@@ -1,0 +1,58 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):13:n - 1 |==> n % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):13:n - 1 |==> n * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):13:n - 1 |==> n + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):13:n - 1 |==> n / 1
+5:ROR:<(int,int):!=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n |==> l != n
+6:ROR:<(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n |==> l <= n
+7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n |==> false
+8:ROR:>(int,int):!=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:newInterval[0] > intervals[l][1] |==> newInterval[0] != intervals[l][1]
+9:ROR:>(int,int):>=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:newInterval[0] > intervals[l][1] |==> newInterval[0] >= intervals[l][1]
+10:ROR:>(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:newInterval[0] > intervals[l][1] |==> false
+11:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n && newInterval[0] > intervals[l][1] |==> l < n == newInterval[0] > intervals[l][1]
+12:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n && newInterval[0] > intervals[l][1] |==> false
+13:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n && newInterval[0] > intervals[l][1] |==> l < n
+14:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):14:l < n && newInterval[0] > intervals[l][1] |==> newInterval[0] > intervals[l][1]
+15:STD:<INC>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):15:l++; |==> <NO-OP>
+16:ROR:>=(int,int):==(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 |==> r == 0
+17:ROR:>=(int,int):>(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 |==> r > 0
+18:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 |==> true
+19:ROR:<(int,int):!=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:newInterval[1] < intervals[r][0] |==> newInterval[1] != intervals[r][0]
+20:ROR:<(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:newInterval[1] < intervals[r][0] |==> newInterval[1] <= intervals[r][0]
+21:ROR:<(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:newInterval[1] < intervals[r][0] |==> false
+22:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 && newInterval[1] < intervals[r][0] |==> r >= 0 == newInterval[1] < intervals[r][0]
+23:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 && newInterval[1] < intervals[r][0] |==> false
+24:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 && newInterval[1] < intervals[r][0] |==> r >= 0
+25:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):17:r >= 0 && newInterval[1] < intervals[r][0] |==> newInterval[1] < intervals[r][0]
+26:STD:<DEC>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):18:r--; |==> <NO-OP>
+27:AOR:+(int,int):%(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n |==> l % n
+28:AOR:+(int,int):*(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n |==> l * n
+29:AOR:+(int,int):-(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n |==> l - n
+30:AOR:+(int,int):/(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n |==> l / n
+31:AOR:-(int,int):%(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n - r |==> (l + n) % r
+32:AOR:-(int,int):*(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n - r |==> (l + n) * r
+33:AOR:-(int,int):+(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n - r |==> l + n + r
+34:AOR:-(int,int):/(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):20:l + n - r |==> (l + n) / r
+35:ROR:<(int,int):!=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):21:i < l |==> i != l
+36:ROR:<(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):21:i < l |==> i <= l
+37:ROR:<(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):21:i < l |==> false
+38:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):22:res[i] = Arrays.copyOf(intervals[i], intervals[i].length); |==> <NO-OP>
+39:ROR:==(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):24:l == n |==> l <= n
+40:ROR:==(int,int):>=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):24:l == n |==> l >= n
+41:ROR:==(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):24:l == n |==> false
+42:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):24:res[l][0] = Math.min(newInterval[0], l == n ? newInterval[0] : intervals[l][0]); |==> <NO-OP>
+43:ROR:==(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):25:r == -1 |==> r <= -1
+44:ROR:==(int,int):>=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):25:r == -1 |==> r >= -1
+45:ROR:==(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):25:r == -1 |==> false
+46:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):25:res[l][1] = Math.max(newInterval[1], r == -1 ? newInterval[1] : intervals[r][1]); |==> <NO-OP>
+47:AOR:+(int,int):%(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:l + 1 |==> l % 1
+48:AOR:+(int,int):*(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:l + 1 |==> l * 1
+49:AOR:+(int,int):-(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:l + 1 |==> l - 1
+50:AOR:+(int,int):/(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:l + 1 |==> l / 1
+51:AOR:+(int,int):%(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:r + 1 |==> r % 1
+52:AOR:+(int,int):*(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:r + 1 |==> r * 1
+53:AOR:+(int,int):-(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:r + 1 |==> r - 1
+54:AOR:+(int,int):/(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:r + 1 |==> r / 1
+55:ROR:<(int,int):!=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:j < n |==> j != n
+56:ROR:<(int,int):<=(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:j < n |==> j <= n
+57:ROR:<(int,int):FALSE(int,int):g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):26:j < n |==> false
+58:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0057_insert_interval.Solution@insert(int[][],int[]):27:res[i] = intervals[j]; |==> <NO-OP>

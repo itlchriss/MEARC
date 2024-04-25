@@ -1,0 +1,132 @@
+1:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str == null |==> false
+2:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str.length() == 0 |==> str.length() <= 0
+3:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str.length() == 0 |==> str.length() >= 0
+4:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str.length() == 0 |==> false
+5:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str == null || str.length() == 0 |==> str == null != (str.length() == 0)
+6:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str == null || str.length() == 0 |==> str == null
+7:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str == null || str.length() == 0 |==> str.length() == 0
+8:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):9:str == null || str.length() == 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):10:return 0; |==> <NO-OP>
+10:ROR:<(int,int):!=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length |==> i != input.length
+11:ROR:<(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length |==> i <= input.length
+12:ROR:<(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length |==> false
+13:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:input[i] == ' ' |==> input[i] <= ' '
+14:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:input[i] == ' ' |==> input[i] >= ' '
+15:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:input[i] == ' ' |==> false
+16:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length && input[i] == ' ' |==> i < input.length == (input[i] == ' ')
+17:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length && input[i] == ' ' |==> false
+18:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length && input[i] == ' ' |==> i < input.length
+19:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):15:i < input.length && input[i] == ' ' |==> input[i] == ' '
+20:STD:<INC>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):16:i++; |==> <NO-OP>
+21:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):18:i == input.length |==> i <= input.length
+22:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):18:i == input.length |==> i >= input.length
+23:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):18:i == input.length |==> false
+24:STD:<RETURN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):19:return 0; |==> <NO-OP>
+25:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):20:input[i] == '+' |==> input[i] <= '+'
+26:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):20:input[i] == '+' |==> input[i] >= '+'
+27:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):20:input[i] == '+' |==> false
+28:STD:<INC>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):21:i++; |==> <NO-OP>
+29:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):22:input[i] == '-' |==> input[i] <= '-'
+30:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):22:input[i] == '-' |==> input[i] >= '-'
+31:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):22:input[i] == '-' |==> false
+32:STD:<INC>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):23:i++; |==> <NO-OP>
+33:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):24:negetiveSign = true; |==> <NO-OP>
+34:ROR:<(int,int):!=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length |==> i != input.length
+35:ROR:<(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length |==> i <= input.length
+36:ROR:<(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length |==> false
+37:ROR:<=(int,int):<(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] <= '9' |==> input[i] < '9'
+38:ROR:<=(int,int):==(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] <= '9' |==> input[i] == '9'
+39:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] <= '9' |==> true
+40:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' |==> i < input.length == input[i] <= '9'
+41:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' |==> false
+42:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' |==> i < input.length
+43:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' |==> input[i] <= '9'
+44:ROR:>=(int,int):==(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] >= '0' |==> input[i] == '0'
+45:ROR:>=(int,int):>(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] >= '0' |==> input[i] > '0'
+46:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:input[i] >= '0' |==> true
+47:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' && input[i] >= '0' |==> (i < input.length && input[i] <= '9') == input[i] >= '0'
+48:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' && input[i] >= '0' |==> false
+49:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' && input[i] >= '0' |==> i < input.length && input[i] <= '9'
+50:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):27:i < input.length && input[i] <= '9' && input[i] >= '0' |==> input[i] >= '0'
+51:AOR:-(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):29:input[i] - '0' |==> input[i] % '0'
+52:AOR:-(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):29:input[i] - '0' |==> input[i] * '0'
+53:AOR:-(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):29:input[i] - '0' |==> input[i] + '0'
+54:AOR:-(int,int):/(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):29:input[i] - '0' |==> input[i] / '0'
+55:COR:<IDENTIFIER(boolean)>:TRUE:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):30:negetiveSign |==> false
+56:COR:<IDENTIFIER(boolean)>:FALSE:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):30:negetiveSign |==> true
+57:ORU:---(int):+++(int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):30:-tem |==> +tem
+58:ORU:---(int):~(int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):30:-tem |==> ~tem
+59:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):30:tem = negetiveSign ? -tem : tem; |==> <NO-OP>
+60:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 |==> num <= 0
+61:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 |==> num >= 0
+62:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 |==> false
+63:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:tem == '0' |==> tem <= '0'
+64:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:tem == '0' |==> tem >= '0'
+65:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:tem == '0' |==> false
+66:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 && tem == '0' |==> num == 0 == (tem == '0')
+67:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 && tem == '0' |==> false
+68:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 && tem == '0' |==> num == 0
+69:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):32:num == 0 && tem == '0' |==> tem == '0'
+70:STD:<INC>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):33:i++; |==> <NO-OP>
+71:AOR:/(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE % 10
+72:AOR:/(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE * 10
+73:AOR:/(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE + 10
+74:AOR:/(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE - 10
+75:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 |==> num <= Integer.MIN_VALUE / 10
+76:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 |==> num >= Integer.MIN_VALUE / 10
+77:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 |==> false
+78:ROR:<=(int,int):<(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:tem <= -8 |==> tem < -8
+79:ROR:<=(int,int):==(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:tem <= -8 |==> tem == -8
+80:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:tem <= -8 |==> true
+81:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 |==> num == Integer.MIN_VALUE / 10 == tem <= -8
+82:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 |==> false
+83:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 |==> num == Integer.MIN_VALUE / 10
+84:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 |==> tem <= -8
+85:AOR:/(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE % 10
+86:AOR:/(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE * 10
+87:AOR:/(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE + 10
+88:AOR:/(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:Integer.MIN_VALUE / 10 |==> Integer.MIN_VALUE - 10
+89:ROR:<(int,int):!=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num < Integer.MIN_VALUE / 10 |==> num != Integer.MIN_VALUE / 10
+90:ROR:<(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num < Integer.MIN_VALUE / 10 |==> num <= Integer.MIN_VALUE / 10
+91:ROR:<(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num < Integer.MIN_VALUE / 10 |==> false
+92:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 |==> (num == Integer.MIN_VALUE / 10 && tem <= -8) != num < Integer.MIN_VALUE / 10
+93:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 |==> num == Integer.MIN_VALUE / 10 && tem <= -8
+94:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 |==> num < Integer.MIN_VALUE / 10
+95:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):34:num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 |==> true
+96:STD:<RETURN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):35:return Integer.MIN_VALUE; |==> <NO-OP>
+97:AOR:/(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE % 10
+98:AOR:/(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE * 10
+99:AOR:/(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE + 10
+100:AOR:/(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE - 10
+101:ROR:==(int,int):<=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 |==> num <= Integer.MAX_VALUE / 10
+102:ROR:==(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 |==> num >= Integer.MAX_VALUE / 10
+103:ROR:==(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 |==> false
+104:ROR:>=(int,int):==(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:tem >= 7 |==> tem == 7
+105:ROR:>=(int,int):>(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:tem >= 7 |==> tem > 7
+106:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:tem >= 7 |==> true
+107:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 |==> num == Integer.MAX_VALUE / 10 == tem >= 7
+108:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 |==> false
+109:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 |==> num == Integer.MAX_VALUE / 10
+110:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 |==> tem >= 7
+111:AOR:/(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE % 10
+112:AOR:/(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE * 10
+113:AOR:/(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE + 10
+114:AOR:/(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:Integer.MAX_VALUE / 10 |==> Integer.MAX_VALUE - 10
+115:ROR:>(int,int):!=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num > Integer.MAX_VALUE / 10 |==> num != Integer.MAX_VALUE / 10
+116:ROR:>(int,int):>=(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num > Integer.MAX_VALUE / 10 |==> num >= Integer.MAX_VALUE / 10
+117:ROR:>(int,int):FALSE(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num > Integer.MAX_VALUE / 10 |==> false
+118:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 |==> (num == Integer.MAX_VALUE / 10 && tem >= 7) != num > Integer.MAX_VALUE / 10
+119:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 |==> num == Integer.MAX_VALUE / 10 && tem >= 7
+120:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 |==> num > Integer.MAX_VALUE / 10
+121:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):36:num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 |==> true
+122:STD:<RETURN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):37:return Integer.MAX_VALUE; |==> <NO-OP>
+123:AOR:*(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 |==> num % 10
+124:AOR:*(int,int):+(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 |==> num + 10
+125:AOR:*(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 |==> num - 10
+126:AOR:*(int,int):/(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 |==> num / 10
+127:AOR:+(int,int):%(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 + tem |==> num * 10 % tem
+128:AOR:+(int,int):*(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 + tem |==> num * 10 * tem
+129:AOR:+(int,int):-(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 + tem |==> num * 10 - tem
+130:AOR:+(int,int):/(int,int):g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num * 10 + tem |==> num * 10 / tem
+131:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):39:num = num * 10 + tem; |==> <NO-OP>
+132:STD:<INC>:<NO-OP>:g0001_0100.s0008_string_to_integer_atoi.Solution@myAtoi(java.lang.String):40:i++; |==> <NO-OP>

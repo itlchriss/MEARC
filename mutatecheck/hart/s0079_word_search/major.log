@@ -1,0 +1,744 @@
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0079_word_search.Solution]]]]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0079_word_search.Solution
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: backtrace([char[][] board, boolean[][] visited, String word, int index, int x, int y])boolean
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.backtrace(line 10, col 19)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  index == word.length() 
+            mutant:                    index <= word.length()
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.backtrace(line 10, col 19)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  index == word.length() 
+            mutant:                    index >= word.length()
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.backtrace(line 10, col 19)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  index == word.length() 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 4: (STD) return true; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.backtrace(line 13, col 15)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  x < 0 
+            mutant:                    x != 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.backtrace(line 13, col 15)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  x < 0 
+            mutant:                    x <= 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.backtrace(line 13, col 15)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  x < 0 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.backtrace(line 13, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  x >= board.length 
+            mutant:                    x == board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.backtrace(line 13, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  x >= board.length 
+            mutant:                    x > board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.backtrace(line 13, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  x >= board.length 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.backtrace(line 13, col 19)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  x < 0 || x >= board.length 
+            mutant:                    x < 0 != x >= board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.backtrace(line 13, col 15)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length 
+            mutant:                    x < 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.backtrace(line 13, col 24)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length 
+            mutant:                    x >= board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.backtrace(line 13, col 19)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  x < 0 || x >= board.length 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.backtrace(line 13, col 45)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  y < 0 
+            mutant:                    y != 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.backtrace(line 13, col 45)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  y < 0 
+            mutant:                    y <= 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.backtrace(line 13, col 45)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  y < 0 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.backtrace(line 13, col 40)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 
+            mutant:                    (x < 0 || x >= board.length) != y < 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.backtrace(line 13, col 19)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 
+            mutant:                    x < 0 || x >= board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.backtrace(line 13, col 45)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 
+            mutant:                    y < 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.backtrace(line 13, col 40)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.backtrace(line 13, col 54)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  y >= board[0].length 
+            mutant:                    y == board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.backtrace(line 13, col 54)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  y >= board[0].length 
+            mutant:                    y > board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.backtrace(line 13, col 54)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  y >= board[0].length 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.backtrace(line 13, col 49)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length 
+            mutant:                    (x < 0 || x >= board.length || y < 0) != y >= board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.backtrace(line 13, col 40)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length 
+            mutant:                    x < 0 || x >= board.length || y < 0
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.backtrace(line 13, col 54)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length 
+            mutant:                    y >= board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.backtrace(line 13, col 49)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.backtrace(line 13, col 73)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y] 
+            mutant:                    (x < 0 || x >= board.length || y < 0 || y >= board[0].length) != visited[x][y]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.backtrace(line 13, col 49)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y] 
+            mutant:                    x < 0 || x >= board.length || y < 0 || y >= board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.backtrace(line 13, col 86)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y] 
+            mutant:                    visited[x][y]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.backtrace(line 13, col 73)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y] 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 33: (STD) return false; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 34: (STD) visited[x][y] = true; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.backtrace(line 17, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  word.charAt(index) == board[x][y] 
+            mutant:                    word.charAt(index) <= board[x][y]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.backtrace(line 17, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  word.charAt(index) == board[x][y] 
+            mutant:                    word.charAt(index) >= board[x][y]
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.backtrace(line 17, col 32)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  word.charAt(index) == board[x][y] 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.backtrace(line 19, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  index + 1 
+            mutant:                    index % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.backtrace(line 19, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  index + 1 
+            mutant:                    index * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.backtrace(line 19, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  index + 1 
+            mutant:                    index - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.backtrace(line 19, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  index + 1 
+            mutant:                    index / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.backtrace(line 19, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  y + 1 
+            mutant:                    y % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.backtrace(line 19, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  y + 1 
+            mutant:                    y * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.backtrace(line 19, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  y + 1 
+            mutant:                    y - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.backtrace(line 19, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  y + 1 
+            mutant:                    y / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.backtrace(line 20, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  index + 1 
+            mutant:                    index % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.backtrace(line 20, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  index + 1 
+            mutant:                    index * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.backtrace(line 20, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  index + 1 
+            mutant:                    index - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.backtrace(line 20, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  index + 1 
+            mutant:                    index / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.backtrace(line 20, col 80)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  y - 1 
+            mutant:                    y % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.backtrace(line 20, col 80)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  y - 1 
+            mutant:                    y * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.backtrace(line 20, col 80)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  y - 1 
+            mutant:                    y + 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.backtrace(line 20, col 80)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  y - 1 
+            mutant:                    y / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.backtrace(line 20, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) 
+            mutant:                    backtrace(board, visited, word, index + 1, x, y + 1) != backtrace(board, visited, word, index + 1, x, y - 1)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.backtrace(line 19, col 30)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) 
+            mutant:                    backtrace(board, visited, word, index + 1, x, y + 1)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.backtrace(line 20, col 41)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) 
+            mutant:                    backtrace(board, visited, word, index + 1, x, y - 1)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.backtrace(line 20, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.backtrace(line 21, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  index + 1 
+            mutant:                    index % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.backtrace(line 21, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  index + 1 
+            mutant:                    index * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.backtrace(line 21, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  index + 1 
+            mutant:                    index - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.backtrace(line 21, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  index + 1 
+            mutant:                    index / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.backtrace(line 21, col 77)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  x + 1 
+            mutant:                    x % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.backtrace(line 21, col 77)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  x + 1 
+            mutant:                    x * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.backtrace(line 21, col 77)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  x + 1 
+            mutant:                    x - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.backtrace(line 21, col 77)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  x + 1 
+            mutant:                    x / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.backtrace(line 21, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) 
+            mutant:                    (backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1)) != backtrace(board, visited, word, index + 1, x + 1, y)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.backtrace(line 20, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) 
+            mutant:                    backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.backtrace(line 21, col 41)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) 
+            mutant:                    backtrace(board, visited, word, index + 1, x + 1, y)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.backtrace(line 21, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.backtrace(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  index + 1 
+            mutant:                    index % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.backtrace(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  index + 1 
+            mutant:                    index * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.backtrace(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  index + 1 
+            mutant:                    index - 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.backtrace(line 22, col 70)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  index + 1 
+            mutant:                    index / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.backtrace(line 22, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  x - 1 
+            mutant:                    x % 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.backtrace(line 22, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  x - 1 
+            mutant:                    x * 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.backtrace(line 22, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  x - 1 
+            mutant:                    x + 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.backtrace(line 22, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  x - 1 
+            mutant:                    x / 1
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.backtrace(line 22, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) || backtrace(board, visited, word, index + 1, x - 1, y) 
+            mutant:                    (backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y)) != backtrace(board, visited, word, index + 1, x - 1, y)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.backtrace(line 21, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) || backtrace(board, visited, word, index + 1, x - 1, y) 
+            mutant:                    backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.backtrace(line 22, col 41)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) || backtrace(board, visited, word, index + 1, x - 1, y) 
+            mutant:                    backtrace(board, visited, word, index + 1, x - 1, y)
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.backtrace(line 22, col 29)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  backtrace(board, visited, word, index + 1, x, y + 1) || backtrace(board, visited, word, index + 1, x, y - 1) || backtrace(board, visited, word, index + 1, x + 1, y) || backtrace(board, visited, word, index + 1, x - 1, y) 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.backtrace(line 23, col 18)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
+            original:                  res 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.backtrace(line 23, col 18)
+            mutation operator group:   COR
+            mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
+            original:                  res 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 84: (STD) visited[x][y] = false; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 85: (STD) visited[x][y] = false; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: exist([char[][] board, String word])boolean
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.exist(line 37, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < board.length 
+            mutant:                    i != board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.exist(line 37, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < board.length 
+            mutant:                    i <= board.length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.exist(line 37, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < board.length 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.exist(line 38, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < board[0].length 
+            mutant:                    j != board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.exist(line 38, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < board[0].length 
+            mutant:                    j <= board[0].length
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.exist(line 38, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < board[0].length 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.exist(line 39, col 30)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  backtrace(board, visited, word, 0, i, j) 
+            mutant:                    false
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.exist(line 39, col 30)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  backtrace(board, visited, word, 0, i, j) 
+            mutant:                    true
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 94: (STD) return true; -> <NO-OP>
+[04/24 17:42:16] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 94 mutants (118 ms)

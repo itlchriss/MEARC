@@ -1,0 +1,858 @@
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.Arrays, java.util.ArrayList, g0001_0100.s0051_n_queens.Solution]]]]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0051_n_queens.Solution
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: solveNQueens([int n])List<List<String>>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.solveNQueens(line 13, col 43)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  2 * n 
+            mutant:                    2 % n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.solveNQueens(line 13, col 43)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  2 * n 
+            mutant:                    2 + n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.solveNQueens(line 13, col 43)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  2 * n 
+            mutant:                    2 - n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.solveNQueens(line 13, col 43)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  2 * n 
+            mutant:                    2 / n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.solveNQueens(line 13, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n % (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.solveNQueens(line 13, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n * (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.solveNQueens(line 13, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n - 2 * n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.solveNQueens(line 13, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n / (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.solveNQueens(line 13, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) % 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.solveNQueens(line 13, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) * 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.solveNQueens(line 13, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    n + 2 * n + 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.solveNQueens(line 13, col 47)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) / 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.solveNQueens(line 13, col 55)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  2 * n 
+            mutant:                    2 % n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.solveNQueens(line 13, col 55)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  2 * n 
+            mutant:                    2 + n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.solveNQueens(line 13, col 55)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  2 * n 
+            mutant:                    2 - n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.solveNQueens(line 13, col 55)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  2 * n 
+            mutant:                    2 / n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.solveNQueens(line 13, col 51)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + 2 * n 
+            mutant:                    (n + 2 * n - 1) % (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.solveNQueens(line 13, col 51)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + 2 * n 
+            mutant:                    (n + 2 * n - 1) * (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.solveNQueens(line 13, col 51)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 2 * n - 1 + 2 * n 
+            mutant:                    n + 2 * n - 1 - 2 * n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.solveNQueens(line 13, col 51)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + 2 * n 
+            mutant:                    (n + 2 * n - 1) / (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.solveNQueens(line 13, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + 2 * n - 1 
+            mutant:                    (n + 2 * n - 1 + 2 * n) % 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.solveNQueens(line 13, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + 2 * n - 1 
+            mutant:                    (n + 2 * n - 1 + 2 * n) * 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.solveNQueens(line 13, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n + 2 * n - 1 + 2 * n - 1 
+            mutant:                    n + 2 * n - 1 + 2 * n + 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.solveNQueens(line 13, col 59)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + 2 * n - 1 
+            mutant:                    (n + 2 * n - 1 + 2 * n) / 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 25: (STD) helper(n, 0, pos, pos2, ans); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: helper([int n, int row, boolean[] pos, int[] pos2, List<List<String>> ans])void
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.helper(line 21, col 17)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  row == n 
+            mutant:                    row <= n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.helper(line 21, col 17)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  row == n 
+            mutant:                    row >= n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.helper(line 21, col 17)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  row == n 
+            mutant:                    false
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 29: (STD) construct(n, pos2, ans); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 30: (STD) return; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.helper(line 25, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < n 
+            mutant:                    i != n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.helper(line 25, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < n 
+            mutant:                    i <= n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.helper(line 25, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < n 
+            mutant:                    false
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.helper(line 26, col 31)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  2 * n 
+            mutant:                    2 % n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.helper(line 26, col 31)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  2 * n 
+            mutant:                    2 + n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.helper(line 26, col 31)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  2 * n 
+            mutant:                    2 - n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.helper(line 26, col 31)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  2 * n 
+            mutant:                    2 / n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.helper(line 26, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n % (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.helper(line 26, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n * (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.helper(line 26, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n - 2 * n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.helper(line 26, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 2 * n 
+            mutant:                    n / (2 * n)
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.helper(line 26, col 35)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) % 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.helper(line 26, col 35)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) * 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.helper(line 26, col 35)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    n + 2 * n + 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.helper(line 26, col 35)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 
+            mutant:                    (n + 2 * n) / 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.helper(line 26, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + n 
+            mutant:                    (n + 2 * n - 1) % n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.helper(line 26, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + n 
+            mutant:                    (n + 2 * n - 1) * n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.helper(line 26, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 2 * n - 1 + n 
+            mutant:                    n + 2 * n - 1 - n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.helper(line 26, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + n 
+            mutant:                    (n + 2 * n - 1) / n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.helper(line 26, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + n - 1 
+            mutant:                    (n + 2 * n - 1 + n) % 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.helper(line 26, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + n - 1 
+            mutant:                    (n + 2 * n - 1 + n) * 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.helper(line 26, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n + 2 * n - 1 + n - 1 
+            mutant:                    n + 2 * n - 1 + n + 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.helper(line 26, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + n - 1 
+            mutant:                    (n + 2 * n - 1 + n) / 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.helper(line 26, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i 
+            mutant:                    (n + 2 * n - 1 + n - 1) % i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.helper(line 26, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i 
+            mutant:                    (n + 2 * n - 1 + n - 1) * i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.helper(line 26, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i 
+            mutant:                    n + 2 * n - 1 + n - 1 - i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.helper(line 26, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i 
+            mutant:                    (n + 2 * n - 1 + n - 1) / i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.helper(line 26, col 51)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i - row 
+            mutant:                    (n + 2 * n - 1 + n - 1 + i) % row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.helper(line 26, col 51)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i - row 
+            mutant:                    (n + 2 * n - 1 + n - 1 + i) * row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.helper(line 26, col 51)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i - row 
+            mutant:                    n + 2 * n - 1 + n - 1 + i + row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.helper(line 26, col 51)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n + 2 * n - 1 + n - 1 + i - row 
+            mutant:                    (n + 2 * n - 1 + n - 1 + i) / row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.helper(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i 
+            mutant:                    n % i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.helper(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i 
+            mutant:                    n * i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.helper(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i 
+            mutant:                    n - i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.helper(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i 
+            mutant:                    n / i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.helper(line 27, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) % row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.helper(line 27, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) * row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.helper(line 27, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i + row 
+            mutant:                    n + i - row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.helper(line 27, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) / row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.helper(line 27, col 24)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] 
+            mutant:                    pos[i] != pos[n + i + row]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.helper(line 27, col 20)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] 
+            mutant:                    pos[i]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.helper(line 27, col 30)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] 
+            mutant:                    pos[n + i + row]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.helper(line 27, col 24)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] 
+            mutant:                    true
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.helper(line 27, col 44)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] || pos[index] 
+            mutant:                    (pos[i] || pos[n + i + row]) != pos[index]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.helper(line 27, col 24)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] || pos[index] 
+            mutant:                    pos[i] || pos[n + i + row]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.helper(line 27, col 50)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] || pos[index] 
+            mutant:                    pos[index]
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.helper(line 27, col 44)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  pos[i] || pos[n + i + row] || pos[index] 
+            mutant:                    true
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 78: (STD) continue; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 79: (STD) pos[i] = true; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.helper(line 31, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i 
+            mutant:                    n % i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.helper(line 31, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i 
+            mutant:                    n * i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.helper(line 31, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i 
+            mutant:                    n - i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.helper(line 31, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i 
+            mutant:                    n / i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.helper(line 31, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) % row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.helper(line 31, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) * row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.helper(line 31, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i + row 
+            mutant:                    n + i - row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.helper(line 31, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) / row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 88: (STD) pos[n + i + row] = true; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 89: (STD) pos[index] = true; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 90: (STD) pos2[row] = i; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.helper(line 34, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  row + 1 
+            mutant:                    row % 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.helper(line 34, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  row + 1 
+            mutant:                    row * 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.helper(line 34, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  row + 1 
+            mutant:                    row - 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.helper(line 34, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  row + 1 
+            mutant:                    row / 1
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 95: (STD) helper(n, row + 1, pos, pos2, ans); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 96: (STD) pos[i] = false; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.helper(line 36, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i 
+            mutant:                    n % i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.helper(line 36, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i 
+            mutant:                    n * i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.helper(line 36, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i 
+            mutant:                    n - i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.helper(line 36, col 19)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i 
+            mutant:                    n / i
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.helper(line 36, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) % row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.helper(line 36, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) * row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.helper(line 36, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + i + row 
+            mutant:                    n + i - row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 104
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 104: Solution.helper(line 36, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + i + row 
+            mutant:                    (n + i) / row
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 105
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 105: (STD) pos[n + i + row] = false; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 106
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 106: (STD) pos[index] = false; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: construct([int n, int[] pos, List<List<String>> ans])void
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 107
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 107: Solution.construct(line 43, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  r < n 
+            mutant:                    r != n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 108
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 108: Solution.construct(line 43, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  r < n 
+            mutant:                    r <= n
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 109
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 109: Solution.construct(line 43, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  r < n 
+            mutant:                    false
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 110
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 110: (STD) Arrays.fill(queenRow, '.'); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 111
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 111: (STD) queenRow[pos[r]] = 'Q'; -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 112
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 112: (STD) sol.add(new String(queenRow)); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 113
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 113: (STD) ans.add(sol); -> <NO-OP>
+[04/24 17:40:58] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 113 mutants (138 ms)

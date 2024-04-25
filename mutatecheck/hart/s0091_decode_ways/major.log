@@ -1,0 +1,506 @@
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0091_decode_ways.Solution]]]]
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0091_decode_ways.Solution
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: numDecodings([String s])int
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.numDecodings(line 10, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  s.charAt(0) == '0' 
+            mutant:                    s.charAt(0) <= '0'
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.numDecodings(line 10, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  s.charAt(0) == '0' 
+            mutant:                    s.charAt(0) >= '0'
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.numDecodings(line 10, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  s.charAt(0) == '0' 
+            mutant:                    false
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 4: (STD) return 0; -> <NO-OP>
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.numDecodings(line 14, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n + 1 
+            mutant:                    n % 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.numDecodings(line 14, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n + 1 
+            mutant:                    n * 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.numDecodings(line 14, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n + 1 
+            mutant:                    n - 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.numDecodings(line 14, col 29)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n + 1 
+            mutant:                    n / 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 9: (STD) f[0] = 1; -> <NO-OP>
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 10: (STD) f[1] = 1; -> <NO-OP>
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.numDecodings(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  i <= n 
+            mutant:                    i < n
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.numDecodings(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  i <= n 
+            mutant:                    i == n
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.numDecodings(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  i <= n 
+            mutant:                    true
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.numDecodings(line 20, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 1 
+            mutant:                    i % 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.numDecodings(line 20, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 1 
+            mutant:                    i * 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.numDecodings(line 20, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 1 
+            mutant:                    i + 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.numDecodings(line 20, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 1 
+            mutant:                    i / 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.numDecodings(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> <(int,int)
+            original:                  s.charAt(i - 1) != '0' 
+            mutant:                    s.charAt(i - 1) < '0'
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.numDecodings(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> >(int,int)
+            original:                  s.charAt(i - 1) != '0' 
+            mutant:                    s.charAt(i - 1) > '0'
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.numDecodings(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         !=(int,int) |==> TRUE(int,int)
+            original:                  s.charAt(i - 1) != '0' 
+            mutant:                    true
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.numDecodings(line 23, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 1 
+            mutant:                    i % 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.numDecodings(line 23, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 1 
+            mutant:                    i * 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.numDecodings(line 23, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 1 
+            mutant:                    i + 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.numDecodings(line 23, col 28)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 1 
+            mutant:                    i / 1
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 25: (STD) f[i] = f[i - 1]; -> <NO-OP>
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.numDecodings(line 26, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 2 
+            mutant:                    i % 2
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.numDecodings(line 26, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 2 
+            mutant:                    i * 2
+[04/24 17:42:21] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.numDecodings(line 26, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 2 
+            mutant:                    i + 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.numDecodings(line 26, col 41)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 2 
+            mutant:                    i / 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.numDecodings(line 26, col 46)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  s.charAt(i - 2) - '0' 
+            mutant:                    s.charAt(i - 2) % '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.numDecodings(line 26, col 46)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  s.charAt(i - 2) - '0' 
+            mutant:                    s.charAt(i - 2) * '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.numDecodings(line 26, col 46)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  s.charAt(i - 2) - '0' 
+            mutant:                    s.charAt(i - 2) + '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.numDecodings(line 26, col 46)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  s.charAt(i - 2) - '0' 
+            mutant:                    s.charAt(i - 2) / '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.numDecodings(line 26, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 
+            mutant:                    (s.charAt(i - 2) - '0') % 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.numDecodings(line 26, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 
+            mutant:                    (s.charAt(i - 2) - '0') + 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.numDecodings(line 26, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 
+            mutant:                    (s.charAt(i - 2) - '0') - 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.numDecodings(line 26, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 
+            mutant:                    (s.charAt(i - 2) - '0') / 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.numDecodings(line 26, col 72)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 1 
+            mutant:                    i % 1
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.numDecodings(line 26, col 72)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 1 
+            mutant:                    i * 1
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.numDecodings(line 26, col 72)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 1 
+            mutant:                    i + 1
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.numDecodings(line 26, col 72)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 1 
+            mutant:                    i / 1
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.numDecodings(line 26, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  s.charAt(i - 1) - '0' 
+            mutant:                    s.charAt(i - 1) % '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.numDecodings(line 26, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  s.charAt(i - 1) - '0' 
+            mutant:                    s.charAt(i - 1) * '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.numDecodings(line 26, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  s.charAt(i - 1) - '0' 
+            mutant:                    s.charAt(i - 1) + '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.numDecodings(line 26, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  s.charAt(i - 1) - '0' 
+            mutant:                    s.charAt(i - 1) / '0'
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.numDecodings(line 26, col 58)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') 
+            mutant:                    (s.charAt(i - 2) - '0') * 10 % (s.charAt(i - 1) - '0')
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.numDecodings(line 26, col 58)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') 
+            mutant:                    (s.charAt(i - 2) - '0') * 10 * (s.charAt(i - 1) - '0')
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.numDecodings(line 26, col 58)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') 
+            mutant:                    (s.charAt(i - 2) - '0') * 10 - (s.charAt(i - 1) - '0')
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.numDecodings(line 26, col 58)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  (s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') 
+            mutant:                    (s.charAt(i - 2) - '0') * 10 / (s.charAt(i - 1) - '0')
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.numDecodings(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  twodigits >= 10 
+            mutant:                    twodigits == 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.numDecodings(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  twodigits >= 10 
+            mutant:                    twodigits > 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.numDecodings(line 27, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  twodigits >= 10 
+            mutant:                    true
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.numDecodings(line 27, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  twodigits <= 26 
+            mutant:                    twodigits < 26
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.numDecodings(line 27, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  twodigits <= 26 
+            mutant:                    twodigits == 26
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.numDecodings(line 27, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  twodigits <= 26 
+            mutant:                    true
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.numDecodings(line 27, col 33)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  twodigits >= 10 && twodigits <= 26 
+            mutant:                    twodigits >= 10 == twodigits <= 26
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.numDecodings(line 27, col 33)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  twodigits >= 10 && twodigits <= 26 
+            mutant:                    false
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.numDecodings(line 27, col 27)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  twodigits >= 10 && twodigits <= 26 
+            mutant:                    twodigits >= 10
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.numDecodings(line 27, col 46)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  twodigits >= 10 && twodigits <= 26 
+            mutant:                    twodigits <= 26
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.numDecodings(line 28, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  i - 2 
+            mutant:                    i % 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.numDecodings(line 28, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  i - 2 
+            mutant:                    i * 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.numDecodings(line 28, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  i - 2 
+            mutant:                    i + 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.numDecodings(line 28, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  i - 2 
+            mutant:                    i / 2
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 64: (STD) f[i] += f[i - 2]; -> <NO-OP>
+[04/24 17:42:22] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 64 mutants (85 ms)

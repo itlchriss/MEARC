@@ -1,0 +1,28 @@
+1:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums == null |==> false
+2:ROR:==(int,int):<=(int,int):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums.length == 0 |==> nums.length <= 0
+3:ROR:==(int,int):>=(int,int):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums.length == 0 |==> nums.length >= 0
+4:ROR:==(int,int):FALSE(int,int):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums.length == 0 |==> false
+5:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums == null || nums.length == 0 |==> nums == null != (nums.length == 0)
+6:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums == null || nums.length == 0 |==> nums == null
+7:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums == null || nums.length == 0 |==> nums.length == 0
+8:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0046_permutations.Solution@permute(int[]):16:nums == null || nums.length == 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permute(int[]):17:return new ArrayList<>(); |==> <NO-OP>
+10:STD:<CALL>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permute(int[]):20:permuteRecur(nums, finalResult, new ArrayList<>(), new boolean[nums.length]); |==> <NO-OP>
+11:ROR:==(int,int):<=(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):26:currResult.size() == nums.length |==> currResult.size() <= nums.length
+12:ROR:==(int,int):>=(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):26:currResult.size() == nums.length |==> currResult.size() >= nums.length
+13:ROR:==(int,int):FALSE(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):26:currResult.size() == nums.length |==> false
+14:STD:<CALL>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):27:finalResult.add(new ArrayList<>(currResult)); |==> <NO-OP>
+15:STD:<RETURN>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):28:return; |==> <NO-OP>
+16:ROR:<(int,int):!=(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):30:i < nums.length |==> i != nums.length
+17:ROR:<(int,int):<=(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):30:i < nums.length |==> i <= nums.length
+18:ROR:<(int,int):FALSE(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):30:i < nums.length |==> false
+19:STD:<CONT>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):32:continue; |==> <NO-OP>
+20:STD:<CALL>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):34:currResult.add(nums[i]); |==> <NO-OP>
+21:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):35:used[i] = true; |==> <NO-OP>
+22:STD:<CALL>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):36:permuteRecur(nums, finalResult, currResult, used); |==> <NO-OP>
+23:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):37:used[i] = false; |==> <NO-OP>
+24:AOR:-(int,int):%(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):38:currResult.size() - 1 |==> currResult.size() % 1
+25:AOR:-(int,int):*(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):38:currResult.size() - 1 |==> currResult.size() * 1
+26:AOR:-(int,int):+(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):38:currResult.size() - 1 |==> currResult.size() + 1
+27:AOR:-(int,int):/(int,int):g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):38:currResult.size() - 1 |==> currResult.size() / 1
+28:STD:<CALL>:<NO-OP>:g0001_0100.s0046_permutations.Solution@permuteRecur(int[],java.util.List<java.util.List<java.lang.Integer>>,java.util.List<java.lang.Integer>,boolean[]):38:currResult.remove(currResult.size() - 1); |==> <NO-OP>

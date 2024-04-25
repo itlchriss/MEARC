@@ -1,0 +1,1176 @@
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Arrays, g0001_0100.s0016_3sum_closest.Solution]]]]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0016_3sum_closest.Solution
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: threeSumClosest([int[] nums, int target])int
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.threeSumClosest(line 14, col 18)
+            mutation operator group:   ROR
+            mutation operator:         ==(java.lang.Object,java.lang.Object) |==> FALSE(java.lang.Object,java.lang.Object)
+            original:                  nums == null 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.threeSumClosest(line 14, col 41)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  nums.length < 3 
+            mutant:                    nums.length != 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.threeSumClosest(line 14, col 41)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  nums.length < 3 
+            mutant:                    nums.length <= 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.threeSumClosest(line 14, col 41)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  nums.length < 3 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.threeSumClosest(line 14, col 26)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  nums == null || nums.length < 3 
+            mutant:                    nums == null != nums.length < 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.threeSumClosest(line 14, col 18)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  nums == null || nums.length < 3 
+            mutant:                    nums == null
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.threeSumClosest(line 14, col 41)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  nums == null || nums.length < 3 
+            mutant:                    nums.length < 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.threeSumClosest(line 14, col 26)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  nums == null || nums.length < 3 
+            mutant:                    true
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 9: (STD) return 0; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.threeSumClosest(line 17, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  nums.length == 3 
+            mutant:                    nums.length <= 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.threeSumClosest(line 17, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  nums.length == 3 
+            mutant:                    nums.length >= 3
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.threeSumClosest(line 17, col 25)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  nums.length == 3 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.threeSumClosest(line 18, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] % nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.threeSumClosest(line 18, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] * nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.threeSumClosest(line 18, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] - nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.threeSumClosest(line 18, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] / nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.threeSumClosest(line 18, col 38)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) % nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.threeSumClosest(line 18, col 38)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) * nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.threeSumClosest(line 18, col 38)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    nums[0] + nums[1] - nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.threeSumClosest(line 18, col 38)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) / nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 21: (STD) return nums[0] + nums[1] + nums[2]; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 22: (STD) Arrays.sort(nums); -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.threeSumClosest(line 22, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] % nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.threeSumClosest(line 22, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] * nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.threeSumClosest(line 22, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] - nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.threeSumClosest(line 22, col 27)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[0] + nums[1] 
+            mutant:                    nums[0] / nums[1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.threeSumClosest(line 22, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) % nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.threeSumClosest(line 22, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) * nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.threeSumClosest(line 22, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    nums[0] + nums[1] - nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.threeSumClosest(line 22, col 37)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[0] + nums[1] + nums[2] 
+            mutant:                    (nums[0] + nums[1]) / nums[2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.threeSumClosest(line 23, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.threeSumClosest(line 23, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.threeSumClosest(line 23, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.threeSumClosest(line 23, col 31)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.threeSumClosest(line 23, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < n - 2 
+            mutant:                    i != n - 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.threeSumClosest(line 23, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < n - 2 
+            mutant:                    i <= n - 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.threeSumClosest(line 23, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < n - 2 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.threeSumClosest(line 24, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.threeSumClosest(line 24, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.threeSumClosest(line 24, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.threeSumClosest(line 24, col 34)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.threeSumClosest(line 24, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] % nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.threeSumClosest(line 24, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] * nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.threeSumClosest(line 24, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] - nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.threeSumClosest(line 24, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] / nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.threeSumClosest(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.threeSumClosest(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.threeSumClosest(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.threeSumClosest(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.threeSumClosest(line 24, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) % nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.threeSumClosest(line 24, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) * nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.threeSumClosest(line 24, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    nums[i] + nums[n - 1] - nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.threeSumClosest(line 24, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) / nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.threeSumClosest(line 24, col 53)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] < target 
+            mutant:                    nums[i] + nums[n - 1] + nums[n - 2] != target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.threeSumClosest(line 24, col 53)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] < target 
+            mutant:                    nums[i] + nums[n - 1] + nums[n - 2] <= target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.threeSumClosest(line 24, col 53)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] < target 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.threeSumClosest(line 25, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.threeSumClosest(line 25, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.threeSumClosest(line 25, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.threeSumClosest(line 25, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.threeSumClosest(line 25, col 31)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] % nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.threeSumClosest(line 25, col 31)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] * nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.threeSumClosest(line 25, col 31)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] - nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.threeSumClosest(line 25, col 31)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[n - 1] 
+            mutant:                    nums[i] / nums[n - 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.threeSumClosest(line 25, col 54)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 2 
+            mutant:                    n % 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.threeSumClosest(line 25, col 54)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 2 
+            mutant:                    n * 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.threeSumClosest(line 25, col 54)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 2 
+            mutant:                    n + 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.threeSumClosest(line 25, col 54)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 2 
+            mutant:                    n / 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.threeSumClosest(line 25, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) % nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.threeSumClosest(line 25, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) * nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.threeSumClosest(line 25, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    nums[i] + nums[n - 1] - nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.threeSumClosest(line 25, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[n - 1] + nums[n - 2] 
+            mutant:                    (nums[i] + nums[n - 1]) / nums[n - 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 73: (STD) sum = nums[i] + nums[n - 1] + nums[n - 2]; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 74: (STD) continue; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.threeSumClosest(line 28, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.threeSumClosest(line 28, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.threeSumClosest(line 28, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.threeSumClosest(line 28, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.threeSumClosest(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] % nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.threeSumClosest(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] * nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.threeSumClosest(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] - nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.threeSumClosest(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] / nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.threeSumClosest(line 28, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 2 
+            mutant:                    i % 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.threeSumClosest(line 28, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 2 
+            mutant:                    i * 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.threeSumClosest(line 28, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 2 
+            mutant:                    i - 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.threeSumClosest(line 28, col 48)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 2 
+            mutant:                    i / 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.threeSumClosest(line 28, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) % nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.threeSumClosest(line 28, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) * nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.threeSumClosest(line 28, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    nums[i] + nums[i + 1] - nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.threeSumClosest(line 28, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) / nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.threeSumClosest(line 28, col 53)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] > target 
+            mutant:                    nums[i] + nums[i + 1] + nums[i + 2] != target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.threeSumClosest(line 28, col 53)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] > target 
+            mutant:                    nums[i] + nums[i + 1] + nums[i + 2] >= target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.threeSumClosest(line 28, col 53)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] > target 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.threeSumClosest(line 29, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 95: Solution.threeSumClosest(line 29, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 96: Solution.threeSumClosest(line 29, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.threeSumClosest(line 29, col 45)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.threeSumClosest(line 29, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] % nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.threeSumClosest(line 29, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] * nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.threeSumClosest(line 29, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] - nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.threeSumClosest(line 29, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[i + 1] 
+            mutant:                    nums[i] / nums[i + 1]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.threeSumClosest(line 29, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 2 
+            mutant:                    i % 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.threeSumClosest(line 29, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 2 
+            mutant:                    i * 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 104
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 104: Solution.threeSumClosest(line 29, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 2 
+            mutant:                    i - 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 105
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 105: Solution.threeSumClosest(line 29, col 59)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 2 
+            mutant:                    i / 2
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 106
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 106: Solution.threeSumClosest(line 29, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) % nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 107
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 107: Solution.threeSumClosest(line 29, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) * nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 108
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 108: Solution.threeSumClosest(line 29, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    nums[i] + nums[i + 1] - nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 109
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 109: Solution.threeSumClosest(line 29, col 50)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[i + 1] + nums[i + 2] 
+            mutant:                    (nums[i] + nums[i + 1]) / nums[i + 2]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 110
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 110: (STD) return lessGap(sum, temp, target); -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 111
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 111: Solution.threeSumClosest(line 32, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 112
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 112: Solution.threeSumClosest(line 32, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 113
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 113: Solution.threeSumClosest(line 32, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 114
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 114: Solution.threeSumClosest(line 32, col 23)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 115
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 115: Solution.threeSumClosest(line 33, col 23)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  n - 1 
+            mutant:                    n % 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 116
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 116: Solution.threeSumClosest(line 33, col 23)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  n - 1 
+            mutant:                    n * 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 117
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 117: Solution.threeSumClosest(line 33, col 23)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  n - 1 
+            mutant:                    n + 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 118
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 118: Solution.threeSumClosest(line 33, col 23)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  n - 1 
+            mutant:                    n / 1
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 119
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 119: Solution.threeSumClosest(line 34, col 22)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < k 
+            mutant:                    j != k
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 120
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 120: Solution.threeSumClosest(line 34, col 22)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < k 
+            mutant:                    j <= k
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 121
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 121: Solution.threeSumClosest(line 34, col 22)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < k 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 122
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 122: Solution.threeSumClosest(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] % nums[j]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 123
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 123: Solution.threeSumClosest(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] * nums[j]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 124
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 124: Solution.threeSumClosest(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] - nums[j]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 125
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 125: Solution.threeSumClosest(line 35, col 36)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[j] 
+            mutant:                    nums[i] / nums[j]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 126
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 126: Solution.threeSumClosest(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nums[i] + nums[j] + nums[k] 
+            mutant:                    (nums[i] + nums[j]) % nums[k]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 127
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 127: Solution.threeSumClosest(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nums[i] + nums[j] + nums[k] 
+            mutant:                    (nums[i] + nums[j]) * nums[k]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 128
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 128: Solution.threeSumClosest(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nums[i] + nums[j] + nums[k] 
+            mutant:                    nums[i] + nums[j] - nums[k]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 129
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 129: Solution.threeSumClosest(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nums[i] + nums[j] + nums[k] 
+            mutant:                    (nums[i] + nums[j]) / nums[k]
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 130
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 130: Solution.threeSumClosest(line 36, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  temp == target 
+            mutant:                    temp <= target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 131
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 131: Solution.threeSumClosest(line 36, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  temp == target 
+            mutant:                    temp >= target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 132
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 132: Solution.threeSumClosest(line 36, col 26)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  temp == target 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 133
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 133: (STD) return target; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 134
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 134: Solution.threeSumClosest(line 39, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  temp < target 
+            mutant:                    temp != target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 135
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 135: Solution.threeSumClosest(line 39, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  temp < target 
+            mutant:                    temp <= target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 136
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 136: Solution.threeSumClosest(line 39, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  temp < target 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 137
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 137: (STD) j++; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 138
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 138: (STD) k--; -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 139
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 139: (STD) sum = lessGap(sum, temp, target); -> <NO-OP>
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: lessGap([int sum, int temp, int target])int
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 140
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 140: Solution.lessGap(line 51, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  sum - target 
+            mutant:                    sum % target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 141
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 141: Solution.lessGap(line 51, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  sum - target 
+            mutant:                    sum * target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 142
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 142: Solution.lessGap(line 51, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  sum - target 
+            mutant:                    sum + target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 143
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 143: Solution.lessGap(line 51, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  sum - target 
+            mutant:                    sum / target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 144
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 144: Solution.lessGap(line 51, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  temp - target 
+            mutant:                    temp % target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 145
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 145: Solution.lessGap(line 51, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  temp - target 
+            mutant:                    temp * target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 146
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 146: Solution.lessGap(line 51, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  temp - target 
+            mutant:                    temp + target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 147
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 147: Solution.lessGap(line 51, col 55)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  temp - target 
+            mutant:                    temp / target
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 148
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 148: Solution.lessGap(line 51, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  Math.abs(sum - target) < Math.abs(temp - target) 
+            mutant:                    Math.abs(sum - target) != Math.abs(temp - target)
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 149
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 149: Solution.lessGap(line 51, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  Math.abs(sum - target) < Math.abs(temp - target) 
+            mutant:                    Math.abs(sum - target) <= Math.abs(temp - target)
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 150
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 150: Solution.lessGap(line 51, col 39)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  Math.abs(sum - target) < Math.abs(temp - target) 
+            mutant:                    false
+[04/24 17:41:41] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 150 mutants (133 ms)

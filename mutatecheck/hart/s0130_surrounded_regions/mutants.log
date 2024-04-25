@@ -1,0 +1,109 @@
+1:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):11:board.length == 0 |==> board.length <= 0
+2:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):11:board.length == 0 |==> board.length >= 0
+3:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):11:board.length == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):12:return; |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):15:i < board[0].length |==> i != board[0].length
+6:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):15:i < board[0].length |==> i <= board[0].length
+7:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):15:i < board[0].length |==> false
+8:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):17:board[0][i] == 'O' |==> board[0][i] <= 'O'
+9:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):17:board[0][i] == 'O' |==> board[0][i] >= 'O'
+10:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):17:board[0][i] == 'O' |==> false
+11:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):19:dfs(board, 0, i); |==> <NO-OP>
+12:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board.length - 1 |==> board.length % 1
+13:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board.length - 1 |==> board.length * 1
+14:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board.length - 1 |==> board.length + 1
+15:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board.length - 1 |==> board.length / 1
+16:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board[board.length - 1][i] == 'O' |==> board[board.length - 1][i] <= 'O'
+17:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board[board.length - 1][i] == 'O' |==> board[board.length - 1][i] >= 'O'
+18:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):22:board[board.length - 1][i] == 'O' |==> false
+19:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):24:board.length - 1 |==> board.length % 1
+20:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):24:board.length - 1 |==> board.length * 1
+21:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):24:board.length - 1 |==> board.length + 1
+22:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):24:board.length - 1 |==> board.length / 1
+23:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):24:dfs(board, board.length - 1, i); |==> <NO-OP>
+24:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):28:i < board.length |==> i != board.length
+25:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):28:i < board.length |==> i <= board.length
+26:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):28:i < board.length |==> false
+27:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):30:board[i][0] == 'O' |==> board[i][0] <= 'O'
+28:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):30:board[i][0] == 'O' |==> board[i][0] >= 'O'
+29:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):30:board[i][0] == 'O' |==> false
+30:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):32:dfs(board, i, 0); |==> <NO-OP>
+31:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[0].length - 1 |==> board[0].length % 1
+32:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[0].length - 1 |==> board[0].length * 1
+33:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[0].length - 1 |==> board[0].length + 1
+34:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[0].length - 1 |==> board[0].length / 1
+35:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[i][board[0].length - 1] == 'O' |==> board[i][board[0].length - 1] <= 'O'
+36:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[i][board[0].length - 1] == 'O' |==> board[i][board[0].length - 1] >= 'O'
+37:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):35:board[i][board[0].length - 1] == 'O' |==> false
+38:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):37:board[0].length - 1 |==> board[0].length % 1
+39:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):37:board[0].length - 1 |==> board[0].length * 1
+40:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):37:board[0].length - 1 |==> board[0].length + 1
+41:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):37:board[0].length - 1 |==> board[0].length / 1
+42:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):37:dfs(board, i, board[0].length - 1); |==> <NO-OP>
+43:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):41:i < board.length |==> i != board.length
+44:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):41:i < board.length |==> i <= board.length
+45:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):41:i < board.length |==> false
+46:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):42:j < board[0].length |==> j != board[0].length
+47:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):42:j < board[0].length |==> j <= board[0].length
+48:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):42:j < board[0].length |==> false
+49:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):43:board[i][j] == 'O' |==> board[i][j] <= 'O'
+50:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):43:board[i][j] == 'O' |==> board[i][j] >= 'O'
+51:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):43:board[i][j] == 'O' |==> false
+52:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):45:board[i][j] = 'X'; |==> <NO-OP>
+53:ROR:==(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):47:board[i][j] == '#' |==> board[i][j] <= '#'
+54:ROR:==(int,int):>=(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):47:board[i][j] == '#' |==> board[i][j] >= '#'
+55:ROR:==(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):47:board[i][j] == '#' |==> false
+56:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@solve(char[][]):49:board[i][j] = 'O'; |==> <NO-OP>
+57:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 |==> row != 0
+58:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 |==> row <= 0
+59:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 |==> false
+60:ROR:>=(int,int):==(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):57:row >= board.length |==> row == board.length
+61:ROR:>=(int,int):>(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):57:row >= board.length |==> row > board.length
+62:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):57:row >= board.length |==> true
+63:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length |==> row < 0 != row >= board.length
+64:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length |==> row < 0
+65:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):57:row < 0 || row >= board.length |==> row >= board.length
+66:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):57:row < 0 || row >= board.length |==> true
+67:ROR:<(int,int):!=(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):58:column < 0 |==> column != 0
+68:ROR:<(int,int):<=(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):58:column < 0 |==> column <= 0
+69:ROR:<(int,int):FALSE(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):58:column < 0 |==> false
+70:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 |==> (row < 0 || row >= board.length) != column < 0
+71:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 |==> row < 0 || row >= board.length
+72:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):58:row < 0 || row >= board.length || column < 0 |==> column < 0
+73:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):58:row < 0 || row >= board.length || column < 0 |==> true
+74:ROR:>=(int,int):==(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):59:column >= board[0].length |==> column == board[0].length
+75:ROR:>=(int,int):>(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):59:column >= board[0].length |==> column > board[0].length
+76:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):59:column >= board[0].length |==> true
+77:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 || column >= board[0].length |==> (row < 0 || row >= board.length || column < 0) != column >= board[0].length
+78:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 || column >= board[0].length |==> row < 0 || row >= board.length || column < 0
+79:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):59:row < 0 || row >= board.length || column < 0 || column >= board[0].length |==> column >= board[0].length
+80:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):59:row < 0 || row >= board.length || column < 0 || column >= board[0].length |==> true
+81:ROR:!=(int,int):<(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):60:board[row][column] != 'O' |==> board[row][column] < 'O'
+82:ROR:!=(int,int):>(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):60:board[row][column] != 'O' |==> board[row][column] > 'O'
+83:ROR:!=(int,int):TRUE(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):60:board[row][column] != 'O' |==> true
+84:COR:||(boolean,boolean):!=(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' |==> (row < 0 || row >= board.length || column < 0 || column >= board[0].length) != (board[row][column] != 'O')
+85:COR:||(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):56:row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' |==> row < 0 || row >= board.length || column < 0 || column >= board[0].length
+86:COR:||(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):60:row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' |==> board[row][column] != 'O'
+87:COR:||(boolean,boolean):TRUE(boolean,boolean):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):60:row < 0 || row >= board.length || column < 0 || column >= board[0].length || board[row][column] != 'O' |==> true
+88:STD:<RETURN>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):61:return; |==> <NO-OP>
+89:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):63:board[row][column] = '#'; |==> <NO-OP>
+90:AOR:+(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):64:row + 1 |==> row % 1
+91:AOR:+(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):64:row + 1 |==> row * 1
+92:AOR:+(int,int):-(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):64:row + 1 |==> row - 1
+93:AOR:+(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):64:row + 1 |==> row / 1
+94:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):64:dfs(board, row + 1, column); |==> <NO-OP>
+95:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):65:row - 1 |==> row % 1
+96:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):65:row - 1 |==> row * 1
+97:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):65:row - 1 |==> row + 1
+98:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):65:row - 1 |==> row / 1
+99:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):65:dfs(board, row - 1, column); |==> <NO-OP>
+100:AOR:+(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):66:column + 1 |==> column % 1
+101:AOR:+(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):66:column + 1 |==> column * 1
+102:AOR:+(int,int):-(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):66:column + 1 |==> column - 1
+103:AOR:+(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):66:column + 1 |==> column / 1
+104:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):66:dfs(board, row, column + 1); |==> <NO-OP>
+105:AOR:-(int,int):%(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):67:column - 1 |==> column % 1
+106:AOR:-(int,int):*(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):67:column - 1 |==> column * 1
+107:AOR:-(int,int):+(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):67:column - 1 |==> column + 1
+108:AOR:-(int,int):/(int,int):g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):67:column - 1 |==> column / 1
+109:STD:<CALL>:<NO-OP>:g0101_0200.s0130_surrounded_regions.Solution@dfs(char[][],int,int):67:dfs(board, row, column - 1); |==> <NO-OP>

@@ -1,0 +1,77 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):10:i < nums.length |==> i != nums.length
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):10:i < nums.length |==> i <= nums.length
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):10:i < nums.length |==> false
+4:ROR:<=(int,int):<(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 |==> nums[i] < 0
+5:ROR:<=(int,int):==(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 |==> nums[i] == 0
+6:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 |==> true
+7:ROR:>(int,int):!=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] > nums.length |==> nums[i] != nums.length
+8:ROR:>(int,int):>=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] > nums.length |==> nums[i] >= nums.length
+9:ROR:>(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] > nums.length |==> false
+10:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length |==> nums[i] <= 0 != nums[i] > nums.length
+11:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length |==> nums[i] <= 0
+12:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length |==> nums[i] > nums.length
+13:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length |==> true
+14:AOR:+(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:i + 1 |==> i % 1
+15:AOR:+(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:i + 1 |==> i * 1
+16:AOR:+(int,int):-(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:i + 1 |==> i - 1
+17:AOR:+(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:i + 1 |==> i / 1
+18:ROR:==(int,int):<=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] == i + 1 |==> nums[i] <= i + 1
+19:ROR:==(int,int):>=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] == i + 1 |==> nums[i] >= i + 1
+20:ROR:==(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] == i + 1 |==> false
+21:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length || nums[i] == i + 1 |==> (nums[i] <= 0 || nums[i] > nums.length) != (nums[i] == i + 1)
+22:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length || nums[i] == i + 1 |==> nums[i] <= 0 || nums[i] > nums.length
+23:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length || nums[i] == i + 1 |==> nums[i] == i + 1
+24:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):11:nums[i] <= 0 || nums[i] > nums.length || nums[i] == i + 1 |==> true
+25:STD:<CONT>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):12:continue; |==> <NO-OP>
+26:STD:<CALL>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):14:dfs(nums, nums[i]); |==> <NO-OP>
+27:ROR:<(int,int):!=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):16:i < nums.length |==> i != nums.length
+28:ROR:<(int,int):<=(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):16:i < nums.length |==> i <= nums.length
+29:ROR:<(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):16:i < nums.length |==> false
+30:AOR:+(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:i + 1 |==> i % 1
+31:AOR:+(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:i + 1 |==> i * 1
+32:AOR:+(int,int):-(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:i + 1 |==> i - 1
+33:AOR:+(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:i + 1 |==> i / 1
+34:ROR:!=(int,int):<(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:nums[i] != i + 1 |==> nums[i] < i + 1
+35:ROR:!=(int,int):>(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:nums[i] != i + 1 |==> nums[i] > i + 1
+36:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):17:nums[i] != i + 1 |==> true
+37:AOR:+(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):18:i + 1 |==> i % 1
+38:AOR:+(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):18:i + 1 |==> i * 1
+39:AOR:+(int,int):-(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):18:i + 1 |==> i - 1
+40:AOR:+(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):18:i + 1 |==> i / 1
+41:STD:<RETURN>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):18:return i + 1; |==> <NO-OP>
+42:AOR:+(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):21:nums.length + 1 |==> nums.length % 1
+43:AOR:+(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):21:nums.length + 1 |==> nums.length * 1
+44:AOR:+(int,int):-(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):21:nums.length + 1 |==> nums.length - 1
+45:AOR:+(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@firstMissingPositive(int[]):21:nums.length + 1 |==> nums.length / 1
+46:ROR:<=(int,int):<(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 |==> val < 0
+47:ROR:<=(int,int):==(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 |==> val == 0
+48:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 |==> true
+49:ROR:>(int,int):!=(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val > nums.length |==> val != nums.length
+50:ROR:>(int,int):>=(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val > nums.length |==> val >= nums.length
+51:ROR:>(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val > nums.length |==> false
+52:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length |==> val <= 0 != val > nums.length
+53:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length |==> val <= 0
+54:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length |==> val > nums.length
+55:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length |==> true
+56:AOR:-(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val - 1 |==> val % 1
+57:AOR:-(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val - 1 |==> val * 1
+58:AOR:-(int,int):+(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val - 1 |==> val + 1
+59:AOR:-(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val - 1 |==> val / 1
+60:ROR:==(int,int):<=(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val == nums[val - 1] |==> val <= nums[val - 1]
+61:ROR:==(int,int):>=(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val == nums[val - 1] |==> val >= nums[val - 1]
+62:ROR:==(int,int):FALSE(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val == nums[val - 1] |==> false
+63:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length || val == nums[val - 1] |==> (val <= 0 || val > nums.length) != (val == nums[val - 1])
+64:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length || val == nums[val - 1] |==> val <= 0 || val > nums.length
+65:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length || val == nums[val - 1] |==> val == nums[val - 1]
+66:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):25:val <= 0 || val > nums.length || val == nums[val - 1] |==> true
+67:STD:<RETURN>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):26:return; |==> <NO-OP>
+68:AOR:-(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):28:val - 1 |==> val % 1
+69:AOR:-(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):28:val - 1 |==> val * 1
+70:AOR:-(int,int):+(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):28:val - 1 |==> val + 1
+71:AOR:-(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):28:val - 1 |==> val / 1
+72:AOR:-(int,int):%(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):29:val - 1 |==> val % 1
+73:AOR:-(int,int):*(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):29:val - 1 |==> val * 1
+74:AOR:-(int,int):+(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):29:val - 1 |==> val + 1
+75:AOR:-(int,int):/(int,int):g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):29:val - 1 |==> val / 1
+76:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):29:nums[val - 1] = val; |==> <NO-OP>
+77:STD:<CALL>:<NO-OP>:g0001_0100.s0041_first_missing_positive.Solution@dfs(int[],int):30:dfs(nums, temp); |==> <NO-OP>

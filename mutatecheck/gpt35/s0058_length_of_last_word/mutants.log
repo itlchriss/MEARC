@@ -1,0 +1,22 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:s.length() - 1 |==> s.length() % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:s.length() - 1 |==> s.length() * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:s.length() - 1 |==> s.length() + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:s.length() - 1 |==> s.length() / 1
+5:ROR:>=(int,int):==(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:i >= 0 |==> i == 0
+6:ROR:>=(int,int):>(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:i >= 0 |==> i > 0
+7:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):23:i >= 0 |==> true
+8:ROR:==(int,int):<=(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' |==> ch <= ' '
+9:ROR:==(int,int):>=(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' |==> ch >= ' '
+10:ROR:==(int,int):FALSE(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' |==> false
+11:ROR:>(int,int):!=(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:len > 0 |==> len != 0
+12:ROR:>(int,int):>=(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:len > 0 |==> len >= 0
+13:ROR:>(int,int):FALSE(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:len > 0 |==> false
+14:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' && len > 0 |==> ch == ' ' == len > 0
+15:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' && len > 0 |==> false
+16:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' && len > 0 |==> ch == ' '
+17:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):25:ch == ' ' && len > 0 |==> len > 0
+18:STD:<BREAK>:<NO-OP>:g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):26:break; |==> <NO-OP>
+19:ROR:!=(int,int):<(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):27:ch != ' ' |==> ch < ' '
+20:ROR:!=(int,int):>(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):27:ch != ' ' |==> ch > ' '
+21:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):27:ch != ' ' |==> true
+22:STD:<INC>:<NO-OP>:g0001_0100.s0058_length_of_last_word.Solution@lengthOfLastWord(java.lang.String):28:len++; |==> <NO-OP>

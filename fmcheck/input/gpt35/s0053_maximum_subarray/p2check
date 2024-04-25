@@ -1,0 +1,14 @@
+./fmcheck/gpt35/s0053_maximum_subarray/Solution.java:10: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < nums.length; -10^4 <= nums[i] && nums[i] <= 10^4));
+                                                           ^
+  first type:  int
+  second type: boolean
+./fmcheck/gpt35/s0053_maximum_subarray/Solution.java:10: error: bad operand types for binary operator '^'
+//@ requires((\forall int i; 0 <= i && i < nums.length; -10^4 <= nums[i] && nums[i] <= 10^4));
+                                                                                         ^
+  first type:  boolean
+  second type: int
+./fmcheck/gpt35/s0053_maximum_subarray/Solution.java:11: error: incomparable types: int and boolean
+//@ ensures(\result == (\max int sum; (\exists int i, j; 0 <= i && i <= j && j < nums.length; sum == (\sum int k; i <= k && k <= j; nums[k]))));
+                    ^
+3 errors

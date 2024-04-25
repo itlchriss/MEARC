@@ -1,0 +1,6 @@
+1:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):16:sum += num; |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):17:maxi = Math.max(sum, maxi); |==> <NO-OP>
+3:ROR:<(int,int):!=(int,int):g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):18:sum < 0 |==> sum != 0
+4:ROR:<(int,int):<=(int,int):g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):18:sum < 0 |==> sum <= 0
+5:ROR:<(int,int):FALSE(int,int):g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):18:sum < 0 |==> false
+6:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0053_maximum_subarray.Solution@maxSubArray(int[]):20:sum = 0; |==> <NO-OP>

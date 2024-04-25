@@ -1,0 +1,94 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):18:i < 9 |==> i != 9
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):18:i < 9 |==> i <= 9
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):18:i < 9 |==> false
+4:ROR:<(int,int):!=(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):19:j < 9 |==> j != 9
+5:ROR:<(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):19:j < 9 |==> j <= 9
+6:ROR:<(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):19:j < 9 |==> false
+7:COR:<IDENTIFIER(boolean)>:TRUE:g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):21:res |==> false
+8:COR:<IDENTIFIER(boolean)>:FALSE:g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):21:res |==> true
+9:STD:<RETURN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@isValidSudoku(char[][]):22:return false; |==> <NO-OP>
+10:ROR:==(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):30:j == 0 |==> j <= 0
+11:ROR:==(int,int):>=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):30:j == 0 |==> j >= 0
+12:ROR:==(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):30:j == 0 |==> false
+13:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):31:j1 = 0; |==> <NO-OP>
+14:ROR:==(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):33:board[i][j] == '.' |==> board[i][j] <= '.'
+15:ROR:==(int,int):>=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):33:board[i][j] == '.' |==> board[i][j] >= '.'
+16:ROR:==(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):33:board[i][j] == '.' |==> false
+17:STD:<RETURN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):34:return true; |==> <NO-OP>
+18:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):36:board[i][j] - '0' |==> board[i][j] % '0'
+19:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):36:board[i][j] - '0' |==> board[i][j] * '0'
+20:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):36:board[i][j] - '0' |==> board[i][j] + '0'
+21:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):36:board[i][j] - '0' |==> board[i][j] / '0'
+22:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:val - 1 |==> val % 1
+23:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:val - 1 |==> val * 1
+24:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:val - 1 |==> val + 1
+25:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:val - 1 |==> val / 1
+26:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:1 << (val - 1) |==> 1 >> (val - 1)
+27:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:1 << (val - 1) |==> 1 >>> (val - 1)
+28:LOR:|(int,int):&(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:j1 | (1 << (val - 1)) |==> j1 & (1 << (val - 1))
+29:LOR:|(int,int):^(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:j1 | (1 << (val - 1)) |==> j1 ^ (1 << (val - 1))
+30:ROR:==(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:j1 == (j1 | (1 << (val - 1))) |==> j1 <= (j1 | (1 << (val - 1)))
+31:ROR:==(int,int):>=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:j1 == (j1 | (1 << (val - 1))) |==> j1 >= (j1 | (1 << (val - 1)))
+32:ROR:==(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):37:j1 == (j1 | (1 << (val - 1))) |==> false
+33:STD:<RETURN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):38:return false; |==> <NO-OP>
+34:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:val - 1 |==> val % 1
+35:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:val - 1 |==> val * 1
+36:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:val - 1 |==> val + 1
+37:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:val - 1 |==> val / 1
+38:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:1 << (val - 1) |==> 1 >> (val - 1)
+39:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:1 << (val - 1) |==> 1 >>> (val - 1)
+40:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):40:j1 |= 1 << (val - 1); |==> <NO-OP>
+41:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:val - 1 |==> val % 1
+42:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:val - 1 |==> val * 1
+43:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:val - 1 |==> val + 1
+44:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:val - 1 |==> val / 1
+45:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:1 << (val - 1) |==> 1 >> (val - 1)
+46:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:1 << (val - 1) |==> 1 >>> (val - 1)
+47:LOR:|(int,int):&(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:i1[j] | (1 << (val - 1)) |==> i1[j] & (1 << (val - 1))
+48:LOR:|(int,int):^(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:i1[j] | (1 << (val - 1)) |==> i1[j] ^ (1 << (val - 1))
+49:ROR:==(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:i1[j] == (i1[j] | (1 << (val - 1))) |==> i1[j] <= (i1[j] | (1 << (val - 1)))
+50:ROR:==(int,int):>=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:i1[j] == (i1[j] | (1 << (val - 1))) |==> i1[j] >= (i1[j] | (1 << (val - 1)))
+51:ROR:==(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):41:i1[j] == (i1[j] | (1 << (val - 1))) |==> false
+52:STD:<RETURN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):42:return false; |==> <NO-OP>
+53:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:val - 1 |==> val % 1
+54:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:val - 1 |==> val * 1
+55:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:val - 1 |==> val + 1
+56:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:val - 1 |==> val / 1
+57:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:1 << (val - 1) |==> 1 >> (val - 1)
+58:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:1 << (val - 1) |==> 1 >>> (val - 1)
+59:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):44:i1[j] |= 1 << (val - 1); |==> <NO-OP>
+60:AOR:/(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:i / 3 |==> i % 3
+61:AOR:/(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:i / 3 |==> i * 3
+62:AOR:/(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:i / 3 |==> i + 3
+63:AOR:/(int,int):-(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:i / 3 |==> i - 3
+64:AOR:*(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 |==> (i / 3) % 3
+65:AOR:*(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 |==> (i / 3) + 3
+66:AOR:*(int,int):-(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 |==> (i / 3) - 3
+67:AOR:*(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 |==> (i / 3) / 3
+68:AOR:/(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:j / 3 |==> j % 3
+69:AOR:/(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:j / 3 |==> j * 3
+70:AOR:/(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:j / 3 |==> j + 3
+71:AOR:/(int,int):-(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:j / 3 |==> j - 3
+72:AOR:+(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 + j / 3 |==> (i / 3) * 3 % (j / 3)
+73:AOR:+(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 + j / 3 |==> (i / 3) * 3 * (j / 3)
+74:AOR:+(int,int):-(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 + j / 3 |==> (i / 3) * 3 - j / 3
+75:AOR:+(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):45:(i / 3) * 3 + j / 3 |==> (i / 3) * 3 / (j / 3)
+76:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:val - 1 |==> val % 1
+77:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:val - 1 |==> val * 1
+78:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:val - 1 |==> val + 1
+79:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:val - 1 |==> val / 1
+80:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:1 << (val - 1) |==> 1 >> (val - 1)
+81:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:1 << (val - 1) |==> 1 >>> (val - 1)
+82:LOR:|(int,int):&(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:b1[b] | (1 << (val - 1)) |==> b1[b] & (1 << (val - 1))
+83:LOR:|(int,int):^(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:b1[b] | (1 << (val - 1)) |==> b1[b] ^ (1 << (val - 1))
+84:ROR:==(int,int):<=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:b1[b] == (b1[b] | (1 << (val - 1))) |==> b1[b] <= (b1[b] | (1 << (val - 1)))
+85:ROR:==(int,int):>=(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:b1[b] == (b1[b] | (1 << (val - 1))) |==> b1[b] >= (b1[b] | (1 << (val - 1)))
+86:ROR:==(int,int):FALSE(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):46:b1[b] == (b1[b] | (1 << (val - 1))) |==> false
+87:STD:<RETURN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):47:return false; |==> <NO-OP>
+88:AOR:-(int,int):%(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:val - 1 |==> val % 1
+89:AOR:-(int,int):*(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:val - 1 |==> val * 1
+90:AOR:-(int,int):+(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:val - 1 |==> val + 1
+91:AOR:-(int,int):/(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:val - 1 |==> val / 1
+92:SOR:<<(int,int):>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:1 << (val - 1) |==> 1 >> (val - 1)
+93:SOR:<<(int,int):>>>(int,int):g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:1 << (val - 1) |==> 1 >>> (val - 1)
+94:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0036_valid_sudoku.Solution@checkValid(char[][],int,int):49:b1[b] |= 1 << (val - 1); |==> <NO-OP>

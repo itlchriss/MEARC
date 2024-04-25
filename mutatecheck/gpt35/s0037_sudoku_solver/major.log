@@ -1,0 +1,782 @@
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.List, java.util.ArrayList, g0001_0100.s0037_sudoku_solver.Solution]]]]
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0037_sudoku_solver.Solution
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: solveSudoku([char[][] board])void
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.solveSudoku(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  r < 9 
+            mutant:                    r != 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.solveSudoku(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  r < 9 
+            mutant:                    r <= 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.solveSudoku(line 18, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  r < 9 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.solveSudoku(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  c < 9 
+            mutant:                    c != 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.solveSudoku(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  c < 9 
+            mutant:                    c <= 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.solveSudoku(line 19, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  c < 9 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.solveSudoku(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  board[r][c] == '.' 
+            mutant:                    board[r][c] <= '.'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.solveSudoku(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  board[r][c] == '.' 
+            mutant:                    board[r][c] >= '.'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.solveSudoku(line 20, col 33)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  board[r][c] == '.' 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 10: (STD) emptyCells.add(new int[]{r, c}); -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.solveSudoku(line 23, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  board[r][c] - '0' 
+            mutant:                    board[r][c] % '0'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.solveSudoku(line 23, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  board[r][c] - '0' 
+            mutant:                    board[r][c] * '0'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.solveSudoku(line 23, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  board[r][c] - '0' 
+            mutant:                    board[r][c] + '0'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.solveSudoku(line 23, col 43)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  board[r][c] - '0' 
+            mutant:                    board[r][c] / '0'
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.solveSudoku(line 24, col 36)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  r / 3 
+            mutant:                    r % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.solveSudoku(line 24, col 36)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  r / 3 
+            mutant:                    r * 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.solveSudoku(line 24, col 36)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  r / 3 
+            mutant:                    r + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.solveSudoku(line 24, col 36)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  r / 3 
+            mutant:                    r - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.solveSudoku(line 24, col 40)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  r / 3 * 3 
+            mutant:                    r / 3 % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.solveSudoku(line 24, col 40)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  r / 3 * 3 
+            mutant:                    r / 3 + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.solveSudoku(line 24, col 40)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  r / 3 * 3 
+            mutant:                    r / 3 - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.solveSudoku(line 24, col 40)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  r / 3 * 3 
+            mutant:                    r / 3 / 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.solveSudoku(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  c / 3 
+            mutant:                    c % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.solveSudoku(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  c / 3 
+            mutant:                    c * 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.solveSudoku(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  c / 3 
+            mutant:                    c + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.solveSudoku(line 24, col 48)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  c / 3 
+            mutant:                    c - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.solveSudoku(line 24, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  r / 3 * 3 + c / 3 
+            mutant:                    r / 3 * 3 % (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.solveSudoku(line 24, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  r / 3 * 3 + c / 3 
+            mutant:                    r / 3 * 3 * (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.solveSudoku(line 24, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  r / 3 * 3 + c / 3 
+            mutant:                    r / 3 * 3 - c / 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.solveSudoku(line 24, col 44)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  r / 3 * 3 + c / 3 
+            mutant:                    r / 3 * 3 / (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.solveSudoku(line 25, col 34)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.solveSudoku(line 25, col 34)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 33: (STD) rows[r] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.solveSudoku(line 26, col 34)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.solveSudoku(line 26, col 34)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 36: (STD) cols[c] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.solveSudoku(line 27, col 40)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.solveSudoku(line 27, col 40)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 39: (STD) boxes[boxPos] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 40: (STD) backtracking(board, 0); -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: backtracking([char[][] board, int i])boolean
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.backtracking(line 36, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  i == emptyCells.size() 
+            mutant:                    i <= emptyCells.size()
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.backtracking(line 36, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  i == emptyCells.size() 
+            mutant:                    i >= emptyCells.size()
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.backtracking(line 36, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  i == emptyCells.size() 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 44: (STD) return true; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.backtracking(line 42, col 25)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  r / 3 
+            mutant:                    r % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.backtracking(line 42, col 25)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  r / 3 
+            mutant:                    r * 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.backtracking(line 42, col 25)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  r / 3 
+            mutant:                    r + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.backtracking(line 42, col 25)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  r / 3 
+            mutant:                    r - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.backtracking(line 42, col 30)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  (r / 3) * 3 
+            mutant:                    (r / 3) % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.backtracking(line 42, col 30)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  (r / 3) * 3 
+            mutant:                    (r / 3) + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.backtracking(line 42, col 30)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  (r / 3) * 3 
+            mutant:                    (r / 3) - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.backtracking(line 42, col 30)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  (r / 3) * 3 
+            mutant:                    (r / 3) / 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.backtracking(line 42, col 38)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  c / 3 
+            mutant:                    c % 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.backtracking(line 42, col 38)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  c / 3 
+            mutant:                    c * 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.backtracking(line 42, col 38)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  c / 3 
+            mutant:                    c + 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.backtracking(line 42, col 38)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  c / 3 
+            mutant:                    c - 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.backtracking(line 42, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  (r / 3) * 3 + c / 3 
+            mutant:                    (r / 3) * 3 % (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.backtracking(line 42, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  (r / 3) * 3 + c / 3 
+            mutant:                    (r / 3) * 3 * (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.backtracking(line 42, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  (r / 3) * 3 + c / 3 
+            mutant:                    (r / 3) * 3 - c / 3
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.backtracking(line 42, col 34)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  (r / 3) * 3 + c / 3 
+            mutant:                    (r / 3) * 3 / (c / 3)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.backtracking(line 43, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  val <= 9 
+            mutant:                    val < 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.backtracking(line 43, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  val <= 9 
+            mutant:                    val == 9
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.backtracking(line 43, col 31)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  val <= 9 
+            mutant:                    true
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.backtracking(line 45, col 38)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) 
+            mutant:                    hasBit(rows[r], val) != hasBit(cols[c], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.backtracking(line 45, col 23)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) 
+            mutant:                    hasBit(rows[r], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.backtracking(line 45, col 47)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) 
+            mutant:                    hasBit(cols[c], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.backtracking(line 45, col 38)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) 
+            mutant:                    true
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.backtracking(line 45, col 62)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) || hasBit(boxes[boxPos], val) 
+            mutant:                    (hasBit(rows[r], val) || hasBit(cols[c], val)) != hasBit(boxes[boxPos], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.backtracking(line 45, col 38)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) || hasBit(boxes[boxPos], val) 
+            mutant:                    hasBit(rows[r], val) || hasBit(cols[c], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.backtracking(line 45, col 71)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) || hasBit(boxes[boxPos], val) 
+            mutant:                    hasBit(boxes[boxPos], val)
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.backtracking(line 45, col 62)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  hasBit(rows[r], val) || hasBit(cols[c], val) || hasBit(boxes[boxPos], val) 
+            mutant:                    true
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 72: (STD) continue; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.backtracking(line 48, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  '0' + val 
+            mutant:                    '0' % val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.backtracking(line 48, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  '0' + val 
+            mutant:                    '0' * val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.backtracking(line 48, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  '0' + val 
+            mutant:                    '0' - val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.backtracking(line 48, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  '0' + val 
+            mutant:                    '0' / val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 77: (STD) board[r][c] = (char)('0' + val); -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.backtracking(line 53, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.backtracking(line 53, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 80: (STD) rows[r] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.backtracking(line 54, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.backtracking(line 54, col 26)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 83: (STD) cols[c] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.backtracking(line 55, col 32)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.backtracking(line 55, col 32)
+            mutation operator group:   SOR
+            mutation operator:         <<(int,int) |==> >>>(int,int)
+            original:                  1 << val 
+            mutant:                    1 >>> val
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 86: (STD) boxes[boxPos] |= 1 << val; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.backtracking(line 56, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  i + 1 
+            mutant:                    i % 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.backtracking(line 56, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  i + 1 
+            mutant:                    i * 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.backtracking(line 56, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  i + 1 
+            mutant:                    i - 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.backtracking(line 56, col 39)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  i + 1 
+            mutant:                    i / 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.backtracking(line 56, col 29)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
+            original:                  backtracking(board, i + 1) 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.backtracking(line 56, col 29)
+            mutation operator group:   COR
+            mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
+            original:                  backtracking(board, i + 1) 
+            mutant:                    true
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 93: (STD) return true; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 94: (STD) rows[r] = oldRow; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 95: (STD) cols[c] = oldCol; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 96: (STD) boxes[boxPos] = oldBox; -> <NO-OP>
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: hasBit([int x, int k])boolean
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.hasBit(line 67, col 19)
+            mutation operator group:   SOR
+            mutation operator:         >>(int,int) |==> <<(int,int)
+            original:                  x >> k 
+            mutant:                    x << k
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.hasBit(line 67, col 19)
+            mutation operator group:   SOR
+            mutation operator:         >>(int,int) |==> >>>(int,int)
+            original:                  x >> k 
+            mutant:                    x >>> k
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.hasBit(line 67, col 24)
+            mutation operator group:   LOR
+            mutation operator:         &(int,int) |==> ^(int,int)
+            original:                  x >> k & 1 
+            mutant:                    x >> k ^ 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.hasBit(line 67, col 24)
+            mutation operator group:   LOR
+            mutation operator:         &(int,int) |==> |(int,int)
+            original:                  x >> k & 1 
+            mutant:                    x >> k | 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.hasBit(line 67, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  (x >> k & 1) == 1 
+            mutant:                    (x >> k & 1) <= 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.hasBit(line 67, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  (x >> k & 1) == 1 
+            mutant:                    (x >> k & 1) >= 1
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.hasBit(line 67, col 29)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  (x >> k & 1) == 1 
+            mutant:                    false
+[04/24 17:40:49] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 103 mutants (148 ms)

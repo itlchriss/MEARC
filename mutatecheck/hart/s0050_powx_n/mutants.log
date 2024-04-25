@@ -1,0 +1,26 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):13:n < 0 |==> n != 0
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):13:n < 0 |==> n <= 0
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):13:n < 0 |==> false
+4:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):14:nn *= -1; |==> <NO-OP>
+5:ROR:>(long,long):!=(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):16:nn > 0 |==> nn != 0
+6:ROR:>(long,long):>=(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):16:nn > 0 |==> nn >= 0
+7:ROR:>(long,long):FALSE(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):16:nn > 0 |==> false
+8:AOR:%(long,long):*(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 |==> nn * 2
+9:AOR:%(long,long):+(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 |==> nn + 2
+10:AOR:%(long,long):-(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 |==> nn - 2
+11:AOR:%(long,long):/(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 |==> nn / 2
+12:ROR:==(long,long):<=(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 == 1 |==> nn % 2 <= 1
+13:ROR:==(long,long):>=(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 == 1 |==> nn % 2 >= 1
+14:ROR:==(long,long):FALSE(long,long):g0001_0100.s0050_powx_n.Solution@myPow(double,int):17:nn % 2 == 1 |==> false
+15:STD:<DEC>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):18:nn--; |==> <NO-OP>
+16:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):19:res *= x; |==> <NO-OP>
+17:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):21:x *= x; |==> <NO-OP>
+18:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):22:nn /= 2; |==> <NO-OP>
+19:ROR:<(int,int):!=(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):25:n < 0 |==> n != 0
+20:ROR:<(int,int):<=(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):25:n < 0 |==> n <= 0
+21:ROR:<(int,int):FALSE(int,int):g0001_0100.s0050_powx_n.Solution@myPow(double,int):25:n < 0 |==> false
+22:AOR:/(double,double):%(double,double):g0001_0100.s0050_powx_n.Solution@myPow(double,int):26:1.0 / res |==> 1.0 % res
+23:AOR:/(double,double):*(double,double):g0001_0100.s0050_powx_n.Solution@myPow(double,int):26:1.0 / res |==> 1.0 * res
+24:AOR:/(double,double):+(double,double):g0001_0100.s0050_powx_n.Solution@myPow(double,int):26:1.0 / res |==> 1.0 + res
+25:AOR:/(double,double):-(double,double):g0001_0100.s0050_powx_n.Solution@myPow(double,int):26:1.0 / res |==> 1.0 - res
+26:STD:<RETURN>:<NO-OP>:g0001_0100.s0050_powx_n.Solution@myPow(double,int):26:return 1.0 / res; |==> <NO-OP>

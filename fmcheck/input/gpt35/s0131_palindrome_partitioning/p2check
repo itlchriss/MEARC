@@ -1,0 +1,27 @@
+./fmcheck/gpt35/s0131_palindrome_partitioning/Solution.java:12: error: cannot find symbol
+//@ ensures((\forall List<String> partition; \result.contains(partition); isPalindromePartition(s, partition)));
+                                                                          ^
+  symbol:   method isPalindromePartition(String,List<String>)
+  location: class Solution
+./fmcheck/gpt35/s0131_palindrome_partitioning/Solution.java:13: error: cannot find symbol
+//@ ensures((\forall List<String> partition1, partition2; \result.contains(partition1) && \result.contains(partition2); partition1 != partition2 ==> !isPalindromePartition(s, partition1) || !isPalindromePartition(s, partition2)));
+                                                                                                                                                      ^
+  symbol:   method isPalindromePartition(String,List<String>)
+  location: class Solution
+./fmcheck/gpt35/s0131_palindrome_partitioning/Solution.java:13: error: cannot find symbol
+//@ ensures((\forall List<String> partition1, partition2; \result.contains(partition1) && \result.contains(partition2); partition1 != partition2 ==> !isPalindromePartition(s, partition1) || !isPalindromePartition(s, partition2)));
+                                                                                                                                                                                               ^
+  symbol:   method isPalindromePartition(String,List<String>)
+  location: class Solution
+./fmcheck/gpt35/s0131_palindrome_partitioning/Solution.java:19: error: incompatible types: ArrayList<E> cannot be converted to List<String>
+        backtracking(res, new ArrayList<>(), s, 0);
+                          ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./fmcheck/gpt35/s0131_palindrome_partitioning/Solution.java:25: error: incompatible types: ArrayList<E> cannot be converted to List<String>
+            res.add(new ArrayList<>(currArr));
+                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+5 errors

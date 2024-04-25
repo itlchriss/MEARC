@@ -1,0 +1,754 @@
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0004_median_of_two_sorted_arrays.Solution]]]]
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0004_median_of_two_sorted_arrays.Solution
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: findMedianSortedArrays([int[] nums1, int[] nums2])double
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.findMedianSortedArrays(line 17, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  nums2.length < nums1.length 
+            mutant:                    nums2.length != nums1.length
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.findMedianSortedArrays(line 17, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  nums2.length < nums1.length 
+            mutant:                    nums2.length <= nums1.length
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.findMedianSortedArrays(line 17, col 26)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  nums2.length < nums1.length 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 4: (STD) return findMedianSortedArrays(nums2, nums1); -> <NO-OP>
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.findMedianSortedArrays(line 26, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  low <= high 
+            mutant:                    low < high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.findMedianSortedArrays(line 26, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  low <= high 
+            mutant:                    low == high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.findMedianSortedArrays(line 26, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  low <= high 
+            mutant:                    true
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.findMedianSortedArrays(line 27, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  low + high 
+            mutant:                    low % high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.findMedianSortedArrays(line 27, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  low + high 
+            mutant:                    low * high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.findMedianSortedArrays(line 27, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  low + high 
+            mutant:                    low - high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.findMedianSortedArrays(line 27, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  low + high 
+            mutant:                    low / high
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.findMedianSortedArrays(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  (low + high) / 2 
+            mutant:                    (low + high) % 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.findMedianSortedArrays(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  (low + high) / 2 
+            mutant:                    (low + high) * 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.findMedianSortedArrays(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  (low + high) / 2 
+            mutant:                    (low + high) + 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.findMedianSortedArrays(line 27, col 33)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  (low + high) / 2 
+            mutant:                    (low + high) - 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.findMedianSortedArrays(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 % n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.findMedianSortedArrays(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 * n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.findMedianSortedArrays(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 - n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.findMedianSortedArrays(line 28, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 / n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.findMedianSortedArrays(line 28, col 30)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n1 + n2 + 1 
+            mutant:                    (n1 + n2) % 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.findMedianSortedArrays(line 28, col 30)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n1 + n2 + 1 
+            mutant:                    (n1 + n2) * 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.findMedianSortedArrays(line 28, col 30)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n1 + n2 + 1 
+            mutant:                    n1 + n2 - 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.findMedianSortedArrays(line 28, col 30)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n1 + n2 + 1 
+            mutant:                    (n1 + n2) / 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 24: Solution.findMedianSortedArrays(line 28, col 35)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> %(int,int)
+            original:                  (n1 + n2 + 1) / 2 
+            mutant:                    (n1 + n2 + 1) % 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.findMedianSortedArrays(line 28, col 35)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> *(int,int)
+            original:                  (n1 + n2 + 1) / 2 
+            mutant:                    (n1 + n2 + 1) * 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.findMedianSortedArrays(line 28, col 35)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> +(int,int)
+            original:                  (n1 + n2 + 1) / 2 
+            mutant:                    (n1 + n2 + 1) + 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.findMedianSortedArrays(line 28, col 35)
+            mutation operator group:   AOR
+            mutation operator:         /(int,int) |==> -(int,int)
+            original:                  (n1 + n2 + 1) / 2 
+            mutant:                    (n1 + n2 + 1) - 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.findMedianSortedArrays(line 28, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  ((n1 + n2 + 1) / 2) - cut1 
+            mutant:                    ((n1 + n2 + 1) / 2) % cut1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.findMedianSortedArrays(line 28, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  ((n1 + n2 + 1) / 2) - cut1 
+            mutant:                    ((n1 + n2 + 1) / 2) * cut1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.findMedianSortedArrays(line 28, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  ((n1 + n2 + 1) / 2) - cut1 
+            mutant:                    ((n1 + n2 + 1) / 2) + cut1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.findMedianSortedArrays(line 28, col 40)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  ((n1 + n2 + 1) / 2) - cut1 
+            mutant:                    ((n1 + n2 + 1) / 2) / cut1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.findMedianSortedArrays(line 29, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  cut1 == 0 
+            mutant:                    cut1 <= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.findMedianSortedArrays(line 29, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  cut1 == 0 
+            mutant:                    cut1 >= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.findMedianSortedArrays(line 29, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  cut1 == 0 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.findMedianSortedArrays(line 29, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 % 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.findMedianSortedArrays(line 29, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 * 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.findMedianSortedArrays(line 29, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 + 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.findMedianSortedArrays(line 29, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 / 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.findMedianSortedArrays(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  cut2 == 0 
+            mutant:                    cut2 <= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.findMedianSortedArrays(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  cut2 == 0 
+            mutant:                    cut2 >= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.findMedianSortedArrays(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  cut2 == 0 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.findMedianSortedArrays(line 30, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  cut2 - 1 
+            mutant:                    cut2 % 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.findMedianSortedArrays(line 30, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  cut2 - 1 
+            mutant:                    cut2 * 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.findMedianSortedArrays(line 30, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  cut2 - 1 
+            mutant:                    cut2 + 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.findMedianSortedArrays(line 30, col 65)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  cut2 - 1 
+            mutant:                    cut2 / 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.findMedianSortedArrays(line 31, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  cut1 == n1 
+            mutant:                    cut1 <= n1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.findMedianSortedArrays(line 31, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  cut1 == n1 
+            mutant:                    cut1 >= n1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.findMedianSortedArrays(line 31, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  cut1 == n1 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.findMedianSortedArrays(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  cut2 == n2 
+            mutant:                    cut2 <= n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.findMedianSortedArrays(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  cut2 == n2 
+            mutant:                    cut2 >= n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.findMedianSortedArrays(line 32, col 27)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  cut2 == n2 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.findMedianSortedArrays(line 33, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  l1 <= r2 
+            mutant:                    l1 < r2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.findMedianSortedArrays(line 33, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  l1 <= r2 
+            mutant:                    l1 == r2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.findMedianSortedArrays(line 33, col 20)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  l1 <= r2 
+            mutant:                    true
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.findMedianSortedArrays(line 33, col 32)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> <(int,int)
+            original:                  l2 <= r1 
+            mutant:                    l2 < r1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.findMedianSortedArrays(line 33, col 32)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> ==(int,int)
+            original:                  l2 <= r1 
+            mutant:                    l2 == r1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.findMedianSortedArrays(line 33, col 32)
+            mutation operator group:   ROR
+            mutation operator:         <=(int,int) |==> TRUE(int,int)
+            original:                  l2 <= r1 
+            mutant:                    true
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.findMedianSortedArrays(line 33, col 26)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  l1 <= r2 && l2 <= r1 
+            mutant:                    l1 <= r2 == l2 <= r1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.findMedianSortedArrays(line 33, col 26)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  l1 <= r2 && l2 <= r1 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.findMedianSortedArrays(line 33, col 20)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  l1 <= r2 && l2 <= r1 
+            mutant:                    l1 <= r2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.findMedianSortedArrays(line 33, col 32)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  l1 <= r2 && l2 <= r1 
+            mutant:                    l2 <= r1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.findMedianSortedArrays(line 34, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 % n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.findMedianSortedArrays(line 34, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 * n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.findMedianSortedArrays(line 34, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 - n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.findMedianSortedArrays(line 34, col 25)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  n1 + n2 
+            mutant:                    n1 / n2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.findMedianSortedArrays(line 34, col 31)
+            mutation operator group:   AOR
+            mutation operator:         %(int,int) |==> *(int,int)
+            original:                  (n1 + n2) % 2 
+            mutant:                    (n1 + n2) * 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.findMedianSortedArrays(line 34, col 31)
+            mutation operator group:   AOR
+            mutation operator:         %(int,int) |==> +(int,int)
+            original:                  (n1 + n2) % 2 
+            mutant:                    (n1 + n2) + 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.findMedianSortedArrays(line 34, col 31)
+            mutation operator group:   AOR
+            mutation operator:         %(int,int) |==> -(int,int)
+            original:                  (n1 + n2) % 2 
+            mutant:                    (n1 + n2) - 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.findMedianSortedArrays(line 34, col 31)
+            mutation operator group:   AOR
+            mutation operator:         %(int,int) |==> /(int,int)
+            original:                  (n1 + n2) % 2 
+            mutant:                    (n1 + n2) / 2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.findMedianSortedArrays(line 34, col 35)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  (n1 + n2) % 2 == 0 
+            mutant:                    (n1 + n2) % 2 <= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.findMedianSortedArrays(line 34, col 35)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  (n1 + n2) % 2 == 0 
+            mutant:                    (n1 + n2) % 2 >= 0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.findMedianSortedArrays(line 34, col 35)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  (n1 + n2) % 2 == 0 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.findMedianSortedArrays(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  Math.max(l1, l2) + Math.min(r1, r2) 
+            mutant:                    Math.max(l1, l2) % Math.min(r1, r2)
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.findMedianSortedArrays(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  Math.max(l1, l2) + Math.min(r1, r2) 
+            mutant:                    Math.max(l1, l2) * Math.min(r1, r2)
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.findMedianSortedArrays(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  Math.max(l1, l2) + Math.min(r1, r2) 
+            mutant:                    Math.max(l1, l2) - Math.min(r1, r2)
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.findMedianSortedArrays(line 35, col 46)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  Math.max(l1, l2) + Math.min(r1, r2) 
+            mutant:                    Math.max(l1, l2) / Math.min(r1, r2)
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.findMedianSortedArrays(line 35, col 66)
+            mutation operator group:   AOR
+            mutation operator:         /(double,double) |==> %(double,double)
+            original:                  (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 
+            mutant:                    (Math.max(l1, l2) + Math.min(r1, r2)) % 2.0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.findMedianSortedArrays(line 35, col 66)
+            mutation operator group:   AOR
+            mutation operator:         /(double,double) |==> *(double,double)
+            original:                  (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 
+            mutant:                    (Math.max(l1, l2) + Math.min(r1, r2)) * 2.0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.findMedianSortedArrays(line 35, col 66)
+            mutation operator group:   AOR
+            mutation operator:         /(double,double) |==> +(double,double)
+            original:                  (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 
+            mutant:                    (Math.max(l1, l2) + Math.min(r1, r2)) + 2.0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.findMedianSortedArrays(line 35, col 66)
+            mutation operator group:   AOR
+            mutation operator:         /(double,double) |==> -(double,double)
+            original:                  (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0 
+            mutant:                    (Math.max(l1, l2) + Math.min(r1, r2)) - 2.0
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 81: (STD) return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0; -> <NO-OP>
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 82: (STD) return Math.max(l1, l2); -> <NO-OP>
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.findMedianSortedArrays(line 38, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> !=(int,int)
+            original:                  l1 > r2 
+            mutant:                    l1 != r2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.findMedianSortedArrays(line 38, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> >=(int,int)
+            original:                  l1 > r2 
+            mutant:                    l1 >= r2
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.findMedianSortedArrays(line 38, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >(int,int) |==> FALSE(int,int)
+            original:                  l1 > r2 
+            mutant:                    false
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.findMedianSortedArrays(line 39, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 % 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.findMedianSortedArrays(line 39, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 * 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.findMedianSortedArrays(line 39, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 + 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.findMedianSortedArrays(line 39, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  cut1 - 1 
+            mutant:                    cut1 / 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 90: (STD) high = cut1 - 1; -> <NO-OP>
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.findMedianSortedArrays(line 41, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  cut1 + 1 
+            mutant:                    cut1 % 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.findMedianSortedArrays(line 41, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  cut1 + 1 
+            mutant:                    cut1 * 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.findMedianSortedArrays(line 41, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  cut1 + 1 
+            mutant:                    cut1 - 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.findMedianSortedArrays(line 41, col 28)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  cut1 + 1 
+            mutant:                    cut1 / 1
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 95: (STD) low = cut1 + 1; -> <NO-OP>
+[04/24 17:40:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 95 mutants (109 ms)

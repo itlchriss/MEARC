@@ -1,0 +1,64 @@
+1:ROR:==(int,int):<=(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):10:s.charAt(0) == '0' |==> s.charAt(0) <= '0'
+2:ROR:==(int,int):>=(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):10:s.charAt(0) == '0' |==> s.charAt(0) >= '0'
+3:ROR:==(int,int):FALSE(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):10:s.charAt(0) == '0' |==> false
+4:STD:<RETURN>:<NO-OP>:g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):11:return 0; |==> <NO-OP>
+5:AOR:+(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):14:n + 1 |==> n % 1
+6:AOR:+(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):14:n + 1 |==> n * 1
+7:AOR:+(int,int):-(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):14:n + 1 |==> n - 1
+8:AOR:+(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):14:n + 1 |==> n / 1
+9:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):16:f[0] = 1; |==> <NO-OP>
+10:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):17:f[1] = 1; |==> <NO-OP>
+11:ROR:<=(int,int):<(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):18:i <= n |==> i < n
+12:ROR:<=(int,int):==(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):18:i <= n |==> i == n
+13:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):18:i <= n |==> true
+14:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:i - 1 |==> i % 1
+15:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:i - 1 |==> i * 1
+16:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:i - 1 |==> i + 1
+17:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:i - 1 |==> i / 1
+18:ROR:!=(int,int):<(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:s.charAt(i - 1) != '0' |==> s.charAt(i - 1) < '0'
+19:ROR:!=(int,int):>(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:s.charAt(i - 1) != '0' |==> s.charAt(i - 1) > '0'
+20:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):20:s.charAt(i - 1) != '0' |==> true
+21:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):23:i - 1 |==> i % 1
+22:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):23:i - 1 |==> i * 1
+23:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):23:i - 1 |==> i + 1
+24:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):23:i - 1 |==> i / 1
+25:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):23:f[i] = f[i - 1]; |==> <NO-OP>
+26:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 2 |==> i % 2
+27:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 2 |==> i * 2
+28:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 2 |==> i + 2
+29:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 2 |==> i / 2
+30:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 2) - '0' |==> s.charAt(i - 2) % '0'
+31:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 2) - '0' |==> s.charAt(i - 2) * '0'
+32:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 2) - '0' |==> s.charAt(i - 2) + '0'
+33:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 2) - '0' |==> s.charAt(i - 2) / '0'
+34:AOR:*(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 |==> (s.charAt(i - 2) - '0') % 10
+35:AOR:*(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 |==> (s.charAt(i - 2) - '0') + 10
+36:AOR:*(int,int):-(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 |==> (s.charAt(i - 2) - '0') - 10
+37:AOR:*(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 |==> (s.charAt(i - 2) - '0') / 10
+38:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 1 |==> i % 1
+39:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 1 |==> i * 1
+40:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 1 |==> i + 1
+41:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:i - 1 |==> i / 1
+42:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 1) - '0' |==> s.charAt(i - 1) % '0'
+43:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 1) - '0' |==> s.charAt(i - 1) * '0'
+44:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 1) - '0' |==> s.charAt(i - 1) + '0'
+45:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:s.charAt(i - 1) - '0' |==> s.charAt(i - 1) / '0'
+46:AOR:+(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') |==> (s.charAt(i - 2) - '0') * 10 % (s.charAt(i - 1) - '0')
+47:AOR:+(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') |==> (s.charAt(i - 2) - '0') * 10 * (s.charAt(i - 1) - '0')
+48:AOR:+(int,int):-(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') |==> (s.charAt(i - 2) - '0') * 10 - (s.charAt(i - 1) - '0')
+49:AOR:+(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):26:(s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') |==> (s.charAt(i - 2) - '0') * 10 / (s.charAt(i - 1) - '0')
+50:ROR:>=(int,int):==(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 |==> twodigits == 10
+51:ROR:>=(int,int):>(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 |==> twodigits > 10
+52:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 |==> true
+53:ROR:<=(int,int):<(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits <= 26 |==> twodigits < 26
+54:ROR:<=(int,int):==(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits <= 26 |==> twodigits == 26
+55:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits <= 26 |==> true
+56:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 && twodigits <= 26 |==> twodigits >= 10 == twodigits <= 26
+57:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 && twodigits <= 26 |==> false
+58:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 && twodigits <= 26 |==> twodigits >= 10
+59:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):27:twodigits >= 10 && twodigits <= 26 |==> twodigits <= 26
+60:AOR:-(int,int):%(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):28:i - 2 |==> i % 2
+61:AOR:-(int,int):*(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):28:i - 2 |==> i * 2
+62:AOR:-(int,int):+(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):28:i - 2 |==> i + 2
+63:AOR:-(int,int):/(int,int):g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):28:i - 2 |==> i / 2
+64:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0091_decode_ways.Solution@numDecodings(java.lang.String):28:f[i] += f[i - 2]; |==> <NO-OP>

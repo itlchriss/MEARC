@@ -18,9 +18,9 @@ do
     src=$(dirname "$entry")
     # mkdir -p $path/build
     filename=`echo $(dirname "$entry") | sed 's/.*\///' `
-    mkdir -p ./fmcheck/gpt35/$filename
-    $PYCMD ./scripts/insertjml.py $src llm > ./fmcheck/gpt35/$filename/Solution.java
+    mkdir -p ./fmcheck/input/gpt35/$filename
+    $PYCMD ./scripts/insertjml.py $src llm > ./fmcheck/input/gpt35/$filename/Solution.java
     # $OPENJML ./fmcheck/gpt35/$filename/Solution.java $BIGINT_FLAGS --timeout 180 > ./fmcheck/gpt35/$filename/check
-    $OPENJML ./fmcheck/gpt35/$filename/Solution.java --timeout 180 > ./fmcheck/gpt35/$filename/p2check
+    $OPENJML ./fmcheck/input/gpt35/$filename/Solution.java --timeout 180 > ./fmcheck/input/gpt35/$filename/p2check
 done
 

@@ -1,0 +1,7 @@
+./fmcheck/gpt35/s0090_subsets_ii/Solution.java:16: error: ')' expected
+//@ ensures((\forall List<Integer> subset; \result.contains(subset); (\forall int num; nums.contains(num); (subset.contains(num) <==> nums.contains(num))));
+                                                                                                                                                           ^
+./fmcheck/gpt35/s0090_subsets_ii/Solution.java:23: error: ')' expected
+//@ ensures((\forall List<Integer> subset; \result.contains(subset); (\forall int num; nums.contains(num); (subset);
+                                                                                                                   ^
+2 errors

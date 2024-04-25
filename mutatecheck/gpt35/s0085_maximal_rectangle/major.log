@@ -1,0 +1,812 @@
+[04/24 17:41:18] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0085_maximal_rectangle.Solution]]]]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0001_0100.s0085_maximal_rectangle.Solution
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: maximalRectangle([char[][] matrix])int
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.maximalRectangle(line 22, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  m == 0 
+            mutant:                    m <= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.maximalRectangle(line 22, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  m == 0 
+            mutant:                    m >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.maximalRectangle(line 22, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  m == 0 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.maximalRectangle(line 22, col 46)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  (n = matrix[0].length) == 0 
+            mutant:                    (n = matrix[0].length) <= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.maximalRectangle(line 22, col 46)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  (n = matrix[0].length) == 0 
+            mutant:                    (n = matrix[0].length) >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.maximalRectangle(line 22, col 20)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
+            original:                  m == 0 || (n = matrix[0].length) == 0 
+            mutant:                    m == 0 != ((n = matrix[0].length) == 0)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.maximalRectangle(line 22, col 46)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  m == 0 || (n = matrix[0].length) == 0 
+            mutant:                    (n = matrix[0].length) == 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.maximalRectangle(line 22, col 20)
+            mutation operator group:   COR
+            mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
+            original:                  m == 0 || (n = matrix[0].length) == 0 
+            mutant:                    true
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.maximalRectangle(line 29, col 23)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < m 
+            mutant:                    i != m
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.maximalRectangle(line 29, col 23)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < m 
+            mutant:                    i <= m
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.maximalRectangle(line 29, col 23)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < m 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 12
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.maximalRectangle(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  j < n 
+            mutant:                    j != n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 13
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.maximalRectangle(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  j < n 
+            mutant:                    j <= n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 14
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.maximalRectangle(line 30, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  j < n 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 15
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.maximalRectangle(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  matrix[i][j] == '0' 
+            mutant:                    matrix[i][j] <= '0'
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 16
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.maximalRectangle(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  matrix[i][j] == '0' 
+            mutant:                    matrix[i][j] >= '0'
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 17
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.maximalRectangle(line 31, col 34)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  matrix[i][j] == '0' 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 18
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 18: (STD) heights[j] = 0; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 19
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 19: (STD) heights[j] += 1; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 20
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 20: (STD) res = Math.max(res, largestRectangleArea(heights)); -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: largestRectangleArea([int[] heights])int
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 21
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.largestRectangleArea(line 56, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  n == 0 
+            mutant:                    n <= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 22
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.largestRectangleArea(line 56, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  n == 0 
+            mutant:                    n >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 23
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.largestRectangleArea(line 56, col 15)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  n == 0 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 24
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 24: (STD) return 0; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 25
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 25: (STD) nLeftGeq[0] = 1; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 26
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.largestRectangleArea(line 66, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < n 
+            mutant:                    i != n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 27
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.largestRectangleArea(line 66, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < n 
+            mutant:                    i <= n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 28
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 28: Solution.largestRectangleArea(line 66, col 27)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < n 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 29
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 29: (STD) nLeftGeq[i] = 1; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 30
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.largestRectangleArea(line 69, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx == 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 31
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.largestRectangleArea(line 69, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx > 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 32
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 32: Solution.largestRectangleArea(line 69, col 27)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    true
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 33
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 33: Solution.largestRectangleArea(line 69, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  heights[i] < heights[preIdx] 
+            mutant:                    heights[i] != heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 34
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.largestRectangleArea(line 69, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  heights[i] < heights[preIdx] 
+            mutant:                    heights[i] <= heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 35
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.largestRectangleArea(line 69, col 46)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  heights[i] < heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 36
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.largestRectangleArea(line 69, col 32)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] < heights[preIdx] 
+            mutant:                    preIdx >= 0 == heights[i] < heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 37
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.largestRectangleArea(line 69, col 32)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] < heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 38
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.largestRectangleArea(line 69, col 27)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] < heights[preIdx] 
+            mutant:                    preIdx >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 39
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.largestRectangleArea(line 69, col 46)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] < heights[preIdx] 
+            mutant:                    heights[i] < heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 40
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.largestRectangleArea(line 70, col 73)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + i 
+            mutant:                    nLeftGeq[preIdx] % i
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 41
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.largestRectangleArea(line 70, col 73)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + i 
+            mutant:                    nLeftGeq[preIdx] * i
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 42
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.largestRectangleArea(line 70, col 73)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nLeftGeq[preIdx] + i 
+            mutant:                    nLeftGeq[preIdx] - i
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 43
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.largestRectangleArea(line 70, col 73)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + i 
+            mutant:                    nLeftGeq[preIdx] / i
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 44
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.largestRectangleArea(line 70, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + i) % preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 45
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.largestRectangleArea(line 70, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + i) * preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 46
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.largestRectangleArea(line 70, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx 
+            mutant:                    nLeftGeq[preIdx] + i + preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 47
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.largestRectangleArea(line 70, col 77)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + i) / preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 48
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.largestRectangleArea(line 70, col 86)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + i - preIdx) % 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 49
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.largestRectangleArea(line 70, col 86)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + i - preIdx) * 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 50
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.largestRectangleArea(line 70, col 86)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx - 1 
+            mutant:                    nLeftGeq[preIdx] + i - preIdx + 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 51
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.largestRectangleArea(line 70, col 86)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + i - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + i - preIdx) / 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 52
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.largestRectangleArea(line 70, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + i - preIdx - 1) 
+            mutant:                    heights[preIdx] % (nLeftGeq[preIdx] + i - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 53
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.largestRectangleArea(line 70, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + i - preIdx - 1) 
+            mutant:                    heights[preIdx] + (nLeftGeq[preIdx] + i - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 54
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.largestRectangleArea(line 70, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + i - preIdx - 1) 
+            mutant:                    heights[preIdx] - (nLeftGeq[preIdx] + i - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 55
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.largestRectangleArea(line 70, col 53)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + i - preIdx - 1) 
+            mutant:                    heights[preIdx] / (nLeftGeq[preIdx] + i - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 56
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 56: (STD) res = Math.max(res, heights[preIdx] * (nLeftGeq[preIdx] + i - preIdx - 1)); -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 57
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 57: (STD) nLeftGeq[i] += nLeftGeq[preIdx]; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 58
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.largestRectangleArea(line 74, col 33)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx % nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 59
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 59: Solution.largestRectangleArea(line 74, col 33)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx * nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 60
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.largestRectangleArea(line 74, col 33)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx + nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 61
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.largestRectangleArea(line 74, col 33)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx / nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 62
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 62: (STD) preIdx = preIdx - nLeftGeq[preIdx]; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 63
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.largestRectangleArea(line 76, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx == 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 64
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.largestRectangleArea(line 76, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx > 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 65
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.largestRectangleArea(line 76, col 24)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    true
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 66
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.largestRectangleArea(line 76, col 43)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> <=(int,int)
+            original:                  heights[i] == heights[preIdx] 
+            mutant:                    heights[i] <= heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 67
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.largestRectangleArea(line 76, col 43)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> >=(int,int)
+            original:                  heights[i] == heights[preIdx] 
+            mutant:                    heights[i] >= heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 68
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.largestRectangleArea(line 76, col 43)
+            mutation operator group:   ROR
+            mutation operator:         ==(int,int) |==> FALSE(int,int)
+            original:                  heights[i] == heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 69
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.largestRectangleArea(line 76, col 29)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] == heights[preIdx] 
+            mutant:                    preIdx >= 0 == (heights[i] == heights[preIdx])
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 70
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 70: Solution.largestRectangleArea(line 76, col 29)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] == heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 71
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.largestRectangleArea(line 76, col 24)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] == heights[preIdx] 
+            mutant:                    preIdx >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 72
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.largestRectangleArea(line 76, col 43)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  preIdx >= 0 && heights[i] == heights[preIdx] 
+            mutant:                    heights[i] == heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 73
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 73: (STD) nLeftGeq[i] += nLeftGeq[preIdx]; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 74
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 74: (STD) preIdx = i; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 75
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.largestRectangleArea(line 85, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> ==(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx == 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 76
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.largestRectangleArea(line 85, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> >(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    preIdx > 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 77
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.largestRectangleArea(line 85, col 23)
+            mutation operator group:   ROR
+            mutation operator:         >=(int,int) |==> TRUE(int,int)
+            original:                  preIdx >= 0 
+            mutant:                    true
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 78
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.largestRectangleArea(line 85, col 33)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  0 < heights[preIdx] 
+            mutant:                    0 != heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 79
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.largestRectangleArea(line 85, col 33)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  0 < heights[preIdx] 
+            mutant:                    0 <= heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 80
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.largestRectangleArea(line 85, col 33)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  0 < heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 81
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.largestRectangleArea(line 85, col 28)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
+            original:                  preIdx >= 0 && 0 < heights[preIdx] 
+            mutant:                    preIdx >= 0 == 0 < heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 82
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.largestRectangleArea(line 85, col 28)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
+            original:                  preIdx >= 0 && 0 < heights[preIdx] 
+            mutant:                    false
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 83
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.largestRectangleArea(line 85, col 23)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
+            original:                  preIdx >= 0 && 0 < heights[preIdx] 
+            mutant:                    preIdx >= 0
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 84
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.largestRectangleArea(line 85, col 33)
+            mutation operator group:   COR
+            mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
+            original:                  preIdx >= 0 && 0 < heights[preIdx] 
+            mutant:                    0 < heights[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 85
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.largestRectangleArea(line 86, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + n 
+            mutant:                    nLeftGeq[preIdx] % n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 86
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.largestRectangleArea(line 86, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + n 
+            mutant:                    nLeftGeq[preIdx] * n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 87
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.largestRectangleArea(line 86, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  nLeftGeq[preIdx] + n 
+            mutant:                    nLeftGeq[preIdx] - n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 88
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.largestRectangleArea(line 86, col 69)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + n 
+            mutant:                    nLeftGeq[preIdx] / n
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 89
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.largestRectangleArea(line 86, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + n) % preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 90
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.largestRectangleArea(line 86, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + n) * preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 91
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.largestRectangleArea(line 86, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx 
+            mutant:                    nLeftGeq[preIdx] + n + preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 92
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.largestRectangleArea(line 86, col 73)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx 
+            mutant:                    (nLeftGeq[preIdx] + n) / preIdx
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 93
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.largestRectangleArea(line 86, col 82)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + n - preIdx) % 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 94
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.largestRectangleArea(line 86, col 82)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + n - preIdx) * 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 95
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 95: Solution.largestRectangleArea(line 86, col 82)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx - 1 
+            mutant:                    nLeftGeq[preIdx] + n - preIdx + 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 96
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 96: Solution.largestRectangleArea(line 86, col 82)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  nLeftGeq[preIdx] + n - preIdx - 1 
+            mutant:                    (nLeftGeq[preIdx] + n - preIdx) / 1
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 97
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.largestRectangleArea(line 86, col 49)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> %(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + n - preIdx - 1) 
+            mutant:                    heights[preIdx] % (nLeftGeq[preIdx] + n - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 98
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.largestRectangleArea(line 86, col 49)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> +(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + n - preIdx - 1) 
+            mutant:                    heights[preIdx] + (nLeftGeq[preIdx] + n - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 99
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.largestRectangleArea(line 86, col 49)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> -(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + n - preIdx - 1) 
+            mutant:                    heights[preIdx] - (nLeftGeq[preIdx] + n - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 100
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.largestRectangleArea(line 86, col 49)
+            mutation operator group:   AOR
+            mutation operator:         *(int,int) |==> /(int,int)
+            original:                  heights[preIdx] * (nLeftGeq[preIdx] + n - preIdx - 1) 
+            mutant:                    heights[preIdx] / (nLeftGeq[preIdx] + n - preIdx - 1)
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 101
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 101: (STD) res = Math.max(res, heights[preIdx] * (nLeftGeq[preIdx] + n - preIdx - 1)); -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 102
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.largestRectangleArea(line 88, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> %(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx % nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 103
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.largestRectangleArea(line 88, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> *(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx * nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 104
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 104: Solution.largestRectangleArea(line 88, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> +(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx + nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 105
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 105: Solution.largestRectangleArea(line 88, col 29)
+            mutation operator group:   AOR
+            mutation operator:         -(int,int) |==> /(int,int)
+            original:                  preIdx - nLeftGeq[preIdx] 
+            mutant:                    preIdx / nLeftGeq[preIdx]
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 106
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 106: (STD) preIdx = preIdx - nLeftGeq[preIdx]; -> <NO-OP>
+[04/24 17:41:19] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 106 mutants (142 ms)

@@ -1,0 +1,48 @@
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):18:i < n |==> i != n
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):18:i < n |==> i <= n
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):18:i < n |==> false
+4:ROR:==(int,int):<=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):20:ch == '(' |==> ch <= '('
+5:ROR:==(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):20:ch == '(' |==> ch >= '('
+6:ROR:==(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):20:ch == '(' |==> false
+7:STD:<INC>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):21:left++; |==> <NO-OP>
+8:STD:<INC>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):23:right++; |==> <NO-OP>
+9:ROR:>(int,int):!=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):25:right > left |==> right != left
+10:ROR:>(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):25:right > left |==> right >= left
+11:ROR:>(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):25:right > left |==> false
+12:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):26:left = 0; |==> <NO-OP>
+13:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):27:right = 0; |==> <NO-OP>
+14:ROR:==(int,int):<=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):29:left == right |==> left <= right
+15:ROR:==(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):29:left == right |==> left >= right
+16:ROR:==(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):29:left == right |==> false
+17:AOR:+(int,int):%(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):30:left + right |==> left % right
+18:AOR:+(int,int):*(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):30:left + right |==> left * right
+19:AOR:+(int,int):-(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):30:left + right |==> left - right
+20:AOR:+(int,int):/(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):30:left + right |==> left / right
+21:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):30:max = Math.max(max, left + right); |==> <NO-OP>
+22:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):33:left = 0; |==> <NO-OP>
+23:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):34:right = 0; |==> <NO-OP>
+24:AOR:-(int,int):%(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:n - 1 |==> n % 1
+25:AOR:-(int,int):*(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:n - 1 |==> n * 1
+26:AOR:-(int,int):+(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:n - 1 |==> n + 1
+27:AOR:-(int,int):/(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:n - 1 |==> n / 1
+28:ROR:>=(int,int):==(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:i >= 0 |==> i == 0
+29:ROR:>=(int,int):>(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:i >= 0 |==> i > 0
+30:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):35:i >= 0 |==> true
+31:ROR:==(int,int):<=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):37:ch == '(' |==> ch <= '('
+32:ROR:==(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):37:ch == '(' |==> ch >= '('
+33:ROR:==(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):37:ch == '(' |==> false
+34:STD:<INC>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):38:left++; |==> <NO-OP>
+35:STD:<INC>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):40:right++; |==> <NO-OP>
+36:ROR:>(int,int):!=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):42:left > right |==> left != right
+37:ROR:>(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):42:left > right |==> left >= right
+38:ROR:>(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):42:left > right |==> false
+39:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):43:left = 0; |==> <NO-OP>
+40:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):44:right = 0; |==> <NO-OP>
+41:ROR:==(int,int):<=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):46:left == right |==> left <= right
+42:ROR:==(int,int):>=(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):46:left == right |==> left >= right
+43:ROR:==(int,int):FALSE(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):46:left == right |==> false
+44:AOR:+(int,int):%(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):47:left + right |==> left % right
+45:AOR:+(int,int):*(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):47:left + right |==> left * right
+46:AOR:+(int,int):-(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):47:left + right |==> left - right
+47:AOR:+(int,int):/(int,int):g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):47:left + right |==> left / right
+48:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0032_longest_valid_parentheses.Solution@longestValidParentheses(java.lang.String):47:max = Math.max(max, left + right); |==> <NO-OP>

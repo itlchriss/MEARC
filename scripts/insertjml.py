@@ -51,7 +51,7 @@ def _dogpt35(srcpath: str, program: List[str]):
 def _dosym(srcpath: str, program: List[str]):
     import glob
     files = glob.glob(os.path.join(srcpath, "jml", "*.jml"))
-    print(files, file=sys.stderr)
+    # print(files, file=sys.stderr)
     tmp = []
     for file in files:
         with open(file, 'r') as fp:

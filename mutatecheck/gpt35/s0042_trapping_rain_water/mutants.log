@@ -1,0 +1,24 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):15:height.length - 1 |==> height.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):15:height.length - 1 |==> height.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):15:height.length - 1 |==> height.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):15:height.length - 1 |==> height.length / 1
+5:ROR:<(int,int):!=(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):18:l < r |==> l != r
+6:ROR:<(int,int):<=(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):18:l < r |==> l <= r
+7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):18:l < r |==> false
+8:ROR:<(int,int):!=(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):23:lVal < rVal |==> lVal != rVal
+9:ROR:<(int,int):<=(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):23:lVal < rVal |==> lVal <= rVal
+10:ROR:<(int,int):FALSE(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):23:lVal < rVal |==> false
+11:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):25:lowerWall = Math.max(lVal, lowerWall); |==> <NO-OP>
+12:AOR:-(int,int):%(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):31:lowerWall - lVal |==> lowerWall % lVal
+13:AOR:-(int,int):*(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):31:lowerWall - lVal |==> lowerWall * lVal
+14:AOR:-(int,int):+(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):31:lowerWall - lVal |==> lowerWall + lVal
+15:AOR:-(int,int):/(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):31:lowerWall - lVal |==> lowerWall / lVal
+16:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):31:res += lowerWall - lVal; |==> <NO-OP>
+17:STD:<INC>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):33:l++; |==> <NO-OP>
+18:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):36:lowerWall = Math.max(rVal, lowerWall); |==> <NO-OP>
+19:AOR:-(int,int):%(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):37:lowerWall - rVal |==> lowerWall % rVal
+20:AOR:-(int,int):*(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):37:lowerWall - rVal |==> lowerWall * rVal
+21:AOR:-(int,int):+(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):37:lowerWall - rVal |==> lowerWall + rVal
+22:AOR:-(int,int):/(int,int):g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):37:lowerWall - rVal |==> lowerWall / rVal
+23:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):37:res += lowerWall - rVal; |==> <NO-OP>
+24:STD:<DEC>:<NO-OP>:g0001_0100.s0042_trapping_rain_water.Solution@trap(int[]):38:r--; |==> <NO-OP>

@@ -1,0 +1,55 @@
+1:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums == null |==> false
+2:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums.length == 0 |==> nums.length <= 0
+3:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums.length == 0 |==> nums.length >= 0
+4:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums.length == 0 |==> false
+5:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums == null || nums.length == 0 |==> nums == null != (nums.length == 0)
+6:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums == null || nums.length == 0 |==> nums == null
+7:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums == null || nums.length == 0 |==> nums.length == 0
+8:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):9:nums == null || nums.length == 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):10:return 0; |==> <NO-OP>
+10:AOR:-(int,int):%(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):13:len - 1 |==> len % 1
+11:AOR:-(int,int):*(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):13:len - 1 |==> len * 1
+12:AOR:-(int,int):+(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):13:len - 1 |==> len + 1
+13:AOR:-(int,int):/(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):13:len - 1 |==> len / 1
+14:ROR:<(int,int):!=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):15:i < len |==> i != len
+15:ROR:<(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):15:i < len |==> i <= len
+16:ROR:<(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):15:i < len |==> false
+17:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):16:nums[i] == val |==> nums[i] <= val
+18:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):16:nums[i] == val |==> nums[i] >= val
+19:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):16:nums[i] == val |==> false
+20:STD:<INC>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):17:occurTimes++; |==> <NO-OP>
+21:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):18:j == i |==> j <= i
+22:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):18:j == i |==> j >= i
+23:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):18:j == i |==> false
+24:AOR:-(int,int):%(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):19:len - occurTimes |==> len % occurTimes
+25:AOR:-(int,int):*(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):19:len - occurTimes |==> len * occurTimes
+26:AOR:-(int,int):+(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):19:len - occurTimes |==> len + occurTimes
+27:AOR:-(int,int):/(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):19:len - occurTimes |==> len / occurTimes
+28:STD:<RETURN>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):19:return len - occurTimes; |==> <NO-OP>
+29:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):21:nums[j] == val |==> nums[j] <= val
+30:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):21:nums[j] == val |==> nums[j] >= val
+31:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):21:nums[j] == val |==> false
+32:STD:<DEC>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):22:j--; |==> <NO-OP>
+33:STD:<INC>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):23:occurTimes++; |==> <NO-OP>
+34:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):24:j == i |==> j <= i
+35:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):24:j == i |==> j >= i
+36:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):24:j == i |==> false
+37:AOR:-(int,int):%(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):25:len - occurTimes |==> len % occurTimes
+38:AOR:-(int,int):*(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):25:len - occurTimes |==> len * occurTimes
+39:AOR:-(int,int):+(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):25:len - occurTimes |==> len + occurTimes
+40:AOR:-(int,int):/(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):25:len - occurTimes |==> len / occurTimes
+41:STD:<RETURN>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):25:return len - occurTimes; |==> <NO-OP>
+42:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):28:nums[i] = nums[j]; |==> <NO-OP>
+43:STD:<DEC>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):29:j--; |==> <NO-OP>
+44:ROR:==(int,int):<=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):31:i == j |==> i <= j
+45:ROR:==(int,int):>=(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):31:i == j |==> i >= j
+46:ROR:==(int,int):FALSE(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):31:i == j |==> false
+47:AOR:-(int,int):%(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):32:len - occurTimes |==> len % occurTimes
+48:AOR:-(int,int):*(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):32:len - occurTimes |==> len * occurTimes
+49:AOR:-(int,int):+(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):32:len - occurTimes |==> len + occurTimes
+50:AOR:-(int,int):/(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):32:len - occurTimes |==> len / occurTimes
+51:STD:<RETURN>:<NO-OP>:g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):32:return len - occurTimes; |==> <NO-OP>
+52:AOR:-(int,int):%(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):35:len - occurTimes |==> len % occurTimes
+53:AOR:-(int,int):*(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):35:len - occurTimes |==> len * occurTimes
+54:AOR:-(int,int):+(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):35:len - occurTimes |==> len + occurTimes
+55:AOR:-(int,int):/(int,int):g0001_0100.s0027_remove_element.Solution@removeElement(int[],int):35:len - occurTimes |==> len / occurTimes

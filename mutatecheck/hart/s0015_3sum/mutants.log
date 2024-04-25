@@ -1,0 +1,90 @@
+1:STD:<CALL>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):17:Arrays.sort(nums); |==> <NO-OP>
+2:AOR:-(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:len - 2 |==> len % 2
+3:AOR:-(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:len - 2 |==> len * 2
+4:AOR:-(int,int):+(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:len - 2 |==> len + 2
+5:AOR:-(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:len - 2 |==> len / 2
+6:ROR:<(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:i < len - 2 |==> i != len - 2
+7:ROR:<(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:i < len - 2 |==> i <= len - 2
+8:ROR:<(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):22:i < len - 2 |==> false
+9:AOR:+(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):23:i + 1 |==> i % 1
+10:AOR:+(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):23:i + 1 |==> i * 1
+11:AOR:+(int,int):-(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):23:i + 1 |==> i - 1
+12:AOR:+(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):23:i + 1 |==> i / 1
+13:AOR:-(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):24:len - 1 |==> len % 1
+14:AOR:-(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):24:len - 1 |==> len * 1
+15:AOR:-(int,int):+(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):24:len - 1 |==> len + 1
+16:AOR:-(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):24:len - 1 |==> len / 1
+17:ROR:>(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):25:r > l |==> r != l
+18:ROR:>(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):25:r > l |==> r >= l
+19:ROR:>(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):25:r > l |==> false
+20:AOR:+(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] |==> nums[i] % nums[l]
+21:AOR:+(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] |==> nums[i] * nums[l]
+22:AOR:+(int,int):-(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] |==> nums[i] - nums[l]
+23:AOR:+(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] |==> nums[i] / nums[l]
+24:AOR:+(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] + nums[r] |==> (nums[i] + nums[l]) % nums[r]
+25:AOR:+(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] + nums[r] |==> (nums[i] + nums[l]) * nums[r]
+26:AOR:+(int,int):-(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] + nums[r] |==> nums[i] + nums[l] - nums[r]
+27:AOR:+(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):26:nums[i] + nums[l] + nums[r] |==> (nums[i] + nums[l]) / nums[r]
+28:ROR:<(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):27:sum < 0 |==> sum != 0
+29:ROR:<(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):27:sum < 0 |==> sum <= 0
+30:ROR:<(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):27:sum < 0 |==> false
+31:STD:<INC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):28:l++; |==> <NO-OP>
+32:ROR:>(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):29:sum > 0 |==> sum != 0
+33:ROR:>(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):29:sum > 0 |==> sum >= 0
+34:ROR:>(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):29:sum > 0 |==> false
+35:STD:<DEC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):30:r--; |==> <NO-OP>
+36:STD:<CALL>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):33:list.add(nums[i]); |==> <NO-OP>
+37:STD:<CALL>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):34:list.add(nums[l]); |==> <NO-OP>
+38:STD:<CALL>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):35:list.add(nums[r]); |==> <NO-OP>
+39:STD:<CALL>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):36:result.add(list); |==> <NO-OP>
+40:ROR:<(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r |==> l != r
+41:ROR:<(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r |==> l <= r
+42:ROR:<(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r |==> false
+43:AOR:+(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l + 1 |==> l % 1
+44:AOR:+(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l + 1 |==> l * 1
+45:AOR:+(int,int):-(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l + 1 |==> l - 1
+46:AOR:+(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l + 1 |==> l / 1
+47:ROR:==(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:nums[l + 1] == nums[l] |==> nums[l + 1] <= nums[l]
+48:ROR:==(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:nums[l + 1] == nums[l] |==> nums[l + 1] >= nums[l]
+49:ROR:==(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:nums[l + 1] == nums[l] |==> false
+50:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r && nums[l + 1] == nums[l] |==> l < r == (nums[l + 1] == nums[l])
+51:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r && nums[l + 1] == nums[l] |==> false
+52:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r && nums[l + 1] == nums[l] |==> l < r
+53:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):37:l < r && nums[l + 1] == nums[l] |==> nums[l + 1] == nums[l]
+54:STD:<INC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):38:l++; |==> <NO-OP>
+55:ROR:>(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l |==> r != l
+56:ROR:>(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l |==> r >= l
+57:ROR:>(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l |==> false
+58:AOR:-(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r - 1 |==> r % 1
+59:AOR:-(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r - 1 |==> r * 1
+60:AOR:-(int,int):+(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r - 1 |==> r + 1
+61:AOR:-(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r - 1 |==> r / 1
+62:ROR:==(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:nums[r - 1] == nums[r] |==> nums[r - 1] <= nums[r]
+63:ROR:==(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:nums[r - 1] == nums[r] |==> nums[r - 1] >= nums[r]
+64:ROR:==(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:nums[r - 1] == nums[r] |==> false
+65:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l && nums[r - 1] == nums[r] |==> r > l == (nums[r - 1] == nums[r])
+66:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l && nums[r - 1] == nums[r] |==> false
+67:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l && nums[r - 1] == nums[r] |==> r > l
+68:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):40:r > l && nums[r - 1] == nums[r] |==> nums[r - 1] == nums[r]
+69:STD:<DEC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):41:r--; |==> <NO-OP>
+70:STD:<INC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):43:l++; |==> <NO-OP>
+71:STD:<DEC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):44:r--; |==> <NO-OP>
+72:AOR:-(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:len - 1 |==> len % 1
+73:AOR:-(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:len - 1 |==> len * 1
+74:AOR:-(int,int):+(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:len - 1 |==> len + 1
+75:AOR:-(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:len - 1 |==> len / 1
+76:ROR:<(int,int):!=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 |==> i != len - 1
+77:ROR:<(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 |==> i <= len - 1
+78:ROR:<(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 |==> false
+79:AOR:+(int,int):%(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i + 1 |==> i % 1
+80:AOR:+(int,int):*(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i + 1 |==> i * 1
+81:AOR:+(int,int):-(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i + 1 |==> i - 1
+82:AOR:+(int,int):/(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i + 1 |==> i / 1
+83:ROR:==(int,int):<=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:nums[i + 1] == nums[i] |==> nums[i + 1] <= nums[i]
+84:ROR:==(int,int):>=(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:nums[i + 1] == nums[i] |==> nums[i + 1] >= nums[i]
+85:ROR:==(int,int):FALSE(int,int):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:nums[i + 1] == nums[i] |==> false
+86:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 && nums[i + 1] == nums[i] |==> i < len - 1 == (nums[i + 1] == nums[i])
+87:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 && nums[i + 1] == nums[i] |==> false
+88:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 && nums[i + 1] == nums[i] |==> i < len - 1
+89:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0015_3sum.Solution@threeSum(int[]):47:i < len - 1 && nums[i + 1] == nums[i] |==> nums[i + 1] == nums[i]
+90:STD:<INC>:<NO-OP>:g0001_0100.s0015_3sum.Solution@threeSum(int[]):48:i++; |==> <NO-OP>

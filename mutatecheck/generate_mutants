@@ -1,11 +1,32 @@
 MAJOR="../../major"
 GENSCRIPT="../scripts/createmutants.py"
 
-for folder in `find ./gpt35 -type d -name "s*"`
-do
-    echo $folder
-    $MAJOR/bin/major --mml $MAJOR/mml/all.mml.bin $folder/Solution.java
-    mv major.log $folder
-    mv mutants.log $folder
-    python $GENSCRIPT $folder
-done
+docreatemutants () {
+    type=$1
+    for folder in `find ../fmcheck/checked/$type -type d -name 's*' | sort`
+    do
+        problem=`echo $folder | sed 's/.*\///'`
+        mkdir -p ./$type/$problem
+        cp $folder/Solution.java ./$type/$problem
+        $MAJOR/bin/major --mml $MAJOR/mml/all.mml.bin ./$type/$problem/Solution.java
+        mv major.log ./$type/$problem
+        mv mutants.log ./$type/$problem
+        python $GENSCRIPT ./$type/$problem
+    done
+}
+
+rm -rf ./gpt35/*
+rm -rf ./hart/*
+
+docreatemutants 'gpt35'
+docreatemutants 'hart'
+
+
+# for folder in `find ./gpt35 -type d -name "s*"`
+# do
+#     echo $folder
+#     $MAJOR/bin/major --mml $MAJOR/mml/all.mml.bin $folder/Solution.java
+#     mv major.log $folder
+#     mv mutants.log $folder
+#     python $GENSCRIPT $folder
+# done

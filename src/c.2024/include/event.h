@@ -11,6 +11,8 @@ struct event {
     */
     // char *var;
     struct cstsymbol *cstptr;
+
+    
     struct queue *entities;
 };
 

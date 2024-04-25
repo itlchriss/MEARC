@@ -1,0 +1,113 @@
+1:AOR:*(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 % n
+2:AOR:*(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 + n
+3:AOR:*(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 - n
+4:AOR:*(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 / n
+5:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n |==> n % (2 * n)
+6:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n |==> n * (2 * n)
+7:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n |==> n - 2 * n
+8:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n |==> n / (2 * n)
+9:AOR:-(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 |==> (n + 2 * n) % 1
+10:AOR:-(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 |==> (n + 2 * n) * 1
+11:AOR:-(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 |==> n + 2 * n + 1
+12:AOR:-(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 |==> (n + 2 * n) / 1
+13:AOR:*(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 % n
+14:AOR:*(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 + n
+15:AOR:*(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 - n
+16:AOR:*(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:2 * n |==> 2 / n
+17:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n |==> (n + 2 * n - 1) % (2 * n)
+18:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n |==> (n + 2 * n - 1) * (2 * n)
+19:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n |==> n + 2 * n - 1 - 2 * n
+20:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n |==> (n + 2 * n - 1) / (2 * n)
+21:AOR:-(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n - 1 |==> (n + 2 * n - 1 + 2 * n) % 1
+22:AOR:-(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n - 1 |==> (n + 2 * n - 1 + 2 * n) * 1
+23:AOR:-(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n - 1 |==> n + 2 * n - 1 + 2 * n + 1
+24:AOR:-(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@solveNQueens(int):13:n + 2 * n - 1 + 2 * n - 1 |==> (n + 2 * n - 1 + 2 * n) / 1
+25:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@solveNQueens(int):16:helper(n, 0, pos, pos2, ans); |==> <NO-OP>
+26:ROR:==(int,int):<=(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):21:row == n |==> row <= n
+27:ROR:==(int,int):>=(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):21:row == n |==> row >= n
+28:ROR:==(int,int):FALSE(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):21:row == n |==> false
+29:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):22:construct(n, pos2, ans); |==> <NO-OP>
+30:STD:<RETURN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):23:return; |==> <NO-OP>
+31:ROR:<(int,int):!=(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):25:i < n |==> i != n
+32:ROR:<(int,int):<=(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):25:i < n |==> i <= n
+33:ROR:<(int,int):FALSE(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):25:i < n |==> false
+34:AOR:*(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:2 * n |==> 2 % n
+35:AOR:*(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:2 * n |==> 2 + n
+36:AOR:*(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:2 * n |==> 2 - n
+37:AOR:*(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:2 * n |==> 2 / n
+38:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n |==> n % (2 * n)
+39:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n |==> n * (2 * n)
+40:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n |==> n - 2 * n
+41:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n |==> n / (2 * n)
+42:AOR:-(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 |==> (n + 2 * n) % 1
+43:AOR:-(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 |==> (n + 2 * n) * 1
+44:AOR:-(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 |==> n + 2 * n + 1
+45:AOR:-(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 |==> (n + 2 * n) / 1
+46:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n |==> (n + 2 * n - 1) % n
+47:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n |==> (n + 2 * n - 1) * n
+48:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n |==> n + 2 * n - 1 - n
+49:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n |==> (n + 2 * n - 1) / n
+50:AOR:-(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 |==> (n + 2 * n - 1 + n) % 1
+51:AOR:-(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 |==> (n + 2 * n - 1 + n) * 1
+52:AOR:-(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 |==> n + 2 * n - 1 + n + 1
+53:AOR:-(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 |==> (n + 2 * n - 1 + n) / 1
+54:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i |==> (n + 2 * n - 1 + n - 1) % i
+55:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i |==> (n + 2 * n - 1 + n - 1) * i
+56:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i |==> n + 2 * n - 1 + n - 1 - i
+57:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i |==> (n + 2 * n - 1 + n - 1) / i
+58:AOR:-(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i - row |==> (n + 2 * n - 1 + n - 1 + i) % row
+59:AOR:-(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i - row |==> (n + 2 * n - 1 + n - 1 + i) * row
+60:AOR:-(int,int):+(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i - row |==> n + 2 * n - 1 + n - 1 + i + row
+61:AOR:-(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):26:n + 2 * n - 1 + n - 1 + i - row |==> (n + 2 * n - 1 + n - 1 + i) / row
+62:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i |==> n % i
+63:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i |==> n * i
+64:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i |==> n - i
+65:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i |==> n / i
+66:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i + row |==> (n + i) % row
+67:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i + row |==> (n + i) * row
+68:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i + row |==> n + i - row
+69:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:n + i + row |==> (n + i) / row
+70:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] |==> pos[i] != pos[n + i + row]
+71:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] |==> pos[i]
+72:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] |==> pos[n + i + row]
+73:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] |==> true
+74:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] || pos[index] |==> (pos[i] || pos[n + i + row]) != pos[index]
+75:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] || pos[index] |==> pos[i] || pos[n + i + row]
+76:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] || pos[index] |==> pos[index]
+77:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):27:pos[i] || pos[n + i + row] || pos[index] |==> true
+78:STD:<CONT>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):28:continue; |==> <NO-OP>
+79:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):30:pos[i] = true; |==> <NO-OP>
+80:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i |==> n % i
+81:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i |==> n * i
+82:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i |==> n - i
+83:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i |==> n / i
+84:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i + row |==> (n + i) % row
+85:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i + row |==> (n + i) * row
+86:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i + row |==> n + i - row
+87:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:n + i + row |==> (n + i) / row
+88:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):31:pos[n + i + row] = true; |==> <NO-OP>
+89:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):32:pos[index] = true; |==> <NO-OP>
+90:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):33:pos2[row] = i; |==> <NO-OP>
+91:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):34:row + 1 |==> row % 1
+92:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):34:row + 1 |==> row * 1
+93:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):34:row + 1 |==> row - 1
+94:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):34:row + 1 |==> row / 1
+95:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):34:helper(n, row + 1, pos, pos2, ans); |==> <NO-OP>
+96:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):35:pos[i] = false; |==> <NO-OP>
+97:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i |==> n % i
+98:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i |==> n * i
+99:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i |==> n - i
+100:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i |==> n / i
+101:AOR:+(int,int):%(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i + row |==> (n + i) % row
+102:AOR:+(int,int):*(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i + row |==> (n + i) * row
+103:AOR:+(int,int):-(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i + row |==> n + i - row
+104:AOR:+(int,int):/(int,int):g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:n + i + row |==> (n + i) / row
+105:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):36:pos[n + i + row] = false; |==> <NO-OP>
+106:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>):37:pos[index] = false; |==> <NO-OP>
+107:ROR:<(int,int):!=(int,int):g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):43:r < n |==> r != n
+108:ROR:<(int,int):<=(int,int):g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):43:r < n |==> r <= n
+109:ROR:<(int,int):FALSE(int,int):g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):43:r < n |==> false
+110:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):45:Arrays.fill(queenRow, '.'); |==> <NO-OP>
+111:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):46:queenRow[pos[r]] = 'Q'; |==> <NO-OP>
+112:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):47:sol.add(new String(queenRow)); |==> <NO-OP>
+113:STD:<CALL>:<NO-OP>:g0001_0100.s0051_n_queens.Solution@construct(int,int[],java.util.List<java.util.List<java.lang.String>>):49:ans.add(sol); |==> <NO-OP>

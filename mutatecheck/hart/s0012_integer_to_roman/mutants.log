@@ -1,0 +1,46 @@
+1:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@intToRoman(int):13:num = numerals(sb, num, m, ' ', ' ', 'M'); |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@intToRoman(int):14:num = numerals(sb, num, c, 'M', 'D', 'C'); |==> <NO-OP>
+3:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@intToRoman(int):15:num = numerals(sb, num, x, 'C', 'L', 'X'); |==> <NO-OP>
+4:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@intToRoman(int):16:numerals(sb, num, i, 'X', 'V', 'I'); |==> <NO-OP>
+5:AOR:/(int,int):%(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):21:num / one |==> num % one
+6:AOR:/(int,int):*(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):21:num / one |==> num * one
+7:AOR:/(int,int):+(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):21:num / one |==> num + one
+8:AOR:/(int,int):-(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):21:num / one |==> num - one
+9:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):24:sb.append(cOne); |==> <NO-OP>
+10:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):25:sb.append(cTen); |==> <NO-OP>
+11:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):26:break; |==> <NO-OP>
+12:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):28:sb.append(cFive); |==> <NO-OP>
+13:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):29:sb.append(cOne); |==> <NO-OP>
+14:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):30:sb.append(cOne); |==> <NO-OP>
+15:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):31:sb.append(cOne); |==> <NO-OP>
+16:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):32:break; |==> <NO-OP>
+17:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):34:sb.append(cFive); |==> <NO-OP>
+18:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):35:sb.append(cOne); |==> <NO-OP>
+19:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):36:sb.append(cOne); |==> <NO-OP>
+20:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):37:break; |==> <NO-OP>
+21:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):39:sb.append(cFive); |==> <NO-OP>
+22:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):40:sb.append(cOne); |==> <NO-OP>
+23:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):41:break; |==> <NO-OP>
+24:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):43:sb.append(cFive); |==> <NO-OP>
+25:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):44:break; |==> <NO-OP>
+26:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):46:sb.append(cOne); |==> <NO-OP>
+27:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):47:sb.append(cFive); |==> <NO-OP>
+28:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):48:break; |==> <NO-OP>
+29:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):50:sb.append(cOne); |==> <NO-OP>
+30:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):51:sb.append(cOne); |==> <NO-OP>
+31:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):52:sb.append(cOne); |==> <NO-OP>
+32:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):53:break; |==> <NO-OP>
+33:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):55:sb.append(cOne); |==> <NO-OP>
+34:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):56:sb.append(cOne); |==> <NO-OP>
+35:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):57:break; |==> <NO-OP>
+36:STD:<CALL>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):59:sb.append(cOne); |==> <NO-OP>
+37:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):60:break; |==> <NO-OP>
+38:STD:<BREAK>:<NO-OP>:g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):62:break; |==> <NO-OP>
+39:AOR:*(int,int):%(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:div * one |==> div % one
+40:AOR:*(int,int):+(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:div * one |==> div + one
+41:AOR:*(int,int):-(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:div * one |==> div - one
+42:AOR:*(int,int):/(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:div * one |==> div / one
+43:AOR:-(int,int):%(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:num - (div * one) |==> num % (div * one)
+44:AOR:-(int,int):*(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:num - (div * one) |==> num * (div * one)
+45:AOR:-(int,int):+(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:num - (div * one) |==> num + (div * one)
+46:AOR:-(int,int):/(int,int):g0001_0100.s0012_integer_to_roman.Solution@numerals(java.lang.StringBuilder,int,int,char,char,char):64:num - (div * one) |==> num / (div * one)

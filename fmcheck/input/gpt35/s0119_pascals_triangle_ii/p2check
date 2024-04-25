@@ -1,0 +1,7 @@
+./fmcheck/gpt35/s0119_pascals_triangle_ii/Solution.java:12: error: A \result expression is not allowed in an old environment
+//@ ensures((\forall int i; 0 <= i && i < \result.size() - 1; \result.get(i) == \old(\result.get(i)) + \old(\result.get(i + 1))));
+                                                                                     ^
+./fmcheck/gpt35/s0119_pascals_triangle_ii/Solution.java:12: error: A \result expression is not allowed in an old environment
+//@ ensures((\forall int i; 0 <= i && i < \result.size() - 1; \result.get(i) == \old(\result.get(i)) + \old(\result.get(i + 1))));
+                                                                                                            ^
+2 errors

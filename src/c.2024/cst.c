@@ -37,6 +37,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->datatype->types = initqueue();
     new->datatype->element_datatype = NULL;
     new->datatype->relative_datatype = NULL;
+    new->astptr = NULL;
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;

@@ -1,0 +1,66 @@
+1:ROR:<(int,int):!=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):9:text.length() < text2.length() |==> text.length() != text2.length()
+2:ROR:<(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):9:text.length() < text2.length() |==> text.length() <= text2.length()
+3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):9:text.length() < text2.length() |==> false
+4:STD:<RETURN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):10:return 0; |==> <NO-OP>
+5:ROR:==(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):12:text.length() == text2.length() |==> text.length() <= text2.length()
+6:ROR:==(int,int):>=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):12:text.length() == text2.length() |==> text.length() >= text2.length()
+7:ROR:==(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):12:text.length() == text2.length() |==> false
+8:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):13:text.equals(text2) |==> false
+9:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):13:text.equals(text2) |==> true
+10:STD:<RETURN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):13:return (text.equals(text2) ? 1 : 0); |==> <NO-OP>
+11:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() |==> text.length() % text2.length()
+12:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() |==> text.length() * text2.length()
+13:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() |==> text.length() + text2.length()
+14:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() |==> text.length() / text2.length()
+15:AOR:+(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() + 2 |==> (text.length() - text2.length()) % 2
+16:AOR:+(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() + 2 |==> (text.length() - text2.length()) * 2
+17:AOR:+(int,int):-(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() + 2 |==> text.length() - text2.length() - 2
+18:AOR:+(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):15:text.length() - text2.length() + 2 |==> (text.length() - text2.length()) / 2
+19:ROR:<(int,int):!=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):21:i < text2.length() |==> i != text2.length()
+20:ROR:<(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):21:i < text2.length() |==> i <= text2.length()
+21:ROR:<(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):21:i < text2.length() |==> false
+22:ROR:<(int,int):!=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):23:j < move |==> j != move
+23:ROR:<(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):23:j < move |==> j <= move
+24:ROR:<(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):23:j < move |==> false
+25:AOR:+(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j |==> i % j
+26:AOR:+(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j |==> i * j
+27:AOR:+(int,int):-(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j |==> i - j
+28:AOR:+(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j |==> i / j
+29:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j - 1 |==> (i + j) % 1
+30:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j - 1 |==> (i + j) * 1
+31:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j - 1 |==> i + j + 1
+32:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:i + j - 1 |==> (i + j) / 1
+33:ROR:==(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:text2.charAt(i) == text.charAt(i + j - 1) |==> text2.charAt(i) <= text.charAt(i + j - 1)
+34:ROR:==(int,int):>=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:text2.charAt(i) == text.charAt(i + j - 1) |==> text2.charAt(i) >= text.charAt(i + j - 1)
+35:ROR:==(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):24:text2.charAt(i) == text.charAt(i + j - 1) |==> false
+36:COR:<IDENTIFIER(boolean)>:TRUE:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):25:firstMatch |==> false
+37:COR:<IDENTIFIER(boolean)>:FALSE:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):25:firstMatch |==> true
+38:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):28:k = j; |==> <NO-OP>
+39:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):29:firstMatch = false; |==> <NO-OP>
+40:ROR:==(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):31:i == 0 |==> i <= 0
+41:ROR:==(int,int):>=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):31:i == 0 |==> i >= 0
+42:ROR:==(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):31:i == 0 |==> false
+43:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):32:dp[j] = 1; |==> <NO-OP>
+44:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):34:j - 1 |==> j % 1
+45:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):34:j - 1 |==> j * 1
+46:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):34:j - 1 |==> j + 1
+47:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):34:j - 1 |==> j / 1
+48:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):34:dp[j] += dp[j - 1]; |==> <NO-OP>
+49:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):36:j - 1 |==> j % 1
+50:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):36:j - 1 |==> j * 1
+51:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):36:j - 1 |==> j + 1
+52:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):36:j - 1 |==> j / 1
+53:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):36:dp[j] = dp[j - 1]; |==> <NO-OP>
+54:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:move - 1 |==> move % 1
+55:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:move - 1 |==> move * 1
+56:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:move - 1 |==> move + 1
+57:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:move - 1 |==> move / 1
+58:ROR:==(int,int):<=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:dp[move - 1] == 0 |==> dp[move - 1] <= 0
+59:ROR:==(int,int):>=(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:dp[move - 1] == 0 |==> dp[move - 1] >= 0
+60:ROR:==(int,int):FALSE(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):40:dp[move - 1] == 0 |==> false
+61:STD:<RETURN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):41:return 0; |==> <NO-OP>
+62:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):43:j = k; |==> <NO-OP>
+63:AOR:-(int,int):%(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):45:move - 1 |==> move % 1
+64:AOR:-(int,int):*(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):45:move - 1 |==> move * 1
+65:AOR:-(int,int):+(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):45:move - 1 |==> move + 1
+66:AOR:-(int,int):/(int,int):g0101_0200.s0115_distinct_subsequences.Solution@numDistinct(java.lang.String,java.lang.String):45:move - 1 |==> move / 1

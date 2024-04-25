@@ -1,0 +1,30 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):15:height.length - 1 |==> height.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):15:height.length - 1 |==> height.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):15:height.length - 1 |==> height.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):15:height.length - 1 |==> height.length / 1
+5:ROR:<(int,int):!=(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):16:left < right |==> left != right
+6:ROR:<(int,int):<=(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):16:left < right |==> left <= right
+7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):16:left < right |==> false
+8:ROR:<(int,int):!=(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):17:height[left] < height[right] |==> height[left] != height[right]
+9:ROR:<(int,int):<=(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):17:height[left] < height[right] |==> height[left] <= height[right]
+10:ROR:<(int,int):FALSE(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):17:height[left] < height[right] |==> false
+11:AOR:-(int,int):%(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:right - left |==> right % left
+12:AOR:-(int,int):*(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:right - left |==> right * left
+13:AOR:-(int,int):+(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:right - left |==> right + left
+14:AOR:-(int,int):/(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:right - left |==> right / left
+15:AOR:*(int,int):%(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:height[left] * (right - left) |==> height[left] % (right - left)
+16:AOR:*(int,int):+(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:height[left] * (right - left) |==> height[left] + (right - left)
+17:AOR:*(int,int):-(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:height[left] * (right - left) |==> height[left] - (right - left)
+18:AOR:*(int,int):/(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:height[left] * (right - left) |==> height[left] / (right - left)
+19:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):18:maxArea = Math.max(maxArea, height[left] * (right - left)); |==> <NO-OP>
+20:STD:<INC>:<NO-OP>:g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):19:left++; |==> <NO-OP>
+21:AOR:-(int,int):%(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:right - left |==> right % left
+22:AOR:-(int,int):*(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:right - left |==> right * left
+23:AOR:-(int,int):+(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:right - left |==> right + left
+24:AOR:-(int,int):/(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:right - left |==> right / left
+25:AOR:*(int,int):%(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:height[right] * (right - left) |==> height[right] % (right - left)
+26:AOR:*(int,int):+(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:height[right] * (right - left) |==> height[right] + (right - left)
+27:AOR:*(int,int):-(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:height[right] * (right - left) |==> height[right] - (right - left)
+28:AOR:*(int,int):/(int,int):g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:height[right] * (right - left) |==> height[right] / (right - left)
+29:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):21:maxArea = Math.max(maxArea, height[right] * (right - left)); |==> <NO-OP>
+30:STD:<DEC>:<NO-OP>:g0001_0100.s0011_container_with_most_water.Solution@maxArea(int[]):22:right--; |==> <NO-OP>

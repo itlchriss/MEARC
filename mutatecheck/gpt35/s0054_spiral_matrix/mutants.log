@@ -1,0 +1,52 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):22:matrix.length - 1 |==> matrix.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):22:matrix.length - 1 |==> matrix.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):22:matrix.length - 1 |==> matrix.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):22:matrix.length - 1 |==> matrix.length / 1
+5:AOR:-(int,int):%(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):23:matrix[0].length - 1 |==> matrix[0].length % 1
+6:AOR:-(int,int):*(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):23:matrix[0].length - 1 |==> matrix[0].length * 1
+7:AOR:-(int,int):+(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):23:matrix[0].length - 1 |==> matrix[0].length + 1
+8:AOR:-(int,int):/(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):23:matrix[0].length - 1 |==> matrix[0].length / 1
+9:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR |==> r < bigR
+10:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR |==> r == bigR
+11:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR |==> true
+12:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:c <= bigC |==> c < bigC
+13:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:c <= bigC |==> c == bigC
+14:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:c <= bigC |==> true
+15:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR && c <= bigC |==> r <= bigR == c <= bigC
+16:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR && c <= bigC |==> false
+17:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR && c <= bigC |==> r <= bigR
+18:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):24:r <= bigR && c <= bigC |==> c <= bigC
+19:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):25:i <= bigC |==> i < bigC
+20:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):25:i <= bigC |==> i == bigC
+21:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):25:i <= bigC |==> true
+22:STD:<CALL>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):26:list.add(matrix[r][i]); |==> <NO-OP>
+23:STD:<INC>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):28:r++; |==> <NO-OP>
+24:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):29:i <= bigR |==> i < bigR
+25:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):29:i <= bigR |==> i == bigR
+26:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):29:i <= bigR |==> true
+27:STD:<CALL>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):30:list.add(matrix[i][bigC]); |==> <NO-OP>
+28:STD:<DEC>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):32:bigC--; |==> <NO-OP>
+29:ROR:>=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c |==> i == c
+30:ROR:>=(int,int):>(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c |==> i > c
+31:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c |==> true
+32:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:r <= bigR |==> r < bigR
+33:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:r <= bigR |==> r == bigR
+34:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:r <= bigR |==> true
+35:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c && r <= bigR |==> i >= c == r <= bigR
+36:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c && r <= bigR |==> false
+37:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c && r <= bigR |==> i >= c
+38:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):33:i >= c && r <= bigR |==> r <= bigR
+39:STD:<CALL>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):34:list.add(matrix[bigR][i]); |==> <NO-OP>
+40:STD:<DEC>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):36:bigR--; |==> <NO-OP>
+41:ROR:>=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r |==> i == r
+42:ROR:>=(int,int):>(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r |==> i > r
+43:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r |==> true
+44:ROR:<=(int,int):<(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:c <= bigC |==> c < bigC
+45:ROR:<=(int,int):==(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:c <= bigC |==> c == bigC
+46:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:c <= bigC |==> true
+47:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r && c <= bigC |==> i >= r == c <= bigC
+48:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r && c <= bigC |==> false
+49:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r && c <= bigC |==> i >= r
+50:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):37:i >= r && c <= bigC |==> c <= bigC
+51:STD:<CALL>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):38:list.add(matrix[i][c]); |==> <NO-OP>
+52:STD:<INC>:<NO-OP>:g0001_0100.s0054_spiral_matrix.Solution@spiralOrder(int[][]):40:c++; |==> <NO-OP>

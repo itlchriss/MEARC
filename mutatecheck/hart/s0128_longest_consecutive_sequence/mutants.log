@@ -1,0 +1,35 @@
+1:ROR:==(int,int):<=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):13:nums.length == 0 |==> nums.length <= 0
+2:ROR:==(int,int):>=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):13:nums.length == 0 |==> nums.length >= 0
+3:ROR:==(int,int):FALSE(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):13:nums.length == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):14:return 0; |==> <NO-OP>
+5:STD:<CALL>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):16:Arrays.sort(nums); |==> <NO-OP>
+6:AOR:-(int,int):%(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:nums.length - 1 |==> nums.length % 1
+7:AOR:-(int,int):*(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:nums.length - 1 |==> nums.length * 1
+8:AOR:-(int,int):+(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:nums.length - 1 |==> nums.length + 1
+9:AOR:-(int,int):/(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:nums.length - 1 |==> nums.length / 1
+10:ROR:<(int,int):!=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:i < nums.length - 1 |==> i != nums.length - 1
+11:ROR:<(int,int):<=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:i < nums.length - 1 |==> i <= nums.length - 1
+12:ROR:<(int,int):FALSE(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):19:i < nums.length - 1 |==> false
+13:AOR:+(int,int):%(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:i + 1 |==> i % 1
+14:AOR:+(int,int):*(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:i + 1 |==> i * 1
+15:AOR:+(int,int):-(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:i + 1 |==> i - 1
+16:AOR:+(int,int):/(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:i + 1 |==> i / 1
+17:AOR:+(int,int):%(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i] + 1 |==> nums[i] % 1
+18:AOR:+(int,int):*(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i] + 1 |==> nums[i] * 1
+19:AOR:+(int,int):-(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i] + 1 |==> nums[i] - 1
+20:AOR:+(int,int):/(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i] + 1 |==> nums[i] / 1
+21:ROR:==(int,int):<=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i + 1] == nums[i] + 1 |==> nums[i + 1] <= nums[i] + 1
+22:ROR:==(int,int):>=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i + 1] == nums[i] + 1 |==> nums[i + 1] >= nums[i] + 1
+23:ROR:==(int,int):FALSE(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):20:nums[i + 1] == nums[i] + 1 |==> false
+24:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):21:thsMax += 1; |==> <NO-OP>
+25:STD:<CONT>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):22:continue; |==> <NO-OP>
+26:AOR:+(int,int):%(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:i + 1 |==> i % 1
+27:AOR:+(int,int):*(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:i + 1 |==> i * 1
+28:AOR:+(int,int):-(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:i + 1 |==> i - 1
+29:AOR:+(int,int):/(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:i + 1 |==> i / 1
+30:ROR:==(int,int):<=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:nums[i + 1] == nums[i] |==> nums[i + 1] <= nums[i]
+31:ROR:==(int,int):>=(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:nums[i + 1] == nums[i] |==> nums[i + 1] >= nums[i]
+32:ROR:==(int,int):FALSE(int,int):g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):24:nums[i + 1] == nums[i] |==> false
+33:STD:<CONT>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):25:continue; |==> <NO-OP>
+34:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):28:max = Math.max(max, thsMax); |==> <NO-OP>
+35:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0128_longest_consecutive_sequence.Solution@longestConsecutive(int[]):29:thsMax = 1; |==> <NO-OP>

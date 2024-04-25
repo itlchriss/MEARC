@@ -1,0 +1,31 @@
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:6: error: ')' expected
+//@ ensures(\result == true ==> s3 is formed by an interleaving of s1 and s2);
+                                  ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:6: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(\result == true ==> s3 is formed by an interleaving of s1 and s2);
+                                   ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:7: error: illegal start of expression
+//@ ensures(\result == true ==> |s1.length() - s2.length()| <= 1);
+                                ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:7: error: illegal start of expression
+//@ ensures(\result == true ==> |s1.length() - s2.length()| <= 1);
+                                                            ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:8: error: ')' expected
+//@ ensures(\result == false ==> s3 does not follow the interleaving pattern of s1 and s2);
+                                   ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:8: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(\result == false ==> s3 does not follow the interleaving pattern of s1 and s2);
+                                    ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:10: error: ')' expected
+//@ ensures(\result == true ==> s3 consists of characters from s1 and s2 in the correct order);
+                                  ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:10: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(\result == true ==> s3 consists of characters from s1 and s2 in the correct order);
+                                   ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:17: error: ')' expected
+//@ ensures(\result == false ==> s3 is not formed by an interleaving of s1 and s2);
+                                   ^
+./fmcheck/gpt35/s0097_interleaving_string/Solution.java:17: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(\result == false ==> s3 is not formed by an interleaving of s1 and s2);
+                                    ^
+10 errors

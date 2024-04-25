@@ -1,0 +1,39 @@
+1:AOR:-(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):17:nums.length - 1 |==> nums.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):17:nums.length - 1 |==> nums.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):17:nums.length - 1 |==> nums.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):17:nums.length - 1 |==> nums.length / 1
+5:ROR:<=(int,int):<(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):18:lo <= hi |==> lo < hi
+6:ROR:<=(int,int):==(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):18:lo <= hi |==> lo == hi
+7:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):18:lo <= hi |==> true
+8:AOR:-(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:hi - lo |==> hi % lo
+9:AOR:-(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:hi - lo |==> hi * lo
+10:AOR:-(int,int):+(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:hi - lo |==> hi + lo
+11:AOR:-(int,int):/(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:hi - lo |==> hi / lo
+12:AOR:/(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:(hi - lo) / 2 |==> (hi - lo) % 2
+13:AOR:/(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:(hi - lo) / 2 |==> (hi - lo) * 2
+14:AOR:/(int,int):+(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:(hi - lo) / 2 |==> (hi - lo) + 2
+15:AOR:/(int,int):-(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:(hi - lo) / 2 |==> (hi - lo) - 2
+16:AOR:+(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:lo + (hi - lo) / 2 |==> lo % ((hi - lo) / 2)
+17:AOR:+(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:lo + (hi - lo) / 2 |==> lo * ((hi - lo) / 2)
+18:AOR:+(int,int):-(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:lo + (hi - lo) / 2 |==> lo - (hi - lo) / 2
+19:AOR:+(int,int):/(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):19:lo + (hi - lo) / 2 |==> lo / ((hi - lo) / 2)
+20:ROR:==(int,int):<=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):20:target == nums[mid] |==> target <= nums[mid]
+21:ROR:==(int,int):>=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):20:target == nums[mid] |==> target >= nums[mid]
+22:ROR:==(int,int):FALSE(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):20:target == nums[mid] |==> false
+23:STD:<RETURN>:<NO-OP>:g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):21:return mid; |==> <NO-OP>
+24:ROR:<(int,int):!=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):22:target < nums[mid] |==> target != nums[mid]
+25:ROR:<(int,int):<=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):22:target < nums[mid] |==> target <= nums[mid]
+26:ROR:<(int,int):FALSE(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):22:target < nums[mid] |==> false
+27:AOR:-(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):23:mid - 1 |==> mid % 1
+28:AOR:-(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):23:mid - 1 |==> mid * 1
+29:AOR:-(int,int):+(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):23:mid - 1 |==> mid + 1
+30:AOR:-(int,int):/(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):23:mid - 1 |==> mid / 1
+31:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):23:hi = mid - 1; |==> <NO-OP>
+32:ROR:>(int,int):!=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):24:target > nums[mid] |==> target != nums[mid]
+33:ROR:>(int,int):>=(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):24:target > nums[mid] |==> target >= nums[mid]
+34:ROR:>(int,int):FALSE(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):24:target > nums[mid] |==> false
+35:AOR:+(int,int):%(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):25:mid + 1 |==> mid % 1
+36:AOR:+(int,int):*(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):25:mid + 1 |==> mid * 1
+37:AOR:+(int,int):-(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):25:mid + 1 |==> mid - 1
+38:AOR:+(int,int):/(int,int):g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):25:mid + 1 |==> mid / 1
+39:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0035_search_insert_position.Solution@searchInsert(int[],int):25:lo = mid + 1; |==> <NO-OP>

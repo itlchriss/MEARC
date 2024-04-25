@@ -1,0 +1,25 @@
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: Expected a semicolon to separate the parts of a JML quantified expression
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                        ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: ')' expected
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                                                                                               ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: illegal start of type
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                                                                                                 ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: <identifier> expected
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                                                                                                            ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: <identifier> expected
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                                                                                                                ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:9: error: ';' expected
+//@ ensures((\forall String ip1, String ip2; \result.contains(ip1) && \result.contains(ip2) && !ip1.equals(ip2); !ip1.equals(ip2)));
+                                                                                                                                 ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:12: error: ')' expected
+//@ ensures(\result.size() >= 0; public List<String> restoreIpAddresses(String s) {});
+                               ^
+./fmcheck/gpt35/s0093_restore_ip_addresses/Solution.java:12: error: illegal start of type
+//@ ensures(\result.size() >= 0; public List<String> restoreIpAddresses(String s) {});
+                                                                                    ^
+8 errors

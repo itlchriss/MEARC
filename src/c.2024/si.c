@@ -744,7 +744,14 @@ int IN_code_synthesis(struct astnode *node) {
             deallocatequeue(eventnode->cstptr->datalist, deallocatedata);
             eventnode->cstptr->datalist = initqueue();
             for (int i = 0; i < node->si_q->count; ++i) enqueue(eventnode->cstptr->datalist, (char *)strdup((char *)gqueue(node->si_q, i)));
-
+            /* 
+                write back the data to the predicate (astnode) that the event is pointed to. because preposition here doing COMP is in fact  compensating or complementing the semantics of this astnode 
+                eventnode->cstptr is the cst ptr of the event, eventnode is the ast node of the event that this preposition's child
+            */
+            deallocatequeue(eventnode->cstptr->astptr->si_q, NULL);
+            eventnode->cstptr->astptr->si_q = initqueue();
+            /* TODO: there can be a problem if there are multiple SI */
+            enqueue(eventnode->cstptr->astptr->si_q, (void *)strdup((char *)gqueue(node->si_q, 0)));
         } else {
             node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
             if (node->si_q->count == 0) sinotfound_error(node->token->symbol);        
@@ -897,6 +904,7 @@ int event_synthesis(struct astnode *node) {
     struct event *e = __searchevent(getastchild(node, 0)->cstptr);
     struct queue *siq = NULL;
     struct queue * (*funcptr)(struct event *, struct queue *);
+    e->cstptr->astptr = node;
     
     if (e->entities->count == 1) {
         /* cases that predicates only have Subj */

@@ -1,0 +1,16 @@
+1:STD:<CALL>:<NO-OP>:g0001_0100.s0078_subsets.Solution@subsets(int[]):15:solve(nums, new ArrayList<>(), res, 0); |==> <NO-OP>
+2:STD:<CALL>:<NO-OP>:g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):20:res.add(new ArrayList<>(temp)); |==> <NO-OP>
+3:ROR:<(int,int):!=(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):21:i < nums.length |==> i != nums.length
+4:ROR:<(int,int):<=(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):21:i < nums.length |==> i <= nums.length
+5:ROR:<(int,int):FALSE(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):21:i < nums.length |==> false
+6:STD:<CALL>:<NO-OP>:g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):22:temp.add(nums[i]); |==> <NO-OP>
+7:AOR:+(int,int):%(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):23:i + 1 |==> i % 1
+8:AOR:+(int,int):*(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):23:i + 1 |==> i * 1
+9:AOR:+(int,int):-(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):23:i + 1 |==> i - 1
+10:AOR:+(int,int):/(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):23:i + 1 |==> i / 1
+11:STD:<CALL>:<NO-OP>:g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):23:solve(nums, temp, res, i + 1); |==> <NO-OP>
+12:AOR:-(int,int):%(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):24:temp.size() - 1 |==> temp.size() % 1
+13:AOR:-(int,int):*(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):24:temp.size() - 1 |==> temp.size() * 1
+14:AOR:-(int,int):+(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):24:temp.size() - 1 |==> temp.size() + 1
+15:AOR:-(int,int):/(int,int):g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):24:temp.size() - 1 |==> temp.size() / 1
+16:STD:<CALL>:<NO-OP>:g0001_0100.s0078_subsets.Solution@solve(int[],java.util.List<java.lang.Integer>,java.util.List<java.util.List<java.lang.Integer>>,int):24:temp.remove(temp.size() - 1); |==> <NO-OP>
