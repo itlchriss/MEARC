@@ -1,0 +1,32 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findMedianSortedArrays
+            int l2 = cut2 == 0 ? Integer.MIN_VALUE : nums2[cut2 - 1];
+                                                          ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method findMedianSortedArrays
+            int l1 = cut1 == 0 ? Integer.MIN_VALUE : nums1[cut1 + 1];
+                                                          ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findMedianSortedArrays
+            int l1 = cut1 == 0 ? Integer.MIN_VALUE : nums1[cut1 + 1];
+                                                          ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:11:) in method findMedianSortedArrays
+        return 0.0f;
+        ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:11: verify: Associated declaration: ./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:44:
+//@ ensures(\result == 1.0);
+    ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method findMedianSortedArrays
+            int r1 = cut1 == n1 ? Integer.MAX_VALUE : nums1[cut1];
+                                                           ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:8:) in method findMedianSortedArrays
+                return Math.max(l1, l2);
+                ^
+./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:8: verify: Associated declaration: ./gpt35/s0004_median_of_two_sorted_arrays/mutants/36/Solution.java:37:
+//@ ensures(\result == 0.0);
+    ^
+2 warnings
+8 verification failures

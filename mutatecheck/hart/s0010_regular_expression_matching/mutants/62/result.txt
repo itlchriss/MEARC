@@ -1,0 +1,80 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:8: verify: The prover cannot establish an assertion (NullField) in method Solution
+    private Boolean[][] cache;
+                        ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:16: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:11:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:11: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:16:
+//@ ensures(\forall int i; 0 <= i < s.length(); Character.isLowerCase(s.charAt(i)));
+    ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:16: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:9:) in method isMatch
+        return isMatch(s, p, 0, 0);
+        ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:9: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:16:
+//@ ensures((s.length() >= 1) && (s.length() <= 20));
+    ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                 ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                    ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                    ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter p)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyBadArrayAssignment) in method isMatch
+        cache[i][j] = result;
+                    ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: (Parameter: s, Caller: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int), Callee: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int))
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        cache[i][j] = result;
+             ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        if (cache[i][j] != null) {
+                 ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter s)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: (Parameter: p, Caller: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int), Callee: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int))
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isMatch
+        cache[i][j] = result;
+                ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter p)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isMatch: g0001_0100.s0010_regular_expression_matching.Solution.isMatch(java.lang.String,java.lang.String,int,int) (parameter s)
+    private boolean isMatch(String s, String p, int i, int j) {
+                                   ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0010_regular_expression_matching/mutants/62/Solution.java:19:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 warnings
+24 verification failures

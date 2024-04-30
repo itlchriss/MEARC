@@ -1,0 +1,47 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+./hart/s0018_4sum/mutants/213/Solution.java:22: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fourSum
+            if ((long) nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target) {
+                           ^
+./hart/s0018_4sum/mutants/213/Solution.java:66: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0018_4sum/mutants/213/Solution.java:13:) in method fourSum
+        return result;
+        ^
+./hart/s0018_4sum/mutants/213/Solution.java:13: verify: Associated declaration: ./hart/s0018_4sum/mutants/213/Solution.java:66:
+//@ ensures((nums.length >= 1) && (nums.length <= 200));
+    ^
+./hart/s0018_4sum/mutants/213/Solution.java:66: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0018_4sum/mutants/213/Solution.java:11:) in method fourSum
+        return result;
+        ^
+./hart/s0018_4sum/mutants/213/Solution.java:11: verify: Associated declaration: ./hart/s0018_4sum/mutants/213/Solution.java:66:
+//@ ensures((target >= -1000000000) && (target <= 1000000000));
+    ^
+./hart/s0018_4sum/mutants/213/Solution.java:66: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0018_4sum/mutants/213/Solution.java:12:) in method fourSum
+        return result;
+        ^
+./hart/s0018_4sum/mutants/213/Solution.java:12: verify: Associated declaration: ./hart/s0018_4sum/mutants/213/Solution.java:66:
+//@ ensures(\forall int i; 0 <= i < nums.length; ((nums[i] >= -1000000000) && (nums[i] <= 1000000000)));
+    ^
+./hart/s0018_4sum/mutants/213/Solution.java:32: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fourSum
+                if ((long) nums[j] + nums[j + 1] + nums[j + 2] > target - nums[i]) {
+                               ^
+./hart/s0018_4sum/mutants/213/Solution.java:42: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fourSum
+                    int curSum = nums[low] + nums[high];
+                                     ^
+./hart/s0018_4sum/mutants/213/Solution.java:42: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method fourSum
+                    int curSum = nums[low] + nums[high];
+                                     ^
+./hart/s0018_4sum/mutants/213/Solution.java:42: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method fourSum
+                    int curSum = nums[low] + nums[high];
+                                                 ^
+4 warnings
+11 verification failures

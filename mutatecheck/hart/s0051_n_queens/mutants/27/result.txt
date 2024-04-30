@@ -1,0 +1,68 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+./hart/s0051_n_queens/mutants/27/Solution.java:44: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method construct
+            char[] queenRow = new char[n];
+                                       ^
+./hart/s0051_n_queens/mutants/27/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method construct
+            queenRow[pos[r]] = 'Q';
+                        ^
+./hart/s0051_n_queens/mutants/27/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method construct
+            queenRow[pos[r]] = 'Q';
+                    ^
+./hart/s0051_n_queens/mutants/27/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method construct
+            queenRow[pos[r]] = 'Q';
+                        ^
+./hart/s0051_n_queens/mutants/27/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method construct
+            queenRow[pos[r]] = 'Q';
+                    ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                   ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                   ^
+./hart/s0051_n_queens/mutants/27/Solution.java:20: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method helper: g0001_0100.s0051_n_queens.Solution.helper(int,int,boolean[],int[],java.util.List<java.util.List<java.lang.String>>) (parameter ans)
+    private void helper(int n, int row, boolean[] pos, int[] pos2, List<List<String>> ans) {
+                                                                                      ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0051_n_queens/mutants/27/Solution.java:20:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                             ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                                                 ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                             ^
+./hart/s0051_n_queens/mutants/27/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method helper
+            pos2[row] = i;
+                ^
+./hart/s0051_n_queens/mutants/27/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method helper
+            pos2[row] = i;
+                ^
+./hart/s0051_n_queens/mutants/27/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method helper
+            if (pos[i] || pos[n + i + row] || pos[index]) {
+                                                 ^
+./hart/s0051_n_queens/mutants/27/Solution.java:13: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method solveNQueens
+        boolean[] pos = new boolean[n + 2 * n - 1 + 2 * n - 1];
+                                                          ^
+./hart/s0051_n_queens/mutants/27/Solution.java:17: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0051_n_queens/mutants/27/Solution.java:11:) in method solveNQueens
+        return ans;
+        ^
+./hart/s0051_n_queens/mutants/27/Solution.java:11: verify: Associated declaration: ./hart/s0051_n_queens/mutants/27/Solution.java:17:
+//@ ensures((n >= 1) && (n <= 9));
+    ^
+4 warnings
+18 verification failures

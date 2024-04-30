@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0069_sqrtx/mutants/46/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method mySqrt
+            if (sqrt == x / sqrt) {
+                          ^
+./gpt35/s0069_sqrtx/mutants/46/Solution.java:29: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0069_sqrtx/mutants/46/Solution.java:7:) in method mySqrt
+            return sqrt;
+            ^
+./gpt35/s0069_sqrtx/mutants/46/Solution.java:7: verify: Associated declaration: ./gpt35/s0069_sqrtx/mutants/46/Solution.java:29:
+//@ ensures(\result * \result <= x && ( \result + 1) * ( \result + 1) > x);
+    ^
+./gpt35/s0069_sqrtx/mutants/46/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method mySqrt
+        if (sqrt > x / sqrt) {
+                     ^
+2 warnings
+4 verification failures

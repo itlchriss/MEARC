@@ -1,0 +1,62 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:16:) in method numDecodings
+            return 0;
+            ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:16: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:31:
+//@ ensures(\result == 0 ==> (\forall int i; 0 <= i && i < s.length(); s.charAt(i) != '0'));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:13:) in method numDecodings
+            return 0;
+            ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:13: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:31:
+//@ ensures(\result == 0 ==> (\exists int i; 0 <= i && i < s.length() - 1; s.charAt(i) > '2' && s.charAt(i + 1) == '0'));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:9:) in method numDecodings
+            return 0;
+            ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:9: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:31:
+//@ ensures(\result == 0 ==> (\exists int i; 0 <= i && i < s.length() - 1; s.charAt(i) == '0' && s.charAt(i + 1) == '0'));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:8:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:8: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result == 1 ==> (\forall int i; 0 <= i && i < s.length() - 1; s.charAt(i) == '1' || (s.charAt(i) == '2' && (s.charAt(i + 1) >= '1' && s.charAt(i + 1) <= '6'))));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:10:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:10: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result == 1 ==> (\forall int i; 0 <= i && i < s.length(); s.charAt(i) != '0'));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:19:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:19: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result > 0 ==> (\forall int i; 0 <= i && i < s.length(); s.charAt(i) != '0'));
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:24:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:24: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result <= Integer.MAX_VALUE);
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:18:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:18: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result >= 0);
+    ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:51: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:23:) in method numDecodings
+        return f[n];
+        ^
+./gpt35/s0091_decode_ways/mutants/45/Solution.java:23: verify: Associated declaration: ./gpt35/s0091_decode_ways/mutants/45/Solution.java:51:
+//@ ensures(\result > 0 ==> (\forall int i; 0 <= i && i < s.length() - 1; s.charAt(i) == '1' || (s.charAt(i) == '2' && (s.charAt(i + 1) >= '1' && s.charAt(i + 1) <= '6'))));
+    ^
+2 warnings
+18 verification failures

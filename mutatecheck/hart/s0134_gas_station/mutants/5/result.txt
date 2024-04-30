@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0134_gas_station/mutants/5/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method canCompleteCircuit
+            curGas += gas[i] + cost[i];
+                                   ^
+./hart/s0134_gas_station/mutants/5/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method canCompleteCircuit
+            curGas += gas[i] + cost[i];
+                         ^
+./hart/s0134_gas_station/mutants/5/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0134_gas_station/mutants/5/Solution.java:7:) in method canCompleteCircuit
+        return result;
+        ^
+./hart/s0134_gas_station/mutants/5/Solution.java:7: verify: Associated declaration: ./hart/s0134_gas_station/mutants/5/Solution.java:30:
+//@ ensures(\forall int i; 0 <= i < cost.length; ((gas[i] >= 0) && (gas[i] <= 10000)));
+    ^
+2 warnings
+4 verification failures

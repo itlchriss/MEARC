@@ -1,0 +1,26 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0130_surrounded_regions/mutants/53/Solution.java:64: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+                || board[row][column] != 'O') {
+                             ^
+./gpt35/s0130_surrounded_regions/mutants/53/Solution.java:64: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+                || board[row][column] != 'O') {
+                        ^
+./gpt35/s0130_surrounded_regions/mutants/53/Solution.java:63: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+                || column >= board[0].length
+                                  ^
+./gpt35/s0130_surrounded_regions/mutants/53/Solution.java:49: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'X';
+                          ^
+  Reason: Double rewriting of ident: i i_1931_1931___62 i_1931_1956___65
+./gpt35/s0130_surrounded_regions/mutants/53/Solution.java:53: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'O';
+                          ^
+  Reason: Double rewriting of ident: i i_1931_1931___62 i_1931_1956___65
+2 errors
+2 warnings
+3 verification failures

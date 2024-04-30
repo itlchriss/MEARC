@@ -1,0 +1,50 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+./hart/s0120_triangle/mutants/2/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+                   ^
+./hart/s0120_triangle/mutants/2/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+              ^
+./hart/s0120_triangle/mutants/2/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+              ^
+./hart/s0120_triangle/mutants/2/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method dfs
+        if (dp[row][col] != -10001) {
+                   ^
+./hart/s0120_triangle/mutants/2/Solution.java:25: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method dfs: g0101_0200.s0120_triangle.Solution.dfs(java.util.List<java.util.List<java.lang.Integer>>,int[][],int,int) (parameter triangle)
+    private int dfs(List<List<Integer>> triangle, int[][] dp, int row, int col) {
+                                        ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0120_triangle/mutants/2/Solution.java:25:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./hart/s0120_triangle/mutants/2/Solution.java:25: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method dfs: g0101_0200.s0120_triangle.Solution.dfs(java.util.List<java.util.List<java.lang.Integer>>,int[][],int,int) (parameter triangle)
+    private int dfs(List<List<Integer>> triangle, int[][] dp, int row, int col) {
+                                        ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0120_triangle/mutants/2/Solution.java:25:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./hart/s0120_triangle/mutants/2/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0120_triangle/mutants/2/Solution.java:12:) in method minimumTotal
+        return dfs(triangle, dp, 0, 0);
+        ^
+./hart/s0120_triangle/mutants/2/Solution.java:12: verify: Associated declaration: ./hart/s0120_triangle/mutants/2/Solution.java:22:
+//@ ensures((\result >= -10000) && (\result <= 10000));
+    ^
+./hart/s0120_triangle/mutants/2/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0120_triangle/mutants/2/Solution.java:11:) in method minimumTotal
+        return dfs(triangle, dp, 0, 0);
+        ^
+./hart/s0120_triangle/mutants/2/Solution.java:11: verify: Associated declaration: ./hart/s0120_triangle/mutants/2/Solution.java:22:
+//@ ensures((triangle.size() >= 1) && (triangle.size() <= 200));
+    ^
+./hart/s0120_triangle/mutants/2/Solution.java:14: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method minimumTotal: g0101_0200.s0120_triangle.Solution.minimumTotal(java.util.List<java.util.List<java.lang.Integer>>) (parameter triangle)
+    public int minimumTotal(List<List<Integer>> triangle) {
+                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0120_triangle/mutants/2/Solution.java:14:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+2 warnings
+14 verification failures

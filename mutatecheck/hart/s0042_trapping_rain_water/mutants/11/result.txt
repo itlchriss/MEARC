@@ -1,0 +1,23 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0042_trapping_rain_water/mutants/11/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method trap
+            int rVal = height[r];
+                             ^
+./hart/s0042_trapping_rain_water/mutants/11/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method trap
+            int lVal = height[l];
+                             ^
+./hart/s0042_trapping_rain_water/mutants/11/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method trap
+            int lVal = height[l];
+                             ^
+./hart/s0042_trapping_rain_water/mutants/11/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0042_trapping_rain_water/mutants/11/Solution.java:8:) in method trap
+        return res;
+        ^
+./hart/s0042_trapping_rain_water/mutants/11/Solution.java:8: verify: Associated declaration: ./hart/s0042_trapping_rain_water/mutants/11/Solution.java:38:
+//@ ensures(\result >= 0);
+    ^
+2 warnings
+5 verification failures

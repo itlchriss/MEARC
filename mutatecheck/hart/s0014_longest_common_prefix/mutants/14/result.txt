@@ -1,0 +1,32 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestCommonPrefix
+            if (temp.length() > strs[i].length()) {
+                                    ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestCommonPrefix
+            if (temp.length() > strs[i].length()) {
+                                    ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:10: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0014_longest_common_prefix/mutants/14/Solution.java:7:) in method longestCommonPrefix
+            return "";
+            ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:7: verify: Associated declaration: ./hart/s0014_longest_common_prefix/mutants/14/Solution.java:10:
+//@ ensures((strs.length >= 1) && (strs.length <= 200));
+    ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:22: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method longestCommonPrefix: (Caller: g0001_0100.s0014_longest_common_prefix.Solution.longestCommonPrefix(java.lang.String[]), Callee: java.lang.String.substring(int,int))
+            cur = strs[i].substring(0, temp.length());
+                                   ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0014_longest_common_prefix/mutants/14/Solution.java:22:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0014_longest_common_prefix/mutants/14/Solution.java:13: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method longestCommonPrefix: g0001_0100.s0014_longest_common_prefix.Solution.longestCommonPrefix(java.lang.String[]) (for result type)
+            return strs[0];
+            ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0014_longest_common_prefix/mutants/14/Solution.java:13:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 warnings
+8 verification failures

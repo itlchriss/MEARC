@@ -1,0 +1,26 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method helper
+            if (nums[mid] == target) {
+                    ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method helper
+            if (nums[mid] == target) {
+                    ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:15: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:10:) in method searchRange
+        return ans;
+        ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:10: verify: Associated declaration: ./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:15:
+//@ ensures(\forall int k; 0 <= k && k < nums.length-1; nums[k] <= nums[k+1]);
+    ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:15: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:9:) in method searchRange
+        return ans;
+        ^
+./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:9: verify: Associated declaration: ./hart/s0034_find_first_and_last_position_of_element_in_sorted_array/mutants/41/Solution.java:15:
+//@ ensures((target >= -1000000000) && (target <= 1000000000));
+    ^
+2 warnings
+6 verification failures

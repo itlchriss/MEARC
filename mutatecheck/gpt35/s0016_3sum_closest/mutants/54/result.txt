@@ -1,0 +1,17 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+./gpt35/s0016_3sum_closest/mutants/54/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0016_3sum_closest/mutants/54/Solution.java:12:) in method threeSumClosest
+                return lessGap(sum, temp, target);
+                ^
+./gpt35/s0016_3sum_closest/mutants/54/Solution.java:12: verify: Associated declaration: ./gpt35/s0016_3sum_closest/mutants/54/Solution.java:31:
+//@ ensures((\exists int i, j, k; 0 <= i && i < j && j < k && k < nums.length; \result == nums[i] + nums[j] + nums[k]));
+    ^
+./gpt35/s0016_3sum_closest/mutants/54/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method threeSumClosest
+            if (nums[i] + nums[n - 1] + nums[n - 2] <= target) {
+                    ^
+2 warnings
+3 verification failures

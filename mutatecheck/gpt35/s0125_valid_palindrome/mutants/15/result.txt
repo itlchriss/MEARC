@@ -1,0 +1,14 @@
+./gpt35/s0125_valid_palindrome/mutants/15/Solution.java:9: warning: A non-pure method is being called where it is not permitted: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String)
+//@ ensures(\result == true <==> isPalindrome(s));
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0125_valid_palindrome/mutants/15/Solution.java:23: error: unreachable statement
+            while (false) {
+                          ^
+1 error
+3 warnings

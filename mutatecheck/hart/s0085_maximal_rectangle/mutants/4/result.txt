@@ -1,0 +1,17 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0085_maximal_rectangle/mutants/4/Solution.java:62: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestRectangleArea
+            nLeftGeq[i] = 1;
+                    ^
+./hart/s0085_maximal_rectangle/mutants/4/Solution.java:80: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+        while (preIdx >= 0 && 0 < heights[preIdx]) {
+                                         ^
+./hart/s0085_maximal_rectangle/mutants/4/Solution.java:64: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+            while (preIdx >= 0 && heights[i] < heights[preIdx]) {
+                                                      ^
+2 warnings
+3 verification failures

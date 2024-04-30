@@ -1,0 +1,41 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method plusOne
+                sum = digits[i] + carry;
+                            ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/18/Solution.java:10:) in method plusOne
+            return ans;
+            ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:10: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/18/Solution.java:33:
+//@ ensures((\forall int i; 0 <= i && i < digits.length - 1; \result[i] != 0));
+    ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/18/Solution.java:8:) in method plusOne
+        return digits;
+        ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:8: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/18/Solution.java:35:
+//@ ensures(\result[digits.length - 1] == digits[digits.length - 1] + 1);
+    ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/18/Solution.java:11:) in method plusOne
+            return ans;
+            ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:11: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/18/Solution.java:33:
+//@ ensures((\forall int i; 0 <= i && i < digits.length - 1; \result[i] == digits[i]));
+    ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/18/Solution.java:9:) in method plusOne
+            return ans;
+            ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:9: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/18/Solution.java:33:
+//@ ensures(\result[digits.length - 1] != 10);
+    ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/18/Solution.java:13:) in method plusOne
+            return ans;
+            ^
+./gpt35/s0066_plus_one/mutants/18/Solution.java:13: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/18/Solution.java:33:
+//@ ensures(\result.length == digits.length);
+    ^
+2 warnings
+11 verification failures

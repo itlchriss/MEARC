@@ -1,0 +1,29 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0125_valid_palindrome/mutants/12/Solution.java:20: verify: The prover cannot establish an assertion (InvariantEntrance: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: (Caller: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String), Callee: java.lang.String.charAt(int))
+            while (i <= j && isNotAlphaNumeric(s.charAt(j))) {
+                                                       ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0125_valid_palindrome/mutants/12/Solution.java:20:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0125_valid_palindrome/mutants/12/Solution.java:8: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String) (parameter s)
+    public boolean isPalindrome(String s) {
+                                       ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0125_valid_palindrome/mutants/12/Solution.java:8:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0125_valid_palindrome/mutants/12/Solution.java:8: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String) (parameter s)
+    public boolean isPalindrome(String s) {
+                                       ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0125_valid_palindrome/mutants/12/Solution.java:8:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0125_valid_palindrome/mutants/12/Solution.java:56: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method upperToLower
+            c = (char) (c + 32);
+                ^
+2 warnings
+7 verification failures

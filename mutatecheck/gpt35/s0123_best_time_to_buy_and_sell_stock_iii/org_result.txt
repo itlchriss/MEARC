@@ -1,0 +1,26 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:6:) in method maxProfit
+        return ss;
+        ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:6: verify: Associated declaration: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26:
+//@ ensures((\forall int i, j; 0 <= i && i < j && j < prices.length; \result >= prices[j] - prices[i]));
+    ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:8:) in method maxProfit
+        return ss;
+        ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:8: verify: Associated declaration: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26:
+//@ ensures((\forall int i; 0 <= i && i < prices.length; \result >= prices[i]));
+    ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:11:) in method maxProfit
+        return ss;
+        ^
+./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:11: verify: Associated declaration: ./gpt35/s0123_best_time_to_buy_and_sell_stock_iii/Solution.java:26:
+//@ ensures(\result >= 0);
+    ^
+2 warnings
+6 verification failures

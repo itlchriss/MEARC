@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+error: An error while executing a proof script for backtracking: (error "line 1380 column 185: operator is applied to arguments of the wrong sort")
+  >>>(define-fun |_JML__tmp258| () Bool (bvsge (arrLength0 (select |java.lang.Iterable_values_209_209___30| (select |g0001_0100.s0037_sudoku_solver.Solution_-266336320| |`THIS|))) #x00000000))
+error: An error while executing a proof script for hasBit: (error "line 726 column 185: operator is applied to arguments of the wrong sort")
+  >>>(define-fun |_JML__tmp483| () Bool (bvsge (arrLength0 (select |java.lang.Iterable_values_209_209___23| (select |g0001_0100.s0037_sudoku_solver.Solution_-266336320| |`THIS|))) #x00000000))
+error: An error while executing a proof script for solveSudoku: (error "line 1157 column 182: operator is applied to arguments of the wrong sort")
+  >>>(define-fun |_JML__tmp90| () Bool (bvsge (arrLength0 (select |java.lang.Iterable_values_209_0___11| (select |g0001_0100.s0037_sudoku_solver.Solution_-266336318| |`THIS|))) #x00000000))
+3 errors
+4 warnings

@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0069_sqrtx/mutants/57/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method mySqrt
+            if (sqrt == x / sqrt) {
+                          ^
+./hart/s0069_sqrtx/mutants/57/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method mySqrt
+        if (sqrt > x / sqrt) {
+                     ^
+./hart/s0069_sqrtx/mutants/57/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0069_sqrtx/mutants/57/Solution.java:7:) in method mySqrt
+            return sqrt;
+            ^
+./hart/s0069_sqrtx/mutants/57/Solution.java:7: verify: Associated declaration: ./hart/s0069_sqrtx/mutants/57/Solution.java:28:
+//@ ensures((x >= 0) && (x <= 2147483647));
+    ^
+2 warnings
+4 verification failures

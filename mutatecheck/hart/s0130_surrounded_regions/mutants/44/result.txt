@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0130_surrounded_regions/mutants/44/Solution.java:60: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method dfs
+                || board[row][column] != 'O') {
+                             ^
+./hart/s0130_surrounded_regions/mutants/44/Solution.java:45: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'X';
+                          ^
+  Reason: Double rewriting of ident: i i_1440_1440___56 i_1440_1465___59
+./hart/s0130_surrounded_regions/mutants/44/Solution.java:49: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    board[i][j] = 'O';
+                          ^
+  Reason: Double rewriting of ident: i i_1440_1440___56 i_1440_1465___59
+2 errors
+2 warnings
+1 verification failure

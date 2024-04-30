@@ -1,0 +1,38 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method maxArea
+            if (height[left] < height[right]) {
+                      ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method maxArea
+            if (height[left] < height[right]) {
+                      ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:8:) in method maxArea
+        return maxArea;
+        ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:8: verify: Associated declaration: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:25:
+//@ ensures(\forall int i; 0 <= i < height.length; ((height[i] >= 0) && (height[i] <= 10000)));
+    ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:10:) in method maxArea
+        return maxArea;
+        ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:10: verify: Associated declaration: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:25:
+//@ ensures((height.length >= 2) && (height.length <= 100000));
+    ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:9:) in method maxArea
+        return maxArea;
+        ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:9: verify: Associated declaration: ./hart/s0011_container_with_most_water/mutants/13/Solution.java:25:
+//@ ensures(\result >= 0);
+    ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method maxArea
+            if (height[left] < height[right]) {
+                                     ^
+./hart/s0011_container_with_most_water/mutants/13/Solution.java:18: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxArea
+                maxArea = Math.max(maxArea, height[left] * (right / left));
+                                                                  ^
+2 warnings
+10 verification failures

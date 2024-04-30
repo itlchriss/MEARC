@@ -1,0 +1,49 @@
+./gpt35/s0077_combinations/mutants/0/Solution.java:24: error: incompatible types: ArrayDeque<E> cannot be converted to ArrayDeque<Integer>
+        backtrack(ans, n, k, 1, new ArrayDeque<>());
+                                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayDeque
+./gpt35/s0077_combinations/mutants/0/Solution.java:33: error: incompatible types: ArrayList<E> cannot be converted to List<Integer>
+            ans.add(new ArrayList<>(stack));
+                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayDeque.jml:49: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //-RAC@ also ensures (\forall int i; 0 <= i & i < values.length; \result[i].equals( _get(i)));
+                                                                                      ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayDeque.jml:54: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //-RAC@ ensures (\forall int i; 0 <= i & i < values.length; \result[i].equals( _get(i)));
+                                                                                 ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:243: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @   ensures (\exists \bigint i; 0 <= i && i <= values.length && (\old(_get(i))==null || \old(_get(i)).equals(o)) &&
+                                                                                                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:244: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @               (\forall \bigint j; 0 <= j && j < i; !(\old(_get(i))== null || \old(_get(j)).equals(o)));
+                                                                                                         ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:260: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @   ensures (\exists \bigint i; 0 <= i && i <= values.length && (\old(_get(i))== null || \old(_get(i)).equals(o)) &&
+                                                                                                                   ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:261: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @               (\forall \bigint j; 0 <= j && j < i; !(\old(_get(i))== null || \old(_get(j)).equals(o)));
+                                                                                                         ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:292: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @   ensures (\exists \bigint i; 0 <= i && i <= values.length && \old(_get(i)).equals(o) &&
+                                                                                          ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Deque.jml:293: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @               (\forall \bigint j; i < j && j <= values.length; !\old(_get(j)).equals(o));
+                                                                                            ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors
+12 warnings

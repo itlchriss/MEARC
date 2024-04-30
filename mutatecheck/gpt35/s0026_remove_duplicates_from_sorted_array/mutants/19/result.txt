@@ -1,0 +1,38 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                               ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+            if (nums[i] != nums[j]) {
+                    ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:7:) in method removeDuplicates
+        return i - 1;
+        ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:7: verify: Associated declaration: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26:
+//@ ensures(\result >= 0 && \result <= nums.length);
+    ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:8:) in method removeDuplicates
+        return i - 1;
+        ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:8: verify: Associated declaration: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26:
+//@ ensures((\forall int i, j; 0 <= i && i < j && j < \result; nums[i] != nums[j]));
+    ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:10:) in method removeDuplicates
+        return i - 1;
+        ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:10: verify: Associated declaration: ./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:26:
+//@ ensures((\forall int i; \result <= i && i < nums.length; (\exists int j; 0 <= j && j < \result; nums[j] == nums[i])));
+    ^
+./gpt35/s0026_remove_duplicates_from_sorted_array/mutants/19/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeDuplicates
+                nums[i + 1] = nums[j];
+                    ^
+2 warnings
+10 verification failures

@@ -1,0 +1,44 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0079_word_search/mutants/51/Solution.java:13: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y]) {
+                                                                                     ^
+./hart/s0079_word_search/mutants/51/Solution.java:13: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y]) {
+                                                                                  ^
+./hart/s0079_word_search/mutants/51/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (word.charAt(index) == board[x][y]) {
+                                          ^
+./hart/s0079_word_search/mutants/51/Solution.java:9: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method backtrace: g0001_0100.s0079_word_search.Solution.backtrace(char[][],boolean[][],java.lang.String,int,int,int) (parameter word)
+            char[][] board, boolean[][] visited, String word, int index, int x, int y) {
+                                                        ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0079_word_search/mutants/51/Solution.java:9:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0079_word_search/mutants/51/Solution.java:9: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method backtrace: g0001_0100.s0079_word_search.Solution.backtrace(char[][],boolean[][],java.lang.String,int,int,int) (parameter word)
+            char[][] board, boolean[][] visited, String word, int index, int x, int y) {
+                                                        ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0079_word_search/mutants/51/Solution.java:9:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0079_word_search/mutants/51/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method exist
+        boolean[][] visited = new boolean[board.length][board[0].length];
+                                                             ^
+./hart/s0079_word_search/mutants/51/Solution.java:35: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method exist: g0001_0100.s0079_word_search.Solution.exist(char[][],java.lang.String) (parameter word)
+    public boolean exist(char[][] board, String word) {
+                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0079_word_search/mutants/51/Solution.java:35:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0079_word_search/mutants/51/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0079_word_search/mutants/51/Solution.java:32:) in method exist
+        return false;
+        ^
+./hart/s0079_word_search/mutants/51/Solution.java:32: verify: Associated declaration: ./hart/s0079_word_search/mutants/51/Solution.java:44:
+//@ ensures((word.length() >= 1) && (word.length() <= 15));
+    ^
+2 warnings
+12 verification failures

@@ -1,0 +1,23 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0027_remove_element/mutants/0/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method removeElement
+                while (nums[j] == val) {
+                           ^
+./hart/s0027_remove_element/mutants/0/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeElement
+            if (nums[i] == val) {
+                    ^
+./hart/s0027_remove_element/mutants/0/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method removeElement
+                while (nums[j] == val) {
+                           ^
+./hart/s0027_remove_element/mutants/0/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0027_remove_element/mutants/0/Solution.java:6:) in method removeElement
+                    return len - occurTimes;
+                    ^
+./hart/s0027_remove_element/mutants/0/Solution.java:6: verify: Associated declaration: ./hart/s0027_remove_element/mutants/0/Solution.java:19:
+//@ ensures((val >= 0) && (val <= 100));
+    ^
+2 warnings
+5 verification failures

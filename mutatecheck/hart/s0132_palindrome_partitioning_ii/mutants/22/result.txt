@@ -1,0 +1,26 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+            dp[j + 1] = Math.min(dp[j + 1], dp[i] + 1);
+                                              ^
+./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+            dp[j + 1] = Math.min(dp[j + 1], dp[i] + 1);
+              ^
+./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method expandAround
+        while (i >= 0 && j < t.length && t[i] >= t[j]) {
+                                          ^
+./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method expandAround
+        while (i >= 0 && j < t.length && t[i] >= t[j]) {
+                                                  ^
+./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:9: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minCut: g0101_0200.s0132_palindrome_partitioning_ii.Solution.minCut(java.lang.String) (parameter s)
+    public int minCut(String s) {
+                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0132_palindrome_partitioning_ii/mutants/22/Solution.java:9:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 warnings
+6 verification failures

@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0050_powx_n/mutants/22/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0050_powx_n/mutants/22/Solution.java:8:) in method myPow
+            return 1.0 * res;
+            ^
+./gpt35/s0050_powx_n/mutants/22/Solution.java:8: verify: Associated declaration: ./gpt35/s0050_powx_n/mutants/22/Solution.java:27:
+//@ ensures(\result == Math.pow(x, n));
+    ^
+./gpt35/s0050_powx_n/mutants/22/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0050_powx_n/mutants/22/Solution.java:7:) in method myPow
+            return 1.0 * res;
+            ^
+./gpt35/s0050_powx_n/mutants/22/Solution.java:7: verify: Associated declaration: ./gpt35/s0050_powx_n/mutants/22/Solution.java:27:
+//@ ensures(-10000 <= \result && \result <= 10000);
+    ^
+2 warnings
+4 verification failures

@@ -1,0 +1,56 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method step
+                    String.valueOf(octets[0])
+                                         ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method step: g0001_0100.s0093_restore_ip_addresses.Solution.step(java.lang.String,int,int[],int,java.util.List<java.lang.String>) (parameter s)
+    void step(String s, int pos, int[] octets, int count, List<String> results) {
+                     ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method step
+                        octets[count] = octet;
+                              ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method step
+                        octets[count] = octet;
+                              ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method step: g0001_0100.s0093_restore_ip_addresses.Solution.step(java.lang.String,int,int[],int,java.util.List<java.lang.String>) (parameter results)
+    void step(String s, int pos, int[] octets, int count, List<String> results) {
+                                                                       ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method step: g0001_0100.s0093_restore_ip_addresses.Solution.step(java.lang.String,int,int[],int,java.util.List<java.lang.String>) (parameter s)
+    void step(String s, int pos, int[] octets, int count, List<String> results) {
+                     ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method step: g0001_0100.s0093_restore_ip_addresses.Solution.step(java.lang.String,int,int[],int,java.util.List<java.lang.String>) (parameter results)
+    void step(String s, int pos, int[] octets, int count, List<String> results) {
+                                                                       ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:16:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method step
+                            + octets[1]
+                                    ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:23: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method step
+                            + octets[2]
+                                    ^
+./hart/s0093_restore_ip_addresses/mutants/75/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method step
+                            + octets[3]);
+                                    ^
+4 warnings
+14 verification failures

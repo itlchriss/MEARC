@@ -1,0 +1,53 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:10: verify: The prover cannot establish an assertion (NullField) in method Solution
+    private List<List<Integer>> ans;
+                                ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method permute
+            if (true && !used[10 + nums[i]]) {
+                             ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method permute
+            if (true && !used[10 + nums[i]]) {
+                                       ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method permute
+            if (true && !used[10 + nums[i]]) {
+                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: The prover cannot establish an assertion (Invariant) in method permute
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:20: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0047_permutations_ii/mutants/24/Solution.java:14:) in method permuteUnique
+        return ans;
+        ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:14: verify: Associated declaration: ./gpt35/s0047_permutations_ii/mutants/24/Solution.java:20:
+//@ ensures((\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2); list1 != list2 ==> !list1.equals(list2)));
+    ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:20: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0047_permutations_ii/mutants/24/Solution.java:12:) in method permuteUnique
+        return ans;
+        ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:12: verify: Associated declaration: ./gpt35/s0047_permutations_ii/mutants/24/Solution.java:20:
+//@ ensures((\forall List<Integer> list; \result.contains(list); list.size() == nums.length));
+    ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method swap
+        nums[i] = nums[j];
+                      ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:45: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method swap
+        int t = nums[i];
+                    ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:45: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method swap
+        int t = nums[i];
+                    ^
+./gpt35/s0047_permutations_ii/mutants/24/Solution.java:46: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method swap
+        nums[i] = nums[j];
+                      ^
+4 warnings
+13 verification failures

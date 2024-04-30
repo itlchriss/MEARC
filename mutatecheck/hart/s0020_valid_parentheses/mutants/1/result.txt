@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Vector.jml:228: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @    ensures \result != -1 ==> get(\result).equals(elem);
+                                                        ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Vector.jml:347: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @            || get(elementCount-1).equals(obj); // or == ?
+                                                ^
+./hart/s0020_valid_parentheses/mutants/1/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0020_valid_parentheses/mutants/1/Solution.java:11:) in method isValid
+                return false;
+                ^
+./hart/s0020_valid_parentheses/mutants/1/Solution.java:11: verify: Associated declaration: ./hart/s0020_valid_parentheses/mutants/1/Solution.java:25:
+//@ ensures(\result == true);
+    ^
+4 warnings
+2 verification failures

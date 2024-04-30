@@ -1,0 +1,32 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method searchMatrix
+            if (matrix[i][endCol - 1] >= target) {
+                         ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method searchMatrix
+            if (matrix[i][endCol - 1] >= target) {
+                      ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method searchMatrix
+            if (matrix[targetRow][i] == target) {
+                                 ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:10:) in method searchMatrix
+        return result;
+        ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:10: verify: Associated declaration: ./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:30:
+//@ ensures(\result == true <==> (\exists int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[i].length; matrix[i][j] == target));
+    ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method searchMatrix
+            if (matrix[targetRow][i] == target) {
+                      ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method searchMatrix
+            if (matrix[targetRow][i] == target) {
+                                 ^
+./gpt35/s0074_search_a_2d_matrix/mutants/19/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method searchMatrix
+            if (matrix[targetRow][i] == target) {
+                      ^
+2 warnings
+8 verification failures

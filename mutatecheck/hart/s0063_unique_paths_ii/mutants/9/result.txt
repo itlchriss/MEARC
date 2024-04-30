@@ -1,0 +1,24 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0063_unique_paths_ii/mutants/9/Solution.java:18: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                obstacleGrid[i][0] = 0;
+                             ^
+  Reason: Double rewriting of ident: i i_521_521___32 i_521_535___35
+./hart/s0063_unique_paths_ii/mutants/9/Solution.java:20: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                obstacleGrid[i][0] = obstacleGrid[i % 1][0];
+                             ^
+  Reason: Double rewriting of ident: i i_521_521___32 i_521_535___35
+./hart/s0063_unique_paths_ii/mutants/9/Solution.java:33: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    obstacleGrid[i][j] = 0;
+                                 ^
+  Reason: Double rewriting of ident: i i_975_975___64 i_975_989___67
+./hart/s0063_unique_paths_ii/mutants/9/Solution.java:35: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
+                                 ^
+  Reason: Double rewriting of ident: i i_975_975___64 i_975_989___67
+4 errors
+2 warnings

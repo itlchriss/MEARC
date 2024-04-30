@@ -1,0 +1,29 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+            newStr[2 * i + 1] = s.charAt(i);
+                  ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestPalindrome
+                            ? Math.min(dp[friendCenter * 2 - i], (friendCenter + friendRadius) - i)
+                                         ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:30: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+                            ? Math.min(dp[friendCenter * 2 - i], (friendCenter + friendRadius) - i)
+                                         ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestPalindrome
+            newStr[2 * i + 1] = s.charAt(i);
+                  ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+                    && newStr[i + dp[i]] == newStr[i - dp[i]]) {
+                             ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:34: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestPalindrome
+                    && newStr[i + dp[i]] == newStr[i - dp[i]]) {
+                                                  ^
+./gpt35/s0005_longest_palindromic_substring/mutants/8/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+            dp[i] =
+              ^
+2 warnings
+7 verification failures

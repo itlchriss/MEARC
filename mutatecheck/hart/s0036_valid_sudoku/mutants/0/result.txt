@@ -1,0 +1,10 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+error: An error while executing a proof script for checkValid: (error "line 951 column 98: invalid function application, sort mismatch on argument at position 2")
+  >>>(define-fun BL_750_afterIf_34__A8 () Bool (= ((_ sign_extend 32) |val_823_823___38|) |_JML__tmp94|))
+1 error
+2 warnings

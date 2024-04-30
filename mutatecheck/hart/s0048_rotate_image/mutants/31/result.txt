@@ -1,0 +1,12 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0048_rotate_image/mutants/31/Solution.java:20: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    matrix[pos[k][0]][pos[k][1]] = t;
+                               ^
+  Reason: Double rewriting of ident: k k_756_756___16 k_756_779___30
+1 error
+2 warnings

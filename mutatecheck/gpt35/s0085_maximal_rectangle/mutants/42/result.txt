@@ -1,0 +1,35 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:67: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestRectangleArea
+            nLeftGeq[i] = 1;
+                    ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:85: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+        while (preIdx >= 0 && 0 < heights[preIdx]) {
+                                         ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:69: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+            while (preIdx >= 0 && heights[i] < heights[preIdx]) {
+                                                      ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method maximalRectangle
+                if (matrix[i][j] == '0') {
+                             ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:40: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:11:) in method maximalRectangle
+        return res;
+        ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:11: verify: Associated declaration: ./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:40:
+//@ ensures((\forall int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; matrix[i][j] == '1' ==> \result >= (i+1)*(j+1)));
+    ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:40: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:13:) in method maximalRectangle
+        return res;
+        ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:13: verify: Associated declaration: ./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:40:
+//@ ensures(\result >= 0);
+    ^
+./gpt35/s0085_maximal_rectangle/mutants/42/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method maximalRectangle
+                if (matrix[i][j] == '0') {
+                          ^
+2 warnings
+9 verification failures

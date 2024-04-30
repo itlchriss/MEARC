@@ -1,0 +1,14 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0067_add_binary/mutants/13/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method addBinary
+            int sum = (i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry;
+                                      ^
+./hart/s0067_add_binary/mutants/13/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method addBinary
+            int sum = (i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry;
+                                                                       ^
+2 warnings
+2 verification failures

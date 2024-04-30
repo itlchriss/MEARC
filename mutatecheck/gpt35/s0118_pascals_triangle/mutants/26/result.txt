@@ -1,0 +1,38 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:106: warning: A non-pure method is being called where it is not permitted: java.util.Objects.equals(java.lang.Object,java.lang.Object)
+    //@   //-RAC@ ensures \result == (\exists \bigint i; 0 <= i <= values.length; Objects.equals(elem, values[i]));
+                                                                                                ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/ArrayList.jml:119: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+    //@   ensures \result.equals(this);
+                                ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:12:) in method generate
+        return output;
+        ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:12: verify: Associated declaration: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31:
+//@ ensures((\forall int i, j; 0 <= i && i < numRows && 0 <= j && j < \result.get(i).size(); (j == 0 || j == \result.get(i).size() - 1) ==> \result.get(i).get(j) == 1));
+    ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:14:) in method generate
+        return output;
+        ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:14: verify: Associated declaration: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31:
+//@ ensures((\forall int i; 1 <= i && i < numRows; (\forall int j; 1 <= j && j < \result.get(i).size() - 1; \result.get(i).get(j) == \result.get(i - 1).get(j - 1) + \result.get(i - 1).get(j))));
+    ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:15:) in method generate
+        return output;
+        ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:15: verify: Associated declaration: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31:
+//@ ensures((\forall int i; 0 <= i && i < numRows; \result.get(i).size() == i + 1));
+    ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:16:) in method generate
+        return output;
+        ^
+./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:16: verify: Associated declaration: ./gpt35/s0118_pascals_triangle/mutants/26/Solution.java:31:
+//@ ensures(\result.size() == numRows);
+    ^
+4 warnings
+8 verification failures

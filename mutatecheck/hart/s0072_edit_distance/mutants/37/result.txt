@@ -1,0 +1,41 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method minDistance
+            dp[j] = j;
+              ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method minDistance
+                int tmp = dp[j];
+                            ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method minDistance
+                                ? 1 / Math.min(pre, Math.min(dp[j], dp[j - 1]))
+                                    ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w2)
+    public int minDistance(String w1, String w2) {
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/37/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExceptionExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w1)
+    public int minDistance(String w1, String w2) {
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/37/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w2)
+    public int minDistance(String w1, String w2) {
+                                             ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/37/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./hart/s0072_edit_distance/mutants/37/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExit: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w1)
+    public int minDistance(String w1, String w2) {
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/37/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 warnings
+11 verification failures

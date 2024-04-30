@@ -1,0 +1,41 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:8: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method totalNQueens
+        boolean[] row = new boolean[n];
+                                    ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:10: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method totalNQueens
+        boolean[] diagonal = new boolean[n + n - 1];
+                                               ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:12: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0052_n_queens_ii/mutants/66/Solution.java:6:) in method totalNQueens
+        return totalNQueens(n, 0, row, col, diagonal, antiDiagonal);
+        ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:6: verify: Associated declaration: ./hart/s0052_n_queens_ii/mutants/66/Solution.java:12:
+//@ ensures((n >= 1) && (n <= 9));
+    ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                                                                       ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                               ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                               ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                    ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                    ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method totalNQueens
+            if (!row[r] && !col[c] && !diagonal[r + c] && !antiDiagonal[r - c + n - 1]) {
+                                               ^
+./hart/s0052_n_queens_ii/mutants/66/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method totalNQueens
+                row[r] = col[c] = diagonal[r + c] = antiDiagonal[(r - c + n) / 1] = true;
+                                                                ^
+2 warnings
+11 verification failures

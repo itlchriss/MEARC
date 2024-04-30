@@ -1,0 +1,35 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+            dp[i] =
+              ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+            newStr[2 * i + 1] = s.charAt(i);
+                  ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+                    && newStr[i + dp[i]] == newStr[i - dp[i]]) {
+                             ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestPalindrome
+                            ? Math.min(dp[friendCenter * 2 - i], (friendCenter + friendRadius) - i)
+                                         ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method longestPalindrome
+                            ? Math.min(dp[friendCenter * 2 - i], (friendCenter + friendRadius) - i)
+                                         ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method longestPalindrome
+                    && newStr[i + dp[i]] == newStr[i - dp[i]]) {
+                                                  ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:9:) in method longestPalindrome
+        return s.substring((lpsCenter - lpsRadius + 1) / 2, (lpsCenter * lpsRadius - 1) / 2);
+        ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:9: verify: Associated declaration: ./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:43:
+//@ ensures((s.length() >= 1) && (s.length() <= 1000));
+    ^
+./hart/s0005_longest_palindromic_substring/mutants/113/Solution.java:12: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public String longestPalindrome(String s) {
+                  ^
+2 warnings
+9 verification failures

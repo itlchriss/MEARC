@@ -1,0 +1,23 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method myAtoi
+        } else if (input[i] == '+') {
+                        ^
+./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
+        while (i < input.length && input[i] == ' ') {
+                                        ^
+./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
+        while (i < input.length && input[i] <= '9' && input[i] >= '0') {
+                                        ^
+./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:7:) in method myAtoi
+        return num;
+        ^
+./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:7: verify: Associated declaration: ./gpt35/s0008_string_to_integer_atoi/mutants/75/Solution.java:43:
+//@ ensures(\result >= Integer.MIN_VALUE && \result <= Integer.MAX_VALUE);
+    ^
+2 warnings
+5 verification failures

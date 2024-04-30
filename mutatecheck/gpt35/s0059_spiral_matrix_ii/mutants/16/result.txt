@@ -1,0 +1,16 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0059_spiral_matrix_ii/mutants/16/Solution.java:32: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                spiral[k][cEnd] = num++;
+                       ^
+  Reason: Double rewriting of ident: k k_1030_1030___19 k_1030_1053___52
+./gpt35/s0059_spiral_matrix_ii/mutants/16/Solution.java:43: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    spiral[k][cStart] = num++;
+                           ^
+  Reason: Double rewriting of ident: k k_1380_1380___23 k_1380_1403___60
+2 errors
+2 warnings

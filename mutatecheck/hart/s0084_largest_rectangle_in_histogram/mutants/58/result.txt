@@ -1,0 +1,62 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:60: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method checkIfSorted
+            if (a[i] < a[i - 1]) {
+                        ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:60: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method checkIfSorted
+            if (a[i] < a[i - 1]) {
+                 ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:60: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method checkIfSorted
+            if (a[i] < a[i - 1]) {
+                 ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:50: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findMinInArray
+            if (a[index] < min) {
+                 ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:50: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method findMinInArray
+            if (a[index] < min) {
+                 ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestArea
+            int maxOfTwoBars = Math.max(a[start], a[start + 1]);
+                                         ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:22: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestArea
+            return a[start];
+                    ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:22: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestArea
+            return a[start];
+                    ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestArea
+            int maxOfTwoBars = Math.max(a[start], a[start + 1]);
+                                         ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestArea
+            int maxOfTwoBars = Math.max(a[start], a[start + 1]);
+                                                   ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:32: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestArea
+                if (a[i] * (limit - i) > maxWhenSorted) {
+                     ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestArea
+                    a[minInd] * (limit - start),
+                     ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:41: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestArea
+                    a[minInd] * (limit - start),
+                     ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:32: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestArea
+                if (a[i] * (limit - i) > maxWhenSorted) {
+                     ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:11: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:8:) in method largestRectangleArea
+        return largestArea(heights, 0, heights.length);
+        ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:8: verify: Associated declaration: ./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:11:
+//@ ensures((heights.length >= 1) && (heights.length <= 100000));
+    ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:11: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:7:) in method largestRectangleArea
+        return largestArea(heights, 0, heights.length);
+        ^
+./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:7: verify: Associated declaration: ./hart/s0084_largest_rectangle_in_histogram/mutants/58/Solution.java:11:
+//@ ensures(\forall int i; 0 <= i < heights.length; ((heights[i] >= 0) && (heights[i] <= 10000)));
+    ^
+2 warnings
+18 verification failures

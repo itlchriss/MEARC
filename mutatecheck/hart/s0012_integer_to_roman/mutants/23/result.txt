@@ -1,0 +1,17 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0012_integer_to_roman/mutants/23/Solution.java:17: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0012_integer_to_roman/mutants/23/Solution.java:6:) in method intToRoman
+        return sb.toString();
+        ^
+./hart/s0012_integer_to_roman/mutants/23/Solution.java:6: verify: Associated declaration: ./hart/s0012_integer_to_roman/mutants/23/Solution.java:17:
+//@ ensures((num >= 1) && (num <= 3999));
+    ^
+./hart/s0012_integer_to_roman/mutants/23/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method numerals
+        int div = num / one;
+                      ^
+2 warnings
+3 verification failures

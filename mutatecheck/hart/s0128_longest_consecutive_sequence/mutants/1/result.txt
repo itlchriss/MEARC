@@ -1,0 +1,14 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:10:) in method longestConsecutive
+            return 0;
+            ^
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:10: verify: Associated declaration: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14:
+//@ ensures(nums.length <= 100000);
+    ^
+2 warnings
+2 verification failures

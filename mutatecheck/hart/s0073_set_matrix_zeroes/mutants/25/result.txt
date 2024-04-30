@@ -1,0 +1,20 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./hart/s0073_set_matrix_zeroes/mutants/25/Solution.java:34: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    matrix[i][0] = 0;
+                           ^
+  Reason: Double rewriting of ident: i i_1074_1074___51 i_1074_1088___54
+./hart/s0073_set_matrix_zeroes/mutants/25/Solution.java:43: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                    matrix[i][j] = 0;
+                           ^
+  Reason: Double rewriting of ident: i i_1389_1389___79 i_1389_1403___82
+./hart/s0073_set_matrix_zeroes/mutants/25/Solution.java:50: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                matrix[i][0] = 0;
+                       ^
+  Reason: Double rewriting of ident: i i_1637_1637___106 i_1637_1651___109
+3 errors
+2 warnings

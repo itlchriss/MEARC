@@ -1,0 +1,38 @@
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @        ( o != null && oo != null && o.equals(oo)));
+                                                    ^
+/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
+      @                a[i].equals(a2[i])));
+                                  ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method lengthOfLongestSubstring
+            lastIndices[i] = -1;
+                       ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:8:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:8: verify: Associated declaration: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); (\exists int k; i <= k <= j; (\forall int l; i <= l <= j; k != l))));
+    ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method lengthOfLongestSubstring
+            if (lastIndices[cur] < start) {
+                           ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:9:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:9: verify: Associated declaration: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); (\forall int k; i <= k < j; (\forall int l; i <= l < j; k != l))));
+    ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:10:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:10: verify: Associated declaration: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37:
+//@ ensures((\forall int i, j; 0 <= i <= j < s.length(); j - i <= \result));
+    ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:11:) in method lengthOfLongestSubstring
+        return maxLen;
+        ^
+./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:11: verify: Associated declaration: ./gpt35/s0003_longest_substring_without_repeating_characters/mutants/22/Solution.java:37:
+//@ ensures((\exists int i, j; 0 <= i <= j < s.length(); j - i == \result));
+    ^
+2 warnings
+10 verification failures
