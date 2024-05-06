@@ -1,0 +1,5 @@
+ensures:
+- The type_integer_ param_x_ is greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.
+- The type_integer_ result is the reverse of the digits of the type_integer_ param_x_.
+- If the reverse of the digits of the type_integer_ param_x_ causes the value to go outside the signed 32-bit type_integer_ range , the result is equal to 0.
+requires: []

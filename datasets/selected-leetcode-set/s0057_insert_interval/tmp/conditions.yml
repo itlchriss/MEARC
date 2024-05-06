@@ -1,0 +1,8 @@
+ensures:
+- The type_integer_ type_array_ param_intervals_ is not null.
+- The type_integer_ type_array_ param_intervals_ is sorted in ascending_order by the first element of each interval.
+- The type_integer_ type_array_ param_newInterval_ is not null.
+- The type_integer_ type_array_ param_newInterval_ is a non-overlapping interval.
+- The type_integer_ type_array_ result is the expr_a type_array_ after inserting expr_b such that the intervals are still sorted in ascending_order by the first element of each interval and exist no overlapping intervals.
+- If the expr_a overlaps with existing intervals in expr_b , the overlapping intervals are merged appropriately.
+requires: []

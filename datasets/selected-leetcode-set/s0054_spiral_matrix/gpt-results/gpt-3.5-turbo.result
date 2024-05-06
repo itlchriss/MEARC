@@ -1,0 +1,12 @@
+- public List<Integer> spiralOrder(int[][] matrix)
+- requires matrix != null;
+- requires matrix.length > 0;
+- requires matrix[0].length > 0;
+- ensures \result != null;
+- ensures (\forall int i; 0 <= i && i < \result.size(); matrixContains(matrix, \result.get(i)));
+- ensures \result.size() == matrix.length * matrix[0].length;
+- pure public boolean matrixContains(int[][] matrix, int num)
+- requires matrix != null;
+- requires matrix.length > 0;
+- requires matrix[0].length > 0;
+- ensures \result == (\exists int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; matrix[i][j] == num);

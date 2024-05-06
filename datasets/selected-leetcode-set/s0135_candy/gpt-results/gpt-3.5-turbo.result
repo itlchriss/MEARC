@@ -1,0 +1,6 @@
+- public int candy(int[] ratings)
+- requires ratings != null && ratings.length > 0;
+- ensures \result >= 0;
+- ensures (\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] <= ratings[i + 1] ==> \result >= \old(\result));
+- ensures (\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] > ratings[i + 1] ==> \result > \old(\result));
+- ensures (\forall int i; 0 <= i && i < ratings.length - 1; ratings[i] < ratings[i + 1] ==> \result > \old(\result));

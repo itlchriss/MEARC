@@ -1,0 +1,1 @@
+ensures((!(\forall int i; 0 <= i && i < String.valueOf((x)).length() / 2; String.valueOf((x)).charAt(i) == String.valueOf((x)).charAt(String.valueOf((x)).length() - 1 - i))) ==> (\result == false));

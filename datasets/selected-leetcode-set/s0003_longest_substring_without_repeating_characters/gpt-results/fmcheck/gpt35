@@ -1,0 +1,7 @@
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method lengthOfLongestSubstring
+            lastIndices[i] = -1;
+                       ^
+./datasets/leetcode-behavioural/s0003_longest_substring_without_repeating_characters/gpt-results/build/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method lengthOfLongestSubstring
+            if (lastIndices[cur] < start) {
+                           ^
+2 verification failures

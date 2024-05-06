@@ -1,0 +1,8 @@
+ensures:
+- The type_integer_ type_array_ param_nums_ is not null.
+- The length of the type_integer_ type_array_ param_nums_ is greater_than_or_equal to 1 and is less_than_or_equal to 6.
+- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 10 and are less_than_or_equal to 10.
+- All integers in the type_integer_ type_array_ param_nums_ are unique.
+- The result is a type_list_ of lists that each inner type_list_ is a permutation of the integers in the type_array_ param_nums_.
+- The order of permutations in the result type_list_ can be in any order.
+requires: []

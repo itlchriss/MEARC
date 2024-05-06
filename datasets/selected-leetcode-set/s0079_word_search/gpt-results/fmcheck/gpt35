@@ -1,0 +1,31 @@
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:13: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y]) {
+                                                                                     ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:13: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y]) {
+                                                                                  ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:9: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method backtrace: g0001_0100.s0079_word_search.Solution.backtrace(char[][],boolean[][],java.lang.String,int,int,int) (parameter word)
+            char[][] board, boolean[][] visited, String word, int index, int x, int y) {
+                                                        ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:9:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method backtrace
+        if (word.charAt(index) == board[x][y]) {
+                                          ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:9: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method backtrace: g0001_0100.s0079_word_search.Solution.backtrace(char[][],boolean[][],java.lang.String,int,int,int) (parameter word)
+            char[][] board, boolean[][] visited, String word, int index, int x, int y) {
+                                                        ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:9:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:43: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method exist
+        boolean[][] visited = new boolean[board.length][board[0].length];
+                                                             ^
+./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:42: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method exist: g0001_0100.s0079_word_search.Solution.exist(char[][],java.lang.String) (parameter word)
+    public boolean exist(char[][] board, String word) {
+                                                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0079_word_search/gpt-results/build/Solution.java:42:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+10 verification failures

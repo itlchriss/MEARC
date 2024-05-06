@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_0" surf="expr_a" base="expr_a"/>
+          <token start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" id="t0_1" surf="is" base="be"/>
+          <token start="2" span="1" pos="RB" chunk="O" entity="O" cat="(S\NP)\(S\NP)" id="t0_2" surf="not" base="not"/>
+          <token start="3" span="1" pos="JJ" chunk="I-ADJP" entity="O" cat="S[adj]\NP" id="t0_3" surf="equal" base="equal"/>
+          <token start="4" span="1" pos="TO" chunk="I-VP" entity="O" cat="(S[to]\NP)/(S[b]\NP)" id="t0_4" surf="to" base="to"/>
+          <token start="5" span="1" pos="VB" chunk="I-VP" entity="O" cat="S[b]\NP" id="t0_5" surf="expr_b" base="expr_b"/>
+          <token start="6" span="1" pos="." chunk="O" entity="O" cat="." id="t0_6" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp14" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp4" category="S[dcl=true]" rule="ba"/>
+          <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+          <span start="0" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp3" surf="expr_a" base="expr_a" terminal="t0_0" category="N"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp10" category="S[dcl=true]\NP" rule="ba"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp9" category="S[dcl=true]\NP" rule="fa"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" category="(S[dcl=true]\NP)/(S[adj=true]\NP)" rule="bx"/>
+          <span start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp7" surf="is" base="be" terminal="t0_1" category="(S[dcl=true]\NP)/(S[adj=true]\NP)"/>
+          <span start="2" span="1" pos="RB" chunk="O" entity="O" id="s0_sp8" surf="not" base="not" terminal="t0_2" category="(S\NP)\(S\NP)"/>
+          <span start="3" span="1" pos="JJ" chunk="I-ADJP" entity="O" id="s0_sp9" surf="equal" base="equal" terminal="t0_3" category="S[adj=true]\NP"/>
+          <span id="s0_sp10" child="s0_sp11" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="lex"/>
+          <span id="s0_sp11" child="s0_sp12 s0_sp13" category="S[to=true]\NP" rule="fa"/>
+          <span start="4" span="1" pos="TO" chunk="I-VP" entity="O" id="s0_sp12" surf="to" base="to" terminal="t0_4" category="(S[to=true]\NP)/(S[b=true]\NP)"/>
+          <span start="5" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp13" surf="expr_b" base="expr_b" terminal="t0_5" category="S[b=true]\NP"/>
+          <span start="6" span="1" pos="." chunk="O" entity="O" id="s0_sp14" surf="." base="." terminal="t0_6" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

@@ -1,0 +1,3 @@
+- requires nums != null && nums.length > 0;
+- requires (\forall int i; 0 <= i && i < nums.length; -10^4 <= nums[i] && nums[i] <= 10^4);
+- ensures \result == (\max int sum; (\exists int i, j; 0 <= i && i <= j && j < nums.length; sum == (\sum int k; i <= k && k <= j; nums[k])));

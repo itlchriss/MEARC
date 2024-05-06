@@ -1,0 +1,5 @@
+- requires nums != null && nums.length > 0;
+- requires (\forall int i; 0 <= i && i < nums.length; nums[i] >= Integer.MIN_VALUE && nums[i] <= Integer.MAX_VALUE);
+- ensures \result >= 1;
+- ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != \result);
+- ensures (\exists int i; 1 <= i && i <= nums.length; (\forall int j; 0 <= j && j < nums.length; nums[j] != i) ==> \result == i);

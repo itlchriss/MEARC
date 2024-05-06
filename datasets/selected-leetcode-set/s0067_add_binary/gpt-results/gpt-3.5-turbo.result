@@ -1,0 +1,4 @@
+- requires a != null && b != null;
+- requires a.matches("[01]+") && b.matches("[01]+");
+- ensures \result.matches("[01]+");
+- ensures \result.equals(Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2)));

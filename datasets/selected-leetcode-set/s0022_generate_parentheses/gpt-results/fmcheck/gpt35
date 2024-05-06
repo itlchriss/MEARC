@@ -1,0 +1,25 @@
+./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method generate: (Parameter: str, Caller: g0001_0100.s0022_generate_parentheses.Solution.generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int), Callee: java.lang.StringBuilder.append(char))
+    private List<String> generate(StringBuilder sb, List<String> str, int open, int close) {
+                                                                 ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10:) in method generate: g0001_0100.s0022_generate_parentheses.Solution.generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int) (parameter str)
+    private List<String> generate(StringBuilder sb, List<String> str, int open, int close) {
+                                                                 ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:10: verify: Associated declaration: ./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21:
+    //-RAC@ public invariant values.length >= 0;  // FIXME - should be implicit? (cf. gitbug686)
+                   ^
+./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:32: verify: The prover cannot establish an assertion (InvariantLeaveCaller: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method generate: (Caller: g0001_0100.s0022_generate_parentheses.Solution.generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int), Callee: java.lang.StringBuilder.append(char))
+            sb.append(')');
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:32:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method generate: g0001_0100.s0022_generate_parentheses.Solution.generate(java.lang.StringBuilder,java.util.List<java.lang.String>,int,int) (parameter sb)
+    private List<String> generate(StringBuilder sb, List<String> str, int open, int close) {
+                                                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0022_generate_parentheses/gpt-results/build/Solution.java:21:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+8 verification failures

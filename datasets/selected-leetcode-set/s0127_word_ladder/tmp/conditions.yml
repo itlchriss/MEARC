@@ -1,0 +1,10 @@
+ensures:
+- The type_integer_ result is the number of words in the shortest transformation sequence from the expr_a to the expr_b , or 0 if no such sequence exists.
+- The length of the expr_a is greater_than_or_equal to 1 and is less_than_or_equal to 10.
+- The length of the expr_a is equal to the length of the expr_b.
+- The length of the expr_a is greater_than_or_equal to 1 and is less_than_or_equal to 5000.
+- The length of each word in the expr_a is equal to the length of the expr_b.
+- The expr_a , expr_b , and all words in the expr_c consist of  lowercase_alphabets  .
+- The expr_a is not equal to the expr_b.
+- All words in the expr_a are unique.
+requires: []

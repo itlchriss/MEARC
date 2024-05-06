@@ -1,0 +1,9 @@
+ensures:
+- Method behavioural specifications:.
+- The type_integer_ type_array_ param_coins_ is not null.
+- The type_integer_ param_amount_ is greater_than_or_equal to 1 and is less_than_or_equal to 500.
+- The type_integer_ result is a type_list_ of lists that each inner type_list_ is a unique combination of integers from the expr_a type_array_ that sum up to the expr_b.
+- Each combination in the result type_list_ is unique , meaning the frequency of at least one chosen number is different.
+- The number of unique combinations in the result type_list_ is less_than to 150 for the given input.
+- The order of combinations in the result type_list_ can be arbitrary.
+requires: []

@@ -1,0 +1,9 @@
+ensures:
+- The type_integer_ type_array_ param_words_ is not null.
+- The type_integer_ param_maxWidth_ is greater_than_or_equal to 1 and is less_than_or_equal to 100.
+- The length of the type_string_ type_list_ result is greater_than_or_equal to 1 and is less_than_or_equal to 300.
+- Each type_string_ in the type_string_ type_list_ result has a length is greater_than to 0 and does not exceed expr_a.
+- Extra spaces between words in each line are distributed as evenly as possible.
+- If the number of spaces on a line does not divide evenly between words , the empty slots on the left will be assigned more spaces than the slots on the right.
+- The last line of text is left-justified and no extra space is inserted between words.
+requires: []

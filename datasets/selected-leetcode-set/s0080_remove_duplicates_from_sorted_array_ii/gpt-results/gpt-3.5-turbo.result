@@ -1,0 +1,5 @@
+- //@ requires nums != null;
+- //@ ensures \result >= 0;
+- //@ ensures (\forall int i; 0 <= i && i < \result; (\forall int j; i+1 <= j && j < \result; nums[i] != nums[j] || (j - i) < 2));
+- //@ ensures (\forall int i; \result <= i && i < nums.length; nums[i] == \old(nums[i]));
+- //@ assignable nums[*];

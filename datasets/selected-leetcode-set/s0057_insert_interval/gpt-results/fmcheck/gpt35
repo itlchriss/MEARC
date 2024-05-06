@@ -1,0 +1,61 @@
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        while (r >= 0 && newInterval[1] < intervals[r][0]) {
+                                    ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        while (r >= 0 && newInterval[1] < intervals[r][0]) {
+                                                      ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        while (r >= 0 && newInterval[1] < intervals[r][0]) {
+                                                   ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        while (l < n && newInterval[0] > intervals[l][1]) {
+                                   ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method insert
+        while (l < n && newInterval[0] > intervals[l][1]) {
+                                                  ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        while (l < n && newInterval[0] > intervals[l][1]) {
+                                                     ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method insert
+            res[i] = Arrays.copyOf(intervals[i], intervals[i].length);
+               ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+            res[i] = Arrays.copyOf(intervals[i], intervals[i].length);
+                                            ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][1] = Math.max(newInterval[1], r == -1 ? newInterval[1] : intervals[r][1]);
+                                        ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][0] = Math.min(newInterval[0], l == n ? newInterval[0] : intervals[l][0]);
+                                                                                ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method insert
+        res[l][1] = Math.max(newInterval[1], r == -1 ? newInterval[1] : intervals[r][1]);
+                                                                                 ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][0] = Math.min(newInterval[0], l == n ? newInterval[0] : intervals[l][0]);
+              ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyNullDeReference) in method insert
+        res[l][0] = Math.min(newInterval[0], l == n ? newInterval[0] : intervals[l][0]);
+              ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][1] = Math.max(newInterval[1], r == -1 ? newInterval[1] : intervals[r][1]);
+              ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method insert
+            res[i] = intervals[j];
+               ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][1] = Math.max(newInterval[1], r == -1 ? newInterval[1] : intervals[r][1]);
+                                                                                    ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+        res[l][0] = Math.min(newInterval[0], l == n ? newInterval[0] : intervals[l][0]);
+                                        ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method insert
+            res[i] = intervals[j];
+                              ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method insert
+            res[i] = intervals[j];
+               ^
+./datasets/leetcode-behavioural/s0057_insert_interval/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method insert
+            res[i] = intervals[j];
+                ^
+20 verification failures

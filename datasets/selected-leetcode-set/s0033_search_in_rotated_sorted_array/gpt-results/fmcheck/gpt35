@@ -1,0 +1,13 @@
+./datasets/leetcode-behavioural/s0033_search_in_rotated_sorted_array/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method search
+            if (nums[lo] <= nums[mid]) {
+                    ^
+./datasets/leetcode-behavioural/s0033_search_in_rotated_sorted_array/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method search
+            if (target == nums[mid]) {
+                              ^
+./datasets/leetcode-behavioural/s0033_search_in_rotated_sorted_array/gpt-results/build/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method search
+            } else if (nums[mid] <= target && target <= nums[hi]) {
+                                                            ^
+./datasets/leetcode-behavioural/s0033_search_in_rotated_sorted_array/gpt-results/build/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method search
+            if (target == nums[mid]) {
+                              ^
+4 verification failures

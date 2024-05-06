@@ -1,0 +1,7 @@
+ensures:
+- The type_integer_ type_array_ param_nums_ is not null.
+- The type_boolean_ result is equal to the true literal if the last index can be reached from the first index using the maximum jump lengths specified in the type_array_ expr_a.
+- The type_boolean_ result is equal to the false literal if the last index cannot be reached from the first index using the maximum jump lengths specified in the type_array_ expr_a.
+- The length of the type_integer_ type_array_ param_nums_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
+- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to 0 and are less_than_or_equal to 100000.
+requires: []

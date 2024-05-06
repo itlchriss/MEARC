@@ -1,0 +1,31 @@
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method minDistance
+            dp[j] = j;
+              ^
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method minDistance
+                int tmp = dp[j];
+                            ^
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w1)
+    public int minDistance(String w1, String w2) {
+                                  ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w2)
+    public int minDistance(String w1, String w2) {
+                                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w1)
+    public int minDistance(String w1, String w2) {
+                                  ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method minDistance: g0001_0100.s0072_edit_distance.Solution.minDistance(java.lang.String,java.lang.String) (parameter w2)
+    public int minDistance(String w1, String w2) {
+                                             ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0072_edit_distance/gpt-results/build/Solution.java:17:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+10 verification failures

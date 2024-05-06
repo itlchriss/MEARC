@@ -1,0 +1,10 @@
+- public String convert(String s, int numRows);
+- requires s != null && numRows > 0;
+- ensures \result != null;
+- ensures \result.length() == s.length();
+- ensures (\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.');
+- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.');
+- ensures (\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.');
+- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)) || Character.isLowerCase(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.');
+- ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == \result.charAt(i) || s.charAt(i) == ',' || s.charAt(i) == '.');
+- ensures (\forall int i; 0 <= i && i < \result.length(); s.charAt(i) == \result.charAt(i) || \result.charAt(i) == ',' || \result.charAt(i) == '.');

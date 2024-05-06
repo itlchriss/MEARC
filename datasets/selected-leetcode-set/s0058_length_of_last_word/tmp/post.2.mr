@@ -1,0 +1,1 @@
+exists x01.(exists e02.(_last{JJ}(e02) & (Subj(e02) = x01) & _word{NN}(x01)) & exists x03.(exists e04.(_maximal{JJ}(e04) & (Subj(e04) = x03) & _substring{NN}(x03)) & exists x05.(exists e06.(_non_dash_space{JJ}(e06) & (Subj(e06) = x05) & _character{NNS}(x05)) & exists e07.(_contain{VBG}(e07) & (Subj(e07) = x03) & (Acc(e07) = x05) & _only{RB}(e07))) & (x01 = x03)))

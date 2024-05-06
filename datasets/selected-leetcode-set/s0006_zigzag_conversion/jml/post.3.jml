@@ -1,0 +1,1 @@
+ensures((\exists int i; 0 <= i < \result.length(); Character.isAlphabetic(\result.charAt(i))) && ((\exists int i; 0 <= i < \result.length(); ',' == (\result.charAt(i))) && (\exists int i; 0 <= i < \result.length(); '.' == (\result.charAt(i)))));

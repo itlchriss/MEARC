@@ -1,0 +1,10 @@
+./datasets/leetcode-behavioural/s0008_string_to_integer_atoi/gpt-results/build/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method myAtoi
+        } else if (input[i] == '+') {
+                        ^
+./datasets/leetcode-behavioural/s0008_string_to_integer_atoi/gpt-results/build/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
+        while (i < input.length && input[i] == ' ') {
+                                        ^
+./datasets/leetcode-behavioural/s0008_string_to_integer_atoi/gpt-results/build/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
+        while (i < input.length && input[i] <= '9' && input[i] >= '0') {
+                                        ^
+3 verification failures

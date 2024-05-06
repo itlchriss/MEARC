@@ -1,0 +1,7 @@
+ensures:
+- The type_string_ param_s_ is not null.
+- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 16.
+- The type_string_ result is a type_list_ of lists that each sublist contains palindrome substrings of the type_string_ param_s_.
+- Each sublist in the type_string_ result only contains  lowercase_alphabets  .
+- Each sublist in the type_string_ result is a valid palindrome partitioning of the type_string_ param_s_.
+requires: []

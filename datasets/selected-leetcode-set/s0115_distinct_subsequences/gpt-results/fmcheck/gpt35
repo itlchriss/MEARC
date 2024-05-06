@@ -1,0 +1,16 @@
+./datasets/leetcode-behavioural/s0115_distinct_subsequences/gpt-results/build/Solution.java:22: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method numDistinct
+        int[] dp = new int[move];
+                           ^
+./datasets/leetcode-behavioural/s0115_distinct_subsequences/gpt-results/build/Solution.java:40: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method numDistinct
+                    dp[j] = dp[j - 1];
+                              ^
+./datasets/leetcode-behavioural/s0115_distinct_subsequences/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method numDistinct
+                    dp[j] += dp[j - 1];
+                               ^
+./datasets/leetcode-behavioural/s0115_distinct_subsequences/gpt-results/build/Solution.java:38: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method numDistinct
+                    dp[j] += dp[j - 1];
+                      ^
+./datasets/leetcode-behavioural/s0115_distinct_subsequences/gpt-results/build/Solution.java:40: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method numDistinct
+                    dp[j] = dp[j - 1];
+                      ^
+5 verification failures

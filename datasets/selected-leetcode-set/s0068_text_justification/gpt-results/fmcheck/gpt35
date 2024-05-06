@@ -1,0 +1,40 @@
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method fullJustify
+        List<String> output = new ArrayList<>((words.length + 1) / (1 + maxWidth / 7));
+                                                                 ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fullJustify
+            lineTotal += words[i].length();
+                              ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:83: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fullJustify
+            lineTotal += words[i].length();
+                              ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:44: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method fullJustify: (Caller: g0001_0100.s0068_text_justification.Solution.fullJustify(java.lang.String[],int), Callee: java.lang.StringBuilder.append(java.lang.String))
+                    sb.append(words[i]);
+                              ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:44:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:84: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method fullJustify: (Caller: g0001_0100.s0068_text_justification.Solution.fullJustify(java.lang.String[],int), Callee: java.lang.StringBuilder.append(java.lang.String))
+            sb.append(words[i]);
+                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:84:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:67: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fullJustify
+                    sb.append(words[startWord + numWordsOnLine - 1]);
+                                   ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:56: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fullJustify
+                        sb.append(words[j]);
+                                       ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:67: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method fullJustify: (Caller: g0001_0100.s0068_text_justification.Solution.fullJustify(java.lang.String[],int), Callee: java.lang.StringBuilder.append(java.lang.String))
+                    sb.append(words[startWord + numWordsOnLine - 1]);
+                              ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:67:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:56: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method fullJustify
+                        sb.append(words[j]);
+                                       ^
+./datasets/leetcode-behavioural/s0068_text_justification/gpt-results/build/Solution.java:25: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public List<String> fullJustify(String[] words, int maxWidth) {
+                        ^
+13 verification failures

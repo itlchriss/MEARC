@@ -1,0 +1,15 @@
+ensures:
+- The List of List of String result contains all the shortest transformation sequences from the expr_a to the expr_b , or an empty type_list_ if no such sequence exists.
+- Each transformation sequence is represented as a type_list_ of words , starting with expr_a and ending with expr_b.
+- Every adjacent pair of words in a transformation sequence must differ by a single letter.
+- Every word in the transformation sequence , except for the expr_a , is present in the expr_b.
+- The expr_a is the last word in the transformation sequence.
+- If exists no valid transformation sequence , an empty type_list_ is returned.
+- The length of expr_a is greater_than_or_equal to 1 and is less_than_or_equal to 5.
+- The length of expr_a is equal to the length of expr_b.
+- The length of expr_a is greater_than_or_equal to 1 and is less_than_or_equal to 1000.
+- Each word in expr_a has the same length as expr_b.
+- ' expr_a and expr_b consist of  lowercase_alphabets  .'
+- ' expr_a is not equal to expr_b.'
+- All words in expr_a are unique.
+requires: []

@@ -1,0 +1,7 @@
+- public List<String> generateParenthesis(int n)
+- requires n >= 1 && n <= 8;
+- ensures \result != null;
+- ensures \forall String s; \result.contains(s) <==> isValidParentheses(s);
+- ensures \result.size() == factorial(2*n)/(factorial(n)*factorial(n));
+- pure helper method: boolean isValidParentheses(String s);
+- pure helper method: int factorial(int n);

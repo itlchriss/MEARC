@@ -1,0 +1,1 @@
+exists x01.(_bracket{NNS}(x01) & _open{NNP}(x01) & _1_DOT{CD}(x01) & exists e02.(_close{VBN}(e02) & (Acc(e02) = x01) & exists x03.(exists e04.(_same{JJ}(e04) & (Subj(e04) = x03) & _type{NN}(x03)) & exists x05.(_bracket{NNS}(x05) & exists e06.(_of{IN}(e06,x05) & (Subj(e06) = x03))) & (Subj(e02) = x03))))

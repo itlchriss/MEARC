@@ -1,0 +1,3 @@
+- public boolean isNumber(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 20
+- ensures \result == true if s is a valid number, false otherwise

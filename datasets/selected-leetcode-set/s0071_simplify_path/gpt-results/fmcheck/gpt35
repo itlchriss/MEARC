@@ -1,0 +1,13 @@
+./datasets/leetcode-behavioural/s0071_simplify_path/gpt-results/build/Solution.java:49: verify: The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:33:) in method simplifyPath
+}
+^
+Note: Call stack
+  /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/util/Deque.jml:212: java.lang.Iterable._get
+  ./datasets/leetcode-behavioural/s0071_simplify_path/gpt-results/build/Solution.java:38: java.util.Deque.push
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Iterable.jml:33: verify: Associated declaration: ./datasets/leetcode-behavioural/s0071_simplify_path/gpt-results/build/Solution.java:49:
+      @ model public pure T _get(int n);
+                            ^
+./datasets/leetcode-behavioural/s0071_simplify_path/gpt-results/build/Solution.java:48: verify: Associated method exit
+    }
+     ^
+3 verification failures

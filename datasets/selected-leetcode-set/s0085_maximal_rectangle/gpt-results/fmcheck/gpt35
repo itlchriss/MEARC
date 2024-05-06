@@ -1,0 +1,19 @@
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:67: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method largestRectangleArea
+            nLeftGeq[i] = 1;
+                    ^
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:69: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+            while (preIdx >= 0 && heights[i] < heights[preIdx]) {
+                                                      ^
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:85: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method largestRectangleArea
+        while (preIdx >= 0 && 0 < heights[preIdx]) {
+                                         ^
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method maximalRectangle
+                if (matrix[i][j] == '0') {
+                             ^
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method maximalRectangle
+                if (matrix[i][j] == '0') {
+                          ^
+./datasets/leetcode-behavioural/s0085_maximal_rectangle/gpt-results/build/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method maximalRectangle
+                if (matrix[i][j] == '0') {
+                             ^
+6 verification failures

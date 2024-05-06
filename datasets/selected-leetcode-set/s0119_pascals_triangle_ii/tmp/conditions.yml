@@ -1,0 +1,6 @@
+ensures:
+- The type_integer_ param_rowIndex_ is greater_than_or_equal to 0 and is less_than_or_equal to 33.
+- The size of the type_integer_ type_list_ result is equal to the type_integer_ param_rowIndex_ plus one.
+- Each element in the type_integer_ type_list_ result is the sum of the two numbers directly above it in Pascal's triangle.
+- The algorithm should use only O(rowIndex) extra space.
+requires: []

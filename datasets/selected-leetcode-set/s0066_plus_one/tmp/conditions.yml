@@ -1,0 +1,8 @@
+ensures:
+- The type_integer_ type_array_ param_digits_ is a large type_integer_ without any leading zeros.
+- The type_integer_ type_array_ result is the large type_integer_ obtained by incrementing the input large type_integer_ by one.
+- The length of the type_integer_ type_array_ result is equal to the length of the type_integer_ type_array_ param_digits_.
+- Each element in the type_integer_ type_array_ result is a digit from 0 to 9.
+- If the last digit in the type_integer_ type_array_ param_digits_ is 9 , the last digit in the type_integer_ type_array_ result is 0 , and the digit before it is incremented by one.
+- If all digits in the type_integer_ type_array_ param_digits_ are 9 , a new digit 1 is added to the beginning of the type_integer_ type_array_ result , and all other digits are set to 0.
+requires: []

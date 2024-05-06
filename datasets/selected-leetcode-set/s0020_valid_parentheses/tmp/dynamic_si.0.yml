@@ -1,0 +1,89 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ' str_a expr_a str_b expr_b str_c expr_c str_d expr_d str_e expr_e
+    str_f'
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ' , '
+- term: expr_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ' , '
+- term: expr_d
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ' , '
+- term: expr_e
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ' , and '
+- term: str_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '''('''
+- term: str_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ''')'''
+- term: str_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '''{'''
+- term: str_d
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '''}'''
+- term: str_e
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: '''['''
+- term: str_f
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation: ''']'''

@@ -1,0 +1,13 @@
+- public boolean isInterleave(String s1, String s2, String s3)
+- requires s1 != null && s2 != null && s3 != null;
+- requires s1.length() <= 100 && s2.length() <= 100 && s3.length() <= 200;
+- requires (\forall int i; 0 <= i && i < s1.length(); Character.isLowerCase(s1.charAt(i)));
+- requires (\forall int i; 0 <= i && i < s2.length(); Character.isLowerCase(s2.charAt(i)));
+- requires (\forall int i; 0 <= i && i < s3.length(); Character.isLowerCase(s3.charAt(i)));
+- ensures \result == true || \result == false;
+- ensures \result == true ==> s3 is formed by an interleaving of s1 and s2;
+- ensures \result == false ==> s3 is not formed by an interleaving of s1 and s2;
+- ensures \result == true ==> |s1.length() - s2.length()| <= 1;
+- ensures \result == true ==> s3.length() == s1.length() + s2.length();
+- ensures \result == true ==> s3 consists of characters from s1 and s2 in the correct order;
+- ensures \result == false ==> s3 does not follow the interleaving pattern of s1 and s2;

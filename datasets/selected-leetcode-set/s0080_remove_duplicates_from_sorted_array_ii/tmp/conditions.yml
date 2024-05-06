@@ -1,0 +1,11 @@
+ensures:
+- The type_integer_ type_array_ param_nums_ is sorted in ascending_order .
+- The type_integer_ result is the number of unique elements in the type_array_ expr_a after removing duplicates such that each unique element appears at most twice.
+- The relative order of the elements in the type_array_ expr_a should be kept the same.
+- The first expr_a elements of the type_array_ expr_b should hold the final result after removing duplicates.
+- The length of the type_integer_ type_array_ expr_a does not change , and the final result is placed in the first expr_b slots of the type_array_ expr_c.
+- The type_integer_ result expr_a is equal to the number of elements in the type_array_ expr_b after removing duplicates.
+- The type_integer_ result expr_a is greater_than_or_equal to 0 and is less_than_or_equal to 30000.
+- The type_integer_ result expr_a is equal to the length of the expected answer with correct length.
+- The values of the first expr_a elements in the type_array_ expr_b are equal to the values of the expected answer with correct length.
+requires: []

@@ -1,0 +1,11 @@
+ensures:
+- The type_string_ param_s_ is not null.
+- The type_string_ param_s_ must only contain digits.
+- The length of the type_string_ param_s_ is between 0 and 20 , inclusive.
+- The type_list_ of type_strings_ result contains valid IP addresses formed by inserting dots into the type_string_ param_s_.
+- Each valid IP address in the type_list_ result consists of four integers separated by single dots.
+- Each type_integer_ in the valid IP address is between 0 and 255 , inclusive.
+- Each type_integer_ in the valid IP address cannot have leading zeros.
+- The valid IP addresses in the type_list_ result are unique.
+- The order of valid IP addresses in the type_list_ result can be arbitrary.
+requires: []

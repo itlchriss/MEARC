@@ -1,0 +1,6 @@
+- requires num >= 1 && num <= 3999;
+- ensures \result != null;
+- ensures validRomanNumeral(\result);
+- pure helper boolean method validRomanNumeral(String s);
+- pure helper int romanToInteger(char r);
+- pure helper char integerToRoman(int n);

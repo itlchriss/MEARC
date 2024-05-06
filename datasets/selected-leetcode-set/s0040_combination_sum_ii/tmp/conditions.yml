@@ -1,0 +1,11 @@
+ensures:
+- Method behavioural specifications:.
+- The type_integer_ type_array_ param_candidates_ is not null.
+- The type_integer_ type_array_ param_candidates_'s length is greater_than_or_equal to 1 and is less_than_or_equal to 100.
+- All values in the type_integer_ type_array_ param_candidates_ are greater_than_or_equal to 1 and are less_than_or_equal to 50.
+- The type_integer_ param_target_ is greater_than_or_equal to 1 and is less_than_or_equal to 30.
+- The result is a type_list_ of lists of integers.
+- Each type_list_ in the result contains unique combinations of numbers from the expr_a type_array_ that sum to the expr_b.
+- Each number in the expr_a type_array_ can only be used once in a combination.
+- The solution set does not contain duplicate combinations.
+requires: []
