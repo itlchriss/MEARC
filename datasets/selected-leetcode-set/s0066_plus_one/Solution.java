@@ -15,7 +15,7 @@ public class Solution {
         int carry = 0;
         int sum;
         //@ assume digits.length > 2;
-        //@ maintaining 0 <= i <= digits.length - 1;
+        //@ maintaining -1 <= i <= digits.length - 1;
         for (int i = digits.length - 1; i >= 0; i--) {
             if (i == digits.length - 1) {
                 sum = digits[i] + carry + num;

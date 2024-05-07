@@ -1,0 +1,10 @@
+ensures:
+- The type_integer_  param_num_ is greater_than_or_equal to negative 2147483648 and
+  is less_than_or_equal to 2147483647.
+- The type_string_ result is a hexadecimal representation of the type_integer_  param_num_.
+- For negative integers ,  the two's complement method is used to represent the hexadecimal
+  value.
+- All letters in the hexadecimal type_string_ result are lowercase characters.
+- There are no leading zeros in the hexadecimal type_string_ result except for the
+  zero itself.
+requires: []

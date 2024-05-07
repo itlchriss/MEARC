@@ -1,0 +1,9 @@
+- The string parameter `version1` and `version2` must only contain digits and dots.
+- The string parameter `version1` and `version2` must be valid version numbers.
+- The length of the string parameter `version1` and `version2` is greater than or equal to 1 and is less than or equal to 500.
+- The integer result is equal to -1 if `version1` is less than `version2`.
+- The integer result is equal to 1 if `version1` is greater than `version2`.
+- The integer result is equal to 0 if `version1` is equal to `version2`.
+- If a revision is not specified at an index, it is treated as 0.
+- Revisions are compared in left-to-right order.
+- Leading zeros in revisions are ignored when comparing revisions.

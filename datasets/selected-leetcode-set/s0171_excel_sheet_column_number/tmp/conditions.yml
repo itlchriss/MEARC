@@ -1,0 +1,8 @@
+ensures:
+- The type_string_  param_columnTitle_ consists only of uppercase English letters.
+- The length of the type_string_  param_columnTitle_ is greater_than_or_equal to 1
+  and is less_than_or_equal to 7.
+- The type_integer_ result is the corresponding column number of the type_string_  param_columnTitle_.
+- The type_integer_ result is greater_than_or_equal to 1 and is less_than_or_equal
+  to 2147483647.
+requires: []

@@ -1,0 +1,9 @@
+ensures:
+- The type_integer_ result is the index of the first non-repeating character in the
+  type_string_  param_s_.
+- If there is no non-repeating character in the type_string_  param_s_ ,  the type_integer_
+  result is equal to negative 1.
+- The type_string_  param_s_ consists of only lowercase English letters.
+- The length of the type_string_  param_s_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to 100000.
+requires: []

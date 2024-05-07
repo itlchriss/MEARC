@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos=":" chunk="O" entity="O" cat=":" id="t0_0" surf="-" base="-"/>
+          <token start="1" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_1" surf="The" base="the"/>
+          <token start="2" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t0_2" surf="string" base="string"/>
+          <token start="3" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="param_s" base="param_s"/>
+          <token start="4" span="1" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" id="t0_4" surf="may" base="may"/>
+          <token start="5" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/(S[ng]\NP)" id="t0_5" surf="contain" base="contain"/>
+          <token start="6" span="1" pos="VBG" chunk="I-NP" entity="O" cat="(S[ng]\NP)/NP" id="t0_6" surf="leading" base="lead"/>
+          <token start="7" span="1" pos="CC" chunk="I-NP" entity="O" cat="conj" id="t0_7" surf="or" base="or"/>
+          <token start="8" span="1" pos="VBG" chunk="I-NP" entity="O" cat="(S[ng]\NP)/NP" id="t0_8" surf="trailing" base="trail"/>
+          <token start="9" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_9" surf="spaces" base="space"/>
+          <token start="10" span="1" pos="." chunk="O" entity="O" cat="." id="t0_10" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp21" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp3" category="S[dcl=true]" rule="lp"/>
+          <span start="0" span="1" pos=":" chunk="O" entity="O" id="s0_sp2" surf="-" base="-" terminal="t0_0" category=":"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp9" category="S[dcl=true]" rule="ba"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp6" category="NP[nb=true]" rule="fa"/>
+          <span start="1" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp5" surf="The" base="the" terminal="t0_1" category="NP[nb=true]/N"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" category="N" rule="fa"/>
+          <span start="2" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp7" surf="string" base="string" terminal="t0_2" category="N/N"/>
+          <span start="3" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp8" surf="param_s" base="param_s" terminal="t0_3" category="N"/>
+          <span id="s0_sp9" child="s0_sp10 s0_sp11" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="4" span="1" pos="MD" chunk="I-VP" entity="O" id="s0_sp10" surf="may" base="may" terminal="t0_4" category="(S[dcl=true]\NP)/(S[b=true]\NP)"/>
+          <span id="s0_sp11" child="s0_sp12 s0_sp13" category="S[b=true]\NP" rule="fa"/>
+          <span start="5" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp12" surf="contain" base="contain" terminal="t0_5" category="(S[b=true]\NP)/(S[ng=true]\NP)"/>
+          <span id="s0_sp13" child="s0_sp14 s0_sp19" category="S[ng=true]\NP" rule="fa"/>
+          <span id="s0_sp14" child="s0_sp15 s0_sp16" category="(S[ng=true]\NP)/NP" rule="ba"/>
+          <span start="6" span="1" pos="VBG" chunk="I-NP" entity="O" id="s0_sp15" surf="leading" base="lead" terminal="t0_6" category="(S[ng=true]\NP)/NP"/>
+          <span id="s0_sp16" child="s0_sp17 s0_sp18" category="((S[ng=true]\NP)/NP)\((S[ng=true]\NP)/NP)" rule="conj"/>
+          <span start="7" span="1" pos="CC" chunk="I-NP" entity="O" id="s0_sp17" surf="or" base="or" terminal="t0_7" category="conj"/>
+          <span start="8" span="1" pos="VBG" chunk="I-NP" entity="O" id="s0_sp18" surf="trailing" base="trail" terminal="t0_8" category="(S[ng=true]\NP)/NP"/>
+          <span id="s0_sp19" child="s0_sp20" category="NP" rule="lex"/>
+          <span start="9" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp20" surf="spaces" base="space" terminal="t0_9" category="N"/>
+          <span start="10" span="1" pos="." chunk="O" entity="O" id="s0_sp21" surf="." base="." terminal="t0_10" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

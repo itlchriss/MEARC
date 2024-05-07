@@ -12,7 +12,9 @@ public class Solution {
 //@ ensures(*If no profit can be achieved, the integer result is equal to 0.*);
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
+        //@ assume 1 <= prices.length <= 10;
         int min = prices[0];
+        //@ maintaining 1 <= i <= prices.length;
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] > min) {
                 maxProfit = Math.max(maxProfit, prices[i] - min);

@@ -1,0 +1,9 @@
+ensures:
+- If the type_integer_  param_n_ is an ugly number (a positive type_integer_ whose
+  prime factors are limited to 2  ,   3  ,   and 5)  ,   the type_boolean_ result
+  is equal to the true literal.
+- If the type_integer_  param_n_ is not an ugly number (contains prime factors other
+  than 2  ,   3  ,   and 5)  ,   the type_boolean_ result is equal to the false literal.
+- The type_integer_  param_n_ is greater_than_or_equal to negative 2147483648 and
+  is less_than_or_equal to 2147483647.
+requires: []

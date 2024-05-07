@@ -1,0 +1,13 @@
+ensures:
+- The type_integer_ type_array_  param_numbers_ is sorted in  ascending_order .
+- The type_integer_ type_array_  param_numbers_ has a length  greater_than_or_equal
+  to 2 and  less_than_or_equal to 30000.
+- All values in the type_integer_ type_array_  param_numbers_ are  greater_than_or_equal
+  to negative 1000 and  less_than_or_equal to 1000.
+- The type_integer_  param_target_ is greater_than_or_equal to negative 1000 and  less_than_or_equal
+  to 1000.
+- The type_integer_ type_array_ result 's length is equal to 2.
+- The values in the type_integer_ type_array_ result are the indices of two numbers
+  in the _expr0_ type_array_ that add up to the _expr1_ number  ,   incremented by
+  one.
+requires: []

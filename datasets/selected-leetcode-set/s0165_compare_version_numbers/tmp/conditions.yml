@@ -1,0 +1,13 @@
+ensures:
+- The type_string_  param_version1_ and param_version2_ must only contain digits and
+  dots.
+- The type_string_  param_version1_ and param_version2_  is valid version numbers.
+- The length of the type_string_  param_version1_ and param_version2_ is greater_than_or_equal
+  to 1 and is less_than_or_equal to 500.
+- The type_integer_ result is equal to negative 1 if _expr0_ is less_than to the _expr1_.
+- The type_integer_ result is equal to 1 if _expr0_ is greater_than to the _expr1_.
+- The type_integer_ result is equal to 0 if _expr0_ is equal to _expr1_.
+- If a revision is not specified at an index  ,   it is treated as 0.
+- Revisions are compared in left-to-right order.
+- Leading zeros in revisions are ignored when comparing revisions.
+requires: []

@@ -1,0 +1,10 @@
+ensures:
+- The type_integer_  param_numerator_ is greater_than_or_equal to negative 2147483648
+  and is less_than_or_equal to 2147483647.
+- The type_integer_  param_denominator_ is greater_than_or_equal to negative 2147483648
+  and is less_than_or_equal to 2147483647  ,   and it is not equal to 0.
+- The type_string_ result is the fraction in type_string_ format.
+- If the fractional part is repeating  ,   the repeating part is enclosed in parentheses.
+- If multiple answers are possible  ,   any valid answer can be returned.
+- The length of the type_string_ result is less_than to 10000 for all given inputs.
+requires: []

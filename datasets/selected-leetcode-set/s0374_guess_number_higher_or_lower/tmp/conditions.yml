@@ -1,0 +1,13 @@
+ensures:
+- The type_integer_  param_n_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to 2147483647.
+- The type_integer_  param_pick_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to the expr0.
+- The type_integer_ result is the number that is picked by the guessing game.
+- The result is equal to the type_integer_  param_pick_ when the API expr0 returns
+  0.
+- The result is less_than to the type_integer_  param_pick_ when the API expr0 returns
+  negative 1.
+- The result is greater_than to the type_integer_  param_pick_ when the API expr0
+  returns 1.
+requires: []

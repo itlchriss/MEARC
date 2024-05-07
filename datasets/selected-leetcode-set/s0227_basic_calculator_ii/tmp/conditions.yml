@@ -1,0 +1,17 @@
+ensures:
+- The type_string_  param_s_  is a valid mathematical expression.
+- The type_integer_ result is the value of the evaluated expression represented by
+  the type_string_  param_s_.
+- The type_integer_ division in the expression truncates toward zero.
+- All intermediate results during the evaluation of the expression will be  in  the
+  range of negative 2147483648 to 2147483647.
+- The method does not use any built-in function that evaluates type_strings_ as mathematical
+  expressions  ,   such as _expr0_.
+- The length of the type_string_  param_s_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to 3 * 100000.
+- The type_string_  param_s_ consists of integers and operators (_str0_) separated
+  by    number of spaces.
+- All integers in the expression are non-negative integers  in  the range [0  ,   2147483648
+  - 1].
+- The answer will fit in a 32-bit type_integer_.
+requires: []

@@ -1,0 +1,16 @@
+ensures:
+- The type_integer_ type_array_  param_buildings_  is not  null.
+- The type_integer_ type_array_  param_buildings_ must have a length  greater_than_or_equal
+  to 1 and  less_than_or_equal to 10000.
+- Each element in the type_integer_ type_array_  param_buildings_  is a 3-length type_array_  ,    that  the
+  first element  is the x coordinate of the left edge of the building  ,   the second
+  element  is the x coordinate of the right edge of the building  ,   and the third
+  element  is the height of the building.
+- The type_integer_ result is a type_list_ of key points sorted by their x-coordinate
+  in the form [[x1  ,  y1]  ,  [x2  ,  y2]  ,  ...] representing the skyline formed
+  by the buildings collectively.
+- Each key point in the result type_list_ is the left endpoint of    horizontal segment
+  in the skyline except the last point  ,   which always has a y-coordinate of 0 to
+  mark the skyline's termination.
+- There  is no consecutive horizontal lines of equal height in the output skyline.
+requires: []

@@ -1,0 +1,10 @@
+ensures:
+- The type_integer_ type_array_  param_nums_ is sorted in  ascending_order .
+- The type_integer_ type_array_  param_nums_ contains unique values.
+- The length of the type_integer_ type_array_  param_nums_ is less_than_or_equal to
+  20.
+- The type_integer_ type_array_  param_nums_ is covered by a type_list_ of ranges  that  each
+  element is covered by    one range.
+- Each range in the type_list_ is output as "a->b" if a is not equal to b  ,   and
+  as "a" if a is equal to b.
+requires: []

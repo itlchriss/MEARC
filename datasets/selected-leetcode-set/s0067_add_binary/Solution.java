@@ -16,8 +16,7 @@ public class Solution {
         int i = aArray.length - 1;
         int j = bArray.length - 1;
         int carry = 0;
-        // maintaining 0 <= j < bArray.length - 1;
-        //@ maintaining 0 <= i && j >= 0;
+        //@ maintaining -1 <= i <= aArray.length - 1 && bArray.length - 1 >= j >= -1;
         while (i >= 0 || j >= 0) {
             int sum = (i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry;
             sb.append(sum % 2);

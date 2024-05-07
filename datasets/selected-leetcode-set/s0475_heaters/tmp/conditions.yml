@@ -1,0 +1,12 @@
+ensures:
+- The type_integer_ type_array_  param_houses_ and the type_integer_ type_array_  param_heaters_
+  is not null.
+- The length of the type_integer_ type_array_  param_houses_ and the type_integer_
+  type_array_  param_heaters_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to 30000.
+- All values in the type_integer_ type_array_  param_houses_ and the type_integer_
+  type_array_  param_heaters_ are greater_than_or_equal to 1 and are less_than_or_equal
+  to 1000000000.
+- The type_integer_ result is the minimum radius standard of heaters so that those
+  heaters could cover all houses.
+requires: []

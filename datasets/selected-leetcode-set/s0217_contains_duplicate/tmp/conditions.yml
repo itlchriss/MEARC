@@ -1,0 +1,10 @@
+ensures:
+- If the type_integer_ type_array_  param_nums_ contains at least one duplicate value  ,   the
+  type_boolean_ result is equal to the true literal.
+- If all elements in the type_integer_ type_array_  param_nums_ are  unique   ,   the
+  type_boolean_ result is equal to the false literal.
+- The length of the type_integer_ type_array_  param_nums_ is less_than_or_equal to
+  100000.
+- All values in the type_integer_ type_array_  param_nums_ are  greater_than_or_equal
+  to negative 1000000000 and are  less_than_or_equal to 1000000000.
+requires: []
