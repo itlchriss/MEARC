@@ -19,7 +19,7 @@ public class Solution {
         Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
         //@ loop_invariant 0 <= i <= numbers.length;
         for (int i = 0; i < numbers.length; i++) {
-            //@ assume Integer.MIN_VALUE + 1 <= target - numbers[i] <= Integer.MAX_VALUE - 1;
+            // assume Integer.MIN_VALUE + 1 <= target - numbers[i] <= Integer.MAX_VALUE - 1;
             Integer requiredNum = target - numbers[i];
             if (indexMap.containsKey(requiredNum)) {
                 return new int[] {indexMap.get(requiredNum), i};

@@ -1,7 +1,0 @@
-./datasets/leetcode-behavioural/s0030_substring_with_concatenation_of_all_words/gpt-results/build/Solution.java:25: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method findSubstring: (Caller: g0001_0100.s0030_substring_with_concatenation_of_all_words.Solution.findSubstring(java.lang.String,java.lang.String[]), Callee: java.util.Map.getOrDefault(java.lang.Object,V))
-            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
-                                                   ^
-/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0030_substring_with_concatenation_of_all_words/gpt-results/build/Solution.java:25:
-	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
-	               ^
-2 verification failures

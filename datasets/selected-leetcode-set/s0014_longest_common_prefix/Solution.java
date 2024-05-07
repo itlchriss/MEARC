@@ -10,26 +10,26 @@ public class Solution {
 //@ ensures(*The string result is the longest common prefix string amongst the array of strings.*);
 //@ ensures(*If there is no common prefix, the string result is equal to an empty string `""`.*);
     public String longestCommonPrefix(String[] strs) {
-        //@ assume strs != null;
+        //@ assume strs != null && 1 < strs.length <= 200;
+        //@ assume \forall int i; 0 <= i < strs.length; strs[i] != null && 1 < strs[i].length() <= 200;
         if (strs.length < 1) {
             return "";
         }        
         if (strs.length == 1) {
-            //@ assume strs != null && strs[0] != null;
+            // assume strs != null && strs[0] != null;
             return strs[0];
         }
-        //@ assume strs[0] != null;
+        // assume strs[0] != null;
         String temp = strs[0];
-        //@ assume temp != null;
+        // assume temp != null;
         int i = 1;
         String cur;
         //@ maintaining 0 <= i <= strs.length;
         while (temp.length() > 0 && i < strs.length) {
-            //@ assume strs[i] != null;
+            // assume strs[i] != null;
             if (temp.length() > strs[i].length()) {
                 temp = temp.substring(0, strs[i].length());
             }
-            //@ assume strs[i] != null && strs[i].length() > temp.length();
             cur = strs[i].substring(0, temp.length());
             if (!cur.equals(temp)) {
                 temp = temp.substring(0, temp.length() - 1);

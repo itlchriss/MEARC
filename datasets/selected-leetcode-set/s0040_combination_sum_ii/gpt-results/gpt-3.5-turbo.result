@@ -1,8 +1,0 @@
-- requires candidates != null && target >= 0;
-- requires candidates.length >= 1 && candidates.length <= 100;
-- requires (\forall int i; 0 <= i && i < candidates.length; candidates[i] >= 1 && candidates[i] <= 50);
-- requires target <= 30;
-- ensures \result != null;
-- ensures (\forall List<Integer> list; \result.contains(list); (\forall int i; 0 <= i && i < list.size(); list.get(i) >= 1 && list.get(i) <= 50));
-- ensures (\forall List<Integer> list1, List<Integer> list2; \result.contains(list1) && \result.contains(list2); !list1.equals(list2));
-- ensures (\forall List<Integer> list; \result.contains(list); (\sum int i; 0 <= i && i < list.size(); list.get(i)) == target);

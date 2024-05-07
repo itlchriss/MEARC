@@ -21,17 +21,15 @@ public class Solution {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         int l;
         int r;
-        //@ loop_invariant 0 <= i <= len - 2;
+        //@ assume \forall int j; 0 <= j < nums.length; -10000 <= nums[j] <= 10000;
+        //@ assume 1000 >= nums.length >= 3;
+        //@ loop_invariant 0 <= i <= len;
         for (int i = 0; i < len - 2; i++) {
             l = i + 1;
             r = len - 1;
-            //@ maintaining 0 <= l < nums.length - 1;
+            //@ maintaining 0 <= l <= nums.length - 1;
             //@ maintaining 0 <= r < nums.length;
             while (r > l) {
-                //@ assume Integer.MIN_VALUE + (nums[l] + nums[r]) <= nums[i] <= Integer.MAX_VALUE - (nums[l] + nums[r]);
-                //@ assume Integer.MIN_VALUE + (nums[i] + nums[r]) <= nums[l] <= Integer.MAX_VALUE - (nums[i] + nums[r]);
-                //@ assume Integer.MIN_VALUE + (nums[i] + nums[l]) <= nums[r] <= Integer.MAX_VALUE - (nums[i] + nums[l]);
-                //@ assume Integer.MIN_VALUE <= nums[i] + nums[l] + nums[r] <= Integer.MAX_VALUE;
                 int sum = nums[i] + nums[l] + nums[r];
                 if (sum < 0) {
                     l++;
@@ -43,7 +41,7 @@ public class Solution {
                     list.add(nums[l]);
                     list.add(nums[r]);
                     result.add(list);
-                    //@ maintaining l <= r;
+                    //@ maintaining l <= r && 0 <= l < nums.length - 1;
                     while (l < r && nums[l + 1] == nums[l]) {
                         l++;
                     }
@@ -55,7 +53,7 @@ public class Solution {
                     r--;
                 }
             }
-            // maintaining 0 <= i <= len - 1;
+            //@ maintaining 0 <= i <= len - 1;
             while (i < len - 1 && nums[i + 1] == nums[i]) {
                 i++;
             }

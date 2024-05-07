@@ -54,9 +54,9 @@ public class Solution {
         return sum;
     }
 
+    //@ requires Integer.MIN_VALUE <= sum - target <= Integer.MAX_VALUE;
+    //@ requires Integer.MIN_VALUE <= temp - target <= Integer.MAX_VALUE;
     private int lessGap(int sum, int temp, int target) {
-        //@ assume Integer.MIN_VALUE <= sum - target <= Integer.MAX_VALUE;
-        //@ assume Integer.MIN_VALUE <= temp - target <= Integer.MAX_VALUE;
         return Math.abs(sum - target) < Math.abs(temp - target) ? sum : temp;
     }
 }

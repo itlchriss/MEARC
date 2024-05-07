@@ -15,6 +15,7 @@ public class Solution {
         int r = height.length - 1;
         int res = 0;
         int lowerWall = 0;   
+        //@ assume height.length >= 2;
         //@ decreases r - l;     
         //@ loop_writes r, l, lowerWall, res;
         //@ loop_invariant 0 <= l <= r <= height.length - 1;

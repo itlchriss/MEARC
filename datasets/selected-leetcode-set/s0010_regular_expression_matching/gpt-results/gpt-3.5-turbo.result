@@ -1,7 +1,0 @@
-- public /*@ pure @*/ boolean isMatch(String s, String p);
-- requires s != null && p != null;
-- ensures \result == true || \result == false;
-- ensures \result == true ==> s.length() > 0;
-- ensures \result == true ==> p.length() > 0;
-- ensures \result == true ==> s.matches(p);
-- ensures \result == false ==> !s.matches(p);

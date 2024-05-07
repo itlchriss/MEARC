@@ -16,7 +16,7 @@ public class Solution {
         //@ assume 0 <= numRows <= (Integer.MAX_VALUE - 3)/2;
         //@ ghost int k = numRows;
         //@ ghost int sl = s.length();
-        //@ assume Integer.MIN_VALUE + 3 <= k * 2 <= Integer.MAX_VALUE - 3;
+        // assume Integer.MIN_VALUE + 3 <= k * 2 <= Integer.MAX_VALUE - 3;
         //@ set k = numRows; 
         int maxDist = numRows * 2 - 2;
         StringBuilder buf = new StringBuilder();
@@ -26,19 +26,19 @@ public class Solution {
             if (i == 0 || i == numRows - 1) {
                 while (index < sLen) {
                     buf.append(s.charAt(index));
-                    //@ assume Integer.MIN_VALUE + 1 <= index + maxDist <= Integer.MAX_VALUE - 1;
+                    // assume Integer.MIN_VALUE + 1 <= index + maxDist <= Integer.MAX_VALUE - 1;
                     index += maxDist;
                 }
             } else {                
                 while (index < sLen) {
                     buf.append(s.charAt(index));
-                    //@ assume Integer.MIN_VALUE + 1 <= index + maxDist - i * 2 <= Integer.MAX_VALUE - 1;
+                    // assume Integer.MIN_VALUE + 1 <= index + maxDist - i * 2 <= Integer.MAX_VALUE - 1;
                     index += maxDist - i * 2;
                     if (index >= sLen) {
                         break;
                     }
                     buf.append(s.charAt(index));
-                    //@ assume Integer.MIN_VALUE + 1 <= index + i * 2 <= Integer.MAX_VALUE - 1;
+                    // assume Integer.MIN_VALUE + 1 <= index + i * 2 <= Integer.MAX_VALUE - 1;
                     index += i * 2;
                 }
             }

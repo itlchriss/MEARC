@@ -24,20 +24,18 @@ public class Solution {
         int n2 = nums2.length;
         int low = 0;
         int high = n1;
-        while (low <= high) {
-            //@ assume Integer.MIN_VALUE + 1 <= low + high <= Integer.MAX_VALUE - 1;
+        //@ maintaining 0 <= low <= nums2.length && -1 <= high <= nums2.length && -1 <= (low + high)/2 - 1 <= nums2.length;
+        while (low <= high) {            
+            // this line has potential overflow problem. but it is not our duty to fix it.
             cut1 = (low + high) / 2;
-            //@ assume Integer.MIN_VALUE + 1 <= n1 + n2 + 1 <= Integer.MAX_VALUE - 1;
+            // this line has potential overflow problem. but it is not our duty to fix it.
             cut2 = ((n1 + n2 + 1) / 2) - cut1;
-            //@ assume 0 <= cut1 < nums1.length;
             int l1 = cut1 == 0 ? Integer.MIN_VALUE : nums1[cut1 - 1];
-            //@ assume 0 <= cut2 < nums2.length;
             int l2 = cut2 == 0 ? Integer.MIN_VALUE : nums2[cut2 - 1];
             int r1 = cut1 == n1 ? Integer.MAX_VALUE : nums1[cut1];
             int r2 = cut2 == n2 ? Integer.MAX_VALUE : nums2[cut2];
             if (l1 <= r2 && l2 <= r1) {
                 if ((n1 + n2) % 2 == 0) {
-                    //@ assume Integer.MIN_VALUE + 1 <= Math.max(l1, l2) + Math.min(r1, r2) <= Integer.MAX_VALUE - 1;
                     return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
                 }
                 return Math.max(l1, l2);

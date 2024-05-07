@@ -34,7 +34,7 @@ public class Solution {
         permute(nums, p + 1);
         boolean[] used = new boolean[30];
         //@ loop_invariant p + 1 <= i <= nums.length;
-        //@ loop_invariant \forall int k; 0 <= k < nums.length; 0 <= 10 + nums[k] < used.length;
+        //@ loop_invariant \forall int k; 0 <= k < nums.length; -10 <= nums[k] < used.length - 10;
         for (int i = p + 1; i < nums.length; i++) {
             if (nums[i] != nums[p] && !used[10 + nums[i]]) {
                 used[10 + nums[i]] = true;

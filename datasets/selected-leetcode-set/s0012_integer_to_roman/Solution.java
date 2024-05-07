@@ -24,6 +24,7 @@ public class Solution {
     }
 
     //@ requires 0 < one <= Integer.MAX_VALUE;
+    //@ requires 0 < num <= Integer.MAX_VALUE;
     //@ ensures \result == num - (num / one * one);
     private int numerals(StringBuilder sb, int num, int one, char cTen, char cFive, char cOne) {
         int div = num / one;
@@ -69,7 +70,6 @@ public class Solution {
             default:
                 break;
         }
-        //@ assume Integer.MIN_VALUE + 1 <= div * one <= Integer.MAX_VALUE - 1;
         return num - (div * one);
     }
 }

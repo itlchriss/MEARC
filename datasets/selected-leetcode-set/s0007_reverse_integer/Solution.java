@@ -16,8 +16,8 @@ public class Solution {
         while (x != 0) {            
             //@ set k = rev;
             //@ set m = x;
-            //@ assume (Long.MIN_VALUE)/10 + m <= k <= (Long.MAX_VALUE)/10 - m;
-            //@ assume ((Long.MIN_VALUE) + ( m % 10 ))/10 <= k <= ((Long.MAX_VALUE) - ( m % 10 )) / 10;
+            // assume (Long.MIN_VALUE)/10 + m <= k <= (Long.MAX_VALUE)/10 - m;
+            // assume ((Long.MIN_VALUE) + ( m % 10 ))/10 <= k <= ((Long.MAX_VALUE) - ( m % 10 )) / 10;
             rev = (rev * 10) + (x % 10);            
             //@ set k = rev;
             //@ set m = m/10;

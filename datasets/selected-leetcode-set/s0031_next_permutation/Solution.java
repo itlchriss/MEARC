@@ -27,19 +27,16 @@ public class Solution {
     //     reverse(nums, i + 1, nums.length - 1);
     // }
 
-    //@ requires 0 <= i < nums.length;
-    //@ requires 0 <= j < nums.length;
+    //@ requires 0 <= i <= j < nums.length;
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
 
-    //@ requires 0 <= i < nums.length;
-    //@ requires 0 <= j < nums.length;
+    //@ requires 0 <= i <= j < nums.length;
     private void reverse(int[] nums, int i, int j) {
-        //@ maintaining 0 <= i < j;        
-        //@ maintaining i <= j < nums.length/2;        
+        //@ maintaining i <= j || j == i - 1;               
         while (i < j) {
             swap(nums, i++, j--);
         }

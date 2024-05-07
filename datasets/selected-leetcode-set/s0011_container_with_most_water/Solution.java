@@ -21,12 +21,12 @@ public class Solution {
         while (left < right) {
             if (height[left] < height[right]) {
                 //@ set k = height[left];
-                //@ assume Integer.MIN_VALUE  <= k * (right - left) <= Integer.MAX_VALUE;
+                // assume Integer.MIN_VALUE  <= k * (right - left) <= Integer.MAX_VALUE;
                 maxArea = Math.max(maxArea, height[left] * (right - left));
                 left++;
             } else {
                 //@ set k = height[right];
-                //@ assume Integer.MIN_VALUE <= k * (right - left) <= Integer.MAX_VALUE;
+                // assume Integer.MIN_VALUE <= k * (right - left) <= Integer.MAX_VALUE;
                 maxArea = Math.max(maxArea, height[right] * (right - left));
                 right--;
             }
