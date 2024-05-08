@@ -1,9 +1,11 @@
-- The string parameter `version1` and `version2` must only contain digits and dots.
-- The string parameter `version1` and `version2` must be valid version numbers.
-- The length of the string parameter `version1` and `version2` is greater than or equal to 1 and is less than or equal to 500.
-- The integer result is equal to -1 if `version1` is less than `version2`.
-- The integer result is equal to 1 if `version1` is greater than `version2`.
-- The integer result is equal to 0 if `version1` is equal to `version2`.
-- If a revision is not specified at an index, it is treated as 0.
-- Revisions are compared in left-to-right order.
-- Leading zeros in revisions are ignored when comparing revisions.
+- If the integer parameter `version1` is less than the integer parameter `version2`, the integer result is equal to -1.
+- If the integer parameter `version1` is greater than the integer parameter `version2`, the integer result is equal to 1.
+- If the integer parameter `version1` is equal to the integer parameter `version2`, the integer result is equal to 0.
+- The integer parameter `version1` and the integer parameter `version2` are valid version numbers.
+- The integer parameter `version1` and the integer parameter `version2` consist of one or more revisions joined by a dot.
+- Each revision in the integer parameter `version1` and the integer parameter `version2` consists of digits and may contain leading zeros.
+- Every revision in the integer parameter `version1` and the integer parameter `version2` contains at least one character.
+- Revisions in the integer parameter `version1` and the integer parameter `version2` are 0-indexed from left to right.
+- Revisions in the integer parameter `version1` and the integer parameter `version2` are compared in left-to-right order using their integer value ignoring any leading zeros.
+- If a version number does not specify a revision at an index, then treat the revision as 0.
+- The integer result is less than or equal to 1 and is greater than or equal to -1.

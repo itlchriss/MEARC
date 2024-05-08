@@ -1,5 +1,5 @@
-- public boolean isValid(String s)
-- requires s != null
-- requires s.length() >= 1 && s.length() <= 10000
-- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' || s.charAt(i) == ')' || s.charAt(i) == '{' || s.charAt(i) == '}' || s.charAt(i) == '[' || s.charAt(i) == ']')
-- ensures \result == true if the input string is valid, false otherwise
+- requires s != null && s.length() >= 1 && s.length() <= 10000;
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' || s.charAt(i) == ')' || s.charAt(i) == '{' || s.charAt(i) == '}' || s.charAt(i) == '[' || s.charAt(i) == ']');
+- ensures \result == true || \result == false;
+- ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' ==> (\exists int j; i < j && j < s.length(); s.charAt(j) == ')') && s.charAt(i) == '{' ==> (\exists int j; i < j && j < s.length(); s.charAt(j) == '}') && s.charAt(i) == '[' ==> (\exists int j; i < j && j < s.length(); s.charAt(j) == ']'));
+- ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != '}') && s.charAt(i) == '(' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != ']') && s.charAt(i) == '{' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != ')') && s.charAt(i) == '{' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != ']') && s.charAt(i) == '[' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != ')') && s.charAt(i) == '[' ==> (\forall int j; i < j && j < s.length(); s.charAt(j) != '}'));

@@ -1,0 +1,15 @@
+- public int findPairs(int[] nums, int k)
+- requires nums != null && k >= 0;
+- ensures \result >= 0;
+- ensures \result == countUniqueKDiffs(nums, k);
+- private int countUniqueKDiffs(int[] nums, int k)
+- requires nums != null && k >= 0;
+- ensures \result >= 0;
+- ensures \result == countUniqueKDiffsHelper(nums, k);
+- private int countUniqueKDiffsHelper(int[] nums, int k)
+- requires nums != null && k >= 0;
+- ensures \result >= 0;
+- ensures \result == (\num_of int i, j; 0 <= i && i < j && j < nums.length; Math.abs(nums[i] - nums[j]) == k);
+- ensures (\forall int i, j, m, n; 0 <= i && i < j && j < nums.length && 0 <= m && m < n && n < nums.length; i != m && j != n ==> (nums[i] != nums[m] || nums[j] != nums[n]));
+- ensures (\forall int i, j; 0 <= i && i < j && j < nums.length; (\exists int m, n; 0 <= m && m < n && n < nums.length; i != m && j != n && Math.abs(nums[i] - nums[j]) == k && nums[i] == nums[m] && nums[j] == nums[n]));
+- ensures \result == (\num_of int i, j; 0 <= i && i < j && j < nums.length; Math.abs(nums[i] - nums[j]) == k);

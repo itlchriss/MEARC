@@ -1,0 +1,27 @@
+- public boolean checkRecord(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 1000
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'A' || s.charAt(i) == 'L' || s.charAt(i) == 'P')
+- ensures \result == true || \result == false
+- ensures \result == true ==> (countAbsences(s) < 2 && !hasConsecutiveLate(s))
+- ensures \result == false ==> (countAbsences(s) >= 2 || hasConsecutiveLate(s))
+
+- private int countAbsences(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 1000
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'A' || s.charAt(i) == 'L' || s.charAt(i) == 'P')
+- ensures \result >= 0
+- ensures \result == countAbsencesHelper(s, 0, 0)
+
+- private int countAbsencesHelper(String s, int index, int count)
+- requires s != null && s.length() >= 1 && s.length() <= 1000
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'A' || s.charAt(i) == 'L' || s.charAt(i) == 'P')
+- requires 0 <= index && index <= s.length()
+- ensures \result >= 0
+- ensures \result == count + countAbsencesHelper(s, index + 1, count) if index < s.length()
+- ensures \result == count if index == s.length()
+
+- private boolean hasConsecutiveLate(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 1000
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'A' || s.charAt(i) == 'L' || s.charAt(i) == 'P')
+- ensures \result == true || \result == false
+- ensures \result == true ==> (\exists int i; 0 <= i && i < s.length() - 2; s.charAt(i) == 'L' && s.charAt(i + 1) == 'L' && s.charAt(i + 2) == 'L')
+- ensures \result == false ==> (\forall int i; 0 <= i && i < s.length() - 2; s.charAt(i) != 'L' || s.charAt(i + 1) != 'L' || s.charAt(i + 2) != 'L')

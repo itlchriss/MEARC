@@ -1,7 +1,6 @@
-- public List<String> generateParenthesis(int n)
 - requires n >= 1 && n <= 8;
 - ensures \result != null;
-- ensures \forall String s; \result.contains(s) <==> isValidParentheses(s);
-- ensures \result.size() == factorial(2*n)/(factorial(n)*factorial(n));
-- pure helper method: boolean isValidParentheses(String s);
-- pure helper method: int factorial(int n);
+- ensures (\forall int i; 0 <= i && i < \result.size(); isValidParenthesis(\result.get(i)));
+- ensures \result.size() == (int) Math.pow(2, 2 * n) / (n * Math.sqrt(n));
+
+where isValidParenthesis is a method that checks if a given string contains well-formed parentheses.

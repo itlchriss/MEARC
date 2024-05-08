@@ -1,0 +1,9 @@
+- public int calculate(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 3 * Math.pow(10, 5)
+- requires s.matches("[0-9+\\-*/\\s]+")
+- ensures \result >= -2147483648 && \result <= 2147483647
+- ensures \result == eval(s)
+- pure private int eval(String s)
+- requires s != null && s.length() >= 1
+- requires s.matches("[0-9+\\-*/\\s]+")
+- ensures \result >= -2147483648 && \result <= 2147483647

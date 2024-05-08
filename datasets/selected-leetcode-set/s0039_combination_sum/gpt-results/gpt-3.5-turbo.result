@@ -1,9 +1,9 @@
-- public /*@ pure @*/ List<List<Integer>> combinationSum(int[] coins, int amount);
-- requires coins != null;
-- requires amount >= 0;
+- public /*@ pure @*/ List<List<Integer>> combinationSum(int[] candidates, int target);
+- requires candidates != null;
+- requires candidates.length >= 1 && candidates.length <= 30;
+- requires (\forall int i; 0 <= i && i < candidates.length; candidates[i] >= 1 && candidates[i] <= 200);
+- requires target >= 1 && target <= 500;
 - ensures \result != null;
-- ensures (\forall List<Integer> list; \result.contains(list); sumList(list) == amount);
-- ensures (\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2) && list1 != list2; !isPermutation(list1, list2));
-- ensures \result.size() < 150;
-- pure int sumList(List<Integer> list);
-- pure boolean isPermutation(List<Integer> list1, List<Integer> list2);
+- ensures (\forall List<Integer> list; \result.contains(list); list != null && list.size() > 0 && list.stream().allMatch(i -> candidates.contains(i)) && list.stream().mapToInt(Integer::intValue).sum() == target);
+- ensures (\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2); list1 != list2 ==> !list1.equals(list2));
+- ensures \result.size() <= 150;

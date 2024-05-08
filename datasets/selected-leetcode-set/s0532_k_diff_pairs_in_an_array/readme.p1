@@ -1,5 +1,4 @@
-- The integer array parameter `nums` must not be null.
+- If there exist unique pairs of integers `nums[i]` and `nums[j]` in the integer array parameter `nums` such that the absolute difference between `nums[i]` and `nums[j]` is equal to the integer parameter `k`, the integer result is the number of unique k-diff pairs in the array.
 - The integer parameter `k` is greater than or equal to 0 and is less than or equal to 10000000.
-- The integer result is the number of unique k-diff pairs in the integer array parameter `nums`.
-- A k-diff pair is an integer pair (nums[i], nums[j]) where 0 <= i < j < nums.length and |nums[i] - nums[j]| == k.
-- The length of the integer array parameter `nums` is less than or equal to 10000.
+- The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.
+- The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.

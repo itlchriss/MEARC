@@ -1,4 +1,0 @@
-- requires matrix != null && matrix.length > 0 && matrix[0].length > 0;
-- requires target >= -10000 && target <= 10000;
-- ensures \result == true <==> (\exists int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[i].length; matrix[i][j] == target);
-- ensures \result == false <==> (\forall int i, j; 0 <= i && i < matrix.length && 0 <= j && j < matrix[i].length; matrix[i][j] != target);

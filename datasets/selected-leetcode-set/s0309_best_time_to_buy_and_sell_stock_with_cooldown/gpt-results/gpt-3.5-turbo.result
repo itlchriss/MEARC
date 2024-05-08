@@ -1,0 +1,4 @@
+- requires prices != null && prices.length >= 1 && prices.length <= 5000
+- requires (\forall int i; 0 <= i && i < prices.length; prices[i] >= 0 && prices[i] <= 1000)
+- ensures \result >= 0
+- pure public int maxProfit(int[] prices)

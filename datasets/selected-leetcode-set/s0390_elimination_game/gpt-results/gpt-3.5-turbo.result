@@ -1,0 +1,6 @@
+- requires n >= 1;
+- ensures \result >= 1 && \result <= n;
+- ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in \old(arr));
+- ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in \old(arr));
+- ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in arr);
+- ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in arr);

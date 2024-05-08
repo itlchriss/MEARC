@@ -1,0 +1,4 @@
+- public boolean isHappy(int n)
+- requires n >= 1 && n <= Math.pow(2, 31) - 1;
+- ensures \result == true || \result == false;
+- signals (ArithmeticException e) n < 1 || n > Math.pow(2, 31) - 1;

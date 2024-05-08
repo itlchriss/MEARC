@@ -3,4 +3,4 @@
 - requires (\forall int i; 0 <= i && i < nums.length; -10 <= nums[i] && nums[i] <= 10)
 - ensures \result != null
 - ensures (\forall List<Integer> list; \result.contains(list); list.size() == nums.length)
-- ensures (\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2); list1 != list2 ==> !list1.equals(list2))
+- ensures (\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2) && list1 != list2; !list1.equals(list2))

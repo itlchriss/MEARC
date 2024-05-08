@@ -1,0 +1,9 @@
+- requires nums1 != null && nums2 != null && nums3 != null && nums4 != null;
+- requires nums1.length == nums2.length && nums2.length == nums3.length && nums3.length == nums4.length;
+- requires nums1.length > 0 && nums1.length <= 200;
+- requires (\forall int i; 0 <= i && i < nums1.length; -2^28 <= nums1[i] && nums1[i] <= 2^28);
+- requires (\forall int i; 0 <= i && i < nums2.length; -2^28 <= nums2[i] && nums2[i] <= 2^28);
+- requires (\forall int i; 0 <= i && i < nums3.length; -2^28 <= nums3[i] && nums3[i] <= 2^28);
+- requires (\forall int i; 0 <= i && i < nums4.length; -2^28 <= nums4[i] && nums4[i] <= 2^28);
+- ensures \result >= 0;
+- ensures (\forall int i, j, k, l; 0 <= i && i < nums1.length && 0 <= j && j < nums2.length && 0 <= k && k < nums3.length && 0 <= l && l < nums4.length; nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0 ==> \result > 0);

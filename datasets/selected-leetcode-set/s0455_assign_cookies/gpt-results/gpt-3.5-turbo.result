@@ -1,0 +1,10 @@
+- public int findContentChildren(int[] g, int[] s)
+- requires g != null && s != null;
+- requires g.length > 0 && s.length > 0;
+- requires (\forall int i; 0 <= i && i < g.length; g[i] >= 1 && g[i] <= Integer.MAX_VALUE);
+- requires (\forall int j; 0 <= j && j < s.length; s[j] >= 1 && s[j] <= Integer.MAX_VALUE);
+- ensures \result >= 0;
+- ensures \result <= g.length;
+- ensures (\forall int i; 0 <= i && i < g.length; g[i] >= 1 && g[i] <= Integer.MAX_VALUE ==> (\exists int j; 0 <= j && j < s.length; s[j] >= g[i]));
+- ensures (\forall int i; 0 <= i && i < g.length; g[i] >= 1 && g[i] <= Integer.MAX_VALUE ==> (\forall int j; 0 <= j && j < s.length; s[j] < g[i]) ==> \result < i);
+- pure

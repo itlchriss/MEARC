@@ -1,0 +1,7 @@
+- requires columnNumber >= 1 && columnNumber <= Math.pow(2, 31) - 1;
+- ensures \result != null;
+- ensures \result.length() > 0;
+- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)));
+- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)));
+- ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) >= 'A' && \result.charAt(i) <= 'Z');
+- ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) == 'A' + (\sum int j; 0 <= j && j < \result.length() - i - 1; 26^j) + columnNumber % 26^i);

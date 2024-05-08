@@ -1,0 +1,4 @@
+- public int countNumbersWithUniqueDigits(int n)
+- requires n >= 0 && n <= 8;
+- ensures \result >= 0;
+- ensures (\forall int x; 0 <= x && x < Math.pow(10, n); (\forall int i, j; 0 <= i && i < j && j < n; (x / Math.pow(10, i)) % 10 != (x / Math.pow(10, j)) % 10) ==> \result++;

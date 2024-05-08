@@ -1,0 +1,4 @@
+- requires word != null && word.length() >= 1 && word.length() <= 100;
+- requires (\forall int i; 0 <= i && i < word.length(); Character.isLetter(word.charAt(i)));
+- ensures \result == true || \result == false;
+- ensures \result == true <==> (word.toUpperCase().equals(word) || word.toLowerCase().equals(word) || (Character.isUpperCase(word.charAt(0)) && word.substring(1).toLowerCase().equals(word.substring(1))));

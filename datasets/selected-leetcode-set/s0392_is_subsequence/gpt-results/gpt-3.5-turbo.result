@@ -1,0 +1,20 @@
+-/*@ requires s != null && t != null;
+  @ requires s.length() <= 100;
+  @ requires t.length() <= 10000;
+  @ requires s.matches("[a-z]*");
+  @ requires t.matches("[a-z]*");
+  @ ensures \result == true || \result == false;
+  @*/
+public boolean isSubsequence(String s, String t) {
+    int sIndex = 0;
+    int tIndex = 0;
+    
+    while (sIndex < s.length() && tIndex < t.length()) {
+        if (s.charAt(sIndex) == t.charAt(tIndex)) {
+            sIndex++;
+        }
+        tIndex++;
+    }
+    
+    return sIndex == s.length();
+}

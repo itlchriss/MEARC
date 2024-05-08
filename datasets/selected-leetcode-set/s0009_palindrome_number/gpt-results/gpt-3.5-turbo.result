@@ -1,3 +1,7 @@
 - public boolean isPalindrome(int x)
 - requires x >= -2147483648 && x <= 2147483647;
 - ensures \result == true || \result == false;
+- ensures \result == true ==> x is a palindrome integer;
+- ensures \result == false ==> x is not a palindrome integer;
+- ensures \result == true <==> x is a palindrome integer;
+- ensures \result == false <==> x is not a palindrome integer;

@@ -1,0 +1,5 @@
+- requires s != null && s.length() >= 1 && s.length() <= 5 * Math.pow(10, 5);
+- requires s.matches("[a-zA-Z0-9]+");
+- ensures \result != null;
+- ensures (\forall int i, j; 0 <= i && i < j && j < \result.length(); s.charAt(i) != s.charAt(j) || \result.indexOf(s.charAt(i)) >= \result.indexOf(s.charAt(j)));
+- ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));

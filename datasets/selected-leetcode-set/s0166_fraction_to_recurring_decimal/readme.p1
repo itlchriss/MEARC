@@ -1,6 +1,4 @@
-- The integer parameter `numerator` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1.
-- The integer parameter `denominator` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1, and it is not equal to 0.
-- The string result is the fraction in string format.
-- If the fractional part is repeating, the repeating part is enclosed in parentheses.
-- If multiple answers are possible, any valid answer can be returned.
-- The length of the string result is less than 10^4 for all given inputs.
+- If the integer parameter `numerator` is divided by the integer parameter `denominator` and the result is a terminating decimal, the string result is equal to the division result in string format.
+- If the integer parameter `numerator` is divided by the integer parameter `denominator` and the result is a recurring decimal, the string result contains the recurring part enclosed in parentheses.
+- The length of the string result is less than 10000.
+- If there are multiple valid answers for the recurring part, any of them can be returned.

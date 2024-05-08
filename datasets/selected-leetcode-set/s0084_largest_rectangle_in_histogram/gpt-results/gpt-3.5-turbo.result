@@ -1,6 +1,0 @@
-- public int largestRectangleArea(int[] heights)
-- requires heights != null && heights.length >= 1 && heights.length <= 100000
-- requires (\forall int i; 0 <= i && i < heights.length; 0 <= heights[i] && heights[i] <= 10000)
-- ensures \result >= 0
-- ensures (\forall int i, j; 0 <= i && i < heights.length && 0 <= j && j < heights.length && i < j; heights[i] <= heights[j] ==> \result >= heights[i] * (j - i + 1))
-- ensures (\exists int i, j; 0 <= i && i < heights.length && 0 <= j && j < heights.length; \result == heights[i] * (j - i + 1) && (\forall int k; i <= k && k <= j; heights[k] >= heights[i]))

@@ -1,0 +1,4 @@
+- public int hammingDistance(int x, int y)
+- requires x >= 0 && y >= 0 && x <= Math.pow(2, 31) - 1 && y <= Math.pow(2, 31) - 1;
+- ensures \result >= 0;
+- ensures \result == Integer.bitCount(x ^ y);

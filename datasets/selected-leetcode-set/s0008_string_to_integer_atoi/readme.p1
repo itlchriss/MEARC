@@ -1,6 +1,10 @@
 - The string parameter `str` is converted to a 32-bit signed integer.
 - Leading whitespace characters in the string `str` are ignored.
-- If the next character in the string `str` is '-' or '+', the result is negative or positive, respectively. If neither is present, the result is assumed to be positive.
-- Only digits are considered for conversion into an integer. Any non-digit character encountered after reading digits is ignored.
-- The integer value is clamped to the range [-2^31, 2^31 - 1] if it exceeds this range.
-- The final result is the converted integer value.
+- If the next character in the string `str` is '-' or '+', the result is negative or positive respectively.
+- Only the space character ' ' is considered a whitespace character.
+- Characters other than leading whitespace or digits are ignored.
+- The integer result is clamped to the range [-2^31, 2^31 - 1].
+- If no digits are read, the integer result is 0.
+- The parsed integer is the concatenation of consecutive digits in the string `str`.
+- The integer result is the value of the parsed integer.
+- The integer result is less than or equal to 2^31 - 1 and is greater than or equal to -2^31.

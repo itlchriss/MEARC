@@ -1,0 +1,5 @@
+- requires arr != null && arr.length > 0;
+- requires (\forall int i; 0 <= i && i < arr.length; -10 <= arr[i] && arr[i] <= 10);
+- ensures \result >= 0;
+- ensures (\forall int i; 0 <= i && i < arr.length; (\forall int j; i <= j && j < arr.length; \result >= arr[i]*arr[i+1]*...*arr[j]));
+- ensures (\exists int i; 0 <= i && i < arr.length; (\exists int j; i <= j && j < arr.length; \result == arr[i]*arr[i+1]*...*arr[j]));

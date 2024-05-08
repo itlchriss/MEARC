@@ -1,6 +1,0 @@
-- requires text != null && text2 != null;
-- requires text.length() <= 1000 && text2.length() <= 1000;
-- requires text.matches("[a-zA-Z]+") && text2.matches("[a-zA-Z]+");
-- ensures \result >= 0;
-- ensures \result <= Integer.MAX_VALUE;
-- ensures \result == number of distinct subsequences of text which equals text2.

@@ -1,0 +1,6 @@
+- public List<Integer> majorityElement(int[] nums)
+- requires nums != null;
+- requires nums.length >= 1 && nums.length <= 5 * 10^4;
+- requires (\forall int i; 0 <= i && i < nums.length; -10^9 <= nums[i] && nums[i] <= 10^9);
+- ensures \result != null;
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\num_of int j; 0 <= j && j < nums.length; nums[j] == \result.get(i)) > nums.length / 3);

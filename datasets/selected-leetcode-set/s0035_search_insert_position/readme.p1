@@ -1,5 +1,6 @@
+- The integer array parameter `nums` must not be null.
 - The integer array parameter `nums` contains distinct values sorted in ascending order.
-- The integer parameter `target` is equal to the target value to be found or inserted.
-- The integer result is the index of the target value in the integer array parameter `nums` if the target value is found.
-- If the target value is not found in the integer array parameter `nums`, the integer result is the index where the target value would be inserted in order.
-- The runtime complexity of the algorithm must be O(log n).
+- The integer parameter `target` is within the range of -10^4 to 10^4.
+- The integer result is the index of the integer parameter `target` if it is found in the integer array parameter `nums`.
+- If the integer parameter `target` is not found in the integer array parameter `nums`, the integer result is the index where it would be inserted in order.
+- The algorithm must have O(log n) runtime complexity.

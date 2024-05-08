@@ -1,0 +1,11 @@
+- requires num1 != null && num2 != null
+- requires num1.matches("\\d+")
+- requires num2.matches("\\d+")
+- requires num1.length() <= 10000
+- requires num2.length() <= 10000
+- requires !num1.startsWith("0") || num1.equals("0")
+- requires !num2.startsWith("0") || num2.equals("0")
+- ensures \result != null
+- ensures \result.matches("\\d+")
+- ensures \result.length() == num1.length() || \result.length() == num1.length() + 1
+- ensures Integer.parseInt(\result) == Integer.parseInt(num1) + Integer.parseInt(num2)

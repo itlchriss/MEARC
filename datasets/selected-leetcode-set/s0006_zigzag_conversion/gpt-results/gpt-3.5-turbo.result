@@ -1,10 +1,5 @@
-- public String convert(String s, int numRows);
-- requires s != null && numRows > 0;
-- ensures \result != null;
-- ensures \result.length() == s.length();
-- ensures (\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.');
-- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.');
-- ensures (\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.');
-- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)) || Character.isLowerCase(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.');
-- ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == \result.charAt(i) || s.charAt(i) == ',' || s.charAt(i) == '.');
-- ensures (\forall int i; 0 <= i && i < \result.length(); s.charAt(i) == \result.charAt(i) || \result.charAt(i) == ',' || \result.charAt(i) == '.');
+- The string `s` should not be null.
+- The number of rows `numRows` should be greater than 0.
+- The output string should not be null.
+- The length of the output string should be equal to the length of the input string `s`.
+- The output string should be a valid zigzag conversion of the input string `s` with the given number of rows.

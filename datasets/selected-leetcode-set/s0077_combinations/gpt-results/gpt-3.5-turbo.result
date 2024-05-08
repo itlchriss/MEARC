@@ -1,6 +1,0 @@
-- requires n >= 1 && n <= 20;
-- requires k >= 1 && k <= n;
-- ensures \result != null;
-- ensures (\forall List<Integer> list; \result.contains(list); list.size() == k);
-- ensures (\forall List<Integer> list1, list2; \result.contains(list1) && \result.contains(list2); list1 != list2);
-- ensures (\forall List<Integer> list; \result.contains(list); (\forall Integer num; list.contains(num); num >= 1 && num <= n));

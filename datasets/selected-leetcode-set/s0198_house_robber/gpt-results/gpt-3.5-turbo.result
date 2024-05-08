@@ -1,0 +1,6 @@
+- public int rob(int[] nums)
+- requires nums != null && nums.length >= 1 && nums.length <= 100
+- requires (\forall int i; 0 <= i && i < nums.length; 0 <= nums[i] && nums[i] <= 400)
+- ensures \result >= 0
+- ensures (\forall int i; 0 <= i && i < nums.length; \result >= nums[i])
+- ensures (\forall int i; 0 <= i && i < nums.length - 1; \result >= nums[i] + nums[i + 2] || \result >= nums[i + 1])

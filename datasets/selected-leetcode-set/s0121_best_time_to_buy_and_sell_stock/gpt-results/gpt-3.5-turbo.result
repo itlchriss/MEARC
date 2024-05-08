@@ -1,6 +1,6 @@
 - public int maxProfit(int[] prices)
 - requires prices != null && prices.length >= 1 && prices.length <= 100000
-- requires (\forall int i; 0 <= i && i < prices.length; 0 <= prices[i] && prices[i] <= 10000)
+- requires (\forall int i; 0 <= i && i < prices.length; prices[i] >= 0 && prices[i] <= 10000)
 - ensures \result >= 0
 - ensures (\forall int i, j; 0 <= i && i < j && j < prices.length; prices[j] - prices[i] <= \result)
-- ensures (\exists int i, j; 0 <= i && i < j && j < prices.length; prices[j] - prices[i] == \result)
+- ensures (\forall int i, j; 0 <= i && i < j && j < prices.length; prices[j] - prices[i] == \result || prices[j] - prices[i] < \result)

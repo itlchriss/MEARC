@@ -1,0 +1,9 @@
+- public boolean isValidSerialization(String preorder)
+- requires preorder != null
+- ensures \result == true || \result == false
+- ensures \result == true <==> preorder is a correct preorder traversal serialization of a binary tree
+- ensures \result == false <==> preorder is not a correct preorder traversal serialization of a binary tree
+- ensures \result == true <==> each comma-separated value in the string is either an integer or '#'
+- ensures \result == true <==> input format is always valid
+- ensures \result == false <==> input format is not valid
+- ensures \result == false <==> preorder does not represent a correct preorder traversal serialization of a binary tree

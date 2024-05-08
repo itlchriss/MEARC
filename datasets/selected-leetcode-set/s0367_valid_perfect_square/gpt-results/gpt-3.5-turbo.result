@@ -1,0 +1,4 @@
+- public boolean isPerfectSquare(int num)
+- requires num >= 1 && num <= Math.pow(2, 31) - 1;
+- ensures \result == true <==> there exists int i; i * i == num;
+- ensures \result == false <==> there does not exist int i; i * i == num;

@@ -1,0 +1,6 @@
+- public boolean validUtf8(int[] data)
+- requires data != null && data.length >= 1 && data.length <= 2 * 10^4
+- requires (\forall int i; 0 <= i && i < data.length; 0 <= data[i] && data[i] <= 255)
+- ensures \result == true || \result == false
+- ensures \result == true ==> data represents a valid UTF-8 encoding
+- ensures \result == false ==> data does not represent a valid UTF-8 encoding

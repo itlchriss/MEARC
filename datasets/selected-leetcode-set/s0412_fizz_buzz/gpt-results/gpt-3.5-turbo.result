@@ -1,0 +1,9 @@
+- public /*@ pure @*/ List<String> fizzBuzz(int n);
+- requires n >= 1 && n <= 10000;
+- ensures \result != null;
+- ensures \result.size() == n;
+- ensures (\forall int i; 1 <= i && i <= n; 
+    answer.get(i-1).equals("FizzBuzz") ==> i % 3 == 0 && i % 5 == 0 &&
+    answer.get(i-1).equals("Fizz") ==> i % 3 == 0 &&
+    answer.get(i-1).equals("Buzz") ==> i % 5 == 0 &&
+    answer.get(i-1).equals(Integer.toString(i)) ==> i % 3 != 0 && i % 5 != 0);

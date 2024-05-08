@@ -1,0 +1,4 @@
+- public boolean containsNearbyDuplicate(int[] nums, int k)
+- requires nums != null && k >= 0;
+- ensures \result == true <==> (\exists int i, j; 0 <= i < j < nums.length && nums[i] == nums[j] && j - i <= k);
+- ensures \result == false <==> (\forall int i, j; 0 <= i < j < nums.length ==> nums[i] != nums[j] || j - i > k);

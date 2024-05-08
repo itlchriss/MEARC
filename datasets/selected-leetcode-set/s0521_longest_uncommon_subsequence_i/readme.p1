@@ -1,3 +1,5 @@
-- If the string parameter `a` is a subsequence of the string parameter `b` but not the other way around, the integer result is equal to the length of the string parameter `a`.
-- If the string parameter `b` is a subsequence of the string parameter `a` but not the other way around, the integer result is equal to the length of the string parameter `b`.
-- If both string parameters `a` and `b` have the same length and are equal, the integer result is equal to -1.
+- If the longest uncommon subsequence between the two string parameters `a` and `b` exists, the integer result is equal to the length of the longest uncommon subsequence.
+- If the longest uncommon subsequence between the two string parameters `a` and `b` does not exist, the integer result is equal to -1.
+- The length of the longest uncommon subsequence is the length of a subsequence that is a subsequence of one string but not the other string.
+- The string parameters `a` and `b` consist of lower-case English letters.
+- The length of the string parameters `a` and `b` is greater than or equal to 1 and is less than or equal to 100.

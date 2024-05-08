@@ -1,0 +1,5 @@
+- public int majorityElement(int[] arr)
+- requires arr != null;
+- requires arr.length > 0;
+- ensures (\forall int i; 0 <= i && i < arr.length; (\num_of int j; 0 <= j && j < arr.length; arr[j] == arr[i]) > arr.length / 2);
+- ensures \result == arr[\max int i; 0 <= i && i < arr.length; (\num_of int j; 0 <= j && j < arr.length; arr[j] == arr[i]) > arr.length / 2);
