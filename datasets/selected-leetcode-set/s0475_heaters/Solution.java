@@ -6,9 +6,11 @@ package g0401_0500.s0475_heaters;
 import java.util.Arrays;
 
 public class Solution {
-//@ ensures(*The integer array parameter `houses` and the integer array parameter `heaters` must not be null.*);
+//@ requires(*The integer array parameter `houses` and the integer array parameter `heaters` must not be null.*);
+//@ requires(*The length of the integer array parameter `houses` and the integer array parameter `heaters` is greater than or equal to 1 and is less than or equal to 30000.*);
+//@ requires(*All values in the integer array parameter `houses` and the integer array parameter `heaters` are greater than or equal to 1 and are less than or equal to 1000000000.*);
 //@ ensures(*The integer result is the minimum radius standard of heaters so that all houses can be covered.*);
-//@ ensures(*The integer result is greater than or equal to 0.*);
+//@ ensures(*The integer result is greater than or equal to 1.*);
     public int findRadius(int[] houses, int[] heaters) {
         int res = 0;
         //@ assume 1 <= houses.length;

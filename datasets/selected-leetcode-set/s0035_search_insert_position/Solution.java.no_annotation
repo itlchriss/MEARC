@@ -8,9 +8,9 @@ public class Solution {
     public int searchInsert(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;
+        //@ maintaining 0 <= lo <= hi < nums.length || lo == hi + 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            //@ assume 0 <= mid < nums.length;
             if (target == nums[mid]) {
                 return mid;
             } else if (target < nums[mid]) {

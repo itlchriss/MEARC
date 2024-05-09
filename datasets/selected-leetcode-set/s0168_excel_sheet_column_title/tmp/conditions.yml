@@ -1,9 +1,7 @@
 ensures:
-- The type_integer_  param_columnNumber_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to 2147483647.
-- The type_string_ result is the corresponding column title as it appears in an Excel
-  sheet based on the type_integer_  param_columnNumber_.
-- The type_string_ result consists of uppercase letters only.
+- The type_string_ result is the corresponding column title of the type_integer_ param_columnNumber_ as it appears in an Excel sheet.
+- The type_string_ result consists of uppercase_alphabets only.
 - The type_string_ result is not null.
-- The type_string_ result does not contain any leading or trailing spaces.
-requires: []
+- The type_string_ result length is less_than_or_equal to 7.
+requires:
+- The type_integer_ param_columnNumber_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.

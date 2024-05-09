@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer result is the total number of continuous subarrays whose sum equals to the integer parameter `k`.*);
     public int subarraySum(int[] nums, int k) {
         int tempSum = 0;
         int ret = 0;

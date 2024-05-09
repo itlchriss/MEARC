@@ -1,1 +1,1 @@
--exists x01.(_param_height_{NN}(x01) & _type_array_{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_null{JJ}(e02) & (Subj(e02) = x01)))
+exists x01.(_result{NN}(x01) & _type_integer_{NN}(x01) & exists x02.(_amount{NN}(x02) & exists x03.(_water{NN}(x03) & exists e04.(_of{IN}(e04,x03) & (Subj(e04) = x02) & exists e05.(_trap{VBN}(e05) & (Acc(e05) = x02)) & exists e06.(_rain{VBG}(e06) & (Subj(e06) = x02) & _can{MD}(e06)))) & (x01 = x02)))

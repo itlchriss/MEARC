@@ -1,15 +1,7 @@
 ensures:
-- The type_integer_ result of the method expr0 is a uniform random type_integer_ in
-  the range expr1.
-- The method expr0 can only call the API expr1 and should not call any other API.
-- The method expr0 should be implemented to generate a uniform random type_integer_
-  in the range expr1 using the expr2 API.
-- The method expr0 should be able to handle multiple calls based on the value of the
-  internal argument expr1.
-- The method expr0 should return a type_list_ of integers based on the number of times
-  it is called ,  with each type_integer_ being a result of a call to expr1.
-- The method expr0 should adhere to the constraints specified for the input value
-  of expr1.
-- The method expr0 should aim to minimize the number of calls to the expr1 API to
-  optimize performance.
-requires: []
+- The type_integer_ result after executing the method expr_a is in the range expr_b.
+requires:
+- The method expr_a can only call the expr_b API and should not call any other API.
+- The number of times the implemented function expr_a will be called while testing is provided as an internal argument expr_b.
+- The method expr_a should return a type_list_ of integers representing the random numbers generated in the range expr_b for each call.
+- The constraints for the internal argument expr_a are expr_b.

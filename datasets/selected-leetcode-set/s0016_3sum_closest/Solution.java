@@ -6,11 +6,11 @@ package g0001_0100.s0016_3sum_closest;
 import java.util.Arrays;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The length of the integer array parameter `nums` is greater than or equal to 3 and is less than or equal to 1000.*);
-//@ ensures(*All values in the integer array parameter `nums` are greater than or equal to -1000 and are less than or equal to 1000.*);
-//@ ensures(*The integer parameter `target` is greater than or equal to -10000 and is less than or equal to 10000.*);
-//@ ensures(*The integer result is the sum of three integers in the integer array `nums` such that the sum is closest to the integer `target`.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 3 and is less than or equal to 1000.*);
+//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -1000 and are less than or equal to 1000.*);
+//@ requires(*The integer parameter `target` is greater than or equal to -10000 and is less than or equal to 10000.*);
+//@ ensures(*The integer result is the sum of three integers in the integer array parameter `nums` such that the sum is closest to the integer parameter `target`.*);
     public int threeSumClosest(int[] nums, int target) {
         if (nums == null || nums.length < 3) {
             return 0;

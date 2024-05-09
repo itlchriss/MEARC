@@ -1,7 +1,8 @@
 ensures:
-- The type_string_ param_s_ is converted into a zigzag pattern with the specified number of rows.
 - The type_string_ result is read line by line from the zigzag pattern.
-- The length of the type_string_ result is less_than_or_equal to the length of the type_string_ param_s_.
-- The type_string_ result contains alphabets , commas , and periods.
+- The type_string_ result is equal to the expected output for the given input in the examples.
+requires:
+- The type_string_ param_s_ is converted into a zigzag pattern with the specified number of rows.
 - The type_integer_ param_numRows_ is greater_than_or_equal to 1 and is less_than_or_equal to 1000.
-requires: []
+- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 1000.
+- The type_string_ param_s_ contains alphabets , `' , ' expr_a str_a`.

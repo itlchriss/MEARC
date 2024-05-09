@@ -1,7 +1,8 @@
 ensures:
-- The type_integer_ type_array_ param_nums_ is not null.
-- The length of the type_integer_ type_array_ param_nums_ is less_than_or_equal to 3000.
-- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 100000 and are less_than_or_equal to 100000.
-- The result is a type_list_ of lists containing triplets expr_a that expr_b , expr_c , and expr_d , and expr_e.
-- The solution set must not contain duplicate triplets.
-requires: []
+- The type_integer_ type_array_ result contains lists of integers , each type_list_ representing a triplet expr_a that expr_b , expr_c , and expr_d.
+- The type_integer_ type_array_ result does not contain duplicate triplets.
+- The sum of elements in each triplet in the type_integer_ type_array_ result is equal to 0.
+- The length of each type_list_ in the type_integer_ type_array_ result is equal to 3.
+- The type_integer_ type_array_ result may be empty if no triplets satisfy the conditions.
+requires:
+- The type_integer_ type_array_ param_nums_ may contain duplicate elements.

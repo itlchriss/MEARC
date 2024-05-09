@@ -33,7 +33,7 @@ def _get_conditions(text: str) -> Dict[str, str]:
 
 def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:    
     models, si = _get_specs()
-    conditions = _get_conditions(filecontent)
+    conditions = _get_conditions(filecontent)    
     
     results = { 'ensures': [], 'requires': []}
     sis = []

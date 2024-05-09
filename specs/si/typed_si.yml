@@ -765,6 +765,26 @@
     reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLetter'
+- term: space
+  syntax:
+  - NN
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'java_method'
+  interpretation: 'Character.isWhiteSpace'
+- term: symbol
+  syntax:
+  - NN
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  interpretation_type: 'java_method_chain'
+  interpretation: " && ,!Character.isLetter,!Character.isWhiteSpace"
 - term: lowercase_alphabets
   syntax:
   - NNS

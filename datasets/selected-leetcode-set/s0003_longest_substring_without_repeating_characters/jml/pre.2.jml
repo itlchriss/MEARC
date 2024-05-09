@@ -1,0 +1,1 @@
+requires((\exists int i; 0 <= i < s.length(); Character.isAlphabetic(s.charAt(i))) && ((\exists int i; 0 <= i < s.length(); Character.isDigit(s.charAt(i))) && ((\exists int i; 0 <= i < s.length(); !Character.isLetter(s.charAt(i)) &&  !Character.isWhiteSpace(s.charAt(i)) ) && (\exists int i; 0 <= i < s.length(); Character.isWhiteSpace(s.charAt(i))))));

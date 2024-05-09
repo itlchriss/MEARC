@@ -1,8 +1,12 @@
 ensures:
+- If the next character in the type_string_ expr_a is str_a or the str_b , the result is negative or positive respectively.
+- The type_integer_ result is clamped to the range [-2147483648 , 2147483648 - 1].
+- If no digits are read , the type_integer_ result is 0.
+- The type_integer_ result is the value of the parsed type_integer_.
+- The type_integer_ result is less_than_or_equal to 2147483647 and is greater_than_or_equal to negative 2147483648.
+requires:
 - The type_string_ param_str_ is converted to a signedint .
 - Leading whitespace characters in the type_string_ expr_a are ignored.
-- If the next character in the type_string_ expr_a is str_a or the str_b , the result is negative or positive , respectively. If neither is present , the result is assumed to be positive.
-- Only digits are considered for conversion into an integer. Any non-digit character encountered after reading digits is ignored.
-- The type_integer_ value is clamped to the range [-2147483648 , 2147483648 - 1] if it exceeds this range.
-- The final result is the converted type_integer_ value.
-requires: []
+- Only the space character ' ' is considered a whitespace character.
+- Characters other than leading whitespace or digits are ignored.
+- The parsed type_integer_ is the concatenation of consecutive digits in the type_string_ expr_a.

@@ -4,11 +4,9 @@ package g0001_0100.s0041_first_missing_positive;
 // #Big_O_Time_O(n)_Space_O(n) #2023_08_11_Time_2_ms_(57.59%)_Space_59.2_MB_(51.48%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer result is the smallest missing positive integer.*);
-//@ ensures(*The integer result is greater than 0.*);
-//@ ensures(*The algorithm must run in O(n) time.*);
-//@ ensures(*The algorithm must use constant extra space.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ ensures(*The integer result is the smallest missing positive integer in the integer array parameter `nums`.*);
+//@ ensures(*The integer result is greater than or equal to 1.*);
     public int firstMissingPositive(int[] nums) {
         //@ loop_invariant 0 <= i <= nums.length;
         //@ decreases nums.length - i;

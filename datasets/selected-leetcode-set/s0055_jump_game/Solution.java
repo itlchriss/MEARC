@@ -5,11 +5,11 @@ package g0001_0100.s0055_jump_game;
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(79.47%)_Space_44.8_MB_(22.14%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The boolean result is equal to the true literal if the last index can be reached from the first index using the maximum jump lengths specified in the array `nums`.*);
-//@ ensures(*The boolean result is equal to the false literal if the last index cannot be reached from the first index using the maximum jump lengths specified in the array `nums`.*);
-//@ ensures(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ ensures(*All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 100000.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 10000.*);
+//@ requires(*All values in the integer array `nums` are greater than or equal to 0 and are less than or equal to 100000.*);
+//@ ensures(*The boolean result is equal to the true literal if it is possible to reach the last index of the integer array `nums`.*);
+//@ ensures(*The boolean result is equal to the false literal if it is not possible to reach the last index of the integer array `nums`.*);
     public boolean canJump(int[] nums) {
         int sz = nums.length;
         // we set 1 so it won't break on the first iteration

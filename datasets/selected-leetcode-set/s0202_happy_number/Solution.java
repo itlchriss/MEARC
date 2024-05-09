@@ -5,9 +5,9 @@ package g0201_0300.s0202_happy_number;
 // #2022_06_28_Time_1_ms_(98.59%)_Space_41_MB_(64.25%)
 
 public class Solution {
-//@ ensures(*The integer parameter `n` must be a positive integer.*);
-//@ ensures(*The boolean result is true if the process of replacing the number by the sum of the squares of its digits eventually equals 1.*);
-//@ ensures(*The boolean result is false if the process of replacing the number by the sum of the squares of its digits loops endlessly in a cycle that does not include 1.*);
+//@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
+//@ ensures(*If the integer parameter `n` is a happy number, the boolean result is equal to the true literal.*);
+//@ ensures(*If the integer parameter `n` is not a happy number, the boolean result is equal to the false literal.*);
     public boolean isHappy(int n) {
         boolean happy;
         int a = n;

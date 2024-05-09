@@ -1,9 +1,10 @@
 ensures:
+- The length of the type_integer_ type_array_ result is equal to 2.
+- The values in the type_integer_ type_array_ result are indices of two numbers in the type_integer_ type_array_ param_numbers_ that add up to the type_integer_ param_target_.
+- The two numbers at the indices specified in the type_integer_ type_array_ result add up to the type_integer_ param_target_.
+requires:
 - The type_integer_ type_array_ param_numbers_ is not null.
 - The length of the type_integer_ type_array_ param_numbers_ is greater_than_or_equal to 2 and is less_than_or_equal to 10000.
 - All values in the type_integer_ type_array_ param_numbers_ are greater_than_or_equal to negative 1000000000 and are less_than_or_equal to 1000000000.
 - The type_integer_ param_target_ is greater_than_or_equal to negative 1000000000 and is less_than_or_equal to 1000000000.
-- The type_integer_ type_array_ result's length is equal to 2.
-- All values in the type_integer_ type_array_ result are unique.
-- The sum of the elements at the indices specified by the type_integer_ type_array_ result is equal to the type_integer_ param_target_.
-requires: []
+- Only one valid answer exists.

@@ -15,6 +15,8 @@ public class Solution {
         return ans;
     }
 
+    //@ requires 0 <= p;
+    //@ requires ans != null;
     private void permute(int[] nums, int p) {
         if (p >= nums.length - 1) {
             List<Integer> t = new ArrayList<>(nums.length);
@@ -26,6 +28,8 @@ public class Solution {
         }
         permute(nums, p + 1);
         boolean[] used = new boolean[30];
+        //@ loop_invariant p + 1 <= i <= nums.length;
+        //@ loop_invariant \forall int k; 0 <= k < nums.length; -10 <= nums[k] < used.length - 10;
         for (int i = p + 1; i < nums.length; i++) {
             if (nums[i] != nums[p] && !used[10 + nums[i]]) {
                 used[10 + nums[i]] = true;
@@ -36,6 +40,8 @@ public class Solution {
         }
     }
 
+    //@ requires 0 <= i < nums.length;
+    //@ requires 0 <= j < nums.length;
     private void swap(int[] nums, int i, int j) {
         int t = nums[i];
         nums[i] = nums[j];

@@ -4,12 +4,11 @@ package g0001_0100.s0066_plus_one;
 // #2023_08_11_Time_0_ms_(100.00%)_Space_40.8_MB_(76.07%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `digits` represents a large integer without any leading zeros.*);
-//@ ensures(*The integer array result represents the large integer obtained by incrementing the input large integer by one.*);
-//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `digits`.*);
-//@ ensures(*Each element in the integer array result is a digit from 0 to 9.*);
-//@ ensures(*If the last digit in the integer array parameter `digits` is 9, the last digit in the integer array result is 0, and the digit before it is incremented by one.*);
-//@ ensures(*If all digits in the integer array parameter `digits` are 9, a new digit 1 is added to the beginning of the integer array result, and all other digits are set to 0.*);
+//@ requires(*The integer array parameter `digits` must not be null.*);
+//@ requires(*The length of the integer array parameter `digits` is greater than or equal to 1 and is less than or equal to 100.*);
+//@ requires(*All values in the integer array parameter `digits` are greater than or equal to 0 and are less than or equal to 9.*);
+//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `digits` or is greater by 1.*);
+//@ ensures(*The integer array result represents the large integer obtained by incrementing the integer array parameter `digits` by one.*);
     public int[] plusOne(int[] digits) {
         int num = 1;
         int carry = 0;

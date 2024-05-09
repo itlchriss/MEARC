@@ -7,8 +7,8 @@ package g0201_0300.s0215_kth_largest_element_in_an_array;
 import java.util.Arrays;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer parameter `k` must be greater than or equal to 1 and less than or equal to the length of the integer array parameter `nums`.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer parameter `k` is greater than or equal to 1 and is less than or equal to the length of the integer array parameter `nums`.*);
 //@ ensures(*The integer result is the `k`th largest element in the sorted order of the integer array parameter `nums`.*);
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;

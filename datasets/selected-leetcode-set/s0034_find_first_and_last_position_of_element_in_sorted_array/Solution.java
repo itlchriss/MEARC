@@ -5,12 +5,11 @@ package g0001_0100.s0034_find_first_and_last_position_of_element_in_sorted_array
 // #2023_08_09_Time_0_ms_(100.00%)_Space_44.3_MB_(89.57%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` is sorted in non-decreasing order.*);
-//@ ensures(*The integer parameter `target` is within the range of -10^9 to 10^9.*);
+//@ requires(*The integer array parameter `nums` is sorted in non-decreasing order.*);
+//@ requires(*The runtime complexity of the algorithm is O(log n).*);
+//@ ensures(*If the integer parameter `target` is found in the integer array parameter `nums`, the integer array result contains the starting and ending positions of the integer parameter `target`.*);
+//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer array result is [-1, -1].*);
 //@ ensures(*The integer array result has a length of 2.*);
-//@ ensures(*If the `target` value is found in the `nums` array, the first element of the result array is the starting position of the `target` value in the `nums` array.*);
-//@ ensures(*If the `target` value is found in the `nums` array, the second element of the result array is the ending position of the `target` value in the `nums` array.*);
-//@ ensures(*If the `target` value is not found in the `nums` array, both elements of the result array are -1.*);
     public int[] searchRange(int[] nums, int target) {
         int[] ans = new int[2];
         ans[0] = helper(nums, target, false);

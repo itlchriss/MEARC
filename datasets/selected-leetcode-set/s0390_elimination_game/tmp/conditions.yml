@@ -1,10 +1,6 @@
 ensures:
-- The type_integer_  param_n_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to 1000000000.
-- The type_integer_ result is the last number that remains in the type_list_ expr0
-  after applying the elimination game algorithm.
-- The length of the type_list_ expr0 decreases by half in each iteration of the elimination
-  game algorithm.
-- The elimination game algorithm alternates between removing numbers from left to
-  right and right to left until a single number remains.
-requires: []
+- The type_integer_ result is the last number that remains in the type_list_ expr_a after applying the elimination game algorithm.
+- The last number that remains in the type_list_ expr_a is returned as the type_integer_ result.
+requires:
+- The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 1000000000.
+- The length of the type_list_ expr_a decreases by half in each iteration of the elimination game algorithm.

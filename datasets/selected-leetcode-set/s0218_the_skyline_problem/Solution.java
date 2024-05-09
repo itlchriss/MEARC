@@ -10,11 +10,14 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class Solution {
-//@ ensures(*The integer array parameter `buildings` must not be null.*);
-//@ ensures(*The integer array parameter `buildings` must be sorted by the left edge coordinate in non-decreasing order.*);
-//@ ensures(*The list result is sorted by the x-coordinate of the key points in non-decreasing order.*);
-//@ ensures(*Each key point in the list represents the left endpoint of a horizontal segment in the skyline, except for the last point which always has a y-coordinate of 0 to mark the skyline's termination.*);
-//@ ensures(*There must be no consecutive horizontal lines of equal height in the output skyline.*);
+//@ requires(*The integer array parameter `buildings` must not be null.*);
+//@ requires(*The integer array parameter `buildings` must have a length greater than or equal to 1 and less than or equal to 10000.*);
+//@ requires(*Each element in the integer array parameter `buildings` must be an array of length 3, where the first element represents the x coordinate of the left edge of the building, the second element represents the x coordinate of the right edge of the building, and the third element represents the height of the building.*);
+//@ requires(*The integer elements representing the x coordinates and height of the buildings must be greater than or equal to 0 and less than or equal to 2^31 - 1.*);
+//@ requires(*The integer elements representing the x coordinates of the buildings must be sorted in non-decreasing order.*);
+//@ requires(*Each key point represents the left endpoint of a horizontal segment in the skyline, except for the last point which always has a y-coordinate of 0 to mark the skyline's termination.*);
+//@ requires(*There should be no consecutive horizontal lines of equal height in the output skyline.*);
+//@ ensures(*The result is a list of key points sorted by their x-coordinate in the form [[x1,y1],[x2,y2],...].*);
     public List<List<Integer>> getSkyline(int[][] buildings) {
         List<List<Integer>> list = new ArrayList<>();
         List<int[]> lines = new ArrayList<>();

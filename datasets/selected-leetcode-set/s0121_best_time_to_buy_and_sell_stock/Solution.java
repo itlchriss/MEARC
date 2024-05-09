@@ -5,10 +5,10 @@ package g0101_0200.s0121_best_time_to_buy_and_sell_stock;
 // #Big_O_Time_O(N)_Space_O(1) #2022_06_23_Time_1_ms_(100.00%)_Space_58.9_MB_(93.57%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `prices` must not be null.*);
-//@ ensures(*The length of the integer array parameter `prices` is greater than or equal to 1 and is less than or equal to 100000.*);
-//@ ensures(*All values in the integer array parameter `prices` are greater than or equal to 0 and are less than or equal to 10000.*);
-//@ ensures(*The integer result is the maximum profit that can be achieved by buying and selling the stock based on the given prices.*);
+//@ requires(*The integer array parameter `prices` must not be null.*);
+//@ requires(*The length of the integer array parameter `prices` is greater than or equal to 1 and is less than or equal to 100000.*);
+//@ requires(*All values in the integer array parameter `prices` are greater than or equal to 0 and are less than or equal to 10000.*);
+//@ ensures(*The integer result is the maximum profit that can be achieved from buying and selling the stock.*);
 //@ ensures(*If no profit can be achieved, the integer result is equal to 0.*);
     public int maxProfit(int[] prices) {
         int maxProfit = 0;

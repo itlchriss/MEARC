@@ -4,12 +4,11 @@ package g0001_0100.s0031_next_permutation;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_42_MB_(90.28%)
 
 public class Solution {
-//@ ensures(*If the integer array parameter `nums` is rearranged into the lexicographically next greater permutation, the integer array result is equal to the rearranged `nums`.*);
-//@ ensures(*If the integer array parameter `nums` cannot be rearranged into the lexicographically next greater permutation, the integer array result is equal to the `nums` sorted in ascending order.*);
-//@ ensures(*The rearrangement must be done in place without using any additional memory.*);
-//@ ensures(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100.*);
-//@ ensures(*All values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 100.*);
-    // public void nextPermutation(int[] nums) {
+    //
+//@ requires(*The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 100.*);
+//@ requires(*All values in the integer array `nums` are greater than or equal to 0 and are less than or equal to 100.*);
+//@ ensures(*If the integer array parameter `nums` is rearranged into the lexicographically next greater permutation of numbers, the integer array result is equal to the rearranged `nums`.*);
+//@ ensures(*If the integer array parameter `nums` cannot be rearranged into the lexicographically next greater permutation of numbers, the integer array result is equal to the sorted `nums` in ascending order.*); public void nextPermutation(int[] nums) {
     //     if (nums == null || nums.length <= 1) {
     //         return;
     //     }

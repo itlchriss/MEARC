@@ -1,11 +1,11 @@
 ensures:
-- The type_integer_ type_array_ param_nums_ is sorted in ascending_order with unique values.
 - The type_integer_ type_array_ param_nums_ is possibly rotated at an unknown pivot index expr_a such that the resulting type_array_ is expr_b.
 - The type_integer_ result is the index of the type_integer_ param_target_ if it is in the type_integer_ type_array_ expr_a.
-- If the type_integer_ param_target_ is not in the type_integer_ type_array_ expr_a , the type_integer_ result is negative 1.
+- If the type_integer_ param_target_ is not in the type_integer_ type_array_ expr_a , the type_integer_ result is equal to negative 1.
+requires:
+- The type_integer_ type_array_ param_nums_ is sorted in ascending_order with unique values.
 - The algorithm must have a runtime complexity of O(log n).
 - The length of the type_integer_ type_array_ expr_a is greater_than_or_equal to 1 and is less_than_or_equal to 5000.
 - All values in the type_integer_ type_array_ expr_a are unique.
-- All values in the type_integer_ type_array_ expr_a are in the range of negative 10000 to 10000.
+- All values in the type_integer_ type_array_ expr_a are greater_than_or_equal to negative 10000 and are less_than_or_equal to 10000.
 - The type_integer_ param_target_ is greater_than_or_equal to negative 10000 and is less_than_or_equal to 10000.
-requires: []

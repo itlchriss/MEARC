@@ -1,14 +1,18 @@
-# total=`find ./datasets/leetcode-behavioural -type f -name "*.mr" | awk 'END {print NR}'`
-total=`find ./datasets/leetcode-behavioural/ -type f -name "readme.p1" | sort | head -100 | xargs wc -l | tail -1 | sed 's/ total//'`
-p2ok=`grep -r 'ensures' ./datasets/leetcode-behavioural/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
+SRCPATH=./datasets/selected-leetcode-set/
+
+
+total=`find $SRCPATH -type f -name "readme.p1" | sort | xargs wc -l | tail -1 | sed 's/ total//'`
+postcount=`grep -r 'ensures' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
+precount=`grep -r 'requires' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
+let p2ok=$(($postcount+$precount))
 derivationerror=`grep -r 'Sentence:' result | awk 'END {print NR}'`
-p1notok=`grep -rlZ '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | xargs -0 grep -lE 'exists|all' | awk 'END {print NR}'`
-p1failed=`grep -rl 'Failed' ./datasets/leetcode-behavioural/*/tmp/*.mr | awk 'END {print NR}'`
-p1unreducted=`grep -rl '\\\' ./datasets/leetcode-behavioural/*/tmp/*.mr | awk 'END {print NR}'`
-p1empty=`find ./datasets/leetcode-behavioural/ -name "*.mr" -type f -empty | awk 'END {print NR}'`
-let p1ok=$total-$p1notok-$p1failed
+p1notok=`grep -rlZ '\\\' $SRCPATH/*/tmp/*.mr | xargs -0 grep -lE 'exists|all' | awk 'END {print NR}'`
+p1failed=`grep -rl 'Failed' $SRCPATH/*/tmp/*.mr | awk 'END {print NR}'`
+p1unreducted=`grep -rl '\\\' $SRCPATH/*/tmp/*.mr | awk 'END {print NR}'`
+p1empty=`find $SRCPATH/ -name "*.mr" -type f -empty | awk 'END {print NR}'`
+let p1ok=$(($total-$p1notok-$p1failed))
 p1percent=`bc -l <<<"($p1ok / $total) * 100"`
-p2percent=`bc -l <<< "($p2ok / $p1ok) * 100"`
+p2percent=`bc -l <<< "($p2ok / $total) * 100"`
 echo 'Total sentence processed: ' $total
 echo 'P1 success cases: ' $p1ok
 echo 'P1 failed cases: ' $p1failed
@@ -17,4 +21,5 @@ echo 'Derivation error in result: ' $derivationerror
 echo 'P1 reducted incompletely cases: ' $p1unreducted
 echo 'P2 success cases: ' $p2ok
 echo 'P1 successful rate: ' $p1percent
-echo 'P2 successful rate: ' $p2percent
+echo 'P2 successful rate out of all sentences: ' $p2percent
+echo 'P2 successful rate out of all MRs: ' `bc -l <<< "($p2ok / $p1ok) * 100"`

@@ -4,9 +4,9 @@ package g0001_0100.s0007_reverse_integer;
 // #2024_01_04_Time_1_ms_(96.61%)_Space_40.9_MB_(11.62%)
 
 public class Solution {
-//@ ensures(*The integer parameter `x` is within the range of -2^31 to 2^31 - 1.*);
-//@ ensures(*The integer result is the reverse of the digits of the integer parameter `x`.*);
-//@ ensures(*If the reverse of the digits of the integer parameter `x` causes the value to go outside the signed 32-bit integer range, the result is equal to 0.*);
+//@ ensures(*If the integer parameter `x` is positive, the integer result is the reverse of the integer parameter `x`.*);
+//@ ensures(*If the integer parameter `x` is negative, the integer result is the reverse of the absolute value of the integer parameter `x` multiplied by -1.*);
+//@ ensures(*If the integer result is outside the range of [-2^31, 2^31 - 1], the integer result is equal to 0.*);
     public int reverse(int x) {
         long rev = 0;        
         //@ ghost long k;

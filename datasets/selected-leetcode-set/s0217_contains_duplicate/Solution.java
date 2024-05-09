@@ -8,8 +8,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Solution {
-//@ ensures(*If any value in the integer array parameter `nums` appears at least twice, the boolean result is true.*);
-//@ ensures(*If every element in the integer array parameter `nums` is distinct, the boolean result is false.*);
+//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 100000.*);
+//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -1000000000 and are less than or equal to 1000000000.*);
+//@ ensures(*If any value in the integer array parameter `nums` appears at least twice, the boolean result is equal to the true literal.*);
+//@ ensures(*If every element in the integer array parameter `nums` is distinct, the boolean result is equal to the false literal.*);
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int n : nums) {

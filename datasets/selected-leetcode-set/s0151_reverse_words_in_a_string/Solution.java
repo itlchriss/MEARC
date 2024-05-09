@@ -4,10 +4,10 @@ package g0101_0200.s0151_reverse_words_in_a_string;
 // #2022_06_25_Time_2_ms_(99.94%)_Space_42.4_MB_(88.57%)
 
 public class Solution {
-//@ ensures(*The string parameter `s` must not be null.*);
-//@ ensures(*The string result is the reverse order of words in the string parameter `s`, concatenated by a single space.*);
-//@ ensures(*Leading and trailing spaces in the string parameter `s` should be removed in the result.*);
-//@ ensures(*Multiple spaces between two words in the string parameter `s` should be reduced to a single space in the result.*);
+//@ requires(*The string parameter `s` contains at least one word.*);
+//@ ensures(*The string result is a concatenation of the words in reverse order separated by a single space.*);
+//@ ensures(*The string result does not contain leading or trailing spaces.*);
+//@ ensures(*The string result reduces multiple spaces between two words to a single space.*);
     public String reverseWords(String s) {
         StringBuilder sb = new StringBuilder();
         int i = s.length() - 1;

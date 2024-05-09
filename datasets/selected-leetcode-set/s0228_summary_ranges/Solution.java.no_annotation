@@ -18,6 +18,7 @@ public class Solution {
         // end of range
         int b = a;
         StringBuilder strB = new StringBuilder();
+        //@ maintaining 1 <= i <= n;
         for (int i = 1; i < n; i++) {
             // we need to make a decision if the next element
             // will expand the range

@@ -11,9 +11,10 @@ package g0301_0400.s0374_guess_number_higher_or_lower;
  *     otherwise return 0 int guess(int num);
  */
 public class Solution {
-//@ ensures(*The integer parameter `n` must be greater than or equal to 1.*);
-//@ ensures(*The integer parameter `pick` must be greater than or equal to 1 and less than or equal to `n`.*);
-//@ ensures(*The integer result is the number that the method picked, which is equal to the integer parameter `pick`.*);
+//@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
+//@ requires(*The integer parameter `pick` is greater than or equal to 1 and is less than or equal to `n`.*);
+//@ ensures(*The integer result is the number that is picked by the guessing game.*);
+//@ ensures(*The result is equal to the integer parameter `pick` that is picked by the guessing game.*);
     public int guessNumber(int n) {
         int start = 0;
         int end = n;

@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ ensures(*For each element `x` in the integer array parameter `nums1`, find the index `j` in the integer array parameter `nums2` such that `nums1[i] == nums2[j]`.*);
-//@ ensures(*If there exists a next greater element to the right of `nums2[j]` in the integer array parameter `nums2`, the integer result at index `i` in the output array `ans` is that next greater element.*);
-//@ ensures(*If there is no next greater element to the right of `nums2[j]` in the integer array parameter `nums2`, the integer result at index `i` in the output array `ans` is -1.*);
+//@ requires(*For each value in the integer array parameter `nums1`, find the index `j` in the integer array parameter `nums2` such that the value in `nums1` is equal to the value in `nums2` at index `j`.*);
+//@ ensures(*If there is a next greater element to the right of the value in `nums2` at index `j`, the corresponding value in the integer array result is the next greater element.*);
+//@ ensures(*If there is no next greater element to the right of the value in `nums2` at index `j`, the corresponding value in the integer array result is -1.*);
+//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `nums1`.*);
+//@ ensures(*All values in the integer array result are either the next greater element to the right or -1.*);
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Map<Integer, Integer> indexMap = new HashMap<>();
         //@ maintaining 0 <= i <= nums2.length;

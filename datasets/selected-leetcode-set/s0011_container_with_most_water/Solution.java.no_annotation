@@ -9,11 +9,19 @@ public class Solution {
         int maxArea = -1;
         int left = 0;
         int right = height.length - 1;
+        //@ assume 1 <= height.length <= Integer.MAX_VALUE;
+        //@ ghost int k;
+        //@ maintaining 0 <= left < height.length;
+        //@ maintaining 0 <= right < height.length;
         while (left < right) {
             if (height[left] < height[right]) {
+                //@ set k = height[left];
+                // assume Integer.MIN_VALUE  <= k * (right - left) <= Integer.MAX_VALUE;
                 maxArea = Math.max(maxArea, height[left] * (right - left));
                 left++;
             } else {
+                //@ set k = height[right];
+                // assume Integer.MIN_VALUE <= k * (right - left) <= Integer.MAX_VALUE;
                 maxArea = Math.max(maxArea, height[right] * (right - left));
                 right--;
             }

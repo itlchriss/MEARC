@@ -12,9 +12,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
-//@ ensures(*The string parameter `s` is sorted in decreasing order based on the frequency of characters.*);
-//@ ensures(*The characters in the sorted string appear in decreasing order of frequency.*);
-//@ ensures(*The sorted string may contain any valid arrangement of characters with the same frequency.*);
+//@ requires(*The string parameter `s` must not be null.*);
+//@ requires(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 500000.*);
+//@ requires(*The characters in the string parameter `s` consist of uppercase and lowercase English letters and digits.*);
+//@ ensures(*The string result is sorted in decreasing order based on the frequency of characters in the string parameter `s`.*);
+//@ ensures(*If there are multiple valid sorted strings, any of them can be returned as the result.*);
     public String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {

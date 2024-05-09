@@ -1,9 +1,6 @@
 ensures:
-- The type_integer_ type_array_  param_nums_  is not  null.
-- The type_integer_ type_array_  param_nums_ must have a length  greater_than_or_equal
-  to 1 and  less_than_or_equal to 50000.
-- All values in the type_integer_ type_array_  param_nums_  is greater_than_or_equal
-  to negative 1000000000 and  less_than_or_equal to 1000000000.
-- The type_integer_ type_collection_ result contains elements that appear more than
-  `⌊ n/3 ⌋` times in the type_integer_ type_array_  param_nums_.
+- If the type_integer_ type_array_ param_nums_ contains elements that appear more than `⌊ n/3 ⌋` times , the type_integer_ type_list_ result contains those elements.
+- The length of the type_integer_ type_list_ result is less_than_or_equal to the length of the type_integer_ type_array_ param_nums_.
+- All values in the type_integer_ type_list_ result are unique.
+- The type_integer_ type_list_ result is empty if exist no elements that appear more than `⌊ n/3 ⌋` times in the type_integer_ type_array_ param_nums_.
 requires: []

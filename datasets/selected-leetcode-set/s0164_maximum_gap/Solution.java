@@ -6,10 +6,10 @@ package g0101_0200.s0164_maximum_gap;
 import java.util.Arrays;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer array parameter `nums` must contain at least two elements.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer array parameter `nums` must contain at least two elements.*);
 //@ ensures(*The integer result is the maximum difference between two successive elements in the sorted form of the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` contains less than two elements, the integer result is 0.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to 0.*);
     public int maximumGap(int[] nums) {
         if (nums.length < 2) {
             return 0;

@@ -10,8 +10,8 @@
     <rule type="ba" cat="S[dcl]">
      <rule type="ba" cat="NP">
       <rule type="fa" cat="NP[nb]">
-       <lf start="1" span="1" word="all" lemma="all" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-       <lf start="2" span="1" word="elements" lemma="element" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+       <lf start="1" span="1" word="every" lemma="every" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+       <lf start="2" span="1" word="element" lemma="element" pos="NN" chunk="I-NP" entity="O" cat="N" />
       </rule>
       <rule type="fa" cat="NP\NP">
        <lf start="3" span="1" word="in" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
@@ -28,7 +28,7 @@
       </rule>
      </rule>
      <rule type="fa" cat="S[dcl]\NP">
-      <lf start="8" span="1" word="are" lemma="be" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
+      <lf start="8" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
       <lf start="9" span="1" word="unique" lemma="unique" pos="JJ" chunk="I-ADJP" entity="O" cat="S[adj]\NP" />
      </rule>
     </rule>

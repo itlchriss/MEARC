@@ -1,9 +1,8 @@
 ensures:
-- The type_integer_  param_n_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to 10000.
-- The size of the type_string_ type_list_ result is equal to the type_integer_  param_n_.
-- Each element in the type_string_ type_list_ result is either "FizzBuzz" if the index
-  is divisible by both 3 and 5 ,  "Fizz" if the index is divisible by 3 ,  "Buzz"
-  if the index is divisible by 5 ,  or the index itself as a type_string_ if none
-  of the conditions are met.
-requires: []
+- The size of the type_string_ type_collection_ result is equal to the type_integer_ param_n_.
+- If the index expr_a is divisible by both 3 and 5 , the type_string_ at index expr_b in the type_string_ type_collection_ result is equal to "FizzBuzz".
+- If the index expr_a is divisible by 3 , the type_string_ at index expr_b in the type_string_ type_collection_ result is equal to "Fizz".
+- If the index expr_a is divisible by 5 , the type_string_ at index expr_b in the type_string_ type_collection_ result is equal to "Buzz".
+- If none of the above conditions are true , the type_string_ at index expr_a in the type_string_ type_collection_ result is equal to the index expr_b as a type_string_.
+requires:
+- The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.

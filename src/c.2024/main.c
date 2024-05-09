@@ -244,6 +244,7 @@ struct queue* readSI(char *dstfilepaths) {
                     si->synthesised_datatype->p = UNDEFINED;
                     si->synthesised_datatype->r = UNDEFINED;
                     si->synthesised_datatype->types = initqueue();
+                    si->operators = initqueue();
                     si->type = -1;
                 }
                 break;
@@ -323,6 +324,8 @@ struct queue* readSI(char *dstfilepaths) {
                                                 arg->datatype->i = SI_INT_TYPE_MODIFIER;
                                             } else if (strcmp((char *)token.data.scalar.value, "java_method") == 0) {
                                                 arg->datatype->i = SI_INT_TYPE_JAVA_METHOD;
+                                            } else if (strcmp((char *)token.data.scalar.value, "java_method_chain") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_JAVA_METHOD_CHAIN;
                                             } else {                                
                                                 arg->datatype->i = SI_INT_TYPE_UNDEFINED;
                                             }
@@ -452,6 +455,8 @@ struct queue* readSI(char *dstfilepaths) {
                                 si->type = SI_INT_TYPE_MODIFIER;
                             } else if (strcmp(value, "java_method") == 0) { 
                                 si->type = SI_INT_TYPE_JAVA_METHOD;
+                            } else if (strcmp(value, "java_method_chain") == 0) { 
+                                si->type = SI_INT_TYPE_JAVA_METHOD_CHAIN;
                             } else if (strcmp(value, "java_boolean") == 0) {
                                 si->type = 50;
                             } else if (strcmp(value, "java_byte") == 0) {

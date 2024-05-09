@@ -5,9 +5,10 @@ package g0001_0100.s0003_longest_substring_without_repeating_characters;
 // #Big_O_Time_O(n)_Space_O(1) #2024_01_04_Time_2_ms_(99.52%)_Space_43.6_MB_(75.37%)
 
 public class Solution {
-//@ ensures(*The integer parameter `s` must not be null.*);
-//@ ensures(*The integer result is the length of the longest substring without repeating characters in the string `s`.*);
-//@ ensures(*The length of the integer result is greater than or equal to 0.*);
+//@ requires(*The string parameter `s` must consist of English letters, digits, symbols, and spaces.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 50000.*);
+//@ ensures(*The integer result is the length of the longest substring without repeating characters in the string parameter `s`.*);
+//@ ensures(*The integer result is greater than or equal to 0.*);
     public int lengthOfLongestSubstring(String s) {
         int[] lastIndices = new int[256];
         //@ loop_invariant 0 <= i <= 256;

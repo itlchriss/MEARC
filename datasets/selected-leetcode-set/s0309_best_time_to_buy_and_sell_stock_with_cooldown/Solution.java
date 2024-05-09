@@ -53,10 +53,11 @@ public class Solution {
      * Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to O(1).
      * And here we are at our final solution:
      */
-//@ ensures(*The integer array parameter `prices` must not be null.*);
-//@ ensures(*The integer result is the maximum profit that can be achieved by completing multiple transactions of buying and selling stocks with the given prices array.*);
-//@ ensures(*The maximum profit can be achieved by buying and selling stocks according to the given prices array with the following restrictions: after selling a stock, there must be a cooldown day before buying another stock.*);
-//@ ensures(*The maximum profit is calculated based on the transactions of buying and selling stocks with the given prices array.*);
+//@ requires(*The integer array parameter `prices` must not be null.*);
+//@ requires(*The integer array parameter `prices` length is greater than or equal to 1 and is less than or equal to 5000.*);
+//@ requires(*All values in the integer array parameter `prices` are greater than or equal to 0 and are less than or equal to 1000.*);
+//@ ensures(*The integer result is the maximum profit that can be achieved by completing transactions based on the given restrictions.*);
+//@ ensures(*The integer result is greater than or equal to 0.*);
     public int maxProfit(int[] prices) {
         int sell = 0;
         int prevSell = 0;

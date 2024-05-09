@@ -58,6 +58,15 @@ then
         $PYCMD ./src/python/depccg/nltk2normal.py $folder/tmp/post.$i.mr
         i=$((i + 1))
     done
+    for condition in `niet ".requires" $folder/tmp/conditions.yml`;
+    do
+        printf '%s\n' "$condition" | sed -f $NLP/en/tokenizer.sed > $folder/tmp/pre.$i.tok
+        $NLP/candc-1.00/bin/candc --models $NLP/candc-1.00/models --candc-printer xml --input $folder/tmp/pre.$i.tok > $folder/tmp/pre.$i.candc.xml
+        $PYCMD $NLP/en/candc2transccg_wsc.py $folder/tmp/pre.$i.candc.xml > $folder/tmp/pre.$i.ccg.xml
+        $PYCMD $NLP/scripts/semparse_wsc.py $folder/tmp/pre.$i.ccg.xml $NLP/en/semantic_templates_en_event_flat_mearc.yaml > $folder/tmp/pre.$i.mr
+        $PYCMD ./src/python/depccg/nltk2normal.py $folder/tmp/pre.$i.mr
+        i=$((i + 1))
+    done
     IFS=$' \t\n'
 fi
 
@@ -84,6 +93,10 @@ then
         elif [[ ! -z "$ans" ]]; then
             mkdir -p $folder/jml            
             filename=$filename_without_extension
+            keyword="ensures"
+            if [[ $filename == *"pre"* ]]; then
+                keyword="requires"
+            fi
             filename+=".jml"
             IFS=$'\n' read -rd '' -a lines <<< "$ans"
             line1="${lines[0]}"
@@ -91,9 +104,9 @@ then
                 pcount="${BASH_REMATCH[1]}"
                 for i in $(seq 1 $pcount); do
                     body="${lines[$i]}"
-                    body="${body//\\ /\\}"
-                    printf "ensures(%s);\n" "$body"
-                    printf "ensures(%s);\n" "$body" > $folder/jml/$filename
+                    body="${body//\\ /\\}"                    
+                    printf "$keyword(%s);\n" "$body"
+                    printf "$keyword(%s);\n" "$body" > $folder/jml/$filename
                 done
             else
                 printf "Failed"

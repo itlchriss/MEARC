@@ -1,11 +1,7 @@
 ensures:
-- The type_string_  param_s_ is not null.
-- The length of the type_string_  param_s_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to 500000.
-- The characters in the type_string_  param_s_ consist of uppercase and lowercase
-  English letters and digits.
-- The type_string_ result is sorted in decreasing order based on the frequency of
-  characters in the type_string_  param_s_.
-- If there are multiple valid sorted type_strings_ ,  any of them can be returned
-  as the result.
-requires: []
+- The type_string_ result is sorted in decreasing order based on the frequency of characters in the type_string_ param_s_.
+- If exist multiple valid sorted type_strings_ , any of them can be returned as the result.
+requires:
+- The type_string_ param_s_ is not null.
+- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 500000.
+- The characters in the type_string_ param_s_ consist of uppercase and  lowercase_alphabets  and digits.

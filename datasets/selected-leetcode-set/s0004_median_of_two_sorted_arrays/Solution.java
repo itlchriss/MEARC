@@ -5,15 +5,15 @@ package g0001_0100.s0004_median_of_two_sorted_arrays;
 
 @SuppressWarnings("java:S2234")
 public class Solution {
+//@ requires(*The overall run time complexity of the method should be O(log (m+n)).*);
+//@ requires(*If the length of the merged array of `nums1` and `nums2` is odd, the median is the middle element of the merged array.*);
+//@ requires(*If the length of the merged array of `nums1` and `nums2` is even, the median is the average of the two middle elements of the merged array.*);
+//@ requires(*The integer arrays `nums1` and `nums2` are sorted in ascending order.*);
+//@ requires(*The length of the integer array `nums1` is greater than or equal to 0 and is less than or equal to 1000.*);
+//@ requires(*The length of the integer array `nums2` is greater than or equal to 0 and is less than or equal to 1000.*);
+//@ requires(*The sum of the lengths of the integer arrays `nums1` and `nums2` is greater than or equal to 1 and is less than or equal to 2000.*);
+//@ requires(*All values in the integer arrays `nums1` and `nums2` are greater than or equal to -1000000 and are less than or equal to 1000000.*);
 //@ ensures(*The double result is the median of the two sorted arrays `nums1` and `nums2`.*);
-//@ ensures(*The overall run time complexity of the method should be O(log (m+n)).*);
-//@ ensures(*The integer array parameter `nums1` and `nums2` must not be null.*);
-//@ ensures(*The length of the integer array parameter `nums1` is equal to `m`.*);
-//@ ensures(*The length of the integer array parameter `nums2` is equal to `n`.*);
-//@ ensures(*The integer result is within the range of -10^6 to 10^6.*);
-//@ ensures(*The integer result is rounded to five decimal places.*);
-//@ ensures(*If the length of the merged array of `nums1` and `nums2` is odd, the median is the middle element.*);
-//@ ensures(*If the length of the merged array of `nums1` and `nums2` is even, the median is the average of the two middle elements.*);
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums2.length < nums1.length) {
             return findMedianSortedArrays(nums2, nums1);

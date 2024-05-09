@@ -1,11 +1,7 @@
 ensures:
-- The type_integer_ type_arrays_ expr0 ,  expr1 ,  expr2 ,  and expr3 is not null.
-- The length of the type_integer_ type_arrays_ expr0 ,  expr1 ,  expr2 ,  and expr3
-  is equal.
-- The type_integer_ result is the number of tuples expr0 such that expr1.
+- The type_integer_ result is the number of tuples expr_a such that expr_b.
 - The type_integer_ result is greater_than_or_equal to 0.
-- The type_integer_ result is less_than_or_equal to the maximum possible number of
-  tuples that satisfy the condition.
-- The type_integer_ result is less_than_or_equal to the product of the length of the
-  type_arrays_ expr0 ,  expr1 ,  expr2 ,  and expr3.
-requires: []
+- The type_integer_ result is less_than_or_equal to the maximum value of java type_integer_.
+requires:
+- The type_integer_ type_arrays_ expr_a , expr_b , expr_c , and expr_d is not null.
+- The length of the type_integer_ type_arrays_ expr_a , expr_b , expr_c , and expr_d is equal.

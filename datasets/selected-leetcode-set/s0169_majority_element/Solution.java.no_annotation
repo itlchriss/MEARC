@@ -7,8 +7,10 @@ package g0101_0200.s0169_majority_element;
 public class Solution {
     public int majorityElement(int[] arr) {
         int count = 1;
+        //@ assume 1 <= arr.length <= Math.pow(50, 4);
         int majority = arr[0];
         // For Potential Majority Element
+        // maintaining 1 <= i <= arr.length;
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == majority) {
                 count++;

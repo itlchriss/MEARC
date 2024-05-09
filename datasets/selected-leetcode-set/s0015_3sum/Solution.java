@@ -10,11 +10,12 @@ import java.util.List;
 
 @SuppressWarnings("java:S127")
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The length of the integer array parameter `nums` is less than or equal to 3000.*);
-//@ ensures(*All values in the integer array parameter `nums` are greater than or equal to -100000 and are less than or equal to 100000.*);
-//@ ensures(*The result is a list of lists containing triplets `[nums[i], nums[j], nums[k]]` where `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.*);
-//@ ensures(*The solution set must not contain duplicate triplets.*);
+//@ requires(*The integer array parameter `nums` may contain duplicate elements.*);
+//@ ensures(*The integer array result contains lists of integers, each list representing a triplet `[nums[i], nums[j], nums[k]]` where `i != j`, `i != k`, and `j != k`.*);
+//@ ensures(*The integer array result does not contain duplicate triplets.*);
+//@ ensures(*The sum of elements in each triplet in the integer array result is equal to 0.*);
+//@ ensures(*The length of each list in the integer array result is equal to 3.*);
+//@ ensures(*The integer array result may be empty if no triplets satisfy the conditions.*);
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         final int len = nums.length;

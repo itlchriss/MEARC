@@ -1,10 +1,7 @@
 ensures:
-- If the type_string_  param_a_ is a subsequence of the type_string_  param_b_ but
-  not the other way around ,  the type_integer_ result is equal to the length of the
-  type_string_  param_a_.
-- If the type_string_  param_b_ is a subsequence of the type_string_  param_a_ but
-  not the other way around ,  the type_integer_ result is equal to the length of the
-  type_string_  param_b_.
-- If both type_string_ parameters expr0 and expr1 have the same length and are equal
-  ,  the type_integer_ result is equal to negative 1.
-requires: []
+- If the longest uncommon subsequence between the two type_string_ parameters expr_a and expr_b exists , the type_integer_ result is equal to the length of the longest uncommon subsequence.
+- If the longest uncommon subsequence between the two type_string_ parameters expr_a and expr_b does not exist , the type_integer_ result is equal to negative 1.
+requires:
+- The length of the longest uncommon subsequence is the length of a subsequence that is a subsequence of one type_string_ but not the other type_string_.
+- The type_string_ parameters expr_a and expr_b consist of lower-case alphabets .
+- The length of the type_string_ parameters expr_a and expr_b is greater_than_or_equal to 1 and is less_than_or_equal to 100.

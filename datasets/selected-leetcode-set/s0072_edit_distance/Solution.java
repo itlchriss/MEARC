@@ -7,9 +7,9 @@ package g0001_0100.s0072_edit_distance;
 
 @SuppressWarnings("java:S2234")
 public class Solution {
-//@ ensures(*The integer parameter `word1` and the integer parameter `word2` consist of lowercase English letters.*);
-//@ ensures(*The integer result is the minimum number of operations required to convert `word1` to `word2`.*);
-//@ ensures(*The operations permitted on a word are inserting a character, deleting a character, and replacing a character.*);
+//@ requires(*The string parameter `word1` and the string parameter `word2` consist of lowercase English letters.*);
+//@ requires(*The length of the string parameter `word1` and the string parameter `word2` is less than or equal to 500.*);
+//@ ensures(*The integer result is the minimum number of operations required to convert the string parameter `word1` to the string parameter `word2`.*);
     public int minDistance(String w1, String w2) {
         int n1 = w1.length();
         int n2 = w2.length();

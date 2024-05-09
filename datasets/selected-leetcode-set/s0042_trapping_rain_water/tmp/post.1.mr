@@ -1,1 +1,1 @@
-exists x01.(_param_height_{NN}(x01) & _type_array_{NN}(x01) & _type_integer_{NN}(x01) & exists x02.(_map{NN}(x02) & _elevation{NN}(x02) & (x01 = x02)) & exists x03.(_width{NN}(x03) & all x04.(_bar{NN}(x04) -> exists e05.(_of{IN}(e05,x04) & (Subj(e05) = x03))) & exists x06.(_1{CD}(x06) & (x03 = x06))))
+exists x01.(_result{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_greater_than_or_equal{JJ}(e02) & (Subj(e02) = x01) & exists x03.(_0{CD}(x03) & (Dat(e02) = x03))))

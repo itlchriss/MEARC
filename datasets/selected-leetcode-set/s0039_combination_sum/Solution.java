@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ ensures(*Method behavioural specifications:*);
-//@ ensures(*The integer array parameter `coins` must not be null.*);
-//@ ensures(*The integer parameter `amount` is greater than or equal to 1 and is less than or equal to 500.*);
-//@ ensures(*The integer result is a list of lists where each inner list represents a unique combination of integers from the `coins` array that sum up to the `amount`.*);
-//@ ensures(*Each combination in the result list is unique, meaning the frequency of at least one chosen number is different.*);
-//@ ensures(*The number of unique combinations in the result list is less than 150 for the given input.*);
-//@ ensures(*The order of combinations in the result list can be arbitrary.*);
+//@ requires(*Method behavioural specifications:*);
+//@ requires(*The integer array parameter `candidates` must not be null.*);
+//@ requires(*The integer parameter `target` is greater than or equal to 1 and is less than or equal to 500.*);
+//@ requires(*The same number from the integer array parameter `candidates` can be chosen multiple times in a combination.*);
+//@ requires(*Two combinations are considered unique if the frequency of at least one chosen number is different.*);
+//@ ensures(*The length of the integer array result is less than or equal to 150.*);
+//@ ensures(*Each list in the list result is a unique combination of integers from the integer array parameter `candidates` that sum up to the integer parameter `target`.*);
     public List<List<Integer>> combinationSum(int[] coins, int amount) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> subList = new ArrayList<>();

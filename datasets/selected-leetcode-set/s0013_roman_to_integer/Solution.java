@@ -4,10 +4,14 @@ package g0001_0100.s0013_roman_to_integer;
 // #2023_08_09_Time_2_ms_(100.00%)_Space_44.1_MB_(19.16%)
 
 public class Solution {
-//@ ensures(*The string parameter `s` must not be null.*);
-//@ ensures(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 15.*);
-//@ ensures(*The string parameter `s` contains only the characters 'I', 'V', 'X', 'L', 'C', 'D', 'M'.*);
-//@ ensures(*The integer result is greater than or equal to 1 and is less than or equal to 3999.*);
+//@ requires(*The string parameter `s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.*);
+//@ requires(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 15.*);
+//@ ensures(*The integer result is less than or equal to 3999 and is greater than or equal to 1.*);
+//@ ensures(*If the string parameter `s` is equal to "III", the integer result is equal to 3.*);
+//@ ensures(*If the string parameter `s` is equal to "IV", the integer result is equal to 4.*);
+//@ ensures(*If the string parameter `s` is equal to "IX", the integer result is equal to 9.*);
+//@ ensures(*If the string parameter `s` is equal to "LVIII", the integer result is equal to 58.*);
+//@ ensures(*If the string parameter `s` is equal to "MCMXCIV", the integer result is equal to 1994.*);
     public int romanToInt(String s) {
         int x = 0;
         char y;

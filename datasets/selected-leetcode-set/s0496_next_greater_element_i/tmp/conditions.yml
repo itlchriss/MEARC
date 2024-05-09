@@ -1,13 +1,7 @@
 ensures:
-- For each value in the type_integer_ type_array_  param_nums1_ ,  find the index
-  expr0 in the type_integer_ type_array_  param_nums2_ such that the value in param_nums1_
-  is equal to the value in param_nums2_ at index expr1.
-- Determine the next greater element of the value in expr0 at index expr1 in the type_integer_
-  type_array_ expr2.
-- If there is no next greater element for a value in expr0 ,  the answer for that
-  value is negative 1.
-- The length of the type_integer_ type_array_ result is equal to the length of the
-  type_integer_ type_array_  param_nums1_.
-- All values in the type_integer_ type_array_ result are either the next greater element
-  or negative 1.
-requires: []
+- If exists a next greater element to the right of the value in expr_a at index expr_b , the corresponding value in the type_integer_ type_array_ result is the next greater element.
+- If exists no next greater element to the right of the value in expr_a at index expr_b , the corresponding value in the type_integer_ type_array_ result is negative 1.
+- The length of the type_integer_ type_array_ result is equal to the length of the type_integer_ type_array_ param_nums1_.
+- All values in the type_integer_ type_array_ result are either the next greater element to the right or negative 1.
+requires:
+- For each value in the type_integer_ type_array_ param_nums1_ , find the index expr_a in the type_integer_ type_array_ param_nums2_ such that the value in param_nums1_ is equal to the value in param_nums2_ at index expr_b.

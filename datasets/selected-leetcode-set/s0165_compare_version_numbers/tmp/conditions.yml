@@ -1,13 +1,13 @@
 ensures:
-- The type_string_  param_version1_ and param_version2_ must only contain digits and
-  dots.
-- The type_string_  param_version1_ and param_version2_  is valid version numbers.
-- The length of the type_string_  param_version1_ and param_version2_ is greater_than_or_equal
-  to 1 and is less_than_or_equal to 500.
-- The type_integer_ result is equal to negative 1 if _expr0_ is less_than to the _expr1_.
-- The type_integer_ result is equal to 1 if _expr0_ is greater_than to the _expr1_.
-- The type_integer_ result is equal to 0 if _expr0_ is equal to _expr1_.
-- If a revision is not specified at an index  ,   it is treated as 0.
-- Revisions are compared in left-to-right order.
-- Leading zeros in revisions are ignored when comparing revisions.
-requires: []
+- If the type_integer_ param_version1_ is less_than to the type_integer_ param_version2_ , the type_integer_ result is equal to negative 1.
+- If the type_integer_ param_version1_ is greater_than to the type_integer_ param_version2_ , the type_integer_ result is equal to 1.
+- If the type_integer_ param_version1_ is equal to the type_integer_ param_version2_ , the type_integer_ result is equal to 0.
+- The type_integer_ result is less_than_or_equal to 1 and is greater_than_or_equal to negative 1.
+requires:
+- The type_integer_ param_version1_ and the type_integer_ param_version2_ are valid version numbers.
+- The type_integer_ param_version1_ and the type_integer_ param_version2_ consist of one or more revisions joined by a dot.
+- Each revision in the type_integer_ param_version1_ and the type_integer_ param_version2_ contains digits and may contain leading zeros.
+- Every revision in the type_integer_ param_version1_ and the type_integer_ param_version2_ contains at least one character.
+- Revisions in the type_integer_ param_version1_ and the type_integer_ param_version2_ are 0-indexed from left to right.
+- Revisions in the type_integer_ param_version1_ and the type_integer_ param_version2_ are compared in left-to-right order using their type_integer_ value ignoring any leading zeros.
+- If a version number does not specify a revision at an index , then treat the revision as 0.

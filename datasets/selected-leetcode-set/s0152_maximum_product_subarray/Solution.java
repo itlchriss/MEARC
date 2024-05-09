@@ -5,9 +5,11 @@ package g0101_0200.s0152_maximum_product_subarray;
 // #Big_O_Time_O(N)_Space_O(1) #2022_06_25_Time_0_ms_(100.00%)_Space_42.7_MB_(82.46%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `arr` must not be null.*);
-//@ ensures(*The integer result is the product of the largest contiguous non-empty subarray within the integer array parameter `arr`.*);
-//@ ensures(*The integer result must fit in a 32-bit integer.*);
+//@ requires(*The integer array parameter `arr` must not be null.*);
+//@ requires(*The length of the integer array parameter `arr` is greater than or equal to 1 and is less than or equal to 20000.*);
+//@ requires(*All values in the integer array parameter `arr` are greater than or equal to -10 and are less than or equal to 10.*);
+//@ ensures(*The integer result is the largest product of a contiguous non-empty subarray within the integer array parameter `arr`.*);
+//@ ensures(*The integer result is guaranteed to fit in a 32-bit integer.*);
     public int maxProduct(int[] arr) {
         int ans = Integer.MIN_VALUE;
         int cprod = 1;

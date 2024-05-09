@@ -5,8 +5,11 @@ package g0101_0200.s0169_majority_element;
 // #Big_O_Time_O(n)_Space_O(1) #2022_06_25_Time_1_ms_(100.00%)_Space_45.5_MB_(97.51%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `arr` must not be null.*);
-//@ ensures(*The integer result is the majority element that appears more than ⌊n / 2⌋ times in the integer array parameter `arr`.*);
+//@ requires(*The integer array parameter `arr` must not be null.*);
+//@ requires(*The majority element is the element that appears more than ⌊n / 2⌋ times, where `n` is the size of the array `arr`.*);
+//@ requires(*The method must solve the problem in linear time and in O(1) space.*);
+//@ ensures(*The integer result is the majority element in the integer array parameter `arr`.*);
+//@ ensures(*The integer result is within the range of -2^31 to 2^31 - 1.*);
     public int majorityElement(int[] arr) {
         int count = 1;
         //@ assume 1 <= arr.length <= Math.pow(50, 4);

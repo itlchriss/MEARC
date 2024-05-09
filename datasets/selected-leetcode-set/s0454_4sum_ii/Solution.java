@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums1`, `nums2`, `nums3`, and `nums4` must not be null.*);
+//@ requires(*The integer arrays `nums1`, `nums2`, `nums3`, and `nums4` must not be null.*);
+//@ requires(*The length of the integer arrays `nums1`, `nums2`, `nums3`, and `nums4` must be equal.*);
 //@ ensures(*The integer result is the number of tuples `(i, j, k, l)` such that `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`.*);
 //@ ensures(*The integer result is greater than or equal to 0.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer.*);
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         int count = 0;
         Map<Integer, Integer> map = new HashMap<>();

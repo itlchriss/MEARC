@@ -1,0 +1,1 @@
+all x01.(exists x02.(exists x03.(_character{NN}(x03) & _space{NN}(x03) & Rel(x02,x03)) & _'{POS}(x02) & (x01 = x02) & exists x04.(_character{NN}(x04) & _whitespace{NN}(x04) & exists e05.(_consider{VBN}(e05) & (Dat(e05) = x02) & (Acc(e05) = x04)))) -> TrueP)

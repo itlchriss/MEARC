@@ -4,12 +4,13 @@ package g0001_0100.s0026_remove_duplicates_from_sorted_array;
 // #2023_08_09_Time_1_ms_(98.56%)_Space_43.9_MB_(51.95%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` is sorted in non-decreasing order.*);
-//@ ensures(*The integer result is equal to `k`, which represents the number of unique elements in the array after removing duplicates.*);
-//@ ensures(*The first `k` elements of the integer array `nums` hold the final result with each unique element appearing only once.*);
-//@ ensures(*The relative order of the elements in the array is kept the same.*);
-//@ ensures(*The length of the integer array `nums` does not change, and any elements beyond the first `k` elements are not specified.*);
-//@ ensures(*The method must modify the input array in-place with O(1) extra memory.*);
+//@ requires(*The integer array parameter `nums` is sorted in non-decreasing order.*);
+//@ requires(*After executing the method, each unique element in the integer array `nums` appears only once.*);
+//@ requires(*The relative order of the elements in the integer array `nums` is kept the same.*);
+//@ requires(*The length of the integer array `nums` after removing duplicates is equal to `k`.*);
+//@ requires(*The method modifies the input array `nums` in-place with O(1) extra memory.*);
+//@ ensures(*The result is placed in the first part of the array `nums`.*);
+//@ ensures(*The first `k` elements of the array `nums` hold the final result after removing duplicates.*);
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
         int i = 0;

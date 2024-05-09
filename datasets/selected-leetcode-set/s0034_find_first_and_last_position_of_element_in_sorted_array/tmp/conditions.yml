@@ -1,8 +1,7 @@
 ensures:
-- The type_integer_ type_array_ param_nums_ is sorted in ascending_order .
-- The type_integer_ param_target_ is greater_than_or_equal to negative 1000000000 and is less_than_or_equal to 1000000000.
+- If the type_integer_ param_target_ is found in the type_integer_ type_array_ param_nums_ , the type_integer_ type_array_ result contains the starting and ending positions of the type_integer_ param_target_.
+- If the type_integer_ param_target_ is not found in the type_integer_ type_array_ param_nums_ , the type_integer_ type_array_ result is [-1 , -1].
 - The type_integer_ type_array_ result's length is equal to 2.
-- If the expr_a value is found in the expr_b type_array_ , the first element of the result type_array_ is the starting position of the expr_c value in the expr_d type_array_.
-- If the expr_a value is found in the expr_b type_array_ , the second element of the result type_array_ is the ending position of the expr_c value in the expr_d type_array_.
-- If the expr_a value is not found in the expr_b type_array_ , both elements of the result type_array_ are negative 1.
-requires: []
+requires:
+- The type_integer_ type_array_ param_nums_ is sorted in ascending_order .
+- The runtime complexity of the algorithm is O(log n).

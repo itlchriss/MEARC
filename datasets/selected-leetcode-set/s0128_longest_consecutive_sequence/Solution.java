@@ -7,11 +7,10 @@ import java.util.Arrays;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10^5.*);
+//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -10^9 and are less than or equal to 10^9.*);
 //@ ensures(*The integer result is the length of the longest consecutive elements sequence in the integer array parameter `nums`.*);
-//@ ensures(*The length of the integer array parameter `nums` is less than or equal to 100000.*);
-//@ ensures(*The integer array parameter `nums` may contain duplicates.*);
-//@ ensures(*The algorithm must run in O(n) time complexity.*);
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) {
             return 0;

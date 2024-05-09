@@ -1,12 +1,7 @@
 ensures:
-- The type_integer_ type_array_  param_arr_  is not  empty.
-- The type_integer_ result is the largest product of a contiguous non-empty subarray  in  the
-  type_integer_ type_array_  param_arr_.
+- The type_integer_ result is the largest product of a contiguous non-empty subarray in the type_integer_ type_array_ param_arr_.
 - The type_integer_ result is guaranteed to fit in a 32-bit type_integer_.
-- The type_integer_ result is the product of a subarray  ,   which is a contiguous
-  subsequence of the type_array_.
-- 'The constraints for the type_integer_ type_array_  param_arr_ are: 1 <= arr.length
-  <= 2 * 10000  ,   negative 10 <= arr[i] <= 10.'
-- The product of any prefix or suffix of the type_integer_ type_array_  param_arr_
-  is guaranteed to fit in a 32-bit type_integer_.
-requires: []
+requires:
+- The type_integer_ type_array_ param_arr_ is not null.
+- The length of the type_integer_ type_array_ param_arr_ is greater_than_or_equal to 1 and is less_than_or_equal to 20000.
+- All values in the type_integer_ type_array_ param_arr_ are greater_than_or_equal to negative 10 and are less_than_or_equal to 10.

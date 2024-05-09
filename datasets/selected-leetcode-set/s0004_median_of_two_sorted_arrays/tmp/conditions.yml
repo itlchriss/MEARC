@@ -1,11 +1,11 @@
 ensures:
 - The type_double_ result is the median of the two sorted type_arrays_ expr_a and expr_b.
+requires:
 - The overall run time complexity of the method should be O(log (m+n)).
-- The type_integer_ type_array_ param_nums1_ and param_nums2_ is not null.
-- The length of the type_integer_ type_array_ param_nums1_ is equal to expr_a.
-- The length of the type_integer_ type_array_ param_nums2_ is equal to expr_a.
-- The type_integer_ result is greater_than_or_equal to negative 1000000 and is less_than_or_equal to 1000000.
-- The type_integer_ result is rounded to five decimal places.
-- If the length of the merged type_array_ of expr_a and expr_b is odd , the median is the middle element.
-- If the length of the merged type_array_ of expr_a and expr_b is even , the median is the average of the two middle elements.
-requires: []
+- If the length of the merged type_array_ of expr_a and expr_b is odd , the median is the middle element of the merged type_array_.
+- If the length of the merged type_array_ of expr_a and expr_b is even , the median is the average of the two middle elements of the merged type_array_.
+- The type_integer_ type_arrays_ expr_a and expr_b are sorted in ascending_order .
+- The length of the type_integer_ type_array_ expr_a is greater_than_or_equal to 0 and is less_than_or_equal to 1000.
+- The length of the type_integer_ type_array_ expr_a is greater_than_or_equal to 0 and is less_than_or_equal to 1000.
+- The sum of the lengths of the type_integer_ type_arrays_ expr_a and expr_b is greater_than_or_equal to 1 and is less_than_or_equal to 2000.
+- All values in the type_integer_ type_arrays_ expr_a and expr_b are greater_than_or_equal to negative 1000000 and are less_than_or_equal to 1000000.

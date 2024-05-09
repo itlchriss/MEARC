@@ -1,8 +1,8 @@
 ensures:
 - If the input type_string_ param_s_ matches the pattern param_p_ entirely , the type_boolean_ result is equal to the true literal.
 - If the input type_string_ param_s_ does not match the pattern param_p_ entirely , the type_boolean_ result is equal to the false literal.
+requires:
 - The length of the input type_string_ param_s_ is greater_than_or_equal to 0 and is less_than_or_equal to 2000.
 - The length of the pattern param_p_ is greater_than_or_equal to 0 and is less_than_or_equal to 2000.
 - The input type_string_ param_s_ only contains  lowercase_alphabets  .
 - The pattern param_p_ only contains  lowercase_alphabets  , str_a or the str_b.
-requires: []

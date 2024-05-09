@@ -3,18 +3,41 @@
 
 <candc>
 <ccg>
- <rule type="fa" cat="N">
-  <lf start="0" span="1" word="Method" lemma="Method" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
-  <rule type="fa" cat="N">
-   <lf start="1" span="1" word="behavioural" lemma="behavioural" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
-   <rule type="rp" cat="N">
-    <rule type="rp" cat="N">
-     <lf start="2" span="1" word="specifications" lemma="specification" pos="NNS" chunk="I-NP" entity="O" cat="N" />
-     <lf start="3" span="1" word=":" lemma=":" pos=":" chunk="O" entity="O" cat=":" />
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="ba" cat="NP">
+    <rule type="fa" cat="NP[nb]">
+     <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+     <lf start="1" span="1" word="length" lemma="length" pos="NN" chunk="I-NP" entity="O" cat="N" />
     </rule>
-    <lf start="4" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+    <rule type="fa" cat="NP\NP">
+     <lf start="2" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+     <rule type="fa" cat="NP[nb]">
+      <lf start="3" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+      <rule type="fa" cat="N">
+       <lf start="4" span="1" word="type_integer_" lemma="type_integer_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+       <rule type="fa" cat="N">
+        <lf start="5" span="1" word="type_array_" lemma="type_array_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+        <lf start="6" span="1" word="result" lemma="result" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="7" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
+    <rule type="fa" cat="S[adj]\NP">
+     <lf start="8" span="1" word="less_than_or_equal" lemma="less_than_or_equal" pos="JJ" chunk="I-ADJP" entity="O" cat="(S[adj]\NP)/PP" />
+     <rule type="fa" cat="PP">
+      <lf start="9" span="1" word="to" lemma="to" pos="TO" chunk="I-PP" entity="O" cat="PP/NP" />
+      <rule type="lex" cat="NP">
+       <lf start="10" span="1" word="150" lemma="150" pos="CD" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+    </rule>
    </rule>
   </rule>
+  <lf start="11" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
  </rule>
 </ccg>
 </candc>

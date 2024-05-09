@@ -5,11 +5,12 @@ package g0001_0100.s0035_search_insert_position;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_43.3_MB_(58.21%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` contains distinct values sorted in ascending order.*);
-//@ ensures(*The integer parameter `target` is equal to the target value to be found or inserted.*);
-//@ ensures(*The integer result is the index of the target value in the integer array parameter `nums` if the target value is found.*);
-//@ ensures(*If the target value is not found in the integer array parameter `nums`, the integer result is the index where the target value would be inserted in order.*);
-//@ ensures(*The runtime complexity of the algorithm must be O(log n).*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer array parameter `nums` contains distinct values sorted in ascending order.*);
+//@ requires(*The integer parameter `target` is within the range of -10^4 to 10^4.*);
+//@ requires(*The algorithm must have O(log n) runtime complexity.*);
+//@ ensures(*The integer result is the index of the integer parameter `target` if it is found in the integer array parameter `nums`.*);
+//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer result is the index where it would be inserted in order.*);
     public int searchInsert(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;

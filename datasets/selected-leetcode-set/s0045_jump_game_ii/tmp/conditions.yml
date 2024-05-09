@@ -1,7 +1,9 @@
 ensures:
-- The type_integer_ type_array_ param_nums_ is not null.
-- The type_integer_ type_array_ param_nums_'s length is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
-- All values in the type_integer_ type_array_ param_nums_ is greater_than_or_equal to 0 and is less_than_or_equal to 1000.
-- The type_integer_ result is the minimum number of jumps to reach the last index in the type_integer_ type_array_ param_nums_.
+- The type_integer_ result is the minimum number of jumps required to reach the last index.
 - The type_integer_ result is greater_than_or_equal to 0.
-requires: []
+- The type_integer_ result is less_than_or_equal to the length of the type_integer_ type_array_ param_nums_.
+- The type_integer_ result is equal to 2 if the type_integer_ type_array_ param_nums_ is [2 , 3 , 1 , 1 , 4].
+- The type_integer_ result is equal to 2 if the type_integer_ type_array_ param_nums_ is [2 , 3 , 0 , 1 , 4].
+requires:
+- The type_integer_ type_array_ param_nums_ is not null.
+- The type_integer_ type_array_ param_nums_ must contain non-negative integers.

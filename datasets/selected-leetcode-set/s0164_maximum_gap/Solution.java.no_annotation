@@ -12,6 +12,7 @@ public class Solution {
         }
         int ret = Integer.MIN_VALUE;
         Arrays.sort(nums);
+        //@ maintaining 0 <= i <= nums.length;
         for (int i = 0; i < nums.length - 1; i++) {
             if ((nums[i + 1] - nums[i]) > ret) {
                 ret = (nums[i + 1] - nums[i]);

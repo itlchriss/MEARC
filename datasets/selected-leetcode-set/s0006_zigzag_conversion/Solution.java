@@ -3,11 +3,12 @@ package g0001_0100.s0006_zigzag_conversion;
 // #Medium #String #2024_01_04_Time_2_ms_(99.60%)_Space_44.7_MB_(38.67%)
 
 public class Solution {
-//@ ensures(*The string parameter `s` is converted into a zigzag pattern with the specified number of rows.*);
+//@ requires(*The string parameter `s` is converted into a zigzag pattern with the specified number of rows.*);
+//@ requires(*The integer parameter `numRows` is greater than or equal to 1 and is less than or equal to 1000.*);
+//@ requires(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 1000.*);
+//@ requires(*The string parameter `s` consists of English letters (lower-case and upper-case), `','`, and `'.'`.*);
 //@ ensures(*The string result is read line by line from the zigzag pattern.*);
-//@ ensures(*The length of the string result is less than or equal to the length of the string parameter `s`.*);
-//@ ensures(*The string result consists of English letters (lower-case and upper-case), commas, and periods.*);
-//@ ensures(*The integer parameter `numRows` is greater than or equal to 1 and is less than or equal to 1000.*);
+//@ ensures(*The string result is equal to the expected output for the given input in the examples.*);
     public String convert(String s, int numRows) {
         int sLen = s.length();
         if (numRows == 1) {

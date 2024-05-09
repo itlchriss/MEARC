@@ -8,13 +8,13 @@ import java.util.List;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ ensures(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 200.*);
-//@ ensures(*All values in the integer array parameter `nums` are greater than or equal to -10^9 and are less than or equal to 10^9.*);
-//@ ensures(*The integer parameter `target` is greater than or equal to -10^9 and is less than or equal to 10^9.*);
-//@ ensures(*The length of the list of lists result is not fixed and can vary.*);
-//@ ensures(*Each list in the list of lists result contains 4 distinct integers from the integer array parameter `nums`.*);
-//@ ensures(*The sum of the 4 integers in each list in the list of lists result is equal to the integer parameter `target`.*);
-//@ ensures(*All lists in the list of lists result are unique.*);
+//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 200.*);
+//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -10^9 and are less than or equal to 10^9.*);
+//@ requires(*The integer parameter `target` is greater than or equal to -10^9 and is less than or equal to 10^9.*);
+//@ ensures(*The length of each integer list in the result list is equal to 4.*);
+//@ ensures(*All values in each integer list in the result list are unique.*);
+//@ ensures(*The sum of the values in each integer list in the result list is equal to the integer parameter `target`.*);
+//@ ensures(*The result list contains unique quadruplets.*);
     public List<List<Integer>> fourSum(int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);

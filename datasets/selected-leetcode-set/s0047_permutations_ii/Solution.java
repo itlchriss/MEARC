@@ -8,11 +8,11 @@ import java.util.List;
 
 public class Solution {
     private List<List<Integer>> ans;
-//@ ensures(*The integer array parameter `nums` may contain duplicates.*);
+//@ requires(*The integer array parameter `nums` may contain duplicates.*);
+//@ requires(*The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 8.*);
+//@ requires(*All values in the integer array `nums` are greater than or equal to -10 and are less than or equal to 10.*);
 //@ ensures(*The result is a list of lists containing all possible unique permutations of the elements in the integer array `nums`.*);
-//@ ensures(*The order of permutations in the result list is not specified.*);
-//@ ensures(*The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 8.*);
-//@ ensures(*All values in the integer array `nums` are greater than or equal to -10 and are less than or equal to 10.*);
+//@ ensures(*The order of the permutations in the result list is not specified.*);
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         ans = new ArrayList<>();

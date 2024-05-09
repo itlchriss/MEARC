@@ -16,9 +16,10 @@ public class Solution {
         int l = 0;
         int r = nums.length - 1;
         int result = -1;
+        //@ maintaining 0 <= l <= r < nums.length || l == r + 1;
         while (l <= r) {
             int mid = l + (r - l) / 2;
-            //@ assume 0 <= mid < nums.length;
+            // assume 0 <= mid < nums.length;
             if (nums[mid] == target) {
                 result = mid;
             }

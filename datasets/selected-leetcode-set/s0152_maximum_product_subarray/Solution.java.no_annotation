@@ -16,6 +16,7 @@ public class Solution {
             }
         }
         cprod = 1;
+        //@ maintaining 0 <= i <= arr.length - 1 || i == -1;
         for (int i = arr.length - 1; i >= 0; i--) {
             cprod = cprod * arr[i];
             ans = Math.max(ans, cprod);

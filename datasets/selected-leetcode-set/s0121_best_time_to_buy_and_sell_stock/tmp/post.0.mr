@@ -1,1 +1,1 @@
--exists x01.(_param_prices_{NN}(x01) & _type_array_{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_null{JJ}(e02) & (Subj(e02) = x01)))
+exists x01.(_result{NN}(x01) & _type_integer_{NN}(x01) & exists x02.(_profit{NN}(x02) & _maximum{NN}(x02) & exists e03.(_achieve{VBN}(e03) & (Acc(e03) = x02)) & exists x04.(_stock{NN}(x04) & exists e05.(_buy{VBG}(e05) & (Subj(e05) = x02) & (Acc(e05) = x04) & _can{MD}(e05)) & exists e06.(_sell{VBG}(e06) & (Subj(e06) = x02) & (Acc(e06) = x04) & _can{MD}(e06))) & (x01 = x02)))

@@ -4,8 +4,9 @@ package g0201_0300.s0231_power_of_two;
 // #2022_07_04_Time_1_ms_(100.00%)_Space_39.6_MB_(90.19%)
 
 public class Solution {
-//@ ensures(*If the integer parameter `n` is a power of two, the boolean result is true.*);
-//@ ensures(*If the integer parameter `n` is not a power of two, the boolean result is false.*);
+//@ requires(*The integer parameter `n` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1.*);
+//@ ensures(*If the integer parameter `n` is a power of two, the boolean result is equal to the true literal.*);
+//@ ensures(*If the integer parameter `n` is not a power of two, the boolean result is equal to the false literal.*);
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) {
             return false;

@@ -3,9 +3,9 @@ package g0501_0600.s0520_detect_capital;
 // #Easy #String #2022_07_25_Time_2_ms_(65.95%)_Space_42_MB_(74.10%)
 
 public class Solution {
-//@ ensures(*If all letters in the string parameter `word` are capitals, the boolean result is true.*);
-//@ ensures(*If all letters in the string parameter `word` are not capitals, the boolean result is true.*);
-//@ ensures(*If only the first letter in the string parameter `word` is capital, the boolean result is true.*);
+//@ ensures(*If the string parameter `word` consists of all uppercase letters, the boolean result is equal to the true literal.*);
+//@ ensures(*If the string parameter `word` consists of all lowercase letters, the boolean result is equal to the true literal.*);
+//@ ensures(*If the string parameter `word` consists of only the first letter being uppercase and the rest being lowercase, the boolean result is equal to the true literal.*);
     public boolean detectCapitalUse(String word) {
         if (word == null || word.length() == 0) {
             return false;

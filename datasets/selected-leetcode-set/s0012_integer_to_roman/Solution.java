@@ -3,13 +3,12 @@ package g0001_0100.s0012_integer_to_roman;
 // #Medium #String #Hash_Table #Math #2023_08_09_Time_2_ms_(100.00%)_Space_43.2_MB_(81.21%)
 
 public class Solution {
-//@ ensures(*The integer parameter `num` is greater than or equal to 1 and is less than or equal to 3999.*);
+//@ requires(*The integer parameter `num` is greater than or equal to 1 and is less than or equal to 3999.*);
 //@ ensures(*The string result is a valid Roman numeral representation of the integer parameter `num`.*);
-//@ ensures(*The Roman numeral representation is constructed according to the rules of Roman numerals where subtraction is used in specific cases.*);
-//@ ensures(*The Roman numeral representation is constructed largest to smallest from left to right.*);
-//@ ensures(*The Roman numeral representation uses the symbols `I`, `V`, `X`, `L`, `C`, `D`, and `M` in accordance with their respective values.*);
-//@ ensures(*The Roman numeral representation follows the specific cases where subtraction is used, such as `IV` for 4 and `IX` for 9.*);
-//@ ensures(*The Roman numeral representation is correct for the given integer parameter `num` according to the provided examples.*);
+//@ ensures(*The string result is constructed following the rules of Roman numerals where subtraction is used in specific cases.*);
+//@ ensures(*The string result is written largest to smallest from left to right.*);
+//@ ensures(*The string result does not contain invalid Roman numeral combinations.*);
+//@ ensures(*The string result does not contain more than three consecutive identical symbols.*);
     public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
         int m = 1000;

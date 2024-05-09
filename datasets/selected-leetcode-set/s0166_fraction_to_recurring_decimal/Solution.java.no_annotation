@@ -18,6 +18,7 @@ public class Solution {
             sb.append("-");
         }
         long x = Math.abs(Long.valueOf(numerator));
+        //@ assume 1 <= denominator <= Integer.MAX_VALUE -1;
         long y = Math.abs(Long.valueOf(denominator));
         sb.append(x / y);
         long remainder = x % y;

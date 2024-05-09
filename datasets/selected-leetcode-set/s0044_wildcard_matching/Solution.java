@@ -4,12 +4,12 @@ package g0001_0100.s0044_wildcard_matching;
 // #Udemy_Dynamic_Programming #2023_08_11_Time_2_ms_(99.87%)_Space_43.2_MB_(99.49%)
 
 public class Solution {
+//@ requires(*The length of the input string parameter `s` is greater than or equal to 0 and is less than or equal to 2000.*);
+//@ requires(*The length of the pattern parameter `p` is greater than or equal to 0 and is less than or equal to 2000.*);
+//@ requires(*The input string parameter `s` contains only lowercase English letters.*);
+//@ requires(*The pattern parameter `p` contains only lowercase English letters, '?' or '*'.*);
 //@ ensures(*If the input string parameter `s` matches the pattern parameter `p` entirely, the boolean result is equal to the true literal.*);
 //@ ensures(*If the input string parameter `s` does not match the pattern parameter `p` entirely, the boolean result is equal to the false literal.*);
-//@ ensures(*The length of the input string parameter `s` is greater than or equal to 0 and is less than or equal to 2000.*);
-//@ ensures(*The length of the pattern parameter `p` is greater than or equal to 0 and is less than or equal to 2000.*);
-//@ ensures(*The input string parameter `s` contains only lowercase English letters.*);
-//@ ensures(*The pattern parameter `p` contains only lowercase English letters, '?' or '*'.*);
     public boolean isMatch(String inputString, String pattern) {
         int i = 0;
         int j = 0;

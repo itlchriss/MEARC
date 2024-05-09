@@ -8,13 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ ensures(*The integer array parameter `numbers` must not be null.*);
-//@ ensures(*The length of the integer array parameter `numbers` is greater than or equal to 2 and is less than or equal to 10000.*);
-//@ ensures(*All values in the integer array parameter `numbers` are greater than or equal to -1000000000 and are less than or equal to 1000000000.*);
-//@ ensures(*The integer parameter `target` is greater than or equal to -1000000000 and is less than or equal to 1000000000.*);
-//@ ensures(*The integer array result is of length 2.*);
-//@ ensures(*All values in the integer array result are unique.*);
-//@ ensures(*The sum of the elements at the indices specified by the integer array result is equal to the integer parameter `target`.*);
+//@ requires(*The integer array parameter `numbers` must not be null.*);
+//@ requires(*The length of the integer array parameter `numbers` is greater than or equal to 2 and is less than or equal to 10000.*);
+//@ requires(*All values in the integer array parameter `numbers` are greater than or equal to -1000000000 and are less than or equal to 1000000000.*);
+//@ requires(*The integer parameter `target` is greater than or equal to -1000000000 and is less than or equal to 1000000000.*);
+//@ requires(*Only one valid answer exists.*);
+//@ ensures(*The length of the integer array result is equal to 2.*);
+//@ ensures(*The values in the integer array result are indices of two numbers in the integer array parameter `numbers` that add up to the integer parameter `target`.*);
+//@ ensures(*The two numbers at the indices specified in the integer array result add up to the integer parameter `target`.*);
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
         //@ loop_invariant 0 <= i <= numbers.length;

@@ -1,10 +1,5 @@
 ensures:
-- The type_integer_ type_array_  param_nums_  is not  null.
-- The type_integer_  param_k_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to the length of the type_integer_ type_array_ _expr0_.
-- The type_integer_ result is the _expr0_th largest element in the sorted order of
-  the type_integer_ type_array_ _expr1_.
-- The type_integer_ result is in  the range of the elements in the type_integer_ type_array_
-  _expr0_.
-- The length of the type_integer_ type_array_ _expr0_ is less_than_or_equal to 10000.
-requires: []
+- The type_integer_ result is the expr_ath largest element in the sorted order of the type_integer_ type_array_ param_nums_.
+requires:
+- The type_integer_ type_array_ param_nums_ is not null.
+- The type_integer_ param_k_ is greater_than_or_equal to 1 and is less_than_or_equal to the length of the type_integer_ type_array_ param_nums_.

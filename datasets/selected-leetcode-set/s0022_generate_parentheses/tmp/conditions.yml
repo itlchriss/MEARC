@@ -1,6 +1,5 @@
 ensures:
+- The size of the type_string_ type_list_ result is equal to the number of combinations of well-formed parentheses generated for the expr_a pairs of parentheses.
+- Each type_string_ in the type_string_ type_list_ result is a well-formed combination of parentheses for the expr_a pairs.
+requires:
 - The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 8.
-- The List<String> result contains all combinations of well-formed parentheses for the given expr_a pairs of parentheses.
-- Each type_string_ in the List<String> result is a valid combination of well-formed parentheses.
-- The length of each type_string_ in the List<String> result is equal to 2*n.
-requires: []

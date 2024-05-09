@@ -9,11 +9,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Solution {
-//@ ensures(*The string parameter `digits` must not be null.*);
-//@ ensures(*The string parameter `digits` must contain digits from 2 to 9 inclusive.*);
-//@ ensures(*The length of the string parameter `digits` is less than or equal to 4.*);
-//@ ensures(*The list of strings result contains all possible letter combinations that the number represented by the string parameter `digits` could represent.*);
-//@ ensures(*The order of the strings in the list result can be in any order.*);
+//@ requires(*The string parameter `digits` must not be null.*);
+//@ requires(*The string parameter `digits` must contain digits from 2 to 9 inclusive.*);
+//@ requires(*The length of the string parameter `digits` is less than or equal to 4.*);
+//@ ensures(*The elements in the list result are all possible letter combinations that the digits in the string parameter `digits` could represent.*);
+//@ ensures(*The elements in the list result are in any order.*);
     public List<String> letterCombinations(String digits) {
         if (digits.isEmpty()) {
             return Collections.emptyList();

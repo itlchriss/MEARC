@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class Solution {
     public int findRadius(int[] houses, int[] heaters) {
         int res = 0;
+        //@ assume 1 <= houses.length;
+        //@ assume 1 <= heaters.length <= 300000;
         int m = houses.length;
         int n = heaters.length;
         int hs = 0;
@@ -17,6 +19,8 @@ public class Solution {
         if (n == 1) {
             return Math.max(Math.abs(houses[0] - heaters[0]), Math.abs(houses[m - 1] - heaters[0]));
         }
+        //@ maintaining 0 <= hs <= houses.length;
+        //@ maintaining 0 <= ht < heaters.length;
         while (hs < m && ht < n - 1) {
             if (houses[hs] <= heaters[ht]) {
                 res = Math.max(heaters[ht] - houses[hs], res);

@@ -1,1 +1,1 @@
-exists x01.(_character{NNS}(x01) & _whitespace{NN}(x01) & _lead{VBG}(x01) & exists x02.(_expr_a{NN}(x02) & _type_string_{NN}(x02) & exists e03.(_in{IN}(e03,x02) & (Subj(e03) = x01))) & exists e04.(_ignore{VBN}(e04) & (Acc(e04) = x01)))
+exists x01.(_result{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_clamp{VBN}(e02) & (Acc(e02) = x01) & exists x03.(_range{NN}(x03) & _dash_2147483648{CD}(x03) & _[{NN}(x03) & (Dat(e02) = x03)) & exists x04.(_2147483648{CD}(x04) & (Dat(e02) = x04)) & _]{NN}(e02)) & _1{CD}(x01))

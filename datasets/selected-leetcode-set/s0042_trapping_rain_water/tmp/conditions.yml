@@ -1,7 +1,9 @@
 ensures:
-- The type_integer_ type_array_ param_height_ is not null.
-- The type_integer_ type_array_ param_height_ is an elevation map that the width of each bar is 1.
 - The type_integer_ result is the amount of water that can be trapped after raining.
 - The type_integer_ result is greater_than_or_equal to 0.
-- The type_integer_ result is less_than_or_equal to the maximum possible amount of water that can be trapped given the elevation map represented by the type_integer_ type_array_ param_height_.
-requires: []
+- The type_integer_ result is less_than_or_equal to the maximum value of java type_integer_.
+- The type_integer_ result is 6 if the type_integer_ type_array_ param_height_ is [0 , 1 , 0 , 2 , 1 , 0 , 1 , 3 , 2 , 1 , 2 , 1].
+- The type_integer_ result is 9 if the type_integer_ type_array_ param_height_ is [4 , 2 , 0 , 3 , 2 , 5].
+requires:
+- The type_integer_ type_array_ param_height_ is not null.
+- The type_integer_ type_array_ param_height_ is an elevation map that the width of each bar is 1.

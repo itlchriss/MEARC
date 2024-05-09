@@ -7,7 +7,11 @@ public class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int[] res = new int[2];
         int i = 0;
+        //@ assume numbers.length > 1;
         int j = numbers.length - 1;
+        //@ maintaining 0 <= i <= numbers.length;
+        //@ maintaining 0 <= j < numbers.length;
+        //@ maintaining i < j || i == j;
         while (i < j) {
             int sum = numbers[i] + numbers[j];
             if (sum == target) {

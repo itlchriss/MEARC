@@ -1,5 +1,5 @@
 ensures:
-- The type_string_ param_s_ is not null.
 - The type_integer_ result is the length of the longest valid parentheses substring in the type_string_ param_s_.
-- The length of the type_string_ param_s_ is less_than_or_equal to 30000.
-requires: []
+requires:
+- The type_integer_ param_N_ is greater_than_or_equal to 0 and is less_than_or_equal to 30000.
+- All characters in the type_string_ param_s_ are either str_a or the str_b.

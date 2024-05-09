@@ -6,9 +6,10 @@ package g0501_0600.s0532_k_diff_pairs_in_an_array;
 import java.util.HashSet;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer parameter `k` must be greater than or equal to 0.*);
-//@ ensures(*The integer result is the number of unique k-diff pairs in the integer array parameter `nums`.*);
+//@ requires(*The integer parameter `k` is greater than or equal to 0 and is less than or equal to 10000000.*);
+//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.*);
+//@ ensures(*If there exist unique pairs of integers `nums[i]` and `nums[j]` in the integer array parameter `nums` such that the absolute difference between `nums[i]` and `nums[j]` is equal to the integer parameter `k`, the integer result is the number of unique k-diff pairs in the array.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
     public int findPairs(int[] nums, int k) {
         int res = 0;
         HashSet<Integer> set = new HashSet<>();

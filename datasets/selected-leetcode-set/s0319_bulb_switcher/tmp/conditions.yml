@@ -1,5 +1,8 @@
 ensures:
-- The type_integer_  param_n_ is greater_than_or_equal to 0 and is less_than_or_equal
-  to 1000000000.
-- The type_integer_ result is the number of bulbs that are on after _expr0_ rounds.
-requires: []
+- The type_integer_ result is the number of bulbs that are on after expr_a rounds.
+- The type_integer_ result is the count of bulbs that are on after expr_a rounds.
+requires:
+- The type_integer_ param_n_ is greater_than_or_equal to 0 and is less_than_or_equal to 1000000000.
+- The number of bulbs that are initially off is equal to expr_a.
+- After each round , the bulbs are toggled based on the round number. On the expr_ath round , every expr_b bulb is toggled.
+- The bulbs are toggled from off to on and vice versa.

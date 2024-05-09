@@ -10,6 +10,8 @@ public class Solution {
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
         Arrays.sort(nums);
+        //@ assume 1 <= k <= nums.length <= 10000;
+        //@ assume n >= k;
         return nums[n - k];
     }
 }

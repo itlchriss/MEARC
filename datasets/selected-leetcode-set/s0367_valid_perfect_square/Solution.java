@@ -4,8 +4,9 @@ package g0301_0400.s0367_valid_perfect_square;
 // #2022_07_12_Time_0_ms_(100.00%)_Space_40.9_MB_(49.73%)
 
 public class Solution {
-//@ ensures(*The positive integer parameter `num` is a perfect square, the boolean result is true.*);
-//@ ensures(*The positive integer parameter `num` is not a perfect square, the boolean result is false.*);
+//@ requires(*The positive integer parameter `num` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
+//@ ensures(*If the positive integer parameter `num` is a perfect square, the boolean result is equal to the true literal.*);
+//@ ensures(*If the positive integer parameter `num` is not a perfect square, the boolean result is equal to the false literal.*);
     public boolean isPerfectSquare(int num) {
         if (num == 0) {
             // If num is 0 return false

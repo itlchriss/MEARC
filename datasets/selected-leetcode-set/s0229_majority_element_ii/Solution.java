@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer collection result contains all elements that appear more than `⌊ n/3 ⌋` times in the integer array parameter `nums`.*);
+//@ ensures(*If the integer array parameter `nums` contains elements that appear more than `⌊ n/3 ⌋` times, the integer list result contains those elements.*);
+//@ ensures(*The length of the integer list result is less than or equal to the length of the integer array parameter `nums`.*);
+//@ ensures(*All values in the integer list result are unique.*);
+//@ ensures(*The integer list result is empty if there are no elements that appear more than `⌊ n/3 ⌋` times in the integer array parameter `nums`.*);
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> results = new ArrayList<>();
         int len = nums.length;

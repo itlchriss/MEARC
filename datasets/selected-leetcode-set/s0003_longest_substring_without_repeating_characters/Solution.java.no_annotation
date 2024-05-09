@@ -14,19 +14,17 @@ public class Solution {
         int maxLen = 0;
         int curLen = 0;
         int start = 0;
+        // assume \forall int j; 0 <= j < s.length(); (int)s.charAt(j) < 256;
         //@ loop_invariant 0 <= i <= s.length();
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
             //@ assume 0 <= cur < 256;
             if (lastIndices[cur] < start) {
                 lastIndices[cur] = i;
-                //@ assume Integer.MIN_VALUE + 1 <= curLen + 1 <= Integer.MAX_VALUE - 1;
                 curLen++;
             } else {
                 int lastIndex = lastIndices[cur];
-                //@ assume Integer.MIN_VALUE + 1 <= lastIndex + 1 <= Integer.MAX_VALUE - 1;
                 start = lastIndex + 1;
-                //@ assume Integer.MIN_VALUE + 1 <= i - start + 1 <= Integer.MAX_VALUE - 1;
                 curLen = i - start + 1;
                 lastIndices[cur] = i;
             }

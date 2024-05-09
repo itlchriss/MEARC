@@ -1,1 +1,1 @@
--exists x01.(_solution{NN}(x01) & exists e02.(_set{VBD}(e02) & (Acc(e02) = x01)) & exists x03.(exists e04.(_duplicate{JJ}(e04) & (Subj(e04) = x03) & _triplet{NNS}(x03)) & exists e05.(_contain{VB}(e05) & (Subj(e05) = x01) & (Acc(e05) = x03) & _must{MD}(e05))))
+-exists x01.(_triplet{NNS}(x01) & exists x02.(_condition{NNS}(x02) & exists e03.(_satisfy{VB}(e03) & (Subj(e03) = x01) & (Acc(e03) = x02)))) -> exists x04.(_result{NN}(x04) & _type_array_{NN}(x04) & _type_integer_{NN}(x04) & exists e05.(_empty{JJ}(e05) & (Subj(e05) = x04) & _may{MD}(e05)))

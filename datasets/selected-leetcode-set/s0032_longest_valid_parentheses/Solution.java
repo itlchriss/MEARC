@@ -4,9 +4,9 @@ package g0001_0100.s0032_longest_valid_parentheses;
 // #2023_08_09_Time_1_ms_(100.00%)_Space_41.4_MB_(85.22%)
 
 public class Solution {
-//@ ensures(*The string parameter `s` must not be null.*);
+//@ requires(*The integer parameter `N` is greater than or equal to 0 and is less than or equal to 30000.*);
+//@ requires(*All characters in the string parameter `s` are either '(' or ')'.*);
 //@ ensures(*The integer result is the length of the longest valid parentheses substring in the string parameter `s`.*);
-//@ ensures(*The length of the string parameter `s` is less than or equal to 30000.*);
     public int longestValidParentheses(String s) {
         int max = 0;
         int left = 0;

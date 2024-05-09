@@ -1,12 +1,18 @@
+BASE=./datasets/selected-leetcode-set
+
 if [ "$#" -eq 1 ]; then
-for entry in `find ./datasets/leetcode-behavioural/s$1* -type f -name "*.mr" | sort`
-do
+for entry in `find $BASE/s$1* -type f -name "Solution.java" | sort`
+do    
     filename=`echo $entry | sed 's/.*\///'`
     index=`echo $filename | sed 's/\..*//'`
     folder=`echo $entry | sed "s/\/$filename//"`
+    rm -rf $folder/tmp/*
     echo '----------------------------------'
-    echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
-    ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
+    # echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
+    # ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
+    python scripts/insertcomment.py $folder
+    echo "./mearc $entry"
+    ./mearc $entry
     echo '----------------------------------'
 done
 else
@@ -16,12 +22,11 @@ else
 #     python scripts/insertcomment.py $d
 # done
 
-# 1992 samples
 
-rm ./datasets/leetcode-behavioural/*/tmp/*.mr
-rm ./datasets/leetcode-behavioural/*/jml/*.jml
+rm $BASE/*/tmp/*.mr
+rm $BASE/*/jml/*.jml
 
-for entry in `find ./datasets/leetcode-behavioural/s*/ -type f -name "Solution.java" | sort | head -100`
+for entry in `find $BASE/s*/ -type f -name "Solution.java" | sort | head -100`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`

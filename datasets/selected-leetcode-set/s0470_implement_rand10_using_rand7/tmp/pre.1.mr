@@ -1,0 +1,1 @@
+exists x01.(_method{NN}(x01) & _expr_a{NN}(x01) & exists x02.(_api{NNP}(x02) & _expr_b{NN}(x02) & exists e03.(_call{VB}(e03) & (Subj(e03) = x01) & (Acc(e03) = x02) & _can{MD}(e03) & _only{RB}(e03))) & -all x04.(_api{NNP}(x04) -> exists e05.(_call{VB}(e05) & (Subj(e05) = x01) & (Acc(e05) = x04) & _should{MD}(e05))))

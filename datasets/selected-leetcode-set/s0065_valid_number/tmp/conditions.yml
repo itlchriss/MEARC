@@ -1,5 +1,6 @@
 ensures:
-- The type_string_ param_s_ is a valid number according to the given components and formats.
-- The type_boolean_ result is equal to the true literal if the type_string_ param_s_ is a valid number.
-- The type_boolean_ result is equal to the false literal if the type_string_ param_s_ is not a valid number.
-requires: []
+- If the type_string_ param_s_ is a valid number according to the given components , the type_boolean_ result is equal to the true literal.
+- If the type_string_ param_s_ is not a valid number according to the given components , the type_boolean_ result is equal to the false literal.
+requires:
+- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 20.
+- The type_string_ param_s_ only contains alphabets (both uppercase and lowercase) , digits (0-9) , plus str_a , minus str_b , or dot str_c.

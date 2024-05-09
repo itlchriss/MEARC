@@ -1,9 +1,7 @@
 ensures:
-- The type_integer_ type_array_  param_arr_  is not  null.
-- The type_integer_ result is the majority element in the type_integer_ type_array_
-  _expr0_.
-- The majority element is the element that appears more than ⌊n / 2⌋ times in the
-  type_integer_ type_array_ _expr0_  ,    that  _expr1_ is the length of the type_array_.
-- The type_integer_ result is greater_than_or_equal to negative 2147483648 and is
-  less_than_or_equal to 2147483647.
-requires: []
+- The type_integer_ result is the majority element in the type_integer_ type_array_ param_arr_.
+- The type_integer_ result is greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.
+requires:
+- The type_integer_ type_array_ param_arr_ is not null.
+- The majority element is the element that appears more than ⌊n / 2⌋ times , that expr_a is the size of the type_array_ expr_b.
+- The method must solve the problem in linear time and in O(1) space.

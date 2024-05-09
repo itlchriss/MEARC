@@ -1,13 +1,8 @@
 ensures:
-- The type_integer_ type_array_  param_nums1_ and the type_integer_ type_array_  param_nums2_
-  is sorted in ascending order.
-- The type_integer_  param_k_ is greater_than_or_equal to 1 and is less_than_or_equal
-  to 1000.
-- The size of the type_list_ result is equal to the type_integer_  param_k_.
-- Each element in the type_list_ result is a type_list_ of two integers representing
-  a pair expr0 that expr1 is an element from expr2 and expr3 is an element from expr4.
-- The pairs in the type_list_ result are the expr0 pairs with the smallest sums.
-- The pairs in the type_list_ result are selected from the combinations of elements
-  from expr0 and expr1.
-- The pairs in the type_list_ result are ordered by their sums in ascending order.
-requires: []
+- The size of the type_list_ result is equal to the type_integer_ param_k_.
+- Each element in the type_list_ result is a type_list_ containing two integers representing a pair expr_a that expr_b is an element from the type_integer_ type_array_ expr_c and expr_d is an element from the type_integer_ type_array_ expr_e.
+- The pairs in the type_list_ result are the expr_a pairs with the smallest sums of elements from expr_b and expr_c.
+requires:
+- Method behavioural specifications:.
+- The type_integer_ type_array_ param_nums1_ and the type_integer_ type_array_ param_nums2_ are sorted in ascending_order .
+- The type_integer_ param_k_ is greater_than_or_equal to 1 and is less_than_or_equal to 1000.

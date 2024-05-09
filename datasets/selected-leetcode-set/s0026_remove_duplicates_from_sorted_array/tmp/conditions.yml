@@ -1,8 +1,9 @@
 ensures:
+- The result is placed in the first part of the type_array_ expr_a.
+- The first expr_a elements of the type_array_ expr_b hold the final result after removing duplicates.
+requires:
 - The type_integer_ type_array_ param_nums_ is sorted in ascending_order .
-- The type_integer_ result is equal to expr_a , which is the number of unique elements in the type_array_ after removing duplicates.
-- The first expr_a elements of the type_integer_ type_array_ expr_b hold the final result with each unique element appearing only once.
-- The relative order of the elements in the type_array_ is kept the same.
-- The length of the type_integer_ type_array_ expr_a does not change , and any elements beyond the first expr_b elements are not specified.
-- The method must modify the input type_array_ in-place with O(1) extra memory.
-requires: []
+- After executing the method , each unique element in the type_integer_ type_array_ expr_a appears only once.
+- The relative order of the elements in the type_integer_ type_array_ expr_a is kept the same.
+- The length of the type_integer_ type_array_ expr_a after removing duplicates is equal to expr_b.
+- The method modifies the type_array_ param_nums_ in-place with O(1) extra memory.

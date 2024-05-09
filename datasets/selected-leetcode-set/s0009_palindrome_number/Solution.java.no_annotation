@@ -13,10 +13,10 @@ public class Solution {
         //@ maintaining localX >= 0;
         while (localX > 0) {
             //@ set k = rev;
-            //@ assume 0 <= k <= Integer.MAX_VALUE / 10;
+            // assume 0 <= k <= Integer.MAX_VALUE / 10;
             rev *= 10;
             //@ set k = rev;
-            //@ assume 0 <= k + localX % 10 <= Integer.MAX_VALUE;
+            // assume 0 <= k + localX % 10 <= Integer.MAX_VALUE;
             rev += localX % 10;
             localX /= 10;
         }

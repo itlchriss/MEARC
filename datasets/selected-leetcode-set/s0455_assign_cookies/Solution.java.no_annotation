@@ -11,6 +11,8 @@ public class Solution {
         int result = 0;
         int i = 0;
         int j = 0;
+        //@ maintaining 0 <= i <= g.length;
+        //@ maintaining 0 <= j <= s.length;
         while (i < g.length && j < s.length) {
             if (s[j] >= g[i]) {
                 result++;

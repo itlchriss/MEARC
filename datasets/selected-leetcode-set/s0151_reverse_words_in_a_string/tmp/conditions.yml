@@ -1,9 +1,6 @@
 ensures:
-- The type_string_  param_s_ contains at least one word.
-- The type_string_  param_s_ may contain leading or trailing spaces.
-- The type_string_  param_s_ may contain multiple spaces between two words.
-- The type_string_ result is a concatenation of the words in reverse order separated
-  by a single space.
+- The type_string_ result is a concatenation of the words in reverse order separated by a single space.
 - The type_string_ result does not contain leading or trailing spaces.
 - The type_string_ result reduces multiple spaces between two words to a single space.
-requires: []
+requires:
+- The type_string_ param_s_ contains at least one word.

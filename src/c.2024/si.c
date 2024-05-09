@@ -62,6 +62,22 @@ int check_need_assigned_entity(struct astnode *node) {
     else return FALSE;
 }
 
+/*
+    if a SI template has type java_method_chain, it consists at least 2 java methods in a comma separated string
+    this method breaks them into a queue
+*/
+struct queue* __get_java_method_interpretations_from_chain__(char *interpretation) {
+    struct queue *result = initqueue();
+    char *s = (char *)strdup(interpretation), *pos;
+    char *token = strtok_r(s, ",", &pos);
+    do {
+        enqueue(result, (void *)((char *)strdup(token)));
+    } while ((token = strtok_r(NULL, ",", &pos)) != NULL);
+    free(token);
+    free(s);
+    return result;
+}
+
 
 /*
     checking if AT LEAST one type from either queue x or y is in another queue
@@ -839,7 +855,7 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
         for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
             char *d1 = (char *)gqueue(en1->cstptr->datalist, j);
             for (int k = 0; k < en2->cstptr->datalist->count; ++k) {
-                char *d2 = (char *)gqueue(en2->cstptr->datalist, k), *s = (char *)strdup(si->interpretation);                
+                char *d2 = (char *)gqueue(en2->cstptr->datalist, k), *s = (char *)strdup(si->interpretation);                    
                 char *tmp = strrep(s, t1, d1);
                 free(s);
                 s = tmp;
@@ -847,6 +863,30 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                     char *_d2 = __combine_3_strings__(d2, " ==", " ");
                     tmp = strrep(s, t2, _d2);
                     free(_d2);
+                } else if (en2->cstptr->datatype->i == INT_SI_TYPE_JAVA_METHOD_CHAIN) {
+                    /* 
+                        get the last part of the interpretation
+                        Currently support:
+                            1. quantify expression
+                            2. simple expression with only one substitution
+                    */
+                    char *_s = (char *)strdup(tmp);
+                    char *token, *last, *pos;
+                    last = token = strtok_r(_s, ";", &pos);
+                    for (;(token = strtok_r(NULL, ";", &pos)) != NULL; last = token);
+                    free(_s);
+                    token = strdup(last);
+                    tmp[strlen(tmp) - strlen(token)] = '\0';
+                    struct queue *inter_list = __get_java_method_interpretations_from_chain__(d2);
+                    // TODO: we need to support a full pre order expression
+                    char *inter_tmp = __combine_3_strings__(                            
+                            strrep(token, t2, gqueue(inter_list, 1)),                            
+                            gqueue(inter_list, 0),
+                            strrep(token, t2, gqueue(inter_list, 2))
+                        );                    
+                    char *buf = __combine_3_strings__(tmp, inter_tmp, " ");
+                    deallocatequeue(inter_list, deallocatedata);
+                    tmp = buf;
                 } else {
                     tmp = strrep(s, t2, d2);
                 }
@@ -1560,7 +1600,10 @@ void deallocatesi(void *tmp) {
     if (si->args)
         deallocatequeue(si->args, deallocatesi_arg);
     if (si->interpretation)
-        free(si->interpretation);        
+        free(si->interpretation);     
+    if (si->operators && si->operators->count > 0) {
+        deallocatequeue(si->operators, deallocatedata);
+    }
     free(si->symbol);
     free(si);
 }

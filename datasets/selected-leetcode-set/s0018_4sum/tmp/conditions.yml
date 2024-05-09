@@ -1,9 +1,9 @@
 ensures:
+- The length of each type_integer_ type_list_ in the result type_list_ is equal to 4.
+- All values in each type_integer_ type_list_ in the result type_list_ are unique.
+- The sum of the values in each type_integer_ type_list_ in the result type_list_ is equal to the type_integer_ param_target_.
+- The result type_list_ contains unique quadruplets.
+requires:
 - The length of the type_integer_ type_array_ param_nums_ is greater_than_or_equal to 1 and is less_than_or_equal to 200.
 - All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 1000000000 and are less_than_or_equal to 1000000000.
 - The type_integer_ param_target_ is greater_than_or_equal to negative 1000000000 and is less_than_or_equal to 1000000000.
-- The length of the type_list_ of lists result is not fixed and can vary.
-- Each type_list_ in the type_list_ of lists result contains 4 unique integers from the type_integer_ type_array_ param_nums_.
-- The sum of the 4 integers in each type_list_ in the type_list_ of lists result is equal to the type_integer_ param_target_.
-- All lists in the type_list_ of lists result are unique.
-requires: []

@@ -4,11 +4,10 @@ package g0001_0100.s0014_longest_common_prefix;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_40.2_MB_(83.48%)
 
 public class Solution {
-//@ ensures(*The length of the string array parameter `strs` is greater than or equal to 1 and is less than or equal to 200.*);
-//@ ensures(*The length of each string in the string array parameter `strs` is greater than or equal to 0 and is less than or equal to 200.*);
-//@ ensures(*Each string in the string array parameter `strs` consists of only lower-case English letters.*);
-//@ ensures(*The string result is the longest common prefix string amongst the array of strings.*);
-//@ ensures(*If there is no common prefix, the string result is equal to an empty string `""`.*);
+//@ ensures(*If there is a common prefix among the input strings, the string result is equal to the longest common prefix string amongst the array of strings.*);
+//@ ensures(*If there is no common prefix among the input strings, the string result is equal to an empty string `""`.*);
+//@ ensures(*The length of the string result is less than or equal to 200.*);
+//@ ensures(*The string result consists of only lower-case English letters.*);
     public String longestCommonPrefix(String[] strs) {
         //@ assume strs != null && 1 < strs.length <= 200;
         //@ assume \forall int i; 0 <= i < strs.length; strs[i] != null && 1 < strs[i].length() <= 200;

@@ -10,15 +10,14 @@ public class Solution {
         int mid;
         int lo = 0;
         int hi = nums.length - 1;
+        // maintaining 0 <= hi < nums.length;
+        //@ maintaining 0 <= lo <= hi < nums.length || lo == hi + 1;
         while (lo <= hi) {
             mid = ((hi - lo) >> 1) + lo;            
-            //@ assume 0 <= mid < nums.length;
             if (target == nums[mid]) {
                 return mid;
             }
             // if this is true, then the possible rotation can only be in the second half
-            //@ assume 0 <= hi < nums.length;
-            //@ assume 0 <= lo < nums.length;
             if (nums[lo] <= nums[mid]) {
                 // the target is in the first half only if it's
                 if (nums[lo] <= target && target <= nums[mid]) {

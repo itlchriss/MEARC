@@ -1,8 +1,7 @@
 ensures:
-- The type_integer_ type_array_  param_nums_ is not null.
-- The type_integer_ type_array_  param_nums_ must have a length greater_than_or_equal
-  to 1 and less_than_or_equal to 100000.
-- All values in the type_integer_ type_array_  param_nums_ is greater_than_or_equal
-  to negative 100 and less_than_or_equal to 100.
-- The type_integer_ result is the maximum value of the rotation function expr0.
-requires: []
+- The type_integer_ result is the maximum value of the rotation function expr_a.
+- The type_integer_ result is less_than_or_equal to the maximum value of a 32-bit type_integer_.
+requires:
+- The type_integer_ type_array_ param_nums_ is not null.
+- The type_integer_ type_array_ param_nums_'s length is equal to the type_integer_ param_n_.
+- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 100 and are less_than_or_equal to 100.

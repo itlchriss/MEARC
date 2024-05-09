@@ -18,7 +18,8 @@ enum interpretation_type {
     SI_INT_TYPE_DIRECT = 0,
     SI_INT_TYPE_EXPR = 1,
     SI_INT_TYPE_MODIFIER = 2,
-    SI_INT_TYPE_JAVA_METHOD = 3
+    SI_INT_TYPE_JAVA_METHOD = 3,
+    SI_INT_TYPE_JAVA_METHOD_CHAIN = 4 
 };
 
 struct si_arg {
@@ -54,6 +55,9 @@ struct si {
         this integer should be consistent with the declaration of enum primitive_datatype in cst.h
     */
     int spec_init_type;
+
+    /* a list of operators chaining the interpretations when the type is SI_INT_TYPE_JAVA_METHOD_CHAIN */
+    struct queue *operators;
 };
 
 /* 

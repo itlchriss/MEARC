@@ -1,0 +1,1 @@
+exists x01.(_character{NNS}(x01) & exists x02.((_whitespace{NN}(x02) | _digit{NNS}(x02)) & _lead{VBG}(x02) & exists e03.(_other{JJ}(e03) & (Subj(e03) = x01)) & _than{IN}(x01,x02)) & exists e04.(_ignore{VBN}(e04) & (Acc(e04) = x01)))

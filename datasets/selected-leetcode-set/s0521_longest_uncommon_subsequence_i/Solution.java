@@ -12,8 +12,11 @@ public class Solution {
      * Or in other words, when a.length() != b.length(), no subsequence of b will be equal to a,
      * so return Math.max(a.length(), b.length())
      */
-//@ ensures(*If the string parameter `a` is not equal to the string parameter `b`, the integer result is the length of the longest uncommon subsequence between the strings `a` and `b`.*);
-//@ ensures(*If the string parameter `a` is equal to the string parameter `b`, the integer result is -1.*);
+//@ requires(*The length of the longest uncommon subsequence is the length of a subsequence that is a subsequence of one string but not the other string.*);
+//@ requires(*The string parameters `a` and `b` consist of lower-case English letters.*);
+//@ requires(*The length of the string parameters `a` and `b` is greater than or equal to 1 and is less than or equal to 100.*);
+//@ ensures(*If the longest uncommon subsequence between the two string parameters `a` and `b` exists, the integer result is equal to the length of the longest uncommon subsequence.*);
+//@ ensures(*If the longest uncommon subsequence between the two string parameters `a` and `b` does not exist, the integer result is equal to -1.*);
     public int findLUSlength(String a, String b) {
         if (a.equals(b)) {
             return -1;

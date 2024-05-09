@@ -11,11 +11,13 @@ public class Solution {
         for (int num : nums) {
             product = product * num;
         }
+        //@ maintaining 0 <= i <= nums.length;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 ans[i] = product / nums[i];
             } else {
                 int p = 1;
+                //@ maintaining 0 <= j <= nums.length;
                 for (int j = 0; j < nums.length; j++) {
                     if (j != i) {
                         p = p * nums[j];

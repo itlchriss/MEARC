@@ -13,40 +13,19 @@
     </rule>
    </rule>
    <rule type="fa" cat="S[dcl]\NP">
-    <lf start="3" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
-    <rule type="ba" cat="NP">
-     <rule type="fa" cat="NP[nb]">
-      <lf start="4" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="3" span="1" word="only" lemma="only" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)/(S\NP)" />
+    <rule type="fa" cat="S[dcl]\NP">
+     <lf start="4" span="1" word="contains" lemma="contain" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+     <rule type="lex" cat="NP">
       <rule type="fa" cat="N">
-       <lf start="5" span="1" word="longest" lemma="longest" pos="JJS" chunk="I-NP" entity="O" cat="N/N" />
-       <rule type="fa" cat="N">
-        <lf start="6" span="1" word="common" lemma="common" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
-        <rule type="fa" cat="N">
-         <lf start="7" span="1" word="prefix" lemma="prefix" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
-         <lf start="8" span="1" word="type_string_" lemma="type_string_" pos="NN" chunk="I-NP" entity="O" cat="N" />
-        </rule>
-       </rule>
-      </rule>
-     </rule>
-     <rule type="fa" cat="NP\NP">
-      <lf start="9" span="1" word="amongst" lemma="amongst" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
-      <rule type="ba" cat="NP">
-       <rule type="fa" cat="NP[nb]">
-        <lf start="10" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-        <lf start="11" span="1" word="type_array_" lemma="type_array_" pos="NN" chunk="I-NP" entity="O" cat="N" />
-       </rule>
-       <rule type="fa" cat="NP\NP">
-        <lf start="12" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
-        <rule type="lex" cat="NP">
-         <lf start="13" span="1" word="type_strings_" lemma="type_strings_" pos="NN" chunk="I-NP" entity="O" cat="N" />
-        </rule>
-       </rule>
+       <lf start="5" span="1" word="lower-case" lemma="lower-case" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+       <lf start="6" span="1" word="alphabets" lemma="alphabet" pos="NNS" chunk="I-NP" entity="O" cat="N" />
       </rule>
      </rule>
     </rule>
    </rule>
   </rule>
-  <lf start="14" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+  <lf start="7" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
  </rule>
 </ccg>
 </candc>

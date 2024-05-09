@@ -5,11 +5,13 @@ package g0001_0100.s0042_trapping_rain_water;
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_0_ms_(100.00%)_Space_44.3_MB_(62.40%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `height` must not be null.*);
-//@ ensures(*The integer array parameter `height` represents an elevation map where the width of each bar is 1.*);
+//@ requires(*The integer array parameter `height` must not be null.*);
+//@ requires(*The integer array parameter `height` represents an elevation map where the width of each bar is 1.*);
 //@ ensures(*The integer result is the amount of water that can be trapped after raining.*);
 //@ ensures(*The integer result is greater than or equal to 0.*);
-//@ ensures(*The integer result is less than or equal to the maximum possible amount of water that can be trapped given the elevation map represented by the integer array parameter `height`.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer.*);
+//@ ensures(*The integer result is 6 if the integer array parameter `height` is [0,1,0,2,1,0,1,3,2,1,2,1].*);
+//@ ensures(*The integer result is 9 if the integer array parameter `height` is [4,2,0,3,2,5].*);
     public int trap(int[] height) {
         int l = 0;
         int r = height.length - 1;

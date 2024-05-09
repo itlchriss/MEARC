@@ -1,9 +1,7 @@
 ensures:
-- The type_integer_ type_array_  param_prices_  is not  null.
-- The type_integer_ type_array_  param_prices_ length is greater_than_or_equal to
-  1 and is less_than_or_equal to 5000.
-- All values in the type_integer_ type_array_  param_prices_ are  greater_than_or_equal
-  to 0 and are  less_than_or_equal to 1000.
-- The type_integer_ result is the maximum profit achievable by completing multiple
-  transactions of buying and selling stocks with the given cooldown restriction.
-requires: []
+- The type_integer_ result is the maximum profit that can be achieved by completing transactions based on the given restrictions.
+- The type_integer_ result is greater_than_or_equal to 0.
+requires:
+- The type_integer_ type_array_ param_prices_ is not null.
+- The type_integer_ type_array_ param_prices_'s length is greater_than_or_equal to 1 and is less_than_or_equal to 5000.
+- All values in the type_integer_ type_array_ param_prices_ are greater_than_or_equal to 0 and are less_than_or_equal to 1000.

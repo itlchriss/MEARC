@@ -6,8 +6,10 @@ package g0101_0200.s0198_house_robber;
 // #2022_06_28_Time_0_ms_(100.00%)_Space_39.9_MB_(85.30%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer result is the maximum amount of money that can be robbed without alerting the police.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 100.*);
+//@ requires(*All values in the integer array parameter `nums` are greater than or equal to 0 and less than or equal to 400.*);
+//@ ensures(*The integer result is the maximum amount of money that can be robbed from the houses without alerting the police.*);
     public int rob(int[] nums) {
         if (nums.length == 0) {
             return 0;

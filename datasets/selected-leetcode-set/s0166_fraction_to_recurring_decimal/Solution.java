@@ -8,9 +8,10 @@ import java.util.Map;
 
 @SuppressWarnings("java:S2153")
 public class Solution {
-//@ ensures(*If the integer parameter `denominator` is not equal to 0, the string result is the fraction of the integer parameters `numerator` and `denominator` in decimal format.*);
-//@ ensures(*If the fractional part of the decimal representation is repeating, the repeating part is enclosed in parentheses.*);
-//@ ensures(*The length of the string result is guaranteed to be less than 10^4 for all given inputs.*);
+//@ requires(*If there are multiple valid answers for the recurring part, any of them can be returned.*);
+//@ ensures(*If the integer parameter `numerator` is divided by the integer parameter `denominator` and the result is a terminating decimal, the string result is equal to the division result in string format.*);
+//@ ensures(*If the integer parameter `numerator` is divided by the integer parameter `denominator` and the result is a recurring decimal, the string result contains the recurring part enclosed in parentheses.*);
+//@ ensures(*The length of the string result is less than 10000.*);
     public String fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) {
             return "0";

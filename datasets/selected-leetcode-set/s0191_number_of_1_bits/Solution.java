@@ -5,8 +5,8 @@ package g0101_0200.s0191_number_of_1_bits;
 // #2022_06_28_Time_1_ms_(84.87%)_Space_41.8_MB_(10.40%)
 
 public class Solution {
-//@ ensures(*The integer parameter `n` must be a binary string of length 32.*);
-//@ ensures(*The integer result is the number of '1' bits in the binary string parameter `n`.*);
+//@ requires(*The integer parameter `n` is a binary string of length 32.*);
+//@ ensures(*The integer result is the number of '1' bits in the binary representation of the integer parameter `n`.*);
     public int hammingWeight(int n) {
         int sum = 0;
         boolean flag = false;

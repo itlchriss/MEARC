@@ -5,9 +5,9 @@ package g0001_0100.s0011_container_with_most_water;
 // #2023_08_09_Time_3_ms_(94.75%)_Space_56.2_MB_(5.82%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `height` must not be null.*);
-//@ ensures(*The length of the integer array parameter `height` is greater than or equal to 2 and is less than or equal to 100000.*);
-//@ ensures(*All values in the integer array parameter `height` are greater than or equal to 0 and are less than or equal to 10000.*);
+//@ requires(*The integer array parameter `height` must not be null.*);
+//@ requires(*The length of the integer array parameter `height` is greater than or equal to 2 and is less than or equal to 100000.*);
+//@ requires(*All values in the integer array parameter `height` are greater than or equal to 0 and are less than or equal to 10000.*);
 //@ ensures(*The integer result is the maximum area of water that can be contained by the two lines in the container formed by the vertical lines represented by the integer array parameter `height`.*);
 //@ ensures(*The integer result is greater than or equal to 0.*);
     public int maxArea(int[] height) {

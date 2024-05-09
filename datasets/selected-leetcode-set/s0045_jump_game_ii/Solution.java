@@ -5,11 +5,13 @@ package g0001_0100.s0045_jump_game_ii;
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(49.02%)_Space_44.7_MB_(52.72%)
 
 public class Solution {
-//@ ensures(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer array parameter `nums` must have a length greater than or equal to 1 and less than or equal to 10000.*);
-//@ ensures(*All values in the integer array parameter `nums` must be greater than or equal to 0 and less than or equal to 1000.*);
-//@ ensures(*The integer result is the minimum number of jumps to reach the last index in the integer array parameter `nums`.*);
+//@ requires(*The integer array parameter `nums` must not be null.*);
+//@ requires(*The integer array parameter `nums` must contain non-negative integers.*);
+//@ ensures(*The integer result is the minimum number of jumps required to reach the last index.*);
 //@ ensures(*The integer result is greater than or equal to 0.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `nums`.*);
+//@ ensures(*The integer result is equal to 2 if the integer array parameter `nums` is [2,3,1,1,4].*);
+//@ ensures(*The integer result is equal to 2 if the integer array parameter `nums` is [2,3,0,1,4].*);
     public int jump(int[] nums) {
         int length = 0;
         int maxLength = 0;
