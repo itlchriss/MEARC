@@ -36,7 +36,7 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
     conditions = _get_conditions(filecontent)    
     
     results = { 'ensures': [], 'requires': []}
-    sis = []
+    sis = {}
     for t in conditions:
         clist = conditions[t]
         for i, c in enumerate(clist):
@@ -46,7 +46,12 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
             #     for v in list(si.values()):
             #         if v not in sis:
             #             sis.append(v)    
-            sis.append(list(si.values()))
+            # sis.append(list(si.values()))
+            if t == 'ensures':
+                ditype = 'post'
+            else:
+                ditype = 'pre'
+            sis['%s.%s' % (ditype, str(i))] = list(si.values())
     return results, sis
 
 class NoAliasDumper(yaml.SafeDumper):
@@ -69,12 +74,16 @@ if __name__ == "__main__":
     tmpfolder = os.path.join(folder, 'tmp')
     if not os.path.exists(tmpfolder):
         os.mkdir(tmpfolder)
-        
+    
     with open(os.path.join(tmpfolder, 'conditions.yml'), 'w') as fp:
         yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True, width=float("inf"))
     
-    for i, v in enumerate(sis):        
-        with open(os.path.join(tmpfolder, 'dynamic_si.%s.yml' % str(i)), 'w') as fp:
-            yaml.dump(v, fp, sort_keys=False, allow_unicode=True, Dumper=NoAliasDumper)
+    # for i, v in enumerate(sis):        
+    for k in sis.keys():
+        with open(os.path.join(tmpfolder, 'dynamic_si.%s.yml' % k), 'w') as fp:
+            if not sis[k]:
+                os.remove(os.path.join(tmpfolder, 'dynamic_si.%s.yml' % k))
+            else:
+                yaml.dump(sis[k], fp, sort_keys=False, allow_unicode=True, Dumper=NoAliasDumper)
     
     

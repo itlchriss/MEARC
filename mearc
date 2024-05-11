@@ -79,12 +79,12 @@ then
         filename_without_extension="${filename%.*}"
         index="${filename_without_extension##*.}"
         cmd=''
-        if test -f $folder/tmp/dynamic_si.$index.yml; then
-            cmd="./bin/main -f $mr -s $STD_SI,$folder/tmp/dynamic_si.$index.yml"
+        if test -f $folder/tmp/dynamic_si.$filename_without_extension.yml; then
+            cmd="./bin/main -f $mr -s $STD_SI,$folder/tmp/dynamic_si.$filename_without_extension.yml"
         else
             cmd="./bin/main -f $mr -s $STD_SI"
         fi
-        # printf '%s\n' "$cmd"
+        printf '%s\n' "$cmd"
         ans=`$cmd`
 
         # [[ -z "$ans"] && [ "$ans" == *"error"* ]] printf '%s\n' "$ans" || printf 'ensures(%s);\n' "$ans"
@@ -104,9 +104,11 @@ then
                 pcount="${BASH_REMATCH[1]}"
                 for i in $(seq 1 $pcount); do
                     body="${lines[$i]}"
-                    body="${body//\\ /\\}"                    
-                    printf "$keyword(%s);\n" "$body"
-                    printf "$keyword(%s);\n" "$body" > $folder/jml/$filename
+                    body="${body//\\ /\\}"               
+                    if [[ ! -z "$body" ]] && [[ "$body" != *"()"* ]]; then
+                        printf "$keyword(%s);\n" "$body"
+                        printf "$keyword(%s);\n" "$body" > $folder/jml/$filename
+                    fi
                 done
             else
                 printf "Failed"

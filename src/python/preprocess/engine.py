@@ -4,7 +4,7 @@ from typing import Tuple, Dict
 import re
 
 
-def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:       
+def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:           
     # repeated 'to' is replaced as a single 'to'
     sent = re.sub(r'(to\s+)+', 'to ', sent)
     sent = re.sub(r'(is\s+)+', 'is ', sent)
@@ -14,12 +14,17 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
     exprs = {}
     # for all remaining strings in quotes (``), we treat them as expressions and separatedly stored
     # print(sent)
-    if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_]+`)', sent):        
+    if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_\'{}]+`)', sent):        
         for i, e in enumerate(r):
             index = chr(i + 97)
             exprs['expr_' + index] = e
             sent = sent.replace(e, ' expr_' + index, 1)
     if r := re.findall(r'(\'[^ ]+\')', sent):
+        for i, e in enumerate(r):
+            index = chr(i + 97)
+            exprs['str_' + index] = e
+            sent = sent.replace(e, ' str_' + index, 1)
+    if r := re.findall(r'(\"[^ ]+\")', sent):
         for i, e in enumerate(r):
             index = chr(i + 97)
             exprs['str_' + index] = e
@@ -80,13 +85,22 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         sent += '.'    
     for k in dynamic_si.keys():
         v = dynamic_si[k]
+        p = '*'
+        r = '*'
+        sp = '0'
+        sr = '1'
+            
         d = {
             'term': k,
             'syntax': ['NN'],
             'arguments': [{
                 'symbol': '*',
-                'primitive_type': '*',
-                'reference_type': '*'
+                'primitive_type': p,
+                'reference_type': r
+            }],
+            'synthesised_datatype': [{
+               'primitive_type': sp,
+               'reference_type': sr
             }],
             'interpretation': v.replace('`', '')
         }

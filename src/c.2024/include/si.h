@@ -55,9 +55,6 @@ struct si {
         this integer should be consistent with the declaration of enum primitive_datatype in cst.h
     */
     int spec_init_type;
-
-    /* a list of operators chaining the interpretations when the type is SI_INT_TYPE_JAVA_METHOD_CHAIN */
-    struct queue *operators;
 };
 
 /* 

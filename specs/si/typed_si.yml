@@ -359,6 +359,21 @@
     reference_type: '-1'
   interpretation_type: 'expression'
   interpretation: (Subj) == (Dat)
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: '*'
+    reference_type: '1'
+  - symbol: Dat
+    primitive_type: '*'
+    reference_type: '1'
+  synthesised_datatype:
+    primitive_type: '0'
+    reference_type: '-1'
+  interpretation_type: 'expression'
+  interpretation: (Subj).equals((Dat))
 - term: __REL__length
   syntax:
   - NN
@@ -774,7 +789,7 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation_type: 'java_method'
-  interpretation: 'Character.isWhiteSpace'
+  interpretation: 'Character.isWhitespace'
 - term: symbol
   syntax:
   - NN
@@ -784,7 +799,7 @@
     primitive_type: '*'
     reference_type: '*'
   interpretation_type: 'java_method_chain'
-  interpretation: " && ,!Character.isLetter,!Character.isWhiteSpace"
+  interpretation: " && ,!Character.isLetter,!Character.isWhitespace"
 - term: lowercase_alphabets
   syntax:
   - NNS
@@ -846,3 +861,11 @@
     primitive_type: '4'
     reference_type: '-1'
   interpretation: '\forall int i; 0 <= i && i < String.valueOf((num)).length() / 2; String.valueOf((num)).charAt(i) == String.valueOf((num)).charAt(String.valueOf((num)).length() - 1 - i)'
+- term: positive
+  syntax:
+  - JJ
+  arguments:
+  - symbol: 'x'
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: '(x) >= 0'

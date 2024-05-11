@@ -42,7 +42,10 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
             // for (int i = 0; i < node->si_q->count; ++i) {                
             //     fprintf(s, formatstr, (char *)gqueue(node->si_q, i));             
             // }  
-            fprintf(s, formatstr, (char *)gqueue(node->si_q, pindex));             
+            if (!ssearch((char *)gqueue(node->si_q, pindex), "__REL__") && gqueue(node->si_q, pindex ) != NULL) {
+                // printf("%s\n", (char *)gqueue(node->si_q, pindex)); 
+                fprintf(s, formatstr, (char *)gqueue(node->si_q, pindex));
+            }             
             break;
         default:
             #if CGDEBUG

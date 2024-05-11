@@ -291,6 +291,14 @@ int strsearch(char *str, char *str1, int *occur) {
     return k;
 }
 
+int ssearch(char *str, char* pattern) {
+    if (str == NULL || pattern == NULL) return FALSE;
+    int occur[strlen(str)/strlen(pattern) + 1], k = 0;
+    k = strsearch(str, pattern, occur);
+    if (k == 0) return FALSE;
+    else return TRUE;
+}
+
 char* strrep(char *str, char *str1, char *str2) {
     int i = 0, occur[strlen(str)/strlen(str1) + 1], k = 0;
     k = strsearch(str, str1, occur);

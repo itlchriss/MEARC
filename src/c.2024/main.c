@@ -244,7 +244,6 @@ struct queue* readSI(char *dstfilepaths) {
                     si->synthesised_datatype->p = UNDEFINED;
                     si->synthesised_datatype->r = UNDEFINED;
                     si->synthesised_datatype->types = initqueue();
-                    si->operators = initqueue();
                     si->type = -1;
                 }
                 break;

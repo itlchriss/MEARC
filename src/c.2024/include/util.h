@@ -18,6 +18,7 @@ struct queuenode {
 
 
 
+int ssearch(char *str, char *pattern);
 struct queue* initqueue();
 struct queue* copyqueue(struct queue *input);
 void enqueue(struct queue* queue, void *node);

@@ -1601,9 +1601,6 @@ void deallocatesi(void *tmp) {
         deallocatequeue(si->args, deallocatesi_arg);
     if (si->interpretation)
         free(si->interpretation);     
-    if (si->operators && si->operators->count > 0) {
-        deallocatequeue(si->operators, deallocatedata);
-    }
     free(si->symbol);
     free(si);
 }

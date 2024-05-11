@@ -23,8 +23,8 @@ else
 # done
 
 
-rm $BASE/*/tmp/*.mr
-rm $BASE/*/jml/*.jml
+rm $BASE/*/tmp/*
+rm $BASE/*/jml/*
 
 for entry in `find $BASE/s*/ -type f -name "Solution.java" | sort | head -100`
 do

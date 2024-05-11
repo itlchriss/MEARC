@@ -20,32 +20,24 @@ def _getfile(path:str) -> str:
 
 
 def _dogpt35(srcpath: str, program: List[str]):
+    srcpath = srcpath.replace('Solution.java', '')
     raw = _getfile(os.path.join(srcpath, "gpt-results", "gpt-3.5-turbo.result"))    
     tmp = []
 
     raw = re.sub(r'\n\s+', ' ', raw)
     for _t in raw.split('\n'):
-        t = re.sub(r'\s+', ' ', _t)
-        t = t.replace('\n', '')
-        t = t.replace('\r', '')
-        t = t.replace('\n\r', '')
-        
-        if j := re.search(r'(?:(ensures|requires))(.*)', t):
-            # jml = r'//@ ' + j.group(1) + '(' + j.group(2) + ')'
-            body = j.group(2)
-            if not body:
-                body = ' '
-            elif body[-1] == ';':
-                body = body[:-1]
-            tmp.append(r'//@ ' + j.group(1) + '(%s);' % body.strip())
+        t = _t.replace('- requires', '//@ requires').replace('- ensures', '//@ ensures')
+        if t[0] == '-':
+            t = '//@ ' + t[1:]
+        tmp.append(t)
 
     tmp = list(set(tmp))
 
     tmp = '\n'.join(tmp)
+
+    # r = re.search(r'(\s+)?public.*\)(\s+)?[{]?', program, re.ASCII)
     r = re.search(r'(\s+)?public.*\)(\s+)?[{]?', program, re.ASCII)
     program = program[:r.start()] + '\n' + tmp + program[r.start():]
-    # with open(os.path.join(srcpath, "gpt-results", "build", "Solution.java"), 'w+') as fp:
-    #     fp.write(program)
     print(program)
 
 def _dosym(srcpath: str, program: List[str]):
@@ -67,7 +59,8 @@ def _dosym(srcpath: str, program: List[str]):
         # fp.write(program)
 
 def main(srcpath:str, mode: str):
-    program = _getfile(os.path.join(srcpath, "Solution.java.no_annotation"))
+    # print(os.path.join(srcpath.replace('Solution.java', ''), "Solution.java.no_annotation"))
+    program = _getfile(os.path.join(srcpath.replace('Solution.java', ''), "Solution.java.no_annotation"))
     print(srcpath, file=sys.stderr)
     if mode == 'llm':
         _dogpt35(srcpath, program)
