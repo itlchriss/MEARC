@@ -1,4 +1,7 @@
 - The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
-- The integer parameter `pick` is greater than or equal to 1 and is less than or equal to `n`.
-- The integer result is the number that is picked by the guessing game.
-- The result is equal to the integer parameter `pick` that is picked by the guessing game.
+- The integer parameter `pick` is greater than or equal to 1 and is less than or equal to the integer parameter `n`.
+- The integer result is equal to the number that is picked by the game.
+- The result is determined by calling the `guess(int num)` API with the guessed number as the parameter.
+- If the `guess(int num)` API returns -1, the number picked is lower than the guessed number.
+- If the `guess(int num)` API returns 1, the number picked is higher than the guessed number.
+- If the `guess(int num)` API returns 0, the number picked is equal to the guessed number.

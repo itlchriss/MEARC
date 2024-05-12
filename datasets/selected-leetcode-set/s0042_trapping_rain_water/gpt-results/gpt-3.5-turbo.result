@@ -1,9 +1,0 @@
-- public int trap(int[] height)
-- requires height != null && height.length > 0;
-- ensures \result >= 0;
-- ensures \result == 6 || \result == 9;
-- ensures (\forall int i; 0 <= i && i < height.length; height[i] >= 0);
-- ensures (\forall int i; 0 <= i && i < height.length; height[i] <= 100000);
-- ensures (\forall int i; 0 <= i && i < height.length; height[i] == \old(height[i]);
-- ensures (\forall int i; 0 <= i && i < height.length; \result >= 0);
-- ensures (\forall int i; 0 <= i && i < height.length; \result == 6 || \result == 9);

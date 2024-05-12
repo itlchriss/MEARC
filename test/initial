@@ -1,0 +1,7 @@
+#!/bin/bash
+for entry in `find . -type f -name 'Solution.java' | sort`; 
+do
+    printf "%s\n" $entry
+    ../../../openjml-0.17-a15/openjml -esc $entry --code-math bigint --spec-math bigint
+done
+#../../../openjml-0.17-a15/openjml -esc s$1*/Solution.java --code-math bigint --spec-math bigint

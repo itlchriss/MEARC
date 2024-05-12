@@ -1,5 +1,9 @@
-- For each value in the integer array parameter `nums1`, find the index `j` in the integer array parameter `nums2` such that the value in `nums1` is equal to the value in `nums2` at index `j`.
-- If there is a next greater element to the right of the value in `nums2` at index `j`, the corresponding value in the integer array result is the next greater element.
-- If there is no next greater element to the right of the value in `nums2` at index `j`, the corresponding value in the integer array result is -1.
+- The length of the integer array parameter `nums1` is less than or equal to the length of the integer array parameter `nums2` and is greater than or equal to 1.
+- All the values in the integer array parameter `nums1` are unique.
+- All the values in the integer array parameter `nums2` are unique.
+- All the values in the integer array parameter `nums1` also appear in the integer array parameter `nums2`.
 - The length of the integer array result is equal to the length of the integer array parameter `nums1`.
-- All values in the integer array result are either the next greater element to the right or -1.
+- For each element `x` in the integer array parameter `nums1`, find the index `j` in the integer array parameter `nums2` such that `x == nums2[j]`.
+- Determine the next greater element of `nums2[j]` in `nums2`.
+- If there is no next greater element, the answer for this query is -1.
+- The integer array result contains the next greater element for each value of `nums1` as described above.

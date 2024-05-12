@@ -1,0 +1,6 @@
+- public int[] diStringMatch(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 100000
+- requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'I' || s.charAt(i) == 'D')
+- ensures \result != null
+- ensures \result.length == s.length() + 1
+- ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'I' ==> \result[i] < \result[i + 1] && s.charAt(i) == 'D' ==> \result[i] > \result[i + 1])

@@ -1,6 +1,9 @@
-Method behavioural specifications:
-- The integer array parameter `nums1` and the integer array parameter `nums2` are sorted in ascending order.
-- The integer parameter `k` is greater than or equal to 1 and is less than or equal to 1000.
-- The size of the list result is equal to the integer parameter `k`.
-- Each element in the list result is a list containing two integers representing a pair `(u, v)` where `u` is an element from the integer array `nums1` and `v` is an element from the integer array `nums2`.
-- The pairs in the list result are the `k` pairs with the smallest sums of elements from `nums1` and `nums2`.
+- The length of the integer array parameter `nums1` is less than or equal to 100000 and is greater than or equal to 1.
+- The length of the integer array parameter `nums2` is less than or equal to 100000 and is greater than or equal to 1.
+- All the values in the integer array parameter `nums1` are less than or equal to 1000000000 and are greater than or equal to -1000000000.
+- All the values in the integer array parameter `nums2` are less than or equal to 1000000000 and are greater than or equal to -1000000000.
+- The integer parameter `k` is less than or equal to 1000 and is greater than or equal to 1.
+- The length of the list result is less than or equal to the integer parameter `k`.
+- Each element in the list result is a list of two integers.
+- The sum of the two integers in each element of the list result is one of the smallest k sums possible from combining elements from `nums1` and `nums2`.
+- The list result is sorted in ascending order based on the sum of the two integers in each element.

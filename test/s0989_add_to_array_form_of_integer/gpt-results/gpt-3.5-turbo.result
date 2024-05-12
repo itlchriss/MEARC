@@ -1,0 +1,5 @@
+- requires num != null && num.length >= 1 && num.length <= 10000 && (\forall int i; 0 <= i && i < num.length; 0 <= num[i] && num[i] <= 9);
+- requires 0 <= k && k <= 10000;
+- ensures \result != null && \result.size() == num.length;
+- ensures (\forall int i; 0 <= i && i < \result.size(); 0 <= \result.get(i) && \result.get(i) <= 9);
+- ensures (\exists int[] resultNum; resultNum.length == \result.size(); (\forall int i; 0 <= i && i < resultNum.length; resultNum[i] == \result.get(i)); resultNum = num + k);

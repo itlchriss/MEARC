@@ -1,7 +1,0 @@
-- requires strs != null && (\forall int i; 0 <= i && i < strs.length; strs[i] != null);
-- requires (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; i != j ==> !strs[i].equals(strs[j]));
-- ensures \result != null;
-- ensures (\forall int i; 0 <= i && i < strs.length; \result.length() <= strs[i].length());
-- ensures (\forall int i; 0 <= i && i < strs.length; (\forall int j; 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result)));
-- ensures (\forall int i; 0 <= i && i < strs.length; (\forall int j; 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) ==> \result.equals(strs[i].substring(0, \result.length()))));
-- ensures (\forall int i; 0 <= i && i < strs.length; (\forall int j; 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) ==> \result.equals(strs[j].substring(0, \result.length()))));

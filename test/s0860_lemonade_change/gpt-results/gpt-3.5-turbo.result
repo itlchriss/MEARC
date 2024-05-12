@@ -1,0 +1,7 @@
+- public boolean lemonadeChange(int[] bills)
+- requires bills != null && bills.length >= 1;
+- ensures \result == true || \result == false;
+- ensures \result == true ==> // can provide every customer with correct change
+- ensures \result == false ==> // cannot provide every customer with correct change
+- ensures // detailed explanation of how the correct change is provided based on the input array bills
+- constraints: 1 <= bills.length <= 10^5, bills[i] is either 5, 10, or 20.

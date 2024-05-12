@@ -1,7 +1,11 @@
-- The string parameter `secret` and the string parameter `guess` must consist of digits only.
-- The length of the string parameter `secret` and the string parameter `guess` is greater than or equal to 1 and is less than or equal to 1000.
-- The string parameter `secret` and the string parameter `guess` have the same length.
-- The string result is formatted as "xAyB" where x is the number of bulls and y is the number of cows.
-- The number of bulls represents the digits in the guess that are in the correct position.
-- The number of cows represents the digits in the guess that are in the secret number but are located in the wrong position.
-- Only one of the two unmatched digits is counted as a cow if the non-bull digits can only be rearranged to allow one digit to be a bull.
+- The length of the string parameter `secret` is less than or equal to 1000 and is greater than or equal to 1.
+- The length of the string parameter `guess` is less than or equal to 1000 and is greater than or equal to 1.
+- The string parameter `secret` and `guess` consist of digits only.
+- The string parameter `secret` and `guess` have the same length.
+- The string result is formatted as "xAyB", where x is the number of bulls and y is the number of cows.
+- Bulls are represented by digits in the correct position between the strings `secret` and `guess`.
+- Cows are represented by digits in the incorrect position between the strings `secret` and `guess`.
+- If the string parameter `secret` is equal to "1807" and the string parameter `guess` is equal to "7810", the string result is equal to "1A3B".
+- If the string parameter `secret` is equal to "1123" and the string parameter `guess` is equal to "0111", the string result is equal to "1A1B".
+- If the string parameter `secret` is equal to "1" and the string parameter `guess` is equal to "0", the string result is equal to "0A0B".
+- If the string parameter `secret` is equal to "1" and the string parameter `guess` is equal to "1", the string result is equal to "1A0B".

@@ -1,0 +1,13 @@
+- The length of the string parameter `s` is less than or equal to 200.
+- The string parameter `s` consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
+- If there are leading whitespaces in the string parameter `s`, they should be ignored.
+- If the next character after leading whitespaces is '-' or '+', the result should be negative or positive respectively.
+- Read characters until the next non-digit character or the end of the input is reached. Ignore the rest of the string.
+- Convert the read digits into an integer. If no digits were read, the integer is 0.
+- Clamp the integer to remain in the range [-2^31, 2^31 - 1].
+- Return the integer as the final result.
+- If the string parameter `s` is equal to "42", the integer result is equal to 42.
+- If the string parameter `s` is equal to " -42", the integer result is equal to -42.
+- If the string parameter `s` is equal to "4193 with words", the integer result is equal to 4193.
+- If the string parameter `s` is equal to "words and 987", the integer result is equal to 0.
+- If the string parameter `s` is equal to "-91283472332", the integer result is equal to -2147483648.

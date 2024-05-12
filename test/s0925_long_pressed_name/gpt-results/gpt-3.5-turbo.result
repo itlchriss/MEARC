@@ -1,0 +1,8 @@
+-/*@ requires name != null && typed != null;
+  @ requires name.length() > 0 && typed.length() > 0;
+  @ requires name.length() <= 1000 && typed.length() <= 1000;
+  @ requires (\forall int i; 0 <= i && i < name.length(); Character.isLowerCase(name.charAt(i)));
+  @ requires (\forall int i; 0 <= i && i < typed.length(); Character.isLowerCase(typed.charAt(i)));
+  @
+  @ ensures \result == true || \result == false;
+  @*/

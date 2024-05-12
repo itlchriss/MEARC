@@ -1,3 +1,6 @@
-- If the integer parameter `n` is a power of three, the boolean result is equal to the true literal.
-- If the integer parameter `n` is not a power of three, the boolean result is equal to the false literal.
-- The integer parameter `n` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1.
+- The integer parameter `n` is greater than or equal to -2147483648 and is less than or equal to 2147483647.
+- The boolean result is equal to true if the integer parameter `n` is a power of three.
+- The boolean result is equal to false if the integer parameter `n` is not a power of three.
+- If the integer parameter `n` is equal to 27, the boolean result is equal to true.
+- If the integer parameter `n` is equal to 0, the boolean result is equal to false.
+- If the integer parameter `n` is equal to 9, the boolean result is equal to true.

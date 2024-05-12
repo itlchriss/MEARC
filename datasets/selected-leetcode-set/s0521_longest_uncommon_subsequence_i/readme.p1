@@ -1,5 +1,5 @@
-- If the longest uncommon subsequence between the two string parameters `a` and `b` exists, the integer result is equal to the length of the longest uncommon subsequence.
-- If the longest uncommon subsequence between the two string parameters `a` and `b` does not exist, the integer result is equal to -1.
-- The length of the longest uncommon subsequence is the length of a subsequence that is a subsequence of one string but not the other string.
-- The string parameters `a` and `b` consist of lower-case English letters.
-- The length of the string parameters `a` and `b` is greater than or equal to 1 and is less than or equal to 100.
+- The length of the string parameter `a` is less than or equal to 100 and is greater than or equal to 1.
+- The length of the string parameter `b` is less than or equal to 100 and is greater than or equal to 1.
+- The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.
+- If the integer result is greater than or equal to 0, the string parameter `a` is not a subsequence of string parameter `b` and vice versa.
+- If the integer result is equal to -1, every subsequence of string parameter `a` is also a subsequence of string parameter `b` and vice versa.

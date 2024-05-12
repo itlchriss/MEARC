@@ -1,0 +1,4 @@
+- public int arrayPairSum(int[] nums)
+- requires nums != null && nums.length % 2 == 0;
+- requires (\forall int i; 0 <= i && i < nums.length; -10000 <= nums[i] && nums[i] <= 10000);
+- ensures \result == (\sum int i; 0 <= i && i < nums.length / 2; Math.min(nums[2*i], nums[2*i+1]));

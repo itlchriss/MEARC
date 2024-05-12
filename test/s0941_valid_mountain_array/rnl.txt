@@ -1,0 +1,8 @@
+- The length of the integer array parameter `arr` is less than or equal to 10000 and is greater than or equal to 1.
+- All the values in the integer array parameter `arr` are less than or equal to 10000 and are greater than or equal to 0.
+- The boolean result is equal to true if and only if the integer array parameter `arr` is a valid mountain array.
+- The integer array parameter `arr` is a valid mountain array if and only if:
+    - The length of the integer array parameter `arr` is greater than or equal to 3.
+    - There exists an index `i` such that 0 is less than `i` and `i` is less than the length of the integer array parameter `arr` minus 1, and:
+        - All elements from index 0 to index `i` are in ascending order.
+        - All elements from index `i` to the end of the array are in descending order.

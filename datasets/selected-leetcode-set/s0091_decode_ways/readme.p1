@@ -1,4 +1,7 @@
-- If the string parameter `s` contains only digits and has a length greater than or equal to 1 and less than or equal to 100, the integer result is the number of ways to decode the string `s`.
-- The integer result is guaranteed to fit in a 32-bit integer.
-- If the string parameter `s` contains a character that is mapped to a number starting with 0, the integer result is equal to 0.
-- If the string parameter `s` contains leading zeros, the integer result is equal to 0.
+- The length of the string parameter `s` is less than or equal to 100 and is greater than or equal to 1.
+- The string parameter `s` contains only digits and may contain leading zeros.
+- The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to 0.
+- If the string parameter `s` is equal to "12", the integer result is equal to 2.
+- If the string parameter `s` is equal to "226", the integer result is equal to 3.
+- If the string parameter `s` is equal to "0", the integer result is equal to 0.
+- If the string parameter `s` is equal to "06", the integer result is equal to 0.

@@ -1,0 +1,5 @@
+- requires arr != null;
+- requires arr.length >= 3;
+- ensures \result == true || \result == false;
+- ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i + 1]) ==> (\exists int i; 0 < i && i < arr.length - 1; arr[0] < arr[1] < ... < arr[i - 1] < arr[i] && arr[i] > arr[i + 1] > ... > arr[arr.length - 1]);
+- ensures !(\exists int i; 0 < i && i < arr.length - 1; arr[0] < arr[1] < ... < arr[i - 1] < arr[i] && arr[i] > arr[i + 1] > ... > arr[arr.length - 1]) ==> \result == false;

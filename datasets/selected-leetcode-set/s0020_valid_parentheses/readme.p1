@@ -1,7 +1,8 @@
-- If the input string `s` contains only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`, the boolean result is equal to the true literal.
-- If the input string `s` is valid according to the following conditions:
-    - Open brackets must be closed by the same type of brackets.
-    - Open brackets must be closed in the correct order.
-  the boolean result is equal to the true literal.
-- If the input string `s` is not valid according to the above conditions, the boolean result is equal to the false literal.
-- The length of the input string `s` is greater than or equal to 1 and is less than or equal to 10000.
+- The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.
+- The string parameter `s` consists of only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`.
+- The boolean result is true if the input string is valid according to the given conditions, and false otherwise.
+- If the input string is equal to "()", the boolean result is true.
+- If the input string is equal to "()[]{}", the boolean result is true.
+- If the input string is equal to "(]", the boolean result is false.
+- If the input string is equal to "([)]", the boolean result is false.
+- If the input string is equal to "{[]}", the boolean result is true.

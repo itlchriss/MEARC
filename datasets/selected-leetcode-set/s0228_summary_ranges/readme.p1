@@ -1,9 +1,7 @@
+- The length of the integer array parameter `nums` is less than or equal to 20 and is greater than or equal to 0.
+- All the values in the integer array parameter `nums` are unique.
 - The integer array parameter `nums` is sorted in ascending order.
-- The integer array parameter `nums` contains unique values.
-- The length of the integer array parameter `nums` is less than or equal to 20.
-- All values in the integer array parameter `nums` are greater than or equal to -2^31 and less than or equal to 2^31 - 1.
-- The string list result contains the smallest sorted list of ranges that cover all the numbers in the array exactly.
-- Each element of the integer array `nums` is covered by exactly one of the ranges in the string list result.
-- If a range `[a,b]` in the list has `a` not equal to `b`, it is output as `"a->b"`.
-- If a range `[a,b]` in the list has `a` equal to `b`, it is output as `"a"`.
-- The string list result is in ascending order based on the starting values of the ranges.
+- Each range in the list should be in the format "a->b" if a is not equal to b, and in the format "a" if a is equal to b.
+- Each range in the list covers all the numbers in the array exactly.
+- Each element of the integer array parameter `nums` is covered by exactly one of the ranges.
+- There is no integer x such that x is in one of the ranges but not in `nums`.

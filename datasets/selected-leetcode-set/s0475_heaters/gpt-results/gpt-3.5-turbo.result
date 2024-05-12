@@ -1,9 +1,0 @@
-- public int findRadius(int[] houses, int[] heaters)
-- requires houses != null && heaters != null;
-- requires houses.length > 0 && heaters.length > 0;
-- requires houses.length <= 3 * Math.pow(10, 4) && heaters.length <= 3 * Math.pow(10, 4);
-- requires \forall int i; 0 <= i && i < houses.length; 1 <= houses[i] && houses[i] <= Math.pow(10, 9);
-- requires \forall int i; 0 <= i && i < heaters.length; 1 <= heaters[i] && heaters[i] <= Math.pow(10, 9);
-- ensures \result >= 0;
-- ensures \forall int i; 0 <= i && i < houses.length; \exists int j; 0 <= j && j < heaters.length; Math.abs(houses[i] - heaters[j]) <= \result;
-- ensures \forall int i; 0 <= i && i < heaters.length; \forall int j; 0 <= j && j < heaters.length; Math.abs(heaters[i] - heaters[j]) == 0;

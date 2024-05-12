@@ -1,10 +1,8 @@
-- The string parameter `str` is converted to a 32-bit signed integer.
-- Leading whitespace characters in the string `str` are ignored.
-- If the next character in the string `str` is '-' or '+', the result is negative or positive respectively.
-- Only the space character ' ' is considered a whitespace character.
-- Characters other than leading whitespace or digits are ignored.
-- The integer result is clamped to the range [-2^31, 2^31 - 1].
-- If no digits are read, the integer result is 0.
-- The parsed integer is the concatenation of consecutive digits in the string `str`.
-- The integer result is the value of the parsed integer.
-- The integer result is less than or equal to 2^31 - 1 and is greater than or equal to -2^31.
+- The string parameter `s` is less than or equal to 200 characters in length.
+- The string parameter `s` consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
+- The integer result is less than or equal to the maximum value of a 32-bit signed integer and is greater than or equal to the minimum value of a 32-bit signed integer.
+- If the string parameter `s` is equal to "42", the integer result is equal to 42.
+- If the string parameter `s` is equal to " -42", the integer result is equal to -42.
+- If the string parameter `s` is equal to "4193 with words", the integer result is equal to 4193.
+- If the string parameter `s` is equal to "words and 987", the integer result is equal to 0.
+- If the string parameter `s` is equal to "-91283472332", the integer result is equal to -2147483648.

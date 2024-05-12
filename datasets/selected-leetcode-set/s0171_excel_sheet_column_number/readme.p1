@@ -1,4 +1,7 @@
+- The length of the string parameter `columnTitle` is less than or equal to 7 and is greater than or equal to 1.
 - The string parameter `columnTitle` consists only of uppercase English letters.
-- The length of the string parameter `columnTitle` is greater than or equal to 1 and is less than or equal to 7.
-- The integer result is the corresponding column number of the string parameter `columnTitle`.
-- The integer result is greater than or equal to 1 and is less than or equal to 2147483647.
+- The integer result is less than or equal to 2147483647 and is greater than or equal to 1.
+- If the string parameter `columnTitle` is equal to "A", the integer result is equal to 1.
+- If the string parameter `columnTitle` is equal to "AB", the integer result is equal to 28.
+- If the string parameter `columnTitle` is equal to "ZY", the integer result is equal to 701.
+- If the string parameter `columnTitle` is equal to "FXSHRXW", the integer result is equal to 2147483647.

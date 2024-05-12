@@ -1,5 +1,6 @@
-- The integer array parameter `nums` is sorted in non-decreasing order.
-- If the integer parameter `target` is found in the integer array parameter `nums`, the integer array result contains the starting and ending positions of the integer parameter `target`.
-- If the integer parameter `target` is not found in the integer array parameter `nums`, the integer array result is [-1, -1].
-- The integer array result has a length of 2.
-- The runtime complexity of the algorithm is O(log n).
+- The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 0.
+- All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.
+- The integer parameter `target` is less than or equal to 1000000000 and is greater than or equal to -1000000000.
+- The length of the integer array result is equal to 2.
+- If the integer parameter `target` is not found in the integer array parameter `nums`, the first element and the second element of the integer array result are both equal to -1.
+- If the integer parameter `target` is found in the integer array parameter `nums`, the first element of the integer array result is equal to the index of the first occurrence of the `target` in the integer array parameter `nums`, and the second element of the integer array result is equal to the index of the last occurrence of the `target` in the integer array parameter `nums`.

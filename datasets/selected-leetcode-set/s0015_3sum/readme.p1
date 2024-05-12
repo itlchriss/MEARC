@@ -1,6 +1,8 @@
-- The integer array parameter `nums` may contain duplicate elements.
-- The integer array result contains lists of integers, each list representing a triplet `[nums[i], nums[j], nums[k]]` where `i != j`, `i != k`, and `j != k`.
-- The integer array result does not contain duplicate triplets.
-- The sum of elements in each triplet in the integer array result is equal to 0.
-- The length of each list in the integer array result is equal to 3.
-- The integer array result may be empty if no triplets satisfy the conditions.
+- The length of the integer array parameter `nums` is less than or equal to 3000 and is greater than or equal to 0.
+- All the values in the integer array parameter `nums` are less than or equal to 100000 and are greater than or equal to -100000.
+- The length of the list result is equal to the number of unique triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+- Each element in the list result is a list containing three integers representing a valid triplet.
+- The list result must not contain duplicate triplets.
+- If the integer array parameter `nums` is empty, the list result is also empty.
+- If the integer array parameter `nums` contains only one element which is 0, the list result is empty.
+- If the integer array parameter `nums` is `[-1,0,1,2,-1,-4]`, the list result contains `[-1,-1,2]` and `[-1,0,1]`.

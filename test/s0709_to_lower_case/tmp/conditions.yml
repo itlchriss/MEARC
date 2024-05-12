@@ -1,0 +1,11 @@
+ensures:
+- If the type_string_  param_s_ contains uppercase letters ,  the type_string_ result
+  is equal to the type_string_  param_s_ with all uppercase letters replaced by their
+  corresponding lowercase letters.
+- If the type_string_  param_s_ does not contain any uppercase letters ,  the type_string_
+  result is equal to the type_string_  param_s_.
+- The length of the type_string_ result is equal to the length of the type_string_  param_s_.
+- The type_string_ result consists of printable ASCII characters.
+- The length of the type_string_  param_s_ is greater_than_or_equal to 1 and is less_than_or_equal
+  to 100.
+requires: []

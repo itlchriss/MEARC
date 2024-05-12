@@ -1,7 +1,7 @@
-- The integer array parameter `g` must not be null.
-- The integer array parameter `s` must not be null.
-- The length of the integer array parameter `g` is greater than or equal to 1 and is less than or equal to 30000.
-- The length of the integer array parameter `s` is greater than or equal to 0 and is less than or equal to 30000.
-- All values in the integer array parameter `g` are greater than or equal to 1 and are less than or equal to 2147483647.
-- All values in the integer array parameter `s` are greater than or equal to 1 and are less than or equal to 2147483647.
-- The integer result is the maximum number of content children that can be satisfied with the given greed factors and cookie sizes.
+- The length of the integer array parameter `g` is less than or equal to 30000 and is greater than or equal to 1.
+- The length of the integer array parameter `s` is less than or equal to 30000.
+- All the values in the integer array parameter `g` are less than or equal to 2147483647 and are greater than or equal to 1.
+- All the values in the integer array parameter `s` are less than or equal to 2147483647 and are greater than or equal to 1.
+- The integer result is less than or equal to the length of the integer array parameter `g`.
+- If the integer result is equal to 1, the integer array parameter `s` has only one element and that element is greater than or equal to the only element in the integer array parameter `g`.
+- If the integer result is equal to 2, the integer array parameter `s` has two elements and both elements are greater than or equal to the elements in the integer array parameter `g`.

@@ -1,0 +1,14 @@
+ensures:
+- The type_integer_ type_array_  param_arr_ must have a length greater_than_or_equal
+  to 3.
+- There exists an type_integer_ expr0 such that expr1 and the following conditions
+  are met:.
+- '    - The elements of the type_array_ expr0 from index 0 to index expr1 are in
+  ascending order.'
+- '    - The elements of the type_array_ expr0 from index expr1 to the last index
+  are in descending order.'
+- If the conditions above are met ,  the type_boolean_ result is equal to the true
+  literal.
+- If the conditions above are not met ,  the type_boolean_ result is equal to the
+  false literal.
+requires: []

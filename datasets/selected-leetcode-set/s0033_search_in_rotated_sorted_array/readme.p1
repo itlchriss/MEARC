@@ -1,9 +1,7 @@
-- The integer array parameter `nums` is sorted in ascending order with distinct values.
-- The integer array parameter `nums` is possibly rotated at an unknown pivot index `k` such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]`.
-- The integer result is the index of the integer parameter `target` if it is in the integer array `nums`.
-- If the integer parameter `target` is not in the integer array `nums`, the integer result is equal to -1.
-- The algorithm must have a runtime complexity of O(log n).
-- The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 5000.
-- All values in the integer array `nums` are unique.
-- All values in the integer array `nums` are greater than or equal to -10000 and are less than or equal to 10000.
-- The integer parameter `target` is greater than or equal to -10000 and is less than or equal to 10000.
+- The length of the integer array parameter `nums` is less than or equal to 5000 and is greater than or equal to 1.
+- All the values in the integer array parameter `nums` are unique.
+- All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.
+- The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.
+- The integer result is less than or equal to the length of the integer array parameter `nums` and is greater than or equal to -1.
+- If the integer result is greater than or equal to 0, the integer array parameter `nums` contains the integer parameter `target`.
+- If the integer result is equal to -1, the integer array parameter `nums` does not contain the integer parameter `target`.

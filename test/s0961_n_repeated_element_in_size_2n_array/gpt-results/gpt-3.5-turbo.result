@@ -1,0 +1,5 @@
+- requires nums != null && nums.length == 2 * n;
+- requires n >= 2 && n <= 5000;
+- requires (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);
+- ensures (\exists int num; 0 <= num && num <= 10000; (\forall int i; 0 <= i && i < nums.length; nums[i] == num) && (\num_of int i; 0 <= i && i < nums.length; nums[i] == num) == n);
+- ensures \result >= 0 && \result <= 10000;

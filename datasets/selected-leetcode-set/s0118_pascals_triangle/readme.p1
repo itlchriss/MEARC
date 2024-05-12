@@ -1,6 +1,6 @@
 - The integer parameter `numRows` is greater than or equal to 1 and is less than or equal to 30.
-- The integer collection result is a list of lists representing the first `numRows` rows of Pascal's triangle.
-- Each inner list in the integer collection result represents a row of Pascal's triangle.
-- The first element of each inner list is always 1.
-- The last element of each inner list is always 1.
-- Each element in the inner lists (except the first and last elements) is the sum of the two numbers directly above it in the previous row.
+- The list result contains `numRows` number of lists.
+- Each list in the result list represents a row in Pascal's triangle.
+- The first list in the result list contains one element which is always 1.
+- Each subsequent list in the result list starts and ends with 1.
+- The elements in between 1 in each list are the sum of the two elements directly above them in the previous row.
