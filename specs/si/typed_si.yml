@@ -3,11 +3,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'boolean'
-    reference_type: 'undefined'
+    primitive_type: '0'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'boolean'
-    reference_type: 'undefined'
+    primitive_type: '0'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
@@ -15,11 +15,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'short'
-    reference_type: 'undefined'
+    primitive_type: '3'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'short'
-    reference_type: 'undefined'
+    primitive_type: '3'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
@@ -27,11 +27,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
@@ -39,11 +39,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'long'
-    reference_type: 'undefined'
+    primitive_type: '5'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'long'
-    reference_type: 'undefined'
+    primitive_type: '5'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
@@ -51,11 +51,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'float'
-    reference_type: 'undefined'
+    primitive_type: '6'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'float'
-    reference_type: 'undefined'
+    primitive_type: '6'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: negative
@@ -63,11 +63,11 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'double'
-    reference_type: 'undefined'
+    primitive_type: '7'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'double'
-    reference_type: 'undefined'
+    primitive_type: '7'
+    reference_type: '-1'
   interpretation_type: 'modifier'
   interpretation: -(Subj)
 - term: greater_than_or_equal
@@ -75,11 +75,11 @@
   - JJ
   arguments:  
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'expression'
   interpretation: (Subj) >= (Dat)
 - term: greater_than
@@ -87,11 +87,11 @@
   - JJ
   arguments:  
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'expression'
   interpretation: (Subj) > (Dat)
 - term: less_than
@@ -99,11 +99,11 @@
   - JJ
   arguments:  
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'expression'
   interpretation: (Subj) < (Dat)
 - term: less_than_or_equal
@@ -111,11 +111,11 @@
   - JJ
   arguments:  
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'expression'
   interpretation: (Subj) <= (Dat)
 - term: literal
@@ -123,16 +123,16 @@
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: ''
 - term: null
   syntax:
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   interpretation_type: 'expression'
   interpretation: '(Subj) == null'
 - term: null
@@ -140,8 +140,8 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   interpretation_type: 'expression'
   interpretation: '(Subj) == null'
 - term: null
@@ -149,8 +149,8 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
     - 'list'
     - 'collection'
@@ -161,8 +161,8 @@
   - JJ
   arguments:
   - symbol: '*'
-    primitive_type: 'undefined'
-    reference_type: 'any'
+    primitive_type: '-1'
+    reference_type: '*'
   interpretation_type: 'java_boolean'
   interpretation: 'true'
 - term: false
@@ -170,8 +170,8 @@
   - JJ
   arguments:
   - symbol: '*'
-    primitive_type: 'undefined'
-    reference_type: 'any'
+    primitive_type: '-1'
+    reference_type: '*'
   interpretation_type: 'java_boolean'
   interpretation: 'false'
 - term: be
@@ -179,27 +179,27 @@
   - VBZ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'undefined'
+    primitive_type: '*'
+    reference_type: '-1'
   - symbol: y
-    primitive_type: 'any'
-    reference_type: 'undefined'
+    primitive_type: '*'
+    reference_type: '-1'
   interpretation: (x) == (y)
 - term: result
   syntax:
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: \result
 - term: prime
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'short'
-    reference_type: 'undefined'
+    primitive_type: '3'
+    reference_type: '-1'
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
     (x)/2; (x)%k != 0))
 - term: prime
@@ -207,8 +207,8 @@
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
     (x)/2; (x)%k != 0))
 - term: prime
@@ -216,8 +216,8 @@
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'long'
-    reference_type: 'undefined'
+    primitive_type: '5'
+    reference_type: '-1'
   interpretation: (x) == 2 || ((x) > 2 && (\forall int k; (x) > 2 && 2 <= k && k <=
     (x)/2; (x)%k != 0))
 - term: even
@@ -225,24 +225,24 @@
   - RB
   arguments:
   - symbol: x
-    primitive_type: 'short'
-    reference_type: 'undefined'
+    primitive_type: '3'
+    reference_type: '-1'
   interpretation: (x) % 2 == 0
 - term: even
   syntax:
   - RB
   arguments:
   - symbol: x
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x) % 2 == 0
 - term: even
   syntax:
   - RB
   arguments:
   - symbol: x
-    primitive_type: 'long'
-    reference_type: 'undefined'
+    primitive_type: '5'
+    reference_type: '-1'
   interpretation: (x) % 2 == 0
 - term: length
   syntax:
@@ -250,8 +250,8 @@
   arguments:
   - symbol: '*'
   synthesised_datatype:
-    primitive_type: 'relative'
-    reference_type: 'relative'
+    primitive_type: 'R'
+    reference_type: 'R'
   interpretation: __REL__length
 - term: size
   syntax:
@@ -264,8 +264,8 @@
   - VBN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   interpretation_type: 'expression'
   interpretation: \forall int k; 0 <= k && k < (x).length-1; (x)[k] __COMP__ (x)[k+1]
 - term: sort
@@ -273,8 +273,8 @@
   - VBN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names: 
       - 'list'      
       - 'collection'
@@ -285,8 +285,8 @@
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: '<='
 - term: descending_order
@@ -294,8 +294,8 @@
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: '>'
 - term: value
@@ -303,24 +303,24 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: __REL__value
 - term: reference
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: (x)
 - term: empty
   syntax:
   - JJ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   interpretation_type: 'expression'
   interpretation: (x).length == 0
 - term: empty
@@ -328,8 +328,8 @@
   - JJ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   interpretation_type: 'expression'
   interpretation: (x).length() == 0
 - term: empty
@@ -337,8 +337,8 @@
   - JJ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
       - 'list'
       - 'collection'
@@ -349,14 +349,14 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'undefined'
+    primitive_type: '*'
+    reference_type: '-1'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'undefined'
+    primitive_type: '*'
+    reference_type: '-1'
   synthesised_datatype:
-    primitive_type: 'boolean'
-    reference_type: 'undefined'
+    primitive_type: '0'
+    reference_type: '-1'
   interpretation_type: 'expression'
   interpretation: (Subj) == (Dat)
 - term: equal
@@ -364,14 +364,14 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   - symbol: Dat
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   synthesised_datatype:
-    primitive_type: 'boolean'
-    reference_type: 'undefined'
+    primitive_type: '0'
+    reference_type: '-1'
   interpretation_type: 'expression'
   interpretation: (Subj).equals((Dat))
 - term: __REL__length
@@ -379,72 +379,72 @@
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).length
 - term: __REL__length
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
     - 'list'
     - 'collection'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).size()
 - term: __REL__length
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).length()
 - term: __REL__size
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).length
 - term: __REL__size
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
       - 'list'
       - 'collection'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).size()
 - term: __REL__size
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   synthesised_datatype:
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: (x).length()
 - term: element
   syntax:
@@ -452,19 +452,19 @@
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: __REL__element
 - term: in
   syntax:
   - IN
   arguments:
   - symbol: y
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   - symbol: Subj
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
     - __REL__element
     - __REL__value
@@ -485,12 +485,105 @@
   - Rel
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   - symbol: y
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: REL(x,y)
+- term: type_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
+- term: type_list_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '2'
+  interpretation: ''
+- term: type_string_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '1'
+  interpretation: ''
+- term: type_character_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '2'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_arrays_
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
+- term: type_integer_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '4'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_double_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '7'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_long_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '5'
+    reference_type: '-1'
+  interpretation: ''
+- term: type_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '*'
+    reference_type: '0'
+  interpretation: ''
+- term: type_boolean_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: '0'
+    reference_type: '-1'
+  interpretation: ''
 - term: keyword_result
   syntax:
   - NN
@@ -510,14 +603,14 @@
   - IN
   arguments:
   - symbol: x
-    primitive_type: 'relative'
-    reference_type: 'relative'
+    primitive_type: 'R'
+    reference_type: 'R'
   - symbol: y
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   synthesised_datatype:
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: __INVOKE__REL__
 - term: __REL__element
@@ -525,47 +618,47 @@
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   synthesised_datatype:
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: (x)[i]
 - term: __REL__element
   syntax:
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   synthesised_datatype:
-    primitive_type: 'character'
-    reference_type: 'any'
+    primitive_type: '2'
+    reference_type: '*'
   interpretation: (x).charAt(i)
 - term: __REL__element
   syntax:
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
     - 'list'
     - 'collection'
   synthesised_datatype:
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation: (x).get(i)
 - term: __REL__value
   syntax:
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
   synthesised_datatype:
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: (x)[i]
 - term: __REL__value
@@ -573,11 +666,11 @@
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'string'
+    primitive_type: '*'
+    reference_type: '1'
   synthesised_datatype:
-    primitive_type: 'character'
-    reference_type: 'any'
+    primitive_type: '2'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: (x).charAt(i)
 - term: __REL__value
@@ -585,14 +678,14 @@
   - NNS
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     type_names:
     - 'list'
     - 'collection'
   synthesised_datatype:
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'modifier'
   interpretation: (x).get(i)
 - term: unique
@@ -600,8 +693,8 @@
   - JJ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'object'
+    primitive_type: '*'
+    reference_type: '2'
     lazy_resolve: __REF__type
     type_names:
     - 'list'
@@ -613,8 +706,8 @@
   - JJ
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
     lazy_resolve: __REF__type
   interpretation_type: 'expression'
   interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
@@ -623,8 +716,8 @@
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
-    reference_type: 'array'
+    primitive_type: '*'
+    reference_type: '0'
     lazy_resolve: __REF__type
   interpretation_type: 'expression'
   interpretation: \sum int i; 0 <= i < __REF__type.length; (x)
@@ -633,11 +726,11 @@
   - VBN
   arguments:
   - symbol: Subj
-    primitive_type: 'integer'    
-    reference_type: 'undefined'
+    primitive_type: '4'    
+    reference_type: '-1'
   - symbol: Acc
-    primitive_type: 'integer'    
-    reference_type: 'undefined'
+    primitive_type: '4'    
+    reference_type: '-1'
   interpretation_type: 'expression'
   interpretation: (Acc) % (Subj) == 0
 - term: comma
@@ -646,8 +739,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_char'
   interpretation: "','"
 - term: period
@@ -656,8 +749,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_char'
   interpretation: "'.'"
 - term: alphabet
@@ -665,8 +758,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isAlphabetic'
 - term: digit
@@ -674,8 +767,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isDigit'
 - term: alphanumeric
@@ -683,8 +776,8 @@
   - NN
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLetter'
 - term: space
@@ -693,8 +786,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_method'
   interpretation: 'Character.isWhitespace'
 - term: symbol
@@ -703,8 +796,8 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   interpretation_type: 'java_method_chain'
   interpretation: " && ,!Character.isLetter,!Character.isWhitespace"
 - term: lowercase_alphabets
@@ -712,11 +805,11 @@
   - NNS
   arguments:
   - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
+    primitive_type: '*'
+    reference_type: '*'
   synthesised_datatype:
-    primitive_type: 'character'
-    reference_type: 'undefined'
+    primitive_type: '2'
+    reference_type: '-1'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLowerCase'
 - term: contain_only
@@ -726,8 +819,8 @@
   - VBP
   arguments:
   - symbol: 'Subj'
-    primitive_type: 'undefined'
-    reference_type: 'string'
+    primitive_type: '-1'
+    reference_type: '1'
   - symbol: 'Acc'
     interpretation_type: 'java_method'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).charAt(i))'
@@ -739,11 +832,11 @@
   - VBG
   arguments:
   - symbol: 'Subj'
-    primitive_type: 'undefined'
-    reference_type: 'string'
+    primitive_type: '-1'
+    reference_type: '1'
   - symbol: 'Acc'
-    primitive_type: 'character'
-    reference_type: 'undefined'
+    primitive_type: '2'
+    reference_type: '-1'
   spec_init_type: 'char'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).charAt(i)'
 - term: contain
@@ -754,8 +847,8 @@
   - VBG
   arguments:
   - symbol: 'Subj'
-    primitive_type: 'undefined'
-    reference_type: 'string'
+    primitive_type: '-1'
+    reference_type: '1'
   - symbol: 'Acc'
     interpretation_type: 'java_method'
   spec_init_type: 'char'
@@ -765,14 +858,14 @@
   - NN
   arguments:
   - symbol: 'num'
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: '\forall int i; 0 <= i && i < String.valueOf((num)).length() / 2; String.valueOf((num)).charAt(i) == String.valueOf((num)).charAt(String.valueOf((num)).length() - 1 - i)'
 - term: positive
   syntax:
   - JJ
   arguments:
   - symbol: 'x'
-    primitive_type: 'integer'
-    reference_type: 'undefined'
+    primitive_type: '4'
+    reference_type: '-1'
   interpretation: '(x) >= 0'
