@@ -1,7 +1,7 @@
-SRCPATH=./datasets/selected-leetcode-set/
+SRCPATH=./test
 
 
-total=`find $SRCPATH -type f -name "readme.p1" | sort | xargs wc -l | tail -1 | sed 's/ total//'`
+total=`find $SRCPATH -type f -name "rnl.txt" | sort | head -100 | xargs wc -l | tail -1 | sed 's/ total//'`
 postcount=`grep -r 'ensures' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
 precount=`grep -r 'requires' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
 let p2ok=$(($postcount+$precount))
@@ -12,14 +12,32 @@ p1unreducted=`grep -rl '\\\' $SRCPATH/*/tmp/*.mr | awk 'END {print NR}'`
 p1empty=`find $SRCPATH/ -name "*.mr" -type f -empty | awk 'END {print NR}'`
 let p1ok=$(($total-$p1notok-$p1failed))
 p1percent=`bc -l <<<"($p1ok / $total) * 100"`
-p2percent=`bc -l <<< "($p2ok / $total) * 100"`
+
+
+p2correct_post=`grep -r '//@ ensures' ./fmcheck/input/hart/*/Solution.java | awk 'END {print NR}'`
+p2correct_pre=`grep -r '//@ requires' ./fmcheck/input/hart/*/Solution.java | awk 'END {print NR}'`
+p2wrong_post=`grep -r '// ensures' ./fmcheck/input/hart/*/Solution.java | awk 'END {print NR}'`
+p2wrong_pre=`grep -r '// requires' ./fmcheck/input/hart/*/Solution.java | awk 'END {print NR}'`
+let p2correct=$(($p2correct_post+$p2correct_pre))
+let p2total=$(($p2correct_post+$p2correct_pre+$p2wrong_post+$p2wrong_pre))
+
+
+llmtotal=`grep -E '^\/\/\s?[^#]+' ./fmcheck/input/gpt35/*/Solution.java | grep -v '#' | wc -l`
+llmp2correct_post=`grep -r '//@ ensures' ./fmcheck/input/gpt35/*/Solution.java | awk 'END {print NR}'`
+llmp2correct_pre=`grep -r '//@ requires' ./fmcheck/input/gpt35/*/Solution.java | awk 'END {print NR}'`
+llmp2wrong=`grep -r '//' ./fmcheck/input/gpt35/*/Solution.java | grep -v '#' | grep -v '@' | awk 'END {print NR}'`
+let llmcorrect=$(($llmp2correct_post+$llmp2correct_pre))
+
+p2percent=`bc -l <<< "($p2total / $total) * 100"`
 echo 'Total sentence processed: ' $total
 echo 'P1 success cases: ' $p1ok
 echo 'P1 failed cases: ' $p1failed
 echo 'P1 empty MR cases: ' $p1empty
 echo 'Derivation error in result: ' $derivationerror
 echo 'P1 reducted incompletely cases: ' $p1unreducted
-echo 'P2 success cases: ' $p2ok
+echo 'translation success cases: ' $p2total
 echo 'P1 successful rate: ' $p1percent
-echo 'P2 successful rate out of all sentences: ' $p2percent
-echo 'P2 successful rate out of all MRs: ' `bc -l <<< "($p2ok / $p1ok) * 100"`
+echo 'translation successful rate out of all sentences: ' $p2percent
+echo 'translation successful rate out of all MRs: ' `bc -l <<< "($p2total / $p1ok) * 100"`
+echo 'translation correct rate(regarding syntax and semantic): ' `bc -l <<< "($p2correct/$p2total) * 100"` "$p2correct out of $p2total"
+echo 'LLM correct rate(regarding syntax and semantic):' `bc -l <<< "($llmcorrect/$llmtotal) * 100"` "$llmcorrect out of $llmtotal"

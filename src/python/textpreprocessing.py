@@ -6,7 +6,7 @@ from typing import Dict, List, Tuple
 from preprocess.engine import runengine
 
 modelspecspath = './specs/models'
-sispecspath = './specs/si/std_si_2023.yml'
+sispecspath = './specs/si/typed_si.yml'
 
     
 

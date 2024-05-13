@@ -41,10 +41,24 @@ void showprocessinfo(char *msg) {
 #endif
 
 int get_datatype(char *s) {
-    if (strcmp(s, "*") == 0) return ANY;
-    else if (strcmp(s, "R") == 0) return RELTYPE;
-    else if (strcmp(s, "-1") == 0) return UNDEFINED;
-    else return atoi(s);
+    if (strcmp(s, "any") == 0) return ANY;
+    else if (strcmp(s, "relative") == 0) return RELTYPE;
+    else if (strcmp(s, "undefined") == 0) return UNDEFINED;
+    else if (strcmp(s, "boolean") == 0) return Boolean;
+    else if (strcmp(s, "byte") == 0) return Byte;
+    else if (strcmp(s, "character") == 0) return Char;
+    else if (strcmp(s, "short") == 0) return Short;
+    else if (strcmp(s, "integer") == 0) return Integer;
+    else if (strcmp(s, "long") == 0) return Long;
+    else if (strcmp(s, "float") == 0) return Float;
+    else if (strcmp(s, "double") == 0) return Double;
+    else if (strcmp(s, "string") == 0) return String;
+    else if (strcmp(s, "array") == 0) return Array;
+    else if (strcmp(s, "object") == 0) return Object;
+    else {
+        sisyntax_error("Invalid primitive type used in SI file", "primitive_type", s);
+        return -1;
+    }
 }
 
 
@@ -325,6 +339,8 @@ struct queue* readSI(char *dstfilepaths) {
                                                 arg->datatype->i = SI_INT_TYPE_JAVA_METHOD;
                                             } else if (strcmp((char *)token.data.scalar.value, "java_method_chain") == 0) {
                                                 arg->datatype->i = SI_INT_TYPE_JAVA_METHOD_CHAIN;
+                                            } else if (strcmp((char *)token.data.scalar.value, "java_type") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_JAVA_TYPE;
                                             } else {                                
                                                 arg->datatype->i = SI_INT_TYPE_UNDEFINED;
                                             }
@@ -456,6 +472,8 @@ struct queue* readSI(char *dstfilepaths) {
                                 si->type = SI_INT_TYPE_JAVA_METHOD;
                             } else if (strcmp(value, "java_method_chain") == 0) { 
                                 si->type = SI_INT_TYPE_JAVA_METHOD_CHAIN;
+                            } else if (strcmp(value, "java_type") == 0) { 
+                                si->type = SI_INT_TYPE_JAVA_TYPE;
                             } else if (strcmp(value, "java_boolean") == 0) {
                                 si->type = 50;
                             } else if (strcmp(value, "java_byte") == 0) {

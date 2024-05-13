@@ -140,4 +140,9 @@ void deallocatedata(void *);
     an exception is 'RelDepend', which is only for predicate 'Rel'
 */
 int has_datatype(struct cstsymbol *cstptr);
+
+/*
+    doing the same as the has_datatype but accepts argument with type struct datatype
+*/
+int datatype_is_specific(struct datatype *dt);
 #endif

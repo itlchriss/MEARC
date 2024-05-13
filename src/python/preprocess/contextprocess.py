@@ -7,10 +7,23 @@ import os
 
 # these are java primitive and reference types
 # we should extend this list to support more data types
-datatypes = [
-    'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays',
-    'string', 'strings', 'matrix', 'boolean'
-    ]
+    # Boolean = 0,
+    # Byte = 1,
+    # Char = 2,
+    # Short = 3,
+    # Integer = 4,
+    # Long = 5,
+    # Float = 6,
+    # Double = 7
+primitive_datatypes = ['boolean', 'byte', 'char', 'short', 'integer', 'long', 'float', 'double', ]
+    # Array = 0,
+    # String = 1,
+    # Object = 2
+reference_datatypes = ['array', 'string', 'object']
+# datatypes = [
+#     'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays',
+#     'string', 'strings', 'matrix', 'boolean'
+#     ]
 
 
 rulespath = './rules'
@@ -37,15 +50,30 @@ class ContextProcessor:
     def _parameter_syntax_processor(self):
         # contextual_si = self.contextual_si
         sent = self.sent
+        combined_datatypes = ['%s %s' % (p, r) for p in primitive_datatypes for r in reference_datatypes]
+        for c in combined_datatypes:
+            if c + ' parameter' in sent:
+                sent = sent.replace(c + ' parameter', 'type_' + c.replace(' ', '_') + ' parameter')
+            if c + ' result' in sent:
+                sent = sent.replace(c + ' result', 'type_' + c.replace(' ', '_') + ' result')
+        
+        for p in primitive_datatypes:
+            if p + ' parameter' in sent:
+                sent = sent.replace(p + ' parameter', 'type_' + p + ' parameter')
+            if p + ' result' in sent:
+                sent = sent.replace(p + ' result', 'type_' + p + ' result')
+        
         # print('before cp: ', sent)
-        if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
-            for type, param in r:
-                # print(type, param)
-                sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
-                # contextual_si['PARAM_type_%s_sym_%s' % (type, param)] = param
-                # contextual_si['param_%s' % (param)] = param
-        # elif r := re.findall(r'`[0-9a-zA-Z_]+`', sent, re.ASCII):
-        elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
+        # if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
+        #     for type, param in r:
+        #         sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
+        # elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
+        # if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
+            # for type, param in r:
+                # sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
+        # elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
+        
+        if r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
             # the case of composite subject/object with two parameters
             # we should convert both of them
             for param in r[0]:
@@ -62,13 +90,15 @@ class ContextProcessor:
         # NOTE: there can be words representing types, but there are no keywords such as 'input', 'parameter'
         #       after doing the above operations, if the words listed in the datatypes have no conflicts with the parameter symbols, 
         #       we also treat them as types
-        words = sent.split(' ')
-        for d in datatypes:
-            indices = [i for i, w in enumerate(words) if w == d]
-            if indices:
-                for index in indices:
-                    words[index] = 'type_' + words[index] + '_'
-        self.sent = ' '.join(words)
+        # words = sent.split(' ')
+        # for d in datatypes:
+        #     indices = [i for i, w in enumerate(words) if w == d]
+        #     if indices:
+        #         for index in indices:
+        #             words[index] = 'type_' + words[index] + '_'
+        
+        
+        # self.sent = ' '.join(words)
         
         # NOTE: because LLM has already recognised the parameter. If 'param_' exists, it means that LLM has provided the parameter information and we have tackled it.
         #       therefore, in this case, the word 'parameter' can be skipped.

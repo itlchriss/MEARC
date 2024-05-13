@@ -8,7 +8,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=gnu11 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o alias.o error.o event.o
+OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o alias.o error.o event_struct.o event_synthesis.o sshare.o command.o preposition_synthesis.o relative_synthesis.o adjective_synthesis.o cardinalnumber_synthesis.o noun_synthesis.o
 DEBUG   ?=      0
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -115,8 +115,29 @@ sst.o  : $(SRC)/sst.c
 cst.o  : $(SRC)/cst.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cst.o $<
 
-event.o  : $(SRC)/event.c
-		$(CC) $(CFLAGS) -c -o $(BUILD)/event.o $<
+event_struct.o  : $(SRC)/event_struct.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/event_struct.o $<
+
+sshare.o  : $(SRC)/synthesis/share.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/sshare.o $<
+
+command.o  : $(SRC)/synthesis/command.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/command.o $<
+
+preposition_synthesis.o  : $(SRC)/synthesis/preposition.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/preposition_synthesis.o $<
+
+relative_synthesis.o  : $(SRC)/synthesis/relative.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/relative_synthesis.o $<
+
+adjective_synthesis.o  : $(SRC)/synthesis/adjective.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/adjective_synthesis.o $<
+
+noun_synthesis.o  : $(SRC)/synthesis/noun.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/noun_synthesis.o $<
+
+cardinalnumber_synthesis.o  : $(SRC)/synthesis/cardinalnumber.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/cardinalnumber_synthesis.o $<
 
 alias.o  : $(SRC)/alias.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/alias.o $<
@@ -137,6 +158,9 @@ si.o	: $(SRC)/si.c
 error.o	: $(SRC)/error.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/error.o $<		
 
+event_synthesis.o: $(SRC)/synthesis/event.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/event_synthesis.o $<		
+
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
 parser.o						:       $(BUILD)/tok.h 
@@ -144,11 +168,11 @@ lex.o							: 	$(BUILD)/tok.h
 ast.o							:   $(INCL)/ast.h $(INCL)/cst.h
 main.o							:   $(INCL)/si.h $(INCL)/alias.h
 util.o							:   $(INCL)/util.h
-cst.o							:   $(INCL)/util.h 
+cst.o							:   $(INCL)/util.h
 cg.o							:   $(INCL)/util.h $(INCL)/cg.h
 alias.o							:	$(INCL)/alias.h
 si.o							:   $(INCL)/si.h 
-event.o							: 	$(INCL)/event.h
+event-struct.o							: 	$(INCL)/event.h
 error.o							:   $(INCL)/error.h
 clean:
 	rm -rf $(BUILD)/*

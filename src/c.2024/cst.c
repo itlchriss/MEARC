@@ -46,15 +46,24 @@ struct cstsymbol *newcstsymbol(char *symbol) {
 }
 
 
+int datatype_is_specific(struct datatype *dt) {
+    if (dt->p >= 0 || dt->r >= 0) return TRUE;
+    else return FALSE;
+}
+
+
 /* 
     providing a checking on a valid datatype that is ready for synthesis
     basically, the data types that have prefix 'Java' are ready for synthesis
     an exception is 'RelDepend', which is only for predicate 'Rel'
 */
 int has_datatype(struct cstsymbol *cstptr) {
-    if (cstptr->datatype->p >= 0 || cstptr->datatype->r >= 0) return TRUE;
-    else return FALSE;
+    // if (cstptr->datatype->p >= 0 || cstptr->datatype->r >= 0) return TRUE;
+    // else return FALSE;
+    return datatype_is_specific(cstptr->datatype);
 }
+
+
 
 
 int __cstsymbolcomparator(void *_pt, void *_symbol) {
