@@ -3,6 +3,9 @@
 - The boolean result is equal to true if and only if the integer array parameter `arr` is a valid mountain array.
 - The integer array parameter `arr` is a valid mountain array if and only if:
     - The length of the integer array parameter `arr` is greater than or equal to 3.
-    - There exists an index `i` such that 0 is less than `i` and `i` is less than the length of the integer array parameter `arr` minus 1, and:
-        - All elements from index 0 to index `i` are in ascending order.
-        - All elements from index `i` to the end of the array are in descending order.
+    - There exists an index `i` such that 0 < `i` < length of `arr` - 1 where:
+        - All elements from index 0 to `i` are in increasing order.
+        - All elements from index `i` to the end are in decreasing order.
+- If the integer array parameter `arr` is equal to [2,1], the boolean result is equal to false.
+- If the integer array parameter `arr` is equal to [3,5,5], the boolean result is equal to false.
+- If the integer array parameter `arr` is equal to [0,3,2,1], the boolean result is equal to true.

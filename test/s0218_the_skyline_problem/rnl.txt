@@ -1,7 +1,10 @@
 - The length of the integer array parameter `buildings` is less than or equal to 10000 and is greater than or equal to 1.
-- All values in the integer array parameter `buildings` are arrays of length 3, where the first element is the x coordinate of the left edge of the building, the second element is the x coordinate of the right edge of the building, and the third element is the height of the building.
-- All values in the integer array result are arrays of length 2, where the first element is the x coordinate and the second element is the height of the key point.
-- The integer value of the second element in each array in the integer array result is greater than or equal to 0.
-- The integer array result is sorted by the x-coordinate of the key points in non-decreasing order.
-- There are no consecutive key points with the same height in the integer array result.
-- The last key point in the integer array result has a height of 0 to mark the skyline's termination where the rightmost building ends.
+- Each element in the integer array parameter `buildings` is an array of three integers `[left_i, right_i, height_i]`.
+- The integer value of `left_i` is less than or equal to the integer value of `right_i`.
+- The integer value of `left_i` is greater than or equal to 0 and is less than or equal to 2^31 - 1.
+- The integer value of `right_i` is greater than or equal to 0 and is less than or equal to 2^31 - 1.
+- The integer value of `height_i` is greater than or equal to 1 and is less than or equal to 2^31 - 1.
+- The integer array result is a list of key points sorted by their x-coordinate in the form `[[x1,y1],[x2,y2],...]`.
+- Each key point represents the left endpoint of a horizontal segment in the skyline except for the last point which always has a y-coordinate of 0.
+- There are no consecutive horizontal lines of equal height in the output skyline.
+- The ground between the leftmost and rightmost buildings is part of the skyline's contour.
