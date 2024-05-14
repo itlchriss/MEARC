@@ -7,25 +7,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-//@ non_null_by_default
 public class Solution {
-//@ ensures(*Preconditions:*);
-//@ ensures(*The input array `num` must not be null.*);
-//@ ensures(*The length of the input array `num` must be greater than or equal to 1.*);
-//@ ensures(*The elements of the input array `num` must be integers between 0 and 9 (inclusive).*);
-//@ ensures(*The input integer `k` must be greater than or equal to 1.*);
-//@ ensures(**);
-//@ ensures(*Postconditions:*);
-//@ ensures(*The output list must not be null.*);
-//@ ensures(*The length of the output list must be equal to the length of the input array `num` or one greater.*);
-//@ ensures(*The elements of the output list must be integers between 0 and 9 (inclusive).*);
-//@ ensures(*The output list must represent the array-form of the sum of `num` and `k`.*);
+//@ requires(*The length of the integer array parameter `num` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `num` are less than or equal to 9 and are greater than or equal to 0.*);
+//@ requires(*The integer parameter `k` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `num` or is greater by 1 if there is a carry from the addition of `num` and `k`.*);
+//@ ensures(*All the values in the integer array result are less than or equal to 9 and are greater than or equal to 0.*);
+//@ ensures(*If the integer array parameter `num` is equal to [1,2,0,0] and the integer parameter `k` is equal to 34, the integer array result is equal to [1,2,3,4].*);
+//@ ensures(*If the integer array parameter `num` is equal to [2,7,4] and the integer parameter `k` is equal to 181, the integer array result is equal to [4,5,5].*);
+//@ ensures(*If the integer array parameter `num` is equal to [2,1,5] and the integer parameter `k` is equal to 806, the integer array result is equal to [1,0,2,1].*);
     public List<Integer> addToArrayForm(int[] num, int k) {
         ArrayList<Integer> result = new ArrayList<>();
         int carry = 0;
-        //@ havoc carry;
-        //@ loop_writes carry;
-        //@ maintaining 0 <= i <= num.length - 1 || i <= -1;
         for (int i = num.length - 1; i >= 0; i--) {
             int temp = num[i] + k % 10 + carry;
             result.add(temp % 10);

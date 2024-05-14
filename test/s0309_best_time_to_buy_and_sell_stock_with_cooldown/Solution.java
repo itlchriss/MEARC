@@ -53,11 +53,11 @@ public class Solution {
      * Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to O(1).
      * And here we are at our final solution:
      */
-//@ requires(*The integer array parameter `prices` must not be null.*);
-//@ requires(*The integer array parameter `prices` length is greater than or equal to 1 and is less than or equal to 5000.*);
-//@ requires(*All values in the integer array parameter `prices` are greater than or equal to 0 and are less than or equal to 1000.*);
-//@ ensures(*The integer result is the maximum profit that can be achieved by completing transactions based on the given restrictions.*);
-//@ ensures(*The integer result is greater than or equal to 0.*);
+//@ requires(*The length of the integer array parameter `prices` is less than or equal to 5000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `prices` are less than or equal to 1000 and are greater than or equal to 0.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
+//@ ensures(*If the integer array parameter `prices` is equal to [1,2,3,0,2], the integer result is equal to 3.*);
+//@ ensures(*If the integer array parameter `prices` is equal to [1], the integer result is equal to 0.*);
     public int maxProfit(int[] prices) {
         int sell = 0;
         int prevSell = 0;

@@ -7,9 +7,12 @@ package g0001_0100.s0072_edit_distance;
 
 @SuppressWarnings("java:S2234")
 public class Solution {
-//@ requires(*The string parameter `word1` and the string parameter `word2` consist of lowercase English letters.*);
-//@ requires(*The length of the string parameter `word1` and the string parameter `word2` is less than or equal to 500.*);
-//@ ensures(*The integer result is the minimum number of operations required to convert the string parameter `word1` to the string parameter `word2`.*);
+//@ requires(*The length of the string parameter `w1` is less than or equal to 500 and is greater than or equal to 0.*);
+//@ requires(*The length of the string parameter `w2` is less than or equal to 500 and is greater than or equal to 0.*);
+//@ requires(*All characters in the string parameter `w1` and `w2` are lowercase English letters.*);
+//@ ensures(*The integer result is equal to the minimum number of operations required to convert `w1` to `w2`.*);
+//@ ensures(*If the string parameter `w1` is equal to "horse" and the string parameter `w2` is equal to "ros", the integer result is equal to 3.*);
+//@ ensures(*If the string parameter `w1` is equal to "intention" and the string parameter `w2` is equal to "execution", the integer result is equal to 5.*);
     public int minDistance(String w1, String w2) {
         int n1 = w1.length();
         int n2 = w2.length();

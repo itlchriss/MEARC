@@ -1,5 +1,6 @@
 ensures:
 - The type_string_ result is the base 7 representation of the type_integer_ param_num_.
-- The type_string_ result may contain a negative sign if the type_integer_ param_num_ is negative.
+- If the type_integer_ param_num_ is equal to 100 , the type_string_ result is equal to str_a.
+- If the type_integer_ param_num_ is equal to negative 7 , the type_string_ result is equal to str_a.
 requires:
-- The type_integer_ param_num_ is greater_than_or_equal to negative 10000000 and is less_than_or_equal to 10000000.
+- The type_integer_ param_num_ is less_than_or_equal to 10000000 and is greater_than_or_equal to negative 10000000.

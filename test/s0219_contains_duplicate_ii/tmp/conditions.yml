@@ -1,7 +1,7 @@
 ensures:
-- If there exist two unique indices expr_a and expr_b in the type_integer_ type_array_ param_nums_ such that the elements at those indices are equal and the absolute difference between expr_c and expr_d is less_than_or_equal to the type_integer_ param_k_ , the type_boolean_ result is equal to the true literal.
-- If there does not exist two unique indices expr_a and expr_b in the type_integer_ type_array_ param_nums_ such that the elements at those indices are equal and the absolute difference between expr_c and expr_d is less_than_or_equal to the type_integer_ param_k_ , the type_boolean_ result is equal to the false literal.
+- If the type_boolean_ result is equal to the true literal , there exist two unique indices expr_a and expr_b in the type_integer_array_ param_nums_ such that expr_c and the absolute difference between expr_d and expr_e is less_than_or_equal to the type_integer_ param_k_.
+- If the type_boolean_ result is equal to the false literal , there does not exist two unique indices expr_a and expr_b in the type_integer_array_ param_nums_ such that expr_c and the absolute difference between expr_d and expr_e is less_than_or_equal to the type_integer_ param_k_.
 requires:
-- The length of the type_integer_ type_array_ param_nums_ is less_than_or_equal to 100000.
-- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 1000000000 and are less_than_or_equal to 1000000000.
-- The type_integer_ param_k_ is less_than_or_equal to 100000.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to negative 1000000000.
+- The type_integer_ param_k_ is less_than_or_equal to 100000 and is greater_than_or_equal to 0.

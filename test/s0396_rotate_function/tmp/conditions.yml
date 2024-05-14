@@ -1,7 +1,7 @@
 ensures:
-- The type_integer_ result is the maximum value of the rotation function expr_a.
-- The type_integer_ result is less_than_or_equal to the maximum value of a 32-bit type_integer_.
+- The type_integer_ result is less_than_or_equal to the maximum value of java integer and is greater_than_or_equal to the minimum value of java integer.
+- If the type_integer_array_ param_nums_ is equal to [4 , 3 , 2 , 6] , the type_integer_ result is equal to 26.
+- If the type_integer_array_ param_nums_ is equal to [100] , the type_integer_ result is equal to 0.
 requires:
-- The type_integer_ type_array_ param_nums_ is not null.
-- The type_integer_ type_array_ param_nums_'s length is equal to the type_integer_ param_n_.
-- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 100 and are less_than_or_equal to 100.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 100 and are greater_than_or_equal to negative 100.

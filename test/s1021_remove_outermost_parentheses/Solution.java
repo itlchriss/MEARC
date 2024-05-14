@@ -6,14 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ ensures(*Preconditions:*);
-//@ ensures(*The input string `s` is a valid parentheses string.*);
-//@ ensures(*The length of `s` is between 1 and 10^5.*);
-//@ ensures(*Each character in `s` is either '(' or ')'.*);
-//@ ensures(**);
-//@ ensures(*Postconditions:*);
-//@ ensures(*The output is a string that represents `s` after removing the outermost parentheses of every primitive string in the primitive decomposition of `s`.*);
-//@ ensures(*The output string is a valid parentheses string.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*The string parameter `s` is a valid parentheses string.*);
+//@ ensures(*The string result is obtained by removing the outermost parentheses of every primitive string in the primitive decomposition of the string parameter `s`.*);
+//@ ensures(*If the string parameter `s` is equal to "(()())(())", the string result is equal to "()()()".*);
+//@ ensures(*If the string parameter `s` is equal to "(()())(())(()(()))", the string result is equal to "()()()()(())".*);
+//@ ensures(*If the string parameter `s` is equal to "()()", the string result is equal to "".*);
     public String removeOuterParentheses(String s) {
         List<String> primitives = new ArrayList<>();
         int i = 1;

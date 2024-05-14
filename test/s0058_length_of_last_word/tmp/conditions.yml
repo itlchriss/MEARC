@@ -1,6 +1,9 @@
 ensures:
-- The type_integer_ result is the length of the last word in the type_string_ param_s_.
+- The type_integer_ result is less_than_or_equal to the length of the last word in the type_string_ param_s_.
+- If the type_string_ param_s_ is equal to "Hello World" , the type_integer_ result is equal to 5.
+- If the type_string_ param_s_ is equal to " fly me to the moon " , the type_integer_ result is equal to 4.
+- If the type_string_ param_s_ is equal to "luffy is still joyboy" , the type_integer_ result is equal to 6.
 requires:
-- The type_string_ param_s_ only contains alphabets and spaces `' '`.
-- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
-- A word is a maximal substring containing non-space characters only.
+- The length of the type_string_ param_s_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- The type_string_ param_s_ only contains alphabets and spaces period.
+- There will be at least one word in the type_string_ param_s_.

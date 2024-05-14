@@ -1,14 +1,13 @@
 ensures:
-- The type_integer_ type_array_  param_arr_ must have a length greater_than_or_equal
-  to 3.
-- There exists an type_integer_ expr0 such that expr1 and the following conditions
-  are met:.
-- '    - The elements of the type_array_ expr0 from index 0 to index expr1 are in
-  ascending order.'
-- '    - The elements of the type_array_ expr0 from index expr1 to the last index
-  are in descending order.'
-- If the conditions above are met ,  the type_boolean_ result is equal to the true
-  literal.
-- If the conditions above are not met ,  the type_boolean_ result is equal to the
-  false literal.
-requires: []
+- The type_boolean_ result is equal to the true literal if and only if the type_integer_array_ param_arr_ is a valid mountain array.
+- If the type_integer_array_ param_arr_ is equal to [2 , 1] , the type_boolean_ result is equal to the false literal .
+- If the type_integer_array_ param_arr_ is equal to [3 , 5 , 5] , the type_boolean_ result is equal to the false literal .
+- If the type_integer_array_ param_arr_ is equal to [0 , 3 , 2 , 1] , the type_boolean_ result is equal to the true literal .
+requires:
+- The length of the type_integer_array_ param_arr_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_arr_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.
+- The type_integer_array_ param_arr_ is a valid mountain array if and only if:.
+- ' - The length of the type_integer_array_ param_arr_ is greater_than_or_equal to 3.'
+- ' - There exists an index expr_a such that 0 < expr_b < length of expr_c - 1 that :.'
+- ' - All elements from index 0 to expr_a are in ascending_order .'
+- ' - All elements from index expr_a to the end are in decreasing order.'

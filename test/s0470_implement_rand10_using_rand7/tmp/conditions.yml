@@ -1,7 +1,8 @@
 ensures:
-- The type_integer_ result after executing the method expr_a is in the range expr_b.
+- The type_integer_ result is greater_than_or_equal to 1 and is less_than_or_equal to 10.
 requires:
-- The method expr_a can only call the expr_b API and should not call any other API.
-- The number of times the implemented function expr_a will be called while testing is provided as an internal argument expr_b.
-- The method expr_a should return a type_list_ of integers representing the random numbers generated in the range expr_b for each call.
-- The constraints for the internal argument expr_a are expr_b.
+- The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 100000.
+- The function expr_a can only call the API expr_b and should not call any other API.
+- The function expr_a should generate a uniform random integer in the range [1 , 10].
+- The function expr_a should be implemented in such a way that it uses the expr_b API to generate the random integer in the range [1 , 10].
+- The function expr_a should be able to handle multiple calls with different values of expr_b and generate the corresponding random integers in the range [1 , 10].

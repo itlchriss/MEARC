@@ -4,10 +4,13 @@ package g0401_0500.s0415_add_strings;
 // #2022_07_16_Time_3_ms_(82.41%)_Space_43.1_MB_(66.56%)
 
 public class Solution {
-//@ requires(*The string parameters `num1` and `num2` consist of only digits.*);
-//@ requires(*The string parameters `num1` and `num2` don't have any leading zeros except for the zero itself.*);
-//@ requires(*The length of the string parameters `num1` and `num2` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ ensures(*The string result is the sum of the string parameters `num1` and `num2` as a string.*);
+//@ requires(*The length of the string parameter `num1` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The length of the string parameter `num2` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The string parameter `num1` consists of only digits and does not have any leading zeros except for zero itself.*);
+//@ requires(*The string parameter `num2` consists of only digits and does not have any leading zeros except for zero itself.*);
+//@ ensures(*The string result is the sum of the string parameter `num1` and the string parameter `num2`.*);
+//@ ensures(*The string result is represented as a string.*);
+//@ ensures(*The string result is equal to the sum of the integer values represented by the string parameter `num1` and the string parameter `num2`.*);
     public String addStrings(String num1, String num2) {
         StringBuilder result = new StringBuilder();
         int carry = 0;

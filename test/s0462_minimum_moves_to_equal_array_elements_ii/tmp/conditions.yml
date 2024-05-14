@@ -1,7 +1,7 @@
 ensures:
-- The type_integer_ result is the minimum number of moves required to make all elements in the type_integer_ type_array_ param_nums_ equal.
+- The type_integer_ result is less_than_or_equal to the maximum value of java integer and is greater_than_or_equal to the minimum value of java integer.
+- If the type_integer_array_ param_nums_ is equal to [1 , 2 , 3] , the type_integer_ result is equal to 2.
+- If the type_integer_array_ param_nums_ is equal to [1 , 10 , 2 , 9] , the type_integer_ result is equal to 16.
 requires:
-- The type_integer_ type_array_ param_nums_ is not null.
-- The type_integer_ type_array_ param_nums_ must have a size is greater_than_or_equal to 1 and is less_than_or_equal to 100000.
-- All elements in the type_integer_ type_array_ param_nums_ is greater_than_or_equal to negative 1000000000 and is less_than_or_equal to 1000000000.
-- Each move can only increment or decrement an element in the type_array_ by 1.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to negative 1000000000.

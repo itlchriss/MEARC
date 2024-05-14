@@ -1,6 +1,7 @@
 ensures:
-- The type_integer_ result is the starting gas station's index if it is possible to travel around the circuit once in the clockwise direction.
-- If it is not possible to travel around the circuit once in the clockwise direction , the type_integer_ result is negative 1.
+- If there exists a solution to travel around the circuit once in the clockwise direction , the type_integer_ result is the starting gas station's index.
+- If exists no solution to travel around the circuit once in the clockwise direction , the type_integer_ result is negative 1.
 requires:
-- The type_integer_ type_array_ param_gas_ and the type_integer_ type_array_ param_cost_ must have the same length.
-- All values in the type_integer_ type_array_ param_gas_ and the type_integer_ type_array_ param_cost_ are greater_than_or_equal to 0 and are less_than_or_equal to 10000.
+- The length of the type_integer_array_ param_gas_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- The length of the type_integer_array_ param_cost_ is equal to the length of the type_integer_array_ param_gas_.
+- All the values in the type_integer_array_ param_gas_ and param_cost_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.

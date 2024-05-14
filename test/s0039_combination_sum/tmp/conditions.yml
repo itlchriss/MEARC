@@ -1,9 +1,10 @@
 ensures:
-- The length of the type_integer_ type_array_ result is less_than_or_equal to 150.
-- Each type_list_ in the type_list_ result is a unique combination of integers from the type_integer_ type_array_ param_candidates_ that sum up to the type_integer_ param_target_.
+- The length of the list result is less_than_or_equal to 150.
+- Each element in the list result is a list of integers representing a unique combination of elements from the type_integer_array_ param_candidates_ that sum up to the type_integer_ param_target_.
+- The order of combinations in the list result does not matter.
 requires:
-- Method behavioural specifications:.
-- The type_integer_ type_array_ param_candidates_ is not null.
-- The type_integer_ param_target_ is greater_than_or_equal to 1 and is less_than_or_equal to 500.
-- The same number from the type_integer_ type_array_ param_candidates_ can be chosen multiple times in a combination.
-- Two combinations are considered unique if the frequency of at least one chosen number is different.
+- The length of the type_integer_array_ param_candidates_ is less_than_or_equal to 30 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_candidates_ are less_than_or_equal to 200 and are greater_than_or_equal to 1.
+- All elements in the type_integer_array_ param_candidates_ are unique .
+- The type_integer_ param_target_ is less_than_or_equal to 500 and is greater_than_or_equal to 1.
+- The same number from the type_integer_array_ param_candidates_ can be chosen multiple times in a single combination.

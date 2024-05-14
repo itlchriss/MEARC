@@ -3,13 +3,13 @@ package g0901_1000.s0925_long_pressed_name;
 // #Easy #String #Two_Pointers #2022_03_29_Time_1_ms_(84.87%)_Space_40.1_MB_(93.12%)
 
 public class Solution {
-//@ ensures(*Preconditions:*);
-//@ ensures(*The lengths of `name` and `typed` are both greater than or equal to 1.*);
-//@ ensures(*`name` and `typed` consist of only lowercase English letters.*);
-//@ ensures(**);
-//@ ensures(*Postconditions:*);
-//@ ensures(*The method returns `true` if it is possible that the characters in `typed` were typed from `name` with some characters (possibly none) being long pressed.*);
-//@ ensures(*The method returns `false` if it is not possible that the characters in `typed` were typed from `name` with some characters (possibly none) being long pressed.*);
+//@ requires(*The length of the string parameter `name` is less than or equal to 1000 and is greater than or equal to 1.*);
+//@ requires(*The length of the string parameter `typed` is less than or equal to 1000 and is greater than or equal to 1.*);
+//@ requires(*The string parameters `name` and `typed` consist of only lowercase English letters.*);
+//@ ensures(*If the string parameter `typed` contains all characters of the string parameter `name`, the boolean result is true.*);
+//@ ensures(*If the string parameter `typed` does not contain all characters of the string parameter `name`, the boolean result is false.*);
+//@ ensures(*If a character in the string parameter `name` is long pressed in the string parameter `typed`, the boolean result is true.*);
+//@ ensures(*If a character in the string parameter `name` is not long pressed in the string parameter `typed`, the boolean result is false.*);
     public boolean isLongPressedName(String name, String typed) {
         int i = 0;
         int j = 0;

@@ -21,18 +21,30 @@
      </rule>
      <rule type="fa" cat="NP\NP">
       <lf start="6" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
-      <rule type="fa" cat="NP[nb]">
-       <lf start="7" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-       <rule type="fa" cat="N">
-        <lf start="8" span="1" word="type_integer_" lemma="type_integer_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
-        <lf start="9" span="1" word="param_num_" lemma="param_num_" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      <rule type="ba" cat="NP">
+       <rule type="fa" cat="NP[nb]">
+        <lf start="7" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+        <rule type="fa" cat="N">
+         <lf start="8" span="1" word="binary" lemma="binary" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+         <lf start="9" span="1" word="representation" lemma="representation" pos="NN" chunk="I-NP" entity="O" cat="N" />
+        </rule>
+       </rule>
+       <rule type="fa" cat="NP\NP">
+        <lf start="10" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+        <rule type="fa" cat="NP[nb]">
+         <lf start="11" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+         <rule type="fa" cat="N">
+          <lf start="12" span="1" word="type_integer_" lemma="type_integer_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+          <lf start="13" span="1" word="param_num_" lemma="param_num_" pos="NN" chunk="I-NP" entity="O" cat="N" />
+         </rule>
+        </rule>
        </rule>
       </rule>
      </rule>
     </rule>
    </rule>
   </rule>
-  <lf start="10" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+  <lf start="14" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
  </rule>
 </ccg>
 </candc>

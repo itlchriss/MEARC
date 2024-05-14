@@ -1,7 +1,5 @@
 ensures:
-- The type_integer_ type_array_  param_nums_ contains expr0 elements.
-- The type_integer_ type_array_  param_nums_ contains expr0 unique elements.
-- Exactly one element in the type_integer_ type_array_  param_nums_ is repeated expr0
-  times.
-- The type_integer_ result is the element that is repeated expr0 times.
-requires: []
+- The type_integer_ result is equal to the value that is repeated expr_a times in the type_integer_array_ param_nums_.
+requires:
+- The length of the type_integer_array_ param_nums_ is equal to twice the type_integer_ param_n_.
+- All the values in the type_integer_array_ param_nums_ are unique , except for one value which is repeated expr_a times.

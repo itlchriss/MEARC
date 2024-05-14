@@ -85,10 +85,10 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         sent += '.'    
     for k in dynamic_si.keys():
         v = dynamic_si[k]
-        p = '*'
-        r = '*'
-        sp = '0'
-        sr = '1'
+        p = 'any'
+        r = 'any'
+        sp = 'undefined'
+        sr = 'string'
             
         d = {
             'term': k,

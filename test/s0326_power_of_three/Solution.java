@@ -5,9 +5,9 @@ package g0301_0400.s0326_power_of_three;
 
 public class Solution {
     // regular method that has a loop
-//@ requires(*The integer parameter `n` is greater than or equal to -2^31 and is less than or equal to 2^31 - 1.*);
-//@ ensures(*If the integer parameter `n` is a power of three, the boolean result is equal to the true literal.*);
-//@ ensures(*If the integer parameter `n` is not a power of three, the boolean result is equal to the false literal.*);
+//@ requires(*The integer parameter `n` is greater than or equal to -2147483648 and is less than or equal to 2147483647.*);
+//@ ensures(*If the boolean result is equal to true, there exists an integer `x` such that `n` is equal to 3 raised to the power of `x`.*);
+//@ ensures(*If the boolean result is equal to false, there does not exist an integer `x` such that `n` is equal to 3 raised to the power of `x`.*);
     public boolean isPowerOfThree(int n) {
         if (n < 3 && n != 1) {
             return false;

@@ -4,11 +4,13 @@ package g0001_0100.s0067_add_binary;
 // #2023_08_11_Time_1_ms_(100.00%)_Space_41.6_MB_(36.86%)
 
 public class Solution {
-//@ requires(*The string parameters `a` and `b` consist only of '0' or '1' characters.*);
-//@ requires(*The length of the string parameters `a` and `b` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ requires(*The string parameters `a` and `b` do not contain leading zeros except for the zero itself.*);
-//@ ensures(*The string result is the sum of the binary strings `a` and `b`.*);
-//@ ensures(*The string result consists only of '0' or '1' characters.*);
+//@ requires(*The length of the string parameter `a` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The length of the string parameter `b` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The string parameter `a` consists only of '0' or '1' characters.*);
+//@ requires(*The string parameter `b` consists only of '0' or '1' characters.*);
+//@ ensures(*The string result is a binary string.*);
+//@ ensures(*If the string parameter `a` is equal to "11" and the string parameter `b` is equal to "1", the string result is equal to "100".*);
+//@ ensures(*If the string parameter `a` is equal to "1010" and the string parameter `b` is equal to "1011", the string result is equal to "10101".*);
     public String addBinary(String a, String b) {
         char[] aArray = a.toCharArray();
         char[] bArray = b.toCharArray();

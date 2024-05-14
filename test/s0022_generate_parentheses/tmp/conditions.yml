@@ -1,5 +1,6 @@
 ensures:
-- The size of the type_string_ type_list_ result is equal to the number of combinations of well-formed parentheses generated for the expr_a pairs of parentheses.
-- Each type_string_ in the type_string_ type_list_ result is a well-formed combination of parentheses for the expr_a pairs.
+- All strings in the list result are combinations of well-formed parentheses.
+- The length of string in the list result is equal to 2 multiplied by the type_integer_ param_n_.
+- The list result contains all possible combinations of well-formed parentheses for the expr_a pairs of parentheses.
 requires:
 - The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 8.

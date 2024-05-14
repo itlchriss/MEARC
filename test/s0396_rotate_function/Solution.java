@@ -3,11 +3,11 @@ package g0301_0400.s0396_rotate_function;
 // #Medium #Array #Dynamic_Programming #Math #2022_07_15_Time_4_ms_(81.33%)_Space_86_MB_(54.94%)
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` must not be null.*);
-//@ requires(*The integer array parameter `nums` length is equal to the integer parameter `n`.*);
-//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -100 and are less than or equal to 100.*);
-//@ ensures(*The integer result is the maximum value of the rotation function `F(0), F(1), ..., F(n-1)`.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 100 and are greater than or equal to -100.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [4,3,2,6], the integer result is equal to 26.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [100], the integer result is equal to 0.*);
     public int maxRotateFunction(int[] nums) {
         int allSum = 0;
         int len = nums.length;

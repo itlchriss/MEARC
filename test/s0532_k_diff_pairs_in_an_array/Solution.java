@@ -6,10 +6,14 @@ package g0501_0600.s0532_k_diff_pairs_in_an_array;
 import java.util.HashSet;
 
 public class Solution {
-//@ requires(*The integer parameter `k` is greater than or equal to 0 and is less than or equal to 10000000.*);
-//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ ensures(*If there exist unique pairs of integers `nums[i]` and `nums[j]` in the integer array parameter `nums` such that the absolute difference between `nums[i]` and `nums[j]` is equal to the integer parameter `k`, the integer result is the number of unique k-diff pairs in the array.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000000 and are greater than or equal to -10000000.*);
+//@ requires(*The integer parameter `k` is less than or equal to 10000000 and is greater than or equal to 0.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `nums`.*);
+//@ ensures(*The integer result represents the number of unique k-diff pairs in the array.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [3,1,4,1,5] and the integer parameter `k` is equal to 2, the integer result is equal to 2.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,4,5] and the integer parameter `k` is equal to 1, the integer result is equal to 4.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,3,1,5,4] and the integer parameter `k` is equal to 0, the integer result is equal to 1.*);
     public int findPairs(int[] nums, int k) {
         int res = 0;
         HashSet<Integer> set = new HashSet<>();

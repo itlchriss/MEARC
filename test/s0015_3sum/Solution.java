@@ -10,12 +10,22 @@ import java.util.List;
 
 @SuppressWarnings("java:S127")
 public class Solution {
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 3000 and is greater than or equal to 0.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 100000 and are greater than or equal to -100000.*);
+//@ ensures(*The length of each integer array in the list result is equal to 3.*);
+//@ ensures(*All the values in each integer array in the list result are unique.*);
+//@ ensures(*The sum of the values in each integer array in the list result is equal to 0.*);
+//@ ensures(*The list result does not contain duplicate triplets.*);
+//@ ensures(*If the integer array parameter `nums` is empty, the list result is empty.*);
+//@ ensures(*If the integer array parameter `nums` contains only one element which is 0, the list result is empty.*);
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         final int len = nums.length;
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         int l;
         int r;
+        //@ assume \forall int j; 0 <= j < nums.length; -10000 <= nums[j] <= 10000;
+        //@ assume 1000 >= nums.length >= 3;
         //@ loop_invariant 0 <= i <= len;
         for (int i = 0; i < len - 2; i++) {
             l = i + 1;

@@ -17,7 +17,7 @@
     <rule type="ba" cat="NP">
      <rule type="fa" cat="NP[nb]">
       <lf start="4" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-      <lf start="5" span="1" word="concatenation" lemma="concatenation" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      <lf start="5" span="1" word="string" lemma="string" pos="NN" chunk="I-NP" entity="O" cat="N" />
      </rule>
      <rule type="fa" cat="NP\NP">
       <lf start="6" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
@@ -37,7 +37,7 @@
          </rule>
          <rule type="lex" cat="NP\NP">
           <rule type="ba" cat="S[pss]\NP">
-           <lf start="12" span="1" word="separated" lemma="separate" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
+           <lf start="12" span="1" word="concatenated" lemma="concatenate" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
            <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
             <lf start="13" span="1" word="by" lemma="by" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" />
             <rule type="fa" cat="NP[nb]">

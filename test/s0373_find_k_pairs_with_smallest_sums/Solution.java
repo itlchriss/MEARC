@@ -20,12 +20,16 @@ public class Solution {
             this.index = index;
         }
     }
-//@ requires(*Method behavioural specifications:*);
-//@ requires(*The integer array parameter `nums1` and the integer array parameter `nums2` are sorted in ascending order.*);
-//@ requires(*The integer parameter `k` is greater than or equal to 1 and is less than or equal to 1000.*);
-//@ ensures(*The size of the list result is equal to the integer parameter `k`.*);
-//@ ensures(*Each element in the list result is a list containing two integers representing a pair `(u, v)` where `u` is an element from the integer array `nums1` and `v` is an element from the integer array `nums2`.*);
-//@ ensures(*The pairs in the list result are the `k` pairs with the smallest sums of elements from `nums1` and `nums2`.*);
+//@ requires(*The length of the integer array parameter `nums1` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*The length of the integer array parameter `nums2` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums1` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ requires(*All the values in the integer array parameter `nums2` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ requires(*The integer parameter `k` is less than or equal to 1000 and is greater than or equal to 1.*);
+//@ ensures(*The length of the list result is less than or equal to the integer parameter `k`.*);
+//@ ensures(*Each element in the list result is a list of two integers representing a pair `(u, v)`.*);
+//@ ensures(*The pairs in the list result are the `k` pairs with the smallest sums.*);
+//@ ensures(*The pairs in the list result are formed by taking one element from the integer array parameter `nums1` and one element from the integer array parameter `nums2`.*);
+//@ ensures(*The pairs in the list result are sorted in ascending order based on their sums.*);
 
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         PriorityQueue<Node> queue = new PriorityQueue<>((a, b) -> a.sum < b.sum ? -1 : 1);

@@ -1,11 +1,12 @@
 ensures:
-- The type_integer_ result is the value of the evaluated expression represented by the type_string_ param_s_.
-- All intermediate results during the evaluation of the expression will be in the range of negative 2147483648 to 2147483647.
+- The type_integer_ result is greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 7.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 1.
+- If the type_string_ param_s_ is equal to "3+5 / 2" , the type_integer_ result is equal to 5.
 requires:
-- The type_integer_ param_s_ is a valid mathematical expression.
-- The type_integer_ division in the expression truncates toward zero.
-- The method does not use any built-in function that evaluates type_strings_ as mathematical expressions , such as expr_a.
-- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 300000.
-- The type_string_ param_s_ consists of integers and operators ( str_a , str_b , str_c , str_d) separated by number of spaces.
-- All integers in the expression are non-negative integers in the range [0 , 2147483648 - 1].
-- The answer will fit in a 32-bit type_integer_.
+- The type_string_ param_s_ is valid and is a mathematical expression.
+- The integer division truncates towards zero.
+- The method does not use any built-in function that evaluates strings as mathematical expressions.
+- The type_string_ param_s_ consists of integers and operators ( str_a) separated by spaces.
+- All integers in the expression are non-negative and in the range [0 , 2147483648 - 1].
+- The answer fits in a 32-bit integer.

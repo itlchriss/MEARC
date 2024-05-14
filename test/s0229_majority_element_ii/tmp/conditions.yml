@@ -1,6 +1,9 @@
 ensures:
-- If the type_integer_ type_array_ param_nums_ contains elements that appear more than `⌊ n/3 ⌋` times , the type_integer_ type_list_ result contains those elements.
-- The length of the type_integer_ type_list_ result is less_than_or_equal to the length of the type_integer_ type_array_ param_nums_.
-- All values in the type_integer_ type_list_ result are unique.
-- The type_integer_ type_list_ result is empty if exist no elements that appear more than `⌊ n/3 ⌋` times in the type_integer_ type_array_ param_nums_.
-requires: []
+- All values in the type_integer_array_ result are elements that appear more than the floor division between the length of the type_integer_array_ param_nums_ and 3 times.
+- The type_integer_array_ result may contain duplicate values.
+- The type_integer_array_ result may contain unique values.
+- The type_integer_array_ result may only contain one element if exists only one element in the type_integer_array_ param_nums_.
+- The type_integer_array_ result may contain all elements in the type_integer_array_ param_nums_ if all elements in the type_integer_array_ param_nums_ appear more than the floor division between the length of the type_integer_array_ param_nums_ and 3 times.
+requires:
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 50000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to negative 1000000000.

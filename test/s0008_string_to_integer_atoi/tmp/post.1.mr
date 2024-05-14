@@ -1,1 +1,1 @@
-exists x01.(_result{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_clamp{VBN}(e02) & (Acc(e02) = x01) & exists x03.(_range{NN}(x03) & _dash_2147483648{CD}(x03) & _[{NN}(x03) & (Dat(e02) = x03)) & exists x04.(_2147483648{CD}(x04) & (Dat(e02) = x04)) & _]{NN}(e02)) & _1{CD}(x01))
+exists x01.(exists e02.(_final{JJ}(e02) & (Subj(e02) = x01) & _result{NN}(x01)) & exists x03.(_integer{NN}(x03) & (x01 = x03))) & all x04.(exists x05.(exists e06.(_above{JJ}(e06) & (Subj(e06) = x05) & _step{NNS}(x05)) & (x04 = x05)) -> exists e07.(_apply{VBN}(e07) & (Acc(e07) = x04)))

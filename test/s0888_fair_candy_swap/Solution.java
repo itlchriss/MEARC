@@ -6,17 +6,13 @@ package g0801_0900.s0888_fair_candy_swap;
 import java.util.HashSet;
 
 public class Solution {
-//@ ensures(*Preconditions:*);
-//@ ensures(*The input arrays `aliceSizes` and `bobSizes` are not null.*);
-//@ ensures(*The lengths of `aliceSizes` and `bobSizes` are greater than or equal to 1.*);
-//@ ensures(*The elements of `aliceSizes` and `bobSizes` are positive integers.*);
-//@ ensures(*The total number of candies in `aliceSizes` is not equal to the total number of candies in `bobSizes`.*);
-//@ ensures(**);
-//@ ensures(*Postconditions:*);
-//@ ensures(*The output array `answer` is not null.*);
-//@ ensures(*The length of `answer` is 2.*);
-//@ ensures(*The elements of `answer` are positive integers.*);
-//@ ensures(*The sum of `aliceSizes` minus `answer[0]` is equal to the sum of `bobSizes` minus `answer[1]`.*);
+//@ requires(*The length of the integer array parameter `aliceSizes` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The length of the integer array parameter `bobSizes` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `aliceSizes` are less than or equal to 100000 and are greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `bobSizes` are less than or equal to 100000 and are greater than or equal to 1.*);
+//@ requires(*The sum of all values in the integer array parameter `aliceSizes` is not equal to the sum of all values in the integer array parameter `bobSizes`.*);
+//@ ensures(*The integer array result has a length of 2.*);
+//@ ensures(*The sum of all values in the integer array parameter `aliceSizes` minus the value at index 0 of the integer array result is equal to the sum of all values in the integer array parameter `bobSizes` minus the value at index 1 of the integer array result.*);
     public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
         int aSum = 0;
         int bSum = 0;

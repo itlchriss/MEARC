@@ -1,11 +1,9 @@
 ensures:
-- The type_integer_ type_array_  param_nums_ is not null.
-- The type_integer_ type_array_  param_nums_ length is greater_than_or_equal to 1
-  and is less_than_or_equal to 10000.
-- All values in the type_integer_ type_array_  param_nums_ are greater_than_or_equal
-  to 0 and are less_than_or_equal to 10000.
-- The type_integer_  param_k_ is greater_than_or_equal to 0 and is less_than_or_equal
-  to 10000.
-- The type_integer_ result is the minimum score of the type_integer_ type_array_ expr0
-  after applying the mentioned operation at most once for each index in it.
-requires: []
+- The type_integer_ result is less_than_or_equal to the difference between the maximum value in the type_integer_array_ param_nums_ and the minimum value in the type_integer_array_ param_nums_.
+- If the type_integer_array_ param_nums_ has only one element , the type_integer_ result is equal to 0.
+- If the type_integer_array_ param_nums_ has two elements , the type_integer_ result is equal to the difference between the maximum value and the minimum value in the type_integer_array_ param_nums_ multiplied by 2.
+- If the type_integer_array_ param_nums_ has more than two elements , the type_integer_ result is equal to 0.
+requires:
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.
+- The type_integer_ param_k_ is less_than_or_equal to 10000 and is greater_than_or_equal to 0.

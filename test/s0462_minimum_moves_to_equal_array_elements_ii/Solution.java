@@ -5,11 +5,11 @@ package g0401_0500.s0462_minimum_moves_to_equal_array_elements_ii;
 import java.util.Arrays;
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` must not be null.*);
-//@ requires(*The integer array parameter `nums` must have a size greater than or equal to 1 and less than or equal to 100000.*);
-//@ requires(*All elements in the integer array parameter `nums` must be greater than or equal to -1000000000 and less than or equal to 1000000000.*);
-//@ requires(*Each move can only increment or decrement an element in the array by 1.*);
-//@ ensures(*The integer result is the minimum number of moves required to make all elements in the integer array parameter `nums` equal.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3], the integer result is equal to 2.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,10,2,9], the integer result is equal to 16.*);
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
         int median = (nums.length - 1) / 2;

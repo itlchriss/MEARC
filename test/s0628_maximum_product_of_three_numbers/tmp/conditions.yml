@@ -1,8 +1,8 @@
 ensures:
-- The type_integer_ type_array_  param_nums_ must have a length greater_than_or_equal
-  to 3 and less_than_or_equal to 10000.
-- All values in the type_integer_ type_array_  param_nums_ is greater_than_or_equal
-  to negative 1000 and less_than_or_equal to 1000.
-- The type_integer_ result is the maximum product of three numbers in the type_integer_
-  type_array_  param_nums_.
-requires: []
+- The type_integer_ result is less_than_or_equal to the product of the three largest values in the type_integer_array_ param_nums_ and is greater_than_or_equal to the product of the two smallest values in the type_integer_array_ param_nums_ multiplied by the largest value in the type_integer_array_ param_nums_.
+- If the type_integer_array_ param_nums_ is equal to [1 , 2 , 3] , the type_integer_ result is equal to 6.
+- If the type_integer_array_ param_nums_ is equal to [1 , 2 , 3 , 4] , the type_integer_ result is equal to 24.
+- If the type_integer_array_ param_nums_ is equal to [-1 , negative 2 , -3] , the type_integer_ result is equal to negative 6.
+requires:
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 10000 and is greater_than_or_equal to 3.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000 and are greater_than_or_equal to negative 1000.

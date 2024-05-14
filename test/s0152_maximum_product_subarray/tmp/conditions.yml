@@ -1,7 +1,7 @@
 ensures:
-- The type_integer_ result is the largest product of a contiguous non-empty subarray in the type_integer_ type_array_ param_arr_.
-- The type_integer_ result is guaranteed to fit in a 32-bit type_integer_.
+- The type_integer_ result is less_than_or_equal to the maximum value of a 32-bit integer and is greater_than_or_equal to the minimum value of a 32-bit integer.
+- If the type_integer_array_ param_nums_ is equal to [2 , 3 , negative 2 , 4] , the type_integer_ result is equal to 6.
+- If the type_integer_array_ param_nums_ is equal to [-2 , 0 , -1] , the type_integer_ result is equal to 0.
 requires:
-- The type_integer_ type_array_ param_arr_ is not null.
-- The length of the type_integer_ type_array_ param_arr_ is greater_than_or_equal to 1 and is less_than_or_equal to 20000.
-- All values in the type_integer_ type_array_ param_arr_ are greater_than_or_equal to negative 10 and are less_than_or_equal to 10.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 20000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 10 and are greater_than_or_equal to negative 10.

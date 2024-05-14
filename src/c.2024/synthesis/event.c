@@ -192,8 +192,10 @@ int event_synthesis(struct astnode *node) {
     if (siq->count == 0) sinotfound_error(node->token->symbol);
     node->si_q = (*funcptr)(e, siq);
     if (datatype_is_specific(((struct si*)gqueue(siq, 0))->synthesised_datatype)) {
-        e->cstptr->datatype->p = en1->cstptr->datatype->p = ((struct si*)gqueue(siq, 0))->synthesised_datatype->p;
-        e->cstptr->datatype->r = en1->cstptr->datatype->r = ((struct si*)gqueue(siq, 0))->synthesised_datatype->r;        
+        // e->cstptr->datatype->p = en1->cstptr->datatype->p = ((struct si*)gqueue(siq, 0))->synthesised_datatype->p;
+        // e->cstptr->datatype->r = en1->cstptr->datatype->r = ((struct si*)gqueue(siq, 0))->synthesised_datatype->r;
+        e->cstptr->datatype->p = ((struct si*)gqueue(siq, 0))->synthesised_datatype->p;
+        e->cstptr->datatype->r = ((struct si*)gqueue(siq, 0))->synthesised_datatype->r;             
     }
 
     for (int i = 0; i < e->entities->count; ++i) ((struct entity *)gqueue(e->entities, i))->cstptr->ref_count--;

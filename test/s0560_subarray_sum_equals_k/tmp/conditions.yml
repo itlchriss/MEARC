@@ -1,7 +1,6 @@
 ensures:
-- The type_integer_ type_array_  param_nums_ is not null.
-- The type_integer_  param_k_ is greater_than_or_equal to negative 10000000 and is
-  less_than_or_equal to 10000000.
-- The type_integer_ result is the total number of continuous subarrays whose sum equals
-  to the type_integer_  param_k_.
-requires: []
+- The type_integer_ result is equal to the total number of continuous subarrays whose sum equals to the type_integer_ param_k_.
+requires:
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 20000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000 and are greater_than_or_equal to negative 1000.
+- The type_integer_ param_k_ is less_than_or_equal to 10000000 and is greater_than_or_equal to negative 10000000.

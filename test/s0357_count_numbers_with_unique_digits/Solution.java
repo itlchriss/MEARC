@@ -5,9 +5,9 @@ package g0301_0400.s0357_count_numbers_with_unique_digits;
 
 public class Solution {
 //@ requires(*The integer parameter `n` is greater than or equal to 0 and is less than or equal to 8.*);
-//@ ensures(*The integer result is the count of all numbers with unique digits in the range of 0 to 10^n, excluding numbers with repeated digits.*);
-//@ ensures(*The integer result is equal to 1 when the integer parameter `n` is equal to 0.*);
-//@ ensures(*The integer result is equal to 91 when the integer parameter `n` is equal to 2.*);
+//@ ensures(*The integer result is equal to the count of all numbers with unique digits in the range of 0 to 10^n, excluding numbers with repeated digits.*);
+//@ ensures(*If the integer parameter `n` is equal to 2, the integer result is equal to 91.*);
+//@ ensures(*If the integer parameter `n` is equal to 0, the integer result is equal to 1.*);
     public int countNumbersWithUniqueDigits(int n) {
         int ans = 1;
         for (int i = 1; i <= n; i++) {

@@ -1,1 +1,1 @@
-requires(!(s == null));
+requires((s.length() <= 500000) && (s.length() >= 1));

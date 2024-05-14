@@ -6,15 +6,12 @@ package g0001_0100.s0033_search_in_rotated_sorted_array;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_40.6_MB_(92.43%)
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` is sorted in ascending order with distinct values.*);
-//@ requires(*The algorithm must have a runtime complexity of O(log n).*);
-//@ requires(*The length of the integer array `nums` is greater than or equal to 1 and is less than or equal to 5000.*);
-//@ requires(*All values in the integer array `nums` are unique.*);
-//@ requires(*All values in the integer array `nums` are greater than or equal to -10000 and are less than or equal to 10000.*);
-//@ requires(*The integer parameter `target` is greater than or equal to -10000 and is less than or equal to 10000.*);
-//@ ensures(*The integer array parameter `nums` is possibly rotated at an unknown pivot index `k` such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]`.*);
-//@ ensures(*The integer result is the index of the integer parameter `target` if it is in the integer array `nums`.*);
-//@ ensures(*If the integer parameter `target` is not in the integer array `nums`, the integer result is equal to -1.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 5000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are unique.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
+//@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
+//@ ensures(*The integer result is equal to the index of the integer parameter `target` in the integer array parameter `nums` after considering the possible rotation.*);
+//@ ensures(*If the integer parameter `target` is not in the integer array parameter `nums`, the integer result is equal to -1.*);
     public int search(int[] nums, int target) {
         int mid;
         int lo = 0;

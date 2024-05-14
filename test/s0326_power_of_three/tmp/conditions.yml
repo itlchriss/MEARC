@@ -1,5 +1,5 @@
 ensures:
-- If the type_integer_ param_n_ is a power of three , the type_boolean_ result is equal to the true literal.
-- If the type_integer_ param_n_ is not a power of three , the type_boolean_ result is equal to the false literal.
+- If the type_boolean_ result is equal to the true literal , there exists an integer expr_a such that expr_b is equal to 3 raised to the power of expr_c.
+- If the type_boolean_ result is equal to the false literal , there does not exist an integer expr_a such that expr_b is equal to 3 raised to the power of expr_c.
 requires:
 - The type_integer_ param_n_ is greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.

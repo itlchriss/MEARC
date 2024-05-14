@@ -1,6 +1,9 @@
 ensures:
-- The type_string_ result is the sum of the type_string_ parameters expr_a and expr_b as a type_string_.
+- The type_string_ result is the sum of the type_string_ param_num1_ and the type_string_ param_num2_.
+- The type_string_ result is represented as a string.
+- The type_string_ result is equal to the sum of the integer values represented by the type_string_ param_num1_ and the type_string_ param_num2_.
 requires:
-- The type_string_ parameters expr_a and expr_b only contain digits.
-- The type_string_ parameters expr_a and expr_b don't have any leading zeros except for the zero itself.
-- The length of the type_string_ parameters expr_a and expr_b is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
+- The length of the type_string_ param_num1_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- The length of the type_string_ param_num2_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- The type_string_ param_num1_ only contains digits and does not have any leading zeros except for zero itself.
+- The type_string_ param_num2_ only contains digits and does not have any leading zeros except for zero itself.

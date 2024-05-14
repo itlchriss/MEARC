@@ -5,8 +5,10 @@ package g0201_0300.s0233_number_of_digit_one;
 
 @SuppressWarnings("java:S127")
 public class Solution {
-//@ requires(*The integer parameter `n` is greater than or equal to 0 and is less than or equal to 10^9.*);
-//@ ensures(*The integer result is the total number of digit 1 appearing in all non-negative integers less than or equal to the integer parameter `n`.*);
+//@ requires(*The integer parameter `n` is greater than or equal to 0 and is less than or equal to 1000000000.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
+//@ ensures(*If the integer parameter `n` is equal to 13, the integer result is equal to 6.*);
+//@ ensures(*If the integer parameter `n` is equal to 0, the integer result is equal to 0.*);
     public int countDigitOne(int n) {
         int ans = 0;
         // count total number of 1s appearing in every digit, starting from the last digit

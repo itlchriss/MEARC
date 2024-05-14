@@ -6,15 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 20 and is greater than or equal to 0.*);
+//@ requires(*All the values in the integer array parameter `nums` are unique.*);
 //@ requires(*The integer array parameter `nums` is sorted in ascending order.*);
-//@ requires(*The integer array parameter `nums` contains unique values.*);
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 20.*);
-//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -2^31 and less than or equal to 2^31 - 1.*);
-//@ requires(*If a range `[a,b]` in the list has `a` not equal to `b`, it is output as `"a->b"`.*);
-//@ requires(*If a range `[a,b]` in the list has `a` equal to `b`, it is output as `"a"`.*);
-//@ ensures(*The string list result contains the smallest sorted list of ranges that cover all the numbers in the array exactly.*);
-//@ ensures(*Each element of the integer array `nums` is covered by exactly one of the ranges in the string list result.*);
-//@ ensures(*The string list result is in ascending order based on the starting values of the ranges.*);
+//@ requires(*Each range in the list should be in the format "a->b" if a is not equal to b, and in the format "a" if a is equal to b.*);
+//@ requires(*The ranges cover all the numbers in the array exactly.*);
+//@ requires(*Each element of the integer array parameter `nums` is covered by exactly one of the ranges.*);
+//@ requires(*There is no integer x such that x is in one of the ranges but not in `nums`.*);
     public List<String> summaryRanges(int[] nums) {
         List<String> ranges = new ArrayList<>();
         if (nums.length == 0) {

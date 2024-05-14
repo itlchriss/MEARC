@@ -6,8 +6,8 @@ package g0201_0300.s0202_happy_number;
 
 public class Solution {
 //@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
-//@ ensures(*If the integer parameter `n` is a happy number, the boolean result is equal to the true literal.*);
-//@ ensures(*If the integer parameter `n` is not a happy number, the boolean result is equal to the false literal.*);
+//@ ensures(*If the boolean result is equal to true, the process of replacing the number by the sum of the squares of its digits eventually reaches 1.*);
+//@ ensures(*If the boolean result is equal to false, the process of replacing the number by the sum of the squares of its digits enters a cycle that does not include 1.*);
     public boolean isHappy(int n) {
         boolean happy;
         int a = n;

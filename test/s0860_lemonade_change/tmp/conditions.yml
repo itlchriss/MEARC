@@ -1,12 +1,8 @@
 ensures:
-- If the type_integer_ type_array_  param_bills_ contains only the type_integer_ 5
-  ,  the type_boolean_ result is equal to the true literal.
-- If the type_integer_ type_array_  param_bills_ contains the type_integer_ 10 ,  the
-  type_integer_ type_array_  param_bills_ must contain the type_integer_ 5 before
-  the type_integer_ 10.
-- If the type_integer_ type_array_  param_bills_ contains the type_integer_ 20 ,  the
-  type_integer_ type_array_  param_bills_ must contain either one type_integer_ 10
-  and one type_integer_ 5 or three integers 5 before the type_integer_ 20.
-- If the type_integer_ type_array_  param_bills_ does not meet the above conditions
-  ,  the type_boolean_ result is equal to the false literal.
-requires: []
+- If the type_boolean_ result is equal to the true literal , it means that for each customer , the correct change was provided such that the net transaction is that the customer pays $5.
+- If the type_boolean_ result is equal to the false literal , it means that there was at least one customer for whom the correct change could not be provided.
+- If the type_integer_array_ param_bills_ is equal to [5 , 5 , 5 , 10 , 20] , the type_boolean_ result is equal to the true literal .
+- If the type_integer_array_ param_bills_ is equal to [5 , 5 , 10 , 10 , 20] , the type_boolean_ result is equal to the false literal .
+requires:
+- The length of the type_integer_array_ param_bills_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_bills_ are either 5 , 10 , or 20.

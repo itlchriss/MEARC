@@ -1,5 +1,6 @@
 ensures:
-- If the positive type_integer_ param_num_ is a perfect square , the type_boolean_ result is equal to the true literal.
-- If the positive type_integer_ param_num_ is not a perfect square , the type_boolean_ result is equal to the false literal.
+- If the type_boolean_ result is equal to the true literal , the type_integer_ param_num_ is a perfect square.
+- If the type_boolean_ result is equal to the false literal , the type_integer_ param_num_ is not a perfect square.
 requires:
-- The positive type_integer_ param_num_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.
+- The type_integer_ param_num_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.
+- The method does not use any built-in library function such as expr_a.

@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` must not be null.*);
-//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 6.*);
-//@ requires(*All values in the integer array parameter `nums` are unique.*);
-//@ ensures(*The size of the list result is equal to the factorial of the length of the integer array parameter `nums`.*);
-//@ ensures(*Each element in the list result is a permutation of the integer array parameter `nums`.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 6 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are unique.*);
+//@ ensures(*The length of the list result is equal to the factorial of the length of the integer array parameter `nums`.*);
+//@ ensures(*Each element in the list result is a list of integers representing a permutation of the integer array parameter `nums`.*);
 //@ ensures(*The order of permutations in the list result can be in any order.*);
     public List<List<Integer>> permute(int[] nums) {
         if (nums == null || nums.length == 0) {

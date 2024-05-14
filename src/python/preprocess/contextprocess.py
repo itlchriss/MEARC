@@ -52,16 +52,28 @@ class ContextProcessor:
         sent = self.sent
         combined_datatypes = ['%s %s' % (p, r) for p in primitive_datatypes for r in reference_datatypes]
         for c in combined_datatypes:
-            if c + ' parameter' in sent:
-                sent = sent.replace(c + ' parameter', 'type_' + c.replace(' ', '_') + ' parameter')
-            if c + ' result' in sent:
-                sent = sent.replace(c + ' result', 'type_' + c.replace(' ', '_') + ' result')
+            # if c + ' parameter' in sent:
+                # sent = sent.replace(c + ' parameter', 'type_' + c.replace(' ', '_') + ' parameter')
+                sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
+                sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
+            # if c + ' result' in sent:
+                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+                sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent) 
         
-        for p in primitive_datatypes:
-            if p + ' parameter' in sent:
-                sent = sent.replace(p + ' parameter', 'type_' + p + ' parameter')
-            if p + ' result' in sent:
-                sent = sent.replace(p + ' result', 'type_' + p + ' result')
+        for c in primitive_datatypes:
+            # if p + ' parameter' in sent:
+                sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
+            # if p + ' result' in sent:
+                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+
+        for c in reference_datatypes:
+            # if p + ' parameter' in sent:
+                sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
+            # if p + ' result' in sent:
+                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+                sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent)        
+        # sent = re.sub(r'\s+string\s+parameter\s+', ' type_string_ parameter ', sent)
+        # sent = re.sub(r'\s+string\s+result\s+', ' type_string_ result ', sent)
         
         # print('before cp: ', sent)
         # if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
@@ -110,6 +122,12 @@ class ContextProcessor:
             self.sent = self.sent[:-1]        
         for rule in alt_rules:            
             self.sent = self.sent.replace(rule[0], ' ' + rule[1] + ' ')
+            
+    def _symbol_syntax_preprocessor(self):
+        if self.sent[-1] == '.':
+            self.sent = self.sent[:-1]        
+        self.sent = re.sub(r'\'\s?,\s?\'', 'comma', self.sent)
+        self.sent = re.sub(r'\'\s?.\s?\'', 'period', self.sent)
 
     possessable_terms = ['length']
 
@@ -127,6 +145,7 @@ class ContextProcessor:
 
     def run(self, sent: str) -> str:
         self.sent = sent        
+        self._symbol_syntax_preprocessor()
         self._synonym_syntax_preprocessor()
-        self._parameter_syntax_processor()
+        self._parameter_syntax_processor()        
         return self.sent

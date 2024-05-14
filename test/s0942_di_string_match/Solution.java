@@ -2,23 +2,18 @@ package g0901_1000.s0942_di_string_match;
 
 // #Easy #Array #String #Math #Greedy #Two_Pointers
 // #2022_03_30_Time_4_ms_(33.74%)_Space_48.7_MB_(20.18%)
-//@ non_null_by_default
+
 public class Solution {
-//@ ensures(*Preconditions:*);
-//@ ensures(*The input string `s` is not null.*);
-//@ ensures(*The length of the input string `s` is greater than or equal to 1 and less than or equal to 10^- Each character in the input string `s` is either 'I' or 'D'.*);
-//@ ensures(**);
-//@ ensures(*Postconditions:*);
-//@ ensures(*The output is an array of integers representing a permutation `perm` of length `n + 1`, where `n` is the length of the input string `s`.*);
-//@ ensures(*The elements of the output array `perm` are integers in the range [0, n].*);
-//@ ensures(*The output array `perm` satisfies the conditions specified by the input string `s`:*);
-//@ ensures(*  - If `s[i] == 'I'`, then `perm[i] < perm[i + 1]`.*);
-//@ ensures(*  - If `s[i] == 'D'`, then `perm[i] > perm[i + 1]`.*);
-//@ ensures(*The output array `perm` is a valid permutation, meaning it contains all integers in the range [0, n] exactly once.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All characters in the string parameter `s` are either 'I' or 'D'.*);
+//@ ensures(*The length of the integer array result is equal to the length of the string parameter `s` plus 1.*);
+//@ ensures(*All values in the integer array result are unique.*);
+//@ ensures(*If the string parameter `s` is equal to "IDID", the integer array result can be [0,4,1,3,2].*);
+//@ ensures(*If the string parameter `s` is equal to "III", the integer array result can be [0,1,2,3].*);
+//@ ensures(*If the string parameter `s` is equal to "DDI", the integer array result can be [3,2,0,1].*);
     public int[] diStringMatch(String s) {
         int[] arr = new int[s.length() + 1];
         int max = s.length();
-        //@ maintaining 0 <= i <= s.length();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == 'D') {
                 arr[i] = max;
@@ -31,7 +26,6 @@ public class Solution {
                 max--;
             }
         }
-        //@ maintaining 0 <= i <= arr.length;
         for (int i = 0; i < arr.length && max > 0; i++) {
             if (arr[i] == 0) {
                 arr[i] = max;

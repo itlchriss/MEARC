@@ -5,10 +5,13 @@ package g0001_0100.s0091_decode_ways;
 // #2022_06_21_Time_2_ms_(66.37%)_Space_41.8_MB_(78.45%)
 
 public class Solution {
-//@ ensures(*If the string parameter `s` contains only digits and has a length greater than or equal to 1 and less than or equal to 100, the integer result is the number of ways to decode the string `s`.*);
-//@ ensures(*The integer result is guaranteed to fit in a 32-bit integer.*);
-//@ ensures(*If the string parameter `s` contains a character that is mapped to a number starting with 0, the integer result is equal to 0.*);
-//@ ensures(*If the string parameter `s` contains leading zeros, the integer result is equal to 0.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 100 and is greater than or equal to 1.*);
+//@ requires(*The string parameter `s` contains only digits and may contain leading zeros.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to 0.*);
+//@ ensures(*If the string parameter `s` is equal to "12", the integer result is equal to 2.*);
+//@ ensures(*If the string parameter `s` is equal to "226", the integer result is equal to 3.*);
+//@ ensures(*If the string parameter `s` is equal to "0", the integer result is equal to 0.*);
+//@ ensures(*If the string parameter `s` is equal to "06", the integer result is equal to 0.*);
     public int numDecodings(String s) {
         if (s.charAt(0) == '0') {
             return 0;

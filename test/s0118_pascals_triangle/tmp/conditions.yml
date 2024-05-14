@@ -1,8 +1,8 @@
 ensures:
-- The type_integer_ type_collection_ result is a type_list_ of lists representing the first expr_a rows of Pascal's triangle.
-- Each inner type_list_ in the type_integer_ type_collection_ result is a row of Pascal's triangle.
+- The list result contains expr_a number of sublists.
+- Each sublist in the list result is a row in Pascal's triangle.
+- The first sublist in the list result contains one element which is always 1.
+- Each subsequent sublist in the list result starts and ends with 1.
 requires:
 - The type_integer_ param_numRows_ is greater_than_or_equal to 1 and is less_than_or_equal to 30.
-- The first element of each inner type_list_ is always 1.
-- The last element of each inner type_list_ is always 1.
-- Each element in the inner lists (except the first and last elements) is the sum of the two numbers directly above it in the previous row.
+- The elements in between the 1s in each sublist are the sum of the two numbers directly above them in the previous row of Pascal's triangle.

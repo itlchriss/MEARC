@@ -10,11 +10,11 @@ import java.util.List;
 @SuppressWarnings("java:S2589")
 public class Solution {
 //@ requires(*The integer parameter `numRows` is greater than or equal to 1 and is less than or equal to 30.*);
-//@ requires(*The first element of each inner list is always 1.*);
-//@ requires(*The last element of each inner list is always 1.*);
-//@ requires(*Each element in the inner lists (except the first and last elements) is the sum of the two numbers directly above it in the previous row.*);
-//@ ensures(*The integer collection result is a list of lists representing the first `numRows` rows of Pascal's triangle.*);
-//@ ensures(*Each inner list in the integer collection result represents a row of Pascal's triangle.*);
+//@ requires(*The elements in between the 1s in each sublist are the sum of the two numbers directly above them in the previous row of Pascal's triangle.*);
+//@ ensures(*The list result contains `numRows` number of sublists.*);
+//@ ensures(*Each sublist in the list result represents a row in Pascal's triangle.*);
+//@ ensures(*The first sublist in the list result contains one element which is always 1.*);
+//@ ensures(*Each subsequent sublist in the list result starts and ends with 1.*);
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> output = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {

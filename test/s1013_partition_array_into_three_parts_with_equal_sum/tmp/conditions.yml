@@ -1,12 +1,6 @@
 ensures:
-- The type_integer_ type_array_  param_arr_ must have a length greater_than_or_equal
-  to 3 and less_than_or_equal to 50000.
-- All values in the type_integer_ type_array_  param_arr_ is greater_than_or_equal
-  to negative 10000 and less_than_or_equal to 10000.
-- The type_boolean_ result is equal to the true literal if the type_array_ expr0 can
-  be partitioned into three non-empty parts with equal sums according to the given
-  condition.
-- The type_boolean_ result is equal to the false literal if the type_array_ expr0
-  cannot be partitioned into three non-empty parts with equal sums according to the
-  given condition.
-requires: []
+- The type_boolean_ result is equal to the true literal if there exist indexes expr_a such that the sum of the elements from index 0 to i is equal to the sum of the elements from index i+1 to j-1 and is equal to the sum of the elements from index j to the end of the array.
+- The type_boolean_ result is equal to the false literal if exist no such indexes expr_a that satisfy the condition mentioned above.
+requires:
+- The length of the type_integer_array_ param_arr_ is less_than_or_equal to 50000 and is greater_than_or_equal to 3.
+- All the values in the type_integer_array_ param_arr_ are less_than_or_equal to 10000 and are greater_than_or_equal to negative 10000.

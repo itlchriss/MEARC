@@ -64,7 +64,8 @@ int __compare_datatype__(struct datatype *x, struct datatype *y) {
             )
         ) ||
         ((x->r == ANY || y->r == ANY) && x->p == y->p) ||
-        (x->p == y->p && x->r == y->r)
+        (x->p == y->p && x->r == y->r) ||
+        (x->i == y->i && ((x->p == UNDEFINED && x->r == UNDEFINED) || (y->p == UNDEFINED && y->r == UNDEFINED)))
     ) 
         return TRUE;
     else
@@ -236,11 +237,19 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         if both p and r are ANY, then it is not specific, so we should not inherit it to overwrite the entity datatype        
     */
     if (targetsi->synthesised_datatype != NULL && 
-        targetsi->synthesised_datatype->p >= 0 &&
-        targetsi->synthesised_datatype->r >= 0) { 
-        child->cstptr->datatype = targetsi->synthesised_datatype;
+        (
+            (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
+            (child->cstptr->datatype->p == ANY && child->cstptr->datatype->r)
+        )
+       ) { 
+        child->cstptr->datatype->p = targetsi->synthesised_datatype->p;
+        child->cstptr->datatype->r = targetsi->synthesised_datatype->r;
     }
-    if (targetsi->type != -1) {
+
+    // if (child->cstptr->datatype->p == UNDEFINED && child->cstptr->datatype->r == UNDEFINED) {
+    //     child->cstptr->datatype->p = child->cstptr->datatype->r = ANY;
+    // }
+    if (targetsi->type != UNDEFINED) {
         child->cstptr->interpretation_type = targetsi->type;
         child->cstptr->datatype->i = targetsi->type;
     }

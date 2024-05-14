@@ -8,11 +8,12 @@ import java.util.Random;
 @SuppressWarnings("java:S2245")
 public class Solution {
     private final Random random = new Random();
-//@ requires(*The method `rand10()` can only call the `rand7()` API and should not call any other API.*);
-//@ requires(*The number of times the implemented function `rand10()` will be called while testing is provided as an internal argument `n`.*);
-//@ requires(*The method `rand10()` should return a list of integers representing the random numbers generated within the range `[1, 10]` for each call.*);
-//@ requires(*The constraints for the internal argument `n` are `1 <= n <= 10^5`.*);
-//@ ensures(*The integer result after executing the method `rand10()` is within the range `[1, 10]`.*);
+//@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 100000.*);
+//@ requires(*The function `rand10()` can only call the API `rand7()` and should not call any other API.*);
+//@ requires(*The function `rand10()` should generate a uniform random integer in the range [1, 10].*);
+//@ requires(*The function `rand10()` should be implemented in such a way that it uses the `rand7()` API to generate the random integer in the range [1, 10].*);
+//@ requires(*The function `rand10()` should be able to handle multiple calls with different values of `n` and generate the corresponding random integers in the range [1, 10].*);
+//@ ensures(*The integer result is greater than or equal to 1 and is less than or equal to 10.*);
 
     public int rand10() {
         int x = rand7();

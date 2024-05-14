@@ -1,9 +1,11 @@
 ensures:
-- The type_string_ result is formatted as "xAyB" that x is the number of bulls and y is the number of cows.
+- The type_string_ result is formatted as str_a that x is the number of bulls and y is the number of cows.
+- If the type_string_ param_secret_ is equal to str_a and the type_string_ param_guess_ is equal to str_b , the type_string_ result is equal to str_c.
+- If the type_string_ param_secret_ is equal to str_a and the type_string_ param_guess_ is equal to str_b , the type_string_ result is equal to str_c.
+- If the type_string_ param_secret_ is equal to str_a and the type_string_ param_guess_ is equal to str_b , the type_string_ result is equal to str_c.
+- If the type_string_ param_secret_ is equal to str_a and the type_string_ param_guess_ is equal to str_b , the type_string_ result is equal to str_c.
 requires:
-- The type_string_ param_secret_ and the type_string_ param_guess_ must only contain digits.
-- The length of the type_string_ param_secret_ and the type_string_ param_guess_ is greater_than_or_equal to 1 and is less_than_or_equal to 1000.
-- The type_string_ param_secret_ and the type_string_ param_guess_ have the same length.
-- The number of bulls is the digits in the guess that are in the correct position.
-- The number of cows is the digits in the guess that are in the secret number but are located in the wrong position.
-- Only one of the two unmatched digits is counted as a cow if the non-bull digits can only be rearranged to allow one digit to be a bull.
+- The length of the type_string_ param_secret_ is less_than_or_equal to 1000 and is greater_than_or_equal to 1.
+- The length of the type_string_ param_guess_ is less_than_or_equal to 1000 and is greater_than_or_equal to 1.
+- The type_string_ param_secret_ and param_guess_ have the same length.
+- The type_string_ param_secret_ and param_guess_ only contain digits.

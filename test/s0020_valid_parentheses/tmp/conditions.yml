@@ -1,9 +1,6 @@
 ensures:
-- If the type_string_ param_s_ only contains the characters  expr_a , the type_boolean_ result is equal to the true literal.
-- ' the type_boolean_ result is equal to the true literal.'
-- If the type_string_ param_s_ is not valid according to the above conditions , the type_boolean_ result is equal to the false literal.
+- If the type_string_ param_s_ is valid according to the given rules , the type_boolean_ result is equal to the true literal .
+- If the type_string_ param_s_ is not valid according to the given rules , the type_boolean_ result is equal to the false literal .
 requires:
-- If the type_string_ param_s_ is valid according to the following conditions:.
-- ' - Open brackets is closed by the same type of brackets.'
-- ' - Open brackets is closed in the correct order.'
-- The length of the type_string_ param_s_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
+- The length of the type_string_ param_s_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- The type_string_ param_s_ only contains the characters expr_a , expr_b , expr_c , expr_d , expr_e , and expr_f.

@@ -1,6 +1,6 @@
 ensures:
-- If any value in the type_integer_ type_array_ param_nums_ appears at least twice , the type_boolean_ result is equal to the true literal.
-- If every element in the type_integer_ type_array_ param_nums_ is unique , the type_boolean_ result is equal to the false literal.
+- If the type_boolean_ result is equal to the true literal , at least one value in the type_integer_array_ param_nums_ appears more than once.
+- If the type_boolean_ result is equal to the false literal , all values in the type_integer_array_ param_nums_ are unique .
 requires:
-- The length of the type_integer_ type_array_ param_nums_ is greater_than_or_equal to 1 and is less_than_or_equal to 100000.
-- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 1000000000 and are less_than_or_equal to 1000000000.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to negative 1000000000.

@@ -8,13 +8,13 @@ import java.util.List;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 1 and is less than or equal to 200.*);
-//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -10^9 and are less than or equal to 10^9.*);
-//@ requires(*The integer parameter `target` is greater than or equal to -10^9 and is less than or equal to 10^9.*);
-//@ ensures(*The length of each integer list in the result list is equal to 4.*);
-//@ ensures(*All values in each integer list in the result list are unique.*);
-//@ ensures(*The sum of the values in each integer list in the result list is equal to the integer parameter `target`.*);
-//@ ensures(*The result list contains unique quadruplets.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 200 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ requires(*The integer parameter `target` is less than or equal to 1000000000 and is greater than or equal to -1000000000.*);
+//@ ensures(*The length of each integer array in the list result is equal to 4.*);
+//@ ensures(*All the values in each integer array in the list result are unique.*);
+//@ ensures(*The sum of all values in each integer array in the list result is equal to the integer parameter `target`.*);
+//@ ensures(*The order of the quadruplets in the list result can be in any order.*);
     public List<List<Integer>> fourSum(int[] nums, int target) {
         int n = nums.length;
         Arrays.sort(nums);

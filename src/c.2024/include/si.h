@@ -20,7 +20,9 @@ enum interpretation_type {
     SI_INT_TYPE_MODIFIER = 2,
     SI_INT_TYPE_JAVA_METHOD = 3,
     SI_INT_TYPE_JAVA_METHOD_CHAIN = 4,
-    SI_INT_TYPE_JAVA_TYPE = 5
+    SI_INT_TYPE_JAVA_TYPE = 5,
+    SI_INT_TYPE_JAVA_MEMBER_METHOD = 6,
+    SI_INT_TYPE_JAVA_MEMBER_ATTR = 7
 };
 
 struct si_arg {

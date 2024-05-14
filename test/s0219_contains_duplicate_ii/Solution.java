@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000.*);
-//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -1000000000 and are less than or equal to 1000000000.*);
-//@ requires(*The integer parameter `k` is less than or equal to 100000.*);
-//@ ensures(*If there exist two distinct indices `i` and `j` in the integer array parameter `nums` such that the elements at those indices are equal and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`, the boolean result is equal to the true literal.*);
-//@ ensures(*If there does not exist two distinct indices `i` and `j` in the integer array parameter `nums` such that the elements at those indices are equal and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`, the boolean result is equal to the false literal.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ requires(*The integer parameter `k` is less than or equal to 100000 and is greater than or equal to 0.*);
+//@ ensures(*If the boolean result is equal to true, there exist two distinct indices `i` and `j` in the integer array parameter `nums` such that `nums[i] == nums[j]` and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`.*);
+//@ ensures(*If the boolean result is equal to false, there does not exist two distinct indices `i` and `j` in the integer array parameter `nums` such that `nums[i] == nums[j]` and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`.*);
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         int len = nums.length;

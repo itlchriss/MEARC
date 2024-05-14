@@ -3,70 +3,54 @@
 
 <candc>
 <ccg>
- <rule type="ba" cat="S[dcl]">
-  <rule type="ba" cat="NP">
-   <rule type="ba" cat="NP">
-    <rule type="fa" cat="NP[nb]">
-     <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-     <lf start="1" span="1" word="number" lemma="number" pos="NN" chunk="I-NP" entity="O" cat="N" />
-    </rule>
-    <rule type="fa" cat="NP\NP">
-     <lf start="2" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
-     <rule type="lex" cat="NP">
-      <lf start="3" span="1" word="times" lemma="time" pos="NNS" chunk="I-NP" entity="O" cat="N" />
-     </rule>
-    </rule>
-   </rule>
-   <rule type="fa" cat="NP\NP">
-    <lf start="4" span="1" word="the" lemma="the" pos="DT" chunk="B-NP" entity="O" cat="(NP\NP)/N" />
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
     <rule type="fa" cat="N">
-     <lf start="5" span="1" word="implemented" lemma="implement" pos="VBN" chunk="I-VP" entity="O" cat="N/N" />
-     <rule type="fa" cat="N">
-      <lf start="6" span="1" word="function" lemma="function" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
-      <lf start="7" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
-     </rule>
+     <lf start="1" span="1" word="function" lemma="function" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+     <lf start="2" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
     </rule>
    </rule>
-  </rule>
-  <rule type="fa" cat="S[dcl]\NP">
-   <lf start="8" span="1" word="will" lemma="will" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" />
-   <rule type="fa" cat="S[b]\NP">
-    <lf start="9" span="1" word="be" lemma="be" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/(S[pss]\NP)" />
-    <rule type="ba" cat="S[pss]\NP">
-     <lf start="10" span="1" word="called" lemma="call" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
-     <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
-      <lf start="11" span="1" word="while" lemma="while" pos="IN" chunk="I-SBAR" entity="O" cat="((S\NP)\(S\NP))/S[dcl]" />
-      <rule type="rp" cat="S[dcl]">
-       <rule type="ba" cat="S[dcl]">
-        <rule type="lex" cat="NP">
-         <lf start="12" span="1" word="testing" lemma="testing" pos="NN" chunk="I-NP" entity="O" cat="N" />
-        </rule>
-        <rule type="fa" cat="S[dcl]\NP">
-         <lf start="13" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[pss]\NP)" />
-         <rule type="fa" cat="S[pss]\NP">
-          <lf start="14" span="1" word="provided" lemma="provide" pos="VBN" chunk="I-VP" entity="O" cat="(S[pss]\NP)/PP" />
-          <rule type="fa" cat="PP">
-           <lf start="15" span="1" word="as" lemma="as" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" />
-           <rule type="ba" cat="NP">
-            <rule type="fa" cat="NP[nb]">
-             <lf start="16" span="1" word="an" lemma="an" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-             <rule type="fa" cat="N">
-              <lf start="17" span="1" word="internal" lemma="internal" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
-              <lf start="18" span="1" word="argument" lemma="argument" pos="NN" chunk="I-NP" entity="O" cat="N" />
-             </rule>
-            </rule>
-            <lf start="19" span="1" word="expr_b" lemma="expr_b" pos="NN" chunk="I-NP" entity="O" cat="NP\NP" />
-           </rule>
-          </rule>
-         </rule>
+   <rule type="ba" cat="S[dcl]\NP">
+    <rule type="fa" cat="S[dcl]\NP">
+     <rule type="bx" cat="(S[dcl]\NP)/(S[b]\NP)">
+      <lf start="3" span="1" word="can" lemma="can" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" />
+      <lf start="4" span="1" word="only" lemma="only" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" />
+     </rule>
+     <rule type="fa" cat="S[b]\NP">
+      <lf start="5" span="1" word="call" lemma="call" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+      <rule type="fa" cat="NP[nb]">
+       <lf start="6" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+       <rule type="fa" cat="N">
+        <lf start="7" span="1" word="API" lemma="API" pos="NNP" chunk="I-NP" entity="I-ORG" cat="N/N" />
+        <lf start="8" span="1" word="expr_b" lemma="expr_b" pos="NN" chunk="I-NP" entity="I-ORG" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+    <rule type="conj" cat="(S[dcl]\NP)\(S[dcl]\NP)">
+     <lf start="9" span="1" word="and" lemma="and" pos="CC" chunk="O" entity="O" cat="conj" />
+     <rule type="fa" cat="S[dcl]\NP">
+      <rule type="bx" cat="(S[dcl]\NP)/(S[b]\NP)">
+       <lf start="10" span="1" word="should" lemma="should" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" />
+       <lf start="11" span="1" word="not" lemma="not" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" />
+      </rule>
+      <rule type="fa" cat="S[b]\NP">
+       <lf start="12" span="1" word="call" lemma="call" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+       <rule type="fa" cat="NP[nb]">
+        <lf start="13" span="1" word="any" lemma="any" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+        <rule type="fa" cat="N">
+         <lf start="14" span="1" word="other" lemma="other" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+         <lf start="15" span="1" word="API" lemma="API" pos="NNP" chunk="I-NP" entity="O" cat="N" />
         </rule>
        </rule>
-       <lf start="20" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
       </rule>
      </rule>
     </rule>
    </rule>
   </rule>
+  <lf start="16" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
  </rule>
 </ccg>
 </candc>

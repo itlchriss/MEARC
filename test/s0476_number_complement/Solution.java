@@ -4,8 +4,9 @@ package g0401_0500.s0476_number_complement;
 
 public class Solution {
 //@ requires(*The integer parameter `num` is greater than or equal to 1 and is less than 2^31.*);
-//@ ensures(*The integer result is the complement of the integer parameter `num`.*);
-//@ ensures(*The binary representation of the integer result is obtained by flipping all `0`'s to `1`'s and all `1`'s to `0`'s in the binary representation of the integer parameter `num`.*);
+//@ ensures(*The integer result is the complement of the binary representation of the integer parameter `num`.*);
+//@ ensures(*If the integer parameter `num` is equal to 5, the integer result is equal to 2.*);
+//@ ensures(*If the integer parameter `num` is equal to 1, the integer result is equal to 0.*);
     public int findComplement(int num) {
         return ~num & ((Integer.highestOneBit(num) << 1) - 1);
     }

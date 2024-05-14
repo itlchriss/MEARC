@@ -5,13 +5,13 @@ package g0401_0500.s0455_assign_cookies;
 import java.util.Arrays;
 
 public class Solution {
-//@ requires(*The integer array parameter `g` must not be null.*);
-//@ requires(*The integer array parameter `s` must not be null.*);
-//@ requires(*The length of the integer array parameter `g` is greater than or equal to 1 and is less than or equal to 30000.*);
-//@ requires(*The length of the integer array parameter `s` is greater than or equal to 0 and is less than or equal to 30000.*);
-//@ requires(*All values in the integer array parameter `g` are greater than or equal to 1 and are less than or equal to 2147483647.*);
-//@ requires(*All values in the integer array parameter `s` are greater than or equal to 1 and are less than or equal to 2147483647.*);
-//@ ensures(*The integer result is the maximum number of content children that can be satisfied with the given greed factors and cookie sizes.*);
+//@ requires(*The length of the integer array parameter `g` is less than or equal to 30000 and is greater than or equal to 1.*);
+//@ requires(*The length of the integer array parameter `s` is less than or equal to 30000 and is greater than or equal to 0.*);
+//@ requires(*All the values in the integer array parameter `g` are less than or equal to 2147483647 and are greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `s` are less than or equal to 2147483647 and are greater than or equal to 1.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `g`.*);
+//@ ensures(*If the integer array parameter `g` is equal to [1,2,3] and the integer array parameter `s` is equal to [1,1], the integer result is equal to 1.*);
+//@ ensures(*If the integer array parameter `g` is equal to [1,2] and the integer array parameter `s` is equal to [1,2,3], the integer result is equal to 2.*);
     public int findContentChildren(int[] g, int[] s) {
         Arrays.sort(g);
         Arrays.sort(s);

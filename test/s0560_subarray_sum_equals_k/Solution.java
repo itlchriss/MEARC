@@ -7,6 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 20000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000 and are greater than or equal to -1000.*);
+//@ requires(*The integer parameter `k` is less than or equal to 10000000 and is greater than or equal to -10000000.*);
+//@ ensures(*The integer result is equal to the total number of continuous subarrays whose sum equals to the integer parameter `k`.*);
     public int subarraySum(int[] nums, int k) {
         int tempSum = 0;
         int ret = 0;

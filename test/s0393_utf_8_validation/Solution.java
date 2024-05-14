@@ -3,12 +3,12 @@ package g0301_0400.s0393_utf_8_validation;
 // #Medium #Array #Bit_Manipulation #2022_07_13_Time_1_ms_(100.00%)_Space_43_MB_(87.62%)
 
 public class Solution {
-//@ requires(*The integer array parameter `data` represents a valid UTF-8 encoding if it follows the specified rules for UTF-8 characters.*);
-//@ requires(*For a 1-byte character, the first bit is 0, followed by its Unicode code.*);
-//@ requires(*For an n-bytes character, the first n bits are all ones, the n + 1 bit is 0, followed by n - 1 bytes with the most significant 2 bits being 10.*);
-//@ requires(*The input array `data` contains integers where only the least significant 8 bits of each integer are used to store the data.*);
-//@ requires(*The method should return true if the input array `data` represents a valid UTF-8 encoding based on the specified rules.*);
-//@ requires(*The method should return false if the input array `data` does not represent a valid UTF-8 encoding based on the specified rules.*);
+//@ requires(*The length of the integer array parameter `data` is less than or equal to 20000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `data` are between 0 and 255.*);
+//@ ensures(*If the integer array parameter `data` represents a valid UTF-8 encoding, the boolean result is true.*);
+//@ ensures(*If the integer array parameter `data` represents an invalid UTF-8 encoding, the boolean result is false.*);
+//@ ensures(*If the integer array parameter `data` is equal to [197,130,1], the boolean result is true.*);
+//@ ensures(*If the integer array parameter `data` is equal to [235,140,4], the boolean result is false.*);
     public boolean validUtf8(int[] data) {
         int count = 0;
         for (int d : data) {

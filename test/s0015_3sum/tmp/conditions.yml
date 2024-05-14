@@ -1,8 +1,10 @@
 ensures:
-- The type_integer_ type_array_ result contains lists of integers , each type_list_ representing a triplet expr_a that expr_b , expr_c , and expr_d.
-- The type_integer_ type_array_ result does not contain duplicate triplets.
-- The sum of elements in each triplet in the type_integer_ type_array_ result is equal to 0.
-- The length of each type_list_ in the type_integer_ type_array_ result is equal to 3.
-- The type_integer_ type_array_ result may be empty if no triplets satisfy the conditions.
+- The length of integer array in the list result is equal to 3.
+- All the values in each integer array in the list result are unique.
+- The sum of the values in each integer array in the list result is equal to 0.
+- The list result does not contain duplicate triplets.
+- If the type_integer_array_ param_nums_ is empty , the list result is empty.
+- If the type_integer_array_ param_nums_ only contains one element which is 0 , the list result is empty.
 requires:
-- The type_integer_ type_array_ param_nums_ may contain duplicate elements.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 3000 and is greater_than_or_equal to 0.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 100000 and are greater_than_or_equal to negative 100000.

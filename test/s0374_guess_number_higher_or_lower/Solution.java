@@ -12,9 +12,12 @@ package g0301_0400.s0374_guess_number_higher_or_lower;
  */
 public class Solution {
 //@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
-//@ requires(*The integer parameter `pick` is greater than or equal to 1 and is less than or equal to `n`.*);
-//@ ensures(*The integer result is the number that is picked by the guessing game.*);
-//@ ensures(*The result is equal to the integer parameter `pick` that is picked by the guessing game.*);
+//@ requires(*The integer parameter `pick` is greater than or equal to 1 and is less than or equal to the integer parameter `n`.*);
+//@ requires(*If the `guess(int num)` API returns -1, the number picked is lower than the guessed number.*);
+//@ requires(*If the `guess(int num)` API returns 1, the number picked is higher than the guessed number.*);
+//@ requires(*If the `guess(int num)` API returns 0, the number picked is equal to the guessed number.*);
+//@ ensures(*The integer result is equal to the number that is picked.*);
+//@ ensures(*The result is determined by calling the `guess(int num)` API with the guessed number as the parameter.*);
     public int guessNumber(int n) {
         int start = 0;
         int end = n;

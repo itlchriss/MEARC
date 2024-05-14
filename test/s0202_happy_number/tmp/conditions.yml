@@ -1,5 +1,5 @@
 ensures:
-- If the type_integer_ param_n_ is a happy number , the type_boolean_ result is equal to the true literal.
-- If the type_integer_ param_n_ is not a happy number , the type_boolean_ result is equal to the false literal.
+- If the type_boolean_ result is equal to the true literal , the process of replacing the number by the sum of the squares of its digits eventually reaches 1.
+- If the type_boolean_ result is equal to the false literal , the process of replacing the number by the sum of the squares of its digits enters a cycle that does not include 1.
 requires:
 - The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.

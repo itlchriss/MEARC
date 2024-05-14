@@ -1,6 +1,9 @@
 ensures:
-- If the type_string_ param_s_ only contains digits and has a length is greater_than_or_equal to 1 and is less_than_or_equal to 100 , the type_integer_ result is the number of ways to decode the type_string_ param_s_.
-- The type_integer_ result is guaranteed to fit in a 32-bit type_integer_.
-- If the type_string_ param_s_ contains a character that is mapped to a number starting with 0 , the type_integer_ result is equal to 0.
-- If the type_string_ param_s_ contains leading zeros , the type_integer_ result is equal to 0.
-requires: []
+- The type_integer_ result is less_than_or_equal to the maximum value of a 32-bit integer and is greater_than_or_equal to 0.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 2.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 3.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 0.
+- If the type_string_ param_s_ is equal to str_a , the type_integer_ result is equal to 0.
+requires:
+- The length of the type_string_ param_s_ is less_than_or_equal to 100 and is greater_than_or_equal to 1.
+- The type_string_ param_s_ only contains digits and may contain leading zeros.

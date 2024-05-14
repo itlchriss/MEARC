@@ -1,1 +1,1 @@
-exists x01.(exists e02.(_last{JJ}(e02) & (Subj(e02) = x01) & _element{NN}(x01)) & all x03.(exists e04.(_inner{JJ}(e04) & (Subj(e04) = x03) & _type_list_{NN}(x03)) -> exists e05.(_of{IN}(e05,x03) & (Subj(e05) = x01))) & exists x06.(_1{CD}(x06) & (x01 = x06)))
+exists x01.(_param_numRows_{NN}(x01) & _type_integer_{NN}(x01) & exists e02.(_greater_than_or_equal{JJ}(e02) & (Subj(e02) = x01) & exists x03.(_1{CD}(x03) & (Dat(e02) = x03))) & exists e04.(_less_than_or_equal{JJ}(e04) & (Subj(e04) = x01) & exists x05.(_30{CD}(x05) & (Dat(e04) = x05))))

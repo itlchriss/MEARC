@@ -1,7 +1,8 @@
 ensures:
-- If the type_string_ param_preorder_ is a correct preorder traversal serialization of a binary tree , the type_boolean_ result is equal to the true literal.
-- If the type_string_ param_preorder_ is not a correct preorder traversal serialization of a binary tree , the type_boolean_ result is equal to the false literal.
+- The type_boolean_ result is equal to the true literal if the type_string_ param_preorder_ is a correct preorder traversal serialization of a binary tree , otherwise false.
+- 'If the type_string_ param_preorder_ is equal to "9 , 3 , 4 , # , # , 1 , # , # , 2 , # , 6 , # , #" , the type_boolean_ result is equal to the true literal .'
+- 'If the type_string_ param_preorder_ is equal to "1 , #" , the type_boolean_ result is equal to the false literal .'
+- 'If the type_string_ param_preorder_ is equal to "9 , # , # , 1" , the type_boolean_ result is equal to the false literal .'
 requires:
-- The length of the type_string_ param_preorder_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
-- Each value in the type_string_ param_preorder_ is either an type_integer_ in the range [0 , 100] or the character  expr_a.
-- The values in the type_string_ param_preorder_ are separated by commas ' , '.
+- The length of the type_string_ param_preorder_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
+- The type_string_ param_preorder_ consists of integers in the range [0 , 100] and period separated by commas comma.

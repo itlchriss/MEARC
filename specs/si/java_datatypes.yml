@@ -1,0 +1,237 @@
+- term: type_boolean_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_byte_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'byte'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_character_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_short_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'short'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_integer_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_long_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'long'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_float_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'float'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_double_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'double'
+    reference_type: 'undefined'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_string_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_boolean_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_byte_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'byte'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_character_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_short_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'short'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_integer_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'integer'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_long_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'long'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_float_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'float'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_double_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'double'
+    reference_type: 'array'
+  interpretation_type: 'java_type'
+  interpretation: ''
+- term: type_list_
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: 'any'
+    reference_type: 'object'
+  interpretation: ''
+- term: type_arrays_
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: 'any'
+    reference_type: 'array'
+  interpretation: ''
+- term: type_array_
+  syntax:
+  - NN
+  - NNS
+  - NNP
+  - NNPS
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: 'any'
+    reference_type: 'array'
+  interpretation: ''

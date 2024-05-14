@@ -1,11 +1,9 @@
-ensures:
-- The type_string_ type_list_ result contains the smallest sorted type_list_ of ranges that cover all the numbers in the type_array_ .
-- Each element of the type_integer_ type_array_ expr_a is covered by one of the ranges in the type_string_ type_list_ result.
-- The type_string_ type_list_ result is in ascending_order based on the starting values of the ranges.
+ensures: []
 requires:
-- The type_integer_ type_array_ param_nums_ is sorted in ascending_order .
-- The type_integer_ type_array_ param_nums_ contains unique values.
-- The length of the type_integer_ type_array_ param_nums_ is less_than_or_equal to 20.
-- All values in the type_integer_ type_array_ param_nums_ are greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.
-- If a range expr_a in the type_list_ has expr_b not equal to expr_c , it is output as `"a->b"`.
-- If a range expr_a in the type_list_ has expr_b equal to expr_c , it is output as `"a"`.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 20 and is greater_than_or_equal to 0.
+- All the values in the type_integer_array_ param_nums_ are unique.
+- The type_integer_array_ param_nums_ is sorted in ascending_order .
+- Each range in the list should be in the format str_a if a is not equal to b , and in the format str_b if a is equal to b.
+- The ranges cover all the numbers in the array .
+- Each element of the type_integer_array_ param_nums_ is covered by one of the ranges.
+- There is no integer x such that x is in one of the ranges but not in expr_a.

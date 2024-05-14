@@ -1,5 +1,8 @@
 ensures:
-- If the type_string_ param_word_ consists of all uppercase_alphabets , the type_boolean_ result is equal to the true literal.
-- If the type_string_ param_word_ consists of all lowercase letters , the type_boolean_ result is equal to the true literal.
-- If the type_string_ param_word_ only contains the first letter being uppercase and the rest being lowercase , the type_boolean_ result is equal to the true literal.
-requires: []
+- If all letters in the type_string_ param_word_ are capitals , the type_boolean_ result is equal to the true literal .
+- If all letters in the type_string_ param_word_ are not capitals , the type_boolean_ result is equal to the true literal .
+- If only the first letter in the type_string_ param_word_ is capital , the type_boolean_ result is equal to the true literal .
+- If none of the above cases hold , the type_boolean_ result is equal to the false literal .
+requires:
+- The length of the type_string_ param_word_ is less_than_or_equal to 100 and is greater_than_or_equal to 1.
+- The type_string_ param_word_ consists of lowercase and uppercase_alphabets .

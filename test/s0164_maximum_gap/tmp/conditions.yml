@@ -1,6 +1,8 @@
 ensures:
-- The type_integer_ result is the maximum difference between two successive elements in the sorted form of the type_integer_ type_array_ param_nums_.
-- The type_integer_ result is less_than_or_equal to the maximum value of java type_integer_ and is greater_than_or_equal to 0.
+- The type_integer_ result is less_than_or_equal to the maximum difference between two successive elements in the sorted form of the type_integer_array_ param_nums_.
+- If the type_integer_array_ param_nums_ contains is less_than to 2 elements , the type_integer_ result is equal to 0.
 requires:
-- The type_integer_ type_array_ param_nums_ is not null.
-- The type_integer_ type_array_ param_nums_ must contain at least two elements.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to 0.
+- The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the type_integer_array_ param_nums_ runs in linear time.
+- The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the type_integer_array_ param_nums_ uses linear extra space.
