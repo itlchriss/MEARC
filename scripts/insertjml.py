@@ -28,7 +28,10 @@ def _dogpt35(srcpath: str, program: List[str]):
     for _t in raw.split('\n'):
         t = _t.replace('- requires', '//@ requires').replace('- ensures', '//@ ensures')
         if t[0] == '-':
-            t = '//@ ' + t[1:]
+            t = '//@ requires' + t[1:]
+            # already a syntax error
+        if t[-1] != ';':
+            t = t.replace('//@', '//')
         tmp.append(t)
 
     tmp = list(set(tmp))

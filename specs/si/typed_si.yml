@@ -390,6 +390,21 @@
   arguments:
   - symbol: Subj
     primitive_type: 'any'
+    reference_type: 'array'
+  - symbol: Dat
+    primitive_type: 'any'
+    reference_type: 'array'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'expression'
+  interpretation: Arrays.equals((Subj), (Dat))
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'any'
     reference_type: 'string'
   - symbol: Dat
     primitive_type: 'any'

@@ -56,6 +56,13 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
     # fixing the case that the NLP is not correct for the 'or'. The MR incorrectly provides the two predicates accept the same entity.
     sent = re.sub(r'or str_', 'or the str_', sent)
     sent = re.sub(r'or expr_', 'or the expr_', sent)
+
+    if r := re.findall(r'(\[[,0-9 ]+\])', sent, re.ASCII):
+        for i, e in enumerate(r):
+            index = chr(i + 97)
+            _int_ = e.replace('[', '').replace(']', '')
+            exprs['arr_' + index] = _int_
+            sent = sent.replace(e, ' arr_' + index, 1)
     return sent, exprs
 
 # sent: requirement statement in natural language
@@ -87,9 +94,16 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         v = dynamic_si[k]
         p = 'any'
         r = 'any'
-        sp = 'undefined'
-        sr = 'string'
-            
+        if 'arr_' not in k:
+            sp = 'undefined'
+            sr = 'string'
+            interpretation = v.replace('`', '')
+        else:
+            sp = 'integer'
+            sr = 'array'
+            interpretation = 'new int[] {%s}' % v
+        
+        #TODO: change the interpretation to new int[] {} when key is arr_[a-z]+
         d = {
             'term': k,
             'syntax': ['NN'],
@@ -102,7 +116,7 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
                'primitive_type': sp,
                'reference_type': sr
             }],
-            'interpretation': v.replace('`', '')
+            'interpretation': interpretation
         }
         dynamic_si[k] = d
     return sent, dynamic_si

@@ -1,0 +1,23 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  synthesised_datatype:
+  - primitive_type: '0'
+    reference_type: '1'
+  interpretation: k
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: '*'
+    reference_type: '*'
+  synthesised_datatype:
+  - primitive_type: '0'
+    reference_type: '1'
+  interpretation: '[nums[k] , nums[k+1] , ... , nums[n-1] , nums[0] , nums[1] , ...
+    , nums[k-1]]'
