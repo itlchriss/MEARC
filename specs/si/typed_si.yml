@@ -137,6 +137,94 @@
     primitive_type: 'character'
     reference_type: 'undefined'
   interpretation: "','"
+- term: leftp
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'('"
+- term: rightp
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "')'"
+- term: leftbp
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'['"
+- term: rightbp
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "']'"
+- term: rightb
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'}'"
+- term: leftb
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'{'"
+- term: questionmark
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'?'"
+- term: asterisk
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  interpretation: "'*'"
 - term: period
   syntax:
   - NN
@@ -185,7 +273,10 @@
   - symbol: '*'
     primitive_type: 'undefined'
     reference_type: 'any'
-  interpretation_type: 'java_boolean'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'modifier'
   interpretation: 'true'
 - term: false
   syntax:
@@ -194,7 +285,10 @@
   - symbol: '*'
     primitive_type: 'undefined'
     reference_type: 'any'
-  interpretation_type: 'java_boolean'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'modifier'
   interpretation: 'false'
 - term: be
   syntax:
@@ -758,7 +852,7 @@
     primitive_type: 'any'
     reference_type: 'any'
   synthesised_datatype:
-    primitive_type: 'character'
+    primitive_type: 'boolean'
     reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLowerCase'
@@ -772,6 +866,8 @@
     primitive_type: 'undefined'
     reference_type: 'string'
   - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
     interpretation_type: 'java_method'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).charAt(i))'
 - term: contain_only
@@ -787,8 +883,25 @@
   - symbol: 'Acc'
     primitive_type: 'character'
     reference_type: 'undefined'
+    interpretation_type: 'undefined'
   spec_init_type: 'char'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).charAt(i)'
+- term: contain_only
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  - VBG
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
+    interpretation_type: 'multiple_si'
+  spec_init_type: 'char'
+  interpretation: '\forall int i; 0 <= i < (Subj).length(); ((Acc)((Subj).charAt(i)))'
 - term: contain
   syntax:
   - VBZ
@@ -818,6 +931,20 @@
     reference_type: 'undefined'
     interpretation_type: 'undefined'
   interpretation: '\exists int i; 0 <= i < (Subj).length(); ((Subj).charAt(i) == (Acc))'
+- term: accontain
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  - VBG
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  interpretation: 'Arrays.asList((Subj).toCharArray()).containsAll(Arrays.asList((Acc).toCharArray()))'
 - term: positive
   syntax:
   - JJ

@@ -1,8 +1,8 @@
 ensures:
 - The type_integer_ result is equal to the number of unique elements in the type_integer_array_ param_nums_.
 - The first expr_a elements of the type_integer_array_ param_nums_ hold the final result after removing duplicates , that expr_b is the integer result.
-- If the type_integer_array_ param_nums_ is equal to [1 , 1 , 2] , the type_integer_ result is equal to 2 , and the type_integer_array_ param_nums_ is equal to [1 , 2 , _].
-- If the type_integer_array_ param_nums_ is equal to [0 , 0 , 1 , 1 , 1 , 2 , 2 , 3 , 3 , 4] , the type_integer_ result is equal to 5 , and the type_integer_array_ param_nums_ is equal to [0 , 1 , 2 , 3 , 4 , _ , _ , _ , _ , _].
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_ result is equal to 2 , and the type_integer_array_ param_nums_ is equal to [1 , 2 , _].
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_ result is equal to 5 , and the type_integer_array_ param_nums_ is equal to [0 , 1 , 2 , 3 , 4 , _ , _ , _ , _ , _].
 requires:
 - The length of the type_integer_array_ param_nums_ is less_than_or_equal to 30000 and is greater_than_or_equal to 0.
 - All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 100 and are greater_than_or_equal to negative 100.

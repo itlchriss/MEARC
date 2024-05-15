@@ -341,6 +341,8 @@ struct queue* readSI(char *dstfilepaths) {
                                                 arg->datatype->i = SI_INT_TYPE_JAVA_METHOD_CHAIN;
                                             } else if (strcmp((char *)token.data.scalar.value, "java_type") == 0) {
                                                 arg->datatype->i = SI_INT_TYPE_JAVA_TYPE;
+                                            } else if (strcmp((char *)token.data.scalar.value, "multiple_si") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_MULTIPLE_SI;
                                             } else {                                
                                                 arg->datatype->i = SI_INT_TYPE_UNDEFINED;
                                             }
@@ -474,6 +476,8 @@ struct queue* readSI(char *dstfilepaths) {
                                 si->type = SI_INT_TYPE_JAVA_METHOD_CHAIN;
                             } else if (strcmp(value, "java_type") == 0) { 
                                 si->type = SI_INT_TYPE_JAVA_TYPE;
+                            } else if (strcmp(value, "multiple_si") == 0) { 
+                                si->type = SI_INT_TYPE_MULTIPLE_SI;
                             } else if (strcmp(value, "java_boolean") == 0) {
                                 si->type = 50;
                             } else if (strcmp(value, "java_byte") == 0) {

@@ -1,8 +1,8 @@
 ensures:
 - If the type_integer_array_ param_data_ is a valid UTF-8 encoding , the type_boolean_ result is equal to the true literal .
 - If the type_integer_array_ param_data_ is an invalid UTF-8 encoding , the type_boolean_ result is equal to the false literal .
-- If the type_integer_array_ param_data_ is equal to [197 , 130 , 1] , the type_boolean_ result is equal to the true literal .
-- If the type_integer_array_ param_data_ is equal to [235 , 140 , 4] , the type_boolean_ result is equal to the false literal .
+- If the type_integer_array_ param_data_ is equal to arr_a , the type_boolean_ result is equal to the true literal .
+- If the type_integer_array_ param_data_ is equal to arr_a , the type_boolean_ result is equal to the false literal .
 requires:
 - The length of the type_integer_array_ param_data_ is less_than_or_equal to 20000 and is greater_than_or_equal to 1.
 - All the values in the type_integer_array_ param_data_ are between 0 and 255.

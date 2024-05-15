@@ -1,6 +1,6 @@
 ROOT=./
 NLP=../NLP/ccg2lambda
-STD_SI=./specs/si/typed_si.yml
+STD_SI=./specs/si/typed_si.yml,./specs/si/java_datatypes.yml
 PYCMD=python
 TMP=./tmp
 OPENJML=../openjml-0.17-a15
@@ -99,13 +99,14 @@ then
             fi
             filename+=".jml"
             IFS=$'\n' read -rd '' -a lines <<< "$ans"
-            line1="${lines[0]}"
+            line1="${lines[0]}"            
             if [[ "$line1[0]" =~ pcount:([0-9]+) ]]; then
                 pcount="${BASH_REMATCH[1]}"
                 for i in $(seq 1 $pcount); do
                     body="${lines[$i]}"
-                    body="${body//\\ /\\}"               
-                    if [[ ! -z "$body" ]] && [[ "$body" != *"()"* ]]; then
+                    # printf "%s" $body
+                    # body="${body//\\ /\\}"                                 
+                    if [[ ! -z "$body" ]] && [[ "$body" != "()" ]]; then
                         printf "$keyword(%s);\n" "$body"
                         printf "$keyword(%s);\n" "$body" > $folder/jml/$filename
                     fi

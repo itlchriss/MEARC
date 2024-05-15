@@ -5,37 +5,30 @@
 <ccg>
  <rule type="rp" cat="S[dcl]">
   <rule type="ba" cat="S[dcl]">
-   <rule type="ba" cat="S[dcl]">
-    <rule type="fa" cat="NP[nb]">
-     <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-     <lf start="1" span="1" word="string" lemma="string" pos="NN" chunk="I-NP" entity="O" cat="N" />
-    </rule>
-    <rule type="fa" cat="S[dcl]\NP">
-     <lf start="2" span="1" word="parameters" lemma="parameter" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
-     <rule type="lex" cat="NP">
-      <lf start="3" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <rule type="ba" cat="N">
+     <rule type="fa" cat="N">
+      <lf start="1" span="1" word="type_string_" lemma="type_string_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+      <lf start="2" span="1" word="param_name_" lemma="param_name_" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+     <rule type="conj" cat="N\N">
+      <lf start="3" span="1" word="and" lemma="and" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+      <lf start="4" span="1" word="param_typed_" lemma="param_typed_" pos="NN" chunk="I-NP" entity="I-ORG" cat="N" />
      </rule>
     </rule>
    </rule>
-   <rule type="conj" cat="S[dcl]\S[dcl]">
-    <lf start="4" span="1" word="and" lemma="and" pos="CC" chunk="I-NP" entity="O" cat="conj" />
-    <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="5" span="1" word="only" lemma="only" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)/(S\NP)" />
+    <rule type="fa" cat="S[dcl]\NP">
+     <lf start="6" span="1" word="contain" lemma="contain" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
      <rule type="lex" cat="NP">
-      <lf start="5" span="1" word="expr_b" lemma="expr_b" pos="NN" chunk="I-NP" entity="O" cat="N" />
-     </rule>
-     <rule type="fa" cat="S[dcl]\NP">
-      <lf start="6" span="1" word="only" lemma="only" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)/(S\NP)" />
-      <rule type="fa" cat="S[dcl]\NP">
-       <lf start="7" span="1" word="contain" lemma="contain" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
-       <rule type="lex" cat="NP">
-        <lf start="8" span="1" word="lowercase_alphabets" lemma="lowercase_alphabets" pos="NNS" chunk="I-NP" entity="O" cat="N" />
-       </rule>
-      </rule>
+      <lf start="7" span="1" word="lowercase_alphabets" lemma="lowercase_alphabets" pos="NNS" chunk="I-NP" entity="O" cat="N" />
      </rule>
     </rule>
    </rule>
   </rule>
-  <lf start="9" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+  <lf start="8" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
  </rule>
 </ccg>
 </candc>

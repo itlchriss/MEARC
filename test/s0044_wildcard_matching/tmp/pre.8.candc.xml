@@ -22,14 +22,12 @@
       </rule>
       <rule type="conj" cat="NP\NP">
        <lf start="6" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
-       <rule type="ba" cat="NP">
-        <rule type="lex" cat="NP">
-         <lf start="7" span="1" word="period" lemma="period" pos="NN" chunk="I-NP" entity="O" cat="N" />
-        </rule>
-        <rule type="conj" cat="NP\NP">
-         <lf start="8" span="1" word="or" lemma="or" pos="CC" chunk="I-NP" entity="O" cat="conj" />
-         <rule type="lex" cat="NP">
-          <lf start="9" span="1" word="period" lemma="period" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       <rule type="lex" cat="NP">
+        <rule type="ba" cat="N">
+         <lf start="7" span="1" word="questionmark" lemma="questionmark" pos="NN" chunk="I-NP" entity="O" cat="N" />
+         <rule type="conj" cat="N\N">
+          <lf start="8" span="1" word="or" lemma="or" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+          <lf start="9" span="1" word="asterisk" lemma="asterisk" pos="NN" chunk="I-NP" entity="O" cat="N" />
          </rule>
         </rule>
        </rule>

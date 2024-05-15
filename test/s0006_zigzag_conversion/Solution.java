@@ -15,6 +15,7 @@ public class Solution {
         if (numRows == 1) {
             return s;
         }
+        //@ assume 0 <= numRows <= (Integer.MAX_VALUE - 3)/2;
         //@ ghost int k = numRows;
         //@ ghost int sl = s.length();
         // assume Integer.MIN_VALUE + 3 <= k * 2 <= Integer.MAX_VALUE - 3;

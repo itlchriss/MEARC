@@ -4,6 +4,7 @@
 #include "util.h"
 #include "cst.h"
 #include "si.h"
+#include "error.h"
 
 // TODO: to be tidied up, should not be extern here
 extern struct astnode *root;
@@ -54,18 +55,24 @@ int __compare_datatype__(struct datatype *x, struct datatype *y) {
                             if x->r == y->r == Object, and x->types have 'list', 'collection' and y->types have 'map', the result is false
     */
     if (
-        ((x->p == ANY || y->p == ANY) && (x->r == ANY || y->r == ANY)) ||
+        // the first case is only single INT SI
         (
-            (x->p == ANY || y->p == ANY) && 
-            x->r == y->r && 
-            (
-                (x->r == Object && __contain_type__(x->types, y->types)) || 
-                x->r != Object
+            (x->i != INT_SI_TYPE_MULTIPLE_SI && y->i != INT_SI_TYPE_MULTIPLE_SI) && (
+                ((x->p == ANY || y->p == ANY) && (x->r == ANY || y->r == ANY)) ||
+                (
+                    (x->p == ANY || y->p == ANY) && 
+                    x->r == y->r && 
+                    (
+                        (x->r == Object && __contain_type__(x->types, y->types)) || 
+                        x->r != Object
+                    )
+                ) ||
+                ((x->r == ANY || y->r == ANY) && x->p == y->p) ||
+                (x->p == y->p && x->r == y->r) ||
+                (x->i == y->i && ((x->p == UNDEFINED && x->r == UNDEFINED) || (y->p == UNDEFINED && y->r == UNDEFINED)))
             )
-        ) ||
-        ((x->r == ANY || y->r == ANY) && x->p == y->p) ||
-        (x->p == y->p && x->r == y->r) ||
-        (x->i == y->i && ((x->p == UNDEFINED && x->r == UNDEFINED) || (y->p == UNDEFINED && y->r == UNDEFINED)))
+        ) || (x->i == INT_SI_TYPE_MULTIPLE_SI && y->i == INT_SI_TYPE_MULTIPLE_SI)
+        // the second case is for multiple INT SI
     ) 
         return TRUE;
     else
@@ -253,12 +260,38 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         child->cstptr->interpretation_type = targetsi->type;
         child->cstptr->datatype->i = targetsi->type;
     }
-    // __subtree_with_direct_syntax_operation__(node, child, targetsi->interpretation);
+    
     if (targetsi->interpretation != NULL && strlen(targetsi->interpretation) > 0) {
         enqueue(child->cstptr->datalist, (char *)strdup(targetsi->interpretation));
+        /*
+        * for multiple SI
+        * some statements may have multiple subjects and objects, we deal with the following section
+        * by recording all the conjunctions and all the datatypes, all intermediate SIs are recorded in the datalist
+        */
+        if (node->parent->type == Connective) {
+            // this indicate that a new intermediate interpretation is enqueued.
+            // therefore, we have to record the conjunction operator in the parent node to make conjunction between them
+            switch(node->parent->conntype) {
+                case Op_And:
+                    enqueue(child->cstptr->conjunction_operators, (char *)strdup("&&"));
+                    break;
+                case Op_Or:
+                    enqueue(child->cstptr->conjunction_operators, (char *)strdup("||"));
+                    break;
+                default:
+                    semantic_error("Unsupported operator conjunction", node->parent->token->symbol);
+                    break;
+            }                        
+        }    
+        struct datatype *new = copydatatype(targetsi->synthesised_datatype);
+        new->i = targetsi->type;
+        if (!child->cstptr->datatype->multiple_datatypes) child->cstptr->datatype->multiple_datatypes = initqueue();
+        enqueue(child->cstptr->datatype->multiple_datatypes, (void *)new);
+        if (child->cstptr->datalist->count > 1) child->cstptr->datatype->i = INT_SI_TYPE_MULTIPLE_SI;
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
     }
     child->cstptr->status = Assigned;
-    child->cstptr->ref_count--;
+    child->cstptr->ref_count--;    
     root = deleteastnodeandedge(node, root);
     return 0;
 }

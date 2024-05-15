@@ -22,9 +22,11 @@ void JJ_event_synthesis_post_operation(struct astnode *node, struct queue *siq) 
         root = deleteastnodeandedge(node, root);
     } else if (siq->count == 1 && ((struct si *)gqueue(siq, 0))->type == SI_INT_TYPE_MODIFIER) {
         struct entity *en1 = (struct entity *)gqueue(__searchevent(getastchild(node, 0)->cstptr)->entities, 0);
-        en1->cstptr->datalist = initqueue();
-        for (int i = 0; i < node->si_q->count; ++i) {
-            enqueue(en1->cstptr->datalist, strdup(gqueue(node->si_q, i)));
+        if (node->si_q) {
+            en1->cstptr->datalist = initqueue();
+            for (int i = 0; i < node->si_q->count; ++i) {
+                enqueue(en1->cstptr->datalist, strdup(gqueue(node->si_q, i)));
+            }
         }
         root = deleteastnodeandedge(node, root);  
     } else {

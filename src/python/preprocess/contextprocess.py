@@ -52,28 +52,26 @@ class ContextProcessor:
         sent = self.sent
         combined_datatypes = ['%s %s' % (p, r) for p in primitive_datatypes for r in reference_datatypes]
         for c in combined_datatypes:
-            # if c + ' parameter' in sent:
-                # sent = sent.replace(c + ' parameter', 'type_' + c.replace(' ', '_') + ' parameter')
-                sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
-                sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
-            # if c + ' result' in sent:
-                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
-                sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent) 
+            sent = re.sub(r'\s+' + c + r'\s+parameters\s+', ' type_' + c.replace(' ', '_') + '_ parameters ', sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameters's\s+", ' type_' + c.replace(' ', '_') + "_ parameters's ", sent)
+            
+            sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
+            sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+            sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent) 
         
         for c in primitive_datatypes:
-            # if p + ' parameter' in sent:
-                sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
-            # if p + ' result' in sent:
-                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+            sent = re.sub(r'\s+' + c + r'\s+parameters\s+', ' type_' + c.replace(' ', '_') + '_ parameters ', sent)
+            sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
+            sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
 
         for c in reference_datatypes:
-            # if p + ' parameter' in sent:
-                sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
-            # if p + ' result' in sent:
-                sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
-                sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent)        
-        # sent = re.sub(r'\s+string\s+parameter\s+', ' type_string_ parameter ', sent)
-        # sent = re.sub(r'\s+string\s+result\s+', ' type_string_ result ', sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameters\s+", ' type_' + c.replace(' ', '_') + "_ parameters ", sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameters's\s+", ' type_' + c.replace(' ', '_') + "_ parameters's ", sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameter\s+", ' type_' + c.replace(' ', '_') + "_ parameter ", sent)
+            sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
+            sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+            sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent)        
         
         # print('before cp: ', sent)
         # if r := re.findall('input\s+(%s)\s+`([a-zA-Z]+)`' % '|'.join(datatypes), sent, re.ASCII):
@@ -86,6 +84,12 @@ class ContextProcessor:
         # elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
         
         if r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
+            # the case of composite subject/object with two parameters
+            # we should convert both of them
+            for param in r[0]:
+                pattern = 'param_%s_' % param.replace('`', '')
+                sent = sent.replace(param, pattern)
+        elif r := re.findall(r'parameters (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
             # the case of composite subject/object with two parameters
             # we should convert both of them
             for param in r[0]:
@@ -115,7 +119,8 @@ class ContextProcessor:
         # NOTE: because LLM has already recognised the parameter. If 'param_' exists, it means that LLM has provided the parameter information and we have tackled it.
         #       therefore, in this case, the word 'parameter' can be skipped.
         if 'param_' in self.sent:
-            self.sent = self.sent.replace('parameter', '');
+            self.sent = self.sent.replace('parameters', '')
+            self.sent = self.sent.replace('parameter', '')            
 
     def _synonym_syntax_preprocessor(self):
         if self.sent[-1] == '.':
@@ -125,9 +130,17 @@ class ContextProcessor:
             
     def _symbol_syntax_preprocessor(self):
         if self.sent[-1] == '.':
-            self.sent = self.sent[:-1]        
-        self.sent = re.sub(r'\'\s?,\s?\'', 'comma', self.sent)
-        self.sent = re.sub(r'\'\s?.\s?\'', 'period', self.sent)
+            self.sent = self.sent[:-1]  
+        self.sent = re.sub(r"'\s*,\s*'", 'comma', self.sent)
+        self.sent = re.sub(r"'\s*\?\s*'", 'questionmark', self.sent)
+        self.sent = re.sub(r"'\s*\*\s*'", 'asterisk', self.sent)
+        self.sent = re.sub(r"'\s*\.\s*'", 'period', self.sent)
+        self.sent = re.sub(r"`*'\s*\(\s*'`*", 'leftp', self.sent)
+        self.sent = re.sub(r"`*'\s*\)\s*'`*", 'rightp', self.sent)
+        self.sent = re.sub(r"`*'\s*\[\s*'`*", 'leftbp', self.sent)
+        self.sent = re.sub(r"`*'\s*\]\s*'`*", 'rightbp', self.sent)
+        self.sent = re.sub(r"`*'\s*\{\s*'`*", 'leftb', self.sent)
+        self.sent = re.sub(r"`*'\s*\}\s*'`*", 'rightb', self.sent)
 
     possessable_terms = ['length']
 

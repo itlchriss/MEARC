@@ -2,9 +2,35 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <stdarg.h>
 #include "util.h"
 
 void throw_error(char *, char *);
+
+char * combine_strings(int count, ...) {
+    va_list valist;
+    char *result = NULL;
+    va_start(valist, count); 
+    for (int i = 0; i < count; ++i) {
+        char *s = va_arg(valist, void *);
+        if (!s || strlen(s) == 0) continue;
+        else {
+            int size = 0;
+            if (!result) size = strlen(s) + 1;
+            else size = strlen(s) + strlen(result) + 1;
+            char *new = (char *) malloc(sizeof(char) * size);
+            new[0] = '\0';
+            if (result) {
+                append(new, result);
+                free(result);
+            }
+            append(new, s);
+            result = new;
+        }
+    }
+    va_end(valist);
+    return result;
+}
 
 char * conv_cardinal_number(char *input) {
     if (strcmp(input, "zero")) {

@@ -1,1 +1,1 @@
-requires((\forall int i; 0 <= i < p.length(); Character.isLowerCase == p.charAt(i)) || (() || ()));
+requires(\forall int i; 0 <= i < p.length(); (Character.isLowerCase(p.charAt(i))) ||  ('?' == (p.charAt(i))) ||  ('*' == (p.charAt(i))));

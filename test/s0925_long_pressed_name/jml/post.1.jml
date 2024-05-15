@@ -1,0 +1,1 @@
+ensures((!(Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray())))) ==> (\result == false));

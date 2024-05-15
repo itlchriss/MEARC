@@ -51,6 +51,10 @@ enum intermediate_SI_type {
     INT_SI_TYPE_MODIFIER = 2,
     INT_SI_TYPE_JAVA_METHOD = 3,
     INT_SI_TYPE_JAVA_METHOD_CHAIN = 4,
+    INT_SI_TYPE_JAVA_TYPE = 5,
+    INT_SI_TYPE_JAVA_MEMBER_METHOD = 6,
+    INT_SI_TYPE_JAVA_MEMBER_ATTR = 7,
+    INT_SI_TYPE_MULTIPLE_SI = 8,
 
     INT_SI_TYPE_JAVA_BOOLEAN = 50,
     INT_SI_TYPE_JAVA_BYTE = 51,
@@ -78,6 +82,12 @@ struct datatype {
     struct datatype *element_datatype;
     /* when a compile symbol is a rel symbol, after its synthesis, we store the datatype of the symbol that decides the SI of this rel symbol*/
     struct datatype *relative_datatype;
+
+    /*
+    * Used when the datalist length is more than 1. However, it is only the case when the datalist length is incremented by 
+    *  having more direct syntax. Another words, if the datalist length is incremented because of ambiguous SI, then it is not used.
+    */
+    struct queue *multiple_datatypes;
 };
 
 
@@ -122,6 +132,11 @@ struct cstsymbol {
     * The predicate(astnode) of this event cstpointer is refered to. Such as sort(e01) then e01->astptr = ptr(sort)
     */
     struct astnode *astptr;
+
+    /*
+    * Used when the datalist length is more than 1. We record the node's connective in this list to perform conjuction
+    */
+    struct queue *conjunction_operators;    
 };
 
 
@@ -130,6 +145,12 @@ struct cstsymbol {
 // the qsymbol is the symbol of the quantifier
 struct cstsymbol *newcstsymbol(char *symbol);
 void showcstsymbol(void *);
+
+
+/*
+* cloning a datatype structure
+*/
+struct datatype *copydatatype(struct datatype *);
 
 void deallocatecstsymbol(void *);
 void deallocatedata(void *);

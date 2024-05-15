@@ -4,8 +4,15 @@ from enum import Enum
 import math
 import pandas as pd
 import re
+import yaml
 
 
+sispecspath = './specs/si/typed_si.yml'
+def _get_specs():
+    si = {}
+    with open(sispecspath) as fp:
+        si = yaml.full_load(fp)
+    return si
 
 # the enumeration and constant UNDEFINED values must be consistent with the declarations in cst.h
 UNDEFINED = -1
@@ -39,6 +46,8 @@ class Reference_datatype(IntEnum):
 # denote __type__ as datatype in datatypes
 # denote __num__ as a numerical value
 
+SI_data = None
+
 def __check_is_numeric__(word: str) -> bool:
     return word.isnumeric() or (word.startswith('-') and word.count('-') == 1 and word.replace('-', '').isnumeric())
 
@@ -68,6 +77,13 @@ def __perform_product__(sent: list) -> str:
 
 def __html2pow__(sent: list) -> str:
     pass
+
+def __check_is_si_term__(word: str) -> bool:
+    global SI_data
+    if not SI_data:
+        SI_data = _get_specs()
+    terms = [si["term"] for si in SI_data]
+    return word in terms
 
 
 words_4_chartype = [
@@ -106,7 +122,8 @@ func_map = {
     '__expr__': __check_is_expr__,
     '__comparative__': __check_is_comparative__,
     '__chartype__': __check_is_chartype__,
-    '__restrictive_adverb__': __check_is_restrictive_adverb__
+    '__restrictive_adverb__': __check_is_restrictive_adverb__,
+    '__si_term__': __check_is_si_term__
 }
 
 # general_syntax_rules = [
@@ -124,6 +141,7 @@ func_map = {
 
 label_primitive_type = 'primitive_type'
 label_reference_type = 'reference_type'
+label_interpretation_type = 'interpretation_type'
 label_symbol = 'symbol'
 
 general_syntax_rules = [
@@ -380,6 +398,15 @@ general_syntax_rules = [
     {
         'pattern': ['__param__', 'length'], 
         'format': "__param__'s length", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ["__si_term__", ",", "__si_term__", "or", "__si_term__"], 
+        'format': "__si_term__ or __si_term__ or __si_term__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',

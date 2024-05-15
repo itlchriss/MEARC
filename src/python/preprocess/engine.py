@@ -22,13 +22,18 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
     if r := re.findall(r'(\'[^ ]+\')', sent):
         for i, e in enumerate(r):
             index = chr(i + 97)
-            exprs['str_' + index] = e
-            sent = sent.replace(e, ' str_' + index, 1)
+            exprs['strx_' + index] = e
+            sent = sent.replace(e, ' strx_' + index, 1)
     if r := re.findall(r'(\"[^ ]+\")', sent):
         for i, e in enumerate(r):
             index = chr(i + 97)
-            exprs['str_' + index] = e
-            sent = sent.replace(e, ' str_' + index, 1)
+            exprs['stry_' + index] = e
+            sent = sent.replace(e, ' stry_' + index, 1)
+    if r := re.findall(r'(\"[a-zA-Z ]+\")', sent):
+        for i, e in enumerate(r):
+            index = chr(i + 97)
+            exprs['strz_' + index] = e
+            sent = sent.replace(e, ' strz_' + index, 1)
     words = sent.split(' ')
     targets = {}
     for w in words:

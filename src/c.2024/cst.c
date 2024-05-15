@@ -9,7 +9,7 @@ extern struct queue *cst;
 void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
-    printf("Symbol: %s  (datatype: p(%d) r(%d))    Number of Refs: %d\n", c->symbol, c->datatype->p, c->datatype->r, c->ref_count);
+    printf("Symbol: %s  (datatype: p(%d) r(%d) i(%d))    Number of Refs: %d\n", c->symbol, c->datatype->p, c->datatype->r, c->datatype->i, c->ref_count);
     printf("Data: ");
     for (int i = 0; i < c->datalist->count; ++i) {
         char *data = (char *)gqueue(c->datalist, i);
@@ -21,6 +21,24 @@ void showcstsymbol(void *_symbol) {
             printf("%s  ", (char *)gqueue(c->datatype->types, i));
         }
     }
+    if ((int)c->datatype->i == (int)SI_INT_TYPE_MULTIPLE_SI) {
+        if (c->datatype->multiple_datatypes->count > 0) {
+            printf("\nMutliple datatypes:");    
+            for (int i = 0; i < c->datatype->multiple_datatypes->count; ++i) {
+                printf("(datatype %d: p(%d) r(%d))  ", 
+                    i,
+                    ((struct datatype *)gqueue(c->datatype->multiple_datatypes, i))->p,
+                    ((struct datatype *)gqueue(c->datatype->multiple_datatypes, i))->r
+                );
+            }
+        }
+    }
+    if (c->conjunction_operators->count > 0) {
+        printf("\nConjunctions:");    
+        for (int i = 0; i < c->conjunction_operators->count; ++i) {
+            printf("%s  ", (char *)gqueue(c->conjunction_operators, i));
+        }
+    }    
     printf("\n===================================================================================\n");
 }
 
@@ -37,11 +55,27 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->datatype->types = initqueue();
     new->datatype->element_datatype = NULL;
     new->datatype->relative_datatype = NULL;
+    new->datatype->multiple_datatypes = initqueue();
     new->astptr = NULL;
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;
+    new->conjunction_operators = initqueue();
     enqueue(cst, (void*)new);
+    return new;
+}
+
+
+struct datatype *copydatatype(struct datatype *input) {
+    struct datatype *new = (struct datatype *)malloc(sizeof(struct datatype));
+    new->p = input->p;
+    new->r = input->r;
+    new->i = input->i;
+    // TODO: the object class names should be copied as well
+    new->types = NULL;
+    new->relative_datatype = new->element_datatype = NULL;
+    new->lazy_resolve = NULL;
+    new->multiple_datatypes = NULL;
     return new;
 }
 
@@ -102,6 +136,9 @@ void deallocatecstsymbol(void *_cstsymbol) {
     }
     if (c->datatype->element_datatype) {
         deallocatequeue(c->datatype->element_datatype->types, deallocatedata);
+    }
+    if (c->conjunction_operators && c->conjunction_operators->count > 0) {
+        deallocatequeue(c->conjunction_operators, deallocatedata);
     }
     /* we never allocate the type_names in the relative datatype */
 }

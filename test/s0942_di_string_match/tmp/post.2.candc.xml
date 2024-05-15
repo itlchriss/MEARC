@@ -10,7 +10,7 @@
     <rule type="fa" cat="NP[nb]">
      <lf start="1" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
      <rule type="fa" cat="N">
-      <lf start="2" span="1" word="type_string_" lemma="type_string_" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+      <lf start="2" span="1" word="string" lemma="string" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
       <lf start="3" span="1" word="param_s_" lemma="param_s_" pos="NN" chunk="I-NP" entity="O" cat="N" />
      </rule>
     </rule>
@@ -42,44 +42,14 @@
      <rule type="fa" cat="S[dcl]\NP">
       <lf start="12" span="1" word="can" lemma="can" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" />
       <rule type="fa" cat="S[b]\NP">
-       <lf start="13" span="1" word="be" lemma="be" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/(S[pss]\NP)" />
-       <rule type="fa" cat="S[pss]\NP">
-        <lf start="14" span="1" word="[" lemma="[" pos="VBN" chunk="I-VP" entity="O" cat="(S[pss]\NP)/NP" />
-        <rule type="lex" cat="NP">
-         <rule type="ba" cat="N">
-          <lf start="15" span="1" word="0" lemma="0" pos="CD" chunk="I-NP" entity="I-DAT" cat="N[num]" />
-          <rule type="conj" cat="N\N">
-           <lf start="16" span="1" word="," lemma="," pos="," chunk="I-NP" entity="I-DAT" cat="," />
-           <rule type="ba" cat="N">
-            <lf start="17" span="1" word="4" lemma="4" pos="CD" chunk="I-NP" entity="I-DAT" cat="N" />
-            <rule type="conj" cat="N\N">
-             <lf start="18" span="1" word="," lemma="," pos="," chunk="I-NP" entity="I-DAT" cat="," />
-             <rule type="ba" cat="N">
-              <lf start="19" span="1" word="1" lemma="1" pos="CD" chunk="I-NP" entity="I-DAT" cat="N" />
-              <rule type="conj" cat="N\N">
-               <lf start="20" span="1" word="," lemma="," pos="," chunk="I-NP" entity="I-DAT" cat="," />
-               <rule type="ba" cat="N">
-                <lf start="21" span="1" word="3" lemma="3" pos="CD" chunk="I-NP" entity="I-DAT" cat="N" />
-                <rule type="conj" cat="N\N">
-                 <lf start="22" span="1" word="," lemma="," pos="," chunk="I-NP" entity="I-DAT" cat="," />
-                 <rule type="fa" cat="N">
-                  <lf start="23" span="1" word="2" lemma="2" pos="CD" chunk="I-NP" entity="I-DAT" cat="N/N" />
-                  <lf start="24" span="1" word="]" lemma="]" pos="NNS" chunk="I-NP" entity="I-DAT" cat="N" />
-                 </rule>
-                </rule>
-               </rule>
-              </rule>
-             </rule>
-            </rule>
-           </rule>
-          </rule>
-         </rule>
-        </rule>
+       <lf start="13" span="1" word="be" lemma="be" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+       <rule type="lex" cat="NP">
+        <lf start="14" span="1" word="arr_a" lemma="arr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
        </rule>
       </rule>
      </rule>
     </rule>
-    <lf start="25" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+    <lf start="15" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
    </rule>
   </rule>
  </rule>

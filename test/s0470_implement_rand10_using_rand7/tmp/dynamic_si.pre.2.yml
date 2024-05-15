@@ -9,3 +9,14 @@
   - primitive_type: undefined
     reference_type: string
   interpretation: rand10()
+- term: arr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {1 , 10}
