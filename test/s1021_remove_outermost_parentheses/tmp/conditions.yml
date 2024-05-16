@@ -1,8 +1,8 @@
 ensures:
-- The type_string_ result is obtained by removing the outermost parentheses of every primitive string in the primitive decomposition of the string param_s_.
-- If the string param_s_ is equal to str_a , the type_string_ result is equal to str_b.
-- If the string param_s_ is equal to str_a , the type_string_ result is equal to str_b.
-- If the string param_s_ is equal to str_a , the type_string_ result is equal to "".
+- The type_string_ result is obtained by removing the outermost parentheses of every primitive string in the primitive decomposition of the type_string_ param_s_.
+- If the type_string_ param_s_ is equal to stry_a , the type_string_ result is equal to stry_b.
+- If the type_string_ param_s_ is equal to stry_a , the type_string_ result is equal to stry_b.
+- If the type_string_ param_s_ is equal to stry_a , the type_string_ result is equal to "".
 requires:
-- The length of the string param_s_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
-- The string param_s_ is a valid parentheses string.
+- The length of the type_string_ param_s_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
+- The type_string_ param_s_ is a valid parentheses string.

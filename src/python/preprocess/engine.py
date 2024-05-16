@@ -62,7 +62,7 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
     sent = re.sub(r'or str_', 'or the str_', sent)
     sent = re.sub(r'or expr_', 'or the expr_', sent)
 
-    if r := re.findall(r'(\[[,0-9 ]+\])', sent, re.ASCII):
+    if r := re.findall(r'(\[[,\-0-9 ]+\])', sent, re.ASCII):
         for i, e in enumerate(r):
             index = chr(i + 97)
             _int_ = e.replace('[', '').replace(']', '')

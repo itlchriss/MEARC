@@ -1,12 +1,12 @@
 ensures:
 - The type_integer_ result is greater_than_or_equal to negative 2147483648 and is less_than_or_equal to 2147483647.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 7.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 1.
-- If the string param_s_ is equal to "3+5 / 2" , the type_integer_ result is equal to 5.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 7.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 1.
+- If the type_string_ param_s_ is equal to "3+5 / 2" , the type_integer_ result is equal to 5.
 requires:
-- The string param_s_ is valid and is a mathematical expression.
+- The type_string_ param_s_ is valid and is a mathematical expression.
 - The integer division truncates towards zero.
 - The method does not use any built-in function that evaluates strings as mathematical expressions.
-- The string param_s_ consists of integers and operators ( str_a) separated by spaces.
-- All integers in the expression are non-negative and in the range [0 , 2147483648 - 1].
+- The type_string_ param_s_ consists of integers and operators ( strx_a) separated by spaces.
+- All integers in the expression are non-negative and in the range arr_a.
 - The answer fits in a 32-bit integer.

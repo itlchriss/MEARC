@@ -277,14 +277,14 @@ int event_synthesis(struct astnode *node) {
     e->cstptr->interpretation_type = INT_SI_TYPE_EXPR;
     e->cstptr->ref_count--; 
     // NOTE: to be removed later. we should make use of the interpretation_type to do this checking
-    if (en1->cstptr->datatype->relative_datatype) {
-        free(en1->cstptr->datatype->relative_datatype);
-        en1->cstptr->datatype->relative_datatype = NULL;
-    }
-    if (en2 && en2->cstptr->datatype->relative_datatype) {
-        free(en2->cstptr->datatype->relative_datatype);
-        en2->cstptr->datatype->relative_datatype = NULL;
-    }
+    // if (en1->cstptr->datatype->relative_datatype) {
+    //     free(en1->cstptr->datatype->relative_datatype);
+    //     en1->cstptr->datatype->relative_datatype = NULL;
+    // }
+    // if (en2 && en2->cstptr->datatype->relative_datatype) {
+    //     free(en2->cstptr->datatype->relative_datatype);
+    //     en2->cstptr->datatype->relative_datatype = NULL;
+    // }
     /* the resulting operations */
     switch (node->syntax) {
         case JJ:

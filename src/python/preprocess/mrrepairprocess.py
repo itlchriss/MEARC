@@ -436,8 +436,13 @@ class RepairProcessor:
     def __process_negative__(self, sent):
         words = sent.split(' ')
         targets = {}
+        arr_flag = False
         for w in words:
-            if w.startswith('-') and w.count('-') == 1 and w.replace('-', '').isnumeric():
+            if '[' in w:
+                arr_flag = True
+            if '^' in w and arr_flag:
+                arr_flag = False
+            if w.startswith('-') and w.count('-') == 1 and w.replace('-', '').isnumeric() and not arr_flag:
                 targets[w] = 'negative ' + w.replace('-', '')
         for k in targets:
             sent = sent.replace(k, targets[k])
@@ -540,4 +545,10 @@ class RepairProcessor:
         for k in reqtype_ignore_rules[t].keys():
             sent = sent.replace(k, reqtype_ignore_rules[t][k])        
         sent = re.sub(r'\s+\'s', '\'s', sent)
+
+        # TODO: experimental statement to replace all the commas to 'and' or 'or'
+        if r := re.search(r"only\s+contains((\s*\w+\s*,)+)+,*\s*(and|or)\s*\w+\s*\.?", sent):
+            g = list(r.groups())
+            conj = g[-1]
+            sent = sent.replace(g[0], g[0].replace(',', conj))
         return sent

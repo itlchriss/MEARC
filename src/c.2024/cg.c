@@ -4,6 +4,7 @@
 #include "ast.h"
 #include "util.h"
 #include "cg.h"
+#include "alias.h"
 
 static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
@@ -85,6 +86,8 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
                         if (node->cstptr->datatype->relative_datatype) {
                             length_str = get_length_str(node->cstptr->datatype->relative_datatype->r);
                         } else {
+                            struct cstsymbol *ac = searchalias(node->cstptr);
+                            
                             length_str = get_length_str(node->cstptr->datatype->r);
                         }
                         fprintf(s, "\\ forall int %c; 0 <= %c < %s.%s; ",

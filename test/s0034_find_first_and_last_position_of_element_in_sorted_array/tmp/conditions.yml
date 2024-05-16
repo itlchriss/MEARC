@@ -1,5 +1,5 @@
 ensures:
-- If the type_integer_ param_target_ is not found in the type_integer_array_ param_nums_ , the type_integer_array_ result is equal to [-1 , -1].
+- If the type_integer_ param_target_ is not found in the type_integer_array_ param_nums_ , the type_integer_array_ result is equal to arr_a.
 - If the type_integer_ param_target_ is found in the type_integer_array_ param_nums_ , the first element of the type_integer_array_ result is equal to the starting position of the param_target_ value in the type_integer_array_ param_nums_ , and the second element of the type_integer_array_ result is equal to the ending position of the param_target_ value in the type_integer_array_ param_nums_.
 requires:
 - The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 0.

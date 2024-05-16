@@ -1,7 +1,7 @@
 ensures:
-- The type_integer_ result is equal to the number of period bits in the binary representation of the input param_n_.
-- If the input param_n_ is equal to str_a , the type_integer_ result is equal to 3.
-- If the input param_n_ is equal to str_a , the type_integer_ result is equal to 1.
-- If the input param_n_ is equal to str_a , the type_integer_ result is equal to 31.
+- The type_integer_ result is equal to the number of strx_a bits in the binary representation of the input param_n_.
+- If the input param_n_ is equal to stry_a , the type_integer_ result is equal to 3.
+- If the input param_n_ is equal to stry_a , the type_integer_ result is equal to 1.
+- If the input param_n_ is equal to stry_a , the type_integer_ result is equal to 31.
 requires:
 - The input param_n_ is a binary string of length 32.

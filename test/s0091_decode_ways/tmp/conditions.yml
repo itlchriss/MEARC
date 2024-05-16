@@ -1,9 +1,9 @@
 ensures:
 - The type_integer_ result is less_than_or_equal to the maximum value of a 32-bit integer and is greater_than_or_equal to 0.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 2.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 3.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 0.
-- If the string param_s_ is equal to str_a , the type_integer_ result is equal to 0.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 2.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 3.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 0.
+- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 0.
 requires:
-- The length of the string param_s_ is less_than_or_equal to 100 and is greater_than_or_equal to 1.
-- The string param_s_ only contains digits and may contain leading zeros.
+- The length of the type_string_ param_s_ is less_than_or_equal to 100 and is greater_than_or_equal to 1.
+- The type_string_ param_s_ only contains digits and may contain leading zeros.

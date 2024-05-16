@@ -1,9 +1,9 @@
 ensures:
 - The type_string_ result consists of uppercase_alphabets only.
 - The type_string_ result corresponds to the Excel sheet column title representation of the type_integer_ param_columnNumber_.
-- If the type_integer_ param_columnNumber_ is equal to 1 , the type_string_ result is equal to str_a.
-- If the type_integer_ param_columnNumber_ is equal to 28 , the type_string_ result is equal to str_a.
-- If the type_integer_ param_columnNumber_ is equal to 701 , the type_string_ result is equal to str_a.
-- If the type_integer_ param_columnNumber_ is equal to 2147483647 , the type_string_ result is equal to str_a.
+- If the type_integer_ param_columnNumber_ is equal to 1 , the type_string_ result is equal to stry_a.
+- If the type_integer_ param_columnNumber_ is equal to 28 , the type_string_ result is equal to stry_a.
+- If the type_integer_ param_columnNumber_ is equal to 701 , the type_string_ result is equal to stry_a.
+- If the type_integer_ param_columnNumber_ is equal to 2147483647 , the type_string_ result is equal to stry_a.
 requires:
 - The type_integer_ param_columnNumber_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.

@@ -1,10 +1,10 @@
 ensures:
-- If the next character after leading whitespaces is period or period , the result is negative or positive , respectively.
+- If the next character after leading whitespaces is strx_a or strx_b , the result is negative or positive , respectively.
 - The final result is the integer after all the above steps have been applied.
 requires:
-- The string param_s_ is less_than_or_equal to 200 characters in length.
-- The string param_s_ contains alphabets , digits (0-9) , ' comma+comma-' , and period.
-- If exist leading whitespaces in the string param_s_ , they are ignored.
+- The type_string_ param_s_ is less_than_or_equal to 200 characters in length.
+- The type_string_ param_s_ contains alphabets , digits , ' comma+comma-' , and period.
+- If exist leading whitespaces in the type_string_ param_s_ , they are ignored.
 - The characters are read until the next non-digit character or the end of the input is reached.
 - The digits are converted into an integer , and if no digits were read , the integer is 0.
-- The integer is clamped to the range [-2147483648 , 2147483648 - 1] if it exceeds this range.
+- The integer is clamped to the range arr_a if it exceeds this range.

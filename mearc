@@ -105,7 +105,7 @@ then
                 for i in $(seq 1 $pcount); do
                     body="${lines[$i]}"
                     # printf "%s" $body
-                    # body="${body//\\ /\\}"                                 
+                    body="${body/\\ /\\}"                                 
                     if [[ ! -z "$body" ]] && [[ "$body" != "()" ]]; then
                         printf "$keyword(%s);\n" "$body"
                         printf "$keyword(%s);\n" "$body" > $folder/jml/$filename

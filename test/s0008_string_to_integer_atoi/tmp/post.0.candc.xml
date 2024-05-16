@@ -28,14 +28,12 @@
      </rule>
      <rule type="fa" cat="S[dcl]\NP">
       <lf start="7" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
-      <rule type="ba" cat="NP">
-       <rule type="lex" cat="NP">
-        <lf start="8" span="1" word="period" lemma="period" pos="NN" chunk="I-NP" entity="O" cat="N" />
-       </rule>
-       <rule type="conj" cat="NP\NP">
-        <lf start="9" span="1" word="or" lemma="or" pos="CC" chunk="I-NP" entity="O" cat="conj" />
-        <rule type="lex" cat="NP">
-         <lf start="10" span="1" word="period" lemma="period" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      <rule type="lex" cat="NP">
+       <rule type="ba" cat="N">
+        <lf start="8" span="1" word="strx_a" lemma="strx_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
+        <rule type="conj" cat="N\N">
+         <lf start="9" span="1" word="or" lemma="or" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+         <lf start="10" span="1" word="strx_b" lemma="strx_b" pos="NN" chunk="I-NP" entity="O" cat="N" />
         </rule>
        </rule>
       </rule>

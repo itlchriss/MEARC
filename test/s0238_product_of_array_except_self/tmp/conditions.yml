@@ -3,7 +3,7 @@ ensures:
 - The product of all elements in the type_integer_array_ result , except the element at index expr_a , is equal to the product of all elements in the type_integer_array_ param_nums_ , except the element at index expr_b.
 - The product of any prefix or suffix of the type_integer_array_ result is guaranteed to fit in a 32-bit integer.
 - If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_array_ result is equal to arr_b.
-- If the type_integer_array_ param_nums_ is equal to [-1 , 1 , 0 , negative 3 , 3] , the type_integer_array_ result is equal to arr_a.
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_array_ result is equal to arr_b.
 requires:
 - The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 2.
 - All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 30 and are greater_than_or_equal to negative 30.
