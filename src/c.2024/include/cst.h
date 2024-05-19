@@ -38,7 +38,8 @@ enum reference_datatype {
     AnyRefType = -2,
     Array = 0,
     String = 1,
-    Object = 2
+    Object = 2,
+    List = 3
 };
 
 /*
@@ -137,6 +138,10 @@ struct cstsymbol {
     * Used when the datalist length is more than 1. We record the node's connective in this list to perform conjuction
     */
     struct queue *conjunction_operators;    
+    /*
+    * A field to record if this symbol is an argument to a predicate. If not, its alias should be check in SI analysis
+    */
+    int is_argument_to_predicate;
 };
 
 

@@ -279,7 +279,7 @@ int __direct_syntax_synthesis__(struct astnode *node) {
                     enqueue(child->cstptr->conjunction_operators, (char *)strdup("||"));
                     break;
                 default:
-                    semantic_error("Unsupported operator conjunction", node->parent->token->symbol);
+                    // semantic_error("Unsupported operator conjunction", node->parent->token->symbol);
                     break;
             }                        
         }    

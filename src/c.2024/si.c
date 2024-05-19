@@ -365,17 +365,20 @@ int satisfy(struct astnode *node, struct queue *visited_variables) {
                 _aliased_cstptr->datatype = en->cstptr->datatype;
                 en->cstptr = _aliased_cstptr;
                 en->cstptr->ref_count++;
-            }
+            } 
             if (!searchqueue(visited_variables, en->cstptr, __search_visited_variables__)) return 0;
             else return 1;
         } else {
             for (int i = 0; i < e->entities->count; ++i) {
                 struct entity *en = (struct entity *)gqueue(e->entities, i);
-                if (en->cstptr->ref_count == 1) {
+                if (en->cstptr->ref_count == 1 || !en->cstptr->is_argument_to_predicate) {
+                    /*
+                    * !en->cstptr->is_argument_to_predicate: this indicates that the variable should always use its alias, because it is not an argument, then it will never have a synthesis to form an intermediate SI. therefore, we should point it to its alias
+                    */
                     struct cstsymbol *_aliased_cstptr = searchalias(en->cstptr);
                     if (_aliased_cstptr == NULL) internal_error("Please check with si.c -> satisfy function. There is an entity that does not have an alias, and its cstptr is only referenced by itself.");
                     en->cstptr = _aliased_cstptr;
-                }
+                } 
                 if (!searchqueue(visited_variables, en->cstptr, __search_visited_variables__)) return 0;
             }       
             /* make it to the last one to be resolved */
@@ -422,6 +425,7 @@ void sianalysis() {
         printf("%s\n", ((struct astnode *)gqueue(predicates, i))->token->symbol);
     }
     #endif
+
     /* 
         adverbs that are restrictive such as 'only' must be resolved first.
         they are resolved by combining them to the verb predicate, 
@@ -448,6 +452,10 @@ void sianalysis() {
             getastchild(node, 0)->cstptr->ref_count/2 > 1) 
             enqueue(rbqueue, (void *)node);
         else enqueue(target, (void *)node);
+        /* further mark the Variable node that is an argument to a predicate. such that for those that are not arguments should have alias */
+        if (countastchildren(node) == 1 && (getastchild(node, 0))->type == Variable) {
+            (getastchild(node, 0))->cstptr->is_argument_to_predicate = TRUE;
+        }
     }
     while (!isempty(target)) { enqueue(predicates, dequeue(target)); }
     target = initqueue();
