@@ -1,0 +1,123 @@
+ERROR:root:Failed to parse \X0 K.TrueP(\x.X0(\y.TrueP,\y.exists e.(_have{VBZ}(e) & (Subj(e) = x) & (Acc(e) = y) & _LEFTB{LRB}(\F1 F2.F2(e),\F1 F2.exists x.((x = _it{PRP}) & F1(x) & F2(x))) & exists e09.(_know{VBN}(e09) & (Acc(e09) = e) & exists z8.(_]{NNS}(z8) & _weight{NN}(z8) & _ham{VBG}(z8) & _[{NN}(z8) & exists z4.(_http{NN}(z4) & exists z3.(_//en_DOTwikipedia_DOTorg/wiki/hammingweight{NNP}(z3) & TrueP & exists e05.(_:{IN}(e05,z3) & (Subj(e05) = z4) & TrueP)) & exists e06.(_LEFTB{LRB}(e06,z4) & (Subj(e06) = z8) & TrueP)) & _as{IN}(e09,z8)) & \F2.exists x.((x = _it{PRP}) & e09(x) & F2(x))))),K). Error: 'e09' is an illegal predicate name.  Individual variables may not be used as predicates.
+\X0 K.TrueP(\x.X0(\y.TrueP,\y.exists e.(_have{VBZ}(e) & (Subj(e) = x) & (Acc(e) = y) & _LEFTB{LRB}(\F1 F2.F2(e),\F1 F2.exists x.((x = _it{PRP}) & F1(x) & F2(x))) & exists e09.(_know{VBN}(e09) & (Acc(e09) = e) & exists z8.(_]{NNS}(z8) & _weight{NN}(z8) & _ham{VBG}(z8) & _[{NN}(z8) & exists z4.(_http{NN}(z4) & exists z3.(_//en_DOTwikipedia_DOTorg/wiki/hammingweight{NNP}(z3) & TrueP & exists e05.(_:{IN}(e05,z3) & (Subj(e05) = z4) & TrueP)) & exists e06.(_LEFTB{LRB}(e06,z4) & (Subj(e06) = z8) & TrueP)) & _as{IN}(e09,z8)) & \F2.exists x.((x = _it{PRP}) & e09(x) & F2(x))))),K)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+ERROR:root:An error occurred: 'e09' is an illegal predicate name.  Individual variables may not be used as predicates.
+\X0 K.TrueP(\x.X0(\y.TrueP,\y.exists e.(_have{VBZ}(e) & (Subj(e) = x) & (Acc(e) = y) & _LEFTB{LRB}(\F1 F2.F2(e),\F1 F2.exists x.((x = _it{PRP}) & F1(x) & F2(x))) & exists e09.(_know{VBN}(e09) & (Acc(e09) = e) & exists z8.(_]{NNS}(z8) & _weight{NN}(z8) & _ham{VBG}(z8) & _[{NN}(z8) & exists z4.(_http{NN}(z4) & exists z3.(_//en_DOTwikipedia_DOTorg/wiki/hammingweight{NNP}(z3) & TrueP & exists e05.(_:{IN}(e05,z3) & (Subj(e05) = z4) & TrueP)) & exists e06.(_LEFTB{LRB}(e06,z4) & (Subj(e06) = z8) & TrueP)) & _as{IN}(e09,z8)) & \F2.exists x.((x = _it{PRP}) & e09(x) & F2(x))))),K)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+Sentence: Write a function that takes an unsigned integer and returns the number of '1 ' bits it has ( also known as the [ Hamming weight ] ( http : //en.wikipedia.org/wiki/Hammingweight ) ) .
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" id="t0_0" surf="Write" base="write"/>
+    <token start="1" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_1" surf="a" base="a"/>
+    <token start="2" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_2" surf="function" base="function"/>
+    <token start="3" span="1" pos="WDT" chunk="B-NP" entity="O" cat="(NP\NP)/(S[dcl]\NP)" id="t0_3" surf="that" base="that"/>
+    <token start="4" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_4" surf="takes" base="take"/>
+    <token start="5" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_5" surf="an" base="an"/>
+    <token start="6" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_6" surf="unsigned" base="unsigned"/>
+    <token start="7" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_7" surf="integer" base="integer"/>
+    <token start="8" span="1" pos="CC" chunk="O" entity="O" cat="conj" id="t0_8" surf="and" base="and"/>
+    <token start="9" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="N" id="t0_9" surf="returns" base="return"/>
+    <token start="10" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_10" surf="the" base="the"/>
+    <token start="11" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_11" surf="number" base="number"/>
+    <token start="12" span="1" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" id="t0_12" surf="of" base="of"/>
+    <token start="13" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_13" surf="'1" base="'1"/>
+    <token start="14" span="1" pos="POS" chunk="B-NP" entity="O" cat="(NP[nb]/N)\NP" id="t0_14" surf="'" base="'"/>
+    <token start="15" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_15" surf="bits" base="bit"/>
+    <token start="16" span="1" pos="PRP" chunk="B-NP" entity="O" cat="NP" id="t0_16" surf="it" base="it"/>
+    <token start="17" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_17" surf="has" base="have"/>
+    <token start="18" span="1" pos="LRB" chunk="O" entity="O" cat="LRB" id="t0_18" surf="(" base="("/>
+    <token start="19" span="1" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)/(S\NP)" id="t0_19" surf="also" base="also"/>
+    <token start="20" span="1" pos="VBN" chunk="I-VP" entity="O" cat="(S[pss]\NP)/PP" id="t0_20" surf="known" base="know"/>
+    <token start="21" span="1" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" id="t0_21" surf="as" base="as"/>
+    <token start="22" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_22" surf="the" base="the"/>
+    <token start="23" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t0_23" surf="[" base="["/>
+    <token start="24" span="1" pos="VBG" chunk="I-VP" entity="O" cat="N/N" id="t0_24" surf="Hamming" base="ham"/>
+    <token start="25" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t0_25" surf="weight" base="weight"/>
+    <token start="26" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_26" surf="]" base="]"/>
+    <token start="27" span="1" pos="LRB" chunk="O" entity="O" cat="(NP\NP)/NP" id="t0_27" surf="(" base="("/>
+    <token start="28" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_28" surf="http" base="http"/>
+    <token start="29" span="1" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" id="t0_29" surf=":" base=":"/>
+    <token start="30" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" cat="N" id="t0_30" surf="//en.wikipedia.org/wiki/Hammingweight" base="//en.wikipedia.org/wiki/hammingweight"/>
+    <token start="31" span="1" pos="RRB" chunk="O" entity="O" cat="RRB" id="t0_31" surf=")" base=")"/>
+    <token start="32" span="1" pos="RRB" chunk="O" entity="O" cat="RRB" id="t0_32" surf=")" base=")"/>
+    <token start="33" span="1" pos="." chunk="O" entity="O" cat="." id="t0_33" surf="." base="."/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp2" category="S[b=true]\NP" rule="fa"/>
+    <span start="0" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp1" surf="Write" base="write" terminal="t0_0" category="(S[b=true]\NP)/NP"/>
+    <span id="s0_sp2" child="s0_sp3 s0_sp6" category="NP" rule="ba"/>
+    <span id="s0_sp3" child="s0_sp4 s0_sp5" category="NP[nb=true]" rule="fa"/>
+    <span start="1" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp4" surf="a" base="a" terminal="t0_1" category="NP[nb=true]/N"/>
+    <span start="2" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp5" surf="function" base="function" terminal="t0_2" category="N"/>
+    <span id="s0_sp6" child="s0_sp7 s0_sp8" category="NP\NP" rule="fa"/>
+    <span start="3" span="1" pos="WDT" chunk="B-NP" entity="O" id="s0_sp7" surf="that" base="that" terminal="t0_3" category="(NP\NP)/(S[dcl=true]\NP)"/>
+    <span id="s0_sp8" child="s0_sp9 s0_sp10" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="4" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp9" surf="takes" base="take" terminal="t0_4" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp10" child="s0_sp11 s0_sp20" category="NP" rule="ba"/>
+    <span id="s0_sp11" child="s0_sp12 s0_sp13" category="NP[nb=true]" rule="fa"/>
+    <span start="5" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp12" surf="an" base="an" terminal="t0_5" category="NP[nb=true]/N"/>
+    <span id="s0_sp13" child="s0_sp14 s0_sp15" category="N" rule="fa"/>
+    <span start="6" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp14" surf="unsigned" base="unsigned" terminal="t0_6" category="N/N"/>
+    <span id="s0_sp15" child="s0_sp16 s0_sp17" category="N" rule="ba"/>
+    <span start="7" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp16" surf="integer" base="integer" terminal="t0_7" category="N"/>
+    <span id="s0_sp17" child="s0_sp18 s0_sp19" category="N\N" rule="conj"/>
+    <span start="8" span="1" pos="CC" chunk="O" entity="O" id="s0_sp18" surf="and" base="and" terminal="t0_8" category="conj"/>
+    <span start="9" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp19" surf="returns" base="return" terminal="t0_9" category="N"/>
+    <span id="s0_sp20" child="s0_sp21" category="NP\NP" rule="lex"/>
+    <span id="s0_sp21" child="s0_sp22 s0_sp73" category="S[dcl=true]" rule="rp"/>
+    <span id="s0_sp22" child="s0_sp23 s0_sp36" category="S[dcl=true]" rule="fa"/>
+    <span id="s0_sp23" child="s0_sp24" category="S[X=true]/(S[X=true]/NP)" rule="tr"/>
+    <span id="s0_sp24" child="s0_sp25 s0_sp28" category="NP" rule="ba"/>
+    <span id="s0_sp25" child="s0_sp26 s0_sp27" category="NP[nb=true]" rule="fa"/>
+    <span start="10" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp26" surf="the" base="the" terminal="t0_10" category="NP[nb=true]/N"/>
+    <span start="11" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp27" surf="number" base="number" terminal="t0_11" category="N"/>
+    <span id="s0_sp28" child="s0_sp29 s0_sp30" category="NP\NP" rule="fa"/>
+    <span start="12" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp29" surf="of" base="of" terminal="t0_12" category="(NP\NP)/NP"/>
+    <span id="s0_sp30" child="s0_sp31 s0_sp35" category="NP[nb=true]" rule="fa"/>
+    <span id="s0_sp31" child="s0_sp32 s0_sp34" category="NP[nb=true]/N" rule="ba"/>
+    <span id="s0_sp32" child="s0_sp33" category="NP" rule="lex"/>
+    <span start="13" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp33" surf="'1" base="'1" terminal="t0_13" category="N"/>
+    <span start="14" span="1" pos="POS" chunk="B-NP" entity="O" id="s0_sp34" surf="'" base="'" terminal="t0_14" category="(NP[nb=true]/N)\NP"/>
+    <span start="15" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp35" surf="bits" base="bit" terminal="t0_15" category="N"/>
+    <span id="s0_sp36" child="s0_sp37 s0_sp39" category="S[dcl=true]/NP" rule="fc"/>
+    <span id="s0_sp37" child="s0_sp38" category="S[X=true]/(S[X=true]\NP)" rule="tr"/>
+    <span start="16" span="1" pos="PRP" chunk="B-NP" entity="O" id="s0_sp38" surf="it" base="it" terminal="t0_16" category="NP"/>
+    <span id="s0_sp39" child="s0_sp40 s0_sp41" category="(S[dcl=true]\NP)/NP" rule="bx"/>
+    <span start="17" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp40" surf="has" base="have" terminal="t0_17" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp41" child="s0_sp42 s0_sp43" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="lp"/>
+    <span start="18" span="1" pos="LRB" chunk="O" entity="O" id="s0_sp42" surf="(" base="(" terminal="t0_18" category="LRB"/>
+    <span id="s0_sp43" child="s0_sp44" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="lex"/>
+    <span id="s0_sp44" child="s0_sp45 s0_sp46" category="S[pss=true]\NP" rule="fa"/>
+    <span start="19" span="1" pos="RB" chunk="I-VP" entity="O" id="s0_sp45" surf="also" base="also" terminal="t0_19" category="(S\NP)/(S\NP)"/>
+    <span id="s0_sp46" child="s0_sp47 s0_sp48" category="S[pss=true]\NP" rule="fa"/>
+    <span start="20" span="1" pos="VBN" chunk="I-VP" entity="O" id="s0_sp47" surf="known" base="know" terminal="t0_20" category="(S[pss=true]\NP)/PP"/>
+    <span id="s0_sp48" child="s0_sp49 s0_sp50" category="PP" rule="fa"/>
+    <span start="21" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp49" surf="as" base="as" terminal="t0_21" category="PP/NP"/>
+    <span id="s0_sp50" child="s0_sp51 s0_sp60" category="NP" rule="ba"/>
+    <span id="s0_sp51" child="s0_sp52 s0_sp53" category="NP[nb=true]" rule="fa"/>
+    <span start="22" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp52" surf="the" base="the" terminal="t0_22" category="NP[nb=true]/N"/>
+    <span id="s0_sp53" child="s0_sp54 s0_sp55" category="N" rule="fa"/>
+    <span start="23" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp54" surf="[" base="[" terminal="t0_23" category="N/N"/>
+    <span id="s0_sp55" child="s0_sp56 s0_sp57" category="N" rule="fa"/>
+    <span start="24" span="1" pos="VBG" chunk="I-VP" entity="O" id="s0_sp56" surf="Hamming" base="ham" terminal="t0_24" category="N/N"/>
+    <span id="s0_sp57" child="s0_sp58 s0_sp59" category="N" rule="fa"/>
+    <span start="25" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp58" surf="weight" base="weight" terminal="t0_25" category="N/N"/>
+    <span start="26" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp59" surf="]" base="]" terminal="t0_26" category="N"/>
+    <span id="s0_sp60" child="s0_sp61 s0_sp72" category="NP\NP" rule="rp"/>
+    <span id="s0_sp61" child="s0_sp62 s0_sp71" category="NP\NP" rule="rp"/>
+    <span id="s0_sp62" child="s0_sp63 s0_sp64" category="NP\NP" rule="fa"/>
+    <span start="27" span="1" pos="LRB" chunk="O" entity="O" id="s0_sp63" surf="(" base="(" terminal="t0_27" category="(NP\NP)/NP"/>
+    <span id="s0_sp64" child="s0_sp65 s0_sp67" category="NP" rule="ba"/>
+    <span id="s0_sp65" child="s0_sp66" category="NP" rule="lex"/>
+    <span start="28" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp66" surf="http" base="http" terminal="t0_28" category="N"/>
+    <span id="s0_sp67" child="s0_sp68 s0_sp69" category="NP\NP" rule="fa"/>
+    <span start="29" span="1" pos="IN" chunk="O" entity="O" id="s0_sp68" surf=":" base=":" terminal="t0_29" category="(NP\NP)/NP"/>
+    <span id="s0_sp69" child="s0_sp70" category="NP" rule="lex"/>
+    <span start="30" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" id="s0_sp70" surf="//en.wikipedia.org/wiki/Hammingweight" base="//en.wikipedia.org/wiki/hammingweight" terminal="t0_30" category="N"/>
+    <span start="31" span="1" pos="RRB" chunk="O" entity="O" id="s0_sp71" surf=")" base=")" terminal="t0_31" category="RRB"/>
+    <span start="32" span="1" pos="RRB" chunk="O" entity="O" id="s0_sp72" surf=")" base=")" terminal="t0_32" category="RRB"/>
+    <span start="33" span="1" pos="." chunk="O" entity="O" id="s0_sp73" surf="." base="." terminal="t0_33" category="."/>
+  </ccg>
+</sentence>
+

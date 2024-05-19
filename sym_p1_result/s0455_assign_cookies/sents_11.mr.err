@@ -1,0 +1,100 @@
+ERROR:root:Failed to parse (_factor{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))) & _greed{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))))(\F2 F3.exists x.(_child{NN}(x) & F2(x) & F3(x))). Error: The function '(_factor{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))) & _greed{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))))' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+(_factor{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))) & _greed{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))))(\F2 F3.exists x.(_child{NN}(x) & F2(x) & F3(x)))
+                                                                                                                                                                                                 ^
+ERROR:root:An error occurred: The function '(_factor{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))) & _greed{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))))' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+(_factor{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))) & _greed{NN}(\Q2 K.Q2(\x.TrueP,\x.exists z5.(_content{NN}(z5) & _1{CD}(z5) & TrueP & (x = z5)))))(\F2 F3.exists x.(_child{NN}(x) & F2(x) & F3(x)))
+                                                                                                                                                                                                 ^
+Sentence: And even though you have 2 cookies , since their size is both 1 , you could only make the child whose greed factor is 1 content .
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="CC" chunk="O" entity="O" cat="S/S" id="t0_0" surf="And" base="and"/>
+    <token start="1" span="1" pos="RB" chunk="I-SBAR" entity="O" cat="(S/S)/(S/S)" id="t0_1" surf="even" base="even"/>
+    <token start="2" span="1" pos="IN" chunk="I-SBAR" entity="O" cat="(S/S)/S[dcl]" id="t0_2" surf="though" base="though"/>
+    <token start="3" span="1" pos="PRP" chunk="I-NP" entity="O" cat="NP" id="t0_3" surf="you" base="you"/>
+    <token start="4" span="1" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_4" surf="have" base="have"/>
+    <token start="5" span="1" pos="CD" chunk="I-NP" entity="O" cat="N/N" id="t0_5" surf="2" base="2"/>
+    <token start="6" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_6" surf="cookies" base="cookie"/>
+    <token start="7" span="1" pos="," chunk="O" entity="O" cat="," id="t0_7" surf="," base=","/>
+    <token start="8" span="1" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/S[dcl]" id="t0_8" surf="since" base="since"/>
+    <token start="9" span="1" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_9" surf="their" base="their"/>
+    <token start="10" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_10" surf="size" base="size"/>
+    <token start="11" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_11" surf="is" base="be"/>
+    <token start="12" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_12" surf="both" base="both"/>
+    <token start="13" span="1" pos="CD" chunk="I-NP" entity="O" cat="N" id="t0_13" surf="1" base="1"/>
+    <token start="14" span="1" pos="," chunk="O" entity="O" cat="," id="t0_14" surf="," base=","/>
+    <token start="15" span="1" pos="PRP" chunk="I-NP" entity="O" cat="NP" id="t0_15" surf="you" base="you"/>
+    <token start="16" span="1" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" id="t0_16" surf="could" base="could"/>
+    <token start="17" span="1" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" id="t0_17" surf="only" base="only"/>
+    <token start="18" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" id="t0_18" surf="make" base="make"/>
+    <token start="19" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_19" surf="the" base="the"/>
+    <token start="20" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_20" surf="child" base="child"/>
+    <token start="21" span="1" pos="WP$" chunk="B-NP" entity="O" cat="((NP\NP)/(S[dcl]\NP))/N" id="t0_21" surf="whose" base="whose"/>
+    <token start="22" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t0_22" surf="greed" base="greed"/>
+    <token start="23" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_23" surf="factor" base="factor"/>
+    <token start="24" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_24" surf="is" base="be"/>
+    <token start="25" span="1" pos="CD" chunk="I-NP" entity="I-PCT" cat="N/N" id="t0_25" surf="1" base="1"/>
+    <token start="26" span="1" pos="NN" chunk="I-NP" entity="I-PCT" cat="N" id="t0_26" surf="content" base="content"/>
+    <token start="27" span="1" pos="." chunk="O" entity="O" cat="." id="t0_27" surf="." base="."/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp2" category="S[dcl=true]" rule="fa"/>
+    <span start="0" span="1" pos="CC" chunk="O" entity="O" id="s0_sp1" surf="And" base="and" terminal="t0_0" category="S/S"/>
+    <span id="s0_sp2" child="s0_sp3 s0_sp29" category="S[dcl=true]" rule="fa"/>
+    <span id="s0_sp3" child="s0_sp4 s0_sp5" category="S[X=true]/S[X=true]" rule="fa"/>
+    <span start="1" span="1" pos="RB" chunk="I-SBAR" entity="O" id="s0_sp4" surf="even" base="even" terminal="t0_1" category="(S/S)/(S/S)"/>
+    <span id="s0_sp5" child="s0_sp6 s0_sp7" category="S[X=true]/S[X=true]" rule="fa"/>
+    <span start="2" span="1" pos="IN" chunk="I-SBAR" entity="O" id="s0_sp6" surf="though" base="though" terminal="t0_2" category="(S/S)/S[dcl=true]"/>
+    <span id="s0_sp7" child="s0_sp8 s0_sp9" category="S[dcl=true]" rule="ba"/>
+    <span start="3" span="1" pos="PRP" chunk="I-NP" entity="O" id="s0_sp8" surf="you" base="you" terminal="t0_3" category="NP"/>
+    <span id="s0_sp9" child="s0_sp10 s0_sp18" category="S[dcl=true]\NP" rule="ba"/>
+    <span id="s0_sp10" child="s0_sp11 s0_sp17" category="S[dcl=true]\NP" rule="rp"/>
+    <span id="s0_sp11" child="s0_sp12 s0_sp13" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="4" span="1" pos="VBP" chunk="I-VP" entity="O" id="s0_sp12" surf="have" base="have" terminal="t0_4" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp13" child="s0_sp14" category="NP" rule="lex"/>
+    <span id="s0_sp14" child="s0_sp15 s0_sp16" category="N" rule="fa"/>
+    <span start="5" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp15" surf="2" base="2" terminal="t0_5" category="N/N"/>
+    <span start="6" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp16" surf="cookies" base="cookie" terminal="t0_6" category="N"/>
+    <span start="7" span="1" pos="," chunk="O" entity="O" id="s0_sp17" surf="," base="," terminal="t0_7" category="=true,"/>
+    <span id="s0_sp18" child="s0_sp19 s0_sp20" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="fa"/>
+    <span start="8" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp19" surf="since" base="since" terminal="t0_8" category="((S\NP)\(S\NP))/S[dcl=true]"/>
+    <span id="s0_sp20" child="s0_sp21 s0_sp24" category="S[dcl=true]" rule="ba"/>
+    <span id="s0_sp21" child="s0_sp22 s0_sp23" category="NP[nb=true]" rule="fa"/>
+    <span start="9" span="1" pos="PRP$" chunk="I-NP" entity="O" id="s0_sp22" surf="their" base="their" terminal="t0_9" category="NP[nb=true]/N"/>
+    <span start="10" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp23" surf="size" base="size" terminal="t0_10" category="N"/>
+    <span id="s0_sp24" child="s0_sp25 s0_sp26" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="11" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp25" surf="is" base="be" terminal="t0_11" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp26" child="s0_sp27 s0_sp28" category="NP[nb=true]" rule="fa"/>
+    <span start="12" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp27" surf="both" base="both" terminal="t0_12" category="NP[nb=true]/N"/>
+    <span start="13" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp28" surf="1" base="1" terminal="t0_13" category="N"/>
+    <span id="s0_sp29" child="s0_sp30 s0_sp31" category="S[dcl=true]" rule="lp"/>
+    <span start="14" span="1" pos="," chunk="O" entity="O" id="s0_sp30" surf="," base="," terminal="t0_14" category="=true,"/>
+    <span id="s0_sp31" child="s0_sp32 s0_sp56" category="S[dcl=true]" rule="rp"/>
+    <span id="s0_sp32" child="s0_sp33 s0_sp34" category="S[dcl=true]" rule="ba"/>
+    <span start="15" span="1" pos="PRP" chunk="I-NP" entity="O" id="s0_sp33" surf="you" base="you" terminal="t0_15" category="NP"/>
+    <span id="s0_sp34" child="s0_sp35 s0_sp38" category="S[dcl=true]\NP" rule="fa"/>
+    <span id="s0_sp35" child="s0_sp36 s0_sp37" category="(S[dcl=true]\NP)/(S[b=true]\NP)" rule="bx"/>
+    <span start="16" span="1" pos="MD" chunk="I-VP" entity="O" id="s0_sp36" surf="could" base="could" terminal="t0_16" category="(S[dcl=true]\NP)/(S[b=true]\NP)"/>
+    <span start="17" span="1" pos="RB" chunk="I-VP" entity="O" id="s0_sp37" surf="only" base="only" terminal="t0_17" category="(S\NP)\(S\NP)"/>
+    <span id="s0_sp38" child="s0_sp39 s0_sp40" category="S[b=true]\NP" rule="fa"/>
+    <span start="18" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp39" surf="make" base="make" terminal="t0_18" category="(S[b=true]\NP)/NP"/>
+    <span id="s0_sp40" child="s0_sp41 s0_sp44" category="NP" rule="ba"/>
+    <span id="s0_sp41" child="s0_sp42 s0_sp43" category="NP[nb=true]" rule="fa"/>
+    <span start="19" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp42" surf="the" base="the" terminal="t0_19" category="NP[nb=true]/N"/>
+    <span start="20" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp43" surf="child" base="child" terminal="t0_20" category="N"/>
+    <span id="s0_sp44" child="s0_sp45 s0_sp50" category="NP\NP" rule="fa"/>
+    <span id="s0_sp45" child="s0_sp46 s0_sp47" category="(NP\NP)/(S[dcl=true]\NP)" rule="fa"/>
+    <span start="21" span="1" pos="WP$" chunk="B-NP" entity="O" id="s0_sp46" surf="whose" base="whose" terminal="t0_21" category="((NP\NP)/(S[dcl=true]\NP))/N"/>
+    <span id="s0_sp47" child="s0_sp48 s0_sp49" category="N" rule="fa"/>
+    <span start="22" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp48" surf="greed" base="greed" terminal="t0_22" category="N/N"/>
+    <span start="23" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp49" surf="factor" base="factor" terminal="t0_23" category="N"/>
+    <span id="s0_sp50" child="s0_sp51 s0_sp52" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="24" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp51" surf="is" base="be" terminal="t0_24" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp52" child="s0_sp53" category="NP" rule="lex"/>
+    <span id="s0_sp53" child="s0_sp54 s0_sp55" category="N" rule="fa"/>
+    <span start="25" span="1" pos="CD" chunk="I-NP" entity="I-PCT" id="s0_sp54" surf="1" base="1" terminal="t0_25" category="N/N"/>
+    <span start="26" span="1" pos="NN" chunk="I-NP" entity="I-PCT" id="s0_sp55" surf="content" base="content" terminal="t0_26" category="N"/>
+    <span start="27" span="1" pos="." chunk="O" entity="O" id="s0_sp56" surf="." base="." terminal="t0_27" category="."/>
+  </ccg>
+</sentence>
+

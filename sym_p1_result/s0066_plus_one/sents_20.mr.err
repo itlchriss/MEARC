@@ -1,0 +1,47 @@
+ERROR:root:Failed to parse \x.((_ = {NN})(x) & _1{CD}(x)). Error: The function '(_ = {NN})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NN})(x) & _1{CD}(x))
+             ^
+ERROR:root:An error occurred: The function '(_ = {NN})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NN})(x) & _1{CD}(x))
+             ^
+Sentence: Incrementing by one gives 0 + 1 = 1 .
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="VBG" chunk="I-VP" entity="O" cat="N" id="t0_0" surf="Incrementing" base="increment"/>
+    <token start="1" span="1" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" id="t0_1" surf="by" base="by"/>
+    <token start="2" span="1" pos="CD" chunk="I-NP" entity="O" cat="N" id="t0_2" surf="one" base="one"/>
+    <token start="3" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_3" surf="gives" base="give"/>
+    <token start="4" span="1" pos="CD" chunk="I-NP" entity="I-PCT" cat="N/N" id="t0_4" surf="0" base="0"/>
+    <token start="5" span="1" pos="NN" chunk="I-NP" entity="I-PCT" cat="N/N" id="t0_5" surf="+" base="+"/>
+    <token start="6" span="1" pos="CD" chunk="I-NP" entity="I-PCT" cat="N/N" id="t0_6" surf="1" base="1"/>
+    <token start="7" span="1" pos="NN" chunk="I-NP" entity="I-PCT" cat="N" id="t0_7" surf="=" base="="/>
+    <token start="8" span="1" pos="CD" chunk="I-NP" entity="I-PCT" cat="N\N" id="t0_8" surf="1" base="1"/>
+    <token start="9" span="1" pos="." chunk="O" entity="O" cat="." id="t0_9" surf="." base="."/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp21" category="S[dcl=true]" rule="rp"/>
+    <span id="s0_sp1" child="s0_sp2 s0_sp9" category="S[dcl=true]" rule="ba"/>
+    <span id="s0_sp2" child="s0_sp3 s0_sp5" category="NP" rule="ba"/>
+    <span id="s0_sp3" child="s0_sp4" category="NP" rule="lex"/>
+    <span start="0" span="1" pos="VBG" chunk="I-VP" entity="O" id="s0_sp4" surf="Incrementing" base="increment" terminal="t0_0" category="N"/>
+    <span id="s0_sp5" child="s0_sp6 s0_sp7" category="NP\NP" rule="fa"/>
+    <span start="1" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp6" surf="by" base="by" terminal="t0_1" category="(NP\NP)/NP"/>
+    <span id="s0_sp7" child="s0_sp8" category="NP" rule="lex"/>
+    <span start="2" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp8" surf="one" base="one" terminal="t0_2" category="N"/>
+    <span id="s0_sp9" child="s0_sp10 s0_sp11" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="3" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp10" surf="gives" base="give" terminal="t0_3" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp11" child="s0_sp12" category="NP" rule="lex"/>
+    <span id="s0_sp12" child="s0_sp13 s0_sp14" category="N" rule="fa"/>
+    <span start="4" span="1" pos="CD" chunk="I-NP" entity="I-PCT" id="s0_sp13" surf="0" base="0" terminal="t0_4" category="N/N"/>
+    <span id="s0_sp14" child="s0_sp15 s0_sp16" category="N" rule="fa"/>
+    <span start="5" span="1" pos="NN" chunk="I-NP" entity="I-PCT" id="s0_sp15" surf="+" base="+" terminal="t0_5" category="N/N"/>
+    <span id="s0_sp16" child="s0_sp17 s0_sp18" category="N" rule="fa"/>
+    <span start="6" span="1" pos="CD" chunk="I-NP" entity="I-PCT" id="s0_sp17" surf="1" base="1" terminal="t0_6" category="N/N"/>
+    <span id="s0_sp18" child="s0_sp19 s0_sp20" category="N" rule="ba"/>
+    <span start="7" span="1" pos="NN" chunk="I-NP" entity="I-PCT" id="s0_sp19" surf="=" base="=" terminal="t0_7" category="N"/>
+    <span start="8" span="1" pos="CD" chunk="I-NP" entity="I-PCT" id="s0_sp20" surf="1" base="1" terminal="t0_8" category="N\N"/>
+    <span start="9" span="1" pos="." chunk="O" entity="O" id="s0_sp21" surf="." base="." terminal="t0_9" category="."/>
+  </ccg>
+</sentence>
+
