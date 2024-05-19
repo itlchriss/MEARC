@@ -80,15 +80,30 @@ void walktree(struct astnode *node, FILE *s, int *haserror) {
             case Quantifier:
                 if (node->qtype != Quantifier_ForAll) (*haserror)++;
                 else {
-                    char * type_name = (char *)gqueue(node->cstptr->datatype->types, 0);
+                    char * type_name = NULL;
+                    struct cstsymbol *ac = NULL;
+                    if (node->cstptr->is_argument_to_predicate) {
+                        /* this indicates that the variable node is involved in synthesis */
+                        type_name = (char *)gqueue(node->cstptr->datatype->types, 0);
+                    } else {
+                        /* this indicate that the alias of the variable node is involved */
+                        ac = searchalias(node->cstptr);
+                        type_name = (char *)gqueue(ac->datatype->types, 0);
+                    }
                     if (node->quantified_ranges->count == 0) {
                         char *length_str = NULL;
-                        if (node->cstptr->datatype->relative_datatype) {
-                            length_str = get_length_str(node->cstptr->datatype->relative_datatype->r);
+                        if (!ac) {
+                            if (node->cstptr->datatype->relative_datatype) {
+                                length_str = get_length_str(node->cstptr->datatype->relative_datatype->r);
+                            } else {                            
+                                length_str = get_length_str(node->cstptr->datatype->r);
+                            }
                         } else {
-                            struct cstsymbol *ac = searchalias(node->cstptr);
-                            
-                            length_str = get_length_str(node->cstptr->datatype->r);
+                            if (ac->datatype->relative_datatype) {
+                                length_str = get_length_str(ac->datatype->relative_datatype->r);
+                            } else {                            
+                                length_str = get_length_str(ac->datatype->r);
+                            }
                         }
                         fprintf(s, "\\ forall int %c; 0 <= %c < %s.%s; ",
                             (char)quantify_variable, 

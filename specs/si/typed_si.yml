@@ -499,6 +499,21 @@
   arguments:
   - symbol: Subj
     primitive_type: 'any'
+    reference_type: 'list'
+  - symbol: Dat
+    primitive_type: 'any'
+    reference_type: 'array'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'expression'
+  interpretation: (Subj).equals(Arrays.asList((Dat))))
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'any'
     reference_type: 'string'
   - symbol: Dat
     primitive_type: 'any'

@@ -55,8 +55,9 @@ int get_datatype(char *s) {
     else if (strcmp(s, "string") == 0) return String;
     else if (strcmp(s, "array") == 0) return Array;
     else if (strcmp(s, "object") == 0) return Object;
+    else if (strcmp(s, "list") == 0) return List;
     else {
-        sisyntax_error("Invalid primitive type used in SI file", "primitive_type", s);
+        sisyntax_error("Invalid primitive type used in SI file", "type", s);
         return -1;
     }
 }

@@ -60,6 +60,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->status = Empty;
     new->datalist = initqueue();
     new->ref_count = 0;
+    new->is_argument_to_predicate = FALSE;
     new->conjunction_operators = initqueue();
     enqueue(cst, (void*)new);
     return new;
