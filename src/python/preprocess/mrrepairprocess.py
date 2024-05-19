@@ -5,6 +5,7 @@ import math
 import pandas as pd
 import re
 import yaml
+from word2number import w2n
 
 
 sispecspath = './specs/si/typed_si.yml'
@@ -52,14 +53,14 @@ def __check_is_numeric__(word: str) -> bool:
     return word.isnumeric() or (word.startswith('-') and word.count('-') == 1 and word.replace('-', '').isnumeric())
 
 def __check_is_param__(word: str) -> bool:
-    return word.startswith('`') and word[-1] == '`'
+    return (word.startswith('`') and word[-1] == '`') or (word.startswith('param_') and word[-1] == '_')
 
 def __check_is_expr__(word: str) -> bool:
     pattern = r'_expr\d+_'
     return re.match(pattern, word)
 
 def __check_is_type__(word: str) -> bool:
-    return False 
+    return word.startswith('type_')
 
 def __check_is_comparative__(word: str) -> bool:
     return word.endswith('er')
@@ -85,6 +86,15 @@ def __check_is_si_term__(word: str) -> bool:
     terms = [si["term"] for si in SI_data]
     return word in terms
 
+def __check_is_num_word__(word: str) -> bool:
+    try:
+        return isinstance(w2n.word_to_num(word), int)
+    except:
+        return False 
+
+def __convert_num_word__(word: str) -> int:
+    return w2n.word_to_num(word)
+
 
 words_4_chartype = [
     'digits', 'English letters', 'alphabets', 'numbers'
@@ -104,9 +114,9 @@ def __check_is_restrictive_adverb__(word: str) -> str:
 
 # returning the index that the pattern starts at, or -1 indicates the pattern is not found
 def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
-    for i in range(len(words) - len(pattern) + 1):        
-        for j in range(len(pattern)):
-            if (pattern[j] in func_map and not func_map[pattern[j]](words[i + j])) or (not pattern[j] in func_map and words[i + j] != pattern[j]):                          
+    for i in range(len(words) - len(pattern) + 1):   
+        for j in range(len(pattern)):     
+            if (pattern[j] in func_map and not func_map[pattern[j]](words[i + j])) or (not pattern[j] in func_map and words[i + j] != pattern[j]):            
                 break
         else:
             return i
@@ -123,7 +133,8 @@ func_map = {
     '__comparative__': __check_is_comparative__,
     '__chartype__': __check_is_chartype__,
     '__restrictive_adverb__': __check_is_restrictive_adverb__,
-    '__si_term__': __check_is_si_term__
+    '__si_term__': __check_is_si_term__,
+    '__num_word__': __check_is_num_word__
 }
 
 # general_syntax_rules = [
@@ -405,8 +416,71 @@ general_syntax_rules = [
         'synthesised_datatype': { }
     },
     {
+        'pattern': ['__param__', 'has', 'a', 'length'], 
+        'format': "__param__'s length", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'has', 'an', 'even', 'length'], 
+        'format': "__param__'s length is even", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['length', 'of', 'the', '__type__', '__param__', 'and', 'the', '__type__', '__param__'], 
+        'format': "length of the __type__ __param__ and the length of the __type__ __param__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
         'pattern': ["__si_term__", ",", "__si_term__", "or", "__si_term__"], 
         'format': "__si_term__ or __si_term__ or __si_term__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'has', 'only', 'one', 'element'], 
+        'format': "__param__'s length is equal to 1", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'has', '__num_word__', 'elements'], 
+        'format': "__param__'s length is equal to __num_word__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'has', 'more', 'than', '__num_word__', 'elements'], 
+        'format': "__param__'s length is greater than to __num_word__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param__', 'has', 'more', 'than', '__num__', 'elements'], 
+        'format': "__param__'s length is greater than to __num__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',
@@ -551,4 +625,15 @@ class RepairProcessor:
             g = list(r.groups())
             conj = g[-1]
             sent = sent.replace(g[0], g[0].replace(',', conj))
+
+        # TODO: experimental replacing all text number to integer
+        index = []
+        words = sent.split(' ')
+        for i,w in enumerate(words):
+            if __check_is_num_word__(w):
+                index.append(i)
+        if index:
+            for i in index:
+                words[i] = str(__convert_num_word__(words[i]))
+        sent = ' '.join(words)
         return sent
