@@ -362,6 +362,10 @@ struct queue* readSI(char *dstfilepaths) {
                                                 yaml_parser_scan(&parser, &token);
                                             }
                                             enqueue(si->args, (void *)arg);
+                                            // TODO: modify here to adapt type_names in the first argument
+                                            // yaml_parser_scan(&parser, &token);
+                                            // printf("%d\n", token.type);
+                                            // exit(1);
                                             goto SWITCH;                                                                                                                  
                                         } else {
                                             sisyntax_error(filepath, si->symbol, "arguments");

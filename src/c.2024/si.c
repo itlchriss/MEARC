@@ -177,9 +177,7 @@ int PDT_code_synthesis(struct astnode *node) { return 0; }
 int POS_code_synthesis(struct astnode *node) { return 0; }
 int PRP_code_synthesis(struct astnode *node) { return 0; }
 int PRP_POS_code_synthesis(struct astnode *node) { return 0; }
-int RB_code_synthesis(struct astnode *node) {
-    return 0;
-}
+
 int RBR_code_synthesis(struct astnode *node) { return 0; }
 int RBS_code_synthesis(struct astnode *node) { return 0; }
 int RP_code_synthesis(struct astnode *node) { return 0; }
@@ -408,6 +406,7 @@ int __match_same_child_variable__(void *_node, void *_inputnode) {
     struct astnode *input = (struct astnode *)_inputnode;
 
     struct astnode *child1 = getastchild(current, 0), *child2 = getastchild(input, 0);
+
     if (child1->cstptr == child2->cstptr) 
         return TRUE;
     else
@@ -434,7 +433,20 @@ void sianalysis() {
     struct queue *rbqueue = initqueue();
     while (!isempty(predicates)) {
         node = (struct astnode *)dequeue(predicates);
-        if (node->syntax == RB) enqueue(rbqueue, (void *)node);
+        /*
+        * however, we have to consider an exceptional case
+        *  that is, if the adverb is not modifying a verb
+        *  such that, the adverb should not be deleted, instead,
+        *   it should be synthesis individually
+        */
+        // if (node->syntax == RB) enqueue(rbqueue, (void *)node);
+        /*
+         * we need a check on the node's child, 
+         * to see if its child is being accepted by another predicate 
+        */
+        if (node->syntax == RB &&
+            getastchild(node, 0)->cstptr->ref_count/2 > 1) 
+            enqueue(rbqueue, (void *)node);
         else enqueue(target, (void *)node);
     }
     while (!isempty(target)) { enqueue(predicates, dequeue(target)); }
