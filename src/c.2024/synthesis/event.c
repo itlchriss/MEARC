@@ -236,7 +236,9 @@ int event_synthesis(struct astnode *node) {
     if (e->entities->count == 1) {
         /* cases that predicates only have Subj */
         en1 = (struct entity *)gqueue(e->entities, 0);
-        if (en1->cstptr->datatype->relative_datatype != NULL) {
+        // if (en1->cstptr->datatype->relative_datatype != NULL) {
+        // TODO: experimental to make adverb only modify the variable instead of the relative noun
+        if (en1->cstptr->datatype->relative_datatype != NULL && node->syntax != RB) {
             siq = __match_event_si__(node->si_q, 1, en1->cstptr->datatype->relative_datatype);
         } else {
             siq = __match_event_si__(node->si_q, 1, en1->cstptr->datatype);

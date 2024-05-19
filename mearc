@@ -18,6 +18,9 @@ compile=3
 preproc=1
 mrderive=2
 flag=$full
+
+
+
 if [ "$#" -eq 2 ]
 then
     if [ "$2" == "compile" ]
@@ -28,8 +31,10 @@ then
         flag=$preproc
     elif [ "$2" == "mrderive" ]
     then
+        rm $folder/tmp/*
         flag=$mrderive
     else
+        rm $folder/tmp/*
         flag=$full
     fi
 fi

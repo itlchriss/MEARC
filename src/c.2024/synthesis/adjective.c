@@ -14,7 +14,7 @@
 
 extern struct astnode *root;
 extern struct queue *predicates, *operators, *silist, *events, *alias;
-extern struct astnode *root;
+
 
 
 void JJ_event_synthesis_post_operation(struct astnode *node, struct queue *siq) {
