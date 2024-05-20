@@ -1,0 +1,1 @@
+Input: digits = [1,2,3]

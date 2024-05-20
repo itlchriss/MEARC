@@ -1,0 +1,55 @@
+ERROR:root:Failed to parse \Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBD})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e)))). Error: The function '(_ = {VBD})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBD})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e))))
+                                                           ^
+ERROR:root:An error occurred: The function '(_ = {VBD})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBD})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e))))
+                                                           ^
+Sentence: Explanation : 2 < sup > 4 < /sup > = 16
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N" id="t0_0" surf="Explanation" base="explanation"/>
+    <token start="1" span="1" pos="IN" chunk="O" entity="I-TIM" cat="(NP\NP)/NP" id="t0_1" surf=":" base=":"/>
+    <token start="2" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_2" surf="2" base="2"/>
+    <token start="3" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_3" surf="&lt;" base="&lt;"/>
+    <token start="4" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N" id="t0_4" surf="sup" base="sup"/>
+    <token start="5" span="1" pos="VBD" chunk="I-VP" entity="I-TIM" cat="(S[dcl]\NP)/NP" id="t0_5" surf="&gt;" base="&gt;"/>
+    <token start="6" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_6" surf="4" base="4"/>
+    <token start="7" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_7" surf="&lt;" base="&lt;"/>
+    <token start="8" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_8" surf="/sup" base="/sup"/>
+    <token start="9" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N" id="t0_9" surf="&gt;" base="&gt;"/>
+    <token start="10" span="1" pos="VBD" chunk="I-VP" entity="I-TIM" cat="(S[dcl]\NP)/NP" id="t0_10" surf="=" base="="/>
+    <token start="11" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N" id="t0_11" surf="16" base="16"/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp12" category="S[dcl=true]" rule="ba"/>
+    <span id="s0_sp1" child="s0_sp2 s0_sp4" category="NP" rule="ba"/>
+    <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+    <span start="0" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp3" surf="Explanation" base="explanation" terminal="t0_0" category="N"/>
+    <span id="s0_sp4" child="s0_sp5 s0_sp6" category="NP\NP" rule="fa"/>
+    <span start="1" span="1" pos="IN" chunk="O" entity="I-TIM" id="s0_sp5" surf=":" base=":" terminal="t0_1" category="(NP\NP)/NP"/>
+    <span id="s0_sp6" child="s0_sp7" category="NP" rule="lex"/>
+    <span id="s0_sp7" child="s0_sp8 s0_sp9" category="N" rule="fa"/>
+    <span start="2" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp8" surf="2" base="2" terminal="t0_2" category="N/N"/>
+    <span id="s0_sp9" child="s0_sp10 s0_sp11" category="N" rule="fa"/>
+    <span start="3" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" id="s0_sp10" surf="&lt;" base="&lt;" terminal="t0_3" category="N/N"/>
+    <span start="4" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp11" surf="sup" base="sup" terminal="t0_4" category="N"/>
+    <span id="s0_sp12" child="s0_sp13 s0_sp14" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="5" span="1" pos="VBD" chunk="I-VP" entity="I-TIM" id="s0_sp13" surf="&gt;" base="&gt;" terminal="t0_5" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp14" child="s0_sp15 s0_sp23" category="NP" rule="ba"/>
+    <span id="s0_sp15" child="s0_sp16" category="NP" rule="lex"/>
+    <span id="s0_sp16" child="s0_sp17 s0_sp18" category="N" rule="fa"/>
+    <span start="6" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp17" surf="4" base="4" terminal="t0_6" category="N/N"/>
+    <span id="s0_sp18" child="s0_sp19 s0_sp20" category="N" rule="fa"/>
+    <span start="7" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" id="s0_sp19" surf="&lt;" base="&lt;" terminal="t0_7" category="N/N"/>
+    <span id="s0_sp20" child="s0_sp21 s0_sp22" category="N" rule="fa"/>
+    <span start="8" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp21" surf="/sup" base="/sup" terminal="t0_8" category="N/N"/>
+    <span start="9" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp22" surf="&gt;" base="&gt;" terminal="t0_9" category="N"/>
+    <span id="s0_sp23" child="s0_sp24" category="NP\NP" rule="lex"/>
+    <span id="s0_sp24" child="s0_sp25 s0_sp26" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="10" span="1" pos="VBD" chunk="I-VP" entity="I-TIM" id="s0_sp25" surf="=" base="=" terminal="t0_10" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp26" child="s0_sp27" category="NP" rule="lex"/>
+    <span start="11" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp27" surf="16" base="16" terminal="t0_11" category="N"/>
+  </ccg>
+</sentence>
+

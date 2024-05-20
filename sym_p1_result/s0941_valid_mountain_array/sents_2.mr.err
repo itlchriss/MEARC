@@ -1,0 +1,26 @@
+ERROR:root:Failed to parse \x.((_ = {NN})(x) & _3`{CD}(x)). Error: The function '(_ = {NN})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NN})(x) & _3`{CD}(x))
+             ^
+ERROR:root:An error occurred: The function '(_ = {NN})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NN})(x) & _3`{CD}(x))
+             ^
+Sentence: `arr.length > = 3`
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_0" surf="`arr.length" base="`arr.length"/>
+    <token start="1" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_1" surf="&gt;" base="&gt;"/>
+    <token start="2" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N" id="t0_2" surf="=" base="="/>
+    <token start="3" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N\N" id="t0_3" surf="3`" base="3`"/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp2" category="N" rule="fa"/>
+    <span start="0" span="1" pos="JJ" chunk="I-NP" entity="I-TIM" id="s0_sp1" surf="`arr.length" base="`arr.length" terminal="t0_0" category="N/N"/>
+    <span id="s0_sp2" child="s0_sp3 s0_sp4" category="N" rule="fa"/>
+    <span start="1" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp3" surf="&gt;" base="&gt;" terminal="t0_1" category="N/N"/>
+    <span id="s0_sp4" child="s0_sp5 s0_sp6" category="N" rule="ba"/>
+    <span start="2" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp5" surf="=" base="=" terminal="t0_2" category="N"/>
+    <span start="3" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp6" surf="3`" base="3`" terminal="t0_3" category="N\N"/>
+  </ccg>
+</sentence>
+

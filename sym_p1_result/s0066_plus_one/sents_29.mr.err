@@ -1,0 +1,35 @@
+ERROR:root:Failed to parse \x.((_ = {NNP})(x) & _<{NNP}(x)). Error: The function '(_ = {NNP})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NNP})(x) & _<{NNP}(x))
+              ^
+ERROR:root:An error occurred: The function '(_ = {NNP})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\x.((_ = {NNP})(x) & _<{NNP}(x))
+              ^
+Sentence: `1 < = digits.length < = 100`
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_0" surf="`1" base="`1"/>
+    <token start="1" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_1" surf="&lt;" base="&lt;"/>
+    <token start="2" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_2" surf="=" base="="/>
+    <token start="3" span="1" pos="NN" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_3" surf="digits.length" base="digits.length"/>
+    <token start="4" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" cat="N/N" id="t0_4" surf="&lt;" base="&lt;"/>
+    <token start="5" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" cat="N" id="t0_5" surf="=" base="="/>
+    <token start="6" span="1" pos="CD" chunk="I-NP" entity="I-TIM" cat="N\N" id="t0_6" surf="100`" base="100`"/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp12" category="N" rule="ba"/>
+    <span id="s0_sp1" child="s0_sp2 s0_sp3" category="N" rule="fa"/>
+    <span start="0" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp2" surf="`1" base="`1" terminal="t0_0" category="N/N"/>
+    <span id="s0_sp3" child="s0_sp4 s0_sp5" category="N" rule="fa"/>
+    <span start="1" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp4" surf="&lt;" base="&lt;" terminal="t0_1" category="N/N"/>
+    <span id="s0_sp5" child="s0_sp6 s0_sp7" category="N" rule="fa"/>
+    <span start="2" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp6" surf="=" base="=" terminal="t0_2" category="N/N"/>
+    <span id="s0_sp7" child="s0_sp8 s0_sp9" category="N" rule="fa"/>
+    <span start="3" span="1" pos="NN" chunk="I-NP" entity="I-TIM" id="s0_sp8" surf="digits.length" base="digits.length" terminal="t0_3" category="N/N"/>
+    <span id="s0_sp9" child="s0_sp10 s0_sp11" category="N" rule="fa"/>
+    <span start="4" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" id="s0_sp10" surf="&lt;" base="&lt;" terminal="t0_4" category="N/N"/>
+    <span start="5" span="1" pos="NNP" chunk="I-NP" entity="I-TIM" id="s0_sp11" surf="=" base="=" terminal="t0_5" category="N"/>
+    <span start="6" span="1" pos="CD" chunk="I-NP" entity="I-TIM" id="s0_sp12" surf="100`" base="100`" terminal="t0_6" category="N\N"/>
+  </ccg>
+</sentence>
+

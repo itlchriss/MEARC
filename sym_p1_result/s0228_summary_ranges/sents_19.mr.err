@@ -1,0 +1,38 @@
+ERROR:root:Failed to parse \Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBP})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e)))). Error: The function '(_ = {VBP})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBP})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e))))
+                                                           ^
+ERROR:root:An error occurred: The function '(_ = {VBP})' is not a Lambda Expression, an Application Expression, or a functional predicate, so it may not take arguments.
+\Q1 Q2 K.Q2(\x.TrueP,\x.Q1(\y.TrueP,\y.exists e.((_ = {VBP})(e) & (Subj(e) = x) & (Acc(e) = y) & K(e))))
+                                                           ^
+Sentence: Input : nums = [ -1 ]
+Tree XML:
+<sentence>
+  <tokens>
+    <token start="0" span="1" pos="NNP" chunk="I-NP" entity="O" cat="N" id="t0_0" surf="Input" base="input"/>
+    <token start="1" span="1" pos="IN" chunk="O" entity="O" cat="(NP\NP)/S[dcl]" id="t0_1" surf=":" base=":"/>
+    <token start="2" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_2" surf="nums" base="num"/>
+    <token start="3" span="1" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_3" surf="=" base="="/>
+    <token start="4" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_4" surf="[" base="["/>
+    <token start="5" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_5" surf="-1" base="-1"/>
+    <token start="6" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_6" surf="]" base="]"/>
+  </tokens>
+  <ccg root="s0_sp0" id="s0_ccg0">
+    <span root="true" id="s0_sp0" child="s0_sp1 s0_sp3" category="NP" rule="ba"/>
+    <span id="s0_sp1" child="s0_sp2" category="NP" rule="lex"/>
+    <span start="0" span="1" pos="NNP" chunk="I-NP" entity="O" id="s0_sp2" surf="Input" base="input" terminal="t0_0" category="N"/>
+    <span id="s0_sp3" child="s0_sp4 s0_sp5" category="NP\NP" rule="fa"/>
+    <span start="1" span="1" pos="IN" chunk="O" entity="O" id="s0_sp4" surf=":" base=":" terminal="t0_1" category="(NP\NP)/S[dcl=true]"/>
+    <span id="s0_sp5" child="s0_sp6 s0_sp8" category="S[dcl=true]" rule="ba"/>
+    <span id="s0_sp6" child="s0_sp7" category="NP" rule="lex"/>
+    <span start="2" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp7" surf="nums" base="num" terminal="t0_2" category="N"/>
+    <span id="s0_sp8" child="s0_sp9 s0_sp10" category="S[dcl=true]\NP" rule="fa"/>
+    <span start="3" span="1" pos="VBP" chunk="I-VP" entity="O" id="s0_sp9" surf="=" base="=" terminal="t0_3" category="(S[dcl=true]\NP)/NP"/>
+    <span id="s0_sp10" child="s0_sp11" category="NP" rule="lex"/>
+    <span id="s0_sp11" child="s0_sp12 s0_sp13" category="N" rule="fa"/>
+    <span start="4" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp12" surf="[" base="[" terminal="t0_4" category="N/N"/>
+    <span id="s0_sp13" child="s0_sp14 s0_sp15" category="N" rule="fa"/>
+    <span start="5" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp14" surf="-1" base="-1" terminal="t0_5" category="N/N"/>
+    <span start="6" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp15" surf="]" base="]" terminal="t0_6" category="N"/>
+  </ccg>
+</sentence>
+
