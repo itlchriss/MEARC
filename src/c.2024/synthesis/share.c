@@ -245,8 +245,8 @@ int __direct_syntax_synthesis__(struct astnode *node) {
     */
     if (targetsi->synthesised_datatype != NULL && 
         (
-            (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
-            (child->cstptr->datatype->p == ANY && child->cstptr->datatype->r)
+            ((targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
+            ((child->cstptr->datatype->p == ANY && child->cstptr->datatype->r) && (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0)))
         )
        ) { 
         child->cstptr->datatype->p = targetsi->synthesised_datatype->p;
