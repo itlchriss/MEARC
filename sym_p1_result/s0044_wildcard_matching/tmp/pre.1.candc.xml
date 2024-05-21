@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="fa" cat="S[pss]\NP">
+  <lf start="0" span="1" word="Given" lemma="Give" pos="VBN" chunk="I-PP" entity="O" cat="(S[pss]\NP)/NP" />
+  <rule type="rp" cat="NP">
+   <rule type="ba" cat="NP">
+    <rule type="fa" cat="NP[nb]">
+     <lf start="1" span="1" word="an" lemma="an" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+     <rule type="fa" cat="N">
+      <lf start="2" span="1" word="input" lemma="input" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+      <rule type="fa" cat="N">
+       <lf start="3" span="1" word="string" lemma="string" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+       <rule type="fa" cat="N">
+        <rule type="fa" cat="N/N">
+         <lf start="4" span="1" word="(" lemma="(" pos="LRB" chunk="O" entity="O" cat="(N/N)/NP" />
+         <rule type="ba" cat="NP">
+          <rule type="rp" cat="NP">
+           <rule type="lex" cat="NP">
+            <lf start="5" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
+           </rule>
+           <lf start="6" span="1" word=")" lemma=")" pos="RRB" chunk="O" entity="O" cat="RRB" />
+          </rule>
+          <rule type="conj" cat="NP\NP">
+           <lf start="7" span="1" word="and" lemma="and" pos="CC" chunk="O" entity="O" cat="conj" />
+           <rule type="ba" cat="NP">
+            <rule type="ba" cat="NP">
+             <rule type="fa" cat="NP[nb]">
+              <lf start="8" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+              <lf start="9" span="1" word="pattern" lemma="pattern" pos="NN" chunk="I-NP" entity="O" cat="N" />
+             </rule>
+             <rule type="rp" cat="NP\NP">
+              <rule type="fa" cat="NP\NP">
+               <lf start="10" span="1" word="(" lemma="(" pos="LRB" chunk="O" entity="O" cat="(NP\NP)/NP" />
+               <rule type="lex" cat="NP">
+                <lf start="11" span="1" word="expr_b" lemma="expr_b" pos="NN" chunk="I-NP" entity="O" cat="N" />
+               </rule>
+              </rule>
+              <lf start="12" span="1" word=")" lemma=")" pos="RRB" chunk="O" entity="O" cat="RRB" />
+             </rule>
+            </rule>
+            <rule type="conj" cat="NP\NP">
+             <lf start="13" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+             <rule type="lex" cat="NP">
+              <rule type="fa" cat="N">
+               <lf start="14" span="1" word="implement" lemma="implement" pos="VB" chunk="I-VP" entity="O" cat="N/N" />
+               <rule type="fa" cat="N">
+                <lf start="15" span="1" word="wildcard" lemma="wildcard" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+                <lf start="16" span="1" word="pattern" lemma="pattern" pos="NN" chunk="I-NP" entity="O" cat="N" />
+               </rule>
+              </rule>
+             </rule>
+            </rule>
+           </rule>
+          </rule>
+         </rule>
+        </rule>
+        <lf start="17" span="1" word="matching" lemma="match" pos="VBG" chunk="I-VP" entity="O" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+    <rule type="fa" cat="NP\NP">
+     <lf start="18" span="1" word="with" lemma="with" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+     <rule type="ba" cat="NP">
+      <rule type="lex" cat="NP">
+       <lf start="19" span="1" word="support" lemma="support" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+      <rule type="fa" cat="NP\NP">
+       <lf start="20" span="1" word="for" lemma="for" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+       <rule type="lex" cat="NP">
+        <lf start="21" span="1" word="`questionmark" lemma="`questionmark" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+   <lf start="22" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+  </rule>
+ </rule>
+</ccg>
+</candc>

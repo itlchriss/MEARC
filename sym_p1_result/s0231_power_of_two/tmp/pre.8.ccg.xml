@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="NNP" chunk="I-NP" entity="O" cat="N" id="t0_0" surf="Input" base="input"/>
+          <token start="1" span="1" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" id="t0_1" surf=":" base=":"/>
+          <token start="2" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t0_2" surf="n" base="n"/>
+          <token start="3" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="=" base="="/>
+          <token start="4" span="1" pos="CD" chunk="I-NP" entity="O" cat="N\N" id="t0_4" surf="16" base="16"/>
+          <token start="5" span="1" pos="." chunk="O" entity="O" cat="." id="t0_5" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp12" category="NP" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp4" category="NP" rule="ba"/>
+          <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+          <span start="0" span="1" pos="NNP" chunk="I-NP" entity="O" id="s0_sp3" surf="Input" base="input" terminal="t0_0" category="N"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp6" category="NP\NP" rule="fa"/>
+          <span start="1" span="1" pos="IN" chunk="O" entity="O" id="s0_sp5" surf=":" base=":" terminal="t0_1" category="(NP\NP)/NP"/>
+          <span id="s0_sp6" child="s0_sp7" category="NP" rule="lex"/>
+          <span id="s0_sp7" child="s0_sp8 s0_sp9" category="N" rule="fa"/>
+          <span start="2" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp8" surf="n" base="n" terminal="t0_2" category="N/N"/>
+          <span id="s0_sp9" child="s0_sp10 s0_sp11" category="N" rule="ba"/>
+          <span start="3" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp10" surf="=" base="=" terminal="t0_3" category="N"/>
+          <span start="4" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp11" surf="16" base="16" terminal="t0_4" category="N\N"/>
+          <span start="5" span="1" pos="." chunk="O" entity="O" id="s0_sp12" surf="." base="." terminal="t0_5" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

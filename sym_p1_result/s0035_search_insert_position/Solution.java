@@ -5,12 +5,29 @@ package g0001_0100.s0035_search_insert_position;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_43.3_MB_(58.21%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
-//@ requires(*All values in the integer array parameter `nums` are distinct and sorted in ascending order.*);
-//@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
-//@ ensures(*If the integer parameter `target` is found in the integer array parameter `nums`, the integer result is equal to the index of the `target`.*);
-//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer result is equal to the index where the `target` would be if it were inserted in order.*);
+//@ requires(*You must write an algorithm with `O(log n)` runtime complexity.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,3,5,6], target = 5*);
+//@ requires(*Output: 2*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [1,3,5,6], target = 2*);
+//@ requires(*Output: 1*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [1,3,5,6], target = 7*);
+//@ requires(*Output: 4*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: nums = [1,3,5,6], target = 0*);
+//@ requires(*Output: 0*);
+//@ requires(*Example 5:*);
+//@ requires(*Input: nums = [1], target = 0*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 10<sup>4</sup></code>*);
+//@ requires(*<code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>*);
+//@ requires(*param_nums contains distinct values sorted in ascending order.*);
+//@ requires(*<code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>*);
+//@ ensures(*Given a sorted array of distinct integers and a target value, the result is the index if the target is found.*);
+//@ ensures(*If not, the result is the index where it would be if it were inserted in order.*);
     public int searchInsert(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;

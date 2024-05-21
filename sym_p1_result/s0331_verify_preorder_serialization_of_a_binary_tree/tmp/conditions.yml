@@ -1,0 +1,25 @@
+ensures:
+- Given the _type_string of comma-separated values param_preorder , the result is expr_a if it is a correct preorder traversal serialization of a binary tree.
+requires:
+- 1 way to serialize a binary tree is to use preorder traversal.
+- When we encounter a non-null node , we record the node's value.
+- If it is a null node , we record using a sentinel value such as  expr_a.
+- '![](.'
+- https://assets.leetcode.com/uploads/2021/03/12/pre-tree.jpg).
+- 'For example , the above binary tree can be serialized to the string `"9 , 3 , 4 , # , # , 1 , # , # , 2 , # , 6 , # , #" expr_a strx_a` is a null node.'
+- It is guaranteed that each comma-separated value in the string is either the _type_integer or a character  expr_a representing null pointer.
+- You may assume that the input format is always valid.
+- For example , it could never contain 2 consecutive commas , such as `"1 , , 3"`.
+- 'Note: You are not allowed to reconstruct the tree.'
+- Example 1:.
+- 'Input: preorder = "9 , 3 , 4 , # , # , 1 , # , # , 2 , # , 6 , # , #".'
+- 'Output: true.'
+- Example 2:.
+- 'Input: preorder = "1 , #".'
+- 'Output: false.'
+- Example 3:.
+- 'Input: preorder = "9 , # , # , 1".'
+- 'Output: false.'
+- Constraints:.
+- <code>1 <= preorder.length <= 10<sup>4</sup></code>.
+- param_preorder consist of integers in the range expr_a and  expr_a.

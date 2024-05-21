@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="NP">
+  <rule type="ba" cat="NP">
+   <rule type="ba" cat="NP">
+    <rule type="ba" cat="NP">
+     <rule type="lex" cat="NP">
+      <rule type="fa" cat="N">
+       <lf start="0" span="1" word="number" lemma="number" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+       <lf start="1" span="1" word="range" lemma="range" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+     <rule type="lex" cat="NP\NP">
+      <rule type="fa" cat="S[adj]\NP">
+       <lf start="2" span="1" word="|" lemma="|" pos="NNS" chunk="I-NP" entity="O" cat="(S[adj]\NP)/(S[adj]\NP)" />
+       <lf start="3" span="1" word="UTF-8" lemma="UTF-8" pos="JJ" chunk="I-NP" entity="O" cat="S[adj]\NP" />
+      </rule>
+     </rule>
+    </rule>
+    <lf start="4" span="1" word="octet" lemma="octet" pos="NN" chunk="I-NP" entity="O" cat="NP\NP" />
+   </rule>
+   <lf start="5" span="1" word="sequence" lemma="sequence" pos="NN" chunk="I-NP" entity="O" cat="NP\NP" />
+  </rule>
+  <lf start="6" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

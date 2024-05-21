@@ -1,0 +1,23 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: i + 1 < j
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: (arr[0] + arr[1] + ... + arr[i] == arr[i + 1] + arr[i + 2] + ...
+    + arr[j - 1] == arr[j] + arr[j + 1] + ... + arr[arr.length - 1])

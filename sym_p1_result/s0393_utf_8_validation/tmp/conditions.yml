@@ -1,0 +1,35 @@
+ensures:
+- Given the _type_integer array param_data representing the data , the result is whether it is a valid UTF-8 encoding.
+requires:
+- A character in UTF8 can be from 1 to 4 bytes long , subjected to the following rules:.
+- '1.'
+- For a 1-byte character , the first bit is a expr_a , followed by its Unicode code.
+- '2.'
+- For an n-bytes character , the first expr_a bits are all one's , the expr_b bit is expr_c , followed by expr_d bytes with the most significant expr_e bits being expr_f.
+- This how the UTF-8 encoding would work:.
+- Char.
+- number range | UTF-8 octet sequence.
+- (hexadecimal) | (binary).
+- '--------------------+---------------------------------------------.'
+- 0 0000-0000 007F | 0xxxxxxx.
+- 0 0080-0000 07FF | 110xxxxx 10xxxxxx.
+- 0 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx.
+- 1 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx.
+- 'Note: The input is the _type_integer_array .'
+- Only the least significant 8 bits of each integer is used to store the data.
+- This means each integer is only 1 byte of data.
+- Example 1:.
+- 'Input: data = arr_a.'
+- 'Output: true.'
+- 'Explanation: data is the octet sequence: 11000101 10000010 1.'
+- It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte character.
+- Example 2:.
+- 'Input: data = arr_a.'
+- 'Output: false.'
+- 'Explanation: data represented the octet sequence: 11101011 10001100 100.'
+- The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes character.
+- The next byte is a continuation byte which starts with 10 and that's correct.
+- But the second continuation byte does not start with 10 , so it is invalid.
+- Constraints:.
+- <code>1 <= data.length <= 2 10<sup>4</sup></code>.
+- ' expr_a.'

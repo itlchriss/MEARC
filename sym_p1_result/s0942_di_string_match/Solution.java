@@ -4,13 +4,23 @@ package g0901_1000.s0942_di_string_match;
 // #2022_03_30_Time_4_ms_(33.74%)_Space_48.7_MB_(20.18%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All characters in the string parameter `s` are either 'I' or 'D'.*);
-//@ ensures(*The length of the integer array result is equal to the length of the string parameter `s` plus 1.*);
-//@ ensures(*All values in the integer array result are unique.*);
-//@ ensures(*If the string parameter `s` is equal to "IDID", the integer array result can be [0,4,1,3,2].*);
-//@ ensures(*If the string parameter `s` is equal to "III", the integer array result can be [0,1,2,3].*);
-//@ ensures(*If the string parameter `s` is equal to "DDI", the integer array result can be [3,2,0,1].*);
+//@ requires(*A permutation `perm` of `n + 1` integers of all the integers in the range `[0, n]` can be represented as a string param_s of length `n` where:*);
+//@ requires(*`s[i] == 'I'` if `perm[i] < perm[i + 1]`, and*);
+//@ requires(*`s[i] == 'D'` if `perm[i] > perm[i + 1]`.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "IDID"*);
+//@ requires(*Output: [0,4,1,3,2]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "III"*);
+//@ requires(*Output: [0,1,2,3]*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "DDI"*);
+//@ requires(*Output: [3,2,0,1]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= s.length <= 10<sup>5</sup></code>*);
+//@ requires(*`s[i]` is either `'I'` or `'D'`.*);
+//@ ensures(*Given a string param_s, reconstruct the permutation `perm` and the result is it.*);
+//@ ensures(*If there are multiple valid permutations perm, the result is any of them.*);
     public int[] diStringMatch(String s) {
         int[] arr = new int[s.length() + 1];
         int max = s.length();

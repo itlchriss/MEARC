@@ -1,0 +1,24 @@
+ensures:
+- Given 2 strings param_a and param_b , the result is the length of the longest uncommon subsequence between param_a and param_b.
+- If the longest uncommon subsequence does not exist , the result is expr_a.
+requires:
+- An uncommon subsequence between 2 strings is the _type_string that is a subsequence of 1 but not the other.
+- A subsequence of the _type_string expr_a is the _type_string that can be obtained after deleting any number of characters from expr_b.
+- For example ,  expr_a.
+- Other subsequences of ` stry_a expr_a stry_b expr_b stry_c expr_c""` (empty string).
+- Example 1:.
+- 'Input: a = stry_a , b = stry_b.'
+- 'Output: 3.'
+- 'Explanation: 1 longest uncommon subsequence is stry_a because stry_b is a subsequence of stry_c but not stry_d.'
+- Note that stry_a is also a longest uncommon subsequence.
+- Example 2:.
+- 'Input: a = stry_a , b = stry_b.'
+- 'Output: 3.'
+- 'Explanation: The longest uncommon subsequences are stry_a and stry_b.'
+- Example 3:.
+- 'Input: a = stry_a , b = stry_b.'
+- 'Output: negative 1.'
+- 'Explanation: Every subsequence of string a is also a subsequence of string b. Similarly , every subsequence of string b is also a subsequence of string a.'
+- Constraints:.
+- ' expr_a.'
+- param_a and param_b consist of lowercase_alphabets .

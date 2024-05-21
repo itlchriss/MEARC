@@ -5,13 +5,21 @@ package g0201_0300.s0238_product_of_array_except_self;
 // #2022_07_04_Time_1_ms_(100.00%)_Space_50.8_MB_(85.60%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 2.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 30 and are greater than or equal to -30.*);
-//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `nums`.*);
-//@ ensures(*The product of all elements in the integer array result, except the element at index `i`, is equal to the product of all elements in the integer array parameter `nums`, except the element at index `i`.*);
-//@ ensures(*The product of any prefix or suffix of the integer array result is guaranteed to fit in a 32-bit integer.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,4], the integer array result is equal to [24,12,8,6].*);
-//@ ensures(*If the integer array parameter `nums` is equal to [-1,1,0,-3,3], the integer array result is equal to [0,0,9,0,0].*);
+//@ requires(*The product of any prefix or suffix of param_nums is guaranteed to fit in a 32-bit integer.*);
+//@ requires(*You must write an algorithm that runs in `O(n)` time and without using the division operation.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,2,3,4]*);
+//@ requires(*Output: [24,12,8,6]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [-1,1,0,-3,3]*);
+//@ requires(*Output: [0,0,9,0,0]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>2 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*`-30 <= nums[i] <= 30`*);
+//@ requires(*The product of any prefix or suffix of param_nums is guaranteed to fit in a 32-bit integer.*);
+//@ requires(*Follow up: Can you solve the problem in `O(1) `extra space complexity? (*);
+//@ requires(*The output array does not count as extra space for space complexity analysis.)*);
+//@ ensures(*Given an integer array param_nums, the result is an array `answer` such that `answer[i]` is equal to the product of all the elements of param_nums except `nums[i]`.*);
     public int[] productExceptSelf(int[] nums) {
         int product = 1;
         int[] ans = new int[nums.length];

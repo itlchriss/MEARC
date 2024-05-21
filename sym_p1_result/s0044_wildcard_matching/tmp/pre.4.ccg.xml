@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="LQU" chunk="O" entity="O" cat="LQU" id="t0_0" surf="`" base="`"/>
+          <token start="1" span="1" pos="NNPS" chunk="I-NP" entity="O" cat="(N/N)/(N/N)" id="t0_1" surf="Matches" base="matches"/>
+          <token start="2" span="1" pos="DT" chunk="I-NP" entity="O" cat="(N/N)/(N/N)" id="t0_2" surf="any" base="any"/>
+          <token start="3" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_3" surf="single" base="single"/>
+          <token start="4" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_4" surf="character" base="character"/>
+          <token start="5" span="1" pos="." chunk="O" entity="O" cat="." id="t0_5" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp2" category="N" rule="lp"/>
+          <span start="0" span="1" pos="LQU" chunk="O" entity="O" id="s0_sp1" surf="`" base="`" terminal="t0_0" category="LQU"/>
+          <span id="s0_sp2" child="s0_sp3 s0_sp8" category="N" rule="fa"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp5" category="N/N" rule="fa"/>
+          <span start="1" span="1" pos="NNPS" chunk="I-NP" entity="O" id="s0_sp4" surf="Matches" base="matches" terminal="t0_1" category="(N/N)/(N/N)"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp7" category="N/N" rule="fa"/>
+          <span start="2" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp6" surf="any" base="any" terminal="t0_2" category="(N/N)/(N/N)"/>
+          <span start="3" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp7" surf="single" base="single" terminal="t0_3" category="N/N"/>
+          <span id="s0_sp8" child="s0_sp9 s0_sp10" category="N" rule="rp"/>
+          <span start="4" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp9" surf="character" base="character" terminal="t0_4" category="N"/>
+          <span start="5" span="1" pos="." chunk="O" entity="O" id="s0_sp10" surf="." base="." terminal="t0_5" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

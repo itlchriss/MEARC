@@ -4,12 +4,26 @@ package g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string;
 // #Programming_Skills_II_Day_1 #2023_08_09_Time_0_ms_(100.00%)_Space_40.5_MB_(71.14%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `haystack` is less than or equal to 50000 and is greater than or equal to 0.*);
-//@ requires(*The length of the string parameter `needle` is less than or equal to 50000 and is greater than or equal to 0.*);
-//@ ensures(*The integer result is less than or equal to the length of the string parameter `haystack` and is greater than or equal to -1.*);
-//@ ensures(*If the string parameter `needle` is an empty string, the integer result is equal to 0.*);
-//@ ensures(*If the string parameter `needle` is not part of the string parameter `haystack`, the integer result is equal to -1.*);
-//@ ensures(*If the string parameter `needle` is part of the string parameter `haystack`, the integer result is equal to the index of the first occurrence of `needle` in `haystack`.*);
+//@ requires(*Implement [strStr()](http://www.cplusplus.com/reference/cstring/strstr/).*);
+//@ requires(*Return the index of the first occurrence of needle in haystack, or `-1` if param_needle is not part of param_haystack.*);
+//@ requires(*Clarification:*);
+//@ requires(*This is a great question to ask during an interview.*);
+//@ requires(*This is consistent to C's [strstr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.*);
+//@ requires(*String)).*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: haystack = "hello", needle = "ll"*);
+//@ requires(*Output: 2*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: haystack = "aaaaa", needle = "bba"*);
+//@ requires(*Output: -1*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: haystack = "", needle = ""*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>0 <= haystack.length, needle.length <= 5  10<sup>4</sup></code>*);
+//@ requires(*param_haystack and param_needle consist of only lower-case English characters.*);
+//@ ensures(*What should we the result is when param_needle is an empty string?*);
+//@ ensures(*For the purpose of this problem, we will the result is 0 when param_needle is an empty string.*);
     public int strStr(String haystack, String needle) {
         if (needle.isEmpty()) {
             return 0;

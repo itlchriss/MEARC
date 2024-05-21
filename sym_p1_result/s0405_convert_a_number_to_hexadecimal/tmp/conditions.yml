@@ -1,0 +1,14 @@
+ensures:
+- Given the _type_integer param_num , the result is the _type_string representing its hexadecimal representation.
+requires:
+- For negative integers , [two’s complement](https://en.wikipedia.org/wiki/Two%27scomplement) method is used.
+- All the letters in the answer string should be lowercase characters , and  exists  not any leading zeros in the answer except for the 0 itself.
+- 'Note: You are not allowed to use any built-in library method to directly solve this problem.'
+- Example 1:.
+- 'Input: num = 26.'
+- 'Output: stry_a.'
+- Example 2:.
+- 'Input: num = negative 1.'
+- 'Output: stry_a.'
+- Constraints:.
+- <code>-2147483648 <= num <= 2147483648 - 1</code>.

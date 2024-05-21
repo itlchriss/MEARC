@@ -6,12 +6,20 @@ package g0101_0200.s0164_maximum_gap;
 import java.util.Arrays;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to 0.*);
-//@ requires(*The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the integer array parameter `nums` runs in linear time.*);
-//@ requires(*The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the integer array parameter `nums` uses linear extra space.*);
-//@ ensures(*The integer result is less than or equal to the maximum difference between two successive elements in the sorted form of the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` contains less than 2 elements, the integer result is equal to 0.*);
+//@ requires(*You must write an algorithm that runs in linear time and uses linear extra space.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [3,6,9,1]*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: The sorted form of the array is [1,3,6,9], either (3,6) or (6,9) has the maximum difference 3.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [10]*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>0 <= nums[i] <= 10<sup>9</sup></code>*);
+//@ ensures(*Given an integer array param_nums, the result is the maximum difference between two successive elements in its sorted form.*);
+//@ ensures(*If the array contains less than two elements, the result is `0`.*);
+//@ ensures(*Explanation: The array contains less than 2 elements, therefore the result is 0.*);
     public int maximumGap(int[] nums) {
         if (nums.length < 2) {
             return 0;

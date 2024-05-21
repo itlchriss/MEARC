@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="Each" lemma="each" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="1" span="1" word="customer" lemma="customer" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <rule type="bx" cat="(S[dcl]\NP)/(S[b]\NP)">
+     <lf start="2" span="1" word="will" lemma="will" pos="MD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" />
+     <lf start="3" span="1" word="only" lemma="only" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" />
+    </rule>
+    <rule type="ba" cat="S[b]\NP">
+     <rule type="ba" cat="S[b]\NP">
+      <rule type="fa" cat="S[b]\NP">
+       <rule type="fa" cat="(S[b]\NP)/PP">
+        <lf start="4" span="1" word="buy" lemma="buy" pos="VB" chunk="I-VP" entity="O" cat="((S[b]\NP)/PP)/NP" />
+        <rule type="ba" cat="NP">
+         <rule type="lex" cat="NP">
+          <rule type="fa" cat="N">
+           <lf start="5" span="1" word="1" lemma="1" pos="CD" chunk="I-NP" entity="O" cat="N/N" />
+           <lf start="6" span="1" word="lemonade" lemma="lemonade" pos="NN" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+         <rule type="conj" cat="NP\NP">
+          <lf start="7" span="1" word="and" lemma="and" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+          <rule type="lex" cat="NP">
+           <lf start="8" span="1" word="pay" lemma="pay" pos="NN" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+       <rule type="fa" cat="PP">
+        <lf start="9" span="1" word="with" lemma="with" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" />
+        <rule type="fa" cat="NP">
+         <lf start="10" span="1" word="either" lemma="either" pos="CC" chunk="O" entity="O" cat="NP/NP" />
+         <rule type="fa" cat="NP[nb]">
+          <lf start="11" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+          <rule type="lp" cat="N">
+           <lf start="12" span="1" word="`" lemma="`" pos="LQU" chunk="I-NP" entity="O" cat="LQU" />
+           <rule type="fa" cat="N">
+            <lf start="13" span="1" word="$" lemma="$" pos="$" chunk="I-NP" entity="I-MON" cat="N/N[num]" />
+            <lf start="14" span="1" word="5" lemma="5" pos="CD" chunk="I-NP" entity="I-MON" cat="N[num]" />
+           </rule>
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+      </rule>
+      <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+       <lf start="15" span="1" word="expr_a" lemma="expr_a" pos="IN" chunk="I-NP" entity="I-MON" cat="((S\NP)\(S\NP))/NP" />
+       <rule type="lex" cat="NP">
+        <rule type="fa" cat="N">
+         <lf start="16" span="1" word="$" lemma="$" pos="$" chunk="I-NP" entity="I-MON" cat="N/N[num]" />
+         <lf start="17" span="1" word="10" lemma="10" pos="CD" chunk="I-NP" entity="I-MON" cat="N[num]" />
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+     <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+      <lf start="18" span="1" word="expr_b" lemma="expr_b" pos="RB" chunk="I-NP" entity="I-MON" cat="((S\NP)\(S\NP))/NP" />
+      <rule type="lex" cat="NP">
+       <rule type="fa" cat="N">
+        <rule type="fa" cat="N/N">
+         <lf start="19" span="1" word="$" lemma="$" pos="$" chunk="I-NP" entity="I-MON" cat="(N/N)/N[num]" />
+         <lf start="20" span="1" word="20`" lemma="20`" pos="CD" chunk="I-NP" entity="I-MON" cat="N[num]" />
+        </rule>
+        <lf start="21" span="1" word="bill" lemma="bill" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="22" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

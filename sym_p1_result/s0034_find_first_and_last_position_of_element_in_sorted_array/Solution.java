@@ -5,11 +5,23 @@ package g0001_0100.s0034_find_first_and_last_position_of_element_in_sorted_array
 // #2023_08_09_Time_0_ms_(100.00%)_Space_44.3_MB_(89.57%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 0.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ requires(*The integer parameter `target` is less than or equal to 1000000000 and is greater than or equal to -1000000000.*);
-//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer array result is equal to [-1, -1].*);
-//@ ensures(*If the integer parameter `target` is found in the integer array parameter `nums`, the first element of the integer array result is equal to the starting position of the `target` value in the integer array parameter `nums`, and the second element of the integer array result is equal to the ending position of the `target` value in the integer array parameter `nums`.*);
+//@ requires(*Given an array of integers param_nums sorted in non-decreasing order, find the starting and ending position of a given param_target value.*);
+//@ requires(*You must write an algorithm with `O(log n)` runtime complexity.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [5,7,7,8,8,10], target = 8*);
+//@ requires(*Output: [3,4]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [5,7,7,8,8,10], target = 6*);
+//@ requires(*Output: [-1,-1]*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [], target = 0*);
+//@ requires(*Output: [-1,-1]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>0 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>*);
+//@ requires(*param_nums is a non-decreasing array.*);
+//@ requires(*<code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>*);
+//@ ensures(*If param_target is not found in the array, the result is `[-1, -1]`.*);
     public int[] searchRange(int[] nums, int target) {
         int[] ans = new int[2];
         ans[0] = helper(nums, target, false);

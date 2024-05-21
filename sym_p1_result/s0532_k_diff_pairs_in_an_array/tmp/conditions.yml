@@ -1,0 +1,24 @@
+ensures:
+- Given the _type_integer_array param_nums and the _type_integer param_k , the result is the number of unique k-diff pairs in the array.
+- Although we have 2 1s in the input , we should only the result is the number of unique pairs.
+requires:
+- A k-diff pair is the _type_integer pair expr_a , that the following are true:.
+- ' expr_a.'
+- ' expr_a.'
+- Notice that expr_a denotes the absolute value of expr_b.
+- Example 1:.
+- 'Input: nums = arr_a , k = 2.'
+- 'Output: 2.'
+- 'Explanation: There are 2 2-diff pairs in the array , (1 , 3) and (3 , 5).'
+- Example 2:.
+- 'Input: nums = arr_a , k = 1.'
+- 'Output: 4.'
+- 'Explanation: There are 4 1-diff pairs in the array , (1 , 2) , (2 , 3) , (3 , 4) and (4 , 5).'
+- Example 3:.
+- 'Input: nums = arr_a , k = 0.'
+- 'Output: 1.'
+- 'Explanation: There is 1 0-diff pair in the array , (1 , 1).'
+- Constraints:.
+- <code>1 <= nums.length <= 10<sup>4</sup></code>.
+- <code>-10<sup>7</sup> <= nums[i] <= 10<sup>7</sup></code>.
+- <code>0 <= k <= 10<sup>7</sup></code>.

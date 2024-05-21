@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="PRP" chunk="I-NP" entity="O" cat="NP" id="t0_0" surf="You" base="you"/>
+          <token start="1" span="1" pos="VBP" chunk="I-VP" entity="O" cat="S[dcl]\NP" id="t0_1" surf="need" base="need"/>
+          <token start="2" span="1" pos="TO" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" id="t0_2" surf="to" base="to"/>
+          <token start="3" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="output" base="output"/>
+          <token start="4" span="1" pos="CD" chunk="I-NP" entity="O" cat="N\N" id="t0_4" surf="2" base="2"/>
+          <token start="5" span="1" pos="." chunk="O" entity="O" cat="." id="t0_5" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp11" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp3" category="S[dcl=true]" rule="ba"/>
+          <span start="0" span="1" pos="PRP" chunk="I-NP" entity="O" id="s0_sp2" surf="You" base="you" terminal="t0_0" category="NP"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp5" category="S[dcl=true]\NP" rule="ba"/>
+          <span start="1" span="1" pos="VBP" chunk="I-VP" entity="O" id="s0_sp4" surf="need" base="need" terminal="t0_1" category="S[dcl=true]\NP"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp7" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="fa"/>
+          <span start="2" span="1" pos="TO" chunk="I-PP" entity="O" id="s0_sp6" surf="to" base="to" terminal="t0_2" category="((S\NP)\(S\NP))/NP"/>
+          <span id="s0_sp7" child="s0_sp8" category="NP" rule="lex"/>
+          <span id="s0_sp8" child="s0_sp9 s0_sp10" category="N" rule="ba"/>
+          <span start="3" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp9" surf="output" base="output" terminal="t0_3" category="N"/>
+          <span start="4" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp10" surf="2" base="2" terminal="t0_4" category="N\N"/>
+          <span start="5" span="1" pos="." chunk="O" entity="O" id="s0_sp11" surf="." base="." terminal="t0_5" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

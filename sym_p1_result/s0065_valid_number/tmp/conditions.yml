@@ -1,0 +1,45 @@
+ensures:
+- Given the _type_string param_s , the result is expr_a if param_s is a valid number.
+requires:
+- A valid number can be split up into these components (in order):.
+- '1.'
+- A decimal number or the _type_integer .
+- '2.'
+- (Optional) An expr_a or the expr_b , followed by the _type_integer .
+- A decimal number can be split up into these components (in order):.
+- '1.'
+- (Optional) A sign character (either expr_a or the expr_b).
+- '2.'
+- 1 of the following formats:.
+- '1.'
+- 1 or more digits , followed by a dot `period.
+- '`.'
+- '2.'
+- 1 or more digits , followed by a dot `period.
+- '` , followed by 1 or more digits.'
+- '3.'
+- A dot `period.
+- '` , followed by 1 or more digits.'
+- An integer can be split up into these components (in order):.
+- '1.'
+- (Optional) A sign character (either expr_a or the expr_b).
+- '2.'
+- 1 or more digits.
+- 'For example , all the following are valid numbers: `[ stry_a , stry_b , stry_c , stry_d , stry_e , ".'
+- '-.9" , stry_a , stry_b , stry_c , stry_d , stry_e , stry_f]` , while the following are not valid numbers:  expr_a.'
+- Example 1:.
+- 'Input: s = stry_a.'
+- 'Output: true.'
+- Example 2:.
+- 'Input: s = stry_a.'
+- 'Output: false.'
+- Example 3:.
+- 'Input: s = stry_a.'
+- 'Output: false.'
+- Example 4:.
+- 'Input: s = stry_a.'
+- 'Output: true.'
+- Constraints:.
+- ' expr_a.'
+- param_s only contains  alphabets  , digits ( expr_a) , plus expr_b , minus expr_c , or dot `period.
+- '`.'

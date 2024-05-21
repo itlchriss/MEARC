@@ -1,0 +1,88 @@
+- term: stry_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"0"'
+- term: stry_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"2->4"'
+- term: stry_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"6"'
+- term: stry_d
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"8->9"'
+- term: arr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {0 , 0}
+- term: arr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {2 , 4}
+- term: arr_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {6 , 6}
+- term: arr_d
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {8 , 9}

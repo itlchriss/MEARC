@@ -6,11 +6,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ requires(*The integer parameter `k` is less than or equal to 100000 and is greater than or equal to 0.*);
-//@ ensures(*If the boolean result is equal to true, there exist two distinct indices `i` and `j` in the integer array parameter `nums` such that `nums[i] == nums[j]` and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`.*);
-//@ ensures(*If the boolean result is equal to false, there does not exist two distinct indices `i` and `j` in the integer array parameter `nums` such that `nums[i] == nums[j]` and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,2,3,1], k = 3*);
+//@ requires(*Output: true*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [1,0,1,1], k = 1*);
+//@ requires(*Output: true*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [1,2,3,1,2,3], k = 2*);
+//@ requires(*Output: false*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>*);
+//@ requires(*<code>0 <= k <= 10<sup>5</sup></code>*);
+//@ ensures(*Given an integer array param_nums and an integer param_k, the result is `true` if there are two distinct indices `i` and `j` in the array such that `nums[i] == nums[j]` and `abs(i - j) <= k`.*);
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         int len = nums.length;

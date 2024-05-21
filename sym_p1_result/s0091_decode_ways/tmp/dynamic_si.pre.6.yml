@@ -1,0 +1,88 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' stry_a expr_b strx_a expr_c stry_b expr_d stry_c'
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' cannot be mapped into '
+- term: expr_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' since '
+- term: expr_d
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' is different from '
+- term: strx_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '''F'''
+- term: stry_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"06"'
+- term: stry_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"6"'
+- term: stry_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"06"'

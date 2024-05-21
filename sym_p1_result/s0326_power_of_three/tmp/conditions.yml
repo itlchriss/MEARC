@@ -1,0 +1,17 @@
+ensures:
+- Given the _type_integer param_n , the result is expr_a if it is a power of 3.
+- Otherwise , the result is expr_a.
+requires:
+- An integer param_n is a power of 3 , if there exists the _type_integer expr_a such that <code>n == 3<sup>x</sup></code>.
+- Example 1:.
+- 'Input: n = 27.'
+- 'Output: true.'
+- Example 2:.
+- 'Input: n = 0.'
+- 'Output: false.'
+- Example 3:.
+- 'Input: n = 9.'
+- 'Output: true.'
+- Constraints:.
+- <code>-2147483648 <= n <= 2147483648 - 1</code>.
+- 'Follow up: Could you solve it without loops/recursion?.'

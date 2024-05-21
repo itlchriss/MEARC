@@ -1,0 +1,16 @@
+ensures:
+- Given the _type_integer array param_nums and the _type_integer param_k , the result is expr_a if exist 2 unique indices expr_b and expr_c in the array such that expr_d and expr_e.
+requires:
+- Example 1:.
+- 'Input: nums = arr_a , k = 3.'
+- 'Output: true.'
+- Example 2:.
+- 'Input: nums = arr_a , k = 1.'
+- 'Output: true.'
+- Example 3:.
+- 'Input: nums = arr_a , k = 2.'
+- 'Output: false.'
+- Constraints:.
+- <code>1 <= nums.length <= 10<sup>5</sup></code>.
+- <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>.
+- <code>0 <= k <= 10<sup>5</sup></code>.

@@ -1,0 +1,21 @@
+ensures:
+- Given the _type_integer_array expr_a and the _type_integer param_target , the result is indices of the 2 numbers such that they add up to param_target.
+- You can the result is the answer in any order.
+- 'Explanation: Because nums arr_a + nums arr_b == 9 , we the result is arr_c.'
+requires:
+- You may assume that each input would have 1 solution , and you may not use the same element twice.
+- Example 1:.
+- 'Input: nums = arr_a , target = 9.'
+- 'Output: arr_a.'
+- Example 2:.
+- 'Input: nums = arr_a , target = 6.'
+- 'Output: arr_a.'
+- Example 3:.
+- 'Input: nums = arr_a , target = 6.'
+- 'Output: arr_a.'
+- Constraints:.
+- <code>2 <= nums.length <= 10<sup>4</sup></code>.
+- <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>.
+- <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>.
+- Only 1 valid answer exists.
+- 'Follow-up: Can you come up with an algorithm that is less_than to <code>O(n<sup>2</sup>)</code> time complexity?.'

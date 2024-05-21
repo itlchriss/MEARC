@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="NP">
+  <rule type="ba" cat="NP">
+   <rule type="ba" cat="NP">
+    <rule type="rp" cat="NP">
+     <rule type="ba" cat="NP">
+      <rule type="fa" cat="NP[nb]">
+       <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+       <lf start="1" span="1" word="student" lemma="student" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+      <rule type="lex" cat="NP\NP">
+       <rule type="fa" cat="S[dcl]\NP">
+        <rule type="bx" cat="(S[dcl]\NP)/(S[adj]\NP)">
+         <lf start="2" span="1" word="was" lemma="be" pos="VBD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
+         <lf start="3" span="1" word="never" lemma="never" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)\(S\NP)" />
+        </rule>
+        <lf start="4" span="1" word="late" lemma="late" pos="JJ" chunk="I-ADJP" entity="O" cat="S[adj]\NP" />
+       </rule>
+      </rule>
+     </rule>
+     <lf start="5" span="1" word="(" lemma="(" pos="LRB" chunk="O" entity="O" cat="LRB" />
+    </rule>
+    <rule type="rp" cat="NP\NP">
+     <lf start="6" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="O" entity="O" cat="NP\NP" />
+     <lf start="7" span="1" word=")" lemma=")" pos="RRB" chunk="O" entity="O" cat="RRB" />
+    </rule>
+   </rule>
+   <rule type="fa" cat="NP\NP">
+    <lf start="8" span="1" word="for" lemma="for" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+    <rule type="lex" cat="NP">
+     <rule type="fa" cat="N">
+      <rule type="ba" cat="N/N">
+       <lf start="9" span="1" word="3" lemma="3" pos="CD" chunk="I-NP" entity="O" cat="N/N" />
+       <rule type="conj" cat="(N/N)\(N/N)">
+        <lf start="10" span="1" word="or" lemma="or" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+        <lf start="11" span="1" word="more" lemma="more" pos="JJR" chunk="I-NP" entity="O" cat="N/N" />
+       </rule>
+      </rule>
+      <rule type="fa" cat="N">
+       <lf start="12" span="1" word="consecutive" lemma="consecutive" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+       <lf start="13" span="1" word="days" lemma="day" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="14" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

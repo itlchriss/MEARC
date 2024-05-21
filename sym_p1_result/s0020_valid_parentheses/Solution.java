@@ -8,10 +8,30 @@ import java.util.Stack;
 
 @SuppressWarnings("java:S1149")
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists of only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`.*);
-//@ ensures(*If the string parameter `s` is valid according to the given rules, the boolean result is equal to true.*);
-//@ ensures(*If the string parameter `s` is not valid according to the given rules, the boolean result is equal to false.*);
+//@ requires(*Given a string param_s containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.*);
+//@ requires(*An input string is valid if:*);
+//@ requires(*1.*);
+//@ requires(*Open brackets must be closed by the same type of brackets.*);
+//@ requires(*2.*);
+//@ requires(*Open brackets must be closed in the correct order.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "()"*);
+//@ requires(*Output: true*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "()[]{}"*);
+//@ requires(*Output: true*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "(]"*);
+//@ requires(*Output: false*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: s = "([)]"*);
+//@ requires(*Output: false*);
+//@ requires(*Example 5:*);
+//@ requires(*Input: s = "{[]}"*);
+//@ requires(*Output: true*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= s.length <= 10<sup>4</sup></code>*);
+//@ requires(*param_s consists of parentheses only `'()[]{}'`.*);
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         //@ loop_invariant 0 <= i <= s.length();

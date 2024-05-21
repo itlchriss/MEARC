@@ -1,0 +1,1 @@
+exists x01.(_number{NNS}(x01) & _version{NNP}(x01) & exists e02.(_consist{VBP}(e02) & (Subj(e02) = x01) & exists x03.(((_revision{NNS}(x03) & _1{CD}(x03)) | exists e04.(_more{JJR}(e04) & (Subj(e04) = x03) & _revision{NNS}(x03))) & exists e05.(_join{VBN}(e05) & (Acc(e05) = x03) & exists x06.(_`period{NN}(x06) & _dot{NN}(x06) & (Subj(e05) = x06))) & _of{IN}(e02,x03))))

@@ -3,13 +3,26 @@ package g0001_0100.s0006_zigzag_conversion;
 // #Medium #String #2024_01_04_Time_2_ms_(99.60%)_Space_44.7_MB_(38.67%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 1000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists of English letters (lower-case and upper-case), ',' and '.'.*);
-//@ requires(*The integer parameter `numRows` is greater than or equal to 1 and is less than or equal to 1000.*);
-//@ ensures(*The string result is formed by reading the zigzag pattern line by line.*);
-//@ ensures(*If the string parameter `s` is equal to "PAYPALISHIRING" and the integer parameter `numRows` is equal to 3, the string result is equal to "PAHNAPLSIIGYIR".*);
-//@ ensures(*If the string parameter `s` is equal to "PAYPALISHIRING" and the integer parameter `numRows` is equal to 4, the string result is equal to "PINALSIGYAHRPI".*);
-//@ ensures(*If the string parameter `s` is equal to "A" and the integer parameter `numRows` is equal to 1, the string result is equal to "A".*);
+//@ requires(*The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)*);
+//@ requires(*P A H N A P L S I I G Y I R*);
+//@ requires(*And then read line by line: `"PAHNAPLSIIGYIR"`*);
+//@ requires(*Write the code that will take a string and make this conversion given a number of rows:*);
+//@ requires(*string convert(string s, int numRows);*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "PAYPALISHIRING", numRows = 3*);
+//@ requires(*Output: "PAHNAPLSIIGYIR"*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "PAYPALISHIRING", numRows = 4*);
+//@ requires(*Output: "PINALSIGYAHRPI"*);
+//@ requires(*Explanation: P I N A L S I G Y A H R P I*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "A", numRows = 1*);
+//@ requires(*Output: "A"*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= s.length <= 1000`*);
+//@ requires(*param_s consists of English letters (lower-case and upper-case), `','` and `'.'*);
+//@ requires(*`.*);
+//@ requires(*`1 <= numRows <= 1000`*);
     public String convert(String s, int numRows) {
         int sLen = s.length();
         if (numRows == 1) {

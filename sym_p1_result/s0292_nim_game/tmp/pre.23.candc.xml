@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="fa" cat="S[dcl]">
+  <rule type="fa" cat="S[X]/S[X]">
+   <lf start="0" span="1" word="In" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="(S/S)/NP" />
+   <rule type="fa" cat="NP[nb]">
+    <lf start="1" span="1" word="all" lemma="all" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="2" span="1" word="outcomes" lemma="outcome" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+  </rule>
+  <rule type="rp" cat="S[dcl]">
+   <rule type="lp" cat="S[dcl]">
+    <lf start="3" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+    <rule type="ba" cat="S[dcl]">
+     <rule type="fa" cat="NP[nb]">
+      <lf start="4" span="1" word="your" lemma="your" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+      <lf start="5" span="1" word="friend" lemma="friend" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+     <lf start="6" span="1" word="wins" lemma="win" pos="VBZ" chunk="I-VP" entity="O" cat="S[dcl]\NP" />
+    </rule>
+   </rule>
+   <lf start="7" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+  </rule>
+ </rule>
+</ccg>
+</candc>

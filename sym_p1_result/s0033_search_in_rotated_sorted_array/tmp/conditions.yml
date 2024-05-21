@@ -1,0 +1,22 @@
+ensures:
+- Prior to being passed to your function , param_nums is possibly rotated at an unknown pivot index expr_a ( expr_b) such that the resulting array is expr_c (0-indexed).
+- Given the array param_nums after the possible rotation and the _type_integer param_target , the result is the index of param_target if it is in param_nums , or the expr_a if it is not in param_nums.
+requires:
+- There is the _type_integer array param_nums sorted in ascending_order (with unique values).
+- For example , expr_a might be rotated at pivot index expr_b and become expr_c.
+- You must write an algorithm with expr_a runtime complexity.
+- Example 1:.
+- 'Input: nums = arr_a , target = 0.'
+- 'Output: 4.'
+- Example 2:.
+- 'Input: nums = arr_a , target = 3.'
+- 'Output: negative 1.'
+- Example 3:.
+- 'Input: nums = arr_a , target = 0.'
+- 'Output: negative 1.'
+- Constraints:.
+- ' expr_a.'
+- <code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>.
+- All values of param_nums are unique.
+- param_nums is an ascending array that is possibly rotated.
+- <code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>.

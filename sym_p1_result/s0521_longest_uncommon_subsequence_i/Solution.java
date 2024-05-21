@@ -12,12 +12,28 @@ public class Solution {
      * Or in other words, when a.length() != b.length(), no subsequence of b will be equal to a,
      * so return Math.max(a.length(), b.length())
      */
-//@ requires(*The length of the string parameter `a` is less than or equal to 100 and is greater than or equal to 1.*);
-//@ requires(*The length of the string parameter `b` is less than or equal to 100 and is greater than or equal to 1.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to -1.*);
-//@ ensures(*If the string parameter `a` is equal to "aba" and the string parameter `b` is equal to "cdc", the integer result is equal to 3.*);
-//@ ensures(*If the string parameter `a` is equal to "aaa" and the string parameter `b` is equal to "bbb", the integer result is equal to 3.*);
-//@ ensures(*If the string parameter `a` is equal to "aaa" and the string parameter `b` is equal to "aaa", the integer result is equal to -1.*);
+//@ requires(*An uncommon subsequence between two strings is a string that is a subsequence of one but not the other.*);
+//@ requires(*A subsequence of a string `s` is a string that can be obtained after deleting any number of characters from `s`.*);
+//@ requires(*For example, `"abc"` is a subsequence of `"aebdc"` because you can delete the underlined characters in `"aebdc"` to get `"abc"`.*);
+//@ requires(*Other subsequences of `"aebdc"` include `"aebdc"`, `"aeb"`, and `""` (empty string).*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: a = "aba", b = "cdc"*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: One longest uncommon subsequence is "aba" because "aba" is a subsequence of "aba" but not "cdc".*);
+//@ requires(*Note that "cdc" is also a longest uncommon subsequence.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: a = "aaa", b = "bbb"*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: The longest uncommon subsequences are "aaa" and "bbb".*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: a = "aaa", b = "aaa"*);
+//@ requires(*Output: -1*);
+//@ requires(*Explanation: Every subsequence of string a is also a subsequence of string b. Similarly, every subsequence of string b is also a subsequence of string a.*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= a.length, b.length <= 100`*);
+//@ requires(*param_a and param_b consist of lower-case English letters.*);
+//@ ensures(*Given two strings param_a and param_b, the result is the length of the longest uncommon subsequence between param_a and param_b.*);
+//@ ensures(*If the longest uncommon subsequence does not exist, the result is `-1`.*);
     public int findLUSlength(String a, String b) {
         if (a.equals(b)) {
             return -1;

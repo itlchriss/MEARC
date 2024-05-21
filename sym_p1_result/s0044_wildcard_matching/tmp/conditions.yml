@@ -1,0 +1,34 @@
+ensures: []
+requires:
+- Given an input string ( expr_a) and a pattern ( expr_b) , implement wildcard pattern matching with support for `questionmark.
+- ' expr_a''''` that :.'
+- '`questionmark.'
+- '` Matches any single character.'
+- ' expr_a Matches any sequence of characters (including the empty sequence).'
+- The matching should cover the entire input string (not partial).
+- Example 1:.
+- 'Input: s = stry_a , p = stry_b.'
+- 'Output: false.'
+- 'Explanation: stry_a does not match the entire string stry_b.'
+- Example 2:.
+- 'Input: s = stry_a , p = stry_b.'
+- 'Output: true.'
+- 'Explanation: strx_a matches any sequence.'
+- Example 3:.
+- 'Input: s = stry_a , p = "?.'
+- a".
+- 'Output: false.'
+- 'Explanation: questionmark.'
+- matches strx_a , but the second letter is strx_b , which does not match strx_c.
+- Example 4:.
+- 'Input: s = stry_a , p = stry_b.'
+- 'Output: true.'
+- 'Explanation: The first strx_a matches the empty sequence , while the second strx_b matches the substring stry_a.'
+- Example 5:.
+- 'Input: s = stry_a , p = stry_b.'
+- 'Output: false.'
+- Constraints:.
+- ' expr_a.'
+- ' expr_a only contains lowercase_alphabets .'
+- ' expr_a only contains lowercase_alphabets , `questionmark.'
+- ' expr_a''''`.'

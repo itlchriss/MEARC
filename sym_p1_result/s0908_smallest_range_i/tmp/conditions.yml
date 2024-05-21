@@ -1,0 +1,25 @@
+ensures: []
+requires:
+- You are given the _type_integer array param_nums and the _type_integer param_k.
+- In 1 operation , you can choose any index expr_a that expr_b and change expr_c to expr_d that expr_e is the _type_integer from the range expr_f.
+- You can apply this operation at most once for each index expr_a.
+- The score of param_nums is the difference between the maximum and minimum elements in param_nums.
+- Return the minimum score of param_nums after applying the mentioned operation at most once for each index in it.
+- Example 1:.
+- 'Input: nums = arr_a , k = 0.'
+- 'Output: 0.'
+- 'Explanation: The score is max(nums) - min(nums) = 0 = 0.'
+- Example 2:.
+- 'Input: nums = arr_a , k = 2.'
+- 'Output: 6.'
+- 'Explanation: Change nums to be arr_a.'
+- The score is max(nums) - min(nums) = 6 = 6.
+- Example 3:.
+- 'Input: nums = arr_a , k = 3.'
+- 'Output: 0.'
+- 'Explanation: Change nums to be arr_a.'
+- The score is max(nums) - min(nums) = 0 = 0.
+- Constraints:.
+- <code>1 <= nums.length <= 10<sup>4</sup></code>.
+- <code>0 <= nums[i] <= 10<sup>4</sup></code>.
+- <code>0 <= k <= 10<sup>4</sup></code>.

@@ -1,0 +1,66 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' include '
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' , '
+- term: expr_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' , and '
+- term: stry_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"aebdc"'
+- term: stry_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"aebdc"'
+- term: stry_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"aeb"'

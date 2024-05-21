@@ -1,0 +1,32 @@
+ensures:
+- Given the _type_string param_s containing only digits , the result is the number of ways to decode it.
+requires:
+- A message containing letters from expr_a can be encoded into numbers using the following mapping:.
+- ' strx_a -> stry_a strx_b -> stry_b ... strx_c -> stry_c.'
+- To decode an encoded message , all the digits is grouped then mapped back into letters using the reverse of the mapping above (there may be multiple ways).
+- For example ,  expr_a can be mapped into:.
+- ' expr_a.'
+- ' expr_a.'
+- Note that the grouping expr_a is invalid because  expr_a.
+- The answer is guaranteed to fit in a 32-bit integer.
+- Example 1:.
+- 'Input: s = stry_a.'
+- 'Output: 2.'
+- 'Explanation: stry_a could be decoded as stry_b (1 2) or stry_c (12).'
+- Example 2:.
+- 'Input: s = stry_a.'
+- 'Output: 3.'
+- 'Explanation: stry_a could be decoded as stry_b (2 26) , stry_c (22 6) , or stry_d (2 2 6).'
+- Example 3:.
+- 'Input: s = stry_a.'
+- 'Output: 0.'
+- 'Explanation: There is no character that is mapped to a number starting with 0.'
+- The only valid mappings with 0 are strx_a -> stry_a and strx_b -> stry_b , neither of which start with 0.
+- Hence , exist no valid ways to decode this since all digits need to be mapped.
+- Example 4:.
+- 'Input: s = stry_a.'
+- 'Output: 0.'
+- 'Explanation: stry_a cannot be mapped to stry_b because of the leading 0 ( stry_c is different from stry_d).'
+- Constraints:.
+- ' expr_a.'
+- param_s only contains digits and may contain leading zero(s).

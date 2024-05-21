@@ -6,12 +6,22 @@ package g0001_0100.s0053_maximum_subarray;
 // #2023_08_11_Time_1_ms_(100.00%)_Space_57.7_MB_(90.58%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [-2,1,-3,4,-1,2,1,-5,4], the integer result is equal to 6.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1], the integer result is equal to 1.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [5,4,-1,7,8], the integer result is equal to 23.*);
+//@ requires(*A subarray is a contiguous part of an array.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [-2,1,-3,4,-1,2,1,-5,4]*);
+//@ requires(*Output: 6*);
+//@ requires(*Explanation: [4,-1,2,1] has the largest sum = 6.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [1]*);
+//@ requires(*Output: 1*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [5,4,-1,7,8]*);
+//@ requires(*Output: 23*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>*);
+//@ requires(*Follow up: If you have figured out the `O(n)` solution, try coding another solution using the divide and conquer approach, which is more subtle.*);
+//@ ensures(*Given an integer array param_nums, find the contiguous subarray (containing at least one number) which has the largest sum and the result is its sum.*);
     public int maxSubArray(int[] nums) {
         int maxi = Integer.MIN_VALUE;
         int sum = 0;

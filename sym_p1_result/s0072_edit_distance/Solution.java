@@ -7,12 +7,22 @@ package g0001_0100.s0072_edit_distance;
 
 @SuppressWarnings("java:S2234")
 public class Solution {
-//@ requires(*The length of the string parameter `w1` is less than or equal to 500 and is greater than or equal to 0.*);
-//@ requires(*The length of the string parameter `w2` is less than or equal to 500 and is greater than or equal to 0.*);
-//@ requires(*All characters in the string parameter `w1` and `w2` are lowercase English letters.*);
-//@ ensures(*The integer result is equal to the minimum number of operations required to convert `w1` to `w2`.*);
-//@ ensures(*If the string parameter `w1` is equal to "horse" and the string parameter `w2` is equal to "ros", the integer result is equal to 3.*);
-//@ ensures(*If the string parameter `w1` is equal to "intention" and the string parameter `w2` is equal to "execution", the integer result is equal to 5.*);
+//@ requires(*You have the following three operations permitted on a word:*);
+//@ requires(*Insert a character*);
+//@ requires(*Delete a character*);
+//@ requires(*Replace a character*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: word1 = "horse", word2 = "ros"*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: horse -> rorse (replace 'h' with 'r') rorse -> rose (remove 'r') rose -> ros (remove 'e')*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: word1 = "intention", word2 = "execution"*);
+//@ requires(*Output: 5*);
+//@ requires(*Explanation: intention -> inention (remove 't') inention -> enention (replace 'i' with 'e') enention -> exention (replace 'n' with 'x') exention -> exection (replace 'n' with 'c') exection -> execution (insert 'u')*);
+//@ requires(*Constraints:*);
+//@ requires(*`0 <= word1.length, word2.length <= 500`*);
+//@ requires(*`word1` and `word2` consist of lowercase English letters.*);
+//@ ensures(*Given two strings `word1` and `word2`, the result is the minimum number of operations required to convert `word1` to `word2`.*);
     public int minDistance(String w1, String w2) {
         int n1 = w1.length();
         int n2 = w2.length();

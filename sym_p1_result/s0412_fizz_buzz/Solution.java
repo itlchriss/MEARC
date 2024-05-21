@@ -7,12 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ ensures(*The length of the string array result is equal to the integer parameter `n`.*);
-//@ ensures(*If the index `i` is divisible by both 3 and 5, the string at index `i` in the string array result is equal to "FizzBuzz".*);
-//@ ensures(*If the index `i` is divisible by 3, the string at index `i` in the string array result is equal to "Fizz".*);
-//@ ensures(*If the index `i` is divisible by 5, the string at index `i` in the string array result is equal to "Buzz".*);
-//@ ensures(*If none of the above conditions are true, the string at index `i` in the string array result is equal to the string representation of `i`.*);
+//@ requires(*`answer[i] == "FizzBuzz"` if `i` is divisible by `3` and `5`.*);
+//@ requires(*`answer[i] == "Fizz"` if `i` is divisible by `3`.*);
+//@ requires(*`answer[i] == "Buzz"` if `i` is divisible by `5`.*);
+//@ requires(*`answer[i] == i` (as a string) if none of the above conditions are true.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: n = 3*);
+//@ requires(*Output: ["1","2","Fizz"]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: n = 5*);
+//@ requires(*Output: ["1","2","Fizz","4","Buzz"]*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: n = 15*);
+//@ requires(*Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= n <= 10<sup>4</sup></code>*);
+//@ ensures(*Given an integer param_n, the result is a string array `answer` (1-indexed) where:*);
     public List<String> fizzBuzz(int n) {
         List<String> result = new ArrayList<>();
         for (int i = 1; i <= n; i++) {

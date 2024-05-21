@@ -1,0 +1,17 @@
+ensures:
+- Given the _type_integer param_num , repeatedly add all its digits until the result has only 1 digit , and the result is it.
+- Since 2 has only 1 digit , the result is it.
+requires:
+- Example 1:.
+- 'Input: num = 38.'
+- 'Output: 2.'
+- Explanation:.
+- The process is.
+- 38 --> 11 --> 11.
+- 11 --> 2 --> 2.
+- Example 2:.
+- 'Input: num = 0.'
+- 'Output: 0.'
+- Constraints:.
+- <code>0 <= num <= 2147483648 - 1</code>.
+- 'Follow up: Could you do it without any loop/recursion in expr_a runtime?.'

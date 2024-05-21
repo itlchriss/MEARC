@@ -7,13 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 50000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ ensures(*All values in the integer array result are elements that appear more than the floor division between the length of the integer array parameter `nums` and 3 times.*);
-//@ ensures(*The integer array result may contain duplicate values.*);
-//@ ensures(*The integer array result may contain unique values.*);
-//@ ensures(*The integer array result may contain only one element if there is only one element in the integer array parameter `nums`.*);
-//@ ensures(*The integer array result may contain all elements in the integer array parameter `nums` if all elements in the integer array parameter `nums` appear more than the floor division between the length of the integer array parameter `nums` and 3 times.*);
+//@ requires(*Given an integer array of size `n`, find all elements that appear more than `⌊ n/3 ⌋` times.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [3,2,3]*);
+//@ requires(*Output: [3]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [1]*);
+//@ requires(*Output: [1]*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [1,2]*);
+//@ requires(*Output: [1,2]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 5  10<sup>4</sup></code>*);
+//@ requires(*<code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>*);
+//@ requires(*Follow up: Could you solve the problem in linear time and in `O(1)` space?*);
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> results = new ArrayList<>();
         int len = nums.length;

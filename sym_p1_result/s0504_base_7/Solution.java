@@ -3,10 +3,15 @@ package g0501_0600.s0504_base_7;
 // #Easy #Math #2022_07_24_Time_0_ms_(100.00%)_Space_39.4_MB_(98.67%)
 
 public class Solution {
-//@ requires(*The integer parameter `num` is less than or equal to 10000000 and is greater than or equal to -10000000.*);
-//@ ensures(*The string result is the base 7 representation of the integer parameter `num`.*);
-//@ ensures(*If the integer parameter `num` is equal to 100, the string result is equal to "202".*);
-//@ ensures(*If the integer parameter `num` is equal to -7, the string result is equal to "-10".*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: num = 100*);
+//@ requires(*Output: "202"*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: num = -7*);
+//@ requires(*Output: "-10"*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>-10<sup>7</sup> <= num <= 10<sup>7</sup></code>*);
+//@ ensures(*Given an integer param_num, the result is a string of its base 7 representation.*);
     public String convertToBase7(int num) {
         return Integer.toString(num, 7);
     }

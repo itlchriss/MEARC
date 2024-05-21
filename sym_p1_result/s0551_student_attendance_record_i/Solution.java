@@ -3,10 +3,26 @@ package g0501_0600.s0551_student_attendance_record_i;
 // #Easy #String #2022_08_02_Time_0_ms_(100.00%)_Space_40.2_MB_(96.36%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 1000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` only contains the characters 'A', 'L', or 'P'.*);
-//@ ensures(*If the boolean result is true, the total number of 'A' characters in the string parameter `s` is less than 2 and there are no sequences of 3 or more consecutive 'L' characters.*);
-//@ ensures(*If the boolean result is false, the total number of 'A' characters in the string parameter `s` is greater than or equal to 2 or there is at least one sequence of 3 or more consecutive 'L' characters.*);
+//@ requires(*You are given a string param_s representing an attendance record for a student where each character signifies whether the student was absent, late, or present on that day.*);
+//@ requires(*The record only contains the following three characters:*);
+//@ requires(*`'A'`: Absent.*);
+//@ requires(*`'L'`: Late.*);
+//@ requires(*`'P'`: Present.*);
+//@ requires(*The student is eligible for an attendance award if they meet both of the following criteria:*);
+//@ requires(*The student was absent (`'A'`) for strictly fewer than 2 days total.*);
+//@ requires(*The student was never late (`'L'`) for 3 or more consecutive days.*);
+//@ requires(*Return `true` if the student is eligible for an attendance award, or `false` otherwise.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "PPALLP"*);
+//@ requires(*Output: true*);
+//@ requires(*Explanation: The student has fewer than 2 absences and was never late 3 or more consecutive days.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "PPALLL"*);
+//@ requires(*Output: false*);
+//@ requires(*Explanation: The student was late 3 consecutive days in the last 3 days, so is not eligible for the award.*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= s.length <= 1000`*);
+//@ requires(*`s[i]` is either `'A'`, `'L'`, or `'P'`.*);
     public boolean checkRecord(String s) {
         int aCount = 0;
         int i = 0;

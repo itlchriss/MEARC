@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[b]\NP)" id="t0_0" surf="Do" base="do"/>
+          <token start="1" span="1" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" id="t0_1" surf="not" base="not"/>
+          <token start="2" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" id="t0_2" surf="include" base="include"/>
+          <token start="3" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_3" surf="any" base="any"/>
+          <token start="4" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_4" surf="extra" base="extra"/>
+          <token start="5" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_5" surf="spaces" base="space"/>
+          <token start="6" span="1" pos="." chunk="O" entity="O" cat="." id="t0_6" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp12" category="S[dcl=true]\NP" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp5" category="S[dcl=true]\NP" rule="fa"/>
+          <span id="s0_sp2" child="s0_sp3 s0_sp4" category="(S[dcl=true]\NP)/(S[b=true]\NP)" rule="bx"/>
+          <span start="0" span="1" pos="VBP" chunk="I-VP" entity="O" id="s0_sp3" surf="Do" base="do" terminal="t0_0" category="(S[dcl=true]\NP)/(S[b=true]\NP)"/>
+          <span start="1" span="1" pos="RB" chunk="I-VP" entity="O" id="s0_sp4" surf="not" base="not" terminal="t0_1" category="(S\NP)\(S\NP)"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp7" category="S[b=true]\NP" rule="fa"/>
+          <span start="2" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp6" surf="include" base="include" terminal="t0_2" category="(S[b=true]\NP)/NP"/>
+          <span id="s0_sp7" child="s0_sp8 s0_sp9" category="NP[nb=true]" rule="fa"/>
+          <span start="3" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp8" surf="any" base="any" terminal="t0_3" category="NP[nb=true]/N"/>
+          <span id="s0_sp9" child="s0_sp10 s0_sp11" category="N" rule="fa"/>
+          <span start="4" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp10" surf="extra" base="extra" terminal="t0_4" category="N/N"/>
+          <span start="5" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp11" surf="spaces" base="space" terminal="t0_5" category="N"/>
+          <span start="6" span="1" pos="." chunk="O" entity="O" id="s0_sp12" surf="." base="." terminal="t0_6" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

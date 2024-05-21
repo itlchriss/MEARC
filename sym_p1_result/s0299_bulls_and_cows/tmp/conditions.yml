@@ -1,0 +1,38 @@
+ensures:
+- Given the secret number param_secret and your friend's guess param_guess , the result is the hint for your friend's guess.
+requires:
+- You are playing the [Bulls and Cows](https://en.wikipedia.org/wiki/BullsandCows) game with your friend.
+- You write down a secret number and ask your friend to guess what the number is.
+- When your friend makes a guess , you provide a hint with the following info:.
+- The number of stry_a , which are digits in the guess that are in the correct position.
+- The number of stry_a , which are digits in the guess that are in your secret number but are located in the wrong position.
+- Specifically , the non-bull digits in the guess that could be rearranged such that they become bulls.
+- The hint should be formatted as  expr_a is the number of cows.
+- Note that both param_secret and param_guess may contain duplicate digits.
+- Example 1:.
+- 'Input: secret = stry_a , guess = stry_b.'
+- 'Output: stry_a.'
+- Explanation:.
+- Bulls are connected with a strx_a and cows are underlined:.
+- ' stry_a.'
+- '|.'
+- ' stry_a.'
+- Example 2:.
+- 'Input: secret = stry_a , guess = stry_b.'
+- 'Output: stry_a.'
+- Explanation:.
+- Bulls are connected with a strx_a and cows are underlined:.
+- ' stry_a stry_b.'
+- '| or |.'
+- ' stry_a stry_b.'
+- Note that only 1 of the 2 unmatched 1s is counted as a cow since the non-bull digits can only be rearranged to allow 1 1 to be a bull.
+- Example 3:.
+- 'Input: secret = stry_a , guess = stry_b.'
+- 'Output: stry_a.'
+- Example 4:.
+- 'Input: secret = stry_a , guess = stry_b.'
+- 'Output: stry_a.'
+- Constraints:.
+- ' expr_a.'
+- ' expr_a.'
+- param_secret and param_guess only contain digits.

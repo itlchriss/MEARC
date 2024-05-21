@@ -1,0 +1,23 @@
+ensures:
+- If exist multiple answers , you may the result is any 1 of them.
+requires:
+- Alice and Bob have a different total number of candies.
+- You are given 2 integer arrays param_aliceSizes and param_bobSizes that expr_a is the number of candies of the <code>i<sup>th</sup></code> box of candy that Alice has and expr_b is the number of candies of the <code>j<sup>th</sup></code> box of candy that Bob has.
+- Since they are friends , they would like to exchange 1 candy box each so that after the exchange , they both have the same total amount of candy.
+- The total amount of candy a person has is the sum of the number of candies in each box they have.
+- Return the _type_integer array expr_a that expr_b is the number of candies in the box that Alice must exchange , and expr_c is the number of candies in the box that Bob must exchange.
+- It is guaranteed that at least 1 answer exists.
+- Example 1:.
+- 'Input: aliceSizes = arr_a , bobSizes = arr_b.'
+- 'Output: arr_a.'
+- Example 2:.
+- 'Input: aliceSizes = arr_a , bobSizes = arr_b.'
+- 'Output: arr_a.'
+- Example 3:.
+- 'Input: aliceSizes = arr_a , bobSizes = arr_b.'
+- 'Output: arr_a.'
+- Constraints:.
+- <code>1 <= aliceSizes.length , bobSizes.length <= 10<sup>4</sup></code>.
+- <code>1 <= aliceSizes[i] , bobSizes[j] <= 10<sup>5</sup></code>.
+- Alice and Bob have a different total number of candies.
+- There will be at least 1 valid answer for the given input.

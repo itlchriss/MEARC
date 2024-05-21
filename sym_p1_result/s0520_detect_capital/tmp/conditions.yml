@@ -1,0 +1,16 @@
+ensures:
+- Given the _type_string param_word , the result is expr_a if the usage of capitals in it is right.
+requires:
+- We define the usage of capitals in a word to be right when 1 of the following cases holds:.
+- All letters in this word are capitals , like  expr_a.
+- All letters in this word are not capitals , like  expr_a.
+- Only the first letter in this word is capital , like  expr_a.
+- Example 1:.
+- 'Input: word = stry_a.'
+- 'Output: true.'
+- Example 2:.
+- 'Input: word = stry_a.'
+- 'Output: false.'
+- Constraints:.
+- ' expr_a.'
+- param_word consists of lowercase and uppercase_alphabets .

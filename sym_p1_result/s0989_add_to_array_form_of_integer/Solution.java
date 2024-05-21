@@ -8,14 +8,26 @@ import java.util.Collections;
 import java.util.List;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `num` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `num` are less than or equal to 9 and are greater than or equal to 0.*);
-//@ requires(*The integer parameter `k` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `num` or is greater by 1 if there is a carry from the addition of `num` and `k`.*);
-//@ ensures(*All the values in the integer array result are less than or equal to 9 and are greater than or equal to 0.*);
-//@ ensures(*If the integer array parameter `num` is equal to [1,2,0,0] and the integer parameter `k` is equal to 34, the integer array result is equal to [1,2,3,4].*);
-//@ ensures(*If the integer array parameter `num` is equal to [2,7,4] and the integer parameter `k` is equal to 181, the integer array result is equal to [4,5,5].*);
-//@ ensures(*If the integer array parameter `num` is equal to [2,1,5] and the integer parameter `k` is equal to 806, the integer array result is equal to [1,0,2,1].*);
+//@ requires(*The array-form of an integer param_num is an array representing its digits in left to right order.*);
+//@ requires(*For example, for `num = 1321`, the array form is `[1,3,2,1]`.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: num = [1,2,0,0], k = 34*);
+//@ requires(*Output: [1,2,3,4]*);
+//@ requires(*Explanation: 1200 + 34 = 1234*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: num = [2,7,4], k = 181*);
+//@ requires(*Output: [4,5,5]*);
+//@ requires(*Explanation: 274 + 181 = 455*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: num = [2,1,5], k = 806*);
+//@ requires(*Output: [1,0,2,1]*);
+//@ requires(*Explanation: 215 + 806 = 1021*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= num.length <= 10<sup>4</sup></code>*);
+//@ requires(*`0 <= num[i] <= 9`*);
+//@ requires(*param_num does not contain any leading zeros except for the zero itself.*);
+//@ requires(*<code>1 <= k <= 10<sup>4</sup></code>*);
+//@ ensures(*Given param_num, the array-form of an integer, and an integer param_k, the result is the array-form of the integer `num + k`.*);
     public List<Integer> addToArrayForm(int[] num, int k) {
         ArrayList<Integer> result = new ArrayList<>();
         int carry = 0;

@@ -1,0 +1,33 @@
+ensures: []
+requires:
+- The next greater element of element expr_a in an array is the first greater element that is to the right of expr_b in the same array.
+- You are given 2 unique 0-indexed integer arrays param_nums1 and param_nums2 , that param_nums1 is a subset of param_nums2.
+- For each expr_a , find the index expr_b such that expr_c and determine the next greater element of expr_d in param_nums2.
+- If exists no next greater element , then the answer for this query is expr_a.
+- Return an array expr_a of length expr_b such that expr_c is the next greater element as described above.
+- Example 1:.
+- 'Input: nums1 = arr_a , nums2 = arr_b.'
+- 'Output: arr_a.'
+- Explanation:.
+- The next greater element for each value of nums1 is as follows:.
+- 4 is underlined in nums2 = arr_a.
+- There is no next greater element , so the answer is negative 1.
+- 1 is underlined in nums2 = arr_a.
+- The next greater element is 3.
+- 2 is underlined in nums2 = arr_a.
+- There is no next greater element , so the answer is negative 1.
+- Example 2:.
+- 'Input: nums1 = arr_a , nums2 = arr_b.'
+- 'Output: arr_a.'
+- Explanation:.
+- The next greater element for each value of nums1 is as follows:.
+- 2 is underlined in nums2 = arr_a.
+- The next greater element is 3.
+- 4 is underlined in nums2 = arr_a.
+- There is no next greater element , so the answer is negative 1.
+- Constraints:.
+- ' expr_a.'
+- <code>0 <= nums1[i] , nums2[i] <= 10<sup>4</sup></code>.
+- All integers in param_nums1 and param_nums2 are unique.
+- All the integers of param_nums1 also appear in param_nums2.
+- 'Follow up: Could you find an expr_a solution?.'

@@ -1,0 +1,17 @@
+ensures:
+- Given the _type_integer array expr_a , find a contiguous non-empty subarray in the array that has the largest product , and the result is the product.
+- 'Explanation: The result cannot be 2 , because arr_a is not a subarray.'
+requires:
+- It is guaranteed that the answer will fit in a 32-bit integer.
+- A subarray is a contiguous subsequence of the array.
+- Example 1:.
+- 'Input: nums = arr_a.'
+- 'Output: 6.'
+- 'Explanation: arr_a has the largest product 6.'
+- Example 2:.
+- 'Input: nums = arr_a.'
+- 'Output: 0.'
+- Constraints:.
+- <code>1 <= nums.length <= 2 10<sup>4</sup></code>.
+- ' expr_a.'
+- The product of any prefix or suffix of expr_a is guaranteed to fit in a 32-bit integer.

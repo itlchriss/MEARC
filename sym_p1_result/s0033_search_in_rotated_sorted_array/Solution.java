@@ -6,12 +6,26 @@ package g0001_0100.s0033_search_in_rotated_sorted_array;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_40.6_MB_(92.43%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 5000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are unique.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
-//@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
-//@ ensures(*The integer result is equal to the index of the integer parameter `target` in the integer array parameter `nums` after considering the possible rotation.*);
-//@ ensures(*If the integer parameter `target` is not in the integer array parameter `nums`, the integer result is equal to -1.*);
+//@ requires(*There is an integer array param_nums sorted in ascending order (with distinct values).*);
+//@ requires(*For example, `[0,1,2,4,5,6,7]` might be rotated at pivot index `3` and become `[4,5,6,7,0,1,2]`.*);
+//@ requires(*You must write an algorithm with `O(log n)` runtime complexity.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [4,5,6,7,0,1,2], target = 0*);
+//@ requires(*Output: 4*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [4,5,6,7,0,1,2], target = 3*);
+//@ requires(*Output: -1*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [1], target = 0*);
+//@ requires(*Output: -1*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= nums.length <= 5000`*);
+//@ requires(*<code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>*);
+//@ requires(*All values of param_nums are unique.*);
+//@ requires(*param_nums is an ascending array that is possibly rotated.*);
+//@ requires(*<code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>*);
+//@ ensures(*Prior to being passed to your function, param_nums is possibly rotated at an unknown pivot index `k` (`1 <= k < nums.length`) such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]` (0-indexed).*);
+//@ ensures(*Given the array param_nums after the possible rotation and an integer param_target, the result is the index of param_target if it is in param_nums, or `-1` if it is not in param_nums.*);
     public int search(int[] nums, int target) {
         int mid;
         int lo = 0;

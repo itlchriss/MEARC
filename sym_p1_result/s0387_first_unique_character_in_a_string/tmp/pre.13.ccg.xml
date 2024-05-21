@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_0" surf="param_s" base="param_s"/>
+          <token start="1" span="1" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)/(S\NP)" id="t0_1" surf="only" base="only"/>
+          <token start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" id="t0_2" surf="contains" base="contain"/>
+          <token start="3" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="lowercase_alphabets" base="lowercase_alphabets"/>
+          <token start="4" span="1" pos="." chunk="O" entity="O" cat="." id="t0_4" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp10" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp4" category="S[dcl=true]" rule="ba"/>
+          <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+          <span start="0" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp3" surf="param_s" base="param_s" terminal="t0_0" category="N"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp6" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="1" span="1" pos="RB" chunk="I-ADVP" entity="O" id="s0_sp5" surf="only" base="only" terminal="t0_1" category="(S\NP)/(S\NP)"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp7" surf="contains" base="contain" terminal="t0_2" category="(S[dcl=true]\NP)/NP"/>
+          <span id="s0_sp8" child="s0_sp9" category="NP" rule="lex"/>
+          <span start="3" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp9" surf="lowercase_alphabets" base="lowercase_alphabets" terminal="t0_3" category="N"/>
+          <span start="4" span="1" pos="." chunk="O" entity="O" id="s0_sp10" surf="." base="." terminal="t0_4" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

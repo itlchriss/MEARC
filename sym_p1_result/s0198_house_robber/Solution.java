@@ -6,11 +6,24 @@ package g0101_0200.s0198_house_robber;
 // #2022_06_28_Time_0_ms_(100.00%)_Space_39.9_MB_(85.30%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 400 and are greater than or equal to 0.*);
-//@ ensures(*The integer result is less than or equal to the sum of the values in the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,1], the integer result is equal to 4.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [2,7,9,3,1], the integer result is equal to 12.*);
+//@ requires(*You are a professional robber planning to rob houses along a street.*);
+//@ requires(*Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,2,3,1]*);
+//@ requires(*Output: 4*);
+//@ requires(*Explanation:*);
+//@ requires(*Rob house 1 (money = 1) and then rob house 3 (money = 3).*);
+//@ requires(*Total amount you can rob = 1 + 3 = 4.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [2,7,9,3,1]*);
+//@ requires(*Output: 12*);
+//@ requires(*Explanation:*);
+//@ requires(*Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).*);
+//@ requires(*Total amount you can rob = 2 + 9 + 1 = 12.*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= nums.length <= 100`*);
+//@ requires(*`0 <= nums[i] <= 400`*);
+//@ ensures(*Given an integer array param_nums representing the amount of money of each house, the result is the maximum amount of money you can rob tonight without alerting the police.*);
     public int rob(int[] nums) {
         if (nums.length == 0) {
             return 0;

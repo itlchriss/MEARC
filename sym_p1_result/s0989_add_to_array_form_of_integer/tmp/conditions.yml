@@ -1,0 +1,22 @@
+ensures:
+- Given param_num , the array-form of the _type_integer , and the _type_integer param_k , the result is the array-form of the integer expr_a.
+requires:
+- The array-form of the _type_integer param_num is an array representing its digits in left to right order.
+- For example , for the expr_a , the array form is expr_b.
+- Example 1:.
+- 'Input: num = arr_a , k = 34.'
+- 'Output: arr_a.'
+- 'Explanation: 1234 = 1234.'
+- Example 2:.
+- 'Input: num = arr_a , k = 181.'
+- 'Output: arr_a.'
+- 'Explanation: 455 = 455.'
+- Example 3:.
+- 'Input: num = arr_a , k = 806.'
+- 'Output: arr_a.'
+- 'Explanation: 1021 = 1021.'
+- Constraints:.
+- <code>1 <= num.length <= 10<sup>4</sup></code>.
+- ' expr_a.'
+- param_num does not contain any leading zeros except for the 0 itself.
+- <code>1 <= k <= 10<sup>4</sup></code>.

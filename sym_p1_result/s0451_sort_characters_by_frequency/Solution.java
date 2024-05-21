@@ -12,10 +12,29 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 500000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists of uppercase and lowercase English letters and digits.*);
-//@ ensures(*The characters in the string result are sorted in decreasing order based on their frequency in the string parameter `s`.*);
-//@ ensures(*If there are multiple valid answers, any of them can be returned as the result.*);
+//@ requires(*Given a string param_s, sort it in decreasing order based on the frequency of the characters.*);
+//@ requires(*The frequency of a character is the number of times it appears in the string.*);
+//@ requires(*Return the sorted string.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "tree"*);
+//@ requires(*Output: "eert"*);
+//@ requires(*Explanation: 'e' appears twice while 'r' and 't' both appear once.*);
+//@ requires(*So 'e' must appear before both 'r' and 't'.*);
+//@ requires(*Therefore "eetr" is also a valid answer.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "cccaaa"*);
+//@ requires(*Output: "aaaccc"*);
+//@ requires(*Explanation: Both 'c' and 'a' appear three times, so both "cccaaa" and "aaaccc" are valid answers.*);
+//@ requires(*Note that "cacaca" is incorrect, as the same characters must be together.*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "Aabb"*);
+//@ requires(*Output: "bbAa"*);
+//@ requires(*Explanation: "bbaA" is also a valid answer, but "Aabb" is incorrect.*);
+//@ requires(*Note that 'A' and 'a' are treated as two different characters.*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= s.length <= 5  10<sup>5</sup></code>*);
+//@ requires(*param_s consists of uppercase and lowercase English letters and digits.*);
+//@ ensures(*If there are multiple answers, the result is any of them.*);
     public String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {

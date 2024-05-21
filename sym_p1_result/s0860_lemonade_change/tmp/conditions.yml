@@ -1,0 +1,27 @@
+ensures:
+- Given the _type_integer array param_bills that expr_a is the bill the <code>i<sup>th</sup></code> customer pays , the result is expr_b if you can provide every customer with the correct change , or the expr_c otherwise.
+requires:
+- At a lemonade stand , each lemonade costs `$5`.
+- Customers are standing in a queue to buy from you and order 1 at a time (in the order specified by bills).
+- Each customer will only buy 1 lemonade and pay with either a `$5 expr_a$10 expr_b$20` bill.
+- You must provide the correct change to each customer so that the net transaction is that the customer pays `$5`.
+- Note that you do not have any change in hand at first.
+- Example 1:.
+- 'Input: bills = arr_a.'
+- 'Output: true.'
+- Explanation:.
+- From the first 3 customers , we collect 3 $5 bills in order.
+- From the fourth customer , we collect a $10 bill and give back a $5.
+- From the fifth customer , we give a $10 bill and a $5 bill.
+- Since all customers got correct change , we output true.
+- Example 2:.
+- 'Input: bills = arr_a.'
+- 'Output: false.'
+- Explanation:.
+- From the first 2 customers in order , we collect 2 $5 bills.
+- For the next 2 customers in order , we collect a $10 bill and give back a $5 bill.
+- For the last customer , we can not give the change of $15 back because we only have 2 $10 bills.
+- Since not every customer received the correct change , the answer is equal to the false literal .
+- Constraints:.
+- <code>1 <= bills.length <= 10<sup>5</sup></code>.
+- ' expr_a is either expr_b , expr_c , or the expr_d.'

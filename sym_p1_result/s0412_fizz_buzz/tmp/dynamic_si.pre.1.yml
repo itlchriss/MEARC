@@ -1,0 +1,33 @@
+- term: expr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: answer[i] == stry_a expr_ai expr_b3
+- term: expr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: ' is divisible by '
+- term: stry_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: undefined
+    reference_type: string
+  interpretation: '"Fizz"'

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="Your" lemma="your" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="1" span="1" word="gas" lemma="gas" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="2" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
+    <rule type="fa" cat="S[adj]\NP">
+     <lf start="3" span="1" word="just" lemma="just" pos="RB" chunk="I-ADJP" entity="O" cat="(S[adj]\NP)/(S[adj]\NP)" />
+     <rule type="fa" cat="S[adj]\NP">
+      <lf start="4" span="1" word="enough" lemma="enough" pos="RB" chunk="I-ADJP" entity="O" cat="(S[adj]\NP)/(S[to]\NP)" />
+      <rule type="fa" cat="S[to]\NP">
+       <lf start="5" span="1" word="to" lemma="to" pos="TO" chunk="I-VP" entity="O" cat="(S[to]\NP)/(S[b]\NP)" />
+       <rule type="ba" cat="S[b]\NP">
+        <rule type="ba" cat="S[b]\NP">
+         <lf start="6" span="1" word="travel" lemma="travel" pos="VB" chunk="I-VP" entity="O" cat="S[b]\NP" />
+         <lf start="7" span="1" word="back" lemma="back" pos="RB" chunk="I-ADVP" entity="O" cat="(S\NP)\(S\NP)" />
+        </rule>
+        <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+         <lf start="8" span="1" word="to" lemma="to" pos="TO" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" />
+         <rule type="lex" cat="NP">
+          <rule type="ba" cat="N">
+           <lf start="9" span="1" word="station" lemma="station" pos="NN" chunk="I-NP" entity="O" cat="N" />
+           <lf start="10" span="1" word="3" lemma="3" pos="CD" chunk="I-NP" entity="I-DAT" cat="N\N" />
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="11" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

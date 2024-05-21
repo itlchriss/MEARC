@@ -1,0 +1,22 @@
+ensures:
+- 'Explanation: The first 3 pairs are the result ised from the sequence: arr_a , arr_b , arr_c , arr_d , arr_e , arr_f , arr_g , arr_h , arr_i.'
+- 'Explanation: The first 2 pairs are the result ised from the sequence: arr_a , arr_b , arr_c , arr_d , arr_e , arr_f , arr_g , arr_h , arr_i.'
+- 'Explanation: All possible pairs are the result ised from the sequence: arr_a , arr_b.'
+requires:
+- You are given 2 integer arrays param_nums1 and param_nums2 sorted in ascending_order and the _type_integer param_k.
+- Define a pair expr_a which consists of 1 element from the first array and 1 element from the second array.
+- Return the param_k pairs <code>(u<sub>1</sub> , v<sub>1</sub>) , (u<sub>2</sub> , v<sub>2</sub>) , ... , (u<sub>k</sub> , v<sub>k</sub>)</code> with the smallest sums.
+- Example 1:.
+- 'Input: nums1 = arr_a , nums2 = arr_b , k = 3.'
+- 'Output: [ arr_a , arr_b , arr_c].'
+- Example 2:.
+- 'Input: nums1 = arr_a , nums2 = arr_b , k = 2.'
+- 'Output: [ arr_a , arr_b].'
+- Example 3:.
+- 'Input: nums1 = arr_a , nums2 = arr_b , k = 3.'
+- 'Output: [ arr_a , arr_b].'
+- Constraints:.
+- <code>1 <= nums1.length , nums2.length <= 10<sup>5</sup></code>.
+- <code>-10<sup>9</sup> <= nums1[i] , nums2[i] <= 10<sup>9</sup></code>.
+- param_nums1 and param_nums2 both are sorted in ascending_order .
+- ' expr_a.'

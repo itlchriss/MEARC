@@ -1,0 +1,23 @@
+ensures:
+- Given 4 integer arrays param_nums1 , param_nums2 , param_nums3 , and param_nums4 all of length expr_a , the result is the number of tuples expr_b such that:.
+requires:
+- ' expr_a.'
+- ' expr_a.'
+- Example 1:.
+- 'Input: nums1 = arr_a , nums2 = arr_b , nums3 = arr_c , nums4 = arr_d.'
+- 'Output: 2.'
+- 'Explanation: The 2 tuples are:.'
+- 1. (.
+- 0 , 0 , 0 , 1) -> nums1 arr_a + nums2 arr_b + nums3 arr_c + nums4 arr_d = 1 + (-2) + (-1) + 2 = 0.
+- 2. (.
+- 1 , 1 , 0 , 0) -> nums1 arr_a + nums2 arr_b + nums3 arr_c + nums4 arr_d = 2 + (-1) + (-1) + 0 = 0.
+- Example 2:.
+- 'Input: nums1 = arr_a , nums2 = arr_b , nums3 = arr_c , nums4 = arr_d.'
+- 'Output: 1.'
+- Constraints:.
+- ' expr_a.'
+- ' expr_a.'
+- ' expr_a.'
+- ' expr_a.'
+- ' expr_a.'
+- <code>-2<sup>28</sup> <= nums1[i] , nums2[i] , nums3[i] , nums4[i] <= 2<sup>28</sup></code>.

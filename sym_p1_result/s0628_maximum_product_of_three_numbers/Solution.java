@@ -3,12 +3,19 @@ package g0601_0700.s0628_maximum_product_of_three_numbers;
 // #Easy #Array #Math #Sorting #2022_03_21_Time_2_ms_(99.90%)_Space_55.5_MB_(5.19%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 3.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000 and are greater than or equal to -1000.*);
-//@ ensures(*The integer result is less than or equal to the product of the three largest values in the integer array parameter `nums` and is greater than or equal to the product of the two smallest values in the integer array parameter `nums` multiplied by the largest value in the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3], the integer result is equal to 6.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,4], the integer result is equal to 24.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [-1,-2,-3], the integer result is equal to -6.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,2,3]*);
+//@ requires(*Output: 6*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [1,2,3,4]*);
+//@ requires(*Output: 24*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [-1,-2,-3]*);
+//@ requires(*Output: -6*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>3 <= nums.length <= 10<sup>4</sup></code>*);
+//@ requires(*`-1000 <= nums[i] <= 1000`*);
+//@ ensures(*Given an integer array param_nums, find three numbers whose product is maximum and the result is the maximum product.*);
     public int maximumProduct(int[] nums) {
         int min1 = Integer.MAX_VALUE;
         int min2 = Integer.MAX_VALUE;

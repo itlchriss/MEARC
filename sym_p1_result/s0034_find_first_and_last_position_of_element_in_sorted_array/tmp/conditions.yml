@@ -1,0 +1,19 @@
+ensures:
+- If param_target is not found in the array , the result is expr_a.
+requires:
+- Given the _type_integer_array param_nums sorted in ascending_order , find the starting and ending position of a given param_target value.
+- You must write an algorithm with expr_a runtime complexity.
+- Example 1:.
+- 'Input: nums = arr_a , target = 8.'
+- 'Output: arr_a.'
+- Example 2:.
+- 'Input: nums = arr_a , target = 6.'
+- 'Output: arr_a.'
+- Example 3:.
+- 'Input: nums = [] , target = 0.'
+- 'Output: arr_a.'
+- Constraints:.
+- <code>0 <= nums.length <= 10<sup>5</sup></code>.
+- <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>.
+- param_nums is a non-decreasing array.
+- <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>.

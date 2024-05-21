@@ -20,16 +20,26 @@ public class Solution {
             this.index = index;
         }
     }
-//@ requires(*The length of the integer array parameter `nums1` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*The length of the integer array parameter `nums2` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums1` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ requires(*All the values in the integer array parameter `nums2` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ requires(*The integer parameter `k` is less than or equal to 1000 and is greater than or equal to 1.*);
-//@ ensures(*The length of the list result is less than or equal to the integer parameter `k`.*);
-//@ ensures(*Each element in the list result is a list of two integers representing a pair `(u, v)`.*);
-//@ ensures(*The pairs in the list result are the `k` pairs with the smallest sums.*);
-//@ ensures(*The pairs in the list result are formed by taking one element from the integer array parameter `nums1` and one element from the integer array parameter `nums2`.*);
-//@ ensures(*The pairs in the list result are sorted in ascending order based on their sums.*);
+//@ requires(*You are given two integer arrays param_nums1 and param_nums2 sorted in ascending order and an integer param_k.*);
+//@ requires(*Define a pair `(u, v)` which consists of one element from the first array and one element from the second array.*);
+//@ requires(*Return the param_k pairs <code>(u<sub>1</sub>, v<sub>1</sub>), (u<sub>2</sub>, v<sub>2</sub>), ..., (u<sub>k</sub>, v<sub>k</sub>)</code> with the smallest sums.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums1 = [1,7,11], nums2 = [2,4,6], k = 3*);
+//@ requires(*Output: [[1,2],[1,4],[1,6]]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums1 = [1,1,2], nums2 = [1,2,3], k = 2*);
+//@ requires(*Output: [[1,1],[1,1]]*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums1 = [1,2], nums2 = [3], k = 3*);
+//@ requires(*Output: [[1,3],[2,3]]*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums1.length, nums2.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>-10<sup>9</sup> <= nums1[i], nums2[i] <= 10<sup>9</sup></code>*);
+//@ requires(*param_nums1 and param_nums2 both are sorted in ascending order.*);
+//@ requires(*`1 <= k <= 1000`*);
+//@ ensures(*Explanation: The first 3 pairs are the result ised from the sequence: [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]*);
+//@ ensures(*Explanation: The first 2 pairs are the result ised from the sequence: [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]*);
+//@ ensures(*Explanation: All possible pairs are the result ised from the sequence: [1,3],[2,3]*);
 
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         PriorityQueue<Node> queue = new PriorityQueue<>((a, b) -> a.sum < b.sum ? -1 : 1);

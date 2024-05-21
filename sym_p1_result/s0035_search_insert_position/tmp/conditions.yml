@@ -1,0 +1,25 @@
+ensures:
+- Given a sorted array of unique integers and a target value , the result is the index if the target is found.
+- If not , the result is the index that it would be if it were inserted in order.
+requires:
+- You must write an algorithm with expr_a runtime complexity.
+- Example 1:.
+- 'Input: nums = arr_a , target = 5.'
+- 'Output: 2.'
+- Example 2:.
+- 'Input: nums = arr_a , target = 2.'
+- 'Output: 1.'
+- Example 3:.
+- 'Input: nums = arr_a , target = 7.'
+- 'Output: 4.'
+- Example 4:.
+- 'Input: nums = arr_a , target = 0.'
+- 'Output: 0.'
+- Example 5:.
+- 'Input: nums = arr_a , target = 0.'
+- 'Output: 0.'
+- Constraints:.
+- <code>1 <= nums.length <= 10<sup>4</sup></code>.
+- <code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>.
+- param_nums contains unique values sorted in ascending_order .
+- <code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>.

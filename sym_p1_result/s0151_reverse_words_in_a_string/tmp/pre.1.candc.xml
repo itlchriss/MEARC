@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[b]">
+  <rule type="fa" cat="S[b]">
+   <rule type="lex" cat="S[X]/S[X]">
+    <lf start="0" span="1" word="Given" lemma="Give" pos="VBN" chunk="I-PP" entity="O" cat="S[pss]\NP" />
+   </rule>
+   <rule type="ba" cat="S[b]">
+    <rule type="fa" cat="NP[nb]">
+     <lf start="1" span="1" word="an" lemma="an" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+     <rule type="fa" cat="N">
+      <lf start="2" span="1" word="input" lemma="input" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+      <rule type="fa" cat="N">
+       <lf start="3" span="1" word="string" lemma="string" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+       <lf start="4" span="1" word="param_s" lemma="param_s" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+    </rule>
+    <rule type="lp" cat="S[b]\NP">
+     <lf start="5" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+     <rule type="fa" cat="S[b]\NP">
+      <lf start="6" span="1" word="reverse" lemma="reverse" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+      <rule type="ba" cat="NP">
+       <rule type="fa" cat="NP[nb]">
+        <lf start="7" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+        <lf start="8" span="1" word="order" lemma="order" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+       <rule type="fa" cat="NP\NP">
+        <lf start="9" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+        <rule type="fa" cat="NP[nb]">
+         <lf start="10" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+         <lf start="11" span="1" word="words" lemma="word" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="12" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

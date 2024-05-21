@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="ba" cat="NP">
+  <rule type="lex" cat="NP">
+   <lf start="0" span="1" word="Input" lemma="Input" pos="NNP" chunk="I-NP" entity="O" cat="N" />
+  </rule>
+  <rule type="fa" cat="NP\NP">
+   <lf start="1" span="1" word=":" lemma=":" pos="IN" chunk="O" entity="O" cat="(NP\NP)/S[dcl]" />
+   <rule type="rp" cat="S[dcl]">
+    <rule type="ba" cat="S[dcl]">
+     <lf start="2" span="1" word="s" lemma="s" pos="PRP" chunk="I-NP" entity="O" cat="NP" />
+     <rule type="fa" cat="S[dcl]\NP">
+      <lf start="3" span="1" word="=" lemma="=" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+      <rule type="lex" cat="NP">
+       <lf start="4" span="1" word="stry_a" lemma="stry_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+    </rule>
+    <lf start="5" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+   </rule>
+  </rule>
+ </rule>
+</ccg>
+</candc>

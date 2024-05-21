@@ -1,0 +1,17 @@
+ensures: []
+requires:
+- Your friend is typing his param_name into a keyboard.
+- Sometimes , when typing a character expr_a , the key might get long pressed , and the character will be typed 1 or more times.
+- You examine the param_typed characters of the keyboard.
+- Return expr_a if it is possible that it was your friends name , with characters (possibly none) being long pressed.
+- Example 1:.
+- 'Input: name = stry_a , typed = stry_b.'
+- 'Output: true.'
+- 'Explanation: strx_a and strx_b in strx_c were long pressed.'
+- Example 2:.
+- 'Input: name = stry_a , typed = stry_b.'
+- 'Output: false.'
+- 'Explanation: strx_a must have been pressed twice , but it was not in the typed output.'
+- Constraints:.
+- ' expr_a.'
+- param_name and param_typed only contain lowercase_alphabets .

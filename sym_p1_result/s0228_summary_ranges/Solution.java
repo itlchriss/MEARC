@@ -6,13 +6,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 20 and is greater than or equal to 0.*);
-//@ requires(*All the values in the integer array parameter `nums` are unique.*);
-//@ requires(*The integer array parameter `nums` is sorted in ascending order.*);
-//@ requires(*Each range in the list should be in the format "a->b" if a is not equal to b, and in the format "a" if a is equal to b.*);
-//@ requires(*The ranges cover all the numbers in the array exactly.*);
-//@ requires(*Each element of the integer array parameter `nums` is covered by exactly one of the ranges.*);
-//@ requires(*There is no integer x such that x is in one of the ranges but not in `nums`.*);
+//@ requires(*You are given a sorted unique integer array param_nums.*);
+//@ requires(*Return the smallest sorted list of ranges that cover all the numbers in the array exactly.*);
+//@ requires(*That is, each element of param_nums is covered by exactly one of the ranges, and there is no integer `x` such that `x` is in one of the ranges but not in param_nums.*);
+//@ requires(*Each range `[a,b]` in the list should be output as:*);
+//@ requires(*`"a->b"` if `a !*);
+//@ requires(*= b`*);
+//@ requires(*`"a"` if `a == b`*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [0,1,2,4,5,7]*);
+//@ requires(*Output: ["0->2","4->5","7"]*);
+//@ requires(*Explanation: The ranges are: [0,2] --> "0->2" [4,5] --> "4->5" [7,7] --> "7"*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [0,2,3,4,6,8,9]*);
+//@ requires(*Output: ["0","2->4","6","8->9"]*);
+//@ requires(*Explanation: The ranges are: [0,0] --> "0" [2,4] --> "2->4" [6,6] --> "6" [8,9] --> "8->9"*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = []*);
+//@ requires(*Output: []*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: nums = [-1]*);
+//@ requires(*Output: ["-1"]*);
+//@ requires(*Example 5:*);
+//@ requires(*Input: nums = [0]*);
+//@ requires(*Output: ["0"]*);
+//@ requires(*Constraints:*);
+//@ requires(*`0 <= nums.length <= 20`*);
+//@ requires(*<code>-2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1</code>*);
+//@ requires(*All the values of param_nums are unique.*);
+//@ requires(*param_nums is sorted in ascending order.*);
     public List<String> summaryRanges(int[] nums) {
         List<String> ranges = new ArrayList<>();
         if (nums.length == 0) {

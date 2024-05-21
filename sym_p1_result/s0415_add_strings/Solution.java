@@ -4,13 +4,22 @@ package g0401_0500.s0415_add_strings;
 // #2022_07_16_Time_3_ms_(82.41%)_Space_43.1_MB_(66.56%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `num1` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The length of the string parameter `num2` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `num1` consists of only digits and does not have any leading zeros except for zero itself.*);
-//@ requires(*The string parameter `num2` consists of only digits and does not have any leading zeros except for zero itself.*);
-//@ ensures(*The string result is the sum of the string parameter `num1` and the string parameter `num2`.*);
-//@ ensures(*The string result is represented as a string.*);
-//@ ensures(*The string result is equal to the sum of the integer values represented by the string parameter `num1` and the string parameter `num2`.*);
+//@ requires(*You must solve the problem without using any built-in library for handling large integers (such as `BigInteger`).*);
+//@ requires(*You must also not convert the inputs to integers directly.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: num1 = "11", num2 = "123"*);
+//@ requires(*Output: "134"*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: num1 = "456", num2 = "77"*);
+//@ requires(*Output: "533"*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: num1 = "0", num2 = "0"*);
+//@ requires(*Output: "0"*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= num1.length, num2.length <= 10<sup>4</sup></code>*);
+//@ requires(*param_num1 and param_num2 consist of only digits.*);
+//@ requires(*param_num1 and param_num2 don't have any leading zeros except for the zero itself.*);
+//@ ensures(*Given two non-negative integers, param_num1 and param_num2 represented as string, the result is the sum of param_num1 and param_num2 as a string.*);
     public String addStrings(String num1, String num2) {
         StringBuilder result = new StringBuilder();
         int carry = 0;

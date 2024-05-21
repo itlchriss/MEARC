@@ -3,12 +3,29 @@ package g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree;
 // #Medium #String #Tree #Binary_Tree #Stack #2022_07_10_Time_2_ms_(99.12%)_Space_42.5_MB_(79.33%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `preorder` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `preorder` consists of integers in the range [0, 100] and '#' separated by commas ','.*);
-//@ ensures(*The boolean result is true if the string parameter `preorder` is a correct preorder traversal serialization of a binary tree, otherwise false.*);
-//@ ensures(*If the string parameter `preorder` is equal to "9,3,4,#,#,1,#,#,2,#,6,#,#", the boolean result is true.*);
-//@ ensures(*If the string parameter `preorder` is equal to "1,#", the boolean result is false.*);
-//@ ensures(*If the string parameter `preorder` is equal to "9,#,#,1", the boolean result is false.*);
+//@ requires(*One way to serialize a binary tree is to use preorder traversal.*);
+//@ requires(*When we encounter a non-null node, we record the node's value.*);
+//@ requires(*If it is a null node, we record using a sentinel value such as `'#'`.*);
+//@ requires(*![](*);
+//@ requires(*https://assets.leetcode.com/uploads/2021/03/12/pre-tree.jpg)*);
+//@ requires(*For example, the above binary tree can be serialized to the string `"9,3,4,#,#,1,#,#,2,#,6,#,#"`, where `'#'` represents a null node.*);
+//@ requires(*It is guaranteed that each comma-separated value in the string must be either an integer or a character `'#'` representing null pointer.*);
+//@ requires(*You may assume that the input format is always valid.*);
+//@ requires(*For example, it could never contain two consecutive commas, such as `"1,,3"`.*);
+//@ requires(*Note: You are not allowed to reconstruct the tree.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: preorder = "9,3,4,#,#,1,#,#,2,#,6,#,#"*);
+//@ requires(*Output: true*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: preorder = "1,#"*);
+//@ requires(*Output: false*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: preorder = "9,#,#,1"*);
+//@ requires(*Output: false*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= preorder.length <= 10<sup>4</sup></code>*);
+//@ requires(*param_preorder consist of integers in the range `[0, 100]` and `'#'` separated by commas `','`.*);
+//@ ensures(*Given a string of comma-separated values param_preorder, the result is `true` if it is a correct preorder traversal serialization of a binary tree.*);
     public boolean isValidSerialization(String preorder) {
         int count = 1;
         int length = preorder.length();

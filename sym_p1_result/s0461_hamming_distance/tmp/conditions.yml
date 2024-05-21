@@ -1,0 +1,13 @@
+ensures:
+- Given 2 integers param_x and param_y , the result is the Hamming distance between them.
+requires:
+- The [Hamming distance](https://en.wikipedia.org/wiki/Hammingdistance) between 2 integers is the number of positions at which the corresponding bits are different.
+- Example 1:.
+- 'Input: x = 1 , y = 4.'
+- 'Output: 2.'
+- 'Explanation: 1 (0 0 0 1) 4 (0 1 0 0) ↑ ↑ The above arrows 0 to positions that the corresponding bits are different.'
+- Example 2:.
+- 'Input: x = 3 , y = 1.'
+- 'Output: 1.'
+- Constraints:.
+- <code>0 <= x , y <= 2147483648 - 1</code>.

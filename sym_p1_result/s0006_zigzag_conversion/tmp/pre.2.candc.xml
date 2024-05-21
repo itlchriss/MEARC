@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="ba" cat="NP">
+  <rule type="lex" cat="NP">
+   <rule type="fa" cat="N">
+    <lf start="0" span="1" word="P" lemma="P" pos="NNP" chunk="I-NP" entity="I-LOC" cat="N/N" />
+    <rule type="fa" cat="N">
+     <lf start="1" span="1" word="A" lemma="A" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+     <rule type="fa" cat="N">
+      <lf start="2" span="1" word="H" lemma="H" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+      <rule type="fa" cat="N">
+       <lf start="3" span="1" word="N" lemma="N" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+       <rule type="fa" cat="N">
+        <lf start="4" span="1" word="A" lemma="A" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+        <rule type="ba" cat="N">
+         <rule type="fa" cat="N">
+          <lf start="5" span="1" word="P" lemma="P" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+          <rule type="fa" cat="N">
+           <lf start="6" span="1" word="L" lemma="L" pos="NNP" chunk="I-NP" entity="O" cat="N/N" />
+           <lf start="7" span="1" word="S" lemma="S" pos="NNP" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+         <lf start="8" span="1" word="I" lemma="I" pos="PRP" chunk="B-NP" entity="O" cat="N\N" />
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <rule type="lex" cat="NP\NP">
+   <rule type="rp" cat="S[dcl]">
+    <rule type="ba" cat="S[dcl]">
+     <lf start="9" span="1" word="I" lemma="I" pos="PRP" chunk="B-NP" entity="O" cat="NP" />
+     <rule type="fa" cat="S[dcl]\NP">
+      <lf start="10" span="1" word="G" lemma="g" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+      <rule type="ba" cat="NP">
+       <rule type="lex" cat="NP">
+        <lf start="11" span="1" word="Y" lemma="Y" pos="NNP" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+       <rule type="lex" cat="NP\NP">
+        <rule type="fc" cat="S[dcl]/NP">
+         <rule type="tr" cat="S[X]/(S[X]\NP)">
+          <lf start="12" span="1" word="I" lemma="I" pos="PRP" chunk="B-NP" entity="O" cat="NP" />
+         </rule>
+         <lf start="13" span="1" word="R" lemma="r" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+    <lf start="14" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+   </rule>
+  </rule>
+ </rule>
+</ccg>
+</candc>

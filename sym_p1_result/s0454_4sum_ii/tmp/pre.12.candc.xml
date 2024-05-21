@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="NP">
+  <rule type="ba" cat="NP">
+   <rule type="lex" cat="NP">
+    <lf start="0" span="1" word="Input" lemma="Input" pos="NNP" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="NP\NP">
+    <lf start="1" span="1" word=":" lemma=":" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" />
+    <rule type="ba" cat="NP">
+     <rule type="lex" cat="NP">
+      <rule type="fa" cat="N">
+       <lf start="2" span="1" word="nums1" lemma="nums1" pos="CD" chunk="I-NP" entity="O" cat="N/N" />
+       <rule type="fa" cat="N">
+        <lf start="3" span="1" word="=" lemma="=" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+        <lf start="4" span="1" word="arr_a" lemma="arr_a" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+      </rule>
+     </rule>
+     <rule type="conj" cat="NP\NP">
+      <lf start="5" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+      <rule type="ba" cat="NP">
+       <rule type="lex" cat="NP">
+        <rule type="fa" cat="N">
+         <lf start="6" span="1" word="nums2" lemma="nums2" pos="NN" chunk="I-NP" entity="I-ORG" cat="N/N" />
+         <rule type="fa" cat="N">
+          <lf start="7" span="1" word="=" lemma="=" pos="NN" chunk="I-NP" entity="I-ORG" cat="N/N" />
+          <lf start="8" span="1" word="arr_b" lemma="arr_b" pos="NN" chunk="I-NP" entity="I-ORG" cat="N" />
+         </rule>
+        </rule>
+       </rule>
+       <rule type="conj" cat="NP\NP">
+        <lf start="9" span="1" word="," lemma="," pos="," chunk="O" entity="I-ORG" cat="," />
+        <rule type="ba" cat="NP">
+         <rule type="lex" cat="NP">
+          <rule type="fa" cat="N">
+           <lf start="10" span="1" word="nums3" lemma="nums3" pos="CD" chunk="I-NP" entity="I-ORG" cat="N/N" />
+           <rule type="fa" cat="N">
+            <lf start="11" span="1" word="=" lemma="=" pos="NN" chunk="I-NP" entity="I-ORG" cat="N/N" />
+            <lf start="12" span="1" word="arr_c" lemma="arr_c" pos="NN" chunk="I-NP" entity="I-ORG" cat="N" />
+           </rule>
+          </rule>
+         </rule>
+         <rule type="conj" cat="NP\NP">
+          <lf start="13" span="1" word="," lemma="," pos="," chunk="O" entity="I-ORG" cat="," />
+          <rule type="lex" cat="NP">
+           <rule type="fa" cat="N">
+            <lf start="14" span="1" word="nums4" lemma="nums4" pos="CD" chunk="I-NP" entity="I-ORG" cat="N/N" />
+            <rule type="fa" cat="N">
+             <lf start="15" span="1" word="=" lemma="=" pos="JJ" chunk="I-NP" entity="I-ORG" cat="N/N" />
+             <lf start="16" span="1" word="arr_d" lemma="arr_d" pos="NN" chunk="I-NP" entity="I-ORG" cat="N" />
+            </rule>
+           </rule>
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="17" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

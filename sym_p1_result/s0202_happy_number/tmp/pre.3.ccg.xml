@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/PP" id="t0_0" surf="Starting" base="start"/>
+          <token start="1" span="1" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" id="t0_1" surf="with" base="with"/>
+          <token start="2" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_2" surf="any" base="any"/>
+          <token start="3" span="1" pos="JJ" chunk="I-NP" entity="O" cat="N/N" id="t0_3" surf="positive" base="positive"/>
+          <token start="4" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_4" surf="integer" base="integer"/>
+          <token start="5" span="1" pos="," chunk="O" entity="O" cat="," id="t0_5" surf="," base=","/>
+          <token start="6" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" id="t0_6" surf="replace" base="replace"/>
+          <token start="7" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_7" surf="the" base="the"/>
+          <token start="8" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_8" surf="number" base="number"/>
+          <token start="9" span="1" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" id="t0_9" surf="by" base="by"/>
+          <token start="10" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_10" surf="the" base="the"/>
+          <token start="11" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_11" surf="sum" base="sum"/>
+          <token start="12" span="1" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" id="t0_12" surf="of" base="of"/>
+          <token start="13" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_13" surf="the" base="the"/>
+          <token start="14" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_14" surf="squares" base="square"/>
+          <token start="15" span="1" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" id="t0_15" surf="of" base="of"/>
+          <token start="16" span="1" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_16" surf="its" base="its"/>
+          <token start="17" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_17" surf="digits" base="digit"/>
+          <token start="18" span="1" pos="." chunk="O" entity="O" cat="." id="t0_18" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp37" category="S[b=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp14" category="S[b=true]" rule="ba"/>
+          <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp13" category="S[ng=true]\NP" rule="rp"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp6" category="S[ng=true]\NP" rule="fa"/>
+          <span start="0" span="1" pos="VBG" chunk="I-VP" entity="O" id="s0_sp5" surf="Starting" base="start" terminal="t0_0" category="(S[ng=true]\NP)/PP"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" category="PP" rule="fa"/>
+          <span start="1" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp7" surf="with" base="with" terminal="t0_1" category="PP/NP"/>
+          <span id="s0_sp8" child="s0_sp9 s0_sp10" category="NP[nb=true]" rule="fa"/>
+          <span start="2" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp9" surf="any" base="any" terminal="t0_2" category="NP[nb=true]/N"/>
+          <span id="s0_sp10" child="s0_sp11 s0_sp12" category="N" rule="fa"/>
+          <span start="3" span="1" pos="JJ" chunk="I-NP" entity="O" id="s0_sp11" surf="positive" base="positive" terminal="t0_3" category="N/N"/>
+          <span start="4" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp12" surf="integer" base="integer" terminal="t0_4" category="N"/>
+          <span start="5" span="1" pos="," chunk="O" entity="O" id="s0_sp13" surf="," base="," terminal="t0_5" category="=true,"/>
+          <span id="s0_sp14" child="s0_sp15 s0_sp20" category="S[b=true]\NP" rule="ba"/>
+          <span id="s0_sp15" child="s0_sp16 s0_sp17" category="S[b=true]\NP" rule="fa"/>
+          <span start="6" span="1" pos="VB" chunk="I-VP" entity="O" id="s0_sp16" surf="replace" base="replace" terminal="t0_6" category="(S[b=true]\NP)/NP"/>
+          <span id="s0_sp17" child="s0_sp18 s0_sp19" category="NP[nb=true]" rule="fa"/>
+          <span start="7" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp18" surf="the" base="the" terminal="t0_7" category="NP[nb=true]/N"/>
+          <span start="8" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp19" surf="number" base="number" terminal="t0_8" category="N"/>
+          <span id="s0_sp20" child="s0_sp21 s0_sp22" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="fa"/>
+          <span start="9" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp21" surf="by" base="by" terminal="t0_9" category="((S\NP)\(S\NP))/NP"/>
+          <span id="s0_sp22" child="s0_sp23 s0_sp26" category="NP" rule="ba"/>
+          <span id="s0_sp23" child="s0_sp24 s0_sp25" category="NP[nb=true]" rule="fa"/>
+          <span start="10" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp24" surf="the" base="the" terminal="t0_10" category="NP[nb=true]/N"/>
+          <span start="11" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp25" surf="sum" base="sum" terminal="t0_11" category="N"/>
+          <span id="s0_sp26" child="s0_sp27 s0_sp28" category="NP\NP" rule="fa"/>
+          <span start="12" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp27" surf="of" base="of" terminal="t0_12" category="(NP\NP)/NP"/>
+          <span id="s0_sp28" child="s0_sp29 s0_sp32" category="NP" rule="ba"/>
+          <span id="s0_sp29" child="s0_sp30 s0_sp31" category="NP[nb=true]" rule="fa"/>
+          <span start="13" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp30" surf="the" base="the" terminal="t0_13" category="NP[nb=true]/N"/>
+          <span start="14" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp31" surf="squares" base="square" terminal="t0_14" category="N"/>
+          <span id="s0_sp32" child="s0_sp33 s0_sp34" category="NP\NP" rule="fa"/>
+          <span start="15" span="1" pos="IN" chunk="I-PP" entity="O" id="s0_sp33" surf="of" base="of" terminal="t0_15" category="(NP\NP)/NP"/>
+          <span id="s0_sp34" child="s0_sp35 s0_sp36" category="NP[nb=true]" rule="fa"/>
+          <span start="16" span="1" pos="PRP$" chunk="I-NP" entity="O" id="s0_sp35" surf="its" base="its" terminal="t0_16" category="NP[nb=true]/N"/>
+          <span start="17" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp36" surf="digits" base="digit" terminal="t0_17" category="N"/>
+          <span start="18" span="1" pos="." chunk="O" entity="O" id="s0_sp37" surf="." base="." terminal="t0_18" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

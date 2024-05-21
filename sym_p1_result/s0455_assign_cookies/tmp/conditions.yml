@@ -1,0 +1,27 @@
+ensures: []
+requires:
+- Assume you are an awe parent and want to give your children cookies.
+- But , you should give each child at most 1 cookie.
+- Each child expr_a has a greed factor the expr_b , which is the minimum size of a cookie that the child will be content with; and each cookie expr_c has a size expr_d.
+- If expr_a , we can assign the cookie expr_b to the child expr_c , and the child expr_d will be content.
+- Your goal is to maximize the number of your content children and output the maximum number.
+- Example 1:.
+- 'Input: g = arr_a , s = arr_b.'
+- 'Output: 1.'
+- Explanation:.
+- You have 3 children and 2 cookies.
+- The greed factors of 3 children are 1 , 2 , 3.
+- And even though you have 2 cookies , since their size is both 1 , you could only make the child whose greed factor is 1 content.
+- You need to output 1.
+- Example 2:.
+- 'Input: g = arr_a , s = arr_b.'
+- 'Output: 2.'
+- Explanation:.
+- You have 2 children and 3 cookies.
+- The greed factors of 2 children are 1 , 2.
+- You have 3 cookies and their sizes are big enough to gratify all of the children , .
+- You need to output 2.
+- Constraints:.
+- <code>1 <= g.length <= 3 10<sup>4</sup></code>.
+- <code>0 <= s.length <= 3 10<sup>4</sup></code>.
+- <code>1 <= g[i] , s[j] <= 2147483648 - 1</code>.

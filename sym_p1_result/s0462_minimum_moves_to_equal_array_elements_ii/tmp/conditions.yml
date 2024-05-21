@@ -1,0 +1,16 @@
+ensures:
+- Given the _type_integer array param_nums of size expr_a , the result is the minimum number of moves required to make all array elements equal.
+requires:
+- In 1 move , you can increment or decrement an element of the array by expr_a.
+- Test cases are designed so that the answer will fit in a 32-bit integer.
+- Example 1:.
+- 'Input: nums = arr_a.'
+- 'Output: 2.'
+- 'Explanation: Only 2 moves are needed (remember each move increments or decrements 1 element): arr_a => arr_b => arr_c.'
+- Example 2:.
+- 'Input: nums = arr_a.'
+- 'Output: 16.'
+- Constraints:.
+- ' expr_a.'
+- <code>1 <= nums.length <= 10<sup>5</sup></code>.
+- <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>.

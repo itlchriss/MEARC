@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t0_0" surf="https" base="http"/>
+          <token start="1" span="1" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" id="t0_1" surf=":" base=":"/>
+          <token start="2" span="1" pos="CD" chunk="I-NP" entity="O" cat="N" id="t0_2" surf="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg" base="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg"/>
+          <token start="3" span="1" pos="RRB" chunk="O" entity="O" cat="RRB" id="t0_3" surf=")" base=")"/>
+          <token start="4" span="1" pos="." chunk="O" entity="O" cat="." id="t0_4" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp10" category="NP" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp4" category="NP" rule="ba"/>
+          <span id="s0_sp2" child="s0_sp3" category="NP" rule="lex"/>
+          <span start="0" span="1" pos="NNS" chunk="I-NP" entity="O" id="s0_sp3" surf="https" base="http" terminal="t0_0" category="N"/>
+          <span id="s0_sp4" child="s0_sp5 s0_sp9" category="NP\NP" rule="rp"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp7" category="NP\NP" rule="fa"/>
+          <span start="1" span="1" pos="IN" chunk="O" entity="O" id="s0_sp6" surf=":" base=":" terminal="t0_1" category="(NP\NP)/NP"/>
+          <span id="s0_sp7" child="s0_sp8" category="NP" rule="lex"/>
+          <span start="2" span="1" pos="CD" chunk="I-NP" entity="O" id="s0_sp8" surf="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg" base="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg" terminal="t0_2" category="N"/>
+          <span start="3" span="1" pos="RRB" chunk="O" entity="O" id="s0_sp9" surf=")" base=")" terminal="t0_3" category="RRB"/>
+          <span start="4" span="1" pos="." chunk="O" entity="O" id="s0_sp10" surf="." base="." terminal="t0_4" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+

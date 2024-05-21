@@ -1,0 +1,21 @@
+ensures:
+- Given the integer param_n , the result is the last number that remains in expr_a.
+requires:
+- You have a list expr_a of all integers in the range expr_b sorted in a strictly ascending_order .
+- Apply the following algorithm on expr_a:.
+- Starting from left to right , remove the first number and every other number afterward until you reach the end of the list.
+- Repeat the previous step again , but this time from right to left , remove the rightmost number and every other number from the remaining numbers.
+- Keep repeating the steps again , alternating left to right and right to left , until a single number remains.
+- Example 1:.
+- 'Input: n = 9.'
+- 'Output: 6.'
+- Explanation:.
+- arr = arr_a.
+- arr = arr_a.
+- arr = arr_a.
+- arr = arr_a.
+- Example 2:.
+- 'Input: n = 1.'
+- 'Output: 1.'
+- Constraints:.
+- <code>1 <= n <= 10<sup>9</sup></code>.

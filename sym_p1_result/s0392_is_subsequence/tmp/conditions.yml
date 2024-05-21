@@ -1,0 +1,17 @@
+ensures:
+- Given 2 strings param_s and param_t , the result is expr_a if param_s is a subsequence of param_t , or the expr_b otherwise.
+requires:
+- A subsequence of the _type_string is a new string that is formed from the original string by deleting (can be none) of without disturbing the relative positions of the remaining characters. (.
+- i.e. ,  expr_a is not).
+- Example 1:.
+- 'Input: s = stry_a , t = stry_b.'
+- 'Output: true.'
+- Example 2:.
+- 'Input: s = stry_a , t = stry_b.'
+- 'Output: false.'
+- Constraints:.
+- ' expr_a.'
+- <code>0 <= t.length <= 10<sup>4</sup></code>.
+- param_s and param_t consist only of lowercase_alphabets .
+- 'Follow up: Suppose exist lots of incoming param_s , say <code>s<sub>1</sub> , s<sub>2</sub> , ... , s<sub>k</sub></code> that <code>k >= 10<sup>9</sup></code> , and you want to check 1 by 1 to see if param_t has its subsequence.'
+- In this scenario , how would you change your code?.

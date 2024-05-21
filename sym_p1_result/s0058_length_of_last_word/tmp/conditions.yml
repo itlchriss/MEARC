@@ -1,0 +1,20 @@
+ensures:
+- Given the _type_string param_s containing words separated by number of spaces , the result is the length of the last word in the string.
+requires:
+- A word is a maximal substring containing non-space characters only.
+- Example 1:.
+- 'Input: s = strz_a.'
+- 'Output: 5.'
+- 'Explanation: The last word is stry_a with length 5.'
+- Example 2:.
+- 'Input: s = strz_a.'
+- 'Output: 4.'
+- 'Explanation: The last word is stry_a with length 4.'
+- Example 3:.
+- 'Input: s = strz_a.'
+- 'Output: 6.'
+- 'Explanation: The last word is stry_a with length 6.'
+- Constraints:.
+- <code>1 <= s.length <= 10<sup>4</sup></code>.
+- param_s only contains alphabets and spaces expr_a.
+- There will be at least 1 word in param_s.

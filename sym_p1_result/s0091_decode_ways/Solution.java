@@ -5,13 +5,36 @@ package g0001_0100.s0091_decode_ways;
 // #2022_06_21_Time_2_ms_(66.37%)_Space_41.8_MB_(78.45%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 100 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` contains only digits and may contain leading zeros.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to 0.*);
-//@ ensures(*If the string parameter `s` is equal to "12", the integer result is equal to 2.*);
-//@ ensures(*If the string parameter `s` is equal to "226", the integer result is equal to 3.*);
-//@ ensures(*If the string parameter `s` is equal to "0", the integer result is equal to 0.*);
-//@ ensures(*If the string parameter `s` is equal to "06", the integer result is equal to 0.*);
+//@ requires(*A message containing letters from `A-Z` can be encoded into numbers using the following mapping:*);
+//@ requires(*'A' -> "1" 'B' -> "2" ... 'Z' -> "26"*);
+//@ requires(*To decode an encoded message, all the digits must be grouped then mapped back into letters using the reverse of the mapping above (there may be multiple ways).*);
+//@ requires(*For example, `"11106"` can be mapped into:*);
+//@ requires(*`"AAJF"` with the grouping `(1 1 10 6)`*);
+//@ requires(*`"KJF"` with the grouping `(11 10 6)`*);
+//@ requires(*Note that the grouping `(1 11 06)` is invalid because `"06"` cannot be mapped into `'F'` since `"6"` is different from `"06"`.*);
+//@ requires(*The answer is guaranteed to fit in a 32-bit integer.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "12"*);
+//@ requires(*Output: 2*);
+//@ requires(*Explanation: "12" could be decoded as "AB" (1 2) or "L" (12).*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "226"*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: "226" could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "0"*);
+//@ requires(*Output: 0*);
+//@ requires(*Explanation: There is no character that is mapped to a number starting with 0.*);
+//@ requires(*The only valid mappings with 0 are 'J' -> "10" and 'T' -> "20", neither of which start with 0.*);
+//@ requires(*Hence, there are no valid ways to decode this since all digits need to be mapped.*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: s = "06"*);
+//@ requires(*Output: 0*);
+//@ requires(*Explanation: "06" cannot be mapped to "F" because of the leading zero ("6" is different from "06").*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= s.length <= 100`*);
+//@ requires(*param_s contains only digits and may contain leading zero(s).*);
+//@ ensures(*Given a string param_s containing only digits, the result is the number of ways to decode it.*);
     public int numDecodings(String s) {
         if (s.charAt(0) == '0') {
             return 0;

@@ -4,12 +4,23 @@ package g0001_0100.s0007_reverse_integer;
 // #2024_01_04_Time_1_ms_(96.61%)_Space_40.9_MB_(11.62%)
 
 public class Solution {
-//@ requires(*The integer parameter `x` is greater than or equal to -2147483648 and is less than or equal to 2147483647.*);
-//@ ensures(*If the integer result is not equal to 0, the absolute value of the integer result is less than or equal to 2147483647.*);
-//@ ensures(*If the integer result is equal to 0, the integer parameter `x` is equal to 0.*);
-//@ ensures(*If the integer parameter `x` is positive, the integer result is positive.*);
-//@ ensures(*If the integer parameter `x` is negative, the integer result is negative.*);
-//@ ensures(*The integer result is the reverse of the integer parameter `x`.*);
+//@ requires(*Assume the environment does not allow you to store 64-bit integers (signed or unsigned).*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: x = 123*);
+//@ requires(*Output: 321*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: x = -123*);
+//@ requires(*Output: -321*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: x = 120*);
+//@ requires(*Output: 21*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: x = 0*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>-2<sup>31</sup> <= x <= 2<sup>31</sup> - 1</code>*);
+//@ ensures(*Given a signed 32-bit integer param_x, the result is param_x with its digits reversed.*);
+//@ ensures(*If reversing param_x causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then the result is `0`.*);
     public int reverse(int x) {
         long rev = 0;        
         //@ ghost long k;

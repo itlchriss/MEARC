@@ -1,0 +1,33 @@
+- term: arr_a
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {1 , 2 , 3}
+- term: arr_b
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {2 , 2 , 3}
+- term: arr_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: integer
+    reference_type: array
+  interpretation: new int[] {2 , 2 , 2}

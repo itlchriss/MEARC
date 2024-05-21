@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="NP">
+  <rule type="ba" cat="NP">
+   <rule type="lex" cat="NP">
+    <lf start="0" span="1" word="https" lemma="http" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="rp" cat="NP\NP">
+    <rule type="fa" cat="NP\NP">
+     <lf start="1" span="1" word=":" lemma=":" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" />
+     <rule type="lex" cat="NP">
+      <lf start="2" span="1" word="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg" lemma="//assets.leetcode.com/uploads/2020/11/05/bulb.jpg" pos="CD" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+    </rule>
+    <lf start="3" span="1" word=")" lemma=")" pos="RRB" chunk="O" entity="O" cat="RRB" />
+   </rule>
+  </rule>
+  <lf start="4" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

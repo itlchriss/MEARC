@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[b]\NP">
+  <rule type="fa" cat="S[b]\NP">
+   <lf start="0" span="1" word="Replace" lemma="replace" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+   <rule type="fa" cat="NP[nb]">
+    <lf start="1" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="2" span="1" word="character" lemma="character" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+  </rule>
+  <lf start="3" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

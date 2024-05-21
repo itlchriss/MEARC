@@ -4,10 +4,16 @@ package g0301_0400.s0367_valid_perfect_square;
 // #2022_07_12_Time_0_ms_(100.00%)_Space_40.9_MB_(49.73%)
 
 public class Solution {
-//@ requires(*The integer parameter `num` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
-//@ requires(*The method does not use any built-in library function such as `sqrt`.*);
-//@ ensures(*If the boolean result is true, the integer parameter `num` is a perfect square.*);
-//@ ensures(*If the boolean result is false, the integer parameter `num` is not a perfect square.*);
+//@ requires(*Follow up: Do not use any built-in library function such as `sqrt`.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: num = 16*);
+//@ requires(*Output: true*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: num = 14*);
+//@ requires(*Output: false*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= num <= 2^31 - 1`*);
+//@ ensures(*Given a positive integer num, write a function which the result iss True if num is a perfect square else False.*);
     public boolean isPerfectSquare(int num) {
         if (num == 0) {
             // If num is 0 return false

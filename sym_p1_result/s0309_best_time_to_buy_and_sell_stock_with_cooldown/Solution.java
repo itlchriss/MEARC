@@ -53,11 +53,21 @@ public class Solution {
      * Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to O(1).
      * And here we are at our final solution:
      */
-//@ requires(*The length of the integer array parameter `prices` is less than or equal to 5000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `prices` are less than or equal to 1000 and are greater than or equal to 0.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of java integer and is greater than or equal to the minimum value of java integer.*);
-//@ ensures(*If the integer array parameter `prices` is equal to [1,2,3,0,2], the integer result is equal to 3.*);
-//@ ensures(*If the integer array parameter `prices` is equal to [1], the integer result is equal to 0.*);
+//@ requires(*You are given an array param_prices where `prices[i]` is the price of a given stock on the <code>i<sup>th</sup></code> day.*);
+//@ requires(*Find the maximum profit you can achieve.*);
+//@ requires(*You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times) with the following restrictions:*);
+//@ requires(*After you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).*);
+//@ requires(*Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: prices = [1,2,3,0,2]*);
+//@ requires(*Output: 3*);
+//@ requires(*Explanation: transactions = [buy, sell, cooldown, buy, sell]*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: prices = [1]*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= prices.length <= 5000`*);
+//@ requires(*`0 <= prices[i] <= 1000`*);
     public int maxProfit(int[] prices) {
         int sell = 0;
         int prevSell = 0;

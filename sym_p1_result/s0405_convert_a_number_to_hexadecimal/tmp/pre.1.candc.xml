@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="fa" cat="S[dcl]">
+   <rule type="fa" cat="S[X]/S[X]">
+    <lf start="0" span="1" word="For" lemma="for" pos="IN" chunk="I-PP" entity="O" cat="(S/S)/NP" />
+    <rule type="ba" cat="NP">
+     <rule type="lex" cat="NP">
+      <rule type="fa" cat="N">
+       <lf start="1" span="1" word="negative" lemma="negative" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+       <lf start="2" span="1" word="integers" lemma="integer" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+     <rule type="conj" cat="NP\NP">
+      <lf start="3" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+      <rule type="ba" cat="NP">
+       <rule type="lex" cat="NP">
+        <rule type="fa" cat="N">
+         <lf start="4" span="1" word="[" lemma="[" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+         <rule type="fa" cat="N">
+          <lf start="5" span="1" word="two’s" lemma="two’s" pos="NNS" chunk="I-NP" entity="O" cat="N/N" />
+          <rule type="fa" cat="N">
+           <lf start="6" span="1" word="complement" lemma="complement" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+           <lf start="7" span="1" word="]" lemma="]" pos="NN" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+       <rule type="rp" cat="NP\NP">
+        <rule type="fa" cat="NP\NP">
+         <lf start="8" span="1" word="(" lemma="(" pos="LRB" chunk="O" entity="O" cat="(NP\NP)/NP" />
+         <rule type="ba" cat="NP">
+          <rule type="lex" cat="NP">
+           <lf start="9" span="1" word="https" lemma="http" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+          <rule type="fa" cat="NP\NP">
+           <lf start="10" span="1" word=":" lemma=":" pos="IN" chunk="O" entity="O" cat="(NP\NP)/NP" />
+           <rule type="ba" cat="NP">
+            <rule type="lex" cat="NP">
+             <rule type="fa" cat="N">
+              <lf start="11" span="1" word="//en.wikipedia.org/wiki/Two" lemma="//en.wikipedia.org/wiki/Two" pos="CD" chunk="I-NP" entity="I-PCT" cat="N/N" />
+              <lf start="12" span="1" word="%" lemma="%" pos="NN" chunk="I-NP" entity="I-PCT" cat="N" />
+             </rule>
+            </rule>
+            <lf start="13" span="1" word="27scomplement" lemma="27scomplement" pos="CD" chunk="I-NP" entity="I-PCT" cat="NP\NP" />
+           </rule>
+          </rule>
+         </rule>
+        </rule>
+        <lf start="14" span="1" word=")" lemma=")" pos="RRB" chunk="O" entity="O" cat="RRB" />
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+   <rule type="ba" cat="S[dcl]">
+    <rule type="lex" cat="NP">
+     <lf start="15" span="1" word="method" lemma="method" pos="NN" chunk="I-NP" entity="O" cat="N" />
+    </rule>
+    <rule type="fa" cat="S[dcl]\NP">
+     <lf start="16" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[pss]\NP)" />
+     <lf start="17" span="1" word="used" lemma="use" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
+    </rule>
+   </rule>
+  </rule>
+  <lf start="18" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

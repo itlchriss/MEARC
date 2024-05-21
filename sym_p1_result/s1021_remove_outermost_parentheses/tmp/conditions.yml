@@ -1,0 +1,29 @@
+ensures: []
+requires:
+- A valid parentheses string is either empty `"" expr_a stry_a + A + stry_b expr_bA + B expr_cA expr_dB expr_e+` is string concatenation.
+- For example , `"" expr_a stry_a expr_b stry_b expr_c stry_c` are all valid parentheses strings.
+- A valid parentheses string param_s is primitive if it is nonempty , and there does not exist a way to split it into expr_a , with expr_b and expr_c nonempty valid parentheses strings.
+- 'Given a valid parentheses string param_s , consider its primitive decomposition: <code>s = P<sub>1</sub> + P<sub>2</sub> + ... + P<sub>k</sub></code> , that <code>P<sub>i</sub></code> are primitive valid parentheses strings.'
+- Return param_s after removing the outermost parentheses of every primitive string in the primitive decomposition of param_s.
+- Example 1:.
+- 'Input: s = stry_a.'
+- 'Output: stry_a.'
+- Explanation:.
+- The input string is stry_a , with primitive decomposition stry_b + stry_c.
+- After removing outer parentheses of each part , this stry_a + stry_b = stry_c.
+- Example 2:.
+- 'Input: s = stry_a.'
+- 'Output: stry_a.'
+- Explanation:.
+- The input string is stry_a , with primitive decomposition stry_b + stry_c + stry_d.
+- After removing outer parentheses of each part , this stry_a + stry_b + stry_c = stry_d.
+- Example 3:.
+- 'Input: s = stry_a.'
+- 'Output: "".'
+- Explanation:.
+- The input string is stry_a , with primitive decomposition stry_b + stry_c.
+- After removing outer parentheses of each part , this "" + "" = "".
+- Constraints:.
+- <code>1 <= s.length <= 10<sup>5</sup></code>.
+- ' expr_a is either leftp or rightp.'
+- param_s is a valid parentheses string.

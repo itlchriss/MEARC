@@ -7,11 +7,19 @@ import java.util.Arrays;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ ensures(*The integer result is equal to the length of the longest consecutive elements sequence in the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [100,4,200,1,3,2], the integer result is equal to 4.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [0,3,7,2,5,8,4,6,0,1], the integer result is equal to 9.*);
+//@ requires(*You must write an algorithm that runs in `O(n)` time.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [100,4,200,1,3,2]*);
+//@ requires(*Output: 4*);
+//@ requires(*Explanation: The longest consecutive elements sequence is `[1, 2, 3, 4]`.*);
+//@ requires(*Therefore its length is 4.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [0,3,7,2,5,8,4,6,0,1]*);
+//@ requires(*Output: 9*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>0 <= nums.length <= 10<sup>5</sup></code>*);
+//@ requires(*<code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>*);
+//@ ensures(*Given an unsorted array of integers param_nums, the result is the length of the longest consecutive elements sequence.*);
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) {
             return 0;

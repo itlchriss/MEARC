@@ -4,12 +4,20 @@ package g0001_0100.s0041_first_missing_positive;
 // #Big_O_Time_O(n)_Space_O(n) #2023_08_11_Time_2_ms_(57.59%)_Space_59.2_MB_(51.48%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 500000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 2^31 - 1 and are greater than or equal to -2^31.*);
-//@ requires(*The algorithm used to find the smallest missing positive integer runs in O(n) time.*);
-//@ requires(*The algorithm used to find the smallest missing positive integer uses constant extra space.*);
-//@ ensures(*The integer result is greater than or equal to 1.*);
-//@ ensures(*The integer result is the smallest positive integer that is missing from the integer array parameter `nums`.*);
+//@ requires(*You must implement an algorithm that runs in `O(n)` time and uses constant extra space.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [1,2,0]*);
+//@ requires(*Output: 3*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [3,4,-1,1]*);
+//@ requires(*Output: 2*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: nums = [7,8,9,11,12]*);
+//@ requires(*Output: 1*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 5  10<sup>5</sup></code>*);
+//@ requires(*<code>-2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1</code>*);
+//@ ensures(*Given an unsorted integer array param_nums, the result is the smallest missing positive integer.*);
     public int firstMissingPositive(int[] nums) {
         //@ loop_invariant 0 <= i <= nums.length;
         //@ decreases nums.length - i;

@@ -4,15 +4,38 @@ package g0001_0100.s0044_wildcard_matching;
 // #Udemy_Dynamic_Programming #2023_08_11_Time_2_ms_(99.87%)_Space_43.2_MB_(99.49%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is less than or equal to 2000 and is greater than or equal to 0.*);
-//@ requires(*The length of the string parameter `p` is less than or equal to 2000 and is greater than or equal to 0.*);
-//@ requires(*The string parameter `s` contains only lowercase English letters.*);
-//@ requires(*The string parameter `p` contains only lowercase English letters, '?' or '*'.*);
-//@ ensures(*If the string parameter `s` is equal to "aa" and the string parameter `p` is equal to "a", the boolean result is false.*);
-//@ ensures(*If the string parameter `s` is equal to "aa" and the string parameter `p` is equal to "*", the boolean result is true.*);
-//@ ensures(*If the string parameter `s` is equal to "cb" and the string parameter `p` is equal to "?a", the boolean result is false.*);
-//@ ensures(*If the string parameter `s` is equal to "adceb" and the string parameter `p` is equal to "*a*b", the boolean result is true.*);
-//@ ensures(*If the string parameter `s` is equal to "acdcb" and the string parameter `p` is equal to "a*c?b", the boolean result is false.*);
+//@ requires(*Given an input string (`s`) and a pattern (`p`), implement wildcard pattern matching with support for `'?'*);
+//@ requires(*` and `''` where:*);
+//@ requires(*`'?'*);
+//@ requires(*` Matches any single character.*);
+//@ requires(*`''` Matches any sequence of characters (including the empty sequence).*);
+//@ requires(*The matching should cover the entire input string (not partial).*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: s = "aa", p = "a"*);
+//@ requires(*Output: false*);
+//@ requires(*Explanation: "a" does not match the entire string "aa".*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: s = "aa", p = "\"*);
+//@ requires(*Output: true*);
+//@ requires(*Explanation: '\' matches any sequence.*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: s = "cb", p = "?*);
+//@ requires(*a"*);
+//@ requires(*Output: false*);
+//@ requires(*Explanation: '?'*);
+//@ requires(*matches 'c', but the second letter is 'a', which does not match 'b'.*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: s = "adceb", p = "\a\b"*);
+//@ requires(*Output: true*);
+//@ requires(*Explanation: The first '\' matches the empty sequence, while the second '\' matches the substring "dce".*);
+//@ requires(*Example 5:*);
+//@ requires(*Input: s = "acdcb", p = "a\c?b"*);
+//@ requires(*Output: false*);
+//@ requires(*Constraints:*);
+//@ requires(*`0 <= s.length, p.length <= 2000`*);
+//@ requires(*`s` contains only lowercase English letters.*);
+//@ requires(*`p` contains only lowercase English letters, `'?'*);
+//@ requires(*` or `''`.*);
     public boolean isMatch(String inputString, String pattern) {
         int i = 0;
         int j = 0;

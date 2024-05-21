@@ -5,11 +5,21 @@ package g0101_0200.s0152_maximum_product_subarray;
 // #Big_O_Time_O(N)_Space_O(1) #2022_06_25_Time_0_ms_(100.00%)_Space_42.7_MB_(82.46%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is less than or equal to 20000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10 and are greater than or equal to -10.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to the minimum value of a 32-bit integer.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [2,3,-2,4], the integer result is equal to 6.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [-2,0,-1], the integer result is equal to 0.*);
+//@ requires(*It is guaranteed that the answer will fit in a 32-bit integer.*);
+//@ requires(*A subarray is a contiguous subsequence of the array.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: nums = [2,3,-2,4]*);
+//@ requires(*Output: 6*);
+//@ requires(*Explanation: [2,3] has the largest product 6.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: nums = [-2,0,-1]*);
+//@ requires(*Output: 0*);
+//@ requires(*Constraints:*);
+//@ requires(*<code>1 <= nums.length <= 2  10<sup>4</sup></code>*);
+//@ requires(*`-10 <= nums[i] <= 10`*);
+//@ requires(*The product of any prefix or suffix of `nums` is guaranteed to fit in a 32-bit integer.*);
+//@ ensures(*Given an integer array `nums`, find a contiguous non-empty subarray within the array that has the largest product, and the result is the product.*);
+//@ ensures(*Explanation: The result cannot be 2, because [-2,-1] is not a subarray.*);
     public int maxProduct(int[] arr) {
         int ans = Integer.MIN_VALUE;
         int cprod = 1;

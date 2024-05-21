@@ -1,0 +1,25 @@
+ensures:
+- If exist multiple answers , the result is any of them.
+requires:
+- Given the _type_string param_s , sort it in decreasing order based on the frequency of .
+- The frequency of a character is the number of times it appears in the string.
+- Return the sorted string.
+- Example 1:.
+- 'Input: s = stry_a.'
+- 'Output: stry_a.'
+- 'Explanation: strx_a appears twice while strx_b and strx_c both appear once.'
+- So strx_a must appear before both strx_b and strx_c.
+- Therefore stry_a is also a valid answer.
+- Example 2:.
+- 'Input: s = stry_a.'
+- 'Output: stry_a.'
+- 'Explanation: Both strx_a and strx_b appear 3 times , so both stry_a and stry_b are valid answers.'
+- Note that stry_a is incorrect , as the same characters is together.
+- Example 3:.
+- 'Input: s = stry_a.'
+- 'Output: stry_a.'
+- 'Explanation: stry_a is also a valid answer , but stry_b is incorrect.'
+- Note that strx_a and strx_b are treated as 2 different characters.
+- Constraints:.
+- <code>1 <= s.length <= 5 10<sup>5</sup></code>.
+- param_s consists of uppercase and lowercase_alphabets and digits.

@@ -1,0 +1,22 @@
+ensures:
+- Given the _type_string param_s which is an expression , evaluate this expression and the result is its value.
+- All intermediate results will be in the range of <code> arr_a</code>.
+requires:
+- The integer division should truncate toward 0.
+- You may assume that the given expression is always valid.
+- 'Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions , such as expr_a.'
+- Example 1:.
+- 'Input: s = stry_a.'
+- 'Output: 7.'
+- Example 2:.
+- 'Input: s = " 3/2 ".'
+- 'Output: 1.'
+- Example 3:.
+- 'Input: s = " 3+5 / 2 ".'
+- 'Output: 5.'
+- Constraints:.
+- <code>1 <= s.length <= 3 10<sup>5</sup></code>.
+- param_s consists of integers and operators expr_a separated by number of spaces.
+- param_s is a valid expression.
+- All the integers in the expression are non-negative integers in the range <code> arr_a</code>.
+- The answer is guaranteed to fit in a 32-bit integer.

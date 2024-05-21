@@ -1,0 +1,31 @@
+ensures:
+- The the result ised string should only have a single space separating the words.
+requires:
+- Given an input string param_s , reverse the order of the words.
+- A word is defined as a sequence of non-space characters.
+- The words in param_s will be separated by at least 1 space.
+- Return the _type_string of the words in reverse order concatenated by a single space.
+- Note that param_s may contain leading or trailing spaces or multiple spaces between 2 words.
+- Do not include any extra spaces.
+- Example 1:.
+- 'Input: s = strz_a.'
+- 'Output: strz_a.'
+- Example 2:.
+- 'Input: s = strz_a.'
+- 'Output: strz_a.'
+- 'Explanation: Your reversed string should not contain leading or trailing spaces.'
+- Example 3:.
+- 'Input: s = strz_a.'
+- 'Output: strz_a.'
+- 'Explanation: You need to reduce multiple spaces between 2 words to a single space in the reversed string.'
+- Example 4:.
+- 'Input: s = strz_a.'
+- 'Output: strz_a.'
+- Example 5:.
+- 'Input: s = strz_a.'
+- 'Output: strz_a.'
+- Constraints:.
+- <code>1 <= s.length <= 10<sup>4</sup></code>.
+- param_s contains alphabets (upper-case and lower-case) , digits , and spaces expr_a.
+- There is at least 1 word in param_s.
+- 'Follow-up: If the string data type is mutable in your language , can you solve it in-place with expr_a extra space?.'

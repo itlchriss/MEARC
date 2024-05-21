@@ -1,0 +1,18 @@
+ensures:
+- Given 2 strings expr_a and expr_b , the result is the minimum number of operations required to convert expr_c to expr_d.
+requires:
+- You have the following 3 operations permitted on a word:.
+- Insert a character.
+- Delete a character.
+- Replace a character.
+- Example 1:.
+- 'Input: word1 = stry_a , word2 = stry_b.'
+- 'Output: 3.'
+- 'Explanation: horse -> rorse (replace strx_a with strx_b) rorse -> rose (remove strx_c) rose -> ros (remove strx_d).'
+- Example 2:.
+- 'Input: word1 = stry_a , word2 = stry_b.'
+- 'Output: 5.'
+- 'Explanation: intention -> inention (remove strx_a) inention -> enention (replace strx_b with strx_c) enention -> exention (replace strx_d with strx_e) exention -> exection (replace strx_f with strx_g) exection -> execution (insert strx_h).'
+- Constraints:.
+- ' expr_a.'
+- ' expr_a and expr_b consist of lowercase_alphabets .'

@@ -1,0 +1,26 @@
+ensures:
+- So you should the result is 1 because exists only 1 bulb is on.
+requires:
+- There are param_n bulbs that are initially off.
+- You first turn on all the bulbs , then you turn off every second bulb.
+- On the third round , you toggle every third bulb (turning on if it's off or turning off if it's on).
+- For the <code>i<sup>th</sup></code> round , you toggle every expr_a bulb.
+- For the <code>n<sup>th</sup></code> round , you only toggle the last bulb.
+- Return the number of bulbs that are on after param_n rounds.
+- Example 1:.
+- '![](.'
+- https://assets.leetcode.com/uploads/2020/11/05/bulb.jpg).
+- 'Input: n = 3.'
+- 'Output: 1.'
+- 'Explanation: At first , the 3 bulbs are [off , off , off].'
+- After the first round , the 3 bulbs are [on , on , on].
+- After the second round , the 3 bulbs are [on , off , on].
+- After the third round , the 3 bulbs are [on , off , off].
+- Example 2:.
+- 'Input: n = 0.'
+- 'Output: 0.'
+- Example 3:.
+- 'Input: n = 1.'
+- 'Output: 1.'
+- Constraints:.
+- <code>0 <= n <= 10<sup>9</sup></code>.

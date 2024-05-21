@@ -4,12 +4,38 @@ package g0001_0100.s0066_plus_one;
 // #2023_08_11_Time_0_ms_(100.00%)_Space_40.8_MB_(76.07%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `digits` is less than or equal to 100 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `digits` are less than or equal to 9 and are greater than or equal to 0.*);
-//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `digits`.*);
-//@ ensures(*If the last element of the integer array parameter `digits` is less than 9, the last element of the integer array result is equal to the last element of the integer array parameter `digits` plus 1.*);
-//@ ensures(*If the last element of the integer array parameter `digits` is equal to 9, the last element of the integer array result is equal to 0 and the second last element of the integer array result is equal to the second last element of the integer array parameter `digits` plus 1.*);
-//@ ensures(*If all the elements of the integer array parameter `digits` are equal to 9, the first element of the integer array result is equal to 1 and all the other elements are equal to 0.*);
+//@ requires(*You are given a large integer represented as an integer array param_digits, where each `digits[i]` is the `ith` digit of the integer.*);
+//@ requires(*The digits are ordered from most significant to least significant in left-to-right order.*);
+//@ requires(*The large integer does not contain any leading `0`'s.*);
+//@ requires(*Example 1:*);
+//@ requires(*Input: digits = [1,2,3]*);
+//@ requires(*Output: [1,2,4]*);
+//@ requires(*Explanation: The array represents the integer 123.*);
+//@ requires(*Incrementing by one gives 123 + 1 = 124.*);
+//@ requires(*Example 2:*);
+//@ requires(*Input: digits = [4,3,2,1]*);
+//@ requires(*Output: [4,3,2,2]*);
+//@ requires(*Explanation: The array represents the integer 4321.*);
+//@ requires(*Incrementing by one gives 4321 + 1 = 4322.*);
+//@ requires(*Example 3:*);
+//@ requires(*Input: digits = [0]*);
+//@ requires(*Output: [1]*);
+//@ requires(*Explanation: The array represents the integer 0.*);
+//@ requires(*Incrementing by one gives 0 + 1 = 1.*);
+//@ requires(*Example 4:*);
+//@ requires(*Input: digits = [9]*);
+//@ requires(*Output: [1,0]*);
+//@ requires(*Explanation: The array represents the integer 9.*);
+//@ requires(*Incrementing by one gives 9 + 1 = 10.*);
+//@ requires(*Constraints:*);
+//@ requires(*`1 <= digits.length <= 100`*);
+//@ requires(*`0 <= digits[i] <= 9`*);
+//@ requires(*param_digits does not contain any leading `0`'s.*);
+//@ ensures(*Increment the large integer by one and the result is the resulting array of digits.*);
+//@ ensures(*Thus, the result should be [1,2,4].*);
+//@ ensures(*Thus, the result should be [4,3,2,2].*);
+//@ ensures(*Thus, the result should be [1].*);
+//@ ensures(*Thus, the result should be [1,0].*);
     public int[] plusOne(int[] digits) {
         int num = 1;
         int carry = 0;

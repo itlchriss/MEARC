@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="fa" cat="S[b]\NP">
+  <rule type="bx" cat="(S[b]\NP)/S[dcl]">
+   <lf start="0" span="1" word="Follow" lemma="follow" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/S[dcl]" />
+   <lf start="1" span="1" word="up" lemma="up" pos="RP" chunk="I-PRT" entity="O" cat="(S\NP)\(S\NP)" />
+  </rule>
+  <rule type="lp" cat="S[dcl]">
+   <lf start="2" span="1" word=":" lemma=":" pos=":" chunk="O" entity="O" cat=":" />
+   <rule type="rp" cat="S[dcl]">
+    <rule type="rp" cat="S[dcl]">
+     <rule type="fa" cat="S[dcl]">
+      <rule type="fa" cat="S[dcl]/(S[b]\NP)">
+       <lf start="3" span="1" word="Could" lemma="could" pos="MD" chunk="O" entity="O" cat="(S[dcl]/(S[b]\NP))/NP" />
+       <lf start="4" span="1" word="you" lemma="you" pos="PRP" chunk="I-NP" entity="O" cat="NP" />
+      </rule>
+      <rule type="fa" cat="S[b]\NP">
+       <lf start="5" span="1" word="find" lemma="find" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/NP" />
+       <rule type="fa" cat="NP[nb]">
+        <lf start="6" span="1" word="an" lemma="an" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+        <rule type="fa" cat="N">
+         <lf start="7" span="1" word="expr_a" lemma="expr_a" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+         <lf start="8" span="1" word="solution" lemma="solution" pos="NN" chunk="I-NP" entity="O" cat="N" />
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+     <lf start="9" span="1" word="?" lemma="?" pos="." chunk="O" entity="O" cat="." />
+    </rule>
+    <lf start="10" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+   </rule>
+  </rule>
+ </rule>
+</ccg>
+</candc>

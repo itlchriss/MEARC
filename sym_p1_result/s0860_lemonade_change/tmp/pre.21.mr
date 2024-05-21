@@ -1,0 +1,1 @@
+exists x01.(_answer{NN}(x01) & exists e02.(_equal{JJ}(e02) & (Subj(e02) = x01) & exists x03.(exists e04.(_false{JJ}(e04) & (Subj(e04) = x03) & _literal{NN}(x03)) & (Dat(e02) = x03)))) & -all x05.(_customer{NN}(x05) -> exists x06.(exists e07.(_correct{JJ}(e07) & (Subj(e07) = x06) & _change{NN}(x06)) & exists e08.(_receive{VBD}(e08) & (Subj(e08) = x05) & (Acc(e08) = x06))))
