@@ -6,11 +6,16 @@ package g0001_0100.s0020_valid_parentheses;
 
 import java.util.Stack;
 
+import java.util.Arrays;
+
+import java.util.Collections;
+
 @SuppressWarnings("java:S1149")
 public class Solution {
-//@ ensures(\result == true);
+//@ requires((\forall int i; 0 <= i < s.length(); '(' == s.charAt(i)) && (\forall int i; 0 <= i < s.length(); (']' == (s.charAt(i))) &&  ('[' == (s.charAt(i))) &&  ('}' == (s.charAt(i))) &&  ('{' == (s.charAt(i))) &&  (')' == (s.charAt(i)))));
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
+        //@ loop_invariant 0 <= i <= s.length();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (c == '(' || c == '[' || c == '{') {

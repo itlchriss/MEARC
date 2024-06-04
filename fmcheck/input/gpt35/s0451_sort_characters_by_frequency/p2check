@@ -1,0 +1,29 @@
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.lang.String.chars()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                    ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.stream.IntStream.distinct()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                               ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: error: variable c is already defined in method frequencySort(String)
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                           ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.lang.String.chars()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                       ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.stream.IntStream.filter(java.util.function.IntPredicate)
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                                ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.stream.IntStream.count()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                                                     ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.lang.String.chars()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                                                                        ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.stream.IntStream.filter(java.util.function.IntPredicate)
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                                                                                 ^
+./fmcheck/input/gpt35/s0451_sort_characters_by_frequency/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.stream.IntStream.count()
+//@ ensures (\forall char c; s.chars().distinct().allMatch(c -> s.chars().filter(ch -> ch == c).count() == \result.chars().filter(ch -> ch == c).count()));
+                                                                                                                                                      ^
+1 error
+8 warnings

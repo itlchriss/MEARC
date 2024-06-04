@@ -1,0 +1,4 @@
+./fmcheck/input/hart/s0942_di_string_match/Solution.java:12: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
+                                                                          ^
+1 warning
