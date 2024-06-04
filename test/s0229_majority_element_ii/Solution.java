@@ -8,12 +8,12 @@ import java.util.List;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 50000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ ensures(*All values in the integer array result are elements that appear more than the floor division between the length of the integer array parameter `nums` and 3 times.*);
-//@ ensures(*The integer array result may contain duplicate values.*);
-//@ ensures(*The integer array result may contain unique values.*);
-//@ ensures(*The integer array result may contain only one element if there is only one element in the integer array parameter `nums`.*);
-//@ ensures(*The integer array result may contain all elements in the integer array parameter `nums` if all elements in the integer array parameter `nums` appear more than the floor division between the length of the integer array parameter `nums` and 3 times.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ ensures(*If the list result is not empty, all values in the list result are elements that appear more than `⌊ n/3 ⌋` times in the integer array parameter `nums`.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [3,2,3], the list result is equal to [3].*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1], the list result is equal to [1].*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,2], the list result is equal to [1,2].*);
+//@ ensures(*The list result does not contain duplicate elements.*);
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> results = new ArrayList<>();
         int len = nums.length;

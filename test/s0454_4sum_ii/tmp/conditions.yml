@@ -1,7 +1,7 @@
 ensures:
-- The type_integer_ result is less_than_or_equal to the maximum value of java integer and is greater_than_or_equal to the minimum value of java integer.
+- The type_integer_ result is less_than_or_equal to 2147483647 and is greater_than_or_equal to negative 2147483648 .
 - If the type_integer_ result is equal to 2 , the tuples are (0 , 0 , 0 , 1) and (1 , 1 , 0 , 0) that the sum of elements at the corresponding indices in expr_a , expr_b , expr_c , and expr_d is equal to 0.
-- If the type_integer_ result is equal to 1 , exists one tuple that the sum of elements at the corresponding indices in expr_a , expr_b , expr_c , and expr_d is equal to 0.
+- If the type_integer_ result is equal to 1 , exists 1 tuple that the sum of elements at the corresponding indices in expr_a , expr_b , expr_c , and expr_d is equal to 0.
 requires:
 - The length of type_integer_array_ param_nums1_ , expr_a , expr_b , and expr_c is equal to expr_d and is greater_than_or_equal to 1 and is less_than_or_equal to 200.
 - All the values in each type_integer_array_ param_nums1_ , expr_a , expr_b , and expr_c are greater_than_or_equal to negative 268435456 and is less_than_or_equal to 268435456.

@@ -50,11 +50,11 @@
           <rule type="ba" cat="NP">
            <rule type="lex" cat="NP">
             <rule type="fa" cat="N">
-             <rule type="fa" cat="N/N">
-              <lf start="17" span="1" word="least" lemma="least" pos="JJS" chunk="I-NP" entity="O" cat="(N/N)/(N/N)" />
-              <lf start="18" span="1" word="one" lemma="one" pos="CD" chunk="I-NP" entity="O" cat="N/N" />
+             <lf start="17" span="1" word="least" lemma="least" pos="JJS" chunk="I-NP" entity="O" cat="N/N" />
+             <rule type="fa" cat="N">
+              <lf start="18" span="1" word="1" lemma="1" pos="CD" chunk="I-NP" entity="O" cat="N/N" />
+              <lf start="19" span="1" word="customer" lemma="customer" pos="NN" chunk="I-NP" entity="O" cat="N" />
              </rule>
-             <lf start="19" span="1" word="customer" lemma="customer" pos="NN" chunk="I-NP" entity="O" cat="N" />
             </rule>
            </rule>
            <rule type="fa" cat="NP\NP">

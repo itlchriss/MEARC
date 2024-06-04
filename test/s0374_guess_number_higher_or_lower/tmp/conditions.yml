@@ -1,9 +1,0 @@
-ensures:
-- The type_integer_ result is equal to the number that is picked.
-- The result is determined by calling the expr_a API with the guessed number as the parameter.
-requires:
-- The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 2147483647.
-- The type_integer_ param_pick_ is greater_than_or_equal to 1 and is less_than_or_equal to the type_integer_ param_n_.
-- If the expr_a API returns negative 1 , the number picked is lower than the guessed number.
-- If the expr_a API returns 1 , the number picked is higher than the guessed number.
-- If the expr_a API returns 0 , the number picked is equal to the guessed number.

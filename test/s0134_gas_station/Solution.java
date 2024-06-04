@@ -4,11 +4,11 @@ package g0101_0200.s0134_gas_station;
 // #2022_06_24_Time_2_ms_(94.26%)_Space_62.5_MB_(87.11%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `gas` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*The length of the integer array parameter `cost` is equal to the length of the integer array parameter `gas`.*);
-//@ requires(*All the values in the integer array parameter `gas` and `cost` are less than or equal to 10000 and are greater than or equal to 0.*);
-//@ ensures(*If there exists a solution to travel around the circuit once in the clockwise direction, the integer result is the starting gas station's index.*);
-//@ ensures(*If there is no solution to travel around the circuit once in the clockwise direction, the integer result is -1.*);
+//@ requires(*The length of the integer arrays `gas` and `cost` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All values in the integer arrays `gas` and `cost` are less than or equal to 10000 and are greater than or equal to 0.*);
+//@ ensures(*The integer result is equal to the starting gas station's index if it is possible to travel around the circuit once in the clockwise direction, otherwise, the integer result is equal to -1.*);
+//@ ensures(*If the integer result is equal to 3, the starting gas station's index is 3.*);
+//@ ensures(*If the integer result is equal to -1, it means it is not possible to travel around the circuit once no matter where you start.*);
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int sumGas = 0;
         int sumCost = 0;

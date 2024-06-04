@@ -10,8 +10,12 @@ import java.util.Stack;
 public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists of only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`.*);
-//@ ensures(*If the string parameter `s` is valid according to the given rules, the boolean result is equal to true.*);
-//@ ensures(*If the string parameter `s` is not valid according to the given rules, the boolean result is equal to false.*);
+//@ ensures(*The boolean result is true if the input string is valid according to the given conditions, and false otherwise.*);
+//@ ensures(*If the string parameter `s` is equal to "()", the boolean result is true.*);
+//@ ensures(*If the string parameter `s` is equal to "()[]{}", the boolean result is true.*);
+//@ ensures(*If the string parameter `s` is equal to "(]", the boolean result is false.*);
+//@ ensures(*If the string parameter `s` is equal to "([)]", the boolean result is false.*);
+//@ ensures(*If the string parameter `s` is equal to "{[]}", the boolean result is true.*);
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         //@ loop_invariant 0 <= i <= s.length();

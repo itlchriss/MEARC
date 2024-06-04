@@ -1,6 +1,0 @@
-- requires n >= 1 && n <= 8;
-- ensures \result != null;
-- ensures (\forall int i; 0 <= i && i < \result.size(); isValidParenthesis(\result.get(i)));
-- ensures \result.size() == (int) Math.pow(2, 2 * n) / (n * Math.sqrt(n));
-
-where isValidParenthesis is a method that checks if a given string contains well-formed parentheses.

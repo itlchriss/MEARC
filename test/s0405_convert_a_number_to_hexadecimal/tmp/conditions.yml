@@ -1,7 +1,7 @@
 ensures:
 - The type_string_ result is the hexadecimal representation of the type_integer_ param_num_.
-- The type_string_ result consists of lowercase characters only.
-- The type_string_ result does not contain any leading zeros except for the zero itself.
+- The type_string_ result contains lowercase characters only.
+- The type_string_ result does not contain any leading zeros except for the 0 itself.
 - If the type_integer_ param_num_ is equal to 26 , the type_string_ result is equal to stry_a.
 - If the type_integer_ param_num_ is equal to negative 1 , the type_string_ result is equal to stry_a.
 requires:

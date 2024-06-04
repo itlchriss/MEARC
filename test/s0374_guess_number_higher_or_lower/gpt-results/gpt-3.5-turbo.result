@@ -1,7 +1,0 @@
-- public int guessNumber(int n)
-- requires n >= 1 && n <= Math.pow(2, 31) - 1;
-- ensures \result >= 1 && \result <= n;
-- ensures \result == pick;
-- ensures (\forall int i; i >= 1 && i < \result; guess(i) == 1);
-- ensures (\forall int i; i > \result && i <= n; guess(i) == -1);
-- ensures guess(\result) == 0;

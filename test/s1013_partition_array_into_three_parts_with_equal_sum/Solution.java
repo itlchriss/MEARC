@@ -4,9 +4,11 @@ package g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `arr` is less than or equal to 50000 and is greater than or equal to 3.*);
-//@ requires(*All the values in the integer array parameter `arr` are less than or equal to 10000 and are greater than or equal to -10000.*);
-//@ ensures(*The boolean result is true if there exist indexes `i + 1 < j` such that the sum of the elements from index 0 to i is equal to the sum of the elements from index i+1 to j-1 and is equal to the sum of the elements from index j to the end of the array.*);
-//@ ensures(*The boolean result is false if there are no such indexes `i + 1 < j` that satisfy the condition mentioned above.*);
+//@ requires(*All values in the integer array parameter `arr` are less than or equal to 10000 and are greater than or equal to -10000.*);
+//@ ensures(*The boolean result is true if we can find indexes `i + 1 < j` such that the sum of the elements from index 0 to i is equal to the sum of the elements from index i+1 to j-1 and is equal to the sum of the elements from index j to the end of the array.*);
+//@ ensures(*If the integer array parameter `arr` is equal to [0,2,1,-6,6,-7,9,1,2,0,1], the boolean result is true.*);
+//@ ensures(*If the integer array parameter `arr` is equal to [0,2,1,-6,6,7,9,-1,2,0,1], the boolean result is false.*);
+//@ ensures(*If the integer array parameter `arr` is equal to [3,3,6,5,-2,2,5,1,-9,4], the boolean result is true.*);
     public boolean canThreePartsEqualSum(int[] arr) {
         int sum = 0;
         for (int j : arr) {

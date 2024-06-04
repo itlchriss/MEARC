@@ -6,11 +6,15 @@ package g0001_0100.s0035_search_insert_position;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
-//@ requires(*All values in the integer array parameter `nums` are distinct and sorted in ascending order.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
+//@ requires(*The integer array parameter `nums` contains distinct values sorted in ascending order.*);
 //@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
-//@ ensures(*If the integer parameter `target` is found in the integer array parameter `nums`, the integer result is equal to the index of the `target`.*);
-//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer result is equal to the index where the `target` would be if it were inserted in order.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `nums` and is greater than or equal to 0.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,3,5,6] and the integer parameter `target` is equal to 5, the integer result is equal to 2.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,3,5,6] and the integer parameter `target` is equal to 2, the integer result is equal to 1.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,3,5,6] and the integer parameter `target` is equal to 7, the integer result is equal to 4.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,3,5,6] and the integer parameter `target` is equal to 0, the integer result is equal to 0.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1] and the integer parameter `target` is equal to 0, the integer result is equal to 0.*);
     public int searchInsert(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;

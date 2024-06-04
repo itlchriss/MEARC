@@ -31,12 +31,12 @@
        <lf start="9" span="1" word="except" lemma="except" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/PP" />
        <rule type="fa" cat="PP">
         <lf start="10" span="1" word="for" lemma="for" pos="IN" chunk="B-PP" entity="O" cat="PP/NP" />
-        <rule type="ba" cat="NP">
-         <rule type="fa" cat="NP[nb]">
-          <lf start="11" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-          <lf start="12" span="1" word="zero" lemma="zero" pos="NN" chunk="I-NP" entity="O" cat="N" />
+        <rule type="fa" cat="NP[nb]">
+         <lf start="11" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+         <rule type="ba" cat="N">
+          <lf start="12" span="1" word="0" lemma="0" pos="CD" chunk="I-NP" entity="O" cat="N" />
+          <lf start="13" span="1" word="itself" lemma="itself" pos="PRP" chunk="B-NP" entity="O" cat="N\N" />
          </rule>
-         <lf start="13" span="1" word="itself" lemma="itself" pos="PRP" chunk="B-NP" entity="O" cat="NP\NP" />
         </rule>
        </rule>
       </rule>

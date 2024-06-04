@@ -18,26 +18,26 @@
      </rule>
     </rule>
    </rule>
-   <rule type="fa" cat="S[dcl]\NP">
-    <rule type="bx" cat="(S[dcl]\NP)/(S[adj]\NP)">
-     <lf start="5" span="1" word="are" lemma="be" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[adj]\NP)" />
-     <rule type="ba" cat="(S[X]\NP)\(S[X]\NP)">
-      <rule type="lex" cat="(S[X]\NP)\(S[X]\NP)">
-       <lf start="6" span="1" word="non-negative" lemma="non-negative" pos="JJ" chunk="I-ADJP" entity="O" cat="S[adj]\NP" />
+   <rule type="ba" cat="S[dcl]\NP">
+    <rule type="fa" cat="S[dcl]\NP">
+     <lf start="5" span="1" word="are" lemma="be" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+     <rule type="ba" cat="NP">
+      <rule type="lex" cat="NP">
+       <rule type="fa" cat="N">
+        <lf start="6" span="1" word="non-negative" lemma="non-negative" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+        <lf start="7" span="1" word="integers" lemma="integer" pos="NNS" chunk="I-NP" entity="O" cat="N" />
+       </rule>
       </rule>
-      <rule type="conj" cat="((S[X]\NP)\(S[X]\NP))\((S[X]\NP)\(S[X]\NP))">
-       <lf start="7" span="1" word="and" lemma="and" pos="CC" chunk="O" entity="O" cat="conj" />
-       <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
-        <lf start="8" span="1" word="in" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" />
-        <rule type="fa" cat="NP[nb]">
-         <lf start="9" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
-         <lf start="10" span="1" word="range" lemma="range" pos="NN" chunk="I-NP" entity="O" cat="N" />
-        </rule>
+      <rule type="fa" cat="NP\NP">
+       <lf start="8" span="1" word="in" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+       <rule type="fa" cat="NP[nb]">
+        <lf start="9" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+        <lf start="10" span="1" word="range" lemma="range" pos="NN" chunk="I-NP" entity="O" cat="N" />
        </rule>
       </rule>
      </rule>
     </rule>
-    <lf start="11" span="1" word="arr_a" lemma="arr_a" pos="NN" chunk="I-NP" entity="O" cat="S[adj]\NP" />
+    <lf start="11" span="1" word="arr_a" lemma="arr_a" pos="NN" chunk="I-NP" entity="O" cat="(S\NP)\(S\NP)" />
    </rule>
   </rule>
   <lf start="12" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />

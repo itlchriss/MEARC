@@ -1,10 +1,10 @@
 ensures:
-- If the next character after leading whitespaces is strx_a or strx_b , the result is negative or positive , respectively.
-- The final result is the integer after all the above steps have been applied.
+- Check if the next character (if not already at the end of the string) is strx_a or strx_b. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.
+- Return the integer as the final result.
 requires:
-- The type_string_ param_s_ is less_than_or_equal to 200 characters in length.
-- The type_string_ param_s_ contains alphabets , digits , ' comma+comma-' , and period.
-- If exist leading whitespaces in the type_string_ param_s_ , they are ignored.
-- The characters are read until the next non-digit character or the end of the input is reached.
-- The digits are converted into an integer , and if no digits were read , the integer is 0.
-- The integer is clamped to the range arr_a if it exceeds this range.
+- The type_string_ param_str_ contains alphabets , digits , ' comma+comma-' , and period.
+- The length of the type_string_ param_str_ is less_than_or_equal to 200.
+- Read in and ignore any leading whitespace.
+- Read in next until the next non-digit character or the end of the input is reached. The rest of the string is ignored.
+- Convert these digits into an integer (i.e. stry_a -> 123 , stry_b -> 32). If no digits were read , then the integer is 0. Change the sign as necessary (from step 2).
+- If the integer is out of the signedint range arr_a , then clamp the integer so that it remains in the range. Specifically , integers is less_than to negative 2147483648 should be clamped to negative 2147483648 , and integers is greater_than to 2147483647 should be clamped to 2147483647.

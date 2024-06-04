@@ -1,5 +1,9 @@
 ensures:
-- The type_integer_ result is equal to the value that is repeated expr_a times in the type_integer_array_ param_nums_.
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_ result is equal to 3.
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_ result is equal to 2.
+- If the type_integer_array_ param_nums_ is equal to arr_a , the type_integer_ result is equal to 5.
 requires:
-- The length of the type_integer_array_ param_nums_ is equal to twice the type_integer_ param_n_.
-- All the values in the type_integer_array_ param_nums_ are unique , except for one value which is repeated expr_a times.
+- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 10000 and is greater_than_or_equal to 4.
+- All values in the type_integer_array_ param_nums_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.
+- The type_integer_array_ param_nums_ contains n + 1 unique elements.
+- Exactly 1 element in the type_integer_array_ param_nums_ is repeated n times.

@@ -6,9 +6,9 @@ package g0001_0100.s0055_jump_game;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 100000 and are greater than or equal to 0.*);
-//@ ensures(*If the boolean result is equal to true, it means that it is possible to reach the last index of the array.*);
-//@ ensures(*If the boolean result is equal to false, it means that it is not possible to reach the last index of the array.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 100000 and are greater than or equal to 0.*);
+//@ ensures(*If the boolean result is true, it means that it is possible to reach the last index of the integer array parameter `nums`.*);
+//@ ensures(*If the boolean result is false, it means that it is not possible to reach the last index of the integer array parameter `nums`.*);
     public boolean canJump(int[] nums) {
         int sz = nums.length;
         // we set 1 so it won't break on the first iteration

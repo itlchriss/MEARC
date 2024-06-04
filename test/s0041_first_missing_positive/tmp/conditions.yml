@@ -1,8 +1,0 @@
-ensures:
-- The type_integer_ result is greater_than_or_equal to 1.
-- The type_integer_ result is the smallest positive integer that is missing from the type_integer_array_ param_nums_.
-requires:
-- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 500000 and is greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_nums_ are less_than_or_equal to 2147483647 and are greater_than_or_equal to negative 2147483648.
-- The algorithm used to find the smallest missing positive integer runs in O(n) time.
-- The algorithm used to find the smallest missing positive integer uses constant extra space.

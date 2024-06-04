@@ -9,9 +9,9 @@ import java.util.Set;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
-//@ ensures(*If the boolean result is equal to true, at least one value in the integer array parameter `nums` appears more than once.*);
-//@ ensures(*If the boolean result is equal to false, all values in the integer array parameter `nums` are distinct.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
+//@ ensures(*If the boolean result is equal to the true literal, at least one value in the integer array parameter `nums` appears more than once.*);
+//@ ensures(*If the boolean result is equal to the false literal, all values in the integer array parameter `nums` are distinct.*);
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int n : nums) {

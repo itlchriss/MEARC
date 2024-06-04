@@ -5,12 +5,11 @@ package g0001_0100.s0026_remove_duplicates_from_sorted_array;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 30000 and is greater than or equal to 0.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 100 and are greater than or equal to -100.*);
-//@ requires(*The relative order of the elements in the integer array parameter `nums` should be kept the same after removing duplicates.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 100 and are greater than or equal to -100.*);
+//@ requires(*The integer array parameter `nums` is sorted in non-decreasing order.*);
+//@ requires(*The relative order of the elements should be kept the same after removing duplicates.*);
 //@ ensures(*The integer result is equal to the number of unique elements in the integer array parameter `nums`.*);
-//@ ensures(*The first `k` elements of the integer array parameter `nums` hold the final result after removing duplicates, where `k` is the integer result.*);
-//@ ensures(*If the integer array parameter `nums` is equal to [1,1,2], the integer result is equal to 2, and the integer array parameter `nums` is equal to [1,2,_].*);
-//@ ensures(*If the integer array parameter `nums` is equal to [0,0,1,1,1,2,2,3,3,4], the integer result is equal to 5, and the integer array parameter `nums` is equal to [0,1,2,3,4,_,_,_,_,_].*);
+//@ ensures(*The first `k` elements of the integer array parameter `nums` should hold the final result after removing duplicates.*);
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
         int i = 0;

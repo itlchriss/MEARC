@@ -9,13 +9,11 @@ import java.util.List;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `num` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `num` are less than or equal to 9 and are greater than or equal to 0.*);
+//@ requires(*All values in the integer array parameter `num` are less than or equal to 9 and are greater than or equal to 0.*);
+//@ requires(*The integer array parameter `num` does not contain any leading zeros except for the zero itself.*);
 //@ requires(*The integer parameter `k` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `num` or is greater by 1 if there is a carry from the addition of `num` and `k`.*);
-//@ ensures(*All the values in the integer array result are less than or equal to 9 and are greater than or equal to 0.*);
-//@ ensures(*If the integer array parameter `num` is equal to [1,2,0,0] and the integer parameter `k` is equal to 34, the integer array result is equal to [1,2,3,4].*);
-//@ ensures(*If the integer array parameter `num` is equal to [2,7,4] and the integer parameter `k` is equal to 181, the integer array result is equal to [4,5,5].*);
-//@ ensures(*If the integer array parameter `num` is equal to [2,1,5] and the integer parameter `k` is equal to 806, the integer array result is equal to [1,0,2,1].*);
+//@ ensures(*The length of the integer array result is equal to the maximum length between the length of the integer array parameter `num` and the number of digits in the integer parameter `k` plus 1.*);
+//@ ensures(*The integer array result represents the array form of the sum between the integer array parameter `num` and the integer parameter `k`.*);
     public List<Integer> addToArrayForm(int[] num, int k) {
         ArrayList<Integer> result = new ArrayList<>();
         int carry = 0;

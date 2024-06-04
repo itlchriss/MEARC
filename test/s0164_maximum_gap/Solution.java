@@ -7,11 +7,10 @@ import java.util.Arrays;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to 0.*);
-//@ requires(*The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the integer array parameter `nums` runs in linear time.*);
-//@ requires(*The algorithm used to calculate the maximum difference between two successive elements in the sorted form of the integer array parameter `nums` uses linear extra space.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to 0.*);
 //@ ensures(*The integer result is less than or equal to the maximum difference between two successive elements in the sorted form of the integer array parameter `nums`.*);
-//@ ensures(*If the integer array parameter `nums` contains less than 2 elements, the integer result is equal to 0.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [3,6,9,1], the integer result is equal to 3.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [10], the integer result is equal to 0.*);
     public int maximumGap(int[] nums) {
         if (nums.length < 2) {
             return 0;

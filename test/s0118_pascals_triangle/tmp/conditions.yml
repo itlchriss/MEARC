@@ -1,8 +1,0 @@
-ensures:
-- The list result contains expr_a number of sublists.
-- Each sublist in the list result is a row in Pascal's triangle.
-- The first sublist in the list result contains one element which is always 1.
-- Each subsequent sublist in the list result starts and ends with 1.
-requires:
-- The type_integer_ param_numRows_ is greater_than_or_equal to 1 and is less_than_or_equal to 30.
-- The elements in between the 1s in each sublist are the sum of the two numbers directly above them in the previous row of Pascal's triangle.

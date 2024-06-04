@@ -3,14 +3,14 @@ package g0001_0100.s0008_string_to_integer_atoi;
 // #Medium #Top_Interview_Questions #String #2024_01_04_Time_1_ms_(100.00%)_Space_42.7_MB_(8.86%)
 
 public class Solution {
-//@ requires(*The string parameter `s` is less than or equal to 200 characters in length.*);
-//@ requires(*The string parameter `s` consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.*);
-//@ requires(*If there are leading whitespaces in the string parameter `s`, they are ignored.*);
-//@ requires(*The characters are read until the next non-digit character or the end of the input is reached.*);
-//@ requires(*The digits are converted into an integer, and if no digits were read, the integer is 0.*);
-//@ requires(*The integer is clamped to the range [-2^31, 2^31 - 1] if it exceeds this range.*);
-//@ ensures(*If the next character after leading whitespaces is '-' or '+', the result is negative or positive, respectively.*);
-//@ ensures(*The final result is the integer after all the above steps have been applied.*);
+//@ requires(*The string parameter `str` consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.*);
+//@ requires(*The length of the string parameter `str` is less than or equal to 200.*);
+//@ requires(*Read in and ignore any leading whitespace.*);
+//@ requires(*Read in next the characters until the next non-digit character or the end of the input is reached. The rest of the string is ignored.*);
+//@ requires(*Convert these digits into an integer (i.e. "123" -> 123, "0032" -> 32). If no digits were read, then the integer is 0. Change the sign as necessary (from step 2).*);
+//@ requires(*If the integer is out of the 32-bit signed integer range [-2^31, 2^31 - 1], then clamp the integer so that it remains in the range. Specifically, integers less than -2^31 should be clamped to -2^31, and integers greater than 2^31 - 1 should be clamped to 2^31 - 1.*);
+//@ ensures(*Check if the next character (if not already at the end of the string) is '-' or '+'. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.*);
+//@ ensures(*Return the integer as the final result.*);
     public int myAtoi(String str) {
         if (str == null || str.length() == 0) {
             return 0;

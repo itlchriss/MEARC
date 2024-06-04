@@ -6,9 +6,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is equal to twice the integer parameter `n`.*);
-//@ requires(*All the values in the integer array parameter `nums` are unique, except for one value which is repeated `n` times.*);
-//@ ensures(*The integer result is equal to the value that is repeated `n` times in the integer array parameter `nums`.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 4.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to 0.*);
+//@ requires(*The integer array parameter `nums` contains n + 1 unique elements.*);
+//@ requires(*Exactly one element in the integer array parameter `nums` is repeated n times.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,3], the integer result is equal to 3.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [2,1,2,5,3,2], the integer result is equal to 2.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [5,1,5,2,5,3,5,4], the integer result is equal to 5.*);
     public int repeatedNTimes(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {

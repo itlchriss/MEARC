@@ -7,11 +7,12 @@ package g0001_0100.s0033_search_in_rotated_sorted_array;
 
 public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 5000 and is greater than or equal to 1.*);
-//@ requires(*All the values in the integer array parameter `nums` are unique.*);
-//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
+//@ requires(*All values in the integer array parameter `nums` are unique.*);
+//@ requires(*All values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
 //@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
-//@ ensures(*The integer result is equal to the index of the integer parameter `target` in the integer array parameter `nums` after considering the possible rotation.*);
-//@ ensures(*If the integer parameter `target` is not in the integer array parameter `nums`, the integer result is equal to -1.*);
+//@ ensures(*If the integer result is equal to 4 and the integer array parameter `nums` is equal to [4,5,6,7,0,1,2] and the integer parameter `target` is equal to 0, the integer result is equal to 4.*);
+//@ ensures(*If the integer result is equal to -1 and the integer array parameter `nums` is equal to [4,5,6,7,0,1,2] and the integer parameter `target` is equal to 3, the integer result is equal to -1.*);
+//@ ensures(*If the integer result is equal to -1 and the integer array parameter `nums` is equal to [1] and the integer parameter `target` is equal to 0, the integer result is equal to -1.*);
     public int search(int[] nums, int target) {
         int mid;
         int lo = 0;

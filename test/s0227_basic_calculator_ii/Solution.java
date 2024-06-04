@@ -4,13 +4,12 @@ package g0201_0300.s0227_basic_calculator_ii;
 // #2022_07_04_Time_8_ms_(95.32%)_Space_43.6_MB_(79.36%)
 
 public class Solution {
-//@ requires(*The string parameter `s` is valid and represents a mathematical expression.*);
-//@ requires(*The integer division truncates towards zero.*);
-//@ requires(*The method does not use any built-in function that evaluates strings as mathematical expressions.*);
-//@ requires(*The string parameter `s` consists of integers and operators ('+', '-', '*', '/') separated by spaces.*);
-//@ requires(*All integers in the expression are non-negative and within the range [0, 2^31 - 1].*);
-//@ requires(*The answer fits in a 32-bit integer.*);
-//@ ensures(*The integer result is within the range of [-2^31, 2^31 - 1].*);
+//@ requires(*The string parameter `s` is a valid expression consisting of integers and operators `('+', '-', '*', '/')` separated by spaces.*);
+//@ requires(*The integer division should truncate toward zero.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 3 times 10^5 and is greater than or equal to 1.*);
+//@ requires(*All integers in the expression are non-negative integers in the range [0, 2^31 - 1].*);
+//@ ensures(*The intermediate results will be in the range of `[-2^31, 2^31 - 1]`.*);
+//@ ensures(*The integer result is guaranteed to fit in a 32-bit integer.*);
 //@ ensures(*If the string parameter `s` is equal to "3+2*2", the integer result is equal to 7.*);
 //@ ensures(*If the string parameter `s` is equal to "3/2", the integer result is equal to 1.*);
 //@ ensures(*If the string parameter `s` is equal to "3+5 / 2", the integer result is equal to 5.*);

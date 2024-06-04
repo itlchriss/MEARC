@@ -1,10 +1,8 @@
 ensures:
-- The length of the type_integer_array_ result is equal to the length of the type_integer_array_ param_num_ or is greater by 1 if exists a carry from the addition of param_num_ and expr_a.
-- All the values in the type_integer_array_ result are less_than_or_equal to 9 and are greater_than_or_equal to 0.
-- If the type_integer_array_ param_num_ is equal to arr_a and the type_integer_ param_k_ is equal to 34 , the type_integer_array_ result is equal to arr_b.
-- If the type_integer_array_ param_num_ is equal to arr_a and the type_integer_ param_k_ is equal to 181 , the type_integer_array_ result is equal to arr_b.
-- If the type_integer_array_ param_num_ is equal to arr_a and the type_integer_ param_k_ is equal to 806 , the type_integer_array_ result is equal to arr_b.
+- The length of the type_integer_array_ result is equal to the maximum length between the length of the type_integer_array_ param_num_ and the number of digits in the type_integer_ param_k_ plus 1.
+- The type_integer_array_ result is the array form of the sum between the type_integer_array_ param_num_ and the type_integer_ param_k_.
 requires:
 - The length of the type_integer_array_ param_num_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_num_ are less_than_or_equal to 9 and are greater_than_or_equal to 0.
+- All values in the type_integer_array_ param_num_ are less_than_or_equal to 9 and are greater_than_or_equal to 0.
+- The type_integer_array_ param_num_ does not contain any leading zeros except for the 0 itself.
 - The type_integer_ param_k_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.

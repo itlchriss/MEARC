@@ -1,7 +1,0 @@
-- requires nums != null && nums.length >= 1 && nums.length <= 6;
-- requires (\forall int i; 0 <= i && i < nums.length; -10 <= nums[i] && nums[i] <= 10);
-- requires (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);
-- ensures \result != null;
-- ensures (\forall List<Integer> permutation; \result.contains(permutation); permutation.size() == nums.length);
-- ensures (\forall List<Integer> permutation; \result.contains(permutation); (\forall int i; 0 <= i && i < nums.length; permutation.contains(nums[i])));
-- ensures (\forall List<Integer> permutation1, permutation2; \result.contains(permutation1) && \result.contains(permutation2) && permutation1 != permutation2; !permutation1.equals(permutation2));
