@@ -76,14 +76,17 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
             //  and in the current version, we do not support the combinatorial synthesis here
             char *tmp = NULL, *d = NULL, *s = (char *)strdup(si->interpretation), *targettag = NULL;
             struct cstsymbol *msptr = NULL;
+            struct datatype *singledt = NULL;
             if (en1->cstptr->datatype->i != INT_SI_TYPE_MULTIPLE_SI) {
                 d = (char *)gqueue(en1->cstptr->datalist, 0);
                 tmp = strrep(s, t1, d);
+                singledt = en1->cstptr->datatype;
                 msptr = en2->cstptr;
                 targettag = t2;
             } else {
                 d = (char *)gqueue(en2->cstptr->datalist, 0);
                 tmp = strrep(s, t2, d);
+                singledt = en2->cstptr->datatype;
                 msptr = en1->cstptr;
                 targettag = t1;
             }
@@ -115,8 +118,16 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                     _s = strrep(last, targettag, _d);
                     free(_d);
                 } else {
-                    // TODO: the space for reference type
-                    internal_error("Current version does not support multiple SI with reference type");
+                    if (dt->r == String && singledt->r == String) {
+                        char *_d = (char *)strdup(d);
+                        append(_d, (char *)strdup(".equals("));
+                        _s = strrep(last, targettag, _d);
+                        append(_s, (char *)strdup(")"));
+                        free(_d);
+                    } else {
+                        // TODO: the space for reference type
+                        internal_error("Current version does not support multiple SI with reference type");
+                    }
                 }
 
                 if (!complex) {

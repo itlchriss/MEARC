@@ -968,3 +968,14 @@
     primitive_type: 'integer'
     reference_type: 'undefined'
   interpretation: '(x) >= 0'
+- term: empty_str
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  interpretation: '""'

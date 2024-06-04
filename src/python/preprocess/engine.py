@@ -19,6 +19,18 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
             index = chr(i + 97)
             exprs['expr_' + index] = e
             sent = sent.replace(e, ' expr_' + index, 1)
+    if r := re.findall(r'((\'[^ ]+\')\s+or\s+(\'[^ ]+\')\s+characters)', sent):
+        r = r[0]
+        s = r[0]
+        # TODO: need to fix here. to introduce character type here
+        _s = s.replace('characters', '')
+        # sent = sent.replace(s, _s)
+        t = r[1:]
+        for i, e in enumerate(t):
+            index = chr(i + 97)
+            exprs['chrx_' + index] = e
+            _s = _s.replace(e, ' chrx_' + index, 1)
+        sent = sent.replace(s, _s)
     if r := re.findall(r'(\'[^ ]+\')', sent):
         for i, e in enumerate(r):
             index = chr(i + 97)
@@ -99,7 +111,11 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         v = dynamic_si[k]
         p = 'any'
         r = 'any'
-        if 'arr_' not in k:
+        if 'chr' in k:
+            sp = 'character'
+            sr = 'undefined'
+            interpretation = v
+        elif 'arr_' not in k:
             sp = 'undefined'
             sr = 'string'
             interpretation = v.replace('`', '')
