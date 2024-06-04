@@ -1,12 +1,12 @@
 SRCPATH=./test
 
 
-total=`find $SRCPATH -type f -name "rnl.txt" | sort | head -100 | xargs wc -l | tail -1 | sed 's/ total//'`
+total=`find $SRCPATH -type f -name "rnl.txt" | sort | xargs wc -l | tail -1 | sed 's/ total//'`
 postcount=`grep -r 'ensures' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
 precount=`grep -r 'requires' $SRCPATH/*/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
-let p2ok=$(($postcount+$precount))
+let transok=$(($postcount+$precount))
 derivationerror=`grep -r 'Sentence:' result | awk 'END {print NR}'`
-p1notok=`grep -rlZ '\\\' $SRCPATH/*/tmp/*.mr | xargs -0 grep -lE 'exists|all' | awk 'END {print NR}'`
+p1notok=`grep -rlZ '\\\' $SRCPATH/*/tmp/*.mr | xargs grep -lE 'exists|all' | awk 'END {print NR}'`
 p1failed=`grep -rl 'Failed' $SRCPATH/*/tmp/*.mr | awk 'END {print NR}'`
 p1unreducted=`grep -rl '\\\' $SRCPATH/*/tmp/*.mr | awk 'END {print NR}'`
 p1empty=`find $SRCPATH/ -name "*.mr" -type f -empty | awk 'END {print NR}'`
@@ -28,16 +28,16 @@ llmp2correct_pre=`grep -r '//@ requires' ./fmcheck/input/gpt35/*/Solution.java |
 llmp2wrong=`grep -r '//' ./fmcheck/input/gpt35/*/Solution.java | grep -v '#' | grep -v '@' | awk 'END {print NR}'`
 let llmcorrect=$(($llmp2correct_post+$llmp2correct_pre))
 
-p2percent=`bc -l <<< "($p2total / $total) * 100"`
+p2percent=`bc -l <<< "($p2correct / $total) * 100"`
 echo 'Total sentence processed: ' $total
 echo 'P1 success cases: ' $p1ok
 echo 'P1 failed cases: ' $p1failed
 echo 'P1 empty MR cases: ' $p1empty
 echo 'Derivation error in result: ' $derivationerror
 echo 'P1 reducted incompletely cases: ' $p1unreducted
-echo 'translation success cases: ' $p2total
+echo 'translation success cases: ' $transok
 echo 'P1 successful rate: ' $p1percent
-echo 'translation successful rate out of all sentences: ' $p2percent
-echo 'translation successful rate out of all MRs: ' `bc -l <<< "($p2total / $p1ok) * 100"`
-echo 'translation correct rate(regarding syntax and semantic): ' `bc -l <<< "($p2correct/$p2total) * 100"` "$p2correct out of $p2total"
+echo 'translation successful rate out of all sentences: ' `bc -l <<< "($transok / $total) * 100"`
+echo 'translation successful rate out of all MRs: ' `bc -l <<< "($transok / $p1ok) * 100"`
+echo 'translation correct rate(regarding syntax and semantic): ' `bc -l <<< "($p2correct/$transok) * 100"` "$p2correct out of $transok"
 echo 'LLM correct rate(regarding syntax and semantic):' `bc -l <<< "($llmcorrect/$llmtotal) * 100"` "$llmcorrect out of $llmtotal"
