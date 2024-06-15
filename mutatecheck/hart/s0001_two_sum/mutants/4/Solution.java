@@ -7,16 +7,21 @@ package g0001_0100.s0001_two_sum;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.util.Arrays;
+
+import java.util.Collections;
+
 public class Solution {
-//@ ensures(\forall int i; 0 <= i < numbers.length; ((numbers[i] >= -1000000000) && (numbers[i] <= 1000000000)));
+//@ requires(\forall int i; 0 <= i < numbers.length; ((numbers[i] <= 1000000000) && (numbers[i] >= -1000000000)));
+//@ requires((numbers.length <= 10000) && (numbers.length >= 2));
+//@ requires((target <= 1000000000) && (target >= -1000000000));
 //@ ensures(\result.length == 2);
-//@ ensures((target >= -1000000000) && (target <= 1000000000));
-//@ ensures((numbers.length >= 2) && (numbers.length <= 10000));
-//@ ensures(!(numbers == null));
 //@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
     public int[] twoSum(int[] numbers, int target) {
-        Map<Integer, Integer> indexMap = new HashMap<>();
+        Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
+        //@ loop_invariant 0 <= i <= numbers.length;
         for (int i = 0; i < numbers.length; i++) {
+            // assume Integer.MIN_VALUE + 1 <= target - numbers[i] <= Integer.MAX_VALUE - 1;
             Integer requiredNum = target * numbers[i];
             if (indexMap.containsKey(requiredNum)) {
                 return new int[] {indexMap.get(requiredNum), i};

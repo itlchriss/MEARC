@@ -1,0 +1,46 @@
+1:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):26:temp == first |==> temp <= first
+2:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):26:temp == first |==> temp >= first
+3:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):26:temp == first |==> false
+4:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):27:count1++; |==> <NO-OP>
+5:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):28:temp == second |==> temp <= second
+6:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):28:temp == second |==> temp >= second
+7:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):28:temp == second |==> false
+8:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):29:count2++; |==> <NO-OP>
+9:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):30:count1 == 0 |==> count1 <= 0
+10:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):30:count1 == 0 |==> count1 >= 0
+11:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):30:count1 == 0 |==> false
+12:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):31:first = temp; |==> <NO-OP>
+13:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):32:count1++; |==> <NO-OP>
+14:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):33:count2 == 0 |==> count2 <= 0
+15:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):33:count2 == 0 |==> count2 >= 0
+16:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):33:count2 == 0 |==> false
+17:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):34:second = temp; |==> <NO-OP>
+18:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):35:count2++; |==> <NO-OP>
+19:STD:<DEC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):40:count1--; |==> <NO-OP>
+20:STD:<DEC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):41:count2--; |==> <NO-OP>
+21:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):49:count1 = 0; |==> <NO-OP>
+22:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):50:count2 = 0; |==> <NO-OP>
+23:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):54:temp == first |==> temp <= first
+24:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):54:temp == first |==> temp >= first
+25:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):54:temp == first |==> false
+26:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):55:count1++; |==> <NO-OP>
+27:ROR:==(int,int):<=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):57:temp == second |==> temp <= second
+28:ROR:==(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):57:temp == second |==> temp >= second
+29:ROR:==(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):57:temp == second |==> false
+30:STD:<INC>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):58:count2++; |==> <NO-OP>
+31:AOR:/(int,int):%(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:len / 3 |==> len % 3
+32:AOR:/(int,int):*(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:len / 3 |==> len * 3
+33:AOR:/(int,int):+(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:len / 3 |==> len + 3
+34:AOR:/(int,int):-(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:len / 3 |==> len - 3
+35:ROR:>(int,int):!=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:count1 > len / 3 |==> count1 != len / 3
+36:ROR:>(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:count1 > len / 3 |==> count1 >= len / 3
+37:ROR:>(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):61:count1 > len / 3 |==> false
+38:STD:<CALL>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):62:results.add(first); |==> <NO-OP>
+39:AOR:/(int,int):%(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:len / 3 |==> len % 3
+40:AOR:/(int,int):*(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:len / 3 |==> len * 3
+41:AOR:/(int,int):+(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:len / 3 |==> len + 3
+42:AOR:/(int,int):-(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:len / 3 |==> len - 3
+43:ROR:>(int,int):!=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:count2 > len / 3 |==> count2 != len / 3
+44:ROR:>(int,int):>=(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:count2 > len / 3 |==> count2 >= len / 3
+45:ROR:>(int,int):FALSE(int,int):g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):64:count2 > len / 3 |==> false
+46:STD:<CALL>:<NO-OP>:g0201_0300.s0229_majority_element_ii.Solution@majorityElement(int[]):65:results.add(second); |==> <NO-OP>

@@ -1,0 +1,10 @@
+./gpt35/s0238_product_of_array_except_self/mutants/0/Solution.java:9: error: ']' expected
+//@ ensures (\forall int i; 0 <= i && i < \result.length;  (\forall int j; 0 <= j && j < nums.length && j != i;  \result[i] == \product nums[j]));
+                                                                                                                                             ^
+./gpt35/s0238_product_of_array_except_self/mutants/0/Solution.java:9: error: Expected a semicolon to separate the parts of a JML quantified expression
+//@ ensures (\forall int i; 0 <= i && i < \result.length;  (\forall int j; 0 <= j && j < nums.length && j != i;  \result[i] == \product nums[j]));
+                                                                                                                                              ^
+./gpt35/s0238_product_of_array_except_self/mutants/0/Solution.java:9: error: ')' expected
+//@ ensures (\forall int i; 0 <= i && i < \result.length;  (\forall int j; 0 <= j && j < nums.length && j != i;  \result[i] == \product nums[j]));
+                                                                                                                                                 ^
+3 errors

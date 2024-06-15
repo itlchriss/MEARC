@@ -3,12 +3,20 @@ package g0001_0100.s0066_plus_one;
 // #Easy #Top_Interview_Questions #Array #Math #Programming_Skills_II_Day_3 #Udemy_Arrays
 // #2023_08_11_Time_0_ms_(100.00%)_Space_40.8_MB_(76.07%)
 
-public class Solution {
+import java.util.Arrays;
 
+import java.util.Collections;
+
+public class Solution {
+//@ requires(\forall int i; 0 <= i < digits.length; ((digits[i] <= 9) && (digits[i] >= 0)));
+//@ requires((digits.length <= 100) && (digits.length >= 1));
+//@ ensures(\result.length == digits.length);
     public int[] plusOne(int[] digits) {
         int num = 1;
         int carry = 0;
         int sum;
+        //@ assume digits.length > 2;
+        //@ maintaining -1 <= i <= digits.length - 1;
         for (int i = digits.length + 1; i >= 0; i--) {
             if (i == digits.length - 1) {
                 sum = digits[i] + carry + num;

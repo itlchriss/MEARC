@@ -1,0 +1,7 @@
+./gpt35/s0219_contains_duplicate_ii/mutants/8/Solution.java:23: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0219_contains_duplicate_ii/mutants/8/Solution.java:11:) in method containsNearbyDuplicate
+        return false;
+        ^
+./gpt35/s0219_contains_duplicate_ii/mutants/8/Solution.java:11: verify: Associated declaration: ./gpt35/s0219_contains_duplicate_ii/mutants/8/Solution.java:23:
+//@ ensures \result == false <==> (\forall int i, j; 0 <= i < j < nums.length ==> nums[i] != nums[j] || j - i > k);
+    ^
+2 verification failures

@@ -1,0 +1,33 @@
+1:ROR:==(int,int):<=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):18:bill == 5 |==> bill <= 5
+2:ROR:==(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):18:bill == 5 |==> bill >= 5
+3:ROR:==(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):18:bill == 5 |==> false
+4:STD:<INC>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):19:countFive++; |==> <NO-OP>
+5:ROR:==(int,int):<=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):20:bill == 10 |==> bill <= 10
+6:ROR:==(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):20:bill == 10 |==> bill >= 10
+7:ROR:==(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):20:bill == 10 |==> false
+8:ROR:==(int,int):<=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):21:countFive == 0 |==> countFive <= 0
+9:ROR:==(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):21:countFive == 0 |==> countFive >= 0
+10:ROR:==(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):21:countFive == 0 |==> false
+11:STD:<RETURN>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):22:return false; |==> <NO-OP>
+12:STD:<DEC>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):24:countFive--; |==> <NO-OP>
+13:STD:<INC>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):25:countTen++; |==> <NO-OP>
+14:ROR:==(int,int):<=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):26:bill == 20 |==> bill <= 20
+15:ROR:==(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):26:bill == 20 |==> bill >= 20
+16:ROR:==(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):26:bill == 20 |==> false
+17:ROR:>(int,int):!=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 |==> countFive != 0
+18:ROR:>(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 |==> countFive >= 0
+19:ROR:>(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 |==> false
+20:ROR:>(int,int):!=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countTen > 0 |==> countTen != 0
+21:ROR:>(int,int):>=(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countTen > 0 |==> countTen >= 0
+22:ROR:>(int,int):FALSE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countTen > 0 |==> false
+23:COR:&&(boolean,boolean):==(boolean,boolean):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 && countTen > 0 |==> countFive > 0 == countTen > 0
+24:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 && countTen > 0 |==> false
+25:COR:&&(boolean,boolean):LHS(boolean,boolean):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 && countTen > 0 |==> countFive > 0
+26:COR:&&(boolean,boolean):RHS(boolean,boolean):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):27:countFive > 0 && countTen > 0 |==> countTen > 0
+27:STD:<DEC>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):28:countFive--; |==> <NO-OP>
+28:STD:<DEC>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):29:countTen--; |==> <NO-OP>
+29:ROR:>=(int,int):==(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):30:countFive >= 3 |==> countFive == 3
+30:ROR:>=(int,int):>(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):30:countFive >= 3 |==> countFive > 3
+31:ROR:>=(int,int):TRUE(int,int):g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):30:countFive >= 3 |==> true
+32:STD:<ASSIGN>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):31:countFive -= 3; |==> <NO-OP>
+33:STD:<RETURN>:<NO-OP>:g0801_0900.s0860_lemonade_change.Solution@lemonadeChange(int[]):33:return false; |==> <NO-OP>

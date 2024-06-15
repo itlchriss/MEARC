@@ -1,0 +1,20 @@
+1:ROR:<=(int,int):<(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):16:i <= n |==> i < n
+2:ROR:<=(int,int):==(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):16:i <= n |==> i == n
+3:ROR:<=(int,int):TRUE(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):16:i <= n |==> true
+4:ROR:<(int,int):!=(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):18:j < i |==> j != i
+5:ROR:<(int,int):<=(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):18:j < i |==> j <= i
+6:ROR:<(int,int):FALSE(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):18:j < i |==> false
+7:AOR:-(int,int):%(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):19:10 - j |==> 10 % j
+8:AOR:-(int,int):*(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):19:10 - j |==> 10 * j
+9:AOR:-(int,int):+(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):19:10 - j |==> 10 + j
+10:AOR:-(int,int):/(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):19:10 - j |==> 10 / j
+11:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):19:mul *= (10 - j); |==> <NO-OP>
+12:AOR:*(int,int):%(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:9 * mul |==> 9 % mul
+13:AOR:*(int,int):+(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:9 * mul |==> 9 + mul
+14:AOR:*(int,int):-(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:9 * mul |==> 9 - mul
+15:AOR:*(int,int):/(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:9 * mul |==> 9 / mul
+16:AOR:+(int,int):%(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:ans + 9 * mul |==> ans % (9 * mul)
+17:AOR:+(int,int):*(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:ans + 9 * mul |==> ans * (9 * mul)
+18:AOR:+(int,int):-(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:ans + 9 * mul |==> ans - 9 * mul
+19:AOR:+(int,int):/(int,int):g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:ans + 9 * mul |==> ans / (9 * mul)
+20:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0357_count_numbers_with_unique_digits.Solution@countNumbersWithUniqueDigits(int):21:ans = ans + 9 * mul; |==> <NO-OP>

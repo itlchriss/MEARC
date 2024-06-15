@@ -1,0 +1,16 @@
+./hart/s0202_happy_number/mutants/41/Solution.java:31: verify: The prover cannot establish an assertion (Precondition: ./hart/s0202_happy_number/mutants/41/Solution.java:15:) in method isHappy
+                happy = isHappy(sum);
+                               ^
+./hart/s0202_happy_number/mutants/41/Solution.java:15: verify: Associated declaration: ./hart/s0202_happy_number/mutants/41/Solution.java:31:
+    public boolean isHappy(int n) {
+                   ^
+./hart/s0202_happy_number/mutants/41/Solution.java:12: verify: Precondition conjunct is false: ((n >= 1) && (n <= 2147483647))
+//@ requires((n >= 1) && (n <= 2147483647));
+            ^
+./hart/s0202_happy_number/mutants/41/Solution.java:36: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0202_happy_number/mutants/41/Solution.java:14:) in method isHappy
+        return happy;
+        ^
+./hart/s0202_happy_number/mutants/41/Solution.java:14: verify: Associated declaration: ./hart/s0202_happy_number/mutants/41/Solution.java:36:
+//@ ensures((n == 19) ==> (\result == true));
+    ^
+5 verification failures

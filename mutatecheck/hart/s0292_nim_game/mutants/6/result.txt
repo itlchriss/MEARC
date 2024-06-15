@@ -1,0 +1,7 @@
+./hart/s0292_nim_game/mutants/6/Solution.java:15: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0292_nim_game/mutants/6/Solution.java:12:) in method canWinNim
+        return true;
+        ^
+./hart/s0292_nim_game/mutants/6/Solution.java:12: verify: Associated declaration: ./hart/s0292_nim_game/mutants/6/Solution.java:15:
+//@ ensures((n == 4) ==> (\result == false));
+    ^
+2 verification failures

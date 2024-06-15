@@ -1,0 +1,30 @@
+1:ROR:<(int,int):!=(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):20:i < len |==> i != len
+2:ROR:<(int,int):<=(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):20:i < len |==> i <= len
+3:ROR:<(int,int):FALSE(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):20:i < len |==> false
+4:AOR:*(int,int):%(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):21:i * nums[i] |==> i % nums[i]
+5:AOR:*(int,int):+(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):21:i * nums[i] |==> i + nums[i]
+6:AOR:*(int,int):-(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):21:i * nums[i] |==> i - nums[i]
+7:AOR:*(int,int):/(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):21:i * nums[i] |==> i / nums[i]
+8:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):21:f += i * nums[i]; |==> <NO-OP>
+9:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):22:allSum += nums[i]; |==> <NO-OP>
+10:AOR:-(int,int):%(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:len - 1 |==> len % 1
+11:AOR:-(int,int):*(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:len - 1 |==> len * 1
+12:AOR:-(int,int):+(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:len - 1 |==> len + 1
+13:AOR:-(int,int):/(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:len - 1 |==> len / 1
+14:ROR:>=(int,int):==(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:i >= 1 |==> i == 1
+15:ROR:>=(int,int):>(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:i >= 1 |==> i > 1
+16:ROR:>=(int,int):TRUE(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):26:i >= 1 |==> true
+17:AOR:+(int,int):%(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum |==> f % allSum
+18:AOR:+(int,int):*(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum |==> f * allSum
+19:AOR:+(int,int):-(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum |==> f - allSum
+20:AOR:+(int,int):/(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum |==> f / allSum
+21:AOR:*(int,int):%(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:len * nums[i] |==> len % nums[i]
+22:AOR:*(int,int):+(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:len * nums[i] |==> len + nums[i]
+23:AOR:*(int,int):-(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:len * nums[i] |==> len - nums[i]
+24:AOR:*(int,int):/(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:len * nums[i] |==> len / nums[i]
+25:AOR:-(int,int):%(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum - len * nums[i] |==> (f + allSum) % (len * nums[i])
+26:AOR:-(int,int):*(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum - len * nums[i] |==> (f + allSum) * (len * nums[i])
+27:AOR:-(int,int):+(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum - len * nums[i] |==> f + allSum + len * nums[i]
+28:AOR:-(int,int):/(int,int):g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f + allSum - len * nums[i] |==> (f + allSum) / (len * nums[i])
+29:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):27:f = f + allSum - len * nums[i]; |==> <NO-OP>
+30:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0396_rotate_function.Solution@maxRotateFunction(int[]):28:max = Math.max(f, max); |==> <NO-OP>

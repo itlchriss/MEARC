@@ -1,0 +1,10 @@
+./hart/s0709_to_lower_case/mutants/12/Solution.java:18: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method toLowerCase
+            if (c[i] >= 'A') {
+                 ^
+./hart/s0709_to_lower_case/mutants/12/Solution.java:19: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method toLowerCase
+                c[i] = (char) (c[i] - 'A' + 'a');
+                       ^
+./hart/s0709_to_lower_case/mutants/12/Solution.java:15: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public String toLowerCase(String s) {
+                  ^
+3 verification failures

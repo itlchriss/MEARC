@@ -1,0 +1,7 @@
+./gpt35/s0326_power_of_three/mutants/15/Solution.java:21: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0326_power_of_three/mutants/15/Solution.java:9:) in method isPowerOfThree
+        return true;
+        ^
+./gpt35/s0326_power_of_three/mutants/15/Solution.java:9: verify: Associated declaration: ./gpt35/s0326_power_of_three/mutants/15/Solution.java:21:
+//@ ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);
+    ^
+2 verification failures

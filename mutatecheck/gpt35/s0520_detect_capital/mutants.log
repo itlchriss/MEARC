@@ -1,0 +1,40 @@
+1:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word == null |==> false
+2:ROR:==(int,int):<=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word.length() == 0 |==> word.length() <= 0
+3:ROR:==(int,int):>=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word.length() == 0 |==> word.length() >= 0
+4:ROR:==(int,int):FALSE(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word.length() == 0 |==> false
+5:COR:||(boolean,boolean):!=(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word == null || word.length() == 0 |==> word == null != (word.length() == 0)
+6:COR:||(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word == null || word.length() == 0 |==> word == null
+7:COR:||(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word == null || word.length() == 0 |==> word.length() == 0
+8:COR:||(boolean,boolean):TRUE(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):11:word == null || word.length() == 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):12:return false; |==> <NO-OP>
+10:ROR:<(int,int):!=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):18:i < n |==> i != n
+11:ROR:<(int,int):<=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):18:i < n |==> i <= n
+12:ROR:<(int,int):FALSE(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):18:i < n |==> false
+13:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):19:Character.isUpperCase(word.charAt(i)) |==> false
+14:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):19:Character.isUpperCase(word.charAt(i)) |==> true
+15:STD:<INC>:<NO-OP>:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):20:upper++; |==> <NO-OP>
+16:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):21:Character.isLowerCase(word.charAt(i)) |==> false
+17:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):21:Character.isLowerCase(word.charAt(i)) |==> true
+18:STD:<INC>:<NO-OP>:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):22:lower++; |==> <NO-OP>
+19:ROR:>(int,int):!=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:upper > 1 |==> upper != 1
+20:ROR:>(int,int):>=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:upper > 1 |==> upper >= 1
+21:ROR:>(int,int):FALSE(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:upper > 1 |==> false
+22:COR:&&(boolean,boolean):==(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:firstUpper && upper > 1 |==> firstUpper == upper > 1
+23:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:firstUpper && upper > 1 |==> false
+24:COR:&&(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:firstUpper && upper > 1 |==> firstUpper
+25:COR:&&(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):25:firstUpper && upper > 1 |==> upper > 1
+26:STD:<ASSIGN>:<NO-OP>:g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):26:firstUpper = false; |==> <NO-OP>
+27:ROR:==(int,int):<=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n |==> upper <= n
+28:ROR:==(int,int):>=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n |==> upper >= n
+29:ROR:==(int,int):FALSE(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n |==> false
+30:ROR:==(int,int):<=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:lower == n |==> lower <= n
+31:ROR:==(int,int):>=(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:lower == n |==> lower >= n
+32:ROR:==(int,int):FALSE(int,int):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:lower == n |==> false
+33:COR:||(boolean,boolean):!=(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n |==> upper == n != (lower == n)
+34:COR:||(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n |==> upper == n
+35:COR:||(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n |==> lower == n
+36:COR:||(boolean,boolean):TRUE(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n |==> true
+37:COR:||(boolean,boolean):!=(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n || firstUpper |==> (upper == n || lower == n) != firstUpper
+38:COR:||(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n || firstUpper |==> upper == n || lower == n
+39:COR:||(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n || firstUpper |==> firstUpper
+40:COR:||(boolean,boolean):TRUE(boolean,boolean):g0501_0600.s0520_detect_capital.Solution@detectCapitalUse(java.lang.String):28:upper == n || lower == n || firstUpper |==> true

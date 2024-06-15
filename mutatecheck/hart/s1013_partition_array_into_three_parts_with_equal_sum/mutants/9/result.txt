@@ -1,0 +1,19 @@
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:14:) in method canThreePartsEqualSum
+                return true;
+                ^
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:14: verify: Associated declaration: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:33:
+//@ ensures((Arrays.equals(arr, new int[] {0 , 2 , 1 , -6 , 6 , 7 , 9 , -1 , 2 , 0 , 1})) ==> (\result == false));
+    ^
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:12:) in method canThreePartsEqualSum
+            return false;
+            ^
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:12: verify: Associated declaration: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:22:
+//@ ensures((Arrays.equals(arr, new int[] {0 , 2 , 1 , -6 , 6 , -7 , 9 , 1 , 2 , 0 , 1})) ==> (\result == true));
+    ^
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:13:) in method canThreePartsEqualSum
+            return false;
+            ^
+./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:13: verify: Associated declaration: ./hart/s1013_partition_array_into_three_parts_with_equal_sum/mutants/9/Solution.java:22:
+//@ ensures((Arrays.equals(arr, new int[] {3 , 3 , 6 , 5 , -2 , 2 , 5 , 1 , -9 , 4})) ==> (\result == true));
+    ^
+6 verification failures

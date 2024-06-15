@@ -1,0 +1,37 @@
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:7: error: ')' expected
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in \old(arr));
+                                                              ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:7: error: Incorrectly formed or terminated in statement near here
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in \old(arr));
+                                                                      ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:6: error: Misplaced method specifications preceding a in clause (ignored)
+//@ requires n >= 1;
+    ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:7: error: This in clause must directly follow a field declaration
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in \old(arr));
+                                                               ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:9: error: ')' expected
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in arr);
+                                                              ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:9: error: Incorrectly formed or terminated in statement near here
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in arr);
+                                                                     ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:8: error: Misplaced method specifications preceding a in clause (ignored)
+//@ ensures \result >= 1 && \result <= n;
+    ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:9: error: This in clause must directly follow a field declaration
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 != 0 ==> i in arr);
+                                                               ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:10: error: ')' expected
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in arr);
+                                                              ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:10: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in arr);
+                                                               ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:11: error: ')' expected
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in \old(arr));
+                                                              ^
+./gpt35/s0390_elimination_game/mutants/11/Solution.java:11: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures (\forall int i; i >= 1 && i <= n; i % 2 == 0 ==> i not in \old(arr));
+                                                               ^
+12 errors

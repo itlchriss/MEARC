@@ -1,0 +1,32 @@
+1:ROR:<(int,int):!=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):16:nums.length < 2 |==> nums.length != 2
+2:ROR:<(int,int):<=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):16:nums.length < 2 |==> nums.length <= 2
+3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):16:nums.length < 2 |==> false
+4:STD:<RETURN>:<NO-OP>:g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):17:return 0; |==> <NO-OP>
+5:STD:<CALL>:<NO-OP>:g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):20:Arrays.sort(nums); |==> <NO-OP>
+6:AOR:-(int,int):%(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:nums.length - 1 |==> nums.length % 1
+7:AOR:-(int,int):*(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:nums.length - 1 |==> nums.length * 1
+8:AOR:-(int,int):+(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:nums.length - 1 |==> nums.length + 1
+9:AOR:-(int,int):/(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:nums.length - 1 |==> nums.length / 1
+10:ROR:<(int,int):!=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:i < nums.length - 1 |==> i != nums.length - 1
+11:ROR:<(int,int):<=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:i < nums.length - 1 |==> i <= nums.length - 1
+12:ROR:<(int,int):FALSE(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):22:i < nums.length - 1 |==> false
+13:AOR:+(int,int):%(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:i + 1 |==> i % 1
+14:AOR:+(int,int):*(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:i + 1 |==> i * 1
+15:AOR:+(int,int):-(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:i + 1 |==> i - 1
+16:AOR:+(int,int):/(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:i + 1 |==> i / 1
+17:AOR:-(int,int):%(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:nums[i + 1] - nums[i] |==> nums[i + 1] % nums[i]
+18:AOR:-(int,int):*(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:nums[i + 1] - nums[i] |==> nums[i + 1] * nums[i]
+19:AOR:-(int,int):+(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:nums[i + 1] - nums[i] |==> nums[i + 1] + nums[i]
+20:AOR:-(int,int):/(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:nums[i + 1] - nums[i] |==> nums[i + 1] / nums[i]
+21:ROR:>(int,int):!=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:(nums[i + 1] - nums[i]) > ret |==> (nums[i + 1] - nums[i]) != ret
+22:ROR:>(int,int):>=(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:(nums[i + 1] - nums[i]) > ret |==> (nums[i + 1] - nums[i]) >= ret
+23:ROR:>(int,int):FALSE(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):23:(nums[i + 1] - nums[i]) > ret |==> false
+24:AOR:+(int,int):%(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:i + 1 |==> i % 1
+25:AOR:+(int,int):*(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:i + 1 |==> i * 1
+26:AOR:+(int,int):-(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:i + 1 |==> i - 1
+27:AOR:+(int,int):/(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:i + 1 |==> i / 1
+28:AOR:-(int,int):%(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:nums[i + 1] - nums[i] |==> nums[i + 1] % nums[i]
+29:AOR:-(int,int):*(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:nums[i + 1] - nums[i] |==> nums[i + 1] * nums[i]
+30:AOR:-(int,int):+(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:nums[i + 1] - nums[i] |==> nums[i + 1] + nums[i]
+31:AOR:-(int,int):/(int,int):g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:nums[i + 1] - nums[i] |==> nums[i + 1] / nums[i]
+32:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0164_maximum_gap.Solution@maximumGap(int[]):24:ret = (nums[i + 1] - nums[i]); |==> <NO-OP>

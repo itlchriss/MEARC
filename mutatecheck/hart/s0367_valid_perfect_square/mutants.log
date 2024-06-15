@@ -1,0 +1,51 @@
+1:ROR:==(int,int):<=(int,int):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):13:num == 0 |==> num <= 0
+2:ROR:==(int,int):>=(int,int):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):13:num == 0 |==> num >= 0
+3:ROR:==(int,int):FALSE(int,int):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):13:num == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):15:return false; |==> <NO-OP>
+5:ROR:<=(long,long):<(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):21:start <= end |==> start < end
+6:ROR:<=(long,long):==(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):21:start <= end |==> start == end
+7:ROR:<=(long,long):TRUE(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):21:start <= end |==> true
+8:AOR:-(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:end - start |==> end % start
+9:AOR:-(long,long):*(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:end - start |==> end * start
+10:AOR:-(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:end - start |==> end + start
+11:AOR:-(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:end - start |==> end / start
+12:AOR:/(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:(end - start) / 2 |==> (end - start) % 2
+13:AOR:/(long,long):*(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:(end - start) / 2 |==> (end - start) * 2
+14:AOR:/(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:(end - start) / 2 |==> (end - start) + 2
+15:AOR:/(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:(end - start) / 2 |==> (end - start) - 2
+16:AOR:+(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:start + (end - start) / 2 |==> start % ((end - start) / 2)
+17:AOR:+(long,long):*(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:start + (end - start) / 2 |==> start * ((end - start) / 2)
+18:AOR:+(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:start + (end - start) / 2 |==> start - (end - start) / 2
+19:AOR:+(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):24:start + (end - start) / 2 |==> start / ((end - start) / 2)
+20:AOR:*(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid |==> mid % mid
+21:AOR:*(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid |==> mid + mid
+22:AOR:*(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid |==> mid - mid
+23:AOR:*(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid |==> mid / mid
+24:ROR:==(long,long):<=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid == num |==> mid * mid <= num
+25:ROR:==(long,long):>=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid == num |==> mid * mid >= num
+26:ROR:==(long,long):FALSE(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):25:mid * mid == num |==> false
+27:STD:<RETURN>:<NO-OP>:g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):27:return true; |==> <NO-OP>
+28:AOR:*(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid |==> mid % mid
+29:AOR:*(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid |==> mid + mid
+30:AOR:*(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid |==> mid - mid
+31:AOR:*(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid |==> mid / mid
+32:ROR:<(long,long):!=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid < num |==> mid * mid != num
+33:ROR:<(long,long):<=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid < num |==> mid * mid <= num
+34:ROR:<(long,long):FALSE(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):28:mid * mid < num |==> false
+35:AOR:+(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):30:mid + 1 |==> mid % 1
+36:AOR:+(long,long):*(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):30:mid + 1 |==> mid * 1
+37:AOR:+(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):30:mid + 1 |==> mid - 1
+38:AOR:+(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):30:mid + 1 |==> mid / 1
+39:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):30:start = mid + 1; |==> <NO-OP>
+40:AOR:*(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid |==> mid % mid
+41:AOR:*(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid |==> mid + mid
+42:AOR:*(long,long):-(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid |==> mid - mid
+43:AOR:*(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid |==> mid / mid
+44:ROR:>(long,long):!=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid > num |==> mid * mid != num
+45:ROR:>(long,long):>=(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid > num |==> mid * mid >= num
+46:ROR:>(long,long):FALSE(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):31:mid * mid > num |==> false
+47:AOR:-(long,long):%(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):33:mid - 1 |==> mid % 1
+48:AOR:-(long,long):*(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):33:mid - 1 |==> mid * 1
+49:AOR:-(long,long):+(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):33:mid - 1 |==> mid + 1
+50:AOR:-(long,long):/(long,long):g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):33:mid - 1 |==> mid / 1
+51:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0367_valid_perfect_square.Solution@isPerfectSquare(int):33:end = mid - 1; |==> <NO-OP>

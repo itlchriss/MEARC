@@ -1,0 +1,31 @@
+./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:21: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:11:) in method titleToNumber
+        return num;
+        ^
+./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:11: verify: Associated declaration: ./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:21:
+//@ ensures((s.equals("A")) ==> (\result == 1));
+    ^
+./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:19: verify: The prover cannot establish an assertion (Precondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495:) in method titleToNumber
+            num += (int) Math.pow(26, pow++) * (s.charAt(i) % 'A' + 1);
+                                 ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495: verify: Associated declaration: ./hart/s0171_excel_sheet_column_number/mutants/7/Solution.java:19:
+    public static /*@ pure @*/ double pow(double a, double b);
+                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:434: verify: Precondition conjunct is false: b == 0.0
+      @   requires b == 0.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:437: verify: Precondition conjunct is false: b == 1.0
+      @   requires b == 1.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:440: verify: Precondition conjunct is false: Double.isNaN(b)
+      @   requires Double.isNaN(b);
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:443: verify: Precondition conjunct is false: Double.isNaN(a)
+      @   requires Double.isNaN(a) && b != 0.0;
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:447: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.POSITIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY);
+                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:451: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.NEGATIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.POSITIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.POSITIVE_INFINITY);
+                ^
+10 verification failures

@@ -1,0 +1,27 @@
+1:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):25:set.contains(n) |==> false
+2:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):25:set.contains(n) |==> true
+3:ROR:==(int,int):<=(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 |==> k <= 0
+4:ROR:==(int,int):>=(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 |==> k >= 0
+5:ROR:==(int,int):FALSE(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 |==> false
+6:COR:&&(boolean,boolean):==(boolean,boolean):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 && !twice.contains(n) |==> k == 0 == !twice.contains(n)
+7:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 && !twice.contains(n) |==> false
+8:COR:&&(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 && !twice.contains(n) |==> k == 0
+9:COR:&&(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):26:k == 0 && !twice.contains(n) |==> !twice.contains(n)
+10:STD:<INC>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):27:res++; |==> <NO-OP>
+11:STD:<CALL>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):28:twice.add(n); |==> <NO-OP>
+12:STD:<CONT>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):30:continue; |==> <NO-OP>
+13:AOR:-(int,int):%(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:n - k |==> n % k
+14:AOR:-(int,int):*(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:n - k |==> n * k
+15:AOR:-(int,int):+(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:n - k |==> n + k
+16:AOR:-(int,int):/(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:n - k |==> n / k
+17:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:set.contains(n - k) |==> false
+18:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):33:set.contains(n - k) |==> true
+19:STD:<INC>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):34:res++; |==> <NO-OP>
+20:AOR:+(int,int):%(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:n + k |==> n % k
+21:AOR:+(int,int):*(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:n + k |==> n * k
+22:AOR:+(int,int):-(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:n + k |==> n - k
+23:AOR:+(int,int):/(int,int):g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:n + k |==> n / k
+24:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:set.contains(n + k) |==> false
+25:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):36:set.contains(n + k) |==> true
+26:STD:<INC>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):37:res++; |==> <NO-OP>
+27:STD:<CALL>:<NO-OP>:g0501_0600.s0532_k_diff_pairs_in_an_array.Solution@findPairs(int[],int):40:set.add(n); |==> <NO-OP>

@@ -1,68 +1,68 @@
-1:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):13:i < inputString.length() |==> i != inputString.length()
-2:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):13:i < inputString.length() |==> i <= inputString.length()
-3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):13:i < inputString.length() |==> false
-4:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):14:j < pattern.length() |==> j != pattern.length()
-5:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):14:j < pattern.length() |==> j <= pattern.length()
-6:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):14:j < pattern.length() |==> false
-7:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) |==> inputString.charAt(i) <= pattern.charAt(j)
-8:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) |==> inputString.charAt(i) >= pattern.charAt(j)
-9:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) |==> false
-10:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:pattern.charAt(j) == '?' |==> pattern.charAt(j) <= '?'
-11:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:pattern.charAt(j) == '?' |==> pattern.charAt(j) >= '?'
-12:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:pattern.charAt(j) == '?' |==> false
-13:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> inputString.charAt(i) == pattern.charAt(j) != (pattern.charAt(j) == '?')
-14:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> inputString.charAt(i) == pattern.charAt(j)
-15:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> pattern.charAt(j) == '?'
-16:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> true
-17:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):14:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> j < pattern.length() == (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
-18:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> false
-19:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):14:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> j < pattern.length()
-20:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):15:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
-21:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):16:i++; |==> <NO-OP>
-22:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):17:j++; |==> <NO-OP>
-23:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() |==> j != pattern.length()
-24:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() |==> j <= pattern.length()
-25:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() |==> false
-26:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:pattern.charAt(j) == '*' |==> pattern.charAt(j) <= '*'
-27:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:pattern.charAt(j) == '*' |==> pattern.charAt(j) >= '*'
-28:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:pattern.charAt(j) == '*' |==> false
-29:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length() == (pattern.charAt(j) == '*')
-30:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() && pattern.charAt(j) == '*' |==> false
-31:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length()
-32:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):18:j < pattern.length() && pattern.charAt(j) == '*' |==> pattern.charAt(j) == '*'
-33:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):19:starIdx = j; |==> <NO-OP>
-34:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):20:lastMatch = i; |==> <NO-OP>
-35:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):21:j++; |==> <NO-OP>
-36:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):22:starIdx != -1 |==> starIdx < -1
-37:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):22:starIdx != -1 |==> starIdx > -1
-38:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):22:starIdx != -1 |==> true
-39:AOR:+(int,int):%(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:starIdx + 1 |==> starIdx % 1
-40:AOR:+(int,int):*(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:starIdx + 1 |==> starIdx * 1
-41:AOR:+(int,int):-(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:starIdx + 1 |==> starIdx - 1
-42:AOR:+(int,int):/(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:starIdx + 1 |==> starIdx / 1
-43:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:j = starIdx + 1; |==> <NO-OP>
-44:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):29:lastMatch++; |==> <NO-OP>
-45:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):31:i = lastMatch; |==> <NO-OP>
-46:STD:<RETURN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):33:return false; |==> <NO-OP>
-47:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() |==> j != pattern.length()
-48:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() |==> j <= pattern.length()
-49:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() |==> false
-50:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:pattern.charAt(j) == '*' |==> pattern.charAt(j) <= '*'
-51:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:pattern.charAt(j) == '*' |==> pattern.charAt(j) >= '*'
-52:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:pattern.charAt(j) == '*' |==> false
-53:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length() == (pattern.charAt(j) == '*')
-54:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() && pattern.charAt(j) == '*' |==> false
-55:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length()
-56:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j < pattern.length() && pattern.charAt(j) == '*' |==> pattern.charAt(j) == '*'
-57:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):38:j++; |==> <NO-OP>
-58:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() |==> i < inputString.length()
-59:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() |==> i > inputString.length()
-60:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() |==> true
-61:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:j != pattern.length() |==> j < pattern.length()
-62:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:j != pattern.length() |==> j > pattern.length()
-63:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:j != pattern.length() |==> true
-64:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() || j != pattern.length() |==> i != inputString.length() != (j != pattern.length())
-65:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() || j != pattern.length() |==> i != inputString.length()
-66:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() || j != pattern.length() |==> j != pattern.length()
-67:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):40:i != inputString.length() || j != pattern.length() |==> true
-68:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):41:isMatch = false; |==> <NO-OP>
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):23:i < inputString.length() |==> i != inputString.length()
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):23:i < inputString.length() |==> i <= inputString.length()
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):23:i < inputString.length() |==> false
+4:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):24:j < pattern.length() |==> j != pattern.length()
+5:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):24:j < pattern.length() |==> j <= pattern.length()
+6:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):24:j < pattern.length() |==> false
+7:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) |==> inputString.charAt(i) <= pattern.charAt(j)
+8:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) |==> inputString.charAt(i) >= pattern.charAt(j)
+9:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) |==> false
+10:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:pattern.charAt(j) == '?' |==> pattern.charAt(j) <= '?'
+11:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:pattern.charAt(j) == '?' |==> pattern.charAt(j) >= '?'
+12:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:pattern.charAt(j) == '?' |==> false
+13:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> inputString.charAt(i) == pattern.charAt(j) != (pattern.charAt(j) == '?')
+14:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> inputString.charAt(i) == pattern.charAt(j)
+15:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> pattern.charAt(j) == '?'
+16:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' |==> true
+17:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):24:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> j < pattern.length() == (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
+18:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> false
+19:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):24:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> j < pattern.length()
+20:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):25:j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') |==> (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
+21:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):26:i++; |==> <NO-OP>
+22:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):27:j++; |==> <NO-OP>
+23:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() |==> j != pattern.length()
+24:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() |==> j <= pattern.length()
+25:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() |==> false
+26:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:pattern.charAt(j) == '*' |==> pattern.charAt(j) <= '*'
+27:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:pattern.charAt(j) == '*' |==> pattern.charAt(j) >= '*'
+28:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:pattern.charAt(j) == '*' |==> false
+29:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length() == (pattern.charAt(j) == '*')
+30:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() && pattern.charAt(j) == '*' |==> false
+31:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length()
+32:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):28:j < pattern.length() && pattern.charAt(j) == '*' |==> pattern.charAt(j) == '*'
+33:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):29:starIdx = j; |==> <NO-OP>
+34:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):30:lastMatch = i; |==> <NO-OP>
+35:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):31:j++; |==> <NO-OP>
+36:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):32:starIdx != -1 |==> starIdx < -1
+37:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):32:starIdx != -1 |==> starIdx > -1
+38:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):32:starIdx != -1 |==> true
+39:AOR:+(int,int):%(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:starIdx + 1 |==> starIdx % 1
+40:AOR:+(int,int):*(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:starIdx + 1 |==> starIdx * 1
+41:AOR:+(int,int):-(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:starIdx + 1 |==> starIdx - 1
+42:AOR:+(int,int):/(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:starIdx + 1 |==> starIdx / 1
+43:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):37:j = starIdx + 1; |==> <NO-OP>
+44:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):39:lastMatch++; |==> <NO-OP>
+45:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):41:i = lastMatch; |==> <NO-OP>
+46:STD:<RETURN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):43:return false; |==> <NO-OP>
+47:ROR:<(int,int):!=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() |==> j != pattern.length()
+48:ROR:<(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() |==> j <= pattern.length()
+49:ROR:<(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() |==> false
+50:ROR:==(int,int):<=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:pattern.charAt(j) == '*' |==> pattern.charAt(j) <= '*'
+51:ROR:==(int,int):>=(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:pattern.charAt(j) == '*' |==> pattern.charAt(j) >= '*'
+52:ROR:==(int,int):FALSE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:pattern.charAt(j) == '*' |==> false
+53:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length() == (pattern.charAt(j) == '*')
+54:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() && pattern.charAt(j) == '*' |==> false
+55:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() && pattern.charAt(j) == '*' |==> j < pattern.length()
+56:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):47:j < pattern.length() && pattern.charAt(j) == '*' |==> pattern.charAt(j) == '*'
+57:STD:<INC>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):48:j++; |==> <NO-OP>
+58:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() |==> i < inputString.length()
+59:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() |==> i > inputString.length()
+60:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() |==> true
+61:ROR:!=(int,int):<(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:j != pattern.length() |==> j < pattern.length()
+62:ROR:!=(int,int):>(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:j != pattern.length() |==> j > pattern.length()
+63:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:j != pattern.length() |==> true
+64:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() || j != pattern.length() |==> i != inputString.length() != (j != pattern.length())
+65:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() || j != pattern.length() |==> i != inputString.length()
+66:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() || j != pattern.length() |==> j != pattern.length()
+67:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):50:i != inputString.length() || j != pattern.length() |==> true
+68:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0044_wildcard_matching.Solution@isMatch(java.lang.String,java.lang.String):51:isMatch = false; |==> <NO-OP>

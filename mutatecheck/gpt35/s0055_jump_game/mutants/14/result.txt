@@ -1,23 +1,16 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
 ./gpt35/s0055_jump_game/mutants/14/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method canJump
             tmp = Math.max(tmp, nums[i]);
                                     ^
-./gpt35/s0055_jump_game/mutants/14/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0055_jump_game/mutants/14/Solution.java:9:) in method canJump
-        return true;
-        ^
-./gpt35/s0055_jump_game/mutants/14/Solution.java:9: verify: Associated declaration: ./gpt35/s0055_jump_game/mutants/14/Solution.java:44:
-//@ ensures(\result == true ==> (\exists int i; 0 <= i < nums.length; i == nums.length - 1 || (\forall int j; i < j < nums.length; nums[j] > 0)));
-    ^
 ./gpt35/s0055_jump_game/mutants/14/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0055_jump_game/mutants/14/Solution.java:8:) in method canJump
                 return false;
                 ^
 ./gpt35/s0055_jump_game/mutants/14/Solution.java:8: verify: Associated declaration: ./gpt35/s0055_jump_game/mutants/14/Solution.java:22:
 //@ ensures(\result == false ==> (\forall int i; 0 <= i < nums.length; (\exists int j; i < j < nums.length; nums[j] == 0)));
     ^
-2 warnings
+./gpt35/s0055_jump_game/mutants/14/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0055_jump_game/mutants/14/Solution.java:9:) in method canJump
+        return true;
+        ^
+./gpt35/s0055_jump_game/mutants/14/Solution.java:9: verify: Associated declaration: ./gpt35/s0055_jump_game/mutants/14/Solution.java:44:
+//@ ensures(\result == true ==> (\exists int i; 0 <= i < nums.length; i == nums.length - 1 || (\forall int j; i < j < nums.length; nums[j] > 0)));
+    ^
 5 verification failures

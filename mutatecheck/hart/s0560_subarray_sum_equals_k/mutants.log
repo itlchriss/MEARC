@@ -1,0 +1,20 @@
+1:STD:<CALL>:<NO-OP>:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):21:sumCount.put(0, 1); |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):23:tempSum += i; |==> <NO-OP>
+3:AOR:-(int,int):%(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:tempSum - k |==> tempSum % k
+4:AOR:-(int,int):*(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:tempSum - k |==> tempSum * k
+5:AOR:-(int,int):+(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:tempSum - k |==> tempSum + k
+6:AOR:-(int,int):/(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:tempSum - k |==> tempSum / k
+7:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:sumCount.containsKey(tempSum - k) |==> false
+8:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):24:sumCount.containsKey(tempSum - k) |==> true
+9:AOR:-(int,int):%(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):25:tempSum - k |==> tempSum % k
+10:AOR:-(int,int):*(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):25:tempSum - k |==> tempSum * k
+11:AOR:-(int,int):+(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):25:tempSum - k |==> tempSum + k
+12:AOR:-(int,int):/(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):25:tempSum - k |==> tempSum / k
+13:STD:<ASSIGN>:<NO-OP>:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):25:ret += sumCount.get(tempSum - k); |==> <NO-OP>
+14:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):27:sumCount.get(tempSum) != null |==> true
+15:AOR:+(int,int):%(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):28:sumCount.get(tempSum) + 1 |==> sumCount.get(tempSum) % 1
+16:AOR:+(int,int):*(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):28:sumCount.get(tempSum) + 1 |==> sumCount.get(tempSum) * 1
+17:AOR:+(int,int):-(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):28:sumCount.get(tempSum) + 1 |==> sumCount.get(tempSum) - 1
+18:AOR:+(int,int):/(int,int):g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):28:sumCount.get(tempSum) + 1 |==> sumCount.get(tempSum) / 1
+19:STD:<CALL>:<NO-OP>:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):28:sumCount.put(tempSum, sumCount.get(tempSum) + 1); |==> <NO-OP>
+20:STD:<CALL>:<NO-OP>:g0501_0600.s0560_subarray_sum_equals_k.Solution@subarraySum(int[],int):30:sumCount.put(tempSum, 1); |==> <NO-OP>

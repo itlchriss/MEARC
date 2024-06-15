@@ -1,0 +1,86 @@
+[05/24 20:48:51] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+    Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+    Initializing operator symbols for opcode mapping
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+    Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Arrays, java.util.TreeMap, java.util.Map, java.util.List, java.util.HashMap, java.util.Collections, java.util.ArrayList, g0401_0500.s0451_sort_characters_by_frequency.Solution]]]]
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+    CLASS: g0401_0500.s0451_sort_characters_by_frequency.Solution
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: <init>([])null
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+    METHOD: frequencySort([String s])String
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 1
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.frequencySort(line 21, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> %(int,int)
+            original:                  map.getOrDefault(c, 0) + 1 
+            mutant:                    map.getOrDefault(c, 0) % 1
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 2
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.frequencySort(line 21, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> *(int,int)
+            original:                  map.getOrDefault(c, 0) + 1 
+            mutant:                    map.getOrDefault(c, 0) * 1
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 3
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.frequencySort(line 21, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> -(int,int)
+            original:                  map.getOrDefault(c, 0) + 1 
+            mutant:                    map.getOrDefault(c, 0) - 1
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 4
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.frequencySort(line 21, col 47)
+            mutation operator group:   AOR
+            mutation operator:         +(int,int) |==> /(int,int)
+            original:                  map.getOrDefault(c, 0) + 1 
+            mutant:                    map.getOrDefault(c, 0) / 1
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 5
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 5: (STD) map.put(c, map.getOrDefault(c, 0) + 1); -> <NO-OP>
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 6
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 6: (STD) reverseMap.computeIfAbsent(freq, (k)->new ArrayList<>()); -> <NO-OP>
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 7
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 7: (STD) reverseMap.get(freq).add(c.getKey()); -> <NO-OP>
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 8
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.frequencySort(line 33, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> !=(int,int)
+            original:                  i < freq.getKey() 
+            mutant:                    i != freq.getKey()
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 9
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.frequencySort(line 33, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> <=(int,int)
+            original:                  i < freq.getKey() 
+            mutant:                    i <= freq.getKey()
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 10
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.frequencySort(line 33, col 35)
+            mutation operator group:   ROR
+            mutation operator:         <(int,int) |==> FALSE(int,int)
+            original:                  i < freq.getKey() 
+            mutant:                    false
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+    Creating mutant 11
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+    Logging mutantSTD 11: (STD) sb.append(c); -> <NO-OP>
+[05/24 20:48:52] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 11 mutants (86 ms)

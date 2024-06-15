@@ -1,0 +1,13 @@
+./hart/s0709_to_lower_case/mutants/16/Solution.java:18: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method toLowerCase
+            if (c[i] <= 'Z' && c[i] >= 'A') {
+                 ^
+./hart/s0709_to_lower_case/mutants/16/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0709_to_lower_case/mutants/16/Solution.java:12:) in method toLowerCase
+        return new String(c);
+        ^
+./hart/s0709_to_lower_case/mutants/16/Solution.java:12: verify: Associated declaration: ./hart/s0709_to_lower_case/mutants/16/Solution.java:22:
+//@ ensures((s.equals("Hello")) ==> (\result.equals("hello")));
+    ^
+./hart/s0709_to_lower_case/mutants/16/Solution.java:15: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public String toLowerCase(String s) {
+                  ^
+4 verification failures

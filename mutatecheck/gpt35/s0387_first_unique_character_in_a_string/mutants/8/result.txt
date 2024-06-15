@@ -1,0 +1,13 @@
+./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:7:) in method firstUniqChar
+        return ans;
+        ^
+./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:7: verify: Associated declaration: ./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:24:
+//@ ensures \result >= -1 && \result < s.length();
+    ^
+./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:9:) in method firstUniqChar
+        return ans;
+        ^
+./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:9: verify: Associated declaration: ./gpt35/s0387_first_unique_character_in_a_string/mutants/8/Solution.java:24:
+//@ ensures (\exists int i; 0 <= i && i < s.length(); (\forall int j; 0 <= j && j < s.length(); j != i ==> s.charAt(i) != s.charAt(j)) && \result == i);
+    ^
+4 verification failures

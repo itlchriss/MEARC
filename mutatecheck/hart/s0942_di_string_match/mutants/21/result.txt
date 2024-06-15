@@ -1,0 +1,8 @@
+./hart/s0942_di_string_match/mutants/21/Solution.java:12: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
+                                                                          ^
+./hart/s0942_di_string_match/mutants/21/Solution.java:25: error: unreachable statement
+        for (int i = s.length() - 1; false; i--) {
+                                                 ^
+1 error
+1 warning

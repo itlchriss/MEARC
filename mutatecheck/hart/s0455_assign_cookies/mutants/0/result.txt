@@ -1,0 +1,13 @@
+./hart/s0455_assign_cookies/mutants/0/Solution.java:32: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0455_assign_cookies/mutants/0/Solution.java:14:) in method findContentChildren
+        return result;
+        ^
+./hart/s0455_assign_cookies/mutants/0/Solution.java:14: verify: Associated declaration: ./hart/s0455_assign_cookies/mutants/0/Solution.java:32:
+//@ ensures(\result <= g.length);
+    ^
+./hart/s0455_assign_cookies/mutants/0/Solution.java:32: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0455_assign_cookies/mutants/0/Solution.java:15:) in method findContentChildren
+        return result;
+        ^
+./hart/s0455_assign_cookies/mutants/0/Solution.java:15: verify: Associated declaration: ./hart/s0455_assign_cookies/mutants/0/Solution.java:32:
+//@ ensures(((Arrays.equals(g, new int[] {1 , 2 , 3})) && (Arrays.equals(s, new int[] {1 , 1}))) ==> (\result == 1));
+    ^
+4 verification failures

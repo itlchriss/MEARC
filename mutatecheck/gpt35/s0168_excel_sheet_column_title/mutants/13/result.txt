@@ -1,0 +1,16 @@
+./gpt35/s0168_excel_sheet_column_title/mutants/13/Solution.java:7: error: cannot find symbol
+//@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) == 'A' + (\sum int j; 0 <= j && j < \result.length() - i - 1; 26^j) + columnNumber % 26^i);
+                                                                                                                                                    ^
+  symbol:   variable columnNumber
+  location: class Solution
+./gpt35/s0168_excel_sheet_column_title/mutants/13/Solution.java:12: error: cannot find symbol
+//@ requires columnNumber >= 1 && columnNumber <= Math.pow(2, 31) - 1;
+             ^
+  symbol:   variable columnNumber
+  location: class Solution
+./gpt35/s0168_excel_sheet_column_title/mutants/13/Solution.java:12: error: cannot find symbol
+//@ requires columnNumber >= 1 && columnNumber <= Math.pow(2, 31) - 1;
+                                  ^
+  symbol:   variable columnNumber
+  location: class Solution
+3 errors

@@ -1,7 +1,25 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-2 warnings
+./hart/s0065_valid_number/mutants/83/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0065_valid_number/mutants/83/Solution.java:10:) in method isNumber
+        return numberSeen;
+        ^
+./hart/s0065_valid_number/mutants/83/Solution.java:10: verify: Associated declaration: ./hart/s0065_valid_number/mutants/83/Solution.java:44:
+//@ ensures((s.equals("0")) ==> (\result == true));
+    ^
+./hart/s0065_valid_number/mutants/83/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0065_valid_number/mutants/83/Solution.java:11:) in method isNumber
+        return numberSeen;
+        ^
+./hart/s0065_valid_number/mutants/83/Solution.java:11: verify: Associated declaration: ./hart/s0065_valid_number/mutants/83/Solution.java:44:
+//@ ensures((s.equals(".")) ==> (\result == false));
+    ^
+./hart/s0065_valid_number/mutants/83/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0065_valid_number/mutants/83/Solution.java:12:) in method isNumber
+        return numberSeen;
+        ^
+./hart/s0065_valid_number/mutants/83/Solution.java:12: verify: Associated declaration: ./hart/s0065_valid_number/mutants/83/Solution.java:44:
+//@ ensures((s.equals("e")) ==> (\result == false));
+    ^
+./hart/s0065_valid_number/mutants/83/Solution.java:32: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0065_valid_number/mutants/83/Solution.java:13:) in method isNumber
+                    return false;
+                    ^
+./hart/s0065_valid_number/mutants/83/Solution.java:13: verify: Associated declaration: ./hart/s0065_valid_number/mutants/83/Solution.java:32:
+//@ ensures((s.equals(".1")) ==> (\result == true));
+    ^
+8 verification failures

@@ -1,11 +1,11 @@
-1:ROR:<(int,int):!=(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):19:i < numbers.length |==> i != numbers.length
-2:ROR:<(int,int):<=(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):19:i < numbers.length |==> i <= numbers.length
-3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):19:i < numbers.length |==> false
-4:AOR:-(int,int):%(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):20:target - numbers[i] |==> target % numbers[i]
-5:AOR:-(int,int):*(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):20:target - numbers[i] |==> target * numbers[i]
-6:AOR:-(int,int):+(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):20:target - numbers[i] |==> target + numbers[i]
-7:AOR:-(int,int):/(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):20:target - numbers[i] |==> target / numbers[i]
-8:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):21:indexMap.containsKey(requiredNum) |==> false
-9:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):21:indexMap.containsKey(requiredNum) |==> true
-10:STD:<RETURN>:<NO-OP>:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):22:return new int[]{indexMap.get(requiredNum), i}; |==> <NO-OP>
-11:STD:<CALL>:<NO-OP>:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):24:indexMap.put(numbers[i], i); |==> <NO-OP>
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):23:i < numbers.length |==> i != numbers.length
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):23:i < numbers.length |==> i <= numbers.length
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):23:i < numbers.length |==> false
+4:AOR:-(int,int):%(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):25:target - numbers[i] |==> target % numbers[i]
+5:AOR:-(int,int):*(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):25:target - numbers[i] |==> target * numbers[i]
+6:AOR:-(int,int):+(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):25:target - numbers[i] |==> target + numbers[i]
+7:AOR:-(int,int):/(int,int):g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):25:target - numbers[i] |==> target / numbers[i]
+8:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):26:indexMap.containsKey(requiredNum) |==> false
+9:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):26:indexMap.containsKey(requiredNum) |==> true
+10:STD:<RETURN>:<NO-OP>:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):27:return new int[]{indexMap.get(requiredNum), i}; |==> <NO-OP>
+11:STD:<CALL>:<NO-OP>:g0001_0100.s0001_two_sum.Solution@twoSum(int[],int):29:indexMap.put(numbers[i], i); |==> <NO-OP>

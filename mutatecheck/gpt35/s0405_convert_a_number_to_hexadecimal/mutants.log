@@ -1,0 +1,21 @@
+1:ROR:==(int,int):<=(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):12:num == 0 |==> num <= 0
+2:ROR:==(int,int):>=(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):12:num == 0 |==> num >= 0
+3:ROR:==(int,int):FALSE(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):12:num == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):13:return "0"; |==> <NO-OP>
+5:ROR:!=(int,int):<(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):17:num != 0 |==> num < 0
+6:ROR:!=(int,int):>(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):17:num != 0 |==> num > 0
+7:ROR:!=(int,int):TRUE(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):17:num != 0 |==> true
+8:LOR:&(int,int):^(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):18:num & 15 |==> num ^ 15
+9:LOR:&(int,int):|(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):18:num & 15 |==> num | 15
+10:ROR:<(int,int):!=(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):19:x < 10 |==> x != 10
+11:ROR:<(int,int):<=(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):19:x < 10 |==> x <= 10
+12:ROR:<(int,int):FALSE(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):19:x < 10 |==> false
+13:STD:<CALL>:<NO-OP>:g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):20:sb.append(x); |==> <NO-OP>
+14:AOR:+(int,int):%(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):22:x + 87 |==> x % 87
+15:AOR:+(int,int):*(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):22:x + 87 |==> x * 87
+16:AOR:+(int,int):-(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):22:x + 87 |==> x - 87
+17:AOR:+(int,int):/(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):22:x + 87 |==> x / 87
+18:STD:<CALL>:<NO-OP>:g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):22:sb.append((char)(x + 87)); |==> <NO-OP>
+19:SOR:>>>(int,int):<<(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):24:num >>> 4 |==> num << 4
+20:SOR:>>>(int,int):>>(int,int):g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):24:num >>> 4 |==> num >> 4
+21:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0405_convert_a_number_to_hexadecimal.Solution@toHex(int):24:num = num >>> 4; |==> <NO-OP>

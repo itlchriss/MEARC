@@ -1,0 +1,13 @@
+./gpt35/s0942_di_string_match/mutants/2/Solution.java:14: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method diStringMatch
+        int[] arr = new int[s.length() - 1];
+                                       ^
+./gpt35/s0942_di_string_match/mutants/2/Solution.java:23: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method diStringMatch
+            if (s.charAt(i) == 'I' && arr[i + 1] == 0) {
+                                         ^
+./gpt35/s0942_di_string_match/mutants/2/Solution.java:18: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method diStringMatch
+                arr[i] = max;
+                   ^
+./gpt35/s0942_di_string_match/mutants/2/Solution.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method diStringMatch
+            if (arr[i] == 0) {
+                   ^
+4 verification failures

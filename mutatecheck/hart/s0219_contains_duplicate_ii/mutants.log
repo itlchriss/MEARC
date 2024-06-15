@@ -1,0 +1,16 @@
+1:ROR:<(int,int):!=(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):20:i < len |==> i != len
+2:ROR:<(int,int):<=(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):20:i < len |==> i <= len
+3:ROR:<(int,int):FALSE(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):20:i < len |==> false
+4:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index != null |==> true
+5:AOR:-(int,int):%(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index - i |==> index % i
+6:AOR:-(int,int):*(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index - i |==> index * i
+7:AOR:-(int,int):+(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index - i |==> index + i
+8:AOR:-(int,int):/(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index - i |==> index / i
+9:ROR:<=(int,int):<(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:Math.abs(index - i) <= k |==> Math.abs(index - i) < k
+10:ROR:<=(int,int):==(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:Math.abs(index - i) <= k |==> Math.abs(index - i) == k
+11:ROR:<=(int,int):TRUE(int,int):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:Math.abs(index - i) <= k |==> true
+12:COR:&&(boolean,boolean):==(boolean,boolean):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index != null && Math.abs(index - i) <= k |==> index != null == Math.abs(index - i) <= k
+13:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index != null && Math.abs(index - i) <= k |==> false
+14:COR:&&(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index != null && Math.abs(index - i) <= k |==> index != null
+15:COR:&&(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):22:index != null && Math.abs(index - i) <= k |==> Math.abs(index - i) <= k
+16:STD:<RETURN>:<NO-OP>:g0201_0300.s0219_contains_duplicate_ii.Solution@containsNearbyDuplicate(int[],int):23:return true; |==> <NO-OP>

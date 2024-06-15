@@ -1,0 +1,34 @@
+./gpt35/s0326_power_of_three/mutants/17/Solution.java:9: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method isPowerOfThree
+//@ ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);
+                                                                    ^
+./gpt35/s0326_power_of_three/mutants/17/Solution.java:13: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0326_power_of_three/mutants/17/Solution.java:9:) in method isPowerOfThree
+            return false;
+            ^
+./gpt35/s0326_power_of_three/mutants/17/Solution.java:9: verify: Associated declaration: ./gpt35/s0326_power_of_three/mutants/17/Solution.java:13:
+//@ ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);
+    ^
+./gpt35/s0326_power_of_three/mutants/17/Solution.java:9: verify: The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495:) in method isPowerOfThree
+//@ ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);
+                                         ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495: verify: Associated declaration: ./gpt35/s0326_power_of_three/mutants/17/Solution.java:9:
+    public static /*@ pure @*/ double pow(double a, double b);
+                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:434: verify: Precondition conjunct is false: b == 0.0
+      @   requires b == 0.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:437: verify: Precondition conjunct is false: b == 1.0
+      @   requires b == 1.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:440: verify: Precondition conjunct is false: Double.isNaN(b)
+      @   requires Double.isNaN(b);
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:443: verify: Precondition conjunct is false: Double.isNaN(a)
+      @   requires Double.isNaN(a) && b != 0.0;
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:447: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.POSITIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY);
+                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:451: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.NEGATIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.POSITIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.POSITIVE_INFINITY);
+                ^
+11 verification failures

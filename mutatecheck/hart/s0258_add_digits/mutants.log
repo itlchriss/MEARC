@@ -1,0 +1,16 @@
+1:ROR:==(int,int):<=(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):14:num == 0 |==> num <= 0
+2:ROR:==(int,int):>=(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):14:num == 0 |==> num >= 0
+3:ROR:==(int,int):FALSE(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):14:num == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0201_0300.s0258_add_digits.Solution@addDigits(int):15:return 0; |==> <NO-OP>
+5:AOR:%(int,int):*(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 |==> num * 9
+6:AOR:%(int,int):+(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 |==> num + 9
+7:AOR:%(int,int):-(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 |==> num - 9
+8:AOR:%(int,int):/(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 |==> num / 9
+9:ROR:==(int,int):<=(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 == 0 |==> num % 9 <= 0
+10:ROR:==(int,int):>=(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 == 0 |==> num % 9 >= 0
+11:ROR:==(int,int):FALSE(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):17:num % 9 == 0 |==> false
+12:STD:<RETURN>:<NO-OP>:g0201_0300.s0258_add_digits.Solution@addDigits(int):18:return 9; |==> <NO-OP>
+13:AOR:%(int,int):*(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):20:num % 9 |==> num * 9
+14:AOR:%(int,int):+(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):20:num % 9 |==> num + 9
+15:AOR:%(int,int):-(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):20:num % 9 |==> num - 9
+16:AOR:%(int,int):/(int,int):g0201_0300.s0258_add_digits.Solution@addDigits(int):20:num % 9 |==> num / 9

@@ -1,0 +1,25 @@
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:6:) in method smallestRangeI
+        return (max * k) - (min + k);
+        ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:6: verify: Associated declaration: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:24:
+//@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] - k <= \result && \result <= nums[i] + k);
+    ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:9:) in method smallestRangeI
+            return 0;
+            ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:9: verify: Associated declaration: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:22:
+//@ ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] - k <= nums[j] && nums[j] <= nums[i] + k);
+    ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:11:) in method smallestRangeI
+            return 0;
+            ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:11: verify: Associated declaration: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:22:
+//@ ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] - k <= nums[j] - k && nums[j] + k <= nums[i] + k);
+    ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:12:) in method smallestRangeI
+        return (max * k) - (min + k);
+        ^
+./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:12: verify: Associated declaration: ./gpt35/s0908_smallest_range_i/mutants/15/Solution.java:24:
+//@ ensures \result >= 0;
+    ^
+8 verification failures

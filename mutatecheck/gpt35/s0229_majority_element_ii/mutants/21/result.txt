@@ -1,0 +1,16 @@
+./gpt35/s0229_majority_element_ii/mutants/21/Solution.java:11: error: bad operand types for binary operator '^'
+//@ requires nums.length >= 1 && nums.length <= 5 * 10^4;
+                                                      ^
+  first type:  boolean
+  second type: int
+./gpt35/s0229_majority_element_ii/mutants/21/Solution.java:13: error: bad operand types for binary operator '^'
+//@ requires (\forall int i; 0 <= i && i < nums.length; -10^9 <= nums[i] && nums[i] <= 10^9);
+                                                           ^
+  first type:  int
+  second type: boolean
+./gpt35/s0229_majority_element_ii/mutants/21/Solution.java:13: error: bad operand types for binary operator '^'
+//@ requires (\forall int i; 0 <= i && i < nums.length; -10^9 <= nums[i] && nums[i] <= 10^9);
+                                                                                         ^
+  first type:  boolean
+  second type: int
+3 errors

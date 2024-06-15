@@ -1,0 +1,18 @@
+./hart/s0229_majority_element_ii/mutants/4/Solution.java:70: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0229_majority_element_ii/mutants/4/Solution.java:16:) in method majorityElement
+        return results;
+        ^
+./hart/s0229_majority_element_ii/mutants/4/Solution.java:16: verify: Associated declaration: ./hart/s0229_majority_element_ii/mutants/4/Solution.java:70:
+//@ ensures((Arrays.equals(nums, new int[] {3 , 2 , 3})) ==> (\result.equals(Arrays.asList(new int[] {3}))));
+    ^
+./hart/s0229_majority_element_ii/mutants/4/Solution.java:70: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0229_majority_element_ii/mutants/4/Solution.java:17:) in method majorityElement
+        return results;
+        ^
+./hart/s0229_majority_element_ii/mutants/4/Solution.java:17: verify: Associated declaration: ./hart/s0229_majority_element_ii/mutants/4/Solution.java:70:
+//@ ensures((Arrays.equals(nums, new int[] {1 , 2})) ==> (\result.equals(Arrays.asList(new int[] {1 , 2}))));
+    ^
+./hart/s0229_majority_element_ii/mutants/4/Solution.java:19: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public List<Integer> majorityElement(int[] nums) {
+                         ^
+Note: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/util/List.jml uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+5 verification failures

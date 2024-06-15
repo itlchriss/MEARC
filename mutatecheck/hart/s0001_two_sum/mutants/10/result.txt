@@ -1,13 +1,11 @@
-./hart/s0001_two_sum/mutants/10/Solution.java:16: error: cannot find symbol
+./hart/s0001_two_sum/mutants/10/Solution.java:19: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
 //@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
-                                                     ^
-  symbol:   variable Collections
-  location: class Solution
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-1 error
-2 warnings
+                                                                          ^
+./hart/s0001_two_sum/mutants/10/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0001_two_sum/mutants/10/Solution.java:19:) in method twoSum
+        return new int[] {-1, -1};
+        ^
+./hart/s0001_two_sum/mutants/10/Solution.java:19: verify: Associated declaration: ./hart/s0001_two_sum/mutants/10/Solution.java:31:
+//@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
+    ^
+1 warning
+2 verification failures

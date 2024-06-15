@@ -1,0 +1,23 @@
+1:ROR:<(int,int):!=(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 |==> n != 3
+2:ROR:<(int,int):<=(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 |==> n <= 3
+3:ROR:<(int,int):FALSE(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 |==> false
+4:ROR:!=(int,int):<(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n != 1 |==> n < 1
+5:ROR:!=(int,int):>(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n != 1 |==> n > 1
+6:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n != 1 |==> true
+7:COR:&&(boolean,boolean):==(boolean,boolean):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 && n != 1 |==> n < 3 == (n != 1)
+8:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 && n != 1 |==> false
+9:COR:&&(boolean,boolean):LHS(boolean,boolean):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 && n != 1 |==> n < 3
+10:COR:&&(boolean,boolean):RHS(boolean,boolean):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):14:n < 3 && n != 1 |==> n != 1
+11:STD:<RETURN>:<NO-OP>:g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):15:return false; |==> <NO-OP>
+12:ROR:!=(int,int):<(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):17:n != 1 |==> n < 1
+13:ROR:!=(int,int):>(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):17:n != 1 |==> n > 1
+14:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):17:n != 1 |==> true
+15:AOR:%(int,int):*(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 |==> n * 3
+16:AOR:%(int,int):+(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 |==> n + 3
+17:AOR:%(int,int):-(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 |==> n - 3
+18:AOR:%(int,int):/(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 |==> n / 3
+19:ROR:!=(int,int):<(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 != 0 |==> n % 3 < 0
+20:ROR:!=(int,int):>(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 != 0 |==> n % 3 > 0
+21:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):18:n % 3 != 0 |==> true
+22:STD:<RETURN>:<NO-OP>:g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):19:return false; |==> <NO-OP>
+23:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0326_power_of_three.Solution@isPowerOfThree(int):21:n /= 3; |==> <NO-OP>

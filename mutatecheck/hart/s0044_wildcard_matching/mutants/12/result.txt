@@ -1,7 +1,34 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-2 warnings
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:13:) in method isMatch
+        return isMatch;
+        ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:13: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:53:
+//@ ensures(((inputString.equals("aa")) && (pattern.equals("*"))) ==> (\result == true));
+    ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:14:) in method isMatch
+        return isMatch;
+        ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:14: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:53:
+//@ ensures(((inputString.equals("aa")) && (pattern.equals("a"))) ==> (\result == false));
+    ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:17:) in method isMatch
+        return isMatch;
+        ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:17: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:53:
+//@ ensures(((inputString.equals("cb")) && (pattern.equals("?a"))) ==> (\result == false));
+    ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:15:) in method isMatch
+        return isMatch;
+        ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:15: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:53:
+//@ ensures(((inputString.equals("acdcb")) && (pattern.equals("a*c?b"))) ==> (\result == false));
+    ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:16:) in method isMatch
+                return false;
+                ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:16: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/12/Solution.java:43:
+//@ ensures(((inputString.equals("adceb")) && (pattern.equals("*a*b"))) ==> (\result == true));
+    ^
+./hart/s0044_wildcard_matching/mutants/12/Solution.java:18: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public boolean isMatch(String inputString, String pattern) {
+                   ^
+11 verification failures

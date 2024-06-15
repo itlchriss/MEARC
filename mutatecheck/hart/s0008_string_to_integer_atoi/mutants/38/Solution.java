@@ -2,15 +2,20 @@ package g0001_0100.s0008_string_to_integer_atoi;
 
 // #Medium #Top_Interview_Questions #String #2024_01_04_Time_1_ms_(100.00%)_Space_42.7_MB_(8.86%)
 
-public class Solution {
+import java.util.Arrays;
 
+import java.util.Collections;
+
+public class Solution {
+//@ requires(str.length() <= 200);
     public int myAtoi(String str) {
         if (str == null || str.length() == 0) {
             return 0;
         }
         int i = 0;
         boolean negetiveSign = false;
-        char[] input = str.toCharArray();
+        char[] input = str.toCharArray();        
+        //@ loop_invariant 0 <= i <= input.length;
         while (i < input.length && input[i] == ' ') {
             i++;
         }
@@ -23,6 +28,8 @@ public class Solution {
             negetiveSign = true;
         }
         int num = 0;
+        //@ loop_invariant 0 <= i <= input.length;
+        //@ decreases input.length - i;
         while (i < input.length && input[i] <= '9' && input[i] > '0') {
             // current char
             int tem = input[i] - '0';

@@ -1,0 +1,10 @@
+./gpt35/s0908_smallest_range_i/mutants/23/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0908_smallest_range_i/mutants/23/Solution.java:6:) in method smallestRangeI
+        return (max - k) * (min + k);
+        ^
+./gpt35/s0908_smallest_range_i/mutants/23/Solution.java:6: verify: Associated declaration: ./gpt35/s0908_smallest_range_i/mutants/23/Solution.java:24:
+//@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] - k <= \result && \result <= nums[i] + k);
+    ^
+./gpt35/s0908_smallest_range_i/mutants/23/Solution.java:14: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int smallestRangeI(int[] nums, int k) {
+               ^
+3 verification failures

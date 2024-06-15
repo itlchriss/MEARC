@@ -1,0 +1,16 @@
+./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method countNumbersWithUniqueDigits
+                mul *= (10 % j);
+                           ^
+./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:23: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:12:) in method countNumbersWithUniqueDigits
+        return ans;
+        ^
+./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:12: verify: Associated declaration: ./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:23:
+//@ ensures((n == 2) ==> (\result == 91));
+    ^
+./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:23: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:13:) in method countNumbersWithUniqueDigits
+        return ans;
+        ^
+./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:13: verify: Associated declaration: ./hart/s0357_count_numbers_with_unique_digits/mutants/6/Solution.java:23:
+//@ ensures((n == 0) ==> (\result == 1));
+    ^
+5 verification failures

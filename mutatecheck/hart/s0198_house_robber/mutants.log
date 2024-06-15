@@ -1,0 +1,34 @@
+1:ROR:==(int,int):<=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):18:nums.length == 0 |==> nums.length <= 0
+2:ROR:==(int,int):>=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):18:nums.length == 0 |==> nums.length >= 0
+3:ROR:==(int,int):FALSE(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):18:nums.length == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):19:return 0; |==> <NO-OP>
+5:ROR:==(int,int):<=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):21:nums.length == 1 |==> nums.length <= 1
+6:ROR:==(int,int):>=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):21:nums.length == 1 |==> nums.length >= 1
+7:ROR:==(int,int):FALSE(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):21:nums.length == 1 |==> false
+8:STD:<RETURN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):22:return nums[0]; |==> <NO-OP>
+9:ROR:==(int,int):<=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):24:nums.length == 2 |==> nums.length <= 2
+10:ROR:==(int,int):>=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):24:nums.length == 2 |==> nums.length >= 2
+11:ROR:==(int,int):FALSE(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):24:nums.length == 2 |==> false
+12:STD:<RETURN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):25:return Math.max(nums[0], nums[1]); |==> <NO-OP>
+13:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):28:profit[0] = nums[0]; |==> <NO-OP>
+14:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):29:profit[1] = Math.max(nums[1], nums[0]); |==> <NO-OP>
+15:ROR:<(int,int):!=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):32:i < nums.length |==> i != nums.length
+16:ROR:<(int,int):<=(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):32:i < nums.length |==> i <= nums.length
+17:ROR:<(int,int):FALSE(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):32:i < nums.length |==> false
+18:AOR:-(int,int):%(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 1 |==> i % 1
+19:AOR:-(int,int):*(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 1 |==> i * 1
+20:AOR:-(int,int):+(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 1 |==> i + 1
+21:AOR:-(int,int):/(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 1 |==> i / 1
+22:AOR:-(int,int):%(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 2 |==> i % 2
+23:AOR:-(int,int):*(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 2 |==> i * 2
+24:AOR:-(int,int):+(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 2 |==> i + 2
+25:AOR:-(int,int):/(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:i - 2 |==> i / 2
+26:AOR:+(int,int):%(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:nums[i] + profit[i - 2] |==> nums[i] % profit[i - 2]
+27:AOR:+(int,int):*(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:nums[i] + profit[i - 2] |==> nums[i] * profit[i - 2]
+28:AOR:+(int,int):-(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:nums[i] + profit[i - 2] |==> nums[i] - profit[i - 2]
+29:AOR:+(int,int):/(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):33:nums[i] + profit[i - 2] |==> nums[i] / profit[i - 2]
+30:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0198_house_robber.Solution@rob(int[]):33:profit[i] = Math.max(profit[i - 1], nums[i] + profit[i - 2]); |==> <NO-OP>
+31:AOR:-(int,int):%(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):35:nums.length - 1 |==> nums.length % 1
+32:AOR:-(int,int):*(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):35:nums.length - 1 |==> nums.length * 1
+33:AOR:-(int,int):+(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):35:nums.length - 1 |==> nums.length + 1
+34:AOR:-(int,int):/(int,int):g0101_0200.s0198_house_robber.Solution@rob(int[]):35:nums.length - 1 |==> nums.length / 1

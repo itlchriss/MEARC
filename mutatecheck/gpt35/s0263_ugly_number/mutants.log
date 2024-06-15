@@ -1,0 +1,26 @@
+1:ROR:==(int,int):<=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):12:n == 1 |==> n <= 1
+2:ROR:==(int,int):>=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):12:n == 1 |==> n >= 1
+3:ROR:==(int,int):FALSE(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):12:n == 1 |==> false
+4:STD:<RETURN>:<NO-OP>:g0201_0300.s0263_ugly_number.Solution@isUgly(int):13:return true; |==> <NO-OP>
+5:ROR:<=(int,int):<(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):14:n <= 0 |==> n < 0
+6:ROR:<=(int,int):==(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):14:n <= 0 |==> n == 0
+7:ROR:<=(int,int):TRUE(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):14:n <= 0 |==> true
+8:STD:<RETURN>:<NO-OP>:g0201_0300.s0263_ugly_number.Solution@isUgly(int):15:return false; |==> <NO-OP>
+9:ROR:>(int,int):!=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 |==> n != 1
+10:ROR:>(int,int):>=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 |==> n >= 1
+11:ROR:>(int,int):FALSE(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 |==> false
+12:AOR:%(int,int):*(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor |==> n * factor
+13:AOR:%(int,int):+(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor |==> n + factor
+14:AOR:%(int,int):-(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor |==> n - factor
+15:AOR:%(int,int):/(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor |==> n / factor
+16:ROR:==(int,int):<=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor == 0 |==> n % factor <= 0
+17:ROR:==(int,int):>=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor == 0 |==> n % factor >= 0
+18:ROR:==(int,int):FALSE(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n % factor == 0 |==> false
+19:COR:&&(boolean,boolean):==(boolean,boolean):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 && n % factor == 0 |==> n > 1 == (n % factor == 0)
+20:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 && n % factor == 0 |==> false
+21:COR:&&(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 && n % factor == 0 |==> n > 1
+22:COR:&&(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0263_ugly_number.Solution@isUgly(int):19:n > 1 && n % factor == 0 |==> n % factor == 0
+23:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0263_ugly_number.Solution@isUgly(int):20:n /= factor; |==> <NO-OP>
+24:ROR:==(int,int):<=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):23:n == 1 |==> n <= 1
+25:ROR:==(int,int):>=(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):23:n == 1 |==> n >= 1
+26:ROR:==(int,int):FALSE(int,int):g0201_0300.s0263_ugly_number.Solution@isUgly(int):23:n == 1 |==> false

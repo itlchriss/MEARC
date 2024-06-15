@@ -1,0 +1,7 @@
+./gpt35/s0152_maximum_product_subarray/mutants/11/Solution.java:9: error: illegal start of expression
+//@ ensures (\forall int i; 0 <= i && i < arr.length; (\forall int j; i <= j && j < arr.length; \result >= arr[i]*arr[i+1]*...*arr[j]));
+                                                                                                                           ^
+./gpt35/s0152_maximum_product_subarray/mutants/11/Solution.java:11: error: illegal start of expression
+//@ ensures (\exists int i; 0 <= i && i < arr.length; (\exists int j; i <= j && j < arr.length; \result == arr[i]*arr[i+1]*...*arr[j]));
+                                                                                                                           ^
+2 errors

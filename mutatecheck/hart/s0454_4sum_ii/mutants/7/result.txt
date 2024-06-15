@@ -1,0 +1,7 @@
+./hart/s0454_4sum_ii/mutants/7/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0454_4sum_ii/mutants/7/Solution.java:14:) in method fourSumCount
+        return count;
+        ^
+./hart/s0454_4sum_ii/mutants/7/Solution.java:14: verify: Associated declaration: ./hart/s0454_4sum_ii/mutants/7/Solution.java:30:
+//@ ensures((\result <= 2147483647) && (\result >= -2147483648));
+    ^
+2 verification failures

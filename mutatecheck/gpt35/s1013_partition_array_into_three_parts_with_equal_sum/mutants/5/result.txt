@@ -1,0 +1,20 @@
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10: warning: NOT IMPLEMENTED: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \sum
+//@ ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length;  (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k])  && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);
+                                                                        ^
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10: warning: NOT IMPLEMENTED: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \sum
+//@ ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length;  (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k])  && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);
+                                                                                                                  ^
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10: warning: NOT IMPLEMENTED: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \sum
+//@ ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length;  (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k])  && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);
+                                                                                                                                                                     ^
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10: warning: NOT IMPLEMENTED: Not yet supported feature in converting BasicPrograms to SMTLIB: JML Quantified expression using \sum
+//@ ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length;  (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k])  && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);
+                                                                                                                                                                                                                       ^
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:29: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10:) in method canThreePartsEqualSum
+                return true;
+                ^
+./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:10: verify: Associated declaration: ./gpt35/s1013_partition_array_into_three_parts_with_equal_sum/mutants/5/Solution.java:29:
+//@ ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length;  (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k])  && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);
+    ^
+4 warnings
+2 verification failures

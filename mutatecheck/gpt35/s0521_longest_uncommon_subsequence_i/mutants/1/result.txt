@@ -1,0 +1,164 @@
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:16: error: cannot find symbol
+//@ ensures \result == (\forall int i; 0 <= i && i < indices.length; s.charAt(indices[i]) == target.charAt(i));
+                                                     ^
+  symbol:   variable indices
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:16: error: cannot find symbol
+//@ ensures \result == (\forall int i; 0 <= i && i < indices.length; s.charAt(indices[i]) == target.charAt(i));
+                                                                              ^
+  symbol:   variable indices
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:16: error: cannot find symbol
+//@ ensures \result == (\forall int i; 0 <= i && i < indices.length; s.charAt(indices[i]) == target.charAt(i));
+                                                                     ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:16: error: cannot find symbol
+//@ ensures \result == (\forall int i; 0 <= i && i < indices.length; s.charAt(indices[i]) == target.charAt(i));
+                                                                                             ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:17: error: cannot find symbol
+//@ requires s != null && target != null;
+             ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:17: error: cannot find symbol
+//@ requires s != null && target != null;
+                          ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:18: error: cannot find symbol
+//@ requires s != null && a != null && b != null;
+             ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:19: error: cannot find symbol
+//@ requires indices.length == s.length();
+             ^
+  symbol:   variable indices
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:19: error: cannot find symbol
+//@ requires indices.length == s.length();
+                               ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:20: error: cannot find symbol
+//@ requires target.length() >= 1 && target.length() <= 100;
+             ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:20: error: cannot find symbol
+//@ requires target.length() >= 1 && target.length() <= 100;
+                                     ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:21: error: cannot find symbol
+//@ requires s.length() > 0;
+             ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:22: error: cannot find symbol
+//@ requires arr != null;
+             ^
+  symbol:   variable arr
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:25: error: cannot find symbol
+//@ requires s != null && target != null && indices != null;
+             ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:25: error: cannot find symbol
+//@ requires s != null && target != null && indices != null;
+                          ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:25: error: cannot find symbol
+//@ requires s != null && target != null && indices != null;
+                                            ^
+  symbol:   variable indices
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:29: error: cannot find symbol
+//@ ensures \result == -1 || (\exists String s; s.length() > \result; isUncommonSubsequence(s, a, b));
+                                                                      ^
+  symbol:   method isUncommonSubsequence(String,String,String)
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:30: error: cannot find symbol
+//@ requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+                                           ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:30: error: cannot find symbol
+//@ requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+                                                                             ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:34: error: cannot find symbol
+//@ requires (\forall int i; 0 <= i && i < target.length(); Character.isLowerCase(target.charAt(i)));
+                                           ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:34: error: cannot find symbol
+//@ requires (\forall int i; 0 <= i && i < target.length(); Character.isLowerCase(target.charAt(i)));
+                                                                                  ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:36: error: cannot find symbol
+//@ ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+                                                                 ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:36: error: cannot find symbol
+//@ ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+                                                                               ^
+  symbol:   method isIncreasing(int[])
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:36: error: cannot find symbol
+//@ ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+                                                                                                                               ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:36: error: cannot find symbol
+//@ ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+                                                                                                                                  ^
+  symbol:   variable target
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:36: error: incomparable types: int and boolean
+//@ ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+                    ^
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:37: error: cannot find symbol
+//@ ensures \result == (\forall int i, j; 0 <= i && i < j && j < arr.length; arr[i] < arr[j]);
+                                                                 ^
+  symbol:   variable arr
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:37: error: cannot find symbol
+//@ ensures \result == (\forall int i, j; 0 <= i && i < j && j < arr.length; arr[i] < arr[j]);
+                                                                             ^
+  symbol:   variable arr
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:37: error: cannot find symbol
+//@ ensures \result == (\forall int i, j; 0 <= i && i < j && j < arr.length; arr[i] < arr[j]);
+                                                                                      ^
+  symbol:   variable arr
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:38: error: cannot find symbol
+//@ ensures \result == (isSubsequence(s, a) && !isSubsequence(s, b)) || (isSubsequence(s, b) && !isSubsequence(s, a));
+                                      ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:38: error: cannot find symbol
+//@ ensures \result == (isSubsequence(s, a) && !isSubsequence(s, b)) || (isSubsequence(s, b) && !isSubsequence(s, a));
+                                                              ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:38: error: cannot find symbol
+//@ ensures \result == (isSubsequence(s, a) && !isSubsequence(s, b)) || (isSubsequence(s, b) && !isSubsequence(s, a));
+                                                                                       ^
+  symbol:   variable s
+  location: class Solution
+./gpt35/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:38: error: cannot find symbol
+//@ ensures \result == (isSubsequence(s, a) && !isSubsequence(s, b)) || (isSubsequence(s, b) && !isSubsequence(s, a));
+                                                                                                               ^
+  symbol:   variable s
+  location: class Solution
+33 errors

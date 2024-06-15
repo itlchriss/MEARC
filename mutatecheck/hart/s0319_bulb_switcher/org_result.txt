@@ -1,0 +1,7 @@
+./hart/s0319_bulb_switcher/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0319_bulb_switcher/Solution.java:11:) in method bulbSwitch
+        return (int) Math.sqrt(n);
+        ^
+./hart/s0319_bulb_switcher/Solution.java:11: verify: Associated declaration: ./hart/s0319_bulb_switcher/Solution.java:18:
+//@ ensures((n == 3) ==> (\result == 1));
+    ^
+2 verification failures

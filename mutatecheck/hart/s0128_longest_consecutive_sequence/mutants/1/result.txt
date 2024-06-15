@@ -1,14 +1,13 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:10:) in method longestConsecutive
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14:) in method longestConsecutive
             return 0;
             ^
-./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:10: verify: Associated declaration: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14:
-//@ ensures(nums.length <= 100000);
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:14: verify: Associated declaration: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:18:
+//@ ensures((Arrays.equals(nums, new int[] {100 , 4 , 200 , 1 , 3 , 2})) ==> (\result == 4));
     ^
-2 warnings
-2 verification failures
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:15:) in method longestConsecutive
+            return 0;
+            ^
+./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:15: verify: Associated declaration: ./hart/s0128_longest_consecutive_sequence/mutants/1/Solution.java:18:
+//@ ensures((Arrays.equals(nums, new int[] {0 , 3 , 7 , 2 , 5 , 8 , 4 , 6 , 0 , 1})) ==> (\result == 9));
+    ^
+4 verification failures

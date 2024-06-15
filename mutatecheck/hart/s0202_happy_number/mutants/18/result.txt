@@ -1,0 +1,7 @@
+./hart/s0202_happy_number/mutants/18/Solution.java:36: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0202_happy_number/mutants/18/Solution.java:14:) in method isHappy
+        return happy;
+        ^
+./hart/s0202_happy_number/mutants/18/Solution.java:14: verify: Associated declaration: ./hart/s0202_happy_number/mutants/18/Solution.java:36:
+//@ ensures((n == 19) ==> (\result == true));
+    ^
+2 verification failures

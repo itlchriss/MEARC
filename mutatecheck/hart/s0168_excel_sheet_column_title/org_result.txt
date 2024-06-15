@@ -1,0 +1,25 @@
+./hart/s0168_excel_sheet_column_title/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0168_excel_sheet_column_title/Solution.java:12:) in method convertToTitle
+        return sb.reverse().toString();
+        ^
+./hart/s0168_excel_sheet_column_title/Solution.java:12: verify: Associated declaration: ./hart/s0168_excel_sheet_column_title/Solution.java:28:
+//@ ensures((n == 701) ==> (\result.equals("ZY")));
+    ^
+./hart/s0168_excel_sheet_column_title/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0168_excel_sheet_column_title/Solution.java:14:) in method convertToTitle
+        return sb.reverse().toString();
+        ^
+./hart/s0168_excel_sheet_column_title/Solution.java:14: verify: Associated declaration: ./hart/s0168_excel_sheet_column_title/Solution.java:28:
+//@ ensures((n == 2147483647) ==> (\result.equals("FXSHRXW")));
+    ^
+./hart/s0168_excel_sheet_column_title/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0168_excel_sheet_column_title/Solution.java:11:) in method convertToTitle
+        return sb.reverse().toString();
+        ^
+./hart/s0168_excel_sheet_column_title/Solution.java:11: verify: Associated declaration: ./hart/s0168_excel_sheet_column_title/Solution.java:28:
+//@ ensures((n == 1) ==> (\result.equals("A")));
+    ^
+./hart/s0168_excel_sheet_column_title/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0168_excel_sheet_column_title/Solution.java:13:) in method convertToTitle
+        return sb.reverse().toString();
+        ^
+./hart/s0168_excel_sheet_column_title/Solution.java:13: verify: Associated declaration: ./hart/s0168_excel_sheet_column_title/Solution.java:28:
+//@ ensures((n == 28) ==> (\result.equals("AB")));
+    ^
+8 verification failures

@@ -1,0 +1,23 @@
+1:STD:<ASSIGN>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):14:sum += j; |==> <NO-OP>
+2:AOR:%(int,int):*(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 |==> sum * 3
+3:AOR:%(int,int):+(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 |==> sum + 3
+4:AOR:%(int,int):-(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 |==> sum - 3
+5:AOR:%(int,int):/(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 |==> sum / 3
+6:ROR:!=(int,int):<(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 != 0 |==> sum % 3 < 0
+7:ROR:!=(int,int):>(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 != 0 |==> sum % 3 > 0
+8:ROR:!=(int,int):TRUE(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):17:sum % 3 != 0 |==> true
+9:STD:<RETURN>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):18:return false; |==> <NO-OP>
+10:AOR:/(int,int):%(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):20:sum / 3 |==> sum % 3
+11:AOR:/(int,int):*(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):20:sum / 3 |==> sum * 3
+12:AOR:/(int,int):+(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):20:sum / 3 |==> sum + 3
+13:AOR:/(int,int):-(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):20:sum / 3 |==> sum - 3
+14:ROR:==(int,int):<=(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):28:count == 2 |==> count <= 2
+15:ROR:==(int,int):>=(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):28:count == 2 |==> count >= 2
+16:ROR:==(int,int):FALSE(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):28:count == 2 |==> false
+17:STD:<RETURN>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):29:return true; |==> <NO-OP>
+18:STD:<ASSIGN>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):32:temp += j; |==> <NO-OP>
+19:ROR:==(int,int):<=(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):34:temp == eq |==> temp <= eq
+20:ROR:==(int,int):>=(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):34:temp == eq |==> temp >= eq
+21:ROR:==(int,int):FALSE(int,int):g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):34:temp == eq |==> false
+22:STD:<INC>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):35:count++; |==> <NO-OP>
+23:STD:<ASSIGN>:<NO-OP>:g1001_1100.s1013_partition_array_into_three_parts_with_equal_sum.Solution@canThreePartsEqualSum(int[]):37:temp = 0; |==> <NO-OP>

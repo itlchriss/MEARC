@@ -1,0 +1,4 @@
+./gpt35/s0496_next_greater_element_i/mutants/25/Solution.java:12: error: ')' expected
+//@ ensures (\forall int i; 0 <= i && i < nums1.length; (\exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j] && (\forall int k; j < k && k < nums2.length; nums2[j] < nums2[k]) ? \result[i] == nums2[k] : \result[i] == -1);
+                                                                                                                                                                                                                                        ^
+1 error

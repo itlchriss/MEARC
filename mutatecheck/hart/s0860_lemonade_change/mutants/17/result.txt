@@ -1,0 +1,13 @@
+./hart/s0860_lemonade_change/mutants/17/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0860_lemonade_change/mutants/17/Solution.java:13:) in method lemonadeChange
+                    return false;
+                    ^
+./hart/s0860_lemonade_change/mutants/17/Solution.java:13: verify: Associated declaration: ./hart/s0860_lemonade_change/mutants/17/Solution.java:33:
+//@ ensures((Arrays.equals(bills, new int[] {5 , 5 , 5 , 10 , 20})) ==> (\result == true));
+    ^
+./hart/s0860_lemonade_change/mutants/17/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0860_lemonade_change/mutants/17/Solution.java:12:) in method lemonadeChange
+        return true;
+        ^
+./hart/s0860_lemonade_change/mutants/17/Solution.java:12: verify: Associated declaration: ./hart/s0860_lemonade_change/mutants/17/Solution.java:37:
+//@ ensures((Arrays.equals(bills, new int[] {5 , 5 , 10 , 10 , 20})) ==> (\result == false));
+    ^
+4 verification failures

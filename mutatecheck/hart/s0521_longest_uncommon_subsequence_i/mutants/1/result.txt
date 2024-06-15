@@ -1,0 +1,13 @@
+./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:22:) in method findLUSlength
+            return -1;
+            ^
+./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:22: verify: Associated declaration: ./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:27:
+//@ ensures(((a.equals("aba")) && (b.equals("cdc"))) ==> (\result == 3));
+    ^
+./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:24:) in method findLUSlength
+            return -1;
+            ^
+./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:24: verify: Associated declaration: ./hart/s0521_longest_uncommon_subsequence_i/mutants/1/Solution.java:27:
+//@ ensures(((a.equals("aaa")) && (b.equals("bbb"))) ==> (\result == 3));
+    ^
+4 verification failures

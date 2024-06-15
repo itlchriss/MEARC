@@ -3,8 +3,18 @@ package g0001_0100.s0044_wildcard_matching;
 // #Hard #Top_Interview_Questions #String #Dynamic_Programming #Greedy #Recursion
 // #Udemy_Dynamic_Programming #2023_08_11_Time_2_ms_(99.87%)_Space_43.2_MB_(99.49%)
 
-public class Solution {
+import java.util.Arrays;
 
+import java.util.Collections;
+
+public class Solution {
+//@ requires((inputString.length() <= 2000) && (pattern.length() <= 2000));
+//@ requires((\forall int i; 0 <= i < inputString.length(); (Character.isLowerCase(inputString.charAt(i))) ||  ('?' == (inputString.charAt(i))) ||  ('*' == (inputString.charAt(i)))) && (\forall int i; 0 <= i < pattern.length(); (Character.isLowerCase(pattern.charAt(i))) ||  ('?' == (pattern.charAt(i))) ||  ('*' == (pattern.charAt(i)))));
+//@ ensures(((inputString.equals("aa")) && (pattern.equals("*"))) ==> (\result == true));
+//@ ensures(((inputString.equals("aa")) && (pattern.equals("a"))) ==> (\result == false));
+//@ ensures(((inputString.equals("acdcb")) && (pattern.equals("a*c?b"))) ==> (\result == false));
+//@ ensures(((inputString.equals("adceb")) && (pattern.equals("*a*b"))) ==> (\result == true));
+//@ ensures(((inputString.equals("cb")) && (pattern.equals("?a"))) ==> (\result == false));
     public boolean isMatch(String inputString, String pattern) {
         int i = 0;
         int j = 0;

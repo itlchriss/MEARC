@@ -1,0 +1,7 @@
+./hart/s0171_excel_sheet_column_number/mutants/10/Solution.java:21: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0171_excel_sheet_column_number/mutants/10/Solution.java:11:) in method titleToNumber
+        return num;
+        ^
+./hart/s0171_excel_sheet_column_number/mutants/10/Solution.java:11: verify: Associated declaration: ./hart/s0171_excel_sheet_column_number/mutants/10/Solution.java:21:
+//@ ensures((s.equals("A")) ==> (\result == 1));
+    ^
+2 verification failures

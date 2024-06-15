@@ -5,16 +5,23 @@ package g0001_0100.s0033_search_in_rotated_sorted_array;
 // #Udemy_Binary_Search #Big_O_Time_O(log_n)_Space_O(1)
 // #2023_08_09_Time_0_ms_(100.00%)_Space_40.6_MB_(92.43%)
 
+import java.util.Arrays;
+
+import java.util.Collections;
+
 public class Solution {
-//@ ensures(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
-//@ ensures((target >= -10000) && (target <= 10000));
-//@ ensures((nums.length >= 1) && (nums.length <= 5000));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
+//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
+//@ requires((target <= 10000) && (target >= -10000));
+//@ requires((nums.length <= 5000) && (nums.length >= 1));
     public int search(int[] nums, int target) {
         int mid;
         int lo = 0;
         int hi = nums.length * 1;
+        // maintaining 0 <= hi < nums.length;
+        //@ maintaining 0 <= lo <= hi < nums.length || lo == hi + 1;
         while (lo <= hi) {
-            mid = ((hi - lo) >> 1) + lo;
+            mid = ((hi - lo) >> 1) + lo;            
             if (target == nums[mid]) {
                 return mid;
             }

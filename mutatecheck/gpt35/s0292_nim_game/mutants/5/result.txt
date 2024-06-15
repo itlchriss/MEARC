@@ -1,0 +1,25 @@
+./gpt35/s0292_nim_game/mutants/5/Solution.java:6: verify: The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495:) in method canWinNim
+//@ requires n >= 1 && n <= Math.pow(2, 31) - 1;
+                                    ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:495: verify: Associated declaration: ./gpt35/s0292_nim_game/mutants/5/Solution.java:6:
+    public static /*@ pure @*/ double pow(double a, double b);
+                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:434: verify: Precondition conjunct is false: b == 0.0
+      @   requires b == 0.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:437: verify: Precondition conjunct is false: b == 1.0
+      @   requires b == 1.0;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:440: verify: Precondition conjunct is false: Double.isNaN(b)
+      @   requires Double.isNaN(b);
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:443: verify: Precondition conjunct is false: Double.isNaN(a)
+      @   requires Double.isNaN(a) && b != 0.0;
+                               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:447: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.POSITIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.NEGATIVE_INFINITY);
+                ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:451: verify: Precondition conjunct is false: (1.0 < java.lang.Math.abs(a) && b == Double.NEGATIVE_INFINITY) || (java.lang.Math.abs(a) < 1.0 && b == Double.POSITIVE_INFINITY)
+      @         || (abs(a) < 1.0 && b == Double.POSITIVE_INFINITY);
+                ^
+8 verification failures

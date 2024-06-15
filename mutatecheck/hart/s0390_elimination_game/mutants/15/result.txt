@@ -1,0 +1,7 @@
+./hart/s0390_elimination_game/mutants/15/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0390_elimination_game/mutants/15/Solution.java:11:) in method lastRemaining
+        return n == 1 ? 1 : 2 * ((n / 2 - lastRemaining(n / 2)) % 1);
+        ^
+./hart/s0390_elimination_game/mutants/15/Solution.java:11: verify: Associated declaration: ./hart/s0390_elimination_game/mutants/15/Solution.java:14:
+//@ ensures((n == 9) ==> (\result == 6));
+    ^
+2 verification failures

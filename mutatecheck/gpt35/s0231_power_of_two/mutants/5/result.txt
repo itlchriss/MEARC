@@ -1,0 +1,7 @@
+./gpt35/s0231_power_of_two/mutants/5/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0231_power_of_two/mutants/5/Solution.java:9:) in method isPowerOfTwo
+                return false;
+                ^
+./gpt35/s0231_power_of_two/mutants/5/Solution.java:9: verify: Associated declaration: ./gpt35/s0231_power_of_two/mutants/5/Solution.java:19:
+//@ ensures \result == (n > 0 && (n & (n - 1)) == 0);
+    ^
+2 verification failures

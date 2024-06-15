@@ -1,0 +1,19 @@
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:10:) in method findContentChildren
+        return result;
+        ^
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:10: verify: Associated declaration: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33:
+//@ ensures (\forall int i; 0 <= i && i < g.length; g[i] >= 1 && g[i] <= Integer.MAX_VALUE ==> (\exists int j; 0 <= j && j < s.length; s[j] >= g[i]));
+    ^
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:13:) in method findContentChildren
+        return result;
+        ^
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:13: verify: Associated declaration: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33:
+//@ ensures \result >= 0;
+    ^
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:17:) in method findContentChildren
+        return result;
+        ^
+./gpt35/s0455_assign_cookies/mutants/17/Solution.java:17: verify: Associated declaration: ./gpt35/s0455_assign_cookies/mutants/17/Solution.java:33:
+//@ ensures \result <= g.length;
+    ^
+6 verification failures

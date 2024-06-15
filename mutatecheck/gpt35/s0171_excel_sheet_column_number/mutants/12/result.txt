@@ -1,0 +1,31 @@
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:7: error: cannot find symbol
+//@ ensures (\forall int i; 0 <= i && i < columnTitle.length(); \result == (\result * 26) + (columnTitle.charAt(i) - 'A' + 1));
+                                          ^
+  symbol:   variable columnTitle
+  location: class Solution
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:7: error: cannot find symbol
+//@ ensures (\forall int i; 0 <= i && i < columnTitle.length(); \result == (\result * 26) + (columnTitle.charAt(i) - 'A' + 1));
+                                                                                             ^
+  symbol:   variable columnTitle
+  location: class Solution
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:8: error: cannot find symbol
+//@ requires columnTitle.matches("[A-Z]+");
+             ^
+  symbol:   variable columnTitle
+  location: class Solution
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:9: error: cannot find symbol
+//@ requires columnTitle != null && columnTitle.length() >= 1 && columnTitle.length() <= 7;
+             ^
+  symbol:   variable columnTitle
+  location: class Solution
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:9: error: cannot find symbol
+//@ requires columnTitle != null && columnTitle.length() >= 1 && columnTitle.length() <= 7;
+                                    ^
+  symbol:   variable columnTitle
+  location: class Solution
+./gpt35/s0171_excel_sheet_column_number/mutants/12/Solution.java:9: error: cannot find symbol
+//@ requires columnTitle != null && columnTitle.length() >= 1 && columnTitle.length() <= 7;
+                                                                 ^
+  symbol:   variable columnTitle
+  location: class Solution
+6 errors

@@ -1,0 +1,28 @@
+1:ROR:<(int,int):!=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):21:i < nums2.length |==> i != nums2.length
+2:ROR:<(int,int):<=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):21:i < nums2.length |==> i <= nums2.length
+3:ROR:<(int,int):FALSE(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):21:i < nums2.length |==> false
+4:STD:<CALL>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):22:indexMap.put(nums2[i], i); |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):25:i < nums1.length |==> i != nums1.length
+6:ROR:<(int,int):<=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):25:i < nums1.length |==> i <= nums1.length
+7:ROR:<(int,int):FALSE(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):25:i < nums1.length |==> false
+8:AOR:-(int,int):%(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:nums2.length - 1 |==> nums2.length % 1
+9:AOR:-(int,int):*(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:nums2.length - 1 |==> nums2.length * 1
+10:AOR:-(int,int):+(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:nums2.length - 1 |==> nums2.length + 1
+11:AOR:-(int,int):/(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:nums2.length - 1 |==> nums2.length / 1
+12:ROR:==(int,int):<=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:index == nums2.length - 1 |==> index <= nums2.length - 1
+13:ROR:==(int,int):>=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:index == nums2.length - 1 |==> index >= nums2.length - 1
+14:ROR:==(int,int):FALSE(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):28:index == nums2.length - 1 |==> false
+15:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):29:nums1[i] = -1; |==> <NO-OP>
+16:ROR:<(int,int):!=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):32:index < nums2.length |==> index != nums2.length
+17:ROR:<(int,int):<=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):32:index < nums2.length |==> index <= nums2.length
+18:ROR:<(int,int):FALSE(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):32:index < nums2.length |==> false
+19:ROR:>(int,int):!=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):33:nums2[index] > num |==> nums2[index] != num
+20:ROR:>(int,int):>=(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):33:nums2[index] > num |==> nums2[index] >= num
+21:ROR:>(int,int):FALSE(int,int):g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):33:nums2[index] > num |==> false
+22:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):34:nums1[i] = nums2[index]; |==> <NO-OP>
+23:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):35:found = true; |==> <NO-OP>
+24:STD:<BREAK>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):36:break; |==> <NO-OP>
+25:STD:<INC>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):38:index++; |==> <NO-OP>
+26:COR:<IDENTIFIER(boolean)>:TRUE:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):40:found |==> false
+27:COR:<IDENTIFIER(boolean)>:FALSE:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):40:found |==> true
+28:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0496_next_greater_element_i.Solution@nextGreaterElement(int[],int[]):41:nums1[i] = -1; |==> <NO-OP>

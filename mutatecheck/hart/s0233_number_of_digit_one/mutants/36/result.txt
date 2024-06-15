@@ -1,0 +1,19 @@
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:15:) in method countDigitOne
+        return ans;
+        ^
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:15: verify: Associated declaration: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33:
+//@ ensures((n == 0) ==> (\result == 0));
+    ^
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:13:) in method countDigitOne
+        return ans;
+        ^
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:13: verify: Associated declaration: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33:
+//@ ensures((\result <= 2147483647) && (\result >= -2147483648));
+    ^
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:14:) in method countDigitOne
+        return ans;
+        ^
+./hart/s0233_number_of_digit_one/mutants/36/Solution.java:14: verify: Associated declaration: ./hart/s0233_number_of_digit_one/mutants/36/Solution.java:33:
+//@ ensures((n == 13) ==> (\result == 6));
+    ^
+6 verification failures

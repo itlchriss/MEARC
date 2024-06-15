@@ -1,0 +1,7 @@
+./gpt35/s0520_detect_capital/mutants/2/Solution.java:12: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0520_detect_capital/mutants/2/Solution.java:9:) in method detectCapitalUse
+            return false;
+            ^
+./gpt35/s0520_detect_capital/mutants/2/Solution.java:9: verify: Associated declaration: ./gpt35/s0520_detect_capital/mutants/2/Solution.java:12:
+//@ ensures \result == true <==> (word.toUpperCase().equals(word) || word.toLowerCase().equals(word) || (Character.isUpperCase(word.charAt(0)) && word.substring(1).toLowerCase().equals(word.substring(1))));
+    ^
+2 verification failures

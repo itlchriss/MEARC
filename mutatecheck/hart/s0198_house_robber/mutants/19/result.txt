@@ -1,0 +1,13 @@
+./hart/s0198_house_robber/mutants/19/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0198_house_robber/mutants/19/Solution.java:16:) in method rob
+        return profit[nums.length - 1];
+        ^
+./hart/s0198_house_robber/mutants/19/Solution.java:16: verify: Associated declaration: ./hart/s0198_house_robber/mutants/19/Solution.java:35:
+//@ ensures((Arrays.equals(nums, new int[] {2 , 7 , 9 , 3 , 1})) ==> (\result == 12));
+    ^
+./hart/s0198_house_robber/mutants/19/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0198_house_robber/mutants/19/Solution.java:15:) in method rob
+        return profit[nums.length - 1];
+        ^
+./hart/s0198_house_robber/mutants/19/Solution.java:15: verify: Associated declaration: ./hart/s0198_house_robber/mutants/19/Solution.java:35:
+//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 1})) ==> (\result == 4));
+    ^
+4 verification failures

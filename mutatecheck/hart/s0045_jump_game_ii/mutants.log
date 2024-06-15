@@ -1,27 +1,27 @@
-1:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:nums.length - 1 |==> nums.length % 1
-2:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:nums.length - 1 |==> nums.length * 1
-3:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:nums.length - 1 |==> nums.length + 1
-4:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:nums.length - 1 |==> nums.length / 1
-5:ROR:<(int,int):!=(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:i < nums.length - 1 |==> i != nums.length - 1
-6:ROR:<(int,int):<=(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:i < nums.length - 1 |==> i <= nums.length - 1
-7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):16:i < nums.length - 1 |==> false
-8:STD:<DEC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):17:length--; |==> <NO-OP>
-9:STD:<DEC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):18:maxLength--; |==> <NO-OP>
-10:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):19:maxLength = Math.max(maxLength, nums[i]); |==> <NO-OP>
-11:ROR:<=(int,int):<(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):20:length <= 0 |==> length < 0
-12:ROR:<=(int,int):==(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):20:length <= 0 |==> length == 0
-13:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):20:length <= 0 |==> true
-14:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):21:length = maxLength; |==> <NO-OP>
-15:STD:<INC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):22:minJump++; |==> <NO-OP>
-16:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i |==> nums.length % i
-17:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i |==> nums.length * i
-18:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i |==> nums.length + i
-19:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i |==> nums.length / i
-20:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i - 1 |==> (nums.length - i) % 1
-21:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i - 1 |==> (nums.length - i) * 1
-22:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i - 1 |==> nums.length - i + 1
-23:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:nums.length - i - 1 |==> (nums.length - i) / 1
-24:ROR:>=(int,int):==(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:length >= nums.length - i - 1 |==> length == nums.length - i - 1
-25:ROR:>=(int,int):>(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:length >= nums.length - i - 1 |==> length > nums.length - i - 1
-26:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):24:length >= nums.length - i - 1 |==> true
-27:STD:<RETURN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:return minJump; |==> <NO-OP>
+1:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:nums.length - 1 |==> nums.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:nums.length - 1 |==> nums.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:nums.length - 1 |==> nums.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:nums.length - 1 |==> nums.length / 1
+5:ROR:<(int,int):!=(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:i < nums.length - 1 |==> i != nums.length - 1
+6:ROR:<(int,int):<=(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:i < nums.length - 1 |==> i <= nums.length - 1
+7:ROR:<(int,int):FALSE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):25:i < nums.length - 1 |==> false
+8:STD:<DEC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):26:length--; |==> <NO-OP>
+9:STD:<DEC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):27:maxLength--; |==> <NO-OP>
+10:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):28:maxLength = Math.max(maxLength, nums[i]); |==> <NO-OP>
+11:ROR:<=(int,int):<(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):29:length <= 0 |==> length < 0
+12:ROR:<=(int,int):==(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):29:length <= 0 |==> length == 0
+13:ROR:<=(int,int):TRUE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):29:length <= 0 |==> true
+14:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):30:length = maxLength; |==> <NO-OP>
+15:STD:<INC>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):31:minJump++; |==> <NO-OP>
+16:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i |==> nums.length % i
+17:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i |==> nums.length * i
+18:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i |==> nums.length + i
+19:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i |==> nums.length / i
+20:AOR:-(int,int):%(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i - 1 |==> (nums.length - i) % 1
+21:AOR:-(int,int):*(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i - 1 |==> (nums.length - i) * 1
+22:AOR:-(int,int):+(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i - 1 |==> nums.length - i + 1
+23:AOR:-(int,int):/(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:nums.length - i - 1 |==> (nums.length - i) / 1
+24:ROR:>=(int,int):==(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:length >= nums.length - i - 1 |==> length == nums.length - i - 1
+25:ROR:>=(int,int):>(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:length >= nums.length - i - 1 |==> length > nums.length - i - 1
+26:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):33:length >= nums.length - i - 1 |==> true
+27:STD:<RETURN>:<NO-OP>:g0001_0100.s0045_jump_game_ii.Solution@jump(int[]):34:return minJump; |==> <NO-OP>

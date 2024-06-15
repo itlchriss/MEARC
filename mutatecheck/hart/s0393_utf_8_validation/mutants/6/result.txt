@@ -1,0 +1,13 @@
+./hart/s0393_utf_8_validation/mutants/6/Solution.java:34: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0393_utf_8_validation/mutants/6/Solution.java:11:) in method validUtf8
+        return count == 0;
+        ^
+./hart/s0393_utf_8_validation/mutants/6/Solution.java:11: verify: Associated declaration: ./hart/s0393_utf_8_validation/mutants/6/Solution.java:34:
+//@ ensures((Arrays.equals(data, new int[] {235 , 140 , 4})) ==> (\result == false));
+    ^
+./hart/s0393_utf_8_validation/mutants/6/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0393_utf_8_validation/mutants/6/Solution.java:12:) in method validUtf8
+                    return false;
+                    ^
+./hart/s0393_utf_8_validation/mutants/6/Solution.java:12: verify: Associated declaration: ./hart/s0393_utf_8_validation/mutants/6/Solution.java:24:
+//@ ensures((Arrays.equals(data, new int[] {197 , 130 , 1})) ==> (\result == true));
+    ^
+4 verification failures

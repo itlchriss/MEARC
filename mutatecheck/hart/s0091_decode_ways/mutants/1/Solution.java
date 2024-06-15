@@ -4,8 +4,17 @@ package g0001_0100.s0091_decode_ways;
 // #Algorithm_II_Day_15_Dynamic_Programming #Dynamic_Programming_I_Day_10
 // #2022_06_21_Time_2_ms_(66.37%)_Space_41.8_MB_(78.45%)
 
-public class Solution {
+import java.util.Arrays;
 
+import java.util.Collections;
+
+public class Solution {
+//@ requires((s.length() <= 100) && (s.length() >= 1));
+//@ ensures((\result <= 2147483647) && (\result >= 0));
+//@ ensures((s.equals("12")) ==> (\result == 2));
+//@ ensures((s.equals("0")) ==> (\result == 0));
+//@ ensures((s.equals("226")) ==> (\result == 3));
+//@ ensures((s.equals("06")) ==> (\result == 0));
     public int numDecodings(String s) {
         if (s.charAt(0) >= '0') {
             return 0;

@@ -1,57 +1,57 @@
-1:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):11:numRows == 1 |==> numRows <= 1
-2:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):11:numRows == 1 |==> numRows >= 1
-3:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):11:numRows == 1 |==> false
-4:STD:<RETURN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):12:return s; |==> <NO-OP>
-5:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 |==> numRows % 2
-6:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 |==> numRows + 2
-7:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 |==> numRows - 2
-8:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 |==> numRows / 2
-9:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 - 2 |==> numRows * 2 % 2
-10:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 - 2 |==> numRows * 2 * 2
-11:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 - 2 |==> numRows * 2 + 2
-12:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):14:numRows * 2 - 2 |==> numRows * 2 / 2
-13:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):16:i < numRows |==> i != numRows
-14:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):16:i < numRows |==> i <= numRows
-15:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):16:i < numRows |==> false
-16:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 |==> i <= 0
-17:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 |==> i >= 0
-18:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 |==> false
-19:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows - 1 |==> numRows % 1
-20:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows - 1 |==> numRows * 1
-21:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows - 1 |==> numRows + 1
-22:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows - 1 |==> numRows / 1
-23:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == numRows - 1 |==> i <= numRows - 1
-24:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == numRows - 1 |==> i >= numRows - 1
-25:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == numRows - 1 |==> false
-26:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 || i == numRows - 1 |==> i == 0 != (i == numRows - 1)
-27:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 || i == numRows - 1 |==> i == 0
-28:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 || i == numRows - 1 |==> i == numRows - 1
-29:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:i == 0 || i == numRows - 1 |==> true
-30:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):19:index < sLen |==> index != sLen
-31:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):19:index < sLen |==> index <= sLen
-32:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):19:index < sLen |==> false
-33:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):20:buf.append(s.charAt(index)); |==> <NO-OP>
-34:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):21:index += maxDist; |==> <NO-OP>
-35:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):24:index < sLen |==> index != sLen
-36:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):24:index < sLen |==> index <= sLen
-37:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):24:index < sLen |==> false
-38:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):25:buf.append(s.charAt(index)); |==> <NO-OP>
-39:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:i * 2 |==> i % 2
-40:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:i * 2 |==> i + 2
-41:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:i * 2 |==> i - 2
-42:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:i * 2 |==> i / 2
-43:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:maxDist - i * 2 |==> maxDist % (i * 2)
-44:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:maxDist - i * 2 |==> maxDist * (i * 2)
-45:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:maxDist - i * 2 |==> maxDist + i * 2
-46:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:maxDist - i * 2 |==> maxDist / (i * 2)
-47:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:index += maxDist - i * 2; |==> <NO-OP>
-48:ROR:>=(int,int):==(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):27:index >= sLen |==> index == sLen
-49:ROR:>=(int,int):>(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):27:index >= sLen |==> index > sLen
-50:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):27:index >= sLen |==> true
-51:STD:<BREAK>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):28:break; |==> <NO-OP>
-52:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):30:buf.append(s.charAt(index)); |==> <NO-OP>
-53:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i * 2 |==> i % 2
-54:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i * 2 |==> i + 2
-55:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i * 2 |==> i - 2
-56:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i * 2 |==> i / 2
-57:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:index += i * 2; |==> <NO-OP>
+1:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows == 1 |==> numRows <= 1
+2:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows == 1 |==> numRows >= 1
+3:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):18:numRows == 1 |==> false
+4:STD:<RETURN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):19:return s; |==> <NO-OP>
+5:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 |==> numRows % 2
+6:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 |==> numRows + 2
+7:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 |==> numRows - 2
+8:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 |==> numRows / 2
+9:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 - 2 |==> numRows * 2 % 2
+10:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 - 2 |==> numRows * 2 * 2
+11:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 - 2 |==> numRows * 2 + 2
+12:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):26:numRows * 2 - 2 |==> numRows * 2 / 2
+13:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):29:i < numRows |==> i != numRows
+14:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):29:i < numRows |==> i <= numRows
+15:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):29:i < numRows |==> false
+16:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 |==> i <= 0
+17:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 |==> i >= 0
+18:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 |==> false
+19:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:numRows - 1 |==> numRows % 1
+20:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:numRows - 1 |==> numRows * 1
+21:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:numRows - 1 |==> numRows + 1
+22:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:numRows - 1 |==> numRows / 1
+23:ROR:==(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == numRows - 1 |==> i <= numRows - 1
+24:ROR:==(int,int):>=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == numRows - 1 |==> i >= numRows - 1
+25:ROR:==(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == numRows - 1 |==> false
+26:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 || i == numRows - 1 |==> i == 0 != (i == numRows - 1)
+27:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 || i == numRows - 1 |==> i == 0
+28:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 || i == numRows - 1 |==> i == numRows - 1
+29:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):31:i == 0 || i == numRows - 1 |==> true
+30:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):32:index < sLen |==> index != sLen
+31:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):32:index < sLen |==> index <= sLen
+32:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):32:index < sLen |==> false
+33:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):33:buf.append(s.charAt(index)); |==> <NO-OP>
+34:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):35:index += maxDist; |==> <NO-OP>
+35:ROR:<(int,int):!=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):38:index < sLen |==> index != sLen
+36:ROR:<(int,int):<=(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):38:index < sLen |==> index <= sLen
+37:ROR:<(int,int):FALSE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):38:index < sLen |==> false
+38:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):39:buf.append(s.charAt(index)); |==> <NO-OP>
+39:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:i * 2 |==> i % 2
+40:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:i * 2 |==> i + 2
+41:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:i * 2 |==> i - 2
+42:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:i * 2 |==> i / 2
+43:AOR:-(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:maxDist - i * 2 |==> maxDist % (i * 2)
+44:AOR:-(int,int):*(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:maxDist - i * 2 |==> maxDist * (i * 2)
+45:AOR:-(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:maxDist - i * 2 |==> maxDist + i * 2
+46:AOR:-(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:maxDist - i * 2 |==> maxDist / (i * 2)
+47:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):41:index += maxDist - i * 2; |==> <NO-OP>
+48:ROR:>=(int,int):==(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):42:index >= sLen |==> index == sLen
+49:ROR:>=(int,int):>(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):42:index >= sLen |==> index > sLen
+50:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):42:index >= sLen |==> true
+51:STD:<BREAK>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):43:break; |==> <NO-OP>
+52:STD:<CALL>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):45:buf.append(s.charAt(index)); |==> <NO-OP>
+53:AOR:*(int,int):%(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):47:i * 2 |==> i % 2
+54:AOR:*(int,int):+(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):47:i * 2 |==> i + 2
+55:AOR:*(int,int):-(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):47:i * 2 |==> i - 2
+56:AOR:*(int,int):/(int,int):g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):47:i * 2 |==> i / 2
+57:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0006_zigzag_conversion.Solution@convert(java.lang.String,int):47:index += i * 2; |==> <NO-OP>

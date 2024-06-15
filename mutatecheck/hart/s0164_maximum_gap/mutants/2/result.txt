@@ -1,0 +1,7 @@
+./hart/s0164_maximum_gap/mutants/2/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0164_maximum_gap/mutants/2/Solution.java:14:) in method maximumGap
+        return ret;
+        ^
+./hart/s0164_maximum_gap/mutants/2/Solution.java:14: verify: Associated declaration: ./hart/s0164_maximum_gap/mutants/2/Solution.java:27:
+//@ ensures((Arrays.equals(nums, new int[] {10})) ==> (\result == 0));
+    ^
+2 verification failures

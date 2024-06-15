@@ -1,0 +1,4 @@
+./gpt35/s0326_power_of_three/mutants/6/Solution.java:9: verify: The prover cannot establish an assertion (UndefinedDivideByZero) in method isPowerOfThree
+//@ ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);
+                                                                    ^
+1 verification failure

@@ -1,0 +1,24 @@
+1:ROR:<(int,int):!=(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):16:n < 0 |==> n != 0
+2:ROR:<(int,int):<=(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):16:n < 0 |==> n <= 0
+3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):16:n < 0 |==> false
+4:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):17:flag = true; |==> <NO-OP>
+5:AOR:-(int,int):%(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):18:n - Integer.MIN_VALUE |==> n % Integer.MIN_VALUE
+6:AOR:-(int,int):*(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):18:n - Integer.MIN_VALUE |==> n * Integer.MIN_VALUE
+7:AOR:-(int,int):+(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):18:n - Integer.MIN_VALUE |==> n + Integer.MIN_VALUE
+8:AOR:-(int,int):/(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):18:n - Integer.MIN_VALUE |==> n / Integer.MIN_VALUE
+9:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):18:n = n - Integer.MIN_VALUE; |==> <NO-OP>
+10:ROR:>(int,int):!=(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):20:n > 0 |==> n != 0
+11:ROR:>(int,int):>=(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):20:n > 0 |==> n >= 0
+12:ROR:>(int,int):FALSE(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):20:n > 0 |==> false
+13:AOR:%(int,int):*(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):21:n % 2 |==> n * 2
+14:AOR:%(int,int):+(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):21:n % 2 |==> n + 2
+15:AOR:%(int,int):-(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):21:n % 2 |==> n - 2
+16:AOR:%(int,int):/(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):21:n % 2 |==> n / 2
+17:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):22:sum += k; |==> <NO-OP>
+18:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):23:n /= 2; |==> <NO-OP>
+19:COR:<IDENTIFIER(boolean)>:TRUE:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:flag |==> false
+20:COR:<IDENTIFIER(boolean)>:FALSE:g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:flag |==> true
+21:AOR:+(int,int):%(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:sum + 1 |==> sum % 1
+22:AOR:+(int,int):*(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:sum + 1 |==> sum * 1
+23:AOR:+(int,int):-(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:sum + 1 |==> sum - 1
+24:AOR:+(int,int):/(int,int):g0101_0200.s0191_number_of_1_bits.Solution@hammingWeight(int):25:sum + 1 |==> sum / 1

@@ -1,0 +1,55 @@
+1:ROR:<(int,int):!=(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):18:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):18:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):18:i < s.length() |==> false
+4:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):20:Character.isDigit(c) |==> false
+5:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):20:Character.isDigit(c) |==> true
+6:AOR:*(int,int):%(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 |==> num % 10
+7:AOR:*(int,int):+(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 |==> num + 10
+8:AOR:*(int,int):-(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 |==> num - 10
+9:AOR:*(int,int):/(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 |==> num / 10
+10:AOR:+(int,int):%(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c |==> num * 10 % c
+11:AOR:+(int,int):*(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c |==> num * 10 * c
+12:AOR:+(int,int):-(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c |==> num * 10 - c
+13:AOR:+(int,int):/(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c |==> num * 10 / c
+14:AOR:-(int,int):%(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c - '0' |==> (num * 10 + c) % '0'
+15:AOR:-(int,int):*(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c - '0' |==> (num * 10 + c) * '0'
+16:AOR:-(int,int):+(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c - '0' |==> num * 10 + c + '0'
+17:AOR:-(int,int):/(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num * 10 + c - '0' |==> (num * 10 + c) / '0'
+18:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):21:num = num * 10 + c - '0'; |==> <NO-OP>
+19:AOR:-(int,int):%(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:s.length() - 1 |==> s.length() % 1
+20:AOR:-(int,int):*(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:s.length() - 1 |==> s.length() * 1
+21:AOR:-(int,int):+(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:s.length() - 1 |==> s.length() + 1
+22:AOR:-(int,int):/(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:s.length() - 1 |==> s.length() / 1
+23:ROR:==(int,int):<=(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 |==> i <= s.length() - 1
+24:ROR:==(int,int):>=(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 |==> i >= s.length() - 1
+25:ROR:==(int,int):FALSE(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 |==> false
+26:ROR:!=(int,int):<(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:c != ' ' |==> c < ' '
+27:ROR:!=(int,int):>(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:c != ' ' |==> c > ' '
+28:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:c != ' ' |==> true
+29:COR:&&(boolean,boolean):==(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:!Character.isDigit(c) && c != ' ' |==> !Character.isDigit(c) == (c != ' ')
+30:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:!Character.isDigit(c) && c != ' ' |==> false
+31:COR:&&(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:!Character.isDigit(c) && c != ' ' |==> !Character.isDigit(c)
+32:COR:&&(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:!Character.isDigit(c) && c != ' ' |==> c != ' '
+33:COR:||(boolean,boolean):!=(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 || !Character.isDigit(c) && c != ' ' |==> i == s.length() - 1 != (!Character.isDigit(c) && c != ' ')
+34:COR:||(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 || !Character.isDigit(c) && c != ' ' |==> i == s.length() - 1
+35:COR:||(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 || !Character.isDigit(c) && c != ' ' |==> !Character.isDigit(c) && c != ' '
+36:COR:||(boolean,boolean):TRUE(boolean,boolean):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):25:i == s.length() - 1 || !Character.isDigit(c) && c != ' ' |==> true
+37:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):28:sum += tempSum; |==> <NO-OP>
+38:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):29:tempSum = num; |==> <NO-OP>
+39:STD:<BREAK>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):30:break; |==> <NO-OP>
+40:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):32:sum += tempSum; |==> <NO-OP>
+41:ORU:---(int):+++(int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):33:-num |==> +num
+42:ORU:---(int):~(int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):33:-num |==> ~num
+43:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):33:tempSum = -num; |==> <NO-OP>
+44:STD:<BREAK>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):34:break; |==> <NO-OP>
+45:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):36:tempSum *= num; |==> <NO-OP>
+46:STD:<BREAK>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):37:break; |==> <NO-OP>
+47:ROR:!=(int,int):<(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):39:num != 0 |==> num < 0
+48:ROR:!=(int,int):>(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):39:num != 0 |==> num > 0
+49:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):39:num != 0 |==> true
+50:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):40:tempSum /= num; |==> <NO-OP>
+51:STD:<BREAK>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):42:break; |==> <NO-OP>
+52:STD:<BREAK>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):44:break; |==> <NO-OP>
+53:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):46:lastSign = c; |==> <NO-OP>
+54:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):47:num = 0; |==> <NO-OP>
+55:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0227_basic_calculator_ii.Solution@calculate(java.lang.String):51:sum += tempSum; |==> <NO-OP>

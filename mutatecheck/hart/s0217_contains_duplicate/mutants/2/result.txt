@@ -1,0 +1,11 @@
+./mutants/2/Solution.java:17: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ ensures((\result == false) ==> (\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1)));
+                                                                                               ^
+./mutants/2/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./mutants/2/Solution.java:17:) in method containsDuplicate
+        return false;
+        ^
+./mutants/2/Solution.java:17: verify: Associated declaration: ./mutants/2/Solution.java:25:
+//@ ensures((\result == false) ==> (\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1)));
+    ^
+1 warning
+2 verification failures

@@ -1,0 +1,22 @@
+1:ROR:<(int,int):!=(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):17:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):17:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):17:i < s.length() |==> false
+4:ROR:<=(int,int):<(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' |==> c[i] < 'Z'
+5:ROR:<=(int,int):==(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' |==> c[i] == 'Z'
+6:ROR:<=(int,int):TRUE(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' |==> true
+7:ROR:>=(int,int):==(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] >= 'A' |==> c[i] == 'A'
+8:ROR:>=(int,int):>(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] >= 'A' |==> c[i] > 'A'
+9:ROR:>=(int,int):TRUE(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] >= 'A' |==> true
+10:COR:&&(boolean,boolean):==(boolean,boolean):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' && c[i] >= 'A' |==> c[i] <= 'Z' == c[i] >= 'A'
+11:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' && c[i] >= 'A' |==> false
+12:COR:&&(boolean,boolean):LHS(boolean,boolean):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' && c[i] >= 'A' |==> c[i] <= 'Z'
+13:COR:&&(boolean,boolean):RHS(boolean,boolean):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):18:c[i] <= 'Z' && c[i] >= 'A' |==> c[i] >= 'A'
+14:AOR:-(int,int):%(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' |==> c[i] % 'A'
+15:AOR:-(int,int):*(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' |==> c[i] * 'A'
+16:AOR:-(int,int):+(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' |==> c[i] + 'A'
+17:AOR:-(int,int):/(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' |==> c[i] / 'A'
+18:AOR:+(int,int):%(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' + 'a' |==> (c[i] - 'A') % 'a'
+19:AOR:+(int,int):*(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' + 'a' |==> (c[i] - 'A') * 'a'
+20:AOR:+(int,int):-(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' + 'a' |==> c[i] - 'A' - 'a'
+21:AOR:+(int,int):/(int,int):g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] - 'A' + 'a' |==> (c[i] - 'A') / 'a'
+22:STD:<ASSIGN>:<NO-OP>:g0701_0800.s0709_to_lower_case.Solution@toLowerCase(java.lang.String):19:c[i] = (char)(c[i] - 'A' + 'a'); |==> <NO-OP>

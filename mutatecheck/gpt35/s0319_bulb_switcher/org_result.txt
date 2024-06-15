@@ -1,0 +1,40 @@
+./gpt35/s0319_bulb_switcher/Solution.java:15: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0319_bulb_switcher/Solution.java:8:) in method bulbSwitch
+        return (int) Math.sqrt(n);
+        ^
+./gpt35/s0319_bulb_switcher/Solution.java:8: verify: Associated declaration: ./gpt35/s0319_bulb_switcher/Solution.java:15:
+//@ ensures \result <= n;
+    ^
+./gpt35/s0319_bulb_switcher/Solution.java:13: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0319_bulb_switcher/Solution.java:9:) in method bulbSwitch
+            return n;
+            ^
+./gpt35/s0319_bulb_switcher/Solution.java:9: verify: Associated declaration: ./gpt35/s0319_bulb_switcher/Solution.java:13:
+//@ ensures \result == (int) Math.sqrt(n);
+    ^
+./gpt35/s0319_bulb_switcher/Solution.java:9: verify: The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:264:) in method bulbSwitch
+//@ ensures \result == (int) Math.sqrt(n);
+                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:264: verify: Associated declaration: ./gpt35/s0319_bulb_switcher/Solution.java:9:
+    public static /*@ pure @*/ double sqrt(double a);
+                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:247: verify: Precondition conjunct is false: Double.isNaN(a) || a < 0.0
+      @   requires Double.isNaN(a) || a < 0.0;
+                                   ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:250: verify: Precondition conjunct is false: a == Double.POSITIVE_INFINITY
+      @   requires a == Double.POSITIVE_INFINITY;
+                     ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:253: verify: Precondition conjunct is false: java.lang.Math.isPositiveZero(a)
+      @   requires isPositiveZero(a);
+                                 ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:256: verify: Precondition conjunct is false: java.lang.Math.isNegativeZero(a)
+      @   requires isNegativeZero(a);
+                                 ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/Math.jml:259: verify: Precondition conjunct is false: a > 0.0
+      @   requires a > 0.0 && a < Double.POSITIVE_INFINITY;
+                     ^
+./gpt35/s0319_bulb_switcher/Solution.java:15: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0319_bulb_switcher/Solution.java:6:) in method bulbSwitch
+        return (int) Math.sqrt(n);
+        ^
+./gpt35/s0319_bulb_switcher/Solution.java:6: verify: Associated declaration: ./gpt35/s0319_bulb_switcher/Solution.java:15:
+//@ ensures \result >= 0;
+    ^
+13 verification failures

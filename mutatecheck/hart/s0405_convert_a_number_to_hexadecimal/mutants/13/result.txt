@@ -1,0 +1,16 @@
+./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:24: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method toHex
+                sb.append((char) (x - 87));
+                          ^
+./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:11:) in method toHex
+        return sb.reverse().toString();
+        ^
+./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:11: verify: Associated declaration: ./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:28:
+//@ ensures((num == 26) ==> (\result.equals("1a")));
+    ^
+./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:12:) in method toHex
+        return sb.reverse().toString();
+        ^
+./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:12: verify: Associated declaration: ./hart/s0405_convert_a_number_to_hexadecimal/mutants/13/Solution.java:28:
+//@ ensures((num == -1) ==> (\result.equals("ffffffff")));
+    ^
+5 verification failures

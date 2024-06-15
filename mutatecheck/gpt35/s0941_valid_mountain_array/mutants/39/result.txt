@@ -1,0 +1,7 @@
+./gpt35/s0941_valid_mountain_array/mutants/39/Solution.java:6: error: illegal start of expression
+//@ ensures !(\exists int i; 0 < i && i < arr.length - 1; arr[0] < arr[1] < ... < arr[i - 1] < arr[i] && arr[i] > arr[i + 1] > ... > arr[arr.length - 1]) ==> \result == false;
+                                                                            ^
+./gpt35/s0941_valid_mountain_array/mutants/39/Solution.java:8: error: illegal start of expression
+//@ ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i + 1]) ==> (\exists int i; 0 < i && i < arr.length - 1; arr[0] < arr[1] < ... < arr[i - 1] < arr[i] && arr[i] > arr[i + 1] > ... > arr[arr.length - 1]);
+                                                                                                                                                  ^
+2 errors

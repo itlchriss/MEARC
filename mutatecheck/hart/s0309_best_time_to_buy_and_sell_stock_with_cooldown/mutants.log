@@ -1,0 +1,11 @@
+1:AOR:-(int,int):%(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):72:prevSell - price |==> prevSell % price
+2:AOR:-(int,int):*(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):72:prevSell - price |==> prevSell * price
+3:AOR:-(int,int):+(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):72:prevSell - price |==> prevSell + price
+4:AOR:-(int,int):/(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):72:prevSell - price |==> prevSell / price
+5:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):72:buy = Math.max(prevSell - price, prevBuy); |==> <NO-OP>
+6:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):73:prevSell = sell; |==> <NO-OP>
+7:AOR:+(int,int):%(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):74:prevBuy + price |==> prevBuy % price
+8:AOR:+(int,int):*(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):74:prevBuy + price |==> prevBuy * price
+9:AOR:+(int,int):-(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):74:prevBuy + price |==> prevBuy - price
+10:AOR:+(int,int):/(int,int):g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):74:prevBuy + price |==> prevBuy / price
+11:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution@maxProfit(int[]):74:sell = Math.max(prevBuy + price, prevSell); |==> <NO-OP>

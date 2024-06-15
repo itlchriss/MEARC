@@ -1,0 +1,28 @@
+1:STD:<ASSIGN>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):25:aSum += bar; |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):28:bSum += bar; |==> <NO-OP>
+3:AOR:-(int,int):%(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):30:aSum - bSum |==> aSum % bSum
+4:AOR:-(int,int):*(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):30:aSum - bSum |==> aSum * bSum
+5:AOR:-(int,int):+(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):30:aSum - bSum |==> aSum + bSum
+6:AOR:-(int,int):/(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):30:aSum - bSum |==> aSum / bSum
+7:STD:<CALL>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):33:set.add(bar); |==> <NO-OP>
+8:AOR:/(int,int):%(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:diff / 2 |==> diff % 2
+9:AOR:/(int,int):*(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:diff / 2 |==> diff * 2
+10:AOR:/(int,int):+(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:diff / 2 |==> diff + 2
+11:AOR:/(int,int):-(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:diff / 2 |==> diff - 2
+12:AOR:+(int,int):%(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:bar + diff / 2 |==> bar % (diff / 2)
+13:AOR:+(int,int):*(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:bar + diff / 2 |==> bar * (diff / 2)
+14:AOR:+(int,int):-(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:bar + diff / 2 |==> bar - diff / 2
+15:AOR:+(int,int):/(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:bar + diff / 2 |==> bar / (diff / 2)
+16:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:set.contains(bar + diff / 2) |==> false
+17:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):36:set.contains(bar + diff / 2) |==> true
+18:AOR:/(int,int):%(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:diff / 2 |==> diff % 2
+19:AOR:/(int,int):*(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:diff / 2 |==> diff * 2
+20:AOR:/(int,int):+(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:diff / 2 |==> diff + 2
+21:AOR:/(int,int):-(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:diff / 2 |==> diff - 2
+22:AOR:+(int,int):%(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:bar + diff / 2 |==> bar % (diff / 2)
+23:AOR:+(int,int):*(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:bar + diff / 2 |==> bar * (diff / 2)
+24:AOR:+(int,int):-(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:bar + diff / 2 |==> bar - diff / 2
+25:AOR:+(int,int):/(int,int):g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:bar + diff / 2 |==> bar / (diff / 2)
+26:STD:<ASSIGN>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):37:ans[0] = bar + diff / 2; |==> <NO-OP>
+27:STD:<ASSIGN>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):38:ans[1] = bar; |==> <NO-OP>
+28:STD:<BREAK>:<NO-OP>:g0801_0900.s0888_fair_candy_swap.Solution@fairCandySwap(int[],int[]):39:break; |==> <NO-OP>

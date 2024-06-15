@@ -1,0 +1,16 @@
+1:AOR:+(int,int):%(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):20:k + i |==> k % i
+2:AOR:+(int,int):*(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):20:k + i |==> k * i
+3:AOR:+(int,int):-(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):20:k + i |==> k - i
+4:AOR:+(int,int):/(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):20:k + i |==> k / i
+5:AOR:+(int,int):%(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):21:map.getOrDefault(sum, 0) + 1 |==> map.getOrDefault(sum, 0) % 1
+6:AOR:+(int,int):*(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):21:map.getOrDefault(sum, 0) + 1 |==> map.getOrDefault(sum, 0) * 1
+7:AOR:+(int,int):-(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):21:map.getOrDefault(sum, 0) + 1 |==> map.getOrDefault(sum, 0) - 1
+8:AOR:+(int,int):/(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):21:map.getOrDefault(sum, 0) + 1 |==> map.getOrDefault(sum, 0) / 1
+9:STD:<CALL>:<NO-OP>:g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):21:map.put(sum, map.getOrDefault(sum, 0) + 1); |==> <NO-OP>
+10:ORU:---(int):+++(int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:-(k + i) |==> +(k + i)
+11:ORU:---(int):~(int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:-(k + i) |==> ~(k + i)
+12:AOR:+(int,int):%(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:k + i |==> k % i
+13:AOR:+(int,int):*(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:k + i |==> k * i
+14:AOR:+(int,int):-(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:k + i |==> k - i
+15:AOR:+(int,int):/(int,int):g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):26:k + i |==> k / i
+16:STD:<ASSIGN>:<NO-OP>:g0401_0500.s0454_4sum_ii.Solution@fourSumCount(int[],int[],int[],int[]):27:count += map.getOrDefault(m, 0); |==> <NO-OP>

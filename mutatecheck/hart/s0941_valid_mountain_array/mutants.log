@@ -1,0 +1,60 @@
+1:AOR:-(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:arr.length - 1 |==> arr.length % 1
+2:AOR:-(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:arr.length - 1 |==> arr.length * 1
+3:AOR:-(int,int):+(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:arr.length - 1 |==> arr.length + 1
+4:AOR:-(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:arr.length - 1 |==> arr.length / 1
+5:ROR:<(int,int):!=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:i < arr.length - 1 |==> i != arr.length - 1
+6:ROR:<(int,int):<=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:i < arr.length - 1 |==> i <= arr.length - 1
+7:ROR:<(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):18:i < arr.length - 1 |==> false
+8:AOR:+(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:i + 1 |==> i % 1
+9:AOR:+(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:i + 1 |==> i * 1
+10:AOR:+(int,int):-(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:i + 1 |==> i - 1
+11:AOR:+(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:i + 1 |==> i / 1
+12:ROR:==(int,int):<=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:arr[i] == arr[i + 1] |==> arr[i] <= arr[i + 1]
+13:ROR:==(int,int):>=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:arr[i] == arr[i + 1] |==> arr[i] >= arr[i + 1]
+14:ROR:==(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):19:arr[i] == arr[i + 1] |==> false
+15:STD:<RETURN>:<NO-OP>:g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):20:return false; |==> <NO-OP>
+16:AOR:+(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:i + 1 |==> i % 1
+17:AOR:+(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:i + 1 |==> i * 1
+18:AOR:+(int,int):-(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:i + 1 |==> i - 1
+19:AOR:+(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:i + 1 |==> i / 1
+20:ROR:>(int,int):!=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:arr[i] > arr[i + 1] |==> arr[i] != arr[i + 1]
+21:ROR:>(int,int):>=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:arr[i] > arr[i + 1] |==> arr[i] >= arr[i + 1]
+22:ROR:>(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):21:arr[i] > arr[i + 1] |==> false
+23:STD:<BREAK>:<NO-OP>:g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):22:break; |==> <NO-OP>
+24:ROR:==(int,int):<=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 |==> i <= 0
+25:ROR:==(int,int):>=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 |==> i >= 0
+26:ROR:==(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 |==> false
+27:AOR:-(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:arr.length - 1 |==> arr.length % 1
+28:AOR:-(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:arr.length - 1 |==> arr.length * 1
+29:AOR:-(int,int):+(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:arr.length - 1 |==> arr.length + 1
+30:AOR:-(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:arr.length - 1 |==> arr.length / 1
+31:ROR:>=(int,int):==(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i >= arr.length - 1 |==> i == arr.length - 1
+32:ROR:>=(int,int):>(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i >= arr.length - 1 |==> i > arr.length - 1
+33:ROR:>=(int,int):TRUE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i >= arr.length - 1 |==> true
+34:COR:||(boolean,boolean):!=(boolean,boolean):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 || i >= arr.length - 1 |==> i == 0 != i >= arr.length - 1
+35:COR:||(boolean,boolean):LHS(boolean,boolean):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 || i >= arr.length - 1 |==> i == 0
+36:COR:||(boolean,boolean):RHS(boolean,boolean):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 || i >= arr.length - 1 |==> i >= arr.length - 1
+37:COR:||(boolean,boolean):TRUE(boolean,boolean):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):25:i == 0 || i >= arr.length - 1 |==> true
+38:STD:<RETURN>:<NO-OP>:g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):26:return false; |==> <NO-OP>
+39:AOR:-(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:arr.length - 1 |==> arr.length % 1
+40:AOR:-(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:arr.length - 1 |==> arr.length * 1
+41:AOR:-(int,int):+(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:arr.length - 1 |==> arr.length + 1
+42:AOR:-(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:arr.length - 1 |==> arr.length / 1
+43:ROR:<(int,int):!=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:i < arr.length - 1 |==> i != arr.length - 1
+44:ROR:<(int,int):<=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:i < arr.length - 1 |==> i <= arr.length - 1
+45:ROR:<(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):28:i < arr.length - 1 |==> false
+46:AOR:+(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:i + 1 |==> i % 1
+47:AOR:+(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:i + 1 |==> i * 1
+48:AOR:+(int,int):-(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:i + 1 |==> i - 1
+49:AOR:+(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:i + 1 |==> i / 1
+50:ROR:<=(int,int):<(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:arr[i] <= arr[i + 1] |==> arr[i] < arr[i + 1]
+51:ROR:<=(int,int):==(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:arr[i] <= arr[i + 1] |==> arr[i] == arr[i + 1]
+52:ROR:<=(int,int):TRUE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):29:arr[i] <= arr[i + 1] |==> true
+53:STD:<RETURN>:<NO-OP>:g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):30:return false; |==> <NO-OP>
+54:AOR:-(int,int):%(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:arr.length - 1 |==> arr.length % 1
+55:AOR:-(int,int):*(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:arr.length - 1 |==> arr.length * 1
+56:AOR:-(int,int):+(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:arr.length - 1 |==> arr.length + 1
+57:AOR:-(int,int):/(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:arr.length - 1 |==> arr.length / 1
+58:ROR:==(int,int):<=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:i == arr.length - 1 |==> i <= arr.length - 1
+59:ROR:==(int,int):>=(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:i == arr.length - 1 |==> i >= arr.length - 1
+60:ROR:==(int,int):FALSE(int,int):g0901_1000.s0941_valid_mountain_array.Solution@validMountainArray(int[]):33:i == arr.length - 1 |==> false

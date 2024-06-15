@@ -1,9 +1,15 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:8:) in method convert
+            return s;
+            ^
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:8: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18:
+//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+    ^
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:10:) in method convert
+            return s;
+            ^
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:10: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18:
+//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+    ^
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:6:) in method convert
         return buf.toString();
         ^
@@ -16,17 +22,11 @@
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:7: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
 //@ ensures((\forall int i; 0 <= i && i < \result.length(); s.charAt(i) == \result.charAt(i) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
     ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:8:) in method convert
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:14:) in method convert
         return buf.toString();
         ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:8: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
-//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:10:) in method convert
-            return s;
-            ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:10: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:18:
-//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
+./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:14: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
+//@ ensures(\result.length() == s.length());
     ^
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:13:) in method convert
         return buf.toString();
@@ -34,17 +34,10 @@
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:13: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
 //@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)) || Character.isLowerCase(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
     ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:14:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:14: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
-//@ ensures(\result.length() == s.length());
-    ^
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:11:) in method convert
         return buf.toString();
         ^
 ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:11: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/53/Solution.java:41:
 //@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
     ^
-2 warnings
 14 verification failures

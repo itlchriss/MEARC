@@ -1,11 +1,7 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-./gpt35/s0007_reverse_integer/mutants/11/Solution.java:12: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method reverse
-            rev = (rev * 10) % (x % 10);
-                             ^
-2 warnings
-1 verification failure
+./gpt35/s0007_reverse_integer/mutants/11/Solution.java:7: error: ',', ')', or '[' expected
+//@ ensures(the result is the reverse of x if it does not cause overflow, otherwise return 0.);
+                      ^
+./gpt35/s0007_reverse_integer/mutants/11/Solution.java:7: error: Incorrectly formed or terminated ensures statement near here
+//@ ensures(the result is the reverse of x if it does not cause overflow, otherwise return 0.);
+                          ^
+2 errors

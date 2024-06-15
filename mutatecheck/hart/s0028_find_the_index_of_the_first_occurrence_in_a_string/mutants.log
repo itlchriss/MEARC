@@ -1,21 +1,21 @@
-1:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):9:needle.isEmpty() |==> false
-2:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):9:needle.isEmpty() |==> true
-3:STD:<RETURN>:<NO-OP>:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):10:return 0; |==> <NO-OP>
-4:AOR:-(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n |==> m % n
-5:AOR:-(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n |==> m * n
-6:AOR:-(int,int):+(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n |==> m + n
-7:AOR:-(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n |==> m / n
-8:AOR:+(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n + 1 |==> (m - n) % 1
-9:AOR:+(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n + 1 |==> (m - n) * 1
-10:AOR:+(int,int):-(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n + 1 |==> m - n - 1
-11:AOR:+(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:m - n + 1 |==> (m - n) / 1
-12:ROR:<(int,int):!=(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:start < m - n + 1 |==> start != m - n + 1
-13:ROR:<(int,int):<=(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:start < m - n + 1 |==> start <= m - n + 1
-14:ROR:<(int,int):FALSE(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):14:start < m - n + 1 |==> false
-15:AOR:+(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:start + n |==> start % n
-16:AOR:+(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:start + n |==> start * n
-17:AOR:+(int,int):-(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:start + n |==> start - n
-18:AOR:+(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:start + n |==> start / n
-19:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:haystack.substring(start, start + n).equals(needle) |==> false
-20:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:haystack.substring(start, start + n).equals(needle) |==> true
-21:STD:<RETURN>:<NO-OP>:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):16:return start; |==> <NO-OP>
+1:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:needle.isEmpty() |==> false
+2:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):15:needle.isEmpty() |==> true
+3:STD:<RETURN>:<NO-OP>:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):16:return 0; |==> <NO-OP>
+4:AOR:-(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n |==> m % n
+5:AOR:-(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n |==> m * n
+6:AOR:-(int,int):+(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n |==> m + n
+7:AOR:-(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n |==> m / n
+8:AOR:+(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n + 1 |==> (m - n) % 1
+9:AOR:+(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n + 1 |==> (m - n) * 1
+10:AOR:+(int,int):-(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n + 1 |==> m - n - 1
+11:AOR:+(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:m - n + 1 |==> (m - n) / 1
+12:ROR:<(int,int):!=(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:start < m - n + 1 |==> start != m - n + 1
+13:ROR:<(int,int):<=(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:start < m - n + 1 |==> start <= m - n + 1
+14:ROR:<(int,int):FALSE(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):21:start < m - n + 1 |==> false
+15:AOR:+(int,int):%(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:start + n |==> start % n
+16:AOR:+(int,int):*(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:start + n |==> start * n
+17:AOR:+(int,int):-(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:start + n |==> start - n
+18:AOR:+(int,int):/(int,int):g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:start + n |==> start / n
+19:COR:<METHOD_INVOCATION(boolean)>:TRUE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:haystack.substring(start, start + n).equals(needle) |==> false
+20:COR:<METHOD_INVOCATION(boolean)>:FALSE:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):22:haystack.substring(start, start + n).equals(needle) |==> true
+21:STD:<RETURN>:<NO-OP>:g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution@strStr(java.lang.String,java.lang.String):23:return start; |==> <NO-OP>

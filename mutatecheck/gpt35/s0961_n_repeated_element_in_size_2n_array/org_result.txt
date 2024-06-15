@@ -1,0 +1,24 @@
+././gpt35/s0961_n_repeated_element_in_size_2n_array/Solution.java:9: error: cannot find symbol
+//@ ensures (\exists int num; 0 <= num && num <= 10000; (\forall int i; 0 <= i && i < nums.length; nums[i] == num) && (\num_of int i; 0 <= i && i < nums.length; nums[i] == num) == n);
+                                                                                                                                                                                    ^
+  symbol:   variable n
+  location: class Solution
+././gpt35/s0961_n_repeated_element_in_size_2n_array/Solution.java:9: error: Values of JML primitive types may only be compared to each other: \bigint vs. n
+//@ ensures (\exists int num; 0 <= num && num <= 10000; (\forall int i; 0 <= i && i < nums.length; nums[i] == num) && (\num_of int i; 0 <= i && i < nums.length; nums[i] == num) == n);
+                                                                                                                                                                                 ^
+././gpt35/s0961_n_repeated_element_in_size_2n_array/Solution.java:12: error: cannot find symbol
+//@ requires nums != null && nums.length == 2 * n;
+                                                ^
+  symbol:   variable n
+  location: class Solution
+././gpt35/s0961_n_repeated_element_in_size_2n_array/Solution.java:13: error: cannot find symbol
+//@ requires n >= 2 && n <= 5000;
+             ^
+  symbol:   variable n
+  location: class Solution
+././gpt35/s0961_n_repeated_element_in_size_2n_array/Solution.java:13: error: cannot find symbol
+//@ requires n >= 2 && n <= 5000;
+                       ^
+  symbol:   variable n
+  location: class Solution
+5 errors

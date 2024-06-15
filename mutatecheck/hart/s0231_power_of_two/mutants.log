@@ -1,0 +1,17 @@
+1:ROR:<=(int,int):<(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):13:n <= 0 |==> n < 0
+2:ROR:<=(int,int):==(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):13:n <= 0 |==> n == 0
+3:ROR:<=(int,int):TRUE(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):13:n <= 0 |==> true
+4:STD:<RETURN>:<NO-OP>:g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):14:return false; |==> <NO-OP>
+5:ROR:==(int,int):<=(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):17:n == 1 |==> n <= 1
+6:ROR:==(int,int):>=(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):17:n == 1 |==> n >= 1
+7:ROR:==(int,int):FALSE(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):17:n == 1 |==> false
+8:STD:<RETURN>:<NO-OP>:g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):18:return true; |==> <NO-OP>
+9:AOR:%(int,int):*(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 |==> n * 2
+10:AOR:%(int,int):+(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 |==> n + 2
+11:AOR:%(int,int):-(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 |==> n - 2
+12:AOR:%(int,int):/(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 |==> n / 2
+13:ROR:==(int,int):<=(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 == 1 |==> n % 2 <= 1
+14:ROR:==(int,int):>=(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 == 1 |==> n % 2 >= 1
+15:ROR:==(int,int):FALSE(int,int):g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):20:n % 2 == 1 |==> false
+16:STD:<RETURN>:<NO-OP>:g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):21:return false; |==> <NO-OP>
+17:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0231_power_of_two.Solution@isPowerOfTwo(int):23:n /= 2; |==> <NO-OP>

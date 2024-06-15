@@ -1,0 +1,10 @@
+1:ORU:~(int):+++(int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:~num |==> +num
+2:ORU:~(int):---(int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:~num |==> -num
+3:SOR:<<(int,int):>>(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:Integer.highestOneBit(num) << 1 |==> Integer.highestOneBit(num) >> 1
+4:SOR:<<(int,int):>>>(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:Integer.highestOneBit(num) << 1 |==> Integer.highestOneBit(num) >>> 1
+5:AOR:-(int,int):%(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:(Integer.highestOneBit(num) << 1) - 1 |==> (Integer.highestOneBit(num) << 1) % 1
+6:AOR:-(int,int):*(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:(Integer.highestOneBit(num) << 1) - 1 |==> (Integer.highestOneBit(num) << 1) * 1
+7:AOR:-(int,int):+(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:(Integer.highestOneBit(num) << 1) - 1 |==> (Integer.highestOneBit(num) << 1) + 1
+8:AOR:-(int,int):/(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:(Integer.highestOneBit(num) << 1) - 1 |==> (Integer.highestOneBit(num) << 1) / 1
+9:LOR:&(int,int):^(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:~num & ((Integer.highestOneBit(num) << 1) - 1) |==> ~num ^ ((Integer.highestOneBit(num) << 1) - 1)
+10:LOR:&(int,int):|(int,int):g0401_0500.s0476_number_complement.Solution@findComplement(int):14:~num & ((Integer.highestOneBit(num) << 1) - 1) |==> ~num | ((Integer.highestOneBit(num) << 1) - 1)

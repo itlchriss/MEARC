@@ -1,0 +1,7 @@
+./hart/s0462_minimum_moves_to_equal_array_elements_ii/mutants/1/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0462_minimum_moves_to_equal_array_elements_ii/mutants/1/Solution.java:12:) in method minMoves2
+        return ops;
+        ^
+./hart/s0462_minimum_moves_to_equal_array_elements_ii/mutants/1/Solution.java:12: verify: Associated declaration: ./hart/s0462_minimum_moves_to_equal_array_elements_ii/mutants/1/Solution.java:24:
+//@ ensures((\result <= 2147483647) && (\result >= -2147483648));
+    ^
+2 verification failures

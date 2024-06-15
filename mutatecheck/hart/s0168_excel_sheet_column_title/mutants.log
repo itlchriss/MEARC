@@ -1,0 +1,21 @@
+1:ROR:!=(int,int):<(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):17:n != 0 |==> n < 0
+2:ROR:!=(int,int):>(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):17:n != 0 |==> n > 0
+3:ROR:!=(int,int):TRUE(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):17:n != 0 |==> true
+4:AOR:%(int,int):*(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):18:n % 26 |==> n * 26
+5:AOR:%(int,int):+(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):18:n % 26 |==> n + 26
+6:AOR:%(int,int):-(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):18:n % 26 |==> n - 26
+7:AOR:%(int,int):/(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):18:n % 26 |==> n / 26
+8:ROR:==(int,int):<=(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):19:remainder == 0 |==> remainder <= 0
+9:ROR:==(int,int):>=(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):19:remainder == 0 |==> remainder >= 0
+10:ROR:==(int,int):FALSE(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):19:remainder == 0 |==> false
+11:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):20:remainder += 26; |==> <NO-OP>
+12:ROR:>=(int,int):==(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):22:n >= remainder |==> n == remainder
+13:ROR:>=(int,int):>(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):22:n >= remainder |==> n > remainder
+14:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):22:n >= remainder |==> true
+15:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):23:n -= remainder; |==> <NO-OP>
+16:AOR:+(int,int):%(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):24:remainder + 64 |==> remainder % 64
+17:AOR:+(int,int):*(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):24:remainder + 64 |==> remainder * 64
+18:AOR:+(int,int):-(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):24:remainder + 64 |==> remainder - 64
+19:AOR:+(int,int):/(int,int):g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):24:remainder + 64 |==> remainder / 64
+20:STD:<CALL>:<NO-OP>:g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):24:sb.append((char)(remainder + 64)); |==> <NO-OP>
+21:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0168_excel_sheet_column_title.Solution@convertToTitle(int):26:n /= 26; |==> <NO-OP>

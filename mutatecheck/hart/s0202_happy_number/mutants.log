@@ -1,0 +1,44 @@
+1:ROR:==(int,int):<=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 |==> a <= 1
+2:ROR:==(int,int):>=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 |==> a >= 1
+3:ROR:==(int,int):FALSE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 |==> false
+4:ROR:==(int,int):<=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 7 |==> a <= 7
+5:ROR:==(int,int):>=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 7 |==> a >= 7
+6:ROR:==(int,int):FALSE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 7 |==> false
+7:COR:||(boolean,boolean):!=(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 || a == 7 |==> a == 1 != (a == 7)
+8:COR:||(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 || a == 7 |==> a == 1
+9:COR:||(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 || a == 7 |==> a == 7
+10:COR:||(boolean,boolean):TRUE(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):20:a == 1 || a == 7 |==> true
+11:ROR:>(int,int):!=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 |==> a != 1
+12:ROR:>(int,int):>=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 |==> a >= 1
+13:ROR:>(int,int):FALSE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 |==> false
+14:ROR:<(int,int):!=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a < 10 |==> a != 10
+15:ROR:<(int,int):<=(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a < 10 |==> a <= 10
+16:ROR:<(int,int):FALSE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a < 10 |==> false
+17:COR:&&(boolean,boolean):==(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 && a < 10 |==> a > 1 == a < 10
+18:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 && a < 10 |==> false
+19:COR:&&(boolean,boolean):LHS(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 && a < 10 |==> a > 1
+20:COR:&&(boolean,boolean):RHS(boolean,boolean):g0201_0300.s0202_happy_number.Solution@isHappy(int):22:a > 1 && a < 10 |==> a < 10
+21:ROR:!=(int,int):<(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):25:a != 0 |==> a < 0
+22:ROR:!=(int,int):>(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):25:a != 0 |==> a > 0
+23:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):25:a != 0 |==> true
+24:AOR:%(int,int):*(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):26:a % 10 |==> a * 10
+25:AOR:%(int,int):+(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):26:a % 10 |==> a + 10
+26:AOR:%(int,int):-(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):26:a % 10 |==> a - 10
+27:AOR:%(int,int):/(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):26:a % 10 |==> a / 10
+28:AOR:*(int,int):%(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:rem * rem |==> rem % rem
+29:AOR:*(int,int):+(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:rem * rem |==> rem + rem
+30:AOR:*(int,int):-(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:rem * rem |==> rem - rem
+31:AOR:*(int,int):/(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:rem * rem |==> rem / rem
+32:AOR:+(int,int):%(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:sum + (rem * rem) |==> sum % (rem * rem)
+33:AOR:+(int,int):*(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:sum + (rem * rem) |==> sum * (rem * rem)
+34:AOR:+(int,int):-(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:sum + (rem * rem) |==> sum - (rem * rem)
+35:AOR:+(int,int):/(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):27:sum + (rem * rem) |==> sum / (rem * rem)
+36:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0202_happy_number.Solution@isHappy(int):27:sum = sum + (rem * rem); |==> <NO-OP>
+37:AOR:/(int,int):%(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):28:a / 10 |==> a % 10
+38:AOR:/(int,int):*(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):28:a / 10 |==> a * 10
+39:AOR:/(int,int):+(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):28:a / 10 |==> a + 10
+40:AOR:/(int,int):-(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):28:a / 10 |==> a - 10
+41:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0202_happy_number.Solution@isHappy(int):28:a = a / 10; |==> <NO-OP>
+42:ROR:!=(int,int):<(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):30:sum != 1 |==> sum < 1
+43:ROR:!=(int,int):>(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):30:sum != 1 |==> sum > 1
+44:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0202_happy_number.Solution@isHappy(int):30:sum != 1 |==> true

@@ -1,0 +1,66 @@
+1:ROR:<(int,int):!=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):23:i < version1.length() |==> i != version1.length()
+2:ROR:<(int,int):<=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):23:i < version1.length() |==> i <= version1.length()
+3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):23:i < version1.length() |==> false
+4:ROR:==(int,int):<=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):25:c == '.' |==> c <= '.'
+5:ROR:==(int,int):>=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):25:c == '.' |==> c >= '.'
+6:ROR:==(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):25:c == '.' |==> false
+7:STD:<BREAK>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):26:break; |==> <NO-OP>
+8:AOR:*(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 |==> numA % 10
+9:AOR:*(int,int):+(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 |==> numA + 10
+10:AOR:*(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 |==> numA - 10
+11:AOR:*(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 |==> numA / 10
+12:AOR:-(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:c - 48 |==> c % 48
+13:AOR:-(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:c - 48 |==> c * 48
+14:AOR:-(int,int):+(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:c - 48 |==> c + 48
+15:AOR:-(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:c - 48 |==> c / 48
+16:AOR:+(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 + (c - 48) |==> numA * 10 % (c - 48)
+17:AOR:+(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 + (c - 48) |==> numA * 10 * (c - 48)
+18:AOR:+(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 + (c - 48) |==> numA * 10 - (c - 48)
+19:AOR:+(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA * 10 + (c - 48) |==> numA * 10 / (c - 48)
+20:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):28:numA = numA * 10 + (c - 48); |==> <NO-OP>
+21:ROR:<(int,int):!=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):34:j < version2.length() |==> j != version2.length()
+22:ROR:<(int,int):<=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):34:j < version2.length() |==> j <= version2.length()
+23:ROR:<(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):34:j < version2.length() |==> false
+24:ROR:==(int,int):<=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):36:c == '.' |==> c <= '.'
+25:ROR:==(int,int):>=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):36:c == '.' |==> c >= '.'
+26:ROR:==(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):36:c == '.' |==> false
+27:STD:<BREAK>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):37:break; |==> <NO-OP>
+28:AOR:*(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 |==> numB % 10
+29:AOR:*(int,int):+(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 |==> numB + 10
+30:AOR:*(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 |==> numB - 10
+31:AOR:*(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 |==> numB / 10
+32:AOR:-(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:c - 48 |==> c % 48
+33:AOR:-(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:c - 48 |==> c * 48
+34:AOR:-(int,int):+(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:c - 48 |==> c + 48
+35:AOR:-(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:c - 48 |==> c / 48
+36:AOR:+(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 + (c - 48) |==> numB * 10 % (c - 48)
+37:AOR:+(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 + (c - 48) |==> numB * 10 * (c - 48)
+38:AOR:+(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 + (c - 48) |==> numB * 10 - (c - 48)
+39:AOR:+(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB * 10 + (c - 48) |==> numB * 10 / (c - 48)
+40:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):39:numB = numB * 10 + (c - 48); |==> <NO-OP>
+41:ROR:>(int,int):!=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):43:numA > numB |==> numA != numB
+42:ROR:>(int,int):>=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):43:numA > numB |==> numA >= numB
+43:ROR:>(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):43:numA > numB |==> false
+44:ROR:<(int,int):!=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):45:numA < numB |==> numA != numB
+45:ROR:<(int,int):<=(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):45:numA < numB |==> numA <= numB
+46:ROR:<(int,int):FALSE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):45:numA < numB |==> false
+47:ROR:!=(int,int):<(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):51:i != version1.length() |==> i < version1.length()
+48:ROR:!=(int,int):>(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):51:i != version1.length() |==> i > version1.length()
+49:ROR:!=(int,int):TRUE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):51:i != version1.length() |==> true
+50:AOR:+(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):52:i + 1 |==> i % 1
+51:AOR:+(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):52:i + 1 |==> i * 1
+52:AOR:+(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):52:i + 1 |==> i - 1
+53:AOR:+(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):52:i + 1 |==> i / 1
+54:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):52:v1 = version1.substring(i + 1); |==> <NO-OP>
+55:ROR:!=(int,int):<(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):54:j != version2.length() |==> j < version2.length()
+56:ROR:!=(int,int):>(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):54:j != version2.length() |==> j > version2.length()
+57:ROR:!=(int,int):TRUE(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):54:j != version2.length() |==> true
+58:AOR:+(int,int):%(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):55:j + 1 |==> j % 1
+59:AOR:+(int,int):*(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):55:j + 1 |==> j * 1
+60:AOR:+(int,int):-(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):55:j + 1 |==> j - 1
+61:AOR:+(int,int):/(int,int):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):55:j + 1 |==> j / 1
+62:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):55:v2 = version2.substring(j + 1); |==> <NO-OP>
+63:COR:&&(boolean,boolean):==(boolean,boolean):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):58:v1.equals("") && v2.equals("") |==> v1.equals("") == v2.equals("")
+64:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):58:v1.equals("") && v2.equals("") |==> false
+65:COR:&&(boolean,boolean):LHS(boolean,boolean):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):58:v1.equals("") && v2.equals("") |==> v1.equals("")
+66:COR:&&(boolean,boolean):RHS(boolean,boolean):g0101_0200.s0165_compare_version_numbers.Solution@compareVersion(java.lang.String,java.lang.String):58:v1.equals("") && v2.equals("") |==> v2.equals("")

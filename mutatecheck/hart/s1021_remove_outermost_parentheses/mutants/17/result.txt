@@ -1,0 +1,13 @@
+./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:14:) in method removeOuterParentheses
+        return sb.toString();
+        ^
+./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:14: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:37:
+//@ ensures((s.equals("(()())(())")) ==> (\result.equals("()()()")));
+    ^
+./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:15:) in method removeOuterParentheses
+        return sb.toString();
+        ^
+./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:15: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/17/Solution.java:37:
+//@ ensures((s.equals("(()())(())(()(()))")) ==> (\result.equals("()()()()(())")));
+    ^
+4 verification failures

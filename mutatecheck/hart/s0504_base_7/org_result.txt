@@ -1,0 +1,13 @@
+././hart/s0504_base_7/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ././hart/s0504_base_7/Solution.java:12:) in method convertToBase7
+        return Integer.toString(num, 7);
+        ^
+././hart/s0504_base_7/Solution.java:12: verify: Associated declaration: ././hart/s0504_base_7/Solution.java:14:
+//@ ensures((num == -7) ==> (\result.equals("-10")));
+    ^
+././hart/s0504_base_7/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ././hart/s0504_base_7/Solution.java:11:) in method convertToBase7
+        return Integer.toString(num, 7);
+        ^
+././hart/s0504_base_7/Solution.java:11: verify: Associated declaration: ././hart/s0504_base_7/Solution.java:14:
+//@ ensures((num == 100) ==> (\result.equals("202")));
+    ^
+4 verification failures

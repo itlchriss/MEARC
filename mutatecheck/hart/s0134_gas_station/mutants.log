@@ -1,23 +1,23 @@
-1:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):14:i < gas.length |==> i != gas.length
-2:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):14:i < gas.length |==> i <= gas.length
-3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):14:i < gas.length |==> false
-4:AOR:-(int,int):%(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):15:gas[i] - cost[i] |==> gas[i] % cost[i]
-5:AOR:-(int,int):*(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):15:gas[i] - cost[i] |==> gas[i] * cost[i]
-6:AOR:-(int,int):+(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):15:gas[i] - cost[i] |==> gas[i] + cost[i]
-7:AOR:-(int,int):/(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):15:gas[i] - cost[i] |==> gas[i] / cost[i]
-8:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):15:curGas += gas[i] - cost[i]; |==> <NO-OP>
-9:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):17:curGas < 0 |==> curGas != 0
-10:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):17:curGas < 0 |==> curGas <= 0
-11:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):17:curGas < 0 |==> false
-12:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):18:result = -1; |==> <NO-OP>
-13:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):19:curGas = 0; |==> <NO-OP>
-14:ROR:==(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):20:result == -1 |==> result <= -1
-15:ROR:==(int,int):>=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):20:result == -1 |==> result >= -1
-16:ROR:==(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):20:result == -1 |==> false
-17:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:result = i; |==> <NO-OP>
-18:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):24:sumGas += gas[i]; |==> <NO-OP>
-19:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):25:sumCost += cost[i]; |==> <NO-OP>
-20:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:sumGas < sumCost |==> sumGas != sumCost
-21:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:sumGas < sumCost |==> sumGas <= sumCost
-22:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:sumGas < sumCost |==> false
-23:STD:<RETURN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):28:return -1; |==> <NO-OP>
+1:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):21:i < gas.length |==> i != gas.length
+2:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):21:i < gas.length |==> i <= gas.length
+3:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):21:i < gas.length |==> false
+4:AOR:-(int,int):%(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:gas[i] - cost[i] |==> gas[i] % cost[i]
+5:AOR:-(int,int):*(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:gas[i] - cost[i] |==> gas[i] * cost[i]
+6:AOR:-(int,int):+(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:gas[i] - cost[i] |==> gas[i] + cost[i]
+7:AOR:-(int,int):/(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:gas[i] - cost[i] |==> gas[i] / cost[i]
+8:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):22:curGas += gas[i] - cost[i]; |==> <NO-OP>
+9:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):24:curGas < 0 |==> curGas != 0
+10:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):24:curGas < 0 |==> curGas <= 0
+11:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):24:curGas < 0 |==> false
+12:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):25:result = -1; |==> <NO-OP>
+13:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):26:curGas = 0; |==> <NO-OP>
+14:ROR:==(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:result == -1 |==> result <= -1
+15:ROR:==(int,int):>=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:result == -1 |==> result >= -1
+16:ROR:==(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):27:result == -1 |==> false
+17:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):29:result = i; |==> <NO-OP>
+18:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):31:sumGas += gas[i]; |==> <NO-OP>
+19:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):32:sumCost += cost[i]; |==> <NO-OP>
+20:ROR:<(int,int):!=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):34:sumGas < sumCost |==> sumGas != sumCost
+21:ROR:<(int,int):<=(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):34:sumGas < sumCost |==> sumGas <= sumCost
+22:ROR:<(int,int):FALSE(int,int):g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):34:sumGas < sumCost |==> false
+23:STD:<RETURN>:<NO-OP>:g0101_0200.s0134_gas_station.Solution@canCompleteCircuit(int[],int[]):35:return -1; |==> <NO-OP>

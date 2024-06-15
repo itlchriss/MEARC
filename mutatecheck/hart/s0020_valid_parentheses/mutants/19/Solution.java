@@ -6,14 +6,25 @@ package g0001_0100.s0020_valid_parentheses;
 
 import java.util.Stack;
 
+import java.util.Arrays;
+
+import java.util.Collections;
+
 @SuppressWarnings("java:S1149")
 public class Solution {
-//@ ensures(\result == true);
+//@ ensures((s.equals("()")) ==> (\result == true));
+//@ ensures((s.equals("()[]{}")) ==> (\result == true));
+//@ ensures((s.equals("(]")) ==> (\result == false));
+//@ ensures((s.equals("([)]")) ==> (\result == false));
+//@ ensures((s.equals("{[]}")) ==> (\result == true));
+//@ requires((s.length() <= 10000) && (s.length() >= 1));
+//@ requires((\forall int i; 0 <= i < s.length(); '(' == s.charAt(i)) && (\forall int i; 0 <= i < s.length(); (']' == (s.charAt(i))) &&  ('[' == (s.charAt(i))) &&  ('}' == (s.charAt(i))) &&  ('{' == (s.charAt(i))) &&  (')' == (s.charAt(i)))));
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
+        //@ loop_invariant 0 <= i <= s.length();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (true) {
+            if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
             } else if (c == ')' && !stack.isEmpty() && stack.peek() == '(') {
                 stack.pop();

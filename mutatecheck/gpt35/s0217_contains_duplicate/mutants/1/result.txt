@@ -1,0 +1,7 @@
+./mutants/1/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./mutants/1/Solution.java:11:) in method containsDuplicate
+                return true;
+                ^
+./mutants/1/Solution.java:11: verify: Associated declaration: ./mutants/1/Solution.java:19:
+//@ ensures \result == false <==> (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);
+    ^
+2 verification failures

@@ -1,0 +1,13 @@
+./gpt35/s0989_add_to_array_form_of_integer/Solution.java:13: error: ')' expected
+//@ ensures (\exists int[] resultNum; resultNum.length == \result.size(); (\forall int i; 0 <= i && i < resultNum.length; resultNum[i] == \result.get(i)); resultNum = num + k);
+                                                                                                                                                         ^
+./gpt35/s0989_add_to_array_form_of_integer/Solution.java:13: error: <identifier> expected
+//@ ensures (\exists int[] resultNum; resultNum.length == \result.size(); (\forall int i; 0 <= i && i < resultNum.length; resultNum[i] == \result.get(i)); resultNum = num + k);
+                                                                                                                                                                    ^
+./gpt35/s0989_add_to_array_form_of_integer/Solution.java:13: error: ';' expected
+//@ ensures (\exists int[] resultNum; resultNum.length == \result.size(); (\forall int i; 0 <= i && i < resultNum.length; resultNum[i] == \result.get(i)); resultNum = num + k);
+                                                                                                                                                                              ^
+./gpt35/s0989_add_to_array_form_of_integer/Solution.java:13: error: Method specs may not precede a variable declaration
+//@ ensures (\exists int[] resultNum; resultNum.length == \result.size(); (\forall int i; 0 <= i && i < resultNum.length; resultNum[i] == \result.get(i)); resultNum = num + k);
+                                                                                                                                                                     ^
+4 errors

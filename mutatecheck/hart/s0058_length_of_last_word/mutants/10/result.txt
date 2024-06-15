@@ -1,20 +1,10 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-./hart/s0058_length_of_last_word/mutants/10/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:8:) in method lengthOfLastWord
+./hart/s0058_length_of_last_word/mutants/10/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:13:) in method lengthOfLastWord
         return len;
         ^
-./hart/s0058_length_of_last_word/mutants/10/Solution.java:8: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:19:
-//@ ensures(\result >= 1);
+./hart/s0058_length_of_last_word/mutants/10/Solution.java:13: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:26:
+//@ ensures((s.equals("Hello World")) ==> (\result == 5));
     ^
-./hart/s0058_length_of_last_word/mutants/10/Solution.java:19: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:7:) in method lengthOfLastWord
-        return len;
-        ^
-./hart/s0058_length_of_last_word/mutants/10/Solution.java:7: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/10/Solution.java:19:
-//@ ensures(\result <= 10000);
-    ^
-2 warnings
-4 verification failures
+./hart/s0058_length_of_last_word/mutants/10/Solution.java:16: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int lengthOfLastWord(String s) {
+               ^
+3 verification failures

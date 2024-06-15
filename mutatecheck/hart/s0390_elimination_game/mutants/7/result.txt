@@ -1,0 +1,16 @@
+./hart/s0390_elimination_game/mutants/7/Solution.java:14: verify: The prover cannot establish an assertion (Precondition: ./hart/s0390_elimination_game/mutants/7/Solution.java:13:) in method lastRemaining
+        return n == 1 ? 1 : 2 * (n % 2 - lastRemaining(n % 2) + 1);
+                                                      ^
+./hart/s0390_elimination_game/mutants/7/Solution.java:13: verify: Associated declaration: ./hart/s0390_elimination_game/mutants/7/Solution.java:14:
+    public int lastRemaining(int n) {
+               ^
+./hart/s0390_elimination_game/mutants/7/Solution.java:10: verify: Precondition conjunct is false: ((n >= 1) && (n <= 1000000000))
+//@ requires((n >= 1) && (n <= 1000000000));
+            ^
+./hart/s0390_elimination_game/mutants/7/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0390_elimination_game/mutants/7/Solution.java:11:) in method lastRemaining
+        return n == 1 ? 1 : 2 * (n % 2 - lastRemaining(n % 2) + 1);
+        ^
+./hart/s0390_elimination_game/mutants/7/Solution.java:11: verify: Associated declaration: ./hart/s0390_elimination_game/mutants/7/Solution.java:14:
+//@ ensures((n == 9) ==> (\result == 6));
+    ^
+5 verification failures

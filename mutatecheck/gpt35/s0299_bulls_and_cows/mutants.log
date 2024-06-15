@@ -1,0 +1,17 @@
+1:ROR:<(int,int):!=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):23:i < secret.length() |==> i != secret.length()
+2:ROR:<(int,int):<=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):23:i < secret.length() |==> i <= secret.length()
+3:ROR:<(int,int):FALSE(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):23:i < secret.length() |==> false
+4:ROR:==(int,int):<=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):26:s == g |==> s <= g
+5:ROR:==(int,int):>=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):26:s == g |==> s >= g
+6:ROR:==(int,int):FALSE(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):26:s == g |==> false
+7:STD:<INC>:<NO-OP>:g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):27:bulls++; |==> <NO-OP>
+8:ROR:<(int,int):!=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):30:ans[s] < 0 |==> ans[s] != 0
+9:ROR:<(int,int):<=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):30:ans[s] < 0 |==> ans[s] <= 0
+10:ROR:<(int,int):FALSE(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):30:ans[s] < 0 |==> false
+11:STD:<INC>:<NO-OP>:g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):31:cows++; |==> <NO-OP>
+12:ROR:>(int,int):!=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):34:ans[g] > 0 |==> ans[g] != 0
+13:ROR:>(int,int):>=(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):34:ans[g] > 0 |==> ans[g] >= 0
+14:ROR:>(int,int):FALSE(int,int):g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):34:ans[g] > 0 |==> false
+15:STD:<INC>:<NO-OP>:g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):35:cows++; |==> <NO-OP>
+16:STD:<INC>:<NO-OP>:g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):37:ans[s]++; |==> <NO-OP>
+17:STD:<DEC>:<NO-OP>:g0201_0300.s0299_bulls_and_cows.Solution@getHint(java.lang.String,java.lang.String):38:ans[g]--; |==> <NO-OP>

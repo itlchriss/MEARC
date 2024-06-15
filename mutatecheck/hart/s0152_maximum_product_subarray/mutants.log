@@ -1,0 +1,28 @@
+1:AOR:*(int,int):%(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):21:cprod * j |==> cprod % j
+2:AOR:*(int,int):+(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):21:cprod * j |==> cprod + j
+3:AOR:*(int,int):-(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):21:cprod * j |==> cprod - j
+4:AOR:*(int,int):/(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):21:cprod * j |==> cprod / j
+5:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):21:cprod = cprod * j; |==> <NO-OP>
+6:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):22:ans = Math.max(ans, cprod); |==> <NO-OP>
+7:ROR:==(int,int):<=(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):23:cprod == 0 |==> cprod <= 0
+8:ROR:==(int,int):>=(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):23:cprod == 0 |==> cprod >= 0
+9:ROR:==(int,int):FALSE(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):23:cprod == 0 |==> false
+10:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):24:cprod = 1; |==> <NO-OP>
+11:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):27:cprod = 1; |==> <NO-OP>
+12:AOR:-(int,int):%(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:arr.length - 1 |==> arr.length % 1
+13:AOR:-(int,int):*(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:arr.length - 1 |==> arr.length * 1
+14:AOR:-(int,int):+(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:arr.length - 1 |==> arr.length + 1
+15:AOR:-(int,int):/(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:arr.length - 1 |==> arr.length / 1
+16:ROR:>=(int,int):==(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:i >= 0 |==> i == 0
+17:ROR:>=(int,int):>(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:i >= 0 |==> i > 0
+18:ROR:>=(int,int):TRUE(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):29:i >= 0 |==> true
+19:AOR:*(int,int):%(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):30:cprod * arr[i] |==> cprod % arr[i]
+20:AOR:*(int,int):+(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):30:cprod * arr[i] |==> cprod + arr[i]
+21:AOR:*(int,int):-(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):30:cprod * arr[i] |==> cprod - arr[i]
+22:AOR:*(int,int):/(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):30:cprod * arr[i] |==> cprod / arr[i]
+23:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):30:cprod = cprod * arr[i]; |==> <NO-OP>
+24:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):31:ans = Math.max(ans, cprod); |==> <NO-OP>
+25:ROR:==(int,int):<=(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):32:cprod == 0 |==> cprod <= 0
+26:ROR:==(int,int):>=(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):32:cprod == 0 |==> cprod >= 0
+27:ROR:==(int,int):FALSE(int,int):g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):32:cprod == 0 |==> false
+28:STD:<ASSIGN>:<NO-OP>:g0101_0200.s0152_maximum_product_subarray.Solution@maxProduct(int[]):33:cprod = 1; |==> <NO-OP>

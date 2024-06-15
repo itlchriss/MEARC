@@ -1,0 +1,19 @@
+1:ROR:>=(int,int):==(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):12:n >= 4 |==> n == 4
+2:ROR:>=(int,int):>(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):12:n >= 4 |==> n > 4
+3:ROR:>=(int,int):TRUE(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):12:n >= 4 |==> true
+4:AOR:%(int,int):*(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 |==> n * 4
+5:AOR:%(int,int):+(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 |==> n + 4
+6:AOR:%(int,int):-(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 |==> n - 4
+7:AOR:%(int,int):/(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 |==> n / 4
+8:ROR:!=(int,int):<(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 != 0 |==> n % 4 < 0
+9:ROR:!=(int,int):>(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 != 0 |==> n % 4 > 0
+10:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):13:n % 4 != 0 |==> true
+11:STD:<RETURN>:<NO-OP>:g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):14:return false; |==> <NO-OP>
+12:AOR:/(int,int):%(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):16:n / 4 |==> n % 4
+13:AOR:/(int,int):*(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):16:n / 4 |==> n * 4
+14:AOR:/(int,int):+(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):16:n / 4 |==> n + 4
+15:AOR:/(int,int):-(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):16:n / 4 |==> n - 4
+16:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):16:n = n / 4; |==> <NO-OP>
+17:ROR:==(int,int):<=(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):18:n == 1 |==> n <= 1
+18:ROR:==(int,int):>=(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):18:n == 1 |==> n >= 1
+19:ROR:==(int,int):FALSE(int,int):g0301_0400.s0342_power_of_four.Solution@isPowerOfFour(int):18:n == 1 |==> false

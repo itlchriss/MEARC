@@ -1,0 +1,25 @@
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:16:) in method findPairs
+        return res;
+        ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:16: verify: Associated declaration: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42:
+//@ ensures(\result <= nums.length);
+    ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:17:) in method findPairs
+        return res;
+        ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:17: verify: Associated declaration: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42:
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4 , 5})) && (k == 1)) ==> (\result == 4));
+    ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:19:) in method findPairs
+        return res;
+        ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:19: verify: Associated declaration: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42:
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 3 , 1 , 5 , 4})) && (k == 0)) ==> (\result == 1));
+    ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:18:) in method findPairs
+        return res;
+        ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:18: verify: Associated declaration: ./hart/s0532_k_diff_pairs_in_an_array/mutants/23/Solution.java:42:
+//@ ensures(((Arrays.equals(nums, new int[] {3 , 1 , 4 , 1 , 5})) && (k == 2)) ==> (\result == 2));
+    ^
+8 verification failures

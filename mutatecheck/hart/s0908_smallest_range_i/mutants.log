@@ -1,0 +1,26 @@
+1:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):20:min = Math.min(min, num); |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):21:max = Math.max(max, num); |==> <NO-OP>
+3:AOR:+(int,int):%(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k |==> min % k
+4:AOR:+(int,int):*(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k |==> min * k
+5:AOR:+(int,int):-(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k |==> min - k
+6:AOR:+(int,int):/(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k |==> min / k
+7:AOR:-(int,int):%(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:max - k |==> max % k
+8:AOR:-(int,int):*(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:max - k |==> max * k
+9:AOR:-(int,int):+(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:max - k |==> max + k
+10:AOR:-(int,int):/(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:max - k |==> max / k
+11:ROR:>=(int,int):==(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k >= max - k |==> min + k == max - k
+12:ROR:>=(int,int):>(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k >= max - k |==> min + k > max - k
+13:ROR:>=(int,int):TRUE(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):23:min + k >= max - k |==> true
+14:STD:<RETURN>:<NO-OP>:g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):24:return 0; |==> <NO-OP>
+15:AOR:-(int,int):%(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:max - k |==> max % k
+16:AOR:-(int,int):*(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:max - k |==> max * k
+17:AOR:-(int,int):+(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:max - k |==> max + k
+18:AOR:-(int,int):/(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:max - k |==> max / k
+19:AOR:+(int,int):%(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:min + k |==> min % k
+20:AOR:+(int,int):*(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:min + k |==> min * k
+21:AOR:+(int,int):-(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:min + k |==> min - k
+22:AOR:+(int,int):/(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:min + k |==> min / k
+23:AOR:-(int,int):%(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:(max - k) - (min + k) |==> (max - k) % (min + k)
+24:AOR:-(int,int):*(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:(max - k) - (min + k) |==> (max - k) * (min + k)
+25:AOR:-(int,int):+(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:(max - k) - (min + k) |==> (max - k) + (min + k)
+26:AOR:-(int,int):/(int,int):g0901_1000.s0908_smallest_range_i.Solution@smallestRangeI(int[],int):26:(max - k) - (min + k) |==> (max - k) / (min + k)

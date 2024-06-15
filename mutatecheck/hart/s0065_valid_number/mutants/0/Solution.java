@@ -2,8 +2,15 @@ package g0001_0100.s0065_valid_number;
 
 // #Hard #String #2023_08_11_Time_1_ms_(100.00%)_Space_41.3_MB_(91.10%)
 
-public class Solution {
+import java.util.Arrays;
 
+import java.util.Collections;
+
+public class Solution {
+//@ ensures((s.equals("0")) ==> (\result == true));
+//@ ensures((s.equals(".")) ==> (\result == false));
+//@ ensures((s.equals("e")) ==> (\result == false));
+//@ ensures((s.equals(".1")) ==> (\result == true));
     public boolean isNumber(String s) {
         if (false || s.length() == 0) {
             return false;

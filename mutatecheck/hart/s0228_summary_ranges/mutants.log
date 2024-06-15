@@ -1,0 +1,30 @@
+1:ROR:==(int,int):<=(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):17:nums.length == 0 |==> nums.length <= 0
+2:ROR:==(int,int):>=(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):17:nums.length == 0 |==> nums.length >= 0
+3:ROR:==(int,int):FALSE(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):17:nums.length == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):18:return ranges; |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):28:i < n |==> i != n
+6:ROR:<(int,int):<=(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):28:i < n |==> i <= n
+7:ROR:<(int,int):FALSE(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):28:i < n |==> false
+8:AOR:+(int,int):%(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:b + 1 |==> b % 1
+9:AOR:+(int,int):*(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:b + 1 |==> b * 1
+10:AOR:+(int,int):-(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:b + 1 |==> b - 1
+11:AOR:+(int,int):/(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:b + 1 |==> b / 1
+12:ROR:!=(int,int):<(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:nums[i] != b + 1 |==> nums[i] < b + 1
+13:ROR:!=(int,int):>(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:nums[i] != b + 1 |==> nums[i] > b + 1
+14:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):33:nums[i] != b + 1 |==> true
+15:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):36:strB.append(a); |==> <NO-OP>
+16:ROR:!=(int,int):<(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):37:a != b |==> a < b
+17:ROR:!=(int,int):>(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):37:a != b |==> a > b
+18:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):37:a != b |==> true
+19:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):38:strB.append("->").append(b); |==> <NO-OP>
+20:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):40:ranges.add(strB.toString()); |==> <NO-OP>
+21:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):45:a = nums[i]; |==> <NO-OP>
+22:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):46:b = a; |==> <NO-OP>
+23:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):48:strB.setLength(0); |==> <NO-OP>
+24:STD:<INC>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):51:b++; |==> <NO-OP>
+25:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):56:strB.append(a); |==> <NO-OP>
+26:ROR:!=(int,int):<(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):57:a != b |==> a < b
+27:ROR:!=(int,int):>(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):57:a != b |==> a > b
+28:ROR:!=(int,int):TRUE(int,int):g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):57:a != b |==> true
+29:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):58:strB.append("->").append(b); |==> <NO-OP>
+30:STD:<CALL>:<NO-OP>:g0201_0300.s0228_summary_ranges.Solution@summaryRanges(int[]):60:ranges.add(strB.toString()); |==> <NO-OP>

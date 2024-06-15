@@ -1,0 +1,13 @@
+./hart/s0476_number_complement/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0476_number_complement/Solution.java:12:) in method findComplement
+        return ~num & ((Integer.highestOneBit(num) << 1) - 1);
+        ^
+./hart/s0476_number_complement/Solution.java:12: verify: Associated declaration: ./hart/s0476_number_complement/Solution.java:14:
+//@ ensures((num == 1) ==> (\result == 0));
+    ^
+./hart/s0476_number_complement/Solution.java:14: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0476_number_complement/Solution.java:11:) in method findComplement
+        return ~num & ((Integer.highestOneBit(num) << 1) - 1);
+        ^
+./hart/s0476_number_complement/Solution.java:11: verify: Associated declaration: ./hart/s0476_number_complement/Solution.java:14:
+//@ ensures((num == 5) ==> (\result == 2));
+    ^
+4 verification failures

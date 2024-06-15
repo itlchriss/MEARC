@@ -1,0 +1,7 @@
+./hart/s0258_add_digits/mutants/11/Solution.java:20: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0258_add_digits/mutants/11/Solution.java:11:) in method addDigits
+        return num + 9;
+        ^
+./hart/s0258_add_digits/mutants/11/Solution.java:11: verify: Associated declaration: ./hart/s0258_add_digits/mutants/11/Solution.java:20:
+//@ ensures((num == 38) ==> (\result == 2));
+    ^
+2 verification failures

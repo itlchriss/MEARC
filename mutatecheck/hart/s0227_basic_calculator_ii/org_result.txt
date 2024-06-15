@@ -1,0 +1,13 @@
+./hart/s0227_basic_calculator_ii/Solution.java:52: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/Solution.java:11:) in method calculate
+        return sum;
+        ^
+./hart/s0227_basic_calculator_ii/Solution.java:11: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/Solution.java:52:
+//@ ensures((s.equals("3/2")) ==> (\result == 1));
+    ^
+./hart/s0227_basic_calculator_ii/Solution.java:52: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/Solution.java:12:) in method calculate
+        return sum;
+        ^
+./hart/s0227_basic_calculator_ii/Solution.java:12: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/Solution.java:52:
+//@ ensures((s.equals("3+2*2")) ==> (\result == 7));
+    ^
+4 verification failures

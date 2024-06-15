@@ -1,0 +1,13 @@
+./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:15:) in method productExceptSelf
+        return ans;
+        ^
+./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:15: verify: Associated declaration: ./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:38:
+//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4})) ==> (Arrays.equals(\result, new int[] {24 , 12 , 8 , 6})));
+    ^
+./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:16:) in method productExceptSelf
+        return ans;
+        ^
+./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:16: verify: Associated declaration: ./hart/s0238_product_of_array_except_self/mutants/7/Solution.java:38:
+//@ ensures((Arrays.equals(nums, new int[] {-1 , 1 , 0 , -3 , 3})) ==> (Arrays.equals(\result, new int[] {0 , 0 , 9 , 0 , 0})));
+    ^
+4 verification failures

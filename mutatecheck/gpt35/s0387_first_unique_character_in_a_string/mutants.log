@@ -1,0 +1,18 @@
+1:ROR:<=(int,int):<(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):15:i <= 'z' |==> i < 'z'
+2:ROR:<=(int,int):==(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):15:i <= 'z' |==> i == 'z'
+3:ROR:<=(int,int):TRUE(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):15:i <= 'z' |==> true
+4:ROR:!=(int,int):<(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 |==> ind < -1
+5:ROR:!=(int,int):>(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 |==> ind > -1
+6:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 |==> true
+7:ROR:==(int,int):<=(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind == s.lastIndexOf(i) |==> ind <= s.lastIndexOf(i)
+8:ROR:==(int,int):>=(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind == s.lastIndexOf(i) |==> ind >= s.lastIndexOf(i)
+9:ROR:==(int,int):FALSE(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind == s.lastIndexOf(i) |==> false
+10:COR:&&(boolean,boolean):==(boolean,boolean):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 && ind == s.lastIndexOf(i) |==> ind != -1 == (ind == s.lastIndexOf(i))
+11:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 && ind == s.lastIndexOf(i) |==> false
+12:COR:&&(boolean,boolean):LHS(boolean,boolean):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 && ind == s.lastIndexOf(i) |==> ind != -1
+13:COR:&&(boolean,boolean):RHS(boolean,boolean):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):17:ind != -1 && ind == s.lastIndexOf(i) |==> ind == s.lastIndexOf(i)
+14:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):18:ans = Math.min(ans, ind); |==> <NO-OP>
+15:ROR:==(int,int):<=(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):21:ans == Integer.MAX_VALUE |==> ans <= Integer.MAX_VALUE
+16:ROR:==(int,int):>=(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):21:ans == Integer.MAX_VALUE |==> ans >= Integer.MAX_VALUE
+17:ROR:==(int,int):FALSE(int,int):g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):21:ans == Integer.MAX_VALUE |==> false
+18:STD:<RETURN>:<NO-OP>:g0301_0400.s0387_first_unique_character_in_a_string.Solution@firstUniqChar(java.lang.String):22:return -1; |==> <NO-OP>

@@ -1,0 +1,7 @@
+./hart/s0165_compare_version_numbers/mutants/18/Solution.java:28: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method compareVersion
+                numA = numA * 10 / (c - 48);
+                                 ^
+./hart/s0165_compare_version_numbers/mutants/18/Solution.java:19: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int compareVersion(String version1, String version2) {
+               ^
+2 verification failures

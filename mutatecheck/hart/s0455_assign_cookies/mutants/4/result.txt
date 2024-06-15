@@ -1,0 +1,7 @@
+./hart/s0455_assign_cookies/mutants/4/Solution.java:32: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0455_assign_cookies/mutants/4/Solution.java:14:) in method findContentChildren
+        return result;
+        ^
+./hart/s0455_assign_cookies/mutants/4/Solution.java:14: verify: Associated declaration: ./hart/s0455_assign_cookies/mutants/4/Solution.java:32:
+//@ ensures(\result <= g.length);
+    ^
+2 verification failures

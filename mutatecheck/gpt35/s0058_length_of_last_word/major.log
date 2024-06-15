@@ -1,182 +1,182 @@
-[04/24 17:41:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[g0001_0100.s0058_length_of_last_word.Solution]]]]
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0001_0100.s0058_length_of_last_word.Solution
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: lengthOfLastWord([String s])int
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.lengthOfLastWord(line 23, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  s.length() - 1 
             mutant:                    s.length() % 1
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.lengthOfLastWord(line 23, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  s.length() - 1 
             mutant:                    s.length() * 1
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.lengthOfLastWord(line 23, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  s.length() - 1 
             mutant:                    s.length() + 1
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.lengthOfLastWord(line 23, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  s.length() - 1 
             mutant:                    s.length() / 1
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.lengthOfLastWord(line 23, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  i >= 0 
             mutant:                    i == 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.lengthOfLastWord(line 23, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  i >= 0 
             mutant:                    i > 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.lengthOfLastWord(line 23, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  i >= 0 
             mutant:                    true
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.lengthOfLastWord(line 25, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  ch == ' ' 
             mutant:                    ch <= ' '
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.lengthOfLastWord(line 25, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  ch == ' ' 
             mutant:                    ch >= ' '
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.lengthOfLastWord(line 25, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  ch == ' ' 
             mutant:                    false
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.lengthOfLastWord(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  len > 0 
             mutant:                    len != 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.lengthOfLastWord(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  len > 0 
             mutant:                    len >= 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.lengthOfLastWord(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  len > 0 
             mutant:                    false
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.lengthOfLastWord(line 25, col 27)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  ch == ' ' && len > 0 
             mutant:                    ch == ' ' == len > 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.lengthOfLastWord(line 25, col 27)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  ch == ' ' && len > 0 
             mutant:                    false
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.lengthOfLastWord(line 25, col 20)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  ch == ' ' && len > 0 
             mutant:                    ch == ' '
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.lengthOfLastWord(line 25, col 34)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  ch == ' ' && len > 0 
             mutant:                    len > 0
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 18: (STD) break; -> <NO-OP>
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.lengthOfLastWord(line 27, col 27)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> <(int,int)
             original:                  ch != ' ' 
             mutant:                    ch < ' '
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.lengthOfLastWord(line 27, col 27)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> >(int,int)
             original:                  ch != ' ' 
             mutant:                    ch > ' '
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 21: Solution.lengthOfLastWord(line 27, col 27)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> TRUE(int,int)
             original:                  ch != ' ' 
             mutant:                    true
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 22: (STD) len++; -> <NO-OP>
-[04/24 17:41:03] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 22 mutants (49 ms)
+[05/24 20:47:00] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 22 mutants (86 ms)

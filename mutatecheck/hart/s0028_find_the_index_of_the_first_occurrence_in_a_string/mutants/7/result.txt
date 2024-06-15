@@ -1,7 +1,4 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-2 warnings
+./hart/s0028_find_the_index_of_the_first_occurrence_in_a_string/mutants/7/Solution.java:20: verify: The prover cannot establish an assertion (LoopDecreasesNonNegative) in method strStr
+        //@ decreases (m - n + 1) - start;
+            ^
+1 verification failure

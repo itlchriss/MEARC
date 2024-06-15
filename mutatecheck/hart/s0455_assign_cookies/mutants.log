@@ -1,0 +1,18 @@
+1:STD:<CALL>:<NO-OP>:g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):18:Arrays.sort(g); |==> <NO-OP>
+2:STD:<CALL>:<NO-OP>:g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):19:Arrays.sort(s); |==> <NO-OP>
+3:ROR:<(int,int):!=(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length |==> i != g.length
+4:ROR:<(int,int):<=(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length |==> i <= g.length
+5:ROR:<(int,int):FALSE(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length |==> false
+6:ROR:<(int,int):!=(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:j < s.length |==> j != s.length
+7:ROR:<(int,int):<=(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:j < s.length |==> j <= s.length
+8:ROR:<(int,int):FALSE(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:j < s.length |==> false
+9:COR:&&(boolean,boolean):==(boolean,boolean):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length && j < s.length |==> i < g.length == j < s.length
+10:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length && j < s.length |==> false
+11:COR:&&(boolean,boolean):LHS(boolean,boolean):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length && j < s.length |==> i < g.length
+12:COR:&&(boolean,boolean):RHS(boolean,boolean):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):25:i < g.length && j < s.length |==> j < s.length
+13:ROR:>=(int,int):==(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):26:s[j] >= g[i] |==> s[j] == g[i]
+14:ROR:>=(int,int):>(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):26:s[j] >= g[i] |==> s[j] > g[i]
+15:ROR:>=(int,int):TRUE(int,int):g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):26:s[j] >= g[i] |==> true
+16:STD:<INC>:<NO-OP>:g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):27:result++; |==> <NO-OP>
+17:STD:<INC>:<NO-OP>:g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):28:i++; |==> <NO-OP>
+18:STD:<INC>:<NO-OP>:g0401_0500.s0455_assign_cookies.Solution@findContentChildren(int[],int[]):30:j++; |==> <NO-OP>

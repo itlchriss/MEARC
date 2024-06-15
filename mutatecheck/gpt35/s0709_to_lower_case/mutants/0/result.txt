@@ -1,0 +1,19 @@
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method toLowerCase
+            if (c[i] <= 'Z' && c[i] >= 'A') {
+                 ^
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:16: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method toLowerCase
+            if (c[i] <= 'Z' && c[i] >= 'A') {
+                 ^
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:20: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0709_to_lower_case/mutants/0/Solution.java:10:) in method toLowerCase
+        return new String(c);
+        ^
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:10: verify: Associated declaration: ./gpt35/s0709_to_lower_case/mutants/0/Solution.java:20:
+//@ ensures (\forall int i; 0 <= i && i < \result.length(); Character.isLowerCase(\result.charAt(i)));
+    ^
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:20: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0709_to_lower_case/mutants/0/Solution.java:12:) in method toLowerCase
+        return new String(c);
+        ^
+./gpt35/s0709_to_lower_case/mutants/0/Solution.java:12: verify: Associated declaration: ./gpt35/s0709_to_lower_case/mutants/0/Solution.java:20:
+//@ ensures (\forall int i; 0 <= i && i < s.length(); Character.toLowerCase(s.charAt(i)) == \result.charAt(i));
+    ^
+6 verification failures

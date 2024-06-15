@@ -1,9 +1,3 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
 ./gpt35/s0066_plus_one/mutants/44/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0066_plus_one/mutants/44/Solution.java:8:) in method plusOne
         return digits;
         ^
@@ -13,29 +7,28 @@
 ./gpt35/s0066_plus_one/mutants/44/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method plusOne
                 sum = digits[i] + carry;
                             ^
-./gpt35/s0066_plus_one/mutants/44/Solution.java:32: verify: The prover cannot establish an assertion (Precondition: /home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:312:) in method plusOne
+./gpt35/s0066_plus_one/mutants/44/Solution.java:32: verify: The prover cannot establish an assertion (Precondition: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:312:) in method plusOne
             System.arraycopy(digits, 0, ans, 1, ans.length / 1);
                             ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:312: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/44/Solution.java:32:
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:312: verify: Associated declaration: ./gpt35/s0066_plus_one/mutants/44/Solution.java:32:
     public static native void arraycopy(/*@nullable*/ Object src,
                               ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:147: verify: Precondition conjunct is false: src == null || dest == null
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:147: verify: Precondition conjunct is false: src == null || dest == null
       @    requires src == null || dest == null;
                                 ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:152: verify: Precondition conjunct is false: (src instanceof byte[])
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:152: verify: Precondition conjunct is false: (src instanceof byte[])
            requires (src instanceof byte[]) &&
                     ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:206: verify: Precondition conjunct is false: (src instanceof Object[])
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:206: verify: Precondition conjunct is false: (src instanceof Object[])
         requires (src instanceof Object[]) &&
                  ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:220: verify: Precondition conjunct is false: srcPos + length_ <= ((int[])src).length
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:220: verify: Precondition conjunct is false: srcPos + length_ <= ((int[])src).length
     @                 srcPos + length_ <= ((int[])src).length
                                        ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:229: verify: Precondition conjunct is false: (src instanceof long[])
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:229: verify: Precondition conjunct is false: (src instanceof long[])
         requires (src instanceof long[]) &&
                  ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/lang/System.jml:240: verify: Precondition conjunct is false: (src instanceof char[])
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/System.jml:240: verify: Precondition conjunct is false: (src instanceof char[])
         requires (src instanceof char[]) &&
                  ^
-2 warnings
 11 verification failures

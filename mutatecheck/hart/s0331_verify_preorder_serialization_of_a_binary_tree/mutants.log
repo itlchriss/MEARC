@@ -1,0 +1,29 @@
+1:ROR:<=(int,int):<(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):14:i <= length |==> i < length
+2:ROR:<=(int,int):==(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):14:i <= length |==> i == length
+3:ROR:<=(int,int):TRUE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):14:i <= length |==> true
+4:ROR:==(int,int):<=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length |==> i <= length
+5:ROR:==(int,int):>=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length |==> i >= length
+6:ROR:==(int,int):FALSE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length |==> false
+7:ROR:==(int,int):<=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:preorder.charAt(i) == ',' |==> preorder.charAt(i) <= ','
+8:ROR:==(int,int):>=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:preorder.charAt(i) == ',' |==> preorder.charAt(i) >= ','
+9:ROR:==(int,int):FALSE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:preorder.charAt(i) == ',' |==> false
+10:COR:||(boolean,boolean):!=(boolean,boolean):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length || preorder.charAt(i) == ',' |==> i == length != (preorder.charAt(i) == ',')
+11:COR:||(boolean,boolean):LHS(boolean,boolean):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length || preorder.charAt(i) == ',' |==> i == length
+12:COR:||(boolean,boolean):RHS(boolean,boolean):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length || preorder.charAt(i) == ',' |==> preorder.charAt(i) == ','
+13:COR:||(boolean,boolean):TRUE(boolean,boolean):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):15:i == length || preorder.charAt(i) == ',' |==> true
+14:STD:<DEC>:<NO-OP>:g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):16:--count; |==> <NO-OP>
+15:ROR:<(int,int):!=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):17:count < 0 |==> count != 0
+16:ROR:<(int,int):<=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):17:count < 0 |==> count <= 0
+17:ROR:<(int,int):FALSE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):17:count < 0 |==> false
+18:STD:<RETURN>:<NO-OP>:g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):18:return false; |==> <NO-OP>
+19:AOR:-(int,int):%(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:i - 1 |==> i % 1
+20:AOR:-(int,int):*(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:i - 1 |==> i * 1
+21:AOR:-(int,int):+(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:i - 1 |==> i + 1
+22:AOR:-(int,int):/(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:i - 1 |==> i / 1
+23:ROR:==(int,int):<=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:preorder.charAt(i - 1) == '#' |==> preorder.charAt(i - 1) <= '#'
+24:ROR:==(int,int):>=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:preorder.charAt(i - 1) == '#' |==> preorder.charAt(i - 1) >= '#'
+25:ROR:==(int,int):FALSE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:preorder.charAt(i - 1) == '#' |==> false
+26:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):20:count += preorder.charAt(i - 1) == '#' ? 0 : 2; |==> <NO-OP>
+27:ROR:==(int,int):<=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):23:count == 0 |==> count <= 0
+28:ROR:==(int,int):>=(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):23:count == 0 |==> count >= 0
+29:ROR:==(int,int):FALSE(int,int):g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree.Solution@isValidSerialization(java.lang.String):23:count == 0 |==> false

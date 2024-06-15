@@ -1,0 +1,7 @@
+./gpt35/s0342_power_of_four/Solution.java:16: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0342_power_of_four/Solution.java:6:) in method isPowerOfFour
+        return n == 1;
+        ^
+./gpt35/s0342_power_of_four/Solution.java:6: verify: Associated declaration: ./gpt35/s0342_power_of_four/Solution.java:16:
+//@ ensures \result == (n > 0 && (n & (n - 1)) == 0 && (n & 0x55555555) != 0);
+    ^
+2 verification failures

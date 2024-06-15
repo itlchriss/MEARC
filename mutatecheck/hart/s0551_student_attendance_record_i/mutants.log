@@ -1,0 +1,32 @@
+1:ROR:<(int,int):!=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):14:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):14:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):14:i < s.length() |==> false
+4:ROR:==(int,int):<=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):15:s.charAt(i) == 'A' |==> s.charAt(i) <= 'A'
+5:ROR:==(int,int):>=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):15:s.charAt(i) == 'A' |==> s.charAt(i) >= 'A'
+6:ROR:==(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):15:s.charAt(i) == 'A' |==> false
+7:STD:<INC>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):16:aCount++; |==> <NO-OP>
+8:ROR:>(int,int):!=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):17:aCount > 1 |==> aCount != 1
+9:ROR:>(int,int):>=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):17:aCount > 1 |==> aCount >= 1
+10:ROR:>(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):17:aCount > 1 |==> false
+11:STD:<RETURN>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):18:return false; |==> <NO-OP>
+12:ROR:==(int,int):<=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):20:s.charAt(i) == 'L' |==> s.charAt(i) <= 'L'
+13:ROR:==(int,int):>=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):20:s.charAt(i) == 'L' |==> s.charAt(i) >= 'L'
+14:ROR:==(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):20:s.charAt(i) == 'L' |==> false
+15:ROR:<(int,int):!=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() |==> i != s.length()
+16:ROR:<(int,int):<=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() |==> i <= s.length()
+17:ROR:<(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() |==> false
+18:ROR:==(int,int):<=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:s.charAt(i) == 'L' |==> s.charAt(i) <= 'L'
+19:ROR:==(int,int):>=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:s.charAt(i) == 'L' |==> s.charAt(i) >= 'L'
+20:ROR:==(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:s.charAt(i) == 'L' |==> false
+21:COR:&&(boolean,boolean):==(boolean,boolean):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() && s.charAt(i) == 'L' |==> i < s.length() == (s.charAt(i) == 'L')
+22:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() && s.charAt(i) == 'L' |==> false
+23:COR:&&(boolean,boolean):LHS(boolean,boolean):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() && s.charAt(i) == 'L' |==> i < s.length()
+24:COR:&&(boolean,boolean):RHS(boolean,boolean):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):22:i < s.length() && s.charAt(i) == 'L' |==> s.charAt(i) == 'L'
+25:STD:<INC>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):23:i++; |==> <NO-OP>
+26:STD:<INC>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):24:continuousLCount++; |==> <NO-OP>
+27:ROR:>(int,int):!=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):25:continuousLCount > 2 |==> continuousLCount != 2
+28:ROR:>(int,int):>=(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):25:continuousLCount > 2 |==> continuousLCount >= 2
+29:ROR:>(int,int):FALSE(int,int):g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):25:continuousLCount > 2 |==> false
+30:STD:<RETURN>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):26:return false; |==> <NO-OP>
+31:STD:<DEC>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):29:i--; |==> <NO-OP>
+32:STD:<INC>:<NO-OP>:g0501_0600.s0551_student_attendance_record_i.Solution@checkRecord(java.lang.String):31:i++; |==> <NO-OP>

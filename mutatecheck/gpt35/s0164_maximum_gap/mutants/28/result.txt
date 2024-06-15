@@ -1,0 +1,10 @@
+./gpt35/s0164_maximum_gap/mutants/28/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0164_maximum_gap/mutants/28/Solution.java:9:) in method maximumGap
+        return ret;
+        ^
+./gpt35/s0164_maximum_gap/mutants/28/Solution.java:9: verify: Associated declaration: ./gpt35/s0164_maximum_gap/mutants/28/Solution.java:26:
+//@ ensures (\forall int i; 0 <= i && i < nums.length - 1; \result >= nums[i + 1] - nums[i]);
+    ^
+./gpt35/s0164_maximum_gap/mutants/28/Solution.java:23: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maximumGap
+                ret = (nums[i + 1] / nums[i]);
+                                   ^
+3 verification failures

@@ -1,0 +1,7 @@
+./gpt35/s0908_smallest_range_i/mutants/22/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method smallestRangeI
+        return (max - k) % (min + k);
+                         ^
+./gpt35/s0908_smallest_range_i/mutants/22/Solution.java:14: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int smallestRangeI(int[] nums, int k) {
+               ^
+2 verification failures

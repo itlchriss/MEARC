@@ -1,0 +1,11 @@
+1:AOR:+(int,int):%(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):21:map.getOrDefault(c, 0) + 1 |==> map.getOrDefault(c, 0) % 1
+2:AOR:+(int,int):*(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):21:map.getOrDefault(c, 0) + 1 |==> map.getOrDefault(c, 0) * 1
+3:AOR:+(int,int):-(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):21:map.getOrDefault(c, 0) + 1 |==> map.getOrDefault(c, 0) - 1
+4:AOR:+(int,int):/(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):21:map.getOrDefault(c, 0) + 1 |==> map.getOrDefault(c, 0) / 1
+5:STD:<CALL>:<NO-OP>:g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):21:map.put(c, map.getOrDefault(c, 0) + 1); |==> <NO-OP>
+6:STD:<CALL>:<NO-OP>:g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):26:reverseMap.computeIfAbsent(freq, (k)->new ArrayList<>()); |==> <NO-OP>
+7:STD:<CALL>:<NO-OP>:g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):27:reverseMap.get(freq).add(c.getKey()); |==> <NO-OP>
+8:ROR:<(int,int):!=(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):33:i < freq.getKey() |==> i != freq.getKey()
+9:ROR:<(int,int):<=(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):33:i < freq.getKey() |==> i <= freq.getKey()
+10:ROR:<(int,int):FALSE(int,int):g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):33:i < freq.getKey() |==> false
+11:STD:<CALL>:<NO-OP>:g0401_0500.s0451_sort_characters_by_frequency.Solution@frequencySort(java.lang.String):34:sb.append(c); |==> <NO-OP>

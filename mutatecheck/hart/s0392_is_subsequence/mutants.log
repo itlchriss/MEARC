@@ -1,0 +1,16 @@
+1:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:m == 0 |==> m <= 0
+2:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:m == 0 |==> m >= 0
+3:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:m == 0 |==> false
+4:STD:<RETURN>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):19:return true; |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:j < n |==> j != n
+6:ROR:<(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:j < n |==> j <= n
+7:ROR:<(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:j < n |==> false
+8:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):22:s.charAt(i) == t.charAt(j) |==> s.charAt(i) <= t.charAt(j)
+9:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):22:s.charAt(i) == t.charAt(j) |==> s.charAt(i) >= t.charAt(j)
+10:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):22:s.charAt(i) == t.charAt(j) |==> false
+11:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):23:i++; |==> <NO-OP>
+12:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):24:i == m |==> i <= m
+13:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):24:i == m |==> i >= m
+14:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):24:i == m |==> false
+15:STD:<RETURN>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):25:return true; |==> <NO-OP>
+16:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):28:j++; |==> <NO-OP>

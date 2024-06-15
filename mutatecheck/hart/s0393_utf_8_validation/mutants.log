@@ -1,0 +1,37 @@
+1:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):16:count == 0 |==> count <= 0
+2:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):16:count == 0 |==> count >= 0
+3:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):16:count == 0 |==> false
+4:SOR:>>(int,int):<<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):17:d >> 5 |==> d << 5
+5:SOR:>>(int,int):>>>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):17:d >> 5 |==> d >>> 5
+6:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):17:d >> 5 == 6 |==> d >> 5 <= 6
+7:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):17:d >> 5 == 6 |==> d >> 5 >= 6
+8:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):17:d >> 5 == 6 |==> false
+9:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):18:count = 1; |==> <NO-OP>
+10:SOR:>>(int,int):<<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):19:d >> 4 |==> d << 4
+11:SOR:>>(int,int):>>>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):19:d >> 4 |==> d >>> 4
+12:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):19:d >> 4 == 14 |==> d >> 4 <= 14
+13:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):19:d >> 4 == 14 |==> d >> 4 >= 14
+14:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):19:d >> 4 == 14 |==> false
+15:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):20:count = 2; |==> <NO-OP>
+16:SOR:>>(int,int):<<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):21:d >> 3 |==> d << 3
+17:SOR:>>(int,int):>>>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):21:d >> 3 |==> d >>> 3
+18:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):21:d >> 3 == 30 |==> d >> 3 <= 30
+19:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):21:d >> 3 == 30 |==> d >> 3 >= 30
+20:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):21:d >> 3 == 30 |==> false
+21:STD:<ASSIGN>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):22:count = 3; |==> <NO-OP>
+22:SOR:>>(int,int):<<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):23:d >> 7 |==> d << 7
+23:SOR:>>(int,int):>>>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):23:d >> 7 |==> d >>> 7
+24:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):23:d >> 7 == 1 |==> d >> 7 <= 1
+25:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):23:d >> 7 == 1 |==> d >> 7 >= 1
+26:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):23:d >> 7 == 1 |==> false
+27:STD:<RETURN>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):24:return false; |==> <NO-OP>
+28:SOR:>>(int,int):<<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):27:d >> 6 |==> d << 6
+29:SOR:>>(int,int):>>>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):27:d >> 6 |==> d >>> 6
+30:ROR:!=(int,int):<(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):27:d >> 6 != 2 |==> d >> 6 < 2
+31:ROR:!=(int,int):>(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):27:d >> 6 != 2 |==> d >> 6 > 2
+32:ROR:!=(int,int):TRUE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):27:d >> 6 != 2 |==> true
+33:STD:<RETURN>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):28:return false; |==> <NO-OP>
+34:STD:<DEC>:<NO-OP>:g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):30:count--; |==> <NO-OP>
+35:ROR:==(int,int):<=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):34:count == 0 |==> count <= 0
+36:ROR:==(int,int):>=(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):34:count == 0 |==> count >= 0
+37:ROR:==(int,int):FALSE(int,int):g0301_0400.s0393_utf_8_validation.Solution@validUtf8(int[]):34:count == 0 |==> false

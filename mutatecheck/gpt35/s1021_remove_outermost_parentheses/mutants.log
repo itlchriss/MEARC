@@ -1,0 +1,30 @@
+1:ROR:<(int,int):!=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):22:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):22:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):22:i < s.length() |==> false
+4:AOR:-(int,int):%(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):23:i - 1 |==> i % 1
+5:AOR:-(int,int):*(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):23:i - 1 |==> i * 1
+6:AOR:-(int,int):+(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):23:i - 1 |==> i + 1
+7:AOR:-(int,int):/(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):23:i - 1 |==> i / 1
+8:ROR:<(int,int):!=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() |==> i != s.length()
+9:ROR:<(int,int):<=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() |==> i <= s.length()
+10:ROR:<(int,int):FALSE(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() |==> false
+11:ROR:>(int,int):!=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:left > 0 |==> left != 0
+12:ROR:>(int,int):>=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:left > 0 |==> left >= 0
+13:ROR:>(int,int):FALSE(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:left > 0 |==> false
+14:COR:&&(boolean,boolean):==(boolean,boolean):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() && left > 0 |==> i < s.length() == left > 0
+15:COR:&&(boolean,boolean):FALSE(boolean,boolean):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() && left > 0 |==> false
+16:COR:&&(boolean,boolean):LHS(boolean,boolean):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() && left > 0 |==> i < s.length()
+17:COR:&&(boolean,boolean):RHS(boolean,boolean):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):25:i < s.length() && left > 0 |==> left > 0
+18:ROR:==(int,int):<=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):26:s.charAt(i) == '(' |==> s.charAt(i) <= '('
+19:ROR:==(int,int):>=(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):26:s.charAt(i) == '(' |==> s.charAt(i) >= '('
+20:ROR:==(int,int):FALSE(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):26:s.charAt(i) == '(' |==> false
+21:STD:<INC>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):27:left++; |==> <NO-OP>
+22:STD:<DEC>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):29:left--; |==> <NO-OP>
+23:STD:<INC>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):31:i++; |==> <NO-OP>
+24:STD:<CALL>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):33:primitives.add(s.substring(initialI, i)); |==> <NO-OP>
+25:STD:<INC>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):34:i++; |==> <NO-OP>
+26:AOR:-(int,int):%(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):38:primitive.length() - 1 |==> primitive.length() % 1
+27:AOR:-(int,int):*(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):38:primitive.length() - 1 |==> primitive.length() * 1
+28:AOR:-(int,int):+(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):38:primitive.length() - 1 |==> primitive.length() + 1
+29:AOR:-(int,int):/(int,int):g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):38:primitive.length() - 1 |==> primitive.length() / 1
+30:STD:<CALL>:<NO-OP>:g1001_1100.s1021_remove_outermost_parentheses.Solution@removeOuterParentheses(java.lang.String):38:sb.append(primitive, 1, primitive.length() - 1); |==> <NO-OP>

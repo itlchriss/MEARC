@@ -1,9 +1,3 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
 ./gpt35/s0032_longest_valid_parentheses/mutants/1/Solution.java:50: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0032_longest_valid_parentheses/mutants/1/Solution.java:7:) in method longestValidParentheses
         return max;
         ^
@@ -28,5 +22,4 @@
 ./gpt35/s0032_longest_valid_parentheses/mutants/1/Solution.java:10: verify: Associated declaration: ./gpt35/s0032_longest_valid_parentheses/mutants/1/Solution.java:50:
 //@ ensures(\result >= 0);
     ^
-2 warnings
 8 verification failures

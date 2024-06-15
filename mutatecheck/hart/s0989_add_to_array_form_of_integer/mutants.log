@@ -1,0 +1,57 @@
+1:AOR:-(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:num.length - 1 |==> num.length % 1
+2:AOR:-(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:num.length - 1 |==> num.length * 1
+3:AOR:-(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:num.length - 1 |==> num.length + 1
+4:AOR:-(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:num.length - 1 |==> num.length / 1
+5:ROR:>=(int,int):==(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:i >= 0 |==> i == 0
+6:ROR:>=(int,int):>(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:i >= 0 |==> i > 0
+7:ROR:>=(int,int):TRUE(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):19:i >= 0 |==> true
+8:AOR:%(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:k % 10 |==> k * 10
+9:AOR:%(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:k % 10 |==> k + 10
+10:AOR:%(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:k % 10 |==> k - 10
+11:AOR:%(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:k % 10 |==> k / 10
+12:AOR:+(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 |==> num[i] % (k % 10)
+13:AOR:+(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 |==> num[i] * (k % 10)
+14:AOR:+(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 |==> num[i] - k % 10
+15:AOR:+(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 |==> num[i] / (k % 10)
+16:AOR:+(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 + carry |==> (num[i] + k % 10) % carry
+17:AOR:+(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 + carry |==> (num[i] + k % 10) * carry
+18:AOR:+(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 + carry |==> num[i] + k % 10 - carry
+19:AOR:+(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):20:num[i] + k % 10 + carry |==> (num[i] + k % 10) / carry
+20:AOR:%(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):21:temp % 10 |==> temp * 10
+21:AOR:%(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):21:temp % 10 |==> temp + 10
+22:AOR:%(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):21:temp % 10 |==> temp - 10
+23:AOR:%(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):21:temp % 10 |==> temp / 10
+24:STD:<CALL>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):21:result.add(temp % 10); |==> <NO-OP>
+25:AOR:/(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):22:temp / 10 |==> temp % 10
+26:AOR:/(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):22:temp / 10 |==> temp * 10
+27:AOR:/(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):22:temp / 10 |==> temp + 10
+28:AOR:/(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):22:temp / 10 |==> temp - 10
+29:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):22:carry = temp / 10; |==> <NO-OP>
+30:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):23:k /= 10; |==> <NO-OP>
+31:ROR:>(int,int):!=(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):25:k > 0 |==> k != 0
+32:ROR:>(int,int):>=(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):25:k > 0 |==> k >= 0
+33:ROR:>(int,int):FALSE(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):25:k > 0 |==> false
+34:AOR:%(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 |==> k * 10
+35:AOR:%(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 |==> k + 10
+36:AOR:%(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 |==> k - 10
+37:AOR:%(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 |==> k / 10
+38:AOR:+(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 + carry |==> k % 10 % carry
+39:AOR:+(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 + carry |==> k % 10 * carry
+40:AOR:+(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 + carry |==> k % 10 - carry
+41:AOR:+(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):26:k % 10 + carry |==> k % 10 / carry
+42:AOR:%(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):27:t % 10 |==> t * 10
+43:AOR:%(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):27:t % 10 |==> t + 10
+44:AOR:%(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):27:t % 10 |==> t - 10
+45:AOR:%(int,int):/(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):27:t % 10 |==> t / 10
+46:STD:<CALL>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):27:result.add(t % 10); |==> <NO-OP>
+47:AOR:/(int,int):%(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):28:t / 10 |==> t % 10
+48:AOR:/(int,int):*(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):28:t / 10 |==> t * 10
+49:AOR:/(int,int):+(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):28:t / 10 |==> t + 10
+50:AOR:/(int,int):-(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):28:t / 10 |==> t - 10
+51:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):28:carry = t / 10; |==> <NO-OP>
+52:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):29:k /= 10; |==> <NO-OP>
+53:ROR:==(int,int):<=(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):31:carry == 1 |==> carry <= 1
+54:ROR:==(int,int):>=(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):31:carry == 1 |==> carry >= 1
+55:ROR:==(int,int):FALSE(int,int):g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):31:carry == 1 |==> false
+56:STD:<CALL>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):32:result.add(1); |==> <NO-OP>
+57:STD:<CALL>:<NO-OP>:g0901_1000.s0989_add_to_array_form_of_integer.Solution@addToArrayForm(int[],int):34:Collections.reverse(result); |==> <NO-OP>

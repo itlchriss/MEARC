@@ -1,0 +1,51 @@
+1:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):18:typed.length() < name.length() |==> typed.length() != name.length()
+2:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):18:typed.length() < name.length() |==> typed.length() <= name.length()
+3:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):18:typed.length() < name.length() |==> false
+4:STD:<RETURN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):19:return false; |==> <NO-OP>
+5:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() |==> i != name.length()
+6:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() |==> i <= name.length()
+7:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() |==> false
+8:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:j < typed.length() |==> j != typed.length()
+9:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:j < typed.length() |==> j <= typed.length()
+10:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:j < typed.length() |==> false
+11:COR:&&(boolean,boolean):==(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() && j < typed.length() |==> i < name.length() == j < typed.length()
+12:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() && j < typed.length() |==> false
+13:COR:&&(boolean,boolean):LHS(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() && j < typed.length() |==> i < name.length()
+14:COR:&&(boolean,boolean):RHS(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):21:i < name.length() && j < typed.length() |==> j < typed.length()
+15:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() |==> j != typed.length()
+16:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() |==> j <= typed.length()
+17:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() |==> false
+18:ROR:!=(int,int):<(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:typed.charAt(j) != name.charAt(i) |==> typed.charAt(j) < name.charAt(i)
+19:ROR:!=(int,int):>(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:typed.charAt(j) != name.charAt(i) |==> typed.charAt(j) > name.charAt(i)
+20:ROR:!=(int,int):TRUE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:typed.charAt(j) != name.charAt(i) |==> true
+21:COR:&&(boolean,boolean):==(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() && typed.charAt(j) != name.charAt(i) |==> j < typed.length() == (typed.charAt(j) != name.charAt(i))
+22:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() && typed.charAt(j) != name.charAt(i) |==> false
+23:COR:&&(boolean,boolean):LHS(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() && typed.charAt(j) != name.charAt(i) |==> j < typed.length()
+24:COR:&&(boolean,boolean):RHS(boolean,boolean):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):22:j < typed.length() && typed.charAt(j) != name.charAt(i) |==> typed.charAt(j) != name.charAt(i)
+25:ROR:!=(int,int):<(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):23:typed.charAt(j) != prev |==> typed.charAt(j) < prev
+26:ROR:!=(int,int):>(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):23:typed.charAt(j) != prev |==> typed.charAt(j) > prev
+27:ROR:!=(int,int):TRUE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):23:typed.charAt(j) != prev |==> true
+28:STD:<RETURN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):24:return false; |==> <NO-OP>
+29:AOR:-(int,int):%(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:typed.length() - 1 |==> typed.length() % 1
+30:AOR:-(int,int):*(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:typed.length() - 1 |==> typed.length() * 1
+31:AOR:-(int,int):+(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:typed.length() - 1 |==> typed.length() + 1
+32:AOR:-(int,int):/(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:typed.length() - 1 |==> typed.length() / 1
+33:ROR:==(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:j == typed.length() - 1 |==> j <= typed.length() - 1
+34:ROR:==(int,int):>=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:j == typed.length() - 1 |==> j >= typed.length() - 1
+35:ROR:==(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):26:j == typed.length() - 1 |==> false
+36:STD:<RETURN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):27:return false; |==> <NO-OP>
+37:STD:<INC>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):29:j++; |==> <NO-OP>
+38:STD:<ASSIGN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):31:prev = name.charAt(i); |==> <NO-OP>
+39:STD:<INC>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):32:i++; |==> <NO-OP>
+40:STD:<INC>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):33:j++; |==> <NO-OP>
+41:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):35:i < name.length() |==> i != name.length()
+42:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):35:i < name.length() |==> i <= name.length()
+43:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):35:i < name.length() |==> false
+44:STD:<RETURN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):36:return false; |==> <NO-OP>
+45:ROR:<(int,int):!=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):38:j < typed.length() |==> j != typed.length()
+46:ROR:<(int,int):<=(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):38:j < typed.length() |==> j <= typed.length()
+47:ROR:<(int,int):FALSE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):38:j < typed.length() |==> false
+48:ROR:!=(int,int):<(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):39:typed.charAt(j) != prev |==> typed.charAt(j) < prev
+49:ROR:!=(int,int):>(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):39:typed.charAt(j) != prev |==> typed.charAt(j) > prev
+50:ROR:!=(int,int):TRUE(int,int):g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):39:typed.charAt(j) != prev |==> true
+51:STD:<RETURN>:<NO-OP>:g0901_1000.s0925_long_pressed_name.Solution@isLongPressedName(java.lang.String,java.lang.String):40:return false; |==> <NO-OP>

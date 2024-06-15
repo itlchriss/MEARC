@@ -1,0 +1,13 @@
+./gpt35/s0164_maximum_gap/mutants/22/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0164_maximum_gap/mutants/22/Solution.java:9:) in method maximumGap
+        return ret;
+        ^
+./gpt35/s0164_maximum_gap/mutants/22/Solution.java:9: verify: Associated declaration: ./gpt35/s0164_maximum_gap/mutants/22/Solution.java:26:
+//@ ensures (\forall int i; 0 <= i && i < nums.length - 1; \result >= nums[i + 1] - nums[i]);
+    ^
+./gpt35/s0164_maximum_gap/mutants/22/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0164_maximum_gap/mutants/22/Solution.java:13:) in method maximumGap
+        return ret;
+        ^
+./gpt35/s0164_maximum_gap/mutants/22/Solution.java:13: verify: Associated declaration: ./gpt35/s0164_maximum_gap/mutants/22/Solution.java:26:
+//@ ensures \result >= 0;
+    ^
+4 verification failures

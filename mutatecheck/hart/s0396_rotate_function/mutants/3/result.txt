@@ -1,0 +1,22 @@
+./hart/s0396_rotate_function/mutants/3/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxRotateFunction
+            f += i % nums[i];
+                   ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0396_rotate_function/mutants/3/Solution.java:12:) in method maxRotateFunction
+        return max;
+        ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:12: verify: Associated declaration: ./hart/s0396_rotate_function/mutants/3/Solution.java:30:
+//@ ensures((\result <= 2147483647) && (\result >= -2147483648));
+    ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0396_rotate_function/mutants/3/Solution.java:13:) in method maxRotateFunction
+        return max;
+        ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:13: verify: Associated declaration: ./hart/s0396_rotate_function/mutants/3/Solution.java:30:
+//@ ensures((Arrays.equals(nums, new int[] {4 , 3 , 2 , 6})) ==> (\result == 26));
+    ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0396_rotate_function/mutants/3/Solution.java:14:) in method maxRotateFunction
+        return max;
+        ^
+./hart/s0396_rotate_function/mutants/3/Solution.java:14: verify: Associated declaration: ./hart/s0396_rotate_function/mutants/3/Solution.java:30:
+//@ ensures((Arrays.equals(nums, new int[] {100})) ==> (\result == 0));
+    ^
+7 verification failures

@@ -1,0 +1,13 @@
+./hart/s0191_number_of_1_bits/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0191_number_of_1_bits/Solution.java:12:) in method hammingWeight
+        return flag ? sum + 1 : sum;
+        ^
+./hart/s0191_number_of_1_bits/Solution.java:12: verify: Associated declaration: ./hart/s0191_number_of_1_bits/Solution.java:27:
+//@ ensures((n == 1011) ==> (\result == 3));
+    ^
+./hart/s0191_number_of_1_bits/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0191_number_of_1_bits/Solution.java:14:) in method hammingWeight
+        return flag ? sum + 1 : sum;
+        ^
+./hart/s0191_number_of_1_bits/Solution.java:14: verify: Associated declaration: ./hart/s0191_number_of_1_bits/Solution.java:27:
+//@ ensures((n == 10000000) ==> (\result == 1));
+    ^
+4 verification failures

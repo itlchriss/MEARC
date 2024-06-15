@@ -1,0 +1,13 @@
+./hart/s0461_hamming_distance/mutants/0/Solution.java:17: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0461_hamming_distance/mutants/0/Solution.java:13:) in method hammingDistance
+        return Integer.bitCount(x & y);
+        ^
+./hart/s0461_hamming_distance/mutants/0/Solution.java:13: verify: Associated declaration: ./hart/s0461_hamming_distance/mutants/0/Solution.java:17:
+//@ ensures((\result >= 0) && (\result <= 32));
+    ^
+./hart/s0461_hamming_distance/mutants/0/Solution.java:17: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0461_hamming_distance/mutants/0/Solution.java:14:) in method hammingDistance
+        return Integer.bitCount(x & y);
+        ^
+./hart/s0461_hamming_distance/mutants/0/Solution.java:14: verify: Associated declaration: ./hart/s0461_hamming_distance/mutants/0/Solution.java:17:
+//@ ensures(((x == 1) && (y == 4)) ==> (\result == 2));
+    ^
+4 verification failures

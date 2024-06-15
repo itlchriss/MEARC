@@ -1,26 +1,4 @@
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Map.jml:31: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @        ( o != null && oo != null && o.equals(oo)));
-                                                    ^
-/home/chrissleong/code/openjml-0.17-a15/specs/java/util/Arrays.jml:946: warning: A non-pure method is being called where it is not permitted: java.lang.Object.equals(java.lang.Object)
-      @                a[i].equals(a2[i])));
-                                  ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:12: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:8:) in method convert
-            return s;
+./hart/s0006_zigzag_conversion/mutants/13/Solution.java:28: verify: The prover cannot establish an assertion (LoopInvariant) in method convert
+        //@ loop_invariant 0 <= i <= k;
             ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:8: verify: Associated declaration: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:12:
-//@ ensures((\exists int i; 0 <= i < \result.length(); Character.isAlphabetic(\result.charAt(i))) && ((\exists int i; 0 <= i < \result.length(); ',' == (\result.charAt(i))) && (\exists int i; 0 <= i < \result.length(); '.' == (\result.charAt(i)))));
-    ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:6:) in method convert
-        return buf.toString();
-        ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:6: verify: Associated declaration: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:35:
-//@ ensures(\result.length() <= s.length());
-    ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:7:) in method convert
-        return buf.toString();
-        ^
-./hart/s0006_zigzag_conversion/mutants/13/Solution.java:7: verify: Associated declaration: ./hart/s0006_zigzag_conversion/mutants/13/Solution.java:35:
-//@ ensures((numRows >= 1) && (numRows <= 1000));
-    ^
-2 warnings
-6 verification failures
+1 verification failure

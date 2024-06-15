@@ -1,0 +1,34 @@
+1:ROR:<(int,int):!=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() |==> sIndex != s.length()
+2:ROR:<(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() |==> sIndex <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() |==> false
+4:ROR:<(int,int):!=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:tIndex < t.length() |==> tIndex != t.length()
+5:ROR:<(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:tIndex < t.length() |==> tIndex <= t.length()
+6:ROR:<(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:tIndex < t.length() |==> false
+7:COR:&&(boolean,boolean):==(boolean,boolean):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() && tIndex < t.length() |==> sIndex < s.length() == tIndex < t.length()
+8:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() && tIndex < t.length() |==> false
+9:COR:&&(boolean,boolean):LHS(boolean,boolean):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() && tIndex < t.length() |==> sIndex < s.length()
+10:COR:&&(boolean,boolean):RHS(boolean,boolean):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex < s.length() && tIndex < t.length() |==> tIndex < t.length()
+11:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:s.charAt(sIndex) == t.charAt(tIndex) |==> s.charAt(sIndex) <= t.charAt(tIndex)
+12:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:s.charAt(sIndex) == t.charAt(tIndex) |==> s.charAt(sIndex) >= t.charAt(tIndex)
+13:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:s.charAt(sIndex) == t.charAt(tIndex) |==> false
+14:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex++; |==> <NO-OP>
+15:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:tIndex++; |==> <NO-OP>
+16:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex == s.length() |==> sIndex <= s.length()
+17:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex == s.length() |==> sIndex >= s.length()
+18:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):7:sIndex == s.length() |==> false
+19:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):15:m == 0 |==> m <= 0
+20:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):15:m == 0 |==> m >= 0
+21:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):15:m == 0 |==> false
+22:STD:<RETURN>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):16:return true; |==> <NO-OP>
+23:ROR:<(int,int):!=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:j < n |==> j != n
+24:ROR:<(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:j < n |==> j <= n
+25:ROR:<(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):18:j < n |==> false
+26:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):19:s.charAt(i) == t.charAt(j) |==> s.charAt(i) <= t.charAt(j)
+27:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):19:s.charAt(i) == t.charAt(j) |==> s.charAt(i) >= t.charAt(j)
+28:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):19:s.charAt(i) == t.charAt(j) |==> false
+29:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):20:i++; |==> <NO-OP>
+30:ROR:==(int,int):<=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:i == m |==> i <= m
+31:ROR:==(int,int):>=(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:i == m |==> i >= m
+32:ROR:==(int,int):FALSE(int,int):g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):21:i == m |==> false
+33:STD:<RETURN>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):22:return true; |==> <NO-OP>
+34:STD:<INC>:<NO-OP>:g0301_0400.s0392_is_subsequence.Solution@isSubsequence(java.lang.String,java.lang.String):25:j++; |==> <NO-OP>

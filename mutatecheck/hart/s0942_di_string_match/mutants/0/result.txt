@@ -1,0 +1,26 @@
+./hart/s0942_di_string_match/mutants/0/Solution.java:12: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
+                                                                          ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method diStringMatch
+                arr[i] = max;
+                   ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method diStringMatch
+            if (s.charAt(i) == 'I' && arr[i + 1] == 0) {
+                                         ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:32: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method diStringMatch
+            if (arr[i] == 0) {
+                   ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0942_di_string_match/mutants/0/Solution.java:13:) in method diStringMatch
+        return arr;
+        ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:13: verify: Associated declaration: ./hart/s0942_di_string_match/mutants/0/Solution.java:38:
+//@ ensures(s.equals("III"));
+    ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0942_di_string_match/mutants/0/Solution.java:14:) in method diStringMatch
+        return arr;
+        ^
+./hart/s0942_di_string_match/mutants/0/Solution.java:14: verify: Associated declaration: ./hart/s0942_di_string_match/mutants/0/Solution.java:38:
+//@ ensures(s.equals("IDID"));
+    ^
+1 warning
+7 verification failures

@@ -4,14 +4,18 @@ package g0001_0100.s0055_jump_game;
 // #Algorithm_II_Day_12_Dynamic_Programming #Dynamic_Programming_I_Day_4 #Udemy_Arrays
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(79.47%)_Space_44.8_MB_(22.14%)
 
+import java.util.Arrays;
+
+import java.util.Collections;
+
 public class Solution {
-//@ ensures(\forall int i; 0 <= i < nums.length; ((nums[i] >= 0) && (nums[i] <= 100000)));
-//@ ensures((nums.length >= 1) && (nums.length <= 10000));
-//@ ensures(!(nums == null));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 100000) && (nums[i] >= 0)));
+//@ requires((nums.length <= 10000) && (nums.length >= 1));
     public boolean canJump(int[] nums) {
         int sz = nums.length;
         // we set 1 so it won't break on the first iteration
         int tmp = 1;
+        //@ loop_invariant 0 <= i <= sz;
         for (int i = 0; i != sz; i++) {
             // we always deduct tmp for every iteration
             tmp--;

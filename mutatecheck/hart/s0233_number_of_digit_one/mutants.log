@@ -1,0 +1,50 @@
+1:ROR:>(int,int):!=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):19:k > 0 |==> k != 0
+2:ROR:>(int,int):>=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):19:k > 0 |==> k >= 0
+3:ROR:>(int,int):FALSE(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):19:k > 0 |==> false
+4:AOR:%(int,int):*(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):20:k % 10 |==> k * 10
+5:AOR:%(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):20:k % 10 |==> k + 10
+6:AOR:%(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):20:k % 10 |==> k - 10
+7:AOR:%(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):20:k % 10 |==> k / 10
+8:AOR:/(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):21:k / 10 |==> k % 10
+9:AOR:/(int,int):*(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):21:k / 10 |==> k * 10
+10:AOR:/(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):21:k / 10 |==> k + 10
+11:AOR:/(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):21:k / 10 |==> k - 10
+12:ROR:==(int,int):<=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):22:rem == 0 |==> rem <= 0
+13:ROR:==(int,int):>=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):22:rem == 0 |==> rem >= 0
+14:ROR:==(int,int):FALSE(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):22:rem == 0 |==> false
+15:AOR:*(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):23:q * curr10 |==> q % curr10
+16:AOR:*(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):23:q * curr10 |==> q + curr10
+17:AOR:*(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):23:q * curr10 |==> q - curr10
+18:AOR:*(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):23:q * curr10 |==> q / curr10
+19:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):23:ans += q * curr10; |==> <NO-OP>
+20:ROR:==(int,int):<=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):24:rem == 1 |==> rem <= 1
+21:ROR:==(int,int):>=(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):24:rem == 1 |==> rem >= 1
+22:ROR:==(int,int):FALSE(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):24:rem == 1 |==> false
+23:AOR:*(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 |==> q % curr10
+24:AOR:*(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 |==> q + curr10
+25:AOR:*(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 |==> q - curr10
+26:AOR:*(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 |==> q / curr10
+27:AOR:+(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum |==> q * curr10 % cum
+28:AOR:+(int,int):*(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum |==> q * curr10 * cum
+29:AOR:+(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum |==> q * curr10 - cum
+30:AOR:+(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum |==> q * curr10 / cum
+31:AOR:+(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum + 1 |==> (q * curr10 + cum) % 1
+32:AOR:+(int,int):*(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum + 1 |==> (q * curr10 + cum) * 1
+33:AOR:+(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum + 1 |==> q * curr10 + cum - 1
+34:AOR:+(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:q * curr10 + cum + 1 |==> (q * curr10 + cum) / 1
+35:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):25:ans += q * curr10 + cum + 1; |==> <NO-OP>
+36:AOR:+(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:q + 1 |==> q % 1
+37:AOR:+(int,int):*(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:q + 1 |==> q * 1
+38:AOR:+(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:q + 1 |==> q - 1
+39:AOR:+(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:q + 1 |==> q / 1
+40:AOR:*(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:(q + 1) * curr10 |==> (q + 1) % curr10
+41:AOR:*(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:(q + 1) * curr10 |==> (q + 1) + curr10
+42:AOR:*(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:(q + 1) * curr10 |==> (q + 1) - curr10
+43:AOR:*(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:(q + 1) * curr10 |==> (q + 1) / curr10
+44:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):27:ans += (q + 1) * curr10; |==> <NO-OP>
+45:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):29:k = q; |==> <NO-OP>
+46:AOR:*(int,int):%(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):31:rem * curr10 |==> rem % curr10
+47:AOR:*(int,int):+(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):31:rem * curr10 |==> rem + curr10
+48:AOR:*(int,int):-(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):31:rem * curr10 |==> rem - curr10
+49:AOR:*(int,int):/(int,int):g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):31:rem * curr10 |==> rem / curr10
+50:STD:<ASSIGN>:<NO-OP>:g0201_0300.s0233_number_of_digit_one.Solution@countDigitOne(int):31:cum += rem * curr10; |==> <NO-OP>

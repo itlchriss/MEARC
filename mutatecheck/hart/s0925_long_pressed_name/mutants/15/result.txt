@@ -1,0 +1,13 @@
+./hart/s0925_long_pressed_name/mutants/15/Solution.java:36: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0925_long_pressed_name/mutants/15/Solution.java:12:) in method isLongPressedName
+            return false;
+            ^
+./hart/s0925_long_pressed_name/mutants/15/Solution.java:12: verify: Associated declaration: ./hart/s0925_long_pressed_name/mutants/15/Solution.java:36:
+//@ ensures((Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray()))) ==> (\result == true));
+    ^
+./hart/s0925_long_pressed_name/mutants/15/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0925_long_pressed_name/mutants/15/Solution.java:13:) in method isLongPressedName
+        return true;
+        ^
+./hart/s0925_long_pressed_name/mutants/15/Solution.java:13: verify: Associated declaration: ./hart/s0925_long_pressed_name/mutants/15/Solution.java:43:
+//@ ensures((!(Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray())))) ==> (\result == false));
+    ^
+4 verification failures
