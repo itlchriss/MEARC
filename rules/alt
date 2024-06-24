@@ -1,6 +1,6 @@
 The result is:The method returns,The method generates,The method yields,The method produces
 :some,the characters
-is:represents,must be
+is:represents,must be,can be
 unique:distinct
 is not:must not be,should not be
 is greater_than_or_equal to:greater than or equal
@@ -14,10 +14,11 @@ less_than to:less than
 stronger than to:stronger than
 in:within
 result:indices in the result
-signedint:32-bit signed integer
-:exactly,immediately,The method must handle cases
+signedint:32-bit signed integer [-2147483648 \, 2147483648 - 1],32-bit signed integer [-2^31, 2^31 - 1],32-bit signed integer
+:exactly,immediately,The method must handle cases,can
 is equal to the true literal:is true
 is equal to the false literal:is false
+are equal to the true literal:are true
 at least 1 time:at least once
 that:where
 ascending_order:ascending order,non-decreasing order,increasing order
@@ -38,6 +39,10 @@ accontains:contains all characters of
 accontain:contain all characters of
 spaces:spaces ' '
 digits:digits (0-9)
+period:dot '.'
+plus_sign:plus '+'
+minus_sign:minus '-'
 All values:The values
 2147483647:the maximum value of java integer,the maximum value of a 32-bit integer
 negative 2147483648:the minimum value of java integer,the minimum value of a 32-bit integer
+empty_str:""

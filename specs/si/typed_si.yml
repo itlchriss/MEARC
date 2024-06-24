@@ -126,17 +126,6 @@
     primitive_type: 'any'
     reference_type: 'any'
   interpretation: ''
-- term: comma
-  syntax:
-  - NN
-  arguments:
-  - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
-  synthesised_datatype:
-    primitive_type: 'character'
-    reference_type: 'undefined'
-  interpretation: "','"
 - term: leftp
   syntax:
   - NN
@@ -225,17 +214,6 @@
     primitive_type: 'character'
     reference_type: 'undefined'
   interpretation: "'*'"
-- term: period
-  syntax:
-  - NN
-  arguments:
-  - symbol: '*'
-    primitive_type: 'any'
-    reference_type: 'any'
-  synthesised_datatype:
-    primitive_type: 'character'
-    reference_type: 'undefined'
-  interpretation: "'.'"
 - term: null
   syntax:
   - JJ
@@ -809,6 +787,26 @@
     reference_type: 'any'
   interpretation_type: 'java_char'
   interpretation: "'.'"
+- term: plus_sign
+  syntax:
+  - NN
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation_type: 'java_char'
+  interpretation: "'+'"
+- term: minus_sign
+  syntax:
+  - NN
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation_type: 'java_char'
+  interpretation: "'-'"
 - term: alphabet
   syntax:
   - NNS
@@ -946,6 +944,21 @@
     reference_type: 'undefined'
     interpretation_type: 'undefined'
   interpretation: '\exists int i; 0 <= i < (Subj).length(); ((Subj).charAt(i) == (Acc))'
+- term: contain
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  - VBG
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+    interpretation_type: 'undefined'
+  interpretation: '(Subj).contains((Acc))'
 - term: accontain
   syntax:
   - VBZ
