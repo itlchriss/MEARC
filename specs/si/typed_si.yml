@@ -992,3 +992,18 @@
     primitive_type: 'undefined'
     reference_type: 'string'
   interpretation: '""'
+- term: match
+  syntax:
+  - VB
+  - VBZ
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation: '(Subj).matches((Acc))'
