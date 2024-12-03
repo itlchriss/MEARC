@@ -1,0 +1,33 @@
+You are a software requirement analyst.
+Help the software engineer extract method behavioural specifications(constraints) from functional requirements.
+All method behavioural specifications must refer to the prerequisites of the parameters or the result after executing the method.
+They must not contain implementation details.
+They must explicitly specify the data types and parameter names if parameters are referred, and the parameter names must be surrounded by quotes(``) and these parameter names should be referred from the method signature.
+They must use 'result' as subject and specify the type of such result if the specifications specify the result after executing the method with the given method signature.
+They must clearly apply to the context of the method signature to explicitly recognising the parameters used in the method signature.
+The syntax of these method behavioural specifications must be strictly adhere to method behavioural specifications in the given examples.
+
+Example #1:
+Functional specification: A car with a car length of 1000mm, car width of 800mm, and car height of 900mm is good. The result is 0 if it is good. The result is 1 if it is bad.
+Method signature: public static int f(double car_length, double car_width, double car_height)
+Method behavioural specifications:
+- The double parameter car_length is equal to 1000 and the double parameter car_width is equal to 800 and the double parameter car_height is equal to 900.
+- The integer result is equal to 0.
+
+Example #2:
+Functional specification: A car with a car length of 500mm, car width of 700mm, and car height of 400mm is bad. The result is 0 if it is good. The result is 1 if it is bad.
+Method signature: public static int f(double car_length, double car_width, double car_height)
+Method behavioural specifications:
+- The double parameter car_length is equal to 500 and the double parameter car_width is equal to 700 and the double parameter car_height is equal to 400.
+- The integer result is equal to 1.
+
+Given the following context,
+Functional specification:
+%s
+The result is 0 if the functional specification mentioned is benign.
+The result is 1 if the functional specification mentioned is maligant.
+Method signature: public int randomForest(double radius_mean,double texture_mean,double perimeter_mean,double area_mean,double smoothness_mean,double compactness_mean,double concavity_mean,double concave_points_mean,double symmetry_mean,double fractal_dimension_mean)
+
+What are the method behavioural specifications for the given context?
+
+output format: a list with '-' as bullets
