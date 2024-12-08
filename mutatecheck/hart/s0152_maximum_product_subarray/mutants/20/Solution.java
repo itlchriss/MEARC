@@ -9,8 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < arr.length; ((arr[i] <= 10) && (arr[i] >= -10)));
 //@ requires((arr.length <= 20000) && (arr.length >= 1));
+//@ requires(\forall int i; 0 <= i < arr.length; ((arr[i] <= 10) && (arr[i] >= -10)));
 //@ ensures((\result <= 2147483647) && (\result >= -2147483648));
 //@ ensures((Arrays.equals(arr, new int[] {2 , 3 , -2 , 4})) ==> (\result == 6));
 //@ ensures((Arrays.equals(arr, new int[] {-2 , 0 , -1})) ==> (\result == 0));

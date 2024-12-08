@@ -12,9 +12,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < numbers.length; ((numbers[i] <= 1000000000) && (numbers[i] >= -1000000000)));
-//@ requires((numbers.length <= 10000) && (numbers.length >= 2));
 //@ requires((target <= 1000000000) && (target >= -1000000000));
+//@ requires((numbers.length <= 10000) && (numbers.length >= 2));
+//@ requires(\forall int i; 0 <= i < numbers.length; ((numbers[i] <= 1000000000) && (numbers[i] >= -1000000000)));
 //@ ensures(\result.length == 2);
 //@ ensures(\forall int i; 0 <= i < \result.length; (Collections.frequency(Arrays.asList(\result), \result[i]) == 1));
     public int[] twoSum(int[] numbers, int target) {

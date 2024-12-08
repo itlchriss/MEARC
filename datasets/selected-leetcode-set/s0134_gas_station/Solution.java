@@ -3,16 +3,23 @@ package g0101_0200.s0134_gas_station;
 // #Medium #Top_Interview_Questions #Array #Greedy
 // #2022_06_24_Time_2_ms_(94.26%)_Space_62.5_MB_(87.11%)
 
-//@ non_null_by_default
 public class Solution {
+//@ requires(*The length of the integer arrays `gas` and `cost` is less than or equal to 100000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer arrays `gas` and `cost` are less than or equal to 10000 and are greater than or equal to 0.*);
+//@ requires(*The starting gas station's index is unique if there exists a solution.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer arrays `gas` and `cost`.*);
+//@ ensures(*If the integer result is equal to -1, it means there is no starting gas station index that allows traveling around the circuit once.*);
+//@ ensures(*If the integer result is greater than or equal to 0, it represents the starting gas station's index that allows traveling around the circuit once in the clockwise direction.*);
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int sumGas = 0;
         int sumCost = 0;
         int curGas = 0;
         int result = -1;
-        //@ havoc sumGas, sumCost, curGas, result;
-        //@ maintaining 0 <= i <= gas.length && 0 <= i <= cost.length;
-        for (int i = 0; i < gas.length && i < cost.length; i++) {
+        //@ assume 1 <= gas.length <= 10;
+        //@ assume gas.length == cost.length;
+        //@ maintaining 0 <= i <= gas.length;
+        //@ maintaining 0 <= i <= cost.length;
+        for (int i = 0; i < gas.length; i++) {
             curGas += gas[i] - cost[i];
             // re-calculate the starting point
             if (curGas < 0) {

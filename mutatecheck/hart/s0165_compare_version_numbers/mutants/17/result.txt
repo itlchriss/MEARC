@@ -1,10 +1,4 @@
-./hart/s0165_compare_version_numbers/mutants/17/Solution.java:44: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0165_compare_version_numbers/mutants/17/Solution.java:14:) in method compareVersion
-            return 1;
-            ^
-./hart/s0165_compare_version_numbers/mutants/17/Solution.java:14: verify: Associated declaration: ./hart/s0165_compare_version_numbers/mutants/17/Solution.java:44:
-//@ ensures(((version1.equals("1.01")) && (version2.equals("1.001"))) ==> (\result == 0));
-    ^
 ./hart/s0165_compare_version_numbers/mutants/17/Solution.java:19: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
     public int compareVersion(String version1, String version2) {
                ^
-3 verification failures
+1 verification failure

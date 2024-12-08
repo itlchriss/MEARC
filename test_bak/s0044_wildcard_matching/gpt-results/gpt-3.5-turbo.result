@@ -1,0 +1,11 @@
+- public boolean isMatch(String inputString, String pattern)
+- requires inputString != null && pattern != null
+- requires inputString.length() <= 2000 && pattern.length() <= 2000
+- requires (\forall int i; 0 <= i && i < inputString.length(); Character.isLowerCase(inputString.charAt(i)))
+- requires (\forall int i; 0 <= i && i < pattern.length(); Character.isLowerCase(pattern.charAt(i)) || pattern.charAt(i) == '?' || pattern.charAt(i) == '*')
+- ensures \result == true || \result == false
+- ensures (\forall int i; 0 <= i && i < inputString.length(); \result == true && (pattern.charAt(i) == inputString.charAt(i) || pattern.charAt(i) == '?'))
+- ensures (\forall int i; 0 <= i && i < inputString.length(); \result == true && (pattern.charAt(i) == '*' || pattern.charAt(i) == '?' || pattern.charAt(i) == inputString.charAt(i)))
+- ensures (\forall int i; 0 <= i && i < inputString.length(); \result == true && (pattern.charAt(i) == '*' || pattern.charAt(i) == '?' || pattern.charAt(i) == inputString.charAt(i) || pattern.charAt(i) == '*'))
+- ensures (\forall int i; 0 <= i && i < inputString.length(); \result == false && (pattern.charAt(i) != inputString.charAt(i) && pattern.charAt(i) != '?'))
+- ensures (\forall int i; 0 <= i && i < inputString.length(); \result == false && (pattern.charAt(i) != inputString.charAt(i) && pattern.charAt(i) != '?' && pattern.charAt(i) != '*'))

@@ -1,0 +1,10 @@
+- requires nums != null && nums.length > 0;
+- requires (\forall int i; 0 <= i && i < nums.length; -10^4 <= nums[i] && nums[i] <= 10^4);
+- ensures \result == maximum subarray sum of nums;
+- ensures (\exists int start, end; 0 <= start && start <= end && end < nums.length; 
+            (\forall int i; start <= i && i <= end; 
+                (\sum int j; start <= j && j <= i; nums[j]) >= 0) &&
+            (\forall int i, j; 0 <= i && i < start && start <= j && j < nums.length; 
+                (\sum int k; i <= k && k <= j; nums[k]) < 0) &&
+            (\forall int i, j; 0 <= i && i < start && start <= j && j < nums.length; 
+                (\sum int k; i <= k && k <= j; nums[k]) < (\sum int k; start <= k && k <= end; nums[k])));

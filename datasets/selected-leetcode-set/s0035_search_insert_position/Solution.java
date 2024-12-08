@@ -5,12 +5,14 @@ package g0001_0100.s0035_search_insert_position;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_43.3_MB_(58.21%)
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` must not be null.*);
-//@ requires(*The integer array parameter `nums` contains distinct values sorted in ascending order.*);
-//@ requires(*The integer parameter `target` is within the range of -10^4 to 10^4.*);
-//@ requires(*The algorithm must have O(log n) runtime complexity.*);
-//@ ensures(*The integer result is the index of the integer parameter `target` if it is found in the integer array parameter `nums`.*);
-//@ ensures(*If the integer parameter `target` is not found in the integer array parameter `nums`, the integer result is the index where it would be inserted in order.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
+//@ requires(*All values in the integer array parameter `nums` are distinct and sorted in ascending order.*);
+//@ requires(*The integer parameter `target` is less than or equal to 10000 and is greater than or equal to -10000.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `nums`.*);
+//@ ensures(*If the integer result is greater than or equal to 1, the integer `target` is not found in the integer array parameter `nums`.*);
+//@ ensures(*If the integer result is equal to 0, the integer `target` is found in the integer array parameter `nums`.*);
+//@ ensures(*If the integer result is greater than or equal to 1, the integer `target` would be inserted at the index specified by the result to maintain the sorted order.*);
     public int searchInsert(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;

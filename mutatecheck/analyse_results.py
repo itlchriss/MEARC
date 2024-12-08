@@ -9,6 +9,7 @@ import re
 KILLED = 0
 SURVIVED = 1
 UNCERTAIN = -1
+FALSE_NEGATIVE = -2
 IE_Terms = ['timeout']
 def _killing_decision(oresult: str, mresult: str, mline: str) -> int:
     # UNCERTAIN conditions
@@ -29,6 +30,10 @@ def _killing_decision(oresult: str, mresult: str, mline: str) -> int:
         m_lines = set(m)
         if o_lines != m_lines:
             return KILLED
+    elif not oresult and mresult:
+        return KILLED
+    elif not mresult and not oresult:
+        return SURVIVED
     # condition 2: if the number of verification failure caught in the mutated program is greater than that of the original program
     pattern = r'(\d+)\s+verification failure[s]?'
     o = re.search(pattern, oresult)
@@ -37,9 +42,17 @@ def _killing_decision(oresult: str, mresult: str, mline: str) -> int:
         _o = int(o.group(1))
         _m = int(m.group(1))
         if _o >= _m:
+            # we have to compare the lines here
+            pattern = r'Solution\.java:(\d+):\s+verify'
+            ol = re.findall(pattern, oresult)
+            ml = re.findall(pattern, mresult)
+            if (_o >= _m and sorted(ml) != sorted(ol)) or sorted(ml) != sorted(ol):
+                return KILLED
             return SURVIVED
-        else:
+        elif _o < _m:
             return KILLED
+        else:
+            return SURVIVED
     elif not o and m:
         return KILLED
     elif not m and o:
@@ -52,25 +65,33 @@ def _get_data(t: str):
     results = {}
     for folder in glob.glob('./%s/*' % t):
         s = folder.split('/')[-1]
+        # x = False
+        # if s == 's0392_is_subsequence':
+        #     print(t, s)
+        #     x = True
         with open(os.path.join(folder, 'org_result.txt'), 'r') as fp:
             odata = fp.read().strip()
         mutantdata = {}
         # the number of cases that the mutation is performed on a line that cannot be proved by the theorem prover
         type1_count = 0
         for mutantfolder in glob.glob(os.path.join(folder, 'mutants/*')):
+            # x and print(mutantfolder)
             with open(os.path.join(mutantfolder, 'line.txt'), 'r') as fp:
                 mutated_line = fp.read().strip()
             # a condition to check if the mutated line is originally wrong
-            if '%s: verify:' % mutated_line in odata:
-                # uncomment this line to see the cases
-                type1_count += 1
-                # print('Originally wrong case found in %s with mutated line %s' % (folder, mutated_line))
-                # skip the case
-                continue
+            # if '%s: verify:' % mutated_line in odata:
+            #     # uncomment this line to see the cases
+            #     type1_count += 1
+            #     # print('Originally wrong case found in %s with mutated line %s' % (folder, mutated_line))
+            #     # skip the case
+            #     # continue
+            #     mutantdata[mutantfolder.split('/')[-1]] = UNCERTAIN
+            # else:
             with open(os.path.join(mutantfolder, 'result.txt'), 'r') as fp:
                 mdata = fp.read().strip()
             mutantdata[mutantfolder.split('/')[-1]] = _killing_decision(odata, mdata, mutated_line)
         results[s] = mutantdata
+        # print(s, len(mutantdata.keys()))
         # uncomment this to check the number of exluded mutants in type 1
         # print('Type 1 excluded %d out of %d' % (type1_count, len(glob.glob(os.path.join(folder, 'mutants/*')))))
     return results
@@ -92,17 +113,46 @@ no_kill_cases = []
 ident_cases = []
 no_valid_mutant = []
 
+with open('./opdata') as fp:
+    opdata = fp.read()
+
+with open('./optypes') as fp:
+    r = fp.read()
+    types = r.strip().split(',')
+    optypes = {}
+    for t in types:
+        optypes[t] = 0
+
+lines = opdata.strip().split('\n')
+opdata = {}
+for line in lines:
+    data = line.split(' ')
+    if data[0] not in opdata.keys():
+        opdata[data[0]] = []
+    opdata[data[0]].append(data[2])
+
+opstat = {'hart': optypes.copy(), 'llm': optypes.copy()}
+
 # consider a vienne diagram
 #   A: set of killed mutants from GPT
 #   B: set of killed mutants from HART
 #   If A% > B% of (A U B), then A provides more effective spec in a problem
 #   vice versa
 for s in gpt_results.keys():
-    print('problem: %s' % s)
+    print('problem: %s' % s)  
     gl = len(gpt_results[s].keys())
     hl = len(hart_results[s].keys())
     gk = len([v for v in gpt_results[s].values() if v == KILLED])
     hk = len([v for v in hart_results[s].values() if v == KILLED])
+
+    gv = [v for v in gpt_results[s].values() if v == KILLED]
+    hv = [v for v in hart_results[s].values() if v == KILLED]
+    if s in opdata:
+        ops = opdata[s]
+        for v in gv:
+            opstat['llm'][ops[int(v)]] += 1
+        for v in hv:
+            opstat['hart'][ops[int(v)]] += 1 
 
     union_mutants = list(set(list(gpt_results[s].keys()) + list(hart_results[s].keys())))
     if len(union_mutants) == 0:
@@ -157,12 +207,21 @@ missing_case = [i for i in gpt_results.keys() if i not in gpt_better_cases and i
 if missing_case:
     print("The following case is missing in the above results: ", missing_case)
 
+print(gpt_results['s0455_assign_cookies'])
+print(hart_results['s0455_assign_cookies'])
+
+print('Number of mutants produced by these operators')
+print('HART')
+print(opstat['hart'])
+print('GPT')
+print(opstat['llm'])
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-programs = [str(i) for i in gpt_results.keys()]
+#### start of boxplot 
 
+programs = [str(i) for i in gpt_results.keys()]
 total = {}
 for i in programs:
     total[i] = len(glob.glob('./hart/%s/mutants/*' % i))
@@ -191,7 +250,7 @@ data = [np.array(g), np.array(p), np.array(u), np.array(d)]
 avg_h = sum(p)/len(p)
 avg_g = sum(g)/len(g)
 avg_u = sum(u)/len(u)
-print(avg_h, avg_g, avg_u)
+print("HART: ", avg_h, ", LLM: ",  avg_g,". Union: ",  avg_u)
 
 
 
@@ -201,34 +260,37 @@ bp = ax.boxplot(data, labels=['LLM', 'Hybrid', 'Union', 'Intersection'])
 plt.title("Mutation score of the contracts generated by the two approaches")  
 plt.show()  
 
-
-# width = 0.5
-
-# title = "Mutants killed by the pure LLM and hybrid approaches"
-# labels = [i.split('_')[0] for i in programs]
+#### end of boxplot
 
 
-# plt.bar(labels, g, color='r', label='pure LLM')
-# plt.bar(labels, p, bottom=g, color='black', label='hybrid')
-# plt.show()
+programs = [str(i) for i in gpt_results.keys()]
+width = 0.5
+g = []
+p = []
+for i in programs:
+    hk = [k for k in hart_results[i] if hart_results[i][k] == KILLED]
+    gk = [k for k in gpt_results[i] if gpt_results[i][k] == KILLED]
+    nh = len(hk)
+    ng = len(gk)
+    g.append(ng)
+    p.append(nh)
 
-# fig, ax = plt.subplots(ncols=2, sharey=True)
+labels = [i.split('_')[0] for i in programs]
+plt.xlabel('Name of the programs')
+plt.ylabel('Number of mutants killed')
+plt.title("Number of mutants killed by the two approaches")
 
-# ax[0].barh(labels, g, color='r', label='pure LLM')
-# ax[0].set_title("pure LLM approach")
-# ax[0].set_xlabel("Percentage of mutants killed")
-# ax[0].set_ylabel("Name of program")
+# 0020 - 0044
+start = 0
+end = int(len(labels)/2)
+# start = 42
+# end = 84
 
-
-# for i, v in enumerate(g):
-#     ax[0].text(v + 1, i + .25, str(v), 
-#             color = 'blue', fontweight = 'bold')
-
-# ax[1].barh(labels, p, color='black', label='hybrid')
-# ax[1].set_title("hybrid approach")
-# ax[1].set_xlabel("Percentage of mutants killed")
-# ax[1].set_ylabel("Name of program")
-# ax[0].invert_xaxis()
-# plt.bar(programs, g, color='r')
-# plt.bar(programs, p, bottom=g, color='black')
+labels = labels[start:end]
+xaxis = np.arange(42)
+plt.xticks(xaxis, labels, rotation=90)
+plt.bar(xaxis - 0.2, g[start:end], 0.4, color='r', label='pure LLM approach')
+plt.bar(xaxis + 0.2, p[start:end], 0.4, color='black', label='HAFIS')
+plt.legend()
+plt.show()
 

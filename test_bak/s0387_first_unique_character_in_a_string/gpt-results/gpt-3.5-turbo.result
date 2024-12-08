@@ -1,0 +1,6 @@
+- public int firstUniqChar(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 100000;
+- requires (\forall int i, j; 0 <= i && i < s.length() && 0 <= j && j < s.length(); i != j ==> s.charAt(i) != s.charAt(j));
+- ensures \result >= -1 && \result < s.length();
+- ensures (\forall int i; 0 <= i && i < s.length(); (\exists int j; 0 <= j && j < s.length(); j != i && s.charAt(i) == s.charAt(j)) ==> \result == -1);
+- ensures (\exists int i; 0 <= i && i < s.length(); (\forall int j; 0 <= j && j < s.length(); j != i ==> s.charAt(i) != s.charAt(j)) && \result == i);

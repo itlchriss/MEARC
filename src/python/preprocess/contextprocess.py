@@ -15,11 +15,11 @@ import os
     # Long = 5,
     # Float = 6,
     # Double = 7
-primitive_datatypes = ['boolean', 'byte', 'char', 'short', 'integer', 'long', 'float', 'double', ]
+primitive_datatypes = ['boolean', 'byte', 'character', 'short', 'integer', 'long', 'float', 'double', ]
     # Array = 0,
     # String = 1,
     # Object = 2
-reference_datatypes = ['array', 'string', 'object']
+reference_datatypes = ['array', 'string', 'object', 'list']
 # datatypes = [
 #     'integer', 'Integer', 'float', 'Float', 'double', 'Double', 'short', 'Short', 'long', 'Long', 'array', 'list', 'collection', 'arrays',
 #     'string', 'strings', 'matrix', 'boolean'
@@ -37,9 +37,13 @@ def _get_alt_rules():
     f = f.strip().split('\n')
     for record in f:
         target = record.split(':')[0]
-        alt = (record.split(':')[1].strip()).split(',')
+        t = record.split(':')[1].strip()
+        if "\," in t:
+            t = t.replace("\,", "ESC_COMMA")
+        alt = t.split(',')
         for a in alt:
-            alt_rules.append((a, target))
+            x = a.replace("ESC_COMMA", ",")
+            alt_rules.append((x, target))
 
 class ContextProcessor:
 
@@ -82,7 +86,6 @@ class ContextProcessor:
             # for type, param in r:
                 # sent = re.sub('input\s+%s\s+`%s`' % (type, param), 'type_%s_ param_%s_' % (type, param), sent, re.ASCII)
         # elif r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
-        
         if r := re.findall(r'parameter (`[0-9a-zA-Z_]+`) and (`[0-9a-zA-Z_]+`)', sent, re.ASCII):
             # the case of composite subject/object with two parameters
             # we should convert both of them
@@ -99,7 +102,10 @@ class ContextProcessor:
             for param in r:
                 pattern = 'param_%s_' % param.replace('`', '')
                 sent = sent.replace(param, pattern)
-                # contextual_si['param_%s' % param] = param
+        elif r := re.findall(r'(parameter [0-9a-zA-Z_]+)', sent, re.ASCII):
+            for param in r:
+                pattern = 'param_%s_' % param.replace('`', '').replace('parameter ', '')
+                sent = sent.replace(param, pattern)
         self.sent = sent
         # print('cp: ', sent)
         
@@ -131,10 +137,10 @@ class ContextProcessor:
     def _symbol_syntax_preprocessor(self):
         if self.sent[-1] == '.':
             self.sent = self.sent[:-1]  
-        self.sent = re.sub(r"'\s*,\s*'", 'comma', self.sent)
-        self.sent = re.sub(r"'\s*\?\s*'", 'questionmark', self.sent)
-        self.sent = re.sub(r"'\s*\*\s*'", 'asterisk', self.sent)
-        self.sent = re.sub(r"'\s*\.\s*'", 'period', self.sent)
+        self.sent = re.sub(r"','", 'comma', self.sent)
+        self.sent = re.sub(r"'\?'", 'questionmark', self.sent)
+        self.sent = re.sub(r"'\*'", 'asterisk', self.sent)
+        self.sent = re.sub(r"'\.'", 'period', self.sent)
         self.sent = re.sub(r"`*'\s*\(\s*'`*", 'leftp', self.sent)
         self.sent = re.sub(r"`*'\s*\)\s*'`*", 'rightp', self.sent)
         self.sent = re.sub(r"`*'\s*\[\s*'`*", 'leftbp', self.sent)

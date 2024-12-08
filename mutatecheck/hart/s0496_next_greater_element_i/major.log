@@ -1,210 +1,210 @@
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, java.util.Map, java.util.HashMap, g0401_0500.s0496_next_greater_element_i.Solution]]]]
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0401_0500.s0496_next_greater_element_i.Solution
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: nextGreaterElement([int[] nums1, int[] nums2])int[]
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 1: Solution.nextGreaterElement(line 21, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.nextGreaterElement(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < nums2.length 
             mutant:                    i != nums2.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 2: Solution.nextGreaterElement(line 21, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.nextGreaterElement(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < nums2.length 
             mutant:                    i <= nums2.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 3: Solution.nextGreaterElement(line 21, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.nextGreaterElement(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < nums2.length 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 4: (STD) indexMap.put(nums2[i], i); -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 5: Solution.nextGreaterElement(line 25, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.nextGreaterElement(line 26, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < nums1.length 
             mutant:                    i != nums1.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 6: Solution.nextGreaterElement(line 25, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.nextGreaterElement(line 26, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < nums1.length 
             mutant:                    i <= nums1.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 7: Solution.nextGreaterElement(line 25, col 27)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.nextGreaterElement(line 26, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < nums1.length 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 8: Solution.nextGreaterElement(line 28, col 39)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.nextGreaterElement(line 29, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  nums2.length - 1 
             mutant:                    nums2.length % 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 9: Solution.nextGreaterElement(line 28, col 39)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 9: Solution.nextGreaterElement(line 29, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  nums2.length - 1 
             mutant:                    nums2.length * 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 10: Solution.nextGreaterElement(line 28, col 39)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.nextGreaterElement(line 29, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  nums2.length - 1 
             mutant:                    nums2.length + 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 11: Solution.nextGreaterElement(line 28, col 39)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.nextGreaterElement(line 29, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  nums2.length - 1 
             mutant:                    nums2.length / 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 12: Solution.nextGreaterElement(line 28, col 23)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.nextGreaterElement(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  index == nums2.length - 1 
             mutant:                    index <= nums2.length - 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 13: Solution.nextGreaterElement(line 28, col 23)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.nextGreaterElement(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  index == nums2.length - 1 
             mutant:                    index >= nums2.length - 1
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 14: Solution.nextGreaterElement(line 28, col 23)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.nextGreaterElement(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  index == nums2.length - 1 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 15: (STD) nums1[i] = -1; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 16: Solution.nextGreaterElement(line 32, col 30)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.nextGreaterElement(line 33, col 30)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  index < nums2.length 
             mutant:                    index != nums2.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 17: Solution.nextGreaterElement(line 32, col 30)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.nextGreaterElement(line 33, col 30)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  index < nums2.length 
             mutant:                    index <= nums2.length
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 18: Solution.nextGreaterElement(line 32, col 30)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.nextGreaterElement(line 33, col 30)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  index < nums2.length 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 19: Solution.nextGreaterElement(line 33, col 38)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.nextGreaterElement(line 34, col 38)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  nums2[index] > num 
             mutant:                    nums2[index] != num
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 20: Solution.nextGreaterElement(line 33, col 38)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 20: Solution.nextGreaterElement(line 34, col 38)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  nums2[index] > num 
             mutant:                    nums2[index] >= num
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 21: Solution.nextGreaterElement(line 33, col 38)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.nextGreaterElement(line 34, col 38)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  nums2[index] > num 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 22: (STD) nums1[i] = nums2[index]; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 23: (STD) found = true; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 24: (STD) break; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 25: (STD) index++; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 26: Solution.nextGreaterElement(line 40, col 22)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.nextGreaterElement(line 41, col 22)
             mutation operator group:   COR
             mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
             original:                  found 
             mutant:                    false
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 27: Solution.nextGreaterElement(line 40, col 22)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.nextGreaterElement(line 41, col 22)
             mutation operator group:   COR
             mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
             original:                  found 
             mutant:                    true
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 28: (STD) nums1[i] = -1; -> <NO-OP>
-[05/24 20:48:57] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 28 mutants (130 ms)
+[06/24 16:50:20] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 28 mutants (137 ms)

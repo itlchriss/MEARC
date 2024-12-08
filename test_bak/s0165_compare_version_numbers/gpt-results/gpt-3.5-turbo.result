@@ -1,0 +1,8 @@
+- requires version1 != null && version2 != null
+- requires version1.matches("[0-9.]+") && version2.matches("[0-9.]+")
+- requires version1.length() <= 500 && version2.length() <= 500
+- requires isValidVersion(version1) && isValidVersion(version2)
+- ensures \result == -1 || \result == 0 || \result == 1
+- ensures \result == -1 ==> version1 < version2
+- ensures \result == 0 ==> version1 == version2
+- ensures \result == 1 ==> version1 > version2

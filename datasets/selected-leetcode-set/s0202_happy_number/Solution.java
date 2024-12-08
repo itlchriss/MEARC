@@ -6,8 +6,10 @@ package g0201_0300.s0202_happy_number;
 
 public class Solution {
 //@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
-//@ ensures(*If the integer parameter `n` is a happy number, the boolean result is equal to the true literal.*);
-//@ ensures(*If the integer parameter `n` is not a happy number, the boolean result is equal to the false literal.*);
+//@ ensures(*The boolean result is equal to true if the integer parameter `n` is a happy number.*);
+//@ ensures(*The boolean result is equal to false if the integer parameter `n` is not a happy number.*);
+//@ ensures(*If the integer parameter `n` is equal to 19, the boolean result is equal to true.*);
+//@ ensures(*If the integer parameter `n` is equal to 2, the boolean result is equal to false.*);
     public boolean isHappy(int n) {
         boolean happy;
         int a = n;

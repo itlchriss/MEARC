@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < s.length(); Character.isLowerCase(s.charAt(i)));
 //@ requires((s.length() <= 100000) && (s.length() >= 1));
+//@ requires(\forall int i; 0 <= i < s.length(); Character.isLowerCase(s.charAt(i)));
     public int firstUniqChar(String s) {
         int ans = Integer.MAX_VALUE;
         for (char i = 'a'; true; i++) {

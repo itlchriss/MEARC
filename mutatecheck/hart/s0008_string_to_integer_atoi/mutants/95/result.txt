@@ -1,0 +1,34 @@
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:11: verify: The prover cannot establish an assertion (UndefinedNullDeReference) in method myAtoi
+//@ ensures((str.equals("42")) ==> (\result == 42));
+                ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:18: verify: Associated method exit
+            return 0;
+            ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:54: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:10:) in method myAtoi
+        return num;
+        ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:10: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:54:
+//@ ensures((\result > -2147483648) && (\result < 2147483647));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:11:) in method myAtoi
+            return 0;
+            ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:11: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28:
+//@ ensures((str.equals("42")) ==> (\result == 42));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:12:) in method myAtoi
+            return 0;
+            ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:12: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28:
+//@ ensures((str.equals("4193 with words")) ==> (\result == 4193));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:13:) in method myAtoi
+            return 0;
+            ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:13: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:28:
+//@ ensures((str.equals(" negative 42")) ==> (\result == -42));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/95/Solution.java:16: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int myAtoi(String str) {
+               ^
+11 verification failures

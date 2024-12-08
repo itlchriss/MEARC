@@ -8,8 +8,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((b.length() <= 10000) && (b.length() >= 1));
+//@ requires(\forall int i; 0 <= i < b.length(); ('0' == (b.charAt(i))) ||  ('1' == (b.charAt(i))));
+//@ requires(\forall int i; 0 <= i < a.length(); ('0' == (a.charAt(i))) ||  ('1' == (a.charAt(i))));
 //@ requires((a.length() <= 10000) && (a.length() >= 1));
+//@ requires((b.length() <= 10000) && (b.length() >= 1));
 //@ ensures(((a.equals("11")) && (b.equals("1"))) ==> (\result.equals("100")));
 //@ ensures(((a.equals("1010")) && (b.equals("1011"))) ==> (\result.equals("10101")));
     public String addBinary(String a, String b) {

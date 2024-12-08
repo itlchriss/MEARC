@@ -1,10 +1,10 @@
-./hart/s0941_valid_mountain_array/mutants/17/Solution.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method validMountainArray
+./hart/s0941_valid_mountain_array/mutants/17/Solution.java:18: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method validMountainArray
             if (arr[i] == arr[i + 1]) {
                    ^
-./hart/s0941_valid_mountain_array/mutants/17/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0941_valid_mountain_array/mutants/17/Solution.java:14:) in method validMountainArray
+./hart/s0941_valid_mountain_array/mutants/17/Solution.java:25: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0941_valid_mountain_array/mutants/17/Solution.java:14:) in method validMountainArray
             return false;
             ^
-./hart/s0941_valid_mountain_array/mutants/17/Solution.java:14: verify: Associated declaration: ./hart/s0941_valid_mountain_array/mutants/17/Solution.java:26:
+./hart/s0941_valid_mountain_array/mutants/17/Solution.java:14: verify: Associated declaration: ./hart/s0941_valid_mountain_array/mutants/17/Solution.java:25:
 //@ ensures((Arrays.equals(arr, new int[] {0 , 3 , 2 , 1})) ==> (\result == true));
     ^
 3 verification failures

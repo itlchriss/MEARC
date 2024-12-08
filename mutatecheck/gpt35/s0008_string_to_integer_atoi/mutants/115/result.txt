@@ -1,15 +1,15 @@
+./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:39: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method myAtoi
+                num = num * 10 / tem;
+                               ^
 ./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:15: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
         while (i < input.length && input[i] == ' ') {
-                                        ^
-./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
-        while (i < input.length && input[i] <= '9' && input[i] >= '0') {
                                         ^
 ./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:20: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method myAtoi
         } else if (input[i] == '+') {
                         ^
-./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:39: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method myAtoi
-                num = num * 10 / tem;
-                               ^
+./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method myAtoi
+        while (i < input.length && input[i] <= '9' && input[i] >= '0') {
+                                        ^
 ./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0008_string_to_integer_atoi/mutants/115/Solution.java:7:) in method myAtoi
         return num;
         ^

@@ -1,4 +1,13 @@
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:711: verify: The prover cannot establish an assertion (UndefinedNegativeIndex: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:30:) in method reverseWords
+      @     //-RAC@            charArray[\result] == ch &&
+                                        ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:30: verify: Associated declaration: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:711:
+//@ non_null_by_default
+            ^
+./hart/s0151_reverse_words_in_a_string/mutants/4/Solution.java:11: verify: The prover cannot establish an assertion (UndefinedNullDeReference) in method reverseWords
+//@ requires((s.length() <= 10000) && (s.length() >= 1));
+               ^
 ./hart/s0151_reverse_words_in_a_string/mutants/4/Solution.java:17: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
     public String reverseWords(String s) {
                   ^
-1 verification failure
+4 verification failures

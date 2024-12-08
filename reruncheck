@@ -1,0 +1,12 @@
+PYCMD="../venv/openai/bin/python"
+OPENJML="../openjml-0.17-a15/openjml "
+ESC_FLAG="-esc"
+BIGINT_FLAGS="--spec-math bigint --code-math bigint"
+
+for entry in `find ./fmcheck/input/gpt35 -type f -name "Solution.java" | sort | head -100`
+do
+    src=$(dirname "$entry")
+    echo $src/p2check
+    $OPENJML $entry $BIGINT_FLAGS > $src/p2check
+done
+

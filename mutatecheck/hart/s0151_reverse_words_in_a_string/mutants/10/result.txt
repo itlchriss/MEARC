@@ -1,10 +1,19 @@
-/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:721: verify: The prover cannot establish an assertion (UndefinedNegativeIndex: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:29:) in method reverseWords
+./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:11: verify: The prover cannot establish an assertion (UndefinedNullDeReference) in method reverseWords
+//@ requires((s.length() <= 10000) && (s.length() >= 1));
+               ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:711: verify: The prover cannot establish an assertion (UndefinedNegativeIndex: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:30:) in method reverseWords
       @     //-RAC@            charArray[\result] == ch &&
                                         ^
-/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:29: verify: Associated declaration: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:721:
-/** JML's specification of java.lang.String.
-                                   ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:30: verify: Associated declaration: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/String.jml:711:
+//@ non_null_by_default
+            ^
+./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:12:) in method reverseWords
+        return sb.toString();
+        ^
+./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:12: verify: Associated declaration: ./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:33:
+//@ ensures((s.equals(" the sky is blue ")) ==> (\result.equals("blue is sky the")));
+    ^
 ./hart/s0151_reverse_words_in_a_string/mutants/10/Solution.java:17: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
     public String reverseWords(String s) {
                   ^
-3 verification failures
+6 verification failures

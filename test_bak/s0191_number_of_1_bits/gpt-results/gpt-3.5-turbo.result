@@ -1,0 +1,5 @@
+- public int hammingWeight(int n)
+- requires n >= 0 && n <= Integer.MAX_VALUE
+- ensures \result >= 0
+- ensures \result <= 32
+- ensures \result == Integer.bitCount(n)

@@ -9,8 +9,11 @@ import java.util.List;
 
 public class Solution {
 //@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 8.*);
-//@ ensures(*The size of the string list result is equal to the number of combinations of well-formed parentheses generated for `n` pairs of parentheses.*);
-//@ ensures(*Each string in the string list result represents a well-formed combination of parentheses for `n` pairs.*);
+//@ ensures(*Each string in the list result represents a combination of well-formed parentheses.*);
+//@ ensures(*The length of each string in the list result is equal to 2 multiplied by the integer parameter `n`.*);
+//@ ensures(*Each string in the list result contains only parentheses characters '(' and ')'.*);
+//@ ensures(*Each string in the list result is a valid combination of well-formed parentheses.*);
+//@ ensures(*The list result contains all possible combinations of well-formed parentheses for `n` pairs of parentheses.*);
     public List<String> generateParenthesis(int n) {
         StringBuilder sb = new StringBuilder();
         List<String> ans = new ArrayList<>();

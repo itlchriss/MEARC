@@ -1,11 +1,11 @@
 ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maximumProduct
         return Math.max(min1 % min2 * max1, max1 * max2 * max3);
                              ^
-./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:12:) in method maximumProduct
+./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:14:) in method maximumProduct
         return Math.max(min1 % min2 * max1, max1 * max2 * max3);
         ^
-./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:12: verify: Associated declaration: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39:
-//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3})) ==> (\result == 6));
+./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:14: verify: Associated declaration: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39:
+//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4})) ==> (\result == 24));
     ^
 ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:13:) in method maximumProduct
         return Math.max(min1 % min2 * max1, max1 * max2 * max3);
@@ -13,10 +13,10 @@
 ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:13: verify: Associated declaration: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39:
 //@ ensures((Arrays.equals(nums, new int[] {-1 , -2 , -3})) ==> (\result == -6));
     ^
-./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:14:) in method maximumProduct
+./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:12:) in method maximumProduct
         return Math.max(min1 % min2 * max1, max1 * max2 * max3);
         ^
-./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:14: verify: Associated declaration: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39:
-//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4})) ==> (\result == 24));
+./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:12: verify: Associated declaration: ./hart/s0628_maximum_product_of_three_numbers/mutants/15/Solution.java:39:
+//@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3})) ==> (\result == 6));
     ^
 7 verification failures

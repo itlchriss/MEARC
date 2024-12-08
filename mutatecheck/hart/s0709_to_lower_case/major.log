@@ -1,186 +1,186 @@
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0701_0800.s0709_to_lower_case.Solution]]]]
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0701_0800.s0709_to_lower_case.Solution
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: toLowerCase([String s])String
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.toLowerCase(line 17, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < s.length() 
             mutant:                    i != s.length()
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.toLowerCase(line 17, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < s.length() 
             mutant:                    i <= s.length()
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.toLowerCase(line 17, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < s.length() 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.toLowerCase(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> <(int,int)
             original:                  c[i] <= 'Z' 
             mutant:                    c[i] < 'Z'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.toLowerCase(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> ==(int,int)
             original:                  c[i] <= 'Z' 
             mutant:                    c[i] == 'Z'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.toLowerCase(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> TRUE(int,int)
             original:                  c[i] <= 'Z' 
             mutant:                    true
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.toLowerCase(line 18, col 37)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  c[i] >= 'A' 
             mutant:                    c[i] == 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.toLowerCase(line 18, col 37)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  c[i] >= 'A' 
             mutant:                    c[i] > 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.toLowerCase(line 18, col 37)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  c[i] >= 'A' 
             mutant:                    true
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.toLowerCase(line 18, col 29)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  c[i] <= 'Z' && c[i] >= 'A' 
             mutant:                    c[i] <= 'Z' == c[i] >= 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.toLowerCase(line 18, col 29)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  c[i] <= 'Z' && c[i] >= 'A' 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.toLowerCase(line 18, col 22)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  c[i] <= 'Z' && c[i] >= 'A' 
             mutant:                    c[i] <= 'Z'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.toLowerCase(line 18, col 37)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  c[i] <= 'Z' && c[i] >= 'A' 
             mutant:                    c[i] >= 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.toLowerCase(line 19, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  c[i] - 'A' 
             mutant:                    c[i] % 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.toLowerCase(line 19, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  c[i] - 'A' 
             mutant:                    c[i] * 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.toLowerCase(line 19, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  c[i] - 'A' 
             mutant:                    c[i] + 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.toLowerCase(line 19, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  c[i] - 'A' 
             mutant:                    c[i] / 'A'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.toLowerCase(line 19, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  c[i] - 'A' + 'a' 
             mutant:                    (c[i] - 'A') % 'a'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.toLowerCase(line 19, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  c[i] - 'A' + 'a' 
             mutant:                    (c[i] - 'A') * 'a'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.toLowerCase(line 19, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  c[i] - 'A' + 'a' 
             mutant:                    c[i] - 'A' - 'a'
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 21: Solution.toLowerCase(line 19, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  c[i] - 'A' + 'a' 
             mutant:                    (c[i] - 'A') / 'a'
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 22: (STD) c[i] = (char)(c[i] - 'A' + 'a'); -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 22 mutants (85 ms)
+[06/24 16:50:28] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 22 mutants (91 ms)

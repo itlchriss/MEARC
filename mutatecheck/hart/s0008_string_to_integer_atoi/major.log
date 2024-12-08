@@ -1,1022 +1,1022 @@
-[05/24 20:48:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:49:26] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0001_0100.s0008_string_to_integer_atoi.Solution]]]]
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0001_0100.s0008_string_to_integer_atoi.Solution
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: myAtoi([String str])int
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 1: Solution.myAtoi(line 12, col 17)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 1: Solution.myAtoi(line 17, col 17)
             mutation operator group:   ROR
             mutation operator:         ==(java.lang.Object,java.lang.Object) |==> FALSE(java.lang.Object,java.lang.Object)
             original:                  str == null 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 2: Solution.myAtoi(line 12, col 41)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 2: Solution.myAtoi(line 17, col 41)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  str.length() == 0 
             mutant:                    str.length() <= 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 3: Solution.myAtoi(line 12, col 41)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 3: Solution.myAtoi(line 17, col 41)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  str.length() == 0 
             mutant:                    str.length() >= 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 4: Solution.myAtoi(line 12, col 41)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 4: Solution.myAtoi(line 17, col 41)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  str.length() == 0 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 5: Solution.myAtoi(line 12, col 25)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 5: Solution.myAtoi(line 17, col 25)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
             original:                  str == null || str.length() == 0 
             mutant:                    str == null != (str.length() == 0)
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 6: Solution.myAtoi(line 12, col 17)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 6: Solution.myAtoi(line 17, col 17)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  str == null || str.length() == 0 
             mutant:                    str == null
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 7: Solution.myAtoi(line 12, col 41)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 7: Solution.myAtoi(line 17, col 41)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  str == null || str.length() == 0 
             mutant:                    str.length() == 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 8: Solution.myAtoi(line 12, col 25)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 8: Solution.myAtoi(line 17, col 25)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
             original:                  str == null || str.length() == 0 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 9: (STD) return 0; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 10: Solution.myAtoi(line 19, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 10: Solution.myAtoi(line 24, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < input.length 
             mutant:                    i != input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 11: Solution.myAtoi(line 19, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 11: Solution.myAtoi(line 24, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < input.length 
             mutant:                    i <= input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 12: Solution.myAtoi(line 19, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 12: Solution.myAtoi(line 24, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < input.length 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 13: Solution.myAtoi(line 19, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 13: Solution.myAtoi(line 24, col 45)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  input[i] == ' ' 
             mutant:                    input[i] <= ' '
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 14: Solution.myAtoi(line 19, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 14: Solution.myAtoi(line 24, col 45)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  input[i] == ' ' 
             mutant:                    input[i] >= ' '
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 15: Solution.myAtoi(line 19, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 15: Solution.myAtoi(line 24, col 45)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  input[i] == ' ' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 16: Solution.myAtoi(line 19, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 16: Solution.myAtoi(line 24, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  i < input.length && input[i] == ' ' 
             mutant:                    i < input.length == (input[i] == ' ')
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 17: Solution.myAtoi(line 19, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 17: Solution.myAtoi(line 24, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  i < input.length && input[i] == ' ' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 18: Solution.myAtoi(line 19, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 18: Solution.myAtoi(line 24, col 18)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  i < input.length && input[i] == ' ' 
             mutant:                    i < input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 19: Solution.myAtoi(line 19, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 19: Solution.myAtoi(line 24, col 45)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  i < input.length && input[i] == ' ' 
             mutant:                    input[i] == ' '
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 20: (STD) i++; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 21: Solution.myAtoi(line 22, col 15)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 21: Solution.myAtoi(line 27, col 15)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  i == input.length 
             mutant:                    i <= input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 22: Solution.myAtoi(line 22, col 15)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 22: Solution.myAtoi(line 27, col 15)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  i == input.length 
             mutant:                    i >= input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 23: Solution.myAtoi(line 22, col 15)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 23: Solution.myAtoi(line 27, col 15)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  i == input.length 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 24: (STD) return 0; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 25: Solution.myAtoi(line 24, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 25: Solution.myAtoi(line 29, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  input[i] == '+' 
             mutant:                    input[i] <= '+'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 26: Solution.myAtoi(line 24, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 26: Solution.myAtoi(line 29, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  input[i] == '+' 
             mutant:                    input[i] >= '+'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 27: Solution.myAtoi(line 24, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 27: Solution.myAtoi(line 29, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  input[i] == '+' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 28: (STD) i++; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 29: Solution.myAtoi(line 26, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 29: Solution.myAtoi(line 31, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  input[i] == '-' 
             mutant:                    input[i] <= '-'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 30: Solution.myAtoi(line 26, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 30: Solution.myAtoi(line 31, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  input[i] == '-' 
             mutant:                    input[i] >= '-'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 31: Solution.myAtoi(line 26, col 29)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 31: Solution.myAtoi(line 31, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  input[i] == '-' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 32: (STD) i++; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 33: (STD) negetiveSign = true; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 34
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 34: Solution.myAtoi(line 33, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 34: Solution.myAtoi(line 38, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < input.length 
             mutant:                    i != input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 35
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 35: Solution.myAtoi(line 33, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 35: Solution.myAtoi(line 38, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < input.length 
             mutant:                    i <= input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 36
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 36: Solution.myAtoi(line 33, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 36: Solution.myAtoi(line 38, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < input.length 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 37
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 37: Solution.myAtoi(line 33, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 37: Solution.myAtoi(line 38, col 45)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> <(int,int)
             original:                  input[i] <= '9' 
             mutant:                    input[i] < '9'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 38
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 38: Solution.myAtoi(line 33, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 38: Solution.myAtoi(line 38, col 45)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> ==(int,int)
             original:                  input[i] <= '9' 
             mutant:                    input[i] == '9'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 39
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 39: Solution.myAtoi(line 33, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 39: Solution.myAtoi(line 38, col 45)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> TRUE(int,int)
             original:                  input[i] <= '9' 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 40
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 40: Solution.myAtoi(line 33, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 40: Solution.myAtoi(line 38, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' 
             mutant:                    i < input.length == input[i] <= '9'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 41
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 41: Solution.myAtoi(line 33, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 41: Solution.myAtoi(line 38, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 42
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 42: Solution.myAtoi(line 33, col 18)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 42: Solution.myAtoi(line 38, col 18)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' 
             mutant:                    i < input.length
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 43
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 43: Solution.myAtoi(line 33, col 45)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 43: Solution.myAtoi(line 38, col 45)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' 
             mutant:                    input[i] <= '9'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 44
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 44: Solution.myAtoi(line 33, col 64)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 44: Solution.myAtoi(line 38, col 64)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  input[i] >= '0' 
             mutant:                    input[i] == '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 45
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 45: Solution.myAtoi(line 33, col 64)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 45: Solution.myAtoi(line 38, col 64)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  input[i] >= '0' 
             mutant:                    input[i] > '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 46
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 46: Solution.myAtoi(line 33, col 64)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 46: Solution.myAtoi(line 38, col 64)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  input[i] >= '0' 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 47
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 47: Solution.myAtoi(line 33, col 52)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 47: Solution.myAtoi(line 38, col 52)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' && input[i] >= '0' 
             mutant:                    (i < input.length && input[i] <= '9') == input[i] >= '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 48
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 48: Solution.myAtoi(line 33, col 52)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 48: Solution.myAtoi(line 38, col 52)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' && input[i] >= '0' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 49
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 49: Solution.myAtoi(line 33, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 49: Solution.myAtoi(line 38, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' && input[i] >= '0' 
             mutant:                    i < input.length && input[i] <= '9'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 50
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 50: Solution.myAtoi(line 33, col 64)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 50: Solution.myAtoi(line 38, col 64)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  i < input.length && input[i] <= '9' && input[i] >= '0' 
             mutant:                    input[i] >= '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 51
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 51: Solution.myAtoi(line 35, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 51: Solution.myAtoi(line 40, col 32)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  input[i] - '0' 
             mutant:                    input[i] % '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 52
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 52: Solution.myAtoi(line 35, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 52: Solution.myAtoi(line 40, col 32)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  input[i] - '0' 
             mutant:                    input[i] * '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 53
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 53: Solution.myAtoi(line 35, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 53: Solution.myAtoi(line 40, col 32)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  input[i] - '0' 
             mutant:                    input[i] + '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 54
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 54: Solution.myAtoi(line 35, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 54: Solution.myAtoi(line 40, col 32)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  input[i] - '0' 
             mutant:                    input[i] / '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 55
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 56
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 55: Solution.myAtoi(line 36, col 19)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 55: Solution.myAtoi(line 41, col 19)
             mutation operator group:   COR
             mutation operator:         <IDENTIFIER(boolean)> |==> TRUE
             original:                  negetiveSign 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 56: Solution.myAtoi(line 36, col 19)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 56: Solution.myAtoi(line 41, col 19)
             mutation operator group:   COR
             mutation operator:         <IDENTIFIER(boolean)> |==> FALSE
             original:                  negetiveSign 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 57
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 57: Solution.myAtoi(line 36, col 34)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 57: Solution.myAtoi(line 41, col 34)
             mutation operator group:   ORU
             mutation operator:         ---(int) |==> +++(int)
             original:                  -tem 
             mutant:                    +tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 58
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 58: Solution.myAtoi(line 36, col 34)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 58: Solution.myAtoi(line 41, col 34)
             mutation operator group:   ORU
             mutation operator:         ---(int) |==> ~(int)
             original:                  -tem 
             mutant:                    ~tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 59
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 59: (STD) tem = negetiveSign ? -tem : tem; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 60
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 60: Solution.myAtoi(line 38, col 21)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 60: Solution.myAtoi(line 43, col 21)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  num == 0 
             mutant:                    num <= 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 61
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 61: Solution.myAtoi(line 38, col 21)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 61: Solution.myAtoi(line 43, col 21)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  num == 0 
             mutant:                    num >= 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 62
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 62: Solution.myAtoi(line 38, col 21)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 62: Solution.myAtoi(line 43, col 21)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  num == 0 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 63
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 63: Solution.myAtoi(line 38, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 63: Solution.myAtoi(line 43, col 33)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  tem == '0' 
             mutant:                    tem <= '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 64
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 64: Solution.myAtoi(line 38, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 64: Solution.myAtoi(line 43, col 33)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  tem == '0' 
             mutant:                    tem >= '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 65
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 65: Solution.myAtoi(line 38, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 65: Solution.myAtoi(line 43, col 33)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  tem == '0' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 66
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 66: Solution.myAtoi(line 38, col 26)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 66: Solution.myAtoi(line 43, col 26)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  num == 0 && tem == '0' 
             mutant:                    num == 0 == (tem == '0')
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 67
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 67: Solution.myAtoi(line 38, col 26)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 67: Solution.myAtoi(line 43, col 26)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  num == 0 && tem == '0' 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 68
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 68: Solution.myAtoi(line 38, col 21)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 68: Solution.myAtoi(line 43, col 21)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  num == 0 && tem == '0' 
             mutant:                    num == 0
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 69
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 69: Solution.myAtoi(line 38, col 33)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 69: Solution.myAtoi(line 43, col 33)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  num == 0 && tem == '0' 
             mutant:                    tem == '0'
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 70
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 70: (STD) i++; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 71
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 71: Solution.myAtoi(line 40, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 71: Solution.myAtoi(line 45, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE % 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 72
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 72: Solution.myAtoi(line 40, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 72: Solution.myAtoi(line 45, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE * 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 73
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 73: Solution.myAtoi(line 40, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 73: Solution.myAtoi(line 45, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE + 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 74
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 74: Solution.myAtoi(line 40, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 74: Solution.myAtoi(line 45, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE - 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 75
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 75: Solution.myAtoi(line 40, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 75: Solution.myAtoi(line 45, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  num == Integer.MIN_VALUE / 10 
             mutant:                    num <= Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 76
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 76: Solution.myAtoi(line 40, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 76: Solution.myAtoi(line 45, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  num == Integer.MIN_VALUE / 10 
             mutant:                    num >= Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 77
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 77: Solution.myAtoi(line 40, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 77: Solution.myAtoi(line 45, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  num == Integer.MIN_VALUE / 10 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 78
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 78: Solution.myAtoi(line 40, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 78: Solution.myAtoi(line 45, col 61)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> <(int,int)
             original:                  tem <= -8 
             mutant:                    tem < -8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 79
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 79: Solution.myAtoi(line 40, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 79: Solution.myAtoi(line 45, col 61)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> ==(int,int)
             original:                  tem <= -8 
             mutant:                    tem == -8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 80
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 80: Solution.myAtoi(line 40, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 80: Solution.myAtoi(line 45, col 61)
             mutation operator group:   ROR
             mutation operator:         <=(int,int) |==> TRUE(int,int)
             original:                  tem <= -8 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 81
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 81: Solution.myAtoi(line 40, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 81: Solution.myAtoi(line 45, col 54)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 
             mutant:                    num == Integer.MIN_VALUE / 10 == tem <= -8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 82
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 82: Solution.myAtoi(line 40, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 82: Solution.myAtoi(line 45, col 54)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 83
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 83: Solution.myAtoi(line 40, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 83: Solution.myAtoi(line 45, col 28)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 
             mutant:                    num == Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 84
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 84: Solution.myAtoi(line 40, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 84: Solution.myAtoi(line 45, col 61)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 
             mutant:                    tem <= -8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 85
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 85: Solution.myAtoi(line 40, col 94)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 85: Solution.myAtoi(line 45, col 94)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE % 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 86
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 86: Solution.myAtoi(line 40, col 94)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 86: Solution.myAtoi(line 45, col 94)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE * 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 87
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 87: Solution.myAtoi(line 40, col 94)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 87: Solution.myAtoi(line 45, col 94)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE + 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 88
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 88: Solution.myAtoi(line 40, col 94)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 88: Solution.myAtoi(line 45, col 94)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  Integer.MIN_VALUE / 10 
             mutant:                    Integer.MIN_VALUE - 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 89
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 89: Solution.myAtoi(line 40, col 74)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 89: Solution.myAtoi(line 45, col 74)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  num < Integer.MIN_VALUE / 10 
             mutant:                    num != Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 90
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 90: Solution.myAtoi(line 40, col 74)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 90: Solution.myAtoi(line 45, col 74)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  num < Integer.MIN_VALUE / 10 
             mutant:                    num <= Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 91
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 91: Solution.myAtoi(line 40, col 74)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 91: Solution.myAtoi(line 45, col 74)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  num < Integer.MIN_VALUE / 10 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 92
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 92: Solution.myAtoi(line 40, col 67)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 92: Solution.myAtoi(line 45, col 67)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 
             mutant:                    (num == Integer.MIN_VALUE / 10 && tem <= -8) != num < Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 93
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 93: Solution.myAtoi(line 40, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 93: Solution.myAtoi(line 45, col 54)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 
             mutant:                    num == Integer.MIN_VALUE / 10 && tem <= -8
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 94
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 94: Solution.myAtoi(line 40, col 74)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 94: Solution.myAtoi(line 45, col 74)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 
             mutant:                    num < Integer.MIN_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 95
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 95: Solution.myAtoi(line 40, col 67)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 95: Solution.myAtoi(line 45, col 67)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
             original:                  num == Integer.MIN_VALUE / 10 && tem <= -8 || num < Integer.MIN_VALUE / 10 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 96
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 96: (STD) return Integer.MIN_VALUE; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 97
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 97: Solution.myAtoi(line 42, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 97: Solution.myAtoi(line 47, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE % 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 98
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 98: Solution.myAtoi(line 42, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 98: Solution.myAtoi(line 47, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE * 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 99
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 99: Solution.myAtoi(line 42, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 99: Solution.myAtoi(line 47, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE + 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 100
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 100: Solution.myAtoi(line 42, col 49)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 100: Solution.myAtoi(line 47, col 49)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE - 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 101
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 101: Solution.myAtoi(line 42, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 101: Solution.myAtoi(line 47, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  num == Integer.MAX_VALUE / 10 
             mutant:                    num <= Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 102
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 102: Solution.myAtoi(line 42, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 102: Solution.myAtoi(line 47, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  num == Integer.MAX_VALUE / 10 
             mutant:                    num >= Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 103
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 103: Solution.myAtoi(line 42, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 103: Solution.myAtoi(line 47, col 28)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  num == Integer.MAX_VALUE / 10 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 104
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 104: Solution.myAtoi(line 42, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 104: Solution.myAtoi(line 47, col 61)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  tem >= 7 
             mutant:                    tem == 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 105
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 105: Solution.myAtoi(line 42, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 105: Solution.myAtoi(line 47, col 61)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  tem >= 7 
             mutant:                    tem > 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 106
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 106: Solution.myAtoi(line 42, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 106: Solution.myAtoi(line 47, col 61)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  tem >= 7 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 107
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 107: Solution.myAtoi(line 42, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 107: Solution.myAtoi(line 47, col 54)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 
             mutant:                    num == Integer.MAX_VALUE / 10 == tem >= 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 108
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 108: Solution.myAtoi(line 42, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 108: Solution.myAtoi(line 47, col 54)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 109
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 109: Solution.myAtoi(line 42, col 28)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 109: Solution.myAtoi(line 47, col 28)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 
             mutant:                    num == Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 110
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 110: Solution.myAtoi(line 42, col 61)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 110: Solution.myAtoi(line 47, col 61)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 
             mutant:                    tem >= 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 111
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 111: Solution.myAtoi(line 42, col 93)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 111: Solution.myAtoi(line 47, col 93)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE % 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 112
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 112: Solution.myAtoi(line 42, col 93)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 112: Solution.myAtoi(line 47, col 93)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE * 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 113
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 113: Solution.myAtoi(line 42, col 93)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 113: Solution.myAtoi(line 47, col 93)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE + 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 114
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 114: Solution.myAtoi(line 42, col 93)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 114: Solution.myAtoi(line 47, col 93)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  Integer.MAX_VALUE / 10 
             mutant:                    Integer.MAX_VALUE - 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 115
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 115: Solution.myAtoi(line 42, col 73)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 115: Solution.myAtoi(line 47, col 73)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  num > Integer.MAX_VALUE / 10 
             mutant:                    num != Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 116
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 116: Solution.myAtoi(line 42, col 73)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 116: Solution.myAtoi(line 47, col 73)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  num > Integer.MAX_VALUE / 10 
             mutant:                    num >= Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 117
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 117: Solution.myAtoi(line 42, col 73)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 117: Solution.myAtoi(line 47, col 73)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  num > Integer.MAX_VALUE / 10 
             mutant:                    false
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 118
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 118: Solution.myAtoi(line 42, col 66)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 118: Solution.myAtoi(line 47, col 66)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 
             mutant:                    (num == Integer.MAX_VALUE / 10 && tem >= 7) != num > Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 119
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 119: Solution.myAtoi(line 42, col 54)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 119: Solution.myAtoi(line 47, col 54)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 
             mutant:                    num == Integer.MAX_VALUE / 10 && tem >= 7
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 120
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 120: Solution.myAtoi(line 42, col 73)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 120: Solution.myAtoi(line 47, col 73)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 
             mutant:                    num > Integer.MAX_VALUE / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 121
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 121: Solution.myAtoi(line 42, col 66)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 121: Solution.myAtoi(line 47, col 66)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
             original:                  num == Integer.MAX_VALUE / 10 && tem >= 7 || num > Integer.MAX_VALUE / 10 
             mutant:                    true
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 122
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 122: (STD) return Integer.MAX_VALUE; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 123
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 123: Solution.myAtoi(line 45, col 27)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 123: Solution.myAtoi(line 50, col 27)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> %(int,int)
             original:                  num * 10 
             mutant:                    num % 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 124
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 124: Solution.myAtoi(line 45, col 27)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 124: Solution.myAtoi(line 50, col 27)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> +(int,int)
             original:                  num * 10 
             mutant:                    num + 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 125
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 125: Solution.myAtoi(line 45, col 27)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 125: Solution.myAtoi(line 50, col 27)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> -(int,int)
             original:                  num * 10 
             mutant:                    num - 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 126
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 126: Solution.myAtoi(line 45, col 27)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 126: Solution.myAtoi(line 50, col 27)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> /(int,int)
             original:                  num * 10 
             mutant:                    num / 10
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 127
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 127: Solution.myAtoi(line 45, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 127: Solution.myAtoi(line 50, col 32)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  num * 10 + tem 
             mutant:                    num * 10 % tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 128
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 128: Solution.myAtoi(line 45, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 128: Solution.myAtoi(line 50, col 32)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  num * 10 + tem 
             mutant:                    num * 10 * tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 129
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 129: Solution.myAtoi(line 45, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 129: Solution.myAtoi(line 50, col 32)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  num * 10 + tem 
             mutant:                    num * 10 - tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 130
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
-    Logging mutant 130: Solution.myAtoi(line 45, col 32)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+    Logging mutant 130: Solution.myAtoi(line 50, col 32)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  num * 10 + tem 
             mutant:                    num * 10 / tem
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 131
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 131: (STD) num = num * 10 + tem; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 132
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 132: (STD) i++; -> <NO-OP>
-[05/24 20:48:03] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 132 mutants (296 ms)
+[06/24 16:49:27] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 132 mutants (297 ms)

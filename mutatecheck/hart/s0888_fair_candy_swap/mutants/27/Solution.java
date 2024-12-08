@@ -12,8 +12,8 @@ import java.util.Collections;
 public class Solution {
 //@ requires(\forall int i; 0 <= i < bobSizes.length; ((bobSizes[i] <= 100000) && (bobSizes[i] >= 1)));
 //@ requires(\forall int i; 0 <= i < aliceSizes.length; ((aliceSizes[i] <= 100000) && (aliceSizes[i] >= 1)));
-//@ requires((bobSizes.length <= 10000) && (bobSizes.length >= 1));
 //@ requires((aliceSizes.length <= 10000) && (aliceSizes.length >= 1));
+//@ requires((bobSizes.length <= 10000) && (bobSizes.length >= 1));
 //@ ensures(\result.length == 2);
     public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
         int aSum = 0;

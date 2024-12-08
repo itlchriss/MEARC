@@ -1,34 +1,34 @@
-[05/24 20:49:10] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:34] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, java.util.Set, java.util.HashSet, g0901_1000.s0961_n_repeated_element_in_size_2n_array.Solution]]]]
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0901_1000.s0961_n_repeated_element_in_size_2n_array.Solution
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: repeatedNTimes([int[] nums])int
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.repeatedNTimes(line 21, col 25)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
             original:                  set.add(num) 
             mutant:                    false
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.repeatedNTimes(line 21, col 25)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
             original:                  set.add(num) 
             mutant:                    true
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 3: (STD) return num; -> <NO-OP>
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 3 mutants (36 ms)
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 3 mutants (41 ms)

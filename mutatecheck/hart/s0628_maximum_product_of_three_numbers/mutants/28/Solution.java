@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000) && (nums[i] >= -1000)));
 //@ requires((nums.length <= 10000) && (nums.length >= 3));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000) && (nums[i] >= -1000)));
 //@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3})) ==> (\result == 6));
 //@ ensures((Arrays.equals(nums, new int[] {-1 , -2 , -3})) ==> (\result == -6));
 //@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4})) ==> (\result == 24));

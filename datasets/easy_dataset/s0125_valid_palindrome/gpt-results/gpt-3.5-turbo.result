@@ -1,0 +1,18 @@
+- requires s != null && s.length() >= 1 && s.length() <= 2 * Math.pow(10, 5);
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLetterOrDigit(s.charAt(i)) || Character.isWhitespace(s.charAt(i)));
+- ensures \result == true || \result == false;
+- ensures \result == true <==> isPalindrome(s);
+- pure private boolean isPalindrome(String s);
+- pure private boolean isPalindrome(String s) {
+    String cleanString = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+    int left = 0;
+    int right = cleanString.length() - 1;
+    while (left < right) {
+        if (cleanString.charAt(left) != cleanString.charAt(right)) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}

@@ -1,16 +1,4 @@
-./hart/s0496_next_greater_element_i/mutants/26/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method nextGreaterElement
-                    if (nums2[index] > num) {
-                             ^
-./hart/s0496_next_greater_element_i/mutants/26/Solution.java:45: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0496_next_greater_element_i/mutants/26/Solution.java:16:) in method nextGreaterElement
-        return nums1;
-        ^
-./hart/s0496_next_greater_element_i/mutants/26/Solution.java:16: verify: Associated declaration: ./hart/s0496_next_greater_element_i/mutants/26/Solution.java:45:
-//@ ensures(((Arrays.equals(nums1, new int[] {4 , 1 , 2})) && (Arrays.equals(nums2, new int[] {1 , 3 , 4 , 2}))) ==> (Arrays.equals(\result, new int[] {-1 , 3 , -1})));
-    ^
-./hart/s0496_next_greater_element_i/mutants/26/Solution.java:45: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0496_next_greater_element_i/mutants/26/Solution.java:17:) in method nextGreaterElement
-        return nums1;
-        ^
-./hart/s0496_next_greater_element_i/mutants/26/Solution.java:17: verify: Associated declaration: ./hart/s0496_next_greater_element_i/mutants/26/Solution.java:45:
-//@ ensures(((Arrays.equals(nums1, new int[] {2 , 4})) && (Arrays.equals(nums2, new int[] {1 , 2 , 3 , 4}))) ==> (Arrays.equals(\result, new int[] {3 , -1})));
-    ^
-5 verification failures
+./hart/s0496_next_greater_element_i/mutants/26/Solution.java:14: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ requires(\forall int i; 0 <= i < nums1.length; (Collections.frequency(Arrays.asList(nums1), nums1[i]) == 1));
+                                                                         ^
+1 warning

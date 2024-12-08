@@ -1,7 +1,16 @@
-./hart/s0067_add_binary/mutants/52/Solution.java:22: verify: The prover cannot establish an assertion (LoopInvariant) in method addBinary
+./hart/s0067_add_binary/mutants/52/Solution.java:24: verify: The prover cannot establish an assertion (LoopInvariant) in method addBinary
         //@ maintaining -1 <= i <= aArray.length - 1 && bArray.length - 1 >= j >= -1;
             ^
-./hart/s0067_add_binary/mutants/52/Solution.java:15: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
-    public String addBinary(String a, String b) {
-                  ^
-2 verification failures
+./hart/s0067_add_binary/mutants/52/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0067_add_binary/mutants/52/Solution.java:15:) in method addBinary
+        return sb.reverse().toString();
+        ^
+./hart/s0067_add_binary/mutants/52/Solution.java:15: verify: Associated declaration: ./hart/s0067_add_binary/mutants/52/Solution.java:39:
+//@ ensures(((a.equals("11")) && (b.equals("1"))) ==> (\result.equals("100")));
+    ^
+./hart/s0067_add_binary/mutants/52/Solution.java:39: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0067_add_binary/mutants/52/Solution.java:16:) in method addBinary
+        return sb.reverse().toString();
+        ^
+./hart/s0067_add_binary/mutants/52/Solution.java:16: verify: Associated declaration: ./hart/s0067_add_binary/mutants/52/Solution.java:39:
+//@ ensures(((a.equals("1010")) && (b.equals("1011"))) ==> (\result.equals("10101")));
+    ^
+5 verification failures

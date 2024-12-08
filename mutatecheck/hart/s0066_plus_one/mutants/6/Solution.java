@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < digits.length; ((digits[i] <= 9) && (digits[i] >= 0)));
 //@ requires((digits.length <= 100) && (digits.length >= 1));
+//@ requires(\forall int i; 0 <= i < digits.length; ((digits[i] <= 9) && (digits[i] >= 0)));
 //@ ensures(\result.length == digits.length);
     public int[] plusOne(int[] digits) {
         int num = 1;

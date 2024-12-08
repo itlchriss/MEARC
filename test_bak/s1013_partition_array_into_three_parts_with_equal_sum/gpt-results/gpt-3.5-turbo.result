@@ -1,0 +1,7 @@
+- requires arr != null;
+- requires arr.length >= 3;
+- requires (\forall int i; 0 <= i && i < arr.length; -10000 <= arr[i] && arr[i] <= 10000);
+- ensures \result == true || \result == false;
+- ensures (\exists int i, j; 0 <= i && i + 1 < j && j < arr.length; 
+    (\sum int k; 0 <= k && k <= i; arr[k]) == (\sum int k; i + 1 <= k && k <= j - 1; arr[k]) 
+    && (\sum int k; j <= k && k < arr.length; arr[k]) == (\sum int k; 0 <= k && k < arr.length; arr[k]) / 3);

@@ -37,6 +37,8 @@ then
         rm $folder/tmp/*
         flag=$full
     fi
+else
+    rm $folder/tmp/*
 fi
 
 # Preprocessing
@@ -56,6 +58,9 @@ then
     i=0
     for condition in `niet ".ensures" $folder/tmp/conditions.yml`;
     do
+        if [ -z "$condition" ] || [ "$condition" = "Element not found: ensures" ]; then
+            break
+        fi
         printf '%s\n' "$condition" | sed -f $NLP/en/tokenizer.sed > $folder/tmp/post.$i.tok
         $NLP/candc-1.00/bin/candc --models $NLP/candc-1.00/models --candc-printer xml --input $folder/tmp/post.$i.tok > $folder/tmp/post.$i.candc.xml
         $PYCMD $NLP/en/candc2transccg_wsc.py $folder/tmp/post.$i.candc.xml > $folder/tmp/post.$i.ccg.xml
@@ -63,10 +68,14 @@ then
         $PYCMD ./src/python/depccg/nltk2normal.py $folder/tmp/post.$i.mr
         i=$((i + 1))
     done
+    i=0
     for condition in `niet ".requires" $folder/tmp/conditions.yml`;
     do
+        if [ -z "$condition" ] || [ "$condition" = "Element not found: requires" ]; then
+            break
+        fi
         printf '%s\n' "$condition" | sed -f $NLP/en/tokenizer.sed > $folder/tmp/pre.$i.tok
-        $NLP/candc-1.00/bin/candc --models $NLP/candc-1.00/models --candc-printer xml --input $folder/tmp/pre.$i.tok > $folder/tmp/pre.$i.candc.xml
+        $NLP/candc-1.00/bin/candc --models $NLP/candc-1.00/models --candc-printer xml --candc-maxwords 2048 --input $folder/tmp/pre.$i.tok > $folder/tmp/pre.$i.candc.xml
         $PYCMD $NLP/en/candc2transccg_wsc.py $folder/tmp/pre.$i.candc.xml > $folder/tmp/pre.$i.ccg.xml
         $PYCMD $NLP/scripts/semparse_wsc.py $folder/tmp/pre.$i.ccg.xml $NLP/en/semantic_templates_en_event_flat_mearc.yaml > $folder/tmp/pre.$i.mr
         $PYCMD ./src/python/depccg/nltk2normal.py $folder/tmp/pre.$i.mr

@@ -1,0 +1,11 @@
+- public int subarraySum(int[] nums, int k)
+- requires nums != null && k != null;
+- ensures \result >= 0;
+- ensures (\forall int i; 0 <= i < nums.length; nums[i] >= -1000 && nums[i] <= 1000);
+- ensures -10000000 <= k && k <= 10000000;
+- ensures \result == countSubarrays(nums, k);
+
+- private int countSubarrays(int[] nums, int k)
+- requires nums != null && k != null;
+- ensures \result >= 0;
+- ensures \result == (\sum int i, j; 0 <= i <= j < nums.length; (\sum int m; i <= m <= j; nums[m]) == k ? 1 : 0);

@@ -8,13 +8,15 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((inputString.length() <= 2000) && (pattern.length() <= 2000));
 //@ requires((\forall int i; 0 <= i < inputString.length(); (Character.isLowerCase(inputString.charAt(i))) ||  ('?' == (inputString.charAt(i))) ||  ('*' == (inputString.charAt(i)))) && (\forall int i; 0 <= i < pattern.length(); (Character.isLowerCase(pattern.charAt(i))) ||  ('?' == (pattern.charAt(i))) ||  ('*' == (pattern.charAt(i)))));
+//@ requires((inputString.length() <= 2000) && (pattern.length() <= 2000));
 //@ ensures(((inputString.equals("aa")) && (pattern.equals("*"))) ==> (\result == true));
 //@ ensures(((inputString.equals("aa")) && (pattern.equals("a"))) ==> (\result == false));
 //@ ensures(((inputString.equals("acdcb")) && (pattern.equals("a*c?b"))) ==> (\result == false));
 //@ ensures(((inputString.equals("adceb")) && (pattern.equals("*a*b"))) ==> (\result == true));
 //@ ensures(((inputString.equals("cb")) && (pattern.equals("?a"))) ==> (\result == false));
+//@ ensures((\result == false) ==> (!(pattern.matches(inputString))));
+//@ ensures((\result == true) ==> ((pattern.matches(inputString))));
     public boolean isMatch(String inputString, String pattern) {
         int i = 0;
         int j = 0;

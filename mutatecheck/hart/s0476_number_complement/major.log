@@ -1,94 +1,94 @@
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0401_0500.s0476_number_complement.Solution]]]]
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0401_0500.s0476_number_complement.Solution
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: findComplement([int num])int
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.findComplement(line 14, col 16)
             mutation operator group:   ORU
             mutation operator:         ~(int) |==> +++(int)
             original:                  ~num 
             mutant:                    +num
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.findComplement(line 14, col 16)
             mutation operator group:   ORU
             mutation operator:         ~(int) |==> ---(int)
             original:                  ~num 
             mutant:                    -num
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.findComplement(line 14, col 52)
             mutation operator group:   SOR
             mutation operator:         <<(int,int) |==> >>(int,int)
             original:                  Integer.highestOneBit(num) << 1 
             mutant:                    Integer.highestOneBit(num) >> 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.findComplement(line 14, col 52)
             mutation operator group:   SOR
             mutation operator:         <<(int,int) |==> >>>(int,int)
             original:                  Integer.highestOneBit(num) << 1 
             mutant:                    Integer.highestOneBit(num) >>> 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.findComplement(line 14, col 58)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  (Integer.highestOneBit(num) << 1) - 1 
             mutant:                    (Integer.highestOneBit(num) << 1) % 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.findComplement(line 14, col 58)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  (Integer.highestOneBit(num) << 1) - 1 
             mutant:                    (Integer.highestOneBit(num) << 1) * 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.findComplement(line 14, col 58)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  (Integer.highestOneBit(num) << 1) - 1 
             mutant:                    (Integer.highestOneBit(num) << 1) + 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.findComplement(line 14, col 58)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  (Integer.highestOneBit(num) << 1) - 1 
             mutant:                    (Integer.highestOneBit(num) << 1) / 1
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.findComplement(line 14, col 21)
             mutation operator group:   LOR
             mutation operator:         &(int,int) |==> ^(int,int)
             original:                  ~num & ((Integer.highestOneBit(num) << 1) - 1) 
             mutant:                    ~num ^ ((Integer.highestOneBit(num) << 1) - 1)
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.findComplement(line 14, col 21)
             mutation operator group:   LOR
             mutation operator:         &(int,int) |==> |(int,int)
             original:                  ~num & ((Integer.highestOneBit(num) << 1) - 1) 
             mutant:                    ~num | ((Integer.highestOneBit(num) << 1) - 1)
-[05/24 20:48:56] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 10 mutants (45 ms)
+[06/24 16:50:19] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 10 mutants (44 ms)

@@ -1,12 +1,12 @@
-./hart/s0396_rotate_function/mutants/22/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxRotateFunction
-            f = (f + allSum) % (len * nums[i]);
-                             ^
 ./hart/s0396_rotate_function/mutants/22/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0396_rotate_function/mutants/22/Solution.java:12:) in method maxRotateFunction
         return max;
         ^
 ./hart/s0396_rotate_function/mutants/22/Solution.java:12: verify: Associated declaration: ./hart/s0396_rotate_function/mutants/22/Solution.java:30:
 //@ ensures((\result <= 2147483647) && (\result >= -2147483648));
     ^
+./hart/s0396_rotate_function/mutants/22/Solution.java:27: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxRotateFunction
+            f = (f + allSum) % (len * nums[i]);
+                             ^
 ./hart/s0396_rotate_function/mutants/22/Solution.java:30: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0396_rotate_function/mutants/22/Solution.java:13:) in method maxRotateFunction
         return max;
         ^

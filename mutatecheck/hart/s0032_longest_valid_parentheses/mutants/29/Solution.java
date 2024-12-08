@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < s.length(); (')' == (s.charAt(i))) &&  ('(' == (s.charAt(i))));
 //@ requires((s.length() <= 30000) && (s.length() >= 0));
+//@ requires(\forall int i; 0 <= i < s.length(); (')' == (s.charAt(i))) &&  ('(' == (s.charAt(i))));
 //@ ensures(\result <= s.length());
 //@ ensures((s.equals("(()")) ==> (\result == 2));
 //@ ensures((s.equals(")()())")) ==> (\result == 4));

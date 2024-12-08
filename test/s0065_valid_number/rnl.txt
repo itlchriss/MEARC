@@ -1,7 +1,6 @@
-- The string parameter `s` is less than or equal to 20 characters in length and is greater than or equal to 1.
+- The string parameter `s` is less than or equal to 20 and is greater than or equal to 1.
 - The string parameter `s` consists of only English letters (both uppercase and lowercase), digits (0-9), plus '+', minus '-', or dot '.'.
-- The boolean result is true if the string parameter `s` is a valid number, and false otherwise.
-- If the string parameter `s` is equal to "0", the boolean result is true.
-- If the string parameter `s` is equal to "e", the boolean result is false.
-- If the string parameter `s` is equal to ".", the boolean result is false.
-- If the string parameter `s` is equal to ".1", the boolean result is true.
+- If the boolean result is equal to true and the string parameter `s` is equal to "0", the boolean result is true.
+- If the boolean result is equal to false and the string parameter `s` is equal to "e", the boolean result is false.
+- If the boolean result is equal to false and the string parameter `s` is equal to ".", the boolean result is false.
+- If the boolean result is equal to true and the string parameter `s` is equal to ".1", the boolean result is true.

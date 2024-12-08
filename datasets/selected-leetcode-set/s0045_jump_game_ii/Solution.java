@@ -4,15 +4,20 @@ package g0001_0100.s0045_jump_game_ii;
 // #Algorithm_II_Day_13_Dynamic_Programming #Dynamic_Programming_I_Day_4
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(49.02%)_Space_44.7_MB_(52.72%)
 
-//@ non_null_by_default
 public class Solution {
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are greater than or equal to 0 and are less than or equal to 1000.*);
+//@ ensures(*The integer result is less than or equal to the length of the integer array parameter `nums`.*);
+//@ ensures(*If the integer result is equal to 2, the minimum number of jumps to reach the last index is 2.*);
+//@ ensures(*If the integer result is equal to 2, the minimum number of jumps to reach the last index is 2.*);
     public int jump(int[] nums) {
         int length = 0;
         int maxLength = 0;
         int minJump = 0;
-        //@ havoc length, maxLength, minJump;
+        //@ assume nums.length > 1;
         //@ decreases nums.length - 1 - i;
-        //@ loop_invariant 0 <= i <= nums.length;
+        //@ loop_invariant 0 <= i <= nums.length - 1;
+        //@ maintaining length <= nums.length - i - 1;
         for (int i = 0; i < nums.length - 1; ++i) {
             length--;
             maxLength--;

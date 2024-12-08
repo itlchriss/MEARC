@@ -1,6 +1,5 @@
-- The integer parameter `x` is greater than or equal to -2147483648 and is less than or equal to 2147483647.
-- If the integer result is not equal to 0, the absolute value of the integer result is less than or equal to 2147483647.
-- If the integer result is equal to 0, the integer parameter `x` is equal to 0.
-- If the integer parameter `x` is positive, the integer result is positive.
-- If the integer parameter `x` is negative, the integer result is negative.
-- The integer result is the reverse of the integer parameter `x`.
+- The integer parameter `x` is less than or equal to 2^31 - 1 and is greater than or equal to -2^31.
+- If the integer result is equal to 321 and the integer parameter `x` is equal to 123, the integer result is equal to 321.
+- If the integer result is equal to -321 and the integer parameter `x` is equal to -123, the integer result is equal to -321.
+- If the integer result is equal to 21 and the integer parameter `x` is equal to 120, the integer result is equal to 21.
+- If the integer result is equal to 0 and the integer parameter `x` is equal to 0, the integer result is equal to 0.

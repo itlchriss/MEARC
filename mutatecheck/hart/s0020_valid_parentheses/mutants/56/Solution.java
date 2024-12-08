@@ -12,13 +12,13 @@ import java.util.Collections;
 
 @SuppressWarnings("java:S1149")
 public class Solution {
-//@ ensures((s.equals("()")) ==> (\result == true));
-//@ ensures((s.equals("()[]{}")) ==> (\result == true));
-//@ ensures((s.equals("(]")) ==> (\result == false));
-//@ ensures((s.equals("([)]")) ==> (\result == false));
-//@ ensures((s.equals("{[]}")) ==> (\result == true));
 //@ requires((s.length() <= 10000) && (s.length() >= 1));
 //@ requires((\forall int i; 0 <= i < s.length(); '(' == s.charAt(i)) && (\forall int i; 0 <= i < s.length(); (']' == (s.charAt(i))) &&  ('[' == (s.charAt(i))) &&  ('}' == (s.charAt(i))) &&  ('{' == (s.charAt(i))) &&  (')' == (s.charAt(i)))));
+//@ ensures((s.equals("()")) ==> (\result == true));
+//@ ensures((s.equals("(]")) ==> (\result == false));
+//@ ensures((s.equals("()[]{}")) ==> (\result == true));
+//@ ensures((s.equals("{[]}")) ==> (\result == true));
+//@ ensures((s.equals("([)]")) ==> (\result == false));
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         //@ loop_invariant 0 <= i <= s.length();
@@ -30,7 +30,7 @@ public class Solution {
                 stack.pop();
             } else if (c == '}' && !stack.isEmpty() && stack.peek() == '{') {
                 stack.pop();
-            } else if (c == ']' && !stack.isEmpty() && stack.peek() == '[') {
+            } else if (c == ']' && !stack.isEmpty() && stack.peek() >= '[') {
                 stack.pop();
             } else {
                 return false;

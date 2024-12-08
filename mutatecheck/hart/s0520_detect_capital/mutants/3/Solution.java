@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\exists int i; 0 <= i < word.length(); Character.isAlphabetic(word.charAt(i)));
 //@ requires((word.length() <= 100) && (word.length() >= 1));
+//@ requires(\exists int i; 0 <= i < word.length(); Character.isAlphabetic(word.charAt(i)));
     public boolean detectCapitalUse(String word) {
         if (word == null || false) {
             return false;

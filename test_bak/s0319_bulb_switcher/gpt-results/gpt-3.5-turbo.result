@@ -1,0 +1,5 @@
+- public int bulbSwitch(int n)
+- requires n >= 0 && n <= 1000000000;
+- ensures \result >= 0;
+- ensures \result <= n;
+- ensures \result == (int) Math.sqrt(n);

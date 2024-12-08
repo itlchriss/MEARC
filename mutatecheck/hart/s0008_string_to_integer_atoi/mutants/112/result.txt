@@ -1,4 +1,25 @@
-./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:45: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method myAtoi
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:11: verify: The prover cannot establish an assertion (UndefinedNullDeReference) in method myAtoi
+//@ ensures((str.equals("42")) ==> (\result == 42));
+                ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:18: verify: Associated method exit
+            return 0;
+            ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:54: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:10:) in method myAtoi
+        return num;
+        ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:10: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:54:
+//@ ensures((\result > -2147483648) && (\result < 2147483647));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:54: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:11:) in method myAtoi
+        return num;
+        ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:11: verify: Associated declaration: ./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:54:
+//@ ensures((str.equals("42")) ==> (\result == 42));
+    ^
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:50: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method myAtoi
                 num = num * 10 % tem;
                                ^
-1 verification failure
+./hart/s0008_string_to_integer_atoi/mutants/112/Solution.java:16: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int myAtoi(String str) {
+               ^
+8 verification failures

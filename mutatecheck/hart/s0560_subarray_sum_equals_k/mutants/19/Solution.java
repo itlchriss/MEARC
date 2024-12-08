@@ -12,8 +12,10 @@ import java.util.Collections;
 
 public class Solution {
 //@ requires((k <= 10000000) && (k >= -10000000));
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000) && (nums[i] >= -1000)));
 //@ requires((nums.length <= 20000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000) && (nums[i] >= -1000)));
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 1 , 1})) && (k == 2)) ==> (\result == 2));
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 2 , 3})) && (k == 3)) ==> (\result == 2));
     public int subarraySum(int[] nums, int k) {
         int tempSum = 0;
         int ret = 0;

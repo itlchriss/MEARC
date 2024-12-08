@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= 0)));
 //@ requires((nums.length <= 100000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= 0)));
 //@ ensures((Arrays.equals(nums, new int[] {3 , 6 , 9 , 1})) ==> (\result == 3));
 //@ ensures((Arrays.equals(nums, new int[] {10})) ==> (\result == 0));
     public int maximumGap(int[] nums) {

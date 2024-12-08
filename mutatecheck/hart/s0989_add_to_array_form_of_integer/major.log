@@ -1,438 +1,438 @@
-[05/24 20:49:11] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Arrays, java.util.List, java.util.Collections, java.util.ArrayList, g0901_1000.s0989_add_to_array_form_of_integer.Solution]]]]
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0901_1000.s0989_add_to_array_form_of_integer.Solution
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: addToArrayForm([int[] num, int k])List<Integer>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.addToArrayForm(line 19, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  num.length - 1 
             mutant:                    num.length % 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.addToArrayForm(line 19, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  num.length - 1 
             mutant:                    num.length * 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.addToArrayForm(line 19, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  num.length - 1 
             mutant:                    num.length + 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.addToArrayForm(line 19, col 33)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  num.length - 1 
             mutant:                    num.length / 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.addToArrayForm(line 19, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  i >= 0 
             mutant:                    i == 0
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.addToArrayForm(line 19, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  i >= 0 
             mutant:                    i > 0
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.addToArrayForm(line 19, col 40)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  i >= 0 
             mutant:                    true
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.addToArrayForm(line 20, col 35)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> *(int,int)
             original:                  k % 10 
             mutant:                    k * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.addToArrayForm(line 20, col 35)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> +(int,int)
             original:                  k % 10 
             mutant:                    k + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.addToArrayForm(line 20, col 35)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> -(int,int)
             original:                  k % 10 
             mutant:                    k - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.addToArrayForm(line 20, col 35)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> /(int,int)
             original:                  k % 10 
             mutant:                    k / 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.addToArrayForm(line 20, col 31)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  num[i] + k % 10 
             mutant:                    num[i] % (k % 10)
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.addToArrayForm(line 20, col 31)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  num[i] + k % 10 
             mutant:                    num[i] * (k % 10)
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.addToArrayForm(line 20, col 31)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  num[i] + k % 10 
             mutant:                    num[i] - k % 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.addToArrayForm(line 20, col 31)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  num[i] + k % 10 
             mutant:                    num[i] / (k % 10)
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.addToArrayForm(line 20, col 40)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  num[i] + k % 10 + carry 
             mutant:                    (num[i] + k % 10) % carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.addToArrayForm(line 20, col 40)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  num[i] + k % 10 + carry 
             mutant:                    (num[i] + k % 10) * carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.addToArrayForm(line 20, col 40)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  num[i] + k % 10 + carry 
             mutant:                    num[i] + k % 10 - carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.addToArrayForm(line 20, col 40)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  num[i] + k % 10 + carry 
             mutant:                    (num[i] + k % 10) / carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.addToArrayForm(line 21, col 29)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> *(int,int)
             original:                  temp % 10 
             mutant:                    temp * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 21: Solution.addToArrayForm(line 21, col 29)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> +(int,int)
             original:                  temp % 10 
             mutant:                    temp + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:35] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 22: Solution.addToArrayForm(line 21, col 29)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> -(int,int)
             original:                  temp % 10 
             mutant:                    temp - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 23: Solution.addToArrayForm(line 21, col 29)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> /(int,int)
             original:                  temp % 10 
             mutant:                    temp / 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 24: (STD) result.add(temp % 10); -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 25: Solution.addToArrayForm(line 22, col 26)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  temp / 10 
             mutant:                    temp % 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 26: Solution.addToArrayForm(line 22, col 26)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  temp / 10 
             mutant:                    temp * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 27: Solution.addToArrayForm(line 22, col 26)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  temp / 10 
             mutant:                    temp + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 28: Solution.addToArrayForm(line 22, col 26)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  temp / 10 
             mutant:                    temp - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 29: (STD) carry = temp / 10; -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 30: (STD) k /= 10; -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 31: Solution.addToArrayForm(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  k > 0 
             mutant:                    k != 0
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 32: Solution.addToArrayForm(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  k > 0 
             mutant:                    k >= 0
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 33: Solution.addToArrayForm(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  k > 0 
             mutant:                    false
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 34
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 34: Solution.addToArrayForm(line 26, col 23)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> *(int,int)
             original:                  k % 10 
             mutant:                    k * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 35
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 35: Solution.addToArrayForm(line 26, col 23)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> +(int,int)
             original:                  k % 10 
             mutant:                    k + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 36
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 36: Solution.addToArrayForm(line 26, col 23)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> -(int,int)
             original:                  k % 10 
             mutant:                    k - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 37
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 37: Solution.addToArrayForm(line 26, col 23)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> /(int,int)
             original:                  k % 10 
             mutant:                    k / 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 38
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 38: Solution.addToArrayForm(line 26, col 28)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  k % 10 + carry 
             mutant:                    k % 10 % carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 39
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 39: Solution.addToArrayForm(line 26, col 28)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  k % 10 + carry 
             mutant:                    k % 10 * carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 40
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 40: Solution.addToArrayForm(line 26, col 28)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  k % 10 + carry 
             mutant:                    k % 10 - carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 41
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 41: Solution.addToArrayForm(line 26, col 28)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  k % 10 + carry 
             mutant:                    k % 10 / carry
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 42
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 42: Solution.addToArrayForm(line 27, col 26)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> *(int,int)
             original:                  t % 10 
             mutant:                    t * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 43
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 43: Solution.addToArrayForm(line 27, col 26)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> +(int,int)
             original:                  t % 10 
             mutant:                    t + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 44
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 44: Solution.addToArrayForm(line 27, col 26)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> -(int,int)
             original:                  t % 10 
             mutant:                    t - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 45
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 45: Solution.addToArrayForm(line 27, col 26)
             mutation operator group:   AOR
             mutation operator:         %(int,int) |==> /(int,int)
             original:                  t % 10 
             mutant:                    t / 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 46
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 46: (STD) result.add(t % 10); -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 47
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 47: Solution.addToArrayForm(line 28, col 23)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> %(int,int)
             original:                  t / 10 
             mutant:                    t % 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 48
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 48: Solution.addToArrayForm(line 28, col 23)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> *(int,int)
             original:                  t / 10 
             mutant:                    t * 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 49
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 49: Solution.addToArrayForm(line 28, col 23)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> +(int,int)
             original:                  t / 10 
             mutant:                    t + 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 50
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 50: Solution.addToArrayForm(line 28, col 23)
             mutation operator group:   AOR
             mutation operator:         /(int,int) |==> -(int,int)
             original:                  t / 10 
             mutant:                    t - 10
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 51
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 51: (STD) carry = t / 10; -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 52
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 52: (STD) k /= 10; -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 53
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 53: Solution.addToArrayForm(line 31, col 19)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  carry == 1 
             mutant:                    carry <= 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 54
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 54: Solution.addToArrayForm(line 31, col 19)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  carry == 1 
             mutant:                    carry >= 1
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 55
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 55: Solution.addToArrayForm(line 31, col 19)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  carry == 1 
             mutant:                    false
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 56
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 56: (STD) result.add(1); -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 57
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 57: (STD) Collections.reverse(result); -> <NO-OP>
-[05/24 20:49:12] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 57 mutants (157 ms)
+[06/24 16:50:36] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 57 mutants (159 ms)

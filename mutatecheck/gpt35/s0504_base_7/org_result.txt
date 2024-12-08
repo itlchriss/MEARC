@@ -1,7 +1,7 @@
-././gpt35/s0504_base_7/Solution.java:10: verify: The prover cannot establish an assertion (Postcondition: ././gpt35/s0504_base_7/Solution.java:6:) in method convertToBase7
+./gpt35/s0504_base_7/Solution.java:10: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0504_base_7/Solution.java:6:) in method convertToBase7
         return Integer.toString(num, 7);
         ^
-././gpt35/s0504_base_7/Solution.java:6: verify: Associated declaration: ././gpt35/s0504_base_7/Solution.java:10:
+./gpt35/s0504_base_7/Solution.java:6: verify: Associated declaration: ./gpt35/s0504_base_7/Solution.java:10:
 //@ ensures \result.equals(Integer.toString(num, 7));
     ^
 2 verification failures

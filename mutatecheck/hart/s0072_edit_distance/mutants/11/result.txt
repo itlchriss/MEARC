@@ -1,13 +1,10 @@
-./hart/s0072_edit_distance/mutants/11/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/11/Solution.java:16:) in method minDistance
-            return minDistance(w2, w1);
-            ^
-./hart/s0072_edit_distance/mutants/11/Solution.java:16: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/11/Solution.java:22:
+./hart/s0072_edit_distance/mutants/11/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/11/Solution.java:16:) in method minDistance
+        return dp[n2];
+        ^
+./hart/s0072_edit_distance/mutants/11/Solution.java:16: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/11/Solution.java:43:
 //@ ensures(((w1.equals("horse")) && (w2.equals("ros"))) ==> (\result == 3));
     ^
-./hart/s0072_edit_distance/mutants/11/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/11/Solution.java:17:) in method minDistance
-            return minDistance(w2, w1);
-            ^
-./hart/s0072_edit_distance/mutants/11/Solution.java:17: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/11/Solution.java:22:
-//@ ensures(((w1.equals("intention")) && (w2.equals("execution"))) ==> (\result == 5));
-    ^
-4 verification failures
+./hart/s0072_edit_distance/mutants/11/Solution.java:18: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+    public int minDistance(String w1, String w2) {
+               ^
+3 verification failures

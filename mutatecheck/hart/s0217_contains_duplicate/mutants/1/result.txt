@@ -1,6 +1,9 @@
 ./mutants/1/Solution.java:17: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
 //@ ensures((\result == false) ==> (\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1)));
                                                                                                ^
+./mutants/1/Solution.java:15: verify: The prover cannot establish an assertion (UndefinedNullDeReference) in method containsDuplicate
+//@ requires((nums.length <= 100000) && (nums.length >= 1));
+                  ^
 ./mutants/1/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./mutants/1/Solution.java:17:) in method containsDuplicate
         return false;
         ^
@@ -8,4 +11,4 @@
 //@ ensures((\result == false) ==> (\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1)));
     ^
 1 warning
-2 verification failures
+3 verification failures

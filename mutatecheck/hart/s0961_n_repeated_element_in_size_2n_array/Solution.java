@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= 0)));
 //@ requires((nums.length <= 10000) && (nums.length >= 4));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= 0)));
 //@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 3})) ==> (\result == 3));
 //@ ensures((Arrays.equals(nums, new int[] {2 , 1 , 2 , 5 , 3 , 2})) ==> (\result == 2));
 //@ ensures((Arrays.equals(nums, new int[] {5 , 1 , 5 , 2 , 5 , 3 , 5 , 4})) ==> (\result == 5));

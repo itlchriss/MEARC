@@ -1,138 +1,138 @@
-[05/24 20:48:53] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:53] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0401_0500.s0455_assign_cookies.Solution]]]]
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0401_0500.s0455_assign_cookies.Solution
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: findContentChildren([int[] g, int[] s])int
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 1: (STD) Arrays.sort(g); -> <NO-OP>
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 2: (STD) Arrays.sort(s); -> <NO-OP>
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.findContentChildren(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < g.length 
             mutant:                    i != g.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.findContentChildren(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < g.length 
             mutant:                    i <= g.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.findContentChildren(line 25, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < g.length 
             mutant:                    false
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.findContentChildren(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  j < s.length 
             mutant:                    j != s.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.findContentChildren(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  j < s.length 
             mutant:                    j <= s.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.findContentChildren(line 25, col 34)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  j < s.length 
             mutant:                    false
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.findContentChildren(line 25, col 29)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  i < g.length && j < s.length 
             mutant:                    i < g.length == j < s.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.findContentChildren(line 25, col 29)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  i < g.length && j < s.length 
             mutant:                    false
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.findContentChildren(line 25, col 18)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  i < g.length && j < s.length 
             mutant:                    i < g.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.findContentChildren(line 25, col 34)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  i < g.length && j < s.length 
             mutant:                    j < s.length
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.findContentChildren(line 26, col 22)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  s[j] >= g[i] 
             mutant:                    s[j] == g[i]
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.findContentChildren(line 26, col 22)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  s[j] >= g[i] 
             mutant:                    s[j] > g[i]
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.findContentChildren(line 26, col 22)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  s[j] >= g[i] 
             mutant:                    true
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 16: (STD) result++; -> <NO-OP>
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 17: (STD) i++; -> <NO-OP>
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 18: (STD) j++; -> <NO-OP>
-[05/24 20:48:54] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 18 mutants (76 ms)
+[06/24 16:50:17] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 18 mutants (80 ms)

@@ -1,4 +1,4 @@
-- term: strx_a
+- term: chry_a
   syntax:
   - NN
   arguments:
@@ -6,10 +6,10 @@
     primitive_type: any
     reference_type: any
   synthesised_datatype:
-  - primitive_type: undefined
-    reference_type: string
-  interpretation: '''AcommaL'''
-- term: strx_b
+  - primitive_type: character
+    reference_type: undefined
+  interpretation: '''A'''
+- term: chry_b
   syntax:
   - NN
   arguments:
@@ -17,6 +17,17 @@
     primitive_type: any
     reference_type: any
   synthesised_datatype:
-  - primitive_type: undefined
-    reference_type: string
+  - primitive_type: character
+    reference_type: undefined
+  interpretation: '''L'''
+- term: chry_c
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: any
+    reference_type: any
+  synthesised_datatype:
+  - primitive_type: character
+    reference_type: undefined
   interpretation: '''P'''

@@ -9,8 +9,8 @@ import java.util.Collections;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= -1000000000)));
 //@ requires(nums.length <= 100000);
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= -1000000000)));
 //@ ensures((Arrays.equals(nums, new int[] {100 , 4 , 200 , 1 , 3 , 2})) ==> (\result == 4));
 //@ ensures((Arrays.equals(nums, new int[] {0 , 3 , 7 , 2 , 5 , 8 , 4 , 6 , 0 , 1})) ==> (\result == 9));
     public int longestConsecutive(int[] nums) {

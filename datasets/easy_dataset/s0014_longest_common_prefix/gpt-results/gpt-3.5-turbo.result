@@ -1,0 +1,9 @@
+- public String longestCommonPrefix(String[] strs)
+- requires strs != null && (\forall int i; 0 <= i && i < strs.length; strs[i] != null);
+- ensures \result != null;
+- ensures (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result));
+- ensures (\forall int i; 0 <= i && i < strs.length; \result.startsWith(strs[i]));
+- ensures (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) && (\forall int k; 0 <= k && k < \result.length(); strs[i].charAt(k) == strs[j].charAt(k)));
+- ensures (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) && (\forall int k; 0 <= k && k < \result.length(); strs[i].charAt(k) == strs[j].charAt(k))) ==> (\forall int i; 0 <= i && i < strs.length; \result.startsWith(strs[i]));
+- ensures (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) && (\forall int k; 0 <= k && k < \result.length(); strs[i].charAt(k) == strs[j].charAt(k))) ==> (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result));
+- ensures (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) && (\forall int k; 0 <= k && k < \result.length(); strs[i].charAt(k) == strs[j].charAt(k))) ==> (\forall int i, j; 0 <= i && i < strs.length && 0 <= j && j < strs.length; strs[i].startsWith(\result) && strs[j].startsWith(\result) && (\forall int k; 0 <= k && k < \result.length(); strs[i].charAt(k) == strs[j].charAt(k)));

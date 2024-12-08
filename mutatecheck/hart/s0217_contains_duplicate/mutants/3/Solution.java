@@ -12,8 +12,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= -1000000000)));
 //@ requires((nums.length <= 100000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 1000000000) && (nums[i] >= -1000000000)));
 //@ ensures((\result == false) ==> (\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1)));
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
@@ -21,6 +21,7 @@ public class Solution {
             if (set.contains(n)) {
                 return true;
             }
+        
         }
         return false;
     }

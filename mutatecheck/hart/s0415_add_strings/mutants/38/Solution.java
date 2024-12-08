@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((num2.length() <= 10000) && (num2.length() >= 1));
 //@ requires((num1.length() <= 10000) && (num1.length() >= 1));
+//@ requires((num2.length() <= 10000) && (num2.length() >= 1));
     public String addStrings(String num1, String num2) {
         StringBuilder result = new StringBuilder();
         int carry = 0;

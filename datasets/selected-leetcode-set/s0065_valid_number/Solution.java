@@ -3,10 +3,9 @@ package g0001_0100.s0065_valid_number;
 // #Hard #String #2023_08_11_Time_1_ms_(100.00%)_Space_41.3_MB_(91.10%)
 
 public class Solution {
-//@ requires(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 20.*);
+//@ requires(*The string parameter `s` is less than or equal to 20 characters in length and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists of only English letters (both uppercase and lowercase), digits (0-9), plus '+', minus '-', or dot '.'.*);
-//@ ensures(*If the string parameter `s` is a valid number according to the given components, the boolean result is equal to the true literal.*);
-//@ ensures(*If the string parameter `s` is not a valid number according to the given components, the boolean result is equal to the false literal.*);
+//@ ensures(*The boolean result is true if the string parameter `s` is a valid number, and false otherwise.*);
     public boolean isNumber(String s) {
         if (s == null || s.length() == 0) {
             return false;

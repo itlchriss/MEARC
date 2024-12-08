@@ -1,0 +1,5 @@
+- public boolean isUgly(int n)
+- requires n >= -2147483648 && n <= 2147483647;
+- ensures \result == true || \result == false;
+- ensures \result == true <==> n is an ugly number;
+- ensures \result == false <==> n is not an ugly number;

@@ -16,5 +16,5 @@ dotest () {
     done
 }
 
-dotest 'gpt35'
+#dotest 'gpt35'
 dotest 'hart'

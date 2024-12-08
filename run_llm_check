@@ -11,7 +11,7 @@ BIGINT_FLAGS="--spec-math bigint --code-math bigint"
 # done
 
 # rm ./datasets/leetcode-behavioural/s*/gpt-results/build/Solution.java 
-for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -100`
+for entry in `find ./test -type f -name "Solution.java" | sort | head -100`
 do
     jmls=()
     # src="${entry//Solution.java/}"

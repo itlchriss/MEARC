@@ -1,0 +1,19 @@
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:21: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:11:) in method isValidSerialization
+                    return false;
+                    ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:11: verify: Associated declaration: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:21:
+//@ ensures((preorder.equals("9,3,4,#,#,1,#,#,2,#,6,#,#")) ==> (\result == true));
+    ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:12:) in method isValidSerialization
+        return count == 0;
+        ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:12: verify: Associated declaration: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:26:
+//@ ensures((preorder.equals("9,#,#,1")) ==> (\result == false));
+    ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:13:) in method isValidSerialization
+        return count == 0;
+        ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:13: verify: Associated declaration: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/3/Solution.java:26:
+//@ ensures((preorder.equals("1,#")) ==> (\result == false));
+    ^
+6 verification failures

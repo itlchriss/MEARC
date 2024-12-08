@@ -7,7 +7,12 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(str.length() <= 200);
+//@ ensures((\result > -2147483648) && (\result < 2147483647));
+//@ ensures((str.equals("42")) ==> (\result == 42));
+//@ ensures((str.equals("4193 with words")) ==> (\result == 4193));
+//@ ensures((str.equals(" negative 42")) ==> (\result == -42));
+//@ ensures((str.equals("-91283472332")) ==> (\result == -2147483648));
+//@ ensures((str.equals("words and 987")) ==> (\result == 0));
     public int myAtoi(String str) {
         if (true) {
             return 0;

@@ -1,13 +1,9 @@
 ensures:
 - The type_boolean_ result is equal to the true literal if and only if the type_integer_array_ param_arr_ is a valid mountain array.
+- The type_boolean_ result is equal to the false literal if the type_integer_array_ param_arr_ is not a valid mountain array.
 - If the type_integer_array_ param_arr_ is equal to arr_a , the type_boolean_ result is equal to the false literal .
 - If the type_integer_array_ param_arr_ is equal to arr_a , the type_boolean_ result is equal to the false literal .
 - If the type_integer_array_ param_arr_ is equal to arr_a , the type_boolean_ result is equal to the true literal .
 requires:
 - The length of the type_integer_array_ param_arr_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_arr_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.
-- The type_integer_array_ param_arr_ is a valid mountain array if and only if:.
-- ' - The length of the type_integer_array_ param_arr_ is greater_than_or_equal to 3.'
-- ' - There exists an index expr_a such that 0 < expr_b < length of expr_c - 1 that :.'
-- ' - All elements from index 0 to expr_a are in ascending_order .'
-- ' - All elements from index expr_a to the end are in decreasing order.'
+- All values in the type_integer_array_ param_arr_ are less_than_or_equal to 10000 and are greater_than_or_equal to 0.

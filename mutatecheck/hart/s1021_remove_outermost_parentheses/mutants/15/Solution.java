@@ -12,6 +12,7 @@ import java.util.Collections;
 public class Solution {
 //@ requires((s.length() <= 100000) && (s.length() >= 1));
 //@ ensures((s.equals("(()())(())")) ==> (\result.equals("()()()")));
+//@ ensures((s.equals("()()")) ==> (\result.equals("")));
 //@ ensures((s.equals("(()())(())(()(()))")) ==> (\result.equals("()()()()(())")));
     public String removeOuterParentheses(String s) {
         List<String> primitives = new ArrayList<>();

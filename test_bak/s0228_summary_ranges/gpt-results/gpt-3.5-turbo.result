@@ -1,0 +1,11 @@
+- requires nums != null && (\forall int i; 0 <= i && i < nums.length; -2^31 <= nums[i] && nums[i] <= 2^31 - 1)
+- requires nums.length <= 20
+- requires (\forall int i, j; 0 <= i && i < j && j < nums.length; nums[i] < nums[j])
+- ensures \result != null
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\exists int j, k; 0 <= j && j < k && k < nums.length; nums[j] <= Integer.parseInt(\result.get(i)) && Integer.parseInt(\result.get(i)) <= nums[k]))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size() && j != i; Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < nums.length; (nums[j] == Integer.parseInt(\result.get(i))) == (\exists int k; 0 <= k && k < \result.size(); Integer.parseInt(\result.get(k)) == nums[j])))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+- ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))

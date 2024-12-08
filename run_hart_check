@@ -4,8 +4,8 @@ ESC_FLAG="-esc"
 BIGINT_FLAGS="--spec-math bigint --code-math bigint"
 
 
-rm -rf ./fmcheck/hart/*
-for entry in `find ./datasets/leetcode-behavioural -type f -name "Solution.java" | sort | head -100`
+rm -rf ./fmcheck/input/hart/*
+for entry in `find ./test -type f -name "Solution.java" | sort | head -100`
 do
     jmls=()
     # src="${entry//Solution.java/}"

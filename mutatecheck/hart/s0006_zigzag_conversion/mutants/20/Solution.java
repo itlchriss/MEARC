@@ -7,9 +7,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((\exists int i; 0 <= i < s.length(); Character.isAlphabetic(s.charAt(i))) && ((\exists int i; 0 <= i < s.length(); (s.charAt(i) == ',')) && (\exists int i; 0 <= i < s.length(); (s.charAt(i) == '.'))));
-//@ requires((s.length() <= 1000) && (s.length() >= 1));
 //@ requires((numRows >= 1) && (numRows <= 1000));
+//@ requires((s.length() <= 1000) && (s.length() >= 1));
 //@ ensures(((s.equals("PAYPALISHIRING")) && (numRows == 3)) ==> (\result.equals("PAHNAPLSIIGYIR")));
 //@ ensures(((s.equals("A")) && (numRows == 1)) ==> (\result.equals("A")));
 //@ ensures(((s.equals("PAYPALISHIRING")) && (numRows == 4)) ==> (\result.equals("PINALSIGYAHRPI")));

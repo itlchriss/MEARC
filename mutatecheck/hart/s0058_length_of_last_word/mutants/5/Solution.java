@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((\forall int i; 0 <= i < s.length(); Character.isAlphabetic(s.charAt(i))) && (\forall int i; 0 <= i < s.length(); Character.isWhitespace(s.charAt(i))));
 //@ requires((s.length() <= 10000) && (s.length() >= 1));
+//@ requires((\forall int i; 0 <= i < s.length(); Character.isAlphabetic(s.charAt(i))) && (\forall int i; 0 <= i < s.length(); Character.isWhitespace(s.charAt(i))));
 //@ ensures((s.equals("Hello World")) ==> (\result == 5));
 //@ ensures((s.equals("luffy is still joyboy")) ==> (\result == 6));
 //@ ensures((s.equals(" fly me to the moon ")) ==> (\result == 4));

@@ -4,9 +4,12 @@ package g0001_0100.s0041_first_missing_positive;
 // #Big_O_Time_O(n)_Space_O(n) #2023_08_11_Time_2_ms_(57.59%)_Space_59.2_MB_(51.48%)
 
 public class Solution {
-//@ requires(*The integer array parameter `nums` must not be null.*);
-//@ ensures(*The integer result is the smallest missing positive integer in the integer array parameter `nums`.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 500000 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 2147483647 and are greater than or equal to -2147483648.*);
+//@ requires(*The algorithm used to find the smallest missing positive integer runs in O(n) time complexity.*);
+//@ requires(*The algorithm used to find the smallest missing positive integer uses constant extra space.*);
 //@ ensures(*The integer result is greater than or equal to 1.*);
+//@ ensures(*The integer result is the smallest positive integer that is missing from the integer array parameter `nums`.*);
     public int firstMissingPositive(int[] nums) {
         //@ loop_invariant 0 <= i <= nums.length;
         //@ decreases nums.length - i;

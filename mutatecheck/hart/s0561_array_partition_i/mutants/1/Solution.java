@@ -9,8 +9,8 @@ import java.util.Collections;
 
 public class Solution {
 //@ requires(nums.length % 2 == 0);
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
 //@ requires((nums.length <= 10000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
 //@ ensures((Arrays.equals(nums, new int[] {1 , 4 , 3 , 2})) ==> (\result == 4));
 //@ ensures((Arrays.equals(nums, new int[] {6 , 2 , 6 , 5 , 1 , 2})) ==> (\result == 9));
     public int arrayPairSum(int[] nums) {

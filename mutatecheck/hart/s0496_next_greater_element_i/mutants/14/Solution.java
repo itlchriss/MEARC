@@ -11,8 +11,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((nums2.length <= 1000) && (nums2.length >= nums1.length));
+//@ requires(\forall int i; 0 <= i < nums1.length; (Collections.frequency(Arrays.asList(nums1), nums1[i]) == 1));
 //@ requires((nums1.length <= 1000) && (nums1.length >= 1));
+//@ requires((nums2.length <= 1000) && (nums2.length >= nums1.length));
 //@ ensures(((Arrays.equals(nums1, new int[] {4 , 1 , 2})) && (Arrays.equals(nums2, new int[] {1 , 3 , 4 , 2}))) ==> (Arrays.equals(\result, new int[] {-1 , 3 , -1})));
 //@ ensures(((Arrays.equals(nums1, new int[] {2 , 4})) && (Arrays.equals(nums2, new int[] {1 , 2 , 3 , 4}))) ==> (Arrays.equals(\result, new int[] {3 , -1})));
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {

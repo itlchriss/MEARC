@@ -1,7 +1,7 @@
-./hart/s0925_long_pressed_name/mutants/33/Solution.java:27: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0925_long_pressed_name/mutants/33/Solution.java:12:) in method isLongPressedName
-                    return false;
-                    ^
-./hart/s0925_long_pressed_name/mutants/33/Solution.java:12: verify: Associated declaration: ./hart/s0925_long_pressed_name/mutants/33/Solution.java:27:
+./hart/s0925_long_pressed_name/mutants/33/Solution.java:40: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0925_long_pressed_name/mutants/33/Solution.java:12:) in method isLongPressedName
+                return false;
+                ^
+./hart/s0925_long_pressed_name/mutants/33/Solution.java:12: verify: Associated declaration: ./hart/s0925_long_pressed_name/mutants/33/Solution.java:40:
 //@ ensures((Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray()))) ==> (\result == true));
     ^
 ./hart/s0925_long_pressed_name/mutants/33/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0925_long_pressed_name/mutants/33/Solution.java:13:) in method isLongPressedName

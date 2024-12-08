@@ -76,6 +76,16 @@ def __perform_diff__(sent: list) -> str:
 def __perform_product__(sent: list) -> str:
     return str(pd.eval(' '.join(sent)))
 
+def __get_number__(sent: list) -> str:
+    for i in sent:
+        if __check_is_numeric__(i):
+            return str(i)
+    return None
+
+def __array_value_access__(sent: list) -> str:
+    print(sent)
+    exit(1)
+
 def __html2pow__(sent: list) -> str:
     pass
 
@@ -134,7 +144,9 @@ func_map = {
     '__chartype__': __check_is_chartype__,
     '__restrictive_adverb__': __check_is_restrictive_adverb__,
     '__si_term__': __check_is_si_term__,
-    '__num_word__': __check_is_num_word__
+    '__num_word__': __check_is_num_word__,
+    '__filter_num__': __get_number__,
+    '__array_value_access__': __array_value_access__
 }
 
 # general_syntax_rules = [
@@ -486,6 +498,24 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['is', 'in', 'the', 'range', 'of', 'a', 'signedint'], 
+        'format': "is greater than to negative 2147483648 and is less than to 2147483647", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'value', 'of', 'the', '__type__', '__param__', 'at', 'the', 'index', 'of', 'the', 'result'],
+        'format': "the __param__array_access_with_result_",
+        'symbol': '__param__array_access_with_result_',
+        'interpretation': '__param__[\\result]',
+        'syntax': 'NN',
+        'arguments': [],
+        'synthesised_datatype': { }
     }
 ]
 
@@ -501,10 +531,12 @@ reqtype_ignore_rules = {
 
 class RepairProcessor:    
     
-    dynamic_si = {}
-    _t = None
+    # dynamic_si = {}
+    # _t = None
     
     def __init__(self):
+        self._t = None
+        self.dynamic_si = {}
         pass
     
     def __process_negative__(self, sent):
@@ -595,7 +627,7 @@ class RepairProcessor:
                                     'arguments': rule['arguments'],  
                                     'synthesised_datatype': rule['synthesised_datatype'],                                   
                                     'interpretation': interpretation,
-                                    }        
+                                    }     
         words = words[:index] + [f] + words[index + len(pattern):]
         return ' '.join(words)
 
@@ -619,12 +651,17 @@ class RepairProcessor:
         for k in reqtype_ignore_rules[t].keys():
             sent = sent.replace(k, reqtype_ignore_rules[t][k])        
         sent = re.sub(r'\s+\'s', '\'s', sent)
+        
 
         # TODO: experimental statement to replace all the commas to 'and' or 'or'
         if r := re.search(r"only\s+contains((\s*\w+\s*,)+)+,*\s*(and|or)\s*\w+\s*\.?", sent):
             g = list(r.groups())
             conj = g[-1]
             sent = sent.replace(g[0], g[0].replace(',', conj))
+        # print(sent)
+        sent = re.sub(r'\s+\'\s,\s\'\s+', '\',\'', sent)
+        # sent = sent.replace('\' , \'', '\',\'')
+        # print(sent)
 
         # TODO: experimental replacing all text number to integer
         index = []

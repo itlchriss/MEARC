@@ -10,13 +10,13 @@
 ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:15: verify: Associated declaration: ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:36:
 //@ ensures((Arrays.equals(arr, new int[] {2 , 3 , -2 , 4})) ==> (\result == 6));
     ^
+./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxProduct
+            cprod = cprod / j;
+                          ^
 ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:36: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:16:) in method maxProduct
         return ans;
         ^
 ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:16: verify: Associated declaration: ./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:36:
 //@ ensures((Arrays.equals(arr, new int[] {-2 , 0 , -1})) ==> (\result == 0));
     ^
-./hart/s0152_maximum_product_subarray/mutants/3/Solution.java:21: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method maxProduct
-            cprod = cprod / j;
-                          ^
 7 verification failures

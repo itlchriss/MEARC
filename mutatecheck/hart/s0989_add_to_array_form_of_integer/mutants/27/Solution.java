@@ -11,8 +11,8 @@ import java.util.Arrays;
 
 public class Solution {
 //@ requires((k <= 10000) && (k >= 1));
-//@ requires(\forall int i; 0 <= i < num.length; ((num[i] <= 9) && (num[i] >= 0)));
 //@ requires((num.length <= 10000) && (num.length >= 1));
+//@ requires(\forall int i; 0 <= i < num.length; ((num[i] <= 9) && (num[i] >= 0)));
     public List<Integer> addToArrayForm(int[] num, int k) {
         ArrayList<Integer> result = new ArrayList<>();
         int carry = 0;

@@ -1,0 +1,12 @@
+- public int longestValidParentheses(String s)
+- requires s != null
+- ensures \result >= 0
+- ensures \result <= s.length()
+- ensures (\forall int i; 0 <= i < s.length(); s.charAt(i) == '(' || s.charAt(i) == ')' )
+- ensures (\forall int i; 0 <= i < \result; isValidSubstring(s, i, i + \result))
+- ensures (\forall int i, j; 0 <= i < j < s.length(); isValidSubstring(s, i, j) ==> j - i <= \result)
+- pure private boolean isValidSubstring(String s, int start, int end)
+- requires start >= 0 && end < s.length()
+- ensures \result ==> (\forall int i; start <= i < end; isValidPair(s.charAt(i), s.charAt(i + 1)))
+- pure private boolean isValidPair(char c1, char c2)
+- ensures \result ==> (c1 == '(' && c2 == ')')

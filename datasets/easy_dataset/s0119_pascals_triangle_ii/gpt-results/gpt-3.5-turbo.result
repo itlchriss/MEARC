@@ -1,0 +1,7 @@
+- public /*@ pure @*/ List<Integer> getRow(int rowIndex)
+- requires rowIndex >= 0 && rowIndex <= 33;
+- ensures \result != null;
+- ensures \result.size() == rowIndex + 1;
+- ensures (\forall int i; 0 <= i && i < \result.size() - 1; \result.get(i) == \old(\result.get(i)) + \old(\result.get(i + 1)));
+- ensures \result.get(0) == 1;
+- ensures \result.get(\result.size() - 1) == 1;

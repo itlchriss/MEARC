@@ -1,13 +1,19 @@
-./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:52: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:12:) in method calculate
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:11:) in method calculate
         return sum;
         ^
-./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:12: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:52:
-//@ ensures((s.equals("3+2*2")) ==> (\result == 7));
-    ^
-./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:52: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:11:) in method calculate
-        return sum;
-        ^
-./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:11: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:52:
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:11: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53:
 //@ ensures((s.equals("3/2")) ==> (\result == 1));
     ^
-4 verification failures
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:12:) in method calculate
+        return sum;
+        ^
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:12: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53:
+//@ ensures((s.equals("3+2*2")) ==> (\result == 7));
+    ^
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:13:) in method calculate
+        return sum;
+        ^
+./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:13: verify: Associated declaration: ./hart/s0227_basic_calculator_ii/mutants/11/Solution.java:53:
+//@ ensures((s.equals("3+5 / 2")) ==> (\result == 5));
+    ^
+6 verification failures

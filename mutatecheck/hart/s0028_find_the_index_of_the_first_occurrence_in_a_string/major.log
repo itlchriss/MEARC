@@ -1,174 +1,174 @@
-[05/24 20:48:05] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution]]]]
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0001_0100.s0028_find_the_index_of_the_first_occurrence_in_a_string.Solution
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: strStr([String haystack, String needle])int
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.strStr(line 15, col 27)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
             original:                  needle.isEmpty() 
             mutant:                    false
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.strStr(line 15, col 27)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
             original:                  needle.isEmpty() 
             mutant:                    true
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 3: (STD) return 0; -> <NO-OP>
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.strStr(line 21, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  m - n 
             mutant:                    m % n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.strStr(line 21, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  m - n 
             mutant:                    m * n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.strStr(line 21, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  m - n 
             mutant:                    m + n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.strStr(line 21, col 39)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  m - n 
             mutant:                    m / n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.strStr(line 21, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  m - n + 1 
             mutant:                    (m - n) % 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.strStr(line 21, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  m - n + 1 
             mutant:                    (m - n) * 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.strStr(line 21, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  m - n + 1 
             mutant:                    m - n - 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.strStr(line 21, col 43)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  m - n + 1 
             mutant:                    (m - n) / 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.strStr(line 21, col 35)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  start < m - n + 1 
             mutant:                    start != m - n + 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.strStr(line 21, col 35)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  start < m - n + 1 
             mutant:                    start <= m - n + 1
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.strStr(line 21, col 35)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  start < m - n + 1 
             mutant:                    false
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.strStr(line 22, col 49)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  start + n 
             mutant:                    start % n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.strStr(line 22, col 49)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  start + n 
             mutant:                    start * n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.strStr(line 22, col 49)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  start + n 
             mutant:                    start - n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.strStr(line 22, col 49)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  start + n 
             mutant:                    start / n
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.strStr(line 22, col 60)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
             original:                  haystack.substring(start, start + n).equals(needle) 
             mutant:                    false
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.strStr(line 22, col 60)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
             original:                  haystack.substring(start, start + n).equals(needle) 
             mutant:                    true
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 21: (STD) return start; -> <NO-OP>
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 21 mutants (84 ms)
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 21 mutants (88 ms)

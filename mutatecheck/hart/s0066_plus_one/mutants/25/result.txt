@@ -1,10 +1,10 @@
+./hart/s0066_plus_one/mutants/25/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method plusOne
+                sum = digits[i] / carry;
+                                ^
 ./hart/s0066_plus_one/mutants/25/Solution.java:33: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0066_plus_one/mutants/25/Solution.java:13:) in method plusOne
             return ans;
             ^
 ./hart/s0066_plus_one/mutants/25/Solution.java:13: verify: Associated declaration: ./hart/s0066_plus_one/mutants/25/Solution.java:33:
 //@ ensures(\result.length == digits.length);
     ^
-./hart/s0066_plus_one/mutants/25/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method plusOne
-                sum = digits[i] / carry;
-                                ^
 3 verification failures

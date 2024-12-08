@@ -1,4 +1,31 @@
-./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:19: error: ')' expected
-//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ');
-                                                                                     ^
-1 error
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:7:) in method lengthOfLastWord
+        return len;
+        ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:7: verify: Associated declaration: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31:
+//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' '));
+    ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:15:) in method lengthOfLastWord
+        return len;
+        ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:15: verify: Associated declaration: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31:
+//@ ensures(\result >= 0);
+    ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:9:) in method lengthOfLastWord
+        return len;
+        ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:9: verify: Associated declaration: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31:
+//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) != ' ' || s.charAt(i) != ' '));
+    ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:8:) in method lengthOfLastWord
+        return len;
+        ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:8: verify: Associated declaration: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31:
+//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) != ' ' && s.charAt(i) == ' '));
+    ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:13:) in method lengthOfLastWord
+        return len;
+        ^
+./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:13: verify: Associated declaration: ./gpt35/s0058_length_of_last_word/mutants/2/Solution.java:31:
+//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ' && s.charAt(i) != ' '));
+    ^
+10 verification failures

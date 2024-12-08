@@ -1,0 +1,6 @@
+- public int maxRotateFunction(int[] nums)
+- requires nums != null && nums.length > 0;
+- ensures \result >= 0;
+- ensures (\forall int i; 0 <= i && i < nums.length; \result >= F(i));
+- ensures (\exists int i; 0 <= i && i < nums.length; \result == F(i));
+- signals (ArithmeticException e) \result == Integer.MAX_VALUE;

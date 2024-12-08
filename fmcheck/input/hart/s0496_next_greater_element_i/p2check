@@ -1,0 +1,4 @@
+./fmcheck/input/hart/s0496_next_greater_element_i/Solution.java:14: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ requires(\forall int i; 0 <= i < nums1.length; (Collections.frequency(Arrays.asList(nums1), nums1[i]) == 1));
+                                                                         ^
+1 warning

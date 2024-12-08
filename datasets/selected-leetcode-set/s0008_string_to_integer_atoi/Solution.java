@@ -3,16 +3,14 @@ package g0001_0100.s0008_string_to_integer_atoi;
 // #Medium #Top_Interview_Questions #String #2024_01_04_Time_1_ms_(100.00%)_Space_42.7_MB_(8.86%)
 
 public class Solution {
-//@ requires(*The string parameter `str` is converted to a 32-bit signed integer.*);
-//@ requires(*Leading whitespace characters in the string `str` are ignored.*);
-//@ requires(*Only the space character ' ' is considered a whitespace character.*);
-//@ requires(*Characters other than leading whitespace or digits are ignored.*);
-//@ requires(*The parsed integer is the concatenation of consecutive digits in the string `str`.*);
-//@ ensures(*If the next character in the string `str` is '-' or '+', the result is negative or positive respectively.*);
-//@ ensures(*The integer result is clamped to the range [-2^31, 2^31 - 1].*);
-//@ ensures(*If no digits are read, the integer result is 0.*);
-//@ ensures(*The integer result is the value of the parsed integer.*);
-//@ ensures(*The integer result is less than or equal to 2^31 - 1 and is greater than or equal to -2^31.*);
+//@ requires(*The string parameter `s` is less than or equal to 200 characters in length.*);
+//@ requires(*The string parameter `s` consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.*);
+//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit signed integer and is greater than or equal to the minimum value of a 32-bit signed integer.*);
+//@ ensures(*If the string parameter `s` is equal to "42", the integer result is equal to 42.*);
+//@ ensures(*If the string parameter `s` is equal to " -42", the integer result is equal to -42.*);
+//@ ensures(*If the string parameter `s` is equal to "4193 with words", the integer result is equal to 4193.*);
+//@ ensures(*If the string parameter `s` is equal to "words and 987", the integer result is equal to 0.*);
+//@ ensures(*If the string parameter `s` is equal to "-91283472332", the integer result is equal to -2147483648.*);
     public int myAtoi(String str) {
         if (str == null || str.length() == 0) {
             return 0;

@@ -1,0 +1,13 @@
+- The length of the string parameter `version1` is less than or equal to 500 and is greater than or equal to 1.
+- The length of the string parameter `version2` is less than or equal to 500 and is greater than or equal to 1.
+- The string parameters `version1` and `version2` only contain digits and '.'.
+- The string parameters `version1` and `version2` are valid version numbers.
+- All the given revisions in `version1` and `version2` can be stored in a 32-bit integer.
+- If the integer result is equal to -1, `version1` is less than `version2`.
+- If the integer result is equal to 1, `version1` is greater than `version2`.
+- If the integer result is equal to 0, `version1` is equal to `version2`.
+- If the string parameter `version1` is equal to "1.01" and the string parameter `version2` is equal to "1.001", the integer result is equal to 0.
+- If the string parameter `version1` is equal to "1.0" and the string parameter `version2` is equal to "1.0.0", the integer result is equal to 0.
+- If the string parameter `version1` is equal to "0.1" and the string parameter `version2` is equal to "1.1", the integer result is equal to -1.
+- If the string parameter `version1` is equal to "1.0.1" and the string parameter `version2` is equal to "1", the integer result is equal to 1.
+- If the string parameter `version1` is equal to "7.5.2.4" and the string parameter `version2` is equal to "7.5.3", the integer result is equal to -1.

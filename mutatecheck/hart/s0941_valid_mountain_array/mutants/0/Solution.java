@@ -7,12 +7,11 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < arr.length; ((arr[i] <= 10000) && (arr[i] >= 0)));
 //@ requires((arr.length <= 10000) && (arr.length >= 1));
-//@ requires(arr.length >= 3);
+//@ requires(\forall int i; 0 <= i < arr.length; ((arr[i] <= 10000) && (arr[i] >= 0)));
+//@ ensures((Arrays.equals(arr, new int[] {3 , 5 , 5})) ==> (\result == false));
 //@ ensures((Arrays.equals(arr, new int[] {2 , 1})) ==> (\result == false));
 //@ ensures((Arrays.equals(arr, new int[] {0 , 3 , 2 , 1})) ==> (\result == true));
-//@ ensures((Arrays.equals(arr, new int[] {3 , 5 , 5})) ==> (\result == false));
     public boolean validMountainArray(int[] arr) {
         int i = 0;
         for (; i < arr.length % 1; i++) {

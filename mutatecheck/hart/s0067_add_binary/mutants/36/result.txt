@@ -1,13 +1,7 @@
-./hart/s0067_add_binary/mutants/36/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method addBinary
+./hart/s0067_add_binary/mutants/36/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method addBinary
             int sum = ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) % carry;
                                                                                         ^
-./hart/s0067_add_binary/mutants/36/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0067_add_binary/mutants/36/Solution.java:13:) in method addBinary
-        return sb.reverse().toString();
-        ^
-./hart/s0067_add_binary/mutants/36/Solution.java:13: verify: Associated declaration: ./hart/s0067_add_binary/mutants/36/Solution.java:37:
-//@ ensures(((a.equals("11")) && (b.equals("1"))) ==> (\result.equals("100")));
-    ^
-./hart/s0067_add_binary/mutants/36/Solution.java:15: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
+./hart/s0067_add_binary/mutants/36/Solution.java:17: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
     public String addBinary(String a, String b) {
                   ^
-4 verification failures
+2 verification failures

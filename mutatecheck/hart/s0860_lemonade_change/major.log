@@ -1,246 +1,246 @@
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0801_0900.s0860_lemonade_change.Solution]]]]
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0801_0900.s0860_lemonade_change.Solution
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: lemonadeChange([int[] bills])boolean
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.lemonadeChange(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  bill == 5 
             mutant:                    bill <= 5
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.lemonadeChange(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  bill == 5 
             mutant:                    bill >= 5
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.lemonadeChange(line 18, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  bill == 5 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 4: (STD) countFive++; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.lemonadeChange(line 20, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  bill == 10 
             mutant:                    bill <= 10
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.lemonadeChange(line 20, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  bill == 10 
             mutant:                    bill >= 10
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.lemonadeChange(line 20, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  bill == 10 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.lemonadeChange(line 21, col 31)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  countFive == 0 
             mutant:                    countFive <= 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.lemonadeChange(line 21, col 31)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  countFive == 0 
             mutant:                    countFive >= 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.lemonadeChange(line 21, col 31)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  countFive == 0 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 11: (STD) return false; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 12: (STD) countFive--; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 13: (STD) countTen++; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.lemonadeChange(line 26, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  bill == 20 
             mutant:                    bill <= 20
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.lemonadeChange(line 26, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  bill == 20 
             mutant:                    bill >= 20
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.lemonadeChange(line 26, col 29)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  bill == 20 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.lemonadeChange(line 27, col 31)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  countFive > 0 
             mutant:                    countFive != 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.lemonadeChange(line 27, col 31)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  countFive > 0 
             mutant:                    countFive >= 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.lemonadeChange(line 27, col 31)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  countFive > 0 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.lemonadeChange(line 27, col 47)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  countTen > 0 
             mutant:                    countTen != 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 21: Solution.lemonadeChange(line 27, col 47)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  countTen > 0 
             mutant:                    countTen >= 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 22: Solution.lemonadeChange(line 27, col 47)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  countTen > 0 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 23: Solution.lemonadeChange(line 27, col 35)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  countFive > 0 && countTen > 0 
             mutant:                    countFive > 0 == countTen > 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 24: Solution.lemonadeChange(line 27, col 35)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  countFive > 0 && countTen > 0 
             mutant:                    false
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 25: Solution.lemonadeChange(line 27, col 31)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  countFive > 0 && countTen > 0 
             mutant:                    countFive > 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 26: Solution.lemonadeChange(line 27, col 47)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  countFive > 0 && countTen > 0 
             mutant:                    countTen > 0
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 27: (STD) countFive--; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 28: (STD) countTen--; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 29: Solution.lemonadeChange(line 30, col 38)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  countFive >= 3 
             mutant:                    countFive == 3
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 30: Solution.lemonadeChange(line 30, col 38)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  countFive >= 3 
             mutant:                    countFive > 3
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 31: Solution.lemonadeChange(line 30, col 38)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  countFive >= 3 
             mutant:                    true
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 32: (STD) countFive -= 3; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 33: (STD) return false; -> <NO-OP>
-[05/24 20:49:05] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+[06/24 16:50:29] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
     Generated 33 mutants (117 ms)

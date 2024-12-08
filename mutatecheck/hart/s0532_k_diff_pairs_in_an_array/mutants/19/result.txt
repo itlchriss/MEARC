@@ -1,12 +1,12 @@
-./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method findPairs
-                if (set.contains(n % k)) {
-                                   ^
 ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:16:) in method findPairs
         return res;
         ^
 ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:16: verify: Associated declaration: ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:42:
 //@ ensures(\result <= nums.length);
     ^
+./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:36: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method findPairs
+                if (set.contains(n % k)) {
+                                   ^
 ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:42: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0532_k_diff_pairs_in_an_array/mutants/19/Solution.java:17:) in method findPairs
         return res;
         ^

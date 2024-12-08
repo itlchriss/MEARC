@@ -1,0 +1,8 @@
+- The string parameter `number` must consist of digits, spaces, and/or dashes.
+- The string result after formatting must not contain any spaces or dashes.
+- The digits in the string parameter `number` must be grouped from left to right into blocks of length 3 until there are 4 or fewer digits remaining.
+- If there are 2 digits remaining after grouping, they must form a single block of length 2.
+- If there are 3 digits remaining after grouping, they must form a single block of length 3.
+- If there are 4 digits remaining after grouping, they must be split into two blocks of length 2 each.
+- The blocks of digits must be joined by dashes in the final result.
+- The final result must not contain any blocks of length 1 and must contain at most two blocks of length 2.

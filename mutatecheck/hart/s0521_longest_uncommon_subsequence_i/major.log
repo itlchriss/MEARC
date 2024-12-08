@@ -1,34 +1,34 @@
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:22] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0501_0600.s0521_longest_uncommon_subsequence_i.Solution]]]]
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0501_0600.s0521_longest_uncommon_subsequence_i.Solution
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: findLUSlength([String a, String b])int
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.findLUSlength(line 26, col 21)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> TRUE
             original:                  a.equals(b) 
             mutant:                    false
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.findLUSlength(line 26, col 21)
             mutation operator group:   COR
             mutation operator:         <METHOD_INVOCATION(boolean)> |==> FALSE
             original:                  a.equals(b) 
             mutant:                    true
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 3: (STD) return -1; -> <NO-OP>
-[05/24 20:48:59] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 3 mutants (39 ms)
+[06/24 16:50:23] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 3 mutants (42 ms)

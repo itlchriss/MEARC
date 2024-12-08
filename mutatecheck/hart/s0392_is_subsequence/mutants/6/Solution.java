@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((t.length() <= 10000) && (t.length() >= 0));
 //@ requires((s.length() <= 100) && (s.length() >= 0));
+//@ requires((t.length() <= 10000) && (t.length() >= 0));
     public boolean isSubsequence(String s, String t) {
         int i = 0;
         int j = 0;

@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-//@ requires(*Method behavioural specifications:*);
-//@ requires(*The integer array parameter `candidates` must not be null.*);
-//@ requires(*The integer parameter `target` is greater than or equal to 1 and is less than or equal to 500.*);
-//@ requires(*The same number from the integer array parameter `candidates` can be chosen multiple times in a combination.*);
-//@ requires(*Two combinations are considered unique if the frequency of at least one chosen number is different.*);
-//@ ensures(*The length of the integer array result is less than or equal to 150.*);
-//@ ensures(*Each list in the list result is a unique combination of integers from the integer array parameter `candidates` that sum up to the integer parameter `target`.*);
+//@ requires(*The length of the integer array parameter `candidates` is less than or equal to 30 and is greater than or equal to 1.*);
+//@ requires(*All the values in the integer array parameter `candidates` are less than or equal to 200 and are greater than or equal to 1.*);
+//@ requires(*All elements in the integer array parameter `candidates` are distinct.*);
+//@ requires(*The integer parameter `target` is less than or equal to 500 and is greater than or equal to 1.*);
+//@ requires(*The same number from the integer array parameter `candidates` can be chosen multiple times in a single combination.*);
+//@ requires(*Two combinations are considered unique if the frequency of at least one of the chosen numbers is different.*);
+//@ ensures(*The length of the list result is less than or equal to 150.*);
+//@ ensures(*Each element in the list result is a list of integers representing a unique combination of elements from the integer array parameter `candidates` that sum up to the integer parameter `target`.*);
+//@ ensures(*The order of combinations in the list result can be arbitrary.*);
     public List<List<Integer>> combinationSum(int[] coins, int amount) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> subList = new ArrayList<>();

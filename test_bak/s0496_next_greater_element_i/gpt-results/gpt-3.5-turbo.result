@@ -1,0 +1,8 @@
+- public int[] nextGreaterElement(int[] nums1, int[] nums2)
+- requires nums1 != null && nums2 != null;
+- requires nums1.length > 0 && nums2.length > 0;
+- requires nums1.length <= nums2.length && nums1.length <= 1000;
+- requires (\forall int i; 0 <= i && i < nums1.length; (\exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]));
+- ensures \result != null;
+- ensures \result.length == nums1.length;
+- ensures (\forall int i; 0 <= i && i < nums1.length; (\exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j] && (\forall int k; j < k && k < nums2.length; nums2[j] < nums2[k]) ? \result[i] == nums2[k] : \result[i] == -1);

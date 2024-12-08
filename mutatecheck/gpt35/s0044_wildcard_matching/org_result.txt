@@ -1,13 +1,13 @@
-./gpt35/s0044_wildcard_matching/Solution.java:48: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0044_wildcard_matching/Solution.java:9:) in method isMatch
-        return isMatch;
-        ^
-./gpt35/s0044_wildcard_matching/Solution.java:9: verify: Associated declaration: ./gpt35/s0044_wildcard_matching/Solution.java:48:
-//@ ensures(\result == true ==> pattern.length() > 0);
-    ^
 ./gpt35/s0044_wildcard_matching/Solution.java:48: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0044_wildcard_matching/Solution.java:7:) in method isMatch
         return isMatch;
         ^
 ./gpt35/s0044_wildcard_matching/Solution.java:7: verify: Associated declaration: ./gpt35/s0044_wildcard_matching/Solution.java:48:
 //@ ensures(\result == true ==> inputString.length() > 0);
+    ^
+./gpt35/s0044_wildcard_matching/Solution.java:48: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0044_wildcard_matching/Solution.java:9:) in method isMatch
+        return isMatch;
+        ^
+./gpt35/s0044_wildcard_matching/Solution.java:9: verify: Associated declaration: ./gpt35/s0044_wildcard_matching/Solution.java:48:
+//@ ensures(\result == true ==> pattern.length() > 0);
     ^
 4 verification failures

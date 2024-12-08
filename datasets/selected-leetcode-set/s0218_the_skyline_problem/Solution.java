@@ -10,14 +10,12 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class Solution {
-//@ requires(*The integer array parameter `buildings` must not be null.*);
-//@ requires(*The integer array parameter `buildings` must have a length greater than or equal to 1 and less than or equal to 10000.*);
-//@ requires(*Each element in the integer array parameter `buildings` must be an array of length 3, where the first element represents the x coordinate of the left edge of the building, the second element represents the x coordinate of the right edge of the building, and the third element represents the height of the building.*);
-//@ requires(*The integer elements representing the x coordinates and height of the buildings must be greater than or equal to 0 and less than or equal to 2^31 - 1.*);
-//@ requires(*The integer elements representing the x coordinates of the buildings must be sorted in non-decreasing order.*);
-//@ requires(*Each key point represents the left endpoint of a horizontal segment in the skyline, except for the last point which always has a y-coordinate of 0 to mark the skyline's termination.*);
-//@ requires(*There should be no consecutive horizontal lines of equal height in the output skyline.*);
-//@ ensures(*The result is a list of key points sorted by their x-coordinate in the form [[x1,y1],[x2,y2],...].*);
+//@ requires(*The length of the integer array parameter `buildings` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*All values in the integer array parameter `buildings` are arrays of length 3 where the first element is less than or equal to the second element and both are less than or equal to 2^31 - 1, and the third element is greater than or equal to 1 and is less than or equal to 2^31 - 1.*);
+//@ ensures(*The integer array result is a list of lists where each inner list contains two integers representing the x-coordinate and the height of a key point in the skyline.*);
+//@ ensures(*The key points in the integer array result are sorted by their x-coordinate.*);
+//@ ensures(*The last key point in the integer array result always has a height of 0 to mark the skyline's termination.*);
+//@ ensures(*There are no consecutive horizontal lines of equal height in the integer array result.*);
     public List<List<Integer>> getSkyline(int[][] buildings) {
         List<List<Integer>> list = new ArrayList<>();
         List<int[]> lines = new ArrayList<>();

@@ -57,8 +57,8 @@ public class Solution {
      * Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to O(1).
      * And here we are at our final solution:
      */
-//@ requires(\forall int i; 0 <= i < prices.length; ((prices[i] <= 1000) && (prices[i] >= 0)));
 //@ requires((prices.length <= 5000) && (prices.length >= 1));
+//@ requires(\forall int i; 0 <= i < prices.length; ((prices[i] <= 1000) && (prices[i] >= 0)));
 //@ ensures((\result <= 2147483647) && (\result >= -2147483648));
 //@ ensures((Arrays.equals(prices, new int[] {1 , 2 , 3 , 0 , 2})) ==> (\result == 3));
 //@ ensures((Arrays.equals(prices, new int[] {1})) ==> (\result == 0));

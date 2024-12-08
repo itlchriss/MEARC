@@ -1,62 +1,62 @@
-1:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):19:aArray.length - 1 |==> aArray.length % 1
-2:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):19:aArray.length - 1 |==> aArray.length * 1
-3:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):19:aArray.length - 1 |==> aArray.length + 1
-4:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):19:aArray.length - 1 |==> aArray.length / 1
-5:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):20:bArray.length - 1 |==> bArray.length % 1
-6:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):20:bArray.length - 1 |==> bArray.length * 1
-7:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):20:bArray.length - 1 |==> bArray.length + 1
-8:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):20:bArray.length - 1 |==> bArray.length / 1
-9:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 |==> i == 0
-10:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 |==> i > 0
-11:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 |==> true
-12:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:j >= 0 |==> j == 0
-13:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:j >= 0 |==> j > 0
-14:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:j >= 0 |==> true
-15:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 || j >= 0 |==> i >= 0 != j >= 0
-16:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 || j >= 0 |==> i >= 0
-17:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 || j >= 0 |==> j >= 0
-18:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):23:i >= 0 || j >= 0 |==> true
-19:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:i >= 0 |==> i == 0
-20:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:i >= 0 |==> i > 0
-21:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:i >= 0 |==> true
-22:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:aArray[i] - '0' |==> aArray[i] % '0'
-23:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:aArray[i] - '0' |==> aArray[i] * '0'
-24:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:aArray[i] - '0' |==> aArray[i] + '0'
-25:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:aArray[i] - '0' |==> aArray[i] / '0'
-26:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:j >= 0 |==> j == 0
-27:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:j >= 0 |==> j > 0
-28:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:j >= 0 |==> true
-29:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:bArray[j] - '0' |==> bArray[j] % '0'
-30:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:bArray[j] - '0' |==> bArray[j] * '0'
-31:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:bArray[j] - '0' |==> bArray[j] + '0'
-32:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:bArray[j] - '0' |==> bArray[j] / '0'
-33:AOR:+(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) % (j >= 0 ? bArray[j] - '0' : 0)
-34:AOR:+(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) * (j >= 0 ? bArray[j] - '0' : 0)
-35:AOR:+(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) - (j >= 0 ? bArray[j] - '0' : 0)
-36:AOR:+(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) / (j >= 0 ? bArray[j] - '0' : 0)
-37:AOR:+(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) % carry
-38:AOR:+(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) * carry
-39:AOR:+(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> (i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) - carry
-40:AOR:+(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):24:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) / carry
-41:AOR:%(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:sum % 2 |==> sum * 2
-42:AOR:%(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:sum % 2 |==> sum + 2
-43:AOR:%(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:sum % 2 |==> sum - 2
-44:AOR:%(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:sum % 2 |==> sum / 2
-45:STD:<CALL>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:sb.append(sum % 2); |==> <NO-OP>
-46:AOR:/(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:sum / 2 |==> sum % 2
-47:AOR:/(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:sum / 2 |==> sum * 2
-48:AOR:/(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:sum / 2 |==> sum + 2
-49:AOR:/(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:sum / 2 |==> sum - 2
-50:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:carry = sum / 2; |==> <NO-OP>
-51:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:i >= 0 |==> i == 0
-52:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:i >= 0 |==> i > 0
-53:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:i >= 0 |==> true
-54:STD:<DEC>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:i--; |==> <NO-OP>
-55:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):30:j >= 0 |==> j == 0
-56:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):30:j >= 0 |==> j > 0
-57:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):30:j >= 0 |==> true
-58:STD:<DEC>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):31:j--; |==> <NO-OP>
-59:ROR:!=(int,int):<(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):34:carry != 0 |==> carry < 0
-60:ROR:!=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):34:carry != 0 |==> carry > 0
-61:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):34:carry != 0 |==> true
-62:STD:<CALL>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):35:sb.append(carry); |==> <NO-OP>
+1:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):21:aArray.length - 1 |==> aArray.length % 1
+2:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):21:aArray.length - 1 |==> aArray.length * 1
+3:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):21:aArray.length - 1 |==> aArray.length + 1
+4:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):21:aArray.length - 1 |==> aArray.length / 1
+5:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):22:bArray.length - 1 |==> bArray.length % 1
+6:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):22:bArray.length - 1 |==> bArray.length * 1
+7:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):22:bArray.length - 1 |==> bArray.length + 1
+8:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):22:bArray.length - 1 |==> bArray.length / 1
+9:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 |==> i == 0
+10:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 |==> i > 0
+11:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 |==> true
+12:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:j >= 0 |==> j == 0
+13:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:j >= 0 |==> j > 0
+14:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:j >= 0 |==> true
+15:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 || j >= 0 |==> i >= 0 != j >= 0
+16:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 || j >= 0 |==> i >= 0
+17:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 || j >= 0 |==> j >= 0
+18:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):25:i >= 0 || j >= 0 |==> true
+19:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:i >= 0 |==> i == 0
+20:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:i >= 0 |==> i > 0
+21:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:i >= 0 |==> true
+22:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:aArray[i] - '0' |==> aArray[i] % '0'
+23:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:aArray[i] - '0' |==> aArray[i] * '0'
+24:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:aArray[i] - '0' |==> aArray[i] + '0'
+25:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:aArray[i] - '0' |==> aArray[i] / '0'
+26:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:j >= 0 |==> j == 0
+27:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:j >= 0 |==> j > 0
+28:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:j >= 0 |==> true
+29:AOR:-(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:bArray[j] - '0' |==> bArray[j] % '0'
+30:AOR:-(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:bArray[j] - '0' |==> bArray[j] * '0'
+31:AOR:-(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:bArray[j] - '0' |==> bArray[j] + '0'
+32:AOR:-(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:bArray[j] - '0' |==> bArray[j] / '0'
+33:AOR:+(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) % (j >= 0 ? bArray[j] - '0' : 0)
+34:AOR:+(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) * (j >= 0 ? bArray[j] - '0' : 0)
+35:AOR:+(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) - (j >= 0 ? bArray[j] - '0' : 0)
+36:AOR:+(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) |==> (i >= 0 ? aArray[i] - '0' : 0) / (j >= 0 ? bArray[j] - '0' : 0)
+37:AOR:+(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) % carry
+38:AOR:+(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) * carry
+39:AOR:+(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> (i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) - carry
+40:AOR:+(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):26:(i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0) + carry |==> ((i >= 0 ? aArray[i] - '0' : 0) + (j >= 0 ? bArray[j] - '0' : 0)) / carry
+41:AOR:%(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:sum % 2 |==> sum * 2
+42:AOR:%(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:sum % 2 |==> sum + 2
+43:AOR:%(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:sum % 2 |==> sum - 2
+44:AOR:%(int,int):/(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:sum % 2 |==> sum / 2
+45:STD:<CALL>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):27:sb.append(sum % 2); |==> <NO-OP>
+46:AOR:/(int,int):%(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:sum / 2 |==> sum % 2
+47:AOR:/(int,int):*(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:sum / 2 |==> sum * 2
+48:AOR:/(int,int):+(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:sum / 2 |==> sum + 2
+49:AOR:/(int,int):-(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:sum / 2 |==> sum - 2
+50:STD:<ASSIGN>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):28:carry = sum / 2; |==> <NO-OP>
+51:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):29:i >= 0 |==> i == 0
+52:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):29:i >= 0 |==> i > 0
+53:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):29:i >= 0 |==> true
+54:STD:<DEC>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):30:i--; |==> <NO-OP>
+55:ROR:>=(int,int):==(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):32:j >= 0 |==> j == 0
+56:ROR:>=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):32:j >= 0 |==> j > 0
+57:ROR:>=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):32:j >= 0 |==> true
+58:STD:<DEC>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):33:j--; |==> <NO-OP>
+59:ROR:!=(int,int):<(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):36:carry != 0 |==> carry < 0
+60:ROR:!=(int,int):>(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):36:carry != 0 |==> carry > 0
+61:ROR:!=(int,int):TRUE(int,int):g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):36:carry != 0 |==> true
+62:STD:<CALL>:<NO-OP>:g0001_0100.s0067_add_binary.Solution@addBinary(java.lang.String,java.lang.String):37:sb.append(carry); |==> <NO-OP>

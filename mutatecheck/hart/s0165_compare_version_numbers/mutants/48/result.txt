@@ -4,10 +4,16 @@
 ./hart/s0165_compare_version_numbers/mutants/48/Solution.java:19: verify: Associated declaration: ./hart/s0165_compare_version_numbers/mutants/48/Solution.java:61:
     public int compareVersion(String version1, String version2) {
                ^
-./hart/s0165_compare_version_numbers/mutants/48/Solution.java:10: verify: Precondition conjunct is false: ((version2.length() <= 500) && (version2.length() >= 1))
-//@ requires((version2.length() <= 500) && (version2.length() >= 1));
+./hart/s0165_compare_version_numbers/mutants/48/Solution.java:10: verify: Precondition conjunct is false: ((version1.length() <= 500) && (version1.length() >= 1))
+//@ requires((version1.length() <= 500) && (version1.length() >= 1));
             ^
+./hart/s0165_compare_version_numbers/mutants/48/Solution.java:46: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0165_compare_version_numbers/mutants/48/Solution.java:14:) in method compareVersion
+            return -1;
+            ^
+./hart/s0165_compare_version_numbers/mutants/48/Solution.java:14: verify: Associated declaration: ./hart/s0165_compare_version_numbers/mutants/48/Solution.java:46:
+//@ ensures(((version1.equals("1.01")) && (version2.equals("1.001"))) ==> (\result == 0));
+    ^
 ./hart/s0165_compare_version_numbers/mutants/48/Solution.java:19: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
     public int compareVersion(String version1, String version2) {
                ^
-4 verification failures
+6 verification failures

@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 400) && (nums[i] >= 0)));
 //@ requires((nums.length <= 100) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 400) && (nums[i] >= 0)));
 //@ ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 1})) ==> (\result == 4));
 //@ ensures((Arrays.equals(nums, new int[] {2 , 7 , 9 , 3 , 1})) ==> (\result == 12));
     public int rob(int[] nums) {

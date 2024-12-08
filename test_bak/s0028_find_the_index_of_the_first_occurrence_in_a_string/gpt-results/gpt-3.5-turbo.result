@@ -1,0 +1,5 @@
+- public int strStr(String haystack, String needle)
+- requires haystack != null && needle != null
+- ensures \result >= -1
+- ensures \result == -1 ==> !haystack.contains(needle)
+- ensures \result >= 0 ==> haystack.substring(\result, \result + needle.length()).equals(needle)

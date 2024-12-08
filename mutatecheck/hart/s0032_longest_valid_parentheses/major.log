@@ -1,350 +1,350 @@
-[05/24 20:48:06] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0001_0100.s0032_longest_valid_parentheses.Solution]]]]
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0001_0100.s0032_longest_valid_parentheses.Solution
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: longestValidParentheses([String s])int
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.longestValidParentheses(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < n 
             mutant:                    i != n
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.longestValidParentheses(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < n 
             mutant:                    i <= n
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.longestValidParentheses(line 22, col 27)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < n 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.longestValidParentheses(line 24, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  ch == '(' 
             mutant:                    ch <= '('
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.longestValidParentheses(line 24, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  ch == '(' 
             mutant:                    ch >= '('
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.longestValidParentheses(line 24, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  ch == '(' 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 7: (STD) left++; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 8: (STD) right++; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.longestValidParentheses(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  right > left 
             mutant:                    right != left
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.longestValidParentheses(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  right > left 
             mutant:                    right >= left
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.longestValidParentheses(line 29, col 23)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  right > left 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 12: (STD) left = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 13: (STD) right = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.longestValidParentheses(line 33, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  left == right 
             mutant:                    left <= right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.longestValidParentheses(line 33, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  left == right 
             mutant:                    left >= right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.longestValidParentheses(line 33, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  left == right 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.longestValidParentheses(line 34, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  left + right 
             mutant:                    left % right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.longestValidParentheses(line 34, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  left + right 
             mutant:                    left * right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.longestValidParentheses(line 34, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  left + right 
             mutant:                    left - right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.longestValidParentheses(line 34, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  left + right 
             mutant:                    left / right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 21: (STD) max = Math.max(max, left + right); -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 22: (STD) left = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 23: (STD) right = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 24: Solution.longestValidParentheses(line 39, col 24)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  n - 1 
             mutant:                    n % 1
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 25: Solution.longestValidParentheses(line 39, col 24)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  n - 1 
             mutant:                    n * 1
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 26: Solution.longestValidParentheses(line 39, col 24)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  n - 1 
             mutant:                    n + 1
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 27: Solution.longestValidParentheses(line 39, col 24)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  n - 1 
             mutant:                    n / 1
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 28: Solution.longestValidParentheses(line 39, col 31)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> ==(int,int)
             original:                  i >= 0 
             mutant:                    i == 0
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 29: Solution.longestValidParentheses(line 39, col 31)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> >(int,int)
             original:                  i >= 0 
             mutant:                    i > 0
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 30: Solution.longestValidParentheses(line 39, col 31)
             mutation operator group:   ROR
             mutation operator:         >=(int,int) |==> TRUE(int,int)
             original:                  i >= 0 
             mutant:                    true
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 31: Solution.longestValidParentheses(line 41, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  ch == '(' 
             mutant:                    ch <= '('
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 32: Solution.longestValidParentheses(line 41, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  ch == '(' 
             mutant:                    ch >= '('
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 33: Solution.longestValidParentheses(line 41, col 20)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  ch == '(' 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 34
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 34: (STD) left++; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 35
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 35: (STD) right++; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 36
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 36: Solution.longestValidParentheses(line 46, col 22)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  left > right 
             mutant:                    left != right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 37
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 37: Solution.longestValidParentheses(line 46, col 22)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  left > right 
             mutant:                    left >= right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 38
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 38: Solution.longestValidParentheses(line 46, col 22)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  left > right 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 39
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 39: (STD) left = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 40
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 40: (STD) right = 0; -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 41
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 41: Solution.longestValidParentheses(line 50, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  left == right 
             mutant:                    left <= right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 42
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 42: Solution.longestValidParentheses(line 50, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  left == right 
             mutant:                    left >= right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 43
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 43: Solution.longestValidParentheses(line 50, col 22)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  left == right 
             mutant:                    false
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 44
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 44: Solution.longestValidParentheses(line 51, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  left + right 
             mutant:                    left % right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 45
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 45: Solution.longestValidParentheses(line 51, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  left + right 
             mutant:                    left * right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 46
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 46: Solution.longestValidParentheses(line 51, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  left + right 
             mutant:                    left - right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 47
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 47: Solution.longestValidParentheses(line 51, col 42)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  left + right 
             mutant:                    left / right
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 48
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 48: (STD) max = Math.max(max, left + right); -> <NO-OP>
-[05/24 20:48:07] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 48 mutants (196 ms)
+[06/24 16:49:30] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 48 mutants (197 ms)

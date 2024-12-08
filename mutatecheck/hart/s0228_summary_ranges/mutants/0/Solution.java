@@ -12,6 +12,7 @@ import java.util.Collections;
 public class Solution {
 //@ requires(\forall int k; 0 <= k && k < nums.length-1; nums[k] <= nums[k+1]);
 //@ requires((nums.length <= 20) && (nums.length >= 0));
+//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
     public List<String> summaryRanges(int[] nums) {
         List<String> ranges = new ArrayList<>();
         if (nums.length <= 0) {

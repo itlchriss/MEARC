@@ -13,9 +13,10 @@ import sys
 import os
 folder = sys.argv[1]
 with open(os.path.join(folder, "mutants.log"), 'r') as fp:
-    mutantslog = fp.read()
+    mutantslog = fp.read().strip()
 with open(os.path.join(folder, "Solution.java"), 'r') as fp:
     program = fp.read()
+
 program = program.split('\n')
 mutantslog = mutantslog.split('\n')
 mutants = []

@@ -1,4 +1,4 @@
-./hart/s0228_summary_ranges/mutants/4/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method summaryRanges
-            if (nums[i] != b + 1) {
-                    ^
-1 verification failure
+./hart/s0228_summary_ranges/mutants/4/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
+                                                                        ^
+1 warning

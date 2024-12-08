@@ -1,0 +1,8 @@
+- requires numbers != null && numbers.length >= 2;
+- requires (\forall int i; 0 <= i && i < numbers.length; -10^9 <= numbers[i] && numbers[i] <= 10^9);
+- requires -10^9 <= target && target <= 10^9;
+- ensures (\exists int i, j; 0 <= i && i < numbers.length && 0 <= j && j < numbers.length && i != j; numbers[i] + numbers[j] == target);
+- ensures (\result != null && \result.length == 2);
+- ensures (\forall int i; 0 <= i && i < \result.length; 0 <= \result[i] && \result[i] < numbers.length);
+- ensures numbers[\result[0]] + numbers[\result[1]] == target;
+- ensures (\forall int i, j; 0 <= i && i < numbers.length && 0 <= j && j < numbers.length && i != j && numbers[i] + numbers[j] == target; i == \result[0] && j == \result[1]);

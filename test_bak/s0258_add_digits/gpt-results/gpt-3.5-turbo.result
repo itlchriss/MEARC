@@ -1,0 +1,4 @@
+- public int addDigits(int num)
+- requires num >= 0 && num <= 2147483647;
+- ensures the result is a single digit after repeatedly adding all its digits;
+- ensures \result >= 0 && \result <= 9;

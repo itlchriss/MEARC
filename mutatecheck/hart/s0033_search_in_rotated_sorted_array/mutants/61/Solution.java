@@ -10,10 +10,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
-//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
 //@ requires((target <= 10000) && (target >= -10000));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
 //@ requires((nums.length <= 5000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
     public int search(int[] nums, int target) {
         int mid;
         int lo = 0;

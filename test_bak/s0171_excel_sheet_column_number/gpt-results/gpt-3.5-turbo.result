@@ -1,0 +1,4 @@
+- requires columnTitle != null && columnTitle.length() >= 1 && columnTitle.length() <= 7;
+- requires columnTitle.matches("[A-Z]+");
+- ensures \result >= 1 && \result <= 2147483647;
+- ensures (\forall int i; 0 <= i && i < columnTitle.length(); \result == (\result * 26) + (columnTitle.charAt(i) - 'A' + 1));

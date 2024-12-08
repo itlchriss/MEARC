@@ -16,7 +16,7 @@ public class Solution {
 //@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ' || s.charAt(i) != ' '));
 //@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) != ' ' && s.charAt(i) != ' '));
 //@ requires(s != null && s.length() > 0);
-//@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ');
+// ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ');
 //@ ensures(\result == 0 ==> (\forall int i; 0 <= i < s.length(); s.charAt(i) == ' ' && s.charAt(i) == ' '));
     public int lengthOfLastWord(String s) {
         int len = 0;

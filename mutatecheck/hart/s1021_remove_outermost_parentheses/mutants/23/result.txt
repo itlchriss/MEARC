@@ -1,10 +1,19 @@
-./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:37: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:14:) in method removeOuterParentheses
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:14:) in method removeOuterParentheses
         return sb.toString();
         ^
-./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:14: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:37:
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:14: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38:
 //@ ensures((s.equals("(()())(())")) ==> (\result.equals("()()()")));
     ^
-./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:16: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout
-    public String removeOuterParentheses(String s) {
-                  ^
-3 verification failures
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:15:) in method removeOuterParentheses
+        return sb.toString();
+        ^
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:15: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38:
+//@ ensures((s.equals("()()")) ==> (\result.equals("")));
+    ^
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38: verify: The prover cannot establish an assertion (Postcondition: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:16:) in method removeOuterParentheses
+        return sb.toString();
+        ^
+./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:16: verify: Associated declaration: ./hart/s1021_remove_outermost_parentheses/mutants/23/Solution.java:38:
+//@ ensures((s.equals("(()())(())(()(()))")) ==> (\result.equals("()()()()(())")));
+    ^
+6 verification failures

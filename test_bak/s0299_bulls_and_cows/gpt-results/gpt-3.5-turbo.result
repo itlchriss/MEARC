@@ -1,0 +1,12 @@
+- requires secret != null && guess != null
+- requires secret.length() == guess.length()
+- requires secret.length() >= 1 && secret.length() <= 1000
+- requires guess.length() >= 1 && guess.length() <= 1000
+- requires (\forall int i; 0 <= i && i < secret.length(); Character.isDigit(secret.charAt(i)))
+- requires (\forall int i; 0 <= i && i < guess.length(); Character.isDigit(guess.charAt(i)))
+- ensures \result != null
+- ensures \result.matches("\\dA\\dB")
+- ensures Integer.parseInt(\result.substring(0,1)) + Integer.parseInt(\result.substring(2,3)) <= secret.length()
+- ensures (\forall int i; 0 <= i && i < secret.length(); secret.charAt(i) == guess.charAt(i) ==> \result.substring(0,1).equals("1"))
+- ensures (\forall int i; 0 <= i && i < secret.length(); secret.charAt(i) != guess.charAt(i) ==> \result.substring(2,3).equals("1"))
+- pure

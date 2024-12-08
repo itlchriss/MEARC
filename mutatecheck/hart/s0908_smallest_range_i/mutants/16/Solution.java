@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= 0)));
-//@ requires((nums.length <= 10000) && (nums.length >= 1));
 //@ requires((k <= 10000) && (k >= 0));
+//@ requires((nums.length <= 10000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= 0)));
 //@ ensures(((Arrays.equals(nums, new int[] {1})) && (k == 0)) ==> (\result == 0));
 //@ ensures(((Arrays.equals(nums, new int[] {1 , 3 , 6})) && (k == 3)) ==> (\result == 0));
 //@ ensures(((Arrays.equals(nums, new int[] {0 , 10})) && (k == 2)) ==> (\result == 6));

@@ -1,0 +1,5 @@
+- //@ requires gas.length == cost.length;
+- //@ requires gas.length > 0;
+- //@ requires (\forall int i; 0 <= i && i < gas.length; gas[i] >= 0 && cost[i] >= 0);
+- //@ ensures \result == -1 || (0 <= \result && \result < gas.length);
+- //@ ensures (\forall int i; 0 <= i && i < gas.length; (\sum int j; 0 <= j && j < gas.length; gas[(i+j)%gas.length] - cost[(i+j)%gas.length]) >= 0) ==> \result != -1;

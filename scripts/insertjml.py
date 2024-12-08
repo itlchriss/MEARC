@@ -57,6 +57,14 @@ def _dosym(srcpath: str, program: List[str]):
     tmp = '\n'.join(tmp)
     r = re.search(r'(\s+)?public.*\)(\s+)?[{]?', program, re.ASCII)
     program = program[:r.start()] + '\n' + tmp + program[r.start():]
+
+    target = 'public class'
+    if '@SuppressWarning' in program:
+        target = '@SuppressWarning' 
+    if 'import java.util.Arrays' not in program:
+        program = program.replace(target, 'import java.util.Arrays;\n\n%s' % target)
+    if 'import java.util.Collections' not in program:
+        program = program.replace(target, 'import java.util.Collections;\n\n%s' % target)
     print(program)
     # with open(os.path.join(srcpath, "hart-results", "build", "Solution.java"), 'w+') as fp:
         # fp.write(program)

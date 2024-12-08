@@ -1,1 +1,1 @@
-requires((bobSizes.length <= 10000) && (bobSizes.length >= 1));
+requires(\forall int i; 0 <= i < bobSizes.length; ((bobSizes[i] <= 100000) && (bobSizes[i] >= 1)));

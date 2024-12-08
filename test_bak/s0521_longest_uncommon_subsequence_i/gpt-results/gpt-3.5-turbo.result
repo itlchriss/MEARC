@@ -1,0 +1,35 @@
+- public int findLUSlength(String a, String b)
+- requires a != null && b != null;
+- requires a.length() >= 1 && a.length() <= 100;
+- requires b.length() >= 1 && b.length() <= 100;
+- requires (\forall int i; 0 <= i && i < a.length(); Character.isLowerCase(a.charAt(i)));
+- requires (\forall int i; 0 <= i && i < b.length(); Character.isLowerCase(b.charAt(i)));
+- ensures \result >= -1;
+- ensures \result == -1 || (\exists String s; s.length() > \result; isUncommonSubsequence(s, a, b));
+- pure private boolean isUncommonSubsequence(String s, String a, String b)
+- requires s != null && a != null && b != null;
+- requires s.length() > 0;
+- requires a.length() >= 1 && a.length() <= 100;
+- requires b.length() >= 1 && b.length() <= 100;
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+- requires (\forall int i; 0 <= i && i < a.length(); Character.isLowerCase(a.charAt(i)));
+- requires (\forall int i; 0 <= i && i < b.length(); Character.isLowerCase(b.charAt(i)));
+- ensures \result == (isSubsequence(s, a) && !isSubsequence(s, b)) || (isSubsequence(s, b) && !isSubsequence(s, a));
+- pure private boolean isSubsequence(String s, String target)
+- requires s != null && target != null;
+- requires s.length() > 0;
+- requires target.length() >= 1 && target.length() <= 100;
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+- requires (\forall int i; 0 <= i && i < target.length(); Character.isLowerCase(target.charAt(i)));
+- ensures \result == (\exists int[] indices; indices.length == s.length() && isIncreasing(indices) && isSubsequenceAtIndices(s, target, indices));
+- pure private boolean isIncreasing(int[] arr)
+- requires arr != null;
+- ensures \result == (\forall int i, j; 0 <= i && i < j && j < arr.length; arr[i] < arr[j]);
+- pure private boolean isSubsequenceAtIndices(String s, String target, int[] indices)
+- requires s != null && target != null && indices != null;
+- requires s.length() > 0;
+- requires target.length() >= 1 && target.length() <= 100;
+- requires indices.length == s.length();
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLowerCase(s.charAt(i)));
+- requires (\forall int i; 0 <= i && i < target.length(); Character.isLowerCase(target.charAt(i)));
+- ensures \result == (\forall int i; 0 <= i && i < indices.length; s.charAt(indices[i]) == target.charAt(i));

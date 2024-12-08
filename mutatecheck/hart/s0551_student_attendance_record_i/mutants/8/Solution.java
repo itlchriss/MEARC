@@ -8,6 +8,7 @@ import java.util.Collections;
 
 public class Solution {
 //@ requires((s.length() <= 1000) && (s.length() >= 1));
+//@ requires(\forall int i; 0 <= i < s.length(); ('A' == (s.charAt(i))) ||  ('L' == (s.charAt(i))) ||  ('P' == (s.charAt(i))));
     public boolean checkRecord(String s) {
         int aCount = 0;
         int i = 0;

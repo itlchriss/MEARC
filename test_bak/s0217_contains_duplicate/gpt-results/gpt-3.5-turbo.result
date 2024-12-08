@@ -1,0 +1,4 @@
+- requires nums != null && nums.length > 0;
+- requires (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);
+- ensures \result == true <==> (\exists int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] == nums[j]);
+- ensures \result == false <==> (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; nums[i] != nums[j]);

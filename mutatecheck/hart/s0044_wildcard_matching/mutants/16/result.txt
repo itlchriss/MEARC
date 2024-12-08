@@ -1,20 +1,20 @@
+./hart/s0044_wildcard_matching/mutants/16/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:15:) in method isMatch
+        return isMatch;
+        ^
+./hart/s0044_wildcard_matching/mutants/16/Solution.java:15: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53:
+//@ ensures(((inputString.equals("acdcb")) && (pattern.equals("a*c?b"))) ==> (\result == false));
+    ^
 ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:14:) in method isMatch
         return isMatch;
         ^
 ./hart/s0044_wildcard_matching/mutants/16/Solution.java:14: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53:
 //@ ensures(((inputString.equals("aa")) && (pattern.equals("a"))) ==> (\result == false));
     ^
-./hart/s0044_wildcard_matching/mutants/16/Solution.java:43: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:13:) in method isMatch
-                return false;
-                ^
-./hart/s0044_wildcard_matching/mutants/16/Solution.java:13: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:43:
-//@ ensures(((inputString.equals("aa")) && (pattern.equals("*"))) ==> (\result == true));
-    ^
-./hart/s0044_wildcard_matching/mutants/16/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:15:) in method isMatch
+./hart/s0044_wildcard_matching/mutants/16/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:13:) in method isMatch
         return isMatch;
         ^
-./hart/s0044_wildcard_matching/mutants/16/Solution.java:15: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53:
-//@ ensures(((inputString.equals("acdcb")) && (pattern.equals("a*c?b"))) ==> (\result == false));
+./hart/s0044_wildcard_matching/mutants/16/Solution.java:13: verify: Associated declaration: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53:
+//@ ensures(((inputString.equals("aa")) && (pattern.equals("*"))) ==> (\result == true));
     ^
 ./hart/s0044_wildcard_matching/mutants/16/Solution.java:53: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0044_wildcard_matching/mutants/16/Solution.java:17:) in method isMatch
         return isMatch;

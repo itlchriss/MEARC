@@ -6,7 +6,8 @@ from glob import glob
 from typing import List
 
 
-root_path = './datasets/selected-leetcode-set'
+# root_path = './datasets/selected-leetcode-set'
+root_path = './test'
 
 
 def _getfile(path:str) -> List[str]:
@@ -25,7 +26,7 @@ def main(srcpath:str):
     if not program:
         print('Program is not found under %s' % srcpath)
         return
-    lines = _getfile(os.path.join(srcpath, "readme.p1"))        
+    lines = _getfile(os.path.join(srcpath, "rnl.txt"))        
     tmp = []
     if lines:
         tmp += ['//@ requires(*%s*);' % re.sub(r'^-\s+', '', i) for i in lines.split('\n') if 'result' not in i]

@@ -1,0 +1,113 @@
+./gpt35/s0151_reverse_words_in_a_string/Solution.java:// ensures (\forall int i, j; 0 <= i && i < j && j < \result.length(); \result.charAt(i) != ' ' || \result.charAt(j) != ' ' || \result.charAt(j - 1) != ' ' || \result.charAt(i + 1) != ' '
+z ./gpt35/s0165_compare_version_numbers/Solution.java:// ensures \result == 1 ==> version1 > version2
+./gpt35/s0165_compare_version_numbers/Solution.java:// requires version1.matches("[0-9.]+") && version2.matches("[0-9.]+")
+y ./gpt35/s0165_compare_version_numbers/Solution.java:// requires isValidVersion(version1) && isValidVersion(version2)
+./gpt35/s0165_compare_version_numbers/Solution.java:// ensures \result == 0 ==> version1 == version2
+./gpt35/s0165_compare_version_numbers/Solution.java:// requires version1 != null && version2 != null
+./gpt35/s0165_compare_version_numbers/Solution.java:// ensures \result == -1 || \result == 0 || \result == 1
+./gpt35/s0165_compare_version_numbers/Solution.java:// requires version1.length() <= 500 && version2.length() <= 500
+z ./gpt35/s0165_compare_version_numbers/Solution.java:// ensures \result == -1 ==> version1 < version2
+./gpt35/s0191_number_of_1_bits/Solution.java:// ensures \result <= 32
+./gpt35/s0191_number_of_1_bits/Solution.java:// ensures \result >= 0
+./gpt35/s0191_number_of_1_bits/Solution.java:// requires n >= 0 && n <= Integer.MAX_VALUE
+./gpt35/s0191_number_of_1_bits/Solution.java:// ensures \result == Integer.bitCount(n)
+./gpt35/s0198_house_robber/Solution.java:// requires (\forall int i; 0 <= i && i < nums.length; 0 <= nums[i] && nums[i] <= 400)
+./gpt35/s0198_house_robber/Solution.java:// ensures (\forall int i; 0 <= i && i < nums.length - 1; \result >= nums[i] + nums[i + 2] || \result >= nums[i + 1])
+./gpt35/s0198_house_robber/Solution.java:// ensures (\forall int i; 0 <= i && i < nums.length; \result >= nums[i])
+./gpt35/s0198_house_robber/Solution.java:// ensures \result >= 0
+./gpt35/s0198_house_robber/Solution.java:// requires nums != null && nums.length >= 1 && nums.length <= 100
+./gpt35/s0227_basic_calculator_ii/Solution.java:// ensures \result == eval(s)
+./gpt35/s0227_basic_calculator_ii/Solution.java:// requires s.matches("[0-9+\\-*/\\s]+")
+./gpt35/s0227_basic_calculator_ii/Solution.java:// ensures \result >= -2147483648 && \result <= 2147483647
+./gpt35/s0227_basic_calculator_ii/Solution.java:// requires s != null && s.length() >= 1
+./gpt35/s0227_basic_calculator_ii/Solution.java:// requires s != null && s.length() >= 1 && s.length() <= 3 * Math.pow(10, 5)
+./gpt35/s0228_summary_ranges/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < nums.length; (nums[j] == Integer.parseInt(\result.get(i))) == (\exists int k; 0 <= k && k < \result.size(); Integer.parseInt(\result.get(k)) == nums[j])))
+./gpt35/s0228_summary_ranges/Solution.java:// requires nums != null && (\forall int i; 0 <= i && i < nums.length; -2^31 <= nums[i] && nums[i] <= 2^31 - 1)
+./gpt35/s0228_summary_ranges/Solution.java:// requires nums.length <= 20
+./gpt35/s0228_summary_ranges/Solution.java:// requires (\forall int i, j; 0 <= i && i < j && j < nums.length; nums[i] < nums[j])
+./gpt35/s0228_summary_ranges/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size(); i != j ==> Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+./gpt35/s0228_summary_ranges/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.size(); (\exists int j, k; 0 <= j && j < k && k < nums.length; nums[j] <= Integer.parseInt(\result.get(i)) && Integer.parseInt(\result.get(i)) <= nums[k]))
+./gpt35/s0228_summary_ranges/Solution.java:// ensures \result != null
+./gpt35/s0228_summary_ranges/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.size(); (\forall int j; 0 <= j && j < \result.size() && j != i; Integer.parseInt(\result.get(i)) != Integer.parseInt(\result.get(j))))
+x ./gpt35/s0233_number_of_digit_one/Solution.java:// ensures \result == count of digit 1 appearing in all non-negative integers less than or equal to n.
+./gpt35/s0238_product_of_array_except_self/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.length;  (\forall int j; 0 <= j && j < nums.length &&
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires (\forall int i; 0 <= i && i < secret.length(); Character.isDigit(secret.charAt(i)))
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires secret.length() == guess.length()
+./gpt35/s0299_bulls_and_cows/Solution.java:// ensures (\forall int i; 0 <= i && i < secret.length(); secret.charAt(i) == guess.charAt(i) ==> \result.substring(0,1).equals("1"))
+./gpt35/s0299_bulls_and_cows/Solution.java:// ensures \result.matches("\\dA\\dB")
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires secret.length() >= 1 && secret.length() <= 1000
+./gpt35/s0299_bulls_and_cows/Solution.java:// ensures Integer.parseInt(\result.substring(0,1)) + Integer.parseInt(\result.substring(2,3)) <= secret.length()
+./gpt35/s0299_bulls_and_cows/Solution.java:// ensures (\forall int i; 0 <= i && i < secret.length(); secret.charAt(i) != guess.charAt(i) ==> \result.substring(2,3).equals("1"))
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires secret != null && guess != null
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires guess.length() >= 1 && guess.length() <= 1000
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires pure
+./gpt35/s0299_bulls_and_cows/Solution.java:// requires (\forall int i; 0 <= i && i < guess.length(); Character.isDigit(guess.charAt(i)))
+./gpt35/s0299_bulls_and_cows/Solution.java:// ensures \result != null
+./gpt35/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:// requires (\forall int i; 0 <= i && i < prices.length; prices[i] >= 0 && prices[i] <= 1000)
+./gpt35/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:// ensures \result >= 0
+./gpt35/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:// requires prices != null && prices.length >= 1 && prices.length <= 5000
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == true <==> each comma-separated value in the string is either an integer or '#'
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == true <==> input format is always valid
+./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == true || \result == false
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == false <==> input format is not valid
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == false <==> preorder is not a correct preorder traversal serialization of a binary tree
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == true <==> preorder is a correct preorder traversal serialization of a binary tree
+./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// requires preorder != null
+x ./gpt35/s0331_verify_preorder_serialization_of_a_binary_tree/Solution.java:// ensures \result == false <==> preorder does not represent a correct preorder traversal serialization of a binary tree
+./gpt35/s0392_is_subsequence/Solution.java:// requires/*@ requires s != null && t != null; @ requires s.length() <= 100; @ requires t.length() <= 10000; @ requires s.matches("[a-z]*"); @ requires t.matches("[a-z]*"); @ ensures \result == true || \result == false; @*/
+x ./gpt35/s0393_utf_8_validation/Solution.java:// ensures \result == false ==> data does not represent a valid UTF-8 encoding
+./gpt35/s0393_utf_8_validation/Solution.java:// requires data != null && data.length >= 1 && data.length <= 2 * 10^4
+./gpt35/s0393_utf_8_validation/Solution.java:// ensures \result == true || \result == false
+./gpt35/s0393_utf_8_validation/Solution.java:// requires (\forall int i; 0 <= i && i < data.length; 0 <= data[i] && data[i] <= 255)
+x ./gpt35/s0393_utf_8_validation/Solution.java:// ensures \result == true ==> data represents a valid UTF-8 encoding
+./gpt35/s0415_add_strings/Solution.java:// requires !num1.startsWith("0") || num1.equals("0")
+./gpt35/s0415_add_strings/Solution.java:// requires !num2.startsWith("0") || num2.equals("0")
+./gpt35/s0415_add_strings/Solution.java:// requires num1.length() <= 10000
+./gpt35/s0415_add_strings/Solution.java:// ensures \result != null
+./gpt35/s0415_add_strings/Solution.java:// ensures \result.matches("\\d+")
+./gpt35/s0415_add_strings/Solution.java:// requires num2.length() <= 10000
+./gpt35/s0415_add_strings/Solution.java:// ensures \result.length() == num1.length() || \result.length() == num1.length() + 1
+./gpt35/s0415_add_strings/Solution.java:// ensures Integer.parseInt(\result) == Integer.parseInt(num1) + Integer.parseInt(num2)
+./gpt35/s0415_add_strings/Solution.java:// requires num1 != null && num2 != null
+./gpt35/s0415_add_strings/Solution.java:// requires num1.matches("\\d+")
+./gpt35/s0415_add_strings/Solution.java:// requires num2.matches("\\d+")
+./gpt35/s0455_assign_cookies/Solution.java:// requires pure
+./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result == true || \result == false
+./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result >= 0
+y ./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result == count + countAbsencesHelper(s, index + 1, count) if index < s.length()
+./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result == true ==> (\exists int i; 0 <= i && i < s.length() - 2; s.charAt(i) == 'L' && s.charAt(i + 1) == 'L' && s.charAt(i + 2) == 'L')
+./gpt35/s0551_student_attendance_record_i/Solution.java:// requires 0 <= index && index <= s.length()
+./gpt35/s0551_student_attendance_record_i/Solution.java:// requires s != null && s.length() >= 1 && s.length() <= 1000
+./gpt35/s0551_student_attendance_record_i/Solution.java:// requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'A' || s.charAt(i) == 'L' || s.charAt(i) == 'P')
+y ./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result == true ==> (countAbsences(s) < 2 && !hasConsecutiveLate(s))
+./gpt35/s0551_student_attendance_record_i/Solution.java:// ensures \result == false ==> (\forall int i; 0 <= i && i < s.length() - 2; s.charAt(i) != 'L' || s.charAt(i + 1) != 'L' || s.charAt(i + 2) != 'L')
+x ./gpt35/s0628_maximum_product_of_three_numbers/Solution.java:// ensures \result == maximum product of three numbers in nums.
+x ./gpt35/s0860_lemonade_change/Solution.java:// ensures \result == true ==> // can provide every customer with correct change
+x ./gpt35/s0860_lemonade_change/Solution.java:// ensures // detailed explanation of how the correct change is provided based on the input array bills
+x ./gpt35/s0860_lemonade_change/Solution.java:// requires constraints: 1 <= bills.length <= 10^5, bills[i] is either 5, 10, or 20.
+x ./gpt35/s0860_lemonade_change/Solution.java:// ensures \result == false ==> // cannot provide every customer with correct change
+./gpt35/s0888_fair_candy_swap/Solution.java:// requires aliceSizes.length <= 10000 && bobSizes.length <= 10000
+./gpt35/s0888_fair_candy_swap/Solution.java:// ensures \result != null
+./gpt35/s0888_fair_candy_swap/Solution.java:// requires (\forall int i; 0 <= i && i < aliceSizes.length; aliceSizes[i] >= 1 && aliceSizes[i] <= 100000)
+./gpt35/s0888_fair_candy_swap/Solution.java:// ensures aliceSizes.length > 0 && bobSizes.length > 0
+./gpt35/s0888_fair_candy_swap/Solution.java:// ensures aliceSizes.length <= 10000 && bobSizes.length <= 10000
+./gpt35/s0888_fair_candy_swap/Solution.java:// requires (\forall int j; 0 <= j && j < bobSizes.length; bobSizes[j] >= 1 && bobSizes[j] <= 100000)
+./gpt35/s0888_fair_candy_swap/Solution.java:// ensures \result.length == 2
+./gpt35/s0888_fair_candy_swap/Solution.java:// requires aliceSizes != null && bobSizes != null
+./gpt35/s0888_fair_candy_swap/Solution.java:// requires aliceSizes.length > 0 && bobSizes.length > 0
+./gpt35/s0908_smallest_range_i/Solution.java:// ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] - k <= nums[j] && nums[j] <= nums[i]
+./gpt35/s0925_long_pressed_name/Solution.java:// requires/*@ requires name != null && typed != null; @ requires name.length() > 0 && typed.length() > 0; @ requires name.length() <= 1000 && typed.length() <= 1000; @ requires (\forall int i; 0 <= i && i < name.length(); Character.isLowerCase(name.charAt(i))); @ requires (\forall int i; 0 <= i && i < typed.length(); Character.isLowerCase(typed.charAt(i))); @ @ ensures \result == true || \result == false; @*/
+./gpt35/s0942_di_string_match/Solution.java:// requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'I' || s.charAt(i) == 'D')
+./gpt35/s0942_di_string_match/Solution.java:// ensures \result.length == s.length() + 1
+./gpt35/s0942_di_string_match/Solution.java:// requires s != null && s.length() >= 1 && s.length() <= 100000
+./gpt35/s0942_di_string_match/Solution.java:// ensures \result != null
+./gpt35/s0942_di_string_match/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == 'I' ==> \result[i] < \result[i + 1] && s.charAt(i) == 'D' ==> \result[i] > \result[i + 1])
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' && \result.charAt(i) == '(' ==> \result.lastIndexOf('(') == i)
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// requires s != null && s.length() >= 1 && s.length() <= 100000
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' && \result.charAt(i) == '(' ==> \result.lastIndexOf(')') == i + 1)
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) == '(' || \result.charAt(i) == ')')
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == ')' && \result.charAt(i) == ')' ==> \result.indexOf('(') == i - 1)
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == ')' && \result.charAt(i) == ')' ==> \result.indexOf(')') == i)
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// requires (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' || s.charAt(i) == ')')
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures \result != null
+./gpt35/s1021_remove_outermost_parentheses/Solution.java:// ensures (\forall int i; 0 <= i && i < s.length(); s.charAt(i) == '(' || s.charAt(i) == ')' ==> \result.contains(s.substring(i, i+1)))

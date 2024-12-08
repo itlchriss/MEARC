@@ -1,0 +1,6 @@
+- requires s != null;
+- requires s.length() >= 1 && s.length() <= 100;
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || Character.isWhitespace(s.charAt(i)));
+- ensures \result != null;
+- ensures (\forall int i; 0 <= i && i < \result.length(); Character.isLowerCase(\result.charAt(i)));
+- ensures (\forall int i; 0 <= i && i < s.length(); Character.toLowerCase(s.charAt(i)) == \result.charAt(i));

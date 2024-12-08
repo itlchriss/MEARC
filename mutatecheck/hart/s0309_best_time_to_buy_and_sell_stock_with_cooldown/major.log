@@ -1,90 +1,90 @@
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution]]]]
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0301_0400.s0309_best_time_to_buy_and_sell_stock_with_cooldown.Solution
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: maxProfit([int[] prices])int
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.maxProfit(line 72, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> %(int,int)
             original:                  prevSell - price 
             mutant:                    prevSell % price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.maxProfit(line 72, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> *(int,int)
             original:                  prevSell - price 
             mutant:                    prevSell * price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.maxProfit(line 72, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> +(int,int)
             original:                  prevSell - price 
             mutant:                    prevSell + price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.maxProfit(line 72, col 37)
             mutation operator group:   AOR
             mutation operator:         -(int,int) |==> /(int,int)
             original:                  prevSell - price 
             mutant:                    prevSell / price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 5: (STD) buy = Math.max(prevSell - price, prevBuy); -> <NO-OP>
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 6: (STD) prevSell = sell; -> <NO-OP>
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.maxProfit(line 74, col 37)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  prevBuy + price 
             mutant:                    prevBuy % price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.maxProfit(line 74, col 37)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  prevBuy + price 
             mutant:                    prevBuy * price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.maxProfit(line 74, col 37)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  prevBuy + price 
             mutant:                    prevBuy - price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.maxProfit(line 74, col 37)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  prevBuy + price 
             mutant:                    prevBuy / price
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 11: (STD) sell = Math.max(prevBuy + price, prevSell); -> <NO-OP>
-[05/24 20:48:39] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 11 mutants (69 ms)
+[06/24 16:50:02] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 11 mutants (72 ms)

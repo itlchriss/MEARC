@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
 //@ requires((nums.length <= 100000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000) && (nums[i] >= -10000)));
 //@ ensures((\result <= 2147483647) && (\result >= -2147483648));
 //@ ensures((Arrays.equals(nums, new int[] {-2 , 1 , -3 , 4 , -1 , 2 , 1 , -5 , 4})) ==> (\result == 6));
 //@ ensures((Arrays.equals(nums, new int[] {5 , 4 , -1 , 7 , 8})) ==> (\result == 23));

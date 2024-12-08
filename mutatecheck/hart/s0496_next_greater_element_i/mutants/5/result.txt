@@ -1,7 +1,4 @@
-./hart/s0496_next_greater_element_i/mutants/5/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method nextGreaterElement
-            int num = nums1[i];
-                           ^
-./hart/s0496_next_greater_element_i/mutants/5/Solution.java:33: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method nextGreaterElement
-                    if (nums2[index] > num) {
-                             ^
-2 verification failures
+./hart/s0496_next_greater_element_i/mutants/5/Solution.java:14: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ requires(\forall int i; 0 <= i < nums1.length; (Collections.frequency(Arrays.asList(nums1), nums1[i]) == 1));
+                                                                         ^
+1 warning

@@ -1,4 +1,4 @@
-BASE=./datasets/selected-leetcode-set
+BASE=./test
 
 if [ "$#" -eq 1 ]; then
 for entry in `find $BASE/s$1* -type f -name "Solution.java" | sort`

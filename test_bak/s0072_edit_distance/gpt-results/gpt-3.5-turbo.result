@@ -1,0 +1,8 @@
+- requires w1 != null && w2 != null;
+- requires w1.length() >= 0 && w1.length() <= 500;
+- requires w2.length() >= 0 && w2.length() <= 500;
+- requires (\forall int i; 0 <= i && i < w1.length(); Character.isLowerCase(w1.charAt(i)));
+- requires (\forall int i; 0 <= i && i < w2.length(); Character.isLowerCase(w2.charAt(i)));
+- ensures \result >= 0;
+- ensures \result == minimum number of operations required to convert w1 to w2;
+- pure public int minDistance(String w1, String w2);

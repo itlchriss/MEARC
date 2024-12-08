@@ -1,4 +1,8 @@
-./hart/s0228_summary_ranges/mutants/5/Solution.java:28: error: unreachable statement
+./hart/s0228_summary_ranges/mutants/5/Solution.java:15: warning: A non-pure method is being called where it is not permitted: java.util.Collections.frequency(java.util.Collection<?>,java.lang.Object)
+//@ requires(\forall int i; 0 <= i < nums.length; (Collections.frequency(Arrays.asList(nums), nums[i]) == 1));
+                                                                        ^
+./hart/s0228_summary_ranges/mutants/5/Solution.java:29: error: unreachable statement
         for (int i = 1; false; i++) {
                                     ^
 1 error
+1 warning

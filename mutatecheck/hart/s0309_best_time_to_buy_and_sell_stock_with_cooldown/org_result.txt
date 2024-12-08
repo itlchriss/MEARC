@@ -4,16 +4,16 @@
 ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:62: verify: Associated declaration: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76:
 //@ ensures((\result <= 2147483647) && (\result >= -2147483648));
     ^
-./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:63:) in method maxProfit
-        return sell;
-        ^
-./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:63: verify: Associated declaration: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76:
-//@ ensures((Arrays.equals(prices, new int[] {1 , 2 , 3 , 0 , 2})) ==> (\result == 3));
-    ^
 ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:64:) in method maxProfit
         return sell;
         ^
 ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:64: verify: Associated declaration: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76:
 //@ ensures((Arrays.equals(prices, new int[] {1})) ==> (\result == 0));
+    ^
+./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:63:) in method maxProfit
+        return sell;
+        ^
+./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:63: verify: Associated declaration: ./hart/s0309_best_time_to_buy_and_sell_stock_with_cooldown/Solution.java:76:
+//@ ensures((Arrays.equals(prices, new int[] {1 , 2 , 3 , 0 , 2})) ==> (\result == 3));
     ^
 6 verification failures

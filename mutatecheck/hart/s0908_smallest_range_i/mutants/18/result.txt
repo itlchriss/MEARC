@@ -1,16 +1,16 @@
 ./hart/s0908_smallest_range_i/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method smallestRangeI
         return (max - k) - (min % k);
                                 ^
-./hart/s0908_smallest_range_i/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:14:) in method smallestRangeI
-        return (max - k) - (min % k);
-        ^
-./hart/s0908_smallest_range_i/mutants/18/Solution.java:14: verify: Associated declaration: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:26:
-//@ ensures(((Arrays.equals(nums, new int[] {1 , 3 , 6})) && (k == 3)) ==> (\result == 0));
-    ^
 ./hart/s0908_smallest_range_i/mutants/18/Solution.java:24: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:15:) in method smallestRangeI
             return 0;
             ^
 ./hart/s0908_smallest_range_i/mutants/18/Solution.java:15: verify: Associated declaration: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:24:
 //@ ensures(((Arrays.equals(nums, new int[] {0 , 10})) && (k == 2)) ==> (\result == 6));
+    ^
+./hart/s0908_smallest_range_i/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:14:) in method smallestRangeI
+        return (max - k) - (min % k);
+        ^
+./hart/s0908_smallest_range_i/mutants/18/Solution.java:14: verify: Associated declaration: ./hart/s0908_smallest_range_i/mutants/18/Solution.java:26:
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 3 , 6})) && (k == 3)) ==> (\result == 0));
     ^
 5 verification failures

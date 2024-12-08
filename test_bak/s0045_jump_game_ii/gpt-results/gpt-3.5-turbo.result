@@ -1,0 +1,8 @@
+- public int jump(int[] nums)
+- requires nums != null && nums.length > 0;
+- requires (\forall int i; 0 <= i && i < nums.length; nums[i] >= 0 && nums[i] <= 1000);
+- ensures \result >= 0;
+- ensures (\forall int i; 0 <= i && i < nums.length; \old(nums[i]) == nums[i]);
+- ensures (\exists int i; 0 <= i && i < nums.length; i == nums.length - 1 && \result == \old(\result));
+- ensures (\forall int i; 0 <= i && i < nums.length; i != nums.length - 1 ==> \result < \old(\result));
+- ensures (\forall int i; 0 <= i && i < nums.length; i != nums.length - 1 ==> (\exists int j; i <= j && j < nums.length && j == i + nums[i] && \result == \old(\result) - 1));

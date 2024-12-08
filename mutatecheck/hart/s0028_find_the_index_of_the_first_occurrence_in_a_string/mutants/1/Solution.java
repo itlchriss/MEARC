@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((needle.length() <= 50000) && (needle.length() >= 0));
 //@ requires((haystack.length() <= 50000) && (haystack.length() >= 0));
+//@ requires((needle.length() <= 50000) && (needle.length() >= 0));
 //@ ensures((\result <= haystack.length()) && (\result >= -1));
     public int strStr(String haystack, String needle) {
         if (true) {

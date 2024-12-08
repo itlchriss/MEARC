@@ -1,0 +1,22 @@
+./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:23: verify: The prover cannot establish an assertion (InvariantEntrance: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: (Caller: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String), Callee: java.lang.String.charAt(int))
+            while (i < j && isNotAlphaNumeric(s.charAt(j))) {
+                                                      ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:23:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String) (parameter s)
+    public boolean isPalindrome(String s) {
+                                       ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:11: verify: The prover cannot establish an assertion (InvariantExceptionExit: /Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30:) in method isPalindrome: g0101_0200.s0125_valid_palindrome.Solution.isPalindrome(java.lang.String) (parameter s)
+    public boolean isPalindrome(String s) {
+                                       ^
+/Users/chrissleong/Documents/Phd_Studies/openjml-0.17-a15/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: ./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:11:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+./datasets/leetcode-behavioural/s0125_valid_palindrome/gpt-results/build/Solution.java:59: verify: The prover cannot establish an assertion (ArithmeticCastRange) in method upperToLower
+            c = (char) (c + 32);
+                ^
+7 verification failures

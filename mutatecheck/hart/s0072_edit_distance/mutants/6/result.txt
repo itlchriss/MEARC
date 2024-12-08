@@ -4,25 +4,25 @@
 ./hart/s0072_edit_distance/mutants/6/Solution.java:24: verify: The prover cannot establish an assertion (PossiblyNegativeSize) in method minDistance
         int[] dp = new int[n2 - 1];
                               ^
-./hart/s0072_edit_distance/mutants/6/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method minDistance
-            int pre = dp[0];
-                        ^
 ./hart/s0072_edit_distance/mutants/6/Solution.java:43: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method minDistance
         return dp[n2];
                  ^
 ./hart/s0072_edit_distance/mutants/6/Solution.java:35: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method minDistance
                 int tmp = dp[j];
                             ^
-./hart/s0072_edit_distance/mutants/6/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/6/Solution.java:17:) in method minDistance
-            return minDistance(w2, w1);
-            ^
-./hart/s0072_edit_distance/mutants/6/Solution.java:17: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/6/Solution.java:22:
-//@ ensures(((w1.equals("intention")) && (w2.equals("execution"))) ==> (\result == 5));
-    ^
+./hart/s0072_edit_distance/mutants/6/Solution.java:31: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method minDistance
+            int pre = dp[0];
+                        ^
 ./hart/s0072_edit_distance/mutants/6/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/6/Solution.java:16:) in method minDistance
             return minDistance(w2, w1);
             ^
 ./hart/s0072_edit_distance/mutants/6/Solution.java:16: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/6/Solution.java:22:
 //@ ensures(((w1.equals("horse")) && (w2.equals("ros"))) ==> (\result == 3));
+    ^
+./hart/s0072_edit_distance/mutants/6/Solution.java:22: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0072_edit_distance/mutants/6/Solution.java:17:) in method minDistance
+            return minDistance(w2, w1);
+            ^
+./hart/s0072_edit_distance/mutants/6/Solution.java:17: verify: Associated declaration: ./hart/s0072_edit_distance/mutants/6/Solution.java:22:
+//@ ensures(((w1.equals("intention")) && (w2.equals("execution"))) ==> (\result == 5));
     ^
 9 verification failures

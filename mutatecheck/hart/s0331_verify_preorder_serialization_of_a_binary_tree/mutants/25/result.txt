@@ -1,0 +1,7 @@
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/25/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/25/Solution.java:11:) in method isValidSerialization
+        return false;
+        ^
+./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/25/Solution.java:11: verify: Associated declaration: ./hart/s0331_verify_preorder_serialization_of_a_binary_tree/mutants/25/Solution.java:26:
+//@ ensures((preorder.equals("9,3,4,#,#,1,#,#,2,#,6,#,#")) ==> (\result == true));
+    ^
+2 verification failures

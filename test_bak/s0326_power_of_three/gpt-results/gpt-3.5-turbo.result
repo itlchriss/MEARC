@@ -1,0 +1,3 @@
+- public boolean isPowerOfThree(int n)
+- requires n >= 0;
+- ensures \result == (n > 0 && Math.pow(3, Math.round(Math.log(n) / Math.log(3))) == n);

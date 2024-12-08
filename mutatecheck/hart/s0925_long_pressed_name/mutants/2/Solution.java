@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((typed.length() <= 1000) && (typed.length() >= 1));
 //@ requires((name.length() <= 1000) && (name.length() >= 1));
+//@ requires((typed.length() <= 1000) && (typed.length() >= 1));
 //@ ensures((Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray()))) ==> (\result == true));
 //@ ensures((!(Arrays.asList(typed.toCharArray()).containsAll(Arrays.asList(name.toCharArray())))) ==> (\result == false));
     public boolean isLongPressedName(String name, String typed) {

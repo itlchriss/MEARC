@@ -1,10 +1,10 @@
+./hart/s0455_assign_cookies/mutants/6/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findContentChildren
+            if (s[j] >= g[i]) {
+                 ^
 ./hart/s0455_assign_cookies/mutants/6/Solution.java:32: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0455_assign_cookies/mutants/6/Solution.java:14:) in method findContentChildren
         return result;
         ^
 ./hart/s0455_assign_cookies/mutants/6/Solution.java:14: verify: Associated declaration: ./hart/s0455_assign_cookies/mutants/6/Solution.java:32:
 //@ ensures(\result <= g.length);
     ^
-./hart/s0455_assign_cookies/mutants/6/Solution.java:26: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method findContentChildren
-            if (s[j] >= g[i]) {
-                 ^
 3 verification failures

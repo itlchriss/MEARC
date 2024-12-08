@@ -9,8 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 100000) && (nums[i] >= 0)));
 //@ requires((nums.length <= 10000) && (nums.length >= 1));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 100000) && (nums[i] >= 0)));
     public boolean canJump(int[] nums) {
         int sz = nums.length;
         // we set 1 so it won't break on the first iteration

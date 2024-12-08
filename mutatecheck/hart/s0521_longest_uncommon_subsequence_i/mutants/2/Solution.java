@@ -16,8 +16,8 @@ public class Solution {
      * Or in other words, when a.length() != b.length(), no subsequence of b will be equal to a,
      * so return Math.max(a.length(), b.length())
      */
-//@ requires((b.length() <= 100) && (b.length() >= 1));
 //@ requires((a.length() <= 100) && (a.length() >= 1));
+//@ requires((b.length() <= 100) && (b.length() >= 1));
 //@ ensures((\result <= 2147483647) && (\result >= -1));
 //@ ensures(((a.equals("aba")) && (b.equals("cdc"))) ==> (\result == 3));
 //@ ensures(((a.equals("aaa")) && (b.equals("aaa"))) ==> (\result == -1));

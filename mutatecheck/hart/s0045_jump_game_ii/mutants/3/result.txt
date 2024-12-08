@@ -4,16 +4,16 @@
 ./hart/s0045_jump_game_ii/mutants/3/Solution.java:14: verify: Associated declaration: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:34:
 //@ ensures(\result >= 1);
     ^
-./hart/s0045_jump_game_ii/mutants/3/Solution.java:34: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:15:) in method jump
-                return minJump;
-                ^
-./hart/s0045_jump_game_ii/mutants/3/Solution.java:15: verify: Associated declaration: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:34:
-//@ ensures((Arrays.equals(nums, new int[] {2 , 3 , 1 , 1 , 4})) ==> (\result == 2));
-    ^
 ./hart/s0045_jump_game_ii/mutants/3/Solution.java:34: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:16:) in method jump
                 return minJump;
                 ^
 ./hart/s0045_jump_game_ii/mutants/3/Solution.java:16: verify: Associated declaration: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:34:
 //@ ensures((Arrays.equals(nums, new int[] {2 , 3 , 0 , 1 , 4})) ==> (\result == 2));
+    ^
+./hart/s0045_jump_game_ii/mutants/3/Solution.java:34: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:15:) in method jump
+                return minJump;
+                ^
+./hart/s0045_jump_game_ii/mutants/3/Solution.java:15: verify: Associated declaration: ./hart/s0045_jump_game_ii/mutants/3/Solution.java:34:
+//@ ensures((Arrays.equals(nums, new int[] {2 , 3 , 1 , 1 , 4})) ==> (\result == 2));
     ^
 6 verification failures

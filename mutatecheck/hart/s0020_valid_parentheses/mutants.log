@@ -1,67 +1,67 @@
-1:ROR:<(int,int):!=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):19:i < s.length() |==> i != s.length()
-2:ROR:<(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):19:i < s.length() |==> i <= s.length()
-3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):19:i < s.length() |==> false
-4:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' |==> c <= '('
-5:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' |==> c >= '('
-6:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' |==> false
-7:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '[' |==> c <= '['
-8:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '[' |==> c >= '['
-9:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '[' |==> false
-10:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' |==> c == '(' != (c == '[')
-11:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' |==> c == '('
-12:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' |==> c == '['
-13:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' |==> true
-14:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '{' |==> c <= '{'
-15:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '{' |==> c >= '{'
-16:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '{' |==> false
-17:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' || c == '{' |==> (c == '(' || c == '[') != (c == '{')
-18:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' || c == '{' |==> c == '(' || c == '['
-19:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' || c == '{' |==> c == '{'
-20:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):21:c == '(' || c == '[' || c == '{' |==> true
-21:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):22:stack.push(c); |==> <NO-OP>
-22:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' |==> c <= ')'
-23:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' |==> c >= ')'
-24:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' |==> false
-25:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() |==> c == ')' == !stack.isEmpty()
-26:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() |==> false
-27:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() |==> c == ')'
-28:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() |==> !stack.isEmpty()
-29:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:stack.peek() == '(' |==> stack.peek() <= '('
-30:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:stack.peek() == '(' |==> stack.peek() >= '('
-31:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:stack.peek() == '(' |==> false
-32:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> (c == ')' && !stack.isEmpty()) == (stack.peek() == '(')
-33:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> false
-34:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> c == ')' && !stack.isEmpty()
-35:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):23:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> stack.peek() == '('
-36:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):24:stack.pop(); |==> <NO-OP>
-37:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' |==> c <= '}'
-38:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' |==> c >= '}'
-39:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' |==> false
-40:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() |==> c == '}' == !stack.isEmpty()
-41:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() |==> false
-42:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() |==> c == '}'
-43:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() |==> !stack.isEmpty()
-44:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:stack.peek() == '{' |==> stack.peek() <= '{'
-45:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:stack.peek() == '{' |==> stack.peek() >= '{'
-46:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:stack.peek() == '{' |==> false
-47:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> (c == '}' && !stack.isEmpty()) == (stack.peek() == '{')
-48:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> false
-49:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> c == '}' && !stack.isEmpty()
-50:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> stack.peek() == '{'
-51:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):26:stack.pop(); |==> <NO-OP>
-52:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' |==> c <= ']'
-53:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' |==> c >= ']'
-54:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' |==> false
-55:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() |==> c == ']' == !stack.isEmpty()
-56:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() |==> false
-57:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() |==> c == ']'
-58:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() |==> !stack.isEmpty()
-59:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:stack.peek() == '[' |==> stack.peek() <= '['
-60:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:stack.peek() == '[' |==> stack.peek() >= '['
-61:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:stack.peek() == '[' |==> false
-62:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> (c == ']' && !stack.isEmpty()) == (stack.peek() == '[')
-63:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> false
-64:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> c == ']' && !stack.isEmpty()
-65:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> stack.peek() == '['
-66:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):28:stack.pop(); |==> <NO-OP>
-67:STD:<RETURN>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):30:return false; |==> <NO-OP>
+1:ROR:<(int,int):!=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:i < s.length() |==> i != s.length()
+2:ROR:<(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:i < s.length() |==> i <= s.length()
+3:ROR:<(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):25:i < s.length() |==> false
+4:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' |==> c <= '('
+5:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' |==> c >= '('
+6:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' |==> false
+7:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '[' |==> c <= '['
+8:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '[' |==> c >= '['
+9:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '[' |==> false
+10:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' |==> c == '(' != (c == '[')
+11:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' |==> c == '('
+12:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' |==> c == '['
+13:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' |==> true
+14:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '{' |==> c <= '{'
+15:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '{' |==> c >= '{'
+16:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '{' |==> false
+17:COR:||(boolean,boolean):!=(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' || c == '{' |==> (c == '(' || c == '[') != (c == '{')
+18:COR:||(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' || c == '{' |==> c == '(' || c == '['
+19:COR:||(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' || c == '{' |==> c == '{'
+20:COR:||(boolean,boolean):TRUE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):27:c == '(' || c == '[' || c == '{' |==> true
+21:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):28:stack.push(c); |==> <NO-OP>
+22:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' |==> c <= ')'
+23:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' |==> c >= ')'
+24:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' |==> false
+25:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() |==> c == ')' == !stack.isEmpty()
+26:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() |==> false
+27:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() |==> c == ')'
+28:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() |==> !stack.isEmpty()
+29:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:stack.peek() == '(' |==> stack.peek() <= '('
+30:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:stack.peek() == '(' |==> stack.peek() >= '('
+31:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:stack.peek() == '(' |==> false
+32:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> (c == ')' && !stack.isEmpty()) == (stack.peek() == '(')
+33:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> false
+34:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> c == ')' && !stack.isEmpty()
+35:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):29:c == ')' && !stack.isEmpty() && stack.peek() == '(' |==> stack.peek() == '('
+36:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):30:stack.pop(); |==> <NO-OP>
+37:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' |==> c <= '}'
+38:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' |==> c >= '}'
+39:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' |==> false
+40:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() |==> c == '}' == !stack.isEmpty()
+41:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() |==> false
+42:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() |==> c == '}'
+43:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() |==> !stack.isEmpty()
+44:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:stack.peek() == '{' |==> stack.peek() <= '{'
+45:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:stack.peek() == '{' |==> stack.peek() >= '{'
+46:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:stack.peek() == '{' |==> false
+47:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> (c == '}' && !stack.isEmpty()) == (stack.peek() == '{')
+48:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> false
+49:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> c == '}' && !stack.isEmpty()
+50:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):31:c == '}' && !stack.isEmpty() && stack.peek() == '{' |==> stack.peek() == '{'
+51:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):32:stack.pop(); |==> <NO-OP>
+52:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' |==> c <= ']'
+53:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' |==> c >= ']'
+54:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' |==> false
+55:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() |==> c == ']' == !stack.isEmpty()
+56:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() |==> false
+57:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() |==> c == ']'
+58:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() |==> !stack.isEmpty()
+59:ROR:==(int,int):<=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:stack.peek() == '[' |==> stack.peek() <= '['
+60:ROR:==(int,int):>=(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:stack.peek() == '[' |==> stack.peek() >= '['
+61:ROR:==(int,int):FALSE(int,int):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:stack.peek() == '[' |==> false
+62:COR:&&(boolean,boolean):==(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> (c == ']' && !stack.isEmpty()) == (stack.peek() == '[')
+63:COR:&&(boolean,boolean):FALSE(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> false
+64:COR:&&(boolean,boolean):LHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> c == ']' && !stack.isEmpty()
+65:COR:&&(boolean,boolean):RHS(boolean,boolean):g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):33:c == ']' && !stack.isEmpty() && stack.peek() == '[' |==> stack.peek() == '['
+66:STD:<CALL>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):34:stack.pop(); |==> <NO-OP>
+67:STD:<RETURN>:<NO-OP>:g0001_0100.s0020_valid_parentheses.Solution@isValid(java.lang.String):36:return false; |==> <NO-OP>

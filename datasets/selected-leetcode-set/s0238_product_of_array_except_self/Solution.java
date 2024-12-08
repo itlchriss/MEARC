@@ -5,14 +5,13 @@ package g0201_0300.s0238_product_of_array_except_self;
 // #2022_07_04_Time_1_ms_(100.00%)_Space_50.8_MB_(85.60%)
 
 public class Solution {
-//@ requires(*The length of the integer array parameter `nums` is greater than or equal to 2 and is less than or equal to 100000.*);
-//@ requires(*All values in the integer array parameter `nums` are greater than or equal to -30 and are less than or equal to 30.*);
-//@ requires(*The product of any prefix or suffix of the integer array parameter `nums` is guaranteed to fit in a 32-bit integer.*);
-//@ requires(*The algorithm must run in O(n) time complexity.*);
-//@ requires(*The algorithm must not use the division operation.*);
-//@ requires(*The algorithm must solve the problem without using more than O(1) extra space.*);
+//@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 2.*);
+//@ requires(*All the values in the integer array parameter `nums` are less than or equal to 30 and are greater than or equal to -30.*);
 //@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `nums`.*);
-//@ ensures(*Each element in the integer array result is equal to the product of all elements in the integer array parameter `nums` except the corresponding element at the same index.*);
+//@ ensures(*The product of all elements in the integer array result is equal to the product of all elements in the integer array parameter `nums` except the element at the same index.*);
+//@ ensures(*The product of any prefix or suffix of the integer array result is guaranteed to fit in a 32-bit integer.*);
+//@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,4], the integer array result is equal to [24,12,8,6].*);
+//@ ensures(*If the integer array parameter `nums` is equal to [-1,1,0,-3,3], the integer array result is equal to [0,0,9,0,0].*);
     public int[] productExceptSelf(int[] nums) {
         int product = 1;
         int[] ans = new int[nums.length];

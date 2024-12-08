@@ -1,1 +1,0 @@
-ensures((target.size() == collection.size() && (\forall int j; 0 <= j < target.size(); (target.get(j) == null <==> collection.get(j) == null) || (target.get(j) != null && collection.get(j) != null <==> target.get(j).equals(collection.get(j)))) && target.equals(collection) && collection.equals(target)) ==> (\result==true));

@@ -9,8 +9,8 @@ import java.util.Collections;
 
 public class Solution {
 //@ requires(\forall int k; 0 <= k && k < nums.length-1; nums[k] <= nums[k+1]);
-//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 100) && (nums[i] >= -100)));
 //@ requires((nums.length <= 30000) && (nums.length >= 0));
+//@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 100) && (nums[i] >= -100)));
     public int removeDuplicates(int[] nums) {
         int n = nums.length;
         int i = 0;

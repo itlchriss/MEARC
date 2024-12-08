@@ -10,6 +10,7 @@ import java.util.Collections;
 public class Solution {
 //@ ensures((s.equals("3/2")) ==> (\result == 1));
 //@ ensures((s.equals("3+2*2")) ==> (\result == 7));
+//@ ensures((s.equals("3+5 / 2")) ==> (\result == 5));
     public int calculate(String s) {
         int sum = 0;
         int tempSum = 0;

@@ -4,7 +4,7 @@
 ./hart/s0165_compare_version_numbers/mutants/6/Solution.java:19: verify: Associated declaration: ./hart/s0165_compare_version_numbers/mutants/6/Solution.java:61:
     public int compareVersion(String version1, String version2) {
                ^
-./hart/s0165_compare_version_numbers/mutants/6/Solution.java:11: verify: Precondition conjunct is false: ((version1.length() <= 500) && (version1.length() >= 1))
+./hart/s0165_compare_version_numbers/mutants/6/Solution.java:10: verify: Precondition conjunct is false: ((version1.length() <= 500) && (version1.length() >= 1))
 //@ requires((version1.length() <= 500) && (version1.length() >= 1));
             ^
 ./hart/s0165_compare_version_numbers/mutants/6/Solution.java:19: verify: Validity is unknown - time or memory limit reached: : Aborted proof: timeout

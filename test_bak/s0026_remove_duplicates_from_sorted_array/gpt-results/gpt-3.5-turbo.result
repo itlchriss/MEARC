@@ -1,0 +1,4 @@
+- //@ requires nums != null;
+- //@ ensures \result >= 0 && \result <= nums.length;
+- //@ ensures (\forall int i, j; 0 <= i < j < \result; nums[i] != nums[j]);
+- //@ ensures (\forall int i; \result <= i < nums.length; (\exists int j; 0 <= j < \result; nums[j] == nums[i]));

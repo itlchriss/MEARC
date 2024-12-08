@@ -8,6 +8,9 @@ import java.util.Collections;
 
 public class Solution {
 //@ requires((preorder.length() <= 10000) && (preorder.length() >= 1));
+//@ ensures((preorder.equals("9,3,4,#,#,1,#,#,2,#,6,#,#")) ==> (\result == true));
+//@ ensures((preorder.equals("9,#,#,1")) ==> (\result == false));
+//@ ensures((preorder.equals("1,#")) ==> (\result == false));
     public boolean isValidSerialization(String preorder) {
         int count = 1;
         int length = preorder.length();

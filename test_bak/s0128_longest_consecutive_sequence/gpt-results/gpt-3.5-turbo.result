@@ -1,0 +1,7 @@
+- requires nums != null && nums.length >= 0;
+- requires (\forall int i; 0 <= i && i < nums.length; -10^9 <= nums[i] && nums[i] <= 10^9);
+- ensures \result >= 0;
+- ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] == nums[j] <==> i == j);
+- ensures (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] < nums[j] <==> i < j);
+- ensures \result == (\max int count; (\exists int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] == nums[j] <==> i == j) && (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length; nums[i] < nums[j] <==> i < j); count);
+- assignable \nothing;

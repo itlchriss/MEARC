@@ -1,514 +1,514 @@
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0001_0100.s0044_wildcard_matching.Solution]]]]
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0001_0100.s0044_wildcard_matching.Solution
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: isMatch([String inputString, String pattern])boolean
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.isMatch(line 23, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < inputString.length() 
             mutant:                    i != inputString.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.isMatch(line 23, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < inputString.length() 
             mutant:                    i <= inputString.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.isMatch(line 23, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < inputString.length() 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 4: Solution.isMatch(line 24, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j != pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 5: Solution.isMatch(line 24, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j <= pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 6: Solution.isMatch(line 24, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  j < pattern.length() 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.isMatch(line 25, col 47)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  inputString.charAt(i) == pattern.charAt(j) 
             mutant:                    inputString.charAt(i) <= pattern.charAt(j)
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.isMatch(line 25, col 47)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  inputString.charAt(i) == pattern.charAt(j) 
             mutant:                    inputString.charAt(i) >= pattern.charAt(j)
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.isMatch(line 25, col 47)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  inputString.charAt(i) == pattern.charAt(j) 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 10: Solution.isMatch(line 25, col 89)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  pattern.charAt(j) == '?' 
             mutant:                    pattern.charAt(j) <= '?'
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 11: Solution.isMatch(line 25, col 89)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  pattern.charAt(j) == '?' 
             mutant:                    pattern.charAt(j) >= '?'
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.isMatch(line 25, col 89)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  pattern.charAt(j) == '?' 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.isMatch(line 25, col 68)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
             original:                  inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' 
             mutant:                    inputString.charAt(i) == pattern.charAt(j) != (pattern.charAt(j) == '?')
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.isMatch(line 25, col 47)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' 
             mutant:                    inputString.charAt(i) == pattern.charAt(j)
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 15: Solution.isMatch(line 25, col 89)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' 
             mutant:                    pattern.charAt(j) == '?'
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.isMatch(line 25, col 68)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
             original:                  inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?' 
             mutant:                    true
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.isMatch(line 25, col 21)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') 
             mutant:                    j < pattern.length() == (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.isMatch(line 25, col 21)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 19: Solution.isMatch(line 24, col 19)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') 
             mutant:                    j < pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 20: Solution.isMatch(line 25, col 24)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  j < pattern.length() && (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?') 
             mutant:                    (inputString.charAt(i) == pattern.charAt(j) || pattern.charAt(j) == '?')
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 21: (STD) i++; -> <NO-OP>
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 22: (STD) j++; -> <NO-OP>
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 23: Solution.isMatch(line 28, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j != pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 24: Solution.isMatch(line 28, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j <= pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 25: Solution.isMatch(line 28, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  j < pattern.length() 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 26: Solution.isMatch(line 28, col 66)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) <= '*'
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 27: Solution.isMatch(line 28, col 66)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) >= '*'
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 28: Solution.isMatch(line 28, col 66)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 29: Solution.isMatch(line 28, col 45)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    j < pattern.length() == (pattern.charAt(j) == '*')
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 30: Solution.isMatch(line 28, col 45)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    false
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 31: Solution.isMatch(line 28, col 26)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    j < pattern.length()
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:48:09] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 32: Solution.isMatch(line 28, col 66)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) == '*'
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 33: (STD) starIdx = j; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 34
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 34: (STD) lastMatch = i; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 35
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 35: (STD) j++; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 36
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 36: Solution.isMatch(line 32, col 32)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> <(int,int)
             original:                  starIdx != -1 
             mutant:                    starIdx < -1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 37
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 37: Solution.isMatch(line 32, col 32)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> >(int,int)
             original:                  starIdx != -1 
             mutant:                    starIdx > -1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 38
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 38: Solution.isMatch(line 32, col 32)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> TRUE(int,int)
             original:                  starIdx != -1 
             mutant:                    true
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 39
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 39: Solution.isMatch(line 37, col 29)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> %(int,int)
             original:                  starIdx + 1 
             mutant:                    starIdx % 1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 40
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 40: Solution.isMatch(line 37, col 29)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> *(int,int)
             original:                  starIdx + 1 
             mutant:                    starIdx * 1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 41
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 41: Solution.isMatch(line 37, col 29)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> -(int,int)
             original:                  starIdx + 1 
             mutant:                    starIdx - 1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 42
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 42: Solution.isMatch(line 37, col 29)
             mutation operator group:   AOR
             mutation operator:         +(int,int) |==> /(int,int)
             original:                  starIdx + 1 
             mutant:                    starIdx / 1
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 43
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 43: (STD) j = starIdx + 1; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 44
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 44: (STD) lastMatch++; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 45
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 45: (STD) i = lastMatch; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 46
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 46: (STD) return false; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 47
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 47: Solution.isMatch(line 47, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j != pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 48
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 48: Solution.isMatch(line 47, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  j < pattern.length() 
             mutant:                    j <= pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 49
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 49: Solution.isMatch(line 47, col 18)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  j < pattern.length() 
             mutant:                    false
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 50
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 50: Solution.isMatch(line 47, col 58)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> <=(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) <= '*'
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 51
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 51: Solution.isMatch(line 47, col 58)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> >=(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) >= '*'
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 52
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 52: Solution.isMatch(line 47, col 58)
             mutation operator group:   ROR
             mutation operator:         ==(int,int) |==> FALSE(int,int)
             original:                  pattern.charAt(j) == '*' 
             mutant:                    false
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 53
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 53: Solution.isMatch(line 47, col 37)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> ==(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    j < pattern.length() == (pattern.charAt(j) == '*')
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 54
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 54: Solution.isMatch(line 47, col 37)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> FALSE(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    false
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 55
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 55: Solution.isMatch(line 47, col 18)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    j < pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 56
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 56: Solution.isMatch(line 47, col 58)
             mutation operator group:   COR
             mutation operator:         &&(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  j < pattern.length() && pattern.charAt(j) == '*' 
             mutant:                    pattern.charAt(j) == '*'
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 57
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 57: (STD) j++; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 58
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 58: Solution.isMatch(line 50, col 15)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> <(int,int)
             original:                  i != inputString.length() 
             mutant:                    i < inputString.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 59
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 59: Solution.isMatch(line 50, col 15)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> >(int,int)
             original:                  i != inputString.length() 
             mutant:                    i > inputString.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 60
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 60: Solution.isMatch(line 50, col 15)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> TRUE(int,int)
             original:                  i != inputString.length() 
             mutant:                    true
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 61
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 61: Solution.isMatch(line 50, col 44)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> <(int,int)
             original:                  j != pattern.length() 
             mutant:                    j < pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 62
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 62: Solution.isMatch(line 50, col 44)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> >(int,int)
             original:                  j != pattern.length() 
             mutant:                    j > pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 63
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 63: Solution.isMatch(line 50, col 44)
             mutation operator group:   ROR
             mutation operator:         !=(int,int) |==> TRUE(int,int)
             original:                  j != pattern.length() 
             mutant:                    true
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 64
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 64: Solution.isMatch(line 50, col 39)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> !=(boolean,boolean)
             original:                  i != inputString.length() || j != pattern.length() 
             mutant:                    i != inputString.length() != (j != pattern.length())
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 65
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 65: Solution.isMatch(line 50, col 15)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> LHS(boolean,boolean)
             original:                  i != inputString.length() || j != pattern.length() 
             mutant:                    i != inputString.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 66
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 66: Solution.isMatch(line 50, col 44)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> RHS(boolean,boolean)
             original:                  i != inputString.length() || j != pattern.length() 
             mutant:                    j != pattern.length()
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 67
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 67: Solution.isMatch(line 50, col 39)
             mutation operator group:   COR
             mutation operator:         ||(boolean,boolean) |==> TRUE(boolean,boolean)
             original:                  i != inputString.length() || j != pattern.length() 
             mutant:                    true
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 68
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 68: (STD) isMatch = false; -> <NO-OP>
-[05/24 20:48:10] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 68 mutants (220 ms)
+[06/24 16:49:33] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 68 mutants (211 ms)

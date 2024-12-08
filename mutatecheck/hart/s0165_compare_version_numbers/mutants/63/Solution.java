@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
-//@ requires((version2.length() <= 500) && (version2.length() >= 1));
 //@ requires((version1.length() <= 500) && (version1.length() >= 1));
+//@ requires((version2.length() <= 500) && (version2.length() >= 1));
 // ensures((\result == -1) ==> (version1 < version2));
 // ensures((\result == 1) ==> (version1 > version2));
 //@ ensures(((version1.equals("1.01")) && (version2.equals("1.001"))) ==> (\result == 0));

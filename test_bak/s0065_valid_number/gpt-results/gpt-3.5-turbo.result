@@ -1,0 +1,4 @@
+- public boolean isNumber(String s)
+- requires s != null && s.length() >= 1 && s.length() <= 20
+- requires (\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || Character.isDigit(s.charAt(i)) || s.charAt(i) == '+' || s.charAt(i) == '-' || s.charAt(i) == '.')
+- ensures \result == true if s is a valid number, false otherwise

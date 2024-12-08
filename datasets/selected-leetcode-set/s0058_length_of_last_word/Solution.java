@@ -4,10 +4,13 @@ package g0001_0100.s0058_length_of_last_word;
 // #2023_08_11_Time_0_ms_(100.00%)_Space_40.3_MB_(97.60%)
 
 public class Solution {
-//@ requires(*The string parameter `s` consists of only English letters and spaces `' '`.*);
-//@ requires(*The length of the string parameter `s` is greater than or equal to 1 and is less than or equal to 10000.*);
-//@ requires(*A word is a maximal substring consisting of non-space characters only.*);
-//@ ensures(*The integer result is the length of the last word in the string parameter `s`.*);
+//@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
+//@ requires(*The string parameter `s` consists of only English letters and spaces ' '.*);
+//@ requires(*There is at least one word in the string parameter `s`.*);
+//@ ensures(*The integer result is less than or equal to the length of the last word in the string parameter `s`.*);
+//@ ensures(*If the string parameter `s` is equal to "Hello World", the integer result is equal to 5.*);
+//@ ensures(*If the string parameter `s` is equal to " fly me to the moon ", the integer result is equal to 4.*);
+//@ ensures(*If the string parameter `s` is equal to "luffy is still joyboy", the integer result is equal to 6.*);
     public int lengthOfLastWord(String s) {
         int len = 0;
         for (int i = s.length() - 1; i >= 0; i--) {

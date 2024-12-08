@@ -1,0 +1,13 @@
+./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:17:) in method subarraySum
+        return ret;
+        ^
+./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:17: verify: Associated declaration: ./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:35:
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 1 , 1})) && (k == 2)) ==> (\result == 2));
+    ^
+./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:35: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:18:) in method subarraySum
+        return ret;
+        ^
+./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:18: verify: Associated declaration: ./hart/s0560_subarray_sum_equals_k/mutants/1/Solution.java:35:
+//@ ensures(((Arrays.equals(nums, new int[] {1 , 2 , 3})) && (k == 3)) ==> (\result == 2));
+    ^
+4 verification failures

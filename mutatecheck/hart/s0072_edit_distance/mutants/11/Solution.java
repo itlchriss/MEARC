@@ -11,8 +11,8 @@ import java.util.Collections;
 
 @SuppressWarnings("java:S2234")
 public class Solution {
-//@ requires((w2.length() <= 500) && (w2.length() >= 0));
 //@ requires((w1.length() <= 500) && (w1.length() >= 0));
+//@ requires((w2.length() <= 500) && (w2.length() >= 0));
 //@ ensures(((w1.equals("horse")) && (w2.equals("ros"))) ==> (\result == 3));
 //@ ensures(((w1.equals("intention")) && (w2.equals("execution"))) ==> (\result == 5));
     public int minDistance(String w1, String w2) {

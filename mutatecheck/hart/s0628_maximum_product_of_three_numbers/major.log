@@ -1,298 +1,298 @@
-[05/24 20:49:03] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.<init>:
     Created MajorPluginTaskListener with options: [mml:../../major/mml/all.mml.bin]
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.initOperatorSymbols:
     Initializing operator symbols for opcode mapping
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.mutateTree:
     Mutating tree: Env[AttrContext[Scope[super, this]],outer=Env[AttrContext[Scope[java.util.Collections, java.util.Arrays, g0601_0700.s0628_maximum_product_of_three_numbers.Solution]]]]
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitClassDef:
     CLASS: g0601_0700.s0628_maximum_product_of_three_numbers.Solution
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: <init>([])null
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.visitMethodDef:
     METHOD: maximumProduct([int[] nums])int
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 1: Solution.maximumProduct(line 22, col 19)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  i > max1 
             mutant:                    i != max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 2: Solution.maximumProduct(line 22, col 19)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  i > max1 
             mutant:                    i >= max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 3: Solution.maximumProduct(line 22, col 19)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  i > max1 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 4
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 4: (STD) max3 = max2; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 5
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 5: (STD) max2 = max1; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 6
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 6: (STD) max1 = i; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 7
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 7: Solution.maximumProduct(line 26, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  i > max2 
             mutant:                    i != max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 8
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 8: Solution.maximumProduct(line 26, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  i > max2 
             mutant:                    i >= max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 9
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 9: Solution.maximumProduct(line 26, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  i > max2 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 10
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 10: (STD) max3 = max2; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 11
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 11: (STD) max2 = i; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 12
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 12: Solution.maximumProduct(line 29, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> !=(int,int)
             original:                  i > max3 
             mutant:                    i != max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 13
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 13: Solution.maximumProduct(line 29, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> >=(int,int)
             original:                  i > max3 
             mutant:                    i >= max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 14
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 14: Solution.maximumProduct(line 29, col 26)
             mutation operator group:   ROR
             mutation operator:         >(int,int) |==> FALSE(int,int)
             original:                  i > max3 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 15
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 15: (STD) max3 = i; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 16
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 16: Solution.maximumProduct(line 32, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < min1 
             mutant:                    i != min1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 17
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 17: Solution.maximumProduct(line 32, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < min1 
             mutant:                    i <= min1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 18
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 18: Solution.maximumProduct(line 32, col 19)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < min1 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 19
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 19: (STD) min2 = min1; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 20
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 20: (STD) min1 = i; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 21
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 21: Solution.maximumProduct(line 35, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> !=(int,int)
             original:                  i < min2 
             mutant:                    i != min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 22
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 22: Solution.maximumProduct(line 35, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> <=(int,int)
             original:                  i < min2 
             mutant:                    i <= min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 23
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 23: Solution.maximumProduct(line 35, col 26)
             mutation operator group:   ROR
             mutation operator:         <(int,int) |==> FALSE(int,int)
             original:                  i < min2 
             mutant:                    false
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 24
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutantSTD:
     Logging mutantSTD 24: (STD) min2 = i; -> <NO-OP>
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 25
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 25: Solution.maximumProduct(line 39, col 30)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> %(int,int)
             original:                  min1 * min2 
             mutant:                    min1 % min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 26
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 26: Solution.maximumProduct(line 39, col 30)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> +(int,int)
             original:                  min1 * min2 
             mutant:                    min1 + min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 27
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 27: Solution.maximumProduct(line 39, col 30)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> -(int,int)
             original:                  min1 * min2 
             mutant:                    min1 - min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 28
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 28: Solution.maximumProduct(line 39, col 30)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> /(int,int)
             original:                  min1 * min2 
             mutant:                    min1 / min2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 29
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 29: Solution.maximumProduct(line 39, col 37)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> %(int,int)
             original:                  min1 * min2 * max1 
             mutant:                    min1 * min2 % max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 30
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 30: Solution.maximumProduct(line 39, col 37)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> +(int,int)
             original:                  min1 * min2 * max1 
             mutant:                    min1 * min2 + max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 31
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 31: Solution.maximumProduct(line 39, col 37)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> -(int,int)
             original:                  min1 * min2 * max1 
             mutant:                    min1 * min2 - max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 32
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 32: Solution.maximumProduct(line 39, col 37)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> /(int,int)
             original:                  min1 * min2 * max1 
             mutant:                    min1 * min2 / max1
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 33
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 33: Solution.maximumProduct(line 39, col 50)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> %(int,int)
             original:                  max1 * max2 
             mutant:                    max1 % max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 34
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 34: Solution.maximumProduct(line 39, col 50)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> +(int,int)
             original:                  max1 * max2 
             mutant:                    max1 + max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 35
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 35: Solution.maximumProduct(line 39, col 50)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> -(int,int)
             original:                  max1 * max2 
             mutant:                    max1 - max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 36
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 36: Solution.maximumProduct(line 39, col 50)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> /(int,int)
             original:                  max1 * max2 
             mutant:                    max1 / max2
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 37
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 37: Solution.maximumProduct(line 39, col 57)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> %(int,int)
             original:                  max1 * max2 * max3 
             mutant:                    max1 * max2 % max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 38
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 38: Solution.maximumProduct(line 39, col 57)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> +(int,int)
             original:                  max1 * max2 * max3 
             mutant:                    max1 * max2 + max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 39
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 39: Solution.maximumProduct(line 39, col 57)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> -(int,int)
             original:                  max1 * max2 * max3 
             mutant:                    max1 * max2 - max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.nextMutant:
     Creating mutant 40
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.mutation.Mutator.logMutant:
     Logging mutant 40: Solution.maximumProduct(line 39, col 57)
             mutation operator group:   AOR
             mutation operator:         *(int,int) |==> /(int,int)
             original:                  max1 * max2 * max3 
             mutant:                    max1 * max2 / max3
-[05/24 20:49:04] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
-    Generated 40 mutants (149 ms)
+[06/24 16:50:27] [INFO   ] org.mutationtesting.major.plugin.MajorPluginTaskListener.mutate:
+    Generated 40 mutants (160 ms)

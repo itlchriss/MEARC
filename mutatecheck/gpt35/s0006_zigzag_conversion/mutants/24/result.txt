@@ -1,43 +1,4 @@
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:8:) in method convert
-            return s;
-            ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:8: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:18:
-//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isLetter(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:6:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:6: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41:
-//@ ensures((\forall int i; 0 <= i && i < s.length(); s.charAt(i) == \result.charAt(i) || s.charAt(i) == ',' || s.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:18: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:10:) in method convert
-            return s;
-            ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:10: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:18:
-//@ ensures((\forall int i; 0 <= i && i < s.length(); Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i)) || s.charAt(i) == ',' || s.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:7:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:7: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41:
-//@ ensures((\forall int i; 0 <= i && i < \result.length(); s.charAt(i) == \result.charAt(i) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:11:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:11: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41:
-//@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isLetter(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:13:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:13: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41:
-//@ ensures((\forall int i; 0 <= i && i < \result.length(); Character.isUpperCase(\result.charAt(i)) || Character.isLowerCase(\result.charAt(i)) || \result.charAt(i) == ',' || \result.charAt(i) == '.'));
-    ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41: verify: The prover cannot establish an assertion (Postcondition: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:14:) in method convert
-        return buf.toString();
-        ^
-./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:14: verify: Associated declaration: ./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:41:
-//@ ensures(\result.length() == s.length());
-    ^
-14 verification failures
+./gpt35/s0006_zigzag_conversion/mutants/24/Solution.java:15: verify: Validity is unknown - no model available method g0001_0100.s0006_zigzag_conversion.Solution.convert -  (possible timeout): (error "line 10553 column 18: model is not available")
+    public String convert(String s, int numRows) {
+                  ^
+1 verification failure

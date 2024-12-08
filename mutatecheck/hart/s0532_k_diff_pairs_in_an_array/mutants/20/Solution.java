@@ -10,9 +10,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Solution {
+//@ requires((k <= 10000000) && (k >= 0));
 //@ requires((nums.length <= 10000) && (nums.length >= 1));
 //@ requires(\forall int i; 0 <= i < nums.length; ((nums[i] <= 10000000) && (nums[i] >= -10000000)));
-//@ requires((k <= 10000000) && (k >= 0));
 //@ ensures(\result <= nums.length);
 //@ ensures(((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4 , 5})) && (k == 1)) ==> (\result == 4));
 //@ ensures(((Arrays.equals(nums, new int[] {3 , 1 , 4 , 1 , 5})) && (k == 2)) ==> (\result == 2));

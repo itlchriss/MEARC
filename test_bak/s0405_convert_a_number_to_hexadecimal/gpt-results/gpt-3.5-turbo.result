@@ -1,0 +1,5 @@
+- requires num >= -2147483648 && num <= 2147483647;
+- ensures \result != null;
+- ensures \result.matches("[0-9a-f]+");
+- ensures num >= 0 ==> \result.equals(Integer.toHexString(num));
+- ensures num < 0 ==> \result.equals(Integer.toHexString(num + 4294967296));

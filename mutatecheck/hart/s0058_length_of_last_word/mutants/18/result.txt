@@ -1,19 +1,4 @@
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:13:) in method lengthOfLastWord
-        return len;
-        ^
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:13: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:26:
-//@ ensures((s.equals("Hello World")) ==> (\result == 5));
-    ^
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:14:) in method lengthOfLastWord
-        return len;
-        ^
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:14: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:26:
-//@ ensures((s.equals("luffy is still joyboy")) ==> (\result == 6));
-    ^
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:26: verify: The prover cannot establish an assertion (Postcondition: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:15:) in method lengthOfLastWord
-        return len;
-        ^
-./hart/s0058_length_of_last_word/mutants/18/Solution.java:15: verify: Associated declaration: ./hart/s0058_length_of_last_word/mutants/18/Solution.java:26:
-//@ ensures((s.equals(" fly me to the moon ")) ==> (\result == 4));
-    ^
-6 verification failures
+./hart/s0058_length_of_last_word/mutants/18/Solution.java:16: verify: Validity is unknown - no model available method g0001_0100.s0058_length_of_last_word.Solution.lengthOfLastWord -  (possible timeout): (error "line 5989 column 18: model is not available")
+    public int lengthOfLastWord(String s) {
+               ^
+1 verification failure

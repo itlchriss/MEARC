@@ -3,6 +3,6 @@ ensures:
 - If the index expr_a is divisible by both 3 and 5 , the string at index expr_b in the string type_array_ result is equal to stry_a.
 - If the index expr_a is divisible by 3 , the string at index expr_b in the string type_array_ result is equal to stry_a.
 - If the index expr_a is divisible by 5 , the string at index expr_b in the string type_array_ result is equal to stry_a.
-- If none of the above conditions are true , the string at index expr_a in the string type_array_ result is equal to the string representation of expr_b.
+- If none of the above conditions are equal to the true literal , the string at index expr_a in the string type_array_ result is equal to the string representation of expr_b.
 requires:
 - The type_integer_ param_n_ is greater_than_or_equal to 1 and is less_than_or_equal to 10000.
