@@ -6,6 +6,7 @@ import unicodedata
 from nltk.internals import Counter
 # from .logic_parser import lexpr
 from logic_parser import lexpr
+import re
 
 _counter = Counter()
 
@@ -60,6 +61,10 @@ def new_variable(var):
     return v
 
 true_preds = ['True', 'TrueP']
+true_q = "(exists|all)\s+e\d*\.(True|TrueP)"
+
+def is_true_pred(expression):
+    return expression in true_preds or re.search(true_q, expression)
 
 def remove_true(expression):
     # Remove True and TrueP
@@ -101,11 +106,15 @@ def remove_true(expression):
             expr = OrExpression(left, right)
     elif isinstance(expression, ImpExpression):
         # True -> A <=> A
+        # A -> True <=> A
         left = expression.first
         right = expression.second
         left_str = str(left)
+        right_str = str(right).strip()  
         if left_str in true_preds:
             expr = remove_true(right)
+        elif is_true_pred(right_str):
+            expr = remove_true(left)
         else:
             left = remove_true(expression.first)
             right = remove_true(expression.second)
@@ -349,7 +358,8 @@ def demo(function):
         
 def normalisation(rawmr):
     # return removeBrackets(str(remove_true(lexpr(rawmr))))
-    return removeParentheses(str(remove_true(lexpr(rawmr))))
+    mr = removeParentheses(str(remove_true(lexpr(rawmr))))
+    return mr
 
 def __get_parentheses_matches__(text):
     istart = []  # stack of indices of opening parentheses
@@ -384,9 +394,7 @@ if __name__ == "__main__":
     import sys
     with open(sys.argv[1], 'r') as fp:
         data = fp.read()
-    data = normalisation(data)
+    data = normalisation(data.strip())
     with open(sys.argv[1], 'w') as fp:
         fp.write(data)
-        
-
-# print(normalisation(r'((exists x01.(_param_s_{NN}(x01) & _type_string_{NN}(x01) & exists e02.(_empty{JJ}(e02) & (Subj(e02) = x01))) & exists x03.(_param_k_{NN}(x03) & _type_integer_{NN}(x03) & exists e04.(_equal{JJ}(e04) & (Subj(e04) = x03) & exists x05.(_0{CD}(x05) & (Dat(e04) = x05))))) -> exists x06.(_result{NN}(x06) & _type_boolean_{NN}(x06) & exists e07.(_equal{JJ}(e07) & (Subj(e07) = x06) & exists x08.(exists e09.(_true{JJ}(e09) & (Subj(e09) = x08) & _literal{NN}(x08)) & (Dat(e07) = x08)))))'))
+    

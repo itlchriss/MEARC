@@ -1,13 +1,10 @@
 public class ChangeCase {
 
-  //@ requires(*The character parameter c is less than or equal to 'Z' and is greater than or equal to 'A'.*);
-  //@ ensures(*The result is less than or equal to 'z' and is greater than or equal to 'a'.*);
+  //@ ensures(*If the character parameter c is less than or equal to 'Z' and is greater than or equal to 'A', the result is less than or equal to 'z' and is greater than or equal to 'a'.*);
   //@ also
-  //@ requires(*The character parameter c is less than or equal to 'z' and is greater than or equal to 'a'.*);
-  //@ ensures(*The result is less than or equal to 'Z' and is greater than or equal to 'A'.*);
-  //@ also
-  //@ requires(*The character parameter c is not less than or equal to 'Z' and is not greater than or equal to 'A' and is not less than or equal to 'z' and is not greater than or equal to 'a'.*);
-  //@ ensures(*The character result is equal to the character parameter c.*);
+  //@ ensures(*If the character parameter c is less than or equal to 'z' and is greater than or equal to 'a', the result is less than or equal to 'Z' and is greater than or equal to 'A'.*);
+  //@ also 
+  //@ ensures(*If the character parameter c is not less than or equal to 'Z' and is not greater than or equal to 'A' and is not less than or equal to 'z' and is not greater than or equal to 'a', the character result is equal to the character parameter c.*);
   public char changeCase(char c) {
     char result = ' ';    
     if (c > 'z') {
