@@ -1,0 +1,11 @@
+- The string parameter `version1` and `version2` consist of only digits and '.'.
+- The string parameter `version1` and `version2` are valid version numbers.
+- The length of the string parameter `version1` and `version2` is less than or equal to 500.
+- The integer result is equal to -1, 1, or 0.
+- If the string parameter `version1` is equal to "1.01" and the string parameter `version2` is equal to "1.001", the integer result is equal to 0.
+- If the string parameter `version1` is equal to "1.0" and the string parameter `version2` is equal to "1.0.0", the integer result is equal to 0.
+- If the string parameter `version1` is equal to "0.1" and the string parameter `version2` is equal to "1.1", the integer result is equal to -1.
+- If the string parameter `version1` is equal to "1.0.1" and the string parameter `version2` is equal to "1", the integer result is equal to 1.
+- If the string parameter `version1` is equal to "7.5.2.4" and the string parameter `version2` is equal to "7.5.3", the integer result is equal to -1.
+
+Example

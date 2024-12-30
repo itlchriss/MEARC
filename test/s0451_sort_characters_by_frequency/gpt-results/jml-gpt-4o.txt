@@ -1,0 +1,69 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and any invariants that describe the behavior of the function. Here's a possible JML specification for the problem:
+
+```java
+/*@
+  @ requires s != null && s.length() >= 1 && s.length() <= 500000;
+  @ requires (\forall int i; 0 <= i < s.length(); 
+  @           ('A' <= s.charAt(i) && s.charAt(i) <= 'Z') || 
+  @           ('a' <= s.charAt(i) && s.charAt(i) <= 'z') || 
+  @           ('0' <= s.charAt(i) && s.charAt(i) <= '9'));
+  @
+  @ ensures (\forall int i, j; 0 <= i < j < \result.length(); 
+  @          (\num_of(\result, \result.charAt(i)) >= \num_of(\result, \result.charAt(j))) || 
+  @          (\num_of(\result, \result.charAt(i)) == \num_of(\result, \result.charAt(j)) && 
+  @           \result.indexOf(\result.charAt(i)) <= \result.indexOf(\result.charAt(j))));
+  @ ensures (\forall int i; 0 <= i < s.length(); 
+  @          \num_of(s, s.charAt(i)) == \num_of(\result, s.charAt(i)));
+  @
+  @ pure helper int \num_of(String str, char c) {
+  @     int count = 0;
+  @     for (int i = 0; i < str.length(); i++) {
+  @         if (str.charAt(i) == c) {
+  @             count++;
+  @         }
+  @     }
+  @     return count;
+  @ }
+  @
+  @ pure helper int \indexOf(String str, char c) {
+  @     for (int i = 0; i < str.length(); i++) {
+  @         if (str.charAt(i) == c) {
+  @             return i;
+  @         }
+  @     }
+  @     return -1;
+  @ }
+  @
+  @ pure helper boolean \isValidChar(char c) {
+  @     return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z') || ('0' <= c && c <= '9');
+  @ }
+  @
+  @ pure helper boolean \isValidString(String str) {
+  @     return str != null && str.length() >= 1 && str.length() <= 500000 &&
+  @            (\forall int i; 0 <= i < str.length(); \isValidChar(str.charAt(i)));
+  @ }
+  @
+  @ also
+  @ ensures \isValidString(\result);
+  @*/
+public String frequencySort(String s) {
+    // Implementation goes here
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**: 
+  - The input string `s` is not null and its length is between 1 and 500,000.
+  - Each character in `s` is either an uppercase letter, a lowercase letter, or a digit.
+
+- **Postconditions (`ensures`)**:
+  - The resulting string is sorted in decreasing order based on the frequency of characters. If two characters have the same frequency, their relative order in the result is not specified, but they must appear together.
+  - The frequency of each character in the result is the same as in the input string.
+  - The result is a valid string according to the constraints.
+
+- **Helper Methods**:
+  - `\num_of(String str, char c)`: Counts the occurrences of character `c` in string `str`.
+  - `\indexOf(String str, char c)`: Finds the first index of character `c` in string `str`.
+  - `\isValidChar(char c)`: Checks if a character is valid (uppercase, lowercase, or digit).
+  - `\isValidString(String str)`: Checks if a string is valid according to the problem constraints.

@@ -1,0 +1,8 @@
+
+The following code snippet implements an efficient solution for finding the length of the last word within a given string using Java's built-in methods. It leverages the `trim()` function to remove leading and trailing whitespace from the input string, followed by splitting it into individual words using the space character as the delimiter. By accessing the last element of the resulting array (which corresponds to the last word), we can directly obtain its length without iterating through each character manually. This approach ensures that the algorithm runs in linear time complexity, making it suitable for handling large strings efficiently. My implementation follows these steps precisely, ensuring accurate results while adhering to the constraints provided.
+```java
+public int lengthOfLastWord(String s) {
+    String[] words = s.trim().split(" ");
+    return words[words.length - 1].length();
+}
+```

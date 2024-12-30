@@ -1,0 +1,15 @@
+
+The following code implements a solution for validating whether a given string represents a valid numerical value according to specific rules defined in the problem statement. The algorithm uses regular expressions (regex) to match patterns that represent decimal numbers and integers with optional signs and exponent parts ('e'/'E'). By defining separate regex patterns for each component, we ensure that the entire input string must conform to the expected structure without any extraneous characters. This approach provides a concise way to check if the provided string is indeed a valid number as per the specified criteria. My code leverages Python's built-in re module to compile the regex patterns once and then apply them using the search method on the input string. If either pattern matches the whole string, it indicates that the input is a valid number; otherwise, it returns False. Here is my implementation:
+```python
+import re
+
+def isNumber(s: str) -> bool:
+    # Regex pattern for integer part
+    int_pattern = r'^[-+]?[0-9]+$'
+    
+    # Regex pattern for decimal part
+    dec_pattern = r'^[-+]?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(e[-+]?[0-9]+)?$'
+
+    # Check if the string matches either the integer or decimal pattern
+    return bool(re.search(int_pattern, s)) or bool(re.search(dec_pattern, s))
+```

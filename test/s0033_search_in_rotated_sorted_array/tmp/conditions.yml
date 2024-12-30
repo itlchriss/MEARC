@@ -1,9 +1,0 @@
-ensures:
-- If the type_integer_ result is equal to 4 and the type_integer_array_ param_nums_ is equal to arr_a and the type_integer_ param_target_ is equal to 0 , the type_integer_ result is equal to 4.
-- If the type_integer_ result is equal to negative 1 and the type_integer_array_ param_nums_ is equal to arr_a and the type_integer_ param_target_ is equal to 3 , the type_integer_ result is equal to negative 1.
-- If the type_integer_ result is equal to negative 1 and the type_integer_array_ param_nums_ is equal to arr_a and the type_integer_ param_target_ is equal to 0 , the type_integer_ result is equal to negative 1.
-requires:
-- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 5000 and is greater_than_or_equal to 1.
-- All values in the type_integer_array_ param_nums_ are unique.
-- All values in the type_integer_array_ param_nums_ are less_than_or_equal to 10000 and are greater_than_or_equal to negative 10000.
-- The type_integer_ param_target_ is less_than_or_equal to 10000 and is greater_than_or_equal to negative 10000.

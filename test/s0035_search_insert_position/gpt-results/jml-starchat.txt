@@ -1,0 +1,39 @@
+
+The following code snippet implements a binary search algorithm to find the insertion point for a given target integer within a sorted list of unique elements. The function returns the correct index based on whether or not the target exists within the array. My solution adheres to the specified O(log n) time complexity requirement by repeatedly dividing the search space in half until the desired element is located or determined to be absent from the array. This approach ensures that the search process can efficiently handle large input sizes while maintaining accuracy. Now let's take a look at my implementation using Java and JML annotations for formal specification.
+```java
+public class Solution {
+    /**
+     * Searches for the target value within a sorted array of distinct integers. 
+     * Returns the index if the target is found; otherwise, returns the index 
+     * where it would be if it were inserted in order.
+     * @param nums A sorted array of distinct integers (in ascending order).
+     * @param target An integer value to search for within 'nums'.
+     * @return The index of 'target' within 'nums', or the index where 'target' should be placed.
+     */
+    public int searchInsert(int[] nums, int target) {
+        // Define initial boundaries for binary search
+        int left = 0;
+        int right = nums.length - 1;
+
+        // Perform binary search
+        while (left <= right) {
+            int mid = left + ((right - left) >>> 1);
+
+            // Check if middle element matches target
+            if (nums[mid] == target)
+                return mid;
+            
+            // Narrow down search range based on comparison result
+            else if (nums[mid] < target) 
+                left = mid + 1; 
+            else 
+                right = mid - 1; 
+        }
+        
+        // Return the position where target should be inserted
+        return left; 
+    }
+
+    /*... Additional test cases... */
+}
+```

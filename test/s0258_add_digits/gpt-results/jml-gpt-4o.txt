@@ -1,0 +1,12 @@
+```jml
+/*@
+  @ requires 0 <= num && num <= Integer.MAX_VALUE;
+  @ ensures \result == (num == 0 ? 0 : (num % 9 == 0 ? 9 : num % 9));
+  @*/
+public int addDigits(int num) {
+    if (num == 0) {
+        return 0;
+    }
+    return num % 9 == 0 ? 9 : num % 9;
+}
+```

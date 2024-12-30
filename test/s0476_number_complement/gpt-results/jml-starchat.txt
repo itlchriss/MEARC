@@ -1,0 +1,23 @@
+
+The following code snippet presents a solution for finding the bitwise complement of a given positive integer within the constraints specified by LeetCode problem number 476. It employs Java's built-in Integer class methods along with bit manipulation techniques to achieve the desired result efficiently. My implementation follows these steps:
+
+1. Initialize a variable `mask` with value 1. This mask will be used to isolate individual bits from the input number.
+2. Iterate while the masked value (`num & mask`) does not equal the original number itself. In each iteration, double the size of the mask by left shifting it one position.
+3. After obtaining the largest power of two that is less than or equal to the input number, subtract this value from the input number to obtain the inverted part of the binary representation without considering leading zeros.
+4. Finally, perform a bitwise OR operation between the inverted part obtained above and the calculated mask minus one. This results in the final complemented number, taking into account both the inverted bits and ensuring no leading zeros are present.
+```java
+public int findComplement(int num) {
+    int mask = 1;
+
+    // Find largest power of 2 smaller than or equal to n
+    while ((num & mask)!= num) {
+        mask <<= 1;
+    }
+
+    // Subtract mask from num to invert bits except leading ones
+    int invertedPart = num - mask;
+
+    // Perform bitwise OR on invertedPart and mask - 1 to ensure no leading zeros
+    return invertedPart | (mask - 1);
+}
+```

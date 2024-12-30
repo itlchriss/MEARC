@@ -1,0 +1,17 @@
+
+The following code snippet implements a Java method using a HashMap data structure to solve the classic problem of finding two numbers within an array whose sum equals a given target value. The approach iterates through the array once while maintaining a record of previously encountered elements and their indices. If at any point during iteration, the difference between the current number and the target is found in the map (indicating another pair has been identified), then those indices are returned as the result. This efficient solution ensures a linear runtime complexity of O(n) where n represents the size of the input array. My implementation adheres strictly to standard coding conventions for readability and maintainability. Here's my solution encapsulated within the provided context:
+```java
+public int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> numMap = new HashMap<>();
+
+    for (int i = 0; i < nums.length; ++i) {
+        if (numMap.containsKey(target - nums[i])) {
+            return new int[]{numMap.get(target - nums[i]), i};
+        }
+
+        numMap.put(nums[i], i);
+    }
+
+    throw new IllegalArgumentException("No two sum solution"); // Should never reach here
+}
+```

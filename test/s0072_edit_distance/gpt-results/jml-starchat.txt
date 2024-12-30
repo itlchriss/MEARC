@@ -1,0 +1,32 @@
+
+The following code implements an algorithm that calculates the Levenshtein distance between two input strings using dynamic programming. The solution adheres to Java's syntax conventions and includes comments for clarity. My implementation follows the standard approach where we create a matrix to store intermediate results, iteratively updating each cell based on the cost of editing operations. Finally, the bottom-right corner of the matrix contains the minimal edit distance between the given words. Here is my solution:
+```java
+public int minDistance(String word1, String word2) {
+    // Initialize dimensions of DP table
+    int m = word1.length();
+    int n = word2.length();
+
+    // Create DP table initialized with zeros
+    int[][] dp = new int[m + 1][n + 1];
+
+    // Fill first row and column with incremental values
+    for (int i = 0; i <= m; ++i)
+        dp[i][0] = i;
+    for (int j = 0; j <= n; ++j)
+        dp[0][j] = j;
+
+    // Iterate through both strings and fill up DP table
+    for (int i = 1; i <= m; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            if (word1.charAt(i - 1) == word2.charAt(j - 1))
+                dp[i][j] = dp[i - 1][j - 1]; // No operation needed when characters match
+            else
+                dp[i][j] = Math.min(dp[i - 1][j], Math.min(dp[i][j - 1], dp[i - 1][j - 1])) + 1;
+                    // Choose the minimum value from deletion, insertion or replacement
+        }
+    }
+
+    // Return final result stored at bottom right corner of DP table
+    return dp[m][n];
+}
+```

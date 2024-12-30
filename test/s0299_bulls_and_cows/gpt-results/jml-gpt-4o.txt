@@ -1,0 +1,33 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for the method that solves the problem. Here's how you might express this in JML:
+
+```java
+//@ requires secret != null && guess != null;
+//@ requires secret.length() == guess.length();
+//@ requires secret.length() >= 1 && secret.length() <= 1000;
+//@ requires (\forall int i; 0 <= i && i < secret.length(); Character.isDigit(secret.charAt(i)));
+//@ requires (\forall int i; 0 <= i && i < guess.length(); Character.isDigit(guess.charAt(i)));
+//@ ensures \result != null;
+//@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) == 'A' || \result.charAt(i) == 'B' || Character.isDigit(\result.charAt(i)));
+//@ ensures (\result.indexOf('A') > 0 && \result.indexOf('B') > \result.indexOf('A'));
+//@ ensures (\result.indexOf('A') == 1 && \result.indexOf('B') == 3);
+//@ ensures (\result.length() == 4);
+public String getHint(String secret, String guess) {
+    // Implementation of the method
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - `secret` and `guess` are not null.
+  - `secret` and `guess` have the same length.
+  - The length of `secret` and `guess` is between 1 and 1000.
+  - All characters in `secret` and `guess` are digits.
+
+- **Postconditions (`ensures`)**:
+  - The result is not null.
+  - The result contains only digits and the characters 'A' and 'B'.
+  - The character 'A' appears at index 1 and 'B' appears at index 3 in the result.
+  - The result has a length of 4, formatted as "xAyB".
+
+This JML specification describes the constraints and expected behavior of the `getHint` method, ensuring that it adheres to the problem's requirements.

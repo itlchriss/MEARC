@@ -1,0 +1,21 @@
+
+The following code snippet implements a solution for counting the occurrences of digit '1' across all numbers from zero up to and including a given input value, `n`. The algorithm utilizes a divide-and-conquer approach that breaks down the problem into smaller subproblems. It iteratively calculates the contribution of each significant position (ones place, tens place, hundreds place, etc.) towards the overall count of digit '1's. This is achieved by considering three factors: the current digit at the considered position (`digit`), the remaining digits after removing the current one (`remainingDigits`), and whether the current digit contributes more than one occurrence of '1'. By carefully handling these cases, we can efficiently compute the cumulative sum of '1's without having to iterate through every single number within the range. My implementation below encapsulates this logic in a recursive function named `countDigitOneRecursive`, which takes two parameters—the current number being processed (`num`) and the base multiplier representing the significance of the current digit position (`base`). The main driver function, `countDigitOnes`, initializes the recursion with appropriate arguments and returns the final result.
+```python
+def countDigitOne(n):
+    if n == 0:
+        return 0
+
+    def countDigitOneRecursive(num, base):
+        if num == 0:
+            return 0
+
+        digit = num % 10
+        remainingDigits = num // 10
+
+        onesCount = remainingDigits * base + min((digit + 1), 1) * max(0, base - 1)
+        sameDigitContribution = max(0, digit - 1) * base
+
+        return onesCount + sameDigitContribution + countDigitOneRecursive(remainingDigits, base * 10)
+
+    return countDigitOneRecursive(n, 1)
+```

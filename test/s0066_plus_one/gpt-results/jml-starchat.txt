@@ -1,0 +1,18 @@
+
+The following code snippet presents my solution for incrementing a large integer represented as an array of digits using Java's syntax. My approach involves iterating through the digits array starting from its last element (least significant). If we encounter a non-nine digit, we simply increment it and break out of the loop since no further carryover will occur. However, if all digits were nines, then after the final iteration, we need to add a new '1' at the beginning of the array to account for the overflow caused by adding one to the largest possible number composed solely of nines. This method ensures that the returned array accurately reflects the incremented value while adhering to the constraints provided in the problem statement. Here is my implementation:
+```java
+public int[] plusOne(int[] digits) {
+    for (int i = digits.length - 1; i >= 0; --i) {
+        if (digits[i] < 9) {
+            ++digits[i];
+            return digits;
+        }
+
+        digits[i] = 0;
+    }
+
+    int[] res = new int[digits.length + 1];
+    res[0] = 1;
+    return res;
+}
+```

@@ -1,0 +1,14 @@
+
+```python
+def maxRotateFunction(nums):
+    totalSum = sum(nums)
+    currentValue = sum([i * num for i, num in enumerate(nums)])
+    maxValue = currentValue
+
+    for i in range(len(nums)):
+        currentValue += totalSum - len(nums) * nums[-1]
+        maxValue = max(maxValue, currentValue)
+        nums.insert(0, nums.pop())
+    
+    return maxValue
+```

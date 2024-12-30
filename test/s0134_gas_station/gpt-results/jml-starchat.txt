@@ -1,0 +1,22 @@
+
+The following code snippet presents my solution for determining whether it's possible to complete a single loop through all gas stations given their respective fuel capacities (`gas`) and driving expenses (`cost`). This problem is approached using Kadane’s algorithm combined with a greedy strategy that keeps track of the minimum cumulative deficit encountered during traversal. My implementation iterates over each potential starting point, simulating the journey while maintaining running totals for current gas reserves and total expenditure. When the simulation reaches a negative balance, indicating insufficient gas, we reset our calculations by updating the starting position and clearing any accumulated deficits. Once we've completed a full cycle without encountering a deficit, the function returns the initial starting point; otherwise, it signals impossibility by returning `-1`. Here's how I implemented this logic within Python:
+```python
+def canCompleteCircuit(gas, cost):
+    min_deficit = float('inf')
+    start = 0
+    curr_tank = 0
+    total_gas = sum(gas)
+    total_cost = sum(cost)
+    
+    if total_gas < total_cost:
+        return -1
+        
+    for i in range(len(gas)):
+        curr_tank += gas[i] - cost[i]
+        
+        if curr_tank < min_deficit:
+            min_deficit = curr_tank
+            start = i + 1
+            
+    return start % len(gas)
+```

@@ -1,0 +1,16 @@
+
+The above problem description is translated from LeetCode's original problem ([Compare Version Numbers](https://leetcode.com/problems/compare-version-numbers/)) where you need to implement a function to solve the problem. Your task now is to write corresponding JML (Java Modeling Language) specifications for your solution.
+
+JML is a formal specification language developed specifically for Java programs. It provides a set of annotations that help developers define preconditions, postconditions, invariant properties, and behavioral contracts for methods and classes. These specifications serve as documentation and aid in verifying the correctness and reliability of the code.
+
+Your JML specifications should include the following components:
+
+1. Precondition: Specify the conditions under which the method should execute correctly. In the context of comparing version numbers, the precondition might involve checking if the input strings conform to the expected format.
+
+2. Postcondition: Define what the method guarantees after execution. For instance, when comparing version numbers, the postcondition could state that the returned result will always be either -1, 0, or 1 based on whether version1 is less than, equal to, or greater than version2, respectively.
+
+3. Behavioral Contract: Describe the expected behavior of the method regarding its inputs and outputs. You can use JML expressions like `@pure`, `@monotonic_with`, etc., to express specific behaviors.
+
+4. Class Invariants: Provide constraints that must hold true for all instances of the class. For example, in the case of version numbers, an invariant might be that each revision is non-negative and cannot exceed 999 due to the maximum length constraint.
+
+Write the JML specifications for the `compareVersionNumbers` method considering the provided examples and requirements.

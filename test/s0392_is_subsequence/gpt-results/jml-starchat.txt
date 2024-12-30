@@ -1,0 +1,13 @@
+
+The following code snippet presents my solution for determining whether a given string `s` is a subsequence of another string `t`. The algorithm I've implemented uses a simple iterative approach with two pointers—one traverses through `s` (`si`), and the other moves along `t` (`ti`). By comparing each character in both sequences, we can determine if `s` forms a valid subsequence within `t`. If at any point the current character in `s` does not match the corresponding character in `t`, the pointer advances in `t`; otherwise, it progresses in both sequences simultaneously until either sequence ends. This ensures that all occurrences of characters in `s` appear consecutively in `t`. My code returns `true` when every character in `s` has been found in order within `t`, indicating that `s` is indeed a subsequence; otherwise, it returns `false`. Here's my implementation in Python:
+```python
+def isSubsequence(s: str, t: str) -> bool:
+    si, ti = 0, 0
+
+    while si < len(s) and ti < len(t):
+        if s[si] == t[ti]:
+            si += 1
+        ti += 1
+    
+    return si == len(s)
+```

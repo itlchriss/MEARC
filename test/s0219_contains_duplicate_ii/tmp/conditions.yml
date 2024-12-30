@@ -1,7 +1,0 @@
-ensures:
-- If the type_boolean_ result is equal to the true literal , there exist 2 unique indices expr_a and expr_b in the type_integer_array_ param_nums_ such that the values at these indices are equal and the absolute difference between expr_c and expr_d is less_than_or_equal to the type_integer_ param_k_.
-- If the type_boolean_ result is equal to the false literal , exist no 2 unique indices expr_a and expr_b in the type_integer_array_ param_nums_ such that the values at these indices are equal and the absolute difference between expr_c and expr_d is less_than_or_equal to the type_integer_ param_k_.
-requires:
-- The length of the type_integer_array_ param_nums_ is less_than_or_equal to 100000 and is greater_than_or_equal to 1.
-- All values in the type_integer_array_ param_nums_ are less_than_or_equal to 1000000000 and are greater_than_or_equal to negative 1000000000.
-- The type_integer_ param_k_ is less_than_or_equal to 100000 and is greater_than_or_equal to 0.

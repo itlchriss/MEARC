@@ -475,6 +475,8 @@ struct queue* readSI(char *dstfilepaths) {
                                 si->type = SI_INT_TYPE_EXPR;
                             } else if (strcmp(value, "modifier") == 0) {
                                 si->type = SI_INT_TYPE_MODIFIER;
+                            } else if (strcmp(value, "function") == 0) {
+                                si->type = SI_INT_TYPE_FUNCTION;
                             } else if (strcmp(value, "java_method") == 0) { 
                                 si->type = SI_INT_TYPE_JAVA_METHOD;
                             } else if (strcmp(value, "java_method_chain") == 0) { 

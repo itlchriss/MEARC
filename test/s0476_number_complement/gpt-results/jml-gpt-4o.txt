@@ -1,0 +1,30 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the behavior of the method that computes the complement of a given integer. Here's how you can express this in JML:
+
+```java
+public class NumberComplement {
+
+    /*@ 
+      @ public normal_behavior
+      @ requires 1 <= num && num < Math.pow(2, 31);
+      @ ensures \result == (\bigint)Integer.parseInt(
+      @     new StringBuilder(Integer.toBinaryString(num))
+      @         .toString()
+      @         .replace('0', '2')
+      @         .replace('1', '0')
+      @         .replace('2', '1'), 2);
+      @*/
+    public static int findComplement(int num) {
+        // Implementation goes here
+    }
+}
+```
+
+### Explanation:
+
+- **Requires Clause**: The `requires` clause specifies the precondition for the method, which is that the input `num` must be between 1 and \(2^{31} - 1\), inclusive. This is derived from the problem constraints.
+
+- **Ensures Clause**: The `ensures` clause specifies the postcondition, which describes the expected result of the method. It uses Java's `Integer.toBinaryString` to convert the number to its binary representation, then flips the bits by replacing '0' with '1' and '1' with '0'. The result is then parsed back to an integer using `Integer.parseInt`.
+
+- **Implementation Note**: The actual implementation of the `findComplement` method is not provided here, as the focus is on specifying the behavior using JML. The implementation would involve converting the number to its binary form, flipping the bits, and converting it back to an integer.
+
+This JML specification provides a formal contract for the `findComplement` method, ensuring that it behaves as expected according to the problem description.

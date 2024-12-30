@@ -1,0 +1,19 @@
+Certainly! Below is the JML (Java Modeling Language) specification for the given problem statement:
+
+```java
+/*@
+  @ requires num > 0 && num <= Integer.MAX_VALUE;
+  @ ensures \result == true <==> (\exists int i; 1 <= i && i * i == num);
+  @*/
+public boolean isPerfectSquare(int num) {
+    // Implementation goes here
+}
+```
+
+### Explanation:
+
+- **`requires num > 0 && num <= Integer.MAX_VALUE;`**: This precondition specifies that the input `num` must be a positive integer and should not exceed the maximum value for an integer in Java, which is `2^31 - 1`.
+
+- **`ensures \result == true <==> (\exists int i; 1 <= i && i * i == num);`**: This postcondition specifies that the function should return `true` if and only if there exists an integer `i` such that `i * i` equals `num`. Otherwise, it should return `false`.
+
+This JML specification captures the essence of the problem statement, ensuring that the function correctly identifies whether a given number is a perfect square without using any built-in library functions like `sqrt`.

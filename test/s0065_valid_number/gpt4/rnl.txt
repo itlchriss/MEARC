@@ -1,0 +1,10 @@
+Method behavioural specifications for the given context:
+
+- The length of the string parameter `s` is less than or equal to 20 and is greater than or equal to 1.
+- The string parameter `s` consists of only English letters (both uppercase and lowercase), digits (`0-9`), plus `'+'`, minus `'-'`, or dot `'.'`.
+- If the boolean result is equal to the true literal, the string parameter `s` represents a valid number according to the specified rules.
+- If the boolean result is equal to the false literal, the string parameter `s` does not represent a valid number according to the specified rules.
+- If the string parameter `s` is equal to "0", the boolean result is equal to the true literal.
+- If the string parameter `s` is equal to "e", the boolean result is equal to the false literal.
+- If the string parameter `s` is equal to ".", the boolean result is equal to the false literal.
+- If the string parameter `s` is equal to ".1", the boolean result is equal to the true literal.

@@ -1,0 +1,54 @@
+
+The following code snippet presents my solution for finding the maximum length of a contiguous subsequence with consecutive numbers within an unordered list using Java and the JML specification language for formal verification. This approach leverages a HashSet data structure to efficiently track unique numbers while iterating through the input array once (achieving O(n) complexity). By maintaining two pointers—one representing the start of each potential sequence (`start`) and another tracking the end (`end`), we can identify sequences of consecutive numbers and update our result accordingly. My implementation ensures that all critical operations are properly documented via JML annotations, which serve as specifications for verifying the correctness of the program's behavior at runtime. Here's how it works:
+
+1. Initialize variables such as `maxLen` to keep track of the maximum length found so far and `set` to store unique numbers from the given array.
+2. Iterate over each number in the array. If the current number has not been encountered before (not present in the set), perform the following steps:
+   - Update `start` by moving backwards until reaching a non-consecutive number or beginning of the array.
+   - Update `end` by moving forward until reaching a non-consecutive number or end of the array.
+   - Calculate the length of the current sequence (`len = end - start + 1`).
+   - Update `maxLen` if necessary.
+   - Add all numbers in the identified range to the set to mark them as visited.
+3. Return `maxLen` after processing all numbers in the array.
+```java
+import java.util.*;
+
+public class Solution {
+    public int longestConsecutive(int[] nums) {
+        // Define preconditions for method arguments
+        assert nums!= null : "Array cannot be null";
+
+        Set<Integer> set = new HashSet<>();
+        int maxLen = 0;
+        
+        for (int num : nums) {
+            // Skip already processed numbers
+            if (!set.contains(num)) {
+                int start = num;
+                
+                // Move backward to find the starting point of the sequence
+                while (set.contains(--start));
+
+                int end = num;
+                
+                // Move forward to find the ending point of the sequence
+                while (set.contains(++end));
+
+                int len = end - start + 1;
+                maxLen = Math.max(maxLen, len);
+
+                // Mark all numbers in the identified sequence as processed
+                for (int i = start; i < end; ++i)
+                    set.add(i);
+            }
+        }
+        
+        return maxLen;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.longestConsecutive(new int[]{100, 4, 200, 1, 3, 2})); // Output: 4
+        System.out.println(sol.longestConsecutive(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1})); // Output: 9
+    }
+}
+```

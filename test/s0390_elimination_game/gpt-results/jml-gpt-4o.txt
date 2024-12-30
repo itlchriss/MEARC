@@ -1,0 +1,25 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the behavior of the method that solves the problem. JML is used to specify the preconditions, postconditions, and invariants for Java methods. Below is a JML specification for a Java method that solves the "Elimination Game" problem:
+
+```java
+//@ public normal_behavior
+//@ requires 1 <= n && n <= 1000000000;
+//@ ensures \result == (\exists int[] arr; (\forall int i; 0 <= i && i < n; arr[i] == i + 1) && (\forall int step; step >= 0; (\forall int i; 0 <= i && i < arr.length; arr[i] == (step % 2 == 0 ? arr[2 * i + 1] : arr[arr.length - 2 * i - 1]))); arr.length == 1; \result == arr[0]);
+public int lastRemaining(int n) {
+    // Method implementation goes here
+}
+```
+
+### Explanation:
+
+- **Precondition (`requires`)**: The input `n` must be between 1 and 1,000,000,000 inclusive. This is derived from the problem constraints.
+
+- **Postcondition (`ensures`)**: The result of the method (`\result`) is the last remaining number after applying the elimination process described in the problem. The postcondition uses a combination of existential and universal quantifiers to express the transformation of the array `arr` through the elimination steps:
+  - `(\exists int[] arr; ...)` specifies that there exists an array `arr` that initially contains all integers from 1 to `n`.
+  - `(\forall int i; 0 <= i && i < n; arr[i] == i + 1)` ensures that the initial array `arr` is filled with numbers from 1 to `n`.
+  - `(\forall int step; step >= 0; ...)` describes the elimination process:
+    - For even `step` values, the array is reduced by keeping every second element starting from the first.
+    - For odd `step` values, the array is reduced by keeping every second element starting from the last.
+  - `arr.length == 1` ensures that the process continues until only one element remains in the array.
+  - `\result == arr[0]` specifies that the result of the method is the last remaining element in the array.
+
+This JML specification provides a formal description of the method's expected behavior, which can be used for verification and documentation purposes.

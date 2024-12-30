@@ -1,0 +1,36 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants that describe the behavior of the function that solves this problem. Here's a possible JML specification for a method that solves the "Next Greater Element I" problem:
+
+```java
+/*@
+  requires nums1 != null && nums2 != null;
+  requires nums1.length >= 1 && nums1.length <= nums2.length && nums2.length <= 1000;
+  requires (\forall int i; 0 <= i < nums1.length; 0 <= nums1[i] && nums1[i] <= 10000);
+  requires (\forall int i; 0 <= i < nums2.length; 0 <= nums2[i] && nums2[i] <= 10000);
+  requires (\forall int i, j; 0 <= i < nums1.length && 0 <= j < nums2.length; nums1[i] == nums2[j] ==> (\exists int k; 0 <= k < nums2.length; nums2[k] == nums1[i]));
+  requires (\forall int i, j; 0 <= i < nums1.length && 0 <= j < nums1.length; i != j ==> nums1[i] != nums1[j]);
+  requires (\forall int i, j; 0 <= i < nums2.length && 0 <= j < nums2.length; i != j ==> nums2[i] != nums2[j]);
+  ensures \result.length == nums1.length;
+  ensures (\forall int i; 0 <= i < nums1.length; 
+             (\exists int j; 0 <= j < nums2.length; nums1[i] == nums2[j] ==> 
+               (\exists int k; j < k < nums2.length; nums2[k] > nums2[j] ==> \result[i] == nums2[k]) || 
+               (\forall int k; j < k < nums2.length; nums2[k] <= nums2[j] ==> \result[i] == -1)));
+@*/
+public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+    // Method implementation goes here
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`):**
+  - `nums1` and `nums2` are not null.
+  - The length of `nums1` is between 1 and the length of `nums2`, and the length of `nums2` is at most 1000.
+  - All elements in `nums1` and `nums2` are between 0 and 10,000.
+  - Every element in `nums1` appears in `nums2`.
+  - All elements in `nums1` and `nums2` are unique.
+
+- **Postconditions (`ensures`):**
+  - The result array has the same length as `nums1`.
+  - For each element in `nums1`, if it appears at index `j` in `nums2`, the result for that element is the first greater element to the right in `nums2`, or `-1` if no such element exists.
+
+This JML specification provides a formal contract for the `nextGreaterElement` method, ensuring that it behaves as expected according to the problem description.

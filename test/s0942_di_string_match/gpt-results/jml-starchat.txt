@@ -1,0 +1,18 @@
+
+The following code implements an algorithm that constructs a unique permutation based on the given increasing-decreasing pattern described by the input string `s`. The solution leverages two pointers—one at the beginning (`inc`) representing the smallest available number for ascending segments, and another one at the end (`dec`) indicating the largest available number for descending segments. By iterating through each character in the string, we incrementally build up our result array according to whether we encounter an 'I' (indicating an increase) or a 'D' (indicating a decrease). This process ensures that the resulting sequence adheres strictly to the specified order defined by the input string while maintaining uniqueness amongst possible permutations. My implementation follows these steps precisely, ensuring optimal performance with time complexity O(n), where n represents the length of the input string. Now let's take a look at my solution below.
+```python
+def diStringMatch(s):
+    inc, dec = 0, len(s)
+    res = []
+
+    for c in s:
+        if c == 'I':
+            res.append(inc)
+            inc += 1
+        else:
+            res.append(dec)
+            dec -= 1
+    
+    res.append(inc)
+    return res
+```

@@ -1,0 +1,44 @@
+
+The following code implements a solution for finding the maximum product of a contiguous subarray within a given list of integers using Java Modeling Language (JML). This algorithm leverages dynamic programming principles by maintaining two arrays—one tracking the maximum product ending at each index (`maxProd`) and another for the minimum product (`minProd`). As we iterate through the input array, we update these values based on whether the current element multiplies with the previous max/min value yields a larger or smaller product than just considering the current element itself. By keeping track of both positive and negative extremes, our approach ensures correctness even when encountering sequences of alternating signs. At the end, we scan the `maxProd` array to identify the overall maximum product found throughout the entire sequence. My implementation below adheres strictly to the syntax rules of JML annotations while providing clear explanations of the logic behind each step.
+```java
+public class Solution {
+    public int maxProduct(int[] nums) {
+        // Initialize variables for tracking maximum and minimum products
+        //@ invariant minProd!= null && maxProd!= null;
+        int n = nums.length;
+        int[] minProd = new int[n];
+        int[] maxProd = new int[n];
+
+        // Base case initialization
+        minProd[0] = maxProd[0] = nums[0];
+        
+        // Iterate over the remaining elements
+        for (int i = 1; i < n; ++i) {
+            // Calculate potential next maximum and minimum products
+            int tempMax = Math.max(Math.max(nums[i], nums[i]*maxProd[i - 1]), nums[i]*minProd[i - 1]);
+            int tempMin = Math.min(Math.min(nums[i], nums[i]*maxProd[i - 1]), nums[i]*minProd[i - 1]);
+
+            // Update maximum and minimum product arrays
+            maxProd[i] = tempMax;
+            minProd[i] = tempMin;
+        }
+
+        // Find the maximum product from all computed maximum products
+        int ans = Integer.MIN_VALUE;
+        for (int val : maxProd) {
+            if (val > ans)
+                ans = val;
+        }
+
+        // Return the final result
+        return ans;
+    }
+
+    // Test cases
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.maxProduct(new int[]{2, 3, -2, 4})); // Expected output: 6
+        System.out.println(sol.maxProduct(new int[]{-2, 0, -1}));    // Expected output: 0
+    }
+}
+```

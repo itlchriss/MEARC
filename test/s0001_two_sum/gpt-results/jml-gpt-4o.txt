@@ -1,0 +1,16 @@
+```jml
+/*@
+  requires nums != null;
+  requires nums.length >= 2 && nums.length <= 10000;
+  requires (\forall int i; 0 <= i < nums.length; -1000000000 <= nums[i] <= 1000000000);
+  requires -1000000000 <= target <= 1000000000;
+  ensures \result.length == 2;
+  ensures 0 <= \result[0] < nums.length && 0 <= \result[1] < nums.length;
+  ensures \result[0] != \result[1];
+  ensures nums[\result[0]] + nums[\result[1]] == target;
+  ensures (\forall int i, j; 0 <= i < j < nums.length; nums[i] + nums[j] == target ==> (i == \result[0] && j == \result[1]) || (i == \result[1] && j == \result[0]));
+@*/
+public int[] twoSum(int[] nums, int target) {
+    // Implementation goes here
+}
+```

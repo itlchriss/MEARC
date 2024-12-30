@@ -1,0 +1,26 @@
+
+
+The following code snippet implements a function that converts an integer into its base 7 representation. It uses the built-in Python library functions for division and remainder operations, which are essential in converting decimal numbers to other bases. The algorithm iteratively divides the input number by 7 until it reaches zero or becomes negative; at each step, the remainder is appended to the resultant string, ensuring correct order from least significant digit (rightmost) to most significant digit (leftmost). If the original number was negative, the resulting string is prefixed with a minus sign ('-') before returning as per the problem's requirements. My solution ensures efficient computation within the given constraints while adhering strictly to the specified output format.
+```python
+def convertToBase7(num):
+    if not num:
+        return '0'
+
+    res = ''
+    neg = False
+    
+    if num < 0:
+        neg = True
+        num *= -1
+        
+    while num > 0:
+        res += str(num % 7)
+        num //= 7
+
+    if neg:
+        res = '-' + res[::-1]
+    else:
+        res = res[::-1]
+
+    return res
+```

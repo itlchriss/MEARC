@@ -1,0 +1,83 @@
+BASE=./test
+
+if [ "$#" -eq 1 ]; then
+for entry in `find $BASE/s$1* -type f -name "Solution.java" | sort`
+do    
+    filename=`echo $entry | sed 's/.*\///'`
+    index=`echo $filename | sed 's/\..*//'`
+    folder=`echo $entry | sed "s/\/$filename//"`
+    rm -rf $folder/tmp/*
+    echo '----------------------------------'
+    # python scripts/insertcomment.py $folder
+    echo "./mearc $entry"
+    ./mearc $entry
+    echo '----------------------------------'
+done
+else
+
+# for d in `find ./datasets/leetcode-behavioural -type d -name "s*" | sort`
+# do
+#     python scripts/insertcomment.py $d
+# done
+
+
+# rm $BASE/*/tmp/*
+# rm $BASE/*/jml/*
+
+# for entry in `find $BASE/s* -type f -name "Solution.java" | sort`
+for entry in `find $BASE/s*/gpt4 -type f -name "Solution.java" | sort`
+do
+       filename=`echo $entry | sed 's/.*\///'`
+       index=`echo $filename | sed 's/\..*//'`
+       folder=`echo $entry | sed "s/\/$filename//"`
+       mkdir -p $folder/tmp
+       mkdir -p $folder/jml
+    #    python scripts/insertcomment.py $folder
+       echo "./mearc $entry"
+       ./mearc $entry &> gpt4log
+done
+
+for entry in `find $BASE/s*/starchat -type f -name "Solution.java" | sort`
+do
+       filename=`echo $entry | sed 's/.*\///'`
+       index=`echo $filename | sed 's/\..*//'`
+       folder=`echo $entry | sed "s/\/$filename//"`
+       mkdir -p $folder/tmp
+       mkdir -p $folder/jml
+    #    python scripts/insertcomment.py $folder
+       echo "./mearc $entry"
+       ./mearc $entry &> starchatlog
+done
+
+for entry in `find $BASE/s*/gpt35 -type f -name "Solution.java" | sort`
+do
+       filename=`echo $entry | sed 's/.*\///'`
+       index=`echo $filename | sed 's/\..*//'`
+       folder=`echo $entry | sed "s/\/$filename//"`
+       mkdir -p $folder/tmp
+       mkdir -p $folder/jml
+    #    python scripts/insertcomment.py $folder
+       echo "./mearc $entry"
+       ./mearc $entry &> gpt35log
+done
+
+# for entry in `find $BASE/s*/gpt4 -type f -name "Solution.java" | sort`
+# do
+#        filename=`echo $entry | sed 's/.*\///'`
+#        index=`echo $filename | sed 's/\..*//'`
+#        folder=`echo $entry | sed "s/\/$filename//"`
+#     #    python scripts/insertcomment.py $folder
+#        echo "./mearc $entry"
+#     #    ./mearc $entry
+# done
+fi
+
+# for entry in `find ./datasets/leetcode-behavioural -type f -name "*.mr" | sort`
+# do
+#     # filename=`echo $entry | sed 's/.*\///'`
+#     # index=`echo $filename | sed 's/\..*//'`
+#     # folder=`echo $entry | sed "s/\/$filename//"`
+#     echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
+#     # ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
+#     # echo '----------------------------------'
+# done

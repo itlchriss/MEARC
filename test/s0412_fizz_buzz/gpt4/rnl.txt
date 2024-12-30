@@ -1,0 +1,10 @@
+- The integer parameter `n` is less than or equal to 10000 and is greater than or equal to 1.
+- The length of the list result is equal to the integer parameter `n`.
+- All values in the list result are strings.
+- If the integer parameter `n` is equal to 3, the list result is equal to ["1", "2", "Fizz"].
+- If the integer parameter `n` is equal to 5, the list result is equal to ["1", "2", "Fizz", "4", "Buzz"].
+- If the integer parameter `n` is equal to 15, the list result is equal to ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"].
+- For any index `i` in the list result, if `i + 1` is divisible by 3 and 5, the value at index `i` is "FizzBuzz".
+- For any index `i` in the list result, if `i + 1` is divisible by 3 and not by 5, the value at index `i` is "Fizz".
+- For any index `i` in the list result, if `i + 1` is divisible by 5 and not by 3, the value at index `i` is "Buzz".
+- For any index `i` in the list result, if `i + 1` is not divisible by 3 or 5, the value at index `i` is the string representation of `i + 1`.

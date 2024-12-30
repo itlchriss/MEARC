@@ -1,0 +1,41 @@
+
+```python
+def calculate(s):
+    def helper():
+        num, sign = 0, '+'
+        while i < len(s):
+            if s[i].isdigit():
+                num = num * 10 + int(s[i])
+            elif s[i]!= ':
+                if sign == '+':
+                    stack.append(num)
+                elif sign == '-':
+                    stack.append(-num)
+                elif sign == '*':
+                    stack.append(stack.pop() * num)
+                else:
+                    temp = stack.pop()
+                    if temp // num >= 0 or (temp % num == 0):
+                        stack.append(temp // num)
+                    else:
+                        stack.append(temp // num + 1)
+                num, sign = 0, s[i]
+            i += 1
+        if sign == '+':
+            stack.append(num)
+        elif sign == '-':
+            stack.append(-num)
+        elif sign == '*':
+            stack.append(stack.pop() * num)
+        else:
+            temp = stack.pop()
+            if temp // num >= 0 or (temp % num == 0):
+                stack.append(temp // num)
+            else:
+                stack.append(temp // num + 1)
+
+    i, stack = 0, []
+    helper()
+    result = sum(stack)
+    return result
+```

@@ -1,0 +1,32 @@
+```jml
+/*@ requires bills != null;
+  @ requires bills.length >= 1 && bills.length <= 100000;
+  @ requires (\forall int i; 0 <= i < bills.length; bills[i] == 5 || bills[i] == 10 || bills[i] == 20);
+  @ ensures \result == true <==> (\forall int i; 0 <= i < bills.length; 
+  @     (\exists int[] change; 
+  @         (\forall int j; 0 <= j < change.length; change[j] == 5 || change[j] == 10) &&
+  @         (\sum int j; 0 <= j < change.length; change[j]) == bills[i] - 5));
+  @*/
+public boolean lemonadeChange(int[] bills) {
+    int five = 0, ten = 0;
+    for (int bill : bills) {
+        if (bill == 5) {
+            five++;
+        } else if (bill == 10) {
+            if (five == 0) return false;
+            five--;
+            ten++;
+        } else {
+            if (ten > 0 && five > 0) {
+                ten--;
+                five--;
+            } else if (five >= 3) {
+                five -= 3;
+            } else {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+```

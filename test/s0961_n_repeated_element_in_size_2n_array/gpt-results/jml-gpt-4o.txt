@@ -1,0 +1,16 @@
+```jml
+/*@
+  requires nums != null;
+  requires nums.length % 2 == 0;
+  requires (\exists int n; 2 <= n && nums.length == 2 * n);
+  requires (\exists int uniqueCount; uniqueCount == n + 1);
+  requires (\exists int repeatedElement; 
+            (\exists int count; count == n && 
+            (\forall int i; 0 <= i < nums.length; 
+              (nums[i] == repeatedElement ==> count-- > 0))));
+  ensures (\result == repeatedElement);
+@*/
+public static int findRepeatedElement(int[] nums) {
+    // Implementation goes here
+}
+```

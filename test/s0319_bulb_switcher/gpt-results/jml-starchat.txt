@@ -1,0 +1,8 @@
+
+The following code snippet attempts to solve the problem using a mathematical approach based on factors and perfect squares. It calculates the count of bulbs that will be left on by identifying those whose switch-toggling pattern results in them being on at the end of `n` rounds. The algorithm works as follows: for each bulb with an index `i`, it checks how many times `i` appears as a factor within the range from 1 to `n`. If `i` has an odd number of factors, it means the bulb was toggled an odd number of times during its lifetime, so it remains on; otherwise, it turns out to be off. This solution leverages the fact that a bulb will remain lit if and only if its index is a perfect square since these indices have exactly one pair of equal factors (`sqrt(index)`), which leads to an odd number of total switches. My implementation below encapsulates this logic into a concise function named `bulbSwitch`.
+```python
+def bulbSwitch(n):
+    import math
+
+    return int(math.sqrt(n))
+```

@@ -1,0 +1,57 @@
+
+The following code snippet presents my solution for finding a specific element within a rotated and sorted array using Java's Binary Search methodology. The core idea behind this approach lies in determining whether the left half or right half of the array contains the desired value based on its comparison with the middle element and the known properties of the rotated array. My implementation ensures logarithmic time complexity by repeatedly dividing the search space in half until either the target is found or the remaining portion becomes empty. Here's how I've translated the problem into executable JML annotations alongside the actual Java code:
+```java
+public class Solution {
+    /**
+     * Searches for a given target value within a rotated and sorted array.
+     * @param nums A distinctly ordered array after potential rotation.
+     * @param target An integer to locate within 'nums'.
+     * @return Returns the index of 'target' if present; otherwise returns -1.
+     */
+    public int search(int[] nums, int target) {
+        // Define initial boundaries
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low <= high) {
+            // Calculate midpoint
+            int mid = low + ((high - low) >>> 1);
+
+            // Check if current midpoint matches target
+            if (nums[mid] == target)
+                return mid;
+
+            /*
+             * Determine which side of the midpoint has a sorted section. 
+             * If the left half is sorted...
+             */
+            else if (nums[low] <= nums[mid]) {
+
+                //...and our target falls within this range, adjust high boundary accordingly
+                if (nums[low] <= target && target < nums[mid])
+                    high = mid - 1;
+                
+                // Otherwise, shift focus towards unsorted right half
+                else 
+                    low = mid + 1;
+            } 
+            /*
+             * Conversely, if the right half is sorted...
+             */
+            else {
+
+                //...and our target falls within this range, adjust low boundary accordingly
+                if (nums[mid] < target && target <= nums[high])
+                    low = mid + 1;
+                
+                // Otherwise, shift focus towards unsorted left half
+                else 
+                    high = mid - 1;
+            }
+        }
+        
+        // Target was not found in array
+        return -1;
+    }
+}
+```

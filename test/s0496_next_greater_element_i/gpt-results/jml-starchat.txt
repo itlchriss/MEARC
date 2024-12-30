@@ -1,0 +1,19 @@
+
+```python
+def nextGreaterElement(nums1, nums2):
+    stack, result = [], {}
+
+    # Iterate through nums2 from end to start
+    for num in reversed(nums2):
+        while stack and stack[-1] <= num:
+            stack.pop()
+
+        if not stack or stack[-1] > num:
+            result[num] = -1
+        else:
+            result[num] = stack[-1]
+            
+        stack.append(num)
+    
+    return [result[num] for num in nums1]
+```

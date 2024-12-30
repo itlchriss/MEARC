@@ -1,0 +1,19 @@
+
+The following code snippet presents my solution to add two strings representing numbers in Java while adhering strictly to the constraints mentioned—no use of BigInteger or direct conversion to integer types. The algorithm used here is straightforward; it iterates through both input strings from right to left, simulating the process of adding decimal place by decimal place. It keeps track of carry values that need to be added to subsequent sums. My implementation ensures that no leading zeros are present in the final result unless the entire sum is zero. Here's how I've written the method with respect to the given requirements and within the specified time complexity:
+```java
+public String addStrings(String num1, String num2) {
+    StringBuilder sb = new StringBuilder();
+    int i = num1.length() - 1, j = num2.length() - 1, carry = 0;
+
+    while (i >= 0 || j >= 0 || carry > 0) {
+        int n1 = i >= 0? num1.charAt(i--) - '0' : 0;
+        int n2 = j >= 0? num2.charAt(j--) - '0' : 0;
+
+        int sum = n1 + n2 + carry;
+        carry = sum / 10;
+        sb.append(sum % 10);
+    }
+
+    return sb.reverse().toString();
+}
+```

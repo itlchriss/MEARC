@@ -1,0 +1,42 @@
+```jml
+/*@
+  requires word1 != null && word2 != null;
+  requires word1.length() >= 0 && word1.length() <= 500;
+  requires word2.length() >= 0 && word2.length() <= 500;
+  requires (\forall int i; 0 <= i && i < word1.length(); Character.isLowerCase(word1.charAt(i)));
+  requires (\forall int i; 0 <= i && i < word2.length(); Character.isLowerCase(word2.charAt(i)));
+  
+  ensures \result >= 0;
+  ensures \result == (\min int ops; 
+    (\exists String[] transformations; 
+      transformations.length == ops + 1 &&
+      transformations[0].equals(word1) &&
+      transformations[ops].equals(word2) &&
+      (\forall int i; 0 <= i < ops; 
+        (transformations[i].length() == transformations[i+1].length() + 1 && 
+         (\exists int j; 0 <= j < transformations[i].length(); 
+           transformations[i].substring(0, j).equals(transformations[i+1].substring(0, j)) &&
+           transformations[i].substring(j+1).equals(transformations[i+1].substring(j))
+         )
+        ) ||
+        (transformations[i].length() + 1 == transformations[i+1].length() && 
+         (\exists int j; 0 <= j < transformations[i+1].length(); 
+           transformations[i].substring(0, j).equals(transformations[i+1].substring(0, j)) &&
+           transformations[i].substring(j).equals(transformations[i+1].substring(j+1))
+         )
+        ) ||
+        (transformations[i].length() == transformations[i+1].length() && 
+         (\exists int j; 0 <= j < transformations[i].length(); 
+           transformations[i].substring(0, j).equals(transformations[i+1].substring(0, j)) &&
+           transformations[i].charAt(j) != transformations[i+1].charAt(j) &&
+           transformations[i].substring(j+1).equals(transformations[i+1].substring(j+1))
+         )
+        )
+      )
+    )
+  );
+@*/
+public int minDistance(String word1, String word2) {
+    // Implementation of the function
+}
+```

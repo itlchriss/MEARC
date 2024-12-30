@@ -1,8 +1,0 @@
-ensures:
-- The type_integer_ result is less_than_or_equal to the length of the type_string_ param_s_.
-- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 2.
-- If the type_string_ param_s_ is equal to stry_a , the type_integer_ result is equal to 4.
-- If the type_string_ param_s_ is an empty string , the type_integer_ result is equal to 0.
-requires:
-- The length of the type_string_ param_s_ is less_than_or_equal to 30000 and is greater_than_or_equal to 0.
-- The type_string_ param_s_ only contains leftp and rightp.

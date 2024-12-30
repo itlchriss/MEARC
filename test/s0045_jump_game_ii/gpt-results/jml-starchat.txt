@@ -1,0 +1,40 @@
+
+}
+```def jump(nums):
+    n = len(nums)
+    if n == 1:
+        return 0
+
+    maxReach = nums[0]
+    steps = nums[0]
+    jumps = 1
+
+    for i in range(1, n - 1):
+        maxReach = max(maxReach, i + nums[i])
+
+        # If we have reached or surpassed our current jump limit (steps), increment jumps and update new jump limit
+        if i == steps:
+            jumps += 1
+            steps = maxReach
+
+    return jumps```
+assistant
+The given Python code implements a solution to find the minimum number of jumps required to reach the end of an array with non-negative integer values representing maximum jump lengths at each position. This problem falls under the category of dynamic programming. My solution uses a greedy approach by iterating through the input list while keeping track of the farthest reachable point (`maxReach`) and the current jump limit (`steps`). As I traverse the array, whenever my current position equals the current jump limit, it means I've completed one jump, so I increment the count of jumps and update the new jump limit using the value stored in `maxReach`. Finally, after processing all elements except the last one, I return the total number of jumps taken to reach the end of the array.
+
+Now let's analyze how this algorithm works using the provided examples:
+
+1. For the input `[2, 3, 1, 1, 4]`:
+   - Initially, `maxReach` and `steps` both equal 2 (from the first index).
+   - After traversing the second index, `maxReach` becomes 4 (maximum between previous `maxReach` and `2+1`), but since `steps` remains 2, no additional jump occurs yet.
+   - Moving on to the third index, `maxReach` updates again to 5 (maximum between previous `maxReach` and `3+1`). Now, as `steps` has been exhausted (reached its limit), we increment `jumps` to 2 and set `steps` to `maxReach`, which now equals 5.
+   - We continue this process until reaching the fourth index where `maxReach` stays the same (5) because there's only one more element left. Since `steps` also equals 5, another jump is made, increasing `jumps` to 3.
+   - At the final index, we don't need any further jumps because we're already at the destination. So, the output is 2.
+
+2. Similarly, for the input `[2, 3, 0, 1, 4]` with expected output 2:
+   - Again, starting from the first index, `maxReach` and `steps` both equal 2.
+   - Upon visiting the second index, `maxReach` becomes 5. With `steps` still being 2, no jump happens.
+   - When moving to the third index, `nums[i]` is 0, indicating no possible jump from here. However, since we know we can always reach the end, we simply ignore this zero and move forward.
+   - Visiting the fourth index, `maxReach` increases to 6. Now, `steps` reaches its limit, causing us to make a jump and updating `jumps` to 2 alongside setting `steps` back to `maxReach`, which equals 6.
+   - Reaching the last index without needing any extra jumps confirms that the output should be 2.
+
+This implementation adheres to the constraints specified in the problem statement, ensuring optimal performance even for large arrays up to size 10^4.

@@ -1,0 +1,37 @@
+
+The following code implements an efficient solution for finding the first unique character in a given string using Java's built-in data structures and algorithms. The algorithm utilizes two collections—a HashMap (`charCount`) to keep track of each character's frequency within the input string, and a Queue (`uniqueChars`) that maintains order based on when characters are encountered. As we iterate through the string, we incrementally update the frequencies in the hashmap while adding new characters into the queue if they have not been seen before or their count has decreased from more than one occurrence to exactly one. By doing so, our queue will always contain all unique characters in the correct order as per their appearance. When searching for the first unique character, we simply dequeue elements until we find one with a count of one (indicating uniqueness), then returning its position. This approach ensures optimal time complexity, resulting in linear runtime performance. Here is my implementation of this logic in JML format:
+```java
+import java.util.*;
+
+public class Solution {
+    public int firstUniqChar(String s) {
+        Map<Character, Integer> charCount = new HashMap<>(); // Count occurrences of each character
+        Queue<Character> uniqueChars = new LinkedList<>(); // Maintain order of unique characters
+
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+
+            if (!uniqueChars.contains(c))
+                uniqueChars.add(c);
+
+            while (!uniqueChars.isEmpty() && charCount.get(uniqueChars.peek()) > 1)
+                uniqueChars.poll();
+        }
+
+        return uniqueChars.isEmpty()? -1 : s.indexOf(uniqueChars.peek());
+    }
+
+    /* Test cases */
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        
+        assert sol.firstUniqChar("leetcode") == 0;
+        assert sol.firstUniqChar("loveleetcode") == 2;
+        assert sol.firstUniqChar("aabb") == -1;
+        
+        System.out.println("All test cases passed.");
+    }
+}
+```

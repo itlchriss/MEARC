@@ -1,0 +1,36 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for a method that calculates the Hamming distance between two integers. Here's how you can express this in JML:
+
+```java
+public class HammingDistance {
+
+    /**
+     * Returns the Hamming distance between two integers.
+     *
+     * @param x the first integer
+     * @param y the second integer
+     * @return the number of positions at which the corresponding bits are different
+     * @throws IllegalArgumentException if x or y is negative or greater than 2^31 - 1
+     */
+    /*@ requires 0 <= x && x <= Integer.MAX_VALUE;
+      @ requires 0 <= y && y <= Integer.MAX_VALUE;
+      @ ensures \result == (\num_of int i; 0 <= i && i < 32; ((x >> i) & 1) != ((y >> i) & 1));
+      @*/
+    public static int hammingDistance(int x, int y) {
+        int xor = x ^ y;
+        int distance = 0;
+        while (xor != 0) {
+            distance += xor & 1;
+            xor >>= 1;
+        }
+        return distance;
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**: The method requires that both `x` and `y` are non-negative and do not exceed `Integer.MAX_VALUE` (which is `2^31 - 1` in Java). This is consistent with the constraints given in the problem.
+
+- **Postconditions (`ensures`)**: The method ensures that the result (`\result`) is equal to the number of positions where the bits of `x` and `y` differ. This is expressed using a quantifier (`\num_of`) that counts the number of bit positions `i` (from 0 to 31) where the bits of `x` and `y` differ.
+
+This JML specification provides a formal contract for the `hammingDistance` method, ensuring that it behaves as expected according to the problem description.

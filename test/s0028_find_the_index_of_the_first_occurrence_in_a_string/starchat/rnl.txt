@@ -1,0 +1,15 @@
+
+- The length of the string parameter `haystack` is less than or equal to 50000 and is greater than or equal to 0.
+- The length of the string parameter `needle` is less than or equal to 50000 and is greater than or equal to 0.
+- The string parameter `haystack` consists of only lower-case English characters.
+- The string parameter `needle` consists of only lower-case English characters.
+- If the string parameter `needle` is an empty string, the integer result is equal to 0.
+- If the string parameter `needle` is not an empty string and is part of the string parameter `haystack`, the integer result is greater than or equal to 0 and is less than the length of the string parameter `haystack`.
+- If the string parameter `needle` is not an empty string and is not part of the string parameter `haystack`, the integer result is equal to -1.
+- If the string parameter `haystack` is an empty string and the string parameter `needle` is an empty string, the integer result is equal to 0.
+- If the string parameter `haystack` is an empty string and the string parameter `needle` is not an empty string, the integer result is equal to -1.
+- If the string parameter `haystack` is not an empty string and the string parameter `needle` is an empty string, the integer result is equal to 0.
+- If the string parameter `haystack` is not an empty string and the string parameter `needle` is not an empty string and is part of the string parameter `haystack`, the integer result is the index of the first occurrence of the string parameter `needle` in the string parameter `haystack`.
+- If the string parameter `haystack` is not an empty string and the string parameter `needle` is not an empty string and is not part of the string parameter `haystack`, the integer result is equal to -1.
+
+Example

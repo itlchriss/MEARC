@@ -1,0 +1,41 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the method contract, including preconditions, postconditions, and any invariants. Here's how you can express the problem in JML:
+
+```java
+public class StrStr {
+
+    /**
+     * @param haystack the string in which to search
+     * @param needle the substring to find
+     * @return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack
+     * @requires haystack != null && needle != null
+     * @ensures (\result == -1) <==> !(\exists int i; 0 <= i && i <= haystack.length() - needle.length(); haystack.startsWith(needle, i))
+     * @ensures (\result >= 0) ==> haystack.startsWith(needle, \result)
+     * @ensures needle.equals("") ==> \result == 0
+     */
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) {
+            return 0;
+        }
+        int haystackLength = haystack.length();
+        int needleLength = needle.length();
+        
+        for (int i = 0; i <= haystackLength - needleLength; i++) {
+            if (haystack.startsWith(needle, i)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`@requires`)**: The method requires that both `haystack` and `needle` are not null.
+  
+- **Postconditions (`@ensures`)**:
+  - The result is `-1` if and only if there is no index `i` such that `needle` starts at position `i` in `haystack`.
+  - If the result is non-negative, then `needle` must start at the returned index in `haystack`.
+  - If `needle` is an empty string, the result is `0`, consistent with the behavior of `strstr()` and `indexOf()`.
+
+This JML specification provides a formal contract for the `strStr` method, ensuring that it behaves as described in the problem statement.

@@ -1,0 +1,25 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for the function that solves the problem. Here's a possible JML specification for a method that returns the number of ways to decode a given string `s`:
+
+```java
+//@ requires s != null;
+//@ requires s.length() >= 1 && s.length() <= 100;
+//@ requires (\forall int i; 0 <= i && i < s.length(); Character.isDigit(s.charAt(i)));
+//@ ensures \result >= 0;
+//@ ensures \result <= Integer.MAX_VALUE;
+public int numDecodings(String s) {
+    // Method implementation goes here
+}
+```
+
+### Explanation:
+
+1. **Preconditions (`requires`):**
+   - `s != null`: The input string `s` must not be null.
+   - `s.length() >= 1 && s.length() <= 100`: The length of the string `s` must be between 1 and 100, inclusive.
+   - `(\forall int i; 0 <= i && i < s.length(); Character.isDigit(s.charAt(i)))`: Every character in the string `s` must be a digit (i.e., '0' to '9').
+
+2. **Postconditions (`ensures`):**
+   - `\result >= 0`: The result (number of ways to decode the string) must be non-negative.
+   - `\result <= Integer.MAX_VALUE`: The result must fit within a 32-bit integer, which is guaranteed by the problem statement.
+
+This JML specification provides a formal contract for the `numDecodings` method, ensuring that it adheres to the constraints and requirements specified in the problem description.

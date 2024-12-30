@@ -1,0 +1,34 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and any invariants that describe the behavior of the method. Here's how you might express this in JML:
+
+```java
+//@ requires Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE;
+//@ ensures (\result == 0) <==> (x == 0 || \result < Integer.MIN_VALUE || \result > Integer.MAX_VALUE);
+//@ ensures (\result != 0) ==> (\result == reverseDigits(x));
+public int reverse(int x) {
+    // Method implementation
+}
+
+/*@ pure @*/ 
+/*@ private normal_behavior
+  @ ensures \result == 0 <==> x == 0;
+  @ ensures x > 0 ==> \result == Integer.parseInt(new StringBuilder(Integer.toString(x)).reverse().toString());
+  @ ensures x < 0 ==> \result == -Integer.parseInt(new StringBuilder(Integer.toString(-x)).reverse().toString());
+  @*/
+private static int reverseDigits(int x) {
+    // Helper method to reverse digits
+}
+```
+
+### Explanation:
+
+1. **Precondition (`requires`)**: The input `x` must be within the range of a signed 32-bit integer, which is `Integer.MIN_VALUE` to `Integer.MAX_VALUE`.
+
+2. **Postcondition (`ensures`)**:
+   - The result is `0` if and only if the input `x` is `0` or if reversing `x` would cause it to go outside the 32-bit signed integer range.
+   - If the result is not `0`, it should be equal to the reversed digits of `x`.
+
+3. **Helper Method (`reverseDigits`)**:
+   - This is a pure method (does not modify any state) that reverses the digits of `x`.
+   - It handles both positive and negative values of `x` and ensures the correct reversed value is returned.
+
+This JML specification provides a formal contract for the `reverse` method, describing what it requires and guarantees, as well as detailing the behavior of the helper method used to reverse the digits.

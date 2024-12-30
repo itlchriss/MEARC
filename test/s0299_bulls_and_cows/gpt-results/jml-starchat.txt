@@ -1,0 +1,9 @@
+
+```python
+def getHint(self, secret: str, guess: str) -> str:
+    bulls = sum([a == b for a, b in zip(secret, guess)])
+    both = [min(secret.count(c), guess.count(c)) for c in set(secret)]
+    cows = sum(both) - bulls
+    
+    return f"{bulls}A{cows}B"
+```

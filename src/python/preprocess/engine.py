@@ -149,7 +149,8 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         else:
             sp = 'integer'
             sr = 'array'
-            interpretation = 'new int[] {%s}' % v
+            # interpretation = 'new int[] {%s}' % v
+            interpretation = '%s' % v.replace(' ', '')
         
         # Experimental: This one has conflict with the lex rules about the parameter name parsing
         #               remove this line if any other conflicts rise

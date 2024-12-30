@@ -1,9 +1,0 @@
-ensures:
-- The type_integer_array_ result's length is equal to 2.
-- The sum of all values in the type_integer_array_ param_aliceSizes_ minus the value at index 0 of the type_integer_array_ result is equal to the sum of all values in the type_integer_array_ param_bobSizes_ minus the value at index 1 of the integer array result.
-requires:
-- The length of the type_integer_array_ param_aliceSizes_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
-- The length of the type_integer_array_ param_bobSizes_ is less_than_or_equal to 10000 and is greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_aliceSizes_ are less_than_or_equal to 100000 and are greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_bobSizes_ are less_than_or_equal to 100000 and are greater_than_or_equal to 1.
-- The sum of all values in the type_integer_array_ param_aliceSizes_ is not equal to the sum of all values in the type_integer_array_ param_bobSizes_.

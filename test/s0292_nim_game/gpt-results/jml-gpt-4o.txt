@@ -1,0 +1,35 @@
+To convert the given problem description into JML (Java Modeling Language), we need to express the problem's constraints, inputs, and expected outputs in a formal specification. Here's how you can represent the Nim Game problem in JML:
+
+```java
+//@ public class NimGame {
+
+/**
+ * Determines if you can win the Nim Game given the number of stones.
+ * 
+ * @param n the number of stones in the heap
+ * @return true if you can win the game assuming both you and your friend play optimally, otherwise false
+ * 
+ * @requires 1 <= n && n <= Integer.MAX_VALUE;
+ * @ensures \result == (n % 4 != 0);
+ */
+public /*@ pure @*/ boolean canWinNim(int n) {
+    return n % 4 != 0;
+}
+//@ }
+```
+
+### Explanation:
+
+- **Class Declaration**: The class is declared as `public` and is named `NimGame`. In JML, the class declaration is typically commented out with `//@` to indicate that it is part of the specification.
+
+- **Method Specification**: The method `canWinNim` is specified with JML annotations.
+
+  - **`@param n`**: Describes the input parameter `n`, which is the number of stones in the heap.
+
+  - **`@return`**: Describes the return value of the method, which is `true` if you can win the game, otherwise `false`.
+
+  - **`@requires`**: Specifies the precondition for the method, which is that `n` must be between 1 and `Integer.MAX_VALUE` (inclusive).
+
+  - **`@ensures`**: Specifies the postcondition for the method, which is that the result is `true` if `n % 4 != 0`, otherwise `false`. This is based on the optimal strategy for the Nim Game, where you can win if the number of stones is not a multiple of 4.
+
+- **`/*@ pure @*/`**: Indicates that the method does not have any side effects, meaning it does not modify any state and only depends on its input parameters to produce a result.

@@ -1,0 +1,19 @@
+```jml
+/*@
+  @ requires num1 != null && num2 != null;
+  @ requires num1.length() >= 1 && num1.length() <= 10000;
+  @ requires num2.length() >= 1 && num2.length() <= 10000;
+  @ requires (\forall int i; 0 <= i && i < num1.length(); Character.isDigit(num1.charAt(i)));
+  @ requires (\forall int i; 0 <= i && i < num2.length(); Character.isDigit(num2.charAt(i)));
+  @ ensures (\result != null) && (\forall int i; 0 <= i && i < \result.length(); Character.isDigit(\result.charAt(i)));
+  @ ensures \result.length() >= 1;
+  @ ensures (\forall int i; 0 <= i && i < \result.length() - 1; \result.charAt(i) != '0');
+  @
+  @ // The result is the sum of num1 and num2 represented as a string
+  @ ensures (\forall int i; 0 <= i && i < num1.length(); \result.charAt(\result.length() - 1 - i) == num1.charAt(num1.length() - 1 - i)) ||
+  @         (\forall int i; 0 <= i && i < num2.length(); \result.charAt(\result.length() - 1 - i) == num2.charAt(num2.length() - 1 - i));
+  @*/
+public String addStrings(String num1, String num2) {
+    // Implementation goes here
+}
+```

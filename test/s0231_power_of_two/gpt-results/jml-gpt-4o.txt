@@ -1,0 +1,29 @@
+To convert the given problem description into Java Modeling Language (JML), we need to specify the behavior of the method that checks if a given integer is a power of two. JML is used to specify the contracts for Java methods, including preconditions, postconditions, and invariants.
+
+Here's how you can express the problem in JML:
+
+```java
+public class PowerOfTwo {
+
+    /**
+     * Checks if the given integer is a power of two.
+     *
+     * @param n the integer to check
+     * @return true if n is a power of two, false otherwise
+     * @requires Integer.MIN_VALUE <= n && n <= Integer.MAX_VALUE;
+     * @ensures \result == (\exists int x; 0 <= x && n == (1 << x));
+     */
+    public boolean isPowerOfTwo(int n) {
+        // Method implementation goes here
+    }
+}
+```
+
+### Explanation:
+
+- **`@param n`**: Describes the parameter `n` which is the integer to be checked.
+- **`@return`**: Describes the return value of the method, which is `true` if `n` is a power of two, and `false` otherwise.
+- **`@requires`**: Specifies the precondition that `n` must be within the range of a 32-bit signed integer, which is already guaranteed by the type `int` in Java.
+- **`@ensures`**: Specifies the postcondition that the result (`\result`) is `true` if there exists an integer `x` such that `0 <= x` and `n` is equal to `2^x` (expressed as `1 << x` in Java, which is a bitwise left shift operation equivalent to `2^x`).
+
+This JML specification describes the contract for the `isPowerOfTwo` method, ensuring that it correctly identifies whether a given integer is a power of two.

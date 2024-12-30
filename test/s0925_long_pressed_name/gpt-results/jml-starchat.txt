@@ -1,0 +1,33 @@
+
+The following code implements an algorithm to verify whether a given string could potentially represent someone's inputted name on a mobile device where certain keys may be held down for multiple consecutive presses. The solution uses two pointers—one iterating through the expected name (`name`) and another scanning the actual sequence of characters entered by the user (`typed`). It compares each pair of corresponding characters from both strings while accounting for potential long press events. If at any point the comparison fails due to incorrect character entry or missing long-press occurrences, the function returns `False`. Otherwise, after examining all pairs of characters, it checks if there are no remaining unmatched characters in either string, ensuring that the entire name has been accurately reproduced. This approach efficiently handles various scenarios involving long pressing without relying on complex data structures or regular expressions. My implementation below encapsulates this logic within a straightforward loop structure, making it easy to understand and maintain.
+```python
+def isLongPressedName(name: str, typed: str) -> bool:
+    i, j = 0, 0
+
+    while i < len(name):
+        # Compare current characters
+        if name[i]!= typed[j]:
+            return False
+
+        count_n, count_t = 1, 1
+        
+        # Count subsequent repeats of same character in name
+        while i + 1 < len(name) and name[i] == name[i + 1]:
+            i += 1
+            count_n += 1
+            
+        # Count subsequent repeats of same character in typed
+        while j + 1 < len(typed) and typed[j] == typed[j + 1]:
+            j += 1
+            count_t += 1
+            
+        # Check if typed contains enough repetitions of current character
+        if count_t < count_n:
+            return False
+
+        i += 1
+        j += 1
+    
+    # Ensure no extra characters remain in typed
+    return j == len(typed)
+```

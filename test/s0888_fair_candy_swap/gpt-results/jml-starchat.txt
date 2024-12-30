@@ -1,0 +1,17 @@
+
+The following code snippet presents my solution to find the optimal boxes for exchanging between Alice and Bob while maintaining equal totals of candies. To achieve this, I first calculate the sums of their respective collections using Java's built-in `Arrays.stream().sum()` method. Then, by subtracting these sums from each other, we can determine how many additional candies Alice needs to reach parity with Bob (or vice versa). This difference divided by 2 gives us the quantity of candy needed to swap out of either Alice or Bob's collection. My implementation iterates through each individual box size list until it finds an appropriate match—one that contains exactly half the required swapping candy count. Once found, the corresponding index within its own sizes array is returned as part of the final result. Here is my concise yet effective approach encapsulated in the provided function signature:
+```java
+public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+    long aliceSum = Arrays.stream(aliceSizes).asLongStream().sum();
+    long bobSum = Arrays.stream(bobSizes).asLongStream().sum();
+
+    long diff = (bobSum - aliceSum) / 2;
+
+    for (int i : aliceSizes) {
+        if (Arrays.binarySearch(bobSizes, (int)(i + diff)) >= 0)
+            return new int[]{i, i + (int)diff};
+    }
+
+    throw new IllegalArgumentException("No possible swap"); // Should never happen due to problem constraints
+}
+```

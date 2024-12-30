@@ -1,0 +1,44 @@
+```jml
+/**
+ * 151. Reverse Words in a String
+ * 
+ * Given an input string `s`, reverse the order of the words.
+ * 
+ * A word is defined as a sequence of non-space characters. The words in `s` will be separated by at least one space.
+ * 
+ * Return a string of the words in reverse order concatenated by a single space.
+ * 
+ * Note that `s` may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
+ * 
+ * @param s the input string containing words separated by spaces
+ * @return a string with the words in reverse order, separated by a single space
+ * 
+ * @example
+ * // returns "blue is sky the"
+ * reverseWords("the sky is blue");
+ * 
+ * @example
+ * // returns "world hello"
+ * reverseWords(" hello world ");
+ * 
+ * @example
+ * // returns "example good a"
+ * reverseWords("a good example");
+ * 
+ * @example
+ * // returns "Alice Loves Bob"
+ * reverseWords(" Bob Loves Alice ");
+ * 
+ * @example
+ * // returns "bob like even not does Alice"
+ * reverseWords("Alice does not even like bob");
+ * 
+ * @constraints
+ * 1 <= s.length <= 10^4
+ * s contains English letters (upper-case and lower-case), digits, and spaces ' '.
+ * There is at least one word in `s`.
+ * 
+ * @followup
+ * If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
+ */
+```

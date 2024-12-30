@@ -1,0 +1,35 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants that describe the behavior of the method. Here's how you can express the problem in JML:
+
+```java
+public class DetectCapital {
+
+    /*@ 
+      @ public normal_behavior
+      @ requires word != null;
+      @ requires word.length() >= 1 && word.length() <= 100;
+      @ ensures \result == (
+      @     (\forall int i; 0 <= i && i < word.length(); Character.isUpperCase(word.charAt(i))) ||
+      @     (\forall int i; 0 <= i && i < word.length(); Character.isLowerCase(word.charAt(i))) ||
+      @     (Character.isUpperCase(word.charAt(0)) && 
+      @      (\forall int i; 1 <= i && i < word.length(); Character.isLowerCase(word.charAt(i))))
+      @ );
+      @*/
+    public boolean detectCapitalUse(String word) {
+        // Method implementation
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - `word != null`: The input string `word` should not be null.
+  - `1 <= word.length() <= 100`: The length of the string should be between 1 and 100, inclusive.
+
+- **Postconditions (`ensures`)**:
+  - The method returns `true` if one of the following conditions is met:
+    - All characters in `word` are uppercase.
+    - All characters in `word` are lowercase.
+    - Only the first character is uppercase, and the rest are lowercase.
+
+The JML specification captures the essence of the problem by defining the conditions under which the method should return `true`. The method implementation should adhere to these specifications to ensure correctness.

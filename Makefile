@@ -8,7 +8,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=gnu11 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o  main.o alias.o error.o event_struct.o event_synthesis.o sshare.o command.o preposition_synthesis.o relative_synthesis.o adjective_synthesis.o cardinalnumber_synthesis.o noun_synthesis.o adverb_synthesis.o
+OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o jml.o main.o alias.o error.o event_struct.o event_synthesis.o sshare.o command.o preposition_synthesis.o relative_synthesis.o adjective_synthesis.o cardinalnumber_synthesis.o noun_synthesis.o adverb_synthesis.o
 DEBUG   ?=      0
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -164,6 +164,9 @@ error.o	: $(SRC)/error.c
 event_synthesis.o: $(SRC)/synthesis/event.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/event_synthesis.o $<		
 
+jml.o: $(SRC)/jml.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/jml.o $<
+
 lex.o parser.o sym_table.o		:	$(INCL)/core.h
 parser.only						:	$(INCL)/ast.h
 parser.o						:       $(BUILD)/tok.h 
@@ -177,6 +180,7 @@ alias.o							:	$(INCL)/alias.h
 si.o							:   $(INCL)/si.h 
 event-struct.o							: 	$(INCL)/event.h
 error.o							:   $(INCL)/error.h
+jml.o							:   $(INCL)/jml.h
 clean:
 	rm -rf $(BUILD)/*
 	rm ./parser.output

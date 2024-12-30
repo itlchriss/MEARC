@@ -1,0 +1,13 @@
+```jml
+/*@
+  requires nums != null;
+  requires 1 <= nums.length && nums.length <= 20000;
+  requires (\forall int i; 0 <= i < nums.length; -10 <= nums[i] && nums[i] <= 10);
+  ensures \result == (\max int p; 
+                      (\exists int i, j; 0 <= i <= j < nums.length; 
+                       p == (\product int k; i <= k <= j; nums[k])));
+@*/
+public static int maxProduct(int[] nums) {
+    // Implementation here
+}
+```

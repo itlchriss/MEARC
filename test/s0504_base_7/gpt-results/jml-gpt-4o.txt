@@ -1,0 +1,36 @@
+To convert the given problem statement into JML (Java Modeling Language), we need to specify the method contract, including preconditions, postconditions, and invariants. Here's how you can express the problem in JML:
+
+```java
+public class Base7Converter {
+
+    /**
+     * Converts an integer to its base 7 representation.
+     *
+     * @param num the integer to be converted, where -10^7 <= num <= 10^7
+     * @return a string representing the base 7 representation of the integer
+     * @throws IllegalArgumentException if num is outside the valid range
+     */
+    /*@ public normal_behavior
+      @ requires -10000000 <= num && num <= 10000000;
+      @ ensures (\result.equals(Integer.toString(num, 7)));
+      @ also
+      @ public exceptional_behavior
+      @ requires num < -10000000 || num > 10000000;
+      @ signals_only IllegalArgumentException;
+      @*/
+    public static String convertToBase7(int num) {
+        if (num < -10000000 || num > 10000000) {
+            throw new IllegalArgumentException("num is out of the valid range");
+        }
+        return Integer.toString(num, 7);
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**: The input `num` must be within the range \(-10^7\) to \(10^7\).
+- **Postconditions (`ensures`)**: The result must be the string representation of `num` in base 7. This is expressed using Java's `Integer.toString(num, 7)` method, which converts an integer to a string in the specified base.
+- **Exceptional Behavior**: If `num` is outside the valid range, an `IllegalArgumentException` is thrown. This is specified under `exceptional_behavior`.
+
+This JML specification ensures that the method behaves correctly according to the problem statement, both in normal and exceptional cases.

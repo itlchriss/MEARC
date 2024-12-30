@@ -1,0 +1,12 @@
+
+The following code snippet implements an algorithm that checks whether the capitalization rules for a given word adhere to the standard conventions outlined in the problem description. The solution iterates through each character in the input string starting from the second position (index 1), checking if any non-initial characters violate the capitalization rule by being either lower case or upper case without being preceded by another upper case letter. If such a violation is found, the function immediately returns `false`; otherwise, after examining all characters, it confirms that the initial character meets the criteria for capitalization before returning `true`. This approach ensures efficient validation against the specified capitalization standards.
+```python
+def detectCapitalUse(word):
+    for i in range(1, len(word)):
+        if ord('A') <= ord(word[i]) <= ord('Z'):
+            if i == 1 or not (ord('A') <= ord(word[0]) <= ord('Z')):
+                return False
+        elif ord('a') > ord(word[i]):
+            return False
+    return True
+```

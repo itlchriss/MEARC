@@ -1,0 +1,42 @@
+
+The following code snippet presents my solution for reversing the order of words within a given string using Java's built-in methods alongside JML annotations for formal specification. This approach involves splitting the original string into individual words, then iteratively building up the result from right to left while ensuring there are no extraneous spaces. My implementation adheres strictly to the constraints provided in the problem statement, including handling edge cases such as leading/trailing spaces and consecutive spaces between words.
+```java
+public class Solution {
+    /**
+     * @spec_public
+     * @pure
+     * @param s A string containing words separated by spaces.
+     * @return A new string where the order of words has been reversed.
+     */
+    public String reverseWords(String s) {
+        // Splitting the string on whitespace gives us all the words
+        String[] words = s.trim().split("\\s+");
+
+        StringBuilder sb = new StringBuilder();
+        
+        // Iterate over the array backwards, appending each word followed by a space
+        for (int i = words.length - 1; i > 0; --i) {
+            sb.append(words[i]).append(" ");
+        }
+
+        if (!sb.isEmpty()) {
+            // Append the last word without adding a trailing space
+            sb.append(words[0]);
+        } else {
+            // Handle case when the input string was empty after trimming
+            return "";
+        }
+
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.reverseWords("the sky is blue")); // Expected output: "blue is sky the"
+        System.out.println(sol.reverseWords(" hello world ")); // Expected output: "world hello"
+        System.out.println(sol.reverseWords("a good example")); // Expected output: "example good a"
+        System.out.println(sol.reverseWords(" Bob Loves Alice ")); // Expected output: "Alice Loves Bob"
+        System.out.println(sol.reverseWords("Alice does not even like bob")); // Expected output: "bob like even not does Alice"
+    }
+}
+```

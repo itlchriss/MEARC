@@ -1,0 +1,30 @@
+To convert the given problem statement into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for a method that checks if a number is a power of four. Here's how you can express this in JML:
+
+```java
+public class PowerOfFour {
+
+    /*@ 
+      @ requires Integer.MIN_VALUE <= n && n <= Integer.MAX_VALUE;
+      @ ensures \result == true <==> (\exists int x; n == Math.pow(4, x));
+      @*/
+    public static boolean isPowerOfFour(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n % 4 == 0) {
+            n /= 4;
+        }
+        return n == 1;
+    }
+}
+```
+
+### Explanation:
+
+- **Precondition (`requires`)**: The method requires that the input `n` is within the range of a 32-bit signed integer, which is already guaranteed by the type `int` in Java. However, it's explicitly stated to align with the problem constraints.
+
+- **Postcondition (`ensures`)**: The method ensures that the result is `true` if and only if there exists an integer `x` such that `n` is equal to `4^x`. This is expressed using the JML existential quantifier `\exists`.
+
+- **Method Implementation**: The method `isPowerOfFour` checks if `n` is a power of four by repeatedly dividing `n` by 4 until it is no longer divisible by 4. If the result is 1, then `n` is a power of four; otherwise, it is not.
+
+This JML specification provides a formal contract for the method, describing what it requires and guarantees, which can be used for verification and documentation purposes.

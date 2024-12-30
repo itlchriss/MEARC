@@ -1,0 +1,13 @@
+
+- The length of the string parameter `inputString` is less than or equal to 2000 and is greater than or equal to 0.
+- The string parameter `inputString` consists of only lowercase English letters.
+- The length of the string parameter `pattern` is less than or equal to 2000 and is greater than or equal to 0.
+- The string parameter `pattern` consists of only lowercase English letters, '?', or '*'.
+- The boolean result is true if the entire string `inputString` matches the entire pattern `pattern`, and false otherwise.
+- If the string parameter `inputString` is equal to "aa" and the string parameter `pattern` is equal to "a", the boolean result is equal to false.
+- If the string parameter `inputString` is equal to "aa" and the string parameter `pattern` is equal to "*", the boolean result is equal to true.
+- If the string parameter `inputString` is equal to "cb" and the string parameter `pattern` is equal to "?a", the boolean result is equal to false.
+- If the string parameter `inputString` is equal to "adceb" and the string parameter `pattern` is equal to "*a*b", the boolean result is equal to true.
+- If the string parameter `inputString` is equal to "acdcb" and the string parameter `pattern` is equal to "a*c?b", the boolean result is equal to false.
+
+Example

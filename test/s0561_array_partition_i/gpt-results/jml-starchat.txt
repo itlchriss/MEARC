@@ -1,0 +1,28 @@
+
+The following code snippet presents my solution to the problem using Java and the JML specification language for design-by-contract programming. This algorithm sorts the input array in ascending order and then iterates through it by taking every second element starting from index zero. By selecting each even indexed number as one part of a pair, we ensure that we always choose the smaller value between two consecutive numbers when forming our partitions. My implementation adheres strictly to the given constraints and ensures that the function behaves correctly according to its specifications.
+```java
+import java.util.*;
+
+public class Solution {
+    /**
+     * @requires nums!= null && nums.length % 2 == 0 && Arrays.stream(nums).allMatch(num -> -10_000 <= num && num <= 10_000);
+     * @ensures \result >= 0;
+     */
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums); // Sorts the array in non-decreasing order
+
+        int result = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            result += nums[i]; // Adds the minimum value of each partition to the total sum
+        }
+        
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.arrayPairSum(new int[]{1, 4, 3, 2})); // Output: 4
+        System.out.println(sol.arrayPairSum(new int[]{6, 2, 6, 5, 1, 2})); // Output: 9
+    }
+}
+```

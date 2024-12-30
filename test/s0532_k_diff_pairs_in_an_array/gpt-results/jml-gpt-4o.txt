@@ -1,0 +1,1084 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants that describe the behavior of the function that solves this problem. Here's a possible JML specification for a method that counts the number of unique k-diff pairs in an array:
+
+```java
+/*@
+  @ requires nums != null;
+  @ requires nums.length >= 1 && nums.length <= 10000;
+  @ requires (\forall int i; 0 <= i < nums.length; -10000000 <= nums[i] <= 10000000);
+  @ requires 0 <= k && k <= 10000000;
+  @
+  @ ensures \result >= 0;
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int count; 0 <= count <= \result; 
+  @           (\forall int x, y; 0 <= x < y < nums.length; 
+  @            Math.abs(nums[x] - nums[y]) == k ==> 
+  @            (nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall int i, j; 0 <= i < j < nums.length;
+  @          Math.abs(nums[i] - nums[j]) == k ==> 
+  @          (\exists int x, y; 0 <= x < y < nums.length; 
+  @           Math.abs(nums[x] - nums[y]) == k && 
+  @           ((nums[i] == nums[x] && nums[j] == nums[y]) || 
+  @            (nums[i] == nums[y] && nums[j] == nums[x]))));
+  @
+  @ also
+  @ ensures (\forall

@@ -1,0 +1,44 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants that describe the behavior of the `canJump` method. Here's how you can express this in JML:
+
+```java
+public class JumpGame {
+
+    /*@
+      @ requires nums != null;
+      @ requires nums.length >= 1 && nums.length <= 10000;
+      @ requires (\forall int i; 0 <= i && i < nums.length; 0 <= nums[i] && nums[i] <= 100000);
+      @ ensures \result == true <==> (\exists int[] path; 
+      @     path.length > 0 && path[0] == 0 && path[path.length - 1] == nums.length - 1 &&
+      @     (\forall int i; 0 <= i < path.length - 1; 
+      @         path[i] >= 0 && path[i] < nums.length && 
+      @         path[i+1] > path[i] && path[i+1] <= path[i] + nums[path[i]]));
+      @*/
+    public boolean canJump(int[] nums) {
+        int maxReach = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > maxReach) {
+                return false;
+            }
+            maxReach = Math.max(maxReach, i + nums[i]);
+            if (maxReach >= nums.length - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - The array `nums` must not be null.
+  - The length of `nums` must be between 1 and 10,000.
+  - Each element in `nums` must be between 0 and 100,000.
+
+- **Postconditions (`ensures`)**:
+  - The method returns `true` if and only if there exists a valid path from the first index to the last index. This path is represented by an array of indices (`path`) such that:
+    - The path starts at index 0 and ends at the last index (`nums.length - 1`).
+    - For each step in the path, the next index is reachable from the current index based on the jump length specified by `nums`.
+
+This JML specification captures the essence of the problem by defining the conditions under which the `canJump` method should return `true` or `false`.

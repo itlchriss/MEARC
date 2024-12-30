@@ -1,0 +1,44 @@
+
+The following code implements an efficient solution for finding the maximum length of a well-formed parenthesis substring using Java's built-in Stack data structure, adhering strictly to the Java Modeling Language (JML). This algorithm iterates through the input string once while maintaining a stack that keeps track of indices where unmatched opening brackets are encountered. By comparing each closing bracket with its corresponding last seen opening bracket in the stack, we can calculate lengths of potential substrings and update our result accordingly. Here's how it works:
+
+1. Initialize variables `maxLen` as zero to store the maximum length found so far, and create an empty integer array `stack` to serve as the index stack.
+2. Iterate over the given character sequence from left to right by incrementing an index variable `i`:
+   - If the current character at position `i` is '(', push its index onto the stack.
+   - Otherwise, if the stack is not empty and the top element on the stack refers to an earlier '(' (indicating a matching pair), pop the top element from the stack and compute the length of the newly formed balanced substring ending at position `i`.
+     - Calculate the distance between the current index (`i`) and the previous index stored in the stack (or zero if the stack was empty before pushing the current index). Add one more unit to account for the enclosing parentheses themselves. Update `maxLen` if necessary.
+3. After processing all characters, return `maxLen` which represents the length of the longest valid parenthesis substring within the provided input.
+```java
+import java.util.*;
+
+public class Solution {
+    public int longestValidParentheses(String s) {
+        // JML specification for method parameters
+        assert s!= null : "Input cannot be null";
+
+        int maxLen = 0;
+        Deque<Integer> stack = new ArrayDeque<>();
+        
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+            
+            if (c == '(') {
+                stack.push(i);
+            } else if (!stack.isEmpty() && s.charAt(stack.peekFirst()) == '(') {
+                stack.pop();
+                
+                int len = stack.isEmpty()? i + 1 : i - stack.peekFirst();
+                maxLen = Math.max(maxLen, len);
+            }
+        }
+        
+        return maxLen;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.longestValidParentheses("(()"));     // Output: 2
+        System.out.println(sol.longestValidParentheses(")()())")); // Output: 4
+        System.out.println(sol.longestValidParentheses(""));        // Output: 0
+    }
+}
+```

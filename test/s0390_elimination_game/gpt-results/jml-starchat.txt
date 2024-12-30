@@ -1,0 +1,49 @@
+
+The above problem description is already given in English. However, I will provide my solution using Java with JML annotations for better code readability and maintainability. Here's how we can solve it:
+
+1. We need to determine which position the final element (last remaining) would be if we were performing the elimination game without considering the direction change between left-to-right and right-to-left. This pattern forms an arithmetic sequence where each term increases by 2. The formula to find the nth term of an arithmetic sequence is `a(n) = a + (n - 1)*d`, where `a` is the first term, `n` is the term number, and `d` is the common difference. In our case, `a = 1`, `d = 2`, so the nth term becomes `a(n) = 1 + (n - 1)*2 = 2*(n - 1) + 1`.
+2. Now, let's consider the direction changes. For even rounds (`round % 2 == 0`), the elements are removed starting from the beginning of the array. So, we just take the modulo operation `(currentPosition - 1) % remainingElements` to get the new current position. If the result is zero, then the last remaining element is at index `remainingElements - 1`. Otherwise, subtract one because indices start from zero.
+3. For odd rounds (`round % 2!= 0`), the elements are removed starting from the end of the array. To achieve this, we calculate the reverse position as follows: `reversePosition = totalRemainingElements - ((currentPosition - 1) % remainingElements)`. Again, if the result is zero, then the last remaining element is at index `totalRemainingElements - remainingElements`. Otherwise, subtract one.
+4. Finally, iterate through the rounds until only one element remains. Return the value of the last remaining element.
+
+Here's the implementation in Java with JML annotations:
+```java
+public class Solution {
+  /**
+   * Returns the last number that remains in the elimination game.
+   * @param n the upper limit of the range [1, n].
+   * @return the last number that remains in the elimination game.
+   */
+  public int lastRemaining(int n) {
+    // Base case: when there is only one element left
+    if (n == 1)
+      return 1;
+    
+    boolean isLeftToRight = true;
+    int round = 1;
+    while (n > 1) {
+      int halfSize = n / 2;
+      
+      // Calculate the next position based on the current direction
+      int nextPosition;
+      if (isLeftToRight)
+        nextPosition = (halfSize + round) % n;
+      else
+        nextPosition = n - 1 - (halfSize + round - 1) % n;
+
+      // Update variables for the next iteration
+      n /= 2;
+      round++;
+      isLeftToRight =!isLeftToRight;
+    }
+    
+    return round;
+  }
+
+  public static void main(String[] args) {
+    Solution sol = new Solution();
+    System.out.println(sol.lastRemaining(9)); // Output: 6
+    System.out.println(sol.lastRemaining(1)); // Output: 1
+  }
+}
+```

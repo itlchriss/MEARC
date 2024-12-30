@@ -1,0 +1,22 @@
+rm: ./test/s1021_remove_outermost_parentheses/gpt4/tmp/*: No such file or directory
+Traceback (most recent call last):
+  File "/Users/chrissleong/Documents/Phd_Studies/MEARC/./src/python/textpreprocessing.py", line 70, in <module>
+    conditions, sis = main(filecontent)
+  File "/Users/chrissleong/Documents/Phd_Studies/MEARC/./src/python/textpreprocessing.py", line 43, in main
+    s, si = runengine(c, t)
+  File "/Users/chrissleong/Documents/Phd_Studies/MEARC/src/python/preprocess/engine.py", line 114, in runengine
+    sent = rp.run(sent, t)
+  File "/Users/chrissleong/Documents/Phd_Studies/MEARC/src/python/preprocess/mrrepairprocess.py", line 637, in run
+    if sent[-1] == '.':
+IndexError: string index out of range
+usage: niet [-h] [-a ADDITIONAL_OBJECTS [ADDITIONAL_OBJECTS ...]]
+            [-f {json,yaml,toml,eval,newline,ifs,squote,dquote,comma}] [-i]
+            [-o OUTPUT_FILE] [-s] [-v] [--debug]
+            object [file]
+niet: error: argument file: can't open './test/s1021_remove_outermost_parentheses/gpt4/tmp/conditions.yml': [Errno 2] No such file or directory: './test/s1021_remove_outermost_parentheses/gpt4/tmp/conditions.yml'
+usage: niet [-h] [-a ADDITIONAL_OBJECTS [ADDITIONAL_OBJECTS ...]]
+            [-f {json,yaml,toml,eval,newline,ifs,squote,dquote,comma}] [-i]
+            [-o OUTPUT_FILE] [-s] [-v] [--debug]
+            object [file]
+niet: error: argument file: can't open './test/s1021_remove_outermost_parentheses/gpt4/tmp/conditions.yml': [Errno 2] No such file or directory: './test/s1021_remove_outermost_parentheses/gpt4/tmp/conditions.yml'
+grep: ./test/s1021_remove_outermost_parentheses/gpt4/tmp/*.mr: No such file or directory

@@ -1,0 +1,25 @@
+
+The following code implements an algorithm to solve the problem of finding smallest sorted ranges covering every number in a sorted unique integer array. It leverages two pointers to iterate through the input array while maintaining the current start and end points of the range being constructed. As we traverse the array, whenever a gap between consecutive elements exceeds one unit (indicating a new range), we add the previous range to our result set and update the starting point for the next range. This process continues until we have processed the entire array, at which point any remaining unfinished range will also be added to the results. My solution ensures optimal performance with time complexity O(n) due to its linear scan over the input array. Now let's take a look at my implementation below.
+```python
+def find_ranges(nums):
+    n = len(nums)
+    res = []
+
+    i = 0
+    while i < n:
+        j = i + 1
+
+        # Find the end of the current range
+        while j < n and nums[j] == nums[j - 1] + 1:
+            j += 1
+        
+        # Add the current range to the result
+        if j == i + 1:
+            res.append(str(nums[i]))
+        else:
+            res.append("{}->{}".format(nums[i], nums[j - 1]))
+            
+        i = j
+    
+    return res
+```

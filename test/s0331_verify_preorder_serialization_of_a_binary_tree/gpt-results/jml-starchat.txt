@@ -1,0 +1,15 @@
+
+```python
+def isValidSerialization(preorder):
+    nodes = preorder.split(",")
+    stack = []
+
+    for node in nodes:
+        while len(stack) > 1 and stack[-1] == "#" and stack[-2]!= "#":
+            _, second_last, last = stack.pop(), stack.pop(), stack.pop()
+            stack.append("#")
+
+        stack.append(node)
+
+    return len(stack) == 1 and stack[0] == "#"
+```

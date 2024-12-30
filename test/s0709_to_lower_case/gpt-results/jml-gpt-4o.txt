@@ -1,0 +1,13 @@
+```jml
+/*@
+  requires s != null;
+  requires 1 <= s.length() && s.length() <= 100;
+  requires (\forall int i; 0 <= i < s.length(); Character.isISOControl(s.charAt(i)) == false);
+  ensures (\forall int i; 0 <= i < s.length(); 
+             (Character.isUpperCase(\old(s.charAt(i))) ==> \result.charAt(i) == Character.toLowerCase(\old(s.charAt(i)))) &&
+             (!Character.isUpperCase(\old(s.charAt(i))) ==> \result.charAt(i) == \old(s.charAt(i))));
+@*/
+public String toLowerCase(String s) {
+    // Implementation here
+}
+```

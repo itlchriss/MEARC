@@ -1,0 +1,36 @@
+To convert the given problem description into JML (Java Modeling Language), we need to express the constraints and requirements of the problem in a formal specification. JML is used to specify the behavior of Java methods, so I'll provide a JML specification for a hypothetical Java method that solves this problem.
+
+```java
+//@ import java.util.List;
+//@ import java.util.ArrayList;
+
+/**
+ * This method finds all elements in the given array that appear more than ⌊ n/3 ⌋ times.
+ * 
+ * @param nums the input array of integers
+ * @return a list of integers that appear more than ⌊ n/3 ⌋ times
+ */
+//@ requires nums != null;
+//@ requires nums.length >= 1 && nums.length <= 5 * 10000;
+//@ requires (\forall int i; 0 <= i < nums.length; -1000000000 <= nums[i] && nums[i] <= 1000000000);
+//@ ensures (\forall int x; \result.contains(x) <==> (\num_of int i; 0 <= i < nums.length; nums[i] == x) > nums.length / 3);
+//@ ensures (\result.size() <= 2); // At most two elements can appear more than ⌊ n/3 ⌋ times
+public List<Integer> majorityElementII(int[] nums) {
+    // Implementation goes here
+    return new ArrayList<Integer>();
+}
+```
+
+### Explanation:
+
+- **Imports**: We import `List` and `ArrayList` to use them in the method signature and implementation.
+- **Method Signature**: The method `majorityElementII` takes an integer array `nums` and returns a list of integers.
+- **Preconditions (`requires`)**:
+  - The input array `nums` must not be null.
+  - The length of `nums` must be between 1 and 50,000.
+  - Each element in `nums` must be between -1,000,000,000 and 1,000,000,000.
+- **Postconditions (`ensures`)**:
+  - For each integer `x` in the result list, the number of occurrences of `x` in `nums` must be greater than `nums.length / 3`.
+  - The size of the result list must be at most 2, as at most two elements can appear more than ⌊ n/3 ⌋ times in an array.
+
+This JML specification describes the expected behavior of the method without providing the actual implementation.

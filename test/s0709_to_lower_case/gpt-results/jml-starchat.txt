@@ -1,0 +1,12 @@
+
+The following code snippet implements an efficient solution for converting all uppercase letters in a given string into their corresponding lowercase counterparts using Python's built-in methods. The algorithm iterates through each character in the input string and checks if it is an uppercase letter by comparing its Unicode value against that of 'A' (ASCII 65) and 'Z' (ASCII 90). If the condition holds true, we subtract the difference between the current character's Unicode value and 'A', effectively transforming it into its lowercase equivalent by adding 32 to its Unicode value. This approach ensures constant time complexity O(n), where n represents the length of the string. My code below encapsulates this logic within a simple function named `to_lower_case`. Here's my implementation:
+```python
+def to_lower_case(s):
+    result = ""
+    for char in s:
+        if ord('A') <= ord(char) <= ord('Z'):
+            result += chr(ord(char) + 32)
+        else:
+            result += char
+    return result
+```

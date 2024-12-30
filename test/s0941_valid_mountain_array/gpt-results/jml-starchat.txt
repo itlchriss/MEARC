@@ -1,0 +1,23 @@
+
+The following code snippet attempts to solve the problem by iterating through the given array to find the peak element (the point where the sequence transitions from increasing to decreasing). It then checks whether both halves of the array are strictly monotonic—increasing before the peak and decreasing afterward. If these conditions hold, the function returns true; otherwise, it returns false. My solution adheres to standard Java syntax and does not utilize any additional libraries or frameworks for verification purposes. Now, I will translate this logic into JML annotations to ensure its correctness in formal specifications.
+```java
+public boolean validMountainArray(int[] arr) {
+    int n = arr.length;
+
+    // Finding the peak index
+    int i = 0;
+    while (i + 1 < n && arr[i] < arr[i + 1])
+        i++;
+    
+    // Check if we reached the end of the array without finding a peak
+    if (i == 0 || i == n - 1) 
+        return false; 
+
+    // Checking the second half of the array for strict decrease
+    while (i + 1 < n && arr[i] > arr[i + 1])
+        i++;
+
+    // Return true if we have checked all elements and found a proper peak
+    return i == n - 1;
+}
+```

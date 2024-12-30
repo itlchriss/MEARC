@@ -1,0 +1,37 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants that describe the behavior of the method solving this problem. Here's how you might express this in JML:
+
+```java
+/*@
+  requires nums1 != null && nums2 != null && nums3 != null && nums4 != null;
+  requires nums1.length == nums2.length && nums2.length == nums3.length && nums3.length == nums4.length;
+  requires 1 <= nums1.length && nums1.length <= 200;
+  requires (\forall int i; 0 <= i && i < nums1.length; 
+              -2147483648 <= nums1[i] && nums1[i] <= 2147483647 &&
+              -2147483648 <= nums2[i] && nums2[i] <= 2147483647 &&
+              -2147483648 <= nums3[i] && nums3[i] <= 2147483647 &&
+              -2147483648 <= nums4[i] && nums4[i] <= 2147483647);
+  
+  ensures \result == (\num_of int i, j, k, l; 
+                      0 <= i && i < nums1.length && 
+                      0 <= j && j < nums2.length && 
+                      0 <= k && k < nums3.length && 
+                      0 <= l && l < nums4.length; 
+                      nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0);
+@*/
+public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+    // Method implementation
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - Ensure that none of the input arrays are `null`.
+  - Ensure all input arrays have the same length.
+  - Ensure the length of the arrays is between 1 and 200.
+  - Ensure each element in the arrays is within the specified range of `-2^28` to `2^28`.
+
+- **Postconditions (`ensures`)**:
+  - The result (`\result`) is the number of tuples `(i, j, k, l)` such that the sum of the elements at these indices from the four arrays is zero.
+
+This JML specification provides a formal contract for the `fourSumCount` method, describing what is expected of the inputs and what the method guarantees to produce as output.

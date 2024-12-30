@@ -1,0 +1,46 @@
+To convert the given problem description into Java Modeling Language (JML), we need to specify the behavior of the function using JML annotations. JML is used to specify the contracts for Java methods, including preconditions, postconditions, and invariants. Here's how you can express the problem in JML:
+
+```java
+public class NumberOf1Bits {
+
+    /**
+     * Returns the number of '1' bits in the binary representation of the given integer.
+     *
+     * @param n the input integer, represented as a binary string of length 32.
+     * @return the number of '1' bits in the binary representation of n.
+     * @throws IllegalArgumentException if the input string is not a valid 32-bit binary string.
+     */
+    /*@ requires n != null;
+      @ requires n.length() == 32;
+      @ requires (\forall int i; 0 <= i && i < n.length(); n.charAt(i) == '0' || n.charAt(i) == '1');
+      @ ensures \result == (\sum int i; 0 <= i && i < n.length(); n.charAt(i) == '1' ? 1 : 0);
+      @*/
+    public static int hammingWeight(String n) {
+        if (n == null || n.length() != 32) {
+            throw new IllegalArgumentException("Input must be a binary string of length 32.");
+        }
+        int count = 0;
+        for (int i = 0; i < n.length(); i++) {
+            if (n.charAt(i) == '1') {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - The input `n` must not be `null`.
+  - The length of `n` must be exactly 32.
+  - Each character in `n` must be either '0' or '1', ensuring it's a valid binary string.
+
+- **Postconditions (`ensures`)**:
+  - The result (`\result`) is the sum of '1' bits in the string `n`. This is expressed using a JML quantifier that iterates over each character in the string and counts the '1's.
+
+- **Exception Handling**:
+  - The method throws an `IllegalArgumentException` if the input string is not a valid 32-bit binary string, which is consistent with the preconditions.
+
+This JML specification ensures that the function behaves as expected according to the problem description.

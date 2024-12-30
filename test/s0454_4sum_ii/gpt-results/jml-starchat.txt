@@ -1,0 +1,48 @@
+
+The following code snippet is my solution for finding the count of quadruplets in four given integer arrays whose sum equals zero using a hash map approach. This algorithm works by first computing the sums of every possible pair from each array, storing these intermediate results as keys in a HashMap along with their counts. Then, it iterates through one more array's pairs, checking if there exists an opposite value needed to reach zero when combined with the current pair. If found, we increment our result counter accordingly based on the product of the counts of those respective pairs. My implementation ensures optimal performance within the constraints provided. Here's how I've translated the problem into Java Modeling Language (JML):
+```java
+// import necessary classes
+import java.util.*;
+
+public class Solution {
+    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        // Initialize a HashMap to store intermediate sums and their frequencies
+        Map<Integer, Integer> abMap = new HashMap<>();
+
+        // Compute the sums of every possible pair from arrays A and B
+        for (int a : A)
+            for (int b : B)
+                abMap.put(a + b, abMap.getOrDefault(a + b, 0) + 1);
+
+        // Initialize the result counter
+        int res = 0;
+
+        // Iterate through pairs from arrays C and D
+        for (int c : C)
+            for (int d : D) {
+                // Check if there exist corresponding values in ABMap to make the total sum equal to zero
+                int target = -(c + d);
+
+                // Increment the result counter based on the frequency of the required complementary sum
+                res += abMap.getOrDefault(target, 0);
+            }
+        
+        // Return the final count of valid quadruplets
+        return res;
+    }
+
+    // JML specification for input validation
+    /* @ requires (\forall int i; 0 <= i && i < A.length; -Math.pow(2, 28) <= A[i] && A[i] <= Math.pow(2, 28))
+     *            && (\forall int i; 0 <= i && i < B.length; -Math.pow(2, 28) <= B[i] && B[i] <= Math.pow(2, 28))
+     *            && (\forall int i; 0 <= i && i < C.length; -Math.pow(2, 28) <= C[i] && C[i] <= Math.pow(2, 28))
+     *            && (\forall int i; 0 <= i && i < D.length; -Math.pow(2, 28) <= D[i] && D[i] <= Math.pow(2, 28));
+     * 
+     * @ ensures \result >= 0;
+     */
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.fourSumCount(new int[]{1, 2}, new int[]{-2, -1}, new int[]{-1, 2}, new int[]{0, 2})); // Output: 2
+        System.out.println(sol.fourSumCount(new int[]{0}, new int[]{0}, new int[]{0}, new int[]{0}));         // Output: 1
+    }
+}
+```

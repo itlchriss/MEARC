@@ -1,0 +1,19 @@
+```jml
+/*@
+  @ requires s != null;
+  @ requires 1 <= s.length() && s.length() <= 300000;
+  @ requires (\forall int i; 0 <= i < s.length(); 
+  @           Character.isDigit(s.charAt(i)) || 
+  @           s.charAt(i) == '+' || 
+  @           s.charAt(i) == '-' || 
+  @           s.charAt(i) == '*' || 
+  @           s.charAt(i) == '/' || 
+  @           Character.isWhitespace(s.charAt(i)));
+  @ ensures -2147483648 <= \result && \result <= 2147483647;
+  @*/
+public int evaluateExpression(String s) {
+    // Implementation goes here
+}
+```
+
+This JML specification describes the preconditions and postconditions for a method `evaluateExpression` that evaluates a mathematical expression given as a string. The preconditions ensure that the input string `s` is not null, has a valid length, and consists only of digits, operators, and whitespace. The postcondition guarantees that the result is within the range of a 32-bit integer.

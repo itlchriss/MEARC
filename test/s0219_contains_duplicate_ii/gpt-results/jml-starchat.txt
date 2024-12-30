@@ -1,0 +1,42 @@
+
+The following code snippet is my solution for checking whether a given array contains duplicate elements within a specified distance (`k`). It employs a HashMap data structure to keep track of the most recent index at which each unique element has been encountered during iteration through the input array. By comparing the difference between current and stored indices with `k`, we can determine if any pair of duplicates falls within the desired range. If such a condition arises, the function returns `true`; otherwise, it concludes by returning `false`. My implementation ensures efficient time complexity as required (O(n)), where n represents the length of the input array. Here's how I've implemented this logic in Java using JML annotations for specification purposes:
+```java
+import java.util.*;
+
+public class Solution {
+    /**
+     * Determines if there exist distinct indices i and j in the array such that nums[i] equals nums[j] 
+     * and abs(i - j) does not exceed k.
+     * @param nums The input array of integers.
+     * @param k The maximum allowed distance between equal numbers.
+     * @return True if conditions met; False otherwise.
+     */
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        // Iterate over the array
+        for (int i = 0; i < nums.length; i++) {
+            // Check if number already exists in map and its last occurrence was less than or equal to 'k' steps ago
+            if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k)
+                return true;
+
+            // Update latest position of current number in map
+            map.put(nums[i], i);
+        }
+        
+        // No pairs found satisfying conditions
+        return false;
+    }
+
+    /* JML Specification */
+    
+    /**
+     * Requires: nums!= null && 1 <= nums.length <= Math.pow(10, 5) && -Math.pow(10, 9) <= nums[i] <= Math.pow(10, 9) && 0 <= k <= Math.pow(10, 5).
+     * Ensures: (\result == true) ==> \exists int i, j; 0 <= i < j < |nums| : nums[i] == nums[j] && j - i <= k.
+     *          (\result == false) ==>!\exists int i, j; 0 <= i < j < |nums| : nums[i] == nums[j] && j - i <= k.
+     */
+    public /*@ pure @*/ boolean containsNearbyDuplicate(/*@ non_null @*/ int[] nums, int k) {
+        // Implementation omitted for brevity...
+    }
+}
+```

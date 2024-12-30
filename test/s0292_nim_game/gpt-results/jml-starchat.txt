@@ -1,0 +1,21 @@
+
+The following code snippet presents my solution for determining whether I have a winning strategy in the classic Nim Game using Java's formal specification language (JML). This approach leverages the mathematical property that if the total number of stones `n` is not divisible by four, then the player making the initial move has a guaranteed victory. By applying JML annotations, we ensure that our method adheres to its specifications regarding input validation and output correctness. My implementation follows these steps:
+
+1. Verify that the provided integer `n` falls within the specified range. If not, throw an IllegalArgumentException indicating invalid input.
+2. Apply the logical condition to determine if the current player has a winning position based on the parity of `n`. Return true when `n % 4!= 0`; otherwise, return false.
+```java
+public class Solution {
+  /**
+   * Determine if the current player has a winning strategy in the Nim Game given the number of stones 'n'.
+   * @param n the number of stones in the heap
+   * @return true if the current player wins; false otherwise
+   */
+  public /*@ pure @*/ boolean canWinNim(int n) {
+    // Input Validation
+    assert n > 0 : "Invalid input! Number of stones must be greater than zero.";
+    
+    // Winning Strategy: Player wins if the number of stones is not divisible by four
+    return n % 4!= 0;
+  }
+}
+```

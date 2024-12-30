@@ -1,0 +1,11 @@
+```jml
+/*@
+  requires nums != null;
+  requires nums.length >= 3 && nums.length <= 10000;
+  requires (\forall int i; 0 <= i < nums.length; -1000 <= nums[i] <= 1000);
+  ensures \result == (\max int i, j, k; 0 <= i < j < k < nums.length; nums[i] * nums[j] * nums[k]);
+@*/
+public static int maximumProduct(int[] nums) {
+    // Implementation goes here
+}
+```

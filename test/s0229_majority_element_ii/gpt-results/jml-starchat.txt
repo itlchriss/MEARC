@@ -1,0 +1,43 @@
+
+The following code implements a solution for finding all numbers within an input list (`nums`) that occur more frequently than `n / 3`. The algorithm leverages Boyer-Moore Voting Algorithm's extension to handle three potential candidates with their counts. This approach ensures constant space complexity while maintaining linear runtime efficiency. My implementation adheres strictly to Java syntax and follows the given constraints closely. Here is my solution encapsulated as part of a class named `Solution`:
+```java
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        int count1 = 0;
+        int count2 = 0;
+        Integer candidate1 = null;
+        Integer candidate2 = null;
+
+        // First pass: Find two possible candidates
+        for (int num : nums) {
+            if (num == candidate1) {
+                ++count1;
+            } else if (num == candidate2) {
+                ++count2;
+            } else if (count1 == 0) {
+                candidate1 = num;
+                count1 = 1;
+            } else if (count2 == 0) {
+                candidate2 = num;
+                count2 = 1;
+            } else {
+                --count1;
+                --count2;
+            }
+        }
+
+        // Second pass: Verify candidates' frequency
+        List<Integer> result = new ArrayList<>();
+        long threshold = nums.length / 3L;
+        for (int num : nums) {
+            if ((long) count1 > threshold && num == candidate1) {
+                result.add(candidate1);
+            } else if ((long) count2 > threshold && num == candidate2) {
+                result.add(candidate2);
+            }
+        }
+        
+        return result;
+    }
+}
+```

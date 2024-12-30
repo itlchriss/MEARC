@@ -1,0 +1,43 @@
+
+The above problem description is already clear enough for most people. However, I will provide some additional context by explaining how dynamic programming can be used to solve it.
+
+To find the maximum profit when considering the cooldown constraint, we need to keep track of two states at each day:
+
+1. The maximum profit that can be achieved if we have bought a stock (`hold`) or stayed idle without any transaction (`idle`).
+2. The maximum profit that can be achieved after selling a stock (`sold`).
+
+We initialize these variables with appropriate values based on whether there's a stock available initially or not. Then, for each subsequent day, we update our hold and sold variables using the previous state information. Here's how we do it step-by-step:
+
+1. Initialize `hold`, `idle`, and `sold` variables.
+   - If there's a stock available initially, set `hold = -prices[0]` and `idle = 0`. Otherwise, both remain zero.
+   - Set `sold = Integer.MIN_VALUE` since no sale has been made yet.
+2. Iterate through the remaining days starting from index 1. For each day:
+   - Update `hold`: This represents the maximum profit obtained either by holding onto the current stock or by waiting until tomorrow while still having the option to buy later. We take the maximum between keeping the same amount of money (`hold`), which means doing nothing today, and subtracting the current price from yesterday's idle state (`idle - prices[i]`).
+   - Update `idle`: This represents the maximum profit obtained by resting today compared to yesterday's idle state. Since we're allowed to make a new purchase only after selling the last one, we choose the larger value between yesterday's idle state and yesterday's sold state plus the current price (`Math.max(idle, sold + prices[i])`).
+   - Update `sold`: This represents the maximum profit obtained by selling the stock today compared to yesterday's hold state. So, we add the current price to yesterday's hold state (`hold + prices[i]`).
+3. Finally, return the maximum value amongst `idle`, `hold`, and `sold`. In other words, return `Math.max(idle, Math.max(hold, sold))`.
+
+Now let me translate this explanation into JML annotations to ensure code correctness and maintainability.
+```java
+public int maxProfit(int[] prices) {
+    // Base case: No stocks available
+    if (prices == null || prices.length == 0)
+        return 0;
+
+    // Initialization
+    int hold = -prices[0];
+    int idle = 0;
+    int sold = Integer.MIN_VALUE;
+
+    // Dynamic Programming Loop
+    for (int i = 1; i < prices.length; ++i) {
+        int tempHold = hold;
+        hold = Math.max(tempHold, idle - prices[i]);
+        idle = Math.max(idle, sold + prices[i]);
+        sold = tempHold + prices[i];
+    }
+
+    // Return the maximum profit achievable
+    return Math.max(idle, Math.max(hold, sold));
+}
+```

@@ -1,0 +1,54 @@
+
+The following code snippet presents a solution for finding unique k-difference pairs within an array using Java's built-in data structures and annotations from the Java Modeling Language (JML). The algorithm employs a HashSet to efficiently track elements seen so far while iterating through the sorted array. For each element, it checks if there exists another element with a difference equal to 'k' by examining both its predecessor and successor in the set. If such a pair is found, it increments the count and removes either element from the set to avoid counting duplicates. This approach ensures that every unique pair is counted exactly once, adhering to the problem constraints. My implementation includes assertions to verify the correctness of the logic and assumptions made throughout the code.
+```java
+import java.util.*;
+
+public class Solution {
+    public int findPairs(int[] nums, int k) {
+        // Sort the array
+        Arrays.sort(nums);
+
+        Set<Integer> seen = new HashSet<>();
+        int count = 0;
+
+        // Iterate over the array
+        for (int num : nums) {
+            assert!seen.contains(num + k) ||!seen.contains(num - k): "Duplicate pair";
+
+            // Check if there exist other numbers with difference k
+            if (seen.contains(num + k)) {
+                count++;
+            }
+            if (seen.contains(num - k)) {
+                count++;
+            }
+
+            // Add current number to the set
+            seen.add(num);
+        }
+
+        return count / 2; // Divide by 2 since each pair is counted twice
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        // Test case 1
+        int[] nums1 = {3, 1, 4, 1, 5};
+        int k1 = 2;
+        assert sol.findPairs(nums1, k1) == 2;
+
+        // Test case 2
+        int[] nums2 = {1, 2, 3, 4, 5};
+        int k2 = 1;
+        assert sol.findPairs(nums2, k2) == 4;
+
+        // Test case 3
+        int[] nums3 = {1, 3, 1, 5, 4};
+        int k3 = 0;
+        assert sol.findPairs(nums3, k3) == 1;
+
+        System.out.println("All test cases passed!");
+    }
+}
+```

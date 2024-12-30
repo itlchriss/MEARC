@@ -1,0 +1,43 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for the method that implements the wildcard matching. Here's a possible JML specification for a method `isMatch` that takes two strings `s` and `p` as input and returns a boolean indicating whether the pattern matches the entire string:
+
+```java
+/**
+ * Wildcard Matching
+ *
+ * @param s the input string
+ * @param p the pattern string containing lowercase letters, '?' and '*'
+ * @return true if the pattern matches the entire input string, false otherwise
+ * @requires s != null && p != null
+ * @ensures \result == (\exists int i; 0 <= i <= s.length; match(s, p, i))
+ */
+public boolean isMatch(String s, String p) {
+    // Implementation goes here
+}
+
+/**
+ * Helper method to determine if the pattern matches the string from a given index.
+ *
+ * @param s the input string
+ * @param p the pattern string
+ * @param index the current index in the input string
+ * @return true if the pattern matches the string starting from the given index
+ * @requires s != null && p != null && 0 <= index <= s.length
+ * @ensures \result == (p.length == 0 ==> index == s.length) &&
+ *          (p.length > 0 ==> (
+ *              (p.charAt(0) == '?' ==> index < s.length && match(s, p.substring(1), index + 1)) ||
+ *              (p.charAt(0) == '*' ==> (\exists int j; index <= j <= s.length; match(s, p.substring(1), j))) ||
+ *              (p.charAt(0) == s.charAt(index) ==> match(s, p.substring(1), index + 1))
+ *          ))
+ */
+private boolean match(String s, String p, int index) {
+    // Implementation goes here
+}
+```
+
+### Explanation:
+
+- **Preconditions (`@requires`)**: The input strings `s` and `p` must not be null.
+- **Postconditions (`@ensures`)**: The result of `isMatch` is true if there exists an index `i` such that the pattern `p` matches the string `s` starting from index `i`.
+- **Helper Method**: The `match` method is a recursive helper that checks if the pattern matches the string starting from a given index. It handles the logic for `?` and `*` as described in the problem statement.
+
+This JML specification outlines the expected behavior of the `isMatch` method and its helper, ensuring that the pattern matching adheres to the rules specified in the problem description.

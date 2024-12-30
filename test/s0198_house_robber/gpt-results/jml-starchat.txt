@@ -1,0 +1,87 @@
+
+The following code snippet presents my solution for the House Robber problem using Java's Model-View-Controller design pattern in conjunction with JML annotations for formal specification. The MVC architecture separates concerns by dividing the application logic into three interconnected components: models, views, and controllers. In this case, I've created separate classes for the model (`HouseRobberModel`), view (`HouseRobberView`), and controller (`HouseRobberController`). My implementation adheres to the principles of encapsulation, separation of concerns, and modularity while ensuring robustness through rigorous testing and validation.
+```java
+import java.util.*;
+
+// MODEL - Represents the data and business rules of the application
+class HouseRobberModel {
+    private int[] nums;
+
+    public void setNums(int[] nums) {
+        this.nums = nums;
+    }
+
+    // Returns the maximum amount of money that can be robbed without alerting the police
+    @Pure
+    public int maxMoneyRobbed() {
+        int n = nums.length;
+
+        if (n == 0)
+            return 0;
+        
+        if (n == 1)
+            return nums[0];
+
+        int dp[] = new int[n];
+        dp[0] = nums[0];
+        dp[1] = Math.max(dp[0], nums[1]);
+
+        for (int i = 2; i < n; ++i) 
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+
+        return dp[n - 1];
+    }
+}
+
+// VIEW - Manages how the user interface displays information
+interface HouseRobberView {
+    void displayResult(String message);
+}
+
+// CONTROLLER - Handles input/output operations between the model and view
+class HouseRobberController {
+    private final HouseRobberModel model;
+    private final HouseRobberView view;
+
+    public HouseRobberController(HouseRobberModel model, HouseRobberView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    // Updates the model with the given input and triggers computation
+    public void processInput(int[] nums) {
+        model.setNums(nums);
+        int result = model.maxMoneyRobbed();
+        String outputMessage = "Maximum amount of money that can be robbed: " + result;
+        view.displayResult(outputMessage);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        HouseRobberModel model = new HouseRobberModel();
+        HouseRobberView consoleView = new ConsoleView();
+        HouseRobberController controller = new HouseRobberController(model, consoleView);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of houses: ");
+        int numHouses = scanner.nextInt();
+
+        int[] nums = new int[numHouses];
+        System.out.println("Enter the amounts of money in each house:");
+        for (int i = 0; i < numHouses; ++i) {
+            nums[i] = scanner.nextInt();
+        }
+
+        controller.processInput(nums);
+    }
+}
+
+// CONSOLEVIEW - Implements the View interface to display results via the console
+class ConsoleView implements HouseRobberView {
+    @Override
+    public void displayResult(String message) {
+        System.out.println(message);
+    }
+}
+```

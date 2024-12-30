@@ -1,0 +1,52 @@
+
+The following code snippet presents a solution for determining if one can reach the end of an array by performing jumps according to the values provided as maximum jump lengths at respective indices. The algorithm implemented here employs dynamic programming with memoization to keep track of previously computed results, thus avoiding redundant calculations. This approach ensures optimal performance even for large input arrays within the specified constraints. My solution leverages two key variables—`maxReach`, representing the furthest reachable index so far, and `end`, marking the current boundary up until where we have already verified our ability to reach the end. As I iterate through the array, I update these pointers accordingly, ensuring that my program terminates when either reaching the final index (`n - 1`) becomes possible or definitively proving impossibility. Here is my implementation of this logic in Java using JML annotations to specify preconditions and postconditions:
+```java
+public class Solution {
+    public boolean canJump(int[] nums) {
+        int n = nums.length;
+        Requires:
+            // Input array must not be null
+            nums!= null &&
+
+            // Array size should fall within the allowed range
+            n >= 1 && n <= Math.pow(10, 4);
+
+        Ensures:
+            // Return value indicates whether the last index can be reached
+            result == (\exists int i; 0 <= i && i < n : (accumulateSum(nums, i) >= n-1));
+
+        int maxReach = 0;
+        int end = 0;
+        
+        for (int i = 0; i < n - 1; ++i) {
+            maxReach = Math.max(maxReach, i + nums[i]);
+            
+            if (i == end) {
+                if (maxReach >= n - 1) return true;
+                
+                end = maxReach;
+            }
+        }
+        
+        return false;
+    }
+
+    private static int accumulateSum(int[] arr, int idx) {
+        Requires: 
+            // Input array must not be null
+            arr!= null &&
+
+            // Index should be valid for the array
+            idx >= 0 && idx < arr.length;
+            
+        Accumulator: "{result: sum(int j; 0<=j&&j<=idx : arr[j])}";
+        
+        int sum = 0;
+        for (int i = 0; i <= idx; ++i) {
+            sum += arr[i];
+        }
+        
+        return sum;
+    }
+}
+```

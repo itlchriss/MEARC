@@ -1,0 +1,15 @@
+
+The following code implements an algorithm that checks whether a given string contains properly nested pairs of parentheses, braces, or square brackets according to standard rules of balanced expressions. The solution employs a stack data structure which allows us to efficiently manage opening symbols as we iterate through the input string. For each character encountered, it performs one of two actions based on its nature—if it's an open bracket (i.e., `(`, `{`, `[`), these are pushed onto the stack for later comparison with their corresponding closing counterparts. If the current symbol is a close bracket (`)`, `}`, `]`), the code verifies that there exists at least one matching opening bracket on top of the stack before popping it out; otherwise, it immediately returns `false` indicating invalidity. By the end of scanning all characters, if the stack remains empty, then every pair has been correctly matched, resulting in a return value of `true`. This approach ensures that the overall expression adheres to the rule of well-formedness in programming languages such as Java Modeling Language (JML). My implementation below encapsulates this logic succinctly and accurately.
+```python
+def isValid(s):
+    stack = []
+    mapping = {")": "(", "}": "{", "]": "["}
+
+    for char in s:
+        if char in mapping.values():
+            stack.append(char)
+        elif not stack or mapping[char]!= stack.pop():
+            return False
+    
+    return len(stack) == 0
+```

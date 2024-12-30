@@ -1,0 +1,32 @@
+
+*/
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+using namespace std;
+
+class Solution {
+public:
+    string frequencySort(string s) {
+        vector<int> count(128);
+        for (char c : s)
+            ++count[c];
+
+        priority_queue<pair<int, char>> pq;
+        for (int i = 0; i < 128; ++i) {
+            if (count[i] > 0)
+                pq.push({count[i], static_cast<char>(i)});
+        }
+
+        string result;
+        while (!pq.empty()) {
+            auto [freq, ch] = pq.top();
+            pq.pop();
+            result += string(freq, ch);
+        }
+
+        return result;
+    }
+};
+```

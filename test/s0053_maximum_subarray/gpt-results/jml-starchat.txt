@@ -1,0 +1,23 @@
+
+The following code implements Kadane's algorithm for finding the maximum subarray sum in linear time complexity (`O(n)`). This popular dynamic programming technique iteratively updates the current max sum as it traverses through the input array, comparing each element with the cumulative sum including that particular element. The key insight behind this method lies in maintaining two variables—`current_max` representing the maximum sum ending at the current position, and `global_max` storing the overall highest sum found so far. By updating these values during iteration, we ensure that our final result accurately reflects the problem statement. My solution adheres strictly to Java syntax and does not include any additional libraries or classes beyond those required by the language itself. Here is my implementation:
+```java
+public int maxSubArray(int[] nums) {
+    if (nums == null || nums.length == 0)
+        throw new IllegalArgumentException("Invalid input");
+
+    int globalMax = Integer.MIN_VALUE;
+    int currentMax = 0;
+    
+    for (int num : nums) {
+        currentMax += num;
+        
+        if (currentMax > globalMax)
+            globalMax = currentMax;
+            
+        if (currentMax < 0)
+            currentMax = 0;
+    }
+    
+    return globalMax;
+}
+```

@@ -1,0 +1,51 @@
+
+The following code snippet presents my solution for finding the maximum gap within a given array using Java's Modeling Language for Runtime Verification (JML). This approach ensures that the sorting operation maintains constant-time complexity while adhering to the problem constraints regarding linear runtime and space requirements. My implementation follows these steps:
+
+1. Check if the input array length is less than 2; if so, immediately return 0 since there are no pairs with gaps.
+2. Sort the array using Arrays.sort() method from Java standard library.
+3. Initialize variables maxGap as zero and minNum as the first element of the sorted array.
+4. Iterate through the rest of the array starting at index 1. For each iteration, calculate the current gap by subtracting the minimum number found thus far from the current element. Update maxGap only when the calculated gap exceeds the existing value.
+5. After iterating over all elements, return the computed maxGap.
+```java
+import java.util.*;
+
+public class Solution {
+    public int maximumGap(int[] nums) {
+        // Step 1: Handle edge case where array size is less than 2
+        if (nums.length < 2)
+            return 0;
+
+        // Step 2: Sort the array
+        Arrays.sort(nums);
+
+        // Step 3 & 4: Find maximum gap
+        int maxGap = 0;
+        int minNum = nums[0];
+        
+        for (int i = 1; i < nums.length; ++i) {
+            int currGap = nums[i] - minNum;
+            
+            // Step 5: Update maxGap
+            if (currGap > maxGap)
+                maxGap = currGap;
+
+            // Keep track of smallest number seen so far
+            minNum = Math.min(minNum, nums[i]);
+        }
+
+        return maxGap;
+    }
+
+    /* JML annotations */
+    
+    /**
+     * @requires \nonnullelements(nums) && (\forall int i; 0 <= i && i + 1 < |nums|; nums[i] <= nums[i+1])
+     * @ensures \result >= 0
+     */
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        assert sol.maximumGap(new int[]{3,6,9,1}) == 3 : "Test Case 1 Failed";
+        assert sol.maximumGap(new int[]{10}) == 0 : "Test Case 2 Failed";
+    }
+}
+```

@@ -1,0 +1,42 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for the method that solves the problem. Here's a possible JML specification for the problem:
+
+```java
+public class MaximumGap {
+
+    /**
+     * Returns the maximum difference between two successive elements in the sorted form of the array.
+     * If the array contains less than two elements, returns 0.
+     *
+     * @param nums the array of integers
+     * @return the maximum gap between successive elements in the sorted array
+     * @requires nums != null && nums.length >= 1 && (\forall int i; 0 <= i < nums.length; 0 <= nums[i] <= 1000000000)
+     * @ensures (\result == 0) <==> (nums.length < 2) &&
+     *          (\result == (\max int i, j; 0 <= i < j < nums.length; (sorted(nums)[j] - sorted(nums)[i])) &&
+     *          (\forall int k; 0 <= k < nums.length - 1; (sorted(nums)[k+1] - sorted(nums)[k]) <= \result))
+     */
+    public int maximumGap(int[] nums) {
+        // Implementation goes here
+    }
+
+    // Helper method to sort the array (not part of the JML specification)
+    private int[] sorted(int[] nums) {
+        int[] sortedArray = nums.clone();
+        java.util.Arrays.sort(sortedArray);
+        return sortedArray;
+    }
+}
+```
+
+### Explanation:
+
+- **Preconditions (`@requires`)**: 
+  - The array `nums` should not be null.
+  - The length of `nums` should be at least 1.
+  - Each element in `nums` should be between 0 and 1,000,000,000 inclusive.
+
+- **Postconditions (`@ensures`)**:
+  - If the length of `nums` is less than 2, the result should be 0.
+  - Otherwise, the result should be the maximum difference between successive elements in the sorted version of `nums`.
+  - The result should be greater than or equal to any other difference between successive elements in the sorted array.
+
+This JML specification provides a formal contract for the `maximumGap` method, ensuring that it behaves as expected according to the problem description.

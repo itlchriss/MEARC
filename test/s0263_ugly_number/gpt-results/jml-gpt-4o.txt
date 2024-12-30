@@ -1,0 +1,38 @@
+Certainly! Below is the JML (Java Modeling Language) specification for the given problem statement:
+
+```java
+//@ public normal_behavior
+//@ requires Integer.MIN_VALUE <= n && n <= Integer.MAX_VALUE;
+//@ ensures \result == isUglyNumber(n);
+public boolean isUglyNumber(int n) {
+    if (n <= 0) return false;
+    while (n % 2 == 0) n /= 2;
+    while (n % 3 == 0) n /= 3;
+    while (n % 5 == 0) n /= 5;
+    return n == 1;
+}
+
+/*@ public normal_behavior
+  @ requires Integer.MIN_VALUE <= n && n <= Integer.MAX_VALUE;
+  @ ensures \result <==> (n > 0 && (\forall int p; p > 1 && p <= n; isPrime(p) ==> (p == 2 || p == 3 || p == 5 || n % p != 0)));
+  @*/
+public static boolean isUglyNumber(int n);
+
+/*@ public normal_behavior
+  @ requires p > 1;
+  @ ensures \result <==> (\forall int i; 2 <= i && i <= Math.sqrt(p); p % i != 0);
+  @*/
+public static boolean isPrime(int p);
+```
+
+### Explanation:
+
+1. **isUglyNumber Method:**
+   - The method `isUglyNumber` checks if a given integer `n` is an ugly number.
+   - The JML specification for `isUglyNumber` ensures that the result is true if and only if `n` is a positive integer and all its prime factors are among `2`, `3`, and `5`.
+
+2. **isPrime Method:**
+   - The method `isPrime` checks if a given integer `p` is a prime number.
+   - The JML specification for `isPrime` ensures that the result is true if and only if `p` is greater than 1 and has no divisors other than `1` and `p` itself.
+
+The JML annotations specify the behavior of the methods, including preconditions (`requires`) and postconditions (`ensures`). The `isUglyNumber` method uses a helper method `isPrime` to determine if a number is prime, which is used in the logical expression to check the prime factors of `n`.

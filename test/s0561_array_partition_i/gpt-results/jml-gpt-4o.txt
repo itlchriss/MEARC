@@ -1,0 +1,29 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and any invariants that describe the behavior of the function. Here's how you might express this in JML:
+
+```java
+/*@
+  requires nums != null;
+  requires nums.length % 2 == 0;
+  requires (\forall int i; 0 <= i < nums.length; -10000 <= nums[i] && nums[i] <= 10000);
+  ensures \result == (\sum int i; 0 <= i < nums.length / 2; 
+                      \min(nums[2*i], nums[2*i + 1]));
+  ensures (\forall int i, j; 0 <= i < j < nums.length / 2; 
+           \min(nums[2*i], nums[2*i + 1]) <= \min(nums[2*j], nums[2*j + 1]));
+@*/
+public int arrayPairSum(int[] nums) {
+    // Implementation goes here
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`)**:
+  - `nums` should not be null.
+  - The length of `nums` should be even, as it is `2n`.
+  - Each element in `nums` should be within the range \([-10^4, 10^4]\).
+
+- **Postconditions (`ensures`)**:
+  - The result should be the sum of the minimum of each pair when the array is optimally paired.
+  - The pairs should be ordered such that the minimum of each pair is less than or equal to the minimum of the next pair, ensuring the sum is maximized.
+
+This JML specification describes the expected behavior of the `arrayPairSum` function, ensuring that it adheres to the problem's constraints and requirements.

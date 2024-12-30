@@ -1,0 +1,29 @@
+To convert the given problem description into JML (Java Modeling Language), we need to specify the preconditions, postconditions, and invariants for the `removeDuplicates` method. Here's how you can express this in JML:
+
+```java
+//@ requires nums != null;
+//@ requires (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]);
+//@ ensures 0 <= \result && \result <= nums.length;
+//@ ensures (\forall int i; 0 <= i && i < \result - 1; nums[i] < nums[i + 1]);
+//@ ensures (\forall int i; \result <= i && i < nums.length; nums[i] == \old(nums[i]));
+//@ ensures (\forall int i; 0 <= i && i < \result; (\exists int j; 0 <= j && j < \old(nums.length); nums[i] == \old(nums[j])));
+//@ ensures (\forall int i; 0 <= i && i < \result; (\forall int j; 0 <= j && j < i; nums[i] != nums[j]));
+public int removeDuplicates(int[] nums) {
+    // Method implementation
+}
+```
+
+### Explanation:
+
+- **Preconditions (`requires`):**
+  - `nums != null`: The input array `nums` should not be null.
+  - `(\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1])`: The array `nums` is sorted in non-decreasing order.
+
+- **Postconditions (`ensures`):**
+  - `0 <= \result && \result <= nums.length`: The return value `k` is a valid index within the bounds of the array.
+  - `(\forall int i; 0 <= i && i < \result - 1; nums[i] < nums[i + 1])`: The first `k` elements of `nums` are unique and sorted in strictly increasing order.
+  - `(\forall int i; \result <= i && i < nums.length; nums[i] == \old(nums[i]))`: Elements beyond the first `k` positions remain unchanged.
+  - `(\forall int i; 0 <= i && i < \result; (\exists int j; 0 <= j && j < \old(nums.length); nums[i] == \old(nums[j])))`: Each element in the first `k` positions of `nums` is one of the original elements.
+  - `(\forall int i; 0 <= i && i < \result; (\forall int j; 0 <= j && j < i; nums[i] != nums[j]))`: All elements in the first `k` positions are unique.
+
+This JML specification provides a formal contract for the `removeDuplicates` method, ensuring that it behaves as expected according to the problem description.

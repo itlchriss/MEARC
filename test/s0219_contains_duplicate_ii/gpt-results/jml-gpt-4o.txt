@@ -1,0 +1,16 @@
+```jml
+/*@
+  @ requires nums != null;
+  @ requires 1 <= nums.length && nums.length <= 100000;
+  @ requires (\forall int i; 0 <= i < nums.length; -1000000000 <= nums[i] && nums[i] <= 1000000000);
+  @ requires 0 <= k && k <= 100000;
+  @
+  @ ensures \result == true <==> (\exists int i, j; 0 <= i < j < nums.length; nums[i] == nums[j] && Math.abs(i - j) <= k);
+  @
+  @ also
+  @
+  @ ensures \result == false <==> !(\exists int i, j; 0 <= i < j < nums.length; nums[i] == nums[j] && Math.abs(i - j) <= k);
+  @
+  @ pure function boolean containsDuplicateII(int[] nums, int k);
+  @*/
+```

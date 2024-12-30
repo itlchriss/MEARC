@@ -1,0 +1,36 @@
+To convert the given problem statement into JML (Java Modeling Language), we need to specify the method contract, including preconditions, postconditions, and any invariants. Here's how you can express the problem in JML:
+
+```java
+public class HexadecimalConverter {
+
+    /**
+     * Converts an integer to its hexadecimal representation.
+     *
+     * @param num the integer to be converted
+     * @return a string representing the hexadecimal representation of the integer
+     * @requires -2147483648 <= num <= 2147483647; // This is the range of a 32-bit signed integer
+     * @ensures \result != null; // The result should not be null
+     * @ensures \forall int i; 0 <= i < \result.length(); 
+     *          (\result.charAt(i) >= '0' && \result.charAt(i) <= '9') || 
+     *          (\result.charAt(i) >= 'a' && \result.charAt(i) <= 'f'); // All characters should be valid hex digits
+     * @ensures \result.equals("0") || \result.charAt(0) != '0'; // No leading zeros except for the zero itself
+     * @ensures num >= 0 ==> Integer.parseInt(\result, 16) == num; // For non-negative numbers, the parsed result should match the input
+     * @ensures num < 0 ==> Integer.parseInt(\result, 16) == (num + 4294967296L); // For negative numbers, use two's complement
+     */
+    public static String toHex(int num) {
+        // Method implementation goes here
+    }
+}
+```
+
+### Explanation:
+
+- **@requires**: Specifies the precondition that the input `num` must be within the range of a 32-bit signed integer.
+- **@ensures**: Specifies the postconditions:
+  - The result should not be null.
+  - Each character in the result should be a valid hexadecimal digit (0-9 or a-f).
+  - The result should not have leading zeros unless it is "0".
+  - For non-negative numbers, the parsed integer from the hexadecimal string should equal the input number.
+  - For negative numbers, the parsed integer should match the two's complement representation of the input number.
+
+This JML specification provides a formal contract for the `toHex` method, ensuring it behaves as expected according to the problem statement.

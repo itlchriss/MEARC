@@ -1,0 +1,26 @@
+
+assistant
+In Java, you can use the following code snippet that converts the given problem statement into a JML specification for method contracts:
+
+```java
+/**
+ * Computes the Hamming distance between two non-negative integers {@code x} and {@code y}.
+ * 
+ * @param x A non-negative integer.
+ * @param y Another non-negative integer.
+ * @return The Hamming distance between {@code x} and {@code y}, i.e., the count of bit positions in which their respective binary representations differ.
+ * @throws IllegalArgumentException If either {@code x} or {@code y} is negative.
+ */
+@Pure
+public static int hammingDistance(@NonNegative long x, @NonNegative long y) {
+    // Method implementation goes here...
+
+    assert x >= 0 : "x must be non-negative";
+    assert y >= 0 : "y must be non-negative";
+    
+    // Postcondition: Return value should be within valid range for Hamming distance.
+    assert result() >= 0 && result() <= Integer.SIZE : "Invalid Hamming distance";
+}
+```
+
+This JML contract specifies that the function computes the Hamming distance between two non-negative integers (`x` and `y`). It also includes preconditions to ensure that both inputs are non-negative using `@NonNegative` annotation from JSR-305 library. Additionally, it has a postcondition to validate the returned result as being within the valid range for Hamming distances (i.e., between 0 and 32). Note that the actual implementation of the method body is not included; replace `"// Method implementation goes here..."` with your own logic.

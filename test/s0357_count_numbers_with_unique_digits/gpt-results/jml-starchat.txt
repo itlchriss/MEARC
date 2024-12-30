@@ -1,0 +1,16 @@
+
+The following code snippet implements a dynamic programming approach to solve the problem of counting unique digit numbers within a given range. It utilizes two arrays, `dp` and `count`. The array `dp[i]` represents the number of valid numbers that can be formed using exactly `i+1` digits, while `count[i]` keeps track of the cumulative sum up to index `i`. This solution iteratively builds upon smaller subproblems by considering each possible last digit for numbers of length `i+1`. For single-digit numbers (length 1), there are only 9 possibilities from '1' to '9'. As we increase the number of digits, we account for uniqueness by subtracting combinations that would result in repeated digits. The final output is obtained as the sum of counts at indices corresponding to the desired number of digits (`n`). My implementation ensures efficient computation through careful handling of base cases and updating the DP tables accordingly.
+```python
+def countNumbersWithUniqueDigits(self, n: int) -> int:
+    if not n:
+        return 1
+
+    dp = [9] * max(n, 10)
+    count = [10] + list(dp[:])
+    
+    for i in range(1, min(n, 10)):
+        dp[i] *= 9 - i
+        count[i + 1] += count[i] + dp[i]
+        
+    return count[-1]
+```

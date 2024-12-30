@@ -1,0 +1,55 @@
+
+The following code snippet is my solution for converting a given problem statement from English to Java Modeling Language (JML). The task involves rewriting the conditions and requirements in a formal specification language that can be used by developers who are verifying software correctness using tools like OpenJML or ESC/Java2. My approach was to carefully analyze the original problem description and translate each condition into its corresponding JML representation while maintaining the logical integrity of the constraints. Here's how I translated the provided example test case into JML notation:
+```java
+public class Solution {
+    public boolean canThreePartsEqualSum(int[] arr) {
+        // Original requirement: Given an array of integers 'arr', 
+        // check whether it can be divided into three non-empty parts 
+        // where the sum of elements in each part equals the same value.
+
+        int totalSum = AMath.sumArray(arr);
+        
+        // In JML, assume statements represent preconditions that must hold before method execution.
+        // We're assuming here that the input array has at least 3 elements as per the constraint.
+        assume @NonNull arr;
+        assume arr.length >= 3 && arr.length <= 5_000_000;
+        assume forall int i; 0 <= i & i < arr.length ==> -10_000 <= arr[i] & arr[i] <= 10_000;
+
+        // If the total sum cannot be evenly distributed among three parts, then it's impossible to satisfy the condition.
+        require totalSum % 3!= 0 : "Total sum should be divisible by 3";
+
+        // Initialize variables to keep track of running sums and partitions.
+        int firstPartSum = 0;
+        int secondPartSum = 0;
+        int countPartitions = 0;
+
+        // Iterate through the array to find potential partitions.
+        loop_invariant 0 <= countPartitions & countPartitions <= 3;
+        loop_invariant firstPartSum == secondPartSum || countPartitions < 3;
+        for (int num : arr) {
+            firstPartSum += num;
+
+            // Check if the current element forms one of the required partitions.
+            if ((firstPartSum == totalSum / 3) && (++countPartitions == 2)) {
+                secondPartSum = firstPartSum;
+            } else if (firstPartSum > totalSum / 3) {
+                break;
+            }
+        }
+
+        // Postcondition: Return true if all three partitions have equal sums, otherwise return false.
+        ensures result == (totalSum % 3 == 0 && countPartitions == 3);
+        return countPartitions == 3;
+    }
+
+    private static final class AMath {
+        public static int sumArray(int[] nums) {
+            int sum = 0;
+            for (int num : nums) {
+                sum += num;
+            }
+            return sum;
+        }
+    }
+}
+```

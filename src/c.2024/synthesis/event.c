@@ -8,6 +8,7 @@
 #include "error.h"
 #include "sshare.h"
 #include "synthesis.h"
+#include "jml.h"
 
 
 extern struct astnode *root;
@@ -68,125 +69,137 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
     struct entity *en1 = (struct entity *)gqueue(event->entities, 0), *en2 = (struct entity *)gqueue(event->entities, 1);
     char *t1 = __combine_3_strings__("(", gramtype2string(en1->type), ")"), *t2 = __combine_3_strings__("(", gramtype2string(en2->type), ")");
     for (int i = 0; i < siq->count; ++i) {
-        struct si *si = (struct si *)gqueue(siq, i);        
+        struct si *si = (struct si *)gqueue(siq, i);    
         if (en1->cstptr->datatype->i == INT_SI_TYPE_MULTIPLE_SI || en2->cstptr->datatype->i == INT_SI_TYPE_MULTIPLE_SI) {
-            // 1. if both entities are multiple SI... then we don't support it in the current version:)
-            // 2. synthesise the one that is not multiple SI first
-            // 3. do the multiple SI one by one by checking the datatype to decide the operator
-            //  and in the current version, we do not support the combinatorial synthesis here
-            char *tmp = NULL, *d = NULL, *s = (char *)strdup(si->interpretation), *targettag = NULL;
-            struct cstsymbol *msptr = NULL;
-            struct datatype *singledt = NULL;
-            if (en1->cstptr->datatype->i != INT_SI_TYPE_MULTIPLE_SI) {
-                d = (char *)gqueue(en1->cstptr->datalist, 0);
-                tmp = strrep(s, t1, d);
-                singledt = en1->cstptr->datatype;
-                msptr = en2->cstptr;
-                targettag = t2;
-            } else {
-                d = (char *)gqueue(en2->cstptr->datalist, 0);
-                tmp = strrep(s, t2, d);
-                singledt = en2->cstptr->datatype;
-                msptr = en1->cstptr;
-                targettag = t1;
-            }
-            free(s);
-            s = tmp;
-
-            char *_s = (char *)strdup(tmp);
-            char *token, *last, *pos;
-            last = token = strtok_r(_s, ";", &pos);
-            for (;(token = strtok_r(NULL, ";", &pos)) != NULL; last = token);
-            free(_s);
-            token = strdup(last);            
-            tmp[strlen(tmp) - strlen(token)] = '\0';
-            // free(last);
-            last = token;
-
-            char *complex = NULL;
-            for (int j = 0; j < msptr->datalist->count; ++j) {
-                d = (char *)gqueue(msptr->datalist, j);
-                // TODO: we support primitive type using == and interpretation type as java_method using directly substitution here
-                //          we can support reference type in the future
-                struct datatype *dt = (struct datatype *)gqueue(msptr->datatype->multiple_datatypes, j);
-                if (dt->i == INT_SI_TYPE_JAVA_METHOD) {
-                    _s = strrep(last, targettag, d);
-                } else if (dt->p != UNDEFINED) {
-                    // TODO: notice that we have not implmented the type checking here. it is to be implemented
-                    char *_d = (char *)strdup(d);
-                    append(_d, (char *)strdup(" == "));
-                    _s = strrep(last, targettag, _d);
-                    free(_d);
+                // 1. if both entities are multiple SI... then we don't support it in the current version:)
+                // 2. synthesise the one that is not multiple SI first
+                // 3. do the multiple SI one by one by checking the datatype to decide the operator
+                //  and in the current version, we do not support the combinatorial synthesis here
+                char *tmp = NULL, *d = NULL, *s = (char *)strdup(si->interpretation), *targettag = NULL;
+                struct cstsymbol *msptr = NULL;
+                struct datatype *singledt = NULL;
+                if (en1->cstptr->datatype->i != INT_SI_TYPE_MULTIPLE_SI) {
+                    d = (char *)gqueue(en1->cstptr->datalist, 0);
+                    tmp = strrep(s, t1, d);
+                    singledt = en1->cstptr->datatype;
+                    msptr = en2->cstptr;
+                    targettag = t2;
                 } else {
-                    if (dt->r == String && singledt->r == String) {
+                    d = (char *)gqueue(en2->cstptr->datalist, 0);
+                    tmp = strrep(s, t2, d);
+                    singledt = en2->cstptr->datatype;
+                    msptr = en1->cstptr;
+                    targettag = t1;
+                }
+                free(s);
+                s = tmp;
+
+                char *_s = (char *)strdup(tmp);
+                char *token, *last, *pos;
+                last = token = strtok_r(_s, ";", &pos);
+                for (;(token = strtok_r(NULL, ";", &pos)) != NULL; last = token);
+                free(_s);
+                token = strdup(last);            
+                tmp[strlen(tmp) - strlen(token)] = '\0';
+                // free(last);
+                last = token;
+
+                char *complex = NULL;
+                for (int j = 0; j < msptr->datalist->count; ++j) {
+                    d = (char *)gqueue(msptr->datalist, j);
+                    // TODO: we support primitive type using == and interpretation type as java_method using directly substitution here
+                    //          we can support reference type in the future
+                    struct datatype *dt = (struct datatype *)gqueue(msptr->datatype->multiple_datatypes, j);
+                    if (dt->i == INT_SI_TYPE_JAVA_METHOD) {
+                        _s = strrep(last, targettag, d);
+                    } else if (dt->p != UNDEFINED) {
+                        // TODO: notice that we have not implmented the type checking here. it is to be implemented
                         char *_d = (char *)strdup(d);
-                        append(_d, (char *)strdup(".equals("));
+                        append(_d, (char *)strdup(" == "));
                         _s = strrep(last, targettag, _d);
-                        append(_s, (char *)strdup(")"));
                         free(_d);
                     } else {
-                        // TODO: the space for reference type
-                        internal_error("Current version does not support multiple SI with reference type");
+                        if (dt->r == String && singledt->r == String) {
+                            char *_d = (char *)strdup(d);
+                            append(_d, (char *)strdup(".equals("));
+                            _s = strrep(last, targettag, _d);
+                            append(_s, (char *)strdup(")"));
+                            free(_d);
+                        } else {
+                            // TODO: the space for reference type
+                            internal_error("Current version does not support multiple SI with reference type");
+                        }
                     }
-                }
 
-                if (!complex) {
-                    d = combine_strings(3, _s, " ", (char *)gqueue(msptr->conjunction_operators, j));
-                } else if (j != msptr->datalist->count - 1) {
-                    d = combine_strings(5, complex, " ", _s, " ", (char *)gqueue(msptr->conjunction_operators, j));
-                } else {
-                    d = combine_strings(3, complex, " ", _s);
+                    if (!complex) {
+                        d = combine_strings(3, _s, " ", (char *)gqueue(msptr->conjunction_operators, j));
+                    } else if (j != msptr->datalist->count - 1) {
+                        d = combine_strings(5, complex, " ", _s, " ", (char *)gqueue(msptr->conjunction_operators, j));
+                    } else {
+                        d = combine_strings(3, complex, " ", _s);
+                    }
+                    complex = d;
+                    free(_s);
                 }
-                complex = d;
-                free(_s);
-            }
-            d = combine_strings(2, tmp, complex);
-            free(complex);
-            free(tmp);
-            tmp = d;
-            enqueue(result, (void *)tmp);
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////            
+                d = combine_strings(2, tmp, complex);
+                free(complex);
+                free(tmp);
+                tmp = d;
+                enqueue(result, (void *)tmp);
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////            
         } else {
             // single SI combinatorial synthesis
             for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
                 char *d1 = (char *)gqueue(en1->cstptr->datalist, j);
                 for (int k = 0; k < en2->cstptr->datalist->count; ++k) {
-                    char *d2 = (char *)gqueue(en2->cstptr->datalist, k), *s = (char *)strdup(si->interpretation);                    
-                    char *tmp = strrep(s, t1, d1);
-                    free(s);
-                    s = tmp;
-                    if (en2->cstptr->datatype->i >= 50 && si->spec_init_type != AnyPrimitiveType) {
-                        char *_d2 = __combine_3_strings__(d2, " ==", " ");
-                        tmp = strrep(s, t2, _d2);
-                        free(_d2);
-                    } else if (en2->cstptr->datatype->i == INT_SI_TYPE_JAVA_METHOD_CHAIN) {
+                    char *d2 = (char *)gqueue(en2->cstptr->datalist, k), *s = (char *)strdup(si->interpretation);    
+                    char *tmp = NULL;
+                    if (si->type == SI_INT_TYPE_FUNCTION) {
                         /* 
-                            get the last part of the interpretation
-                            Currently support:
-                                1. quantify expression
-                                2. simple expression with only one substitution
+                            the SI type is a function that is delegated to the compiler 
+                            helper function is used
                         */
-                        char *_s = (char *)strdup(tmp);
-                        char *token, *last, *pos;
-                        last = token = strtok_r(_s, ";", &pos);
-                        for (;(token = strtok_r(NULL, ";", &pos)) != NULL; last = token);
-                        free(_s);
-                        token = strdup(last);
-                        tmp[strlen(tmp) - strlen(token)] = '\0';
-                        struct queue *inter_list = __get_java_method_interpretations_from_chain__(d2);
-                        // TODO: we need to support a full pre order expression
-                        char *inter_tmp = __combine_3_strings__(                            
-                                strrep(token, t2, gqueue(inter_list, 1)),                            
-                                gqueue(inter_list, 0),
-                                strrep(token, t2, gqueue(inter_list, 2))
-                            );                    
-                        char *buf = __combine_3_strings__(tmp, inter_tmp, " ");
-                        deallocatequeue(inter_list, deallocatedata);
-                        tmp = buf;
+                        if (strcmp(si->interpretation, "array_equal") == 0) {
+                            tmp = array_equal(d1, d2);
+                        } 
                     } else {
-                        tmp = strrep(s, t2, d2);
+                        // char *
+                        tmp = strrep(s, t1, d1);
+                        free(s);
+                        s = tmp;
+                        if (en2->cstptr->datatype->i >= 50 && si->spec_init_type != AnyPrimitiveType) {
+                            char *_d2 = __combine_3_strings__(d2, " ==", " ");
+                            tmp = strrep(s, t2, _d2);
+                            free(_d2);
+                        } else if (en2->cstptr->datatype->i == INT_SI_TYPE_JAVA_METHOD_CHAIN) {
+                            /* 
+                                get the last part of the interpretation
+                                Currently support:
+                                    1. quantify expression
+                                    2. simple expression with only one substitution
+                            */
+                            char *_s = (char *)strdup(tmp);
+                            char *token, *last, *pos;
+                            last = token = strtok_r(_s, ";", &pos);
+                            for (;(token = strtok_r(NULL, ";", &pos)) != NULL; last = token);
+                            free(_s);
+                            token = strdup(last);
+                            tmp[strlen(tmp) - strlen(token)] = '\0';
+                            struct queue *inter_list = __get_java_method_interpretations_from_chain__(d2);
+                            // TODO: we need to support a full pre order expression
+                            char *inter_tmp = __combine_3_strings__(                            
+                                    strrep(token, t2, gqueue(inter_list, 1)),                            
+                                    gqueue(inter_list, 0),
+                                    strrep(token, t2, gqueue(inter_list, 2))
+                                );                    
+                            char *buf = __combine_3_strings__(tmp, inter_tmp, " ");
+                            deallocatequeue(inter_list, deallocatedata);
+                            tmp = buf;
+                        } else {
+                            tmp = strrep(s, t2, d2);
+                        }
+                        free(s);
                     }
-                    free(s);
                     enqueue(result, (void *)tmp);
                 }            
             }

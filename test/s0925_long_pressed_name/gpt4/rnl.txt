@@ -1,0 +1,10 @@
+Method behavioural specifications for the given context:
+
+- The length of the string parameter `name` is less than or equal to 1000 and is greater than or equal to 1.
+- The length of the string parameter `typed` is less than or equal to 1000 and is greater than or equal to 1.
+- The string parameter `name` consists of only lowercase English letters.
+- The string parameter `typed` consists of only lowercase English letters.
+- If the boolean result is equal to the true literal, all characters in the string parameter `name` appear in the string parameter `typed` in the same order, with some characters possibly repeated.
+- If the boolean result is equal to the false literal, there exists at least one character in the string parameter `name` that does not appear in the string parameter `typed` in the required order or frequency.
+- If the string parameter `name` is equal to "alex" and the string parameter `typed` is equal to "aaleex", the boolean result is equal to the true literal.
+- If the string parameter `name` is equal to "saeed" and the string parameter `typed` is equal to "ssaaedd", the boolean result is equal to the false literal.

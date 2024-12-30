@@ -1,0 +1,16 @@
+```jml
+/**
+ * Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+ *
+ * @param s the input string containing only '(' and ')'
+ * @return the length of the longest valid parentheses substring
+ * @throws IllegalArgumentException if the input string is null
+ */
+/*@ requires s != null;
+  @ requires 0 <= s.length() && s.length() <= 30000;
+  @ ensures \result >= 0;
+  @*/
+public static int longestValidParentheses(String s) {
+    // Implementation goes here
+}
+```

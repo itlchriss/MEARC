@@ -1,0 +1,43 @@
+```jml
+/**
+ * Returns the length of the last word in the given string.
+ *
+ * @param s the input string consisting of words separated by spaces
+ * @return the length of the last word in the string
+ * @throws IllegalArgumentException if the input string is null or empty
+ * @requires s != null && !s.isEmpty()
+ * @ensures \result == (\let String[] words = s.trim().split("\\s+");
+ *                      \in words[words.length - 1].length())
+ *
+ * <p>Example 1:
+ * <pre>
+ * Input: s = "Hello World"
+ * Output: 5
+ * Explanation: The last word is "World" with length 5.
+ * </pre>
+ *
+ * <p>Example 2:
+ * <pre>
+ * Input: s = " fly me to the moon "
+ * Output: 4
+ * Explanation: The last word is "moon" with length 4.
+ * </pre>
+ *
+ * <p>Example 3:
+ * <pre>
+ * Input: s = "luffy is still joyboy"
+ * Output: 6
+ * Explanation: The last word is "joyboy" with length 6.
+ * </pre>
+ *
+ * <p>Constraints:
+ * <ul>
+ *   <li>1 <= s.length <= 10^4</li>
+ *   <li>s consists of only English letters and spaces ' '.</li>
+ *   <li>There will be at least one word in s.</li>
+ * </ul>
+ */
+public int lengthOfLastWord(String s) {
+    // Implementation goes here
+}
+```

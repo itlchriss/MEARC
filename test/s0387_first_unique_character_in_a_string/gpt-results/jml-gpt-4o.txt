@@ -1,0 +1,22 @@
+```jml
+/*@
+  @ requires s != null;
+  @ requires 1 <= s.length() && s.length() <= 100000;
+  @ requires (\forall int i; 0 <= i < s.length(); 'a' <= s.charAt(i) && s.charAt(i) <= 'z');
+  @
+  @ ensures (\exists int i; 0 <= i < s.length(); 
+  @            (\forall int j; 0 <= j < s.length(); j != i ==> s.charAt(i) != s.charAt(j)) ==> \result == i)
+  @         || \result == -1;
+  @
+  @ ensures \result == -1 <==> (\forall int i; 0 <= i < s.length(); 
+  @                              (\exists int j; 0 <= j < s.length(); j != i && s.charAt(i) == s.charAt(j)));
+  @
+  @ also
+  @
+  @ ensures \result >= 0 ==> (\forall int k; 0 <= k < \result; 
+  @                            (\exists int j; 0 <= j < s.length(); j != k && s.charAt(k) == s.charAt(j)));
+  @*/
+public static int firstUniqChar(String s) {
+    // Implementation goes here
+}
+```

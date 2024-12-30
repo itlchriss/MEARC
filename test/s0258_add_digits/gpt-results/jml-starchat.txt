@@ -1,0 +1,19 @@
+
+The following code snippet presents a solution for adding digits of a number iteratively until reaching a single-digit sum using Java's Modulus operator (`%`) and Integer division (`/`). This approach adheres to the constraints provided by the problem statement—specifically, not utilizing loops or recursion but maintaining constant time complexity (O(1)). Here's how the algorithm works:
+
+1. Initialize a variable `sum` with the absolute value of the input number `num`. We take the absolute value because negative numbers will eventually converge towards `-1` when their digits are added together due to alternating signs.
+2. As long as our current `sum` is greater than nine (i.e., contains more than one digit), we perform the addition operation on each pair of digits obtained through modulus and integer division operations.
+   * To extract individual digits from `sum`, use `% 10` which gives us the rightmost digit.
+   * Divide `sum` by ten to discard the last digit before moving onto the next iteration.
+3. Once the `while` condition fails (meaning that `sum` now holds a single digit), simply return this final value.
+```java
+public int addDigits(int num) {
+    int sum = Math.abs(num);
+    
+    while (sum > 9) {
+        sum = (sum % 10) + (sum / 10);
+    }
+    
+    return sum;
+}
+```

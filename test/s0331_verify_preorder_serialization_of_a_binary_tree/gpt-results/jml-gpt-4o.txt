@@ -1,0 +1,18 @@
+```jml
+/**
+ * Verify if a given string is a correct preorder traversal serialization of a binary tree.
+ *
+ * @param preorder the string of comma-separated values representing the preorder traversal
+ * @return true if the string is a correct preorder serialization, false otherwise
+ * @throws IllegalArgumentException if the input format is invalid
+ */
+/*@ requires preorder != null;
+  @ requires preorder.length() >= 1 && preorder.length() <= 10000;
+  @ requires (\forall int i; 0 <= i < preorder.length(); 
+  @           Character.isDigit(preorder.charAt(i)) || preorder.charAt(i) == '#' || preorder.charAt(i) == ',');
+  @ ensures \result == true || \result == false;
+  @*/
+public boolean isValidSerialization(String preorder) {
+    // Method implementation
+}
+```

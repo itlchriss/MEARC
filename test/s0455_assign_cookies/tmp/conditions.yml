@@ -1,9 +1,0 @@
-ensures:
-- The type_integer_ result is less_than_or_equal to the length of the type_integer_array_ param_g_.
-- If the type_integer_array_ param_g_ is equal to arr_a and the type_integer_array_ param_s_ is equal to arr_b , the type_integer_ result is equal to 1.
-- If the type_integer_array_ param_g_ is equal to arr_a and the type_integer_array_ param_s_ is equal to arr_b , the type_integer_ result is equal to 2.
-requires:
-- The length of the type_integer_array_ param_g_ is less_than_or_equal to 30000 and is greater_than_or_equal to 1.
-- The length of the type_integer_array_ param_s_ is less_than_or_equal to 30000 and is greater_than_or_equal to 0.
-- All the values in the type_integer_array_ param_g_ are less_than_or_equal to 2147483647 and are greater_than_or_equal to 1.
-- All the values in the type_integer_array_ param_s_ are less_than_or_equal to 2147483647 and are greater_than_or_equal to 1.

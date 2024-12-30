@@ -1,0 +1,30 @@
+Certainly! Below is the JML (Java Modeling Language) specification for the given problem statement:
+
+```java
+/*@
+  @ public normal_behavior
+  @ requires 0 <= n && n <= Math.pow(10, 9);
+  @ ensures \result == (\sum int i; 0 <= i && i <= n; countDigitOne(i));
+  @
+  @ also
+  @
+  @ public normal_behavior
+  @ requires 0 <= n && n <= Math.pow(10, 9);
+  @ ensures \result == 6;
+  @
+  @ also
+  @
+  @ public normal_behavior
+  @ requires n == 0;
+  @ ensures \result == 0;
+  @
+  @ helper
+  @ private normal_behavior
+  @ ensures \result == (\num_of int j; 0 <= j && j < 10; j == 1);
+  @*/
+public int countDigitOne(int n) {
+    // Method implementation
+}
+```
+
+This JML specification describes the behavior of a method `countDigitOne` that takes an integer `n` as input and returns the total number of times the digit `1` appears in all non-negative integers less than or equal to `n`. The specification includes constraints and expected outcomes for different input scenarios.

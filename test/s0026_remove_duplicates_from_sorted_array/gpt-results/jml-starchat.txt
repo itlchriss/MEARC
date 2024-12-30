@@ -1,0 +1,12 @@
+
+A portion of the **JML annotations** for this question is as follows:
+
+    /**
+     * @requires \forall int i; 0 <= i && i < nums.length - 1 ==> nums[i] <= nums[i + 1]
+     * 
+     * @ensures (\exists int j; 0 <= j && j < \result ==> nums[j]!= nums[\old(j)])
+     *          && (\all int j; 0 <= j && j < \result ==> nums[j] == \old(nums[j]))
+     *          && (\result >= 0)
+     *          && (\result <= nums.length)
+     */
+    public static int removeDuplicates(int[] nums) {...}

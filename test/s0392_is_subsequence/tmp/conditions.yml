@@ -1,7 +1,0 @@
-ensures:
-- If the type_boolean_ result is equal to the true literal , the type_string_ param_s_ is a subsequence of the type_string_ param_t_.
-- If the type_boolean_ result is equal to the false literal , the type_string_ param_s_ is not a subsequence of the type_string_ param_t_.
-requires:
-- The length of the type_string_ param_s_ is less_than_or_equal to 100 and is greater_than_or_equal to 0.
-- The length of the type_string_ param_t_ is less_than_or_equal to 10000 and is greater_than_or_equal to 0.
-- The type_string_ param_s_ and param_t_ consist only of lowercase_alphabets .

@@ -1,0 +1,19 @@
+```jml
+/**
+ * Returns the length of the longest uncommon subsequence between two strings.
+ *
+ * @param a the first string
+ * @param b the second string
+ * @return the length of the longest uncommon subsequence, or -1 if it does not exist
+ * @requires a != null && b != null
+ * @ensures \result == (
+ *     (a.equals(b)) ? -1 : Math.max(a.length(), b.length())
+ * )
+ */
+public int findLUSlength(String a, String b) {
+    if (a.equals(b)) {
+        return -1;
+    }
+    return Math.max(a.length(), b.length());
+}
+```

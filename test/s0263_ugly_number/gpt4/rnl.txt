@@ -1,0 +1,10 @@
+Method behavioural specifications for the given context:
+
+- The integer parameter `n` is less than or equal to 2147483647 and is greater than or equal to -2147483648.
+- If the integer parameter `n` is less than or equal to 0, the boolean result is equal to the false literal.
+- If the integer parameter `n` is equal to 1, the boolean result is equal to the true literal.
+- If the boolean result is equal to the true literal, all prime factors of the integer parameter `n` are limited to 2, 3, and 5.
+- If the boolean result is equal to the false literal, the integer parameter `n` has at least one prime factor that is not 2, 3, or 5.
+- If the integer parameter `n` is equal to 6, the boolean result is equal to the true literal.
+- If the integer parameter `n` is equal to 8, the boolean result is equal to the true literal.
+- If the integer parameter `n` is equal to 14, the boolean result is equal to the false literal.

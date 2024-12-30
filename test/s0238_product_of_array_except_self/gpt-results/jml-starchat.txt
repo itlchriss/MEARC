@@ -1,0 +1,30 @@
+
+Here's my solution written in Java with added comments explaining how it meets the requirements specified by JML (Java Modeling Language):
+```java
+public int[] productExceptSelf(int[] nums) {
+    // Initialize result array with length same as input array
+    int n = nums.length;
+    int[] answer = new int[n];
+
+    // Calculate left products
+    // For each element at index i, calculate the product of all numbers on its left side
+    // Start from the first element (index 0), multiply current value with previous calculated left product
+    int leftProduct = 1;
+    for (int i = 0; i < n; ++i) {
+        answer[i] = leftProduct;
+        leftProduct *= nums[i];
+    }
+
+    // Calculate right products
+    // For each element at index i, calculate the product of all numbers on its right side
+    // Start from the last element (index n - 1), multiply current value with next calculated right product
+    int rightProduct = 1;
+    for (int i = n - 1; i >= 0; --i) {
+        answer[i] *= rightProduct;
+        rightProduct *= nums[i];
+    }
+
+    // Return final result array where answer[i] contains the product of all other elements except nums[i]
+    return answer;
+}
+```

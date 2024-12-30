@@ -1,0 +1,43 @@
+
+The following code snippet presents my solution for maximizing the number of content children given their respective greed factors and available cookie sizes using Java's Modeling Language (JML). This approach employs sorting algorithms to arrange the arrays in ascending order before comparing them element-wise to determine if any child can receive a cookie without exceeding its greed factor. My implementation ensures that no more than one cookie is assigned per child while maintaining optimal performance by leveraging binary search within the sorted array of cookie sizes. Here's how I've translated the problem into JML specifications:
+```java
+import java.util.*;
+
+public class Solution {
+  public /*@ pure @*/ int findContentChildren(int[] g, int[] s) {
+    Arrays.sort(g); // Sort greed factors in non-decreasing order
+    Arrays.sort(s); // Sort cookie sizes in non-decreasing order
+    
+    int count = 0;
+    int j = 0;
+  
+    /*
+     * Iterate through the children's greed factors and check if there exists a cookie 
+     * that satisfies the current child's requirement. Use binary search on the sorted 
+     * list of cookie sizes to efficiently locate suitable cookies.
+     */
+    for (int i : g) {
+      while (j < s.length && s[j] < i)
+        ++j;
+      
+      if (j == s.length) 
+        break;
+
+      ++count; 
+      ++j; 
+    }
+  
+    return count; 
+  }
+
+  /**
+   * Requires: 
+   *    g!= null && s!= null
+   * Ensures: 
+   *    \result >= 0
+   *    \forall int k; 0 <= k < min(|g|, |s|): 
+   *        (\exists int l; 0 <= l < |s|; s[l] >= g[k]) ==> \result > old(\result)
+   */
+  public static void main(String[] args) {}
+}
+```

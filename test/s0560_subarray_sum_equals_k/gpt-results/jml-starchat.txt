@@ -1,0 +1,26 @@
+
+The following code snippet implements a solution using the prefix sums technique along with a hash map in Java. The algorithm iterates through each element in the given array while calculating cumulative sums. For every current sum encountered, it checks if there exists any previous sum that satisfies the condition (currentSum - target == pastSum). If such a pair is found, we increment our count by one since all subarrays ending at the current index with their sum equaling 'target' have been accounted for. This approach ensures efficient computation as it avoids nested loops and has linear time complexity O(n), where n represents the length of the input array. My implementation below encapsulates these steps within a method named `subarraySum`.
+```java
+public int subarraySum(int[] nums, int k) {
+    Map<Integer, Integer> sumCountMap = new HashMap<>();
+    int runningSum = 0;
+    int result = 0;
+
+    // Initialize the sumCountMap with zero-sum frequency set to 1
+    sumCountMap.put(runningSum, 1);
+
+    for (int num : nums) {
+        runningSum += num;
+
+        // Check if there's a previous sum which can be subtracted from the current sum to get desired 'k'.
+        if (sumCountMap.containsKey(runningSum - k)) {
+            result += sumCountMap.get(runningSum - k);
+        }
+
+        // Update or add the current sum into the sumCountMap
+        sumCountMap.put(runningSum, sumCountMap.getOrDefault(runningSum, 0) + 1);
+    }
+
+    return result;
+}
+```

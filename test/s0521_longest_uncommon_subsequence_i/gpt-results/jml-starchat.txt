@@ -1,0 +1,10 @@
+
+The following code snippet presents my solution for finding the length of the longest uncommon subsequence between two given strings according to the problem's constraints. My approach leverages straightforward logic by first checking if either input string is empty or identical to the other—in which case it would immediately determine whether an uncommon subsequence exists. If neither condition holds true, we simply return the maximum length amongst both inputs since the longest possible uncommon subsequence could be as long as one of them without being shared with the other. This implementation adheres strictly to the provided requirements and ensures optimal performance within the specified complexity bounds. Now let me present my concise Java method encapsulating these ideas.
+```java
+public int findLUSSize(String a, String b) {
+    if (a.equals(b))
+        return -1;
+
+    return Math.max(a.length(), b.length());
+}
+```

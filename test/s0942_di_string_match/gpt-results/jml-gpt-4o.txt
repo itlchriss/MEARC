@@ -1,0 +1,17 @@
+```jml
+/**
+ * Given a string `s`, reconstruct the permutation `perm` and return it.
+ * If there are multiple valid permutations perm, return any of them.
+ *
+ * @param s the input string representing the permutation pattern
+ * @return an array representing the permutation `perm`
+ * @requires s != null && (\forall int i; 0 <= i < s.length(); s.charAt(i) == 'I' || s.charAt(i) == 'D')
+ * @ensures (\forall int i; 0 <= i < s.length();
+ *              (s.charAt(i) == 'I' ==> perm[i] < perm[i + 1]) &&
+ *              (s.charAt(i) == 'D' ==> perm[i] > perm[i + 1]))
+ * @ensures perm.length == s.length() + 1
+ */
+public int[] diStringMatch(String s) {
+    // Implementation goes here
+}
+```

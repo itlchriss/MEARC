@@ -1,0 +1,11 @@
+Method behavioural specifications for the given context:
+
+- The length of the string parameter `inputString` is less than or equal to 2000 and is greater than or equal to 0.
+- The length of the string parameter `pattern` is less than or equal to 2000 and is greater than or equal to 0.
+- The string parameter `inputString` consists of only lowercase English letters.
+- The string parameter `pattern` consists of only lowercase English letters, the '?' character, or the '*' character.
+- If the string parameter `inputString` is equal to "aa" and the string parameter `pattern` is equal to "a", the boolean result is equal to the false literal.
+- If the string parameter `inputString` is equal to "aa" and the string parameter `pattern` is equal to "*", the boolean result is equal to the true literal.
+- If the string parameter `inputString` is equal to "cb" and the string parameter `pattern` is equal to "?a", the boolean result is equal to the false literal.
+- If the string parameter `inputString` is equal to "adceb" and the string parameter `pattern` is equal to "*a*b", the boolean result is equal to the true literal.
+- If the string parameter `inputString` is equal to "acdcb" and the string parameter `pattern` is equal to "a*c?b", the boolean result is equal to the false literal.

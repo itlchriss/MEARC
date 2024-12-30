@@ -1,0 +1,15 @@
+
+The following code snippet implements a solution using Java's built-in HashSet data structure to efficiently check for duplicate values within an input array of integers. The algorithm iterates through each number in the given array, adding it to the set as we encounter it. If at any point the same number already exists in the set (indicating that it has been seen before), the function immediately returns `true`. Otherwise, after examining all elements, if no duplicates were found, the method will ultimately return `false`. This approach ensures optimal time complexity—O(n)—since checking membership in a HashSet takes constant average time. Here's my implementation of this logic:
+```java
+public boolean containsDuplicate(int[] nums) {
+    Set<Integer> numSet = new HashSet<>();
+
+    for (int num : nums) {
+        if (!numSet.add(num)) {
+            return true; // Found a duplicate!
+        }
+    }
+
+    return false; // No duplicates found
+}
+```
