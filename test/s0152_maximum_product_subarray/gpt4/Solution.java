@@ -5,14 +5,11 @@ package g0101_0200.s0152_maximum_product_subarray;
 // #Big_O_Time_O(N)_Space_O(1) #2022_06_25_Time_0_ms_(100.00%)_Space_42.7_MB_(82.46%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `arr` is less than or equal to 20000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `arr` are less than or equal to 10 and are greater than or equal to -10.*);
-//@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to the minimum value of a 32-bit integer.*);
+//@ ensures(*The integer result is a 32-bit integer.*);
 //@ ensures(*If the integer array parameter `arr` is equal to [2,3,-2,4], the integer result is equal to 6.*);
 //@ ensures(*If the integer array parameter `arr` is equal to [-2,0,-1], the integer result is equal to 0.*);
-//@ ensures(*The integer result is equal to the maximum product of any contiguous subarray within the integer array parameter `arr`.*);
     public int maxProduct(int[] arr) {
         int ans = Integer.MIN_VALUE;
         int cprod = 1;

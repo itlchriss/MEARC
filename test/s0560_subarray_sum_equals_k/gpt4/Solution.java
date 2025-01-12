@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 20000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000 and are greater than or equal to -1000.*);
 //@ requires(*The integer parameter `k` is less than or equal to 10000000 and is greater than or equal to -10000000.*);

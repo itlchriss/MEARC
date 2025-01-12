@@ -6,7 +6,7 @@ package g0701_0800.s0709_to_lower_case;
 public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 100 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists of printable ASCII characters.*);
-//@ ensures(*The string result consists of only lowercase letters if the string parameter `s` contains any uppercase letters.*);
+//@ ensures(*The string result consists of only lowercase letters if the string parameter `s` contains uppercase letters.*);
 //@ ensures(*If the string parameter `s` is equal to "Hello", the string result is equal to "hello".*);
 //@ ensures(*If the string parameter `s` is equal to "here", the string result is equal to "here".*);
 //@ ensures(*If the string parameter `s` is equal to "LOVELY", the string result is equal to "lovely".*);

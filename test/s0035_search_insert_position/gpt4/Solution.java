@@ -5,8 +5,6 @@ package g0001_0100.s0035_search_insert_position;
 // #2023_08_09_Time_0_ms_(100.00%)_Space_43.3_MB_(58.21%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 10000 and are greater than or equal to -10000.*);
 //@ requires(*The integer array parameter `nums` is sorted in ascending order and contains distinct values.*);

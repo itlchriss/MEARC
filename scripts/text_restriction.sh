@@ -18,7 +18,7 @@ do
 
     echo "Working with $entry..................."
     echo "Calling LLM text restriction method........"
-    $OPENAIPYCMD $SCRIPT_PATH/text_restriction.py $entry s
+    $OPENAIPYCMD $SCRIPT_PATH/text_restriction.py $entry
     # mv $folder/rnl-gpt-4o.txt $folder/gpt4/rnl.txt
     # mv $folder/rnl-starchat.txt $folder/starchat/rnl.txt
     

@@ -3,8 +3,6 @@ package g0301_0400.s0396_rotate_function;
 // #Medium #Array #Dynamic_Programming #Math #2022_07_15_Time_4_ms_(81.33%)_Space_86_MB_(54.94%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 100 and are greater than or equal to -100.*);
 //@ ensures(*The integer result is less than or equal to the maximum value of a 32-bit integer and is greater than or equal to the minimum value of a 32-bit integer.*);

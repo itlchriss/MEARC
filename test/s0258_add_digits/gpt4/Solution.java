@@ -4,10 +4,9 @@ package g0201_0300.s0258_add_digits;
 
 public class Solution {
 //@ requires(*The integer parameter `num` is less than or equal to 2147483647 and is greater than or equal to 0.*);
-//@ ensures(*The integer result is a single-digit number.*);
+//@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to 9.*);
 //@ ensures(*If the integer parameter `num` is equal to 0, the integer result is equal to 0.*);
 //@ ensures(*If the integer parameter `num` is equal to 38, the integer result is equal to 2.*);
-//@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to 9.*);
     public int addDigits(int num) {
         if (num == 0) {
             return 0;

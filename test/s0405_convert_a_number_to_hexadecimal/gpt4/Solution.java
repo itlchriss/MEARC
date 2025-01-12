@@ -4,8 +4,8 @@ package g0401_0500.s0405_convert_a_number_to_hexadecimal;
 
 public class Solution {
 //@ requires(*The integer parameter `num` is less than or equal to 2147483647 and is greater than or equal to -2147483648.*);
-//@ ensures(*The string result consists of lowercase hexadecimal digits (0-9, a-f).*);
-//@ ensures(*The string result does not contain leading zeros unless the string result is "0".*);
+//@ ensures(*The string result consists of only lowercase hexadecimal digits.*);
+//@ ensures(*The string result does not contain leading zeros unless the string result is equal to "0".*);
 //@ ensures(*If the integer parameter `num` is equal to 26, the string result is equal to "1a".*);
 //@ ensures(*If the integer parameter `num` is equal to -1, the string result is equal to "ffffffff".*);
     public String toHex(int num) {

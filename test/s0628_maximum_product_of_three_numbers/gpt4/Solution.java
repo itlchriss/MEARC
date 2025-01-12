@@ -3,8 +3,6 @@ package g0601_0700.s0628_maximum_product_of_three_numbers;
 // #Easy #Array #Math #Sorting #2022_03_21_Time_2_ms_(99.90%)_Space_55.5_MB_(5.19%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 3.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000 and are greater than or equal to -1000.*);
 //@ ensures(*The integer result is equal to the maximum product of any three distinct elements in the integer array parameter `nums`.*);

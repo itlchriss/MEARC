@@ -1,1 +1,1 @@
-ensures((Arrays.equals(arr, new int[] {2 , 3 , -2 , 4})) ==> (\result == 6));
+ensures((arr[0] == 2 && arr[1] == 3 && arr[2] == -2 && arr[3] == 4) ==> (\result == 6));

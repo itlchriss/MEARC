@@ -11,7 +11,6 @@ public class Solution {
 //@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to the sum of all values in the integer array parameter `nums`.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,1], the integer result is equal to 4.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [2,7,9,3,1], the integer result is equal to 12.*);
-//@ ensures(*If the integer result is greater than 0, the integer array parameter `nums` contains at least one non-zero value.*);
     public int rob(int[] nums) {
         if (nums.length == 0) {
             return 0;

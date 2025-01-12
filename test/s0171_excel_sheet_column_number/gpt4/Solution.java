@@ -4,7 +4,7 @@ package g0101_0200.s0171_excel_sheet_column_number;
 
 public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 7 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists only of uppercase English letters.*);
+//@ requires(*The string parameter `s` consists of only uppercase English letters.*);
 //@ ensures(*The integer result is greater than or equal to 1 and is less than or equal to 2147483647.*);
 //@ ensures(*If the string parameter `s` is equal to "A", the integer result is equal to 1.*);
 //@ ensures(*If the string parameter `s` is equal to "AB", the integer result is equal to 28.*);

@@ -4,13 +4,9 @@ package g0301_0400.s0367_valid_perfect_square;
 // #2022_07_12_Time_0_ms_(100.00%)_Space_40.9_MB_(49.73%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
-//@ requires(*The integer parameter `num` is greater than or equal to 1 and is less than or equal to 2147483647.*);
+//@ requires(*The integer parameter `num` is less than or equal to 2147483647 and is greater than or equal to 1.*);
 //@ ensures(*If the boolean result is equal to the true literal, the integer parameter `num` is a perfect square.*);
 //@ ensures(*If the boolean result is equal to the false literal, the integer parameter `num` is not a perfect square.*);
-//@ ensures(*If the integer parameter `num` is equal to 16, the boolean result is equal to the true literal.*);
-//@ ensures(*If the integer parameter `num` is equal to 14, the boolean result is equal to the false literal.*);
     public boolean isPerfectSquare(int num) {
         if (num == 0) {
             // If num is 0 return false

@@ -13,7 +13,7 @@ public class Solution {
 //@ requires(*The integer parameter `target` is less than or equal to 1000000000 and is greater than or equal to -1000000000.*);
 //@ ensures(*The length of the integer array result is equal to 2.*);
 //@ ensures(*The sum of the values at the indices specified in the integer array result is equal to the integer parameter `target`.*);
-//@ ensures(*The indices in the integer array result are unique and are valid indices of the integer array parameter `numbers`.*);
+//@ ensures(*The indices in the integer array result are unique.*);
 //@ ensures(*If the integer array parameter `numbers` is equal to [2,7,11,15] and the integer parameter `target` is equal to 9, the integer array result is equal to [0,1].*);
 //@ ensures(*If the integer array parameter `numbers` is equal to [3,2,4] and the integer parameter `target` is equal to 6, the integer array result is equal to [1,2].*);
 //@ ensures(*If the integer array parameter `numbers` is equal to [3,3] and the integer parameter `target` is equal to 6, the integer array result is equal to [0,1].*);

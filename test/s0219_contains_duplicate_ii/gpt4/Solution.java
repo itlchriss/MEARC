@@ -6,12 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
 //@ requires(*The integer parameter `k` is less than or equal to 100000 and is greater than or equal to 0.*);
-//@ ensures(*If the boolean result is equal to the true literal, there exist two distinct indices `i` and `j` such that the integer array parameter `nums[i]` is equal to the integer array parameter `nums[j]` and the absolute difference between `i` and `j` is less than or equal to the integer parameter `k`.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,1] and the integer parameter `k` is equal to 3, the boolean result is equal to the true literal.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [1,0,1,1] and the integer parameter `k` is equal to 1, the boolean result is equal to the true literal.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,1,2,3] and the integer parameter `k` is equal to 2, the boolean result is equal to the false literal.*);

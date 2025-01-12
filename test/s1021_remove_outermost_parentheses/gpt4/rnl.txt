@@ -1,9 +1,7 @@
-Method behavioural specifications for the given context:
-
 - The length of the string parameter `s` is less than or equal to 100000 and is greater than or equal to 1.
-- The string parameter `s` consists only of the characters '(' and ')'.
+- The string parameter `s` consists of only the characters '(' and ')'.
 - The string parameter `s` is a valid parentheses string.
-- The string result is derived by removing the outermost parentheses of every primitive valid parentheses string in the primitive decomposition of the string parameter `s`.
+- The string result does not contain any outermost parentheses of any primitive valid parentheses string in the primitive decomposition of the string parameter `s`.
 - If the string parameter `s` is equal to "(()())(())", the string result is equal to "()()()".
 - If the string parameter `s` is equal to "(()())(())(()(()))", the string result is equal to "()()()()(())".
-- If the string parameter `s` is equal to "()()", the string result is an empty string.
+- If the string parameter `s` is equal to "()()", the string result is empty.

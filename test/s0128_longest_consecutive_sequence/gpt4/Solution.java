@@ -7,14 +7,11 @@ import java.util.Arrays;
 
 @SuppressWarnings("java:S135")
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 0.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
 //@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to the length of the integer array parameter `nums`.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [100,4,200,1,3,2], the integer result is equal to 4.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [0,3,7,2,5,8,4,6,0,1], the integer result is equal to 9.*);
-//@ ensures(*If the integer result is greater than 0, there exists at least one consecutive sequence in the integer array parameter `nums` with a length equal to the integer result.*);
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) {
             return 0;

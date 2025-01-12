@@ -5,9 +5,7 @@ package g0201_0300.s0202_happy_number;
 // #2022_06_28_Time_1_ms_(98.59%)_Space_41_MB_(64.25%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
-//@ requires(*The integer parameter `n` is greater than or equal to 1 and is less than or equal to 2147483647.*);
+//@ requires(*The integer parameter `n` is less than or equal to 2147483647 and is greater than or equal to 1.*);
 //@ ensures(*If the boolean result is equal to the true literal, the integer parameter `n` is a happy number.*);
 //@ ensures(*If the boolean result is equal to the false literal, the integer parameter `n` is not a happy number.*);
 //@ ensures(*If the integer parameter `n` is equal to 19, the boolean result is equal to the true literal.*);

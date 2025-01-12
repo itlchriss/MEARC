@@ -3,8 +3,6 @@ package g0501_0600.s0551_student_attendance_record_i;
 // #Easy #String #2022_08_02_Time_0_ms_(100.00%)_Space_40.2_MB_(96.36%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `s` is less than or equal to 1000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists only of the characters 'A', 'L', and 'P'.*);
 //@ ensures(*If the boolean result is equal to the true literal, the string parameter `s` contains fewer than 2 occurrences of the character 'A'.*);

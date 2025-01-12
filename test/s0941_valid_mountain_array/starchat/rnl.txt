@@ -1,6 +1,8 @@
 
 - The length of the integer array parameter `arr` is less than or equal to 10000 and is greater than or equal to 3.
-- All values in the integer array parameter `arr` are less than or equal to 10000 and is greater than or equal to 0.
+- There exists some integer `i` with 0 < i < arr.length - 1 such that:
+  - The values in the integer array parameter `arr` from index 0 to index i - 1 are strictly increasing.
+  - The values in the integer array parameter `arr` from index i to index arr.length - 1 are strictly decreasing.
 - The integer result is either true or false.
 - If the integer array parameter `arr` is equal to [2,1], the integer result is equal to false.
 - If the integer array parameter `arr` is equal to [3,5,5], the integer result is equal to false.

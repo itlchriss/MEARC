@@ -53,7 +53,9 @@ def send_prompt(prompt: str) -> str:
 
 
 def starchat_send_prompt(prompt: str) -> str:
-    API_TOKEN = "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"
+    API_TOKEN = ""
+    with open('../starchat.key', 'r') as fp:
+        API_TOKEN = fp.read()
     ENDPOINT = "https://api-inference.huggingface.co/models/HuggingFaceH4/starchat-beta"
 
     model2endpoint = {
@@ -120,18 +122,16 @@ def main(filename, mode = None):
     # prompt = 'Please extract all possible behavioural requirements (preconditions and postconditions) such that they clearly apply to the Java method %s from the given requirements: "%s" ' % (signature, sentence)
     prompt = """
 
-    You act as a software specification analyst that write method behavioural specifications.
+    You act as a software specification analyst that rewrites the given software specification into behavioural specifications.
 Each method behavioural specification must refer to either the prerequisites of the parameters or the result after executing the method specified with the method signature. 
 Each method behavioural specification must not contain implementation detail.
 Each method behavioural specification must explicitly specify the data types and parameter names if parameters are referred, and the parameter names must be surrounded by quotes(``) and these parameter names should be referred from the method signature. 
 Each method behavioural specification must explicitly specify the data type and use the term 'result' as subject if result is referred, and the data type of the result should be referred from the method signature.
 Each method behavioural specification must clearly apply to the context of the method signature to explicitly recognising the parameters used in the method signature. 
 The syntax of each method behavioural specification must be strictly adhere to the syntax of the method behavioural specifications in the given examples.
-Do not provide terms that are not in the method behavioural specifications from the given examples.
 Do not provide information that are related to the implementation of methods.
 Do not use parentheses in the method behavioural specifications.
-All method behavioural specifications must be mutually exclusive.
-Do not include examples in your response.
+Do not enumerate behavioural specifications that are not listed in the given software specification.
 
 
 Examples:
@@ -651,31 +651,35 @@ output format: a list with '-' as bullets
 """
 
 
-
+    sentence = sentence.replace('<sup>', '^').replace('</sup>', '')
     if not mode:
-        if not os.path.exists('%s/rnl-starchat.txt' % (folder)):
-            s = starchat_send_prompt(prompt % (sentence, signature))
+        s = starchat_send_prompt(prompt % (sentence, signature))
 
-            print('Writing starchat result...')
-            with open('%s/rnl-starchat.txt' % (folder), 'w') as fp:
-                fp.write(s)
+        print('Writing starchat result...')
+        if os.path.exists('%s/starchat/rnl.txt' % (folder)):
+            os.remove('%s/starchat/rnl.txt' % (folder))
+            print('Removing old file...')
+        with open('%s/starchat/rnl.txt' % (folder), 'w') as fp:
+            fp.write(s)
         
-        if not os.path.exists('%s/rnl-gpt-4o.txt' % (folder)):
-            s = send_prompt(prompt % (sentence, signature))
-            print('Writing gpt4 result...')
-            with open('%s/rnl-gpt-4o.txt' % (folder), 'w') as fp:
-                fp.write(s)
+        with open('%s/starchat/rnl.txt' % (folder), 'r') as fp:
+            lines = fp.readlines()
+            print(lines)
+        # s = send_prompt(prompt % (sentence, signature))
+        # print('Writing gpt4 result...')
+        # with open('%s/gpt4/rnl.txt' % (folder), 'w') as fp:
+        #     fp.write(s)
     elif mode.strip() == 's':
         s = starchat_send_prompt(prompt % (sentence, signature))
-        print('Writing starchat result...')
-        with open('%s/rnl-starchat.txt' % (folder), 'w') as fp:
-                fp.write(s)
+        # print('Writing starchat result...')
+        # with open('%s/rnl-starchat.txt' % (folder), 'w') as fp:
+                # fp.write(s)
         print(s)
     elif mode.strip() == 'g':
         s = send_prompt(prompt % (sentence, signature))
-        print('Writing gpt4 result...')
-        with open('%s/rnl-gpt-4o.txt' % (folder), 'w') as fp:
-                fp.write(s)
+        # print('Writing gpt4 result...')
+        # with open('%s/rnl-gpt-4o.txt' % (folder), 'w') as fp:
+                # fp.write(s)
         print(s)
     else:
         print('Unknown mode...')
@@ -684,4 +688,7 @@ output format: a list with '-' as bullets
 
 
 if __name__ == "__main__":
-    main(filename = sys.argv[1], mode = sys.argv[2])
+    if len(sys.argv) == 3:
+        main(filename = sys.argv[1], mode = sys.argv[2])
+    else:
+        main(filename = sys.argv[1])

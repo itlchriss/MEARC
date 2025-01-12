@@ -5,8 +5,6 @@ package g0001_0100.s0045_jump_game_ii;
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(49.02%)_Space_44.7_MB_(52.72%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000 and are greater than or equal to 0.*);
 //@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to the length of the integer array parameter `nums` minus 1.*);

@@ -3,12 +3,8 @@ package g0001_0100.s0065_valid_number;
 // #Hard #String #2023_08_11_Time_1_ms_(100.00%)_Space_41.3_MB_(91.10%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `s` is less than or equal to 20 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists of only English letters (both uppercase and lowercase), digits (`0-9`), plus `'+'`, minus `'-'`, or dot `'.'`.*);
-//@ ensures(*If the boolean result is equal to the true literal, the string parameter `s` represents a valid number according to the specified rules.*);
-//@ ensures(*If the boolean result is equal to the false literal, the string parameter `s` does not represent a valid number according to the specified rules.*);
+//@ requires(*The string parameter `s` consists of only English letters, digits, plus, minus, or dot characters.*);
 //@ ensures(*If the string parameter `s` is equal to "0", the boolean result is equal to the true literal.*);
 //@ ensures(*If the string parameter `s` is equal to "e", the boolean result is equal to the false literal.*);
 //@ ensures(*If the string parameter `s` is equal to ".", the boolean result is equal to the false literal.*);

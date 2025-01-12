@@ -1,8 +1,6 @@
-Method behavioural specifications for the given context:
-
 - The length of the integer array parameter `bills` is less than or equal to 100000 and is greater than or equal to 1.
 - All values in the integer array parameter `bills` are either 5, 10, or 20.
-- If the boolean result is equal to the true literal, it is possible to provide the correct change for every customer in the integer array parameter `bills`.
-- If the boolean result is equal to the false literal, it is not possible to provide the correct change for every customer in the integer array parameter `bills`.
+- If the boolean result is equal to the true literal, it is possible to provide the correct change to every customer in the integer array parameter `bills`.
+- If the boolean result is equal to the false literal, it is not possible to provide the correct change to every customer in the integer array parameter `bills`.
 - If the integer array parameter `bills` is equal to [5,5,5,10,20], the boolean result is equal to the true literal.
 - If the integer array parameter `bills` is equal to [5,5,10,10,20], the boolean result is equal to the false literal.

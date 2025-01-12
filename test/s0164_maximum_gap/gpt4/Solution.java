@@ -6,12 +6,10 @@ package g0101_0200.s0164_maximum_gap;
 import java.util.Arrays;
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to 0.*);
 //@ ensures(*If the length of the integer array parameter `nums` is less than 2, the integer result is equal to 0.*);
-//@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to the difference between the maximum and minimum values in the integer array parameter `nums`.*);
+//@ ensures(*The integer result is greater than or equal to 0.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [3,6,9,1], the integer result is equal to 3.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [10], the integer result is equal to 0.*);
     public int maximumGap(int[] nums) {

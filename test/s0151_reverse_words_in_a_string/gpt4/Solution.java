@@ -5,12 +5,10 @@ package g0101_0200.s0151_reverse_words_in_a_string;
 
 public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` contains English letters (both upper-case and lower-case), digits, and spaces.*);
+//@ requires(*The string parameter `s` contains English letters, digits, and spaces.*);
 //@ requires(*The string parameter `s` contains at least one word.*);
 //@ ensures(*The string result contains words in reverse order compared to the string parameter `s`.*);
-//@ ensures(*The string result contains a single space separating the words.*);
-//@ ensures(*The string result does not contain leading or trailing spaces.*);
-//@ ensures(*If the string parameter `s` contains multiple spaces between words, the string result reduces them to a single space.*);
+//@ ensures(*The string result contains a single space between words and does not contain leading or trailing spaces.*);
 //@ ensures(*If the string parameter `s` is equal to "the sky is blue", the string result is equal to "blue is sky the".*);
 //@ ensures(*If the string parameter `s` is equal to " hello world ", the string result is equal to "world hello".*);
 //@ ensures(*If the string parameter `s` is equal to "a good example", the string result is equal to "example good a".*);

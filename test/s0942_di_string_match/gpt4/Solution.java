@@ -7,7 +7,7 @@ public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists only of the characters 'I' and 'D'.*);
 //@ ensures(*The length of the integer array result is equal to the length of the string parameter `s` plus 1.*);
-//@ ensures(*All values in the integer array result are unique and range from 0 to the length of the string parameter `s`.*);
+//@ ensures(*All values in the integer array result are unique and are within the range from 0 to the length of the string parameter `s`.*);
 //@ ensures(*If the string parameter `s` is equal to "IDID", the integer array result is equal to [0,4,1,3,2].*);
 //@ ensures(*If the string parameter `s` is equal to "III", the integer array result is equal to [0,1,2,3].*);
 //@ ensures(*If the string parameter `s` is equal to "DDI", the integer array result is equal to [3,2,0,1].*);

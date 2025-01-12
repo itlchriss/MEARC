@@ -3,17 +3,12 @@ package g0101_0200.s0165_compare_version_numbers;
 // #Medium #String #Two_Pointers #2022_06_25_Time_1_ms_(88.88%)_Space_41.8_MB_(66.14%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `version1` is less than or equal to 500 and is greater than or equal to 1.*);
 //@ requires(*The length of the string parameter `version2` is less than or equal to 500 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `version1` consists only of digits and the dot character `'.'`.*);
-//@ requires(*The string parameter `version2` consists only of digits and the dot character `'.'`.*);
+//@ requires(*The string parameter `version1` consists of only digits and the dot character.*);
+//@ requires(*The string parameter `version2` consists of only digits and the dot character.*);
 //@ requires(*All revisions in the string parameter `version1` can be stored in a 32-bit integer.*);
 //@ requires(*All revisions in the string parameter `version2` can be stored in a 32-bit integer.*);
-//@ ensures(*If the integer result is equal to 0, the integer value of all corresponding revisions in the string parameter `version1` and the string parameter `version2` are equal.*);
-//@ ensures(*If the integer result is equal to -1, there exists at least one revision in the string parameter `version1` that is less than the corresponding revision in the string parameter `version2`.*);
-//@ ensures(*If the integer result is equal to 1, there exists at least one revision in the string parameter `version1` that is greater than the corresponding revision in the string parameter `version2`.*);
 //@ ensures(*If the string parameter `version1` is equal to "1.01" and the string parameter `version2` is equal to "1.001", the integer result is equal to 0.*);
 //@ ensures(*If the string parameter `version1` is equal to "1.0" and the string parameter `version2` is equal to "1.0.0", the integer result is equal to 0.*);
 //@ ensures(*If the string parameter `version1` is equal to "0.1" and the string parameter `version2` is equal to "1.1", the integer result is equal to -1.*);

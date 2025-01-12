@@ -1,10 +1,10 @@
 
 - The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.
-- The string parameter `s` consists of English letters (upper-case and lower-case), digits, and spaces '.
-- The string parameter `s` may contain leading or trailing spaces or multiple spaces between two words.
+- The string parameter `s` consists of English letters (upper-case and lower-case), digits, and spaces `' '`.
+- The string parameter `s` contains at least one word.
+- The returned string should not contain leading or trailing spaces.
 - The returned string should only have a single space separating the words.
-- Do not include any extra spaces in the returned string.
-- The returned string should be in reverse order of the words.
+- The returned string should not contain any extra spaces between two words.
 - If the string parameter `s` is equal to "the sky is blue", the returned string is equal to "blue is sky the".
 - If the string parameter `s` is equal to " hello world ", the returned string is equal to "world hello".
 - If the string parameter `s` is equal to "a good example", the returned string is equal to "example good a".

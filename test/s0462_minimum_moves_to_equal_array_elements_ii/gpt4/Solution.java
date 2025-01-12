@@ -5,8 +5,6 @@ package g0401_0500.s0462_minimum_moves_to_equal_array_elements_ii;
 import java.util.Arrays;
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 1000000000 and are greater than or equal to -1000000000.*);
 //@ ensures(*The integer result is greater than or equal to 0.*);

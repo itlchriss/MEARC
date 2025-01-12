@@ -5,7 +5,6 @@ package g0101_0200.s0168_excel_sheet_column_title;
 public class Solution {
 //@ requires(*The integer parameter `n` is less than or equal to 2147483647 and is greater than or equal to 1.*);
 //@ ensures(*The string result consists of only uppercase English letters.*);
-//@ ensures(*The length of the string result is greater than or equal to 1.*);
 //@ ensures(*If the integer parameter `n` is equal to 1, the string result is equal to "A".*);
 //@ ensures(*If the integer parameter `n` is equal to 28, the string result is equal to "AB".*);
 //@ ensures(*If the integer parameter `n` is equal to 701, the string result is equal to "ZY".*);

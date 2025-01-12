@@ -1,1 +1,1 @@
-ensures((Arrays.equals(nums, new int[] {1 , 2 , 3 , 4})) ==> (Arrays.equals(\result, new int[] {24 , 12 , 8 , 6})));
+ensures((nums[0] == -1 && nums[1] == 1 && nums[2] == 0 && nums[3] == -3 && nums[4] == 3) ==> (\result[0] == 0 && \result[1] == 0 && \result[2] == 9 && \result[3] == 0 && \result[4] == 0));

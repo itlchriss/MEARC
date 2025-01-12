@@ -1,1 +1,1 @@
-ensures(((Arrays.equals(aliceSizes, new int[] {1 , 2})) && (Arrays.equals(bobSizes, new int[] {2 , 3}))) ==> (Arrays.equals(\result, new int[] {1 , 2})));
+ensures(((aliceSizes[0] == 1 && aliceSizes[1] == 2) && (bobSizes[0] == 2 && bobSizes[1] == 3)) ==> (\result[0] == 1 && \result[1] == 2));

@@ -5,9 +5,9 @@ package g0301_0400.s0393_utf_8_validation;
 public class Solution {
 //@ requires(*The length of the integer array parameter `data` is less than or equal to 20000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `data` are less than or equal to 255 and is greater than or equal to 0.*);
-//@ ensures(*The boolean result is true if and only if the integer array parameter `data` represents a valid UTF-8 encoding.*);
-//@ ensures(*If the integer array parameter `data` is equal to [197,130,1], the boolean result is true.*);
-//@ ensures(*If the integer array parameter `data` is equal to [235,140,4], the boolean result is false.*);
+//@ ensures(*The integer result is either true or false.*);
+//@ ensures(*If the integer array parameter `data` is equal to [197,130,1], the integer result is equal to true.*);
+//@ ensures(*If the integer array parameter `data` is equal to [235,140,4], the integer result is equal to false.*);
     public boolean validUtf8(int[] data) {
         int count = 0;
         for (int d : data) {

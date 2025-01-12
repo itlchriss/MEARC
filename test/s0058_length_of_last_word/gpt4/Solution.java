@@ -4,8 +4,6 @@ package g0001_0100.s0058_length_of_last_word;
 // #2023_08_11_Time_0_ms_(100.00%)_Space_40.3_MB_(97.60%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists of only English letters and spaces.*);
 //@ requires(*The string parameter `s` contains at least one word.*);

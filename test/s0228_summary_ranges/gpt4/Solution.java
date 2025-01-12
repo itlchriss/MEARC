@@ -10,7 +10,7 @@ public class Solution {
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 2147483647 and are greater than or equal to -2147483648.*);
 //@ requires(*All values in the integer array parameter `nums` are unique.*);
 //@ requires(*The integer array parameter `nums` is sorted in ascending order.*);
-//@ ensures(*If the list result is not empty, all elements in the list result are strings representing ranges in the integer array parameter `nums`.*);
+//@ ensures(*If the list result is not empty, each element in the list result is a string representing a range that covers all numbers in the integer array parameter `nums` exactly.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [0,1,2,4,5,7], the list result is equal to ["0->2","4->5","7"].*);
 //@ ensures(*If the integer array parameter `nums` is equal to [0,2,3,4,6,8,9], the list result is equal to ["0","2->4","6","8->9"].*);
 //@ ensures(*If the integer array parameter `nums` is empty, the list result is empty.*);

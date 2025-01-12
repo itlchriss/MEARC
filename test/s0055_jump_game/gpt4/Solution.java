@@ -5,12 +5,8 @@ package g0001_0100.s0055_jump_game;
 // #Big_O_Time_O(n)_Space_O(1) #2023_08_11_Time_2_ms_(79.47%)_Space_44.8_MB_(22.14%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 100000 and are greater than or equal to 0.*);
-//@ ensures(*If the boolean result is equal to the true literal, there exists a sequence of jumps that allows reaching the last index of the integer array parameter `nums`.*);
-//@ ensures(*If the boolean result is equal to the false literal, there is no sequence of jumps that allows reaching the last index of the integer array parameter `nums`.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [2,3,1,1,4], the boolean result is equal to the true literal.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [3,2,1,0,4], the boolean result is equal to the false literal.*);
     public boolean canJump(int[] nums) {

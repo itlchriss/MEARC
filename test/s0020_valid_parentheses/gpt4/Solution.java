@@ -8,8 +8,6 @@ import java.util.Stack;
 
 @SuppressWarnings("java:S1149")
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `s` is less than or equal to 10000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists only of the characters '(', ')', '{', '}', '[' and ']'.*);
 //@ ensures(*If the boolean result is equal to the true literal, all open brackets in the string parameter `s` are closed by the same type of brackets and in the correct order.*);

@@ -5,8 +5,8 @@
 - If the integer parameter `n` is equal to 3, the boolean result is equal to false.
 - If the integer parameter `n` is equal to 4, the boolean result is equal to true.
 - If the integer parameter `n` is equal to 5, the boolean result is equal to false.
-- If the integer parameter `n` is a power of two, the boolean result is equal to true.
-- If the integer parameter `n` is not a power of two, the boolean result is equal to false.
-- The method should not use loops or recursion to solve the problem.
+- The boolean result is equal to true if and only if there exists an integer `x` such that `n == 2^x`.
+- The boolean result is equal to false if and only if there does not exist an integer `x` such that `n == 2^x`.
+- The method should be implemented without using loops or recursion.
 
 Example

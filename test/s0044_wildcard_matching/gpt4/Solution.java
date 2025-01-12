@@ -4,8 +4,6 @@ package g0001_0100.s0044_wildcard_matching;
 // #Udemy_Dynamic_Programming #2023_08_11_Time_2_ms_(99.87%)_Space_43.2_MB_(99.49%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `inputString` is less than or equal to 2000 and is greater than or equal to 0.*);
 //@ requires(*The length of the string parameter `pattern` is less than or equal to 2000 and is greater than or equal to 0.*);
 //@ requires(*The string parameter `inputString` consists of only lowercase English letters.*);

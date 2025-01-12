@@ -8,9 +8,9 @@ public class Solution {
 //@ requires(*The length of the integer array parameter `nums` is less than or equal to 100000 and is greater than or equal to 2.*);
 //@ requires(*All values in the integer array parameter `nums` are less than or equal to 30 and are greater than or equal to -30.*);
 //@ ensures(*The length of the integer array result is equal to the length of the integer array parameter `nums`.*);
-//@ ensures(*Each value at index `i` in the integer array result is equal to the product of all values in the integer array parameter `nums` except the value at index `i`.*);
 //@ ensures(*If the integer array parameter `nums` is equal to [1,2,3,4], the integer array result is equal to [24,12,8,6].*);
 //@ ensures(*If the integer array parameter `nums` is equal to [-1,1,0,-3,3], the integer array result is equal to [0,0,9,0,0].*);
+//@ ensures(*Each element in the integer array result is equal to the product of all elements in the integer array parameter `nums` except the element at the same index.*);
     public int[] productExceptSelf(int[] nums) {
         int product = 1;
         int[] ans = new int[nums.length];

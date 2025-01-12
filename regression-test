@@ -24,60 +24,48 @@ else
 # rm $BASE/*/tmp/*
 # rm $BASE/*/jml/*
 
-# for entry in `find $BASE/s* -type f -name "Solution.java" | sort`
-for entry in `find $BASE/s*/gpt4 -type f -name "Solution.java" | sort`
-do
-       filename=`echo $entry | sed 's/.*\///'`
-       index=`echo $filename | sed 's/\..*//'`
-       folder=`echo $entry | sed "s/\/$filename//"`
-       mkdir -p $folder/tmp
-       mkdir -p $folder/jml
-    #    python scripts/insertcomment.py $folder
-       echo "./mearc $entry"
-       ./mearc $entry &> gpt4log
-done
+# for entry in `find $BASE/s*/gpt4 -type f -name "Solution.java" | sort`
+# do
+#        filename=`echo $entry | sed 's/.*\///'`
+#        index=`echo $filename | sed 's/\..*//'`
+#        folder=`echo $entry | sed "s/\/$filename//"`
+#       #  mkdir -p $folder/tmp
+#       #  mkdir -p $folder/jml
+#       rm $folder/tmp/*
+#       rm $folder/jml/*
+#     #    python scripts/insertcomment.py $folder
+#        echo "./mearc $entry"
+#        ./mearc $entry &> results/gpt4log
+# done
 
 for entry in `find $BASE/s*/starchat -type f -name "Solution.java" | sort`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
        folder=`echo $entry | sed "s/\/$filename//"`
-       mkdir -p $folder/tmp
-       mkdir -p $folder/jml
+      #  mkdir -p $folder/tmp
+      #  mkdir -p $folder/jml
+      rm $folder/tmp/*
+      rm $folder/jml/*
     #    python scripts/insertcomment.py $folder
        echo "./mearc $entry"
-       ./mearc $entry &> starchatlog
+       ./mearc $entry &> results/starchatlog
 done
 
-for entry in `find $BASE/s*/gpt35 -type f -name "Solution.java" | sort`
-do
-       filename=`echo $entry | sed 's/.*\///'`
-       index=`echo $filename | sed 's/\..*//'`
-       folder=`echo $entry | sed "s/\/$filename//"`
-       mkdir -p $folder/tmp
-       mkdir -p $folder/jml
-    #    python scripts/insertcomment.py $folder
-       echo "./mearc $entry"
-       ./mearc $entry &> gpt35log
-done
-
-# for entry in `find $BASE/s*/gpt4 -type f -name "Solution.java" | sort`
+# for entry in `find $BASE/s*/gpt35 -type f -name "Solution.java" | sort`
 # do
 #        filename=`echo $entry | sed 's/.*\///'`
 #        index=`echo $filename | sed 's/\..*//'`
 #        folder=`echo $entry | sed "s/\/$filename//"`
+#       #  mkdir -p $folder/tmp
+#       #  mkdir -p $folder/jml
+#       rm $folder/tmp/*
+#       rm $folder/jml/*
 #     #    python scripts/insertcomment.py $folder
 #        echo "./mearc $entry"
-#     #    ./mearc $entry
+#        ./mearc $entry &> results/gpt35log
 # done
+
 fi
 
-# for entry in `find ./datasets/leetcode-behavioural -type f -name "*.mr" | sort`
-# do
-#     # filename=`echo $entry | sed 's/.*\///'`
-#     # index=`echo $filename | sed 's/\..*//'`
-#     # folder=`echo $entry | sed "s/\/$filename//"`
-#     echo "./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml"    
-#     # ./bin/main -f $entry -s ./specs/si/typed_si.yml,$folder/dynamic_si.yml
-#     # echo '----------------------------------'
-# done
+

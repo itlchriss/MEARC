@@ -6,8 +6,6 @@ package g0801_0900.s0860_lemonade_change;
 public class Solution {
 //@ requires(*The length of the integer array parameter `bills` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `bills` are either 5, 10, or 20.*);
-//@ ensures(*If the boolean result is true, it means that the cashier can provide every customer with the correct change.*);
-//@ ensures(*If the boolean result is false, it means that the cashier cannot provide the correct change to every customer.*);
 //@ ensures(*If the integer array parameter `bills` is equal to [5,5,5,10,20], the boolean result is equal to true.*);
 //@ ensures(*If the integer array parameter `bills` is equal to [5,5,10,10,20], the boolean result is equal to false.*);
     public boolean lemonadeChange(int[] bills) {

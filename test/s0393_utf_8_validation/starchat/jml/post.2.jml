@@ -1,1 +1,1 @@
-ensures((Arrays.equals(data, new int[] {235 , 140 , 4})) ==> (\result == false));
+ensures((data[0] == 235 && data[1] == 140 && data[2] == 4) ==> (\result == false));

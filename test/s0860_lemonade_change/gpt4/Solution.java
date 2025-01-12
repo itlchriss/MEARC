@@ -4,12 +4,10 @@ package g0801_0900.s0860_lemonade_change;
 // #2022_03_27_Time_2_ms_(90.84%)_Space_75.8_MB_(55.09%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the integer array parameter `bills` is less than or equal to 100000 and is greater than or equal to 1.*);
 //@ requires(*All values in the integer array parameter `bills` are either 5, 10, or 20.*);
-//@ ensures(*If the boolean result is equal to the true literal, it is possible to provide the correct change for every customer in the integer array parameter `bills`.*);
-//@ ensures(*If the boolean result is equal to the false literal, it is not possible to provide the correct change for every customer in the integer array parameter `bills`.*);
+//@ ensures(*If the boolean result is equal to the true literal, it is possible to provide the correct change to every customer in the integer array parameter `bills`.*);
+//@ ensures(*If the boolean result is equal to the false literal, it is not possible to provide the correct change to every customer in the integer array parameter `bills`.*);
 //@ ensures(*If the integer array parameter `bills` is equal to [5,5,5,10,20], the boolean result is equal to the true literal.*);
 //@ ensures(*If the integer array parameter `bills` is equal to [5,5,10,10,20], the boolean result is equal to the false literal.*);
     public boolean lemonadeChange(int[] bills) {

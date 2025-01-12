@@ -4,9 +4,9 @@ package g0301_0400.s0331_verify_preorder_serialization_of_a_binary_tree;
 
 public class Solution {
 //@ requires(*The length of the string parameter `preorder` is less than or equal to 10000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `preorder` consists of integers in the range [0, 100] and the character `'#'`, separated by commas `','`.*);
-//@ requires(*The string parameter `preorder` does not contain two consecutive commas.*);
-//@ ensures(*The boolean result is equal to the true literal if the string parameter `preorder` represents a valid preorder traversal serialization of a binary tree.*);
+//@ requires(*The string parameter `preorder` consists of integers in the range from 0 to 100 and the character '#' separated by commas.*);
+//@ ensures(*If the boolean result is equal to the true literal, the string parameter `preorder` represents a valid preorder traversal serialization of a binary tree.*);
+//@ ensures(*If the boolean result is equal to the false literal, the string parameter `preorder` does not represent a valid preorder traversal serialization of a binary tree.*);
 //@ ensures(*If the string parameter `preorder` is equal to "9,3,4,#,#,1,#,#,2,#,6,#,#", the boolean result is equal to the true literal.*);
 //@ ensures(*If the string parameter `preorder` is equal to "1,#", the boolean result is equal to the false literal.*);
 //@ ensures(*If the string parameter `preorder` is equal to "9,#,#,1", the boolean result is equal to the false literal.*);

@@ -6,9 +6,9 @@ package g0201_0300.s0233_number_of_digit_one;
 @SuppressWarnings("java:S127")
 public class Solution {
 //@ requires(*The integer parameter `n` is less than or equal to 1000000000 and is greater than or equal to 0.*);
-//@ ensures(*The integer result is greater than or equal to 0 and is less than or equal to the integer parameter `n`.*);
-//@ ensures(*If the integer parameter `n` is equal to 0, the integer result is equal to 0.*);
+//@ ensures(*The integer result is greater than or equal to 0.*);
 //@ ensures(*If the integer parameter `n` is equal to 13, the integer result is equal to 6.*);
+//@ ensures(*If the integer parameter `n` is equal to 0, the integer result is equal to 0.*);
     public int countDigitOne(int n) {
         int ans = 0;
         // count total number of 1s appearing in every digit, starting from the last digit

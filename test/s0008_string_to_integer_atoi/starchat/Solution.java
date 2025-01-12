@@ -15,20 +15,20 @@ public class Solution {
 //@ ensures(*If the string parameter `str` is equal to "-91283472332", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483648", the integer result is equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "-2147483649", the integer result is equal to -2147483648.*);
-//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483646.*);
-//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483647", the integer result is equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "-2147483648", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483648", the integer result is equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "-2147483649", the integer result is equal to -2147483648.*);
-//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483646.*);
-//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483647", the integer result is equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "-2147483648", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483648", the integer result is equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "-2147483649", the integer result is equal to -2147483648.*);
-//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483646.*);
-//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "2147483646", the integer result is equal to 2147483647.*);
+//@ ensures(*If the string parameter `str` is equal to "-2147483647", the integer result is equal to -2147483648.*);
 //@ ensures(*If the string parameter `str` is equal to "2147483647", the integer result is equal to 2147483647.*);
     public int myAtoi(String str) {
         if (str == null || str.length() == 0) {

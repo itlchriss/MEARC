@@ -1,1 +1,1 @@
-ensures((Arrays.equals(nums, new int[] {1})) ==> (\result.equals(Arrays.asList(new int[] {1}))));
+ensures((nums[0] == 1 && nums[1] == 2) ==> ());

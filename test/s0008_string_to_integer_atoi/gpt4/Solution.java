@@ -4,10 +4,8 @@ package g0001_0100.s0008_string_to_integer_atoi;
 
 public class Solution {
 //@ requires(*The length of the string parameter `str` is less than or equal to 200 and is greater than or equal to 0.*);
-//@ requires(*The string parameter `str` consists of English letters (both lower-case and upper-case), digits (`0-9`), spaces (`' '`), plus (`'+'`), minus (`'-'`), and period (`'.'`).*);
-//@ ensures(*The integer result is within the range of a 32-bit signed integer, specifically between -2<sup>31</sup> and 2<sup>31</sup> - 1.*);
-//@ ensures(*If the integer result is less than -2<sup>31</sup>, the integer result is clamped to -2<sup>31</sup>.*);
-//@ ensures(*If the integer result is greater than 2<sup>31</sup> - 1, the integer result is clamped to 2<sup>31</sup> - 1.*);
+//@ requires(*The string parameter `str` consists of English letters, digits, spaces, plus signs, minus signs, and periods.*);
+//@ ensures(*The integer result is greater than or equal to -2147483648 and is less than or equal to 2147483647.*);
 //@ ensures(*If the string parameter `str` is equal to "42", the integer result is equal to 42.*);
 //@ ensures(*If the string parameter `str` is equal to " -42", the integer result is equal to -42.*);
 //@ ensures(*If the string parameter `str` is equal to "4193 with words", the integer result is equal to 4193.*);

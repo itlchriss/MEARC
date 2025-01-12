@@ -1,1 +1,1 @@
-ensures((Arrays.equals(arr, new int[] {-2 , 0 , -1})) ==> (\result == 0));
+ensures((arr[0] == -2 && arr[1] == 0 && arr[2] == -1) ==> (\result == 0));

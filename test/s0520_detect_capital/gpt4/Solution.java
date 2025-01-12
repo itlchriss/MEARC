@@ -3,8 +3,6 @@ package g0501_0600.s0520_detect_capital;
 // #Easy #String #2022_07_25_Time_2_ms_(65.95%)_Space_42_MB_(74.10%)
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `word` is less than or equal to 100 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `word` consists of only lowercase and uppercase English letters.*);
 //@ ensures(*If the boolean result is equal to the true literal, all characters in the string parameter `word` are uppercase, or all characters in the string parameter `word` are lowercase, or only the first character in the string parameter `word` is uppercase.*);

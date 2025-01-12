@@ -5,13 +5,8 @@
 - The list result contains strings that represent the smallest sorted list of ranges that cover all the numbers in the array exactly.
 - Each string in the list result is in the format "a->b" if `a!= b` or "a" if `a == b`.
 - The list result does not contain any integer `x` such that `x` is in one of the ranges but not in `nums`.
-- The list result is not empty.
-- The list result does not contain any duplicate ranges.
-- The list result is sorted in ascending order based on the starting number of each range.
+- The list result is sorted in ascending order.
 - If the integer array parameter `nums` is equal to [0,1,2,4,5,7], the list result is equal to ["0->2","4->5","7"].
 - If the integer array parameter `nums` is equal to [0,2,3,4,6,8,9], the list result is equal to ["0","2->4","6","8->9"].
-- If the integer array parameter `nums` is equal to [], the list result is equal to [].
-- If the integer array parameter `nums` is equal to [-1], the list result is equal to ["-1"].
-- If the integer array parameter `nums` is equal to [0], the list result is equal to ["0"].
 
 Example

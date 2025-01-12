@@ -1,1 +1,1 @@
-ensures((\result == -1) && ((Arrays.equals(nums, new int[] {1})) && ((target == 0) && (\result == -1))));
+ensures((\result == -1) && ((\forall int i; 0 <= i < nums.length; nums[i] == 1[i]) && ((target == 0) && (\result == -1))));

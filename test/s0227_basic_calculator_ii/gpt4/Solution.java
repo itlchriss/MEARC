@@ -5,9 +5,9 @@ package g0201_0300.s0227_basic_calculator_ii;
 
 public class Solution {
 //@ requires(*The length of the string parameter `s` is less than or equal to 300000 and is greater than or equal to 1.*);
-//@ requires(*The string parameter `s` consists of integers and operators `('+', '-', '*', '/')` separated by spaces.*);
-//@ requires(*All integers in the string parameter `s` are non-negative and are within the range [0, 2147483647].*);
-//@ ensures(*The integer result is within the range of [-2147483648, 2147483647].*);
+//@ requires(*The string parameter `s` consists of integers and operators ('+', '-', '*', '/') separated by spaces.*);
+//@ requires(*All integers in the string parameter `s` are non-negative and are less than or equal to 2147483647.*);
+//@ ensures(*The integer result is greater than or equal to -2147483648 and is less than or equal to 2147483647.*);
 //@ ensures(*If the string parameter `s` is equal to "3+2*2", the integer result is equal to 7.*);
 //@ ensures(*If the string parameter `s` is equal to " 3/2 ", the integer result is equal to 1.*);
 //@ ensures(*If the string parameter `s` is equal to " 3+5 / 2 ", the integer result is equal to 5.*);

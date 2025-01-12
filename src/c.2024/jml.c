@@ -109,9 +109,9 @@ char * array_equals_primitive_1_var_1_direct(char *var, char *sym) {
         c++;
         _t = strtok_r(NULL, ",", &pos);
     }
-    char num[10];
-    _itoa(c, num);
-    result = combine_strings(5, result, " && ", var, ".length == ", num);
+    // char num[10];
+    // _itoa(c, num);
+    // result = combine_strings(5, result, " && ", var, ".length == ", num);
     return result;
 }
 
@@ -122,3 +122,11 @@ char * array_equals_2_vars(char *var1, char *var2) {
     free(a);
     return result;
 }
+
+// char * string_consist_only(char *var1, char *var2) {
+//     return result;
+// }
+
+// char * string_contain(char *var1, char *var2) {
+//     return result;
+// }

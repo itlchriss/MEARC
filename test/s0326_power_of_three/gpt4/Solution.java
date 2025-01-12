@@ -5,8 +5,6 @@ package g0301_0400.s0326_power_of_three;
 
 public class Solution {
     // regular method that has a loop
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The integer parameter `n` is less than or equal to 2147483647 and is greater than or equal to -2147483648.*);
 //@ ensures(*If the boolean result is equal to the true literal, there exists an integer `x` such that the integer parameter `n` is equal to 3 raised to the power of `x`.*);
 //@ ensures(*If the boolean result is equal to the false literal, there does not exist an integer `x` such that the integer parameter `n` is equal to 3 raised to the power of `x`.*);

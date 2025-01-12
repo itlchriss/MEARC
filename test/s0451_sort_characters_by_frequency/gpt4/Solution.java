@@ -12,12 +12,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
-//@ requires(*Method behavioural specifications for the given context:*);
-//@ requires(**);
 //@ requires(*The length of the string parameter `s` is less than or equal to 500000 and is greater than or equal to 1.*);
 //@ requires(*The string parameter `s` consists of uppercase and lowercase English letters and digits.*);
 //@ ensures(*The string result is sorted in decreasing order based on the frequency of characters in the string parameter `s`.*);
-//@ ensures(*If two characters have the same frequency, their order in the string result can be any order as long as they are grouped together.*);
 //@ ensures(*If the string parameter `s` is equal to "tree", the string result is equal to "eert" or "eetr".*);
 //@ ensures(*If the string parameter `s` is equal to "cccaaa", the string result is equal to "aaaccc" or "cccaaa".*);
 //@ ensures(*If the string parameter `s` is equal to "Aabb", the string result is equal to "bbAa" or "bbaA".*);
