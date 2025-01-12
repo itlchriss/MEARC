@@ -5,7 +5,8 @@
 # folder="./test/s0001_two_sum"
 # app="gpt4"
 models=("gpt4" "gpt35" "starchat")
-OPENJML="../openjml-macos-13-0.21.0-alpha-0/openjml "
+# OPENJML="../openjml-macos-13-0.21.0-alpha-0/openjml "
+OPENJML="../openjml-0.21-a0/openjml "
 SCRIPTSPATH="scripts"
 SRC_PATH="test"
 
@@ -26,7 +27,7 @@ do
         # echo "Invoking OpenJML to check the JML inside the injected program..."
         $OPENJML $APPPATH/build/Solution.java > $APPPATH/build/ss.log
         # echo "Done..."
-        python $SCRIPTSPATH/loganalysis.py $APPPATH 
+        python $SCRIPTSPATH/loganalysis.py $APPPATH > $APPPATH/build/check.log
     done
 done
 

@@ -959,6 +959,18 @@
     reference_type: 'string'
     interpretation_type: 'undefined'
   interpretation: '(Subj).contains((Acc))'
+- term: contain
+  syntax:
+  - VBN
+  arguments:
+  - symbol: 'Dat'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+    interpretation_type: 'undefined'
+  interpretation: '(Dat).contains((Acc))'
 - term: accontain
   syntax:
   - VBZ
@@ -1007,3 +1019,4 @@
     primitive_type: 'boolean'
     reference_type: 'undefined'
   interpretation: '(Subj).matches((Acc))'
+  

@@ -164,6 +164,17 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                         } 
                     } else {
                         // char *
+                        // TODO: we need to support for searching grammar type
+                        //       in the current version of type si, we only support for accusation
+                        //       we should support for other types in the future such as Dative, Genitive, etc.
+                        // if (ssearch(s, t1) == FALSE) {
+                        //     if (strcmp(t1, "(Dat)") == 0) {
+                        //         t1 = "(Acc)";
+                        //     } else {
+                        //         t1 = "(Dat)";
+                        //     }
+                        // }
+                        //
                         tmp = strrep(s, t1, d1);
                         free(s);
                         s = tmp;
