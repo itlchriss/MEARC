@@ -251,6 +251,16 @@ terms
         $$ = $2;
         $$->isnegative = 1;
     }
+    // | NEG '(' term ')' {
+    //     print_debug("term: NEG term");
+    //     $$ = $3;
+    //     $$->isnegative = 1;
+    // }
+    | NEG '(' terms ')' {
+        print_debug("NEG '(' terms ')'");
+        $$ = $3;
+        $$->isnegative = 1;
+    }
     ;
 
 

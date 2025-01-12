@@ -362,11 +362,17 @@ struct queue* readSI(char *dstfilepaths) {
                                                 }                  
                                                 yaml_parser_scan(&parser, &token);
                                             }
-                                            enqueue(si->args, (void *)arg);
-                                            // TODO: modify here to adapt type_names in the first argument
-                                            // yaml_parser_scan(&parser, &token);
-                                            // printf("%d\n", token.type);
-                                            // exit(1);
+                                            // enqueue(si->args, (void *)arg);
+                                            /*
+                                                denotes an external argument
+                                            */
+                                            if (arg->symbol[0] == 'e' && 
+                                                arg->symbol[1] == 'x' &&
+                                                arg->symbol[2] == '_') {
+                                                    si->exarg = arg;
+                                            } else {
+                                                enqueue(si->args, (void *)arg);
+                                            }
                                             goto SWITCH;                                                                                                                  
                                         } else {
                                             sisyntax_error(filepath, si->symbol, "arguments");
@@ -377,7 +383,16 @@ struct queue* readSI(char *dstfilepaths) {
                                 }
                                 yaml_parser_scan(&parser, &token);                            
                             }
-                            enqueue(si->args, (void *)arg);
+                            /*
+                                denotes an external argument
+                             */
+                            if (arg->symbol[0] == 'e' && 
+                                arg->symbol[1] == 'x' &&
+                                arg->symbol[2] == '_') {
+                                    si->exarg = arg;
+                            } else {
+                                enqueue(si->args, (void *)arg);
+                            }
                             yaml_parser_scan(&parser, &token);       
                         }
                         // yaml_parser_scan(&parser, &token); 

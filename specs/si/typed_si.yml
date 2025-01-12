@@ -963,6 +963,17 @@
   syntax:
   - VBN
   arguments:
+  - symbol: 'Acc'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  - symbol: 'Subj'
+    primitive_type: 'integer'
+    reference_type: 'array'
+  interpretation: '\exists int i; 0 <= i < (Subj).length; (Subj)[i] == (Acc)'
+- term: contain
+  syntax:
+  - VBN
+  arguments:
   - symbol: 'Dat'
     primitive_type: 'undefined'
     reference_type: 'string'
@@ -1019,4 +1030,21 @@
     primitive_type: 'boolean'
     reference_type: 'undefined'
   interpretation: '(Subj).matches((Acc))'
+- term: range
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  - symbol: 'Acc'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  - symbol: 'ex_Subj'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation: '(ex_Subj) >= (Subj) && (ex_Subj) <= (Acc)'
   

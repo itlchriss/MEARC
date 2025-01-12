@@ -266,6 +266,15 @@ general_syntax_rules = [
         'synthesised_datatype': { }
     },
     { 
+        'pattern': ['are', 'in', 'the', 'range', 'of', '__num__', 'to', '__num__'], 
+        'format': 'are greater than or equal to __num__ and are less than or equal to __num__', 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
         'pattern': ['is', 'within', 'the', 'range', 'of', '__num__', 'to', '__num__'], 
         'format': 'is greater than or equal to __num__ and is less than or equal to __num__', 
         'symbol': '', 

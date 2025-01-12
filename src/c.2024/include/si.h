@@ -41,6 +41,10 @@ struct si {
     struct queue *syntax;
     /* the interpretation of this SI */
     char *interpretation;
+    /* external argument */
+    /* this is used when a predicate needs external SI to complete its SI */
+    /* for instance, the range of a value requires the SI of the value */
+    struct si_arg *exarg;
     /* type of this SI */
     enum interpretation_type type;
     /* arguments accepted by this SI */
