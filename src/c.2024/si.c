@@ -28,7 +28,7 @@
 extern struct astnode *root;
 extern struct queue *predicates, *operators, *silist, *events, *alias;
 extern struct astnode *root;
-struct queue *cst;    
+extern struct queue *cst;    
 
 int search_syntax(struct si*, enum ptbsyntax);
 int __simatcher(void *, void *);
