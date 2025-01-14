@@ -66,9 +66,33 @@ int IN_code_synthesis(struct astnode *node) {
     }
 
     struct entity *en = (struct entity *)gqueue(__searchevent(eventnode->cstptr)->entities, 0);    
-    
 
-    if (__is_Rel_dependent__(en->cstptr)) {
+    /*
+        20250113 added support of abstract noun
+        if the cstptr points to a variable contains abstract noun, aka  checks the data in the variable the same as the symbol of cstptr
+        then we consider this preposition is a component of the synthesis of this abstract noun
+        1. fill the SI of the varnode into the corresponding argument of the SI arg in the abstract noun
+        2. prune the subtree node rooted at this preposition
+     */
+    if (en->cstptr->abstract_synthesis_required == TRUE) {
+        /*
+            check varnode dependency
+            if there is another node that depends on the varnode, aka the SI synthesis of that node has not been completed yet
+            we should wait for it to be completed
+         */
+         char *var = (char *)gqueue(varnode->cstptr->datalist, 0);
+         char *target = (char *)dequeue(en->cstptr->datalist);
+         char *tmp = strrep(target, __combine_3_strings__("(", node->token->symbol, ")"), var);
+         free(target);
+         target = (char *)strdup(tmp);
+         free(tmp);
+         enqueue(en->cstptr->datalist, (void *)target);
+         varnode->cstptr->ref_count--;
+         eventnode->cstptr->ref_count--;
+         en->cstptr->ref_count--;
+         if (__is_abtract_arg_done__(en->cstptr)) en->cstptr->abstract_synthesis_required = FALSE;
+    }
+    else if (__is_Rel_dependent__(en->cstptr)) {
         char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
         struct queue *relq = q_searchqueue(silist, rel_symbol, __match_si_with_symbol_only__);
         if (relq->count == 0) sinotfound_error(rel_symbol);
@@ -102,9 +126,39 @@ int IN_code_synthesis(struct astnode *node) {
             /* TODO: there can be a problem if there are multiple SI */
             enqueue(eventnode->cstptr->astptr->si_q, (void *)strdup((char *)gqueue(node->si_q, 0)));
         } else {
-            node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);
+            /*
+                check if any other node depends on the entity
+                if the reference count of the entity is greater than 1, then we should wait for the count to be 1
+                which means, the current synthesis is the last one to be resolved
+            */
+            // showqueue(events, showevent);
+            // if (en->cstptr->ref_count > 1 || varnode->cstptr->ref_count > 1) return FALSE;
+            // if (varnode->cstptr->abstract_synthesis_required) return FALSE;
+            node->si_q = q_searchqueue(node->si_q, node, __match_event_si_for_prepositions__);            
             if (node->si_q->count == 0) sinotfound_error(node->token->symbol);        
-            node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
+            if (has_Abstract_SI(node->si_q) && varnode->cstptr->abstract_synthesis_required) return FALSE;
+            
+            if (varnode->cstptr->si_q != NULL && __has_abstract_ex_arg__(varnode->cstptr)) {
+                struct si *si = (struct si *)gqueue(varnode->cstptr->si_q, 0);
+                char *var = (char *)dequeue(varnode->cstptr->datalist);
+                char *target = (char *)gqueue(en->cstptr->datalist, 0);
+                char *tmp = strrep(var, __combine_3_strings__("(", si->exarg->symbol, ")"), target);
+                free(var);
+                var = (char *)strdup(tmp);
+                free(tmp);
+                enqueue(varnode->cstptr->datalist, (void *)var);
+                varnode->cstptr->ref_count--;
+                eventnode->cstptr->ref_count--;
+                en->cstptr->ref_count--;
+                node->si_q = initqueue();
+                enqueue(node->si_q, (void *)strdup(var));
+                /* EXPERIMENTAL */
+                deleteastchildren(node);
+                node->type = Synthesised;                
+                return TRUE;
+            } else {
+                node->si_q = __obtain_si_with_cstptr_(en->cstptr, varnode->cstptr, node->si_q);
+            }
         }        
         deallocatequeue(en->cstptr->datalist, deallocatedata);
         en->cstptr->datalist = initqueue();
@@ -112,5 +166,5 @@ int IN_code_synthesis(struct astnode *node) {
     }
 
     root = deleteastnodeandedge(node, root);
-    return 0;
+    return TRUE;
 }

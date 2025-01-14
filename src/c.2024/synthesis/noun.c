@@ -35,8 +35,23 @@ struct queue *__obtain_si_with_1_cstptr_(struct cstsymbol *x, struct queue *siq)
 
 
 int Nseries_code_synthesis(struct astnode *node) {
+    if (has_Abstract_SI(node->si_q)) {
+        /* we use the abstract noun SI only */
+        /* pop the current SI then find and enqueue the abstract noun SI */
+        struct si *tmp = (struct si *)gqueue(node->si_q, 0);
+        struct queue *tmpq = q_searchqueue(silist, tmp->interpretation, __match_si_with_symbol_only__);
+        if (tmpq->count == 0) sinotfound_error(tmp->interpretation);
+        dequeue(node->si_q);
+        enqueue(node->si_q, (void *)gqueue(tmpq, 0)); 
+        deallocatequeue(tmpq, NULL);
+        ((struct astnode *)getastchild(node, 0))->cstptr->si_q = initqueue();
+        for (int i = 0; i < node->si_q->count; ++i) {
+             enqueue(((struct astnode *)getastchild(node, 0))->cstptr->si_q, (void *)gqueue(node->si_q, i));
+        }
+        return __direct_syntax_synthesis__(node);
+    }
     /* Rel SI always needs typed entity. therefore, the first condition is not work to exclude them */
-    if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {
+    else if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {
         /* get the aliased ptr of the child node cstptr */
         struct cstsymbol *_aliased_cstptr = searchalias(getastchild(node, 0)->cstptr);
         /* check if the aliased ptr is assigned */

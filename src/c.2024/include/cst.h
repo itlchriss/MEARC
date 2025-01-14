@@ -13,6 +13,9 @@
 #ifndef RELTYPE
 #define RELTYPE -9
 #endif
+#ifndef EVENTTYPE
+#define EVENTTYPE -10
+#endif
 #ifndef ALLOWED
 #define ALLOWED 1
 #endif
@@ -142,6 +145,10 @@ struct cstsymbol {
     * A field to record if this symbol is an argument to a predicate. If not, its alias should be check in SI analysis
     */
     int is_argument_to_predicate;
+    /*
+        TRUE indicates the symbol is an abstract noun SI and requires further synthesis
+     */
+    int abstract_synthesis_required;
 };
 
 

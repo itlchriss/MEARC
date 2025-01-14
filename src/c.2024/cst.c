@@ -10,7 +10,7 @@ void showcstsymbol(void *_symbol) {
     struct cstsymbol *c = (struct cstsymbol*)_symbol;
     printf("=============================Compile time symbol===================================\n");
     printf("Symbol: %s  (datatype: p(%d) r(%d) i(%d))    Number of Refs: %d\n", c->symbol, c->datatype->p, c->datatype->r, c->datatype->i, c->ref_count);
-    printf("Data: ");
+    printf("Data: ");    
     for (int i = 0; i < c->datalist->count; ++i) {
         char *data = (char *)gqueue(c->datalist, i);
         printf("%s  ", data);
@@ -39,6 +39,9 @@ void showcstsymbol(void *_symbol) {
             printf("%s  ", (char *)gqueue(c->conjunction_operators, i));
         }
     }    
+    if (c->abstract_synthesis_required == TRUE) {
+        printf("\nAbstract synthesis required");
+    }
     printf("\n===================================================================================\n");
 }
 
@@ -62,6 +65,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->ref_count = 0;
     new->is_argument_to_predicate = FALSE;
     new->conjunction_operators = initqueue();
+    new->abstract_synthesis_required = FALSE;
     enqueue(cst, (void*)new);
     return new;
 }

@@ -637,6 +637,28 @@
   - IN
   arguments:
   - symbol: x
+    primitive_type: 'event'
+    reference_type: 'any'
+  - symbol: y
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation: __ABSTRACT__
+- term: to
+  syntax:
+  - TO
+  arguments:
+  - symbol: x
+    primitive_type: 'event'
+    reference_type: 'any'
+  - symbol: y
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation: __ABSTRACT__
+- term: of
+  syntax:
+  - IN
+  arguments:
+  - symbol: x
     primitive_type: 'relative'
     reference_type: 'relative'
   - symbol: y
@@ -694,7 +716,7 @@
     primitive_type: 'any'
     reference_type: 'any'
   interpretation_type: 'modifier'
-  interpretation: (x)[i]
+  interpretation: (x)
 - term: __REL__value
   syntax:
   - NNS
@@ -734,7 +756,7 @@
     - 'list'
     - 'collection'
   interpretation_type: 'expression'
-  interpretation: Collections.frequency((__REF__type), (x)) == 1
+  interpretation: \forall int i; 0 <= i < (x).size(); (\forall int j; 0 <= j < (x).size() && j != i; (x).get(j) != (x).get(i))
 - term: unique
   syntax:
   - JJ
@@ -742,9 +764,8 @@
   - symbol: x
     primitive_type: 'any'
     reference_type: 'array'
-    lazy_resolve: __REF__type
   interpretation_type: 'expression'
-  interpretation: Collections.frequency(Arrays.asList((__REF__type)), (x)) == 1
+  interpretation: \forall int i; 0 <= i < (x).length; (\forall int j; 0 <= j < (x).length && j != i; (x)[j] != (x)[i])
 - term: sum
   syntax:
   - NN
@@ -1034,10 +1055,18 @@
   syntax:
   - NN
   arguments:
-  - symbol: 'Subj'
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation: __ABSTRACT__range
+- term: __ABSTRACT__range
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'of'
     primitive_type: 'integer'
     reference_type: 'undefined'
-  - symbol: 'Acc'
+  - symbol: 'to'
     primitive_type: 'integer'
     reference_type: 'undefined'
   - symbol: 'ex_Subj'
@@ -1046,5 +1075,27 @@
   synthesised_datatype:
     primitive_type: 'boolean'
     reference_type: 'undefined'
-  interpretation: '(ex_Subj) >= (Subj) && (ex_Subj) <= (Acc)'
+  interpretation: '(ex_Subj) >= (of) && (ex_Subj) <= (to)'
+- term: HYPHEN
+  syntax:
+  - IN
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  - symbol: 'Prep'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  interpretation: '(Subj) - (Prep)'
+- term: in
+  syntax:
+  - IN
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  - symbol: 'Abstract'
+    primitive_type: 'any'
+    reference_type: 'undefined'
+  interpretation: '__ABSTRACT__'
   

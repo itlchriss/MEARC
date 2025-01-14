@@ -16,6 +16,7 @@ int NNS_code_synthesis(struct astnode *);
 int NNP_code_synthesis(struct astnode *);
 int CD_code_synthesis(struct astnode *);
 int RB_code_synthesis(struct astnode *);
+int TO_code_synthesis(struct astnode *);
 
 int __Rel_synthesis__(
     struct cstsymbol *, struct cstsymbol *, struct queue *);

@@ -41,14 +41,20 @@ int has_Rel_SI(struct queue *siq);
 
 int selfSI[] = { 1, 0, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1, 1};
 
+int __is_event_variable__(struct astnode *node) {
+    return node->token->symbol[0] == 'e';
+}
+
+int __is_preposition_predicate__(struct astnode *node) {
+    return (node->syntax == IN && countastchildren(node) == 2) &&
+     __is_event_variable__((struct astnode *)getastchild(node, 0)) && !__is_event_variable__((struct astnode *)getastchild(node, 1));
+}
 
 int __is_noun_predicate__(struct astnode *node) {
     return node->syntax == NN || node->syntax == NNP || node->syntax == NNS || node->syntax == NNPS;
 }
 
-int __is_event_variable__(struct astnode *node) {
-    return node->token->symbol[0] == 'e';
-}
+
 
 
 /*
@@ -182,7 +188,7 @@ int RBR_code_synthesis(struct astnode *node) { return 0; }
 int RBS_code_synthesis(struct astnode *node) { return 0; }
 int RP_code_synthesis(struct astnode *node) { return 0; }
 int SYM_code_synthesis(struct astnode *node) { return 0; }
-int TO_code_synthesis(struct astnode *node) { return 0; }
+// int TO_code_synthesis(struct astnode *node) { return 0; }
 int UH_code_synthesis(struct astnode *node) { return 0; }
 int VB_code_synthesis(struct astnode *node) { 
     return Vseries_code_synthesis(node); 
@@ -495,8 +501,8 @@ void sianalysis() {
             case NNS:
             case NNP:
             case NNPS:
-                node->si_q = q_searchqueue(silist, node, __simatcher);
-                check_validity(node);                
+                node->si_q = q_searchqueue(silist, node, __simatcher);                
+                check_validity(node);           
                 if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {
                     /* current assumption of this case is that there must be an alias to the variable */
                     struct cstsymbol *_aliased_cstptr = searchalias(getastchild(node, 0)->cstptr);
@@ -592,6 +598,8 @@ void sianalysis() {
     deallocatequeue(predicates, NULL);
     deallocatequeue(visited_variables, NULL);
     predicates = target;
+
+    
 }
 
 /* 
@@ -604,6 +612,7 @@ void sianalysis() {
 */
 void sisynthesis() {
     struct astnode *node;
+    struct queue *tmp = initqueue();
     #if SIDEBUG
     printf("si synthesis: after sorting, there are %d predicates in the queue.\n", predicates->count);
     for (int i = 0; i < predicates->count; ++i) {
@@ -617,6 +626,7 @@ void sisynthesis() {
         node = (struct astnode*)dequeue(predicates);
         #if SIDEBUG
         printf("si synthesis: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
+        showast(root, 0);
         #endif
 
         /* 
@@ -652,7 +662,11 @@ void sisynthesis() {
             /* checking all children, if one of them is not assigned with semantics, the synthesis cannot be done */            
             for (int i = 0; i < child_count; ++i) {
                 struct astnode *tmp = (struct astnode *) getastchild(node, i);
-                if (tmp->cstptr->status != Assigned) {
+                if ((tmp->cstptr->status != Assigned && !__is_preposition_predicate__(node)) ||
+                    (__is_preposition_predicate__(node) && tmp->cstptr->status != Assigned && tmp->cstptr->symbol[0] != 'e')) {
+                    #if SIDEBUG
+                    printf("The child %s is not assigned\n", tmp->cstptr->symbol);
+                    #endif
                     semantic_error("Synthesis is stopped because a predicate(%s) has children that are not Assigned.", node->token->symbol);
                 }
             }
@@ -661,7 +675,12 @@ void sisynthesis() {
                 there is a case in NN, that the predicate depends on a variable with type.
                 therefore, the variable needs to wait for its aliased variable to be assigned.                
             */
-            (*code_syntheses[node->syntax])(node);       
+            int result = (*code_syntheses[node->syntax])(node);       
+            if (result == FALSE && node->syntax == IN) {
+                enqueue(tmp, (void *)dequeue(predicates));
+                push(predicates, node);
+                push(predicates, dequeue(tmp));
+            }
         }
         /* ================================================================================================ */
         #if ASTDEBUG

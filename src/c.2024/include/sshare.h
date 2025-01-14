@@ -15,6 +15,9 @@ struct queue* __get_java_method_interpretations_from_chain__(char *);
 */
 int __is_Rel_dependent__(struct cstsymbol *);
 
+
+int __is_Abstract_noun__(struct cstsymbol *);
+
 /*
     Match an SI with the symbol only. this is used in finding REL SI
 */
@@ -33,6 +36,11 @@ int check_need_assigned_entity(struct astnode *);
 struct queue *__obtain_si_with_cstptr_(struct cstsymbol *, struct cstsymbol *, struct queue *);
 
 int has_Rel_SI(struct queue *);
+int has_Abstract_SI(struct queue *);
+
+int __is_abtract_arg_done__(struct cstsymbol *ptr);
+int __has_abstract_ex_arg__(struct cstsymbol *ptr);
+
 int __direct_syntax_synthesis__(struct astnode *);
 void __post_operation_si_subtree_synthesis__(struct astnode *);
 

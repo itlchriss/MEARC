@@ -525,6 +525,15 @@ general_syntax_rules = [
         'syntax': 'NN',
         'arguments': [],
         'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'length', 'of', 'the', '__type__', '__param__'],
+        'format': "the __type__ __param__'s length",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
     }
 ]
 

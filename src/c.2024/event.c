@@ -107,7 +107,7 @@ void showevent(void *_event) {
     for (int j = 0; j < event->entities->count; ++j) {
         struct entity *entity = (struct entity *)gqueue(event->entities, j);
         printf("=============================Event symbol===================================\n");
-        printf("    ->Entity: %s(%d) SI\n ", entity->cstptr->symbol, entity->type);
+        printf("    ->Entity: %s(%d) cst reference count: %d\n ", entity->cstptr->symbol, entity->type, entity->cstptr->ref_count);
         printf("===================================================================================\n");
     }
 }

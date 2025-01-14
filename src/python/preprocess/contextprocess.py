@@ -137,10 +137,10 @@ class ContextProcessor:
     def _symbol_syntax_preprocessor(self):
         if self.sent[-1] == '.':
             self.sent = self.sent[:-1]  
-        self.sent = re.sub(r"','", 'comma', self.sent)
-        self.sent = re.sub(r"'\?'", 'questionmark', self.sent)
-        self.sent = re.sub(r"'\*'", 'asterisk', self.sent)
-        self.sent = re.sub(r"'\.'", 'period', self.sent)
+        self.sent = re.sub(r"','", ' comma ', self.sent)
+        self.sent = re.sub(r"'\?'", ' questionmark ', self.sent)
+        self.sent = re.sub(r"'\*'", ' asterisk ', self.sent)
+        self.sent = re.sub(r"'\.'", ' period ', self.sent)
         self.sent = re.sub(r"`*'\s*\(\s*'`*", 'leftp', self.sent)
         self.sent = re.sub(r"`*'\s*\)\s*'`*", 'rightp', self.sent)
         self.sent = re.sub(r"`*'\s*\[\s*'`*", 'leftbp', self.sent)

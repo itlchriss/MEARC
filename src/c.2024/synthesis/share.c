@@ -9,6 +9,24 @@
 // TODO: to be tidied up, should not be extern here
 extern struct astnode *root;
 
+
+int __is_abtract_arg_done__(struct cstsymbol *ptr) {
+    struct si *si = (struct si *)gqueue(ptr->si_q, 0);
+    struct queue *args = si->args;
+    char *data = (char *)gqueue(ptr->datalist, 0);
+    for (int i = 0; i < args->count; ++i) {
+        struct si_arg *arg = (struct si_arg *)gqueue(args, i);
+        if (ssearch(data, __combine_3_strings__("(", arg->symbol, ")"))) return FALSE;
+    }
+    return TRUE;
+}
+
+int __has_abstract_ex_arg__(struct cstsymbol *ptr) {
+    struct si *si = (struct si *)gqueue(ptr->si_q, 0);
+    if (si->exarg != NULL) return TRUE;
+    else return FALSE;
+}
+
 /*
     a helper function checking the input cst symbol's SI is starting with '__Rel__'.
     If so, c is said to be a dependent value and the result is true, otherwise, the result is false.
@@ -19,6 +37,13 @@ int __is_Rel_dependent__(struct cstsymbol *c) {
     char *data = (char *)gqueue(c->datalist, 0);
     int occur[strlen(data)/7 + 1];
     if (strsearch(data, "__REL__", occur) != 0) return TRUE;        
+    else return FALSE;
+}
+
+int __is_Abstract_noun__(struct cstsymbol *c) {
+    if (c->datalist->count > 1) return FALSE;
+    char *data = (char *)gqueue(c->datalist, 0);
+    if (ssearch(data, "__ABSTRACT_NOUN__") == TRUE) return TRUE;
     else return FALSE;
 }
 
@@ -98,7 +123,7 @@ struct queue* __get_java_method_interpretations_from_chain__(char *interpretatio
 
 
 /*
-    Match an SI with the symbol only. this is used in finding REL SI
+    Match an SI with the symbol only. this is used in finding REL and ABSTRACT SI
 */
 int __match_si_with_symbol_only__(void *_si, void *_symbol) {
     struct si *si = (struct si *)_si;
@@ -130,10 +155,10 @@ struct queue *__obtain_si_with_cstptr_(struct cstsymbol *x, struct cstsymbol *y,
             for (int j = 0; j < y->datalist->count; ++j) {
                 char *s = (char *)strdup(si->interpretation);
                 char *xdata = (char *)gqueue(x->datalist, i), *ydata = (char *)gqueue(y->datalist, j);
-                char *tmp = strrep(s, arg1->symbol, xdata);
+                char *tmp = strrep(s, __combine_3_strings__("(", arg1->symbol, ")"), xdata);
                 free(s);
                 s = tmp;
-                tmp = strrep(s, arg2->symbol, ydata);            
+                tmp = strrep(s, __combine_3_strings__("(", arg2->symbol, ")"), ydata);            
                 free(s);
                 enqueue(result, (void *)tmp);
             }
@@ -236,6 +261,12 @@ int has_Rel_SI(struct queue *siq) {
     else return FALSE;
 }
 
+int has_Abstract_SI(struct queue *siq) {
+    struct si *si = (struct si *)gqueue(siq, 0);
+    if (ssearch(si->interpretation, "__ABSTRACT__") == TRUE) return TRUE;
+    else return FALSE;
+}
+
 
 int __direct_syntax_synthesis__(struct astnode *node) {
     struct astnode *child = (struct astnode *) getastchild(node, 0);
@@ -292,6 +323,11 @@ int __direct_syntax_synthesis__(struct astnode *node) {
     }
     child->cstptr->status = Assigned;
     child->cstptr->ref_count--;    
+    /*
+        Following the setting of the SI
+        if the SI is an abstract SI, then the child requires further abstract synthesis
+     */
+    child->cstptr->abstract_synthesis_required = targetsi->abstract_synthesis_required;
     root = deleteastnodeandedge(node, root);
     return 0;
 }

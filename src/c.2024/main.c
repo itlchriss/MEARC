@@ -43,6 +43,7 @@ void showprocessinfo(char *msg) {
 int get_datatype(char *s) {
     if (strcmp(s, "any") == 0) return ANY;
     else if (strcmp(s, "relative") == 0) return RELTYPE;
+    else if (strcmp(s, "event") == 0) return EVENTTYPE;
     else if (strcmp(s, "undefined") == 0) return UNDEFINED;
     else if (strcmp(s, "boolean") == 0) return Boolean;
     else if (strcmp(s, "byte") == 0) return Byte;
@@ -260,6 +261,7 @@ struct queue* readSI(char *dstfilepaths) {
                     si->synthesised_datatype->r = UNDEFINED;
                     si->synthesised_datatype->types = initqueue();
                     si->type = -1;
+                    si->exarg = NULL;
                 }
                 break;
             case YAML_BLOCK_END_TOKEN:            
@@ -294,7 +296,7 @@ struct queue* readSI(char *dstfilepaths) {
                                         arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
                                         arg->datatype->p = UNDEFINED;
                                         arg->datatype->r = UNDEFINED;
-                                        arg->datatype->types = NULL;
+                                        arg->datatype->types = NULL;                                        
                                         break;
                                     case YAML_KEY_TOKEN:
                                         yaml_parser_scan(&parser, &token);
@@ -464,6 +466,11 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
+                            if (ssearch(si->symbol, "__ABSTRACT__")) {
+                                si->abstract_synthesis_required = TRUE;
+                            } else {
+                                si->abstract_synthesis_required = FALSE;
+                            }
                         } else if (strcmp(key, "spec_init_type") == 0) {
                             if (strcmp(value, "boolean") == 0) {
                                 si->spec_init_type = 0;

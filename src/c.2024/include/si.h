@@ -64,6 +64,10 @@ struct si {
         this integer should be consistent with the declaration of enum primitive_datatype in cst.h
     */
     int spec_init_type;
+    /*
+        TRUE indicates the symbol is an abstract noun SI and requires further synthesis
+     */
+    int abstract_synthesis_required;
 };
 
 /* 

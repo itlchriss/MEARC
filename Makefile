@@ -8,7 +8,7 @@ BUILD	=	./build
 BIN		=   ./bin
 INCL	=	$(SRC)/include
 CFLAGS	= 	-g -Wall -ansi -pedantic -I$(INCL) -std=gnu11 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o jml.o main.o alias.o error.o event_struct.o event_synthesis.o sshare.o command.o preposition_synthesis.o relative_synthesis.o adjective_synthesis.o cardinalnumber_synthesis.o noun_synthesis.o adverb_synthesis.o
+OBJS	=	parser.o lex.o ast.o si.o cst.o util.o cg.o jml.o main.o alias.o error.o event_struct.o event_synthesis.o sshare.o command.o preposition_synthesis.o relative_synthesis.o adjective_synthesis.o cardinalnumber_synthesis.o noun_synthesis.o adverb_synthesis.o to.o
 DEBUG   ?=      0
 LEXDEBUG ?=     0
 DSTDEBUG ?=		0
@@ -138,6 +138,9 @@ noun_synthesis.o  : $(SRC)/synthesis/noun.c
 
 adverb_synthesis.o  : $(SRC)/synthesis/adverb.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/adverb_synthesis.o $<
+
+to.o  : $(SRC)/synthesis/to.c
+		$(CC) $(CFLAGS) -c -o $(BUILD)/to.o $<
 
 cardinalnumber_synthesis.o  : $(SRC)/synthesis/cardinalnumber.c
 		$(CC) $(CFLAGS) -c -o $(BUILD)/cardinalnumber_synthesis.o $<

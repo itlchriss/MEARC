@@ -159,6 +159,21 @@ struct astnode *astsimplification(struct astnode *_root) {
             this is a node that has no effects to the result 
             a node has type connective (and, or, etc.) can only provide meaning when both left and right hand-side operators present
         */
+        if (node->type == Synthesised && node->parent != NULL && countastchildren(node->parent) == 1) {
+            if (node->parent->isroot == 1) {
+                root = node;
+                node->parent = NULL;
+            } else {
+                struct astnodelist *children = node->parent->parent->children;
+                while ((children = children->next) != NULL) {
+                    if (children->node == node->parent) {               
+                        children->node = node;
+                        node->parent = node->parent->parent;
+                        break;
+                    }
+                }
+            }
+        }
         if (count == 1 && (node->type == Connective || (node->type == Quantifier && node->qtype == Quantifier_Exists))) {            
             child = getastchild(node, 0);
             /* xor operation is applied on the new isnegative property */
