@@ -466,7 +466,7 @@ struct queue* readSI(char *dstfilepaths) {
                             }
                         } else if (strcmp(key, "interpretation") == 0) {
                             si->interpretation = (char*) strdup(value);
-                            if (ssearch(si->symbol, "__ABSTRACT__")) {
+                            if (ssearch(si->symbol, "__ABSTRACT__") && si->args->count > 0) {
                                 si->abstract_synthesis_required = TRUE;
                             } else {
                                 si->abstract_synthesis_required = FALSE;

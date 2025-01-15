@@ -17,7 +17,7 @@ int __is_abtract_arg_done__(struct cstsymbol *ptr) {
     for (int i = 0; i < args->count; ++i) {
         struct si_arg *arg = (struct si_arg *)gqueue(args, i);
         if (ssearch(data, __combine_3_strings__("(", arg->symbol, ")"))) return FALSE;
-    }
+    }    
     return TRUE;
 }
 

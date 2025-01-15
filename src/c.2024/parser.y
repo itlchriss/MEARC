@@ -136,7 +136,7 @@
 
 /* %type<ptb> pos_tag */
 %type<conntype> connective
-%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term event_term
+%type<node> terms argument term quantified_term predicate_term grammar_term type_term param_term event_term pronoun_term
 %type<nodelist> arguments
 /* %type<gtype> grammar_relation */
 %start formula
@@ -297,6 +297,9 @@ term
         addastchild($$, right);
         enqueue(operators, (void*)$$);
     }
+    | pronoun_term {
+        $$ = $1;
+    }
     ;
 
 connective
@@ -319,6 +322,20 @@ grammar_term
             // we treat the grammar_tag as a predicate
             enqueue(predicates, (void*)$$);
         }
+    }
+    ;
+
+pronoun_term
+    : '(' IDENTIFIER EQUAL PREDICATE '{' TAG '}' ')' {
+        print_debug("pronoun_term: IDENTIFIER EQUAL PREDICATE '{' TAG '}'");
+        $$ = newastnode(Pronoun, $4);
+        if ($$->token->symbol[0] == '_') {
+            /* removing the underscore */
+            popchar($$->token->symbol);
+        }
+        $$->syntax = string2ptbsyntax($6->symbol);
+        addastchild($$, newastnode(Variable, $2));
+        enqueue(predicates, (void*)$$);
     }
     ;
 

@@ -14,7 +14,7 @@ extern struct astnode *root;
 void throwasterror(char *msg, struct token *token);
 
 // this has to agree exactly with the enum in ast.h
-char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "Operator", "GrammarNotation", "Multiple SIs", "TypePredicate", "EventVariable", "EventEntity" };
+char *node_type_name[] = { "Quantifier", "Predicate", "Variable", "Connective", "Synthesised", "Template", "Operator", "GrammarNotation", "Multiple SIs", "TypePredicate", "EventVariable", "EventEntity", "Pronoun" };
 char *connective_name[] = { "And", "Or", "Equivalent", "Imply" };
 char *quantifier_name[] = { "Exists", "All" };
 struct dstnode *_fdstptr = NULL;

@@ -818,6 +818,16 @@
     reference_type: 'any'
   interpretation_type: 'java_char'
   interpretation: "'+'"
+- term: dot_sign
+  syntax:
+  - NN
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation_type: 'java_char'
+  interpretation: "'.'"
 - term: minus_sign
   syntax:
   - NN
@@ -1059,6 +1069,14 @@
     primitive_type: 'any'
     reference_type: 'any'
   interpretation: __ABSTRACT__range
+- term: summation
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  interpretation: __ABSTRACT__summation
 - term: __ABSTRACT__range
   syntax:
   - NN
@@ -1076,6 +1094,17 @@
     primitive_type: 'boolean'
     reference_type: 'undefined'
   interpretation: '(ex_Subj) >= (of) && (ex_Subj) <= (to)'
+- term: __ABSTRACT__summation
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'ex_Subj'
+    primitive_type: 'integer'
+    reference_type: 'array'
+  synthesised_datatype:
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  interpretation: '\sum int i; 0 <= i < (ex_Subj).length; (ex_Subj)[i]'
 - term: HYPHEN
   syntax:
   - IN

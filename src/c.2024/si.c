@@ -443,6 +443,11 @@ void sianalysis() {
     struct queue *rbqueue = initqueue();
     while (!isempty(predicates)) {
         node = (struct astnode *)dequeue(predicates);
+        #if SIANALYSIS
+        if (node->token->symbol != NULL) {
+            printf("Analysing symbol (%s).......\n", node->token->symbol);
+        }
+        #endif
         /*
         * however, we have to consider an exceptional case
         *  that is, if the adverb is not modifying a verb
@@ -501,6 +506,7 @@ void sianalysis() {
             case NNS:
             case NNP:
             case NNPS:
+            case PRP:
                 node->si_q = q_searchqueue(silist, node, __simatcher);                
                 check_validity(node);           
                 if (check_need_assigned_entity(node) && !has_Rel_SI(node->si_q)) {

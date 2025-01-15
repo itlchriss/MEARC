@@ -55,6 +55,9 @@ def __check_is_numeric__(word: str) -> bool:
 def __check_is_char__(word: str) -> bool:
     return len(word) == 3 and word[0] == '\'' and word[2] == '\''
 
+def __check_is_boolean__(word: str) -> bool:
+    return word == 'true' or word == 'false'
+
 def __check_is_be__(word: str) -> bool:
     return word == 'is' or word == 'are'
 
@@ -142,6 +145,7 @@ func_map = {
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
     '__char__': __check_is_char__,
+    '__bool__': __check_is_boolean__,
     '__param__': __check_is_param__,
     '__type__': __check_is_type__,
     '__sum__': __perform_sum__,
@@ -375,6 +379,24 @@ general_syntax_rules = [
     { 
         'pattern': ['__be__', 'either', '__char__', ',', '__char__', ',', 'or', '__char__'], 
         'format': "__be__ equal to __char__ or __be__ equal to __char__ or __be__ equal to __char__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__be__', 'either', '__num__', ',', '__num__', ',', 'or', '__num__'], 
+        'format': "__be__ equal to __num__ or __be__ equal to __num__ or __be__ equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__be__', 'either', '__bool__', 'or', '__bool__'], 
+        'format': "__be__ equal to the __bool__ literal or __be__ equal to the __bool__ literal", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',

@@ -6,7 +6,7 @@
 #include "event.h"
 
 // this has to agree exactly with the array in ast.c
-enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, Operator, GrammarNotation, MultipleSIs, TypePredicate, EventVariable, EventEntity };
+enum astnodetype { Quantifier, Predicate, Variable, Connective, Synthesised, Template, Operator, GrammarNotation, MultipleSIs, TypePredicate, EventVariable, EventEntity, Pronoun };
 
 enum quantifiertype { Quantifier_Exists, Quantifier_ForAll };
 enum conntype { Op_And, Op_Or,  Op_Equivalent, Op_Imply };

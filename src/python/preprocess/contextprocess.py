@@ -133,7 +133,7 @@ class ContextProcessor:
             self.sent = self.sent[:-1]        
         for rule in alt_rules:            
             # self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
-            if self.sent.endswith(rule[0]):
+            if self.sent.endswith(rule[0]):                
                 self.sent = self.sent.replace(rule[0], rule[1])
             elif self.sent.startswith(rule[0]):
                 self.sent = self.sent.replace(rule[0], rule[1])

@@ -18,7 +18,7 @@ function _trans() {
 gpt35=`bc -l <<< "($(_trans "gpt35") / $(_total "gpt35")) * 100"`
 gpt4=`bc -l <<< "($(_trans "gpt4") / $(_total "gpt4")) * 100"`
 starchat=`bc -l <<< "($(_trans "starchat") / $(_total "starchat")) * 100"`
-echo $gpt35
+echo $(_trans "gpt35") $(_total "gpt35") $gpt35
 echo $(_trans "gpt4") $(_total "gpt4") $gpt4
 echo $(_trans "starchat") $(_total "starchat") $starchat
 

@@ -90,7 +90,12 @@ int IN_code_synthesis(struct astnode *node) {
          varnode->cstptr->ref_count--;
          eventnode->cstptr->ref_count--;
          en->cstptr->ref_count--;
-         if (__is_abtract_arg_done__(en->cstptr)) en->cstptr->abstract_synthesis_required = FALSE;
+         if (__is_abtract_arg_done__(en->cstptr)) {
+            en->cstptr->abstract_synthesis_required = FALSE; 
+            struct si *si = (struct si *)gqueue(en->cstptr->si_q, 0);
+            en->cstptr->datatype->p = si->synthesised_datatype->p;
+            en->cstptr->datatype->r = si->synthesised_datatype->r;           
+         }
     }
     else if (__is_Rel_dependent__(en->cstptr)) {
         char *rel_symbol = (char *)gqueue(en->cstptr->datalist, 0);
