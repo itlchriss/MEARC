@@ -52,6 +52,12 @@ SI_data = None
 def __check_is_numeric__(word: str) -> bool:
     return word.isnumeric() or (word.startswith('-') and word.count('-') == 1 and word.replace('-', '').isnumeric())
 
+def __check_is_char__(word: str) -> bool:
+    return len(word) == 3 and word[0] == '\'' and word[2] == '\''
+
+def __check_is_be__(word: str) -> bool:
+    return word == 'is' or word == 'are'
+
 def __check_is_param__(word: str) -> bool:
     return (word.startswith('`') and word[-1] == '`') or (word.startswith('param_') and word[-1] == '_')
 
@@ -134,6 +140,8 @@ def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
 
 func_map = {
     '__num__': __check_is_numeric__,
+    '__be__': __check_is_be__,
+    '__char__': __check_is_char__,
     '__param__': __check_is_param__,
     '__type__': __check_is_type__,
     '__sum__': __perform_sum__,
@@ -340,6 +348,33 @@ general_syntax_rules = [
     { 
         'pattern': ['is', 'of', 'length', '__num__'], 
         'format': "'s length is equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__be__', 'either', '__num__', 'or', '__num__'], 
+        'format': "__be__ equal to __num__ or __be__ equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__be__', 'either', '__char__', 'or', '__char__'], 
+        'format': "__be__ equal to __char__ or __be__ equal to __char__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['__be__', 'either', '__char__', ',', '__char__', ',', 'or', '__char__'], 
+        'format': "__be__ equal to __char__ or __be__ equal to __char__ or __be__ equal to __char__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',
@@ -625,7 +660,10 @@ class RepairProcessor:
         if len(f.split(' ')) > 1:
             for i, x in enumerate(pattern):
                 if x in func_map.keys():
-                    f = f.replace(x, words[index + i], 1)
+                    if x == '__be__' and 'either' in self._org_sent:
+                        f = f.replace(x, words[index + i])
+                    else:
+                        f = f.replace(x, words[index + i], 1)
                     pairs.append((x, words[index + i]))
         elif f in func_map.keys():
             subsent = words[index: index + len(pattern)]
@@ -652,6 +690,7 @@ class RepairProcessor:
         
     def run(self, sent: str, t: str) -> str:
         self._t = t
+        self._org_sent = sent
         if sent[-1] == '.':
             sent = sent[:-1]   
         if ',' in sent:
