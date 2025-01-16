@@ -68,6 +68,9 @@ def __check_is_expr__(word: str) -> bool:
     pattern = r'_expr\d+_'
     return re.match(pattern, word)
 
+def __check_is_quoted__(word: str) -> bool:
+    return word.startswith('`') and word.endswith('`')
+
 def __check_is_type__(word: str) -> bool:
     return word.startswith('type_')
 
@@ -144,6 +147,7 @@ def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
 func_map = {
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
+    '__quoted__': __check_is_quoted__,
     '__char__': __check_is_char__,
     '__bool__': __check_is_boolean__,
     '__param__': __check_is_param__,
@@ -503,6 +507,15 @@ general_syntax_rules = [
         'synthesised_datatype': { }
     },
     {
+        'pattern': ['__num__', 'times', 'the', 'integer', '__quoted__'], 
+        'format': "the product_expr", 
+        'symbol': 'product_expr', 
+        'interpretation': '__num__ * __quoted__',
+        'syntax': 'NN',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
         'pattern': ['__param__', 'has', 'an', 'even', 'length'], 
         'format': "__param__'s length is even", 
         'symbol': '', 
@@ -684,6 +697,9 @@ class RepairProcessor:
                 if x in func_map.keys():
                     if x == '__be__' and 'either' in self._org_sent:
                         f = f.replace(x, words[index + i])
+                    elif x == '__quoted__':
+                        # replacing the info with unquoted version
+                        f = f.replace(x, words[index + i].replace('`', ''), 1)
                     else:
                         f = f.replace(x, words[index + i], 1)
                     pairs.append((x, words[index + i]))
