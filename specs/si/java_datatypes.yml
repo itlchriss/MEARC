@@ -106,6 +106,18 @@
     reference_type: 'string'
   interpretation_type: 'java_type'
   interpretation: ''
+- term: type_string_array_
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'string_array'
+  interpretation_type: 'java_type'
+  interpretation: ''
 - term: type_boolean_array_
   syntax:
   - NN

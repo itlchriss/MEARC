@@ -492,6 +492,21 @@
   arguments:
   - symbol: Subj
     primitive_type: 'any'
+    reference_type: 'list'
+  - symbol: Dat
+    primitive_type: 'any'
+    reference_type: 'string_array'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'function'
+  interpretation: list_2_string_array_equal
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'any'
     reference_type: 'string'
   - symbol: Dat
     primitive_type: 'any'
@@ -1025,6 +1040,17 @@
     reference_type: 'string'
     interpretation_type: 'undefined'
   interpretation: '(Dat).contains((Acc))'
+- term: contain
+  syntax:
+  - VBN
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'integer'
+    reference_type: 'array'
+  - symbol: 'Acc'
+    primitive_type: 'integer'
+    reference_type: 'array'
+  interpretation: '\forall int i; 0 <= i < (Acc).length; \exists int j; 0 <= j < (Subj).length; (Subj)[j] == (Acc)[i]'
 - term: accontain
   syntax:
   - VBZ

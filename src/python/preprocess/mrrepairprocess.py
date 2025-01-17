@@ -619,6 +619,15 @@ general_syntax_rules = [
         'synthesised_datatype': { }
     },
     {
+        'pattern': ['The', 'length', 'of', 'the', '__type__', '__param__'],
+        'format': "The __type__ __param__'s length",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
         'pattern': ['the', 'length', 'of', 'the', '__type__', 'result'],
         'format': "the __type__ result's length",
         'symbol': '',

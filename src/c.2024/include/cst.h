@@ -42,7 +42,8 @@ enum reference_datatype {
     Array = 0,
     String = 1,
     Object = 2,
-    List = 3
+    List = 3,
+    String_Array = 4
 };
 
 /*

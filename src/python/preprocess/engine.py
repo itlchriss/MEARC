@@ -16,6 +16,13 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
     exprs = {}
     # for all remaining strings in quotes (``), we treat them as expressions and separatedly stored
     # print(sent)
+    if r := re.findall(r'(\["[\w\W]+\"\])', sent, re.ASCII):
+        for i, e in enumerate(r):
+            index = chr(i + 97)
+            _int_ = e.replace('[', '').replace(']', '')
+            exprs['str_seq' + index] = _int_
+            sent = sent.replace(e, ' the type_string_array_ str_seq' + index, 1)
+    
     if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_\'{}]+`)', sent):        
         for i, e in enumerate(r):
             index = chr(i + 97)
@@ -95,6 +102,8 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
             _int_ = e.replace('[', '').replace(']', '')
             exprs['arr_' + index] = _int_
             sent = sent.replace(e, ' arr_' + index, 1)
+            
+
     
     # fixing the case the regular expression for parameter is double treated
     sent = re.sub(r'param_param', 'param', sent)
@@ -139,8 +148,10 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         v = dynamic_si[k]
         p = 'any'
         r = 'any'
-        index = words.index(k)
-        if index != 0 and words[index - 1] == 'type_integer_':
+        index = -1
+        if k in words:
+            index = words.index(k)
+        if index > 0 and words[index - 1] == 'type_integer_':
             sp = 'integer'
             sr = 'undefined'
             interpretation = v.replace('`', '')
@@ -148,6 +159,10 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
             if 'chr' in k:
                 sp = 'character'
                 sr = 'undefined'
+                interpretation = v
+            elif 'str_seq' in k:
+                sp = 'string'
+                sr = 'string_array'
                 interpretation = v
             elif 'arr_' not in k:
                 sp = 'undefined'

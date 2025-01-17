@@ -59,7 +59,35 @@ void _itoa(int N, char *str) {
     the entity that provides d1 must be a list
 */
 char * list_2_array_equal(char *d1, char *d2) {
-    return NULL;
+    return list_2_string_array_equal(d1, d2);
+}
+
+
+/* 
+    the entity that provides d1 must be a list and d2 must be a string array
+*/
+char * list_2_string_array_equal(char *d1, char *d2) {
+    char *pos;
+    char *_t = strtok_r(d2, ",", &pos);
+    int c = 0;
+    char *result = NULL;
+    char *tmp = "%x.get(%i) == %s";
+    char *_a = strrep(tmp, "%x", d1);
+    while (_t != NULL) {
+        char num[10];
+        _itoa(c, num);
+        char *_b = strrep(_a, "%i", num);
+        char *_target = strrep(_b, "%s", _t);
+        free(_b);
+        if (result != NULL) {
+            result = combine_strings(3, result, " && ", _target);
+        } else {
+            result = _target;
+        }
+        c++;
+        _t = strtok_r(NULL, ",", &pos);
+    }
+    return result;
 }
 
 char * array_equal(char *d1, char *d2) {

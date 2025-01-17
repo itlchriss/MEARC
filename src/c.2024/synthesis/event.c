@@ -161,7 +161,13 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                         */
                         if (strcmp(si->interpretation, "array_equal") == 0) {
                             tmp = array_equal(d1, d2);
-                        } 
+                        } else if (strcmp(si->interpretation, "list_2_string_array_equal") == 0) {
+                            tmp = list_2_string_array_equal(d1, d2);
+                        } else if (strcmp(si->interpretation, "list_2_array_equal") == 0) {
+                            tmp = list_2_array_equal(d1, d2);
+                        } else {
+                            internal_error("The function is not supported in the current version");
+                        }
                     } else {
                         // char *
                         // TODO: we need to support for searching grammar type

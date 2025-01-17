@@ -3,24 +3,63 @@ SRCPATH=./test
 MODEL=gpt35
 
 function _total() {
-    local result=`find $SRCPATH/*/$1 -type f -name "rnl.txt" | sort | xargs wc -l | tail -1 | sed 's/ total//'`
+    # local result=`find $SRCPATH/*/$1 -type f -name "rnl.txt" | sort | xargs nl -bt | grep -v -e "Example$" | awk 'NF' | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    local result=`find $SRCPATH/*/$1 -type f -name "rnl.txt" | sort | xargs grep -v -e "Example$" -e "\:$" -e "^$" | awk 'NF' | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
     echo $result
 }
 
 function _trans() {
     local postcount=`grep -r 'ensures' $SRCPATH/*/$1/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
     local precount=`grep -r 'requires' $SRCPATH/*/$1/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
-    # local result=
     echo $(($postcount+$precount))
+
 }
+
+function _derive() {
+    local failed=`find ./test/*/$1/tmp -type f -name "*.mr" | xargs grep "Failed" | awk 'END {print NR}'`
+    local empty=`find ./test/*/$1/tmp -type f -name "*.mr" -empty | awk 'END {print NR}'`
+    local incomplete=`find ./test/*/$1/tmp -type f -name "*.mr" | xargs grep -F '\' | awk 'END {print NR}'`
+    local total=`find ./test/*/$1/tmp -type f -name "*.mr" | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    echo $(($total-$failed-$empty-$incomplete))
+}
+
+function _parse() {
+    local parsing_error=`grep 'Parser: parse error' ./results/"$1"log  | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    local sinotfounderror=`grep 'SI not found error' ./results/"$1"log  | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`	
+    local semanticerror=`grep 'Semantic error' ./results/"$1"log  | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    local sianalysiserror=`grep 'Internal error' ./results/"$1"log  | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    echo $(($parsing_error+$sinotfounderror+$semanticerror+$sianalysiserror))
+}
+
+date=20250117
+
+echo '' > results/$date/starchat_report.txt
+echo '' > results/$date/gpt4_report.txt
+echo '' > results/$date/gpt35_report.txt
+
+for entry in `find ./test/*/starchat/jml -type f -name "*.jml" | sort`
+do
+    echo $entry >> results/$date/starchat_report.txt
+done
+
+for entry in `find ./test/*/gpt4/jml -type f -name "*.jml" | sort`
+do
+    echo $entry >> results/$date/gpt4_report.txt
+done
+
+for entry in `find ./test/*/gpt35/jml -type f -name "*.jml" | sort`
+do
+    echo $entry >> results/$date/gpt35_report.txt
+done
+
 
 
 gpt35=`bc -l <<< "($(_trans "gpt35") / $(_total "gpt35")) * 100"`
 gpt4=`bc -l <<< "($(_trans "gpt4") / $(_total "gpt4")) * 100"`
 starchat=`bc -l <<< "($(_trans "starchat") / $(_total "starchat")) * 100"`
-echo $(_trans "gpt35") $(_total "gpt35") $gpt35
-echo $(_trans "gpt4") $(_total "gpt4") $gpt4
-echo $(_trans "starchat") $(_total "starchat") $starchat
+echo $(_trans "gpt35") $(_total "gpt35") $gpt35 $(_derive "gpt35") $(_parse "gpt35")
+echo $(_trans "gpt4") $(_total "gpt4") $gpt4 $(_derive "gpt4") $(_parse "gpt4")	
+echo $(_trans "starchat") $(_total "starchat") $starchat $(_derive "starchat") $(_parse "starchat")
 
 
 # postcount=`grep -r 'ensures' $SRCPATH/*/gpt35/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`

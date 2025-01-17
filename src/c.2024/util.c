@@ -278,6 +278,7 @@ void deallocatequeue(struct queue *queue, void (*deallocate)(void*)) {
     struct queuenode *tmp = queue->q->next;
     while (queue->count > 0) {
         tmp = queue->q->next;
+        if (queue->q->next == NULL) break;
         queue->q->next = queue->q->next->next;
         if (deallocate != NULL) {
             deallocate(tmp->datanode);
