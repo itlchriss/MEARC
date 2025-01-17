@@ -900,6 +900,18 @@
     reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLowerCase'
+- term: uppercase_alphabets
+  syntax:
+  - NNS
+  arguments:
+  - symbol: '*'
+    primitive_type: 'any'
+    reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'java_method'
+  interpretation: 'Character.isUpperCase'
 - term: contain_only
   syntax:
   - VBZ

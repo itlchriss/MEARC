@@ -132,25 +132,31 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
         for key in rp.dynamic_si.keys():
             if key not in dynamic_si.keys():
                 dynamic_si[key] = rp.dynamic_si[key]['interpretation']
+    words = sent.split(' ')    
     if sent[-1] != '.':
-        sent += '.'    
+        sent += '.'
     for k in dynamic_si.keys():
         v = dynamic_si[k]
         p = 'any'
         r = 'any'
-        if 'chr' in k:
-            sp = 'character'
+        index = words.index(k)
+        if index != 0 and words[index - 1] == 'type_integer_':
+            sp = 'integer'
             sr = 'undefined'
-            interpretation = v
-        elif 'arr_' not in k:
-            sp = 'undefined'
-            sr = 'string'
             interpretation = v.replace('`', '')
         else:
-            sp = 'integer'
-            sr = 'array'
-            # interpretation = 'new int[] {%s}' % v
-            interpretation = '%s' % v.replace(' ', '')
+            if 'chr' in k:
+                sp = 'character'
+                sr = 'undefined'
+                interpretation = v
+            elif 'arr_' not in k:
+                sp = 'undefined'
+                sr = 'string'
+                interpretation = v.replace('`', '')
+            else:
+                sp = 'integer'
+                sr = 'array'
+                interpretation = '%s' % v.replace(' ', '')
         
         # Experimental: This one has conflict with the lex rules about the parameter name parsing
         #               remove this line if any other conflicts rise

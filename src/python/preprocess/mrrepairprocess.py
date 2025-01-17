@@ -101,6 +101,9 @@ def __array_value_access__(sent: list) -> str:
 def __html2pow__(sent: list) -> str:
     pass
 
+def __check_is_string__(word: str) -> bool:
+    return word.startswith('"') and word.endswith('"')
+
 def __check_is_si_term__(word: str) -> bool:
     global SI_data
     if not SI_data:
@@ -148,6 +151,7 @@ func_map = {
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
     '__quoted__': __check_is_quoted__,
+    '__string__': __check_is_string__,
     '__char__': __check_is_char__,
     '__bool__': __check_is_boolean__,
     '__param__': __check_is_param__,
@@ -508,10 +512,10 @@ general_syntax_rules = [
     },
     {
         'pattern': ['__num__', 'times', 'the', 'integer', '__quoted__'], 
-        'format': "the product_expr", 
-        'symbol': 'product_expr', 
-        'interpretation': '__num__ * __quoted__',
-        'syntax': 'NN',
+        'format': "the type_integer_ `__num__ * __quoted__`", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
     },
@@ -536,6 +540,15 @@ general_syntax_rules = [
     {
         'pattern': ["__si_term__", ",", "__si_term__", "or", "__si_term__"], 
         'format': "__si_term__ or __si_term__ or __si_term__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ["is", "equal", "to", "__string__", "or", "__string__"], 
+        'format': "is equal to __string__ or is equal to __string__", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',
@@ -599,6 +612,24 @@ general_syntax_rules = [
     {
         'pattern': ['the', 'length', 'of', 'the', '__type__', '__param__'],
         'format': "the __type__ __param__'s length",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'length', 'of', 'the', '__type__', 'result'],
+        'format': "the __type__ result's length",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['The', 'length', 'of', 'the', '__type__', 'result'],
+        'format': "The __type__ result's length",
         'symbol': '',
         'interpretation': '',
         'syntax': '',

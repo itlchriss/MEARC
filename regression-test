@@ -23,6 +23,9 @@ else
 
 # rm $BASE/*/tmp/*
 # rm $BASE/*/jml/*
+echo ''  > ./results/gpt4log
+echo ''  >  ./results/gpt35log
+echo ''  >  ./results/starchatlog
 
 for entry in `find $BASE/s*/gpt4 -maxdepth 1 -type f -name "Solution.java" | sort`
 do
@@ -52,16 +55,16 @@ do
        ./mearc $entry >> results/starchatlog 2>&1
 done
 
-# for entry in `find $BASE/s*/gpt35 -maxdepth 1 -type f -name "Solution.java" | sort`
-# do
-#        filename=`echo $entry | sed 's/.*\///'`
-#        index=`echo $filename | sed 's/\..*//'`
-#        folder=`echo $entry | sed "s/\/$filename//"`
-#        rm $folder/tmp/*
-#        rm $folder/jml/*
-#        echo "./mearc $entry"
-#        ./mearc $entry >> results/gpt35log 2>&1
-# done
+for entry in `find $BASE/s*/gpt35 -maxdepth 1 -type f -name "Solution.java" | sort`
+do
+       filename=`echo $entry | sed 's/.*\///'`
+       index=`echo $filename | sed 's/\..*//'`
+       folder=`echo $entry | sed "s/\/$filename//"`
+       rm $folder/tmp/*
+       rm $folder/jml/*
+       echo "./mearc $entry"
+       ./mearc $entry >> results/gpt35log 2>&1
+done
 
 fi
 
