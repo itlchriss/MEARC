@@ -198,7 +198,7 @@ def __process_and_false_clause(conditions):
 def __process_redundant_type_clause(conditions):
     patterns = [
         {
-            'p': "the\s+('[\w\W]')\s+character",
+            'p': "the\s+('[\w\W\*\?]')\s+character",
         }
     ] 
     results = {'ensures': [], 'requires': []}
@@ -207,11 +207,11 @@ def __process_redundant_type_clause(conditions):
             processed = False
             for pattern in patterns:
                 if r := re.findall(pattern['p'], sent):   
+                    _sent = sent
                     for _r in r:
                         target = 'the type_character_ %s' % _r              
-                        _sent = sent.replace('the %s character' % _r, target)
-                        results[t].append(_sent)
-                        results[t].append(target)
+                        _sent = _sent.replace('the %s character' % _r, target, 1)
+                    results[t].append(_sent)
                     processed = True
             if not processed:
                 results[t].append(sent)     
@@ -231,7 +231,7 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
     conditions = __process_conditional_sentence_distribution(conditions)
     conditions = __process_false_otherwise(conditions)
     conditions = __process_and_false_clause(conditions)
-    conditions = __process_redundant_type_clause(conditions)
+    # conditions = __process_redundant_type_clause(conditions)
     #######
     for t in conditions:
         clist = conditions[t]

@@ -799,13 +799,28 @@ class RepairProcessor:
     def __process_complex_clause(self, sent) -> str:
         patterns = [
             {
-                'p': r'only\s+contains\s+(\d+( , \d+)*( , and \d+| and \d+)?)',
+                'p': r'(only\s+contains\s+)((([\w_]+)(\s+,\s+the\s+(\w+)(\s+character)?)*(\s+,\s+or\s+the\s+(\w+(\s+character)?)|\s+or\s+the\s+(\w+(\s+character)?))?))',
+            },
+            {
+                'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(\w+))*(\s+,\s+or\s+\w+\s+characters))'
             }
         ]
+        # print(sent)
+        tmp = sent.replace(', - ,', ', minus ,')
         for pattern in patterns:
-            if r := re.search(pattern['p'], sent):
-                target = r.group(0)
-                print(target)
+            if r := re.search(pattern['p'], tmp):
+                # print(r.groups(0))
+                verb = r.group(1)
+                symbol = 'checking_character_sequence_'
+                connective = ''
+                if 'or' in r.group(2):
+                    connective = 'or'
+                else:
+                    connective = 'and'
+                target = r.group(2).replace('character', '').replace('the', '').replace(' ', '').replace('or', ',').replace('and', ',').replace(',,', ',').replace('characters', '')
+                if ',' in target:
+                    self.dynamic_si[symbol] = '%s,%s' % (connective, target)
+                    sent = tmp.replace(r.group(0), verb + ' the ' + symbol)
         return sent
     
     def __nth_repl(s, sub, repl, n):

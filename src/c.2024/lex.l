@@ -130,6 +130,7 @@ KEYWORD_DAT         "Dat"
 PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
 SPECIAL_PREDICATE   (_from_[0-9]+_[0-9]+_[a-z]+_sequence_)
 FIX_SEQUENCE_PREDICATE (_fixed_integer_sequence_)
+CHECK_CHAR_PREDICATE (_checking_character_sequence_)
 EXPR                (_expr[0-9]+_)
 KEYWORD_TYPE         _type[_a-z]+_
 KEYWORD_PARAM        _param[_a-zA-Z0-9]+_
@@ -154,6 +155,7 @@ VARIABLE               ([a-z]([0-9]+)?)
 {KEYWORD_TYPE} { yylval.t = handletoken(yytext); return KEYWORD_TYPE; }
 {PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
 {SPECIAL_PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
+{CHECK_CHAR_PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
 {FIX_SEQUENCE_PREDICATE} { yylval.t = handletoken(yytext); return PREDICATE; }
 {EXPR} { yylval.t = handletoken(yytext); return PREDICATE; }
 "." { handlecolnum(yytext); return '.'; }

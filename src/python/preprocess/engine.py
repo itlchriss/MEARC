@@ -204,6 +204,22 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
                 'interpretation': dynamic_si[k]
             }
             dynamic_si[k] = d
+        elif '_character_sequence_' in k:
+            d = {
+                'term': k,
+                'syntax': ['NN'],
+                'arguments': [{
+                    'symbol': '*',
+                    'primitive_type': 'any',
+                    'reference_type': 'any'
+                }],
+                'synthesised_datatype': [{
+                'primitive_type': 'character',
+                'reference_type': 'array'
+                }],
+                'interpretation': dynamic_si[k]
+            }
+            dynamic_si[k] = d
         else:
             v = dynamic_si[k]
             p = 'any'
