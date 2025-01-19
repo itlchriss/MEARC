@@ -521,6 +521,7 @@ quantified_term
                 }
                 /* the variable is being removed. deduct the reference count */
                 $$->cstptr->ref_count--;
+                $$->cstptr->type_assigned = TRUE;
                 deleteastchild(ref->node->parent, ref->node);
             } else {
                 _node->cstptr = $$->cstptr;

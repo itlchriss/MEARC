@@ -471,6 +471,21 @@
     reference_type: 'undefined'
   interpretation_type: 'function'
   interpretation: array_equal
+- term: partially_equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'any'
+    reference_type: 'array'
+  - symbol: Dat
+    primitive_type: 'any'
+    reference_type: 'array'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'function'
+  interpretation: array_partially_equal
 - term: equal
   syntax:
   - JJ

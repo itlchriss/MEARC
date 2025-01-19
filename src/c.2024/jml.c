@@ -55,6 +55,50 @@ void _itoa(int N, char *str) {
 //     return j_opers[idx];
 // }
 
+
+char * array_partially_equal(char *d1, char *d2) {
+    char *pos, *pos1;
+    char *_s = strtok_r(d2, "_", &pos);
+    char *startchr = (char *)strdup(_s);
+    char *endchr = strdup(strtok_r(NULL, "_", &pos));
+    char *seq = strdup(strtok_r(NULL, "_", &pos));
+
+    // int c = 0;
+    char *result = NULL;
+    char *tmp = "%x[%i] == %s";
+    char *_a = strrep(tmp, "%x", d1);
+    _s = strtok_r(seq, ",", &pos1);
+    int start = (int)(startchr[0] - '0'), end = (int)(endchr[0] - '0');
+    for (int i = start; i <= end; ++i) {
+        char num[10];
+        _itoa(i, num);
+        char *_b = strrep(_a, "%i", num);
+        char *_target = strrep(_b, "%s", _s);
+        free(_b);
+        if (result != NULL) {
+            result = combine_strings(3, result, " && ", _target);
+        } else {
+            result = _target;
+        }
+        _s = strtok_r(NULL, ",", &pos1);
+    }
+    // while (_t != NULL) {
+    //     char num[10];
+    //     _itoa(c, num);
+    //     char *_b = strrep(_a, "%i", num);
+    //     char *_target = strrep(_b, "%s", _t);
+    //     free(_b);
+    //     if (result != NULL) {
+    //         result = combine_strings(3, result, " && ", _target);
+    //     } else {
+    //         result = _target;
+    //     }
+    //     c++;
+    //     _t = strtok_r(NULL, ",", &pos);
+    // }
+    return result;
+}
+
 /* 
     the entity that provides d1 must be a list
 */

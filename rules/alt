@@ -1,7 +1,7 @@
 The result is:The method returns,The method generates,The method yields,The method produces
 :some,the characters
 is:represents,must be,can be
-:some,the characters,entire,also
+:some,the characters,entire,also,respectively
 is:represents,must be
 unique:distinct
 is not:must not be,should not be
@@ -19,7 +19,7 @@ result:indices in the result
 signedint:32-bit signed integer [-2147483648 \, 2147483648 - 1],32-bit signed integer [-2^31, 2^31 - 1],32-bit signed integer
 :exactly,immediately,The method must handle cases,can
 is equal to the true literal:is true
-is equal to the false literal:is false
+is equal to the false literal:is false,is not true
 are equal to the true literal:are true
 at least 1 time:at least once
 that:where
@@ -54,12 +54,16 @@ empty_str:""
 empty:an empty string
 is equal to:is an ,is a 
 is not equal to:is not an ,is not a 
-is contained by:is 1 of the elements in
+is contained by:is 1 of the elements in,is a subsequence of,is equal to subsequence of
 is contained:is part of
 is not contained:is not part of 
-is not contained by:is not present in
+is not contained by:is not present in,is not equal to subsequence of
 signals the arithmetic exception:causes the value to go outside the signed 32-bit integer range
 summation:sum of all values
 printable_ASCII_characters:printable ASCII characters
 results:intermediate results
 in the range of negative 2147483648 to 2147483647:guaranteed to fit in a 32-bit integer
+if:if and only if
+prime_factors:prime factors
+is greater_than to 0:is a positive integer,is equal to positive integer
+is less_than to 0:is not a positive integer,is not equal to positive integer

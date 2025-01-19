@@ -24,10 +24,34 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
             sent = sent.replace(e, ' the type_string_array_ str_seq' + index, 1)
     
     if r := re.findall(r'(`[0-9 <>\-\+\*!,a-zA-Z\[\]=\.\^\(\)\%\|\/_\'{}]+`)', sent):        
-        for i, e in enumerate(r):
+        for i, e in enumerate(r):            
             index = chr(i + 97)
-            exprs['expr_' + index] = e
-            sent = sent.replace(e, ' expr_' + index, 1)
+            _type = ''
+            _symbol = ''
+            # 20250119 changed. added logic to distinguish the character and string
+            _t = e.replace('`', '').replace("'", '').strip()
+            if not _t:
+                # 20250119 changed. hard fix. this means that the symbol is a space
+                _symbol = 'chrs_'
+                _type = 'type_character_' 
+                _t = ' '                          
+            elif _t == 'period':
+                # 20250119 changed. hard fix. to be fine-tuned in the future. related to contextprocess symbol preprocessing
+                _symbol = 'chrs_'
+                _type = 'type_character_' 
+                _t = '.'           
+            elif len(_t) == 1:
+                # we should use the character type here
+                _symbol = 'chrs_'
+                _type = 'type_character_'
+            else:
+                # we should maintain it as a string
+                _symbol = 'strs_'
+                _type = 'type_string_'
+            # exprs['expr_' + index] = e
+            exprs[_symbol + index] = "'%s'" % _t
+            # 20250119 changed. added 'the'
+            sent = sent.replace(e, ' the %s %s' % (_type, _symbol) + index, 1)
     if r := re.findall(r'((\'[^ ]+\')\s+or\s+(\'[^ ]+\')\s+characters)', sent):
         r = r[0]
         s = r[0]
@@ -103,11 +127,27 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
             exprs['arr_' + index] = _int_
             sent = sent.replace(e, ' arr_' + index, 1)
             
-
+    if r := re.findall(r'(\([,\-0-9 ]+\))', sent, re.ASCII):
+        for i, e in enumerate(r):
+            index = chr(i + 97)
+            _int_ = e.replace('(', '').replace(')', '')
+            exprs['tuple_' + index] = _int_
+            sent = sent.replace(e, ' tuple_' + index, 1)
+            
+    # Experimental: fix the sequences (A, B, and C) if all above rules cannot be applied
+    # if r := re.findall(r'(\d+( , \d+)*( , and \d+))', sent):
+    #     for i, e in enumerate(r):
+    #         # index = chr(i + 97)
+    #         target = e[0]
+    #         _int_ = target.replace('and', '').replace(' ', '')
+    #         exprs['fixed_' + _int_.replace(',', '_') + '__integer_sequence__'] = _int_
+    #         sent = sent.replace(target, 'the __integer_sequence__', 1)
+        
     
     # fixing the case the regular expression for parameter is double treated
     sent = re.sub(r'param_param', 'param', sent)
     sent = re.sub(r'__', '_', sent)
+    sent = sent.replace('the the', 'the')
     # if r := re.findall(r'([0-9]*\.? [0-9]*)', sent, re.ASCII):
     #     for i, e in enumerate(r):
     #         _int_ = e.replace('.', '_DOT')
@@ -140,63 +180,83 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
     if rp.dynamic_si:
         for key in rp.dynamic_si.keys():
             if key not in dynamic_si.keys():
-                dynamic_si[key] = rp.dynamic_si[key]['interpretation']
+                if isinstance(rp.dynamic_si[key], dict):
+                    dynamic_si[key] = rp.dynamic_si[key]['interpretation']
+                else:
+                    dynamic_si[key] = rp.dynamic_si[key]
     words = sent.split(' ')    
     if sent[-1] != '.':
         sent += '.'
     for k in dynamic_si.keys():
-        v = dynamic_si[k]
-        p = 'any'
-        r = 'any'
-        index = -1
-        if k in words:
-            index = words.index(k)
-        if index > 0 and words[index - 1] == 'type_integer_':
-            sp = 'integer'
-            sr = 'undefined'
-            interpretation = v.replace('`', '')
+        if '_integer_sequence_' in k:
+            d = {
+                'term': k,
+                'syntax': ['NN'],
+                'arguments': [{
+                    'symbol': '*',
+                    'primitive_type': 'any',
+                    'reference_type': 'any'
+                }],
+                'synthesised_datatype': [{
+                'primitive_type': 'integer',
+                'reference_type': 'array'
+                }],
+                'interpretation': dynamic_si[k]
+            }
+            dynamic_si[k] = d
         else:
-            if 'chr' in k:
-                sp = 'character'
+            v = dynamic_si[k]
+            p = 'any'
+            r = 'any'
+            index = -1
+            if k in words:
+                index = words.index(k)
+            if index > 0 and words[index - 1] == 'type_integer_':
+                sp = 'integer'
                 sr = 'undefined'
-                interpretation = v
-            elif 'str_seq' in k:
-                sp = 'string'
-                sr = 'string_array'
-                interpretation = v
-            elif 'arr_' not in k:
-                sp = 'undefined'
-                sr = 'string'
                 interpretation = v.replace('`', '')
             else:
-                sp = 'integer'
-                sr = 'array'
-                interpretation = '%s' % v.replace(' ', '')
-        
-        # Experimental: This one has conflict with the lex rules about the parameter name parsing
-        #               remove this line if any other conflicts rise
-        term = k
-        if term.startswith('param_'):
-            term = term.replace('param_', '')
-            interpretation = interpretation.replace('param_', '').replace('_', '')
-            if term[-1] == '_':
-                term = term[:-1]
+                if 'chr' in k:
+                    sp = 'character'
+                    sr = 'undefined'
+                    interpretation = v
+                elif 'str_seq' in k:
+                    sp = 'string'
+                    sr = 'string_array'
+                    interpretation = v
+                elif 'arr_' not in k:
+                    sp = 'undefined'
+                    sr = 'string'
+                    interpretation = v.replace('`', '')
+                else:
+                    sp = 'integer'
+                    sr = 'array'
+                    interpretation = '%s' % v.replace(' ', '')
+            
+            # Experimental: This one has conflict with the lex rules about the parameter name parsing
+            #               remove this line if any other conflicts rise        
+            term = k
+            if term.startswith('param_'):
+                term = term.replace('param_', '')
+                interpretation = interpretation.replace('param_', '').replace('_', '')
+                if term[-1] == '_':
+                    term = term[:-1]
 
-        #TODO: change the interpretation to new int[] {} when key is arr_[a-z]+
-        d = {
-            # 'term': k,
-            'term': term,
-            'syntax': ['NN'],
-            'arguments': [{
-                'symbol': '*',
-                'primitive_type': p,
-                'reference_type': r
-            }],
-            'synthesised_datatype': [{
-               'primitive_type': sp,
-               'reference_type': sr
-            }],
-            'interpretation': interpretation
-        }
-        dynamic_si[k] = d
+            #TODO: change the interpretation to new int[] {} when key is arr_[a-z]+
+            d = {
+                # 'term': k,
+                'term': term,
+                'syntax': ['NN'],
+                'arguments': [{
+                    'symbol': '*',
+                    'primitive_type': p,
+                    'reference_type': r
+                }],
+                'synthesised_datatype': [{
+                'primitive_type': sp,
+                'reference_type': sr
+                }],
+                'interpretation': interpretation
+            }
+            dynamic_si[k] = d
     return sent, dynamic_si

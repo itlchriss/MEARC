@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "util.h"
 #include "cst.h"
@@ -8,6 +9,7 @@
 
 // TODO: to be tidied up, should not be extern here
 extern struct astnode *root;
+extern struct queue *cst;
 
 
 int __is_abtract_arg_done__(struct cstsymbol *ptr) {
@@ -278,20 +280,17 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         (
             ((targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
             ((child->cstptr->datatype->p == ANY && child->cstptr->datatype->r) && (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0)))
-        )
+        )  && child->cstptr->type_assigned == FALSE
        ) { 
         child->cstptr->datatype->p = targetsi->synthesised_datatype->p;
         child->cstptr->datatype->r = targetsi->synthesised_datatype->r;
     }
 
-    // if (child->cstptr->datatype->p == UNDEFINED && child->cstptr->datatype->r == UNDEFINED) {
-    //     child->cstptr->datatype->p = child->cstptr->datatype->r = ANY;
-    // }
-    if (targetsi->type != UNDEFINED) {
+    
+    if (targetsi->type != UNDEFINED && child->cstptr->type_assigned == FALSE) {
         child->cstptr->interpretation_type = targetsi->type;
         child->cstptr->datatype->i = targetsi->type;
     }
-    
     if (targetsi->interpretation != NULL && strlen(targetsi->interpretation) > 0) {
         enqueue(child->cstptr->datalist, (char *)strdup(targetsi->interpretation));
         /*
@@ -318,7 +317,9 @@ int __direct_syntax_synthesis__(struct astnode *node) {
         new->i = targetsi->type;
         if (!child->cstptr->datatype->multiple_datatypes) child->cstptr->datatype->multiple_datatypes = initqueue();
         enqueue(child->cstptr->datatype->multiple_datatypes, (void *)new);
-        if (child->cstptr->datalist->count > 1) child->cstptr->datatype->i = INT_SI_TYPE_MULTIPLE_SI;
+        if (child->cstptr->datalist->count > 1) {
+            child->cstptr->datatype->i = INT_SI_TYPE_MULTIPLE_SI;
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
     }
     child->cstptr->status = Assigned;

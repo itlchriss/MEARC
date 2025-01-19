@@ -147,6 +147,9 @@ def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
             return i
     return -1
 
+def __match_any_word__(word: str) -> bool:
+    return word.isalpha()
+
 func_map = {
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
@@ -166,7 +169,8 @@ func_map = {
     '__si_term__': __check_is_si_term__,
     '__num_word__': __check_is_num_word__,
     '__filter_num__': __get_number__,
-    '__array_value_access__': __array_value_access__
+    '__array_value_access__': __array_value_access__,
+    '__word__': __match_any_word__
 }
 
 # general_syntax_rules = [
@@ -644,7 +648,16 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
-    }
+    },
+    {
+        'pattern': ['any', 'value', 'appears', 'at', 'least', 'twice', 'in', 'the', '__word__'],
+        'format': "the __word__ is not unique",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    }    
 ]
 
 
@@ -709,6 +722,90 @@ class RepairProcessor:
             s = [pd.eval(i) for i in s]
             new = 'range of %s to %s' % (str(s[0]), str(s[1]))
             sent = re.sub(range_p, new, sent)
+        return sent
+    
+    def __process_partial_equal(self, sent) -> str:
+        patterns = [
+            {
+                'p': r'the\s+first\s+(\d+)\s+elements\s+of\s+the\s+(\w+)\s+(\w+)\s+are\s+\d+( , \d+)*( , and \d+| and \d+)?',
+                'sp': 'integer',
+                'sr': 'array',
+            },
+            {
+                'p': r'the\s+first\s+(\d+)\s+elements\s+of\s+the\s+(\w+)\s+(\w+)\s+are\s+\d+( , \d+)*( , and \d+| and \d+)?',
+                'sp': 'integer',
+                'sr': 'array',
+            },
+            {
+                'p': r'the\s+first\s+(\d+)\s+elements\s+of\s+the\s+(\w+)\s+(\w+)\s+are\s+equal\s+to\s+\d+( , \d+)*( , and \d+| and \d+)?',
+                'sp': 'integer',
+                'sr': 'array',
+            },
+            {
+                'p': r'the\s+first\s+(\w+)\s+elements\s+of\s+the\s+(\w+\s+array\s+parameter)\s+(`\w+`)\s+are\s+equal\s+to\s+\d+( , \d+)*( , and \d+| and \d+)?',
+                'sp': 'integer',
+                'sr': 'array',
+            },
+        ]
+        result = ''
+        target = ''
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                target = r.group(0)
+                length = r.group(1)
+                data = re.findall(r'\d+', r.group(0))         
+                if not length.isdigit():                   
+                    length = str(__convert_num_word__(length))
+                else:                    
+                    data = data[1:]
+                type_str = r.group(2)
+                param_str = r.group(3)                        
+                symbol = 'from_%s_%s_integer_sequence_' % (str(0), str(int(length) - 1))
+                result = 'the %s %s is partially_equal to the type_integer_array_ %s' % (type_str, param_str, symbol)
+                sent = sent.replace(target, result)                
+                interpretation = '_'.join([str(0), str(int(length) - 1)]) + '_' + ','.join([str(i) for i in data])
+                # self.dynamic_si[symbol] = { 
+                #                     'term': symbol,
+                #                     'syntax': ['NN'],
+                #                     'arguments': '*',  
+                #                     'synthesised_datatype': {
+                #                         'primitive_type': pattern['sp'],
+                #                         'reference_type': pattern['sr']
+                #                         },                                   
+                #                     'interpretation': interpretation,
+                #                     }     
+                self.dynamic_si[symbol] = interpretation
+        return sent
+    
+    def __process_limited_equal(self, sent) -> str:
+        patterns = [
+            {
+                'p': r'are\s+limited\s+to\s+\d+( , \d+)*( , and \d+| and \d+)?',
+                'sp': 'integer',
+                'sr': 'array',
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                target = r.group(0)
+                data = re.findall(r'\d+', r.group(0))         
+                symbol = '_fixed_integer_sequence_'                
+                # result = 'the %s %s is partially_equal to the type_integer_array_ %s' % (type_str, param_str, symbol)
+                sent = sent.replace(target, 'are equal to the type_integer_array_ '+ symbol)                
+                # interpretation = '_'.join([str(0), str(int(length) - 1)]) + '_' + ','.join([str(i) for i in data])
+                self.dynamic_si[symbol] = ','.join([str(i) for i in data])
+        return sent
+    
+    def __process_complex_clause(self, sent) -> str:
+        patterns = [
+            {
+                'p': r'only\s+contains\s+(\d+( , \d+)*( , and \d+| and \d+)?)',
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                target = r.group(0)
+                print(target)
         return sent
     
     def __nth_repl(s, sub, repl, n):
@@ -777,6 +874,9 @@ class RepairProcessor:
         sent = self.__process_power_sign__(sent)
         sent = self.__process_range_sign__(sent)
         sent = self.__process_negative__(sent)  
+        sent = self.__process_partial_equal(sent)
+        sent = self.__process_limited_equal(sent)
+        sent = self.__process_complex_clause(sent)
         words = sent.split(' ')        
         for r in general_syntax_rules:
             pattern = r['pattern']

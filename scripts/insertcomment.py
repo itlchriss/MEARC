@@ -42,9 +42,11 @@ def main(srcpath:str):
         print('Program is not found under %s' % srcpath)
         return
     
+    gpt35lines = _getfile(os.path.join(srcpath, "gpt35", "rnl.txt"))   
     gpt4lines = _getfile(os.path.join(srcpath, "gpt4", "rnl.txt"))   
     starchatlines = _getfile(os.path.join(srcpath, "starchat", "rnl.txt"))  
 
+    _appendfile(os.path.join(srcpath, 'gpt35'), gpt35lines, program)
     _appendfile(os.path.join(srcpath, 'gpt4'), gpt4lines, program)
     _appendfile(os.path.join(srcpath, 'starchat'), starchatlines, program)
 

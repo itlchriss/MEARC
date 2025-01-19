@@ -8,6 +8,11 @@ function _total() {
     echo $result
 }
 
+function _fitgrammar() {    
+    local result=`find $SRCPATH/*/$1/tmp -type f -name "conditions.yml" | sort | xargs grep -v -e "^$" -e "^ensures\:$" -e "^requires\:$" -e "^ensures\: \[\]$" -e "^requires\: \[\]" | awk 'NF' | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    echo $result
+}
+
 function _trans() {
     local postcount=`grep -r 'ensures' $SRCPATH/*/$1/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
     local precount=`grep -r 'requires' $SRCPATH/*/$1/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`
@@ -19,7 +24,9 @@ function _derive() {
     local failed=`find ./test/*/$1/tmp -type f -name "*.mr" | xargs grep "Failed" | awk 'END {print NR}'`
     local empty=`find ./test/*/$1/tmp -type f -name "*.mr" -empty | awk 'END {print NR}'`
     local incomplete=`find ./test/*/$1/tmp -type f -name "*.mr" | xargs grep -F '\' | awk 'END {print NR}'`
+    # local failedtoparse=`grep 'Failed to parse' ./results/"$1"log  | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
     local total=`find ./test/*/$1/tmp -type f -name "*.mr" | nl | tail -1 | awk '{print $1} END {if (NR == 0) print 0}'`
+    # echo $(($total-$failed-$empty-$incomplete-$failedtoparse))
     echo $(($total-$failed-$empty-$incomplete))
 }
 
@@ -31,7 +38,7 @@ function _parse() {
     echo $(($parsing_error+$sinotfounderror+$semanticerror+$sianalysiserror))
 }
 
-date=20250117
+date=20250119
 
 echo '' > results/$date/starchat_report.txt
 echo '' > results/$date/gpt4_report.txt
@@ -54,12 +61,28 @@ done
 
 
 
-gpt35=`bc -l <<< "($(_trans "gpt35") / $(_total "gpt35")) * 100"`
-gpt4=`bc -l <<< "($(_trans "gpt4") / $(_total "gpt4")) * 100"`
-starchat=`bc -l <<< "($(_trans "starchat") / $(_total "starchat")) * 100"`
-echo $(_trans "gpt35") $(_total "gpt35") $gpt35 $(_derive "gpt35") $(_parse "gpt35")
-echo $(_trans "gpt4") $(_total "gpt4") $gpt4 $(_derive "gpt4") $(_parse "gpt4")	
-echo $(_trans "starchat") $(_total "starchat") $starchat $(_derive "starchat") $(_parse "starchat")
+gpt35_jml_rate=`bc -l <<< "($(_trans "gpt35") / $(_total "gpt35")) * 100"`
+gpt4_jml_rate=`bc -l <<< "($(_trans "gpt4") / $(_total "gpt4")) * 100"`
+starchat_jml_rate=`bc -l <<< "($(_trans "starchat") / $(_total "starchat")) * 100"`
+
+gpt35_derive_rate=`bc -l <<< "($(_derive "gpt35") / $(_fitgrammar "gpt35")) * 100"`
+gpt4_derive_rate=`bc -l <<< "($(_derive "gpt4") / $(_fitgrammar "gpt4")) * 100"`
+starchat_derive_rate=`bc -l <<< "($(_derive "starchat") / $(_fitgrammar "starchat")) * 100"`
+
+
+echo "GPT-3.5: Total RNL($(_total "gpt35")) Fit_Grammar($(_fitgrammar "gpt35")) MR_rate($(_derive "gpt35") / $(_fitgrammar "gpt35") = $gpt35_derive_rate) JML_rate("$gpt35_jml_rate")"
+echo "GPT-4: Total RNL($(_total "gpt4")) Fit_Grammar($(_fitgrammar "gpt4"))  MR_rate($gpt4_derive_rate) JML_rate("$gpt4_jml_rate")"
+echo "Starchat: Total RNL($(_total "starchat")) Fit_Grammar($(_fitgrammar "starchat"))  MR_rate($starchat_derive_rate) JML_rate("$starchat_jml_rate")"
+
+echo "GPT-3.5: $(_fitgrammar "gpt35") $(_derive "gpt35") $(_trans "gpt35") $(_parse "gpt35")"
+
+# for entry in `find ./test/*/gpt35 -type f -name "rnl.txt" | sort`
+# do 
+#     folder=""$(dirname $entry)""
+#     rnl_lines=`cat -n $entry | tail -1 | awk '{print $1}'`
+#     fit_lines=`cat -n $folder/tmp/conditions.yml | tail -1 | awk '{print $1}'`
+#     echo "Folder: $folder RNL($rnl_lines) Fit_Grammar($fit_lines)"
+# done
 
 
 # postcount=`grep -r 'ensures' $SRCPATH/*/gpt35/jml/*.jml | grep -v 'Lexer:' | grep -v 'Parser:' | awk 'END {print NR}'`

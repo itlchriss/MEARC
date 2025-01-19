@@ -633,6 +633,7 @@ void sisynthesis() {
         #if SIDEBUG
         printf("si synthesis: processing predicate %s(%s) with %d SIs available.\n", node->token->symbol, ptbsyntax2string(node->syntax), node->si_q->count);
         showast(root, 0);
+        showqueue(cst, showcstsymbol);
         #endif
 
         /* 
@@ -661,6 +662,9 @@ void sisynthesis() {
                 /* there can be a case that the preposition comes before the adjectives. we have to think of retry */
                 semantic_error("Synthesis is stopped because a predicate(%s) has non-noun and non-CD syntax and its argument has not been assigned.", node->token->symbol); 
             } else {
+                #if SIDEBUG
+                printf("si synthesis: processing predicate %s\n", node->token->symbol);
+                #endif
                 /* do the synthesis according to the syntax of predicate */
                 (*code_syntheses[node->syntax])(node);       
             }
@@ -690,8 +694,11 @@ void sisynthesis() {
         }
         /* ================================================================================================ */
         #if ASTDEBUG
+        printf(" ================================================================================================\n");
+        printf("si synthesis: After processing predicate\n");
         showast(root, 0);
         showqueue(cst, showcstsymbol);
+        printf(" ================================================================================================\n");
         fflush(stdout);
         #endif
 

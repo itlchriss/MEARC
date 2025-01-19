@@ -80,6 +80,7 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                 struct datatype *singledt = NULL;
                 if (en1->cstptr->datatype->i != INT_SI_TYPE_MULTIPLE_SI) {
                     d = (char *)gqueue(en1->cstptr->datalist, 0);
+
                     tmp = strrep(s, t1, d);
                     singledt = en1->cstptr->datatype;
                     msptr = en2->cstptr;
@@ -165,6 +166,8 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                             tmp = list_2_string_array_equal(d1, d2);
                         } else if (strcmp(si->interpretation, "list_2_array_equal") == 0) {
                             tmp = list_2_array_equal(d1, d2);
+                        } else if (strcmp(si->interpretation, "array_partially_equal") == 0) {
+                            tmp = array_partially_equal(d1, d2);
                         } else {
                             internal_error("The function is not supported in the current version");
                         }
@@ -180,7 +183,23 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                         //         t1 = "(Dat)";
                         //     }
                         // }
-                        //
+                        if (ssearch(s, "(Dat)") == TRUE) {
+                            if (ssearch(s, t1) == FALSE && strcmp(t2, "(Acc)") == 0) {
+                                free(t1);
+                                if (strcmp(t1, "(Dat)") == 0) {                                    
+                                    t1 = (char *)strdup("(Subj)");
+                                } else {
+                                    t1 = (char *)strdup("(Dat)");
+                                }
+                            }
+                            if (ssearch(s, t2) == FALSE && strcmp(t1, "(Acc)") == 0) {
+                                if (strcmp(t2, "(Dat)") == 0) {
+                                    t2 = (char *)strdup("(Subj)");;
+                                } else {
+                                    t2 = (char *)strdup("(Dat)");
+                                }
+                            }
+                        }
                         tmp = strrep(s, t1, d1);
                         free(s);
                         s = tmp;

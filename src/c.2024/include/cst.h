@@ -150,6 +150,11 @@ struct cstsymbol {
         TRUE indicates the symbol is an abstract noun SI and requires further synthesis
      */
     int abstract_synthesis_required;
+
+    /*
+        TRUE indicates the symbol has a type defined in the input
+     */
+    int type_assigned;
 };
 
 
