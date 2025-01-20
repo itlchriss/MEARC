@@ -130,7 +130,7 @@ class ContextProcessor:
 
     def _synonym_syntax_preprocessor(self):
         if self.sent[-1] == '.':
-            self.sent = self.sent[:-1]        
+            self.sent = self.sent[:-1]
         for rule in alt_rules:            
             # self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
             if self.sent.endswith(rule[0]):                
@@ -139,7 +139,7 @@ class ContextProcessor:
                 self.sent = self.sent.replace(rule[0], rule[1])
             else:
                 self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
-            
+        
     def _symbol_syntax_preprocessor(self):
         if self.sent[-1] == '.':
             self.sent = self.sent[:-1]  

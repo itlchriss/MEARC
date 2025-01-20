@@ -567,6 +567,17 @@
     primitive_type: 'integer'
     reference_type: 'undefined'
   interpretation: (x).length()
+- term: __REL__length
+  syntax:
+  - NN
+  arguments:
+  - symbol: x
+    primitive_type: 'any'
+    reference_type: 'list'
+  synthesised_datatype:
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  interpretation: (x).size()
 - term: __REL__size
   syntax:
   - NN
@@ -721,6 +732,17 @@
     primitive_type: 'character'
     reference_type: 'any'
   interpretation: (x).charAt(i)
+- term: __REL__element
+  syntax:
+  - NNS
+  arguments:
+  - symbol: x
+    primitive_type: 'any'
+    reference_type: 'list'
+  synthesised_datatype:
+    primitive_type: 'any'
+    reference_type: 'undefined'
+  interpretation: (x).get(i)
 - term: __REL__element
   syntax:
   - NNS
@@ -956,6 +978,20 @@
     reference_type: 'undefined'
     interpretation_type: 'java_method'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc)((Subj).charAt(i))'
+- term: contain_only
+  syntax:
+  - VBZ
+  - VB
+  - VBP
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  - symbol: 'Acc'
+    primitive_type: 'character'
+    reference_type: 'array'
+  interpretation_type: 'function'
+  interpretation: 'contain_only_string_chararray'
 - term: contain_only
   syntax:
   - VBZ

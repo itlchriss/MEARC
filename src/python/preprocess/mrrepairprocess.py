@@ -150,6 +150,9 @@ def __words_contain_pattern__(words: List[str], pattern: List[str]) -> int:
 def __match_any_word__(word: str) -> bool:
     return word.isalpha()
 
+def __check_is_SI_string__(word: str) -> bool:
+    return re.match(r'^str[a-z]_[a-z]$', word)
+
 func_map = {
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
@@ -170,7 +173,8 @@ func_map = {
     '__num_word__': __check_is_num_word__,
     '__filter_num__': __get_number__,
     '__array_value_access__': __array_value_access__,
-    '__word__': __match_any_word__
+    '__word__': __match_any_word__,
+    '__expr_string__': __check_is_SI_string__
 }
 
 # general_syntax_rules = [
@@ -657,7 +661,16 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
-    }    
+    },
+    {
+        'pattern': ['contain', 'the', 'substring', '__expr_string__'],
+        'format': "contain the __expr_string__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    }        
 ]
 
 
@@ -796,6 +809,8 @@ class RepairProcessor:
                 self.dynamic_si[symbol] = ','.join([str(i) for i in data])
         return sent
     
+    
+    # TODO: to be combined the two functions
     def __process_complex_clause(self, sent) -> str:
         patterns = [
             {
@@ -803,6 +818,12 @@ class RepairProcessor:
             },
             {
                 'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(\w+))*(\s+,\s+or\s+\w+\s+characters))'
+            },
+            {
+                'p': r"(consist\s+only\s+of)\s+('\w+'\s+or\s+'\w+'\s+characters)"
+            },
+            {
+                'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(the\s+)?(\w+))*(\s+,\s+or\s+(the\s+)?\w+))'
             }
         ]
         # print(sent)
@@ -817,10 +838,49 @@ class RepairProcessor:
                     connective = 'or'
                 else:
                     connective = 'and'
-                target = r.group(2).replace('character', '').replace('the', '').replace(' ', '').replace('or', ',').replace('and', ',').replace(',,', ',').replace('characters', '')
+                target = r.group(2).replace('the', '').replace(' ', '').replace('or', ',').replace('and', ',').replace(',,', ',')
+                if 'characters' in target:
+                    target = target.replace('characters', '')
+                else:
+                    target = target.replace('character', '')
                 if ',' in target:
                     self.dynamic_si[symbol] = '%s,%s' % (connective, target)
                     sent = tmp.replace(r.group(0), verb + ' the ' + symbol)
+        return sent
+    
+    def __process_complex_clause2(self, sent) -> str:
+        patterns = [
+            {
+                'p': r'are\s+either\s+(\w+)\s+((\w+)((\s+,\s+\w+)*\s+,\s+or\s+(\w+)))',
+                'connective': 'or',
+                'template': 'are equal to %s',
+                'symbol': 'checking_string_sequence_'
+            },
+            {
+                'p': r'(only\s+contains)\s+((the\s+)?([\w_]+)(\s+,\s+(the\s+)?([\w_]+))*(\s+,\s+or\s+(the\s+)?[\w_]+))',
+                'connective': 'or',
+                'template': 'only contains %s',
+                'symbol': 'checking_character_sequence_'
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                target = r.group(0)
+                type_str = r.group(1)
+                # if type_str == 'strings':
+                #     type_str = 'string'                
+                result = r.group(2).replace(' ', '').replace(pattern['connective'], '')
+                for s in result.split(','):
+                    if sr := re.match(r'^str\w+_[a-z]$', s):
+                        if s in self.current_dynamic_si.keys():
+                            result = result.replace(s, self.current_dynamic_si[s])  
+                    elif sr := re.match(r'^chr\w+_[a-z]$', s):
+                        if s in self.current_dynamic_si.keys():
+                            result = result.replace(s, self.current_dynamic_si[s])  
+                symbol = pattern['symbol']           
+                self.dynamic_si[symbol] = '%s,%s' % (pattern['connective'], result)
+                sent = sent.replace(target, pattern['template'] % symbol)
+                break
         return sent
     
     def __nth_repl(s, sub, repl, n):
@@ -878,9 +938,10 @@ class RepairProcessor:
         return ' '.join(words)
 
         
-    def run(self, sent: str, t: str) -> str:
+    def run(self, sent: str, t: str, current_dynamic_si = None) -> str:
         self._t = t
         self._org_sent = sent
+        self.current_dynamic_si = current_dynamic_si
         if sent[-1] == '.':
             sent = sent[:-1]   
         if ',' in sent:
@@ -892,6 +953,7 @@ class RepairProcessor:
         sent = self.__process_partial_equal(sent)
         sent = self.__process_limited_equal(sent)
         sent = self.__process_complex_clause(sent)
+        sent = self.__process_complex_clause2(sent)
         words = sent.split(' ')        
         for r in general_syntax_rules:
             pattern = r['pattern']

@@ -173,7 +173,7 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
     
     sent, exprs = __fix_to_cases__(sent)
     dynamic_si.update(exprs)
-    sent = rp.run(sent, t)
+    sent = rp.run(sent, t, dynamic_si)
     sent = cp.run(sent)
     sent, exprs = __fix_to_cases__(sent)
     dynamic_si.update(exprs)
@@ -216,6 +216,22 @@ def runengine(sent: str, t: str) -> Tuple[str, dict]:
                 'synthesised_datatype': [{
                 'primitive_type': 'character',
                 'reference_type': 'array'
+                }],
+                'interpretation': dynamic_si[k]
+            }
+            dynamic_si[k] = d
+        elif '_string_sequence_' in k:
+            d = {
+                'term': k,
+                'syntax': ['NN'],
+                'arguments': [{
+                    'symbol': '*',
+                    'primitive_type': 'any',
+                    'reference_type': 'any'
+                }],
+                'synthesised_datatype': [{
+                'primitive_type': 'undefined',
+                'reference_type': 'string_array'
                 }],
                 'interpretation': dynamic_si[k]
             }

@@ -14,4 +14,6 @@ char * list_2_string_array_equal(char*, char*);
 char * list_2_array_equal(char*, char*);
 
 char * array_partially_equal(char*, char*);
+
+char * contain_only_string_chararray(char *, char *);
 #endif

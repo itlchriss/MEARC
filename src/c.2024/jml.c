@@ -2,6 +2,11 @@
 #include "util.h"
 #include "stdlib.h"
 #include "string.h"
+#include "si.h"
+#include "sshare.h"
+#include "error.h"
+
+extern struct queue *silist;
 
 char * array_equals_primitive_1_var_1_direct(char *var, char *sym);
 char * array_equals_2_vars(char *var1, char *var2);
@@ -96,6 +101,46 @@ char * array_partially_equal(char *d1, char *d2) {
     //     c++;
     //     _t = strtok_r(NULL, ",", &pos);
     // }
+    return result;
+}
+
+
+char * contain_only_string_chararray(char *d1, char *d2) {
+    char *pos;
+    char *_t = strtok_r(d2, ",", &pos), *connective = NULL;
+    if (strcmp(_t, "or") == 0) {
+        connective = " || ";
+    } else {
+        connective = " && ";
+    }
+    char *head = "\\forall int i; 0 <= i < %x.length; ";
+    char *result = strrep(head, "%x", d1);    
+    _t = strtok_r(NULL, ",", &pos);
+    char *end = NULL;
+    while (_t != NULL) {
+        struct si *si = searchqueue(silist, _t, __match_si_with_symbol_only__);
+        if (si == NULL) {
+            sinotfound_error("Cannot find the SI for the symbol in the contain_only_string_chararray function");
+        }
+        char *tmp;
+        if (si->type == SI_INT_TYPE_JAVA_METHOD) {
+            tmp = "%s(%x.get(i))";
+        } else {
+            tmp = "%x.charAt(i) == %s";
+        }
+        char *_target = strrep(tmp, "%s", si->interpretation);        
+        tmp = (char *)strdup(_target);
+        free(_target);
+        _target = strrep(tmp, "%x", d1);
+        free(tmp);        
+        if (end != NULL) {
+            end = combine_strings(3, end, connective, _target);
+        } else {
+            end = _target;
+        }
+        _t = strtok_r(NULL, ",", &pos);
+    }
+    result = combine_strings(2, result, end);
     return result;
 }
 

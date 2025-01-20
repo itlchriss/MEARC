@@ -67,6 +67,63 @@ def __process_parameter_type_distrition(conditions):
     # [print(r) for r in results['ensures']]
     return results
 
+
+def __equal_respectively__(r, sent) -> List[str]:
+    results = []
+    target = r.group(0)
+    parameter_type = r.group(1)
+    subjectA = r.group(2)
+    resultA = r.group(4)
+    subjectB = r.group(3)
+    resultB = r.group(5)
+    predicate = r.group(6)
+    template = 'If the %s parameter %s is equal to %s and the %s parameter %s is equal to %s %s'
+    results.append(template % (parameter_type, subjectA, resultA, parameter_type, subjectB, resultB, predicate))
+    # results.append(template % (parameter_type, subjectA, resultA, predicate))     
+    # results.append(template % (parameter_type, subjectB, resultB, predicate))
+    # print(results)     
+    return results
+
+def __equal_distributedly__(r, sent) -> List[str]:
+    results = []
+    target = r.group(0)
+    parameter_type = r.group(1)
+    subjectA = r.group(2)
+    subjectB = r.group(3)
+    result = r.group(4)
+    predicate = r.group(5)
+    template = 'If the %s parameter %s is equal to %s %s'
+    results.append(template % (parameter_type, subjectA, result, predicate))     
+    results.append(template % (parameter_type, subjectB, result, predicate))
+    print(results)     
+    return results
+
+def __process_compound_subject(conditions):
+    results = {'ensures': [], 'requires': []}
+    patterns = [
+        {
+            'p': 'If\s+the\s+(\w+)\s+parameters\s+(`\w+`)\s+and\s+(`\w+`)\s+are\s+equal\s+to\s+("\w+")\s+and\s+("\w+")(.*)',
+            'func': __equal_respectively__
+        },
+        {
+            'p': 'If\s+the\s+(\w+)\s+parameters\s+(`\w+`)\s+and\s+(`\w+`)\s+are\s+equal\s+to\s+("\w+")(.*)',
+            'func': __equal_distributedly__
+        }
+    ]    
+    for t in conditions:
+        for sent in conditions[t]:                   
+            processed = False
+            for pattern in patterns:
+                if r := re.search(pattern['p'], sent):
+                    results[t] += pattern['func'](r, sent)                    
+                    processed = True
+                    break
+            if not processed:
+                results[t].append(sent)                   
+                                
+    # [print(r) for r in results['ensures']]
+    return results
+
 def __process_either_or__(conditions):
     results = {'ensures': [], 'requires': []}
     patterns = [
@@ -154,6 +211,12 @@ def __process_false_otherwise(conditions):
     patterns = [
         {
             'p': ',\s+or\s+false\s+otherwise\.',
+        },
+        {
+            'p': ',\s+and\s+false\s+otherwise\.',
+        },
+        {
+            'p': ',\s+otherwise\s+false\.',
         }
     ] 
     for t in conditions:
@@ -164,10 +227,10 @@ def __process_false_otherwise(conditions):
                     # print(r.group(0))
                     _sent = sent.replace(r.group(0), '')
                     results[t].append(_sent)
-                    if 'is' in sent:
-                        results[t].append(_sent.replace('is', 'is not'))
-                    elif 'are' in sent:
-                        results[t].append(_sent.replace('are', 'are not'))
+                    # if 'is' in sent:
+                    #     results[t].append(_sent.replace('is', 'is not'))
+                    # elif 'are' in sent:
+                    #     results[t].append(_sent.replace('are', 'are not'))
                     processed = True
             if not processed:
                 results[t].append(sent)     
@@ -231,6 +294,7 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
     conditions = __process_conditional_sentence_distribution(conditions)
     conditions = __process_false_otherwise(conditions)
     conditions = __process_and_false_clause(conditions)
+    conditions = __process_compound_subject(conditions)
     # conditions = __process_redundant_type_clause(conditions)
     #######
     for t in conditions:
