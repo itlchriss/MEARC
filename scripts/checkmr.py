@@ -7,20 +7,20 @@ import os
 
 expected_wrong = {
     'starchat': [
-        './test/s0231_power_of_two/starchat/tmp/post.5.mr', # use of 'there'
-        './test/s0231_power_of_two/starchat/tmp/post.6.mr', # use of 'there'
-        './test/s0219_contains_duplicate_ii/starchat/tmp/post.0.mr', # use of 'there'
-        './test/s0219_contains_duplicate_ii/starchat/tmp/post.1.mr', # use of 'there'
-        './test/s0008_string_to_integer_atoi/starchat/tmp/pre.2.mr', # incomplete sentence structure
+        './test/s0231_power_of_two/hafis/starchat/tmp/post.5.mr', # use of 'there'
+        './test/s0231_power_of_two/hafis/starchat/tmp/post.6.mr', # use of 'there'
+        './test/s0219_contains_duplicate_ii/hafis/starchat/tmp/post.0.mr', # use of 'there'
+        './test/s0219_contains_duplicate_ii/hafis/starchat/tmp/post.1.mr', # use of 'there'
+        './test/s0008_string_to_integer_atoi/hafis/starchat/tmp/pre.2.mr', # incomplete sentence structure
     ],
     'gpt35': [
-        './test/s0860_lemonade_change/gpt35/tmp/post.1.mr', # use of 'there'
-        './test/s0560_subarray_sum_equals_k/gpt35/tmp/post.0.mr', # use of interrogative pronoun
+        './test/s0860_lemonade_change/hafis/gpt35/tmp/post.1.mr', # use of 'there'
+        './test/s0560_subarray_sum_equals_k/hafis/gpt35/tmp/post.0.mr', # use of interrogative pronoun
     ]
 }
 
 def calc(model: str):
-    SRCPATH = "./test/s*"
+    SRCPATH = "./test/s*/hafis"
     data = []
     failed = []
     # refer to incomplete MR beta reduction

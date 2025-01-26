@@ -335,8 +335,12 @@ struct queue* readSI(char *dstfilepaths) {
                                         } else if (strcmp((char*)token.data.scalar.value, "interpretation_type") == 0) {
                                             yaml_parser_scan(&parser, &token);
                                             yaml_parser_scan(&parser, &token);     
-                                            if (strcmp((char *)token.data.scalar.value, "expression") == 0) {
+                                            if (strcmp((char *)token.data.scalar.value, "template") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_TEMPLATE;
+                                            } else if (strcmp((char *)token.data.scalar.value, "expression") == 0) {
                                                 arg->datatype->i = SI_INT_TYPE_EXPR;
+                                            } else if (strcmp((char *)token.data.scalar.value, "expression_requires_param") == 0) {
+                                                arg->datatype->i = SI_INT_TYPE_EXPR_REQ_PARAM;
                                             } else if (strcmp((char *)token.data.scalar.value, "modifier") == 0) {
                                                 arg->datatype->i = SI_INT_TYPE_MODIFIER;
                                             } else if (strcmp((char *)token.data.scalar.value, "java_method") == 0) {
@@ -496,6 +500,12 @@ struct queue* readSI(char *dstfilepaths) {
                             // si->interpretation = (char*) strdup(value);
                             if (strcmp(value, "expression") == 0) {
                                 si->type = SI_INT_TYPE_EXPR;
+                            } else if (strcmp(value, "expression_requires_param") == 0) {
+                                si->type = SI_INT_TYPE_EXPR_REQ_PARAM;
+                            } else if (strcmp(value, "template") == 0) {
+                                si->type = SI_INT_TYPE_TEMPLATE;
+                            } else if (strcmp(value, "construct") == 0) {
+                                si->type = SI_INT_TYPE_CONSTRUCT;
                             } else if (strcmp(value, "modifier") == 0) {
                                 si->type = SI_INT_TYPE_MODIFIER;
                             } else if (strcmp(value, "function") == 0) {

@@ -62,6 +62,7 @@ struct astnodelist {
     struct astnodelist *prev;
 };
 
+struct astnode *getlastchild(struct astnodelist *);
 int getnodelistlength(struct astnodelist *list);
 void appendnode(struct astnodelist *list, struct astnode *n);
 struct astnodelist *newastnodelist(struct astnode* n);

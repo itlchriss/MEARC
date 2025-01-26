@@ -318,6 +318,32 @@ int strsearch(char *str, char *str1, int *occur) {
     return k;
 }
 
+int isInt(char *string){
+    char *endp;
+    long n;
+    n = strtol(string, &endp, 0);
+    if(!*endp && -2147483648  <= n && n <= 2147483647) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int isChar(char *string) {
+    if (strlen(string) == 3 && string[0] == '\'' && string[2] == '\'') {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+int isString(char *string) {
+    if (strlen(string) > 2 && string[0] == '"' && string[strlen(string) - 1] == '"') {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 int ssearch(char *str, char* pattern) {
     if (str == NULL || pattern == NULL) return FALSE;
     int occur[strlen(str)/strlen(pattern) + 1], k = 0;

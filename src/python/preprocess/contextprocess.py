@@ -29,7 +29,8 @@ reference_datatypes = ['array', 'string', 'object', 'list']
 rulespath = './rules'
 ALT_RULE_FILENAME = 'alt'
 
-alt_rules = []
+alt_rules = [("operators ('+', '-', '*', '/')", "arithmetic_operators"),
+             ("operators ('+' , '-' , asterisk , '/')", "arithmetic_operators")]
 
 def _get_alt_rules():
     with open(os.path.join(rulespath, ALT_RULE_FILENAME)) as fp:
@@ -44,6 +45,7 @@ def _get_alt_rules():
         for a in alt:
             x = a.replace("ESC_COMMA", ",")
             alt_rules.append((x, target))
+    
 
 class ContextProcessor:
 
@@ -54,7 +56,10 @@ class ContextProcessor:
     def _parameter_syntax_processor(self):
         # contextual_si = self.contextual_si
         sent = self.sent
+        if sent[-1] == '.':
+            sent = sent[:-1]
         combined_datatypes = ['%s %s' % (p, r) for p in primitive_datatypes for r in reference_datatypes]
+        # print(sent)
         for c in combined_datatypes:
             sent = re.sub(r'\s+' + c + r'\s+parameters\s+', ' type_' + c.replace(' ', '_') + '_ parameters ', sent)
             sent = re.sub(r'\s+' + c + r"\s+parameters's\s+", ' type_' + c.replace(' ', '_') + "_ parameters's ", sent)
@@ -62,8 +67,9 @@ class ContextProcessor:
             sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
             sent = re.sub(r'\s+' + c + r"\s+parameter's\s+", ' type_' + c.replace(' ', '_') + "_ parameter's ", sent)
             sent = re.sub(r'\s+' + c + r'\s+result\s+', ' type_' + c.replace(' ', '_') + '_ result ', sent)
+            sent = re.sub(r'\s+' + c + r'\s+result', ' type_' + c.replace(' ', '_') + '_ result ', sent)
             sent = re.sub(r'\s+' + c + r"\s+result's\s+", ' type_' + c.replace(' ', '_') + "_ result's ", sent) 
-        
+        # print(sent)
         for c in primitive_datatypes:
             sent = re.sub(r'\s+' + c + r'\s+parameters\s+', ' type_' + c.replace(' ', '_') + '_ parameters ', sent)
             sent = re.sub(r'\s+' + c + r'\s+parameter\s+', ' type_' + c.replace(' ', '_') + '_ parameter ', sent)
@@ -131,12 +137,16 @@ class ContextProcessor:
     def _synonym_syntax_preprocessor(self):
         if self.sent[-1] == '.':
             self.sent = self.sent[:-1]
+        self.sent = self.sent.replace('  ', ' ')
+        # print("'s values are contained by the type_integer_array_" in self.sent)
         for rule in alt_rules:            
             # self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
             if self.sent.endswith(rule[0]):                
                 self.sent = self.sent.replace(rule[0], rule[1])
             elif self.sent.startswith(rule[0]):
                 self.sent = self.sent.replace(rule[0], rule[1])
+            elif rule[0].startswith("'"):
+                self.sent = self.sent.replace(rule[0] + ' ', ' ' + rule[1] + ' ')
             else:
                 self.sent = self.sent.replace(' ' + rule[0] + ' ', ' ' + rule[1] + ' ')
         

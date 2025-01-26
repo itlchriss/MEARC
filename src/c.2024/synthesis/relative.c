@@ -26,6 +26,7 @@ int __Rel_synthesis__(
     */
     deallocatequeue(relptr->datalist, deallocatedata);
     relptr->datalist = initqueue();
+    relptr->datatype->relative_var = strdup((char *)gqueue(xptr->datalist, 0));
     for (int i = 0; i < results->count; ++i) {
         enqueue(relptr->datalist, gqueue(results, i));
     }

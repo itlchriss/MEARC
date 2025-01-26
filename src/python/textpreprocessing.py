@@ -95,10 +95,81 @@ def __equal_distributedly__(r, sent) -> List[str]:
     template = 'If the %s parameter %s is equal to %s %s'
     results.append(template % (parameter_type, subjectA, result, predicate))     
     results.append(template % (parameter_type, subjectB, result, predicate))
-    print(results)     
+    return results
+
+def __consist_of_distributed__(r, sent) -> List[str]:
+    results = []
+    template = '%s parameter %s %s %s'
+    type_str = r.group(1)
+    subjectA = r.group(2)
+    subjectB = r.group(3)
+    verb = r.group(4)
+    predicate = r.group(5)
+    if predicate[-1] == '.':
+        predicate = predicate[:-1]
+    verb = verb.replace('consist', 'consists')
+    results.append('The ' + template % (type_str, subjectA, verb, predicate))
+    results.append('The ' + template % (type_str, subjectB, verb, predicate))
+    return results
+
+def __object_distributed__(r, sent, template) -> List[str]:
+    results = []
+    type_str = r.group(1)
+    subjectA = r.group(2)
+    subjectB = r.group(3)
+    results.append(template % (type_str, subjectA, type_str, subjectB))
+    return results
+
+def __object_distributed_general__(r, sent, template) -> List[str]:
+    results = []
+    type_str = r.group(1)
+    subjectA = r.group(2)
+    subjectB = r.group(3)
+    predicate = r.group(4)
+    results.append(template % (type_str, subjectA, predicate, type_str, subjectB, predicate))
+    return results
+
+
+def __process_object_clause__(conditions):
+    results = {'ensures': [], 'requires': []}
+    patterns = [
+        {
+            'p': 'The\s+(\w+)\s+parameter\s+(`\w+`)\s+and\s+(`\w+`)\s+have\s+the\s+same\s+length',
+            'func': __object_distributed__,
+            'template': "The %s parameter %s's length is equal to the %s parameter %s's length"
+        },
+        {
+            'p': 'The\s+(integer\s+array)\s+(result)\s+should\s+have\s+the\s+same\s+length\s+as\s+the\s+input\s+array\s+parameter\s+(`\w+`)',
+            'func': __object_distributed__,
+            'template': "The %s %s's length is equal to the %s parameter %s's length"
+        },
+        {
+            'p': 'The\s+(\w+)\s+parameter\s+(`\w+`)\s+and\s+(`\w+`)\s+consist\s+of\s+digits\s+only',
+            'func': __object_distributed__,
+            'template': "The %s parameter %s consists of digits only and the %s parameter %s consists of digits only"
+        },
+        {
+            'p': 'The\s+(\w+)\s+parameter\s+(`\w+`)\s+and\s+(`\w+`)\s+consist\s+of\s+only\s+(.*).',
+            'func': __object_distributed_general__,
+            'template': "The %s parameter %s consists of only %s and the %s parameter %s consists of only %s."
+        }
+    ]    
+    for t in conditions:
+        for sent in conditions[t]:                   
+            processed = False
+            for pattern in patterns:
+                if r := re.search(pattern['p'], sent):
+                    results[t] += pattern['func'](r, sent, pattern['template'])                    
+                    processed = True
+                    break
+            if not processed:
+                results[t].append(sent)                   
+                                
+    # [print(r) for r in results['ensures']]
     return results
 
 def __process_compound_subject(conditions):
+    # The string parameter `s` and `t` consist only of lowercase English letters.
     results = {'ensures': [], 'requires': []}
     patterns = [
         {
@@ -108,6 +179,14 @@ def __process_compound_subject(conditions):
         {
             'p': 'If\s+the\s+(\w+)\s+parameters\s+(`\w+`)\s+and\s+(`\w+`)\s+are\s+equal\s+to\s+("\w+")(.*)',
             'func': __equal_distributedly__
+        },
+        {
+            'p': 'The\s+(\w+)\s+parameter\s+(`\w+`)\s+and\s+(`\w+`)\s+(consist\s+only\s+of)(.*)',
+            'func': __consist_of_distributed__
+        },
+        {
+            'p': 'The\s+(\w+)\s+parameters\s+(`\w+`)\s+and\s+(`\w+`)\s+(consist\s+of\s+only)(.*)',
+            'func': __consist_of_distributed__
         }
     ]    
     for t in conditions:
@@ -258,6 +337,32 @@ def __process_and_false_clause(conditions):
                 results[t].append(sent)     
     return results
 
+def __process_specified_type_checking_sent__(conditions):
+    results = {'ensures': [], 'requires': []}
+    # print(conditions)
+    # The integer array parameter `nums` consists of integers.
+    patterns = [
+        {
+            'p': '^The\s+(\w+\s+array)\s+parameter\s+(`\w+`)\s+consists\s+of\s+(\w+)\.$',
+            'template': 'The %s parameter %s only contains %s.'
+        }
+    ] 
+    for t in conditions:
+        for sent in conditions[t]:                   
+            processed = False
+            for pattern in patterns:
+                if r := re.search(pattern['p'], sent):   
+                    # print(r.group(0))
+                    template = pattern['template']
+                    checking_symbol = None
+                    if 'integer' in r.group(3) and 'integer array' == r.group(1):
+                        checking_symbol = 'checking_integer'
+                    results[t].append(template % (r.group(1), r.group(2), checking_symbol))
+                    processed = True
+            if not processed:
+                results[t].append(sent)    
+    return results
+
 def __process_redundant_type_clause(conditions):
     patterns = [
         {
@@ -279,6 +384,27 @@ def __process_redundant_type_clause(conditions):
             if not processed:
                 results[t].append(sent)     
     return results
+
+def __process_at_most_elements(conditions):
+    results = {'ensures': [], 'requires': []}
+    patterns = [
+        {
+            'p': '^The\s+(\w+)\s+result\s+(.*)\s+and\s+contains\s+at\s+most\s+(\d+)\s+elements\.$',
+            'template': "The %s result %s and the %s result's length is less than or equal to %s."
+        }
+    ] 
+    for t in conditions:
+        for sent in conditions[t]:          
+            processed = False
+            for pattern in patterns:
+                if r := re.search(pattern['p'], sent):   
+                    type_str = r.group(1)
+                    results[t].append(pattern['template'] % (type_str, r.group(2), type_str, str(r.group(3)))
+                    )
+                    processed = True
+            if not processed:
+                results[t].append(sent)    
+    return results
     
 def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:    
     models, si = _get_specs()
@@ -295,6 +421,9 @@ def main(filecontent: str) -> Tuple[Dict[str, List[str]], List[Dict]]:
     conditions = __process_false_otherwise(conditions)
     conditions = __process_and_false_clause(conditions)
     conditions = __process_compound_subject(conditions)
+    conditions = __process_object_clause__(conditions)
+    conditions = __process_specified_type_checking_sent__(conditions)
+    conditions = __process_at_most_elements(conditions)
     # conditions = __process_redundant_type_clause(conditions)
     #######
     for t in conditions:
@@ -334,7 +463,24 @@ if __name__ == "__main__":
     tmpfolder = os.path.join(folder, 'tmp')
     if not os.path.exists(tmpfolder):
         os.mkdir(tmpfolder)
+
     
+    # final tidy up. some conditions are massaged and initially not directly mentioning result
+    # after massaging, the result is mentioned.
+    # therefore, we should put these sentences to postconditions
+    
+    # postconditions = []
+    # preconditions = []
+    # for c in conditions['requires']:
+    #     if 'result' in c:
+    #         postconditions.append(c)
+    #     else:
+    #         preconditions.append(c)
+    
+    # conditions['requires'] = preconditions
+    # conditions['ensures'] = postconditions + conditions['ensures']
+    
+
     with open(os.path.join(tmpfolder, 'conditions.yml'), 'w') as fp:
         yaml.dump(conditions, fp, sort_keys=False, allow_unicode=True, width=float("inf"))
     

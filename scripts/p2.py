@@ -127,7 +127,7 @@ def main(filename):
         print('error in getting signature of ' % folder)
         exit(-1)
 
-    prompt = 'Please convert this sentence to JML: "%s"'
+    prompt = 'Please convert this specification into JML: "%s"'
     if not os.path.exists('%s/gpt-results/jml-gpt-4o.txt' % (folder)):
         gpt4_s = send_prompt(prompt % (sentence))
     # starchat_s = starchat_send_prompt(prompt % (sentence))

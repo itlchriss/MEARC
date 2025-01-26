@@ -14,7 +14,7 @@ for entry in `find $SRC_PATH -type f -name "Solution.java.no_annotation" | sort`
 do
     folder=""$(dirname $entry)""
     echo "Working with $folder..................."
-    python $SCRIPT_PATH/insertcomment.py $folder
+    python $SCRIPT_PATH/trans/insertcomment.py $folder
 done
 
 

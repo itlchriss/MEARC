@@ -64,6 +64,9 @@ def __check_is_be__(word: str) -> bool:
 def __check_is_param__(word: str) -> bool:
     return (word.startswith('`') and word[-1] == '`') or (word.startswith('param_') and word[-1] == '_')
 
+def __check_is_param_or_result__(word: str) -> bool:
+    return (word.startswith('`') and word[-1] == '`') or (word.startswith('param_') and word[-1] == '_') or word == 'result'
+
 def __check_is_expr__(word: str) -> bool:
     pattern = r'_expr\d+_'
     return re.match(pattern, word)
@@ -86,6 +89,7 @@ def __perform_diff__(sent: list) -> str:
     return str(pd.eval(' '.join(sent)))
 
 def __perform_product__(sent: list) -> str:
+    sent = list(map(lambda x: '*' if x == 'times' else x, sent))
     return str(pd.eval(' '.join(sent)))
 
 def __get_number__(sent: list) -> str:
@@ -93,6 +97,10 @@ def __get_number__(sent: list) -> str:
         if __check_is_numeric__(i):
             return str(i)
     return None
+
+def __convert_to_vocontain__(sent: list) -> str:
+    p = sent[0].replace("'s", '')
+    return "%s vocontains" % p
 
 def __array_value_access__(sent: list) -> str:
     print(sent)
@@ -153,7 +161,17 @@ def __match_any_word__(word: str) -> bool:
 def __check_is_SI_string__(word: str) -> bool:
     return re.match(r'^str[a-z]_[a-z]$', word)
 
+def __check_is_posessive_preposition__(word: str) -> bool:
+    return word == 'of' or word == 'in'
+
+def __check_is_values_with_param_or_result__(word: str) -> bool:
+    return word.endswith("'s") and (word.replace("'s", '') == 'result' or word.startswith("param_"))
+
+def __check_is_contain__(word: str) -> bool:
+    return word == 'contain' or word == 'contains'
+
 func_map = {
+    '__param_or_result__': __check_is_param_or_result__,
     '__num__': __check_is_numeric__,
     '__be__': __check_is_be__,
     '__quoted__': __check_is_quoted__,
@@ -174,7 +192,11 @@ func_map = {
     '__filter_num__': __get_number__,
     '__array_value_access__': __array_value_access__,
     '__word__': __match_any_word__,
-    '__expr_string__': __check_is_SI_string__
+    '__expr_string__': __check_is_SI_string__,
+    '__pos_prep__': __check_is_posessive_preposition__,
+    '__param_or_result_values__': __check_is_values_with_param_or_result__,
+    '__vocontain__': __convert_to_vocontain__,  
+    '__contain__': __check_is_contain__
 }
 
 # general_syntax_rules = [
@@ -368,6 +390,15 @@ general_syntax_rules = [
     { 
         'pattern': ['is', 'of', 'length', '__num__'], 
         'format': "'s length is equal to __num__", 
+        'symbol': '', 
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    { 
+        'pattern': ['length', 'of', 'the', 'string_representation', 'of', 'the', '__type__', '__param_or_result__'], 
+        'format': "__type__ __param_or_result__'s string_representation's length", 
         'symbol': '', 
         'interpretation': '',
         'syntax': '',
@@ -670,8 +701,227 @@ general_syntax_rules = [
         'syntax': '',
         'arguments': [],
         'synthesised_datatype': { }
-    }        
+    },
+    {
+        'pattern': ['All', 'values', '__pos_prep__', 'the', '__type__', '__param__'],
+        'format': "The __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['If', 'all', 'values', '__pos_prep__', 'the', '__type__', '__param__'],
+        'format': "If the __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['All', 'the' 'values', '__pos_prep__', 'the', '__type__', '__param__'],
+        'format': "The __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['All', 'the', 'values', '__pos_prep__', '__type__', '__param__'],
+        'format': "The __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['All', 'values', '__pos_prep__', '__type__', '__param__'],
+        'format': "The __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['All', 'values', '__pos_prep__', 'the', '__type__', '__param_or_result__'],
+        'format': "The __type__ __param_or_result__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['not', 'equal', 'to', 'the', 'summation', 'in', 'the', '__type__', '__param__'],
+        'format': "not_equal to the __type__ __param__'s summation",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['The', 'summation', 'in', 'the', '__type__', '__param_or_result__'],
+        'format': "The __type__ __param_or_result__'s summation",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'summation', 'in', 'the', '__type__', '__param_or_result__'],
+        'format': "the __type__ __param_or_result__'s summation",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'minimum_value', 'in', 'the', '__type__', '__param__'],
+        'format': "the __type__ __param__'s minimum_value",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['first_element', '__pos_prep__', 'the', '__type__', '__param_or_result__'],
+        'format': "__type__ __param_or_result__'s first_element",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['second_element', '__pos_prep__', 'the', '__type__', '__param_or_result__'],
+        'format': "__type__ __param_or_result__'s second_element",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['number_of_unique_elements', '__pos_prep__', 'the', '__type__', '__param_or_result__'],
+        'format': "__type__ __param_or_result__'s number_of_unique_elements",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['length', 'plus', '__num__'],
+        'format': "length + __num__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['at', 'least', '1', 'value', 'in', 'the', '__type__', '__param_or_result__', 'appears', 'more', 'than', 'once'],
+        'format': "the __type__ __param_or_result__ is not unique",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__num__', 'times', '__num__'],
+        'format': "__product__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['contains', 'less', 'than', '__num__', 'elements'],
+        'format': "'s length is less than __num__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__be__', 'unique', 'sorted', 'to', 'the', 'ascending_order'],
+        'format': "__be__ unique and __be__ sorted to the ascending_order",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__be__', 'between', '__num__', 'and', '__num__'],
+        'format': "__be__ greater than __num__ and __be__ less than __num__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__param_or_result_values__', 'values', 'only', '__contain__'],
+        'format': "__vocontain__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['there', 'exists', 'no', 'non-repeating', 'character', 'in', 'the', '__type__', '__param_or_result__'],
+        'format': "the __type__ __param_or_result__ does not contain a nonrepeating_character",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['there', 'exists', 'a', 'non-repeating', 'character', 'in', 'the', '__type__', '__param_or_result__'],
+        'format': "the __type__ __param_or_result__ contains a nonrepeating_character",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['the', 'sum', 'of', 'the', '__type__', '__param_or_result__', 'and', 'the', '__type__', '__param_or_result__'],
+        'format': "the __type__ __param_or_result__ + the __type__ __param_or_result__",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__contain__', 'integers', 'and', 'arithmetic_operators', 'separated', 'by', 'number', 'of', 'spaces'],
+        'format': "only __contain__ arithexprspace",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    }
 ]
+
+# there exists no non-repeating character in the type_string_ param_s_
+
 
 
 reqtype_ignore_rules = {
@@ -681,6 +931,17 @@ reqtype_ignore_rules = {
         "`answer`": 'keyword_result'
     }
 }
+
+def __process_to_later_clause__(sent, r) -> str:
+    type_str = r.group(1)
+    param_str = r.group(2)
+    other_str = r.group(3)
+    ans = None
+    if type_str == 'type_integer_array_':
+        ans = '0'
+    elif type_str == 'type_string_':
+        ans = "'0'"
+    return "The %s %s %s and the %s %s's first_element is equal to %s." % (type_str, param_str, other_str, type_str, param_str, ans)
 
 
 class RepairProcessor:    
@@ -812,7 +1073,15 @@ class RepairProcessor:
     
     # TODO: to be combined the two functions
     def __process_complex_clause(self, sent) -> str:
+        # print(sent)
+        # consists of only digits and the dot character
+        # only contains alphabets , digits , + , - , or dot characters
         patterns = [
+            # {
+            #     'p': r"(only\s+contains)\s+(the\s+characters\s+)?(('\w+')(\s+,\s+('\w+'))*(\s+,\s+or\s+'\w+'))(\s+)?",
+            #     'connective': 'or',
+            #     'target': 3
+            # },
             {
                 'p': r'(only\s+contains\s+)((([\w_]+)(\s+,\s+the\s+(\w+)(\s+character)?)*(\s+,\s+or\s+the\s+(\w+(\s+character)?)|\s+or\s+the\s+(\w+(\s+character)?))?))',
             },
@@ -823,29 +1092,73 @@ class RepairProcessor:
                 'p': r"(consist\s+only\s+of)\s+('\w+'\s+or\s+'\w+'\s+characters)"
             },
             {
-                'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(the\s+)?(\w+))*(\s+,\s+or\s+(the\s+)?\w+))'
+                'p': r"(only\s+contains)\s+(\w+\s+and\s+\w+)\s+characters(\s+)?$",
+                'connective': 'or'
+            },
+            {
+                'p': r"(consists\s+of\s+only)\s+(\w+\s+and\s+the\s+\w+)\s+character",
+                'connective': 'or'
+            },
+            {
+                'p': r"(only\s+contains)\s+((\w+)(\s+,\s+[\w\W]+)+\s,\sor\s+\w+\s+)characters",
+                'connective': 'or'
+            },
+            {
+                'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(the\s+)?(\w+))*(\s+,\s+or\s+(the\s+)?\w+))(\s+)?'
+            },
+            {
+                'p': r'(contains)\s+(([\w_]+)(\s+,\s+(the\s+)?(\w+))*(\s+,\s+and\s+(the\s+)?\w+))',
+                'connective': 'or'
+            },
+            {
+                'p': r'(only\s+contains)\s+(([\w_]+)(\s+,\s+(\w+))*((\s+,)?\s+and\s+\w+))(\s+)?$',
+                'connective': 'or'
+            },
+            {
+                'p': r"are\s+either\s+(('\w')\s+or\s+('\w'))(\s+)?$",
+                'require': 'All values',
+                'template': 'are equal to'
             }
         ]
         # print(sent)
         tmp = sent.replace(', - ,', ', minus ,')
         for pattern in patterns:
             if r := re.search(pattern['p'], tmp):
-                # print(r.groups(0))
-                verb = r.group(1)
-                symbol = 'checking_character_sequence_'
-                connective = ''
-                if 'or' in r.group(2):
-                    connective = 'or'
-                else:
-                    connective = 'and'
-                target = r.group(2).replace('the', '').replace(' ', '').replace('or', ',').replace('and', ',').replace(',,', ',')
-                if 'characters' in target:
-                    target = target.replace('characters', '')
-                else:
-                    target = target.replace('character', '')
-                if ',' in target:
-                    self.dynamic_si[symbol] = '%s,%s' % (connective, target)
-                    sent = tmp.replace(r.group(0), verb + ' the ' + symbol)
+                if not r.group(0).endswith('and the') and not r.group(0).endswith('and does'):
+                    symbol = 'checking_character_sequence_'
+                    if 'template' not in pattern.keys():
+                        verb = r.group(1)
+                        if 'target' in pattern.keys():
+                            index = pattern['target']
+                        else:
+                            index = 2
+                        connective = ''
+                        if 'connective' in pattern.keys():
+                            connective = pattern['connective']
+                        else:
+                            if 'or' in r.group(index):
+                                connective = 'or'
+                            else:
+                                connective = 'and'
+                        target = r.group(index).replace('the', '').replace(' ', '').replace('or', ',').replace('and', ',').replace(',,', ',')
+                        if 'characters' in target:
+                            target = target.replace('characters', '')
+                        else:
+                            target = target.replace('character', '')
+                        target = target.replace("the", '')
+                        if ',' in target:
+                            self.dynamic_si[symbol] = '%s,%s' % (connective, target)
+                            sent = tmp.replace(r.group(0), verb + ' the ' + symbol)
+                    else:
+                        values = r.group(1)
+                        connective = ''
+                        if 'or' in values:
+                            connective = 'or'
+                        else:
+                            connective = 'and'
+                        target = values.replace(connective, ',').replace("\'", '').replace(' ', '')
+                        self.dynamic_si[symbol] = '%s,%s' % (connective, target)
+                        sent = tmp.replace(r.group(0), pattern['template'] + ' ' + symbol)
         return sent
     
     def __process_complex_clause2(self, sent) -> str:
@@ -865,22 +1178,125 @@ class RepairProcessor:
         ]
         for pattern in patterns:
             if r := re.search(pattern['p'], sent):
+                if not r.group(0).endswith('and the') and not r.group(0).endswith('and'):
+                    target = r.group(0)
+                    type_str = r.group(1)
+                    # if type_str == 'strings':
+                    #     type_str = 'string'                
+                    result = r.group(2)
+                    result = re.sub('the\s+', '', result)
+                    # print(result)
+                    result = result.replace(' ', '').replace(pattern['connective'], '')
+                    for s in result.split(','):
+                        if sr := re.match(r'^str\w+_[a-z]$', s):
+                            if s in self.current_dynamic_si.keys():
+                                result = result.replace(s, self.current_dynamic_si[s])  
+                        elif sr := re.match(r'^chr\w+_[a-z]$', s):
+                            if s in self.current_dynamic_si.keys():
+                                result = result.replace(s, self.current_dynamic_si[s])  
+                    symbol = pattern['symbol']           
+                    self.dynamic_si[symbol] = '%s,%s' % (pattern['connective'], result)
+                    sent = sent.replace(target, pattern['template'] % symbol)
+                    break
+        return sent
+    
+    
+    def __process_except_clause__(self, sent) -> str:
+        patterns = [
+            {
+                'p': r'The\s+(type_\w+)\s+(param_\w+)\s+does\s+not\s+(contain|have)\s+(any\s+)?leading\s+zeros\s+except\s+for\s+the\s+0\s+itself(\s+)?$',
+                'template': "The %s %s's first_element is not_equal to %s unless the %s %s only contains single_zero",
+                'repeat': 1
+            },
+            {
+                'p': r'The\s+(type_\w+)\s+(result)\s+does\s+not\s+(contain|have)\s+(any\s+)?leading\s+zeros\s+except\s+for\s+the\s+0\s+itself(\s+)?$',
+                'template': "The %s %s's first_element is not_equal to %s unless the %s %s only contains single_zero",
+                'repeat': 1
+            },
+            {
+                'p': r'The\s+(type_\w+)\s+(result)\s+does\s+not\s+(contain|have)\s+leading\s+zeros\s+unless',
+                'template': "The %s %s's first_element is not_equal to %s unless",
+                'repeat': 0
+            },
+            {
+                'p': r'^The\s+(type_\w+)\s+(param\w+)\s+does\s+not\s+(contain|have)\s+any\s+leading\s+zeros(\s+)?$',
+                'template': "The %s %s's first_element is not_equal to %s.",
+                'repeat': 0
+            },
+            {
+                'p': r'^The\s+(type_\w+)\s+(param\w+)\s+(.*)\s+and\s+contains\s+leading\s+zeros(\s+)?$',
+                'func': __process_to_later_clause__
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                if 'func' in pattern.keys():
+                    sent = pattern['func'](sent, r)
+                    break
+                else:
+                    target = r.group(0)
+                    type_str = r.group(1)
+                    param_str = r.group(2)
+                    # symbol = pattern['symbol']
+                    # self.dynamic_si[symbol] = 'except the %s %s' % (type_str, param_str)
+                    zero = None
+                    if type_str == 'type_integer_array_':
+                        zero = str(0)
+                    elif type_str == 'type_string_':
+                        zero = "'0'"
+                    if pattern['repeat'] == 1:
+                        sent = sent.replace(target, pattern['template'] % (type_str, param_str, zero, type_str, param_str))
+                    else:
+                        sent = sent.replace(target, pattern['template'] % (type_str, param_str, zero))
+        return sent
+    
+    def __process_power_clause__(self, sent) -> str:
+        # 10 raised to the power of the type_integer_ param_n_
+        patterns = [
+            {
+                'p': r'\s+(\d+)\s+raised\s+to\s+the\s+power\s+of\s+the\s+(\w+)\s+param_(\w+)',
+                'template': ' the %s int_expr',
+                'symbol': 'int_expr'
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
                 target = r.group(0)
-                type_str = r.group(1)
-                # if type_str == 'strings':
-                #     type_str = 'string'                
-                result = r.group(2).replace(' ', '').replace(pattern['connective'], '')
-                for s in result.split(','):
-                    if sr := re.match(r'^str\w+_[a-z]$', s):
-                        if s in self.current_dynamic_si.keys():
-                            result = result.replace(s, self.current_dynamic_si[s])  
-                    elif sr := re.match(r'^chr\w+_[a-z]$', s):
-                        if s in self.current_dynamic_si.keys():
-                            result = result.replace(s, self.current_dynamic_si[s])  
-                symbol = pattern['symbol']           
-                self.dynamic_si[symbol] = '%s,%s' % (pattern['connective'], result)
-                sent = sent.replace(target, pattern['template'] % symbol)
-                break
+                base = r.group(1)
+                type_str = r.group(2)
+                power = r.group(3).replace('_', '')
+                symbol = pattern['symbol']
+                self.dynamic_si[symbol] = 'Math.pow(%s,%s)' % (base, power)
+                sent = sent.replace(target, pattern['template'] % type_str)
+        return sent
+
+    def __process_comma_separated_clause__(self, sent) -> str:
+        # comma-separated values that are either integers in the range arr_a or the chry_a 
+        patterns = [
+            {
+                'p': r'comma-separated\s+values\s+that\s+are\s+either\s+(\w+)\s+in\s+the\s+range\s+(\w+)\s+or\s+the\s+(\w+)(\s+)?$', 
+            }
+        ]
+        for pattern in patterns:
+            if r := re.search(pattern['p'], sent):
+                # this is the SI symbol that the construct type SI will find
+                symbol = 'csvdata'
+                target = 'or'
+                if r.group(1) == 'integers':
+                    _range_str = r.group(2)
+                    if _range_str in self.current_dynamic_si.keys():
+                        _range_str = self.current_dynamic_si[_range_str]
+                    if ',' in _range_str:
+                        target += ',range'
+                        for i in _range_str.split(','):
+                            target += ',' + i.strip()
+
+                target += ',equal'
+                if r.group(3).startswith('chr'):
+                    target += ',' + self.current_dynamic_si[r.group(3)]
+                
+                self.dynamic_si[symbol] = target
+                sent = sent.replace(r.group(0), 'checking_csv')
         return sent
     
     def __nth_repl(s, sub, repl, n):
@@ -914,6 +1330,9 @@ class RepairProcessor:
                         f = f.replace(x, words[index + i].replace('`', ''), 1)
                     else:
                         f = f.replace(x, words[index + i], 1)
+                    
+                    if x == '__be__' and '__be__' in f:
+                        f = f.replace(x, words[index + i])
                     pairs.append((x, words[index + i]))
         elif f in func_map.keys():
             subsent = words[index: index + len(pattern)]
@@ -954,6 +1373,9 @@ class RepairProcessor:
         sent = self.__process_limited_equal(sent)
         sent = self.__process_complex_clause(sent)
         sent = self.__process_complex_clause2(sent)
+        sent = self.__process_except_clause__(sent)
+        sent = self.__process_power_clause__(sent)
+        sent = self.__process_comma_separated_clause__(sent)
         words = sent.split(' ')        
         for r in general_syntax_rules:
             pattern = r['pattern']

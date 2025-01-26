@@ -100,8 +100,10 @@ int __compare_datatype__(struct datatype *x, struct datatype *y) {
             )
         ) || (x->i == INT_SI_TYPE_MULTIPLE_SI && y->i == INT_SI_TYPE_MULTIPLE_SI)
         // the second case is for multiple INT SI
-    ) 
+    ) {
+        if (x->i != UNDEFINED && y->i != UNDEFINED && x->i != y->i) return FALSE;
         return TRUE;
+    }
     else
         return FALSE;
 }

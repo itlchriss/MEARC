@@ -15,11 +15,6 @@ do
 done
 else
 
-# for d in `find ./datasets/leetcode-behavioural -type d -name "s*" | sort`
-# do
-#     python scripts/insertcomment.py $d
-# done
-
 
 # rm $BASE/*/tmp/*
 # rm $BASE/*/jml/*
@@ -27,40 +22,36 @@ echo ''  > ./results/gpt4log
 echo ''  >  ./results/gpt35log
 echo ''  >  ./results/starchatlog
 
-for entry in `find $BASE/s*/gpt4 -maxdepth 1 -type f -name "Solution.java" | sort`
+for entry in `find $BASE/s*/hafis/gpt4 -maxdepth 1 -type f -name "Solution.java" | sort`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
        folder=`echo $entry | sed "s/\/$filename//"`
-      #  mkdir -p $folder/tmp
-      #  mkdir -p $folder/jml
-      rm $folder/tmp/*
+
+#       rm $folder/tmp/*
       rm $folder/jml/*
-    #    python scripts/insertcomment.py $folder
        echo "./mearc $entry"
        ./mearc $entry >> results/gpt4log 2>&1
 done
 
-for entry in `find $BASE/s*/starchat -maxdepth 1 -type f -name "Solution.java" | sort`
+for entry in `find $BASE/s*/hafis/starchat -maxdepth 1 -type f -name "Solution.java" | sort`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
        folder=`echo $entry | sed "s/\/$filename//"`
-      #  mkdir -p $folder/tmp
-      #  mkdir -p $folder/jml
-      rm $folder/tmp/*
+
+#       rm $folder/tmp/*
       rm $folder/jml/*
-    #    python scripts/insertcomment.py $folder
        echo "./mearc $entry"
        ./mearc $entry >> results/starchatlog 2>&1
 done
 
-for entry in `find $BASE/s*/gpt35 -maxdepth 1 -type f -name "Solution.java" | sort`
+for entry in `find $BASE/s*/hafis/gpt35 -maxdepth 1 -type f -name "Solution.java" | sort`
 do
        filename=`echo $entry | sed 's/.*\///'`
        index=`echo $filename | sed 's/\..*//'`
        folder=`echo $entry | sed "s/\/$filename//"`
-       rm $folder/tmp/*
+       # rm $folder/tmp/*
        rm $folder/jml/*
        echo "./mearc $entry"
        ./mearc $entry >> results/gpt35log 2>&1

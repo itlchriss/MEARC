@@ -25,9 +25,9 @@ ifeq ($(ANALYSIS), 1)
 	LDFLAGS += -p -g -fprofile-arcs -ftest-coverage
 endif
 
-ifeq ($(DEBUG), 0)
+#ifeq ($(DEBUG), 0)
    CFLAGS = -g -Wall -ansi -pedantic -I$(INCL) -std=c99 -D_POSIX_C_SOURCE=200809L $(LOCINCL)
-else
+#else
 # ifeq ($(DEBUG), 1)
 #   CFLAGS += -DDEBUG -fsanitize=address
    CFLAGS += -DDEBUG
@@ -64,7 +64,11 @@ else
 	ifeq ($(MEMDEBUG), 1)
 		CFLAGS += -DMEMDEBUG -DDEBUG
 	endif
-endif
+
+	ifeq ($(EVENTDEBUG), 1)
+		CFLAGS += -DDEBUG -DEVENTDEBUG
+	endif
+#endif
 
 
 .PHONY: directories

@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "util.h"
 #include "ast.h"
@@ -160,7 +161,9 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                             the SI type is a function that is delegated to the compiler 
                             helper function is used
                         */
-                        if (strcmp(si->interpretation, "array_equal") == 0) {
+                        if (strcmp(si->interpretation, "contain_string_construct") == 0) {
+                            tmp = contain_construct(d1, d2, en1->cstptr->datatype, en2->cstptr->datatype);
+                        } else if (strcmp(si->interpretation, "array_equal") == 0) {
                             tmp = array_equal(d1, d2);
                         } else if (strcmp(si->interpretation, "list_2_string_array_equal") == 0) {
                             tmp = list_2_string_array_equal(d1, d2);
@@ -170,6 +173,19 @@ struct queue *__2_event_entities_combinatorial_subtree_si_synthesis__(struct eve
                             tmp = array_partially_equal(d1, d2);
                         } else if (strcmp(si->interpretation, "contain_only_string_chararray") == 0) {
                             tmp = contain_only_string_chararray(d1, d2);
+                        } else if (strcmp(si->interpretation, "contain_only_template") == 0) {
+                            tmp = contain_only_template(d1, d2, en1->cstptr->datatype, en2->cstptr->datatype);
+                        } else if (strcmp(si->interpretation, "string_charArray_equal") == 0) {
+                            if (en1->cstptr->datatype->relative_var != NULL && en2->cstptr->datatype->relative_var != NULL) {
+                                tmp = string_charArray_equal(en1->cstptr->datatype->relative_var, en2->cstptr->datatype->relative_var);
+                            } else if (en1->cstptr->datatype->relative_var != NULL) {
+                                tmp = string_charArray_equal(en1->cstptr->datatype->relative_var, d2);
+                            } else if (en2->cstptr->datatype->relative_var != NULL) {
+                                tmp = string_charArray_equal(d1, en2->cstptr->datatype->relative_var);
+                            } else {
+                                tmp = string_charArray_equal(d1, d2);
+                            }
+                            
                         } else {
                             internal_error("The function is not supported in the current version");
                         }
@@ -275,6 +291,15 @@ struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct eve
         
             for (int j = 0; j < en1->cstptr->datalist->count; ++j) {
                 char *d1 = (char *)gqueue(en1->cstptr->datalist, j), *s = (char *)strdup(si->interpretation);         
+                if (si->type == SI_INT_TYPE_EXPR_REQ_PARAM) {
+                    if (en1->cstptr->datatype->relative_var != NULL) {
+                    /* 
+                    * indicates that this entity's intermediate SI is from a Rel synthesis 
+                    * we need to get the original param to work on it
+                    */
+                    d1 = en1->cstptr->datatype->relative_var;
+                    }
+                }
                 char *tmp;
                 tmp = strrep(s, t1, d1);
                 free(s);
@@ -318,11 +343,25 @@ int event_synthesis(struct astnode *node) {
         // } else {
         //     siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype);
         // }
-        siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype);
+        struct si * si = (struct si *)gqueue(node->si_q, 0);
+        if (si->type == SI_INT_TYPE_EXPR_REQ_PARAM) {
+            if (en1->cstptr->datatype->relative_var != NULL) {
+                siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype->relative_datatype, en2->cstptr->datatype);
+            } else if (en1->cstptr->datatype->relative_var != NULL) {
+                siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype->relative_datatype);
+            } 
+        } else {
+            siq = __match_event_si__(node->si_q, 2, en1->cstptr->datatype, en2->cstptr->datatype);
+        }
         /* combinatorially forming all possible SI synthesis from 2 entities */
         funcptr = &__2_event_entities_combinatorial_subtree_si_synthesis__;
     }    
-    if (siq->count == 0) sinotfound_error(node->token->symbol);
+    if (siq->count == 0) {
+        printf("Entity 1 type: %d/%d/%d, Entity 2 type: %d/%d/%d\n", 
+            en1->cstptr->datatype->p, en1->cstptr->datatype->r, en1->cstptr->datatype->i,
+            en2->cstptr->datatype->p, en2->cstptr->datatype->r, en2->cstptr->datatype->i);
+        sinotfound_error(node->token->symbol);
+    }
     node->si_q = (*funcptr)(e, siq);
     if (datatype_is_specific(((struct si*)gqueue(siq, 0))->synthesised_datatype)) {
         // e->cstptr->datatype->p = en1->cstptr->datatype->p = ((struct si*)gqueue(siq, 0))->synthesised_datatype->p;

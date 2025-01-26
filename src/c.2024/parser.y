@@ -6,6 +6,7 @@
     #include "event.h"
     #include "regex.h"
     #include "error.h"
+    #include "tok.h"
     #define YYERROR_VERBOSE 1
 
     void print_debug(char *);
@@ -33,6 +34,16 @@
         struct astnode *_eventnode;
         struct astnode *_entitynode;
     };
+
+    int __tmp_event_match_entity_variable__(void *_e, void *_entity_variable) {
+        struct _event *e = (struct _event *)_e;
+        char *entity_var = (char *)_entity_variable;
+        if (strcmp(e->_entitynode->token->symbol, entity_var) == 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
 
     enum gramtype __string2gramtype(char *input) {
         if (strcmp(input, "Subj") == 0) return SubjectOf;

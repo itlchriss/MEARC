@@ -93,6 +93,14 @@ struct datatype {
     *  having more direct syntax. Another words, if the datalist length is incremented because of ambiguous SI, then it is not used.
     */
     struct queue *multiple_datatypes;
+
+    /*
+    * Used when REL synthesis is performed. 
+    * This field holds the original variable
+    * For instance, the length of X
+    * then, this field holds a value X
+    */
+    char *relative_var;
 };
 
 

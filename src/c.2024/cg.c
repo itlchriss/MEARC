@@ -5,6 +5,7 @@
 #include "util.h"
 #include "cg.h"
 #include "alias.h"
+#include "error.h"
 
 static char *connective_code[] = { "&&", "||", "<==>", "==>" };
 
@@ -32,6 +33,10 @@ char *get_length_str(enum reference_datatype r) {
     }
 }
 
+/*
+    TODO: check if the tree has any string type. if so, we need to add the checking of null
+*/
+
 
 void printree(struct astnode *node, FILE *s, int *haserror) {
     char *formatstr = "%s";
@@ -46,7 +51,10 @@ void printree(struct astnode *node, FILE *s, int *haserror) {
             if (node->si_q && !ssearch((char *)gqueue(node->si_q, pindex), "__REL__") && gqueue(node->si_q, pindex ) != NULL) {
                 // printf("%s\n", (char *)gqueue(node->si_q, pindex)); 
                 fprintf(s, formatstr, (char *)gqueue(node->si_q, pindex));
-            }             
+            } else {
+                semantic_error("There are at least 1 predicate TSI not found, however, there are other elements resolved. please check.", "Relative TSI");
+                (*haserror)++;
+            }  
             break;
         default:
             #if CGDEBUG

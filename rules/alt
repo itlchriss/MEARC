@@ -1,8 +1,8 @@
 The result is:The method returns,The method generates,The method yields,The method produces
-:some,the characters
+:some,the characters,in the context,representing null pointer,a character
 is:represents,must be,can be
 :some,the characters,entire,also,respectively
-is:represents,must be
+is:represents,must be,will be
 unique:distinct
 is not:must not be,should not be
 is greater_than_or_equal to:greater than or equal
@@ -16,6 +16,7 @@ less_than to:less than
 stronger than to:stronger than
 in:within
 result:indices in the result
+is in the range of a signedint:is a 32-bit integer
 signedint:32-bit signed integer [-2147483648 \, 2147483648 - 1],32-bit signed integer [-2^31, 2^31 - 1],32-bit signed integer
 :exactly,immediately,The method must handle cases,can
 is equal to the true literal:is true
@@ -23,31 +24,32 @@ is equal to the false literal:is false,is not true
 are equal to the true literal:are true
 at least 1 time:at least once
 that:where
-ascending_order:ascending order,non-decreasing order,increasing order
-descending_order:descending order
+the ascending_order:ascending order,non-decreasing order,increasing order
+the descending_order:descending order
 there exists:there is
 there exist:there are
 only contains:contains only,consists of only
-lowercase_alphabets:lower-case English letters,lowercase English letters,lowercase alphabets,lower-case English characters,lowercase letters
-uppercase_alphabets:uppercase letters,uppercase English letters,uppercase alphabets,uppercase-case English characters
-alphabets:English letters (lower-case and upper-case),English letters,alphabets (both uppercase and lowercase),lowercase and uppercase_alphabets,uppercase and lowercase_alphabets
+lowercase_alphabets:lower-case English letters,lowercase English letters,lowercase alphabets,lower-case English characters,lowercase letters,not capitals
+uppercase_alphabets:uppercase letters,uppercase English letters,uppercase alphabets,uppercase-case English characters,capitals
+alphabets:English letters (lower-case and upper-case),English letters,alphabets (both uppercase and lowercase),lowercase and uppercase_alphabets,uppercase and lowercase_alphabets,alphabets (upper-case and lower-case)
 only contain:contain only,consist of only,must only contain,consist only of
 containing:consisting of
 contains:must consist of,consists of
-are contained by:appear
+are contained by:appear in,appear
 length of:length of each
 to the true literal:to true
 to the false literal:to false
 accontains:contains all characters of
 accontain:contain all characters of
-spaces:spaces ' '
-digits:digits (0-9),digits (`0-9`)
+spaces:spaces ' ',spaces `' '`
+digits:digits (0-9),digits (`0-9`),any digits
 the plus_sign:plus '+',plus signs,plus `'+'`
 the minus_sign:minus '-',minus signs,minus `'-'`
-the dot_sign:dot '.',dot signs,dot `'.'`,dot ` period `
+the dot_sign:dot '.',dot signs,dot `'.'`,dot ` period `,dot period
 period:dot '.'
 -:minus
-All values:The values,All characters
+all values:all letters
+All values:The values,All characters,All the values,all characters
 2147483647:the maximum value of java integer,the maximum value of a 32-bit integer
 negative 2147483648:the minimum value of java integer,the minimum value of a 32-bit integer
 empty_str:""
@@ -59,10 +61,10 @@ is contained:is part of
 is not contained:is not part of 
 is not contained by:is not present in,is not equal to subsequence of
 signals the arithmetic exception:causes the value to go outside the signed 32-bit integer range
-summation:sum of all values
+summation:sum of all values,sum of the values,sum of the elements
 printable_ASCII_characters:printable ASCII characters
 results:intermediate results
-in the range of negative 2147483648 to 2147483647:guaranteed to fit in a 32-bit integer
+in the range of negative 2147483648 to 2147483647:guaranteed to fit in a 32-bit integer,in the range of `[-2^31, 2^31 - 1]`,represented by a signedint
 if:if and only if
 prime_factors:prime factors
 is greater_than to 0:is a positive integer,is equal to positive integer
@@ -75,3 +77,36 @@ have:should have
 or it is not:or not
 the type_string_:the string the type_string_
 matches:matches the pattern
+only contains single_zero:contains a single 0
+first_element:first element,first character,first value,value at index 0,only the first letter
+binary_string_length_32:binary string of length 32
+represented by:represented as
+are greater_than to 0:are non-negative
+character_sharp_comma_separated:character '#' separated by commas
+checking_character_sequence_:checking_character_sequence_ characters
+is unique:contains unique values,does not contain duplicate elements
+sorted to:sorted in
+length_plus1:length + 1
+are contained by the type_integer_array_:'s values are contained by the type_integer_array_
+the perfect_square:perfect square
+not_equal to the:not equal to the
+minimum_value:smallest value
+or:or only
+lowercase_hexadecimal_digits:lowercase hexadecimal digits
+second_element:second element,value at index 1
++:plus
+leading_or_trailing_spaces:leading or trailing spaces
+number_of_unique_elements:number of unique elements
+'s length is equal to:has a length equal to
+only contain the uppercase_alphabets:are uppercase_alphabets
+only contains the lowercase_alphabets:contains lowercase characters only
+only contain the lowercase_alphabets:are lowercase_alphabets
+_is the uppercase_alphabet:is capital
+is equal to:is clamped to
+single_digit:single digit
+contains:may contain
+leading zeros:leading zero(s)
+all_types_parentheses:parentheses `'()[]{}'`
+non_negative_integers:non-negative integers
+string result:returned string
+string_representation:string representation

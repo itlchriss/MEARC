@@ -16,7 +16,9 @@ struct queuenode {
     struct queuenode *prev;
 };
 
-
+int isInt(char *);
+int isChar(char *);
+int isString(char *);
 char * combine_strings(int, ...);
 int ssearch(char *str, char *pattern);
 struct queue* initqueue();

@@ -67,6 +67,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->conjunction_operators = initqueue();
     new->abstract_synthesis_required = FALSE;
     new->type_assigned = FALSE;
+    new->datatype->relative_var = NULL;
     enqueue(cst, (void*)new);
     return new;
 }

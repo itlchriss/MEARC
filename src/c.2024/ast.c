@@ -150,11 +150,26 @@ struct astnode *astsimplification(struct astnode *_root) {
     int count = 0;
     while (!isempty(queue)) {
         node = (struct astnode *)dequeue(queue);
+        #if ASTDEBUG
+        if (node->type == Synthesised) {
+            printf("ast simplying node: %s\n", node->token->symbol);
+        } else if (node->type == Connective) {
+            printf("ast simplying node: %s\n", connective_name[node->conntype]);
+        } else if (node->type == Quantifier) {
+            printf("ast simplying node: %s %s\n", quantifier_name[node->qtype], node->token->symbol);
+        } 
+        #endif
         count = countastchildren(node);
         /* to traverse the tree, children nodes have to be added to the queue */
         for (int i = 0; i < count; ++i) {
-            enqueue(queue, getastchild(node, i));
+            struct astnode *child = getastchild(node, i);
+            if (child->type == Connective && countastchildren(child) == 0) {
+                deleteastchild(node, child);
+            } else {
+                enqueue(queue, getastchild(node, i));
+            }
         }
+        count = countastchildren(node);
         /* 
             this is a node that has no effects to the result 
             a node has type connective (and, or, etc.) can only provide meaning when both left and right hand-side operators present
@@ -257,6 +272,14 @@ void addastchildren(struct astnode *parent, struct astnodelist *children) {
         tmp = tmp->next;
     }
     free(children);
+}
+
+struct astnode *getlastchild(struct astnodelist *children) {
+    struct astnodelist * tmp = children;
+    while (tmp->next != NULL) {
+        tmp = tmp->next;
+    }
+    return tmp->node;
 }
 
 void insertastchild(struct astnode *parent, struct astnode *child, int position) {

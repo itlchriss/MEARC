@@ -24,7 +24,10 @@ enum interpretation_type {
     SI_INT_TYPE_JAVA_MEMBER_METHOD = 6,
     SI_INT_TYPE_JAVA_MEMBER_ATTR = 7,
     SI_INT_TYPE_MULTIPLE_SI = 8,
-    SI_INT_TYPE_FUNCTION = 9
+    SI_INT_TYPE_FUNCTION = 9,
+    SI_INT_TYPE_EXPR_REQ_PARAM = 10,
+    SI_INT_TYPE_TEMPLATE = 11,
+    SI_INT_TYPE_CONSTRUCT = 12
 };
 
 struct si_arg {
@@ -85,4 +88,5 @@ void opresolution();
 void showsi(void *_si);
 void deallocatesi(void *);
 void generate_param_si(char *);
+int search_syntax(struct si* si, enum ptbsyntax ptb);
 #endif

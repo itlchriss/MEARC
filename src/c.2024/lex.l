@@ -127,7 +127,7 @@ KEYWORD_ACC         "Acc"
 KEYWORD_ACCI         "AccI"
 KEYWORD_DAT         "Dat"
 
-PREDICATE           (_([a-zA-Z0-9\-\.*'\^]+))+
+PREDICATE           (_([a-zA-Z0-9\-\.*'\^\+]+))+
 SPECIAL_PREDICATE   (_from_[0-9]+_[0-9]+_[a-z]+_sequence_)
 FIX_SEQUENCE_PREDICATE (_fixed_integer_sequence_)
 CHECK_CHAR_PREDICATE (_checking_character_sequence_)

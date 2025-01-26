@@ -48,8 +48,11 @@ def __fix_to_cases__(sent: str) -> Tuple[str, Dict[str, str]]:
                 # we should maintain it as a string
                 _symbol = 'strs_'
                 _type = 'type_string_'
-            # exprs['expr_' + index] = e
-            exprs[_symbol + index] = "'%s'" % _t
+            
+            if len(_t) == 1:
+                exprs[_symbol + index] = "'%s'" % _t
+            else:
+                exprs[_symbol + index] = "\"%s\"" % _t
             # 20250119 changed. added 'the'
             sent = sent.replace(e, ' the %s %s' % (_type, _symbol) + index, 1)
     if r := re.findall(r'((\'[^ ]+\')\s+or\s+(\'[^ ]+\')\s+characters)', sent):
