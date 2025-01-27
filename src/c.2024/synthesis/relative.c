@@ -42,6 +42,7 @@ int __Rel_synthesis__(
     deallocatequeue(results, NULL);    
     /* the synthesised datatype must be defined in the SI */
     /* TODO: we should perform a checking in the very beginning to acknowledge the users the possible errors in the SI template */
+    struct si *relsi = (struct si *)gqueue(rel_siq, 0);
     struct datatype *dt = ((struct si *)gqueue(rel_siq, 0))->synthesised_datatype;
     relptr->datatype->p = dt->p;
     relptr->datatype->r = dt->r;

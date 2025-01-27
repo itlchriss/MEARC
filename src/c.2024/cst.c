@@ -53,6 +53,7 @@ struct cstsymbol *newcstsymbol(char *symbol) {
     new->datatype = (struct datatype *)malloc(sizeof(struct datatype));
     new->datatype->p = UNDEFINED;
     new->datatype->r = UNDEFINED;
+    new->datatype->i = UNDEFINED;
     new->interpretation_type = -1;
     new->datatype->lazy_resolve = NULL;
     new->datatype->types = initqueue();

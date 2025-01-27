@@ -35,6 +35,22 @@ char *__do_lazy_resolve__(char *s, struct entity *en) {
     }
 }
 
+int __compare_siarg_datatype__(struct datatype *argtype, struct datatype *entype) {
+    if (
+        (
+            (argtype->p == entype->p || argtype->p == ANY) && (argtype->r == entype->r || argtype->r == ANY)  
+                && (entype->i < 100)
+        ) || 
+        (
+            (argtype->i == entype->i && argtype->i != UNDEFINED && entype->i != UNDEFINED) 
+        )
+     ) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 struct queue *__match_event_si__(struct queue *siq, int count, ...) {
     va_list valist;
 
@@ -46,13 +62,24 @@ struct queue *__match_event_si__(struct queue *siq, int count, ...) {
         for (int j = 0; j < count; ++j) {
             struct si_arg *arg = (struct si_arg *)gqueue(si->args, j);
             struct datatype *datatype = (struct datatype *)va_arg(valist, void *);
-            if (!__compare_datatype__(arg->datatype, datatype)) { 
+            if (!__compare_siarg_datatype__(arg->datatype, datatype)) { 
                 match = FALSE; 
                 break; 
             }
         }        
         va_end(valist);
-        if (match) enqueue(result, (void *)si);
+        if (match) {
+            #if SIANALYSIS
+            printf("Matched SI: %s\n", si->symbol);
+            printf("Interpretation: %s\n", si->interpretation);
+            printf("Argument Types: \n");
+            for (int i = 0; i < si->args->count; ++i) {
+                struct si_arg *arg = (struct si_arg *)gqueue(si->args, i);
+                printf("Symbol: %s, Primitive: %d, Reference: %d, Interpretation: %d\n", arg->symbol, arg->datatype->p, arg->datatype->r, arg->datatype->i);
+            }
+            #endif
+            enqueue(result, (void *)si);
+        }
     }    
     return result;
 }
@@ -282,7 +309,7 @@ struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct eve
             en1->cstptr->datalist = initqueue();
             char *tmp = strdup(si->interpretation);
             enqueue(en1->cstptr->datalist, (void *)tmp);
-            result = NULL;
+            result = NULL;            
         } else {
             char *t1 = __combine_3_strings__(
                 "(", 
@@ -308,7 +335,15 @@ struct queue *__1_event_entities_combinatorial_subtree_si_synthesis__(struct eve
             }
             free(t1);
         }
+        // TODO: this part is not ready for multiple SI
+        if (en1->cstptr->datatype->p == UNDEFINED && en1->cstptr->datatype->r == UNDEFINED && en1->cstptr->datatype->i == UNDEFINED) {
+            en1->cstptr->datatype->p = si->synthesised_datatype->p;
+            en1->cstptr->datatype->r = si->synthesised_datatype->r;
+            en1->cstptr->datatype->i = si->type;
+        }
     }
+
+
     return result;
 }
 
@@ -357,8 +392,10 @@ int event_synthesis(struct astnode *node) {
         funcptr = &__2_event_entities_combinatorial_subtree_si_synthesis__;
     }    
     if (siq->count == 0) {
-        printf("Entity 1 type: %d/%d/%d, Entity 2 type: %d/%d/%d\n", 
+        printf("Entity 1(%s) type: %d/%d/%d, Entity 2(%s) type: %d/%d/%d\n", 
+            en1->cstptr->symbol,
             en1->cstptr->datatype->p, en1->cstptr->datatype->r, en1->cstptr->datatype->i,
+            en2->cstptr->symbol,
             en2->cstptr->datatype->p, en2->cstptr->datatype->r, en2->cstptr->datatype->i);
         sinotfound_error(node->token->symbol);
     }

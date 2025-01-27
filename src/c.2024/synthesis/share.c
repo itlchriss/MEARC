@@ -101,7 +101,9 @@ int __compare_datatype__(struct datatype *x, struct datatype *y) {
         ) || (x->i == INT_SI_TYPE_MULTIPLE_SI && y->i == INT_SI_TYPE_MULTIPLE_SI)
         // the second case is for multiple INT SI
     ) {
-        if (x->i != UNDEFINED && y->i != UNDEFINED && x->i != y->i) return FALSE;
+        // if (x->i > SI_INT_TYPE_UNDEFINED && x->i <= SI_INT_TYPE_MAX && y->i <= SI_INT_TYPE_MAX && y->i > SI_INT_TYPE_UNDEFINED && x->i != y->i) return FALSE;
+        // if (x->i >= 0 && y->i >= 0 && x->i != y->i) return FALSE;
+        if (x->i >= 100 && x->i <= 103 && y->i >= 100 && y->i <= 103 && x->i != y->i) return FALSE;
         return TRUE;
     }
     else
@@ -278,14 +280,31 @@ int __direct_syntax_synthesis__(struct astnode *node) {
     /*
         if both p and r are ANY, then it is not specific, so we should not inherit it to overwrite the entity datatype        
     */
+    // if (targetsi->synthesised_datatype != NULL && 
+    //     (
+    //         (
+    //             (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
+    //                 (
+    //                     (child->cstptr->datatype->p == ANY && child->cstptr->datatype->r) && 
+    //                     (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0)
+    //                 )
+    //         )
+    //     )  && child->cstptr->type_assigned == FALSE
+    //    ) { 
+    //     child->cstptr->datatype->p = targetsi->synthesised_datatype->p;
+    //     child->cstptr->datatype->r = targetsi->synthesised_datatype->r;
+    // }
     if (targetsi->synthesised_datatype != NULL && 
-        (
-            ((targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0) ||
-            ((child->cstptr->datatype->p == ANY && child->cstptr->datatype->r) && (targetsi->synthesised_datatype->p >= 0 || targetsi->synthesised_datatype->r >= 0)))
-        )  && child->cstptr->type_assigned == FALSE
-       ) { 
+            (child->cstptr->type_assigned == FALSE || 
+                (child->cstptr->datatype->p == UNDEFINED &&
+                    child->cstptr->datatype->r == UNDEFINED &&
+                    child->cstptr->datatype->i == UNDEFINED)
+            )
+        ) {
         child->cstptr->datatype->p = targetsi->synthesised_datatype->p;
         child->cstptr->datatype->r = targetsi->synthesised_datatype->r;
+        child->cstptr->datatype->i = targetsi->type;
+        // child->cstptr->datatype->i = targetsi->synthesised_datatype->i;
     }
 
     

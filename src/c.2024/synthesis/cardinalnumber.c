@@ -21,5 +21,7 @@ extern struct astnode *root;
 */
 int CD_code_synthesis(struct astnode *node) { 
     ((struct astnode *)getastchild(node, 0))->cstptr->datatype->p = Integer;
+    ((struct astnode *)getastchild(node, 0))->cstptr->datatype->r = UNDEFINED;
+    ((struct astnode *)getastchild(node, 0))->cstptr->datatype->i = UNDEFINED;
     return __direct_syntax_synthesis__(node);
 }

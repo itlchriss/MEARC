@@ -30,7 +30,10 @@ rulespath = './rules'
 ALT_RULE_FILENAME = 'alt'
 
 alt_rules = [("operators ('+', '-', '*', '/')", "arithmetic_operators"),
-             ("operators ('+' , '-' , asterisk , '/')", "arithmetic_operators")]
+             ("operators ('+' , '-' , asterisk , '/')", "arithmetic_operators"),
+             ("operators `('+', '-', '*', '/')`", "arithmetic_operators"),
+             ("operators `('+' , '-' , asterisk , '/')`", "arithmetic_operators"),
+             ]
 
 def _get_alt_rules():
     with open(os.path.join(rulespath, ALT_RULE_FILENAME)) as fp:

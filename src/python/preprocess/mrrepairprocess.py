@@ -170,6 +170,9 @@ def __check_is_values_with_param_or_result__(word: str) -> bool:
 def __check_is_contain__(word: str) -> bool:
     return word == 'contain' or word == 'contains'
 
+def __check_is_array__(word: str) -> bool:
+    return word.startswith('arr_')
+
 func_map = {
     '__param_or_result__': __check_is_param_or_result__,
     '__num__': __check_is_numeric__,
@@ -196,7 +199,8 @@ func_map = {
     '__pos_prep__': __check_is_posessive_preposition__,
     '__param_or_result_values__': __check_is_values_with_param_or_result__,
     '__vocontain__': __convert_to_vocontain__,  
-    '__contain__': __check_is_contain__
+    '__contain__': __check_is_contain__,
+    '__array__': __check_is_array__,
 }
 
 # general_syntax_rules = [
@@ -712,6 +716,15 @@ general_syntax_rules = [
         'synthesised_datatype': { }
     },
     {
+        'pattern': ['all', 'values', '__pos_prep__', 'the', '__type__', '__param__'],
+        'format': "the __type__ __param__'s values",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
         'pattern': ['If', 'all', 'values', '__pos_prep__', 'the', '__type__', '__param__'],
         'format': "If the __type__ __param__'s values",
         'symbol': '',
@@ -912,6 +925,33 @@ general_syntax_rules = [
     {
         'pattern': ['__contain__', 'integers', 'and', 'arithmetic_operators', 'separated', 'by', 'number', 'of', 'spaces'],
         'format': "only __contain__ arithexprspace",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['valid', 'expression', 'containing', 'integers', 'and', 'arithmetic_operators', 'separated', 'by', 'spaces'],
+        'format': "the arithexprspace",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['is', 'the', 'hexadecimal_representation', 'of', 'the', '__type__', '__param_or_result__'],
+        'format': "is equal to the __type__ __param_or_result__'s hexadecimal_representation",
+        'symbol': '',
+        'interpretation': '',
+        'syntax': '',
+        'arguments': [],
+        'synthesised_datatype': { }
+    },
+    {
+        'pattern': ['__type__', '__param_or_result__', 'is', '__array__'],
+        'format': "__type__ __param_or_result__ is equal to __array__",
         'symbol': '',
         'interpretation': '',
         'syntax': '',

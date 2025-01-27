@@ -76,10 +76,10 @@
   arguments:  
   - symbol: Subj
     primitive_type: 'any'
-    reference_type: 'any'
+    reference_type: 'undefined'
   - symbol: Dat
     primitive_type: 'any'
-    reference_type: 'any'
+    reference_type: 'undefined'
   interpretation_type: 'expression'
   interpretation: (Subj) >= (Dat)
 - term: greater_than
@@ -282,7 +282,7 @@
   - JJ
   arguments:
   - symbol: '*'
-    primitive_type: 'undefined'
+    primitive_type: 'any'
     reference_type: 'any'
   synthesised_datatype:
     primitive_type: 'boolean'
@@ -294,7 +294,7 @@
   - JJ
   arguments:
   - symbol: '*'
-    primitive_type: 'undefined'
+    primitive_type: 'any'
     reference_type: 'any'
   synthesised_datatype:
     primitive_type: 'boolean'
@@ -485,10 +485,40 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
+    primitive_type: 'integer'
     reference_type: 'undefined'
   - symbol: Dat
-    primitive_type: 'any'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'expression'
+  interpretation: (Subj) == (Dat)
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  - symbol: Dat
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  synthesised_datatype:
+    primitive_type: 'boolean'
+    reference_type: 'undefined'
+  interpretation_type: 'expression'
+  interpretation: (Subj) == (Dat)
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: Subj
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  - symbol: Dat
+    primitive_type: 'character'
     reference_type: 'undefined'
   synthesised_datatype:
     primitive_type: 'boolean'
@@ -530,7 +560,7 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
+    primitive_type: 'undefined'
     reference_type: 'string'
   - symbol: Dat
     primitive_type: 'character'
@@ -590,10 +620,10 @@
   - JJ
   arguments:
   - symbol: Subj
-    primitive_type: 'any'
+    primitive_type: 'undefined'
     reference_type: 'string'
   - symbol: Dat
-    primitive_type: 'any'
+    primitive_type: 'undefined'
     reference_type: 'string'
   synthesised_datatype:
     primitive_type: 'boolean'
@@ -610,6 +640,7 @@
   synthesised_datatype:
     primitive_type: 'integer'
     reference_type: 'undefined'
+  interpretation_type: 'integer'
   interpretation: (x).length
 - term: __REL__length_plus1
   syntax:
@@ -712,17 +743,19 @@
   synthesised_datatype:
     primitive_type: 'integer'
     reference_type: 'undefined'
+  interpretation_type: 'integer'
   interpretation: (x).size()
 - term: __REL__length
   syntax:
   - NN
   arguments:
   - symbol: x
-    primitive_type: 'any'
+    primitive_type: 'undefined'
     reference_type: 'string'
   synthesised_datatype:
     primitive_type: 'integer'
     reference_type: 'undefined'
+  interpretation_type: 'integer'
   interpretation: (x).length()
 - term: __REL__length
   syntax:
@@ -734,6 +767,7 @@
   synthesised_datatype:
     primitive_type: 'integer'
     reference_type: 'undefined'
+  interpretation_type: 'integer'
   interpretation: (x).size()
 - term: __REL__size
   syntax:
@@ -923,7 +957,7 @@
     reference_type: 'array'
   synthesised_datatype:
     primitive_type: 'any'
-    reference_type: 'any'
+    reference_type: 'undefined'
   interpretation_type: 'modifier'
   interpretation: \forall int i; 0 <= i < (x).length; (x)[i]
 - term: __REL__value
@@ -935,7 +969,7 @@
     reference_type: 'list'
   synthesised_datatype:
     primitive_type: 'any'
-    reference_type: 'any'
+    reference_type: 'undefined'
   interpretation_type: 'modifier'
   interpretation: \forall int i; 0 <= i < (x).size(); (x).get(i)
 - term: __REL__value
@@ -947,7 +981,7 @@
     reference_type: 'string'
   synthesised_datatype:
     primitive_type: 'character'
-    reference_type: 'any'
+    reference_type: 'undefined'
   interpretation_type: 'modifier'
   interpretation: \forall int i; 0 <= i < (x).length(); (x).charAt(i)
 - term: __REL__value
@@ -962,7 +996,7 @@
     - 'collection'
   synthesised_datatype:
     primitive_type: 'any'
-    reference_type: 'any'
+    reference_type: 'undefined'
   interpretation_type: 'modifier'
   interpretation: \forall int i; 0 <= i < (x).size(); (x).get(i)
 - term: unique
@@ -1119,6 +1153,9 @@
   - symbol: '*'
     primitive_type: 'any'
     reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isDigit'
 - term: digits
@@ -1128,6 +1165,9 @@
   - symbol: '*'
     primitive_type: 'any'
     reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isDigit'
 - term: alphanumeric
@@ -1137,6 +1177,9 @@
   - symbol: '*'
     primitive_type: 'any'
     reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isLetter'
 - term: space
@@ -1147,6 +1190,9 @@
   - symbol: '*'
     primitive_type: 'any'
     reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
   interpretation_type: 'java_method'
   interpretation: 'Character.isWhitespace'
 - term: spaces
@@ -1227,6 +1273,7 @@
   - symbol: 'Subj'
     primitive_type: 'undefined'
     reference_type: 'string'
+    interpretation_type: 'direct'
   - symbol: 'Acc'
     primitive_type: 'undefined'
     reference_type: 'undefined'
@@ -1241,6 +1288,7 @@
   - symbol: 'Subj'
     primitive_type: 'undefined'
     reference_type: 'string'
+    interpretation_type: 'direct'
   - symbol: 'Acc'
     primitive_type: 'character'
     reference_type: 'array'
@@ -1275,6 +1323,19 @@
     interpretation_type: 'template'
   interpretation_type: 'function'
   interpretation: 'contain_only_template'
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'character'
+    reference_type: 'undefined'
+  - symbol: 'Acc'
+    primitive_type: 'character'
+    reference_type: 'array'
+    interpretation_type: 'undefined'
+  interpretation_type: 'function'
+  interpretation: 'contain_only_template'
 - term: contain_only
   syntax:
   - VBZ
@@ -1297,6 +1358,21 @@
   - symbol: 'Subj'
     primitive_type: 'integer'
     reference_type: 'undefined'
+    interpretation_type: 'undefined'
+  - symbol: 'Acc'
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
+    interpretation_type: 'template'
+  interpretation_type: 'function'
+  interpretation: 'contain_only_template'
+- term: equal
+  syntax:
+  - JJ
+  arguments:
+  - symbol: 'Subj'
+    primitive_type: 'undefined'
+    reference_type: 'string'
+    interpretation_type: 'direct'
   - symbol: 'Acc'
     primitive_type: 'undefined'
     reference_type: 'undefined'
@@ -1347,22 +1423,6 @@
     interpretation_type: 'undefined'
   spec_init_type: 'char'
   interpretation: '\forall int i; 0 <= i < (Subj).length(); (Acc) == (Subj).charAt(i)'
-- term: contain_only
-  syntax:
-  - VBZ
-  - VB
-  - VBP
-  - VBG
-  arguments:
-  - symbol: 'Subj'
-    primitive_type: 'undefined'
-    reference_type: 'string'
-  - symbol: 'Acc'
-    primitive_type: 'undefined'
-    reference_type: 'undefined'
-    interpretation_type: 'multiple_si'
-  spec_init_type: 'char'
-  interpretation: '\forall int i; 0 <= i < (Subj).length(); ((Acc)((Subj).charAt(i)))'
 - term: contain
   syntax:
   - VBZ
@@ -1849,7 +1909,7 @@
     reference_type: 'undefined'
     interpretation_type: 'undefined'
   - symbol: 'Dat'
-    primitive_type: 'integer'
+    primitive_type: 'undefined'
     reference_type: 'undefined'
     interpretation_type: 'template'
   interpretation_type: 'expression'
@@ -2098,6 +2158,9 @@
   - symbol: '*'
     primitive_type: 'any'
     reference_type: 'any'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'undefined'
   interpretation_type: 'construct'
   interpretation: csvdata
 - term: contain
@@ -2113,3 +2176,25 @@
     interpretation_type: 'construct'
   interpretation_type: 'function'
   interpretation: contain_string_construct
+- term: hexadecimal_representation
+  syntax:
+  - NN
+  arguments:
+  - symbol: '*'
+  synthesised_datatype:
+    primitive_type: 'relative'
+    reference_type: 'relative'
+  interpretation: __REL__hexadecimal_representation
+- term: __REL__hexadecimal_representation
+  syntax:
+  - NN
+  arguments:
+  - symbol: 'x'
+    primitive_type: 'integer'
+    reference_type: 'undefined'
+    interpretation_type: 'direct'
+  synthesised_datatype:
+    primitive_type: 'undefined'
+    reference_type: 'string'
+  interpretation: 'string'
+  interpretation: 'Integer.toHexString((x))'

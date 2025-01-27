@@ -34,6 +34,8 @@ expected_wrong = {
 './test/s1013_partition_array_into_three_parts_with_equal_sum/hafis/starchat/jml/post.0.jml',
 './test/s0055_jump_game/hafis/starchat/jml/post.0.jml',
 './test/s0055_jump_game/hafis/starchat/jml/post.1.jml',
+'./test/s0055_jump_game/hafis/starchat/jml/post.2.jml',     # wrong data type. result is integer and is going to be compared to boolean
+'./test/s0055_jump_game/hafis/starchat/jml/post.3.jml',     # wrong data type. result is integer and is going to be compared to boolean
 './test/s0263_ugly_number/hafis/starchat/jml/post.39.jml',
 './test/s0888_fair_candy_swap/hafis/starchat/jml/post.0.jml',
 './test/s0888_fair_candy_swap/hafis/starchat/jml/post.1.jml',
@@ -244,6 +246,13 @@ expected_wrong = {
 './test/s0035_search_insert_position/hafis/gpt35/jml/post.1.jml', # too complicated. we need to advance the prompt
 './test/s0292_nim_game/hafis/gpt35/jml/post.0.jml', # too complicated. we need to advance the prompt
 './test/s0292_nim_game/hafis/gpt35/jml/post.1.jml', # too complicated. we need to advance the prompt
+'./test/s0091_decode_ways/hafis/gpt35/jml/pre.0.jml', # wrong datatype. string is being compared with integer
+'./test/s0454_4sum_ii/hafis/gpt35/jml/pre.0.jml',   # wrong datatype. integer is being compared with a character, although it is comparable, but the semantic is length of integer array compared with a character
+'./test/s0454_4sum_ii/hafis/gpt35/jml/pre.1.jml',   # wrong datatype. integer is being compared with a character, although it is comparable, but the semantic is length of integer array compared with a character
+'./test/s0454_4sum_ii/hafis/gpt35/jml/pre.2.jml',   # wrong datatype. integer is being compared with a character, although it is comparable, but the semantic is length of integer array compared with a character
+'./test/s0454_4sum_ii/hafis/gpt35/jml/pre.3.jml',   # wrong datatype. integer is being compared with a character, although it is comparable, but the semantic is length of integer array compared with a character
+'./test/s0152_maximum_product_subarray/hafis/gpt35/jml/pre.0.jml', # wrong datatype. integer array is being compared with integer
+'./test/s0053_maximum_subarray/hafis/gpt35/jml/pre.0.jml', # wrong datatype. integer array is being compared with integer
     ],
     'gpt4': [
         './test/s0020_valid_parentheses/hafis/gpt4/jml/post.0.jml',     # use of it 
@@ -348,9 +357,10 @@ def calc(model: str):
     return data, failed, incomplete
 
 # for model in ["starchat", "gpt35", "gpt4"]:
-for model in ["starchat"]:
+for model in ["gpt35"]:
     data, failed, incomplete = calc(model)
     if data:
+        unexpected = []
         print("%s Missing:" % model)
         c = 0
         for i in data:
@@ -359,10 +369,12 @@ for model in ["starchat"]:
             else:
                 c += 1
                 print(i)
+                unexpected.append(i)
         # print("\n".join(data))
         print("unexpected count: ", c)
         print("expected count: ", len(data))
-        # [print("'%s'," % i) for i in data]
+        if unexpected:
+            [print("%s" % i) for i in unexpected]
 
     if failed:
         print("%s Failed " % model)

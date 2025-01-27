@@ -272,6 +272,7 @@ struct si* __add_runtime_si(char *term, enum ptbsyntax syntax, char *interpretat
     new->symbol = (char*)strdup(term);
     new->args = initqueue();
     struct si_arg *arg = (struct si_arg *)malloc(sizeof(struct si_arg));
+    new->type = SI_INT_TYPE_DIRECT;
     arg->symbol = (char*) strdup("(*)");
     arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
     arg->datatype->p = AnyPrimitiveType;
@@ -281,9 +282,11 @@ struct si* __add_runtime_si(char *term, enum ptbsyntax syntax, char *interpretat
     if (syntax == CD) {
         new->synthesised_datatype->p = Integer;
         new->synthesised_datatype->r = UNDEFINED;
+        new->synthesised_datatype->i = UNDEFINED;
     } else {
         new->synthesised_datatype->p = AnyPrimitiveType;
         new->synthesised_datatype->r = AnyRefType;
+        // new->synthesised_datatype->i = UNDEFINED;
     }    
     new->synthesised_datatype->types = NULL;
     enqueue(new->args, (void*)arg);

@@ -297,6 +297,7 @@ struct queue* readSI(char *dstfilepaths) {
                                         arg->datatype = (struct datatype *)malloc(sizeof(struct datatype));
                                         arg->datatype->p = UNDEFINED;
                                         arg->datatype->r = UNDEFINED;
+                                        arg->datatype->i = UNDEFINED;
                                         arg->datatype->types = NULL;                                        
                                         break;
                                     case YAML_KEY_TOKEN:
